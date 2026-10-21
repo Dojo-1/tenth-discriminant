@@ -6,7 +6,16 @@ An experimental, AI-assisted number-theory investigation responding to Terence T
 The question is deliberately narrow: can a variant of Ben Green's Gram-determinant argument yield a fully explicit, independently checkable bound excluding a hypothetical tenth class-number-one imaginary quadratic discriminant?
 
 The broader ambition is methodological: turn an attractive mathematical argument into a chain of claims that another mathematician—or another model—can reconstruct, compute, falsify, and audit.
-Research status — not a completed proof. The class-number-one problem is already solved. This repository explores an alternative route, not a new classification result. The adversarial review recorded in review/ reports a reproducible defect in an auxiliary prime-mass lower bound. Numerical runs, interval outputs, and a plausible asymptotic argument must not be read as a certified exclusion until the relevant proof obligations are repaired and independently checked. Start with [STATUS.md](STATUS.md) and the [review record](review/).
+Research status (21 Oct 2026, evening) — candidate proof, reviewed, not a new result.
+- Prior art: the core route (h=1 split-prime lattice count + Green's derivative Gram determinant) was posted first by
+  *twinheterodox* in the comments of Tao's challenge post (v4: q < 4000; v5: q < 2000). Ours is an independent
+  rediscovery; see [PRIOR_ART.md](PRIOR_ART.md).
+- Our variant (norm-ellipse evaluation set) gives h(−D) ≠ 1 for all D ≥ 1.5·10⁴: 43 Arb interval certificates on
+  [1.5·10⁴, 10¹⁰²] (`ledger/coverage_v4.txt`) + a monotone asymptotic inequality beyond. Below: finite check.
+- Independent review (GPT-6.1 Sol, [review/](review/)): re-derived N1–N8; found defects F1–F4 in the code (incl. a false
+  auxiliary tail bound, labelled FATAL); all fixed and recertified ([review/RESPONSE_Claude.md](review/RESPONSE_Claude.md)).
+- External input: Dusart 2010 (arXiv:1002.0442, Thm 5.2), θ(x) ≥ x(1 − 0.2/ln²x), x ≥ 3 594 641 — primary checked.
+- Not yet independently reviewed: the tighter split-prime partial summation (cover.split_mass) and the Dusart switch.
 
 Why a tenth discriminant?
 There are exactly nine positive squarefree integers $d$ for which the imaginary quadratic field $\mathbb{Q}(\sqrt{-d})$ has class number one:
@@ -55,7 +64,7 @@ Coverage	Recorded attempts to join finite and asymptotic regimes	Gap-free covera
 Independent criticism	A blind-then-audit review process, concrete objections, and counterexample work	Endorsement of the main conclusion
 
 
-Known review obstacle (21 October 2026): an adversarial reviewer reproduced a false auxiliary prime-mass lower bound. This is a defect in the proposed proof route; it does not contradict the already-known class-number-one theorem. The current state of any attempted repair must be read from [STATUS.md](STATUS.md), [LEDGER.md](LEDGER.md), and [`review/`](review/), rather than inferred from this introduction.
+Review obstacle (21 October 2026), resolved: an adversarial reviewer reproduced a false auxiliary prime-mass lower bound (F1). It was a code defect (tail added over an empty range); the guarded version passes the reviewer's counterexample and all certificates were recomputed. See [review/RESPONSE_Claude.md](review/RESPONSE_Claude.md).
 
 The rule throughout is simple: a computed inequality is evidence about that computation; a proof requires the quantified mathematical bridge.
 Navigate the evidence
