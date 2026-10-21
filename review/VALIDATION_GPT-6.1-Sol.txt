@@ -1,0 +1,83 @@
+Model: GPT-6.1 Sol (identification supplied by the user; exact runtime version not independently exposed).
+
+FINAL VALIDATION AND SNAPSHOT SCOPE — 2026-10-21
+
+This is a supplement, not an alteration of either frozen report.
+
+The mathematical audit concerns the assigned task snapshot:
+40a0b1261f518b02c7bf96f9ef8a513eb3915237.
+Its findings, line references, missing large GP file, and command results refer
+to that snapshot, not to subsequent changes on main.
+
+The required automated parallel validation was invoked after the three initial
+review artifacts were committed. It returned:
+
+- Code Review: a success wrapper and "No review comments found", BUT also an
+  explicit statement that the review binary was unavailable. Accordingly an
+  automated code review was NOT actually available; do not read the wrapper
+  as an independent mathematical or code-review endorsement.
+- CodeQL: skipped because all changes are non-executable review documents.
+- Secret scanning: no secrets detected in the three initial review artifacts.
+
+The report-only change classification is appropriate: no production source,
+dependencies, configuration, existing tests, or existing documents were edited.
+
+The following final shell commands supplement the mathematical command record
+at /home/runner/work/tenth-discriminant/tenth-discriminant/review/COMMANDS_GPT-6.1-Sol.txt.
+
+27.
+
+git -C /home/runner/work/tenth-discriminant/tenth-discriminant status --short; git -C /home/runner/work/tenth-discriminant/tenth-discriminant diff --name-status HEAD~2 HEAD; git -C /home/runner/work/tenth-discriminant/tenth-discriminant for-each-ref --format='%(refname)' refs/remotes; git -C /home/runner/work/tenth-discriminant/tenth-discriminant log -3 --format='%h %s'
+
+Output:
+A	review/COMMANDS_GPT-6.1-Sol.txt
+A	review/PHASE1_GPT-6.1-Sol.md
+A	review/PHASE2_GPT-6.1-Sol.md
+refs/remotes/origin/copilot/reviewadversarial-referee-2023-10-04
+8f68915 Add adversarial audit, counterexamples, and reproducible command record
+e5db951 Add frozen blind referee derivations and source-access limitations
+40a0b12 Add blind-then-audit review brief for independent model
+Exit status 0. The worktree status was empty.
+
+The GitHub listing tool found no existing pull request for the task branch.
+No pull-request template was found at the conventional queried locations.
+
+28.
+
+git -C /home/runner/work/tenth-discriminant/tenth-discriminant fetch origin main && git -C /home/runner/work/tenth-discriminant/tenth-discriminant diff --name-status FETCH_HEAD HEAD && git -C /home/runner/work/tenth-discriminant/tenth-discriminant log -1 --format='%h %s' FETCH_HEAD
+
+Output:
+From http://localhost:26831/Dojo-1/tenth-discriminant
+ * branch            main       -> FETCH_HEAD
+M	LEDGER.md
+M	STATUS.md
+D	ledger/coverage_v2.txt
+A	review/COMMANDS_GPT-6.1-Sol.txt
+A	review/PHASE1_GPT-6.1-Sol.md
+A	review/PHASE2_GPT-6.1-Sol.md
+M	tools/cover.py
+D	tools/verify_exact_large.gp
+fdd8052 Tighter split-prime bound (ellipse area + partial summation): coverage now [1.5e4, 1e102]
+Exit status 0.
+
+This TWO-DOT endpoint comparison is NOT the GitHub pull-request change set.
+It exposed changes on main made after the task snapshot, including the large
+GP verifier absent from the assigned snapshot. Those newer contents were not
+read or audited. No merge, rebase, branch switch, or worktree update was done.
+
+29.
+
+git -C /home/runner/work/tenth-discriminant/tenth-discriminant diff --name-status FETCH_HEAD...HEAD; git -C /home/runner/work/tenth-discriminant/tenth-discriminant merge-base FETCH_HEAD HEAD; git -C /home/runner/work/tenth-discriminant/tenth-discriminant rev-parse HEAD~2; git -C /home/runner/work/tenth-discriminant/tenth-discriminant status --short
+
+Output:
+A	review/COMMANDS_GPT-6.1-Sol.txt
+A	review/PHASE1_GPT-6.1-Sol.md
+A	review/PHASE2_GPT-6.1-Sol.md
+40a0b1261f518b02c7bf96f9ef8a513eb3915237
+40a0b1261f518b02c7bf96f9ef8a513eb3915237
+Exit status 0. The worktree status was empty.
+
+Thus the actual THREE-DOT PR diff contained only added review files. This
+supplement is itself one further new, non-executable file under the same
+permitted /home/runner/work/tenth-discriminant/tenth-discriminant/review directory.
+Neither the Phase 1 nor the Phase 2 report was edited after creation.
