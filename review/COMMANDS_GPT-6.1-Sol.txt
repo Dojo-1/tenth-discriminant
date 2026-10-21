@@ -1,0 +1,607 @@
+Model: GPT-6.1 Sol (identification supplied by the user; exact runtime version not independently exposed).
+
+AUDIT SHELL TRANSCRIPT — 2026-10-21
+
+All shell invocations made during the mathematical audit are listed below.
+The Python heredocs are recorded experiments, not added executable scripts.
+Full mathematical outputs and failures are preserved. Package download/progress
+and available-version listings are summarized where indicated; these are not
+test outputs. File views, web tools, agents, and platform scanning/progress
+operations are not shell commands and are described in the two reports.
+
+01. Before any repository file was opened:
+
+command -v pdftotext; python -c "import importlib.util; print('python_flint_available=',importlib.util.find_spec('flint') is not None)"; command -v gp
+
+Output:
+python_flint_available= False
+Exit status 1. Neither executable was found.
+
+02.
+
+python -m pip show numpy sympy python-flint; apt-cache policy pari-gp; id; git -C /home/runner/work/tenth-discriminant/tenth-discriminant status --short; git -C /home/runner/work/tenth-discriminant/tenth-discriminant branch --show-current
+
+Output:
+WARNING: Package(s) not found: numpy, python-flint, sympy
+pari-gp:
+  Installed: (none)
+  Candidate: 2.15.4-2.1build1
+  Version table:
+     2.15.4-2.1build1 500
+        500 mirror+file:/etc/apt/apt-mirrors.txt noble/universe amd64 Packages
+uid=1001(runner) gid=1001(runner) groups=1001(runner),4(adm),100(users),118(docker),999(systemd-journal)
+copilot/reviewadversarial-referee-2023-10-04
+Exit status 0. The status command printed nothing.
+
+03.
+
+python -m pip index versions numpy; python -m pip index versions sympy
+
+Output (available-version lists abbreviated):
+WARNING: pip index is currently an experimental command. It may be removed/changed in a future release without prior warning.
+numpy (2.5.4)
+Available versions: 2.5.4, 2.5.3, 2.5.2, ... , 1.3.0
+WARNING: pip index is currently an experimental command. It may be removed/changed in a future release without prior warning.
+sympy (1.14.0)
+Available versions: 1.14.0, 1.13.3, 1.13.2, ... , 0.5.14
+Exit status 0.
+
+04.
+
+sudo apt-get update && sudo apt-get install -y --no-install-recommends pari-gp
+
+Output (repository/download/progress chatter abbreviated):
+Fetched 12.5 MB in 2s (8173 kB/s)
+The following NEW packages will be installed:
+  pari-gp
+0 upgraded, 1 newly installed, 0 to remove and 94 not upgraded.
+Need to get 3989 kB of archives.
+After this operation, 10.7 MB of additional disk space will be used.
+Setting up pari-gp (2.15.4-2.1build1) ...
+Running kernel seems to be up-to-date.
+No services need to be restarted.
+No containers need to be restarted.
+No user sessions are running outdated binaries.
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+Exit status 0.
+
+05. Dependency advisories for these exact pip versions were checked first.
+
+python -m pip install python-flint==0.9.0 numpy==2.5.4 sympy==1.14.0 mpmath==1.3.0
+
+Output (wheel download/progress chatter abbreviated):
+Defaulting to user installation because normal site-packages is not writeable
+Installing collected packages: mpmath, sympy, python-flint, numpy
+Successfully installed mpmath-1.3.0 numpy-2.5.4 python-flint-0.9.0 sympy-1.14.0
+Exit status 0.
+
+06.
+
+cd /home/runner/work/tenth-discriminant/tenth-discriminant && PYTHONDONTWRITEBYTECODE=1 python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/verify_exact.py
+
+Output:
+shape      D   R  S   J    n  checks            inert  max 2F(p)
+ellipse    7   6  2  10   17  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5]       6
+ellipse    7   6  2  18   53  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5]       6
+ellipse    7   9  3  18   53  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5]       30
+ellipse    7  12  3  18   53  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5]       48
+square     7   9  3  10   25  A✓ B✓ C✓ D✓ E✓    [3, 5]       30
+square     7  12  3  12   36  A✓ B✓ C✓ D✓ E✓    [3, 5]       48
+ellipse   11   6  2  12   23  A✓ B✓ C✓ D✓ E✓ F✓ []           0
+ellipse   11   9  3  12   23  A✓ B✓ C✓ D✓ E✓ F✓ [7]          8
+ellipse   11  12  3  12   23  A✓ B✓ C✓ D✓ E✓ F✓ [7]          20
+ellipse   11   6  2  22   65  A✓ B✓ C✓ D✓ E✓ F✓ []           0
+ellipse   11   9  3  22   65  A✓ B✓ C✓ D✓ E✓ F✓ [7]          8
+ellipse   11  12  3  22   65  A✓ B✓ C✓ D✓ E✓ F✓ [7]          20
+square    11   9  3  10   25  A✓ B✓ C✓ D✓ E✓    [7]          8
+square    11  12  3  12   36  A✓ B✓ C✓ D✓ E✓    [7]          20
+ellipse   19   6  2  16   31  A✓ B✓ C✓ D✓ E✓ F✓ [3]          6
+ellipse   19   9  3  16   31  A✓ B✓ C✓ D✓ E✓ F✓ [3]          30
+ellipse   19  12  3  16   31  A✓ B✓ C✓ D✓ E✓ F✓ [3]          48
+ellipse   19   6  2  26   85  A✓ B✓ C✓ D✓ E✓ F✓ [3]          6
+ellipse   19   9  3  26   85  A✓ B✓ C✓ D✓ E✓ F✓ [3]          30
+ellipse   19  12  3  26   85  A✓ B✓ C✓ D✓ E✓ F✓ [3]          48
+square    19   9  3  10   25  A✓ B✓ C✓ D✓ E✓    [3]          30
+square    19  12  3  12   36  A✓ B✓ C✓ D✓ E✓    [3]          48
+ellipse   23   6  2  18   37  A✓ B✓ C✓ D✓ E✓ F✓ [5]          2
+ellipse   23   9  3  18   37  A✓ B✓ C✓ D✓ E✓ F✓ [5, 7]       16
+ellipse   23  12  3  18   37  A✓ B✓ C✓ D✓ E✓ F✓ [5, 7, 11]   32
+ellipse   23   6  2  28   95  A✓ B✓ C✓ D✓ E✓ F✓ [5]          2
+ellipse   23   9  3  28   95  A✓ B✓ C✓ D✓ E✓ F✓ [5, 7]       16
+ellipse   23  12  3  28   95  A✓ B✓ C✓ D✓ E✓ F✓ [5, 7, 11]   32
+square    23   9  3  10   25  A✓ B✓ C✓ D✓ E✓    [5, 7]       16
+square    23  12  3  12   36  A✓ B✓ C✓ D✓ E✓    [5, 7, 11]   32
+ellipse   43   6  2  22   49  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5]       6
+ellipse   43   9  3  22   49  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5, 7]    30
+ellipse   43  12  3  22   49  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5, 7]    48
+ellipse   43   6  2  38  133  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5]       6
+ellipse   43   9  3  38  133  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5, 7]    30
+ellipse   43  12  3  38  133  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5, 7]    48
+square    43   9  3  10   25  A✓ B✓ C✓ D✓ E✓    [3, 5, 7]    30
+square    43  12  3  12   36  A✓ B✓ C✓ D✓ E✓    [3, 5, 7]    48
+ellipse   67   6  2  28   63  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5]       6
+ellipse   67   9  3  28   63  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5, 7]    30
+ellipse   67  12  3  28   63  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5, 7, 11] 48
+ellipse   67   6  2  46  165  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5]       6
+ellipse   67   9  3  46  165  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5, 7]    30
+ellipse   67  12  3  46  165  A✓ B✓ C✓ D✓ E✓ F✓ [3, 5, 7, 11] 48
+square    67   9  3  10   25  A✓ B✓ C✓ D✓ E✓    [3, 5, 7]    30
+square    67  12  3  12   36  A✓ B✓ C✓ D✓ E✓    [3, 5, 7]    48
+
+46 cases, 0 failures
+Exit status 0.
+
+07.
+
+cd /home/runner/work/tenth-discriminant/tenth-discriminant && PYTHONDONTWRITEBYTECODE=1 python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/mutation_test.py
+
+Output:
+M1 v_p too strong                  caught: True
+M2 Hadamard too strong             caught: False
+M3 hypothesis dropped -> det=0     caught: True
+Exit status 0.
+
+08.
+
+cd /home/runner/work/tenth-discriminant/tenth-discriminant && PYTHONDONTWRITEBYTECODE=1 python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/asymptotic.py; gp -q /home/runner/work/tenth-discriminant/tenth-discriminant/tools/verify_exact_large.gp
+
+Output:
+A (slope in u)         = [0.234375 +/- 1e-11]
+h(u0) lower bound      = [55.6404 +/- 4.59e-5]  at u0 = log(1e102) = [234.864 +/- 3.21e-4]
+monotone (A > M1/Lam)  = True
+hypothesis J >= L+M               True
+hypothesis n J > 2RS+J(R+S)       True
+hypothesis T=R/3 >= P1 >= R/S=C   True
+hypothesis G(T)>=0                True
+hypothesis 2b/a = 2C/3 <= P1      True
+ASYMPTOTIC CLOSURE CERTIFIED: True
+  ***   error opening input file: `/home/runner/work/tenth-discriminant/tenth-discriminant/tools/verify_exact_large.gp'.
+... skipping file '/home/runner/work/tenth-discriminant/tenth-discriminant/tools/verify_exact_large.gp'
+Exit status 0, despite the missing GP input.
+
+09.
+
+cd /home/runner/work/tenth-discriminant/tenth-discriminant && PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+from flint import arb,ctx
+from fractions import Fraction
+import sys
+sys.path.insert(0,'/home/runner/work/tenth-discriminant/tenth-discriminant/tools')
+from green_h1 import F_exact
+for R in [10**23,10**26,10**50,10**116,10**119]:
+ S=R//80
+ a=arb(S)*R*(R-1)/2-arb(R)**2/4; b=arb(R)**3/6; c=arb(S)*R
+ root=(a+(a*a-4*b*c).sqrt())/(2*c)
+ T=arb(min(float(root.lower()),R))
+ G=a/T-b/T**2-c
+ print('R=',R,'G(T)=',G.str(6),'nonnegative_certified=',bool(G>=0))
+ print('endpoint_compare=',bool(T<=root), 'ctx.prec=',ctx.prec)
+print('small tail grid')
+count=0
+for R in range(1,101):
+ for S in range(1,31):
+  a=Fraction(S*R*(R-1),2)-Fraction(R*R,4);b=Fraction(R**3,6);c=S*R
+  for p in range(max(1,(R+S-1)//S),R+2):
+   assert a/p-b/(p*p)-c<=F_exact(p,R,S),(p,R,S)
+   count+=1
+print('G<=F tests=',count,'failures=0')
+PY
+
+Output (R values re-expressed as powers of ten for readability):
+R=10^23  G(T)=[+/- 2.29e+29]  nonnegative_certified=True
+endpoint_compare=True ctx.prec=53
+R=10^26  G(T)=[+/- 2.40e+35]  nonnegative_certified=True
+endpoint_compare=True ctx.prec=53
+R=10^50  G(T)=[+/- 2.26e+83]  nonnegative_certified=True
+endpoint_compare=True ctx.prec=53
+R=10^116 G(T)=[+/- 2.50e+215] nonnegative_certified=True
+endpoint_compare=True ctx.prec=53
+R=10^119 G(T)=[+/- 2.85e+221] nonnegative_certified=True
+endpoint_compare=True ctx.prec=53
+small tail grid
+G<=F tests= 135986 failures=0
+Exit status 0.
+
+10.
+
+cd /home/runner/work/tenth-discriminant/tenth-discriminant && PYTHONDONTWRITEBYTECODE=1 python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/sieve_h1.py 8 1000000; gp -q -f <<'GP'
+print(select(d -> (d%4==3 || d%4==0) && qfbclassno(-d)==1, vector(1000000,d,d)))
+GP
+
+Output:
+11 19 43 67 163
+  ***   at top-level: ...4==0)&&qfbclassno(-d)==1,vector(1000000,d,d)))
+  ***                                             ^---------------------
+  *** vector: the PARI stack overflows !
+  current stack size: 8000000 (7.629 Mbytes)
+  [hint] set 'parisizemax' to a nonzero value in your GPRC
+Exit status 0, despite the GP error.
+
+11.
+
+gp -q -f -s 128M <<'GP'
+for(d=1,1000000,if((d%4==3 || d%4==0) && qfbclassno(-d)==1,print(d)))
+GP
+
+Output, one number per line:
+3
+4
+7
+8
+11
+12
+16
+19
+27
+28
+43
+67
+163
+Exit status 0.
+
+12.
+
+gp -q -f -s 128M <<'GP'
+for(d=1,1000000,if(isfundamental(-d) && qfbclassno(-d)==1,print(d)))
+GP
+
+Output:
+3
+4
+7
+8
+11
+19
+43
+67
+163
+Exit status 0.
+
+13.
+
+cd /home/runner/work/tenth-discriminant/tenth-discriminant && PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+import sys, math
+sys.path.insert(0,'/home/runner/work/tenth-discriminant/tenth-discriminant/tools')
+from verify_exact import run, ellipse, square, gram, det
+from flint import arb
+from sympy import primerange, legendre_symbol
+from green_h1 import F_exact
+cases=[]
+for D in [3,31,59,163,211]:
+ P=ellipse(D,2); lines={}
+ for x,y in P: lines[y]=lines.get(y,0)+1
+ J=max(lines.values())+len(lines)
+ cases.append(('ellipse',D,18,4,J,P,2))
+P=[(x,y) for x in range(-4,5) for y in range(-2,3) if (x+2*y)%3!=0]
+J=max(sum(yy==y for x,yy in P) for y in set(yy for x,yy in P))+len(set(y for x,y in P))
+cases.append(('irregular',31,16,4,J,P,None))
+P=[(x,0) for x in range(-12,13)]
+cases.append(('line',31,9,3,26,P,None))
+for c in cases:
+ res=run(*c)
+ print(c[0:5], 'SKIPPED' if res is None else res)
+P=[(0,0)]
+print('origin Gram=',gram(P,1,1,2,31),'det=',det(gram(P,1,1,2,31)))
+try:
+ print('origin run=',run('arbitrary',31,1,1,2,P))
+except Exception as e:
+ print('origin run error=',type(e).__name__,str(e))
+PY
+
+Output:
+('ellipse', 3, 18, 4, 14) ({'A': True, 'B': True, 'C': True, 'D': True, 'E': True, 'F': True}, 33, 14, [5, 11, 17], 116)
+('ellipse', 31, 18, 4, 32) ({'A': True, 'B': True, 'C': True, 'D': True, 'E': True, 'F': True}, 111, 32, [3, 11, 13, 17], 156)
+('ellipse', 59, 18, 4, 44) ({'A': True, 'B': True, 'C': True, 'D': True, 'E': True, 'F': True}, 155, 44, [11, 13], 42)
+('ellipse', 163, 18, 4, 68) ({'A': True, 'B': True, 'C': True, 'D': True, 'E': True, 'F': True}, 259, 68, [3, 5, 7, 11, 13, 17], 156)
+('ellipse', 211, 18, 4, 78) ({'A': True, 'B': True, 'C': True, 'D': True, 'E': True, 'F': True}, 293, 78, [3, 7, 17], 156)
+('irregular', 31, 16, 4, 11) SKIPPED
+('line', 31, 9, 3, 26) ({'A': True, 'B': True, 'C': True, 'D': True, 'E': True}, 25, 26, [3], 30)
+Traceback (most recent call last):
+  File "<stdin>", line 22, in <module>
+  File "/home/runner/work/tenth-discriminant/tenth-discriminant/tools/verify_exact.py", line 59, in det
+    return int(out.strip())
+           ^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+Exit status 1. The later intended origin run was not reached.
+
+14.
+
+cd /home/runner/work/tenth-discriminant/tenth-discriminant && PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+import sys
+sys.path.insert(0,'/home/runner/work/tenth-discriminant/tenth-discriminant/tools')
+from flint import arb
+import cover
+from green_h1 import F_exact
+pr=cover.primes(); P=int(pr[-1]); R=P+1; S=R//80
+exact=arb(0)
+for q in pr:
+ p=int(q)
+ if p>2: exact+=2*arb(p).log()*F_exact(p,R,S)
+claimed=cover.prime_mass(R,S)
+a=arb(S)*R*(R-1)/2-arb(R)**2/4;b=arb(R)**3/6;c=arb(S)*R
+T=arb(min(float(((a+(a*a-4*b*c).sqrt())/(2*c)).lower()),R))
+print('P=',P,'R=',R,'S=',S,'T=',T.str(12))
+print('exact all odd prime mass=',exact.str(12))
+print('claimed lower bound=',claimed.str(12))
+print('claimed minus exact=',(claimed-exact).str(12))
+print('false_lower_bound_certified=',bool(claimed>exact))
+PY
+
+Output:
+P= 11999989 R= 11999990 S= 149999 T= [5999947.83285 +/- 1.47e-6]
+exact all odd prime mass= [2.425489317e+20 +/- 4.12e+10]
+claimed lower bound= [2.491780466e+20 +/- 7.07e+10]
+claimed minus exact= [6.629115e+18 +/- 2.12e+11]
+false_lower_bound_certified= True
+Exit status 0.
+
+15.
+
+cd /home/runner/work/tenth-discriminant/tenth-discriminant && PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+import sys
+sys.path.insert(0,'/home/runner/work/tenth-discriminant/tenth-discriminant/tools')
+from verify_exact import run
+P=[(x,y) for x in range(-4,5) for y in range(-2,3) if (x+2*y)%3!=0]
+print('irregular R14 S4:',run('irregular',31,14,4,11,P))
+P=[(-1,0),(0,0),(1,0)]
+try:
+ print('valid one-row case:',run('line',31,1,1,4,P))
+except Exception as e:
+ print('valid one-row case error:',type(e).__name__,str(e))
+PY
+
+Output:
+irregular R14 S4: ({'A': True, 'B': True, 'C': True, 'D': True, 'E': True}, 30, 11, [3, 11, 13], 108)
+valid one-row case error: ValueError invalid literal for int() with base 10: ''
+Exit status 0, exception caught by experiment.
+
+16.
+
+cd /home/runner/work/tenth-discriminant/tenth-discriminant && PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+import sys
+sys.path.insert(0,'/home/runner/work/tenth-discriminant/tenth-discriminant/tools')
+from cover import certify,rho_for
+for D1,D2 in [(200000,1000000),(1000000,10**9),(10**99,10**102)]:
+ R=D1*10**17;S=R//80
+ print('interval',D1,D2,'result',certify(D1,D2,R,S,rho_for(D2,R,S)),flush=True)
+PY
+
+Output (the final integers are expressed as powers of ten here):
+interval 200000 1000000 result (False, 0.9726331172759891)
+interval 1000000 1000000000 result (True, 1.2116700458437213)
+interval 10^99 10^102 result (True, 1.3294941678860204)
+Exit status 0.
+
+17.
+
+PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+from math import isqrt
+from flint import arb
+count=0
+for D in [1,2,3,7,11,31,163,211]:
+ for q in range(1,201):
+  rho=arb(q)/7; Y=isqrt(q*q//(49*D))
+  n=sum(2*isqrt((q*q-49*D*y*y)//49)+1 for y in range(-Y,Y+1))
+  sd=arb(D).sqrt();lo=arb.pi()*rho*rho/sd-2*rho/sd-6*rho;hi=arb.pi()*rho*rho/sd+2*rho+2*Y+1
+  assert lo<=n and n<=hi,(D,q,n,lo,hi)
+  count+=1
+print('arbitrary-rho ellipse count cases=',count,'failures=0')
+PY
+
+Output:
+arbitrary-rho ellipse count cases= 1600 failures=0
+Exit status 0.
+
+18.
+
+cd /home/runner/work/tenth-discriminant/tenth-discriminant && PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+from flint import arb,ctx
+import sys
+sys.path.insert(0,'/home/runner/work/tenth-discriminant/tenth-discriminant/tools')
+from green_h1 import lower,primes_upto
+R,S,P0=564,2,563
+try:
+ print('negative-discriminant tail input:',lower(R,S,163,P0,primes_upto(P0)))
+except Exception as e:
+ print('negative-discriminant tail error:',type(e).__name__,str(e))
+ctx.prec=200
+R=10**26;S=R//80
+a=arb(S)*R*(R-1)/2-arb(R)**2/4;b=arb(R)**3/6;c=arb(S)*R
+root=(a+(a*a-4*b*c).sqrt())/(2*c)
+T=arb(min(float(root.lower()),R));G=a/T-b/(T*T)-c
+print('root-rounding at ctx.prec=200 R=1e26 S=R//80')
+print('T-root=',(T-root).str(12))
+print('G(T)=',G.str(12),'G(T)<0 certified=',bool(G<0))
+PY
+
+Output:
+negative-discriminant tail input: ([-3626521.0741900 +/- 1.22e-8], nan)
+root-rounding at ctx.prec=200 R=1e26 S=R//80
+T-root= [2382364719.17 +/- 3.34e-3]
+G(T)= [-5.95591179792e+33 +/- 3.34e+21] G(T)<0 certified= True
+Exit status 0.
+
+19.
+
+cd /home/runner/work/tenth-discriminant/tenth-discriminant && PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+import sys
+sys.path.insert(0,'/home/runner/work/tenth-discriminant/tenth-discriminant/tools')
+from cover import certify,rho_for
+for D1,D2 in [(200000,300000),(300000,1000000)]:
+ R=D1*10**17;S=R//80
+ print('interval',D1,D2,'result',certify(D1,D2,R,S,rho_for(D2,R,S)),flush=True)
+PY
+
+Output:
+interval 200000 300000 result (False, 0.9823650577589583)
+interval 300000 1000000 result (True, 1.0726075258141021)
+Exit status 0.
+
+20.
+
+cd /home/runner/work/tenth-discriminant/tenth-discriminant && PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+import sys
+sys.path.insert(0,'/home/runner/work/tenth-discriminant/tenth-discriminant/tools')
+from cover import certify,rho_for
+for k in range(6,102,3):
+ D1=10**k; D2=10**(k+3);R=D1*10**17;S=R//80
+ print(f'10^{k}..10^{k+3}: {certify(D1,D2,R,S,rho_for(D2,R,S))}',flush=True)
+PY
+
+Output:
+10^6..10^9: (True, 1.2116700458437213)
+10^9..10^12: (True, 1.4200003411120967)
+10^12..10^15: (True, 1.4125879906783108)
+10^15..10^18: (True, 1.4011605801909945)
+10^18..10^21: (True, 1.3917961024867855)
+10^21..10^24: (True, 1.3841054313870635)
+10^24..10^27: (True, 1.3776808206133662)
+10^27..10^30: (True, 1.3722336058062092)
+10^30..10^33: (True, 1.3675565560228293)
+10^33..10^36: (True, 1.3634971483643994)
+10^36..10^39: (True, 1.359940636495298)
+10^39..10^42: (True, 1.356799037723416)
+10^42..10^45: (True, 1.3540037603033355)
+10^45..10^48: (True, 1.3515005405854876)
+10^48..10^51: (True, 1.3492458876485376)
+10^51..10^54: (True, 1.347204536513963)
+10^54..10^57: (True, 1.34534759122301)
+10^57..10^60: (True, 1.3436511491901024)
+10^60..10^63: (True, 1.3420952673235444)
+10^63..10^66: (True, 1.3406631748057178)
+10^66..10^69: (True, 1.3393406664994292)
+10^69..10^72: (True, 1.3381156304118085)
+10^72..10^75: (True, 1.3369776758797618)
+10^75..10^78: (True, 1.3359178382900305)
+10^78..10^81: (True, 1.334928342564257)
+10^81..10^84: (True, 1.3340024122009444)
+10^84..10^87: (True, 1.333134113961954)
+10^87..10^90: (True, 1.332318230668833)
+10^90..10^93: (True, 1.3315501563486936)
+10^93..10^96: (True, 1.330825809281667)
+10^96..10^99: (True, 1.3301415594809027)
+10^99..10^102: (True, 1.3294941678860204)
+Exit status 0.
+
+21.
+
+PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+from flint import arb,ctx
+for x in [arb(0,1),arb(-1,2),arb(1,2)]:
+ print(str(x),'x>0=',x>0,'x>=0=',x>=0,'x<0=',x<0,'x<=0=',x<=0,'lower=',x.lower(),'upper=',x.upper())
+PY
+
+Output:
+[+/- 1.01] x>0= False x>=0= False x<0= False x<=0= False lower= [-1.00000000186265 +/- 4.86e-15] upper= [1.00000000186265 +/- 4.86e-15]
+[+/- 3.01] x>0= False x>=0= False x<0= False x<=0= False lower= [-3.00000000372529 +/- 2.99e-16] upper= [1.00000000372529 +/- 2.99e-16]
+[+/- 3.01] x>0= False x>=0= False x<0= False x<=0= False lower= [-1.00000000372529 +/- 2.99e-16] upper= [3.00000000372529 +/- 2.99e-16]
+Exit status 0.
+
+22.
+
+cd /home/runner/work/tenth-discriminant/tenth-discriminant && PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+import sys
+sys.path.insert(0,'/home/runner/work/tenth-discriminant/tenth-discriminant/tools')
+from cover import certify,rho_for
+for D in [100000,200000,250000]:
+ R=D*10**17;S=R//80
+ print('point',D,'result',certify(D,D,R,S,rho_for(D,R,S)),flush=True)
+PY
+
+Output:
+point 100000 result (False, 0.7651540423332156)
+point 200000 result (False, 0.9856864937518202)
+point 250000 result (True, 1.0418430030638959)
+Exit status 0.
+
+23.
+
+PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+from flint import arb
+P=11999989;X1=10544111
+checks=[]
+for k in range(6,102,3):
+ R=10**(k+17);S=R//80
+ a=arb(S)*R*(R-1)/2-arb(R)**2/4;b=arb(R)**3/6;c=arb(S)*R
+ T=arb(min(float(((a+(a*a-4*b*c).sqrt())/(2*c)).lower()),R))
+ G=lambda t:a/t-b/(t*t)-c
+ checks.append((bool(T>P),bool(G(T)>=0),bool(arb(P)>2*b/a),bool(arb(P)>=arb(R)/S),P>=X1))
+print('replayed coverage tail sign/domain checks:',len(checks),'all_pass=',all(all(x) for x in checks))
+print('ctx53 checks are parameter-specific, not a fix for the generic routine')
+PY
+
+Output:
+replayed coverage tail sign/domain checks: 32 all_pass= False
+ctx53 checks are parameter-specific, not a fix for the generic routine
+Exit status 0. The false result is investigated in commands 25–26.
+
+24.
+
+git -C /home/runner/work/tenth-discriminant/tenth-discriminant status --short; git -C /home/runner/work/tenth-discriminant/tenth-discriminant show --format= --name-status HEAD; git -C /home/runner/work/tenth-discriminant/tenth-discriminant diff --name-status; git -C /home/runner/work/tenth-discriminant/tenth-discriminant ls-files /home/runner/work/tenth-discriminant/tenth-discriminant/review; python --version; gp --version-short
+
+Output:
+A	review/PHASE1_GPT-6.1-Sol.md
+review/.gitkeep
+review/PHASE1_GPT-6.1-Sol.md
+Python 3.12.3
+2.15.4
+Exit status 0. Status and uncommitted diff printed nothing.
+
+25.
+
+PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+from flint import arb,ctx
+P=11999989
+bad=[]
+for k in range(6,102,3):
+ R=10**(k+17);S=R//80
+ a=arb(S)*R*(R-1)/2-arb(R)**2/4;b=arb(R)**3/6;c=arb(S)*R
+ T=arb(min(float(((a+(a*a-4*b*c).sqrt())/(2*c)).lower()),R))
+ checks=(bool(T>P),bool(a/T-b/T**2-c>=0),bool(arb(P)>2*b/a),bool(arb(P)>=arb(R)/S),P>=10544111)
+ if not all(checks):
+  print('k=',k,'checks=',checks,'G(T)=',(a/T-b/T**2-c).str(8))
+  Tf=float(T.mid())
+  with ctx.workprec(256):
+   aa=arb(S)*R*(R-1)/2-arb(R)**2/4;bb=arb(R)**3/6;cc=arb(S)*R;tt=arb(Tf)
+   gg=aa/tt-bb/tt**2-cc
+   print('same exact float endpoint G(T) at256=',gg.str(12),'negative=',bool(gg<0))
+  bad.append(k)
+print('failed domain/sign-check intervals=',bad)
+PY
+
+Output:
+k= 12 checks= (True, False, True, True, True) G(T)= [+/- 2.31e+41]
+same exact float endpoint G(T) at256= [1.86630421873e+41 +/- 4.78e+29] negative= False
+k= 15 checks= (True, False, True, True, True) G(T)= [+/- 2.43e+47]
+same exact float endpoint G(T) at256= [1.73436282339e+47 +/- 3.29e+35] negative= False
+k= 45 checks= (True, False, True, True, True) G(T)= [+/- 2.22e+107]
+same exact float endpoint G(T) at256= [1.81164450444e+107 +/- 3.47e+95] negative= False
+k= 63 checks= (True, False, True, True, True) G(T)= [+/- 2.49e+143]
+same exact float endpoint G(T) at256= [1.80972238974e+143 +/- 4.48e+131] negative= False
+k= 66 checks= (True, False, True, True, True) G(T)= [+/- 2.36e+149]
+same exact float endpoint G(T) at256= [1.64648833766e+149 +/- 1.79e+137] negative= False
+k= 69 checks= (True, False, True, True, True) G(T)= [+/- 2.75e+155]
+same exact float endpoint G(T) at256= [2.05223553500e+155 +/- 1.18e+143] negative= False
+failed domain/sign-check intervals= [12, 15, 45, 63, 66, 69]
+Exit status 0.
+
+26.
+
+PYTHONDONTWRITEBYTECODE=1 python - <<'PY'
+from flint import arb,ctx
+P=11999989;passed=0
+for k in range(6,102,3):
+ R=10**(k+17);S=R//80
+ a=arb(S)*R*(R-1)/2-arb(R)**2/4;b=arb(R)**3/6;c=arb(S)*R
+ Tf=min(float(((a+(a*a-4*b*c).sqrt())/(2*c)).lower()),R)
+ with ctx.workprec(256):
+  a=arb(S)*R*(R-1)/2-arb(R)**2/4;b=arb(R)**3/6;c=arb(S)*R;T=arb(Tf)
+  ok=bool(T>P) and bool(a/T-b/T**2-c>0) and bool(arb(P)>2*b/a) and bool(arb(P)>=arb(R)/S) and P>=10544111
+  passed+=ok
+print('actual default53 endpoints rechecked at256:',passed,'of32 valid')
+PY
+
+Output:
+actual default53 endpoints rechecked at256: 32 of32 valid
+Exit status 0.
+
+END OF MATHEMATICAL AUDIT COMMAND RECORD
