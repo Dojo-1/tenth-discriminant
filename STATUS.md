@@ -45,3 +45,10 @@ Crossover now between D=1e5 (0.91) and 1e6. Same open items 1-4 apply; new ingre
 ## Parked
 - Track F (function-field calibration over F_q[T]): RH known there (Weil); use to test the method against
   ground truth. Needs Hasse derivatives (char p). Start after integer coverage. MacRae 1971 citation unverified.
+
+## 2026-10-21 18:40: deeper probe
+- `tools/verify_exact_large.gp`: exact checks (det>0, Hadamard, v_p >= 2F) on ellipse sets with general rho,
+  matrices up to 160 rows, up to 9 inert primes, valuations up to 380: 9 cases, 0 failures (4.5 min).
+  Hadamard loss at this scale: log(prod G_ii)/log det = 1.03-1.06.
+- Bottleneck at D=1e5 is the split-prime subtraction (7.3 of 24.7 normalized units); N3 bound is ~2x loose
+  (2t/sqrt D vs area pi t/(2 sqrt D)). Tightening N3 is the next lever for D0.
