@@ -23,3 +23,10 @@ so a lattice-point count bounds split primes up to t by (2t+sqrt t)/sqrt D. No L
 3. Independent review of each derivation (fresh model / human), then Lean.
 4. Below D0: sieve endgame (`tools/sieve_h1.py`, verified to 1e10).
 Nothing here may be reported externally until 1–3 close.
+
+## 2026-10-21 (later): ellipse variant GREEN-H1-E (suggested by J. Vilela)
+Replace Green's N x N grid by lattice points inside the norm ellipse x^2 + D y^2 <= rho^2 (a disc in C).
+Max point size drops by ~D^{1/4}; zero bound via horizontal lines (J >= points/line + #lines).
+Point checks (`tools/green_h1_ellipse.py`), certified margins L/U:
+square grid: 1.09-1.21 (D=1e6..1e14)  ->  ellipse: 1.26 (1e6), 1.49 (1e8), 1.50 (1e10), 1.47 (1e14), 1.44 (1e20).
+Crossover now between D=1e5 (0.91) and 1e6. Same open items 1-4 apply; new ingredients E1-E3 need review + brute-force control.
