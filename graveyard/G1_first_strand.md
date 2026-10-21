@@ -13,4 +13,11 @@ Contrast that survives as understanding (the enemy, one sentence):
   (least residue: needs L(1,chi)); class number one lives entirely on the split side. This is the parity
   asymmetry Tao names; the determinant method is the parity-breaking instrument.
 Sources consulted: survey McGown–Treviño (least non-residue); arXiv:1309.3595 (non-residue, GRH) — neither
-addresses effectivity of the least prime RESIDUE; that remains CANNOT-VERIFY.
+addresses effectivity of the least prime RESIDUE.
+Update (sources supplied by J. Vilela, 21 Oct 2026): Linnik–Vinogradov O_eps(D^{1/4+eps}) is NON-effective — its proof combines
+Burgess (effective) with Siegel's L(1,chi) >> D^{-eps} (ineffective). Refs: arXiv:2404.08380; MathOverflow 401156.
+This confirms the diagnosis: the least-residue bound inherits exactly the Siegel input of route B.
+Corollary (DERIVED): with Banks' effective exclusion (1-beta) log q >= 3e-3, the Siegel step becomes effective, so an explicit
+Linnik–Vinogradov bound is now obtainable — but only BY route B, so it adds nothing independent.
+Alternatives rejected for this project: GRH (Ankeny, Lamzouri–Li–Soundararajan) is a forbidden input; Tatuzawa-type
+"effective with at most one exception" is useless here — the possible exception is precisely the tenth discriminant.
