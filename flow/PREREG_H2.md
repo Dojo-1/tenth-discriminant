@@ -25,3 +25,12 @@ K4  any brute-force control failure.
 ## Not claimed
 - Novelty beyond "not found in the thread snapshot of 21 Oct ~21:00"; independent review pending; no Lean.
 - Parameters may be optimized for X only within the families listed in cover_h (e in 6..22, C in {40,80,160}).
+
+## OUTCOME (appended after computing, 21 Oct 2026 ~22:20; nothing above was edited)
+- Step 1: ledger/coverage_h2.txt — 43 contiguous certificates on [7e4, 1e102], 0 failures, min margin 1.0067.
+- Step 2: tools/asymptotic_h.py 2 — certified, h(u0) = 55.12, slope 15/64, all hypotheses True.
+- Step 3: ledger/finite_h2.txt — PARI: exactly 9 fields with h=1 (max 163) and 18 with h=2 (max 427) below 7e4.
+- Step 4: verify_exact_ok 22/22, verify_split_h 17/17.
+- K1–K4: none triggered. Success criteria met. X(2) = 7e4.
+Status: DERIVED + CERTIFIED (arithmetic), NOT independently reviewed. New code since last review:
+cover.split_mass (N3'), cover_h.py, asymptotic_h.py, verify_exact_ok.py, verify_split_h.py.

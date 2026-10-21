@@ -64,3 +64,23 @@ def threshold(H, lo=10**2, hi=10**40):
         if ok(mid): hi = mid
         else: lo = mid
     return hi
+
+def cover(H, D1, Dend, Q):
+    out = []
+    while D1 < Dend:
+        D2 = int(D1 * Q); hit = None
+        for e in range(6, 24):
+            for C in [40, 80, 160]:
+                R = D1 * 10**e; S = R // C
+                ok, info = certify_h(D1, D2, H, R, S, rho_for_h(D2, R, S))
+                if ok: hit = (e, C, info); break
+            if hit: break
+        line = f"[{D1:.4e}, {D2:.4e}]  " + (f"CERTIFIED R=D1*1e{hit[0]} C={hit[1]} margin={hit[2]:.4f}" if hit else "FAILED")
+        print(line, flush=True); out.append(line)
+        if not hit: break
+        D1 = D2
+    return out
+
+if __name__ == "__main__":
+    H = int(sys.argv[1]); D1 = int(float(sys.argv[2])); Dend = int(float(sys.argv[3])); Q = float(sys.argv[4])
+    cover(H, D1, Dend, Q)

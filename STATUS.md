@@ -52,3 +52,8 @@ Crossover now between D=1e5 (0.91) and 1e6. Same open items 1-4 apply; new ingre
   Hadamard loss at this scale: log(prod G_ii)/log det = 1.03-1.06.
 - Bottleneck at D=1e5 is the split-prime subtraction (7.3 of 24.7 normalized units); N3 bound is ~2x loose
   (2t/sqrt D vs area pi t/(2 sqrt D)). Tightening N3 is the next lever for D0.
+
+## 2026-10-21 22:20 — class number <= 2, elementary route (pre-registered, flow/PREREG_H2.md)
+Result (unreviewed): every imaginary quadratic field with |disc| >= 7e4 has h > 2, with no L-functions; below 7e4 PARI
+returns exactly the 9 + 18 known fields. Not found in the thread snapshot (higher h there only via QRH or Siegel-zero routes).
+Next: independent review of cover_h / asymptotic_h / N3' before any external statement.
