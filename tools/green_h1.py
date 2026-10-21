@@ -1,4 +1,5 @@
-"""Explicit Green-type determinant bound specialised to class number one.
+"""[SUPERSEDED by cover.py for certificates; kept for history. Review F2/F4 guards added.]
+Explicit Green-type determinant bound specialised to class number one.
 
 Track: GREEN-H1 (status: DERIVED, unreviewed; numerics in Arb ball arithmetic).
 
@@ -69,6 +70,7 @@ def lower(R, S, D, P0, primes):
     if R > P0 and P0 >= R / S and P0 >= 563:
         # largest T with Gl(T) >= 0: c T^2 - a T + b <= 0
         disc = a * a - 4 * b * c
+        if not disc > 0: return 2 * tot, None   # Review F4: domain guard (no nan)
         Tr = (a + disc.sqrt()) / (2 * c)
         T = min(float(Tr.lower()), R)
         if T > P0:

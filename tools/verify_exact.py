@@ -54,9 +54,12 @@ def gram(P, R, S, J, D):
     return [[sum(2 * (a[0] * b[0] + D * a[1] * b[1]) for a, b in zip(u, v)) for v in rows] for u in rows]
 
 def det(M):
-    s = "matdet([" + ";".join(",".join(map(str, r)) for r in M) + "])"
-    out = subprocess.run(["gp", "-q", "-D", "colors=no", "-s", "1G"], input=s, capture_output=True, text=True).stdout
-    return int(out.strip())
+    # Review F4: Mat(...) so a 1x1 input is a matrix, not a vector; surface gp errors instead of discarding them.
+    s = "matdet(Mat([" + ";".join(",".join(map(str, r)) for r in M) + "]))"
+    res = subprocess.run(["gp", "-q", "-D", "colors=no", "-s", "1G"], input=s, capture_output=True, text=True)
+    if res.returncode or res.stderr.strip() or not res.stdout.strip():
+        raise RuntimeError("gp failed: " + res.stderr.strip())
+    return int(res.stdout.strip())
 
 def vp(n, p):
     k = 0
@@ -79,12 +82,14 @@ def run(shape, D, R, S, J, P, Y0=None):
     ok["B"] = d > 0
     ok["C"] = d <= math.prod(diag)
     B = max(arb(x * x + D * y * y).sqrt() for (x, y) in P)
-    ok["D"] = sum(math.log(g) for g in diag) <= float(upper_B(R, S, J, arb(n), B).lower())
+    # Review F4: Arb throughout (no float logs); certified comparison of balls.
+    lhs = sum((arb(g).log() for g in diag), arb(0))
+    ok["D"] = bool(lhs < upper_B(R, S, J, arb(n), B))
     inert = [p for p in primerange(3, R + 1) if D % p and legendre_symbol((-D) % p, p) == -1]
     ok["E"] = all(vp(d, p) >= 2 * F_exact(p, R, S) for p in inert)
     if shape == "ellipse":
-        sd = math.sqrt(D); rho = (Y0 + 0.5) * sd
-        ok["F"] = math.pi * rho * rho / sd - 2 * rho / sd <= n <= math.pi * rho * rho / sd + 2 * rho + M
+        sd = arb(D).sqrt(); rho = (arb(Y0) + arb(1) / 2) * sd   # Review F4: Arb, certified
+        ok["F"] = bool(arb.pi() * rho * rho / sd - 2 * rho / sd <= n) and bool(arb(n) <= arb.pi() * rho * rho / sd + 2 * rho + M)
     strength = max([2 * F_exact(p, R, S) for p in inert], default=0)
     return ok, n, L + M, inert, strength
 

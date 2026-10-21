@@ -42,10 +42,14 @@ def prime_mass(R, S):
     if R > P:
         assert P >= X1 and P >= R / S
         a = arb(S) * R * (R - 1) / 2 - arb(R) ** 2 / 4; b = arb(R) ** 3 / 6; c = arb(S) * R
-        disc = a * a - 4 * b * c
-        T = arb(min(float(((a + disc.sqrt()) / (2 * c)).lower()), R))
-        Pa = arb(P)
         G = lambda t: a / t - b / (t * t) - c
+        # Review F1/F2 (GPT-6.1, review/PHASE2): T is the exact integer R//3 (no float rounding), and the
+        # tail is added ONLY if every partial-summation hypothesis is certified in Arb:
+        #   T > P (non-empty range),  G(T) > 0,  P >= 2b/a (so -G' >= 0 on [P,T]).  Otherwise no tail (valid: terms >= 0).
+        T = arb(R // 3)
+        Pa = arb(P)
+        if not (T > Pa and G(T) > 0 and Pa >= 2 * b / a):
+            return 2 * tot
         thlow = lambda t: t * (1 - M1 / t.log())
         # sum_{P<p<=T} log p G(p) >= G(T) thlow(T) - G(P) theta(P) + int_P^T thlow(t) (-G'(t)) dt
         # (a/t - 2b/t^2)(1 - M1/log t) >= a/t - a M1/(t log t) - 2b/t^2

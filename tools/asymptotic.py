@@ -17,7 +17,7 @@ UPPER:
 So (L-U)/(R^2S) >= A u + B(u0) - M1 log(u + log K - log 3) - E(u0)   for u >= u0, where
   A = 1 - (3/4)(1+1/C) - (2/C)(1/4),  E collects terms decreasing in u (evaluated at u0, valid for u>=u0).
 h(u) := A u + B - E(u0) - M1 log(u + log K) is increasing once A > M1/(u0+log K - log 3); so h(u0) > 0 suffices.
-Hypotheses (J >= L+M, n_low J > 2RS + J(R+S), T >= P1 >= R/S, G(T) >= 0, 2b/a <= P1) are checked at u0
+Hypotheses (J >= L+M, n_low J > 2RS + J(R+S), T >= P1 >= R/S, G(T) >= 0, 2b/a = (2C/3)/(1-2eps) <= P1) are checked at u0
 and each is monotone in D (ratios scale as positive powers of D).
 """
 import sys
@@ -65,9 +65,10 @@ hyp = {
     "n J > 2RS+J(R+S)": bool(n_low > need),
     "T=R/3 >= P1 >= R/S=C": bool(R0 / 3 > P1) and P1 >= C,
     "G(T)>=0": bool((arb(1) / 2 - 3 * eps0) * 3 / R0 - arb(9) * C / (6 * R0 ** 2) - 1 / R0 > 0),
-    "2b/a = 2C/3 <= P1": 2 * C / 3 <= P1,
+    # Review F3: 2b/a = (2C/3)/(1 - 2 eps), not 2C/3; eps decreases in D, so checking at u0 suffices.
+    "2b/a=(2C/3)/(1-2eps) <= P1": bool(arb(2 * C) / 3 / (1 - 2 * eps0) <= P1),
 }
-print("A (slope in u)         =", A.str(6))
+print("A (slope in u)         =", A.str(6), " (= 15/64; bound ratio -> 64/49 for fixed C, per review A7)")
 print("h(u0) lower bound      =", h0.str(6), " at u0 = log(1e102) =", u0.str(6))
 print("monotone (A > M1/Lam)  =", bool(deriv_ok))
 for k, v in hyp.items(): print(f"hypothesis {k:22} {v}")
