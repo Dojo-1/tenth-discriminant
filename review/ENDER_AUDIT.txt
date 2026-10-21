@@ -1,0 +1,52 @@
+ENDER / FORMIC review record -- 2026-10-21
+
+Read-only mathematical reviewer: rubber-duck agent, reported model
+claude-sonnet-5. Parent summary of returned findings, not a formal
+proof certificate or human peer review.
+
+First pass reconstructed Legendre, the F lower bound and the integral
+tail. It requested a written all-D derivation, an explicit strict
+inertness guard, genuine-field split-cutoff negative controls and a
+comparison of the symbolic envelope to raw normalized bounds.
+Some files were still being completed during that first inspection.
+
+Resolution:
+- ledger/ender.txt supplies the complete derivations and all-D bridge.
+- require_inert_range enforces 4R<D1+1 before certification.
+- Formic rejects R=41,42 for D=163, where 41 is split and has positive
+  F weight at R=42; checks the genuine guarded ranges of four fields.
+- Formic compares both envelope sides to raw normalized values at
+  D=10^36,10^40,10^48.
+- Large-D exact prime-sum control limits and inherited weak mutation
+  controls are explicitly disclosed.
+
+Second pass was analytic-only: the reviewer read the completed ledger,
+re-derived sections 2 and 4, including every constant, geometry condition,
+floor envelope and monotonicity step. It returned:
+  "No actual mathematical defect in sections 2 or 4."
+In particular it recovered slope 15/64, both error envelopes and the
+fact that all errors decrease for u=log(D)>1. This review does not
+establish the inherited determinant lemmas by formal verification,
+nor novelty, nor independence from shared AI assumptions.
+
+Separate read-only code-review agent: no significant issues found in
+the Ender/Formic implementation changes.
+parallel_validation: CodeQL Python scan, zero alerts. Its built-in
+code-review executable was unavailable; the separate code-review agent
+was used rather than treating the unavailable check as a successful
+code review.
+
+Executed parent checks:
+- Full CRT range [92,7e11): sole survivor 163.
+- Formic: 2984 arithmetic controls, 320 ellipse controls, exact small
+  reduced forms, 250 replayed intervals, arithmetic and cutoff
+  mutations, and three envelope comparisons; all passed.
+- Existing exact determinant verifier: 46 cases, zero failures.
+- Existing mutation suite: M1 and M3 caught, M2 NOT caught (pre-existing).
+- Existing genuine-field calculator: zero contradictions for
+  19,43,67,163, but vacuous bounds; weak control.
+- Python compilation and git diff --check passed.
+- Secret scans found no secrets.
+
+Residual status: computational campaign and these AI reviews complete;
+formalization, human mathematical review and novelty assessment are not.

@@ -8,6 +8,7 @@ and a fresh CRT run on [92,7e11) returning only 163. Formic rechecks local arith
 Proof, commands and limitations: `ledger/ender.txt`; outputs: `ledger/coverage_ender.txt`, `ledger/asymptotic_ender.txt`,
 `ledger/sieve_ender.txt`, `ledger/formic.txt`.
 The separate BEAN audit returned GAPS ONLY (`review/BEAN_AUDIT.txt`); the old point-based asymptotic claim is not thereby validated.
+Ender's analytic re-audit found no mathematical defect in the new factorial and universal-envelope derivations (`review/ENDER_AUDIT.txt`).
 This remains a candidate mathematical argument, not a formalized or human-reviewed theorem. Historical entries below are not the latest status.
 
 ## Track GREEN-H1: an L-function-free route to class number one (HYPOTHESIS → under test)

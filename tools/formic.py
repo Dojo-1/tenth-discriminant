@@ -7,13 +7,15 @@ import re
 from pathlib import Path
 
 from flint import arb, ctx
-from sympy import primerange
+from sympy import legendre_symbol, primerange
 
 from ender import (
-    P, CS, asymptotic, certify, factorial_lower, floor_sum, integer,
-    prime_mass, tail_integral,
+    P, CS, asymptotic, asymptotic_bounds, certify, factorial_lower,
+    floor_sum, integer, prime_mass, radius_for, require_inert_range,
+    tail_integral,
 )
 from green_h1 import F_exact
+from green_h1_ellipse import upper_B
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -114,6 +116,32 @@ def small_discriminants():
     print(f"fundamental discriminants below 92 with one reduced form: {survivors}")
 
 
+def inertness_and_envelopes():
+    for D in (19, 43, 67, 163):
+        R = D // 4
+        require_inert_range(D, R)
+        assert all(legendre_symbol(-D, p) == -1 for p in primerange(3, R + 1))
+    assert legendre_symbol(-163, 41) == 1
+    assert reference_F(41, 41, 2) == 0
+    assert reference_F(41, 42, 2) > 0
+    for bad in (41, 42):
+        try:
+            require_inert_range(163, bad)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("split-prime cutoff mutation was not rejected")
+    for D in (10**36, 10**40, 10**48):
+        R, S = D // 4, (D // 4) // 80
+        rho, sd = arb(radius_for(D, R, S)), arb(D).sqrt()
+        M = 2 * int((rho / sd).upper().floor().unique_fmpz()) + 1
+        n_up = arb.pi() * rho * rho / sd + 2 * rho + M
+        low, high = asymptotic_bounds(D)
+        assert prime_mass(R, S) / (R * R * S) > low
+        assert upper_B(R, S, S, n_up, rho) / (R * R * S) < high
+    print("inertness: 4 genuine fields; split-cutoff mutations rejected; 3 normalized envelope comparisons")
+
+
 def coverage():
     path = ROOT / "ledger" / "coverage_ender.txt"
     previous, count = 700000000000, 0
@@ -141,6 +169,7 @@ if __name__ == "__main__":
     arithmetic()
     geometry()
     small_discriminants()
+    inertness_and_envelopes()
     coverage()
     assert asymptotic()
     print("FORMIC: all controls passed (not a formal proof).")

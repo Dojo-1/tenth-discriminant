@@ -63,10 +63,17 @@ def radius_for(D, R, S):
     return radius
 
 
+def require_inert_range(D, R):
+    """Under h(-D)=1, this strict cutoff excludes split and ramified primes."""
+    if R < 1 or 4 * R >= D + 1:
+        raise ValueError("R must lie strictly below the Rabinowitsch cutoff")
+
+
 def certify(D1, D2, C):
     if not (163 < D1 <= D2 and C in CS):
         raise ValueError("need 163<D1<=D2 and a registered C")
     R = D1 // 4
+    require_inert_range(D1, R)
     S = J = R // C
     if S < 2 or P * S < R:
         return False, arb(0)
@@ -107,18 +114,30 @@ def cover(start, end, ratio=Fraction(5, 4)):
     return True
 
 
+def asymptotic_bounds(D):
+    """Bounds for L/(R^2*S), U/(R^2*S), valid for every D>=10^36."""
+    if D < 10**36:
+        raise ValueError("asymptotic bounds require D>=10^36")
+    C = 80
+    d = arb(D)
+    u = d.log()
+    I = tail_integral(P)
+    B = sum((arb(p).log() / (p - 1) for p in small_primes()), arb(0)) + I
+    constant = arb(4).log() + arb(3) / 2 + B + arb(2 * C) * I / 3
+    error_lower = (5 + 5 * (2 * u + 2) + 5 * C * u) / d
+    error_upper = 5 * (arb(8).log() + 2 * u) / d + arb(2) / C * (5 * d ** (-arb(1) / 4) + 5 * u / d)
+    return u - constant - error_lower, (arb(3) / 4 + arb(5) / (4 * C)) * u + error_upper
+
+
 def asymptotic():
     """All D>=10^36: a linear envelope minus decreasing positive errors."""
     C, D0 = 80, 10**36
     d = arb(D0)
     u = d.log()
-    I = tail_integral(P)
-    B = sum((arb(p).log() / (p - 1) for p in small_primes()), arb(0)) + I
+    B = sum((arb(p).log() / (p - 1) for p in small_primes()), arb(0)) + tail_integral(P)
     slope = arb(1) / 4 - arb(5) / (4 * C)
-    constant = arb(4).log() + arb(3) / 2 + B + arb(2 * C) * I / 3
-    error_lower = (5 + 5 * (2 * u + 2) + 5 * C * u) / d
-    error_upper = 5 * (arb(8).log() + 2 * u) / d + arb(2) / C * (5 * d ** (-arb(1) / 4) + 5 * u / d)
-    margin = slope * u - constant - error_lower - error_upper
+    lower, upper = asymptotic_bounds(D0)
+    margin = lower - upper
     checks = {
         "rho <= D^(3/4)": arb("1.001") * ((3 + arb(1) / C) / (4 * arb.pi())).sqrt()
         + 10 * d ** (-arb(1) / 4) + 2 * d ** (-arb(3) / 4) < 1,

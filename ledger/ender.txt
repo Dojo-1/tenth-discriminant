@@ -104,6 +104,7 @@ log(R-1)>=log(R)-2/R and (R-1)^2/R^2>=1-2/R.
 The factorial-tail bracket is positive at u0 and increases thereafter.
 Its value is at most u; multiplying by (1-1/(2S)) loses at most
 (C/R)*u<=5C*u/D. Also W/(R^2*S)<=R/(3S)<=2C/3.
+For the upper bound on that bracket, Hlow<=R^2*log(R)/2 and B>0 suffice.
 These inequalities apply to the unclipped tail; clipping it at zero
 can only improve the lower bound.
 
@@ -161,12 +162,25 @@ integer-radius ellipses. Its coverage worker checks exact stitching,
 strict inertness endpoints and recertifies every saved interval.
 Two deliberately strengthened lower bounds are rejected.
 An independent mathematical agent separately attacks the all-D bridge.
+Its completed analytic re-audit found no mathematical defect in the
+factorial or universal-envelope derivations; see review/ENDER_AUDIT.txt.
+The explicit strict-cutoff guard also rejects R=41 and R=42 for D=163:
+41 is split, with zero F(41) at R=41 but positive weight at R=42.
+For D=19,43,67,163, all odd primes inside the guarded range are checked
+to be inert. At D=10^36,10^40,10^48, the separately written asymptotic
+lower and upper envelopes are compared with the raw normalized
+prime_mass and upper_B values, not just their pass/fail decisions.
 
 Recorded controls: 2984 arithmetic comparisons, 320 ellipses, 250
-replayed intervals, reduced-form enumeration, two caught mutations.
+replayed intervals, reduced-form enumeration, two caught arithmetic
+mutations, two rejected cutoff mutations and three envelope comparisons.
 Existing determinant verifier: 46 cases, zero failures. Existing mutation
 suite catches M1 and M3; M2 (overstrong Hadamard) remains uncaught,
 as it was before this work. This limitation is not hidden by FORMIC.
+The old genuine-field calculator reports no contradictions for
+19,43,67,163; its lower bounds are vacuous, so this is a weak control.
+Direct prime-sum comparisons extend only through R=80001, not to the
+large-D regime; at that scale the analytic inequalities are essential.
 Finite controls are not universal proofs, shared code is not independent
 evidence, and AI review is not mathematical peer review.
 
