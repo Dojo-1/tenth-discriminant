@@ -30,3 +30,18 @@ Max point size drops by ~D^{1/4}; zero bound via horizontal lines (J >= points/l
 Point checks (`tools/green_h1_ellipse.py`), certified margins L/U:
 square grid: 1.09-1.21 (D=1e6..1e14)  ->  ellipse: 1.26 (1e6), 1.49 (1e8), 1.50 (1e10), 1.47 (1e14), 1.44 (1e20).
 Crossover now between D=1e5 (0.91) and 1e6. Same open items 1-4 apply; new ingredients E1-E3 need review + brute-force control.
+
+## 2026-10-21 (evening): self-audit + exact verification
+- Rule-0 audit table of the chain recorded in conversation; new ledger nodes needed: genus-theory lemma
+  (h=1, |disc|>8 => disc=-D, D prime = 3 mod 4), and the line-slicing zero bound for general point sets.
+- `tools/verify_exact.py`: one exact verifier for any point set; checks hypothesis, det>0, Hadamard,
+  my aggregated bound, v_p(det)>=2F(p), ellipse point count. 46 cases (ellipse + square, D=7..67): 0 failures.
+- `tools/mutation_test.py`: verifier rejects a too-strong valuation claim (M1) and shows det=0 when the
+  independence hypothesis is dropped (M3) — the hypothesis is not decorative.
+- M2 (Hadamard x1e-6 stronger) NOT caught => Hadamard is loose. Measured slack log(prod G_ii)/log det:
+  square ~18-20%, ellipse ~6-10%. The round point set also makes rows closer to orthogonal.
+  Open lever: replace Hadamard by a sharper determinant bound.
+
+## Parked
+- Track F (function-field calibration over F_q[T]): RH known there (Weil); use to test the method against
+  ground truth. Needs Hasse derivatives (char p). Start after integer coverage. MacRae 1971 citation unverified.
