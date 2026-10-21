@@ -1,5 +1,15 @@
 # Status — 2026-10-21
 
+## Latest: ENDER / FORMIC
+
+Ender's computational campaign is complete: factorials and Legendre's identity replace Dusart, without any prime-distribution estimate.
+There are 250 certified intervals on [7e11,1e36], a floor-safe all-D envelope above 1e36 (slope 15/64, initial margin 7.84016),
+and a fresh CRT run on [92,7e11) returning only 163. Formic rechecks local arithmetic, geometry, mutations and interval stitching.
+Proof, commands and limitations: `ledger/ender.txt`; outputs: `ledger/coverage_ender.txt`, `ledger/asymptotic_ender.txt`,
+`ledger/sieve_ender.txt`, `ledger/formic.txt`.
+The separate BEAN audit returned GAPS ONLY (`review/BEAN_AUDIT.txt`); the old point-based asymptotic claim is not thereby validated.
+This remains a candidate mathematical argument, not a formalized or human-reviewed theorem. Historical entries below are not the latest status.
+
 ## Track GREEN-H1: an L-function-free route to class number one (HYPOTHESIS → under test)
 
 **Idea.** Green's determinant argument (hexagon:2610.00311v2) needs one input: inert primes carry

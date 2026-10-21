@@ -6,6 +6,12 @@ An experimental, AI-assisted number-theory investigation responding to Terence T
 The question is deliberately narrow: can a variant of Ben Green's Gram-determinant argument yield a fully explicit, independently checkable bound excluding a hypothetical tenth class-number-one imaginary quadratic discriminant?
 
 The broader ambition is methodological: turn an attractive mathematical argument into a chain of claims that another mathematician—or another model—can reconstruct, compute, falsify, and audit.
+
+Latest continuation: **Ender** replaces Dusart with factorials and Legendre's identity; **Formic** adds adversarial arithmetic,
+geometry, mutation and coverage checks. See [the derivation and reproduction commands](ledger/ender.txt) and
+[the BEAN audit limitations](review/BEAN_AUDIT.txt). The computational campaign is complete; formalization and human review are not.
+The route descriptions and review history below predate this continuation.
+
 Research status (21 Oct 2026, evening) — candidate proof, reviewed, not a new result.
 - Prior art: the core route (h=1 split-prime lattice count + Green's derivative Gram determinant) was posted first by
   *twinheterodox* in the comments of Tao's challenge post (v4: q < 4000; v5: q < 2000). Ours is an independent
