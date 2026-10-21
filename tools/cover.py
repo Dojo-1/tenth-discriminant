@@ -11,7 +11,7 @@ Fixed parameters (R, S, J=S, rho) and the point set {x^2 + D y^2 <= rho^2}. Depe
 Point count, general rho (a = rho/sqrt D, Y0 = floor a):
   n >= sum_{|y|<=Y0-1} (2w(y)-1) >= int_{-a}^{a} (2w-1) - 2*1.5*2rho = pi rho^2/sqrt D - 2a - 6 rho   (midpoint rule, concave w)
   n <= pi rho^2/sqrt D + 2 rho + M                                                                 (unimodal sum <= integral + max)
-Prime-sum input [P1]: Dusart 1999, theta(x) >= x(1 - 0.006788/log x) for x >= 10 544 111 (CITED, secondary).
+Prime-sum input [P1]: Dusart 2010, theta(x) >= x(1 - 0.2/ln^2 x) for x >= 3 594 641 (CITED, primary: arXiv:1002.0442).
 """
 import sys, math, functools
 sys.path.insert(0, 'tools')
@@ -21,7 +21,7 @@ from green_h1_ellipse import upper_B
 
 P0 = 10**7 + 1                     # exact enumeration up to here; tail uses Dusart (needs P0 >= 10 544 111? see below)
 PR = None
-M1, X1 = arb("0.006788"), 10544111  # Dusart 1999
+ETA2, X1 = arb("0.2"), 3594641  # Dusart 2010 (arXiv:1002.0442) Thm 5.2 / intro: |theta(x)-x| <= 0.2 x/ln^2 x, x >= 3 594 641 (primary checked)
 
 def primes():
     global PR
@@ -50,11 +50,11 @@ def prime_mass(R, S):
         Pa = arb(P)
         if not (T > Pa and G(T) > 0 and Pa >= 2 * b / a):
             return 2 * tot
-        thlow = lambda t: t * (1 - M1 / t.log())
+        thlow = lambda t: t * (1 - ETA2 / t.log() ** 2)
         # sum_{P<p<=T} log p G(p) >= G(T) thlow(T) - G(P) theta(P) + int_P^T thlow(t) (-G'(t)) dt
-        # (a/t - 2b/t^2)(1 - M1/log t) >= a/t - a M1/(t log t) - 2b/t^2
+        # (a/t - 2b/t^2)(1 - eta/log^2 t) >= a/t - a eta/(t log^2 t) - 2b/t^2 ;  int a eta/(t log^2 t) = a eta (1/log P - 1/log T)
         tail = G(T) * thlow(T) - G(Pa) * th + a * (T.log() - Pa.log()) \
-               - a * M1 * (T.log().log() - Pa.log().log()) - 2 * b * (1 / Pa - 1 / T)
+               - a * ETA2 * (1 / Pa.log() - 1 / T.log()) - 2 * b * (1 / Pa - 1 / T)
         tot += tail
     return 2 * tot
 

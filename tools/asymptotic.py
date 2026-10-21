@@ -26,7 +26,8 @@ from flint import arb
 from green_h1 import primes_upto
 
 K, C, P1 = arb(10) ** 17, 80, 10544111
-M1 = arb("0.006788")
+M1 = arb(0)        # log-log term no longer present (Dusart 2010, k=2 bound)
+ETA2 = arb("0.2")  # Dusart 2010: theta(x) >= x(1 - 0.2/ln^2 x), x >= 3 594 641; P1 = 10 544 111 >= that
 u0 = arb(10).log() * 102
 D0 = u0.exp()
 logK, log3, pi = K.log(), arb(3).log(), arb.pi()
@@ -44,7 +45,7 @@ rho0 = (Lam0 / 2 + u0 / 4 + c_rho).exp()
 
 A = 1 - arb(3) / 4 * (1 + arb(1) / C) - arb(2) / C / 4
 # constant part B: coefficients of the u-independent pieces in L - U
-B = (logK - log3 - arb(P1).log() - theta_P1 / P1 + M1 * arb(P1).log().log() - arb(2 * C) / (3 * P1)) \
+B = (logK - log3 - arb(P1).log() - theta_P1 / P1 - ETA2 / arb(P1).log() - arb(2 * C) / (3 * P1)) \
     - (1 + arb(1) / C) * (logK / 2 + c_rho) - (arb(2) / C) * (logK / 2 + c_Rr) + arb(2) / C
 # decreasing error terms at u0
 eps0 = 1 / (2 * R0) + 1 / (4 * S0)

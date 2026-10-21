@@ -14,7 +14,7 @@ BRUTE (exact computation on small cases) · CERTIFIED (Arb ball arithmetic) · O
 | N6 ✔GPT | aggregated upper bound U(R,S,J,n,B) | DERIVED | BRUTE (D in 46 cases) |
 | N7 ✔GPT | v_p(det G) ≥ 2F(p), p odd inert | Green L5.1 | BRUTE; mutation M1 |
 | N8 ✔GPT | ellipse count: πρ²/√D − 2ρ/√D − 6ρ ≤ n ≤ πρ²/√D + 2ρ + M | DERIVED | BRUTE (F, aligned ρ only) — general-ρ form OPEN to brute |
-| N9 | θ(x) ≥ x(1 − 0.006788/log x), x ≥ 10 544 111 (Dusart 1999) | CITED-2 (arXiv:2002.11068, Table 2) | primary OPEN |
+| N9 | θ(x) ≥ x(1 − 0.2/ln²x), x ≥ 3 594 641 (Dusart 2010, arXiv:1002.0442, Thm 5.2) | CITED (primary read, supplied by J. Vilela) | replaces Dusart 1999 constant; coverage_v4 43/43 |
 | N10 | tail partial summation, G ≤ F on p ≥ R/S | DERIVED; G≤F proved by reviewer for all params | Review F1/F2 fixed (guarded tail, T=R//3) |
 
 ## Coverage
