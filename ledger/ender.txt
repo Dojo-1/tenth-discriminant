@@ -1,0 +1,202 @@
+ENDER -- factorial prime input; FORMIC -- adversarial local verification
+Status: computational campaign complete; candidate mathematical argument,
+not a Lean proof, not a human-reviewed theorem, no novelty claim.
+
+1. Scope and inherited mathematics
+
+D means the absolute FUNDAMENTAL discriminant of an imaginary quadratic
+field, not an arbitrary radicand. For D>163, h(-D)=1 implies D is prime,
+D=3 mod 8, and every prime p<(D+1)/4 is inert. One elementary proof:
+a nonrational element (a+b*sqrt(-D))/2 has norm >=(D+1)/4. A split or
+ramified prime ideal of smaller norm would be principal and contradict
+this bound. Even fundamental discriminants >8 are excluded by the
+ramified prime 2 and x^2+m*y^2=2. A composite odd fundamental D>163
+has a prime divisor <=sqrt(D)<(D+1)/4, excluding ramification; inertness
+of 2 then gives D=3 mod 8. No classification table is used.
+
+Keep Green's derivative Gram determinant and the ellipse
+{x+y*sqrt(-D): x,y integers, x^2+D*y^2<=rho^2}. The inherited lemmas are:
+ n >= pi*rho^2/sqrt(D)-2*rho/sqrt(D)-6*rho,
+ n <= pi*rho^2/sqrt(D)+2*rho+M,
+ L=2*floor(rho)+1, M=2*floor(rho/sqrt(D))+1.
+Rows are independent if J>=L+M and nJ>2RS+J(R+S).
+For odd inert p, v_p(det G)>=2F(p),
+ F(p)=sum_{r=0}^{R-1} sum_{t=0}^{S-1} min(floor(r/p),t).
+Hadamard's logarithmic upper bound U is implemented by upper_B.
+These non-elementary-in-size determinant arguments still need eventual
+formalization. Ender replaces only the prime-distribution input.
+
+2. Factorials replace Dusart
+
+Set A(q)=sum_{r<R} floor(r/q), V=R(R-1)/2, and
+W=R(R-1)(2R-1)/6. If R=kq+m, 0<=m<q, then
+A(q)=q*k*(k-1)/2+k*m.
+
+For H=log(prod_{r=1}^{R-1} r!), Legendre's identity gives
+ H=sum_p log(p)*sum_{j>=1} A(p^j).
+This is a finite exact identity, not an asymptotic theorem about primes.
+Let N=R-1. Integrating log(r!)>=r*log(r)-r+1 and the increasing
+function t*log(t) on [1,N] gives
+ H >= Hlow = (N^2/2)*log(N)-3*N^2/4+N/2+1/4.
+
+Fix P=10000 and enumerate only primes <=P. Define
+ Bsmall=sum_{p<=P} log(p)*sum_{j>=1} A(p^j).
+Every summand is computed with exact integer coefficients and Arb logs.
+For integer m>P,
+ log(m)/(m*(m-1)) <= integral_{m-1}^m log(t+1)/t^2 dt.
+Indeed log(t+1)>=log(m) throughout that interval.
+Consequently both
+ sum_{p>P} log(p)/(p*(p-1)) and sum_{p>P} log(p)/p^2
+are at most
+ I(P)=integral_P^infinity log(t+1)/t^2 dt
+     =log(P+1)/P+log(1+1/P).
+Since A(q)<=V/q, the higher prime powers for p>P cost at most V*I(P).
+Thus T=sum_{p>P} log(p)*A(p) >= Hlow-Bsmall-V*I(P).
+
+For P>=R/S and p>P, k=floor(r/p)<S, so
+ sum_{t<S} min(k,t)=(S-1/2)*k-k^2/2.
+Using sum_r floor(r/p)^2 <= W/p^2 yields
+ sum_{p>P} log(p)*F(p)
+ >= (S-1/2)*(Hlow-Bsmall-V*I(P))-W*I(P)/2.
+Take the maximum of this bound and zero, add the EXACT contributions
+log(p)*F(p) for 2<p<=P, and multiply by two. This is Ender's lower
+bound. It omits p=2 throughout the determinant lower bound, while
+correctly subtracting its powers from Legendre's identity.
+
+3. Finite intervals
+
+Use R=floor(D1/4), S=J=floor(R/C), C in {20,40,80,160}.
+Then R<(D+1)/4 for EVERY integer D in [D1,D2]; no zero-weight
+endpoint exception is needed.
+Choose an integer rho from the Arb upper endpoint of
+ 1.001*sqrt((3R+S)*sqrt(D2)/pi)+10*sqrt(D2).
+Recheck count/rank/line hypotheses in Arb; the search for rho itself
+does not certify them. At fixed rho, use D2 for the lower point count
+and D1 for the upper count and line count.
+All comparisons lower>upper are strict Arb comparisons; decimal
+printed margins are summaries only. Interval endpoints are exact
+integers, not truncated binary-float approximations.
+
+The registered start and asymptotic threshold both passed unchanged.
+The 250 contiguous intervals cover [700000000000,10^36].
+All chose C=20; the smallest printed ratio is about 1.027747792.
+The exact rational ratio is 5/4, with the final interval capped at 10^36.
+The program can bisect a failed interval, but never skips one and
+exits unsuccessfully if even the next integer cannot be covered.
+
+4. Universal closure, not a point probe
+
+For ALL real D>=D0=10^36 choose R=floor(D/4), C=80, S=J=floor(R/C),
+rho=ceil(1.001*sqrt((3R+S)*sqrt(D)/pi)+10*sqrt(D)).
+Only integer D are relevant. Write u=log(D), I=I(P), and
+ B=sum_{p<=P} log(p)/(p-1)+I.
+We have R>=D/5, R<=D/4, S>=R/(2C), R/S<=2C<=P, and
+ u-log(4)-5/D <= log(R) <= u.
+All these hold already for D>=D0. The log bound follows from
+log(1-4/D)>=-5/D for D>=20.
+
+Using Bsmall<=V*sum_{p<=P} log(p)/(p-1) and dropping positive exact
+small-prime contributions,
+ L/(R^2*S) >= u-log(4)-3/2-B-(2C/3)*I-E_L(u),
+ E_L(u)=[5+5*(2u+2)+5C*u]/exp(u).
+Details: 2Hlow/R^2>=log(R)-3/2-(2log(R)+2)/R, obtained by
+log(R-1)>=log(R)-2/R and (R-1)^2/R^2>=1-2/R.
+The factorial-tail bracket is positive at u0 and increases thereafter.
+Its value is at most u; multiplying by (1-1/(2S)) loses at most
+(C/R)*u<=5C*u/D. Also W/(R^2*S)<=R/(3S)<=2C/3.
+For the upper bound on that bracket, Hlow<=R^2*log(R)/2 and B>0 suffice.
+These inequalities apply to the unclipped tail; clipping it at zero
+can only improve the lower bound.
+
+The radius satisfies rho<=D^(3/4), because
+ 1.001*sqrt((3+1/C)/(4*pi))+10*D^(-1/4)+2*D^(-3/4)<1.
+The extra 2 also accommodates the finite-precision integer selection
+in the interval code, which checks that its chosen radius is less than
+the unrounded target plus 2. For the universal proof, the exact ceiling
+itself costs at most 1.
+Also R>rho, n_up<4D, and
+ U/(R^2*S) <= (3/4+5/(4C))*u+E_U(u),
+ E_U(u)=5*(log(8)+2u)/exp(u)
+        +(2/C)*(5*exp(-u/4)+5u/exp(u)).
+To see this, normalize upper_B, bound (S-1)/R<=1/C, and use
+ (1+1/C)log(rho)+(2/C)log(R/rho)
+ =(1-1/C)log(rho)+(2/C)log(R).
+Drop the helpful negative derivative term. Bound the remaining
+rho/R and log(R/rho)/R terms by 5*D^(-1/4) and 5u/D.
+For n_up<4D use pi*D+2D^(3/4)+2D^(1/4)+1<4D at D0;
+after division by D all error terms decrease.
+
+Geometry holds throughout: need=3R+S>=3D/5.
+The 1.001^2 factor gives slack .002001*need; negative point-count
+errors are at most 8D^(3/4). Hence it suffices that
+ .002001*(3/5)*D^(1/4)>8.
+Likewise J>=D/(10C) and L+M<=6D^(3/4), so D^(1/4)>60C suffices.
+The script checks these stronger sufficient conditions.
+
+Therefore
+ (L-U)/(R^2*S) >= (15/64)*u
+   -[log(4)+3/2+B+(2C/3)*I]-E_L(u)-E_U(u).
+Every error is a positive combination of exp(-u/4), exp(-u), and
+u*exp(-u), decreasing for u>=u0>1. The radius, line and count
+conditions improve with D. Thus positivity at u0 proves positivity
+for ALL u>=u0, despite the floors in R and S.
+The certified lower margin at D0 is about 7.84016012450.
+
+5. The finite endgame and FORMIC perspective
+
+Rerunning the existing CRT sieve over the ENTIRE [92,700000000000)
+gave only 163 (142560 classes per period 892371480). This fills the
+artifact mismatch found in BEAN's independent audit, whose old saved
+sieve output began at 10^8. The base constraints are only justified
+for starts >=92; the generic old sieve is not asserted valid below 92.
+Direct primitive reduced-form enumeration for fundamental D<92 gives
+3,4,7,8,11,19,43,67 as the one-form cases. Completeness here uses the
+classical reduced-form correspondence, not a class-number table.
+
+FORMIC is a colony of small falsifiable obligations, not another
+unproved large-D inequality. Its arithmetic worker reconstructs
+Legendre by exact integer products, checks A(q), compares F with a
+different summation identity, and compares prime_mass with exact finite
+prime sums including cases R>P. Its geometry worker enumerates
+integer-radius ellipses. Its coverage worker checks exact stitching,
+strict inertness endpoints and recertifies every saved interval.
+Two deliberately strengthened lower bounds are rejected.
+An independent mathematical agent separately attacks the all-D bridge.
+Its completed analytic re-audit found no mathematical defect in the
+factorial or universal-envelope derivations; see review/ENDER_AUDIT.txt.
+The explicit strict-cutoff guard also rejects R=41 and R=42 for D=163:
+41 is split, with zero F(41) at R=41 but positive weight at R=42.
+For D=19,43,67,163, all odd primes inside the guarded range are checked
+to be inert. At D=10^36,10^40,10^48, the separately written asymptotic
+lower and upper envelopes are compared with the raw normalized
+prime_mass and upper_B values, not just their pass/fail decisions.
+
+Recorded controls: 2984 arithmetic comparisons, 320 ellipses, 250
+replayed intervals, reduced-form enumeration, two caught arithmetic
+mutations, two rejected cutoff mutations and three envelope comparisons.
+Existing determinant verifier: 46 cases, zero failures. Existing mutation
+suite catches M1 and M3; M2 (overstrong Hadamard) remains uncaught,
+as it was before this work. This limitation is not hidden by FORMIC.
+The old genuine-field calculator reports no contradictions for
+19,43,67,163; its lower bounds are vacuous, so this is a weak control.
+Direct prime-sum comparisons extend only through R=80001, not to the
+large-D regime; at that scale the analytic inequalities are essential.
+Finite controls are not universal proofs, shared code is not independent
+evidence, and AI review is not mathematical peer review.
+
+6. Reproduction
+
+From /home/runner/work/tenth-discriminant/tenth-discriminant:
+python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/ender.py cover 7e11 1e36
+python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/ender.py asymptotic
+python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/formic.py
+python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/sieve_crt.py 92 700000000000
+python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/verify_exact.py
+python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/mutation_test.py
+
+Python-flint 0.9.0; Ender and Formic use 160-bit Arb.
+PARI/GP 2.15.4 is used by the pre-existing exact determinant verifier.
+Green's determinant lemmas, the ellipse/interpolation argument,
+Hadamard, elementary quadratic arithmetic and reduced forms remain
+mathematical dependencies. Dusart and any prime-distribution theorem do
+not occur in Ender's numerical bounds or universal closure.

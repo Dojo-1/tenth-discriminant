@@ -1,0 +1,16 @@
+arithmetic controls=2984; mutation controls=['prime-mass lower bound strengthened', 'superfactorial lower bound strengthened']
+integer-radius ellipse controls=320
+fundamental discriminants below 92 with one reduced form: [3, 4, 7, 8, 11, 19, 43, 67]
+inertness: 4 genuine fields; split-cutoff mutations rejected; 3 normalized envelope comparisons
+contiguous coverage rechecked: 250 intervals
+rho <= D^(3/4): True
+n_lower > 3R+S: True
+J >= L+M: True
+R > rho: True
+n_upper < 4D: True
+S >= R/(2C), P >= R/S: True
+positive factorial-tail envelope: True
+decreasing u/D errors: True
+slope=0.234375000000 margin_at_1e36=[7.84016012450 +/- 5.94e-13]
+ENDER ASYMPTOTIC CERTIFIED: True
+FORMIC: all controls passed (not a formal proof).

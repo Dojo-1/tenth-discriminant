@@ -1,0 +1,44 @@
+BEAN adversarial audit -- general-purpose subagent, 2026-10-21
+Protocol: review/BEAN_BRIEF.txt; read-only. This record is a parent
+summary of the agent's returned findings, not a human referee report.
+The agent derived inertness before reading the implementation but
+reconstructed the determinant after inspection. Primary Dusart retrieval
+failed DNS resolution; the quoted constant was not independently checked.
+
+Verdict: GAPS ONLY; no demonstrated fatal error in the intended
+fundamental-discriminant argument.
+
+1. Strict endpoint: p<(D+1)/4 must not become p<=floor((D+1)/4).
+   At D=163, p=41 is split. The old comparison survives because
+   F(R)=0, but its inclusive inertness assertion is false.
+   Ender instead uses R=floor(D1/4), strictly inside the threshold.
+
+2. BEAN's all-D script evaluates endpoint envelopes without a complete
+   floor-aware monotonicity proof. R/S is not identically 80; the
+   code's rank check also uses a lower proxy for its actual need.
+   A weaker floor-safe endpoint calculation still had positive margin
+   about .5239167, but that alone does not close the written proof.
+   Ender supplies a different explicit all-D envelope and its
+   monotonicity argument in ledger/ender.txt. The old script has not
+   been retroactively promoted to an independently complete proof.
+
+3. The old saved CRT artifact covers [10^8,7e11), not the full
+   range advertised by BEAN. The reviewer reran the old simple sieve
+   over [92,10^8) and got 163. Parent then reran the FULL CRT range
+   [92,7e11), also yielding 163; see ledger/sieve_ender.txt.
+   Base CRT filters are unconditionally applied and must not be
+   relied on for a generic range starting below 92.
+
+4. D must mean absolute fundamental discriminant. As an unrestricted
+   radicand the headline would be false: Q(sqrt(-652))=Q(sqrt(-163)).
+   The statement in BEAN.md is qualified accordingly.
+
+5. Reviewer reconstructed interval endpoints, checked first and final
+   BEAN intervals, rederived the valuation and Hadamard arguments,
+   supplied a monotone-integral justification of the ellipse counts,
+   and enumerated fundamental discriminants below 92. Not all 257 old
+   inequalities were replayed. The parent replays all 250 NEW Ender
+   intervals with Formic instead.
+
+The record does not claim novelty, formal verification, or independent
+confirmation of the external Dusart input.

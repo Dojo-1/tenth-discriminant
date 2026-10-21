@@ -1,0 +1,1 @@
+classes per period: 142560 (period 892371480); survivors in [92, 700000000000): [163]
