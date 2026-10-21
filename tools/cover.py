@@ -55,11 +55,22 @@ def prime_mass(R, S):
     return 2 * tot
 
 def split_mass(R, S, D1):
-    t = arb(D1 + 1) / 4; sd = arb(D1).sqrt(); out = arb(0)
-    while t < R:
-        out += (4 * t + (2 * t).sqrt()) / sd * t.log() / t * arb(S) * R * R / 2
-        t = 2 * t
-    return 2 * out
+    """2 * upper bound for sum_{split p <= R} log p * F(p), with F(p) <= c/p, c = S R^2/2.
+    [N3'] A(t) := #{split p <= t} <= alpha t + beta sqrt t, alpha = pi/(2 sqrt D), beta = 1/sqrt D
+          (reps of y != 0 under x^2+xy+((D+1)/4)y^2 <= t: sum of interval lengths <= ellipse area 2 pi t/sqrt D,
+           plus one per line (<= 4 sqrt(t/D) lines), divided by 4 reps per prime).
+    Partial summation, w(t) = c log t / t decreasing for t >= e, A = 0 below t0 = (D+1)/4:
+      sum <= w(R) A(R) + int_{t0}^{R} A(t) (-w'(t)) dt,  -w'(t) = c (log t - 1)/t^2.
+      int alpha t (-w') = alpha c [log^2 t / 2 - log t];   int beta sqrt t (-w') = beta c [-2 (log t + 1)/sqrt t]."""
+    c = arb(S) * R * R / 2; sd = arb(D1).sqrt()
+    al, be = arb.pi() / (2 * sd), 1 / sd
+    t0, Ra = arb(D1 + 1) / 4, arb(R)
+    if not Ra > t0: return arb(0)
+    lt0, lR = t0.log(), Ra.log()
+    I1 = al * c * ((lR * lR - lt0 * lt0) / 2 - (lR - lt0))
+    I2 = be * c * (-2 * (lR + 1) / Ra.sqrt() + 2 * (lt0 + 1) / t0.sqrt())
+    end = c * lR / Ra * (al * Ra + be * Ra.sqrt())
+    return 2 * (end + I1 + I2)
 
 def certify(D1, D2, R, S, rho):
     """True iff h(-D) = 1 is impossible for every prime D in [D1, D2] (given the cited inputs)."""
@@ -86,8 +97,8 @@ if __name__ == "__main__":
     D1 = int(float(sys.argv[1])); Dend = int(float(sys.argv[2])); Q = float(sys.argv[3]) if len(sys.argv) > 3 else 10
     while D1 < Dend:
         D2 = int(D1 * Q); done = False
-        for e in [17, 18, 19, 20, 21]:
-            for C in [80, 160, 320]:
+        for e in range(9, 22):
+            for C in [40, 80, 160, 320]:
                 R = D1 * 10**e; S = R // C
                 ok, info = certify(D1, D2, R, S, rho_for(D2, R, S))
                 if ok:
