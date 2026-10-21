@@ -1,0 +1,40 @@
+ENDER and FORMIC preregistration -- before numerical experiments
+
+Goal: replace BEAN's external prime-distribution estimate by elementary
+factorial identities, keeping Green, the norm ellipse, Hadamard, and
+Rabinowitsch. No L-functions, class-number tables, or theta estimates.
+FORMIC means separate workers attack local invariants and interfaces;
+agreement is evidence, not a proof or a claim of model independence.
+
+Fixed mathematical experiment:
+Let A(q)=sum_{0<=r<R} floor(r/q), V=sum r=R(R-1)/2,
+W=sum r^2=R(R-1)(2R-1)/6, and H=log(prod_{r=1}^{R-1} r!).
+Legendre gives H=sum_p log(p)*sum_{k>=1} A(p^k).
+For P>=R/S, p>P gives floor(r/p)<S and hence
+F(p)>=(S-1/2)A(p)-W/(2p^2).
+Subtract all prime powers of primes <=P exactly. Bound the remaining
+higher powers by V*I(P), and sum_{p>P} log(p)/p^2 by I(P), where
+I(P)=log(P+1)/P+log(1+1/P).
+This follows by comparison with integral_P^infinity log(t+1)/t^2 dt.
+Lower-bound H by integrating log(r!)>=r*log(r)-r+1.
+Add the exact F(p) contributions for odd p<=P.
+
+Parameters: P=10000, C in {20,40,80,160}, R=floor(D1/4),
+S=J=floor(R/C). Choose an integer radius using Arb, then recheck all
+geometric hypotheses in Arb. Cover from 7e11 to 1e36 with exact rational
+interval ratios (initially 5/4; bisect failures, never skip them).
+If the lower endpoint fails, report that failure and search upwards;
+do not claim global closure without also completing the enlarged sieve.
+Asymptotic: seek a positive linear-in-log(D) envelope at 1e36; if it
+fails, record the failure before changing the threshold.
+Pass means a derived all-D envelope, contiguous interval certificates,
+the existing finite sieve rerun, and exact small-parameter controls.
+Kill/partial outcome: any unclosed domain, unproved inequality, or
+failed control must remain an explicit blocker.
+
+FORMIC controls: direct small superfactorials versus their integral
+lower bound; Legendre decomposition; direct versus closed floor sums;
+tail lower bounds versus actual finite prime sums; genuine h=1 fields
+must not be excluded; interval stitching and strict endpoints; mutations
+that strengthen a lower bound must be rejected by at least one control.
+Record tools, commands and limitations. No novelty assertion.

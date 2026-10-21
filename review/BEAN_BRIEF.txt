@@ -1,0 +1,23 @@
+BEAN independent adversarial review
+
+First derive, without reading the implementation, whether h(-D)=1 and
+D>163 imply that every odd prime p<(D+1)/4 is inert. Reconstruct Green's
+Gram determinant on x^2+D*y^2<=rho^2, its independence conditions,
+Hadamard upper bound, and inert-prime valuation. Do not assume the
+classification being proved.
+
+Then audit BEAN.md, flow/PREREG_BEAN.md, tools/bean.py,
+tools/asymptotic_bean.py, tools/cover.py, tools/sieve_crt.py and their
+ledger outputs. Focus on:
+1. Strict versus non-strict Rabinowitsch endpoints, ramification and p=2.
+2. Point counts, floors, rounding, and interval endpoint coverage.
+3. The all-D asymptotic claim: prove every envelope and monotonicity;
+   one positive point evaluation is not a universal certificate.
+4. Tail guards, Dusart's domain, and sieve constraints below 4*q.
+5. Exact finite survivors and the handoff between all ranges.
+
+Report independently derived steps separately from inspected or
+executed checks. Give counterexamples where possible, classify defects
+as FATAL / GAP / SLOPPY, and finish with FATAL FOUND / GAPS ONLY /
+NO ISSUES FOUND. Do not edit repository files. This audit is not a
+formal verification, and cannot establish novelty.
