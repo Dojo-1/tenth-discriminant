@@ -8,6 +8,8 @@ import TenthDiscriminant.GramMatrix
 import TenthDiscriminant.JetKernel
 import TenthDiscriminant.DeterminantMultiplicity
 import TenthDiscriminant.SylvesterLocal
+import TenthDiscriminant.AffineCoefficientTransport
+import TenthDiscriminant.AffineBasisCertificate
 import TenthDiscriminant.Coverage
 import TenthDiscriminant.RecordedCoverage
 import TenthDiscriminant.Envelope
