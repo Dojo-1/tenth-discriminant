@@ -1,114 +1,90 @@
 The Tenth Discriminant
-A determinant argument, an explicit bound, and an open invitation to try to break both.
+A determinant argument you can reconstruct, run, and try to break.
+An AI-assisted investigation of Terence Tao's tenth-discriminant challenge: make an effective class-number-one argument explicit, without importing the known classification as a proof input.
+[Current argument](ledger/ender.txt) · Latest experiments · Reproduction · [Review history](review/) · [Prior art](PRIOR_ART.md)
+Status · 22 October 2026: candidate mathematical argument, with recorded interval certificates, finite computations, and AI review. No end-to-end Lean formalization or human mathematical review is recorded. The latest determinant experiments do not change the discriminant cutoff. No novelty or priority claim is made.
+This overview reflects the artifacts at 062afd2. Numerical summaries below describe those recorded runs; they are not substitutes for the derivations or their dependencies.
 
-An experimental, AI-assisted number-theory investigation responding to Terence Tao's October 2026 tenth-discriminant challenge.
-
-The question is deliberately narrow: can a variant of Ben Green's Gram-determinant argument yield a fully explicit, independently checkable bound excluding a hypothetical tenth class-number-one imaginary quadratic discriminant?
-
-The broader ambition is methodological: turn an attractive mathematical argument into a chain of claims that another mathematician—or another model—can reconstruct, compute, falsify, and audit.
-
-Latest continuation: **Ender** replaces Dusart with factorials and Legendre's identity; **Formic** adds adversarial arithmetic,
-geometry, mutation and coverage checks. See [the derivation and reproduction commands](ledger/ender.txt) and
-[the BEAN audit limitations](review/BEAN_AUDIT.txt). The computational campaign is complete; formalization and human review are not.
-The route descriptions and review history below predate this continuation.
-
-Research status (21 Oct 2026, evening) — candidate proof, reviewed, not a new result.
-- Prior art: the core route (h=1 split-prime lattice count + Green's derivative Gram determinant) was posted first by
-  *twinheterodox* in the comments of Tao's challenge post (v4: q < 4000; v5: q < 2000). Ours is an independent
-  rediscovery; see [PRIOR_ART.md](PRIOR_ART.md).
-- Our variant (norm-ellipse evaluation set) gives h(−D) ≠ 1 for all D ≥ 1.5·10⁴: 43 Arb interval certificates on
-  [1.5·10⁴, 10¹⁰²] (`ledger/coverage_v4.txt`) + a monotone asymptotic inequality beyond. Below: finite check.
-- Independent review (GPT-6.1 Sol, [review/](review/)): re-derived N1–N8; found defects F1–F4 in the code (incl. a false
-  auxiliary tail bound, labelled FATAL); all fixed and recertified ([review/RESPONSE_Claude.md](review/RESPONSE_Claude.md)).
-- External input: Dusart 2010 (arXiv:1002.0442, Thm 5.2), θ(x) ≥ x(1 − 0.2/ln²x), x ≥ 3 594 641 — primary checked.
-- Not yet independently reviewed: the tighter split-prime partial summation (cover.split_mass) and the Dusart switch.
-
-Why a tenth discriminant?
-There are exactly nine positive squarefree integers $d$ for which the imaginary quadratic field $\mathbb{Q}(\sqrt{-d})$ has class number one:
+What bound are we claiming?
+Write $D=|\operatorname{disc} K|$ for the absolute fundamental discriminant of an imaginary quadratic field. It is not an unrestricted radicand. In the notation $q=|\operatorname{disc} K|$ used by twinheterodox's contribution, $q=D$, not $\log D$.
+The current factorial-based route, Ender, claims an analytic exclusion threshold of $D\geq 7\times10^{11}$. Combining that argument with the recorded finite endgame is intended to establish
 \[
-\boxed{1,\ 2,\ 3,\ 7,\ 11,\ 19,\ 43,\ 67,\ 163.}
+h(-D)=1\quad\Longrightarrow\quad
+D\in\{3,4,7,8,11,19,43,67,163\}.
 \]
-This is a classical theorem, established through the work of Heegner, Baker, and Stark. Long before its resolution, the tenth discriminant was the hypothetical missing case. The modern challenge is not to rediscover the list by quoting its proof, but to ask how far different arguments can be made effective: with explicit constants, finite checks, and no hidden appeal to the desired classification.
+Thus $D\leq163$ is the candidate endpoint after the finite check, not the determinant's analytic cutoff and not a newly certified theorem announced by this README.
+The coverage chain
+Range	Recorded component	Evidence
+Fundamental $D<92$	Primitive reduced-form enumeration returns $3,4,7,8,11,19,43,67$ as the one-form cases.	[Formic output](ledger/formic.txt), [derivation §5](ledger/ender.txt)
+$92\leq D<7\times10^{11}$	A full CRT residue-sieve run leaves 163 only. Its base filters are not asserted valid below 92.	[Sieve output](ledger/sieve_ender.txt), [implementation](tools/sieve_crt.py)
+$7\times10^{11}\leq D\leq10^{36}$	250 contiguous Arb-certified intervals, with exact integer endpoints; smallest printed lower/upper ratio approximately 1.027747792.	[Interval record](ledger/coverage_ender.txt), [implementation](tools/ender.py)
+$D\geq10^{36}$	Written floor-safe, all-$D$ envelope, with normalized margin slope $15/64$ in $\log D$ and certified starting margin approximately 7.84016012450.	[Derivation §4](ledger/ender.txt), [endpoint checks](ledger/asymptotic_ender.txt)
 
-For the candidate range considered here, one studies a fundamental discriminant $-D$, with $D>163$ prime and $D\equiv3\pmod 8$, under the contradiction hypothesis
+
+The inequalities certify their stated numerical bounds. The class-number conclusion additionally depends on the quadratic arithmetic, determinant divisibility, nonvanishing, ellipse estimates, and reduced-form correspondence spelled out in the argument. The all-$D$ step needs its written monotonicity proof, not just a positive endpoint printout.
+The argument, without the codenames
+Arithmetic. Under the contradiction hypothesis $h(-D)=1$, a hypothetical $D>163$ is prime, $D\equiv3\pmod8$, and every prime $p<(D+1)/4$ is inert. Ender chooses $R$ strictly inside that threshold; the boundary is not rounded into an inclusive inertness claim.
+Geometry. Evaluate Green's derivative Gram construction on the norm ellipse
 \[
-h(-D)=1.
+\mathcal E_{D,\rho}=\{x+y\sqrt{-D}:x,y\in\mathbb Z,\ x^2+Dy^2\leq\rho^2\}.
 \]
-The aim is to derive an explicit contradiction from independently justified estimates. An estimate that works for selected $D$, or a program that prints a positive margin, is not yet such a contradiction for all remaining $D$.
-The proposed route
-The experiment brings together four ingredients:
-1. Geometry of the sampling set. Adapt Green's Gram-determinant construction from a rectangular lattice grid to the norm-elliptic set
-   \[
-   \mathcal E_{D,\rho}=\{(x,y)\in\mathbb Z^2:x^2+Dy^2\leq\rho^2\}.
-   \]
-   This change of geometry is substantive: any use of the original grid's interpolation or nonvanishing argument needs its own justification on the ellipse.
-2. Arithmetic lower bounds. Use divisibility information at inert primes, while exploiting the restrictions that the class-number-one hypothesis would impose on split primes. The principal binary quadratic form is
-   \[
-   Q_D(x,y)=x^2+xy+\frac{D+1}{4}y^2.
-   \]
-   The exact representation counts, exceptional cases, and all constants in a split-prime estimate matter.
-3. Analytic upper bounds. Apply a determinant upper bound of Hadamard type and explicit estimates for the Chebyshev function $\vartheta(x)$. The resulting inequalities must be stated with their true domains, integer floors, endpoint choices, and error terms intact.
-4. Effective closure. Attempt to connect finite computations, interval certificates, and an all-larger-$D$ argument without leaving a gap between regimes. Every interval must be covered, every monotonicity assertion justified, and every use of floating-point arithmetic given an appropriate error guarantee.
-The envisioned chain is:
-class-number-one hypothesis
-          │
-          ├── geometric / interpolation obligations
-          ├── inert-prime divisibility + split-prime bounds
-          └── explicit determinant / prime-mass estimates
-                         │
-                 quantitative inequality
-                         │
-            exact checks + interval coverage
-                         │
-              independently audited bound
-That last box is a target, not a status claim. See the [proof ledger](LEDGER.md) for the actual argument and its dependencies.
-What is established, and what is not?
-Layer	What the repository provides	What it does not automatically establish
-Mathematical framework	A proposed determinant-based route and its intermediate claims	That each adaptation of a published lemma is valid
-Computation	Scripts, exact-arithmetic checks, and numerical/interval experiments	A universal theorem outside the checked domains
-Coverage	Recorded attempts to join finite and asymptotic regimes	Gap-free coverage without validated endpoints and monotonicity
-Independent criticism	A blind-then-audit review process, concrete objections, and counterexample work	Endorsement of the main conclusion
-
-
-Review obstacle (21 October 2026), resolved: an adversarial reviewer reproduced a false auxiliary prime-mass lower bound (F1). It was a code defect (tail added over an empty range); the guarded version passes the reviewer's counterexample and all certificates were recomputed. See [review/RESPONSE_Claude.md](review/RESPONSE_Claude.md).
-
-The rule throughout is simple: a computed inequality is evidence about that computation; a proof requires the quantified mathematical bridge.
-Navigate the evidence
-Start here	Purpose
-[STATUS.md](STATUS.md)	Current result, blockers, and next proof obligations
-[LEDGER.md](LEDGER.md)	The argument broken into auditable claims and dependencies
-[`ledger/`](ledger/)	Recorded calculations and coverage artifacts
-[REVIEW_BRIEF.md](REVIEW_BRIEF.md)	Instructions for an adversarial, blind-first mathematical review
-[`review/`](review/)	Review reports, counterexamples, and stated validation limits
-[`tools/`](tools/)	Exact checks, candidate inequalities, interval and asymptotic experiments
-[ENVIRONMENT.md](ENVIRONMENT.md)	Reproduction environment and external arithmetic dependencies
-[`lit/`](lit/)	Literature and source-provenance support
-
-
-For a first reading, use STATUS.md → LEDGER.md → review/. For a genuinely blind review, instead begin with [`REVIEW_BRIEF.md`](REVIEW_BRIEF.md) and follow its phase ordering before reading the proposed proof or code.
-Reproduce, then challenge
-Follow [ENVIRONMENT.md](ENVIRONMENT.md) for the supported environment and tool versions. Selected verification entry points include:
+The point counts and interpolation conditions must establish nonvanishing for this actual set. Inert-prime divisibility supplies a lower bound for $\log\det G$; Hadamard supplies an upper bound. A strict lower-over-upper contradiction excludes the candidate discriminant.
+Prime input. Ender obtains the required prime-weight bound from factorials and Legendre's identity, subtracting small-prime powers exactly and bounding the remaining tail by an explicit integral. It removes Dusart and other prime-distribution estimates from this route. Green's determinant lemmas and the geometric and quadratic-arithmetic dependencies remain.
+Trade-off. This is a reduction in analytic inputs, not a better numerical cutoff than the earlier split-prime-counting route. The older $1.5\times10^4$ threshold and its Dusart-dependent calculations remain historical artifacts; they should not be mixed into Ender's dependency chain. Start with [the current derivation](ledger/ender.txt), not the historical [constant ledger](LEDGER.md).
+Beyond Hadamard: two bounded results
+1. Exact determinant structure and prime-power layers
+The [108-case experiment](ledger/determinant_lifts.txt) varies matrix size, derivative order, and sampling geometry. It records 101 nonsingular cases and 7 singular cases. A disjoint-block Fischer bound is strictly sharper than ordinary Hadamard in all 101 nonsingular cases. Only 23 cases satisfy the chosen sufficient interpolation guard; exact rank, not that guard alone, identifies the other nonsingular cases.
+Smith layers describe contributions to one prime-adic valuation, not independent gains to be added twice. A guarded, genuine class-number-one example at $D=19$ has
+\[
+v_3(\det G)=2F(3)=2,
+\]
+which refutes a universal replacement of Green's bound by $2F(p)+2$. It does not exclude improvements under additional hypotheses. These are finite observations, not an all-dimensional determinant improvement. [Raw cases](ledger/determinant_lifts.jsonl) · [Fixed protocol](flow/PREREG_LIFTS.txt).
+2. Analytic radial correlations
+The [radial follow-up](ledger/radial_bounds.txt) derives moment formulas and an annulus correlation bound. For a positive definite Gram matrix, an annulus $b/2\leq |z|^2\leq b$ with $b>0$, and $m$ disjoint available row pairs $(r,s),(r+1,s+1)$ satisfying $r\geq2(J-1)$, it gives
+\[
+\det G\leq\text{moment-block product}
+\leq\left(\prod_i G_{ii}\right)(9/25)^m.
+\]
+The fixed 18-case campaign records 16 certified cases: 8 with strict saving and 8 with no eligible pairs. The other 2 fail the sufficient independence guard; that is not a proof of singularity.
+The limitation is part of the result. This uniform guarantee contributes at most $\log(25/9)/(2R)$ after normalization by $R^2S$, so it does not improve Ender's leading slope. That ceiling concerns the guarantee, not every possible actual saving. The annulus changes the witness, and all 18 cases lie outside the strict inertness cutoff, so the campaign uses only actually inert primes. No improved discriminant cutoff follows. [Raw cases](ledger/radial_bounds.jsonl) · [Fixed protocol](flow/PREREG_RADIAL.txt).
+What the checking does — and does not — establish
+Formic is the local verification suite. Its [recorded run](ledger/formic.txt) includes 2,984 arithmetic comparisons, 320 integer-radius ellipse checks, all 250 replayed intervals, small reduced-form enumeration, arithmetic and cutoff mutations, and three comparisons of the asymptotic envelopes with raw normalized bounds.
+The limitations remain visible:
+- Finite controls have finite scope. Direct prime-sum comparisons extend only through $R=80001$. The inherited genuine-field calculator has vacuous lower bounds, so its lack of contradictions is a weak control. The older mutation suite catches M1 and M3 but does not catch M2, an overstrong Hadamard bound.
+- AI review is not an independent end-to-end certificate. The [Ender audit record](review/ENDER_AUDIT.txt) is a parent summary of agent findings. It reports rederivation of the factorial and universal-envelope steps, not formal verification of the inherited determinant lemmas. Shared code and assumptions must not be counted as independent witnesses.
+- Corrections are preserved. The earlier false auxiliary prime-mass bound and its repair remain in the [review response](review/RESPONSE_Claude.md). The [BEAN audit](review/BEAN_AUDIT.txt) records the strict-endpoint issue, incomplete old all-$D$ justification, and saved-sieve range mismatch. Ender's replacement argument does not retroactively validate the old asymptotic script.
+The next mathematical obligation is an end-to-end review of the stated dependencies and their application to the actual sampling set. For the experimental branch, a finite block improvement must be connected to a valid large-$D$ family before it can strengthen the global bound.
+Reproduce the record
+Run from the repository root. The recorded environment uses python-flint 0.9.0, SymPy 1.14.0, and 160-bit Arb for Ender/Formic and the two new campaigns. [Environment notes](ENVIRONMENT.md) include earlier tools; they are not themselves a proof certificate.
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
+python -m pip install -r requirements.txt "sympy==1.14.0"
 
+# Focused controls for the latest experiments.
+python tools/test_determinant_lifts.py
+python tools/test_radial_bounds.py
+
+# Current analytic route and local verification.
+python tools/ender.py cover 7e11 1e36
+python tools/ender.py asymptotic
+python tools/formic.py
+
+# Full finite sieve: separate from the interval replay.
+python tools/sieve_crt.py 92 700000000000
+Keep fresh outputs separate from the saved evidence:
+mkdir -p /tmp/tenth-discriminant-rerun
+python tools/determinant_lifts.py > /tmp/tenth-discriminant-rerun/determinant_lifts.jsonl
+python tools/radial_bounds.py > /tmp/tenth-discriminant-rerun/radial_bounds.jsonl
+cmp ledger/determinant_lifts.jsonl /tmp/tenth-discriminant-rerun/determinant_lifts.jsonl
+cmp ledger/radial_bounds.jsonl /tmp/tenth-discriminant-rerun/radial_bounds.jsonl
+The pre-existing exact determinant and mutation suites additionally require PARI/GP; the recorded version is 2.15.4:
 python tools/verify_exact.py
 python tools/mutation_test.py
-python tools/asymptotic.py
-
-# Requires PARI/GP in addition to the Python environment:
 gp -q tools/verify_exact_large.gp
-The larger arithmetic workflow may require PARI/GP and python-flint; consult the environment notes rather than assuming that pip install alone is sufficient. The scripts above are entry points, not a single command certifying the theorem. See the ledger and review reports for the tested parameters, outputs, and limits.
-
-Useful ways to contribute a substantive check:
-- Re-derive before comparing. Start from the source lemmas and the stated class-number-one hypothesis, without reading the proposed estimates first.
-- Attack the boundaries. Probe negative coordinates, irregular point sets, small prime exceptions, floors, interval endpoints, and the transition to the asymptotic regime.
-- Separate arithmetic from its certificate. Report whether a result was checked exactly, enclosed by rigorous intervals, approximated numerically, or inferred heuristically.
-- Give a failing instance. An explicit counterexample, its input, and a command that reproduces it are more valuable than an unqualified verdict.
-The repository's review protocol deliberately distinguishes blind derivation from informed audit. An AI-generated argument reviewed by another AI is not automatically independent evidence; models may share assumptions or failure modes. Record the model, tools, prompts/protocol, sources, and commands when those details affect reproducibility.
-Intellectual provenance
-This is an independent response to a mathematical challenge, not an official submission or endorsement by its organizers or by the authors of the source results.
-- Terence Tao, An experimental AI-math challenge: using tenth discriminant bounds to explore arguments ruling out Siegel zeroes, 20 October 2026 — motivation and challenge design.
-- Ben Green, On Landau–Siegel zeros — the determinant approach being investigated; the proposed ellipsoidal adaptation is not claimed to be Green's result.
-- Primary references, downloads, and integrity material: see [`lit/`](lit/) and the citations inside [LEDGER.md](LEDGER.md).
-The intended output is not a dramatic theorem announcement. It is an argument whose every joint can be inspected—and whose failures can be found before its conclusions are believed.
+A successful command establishes only what that program checks. Report the commit, environment, command, output, and any disagreement; do not replace a failed record with a passing one without preserving the correction.
+Provenance, AI assistance, and review
+Credit comes before comparison. Ben Green supplies the derivative determinant method. The [prior-art record](PRIOR_ART.md) acknowledges twinheterodox's earlier split-prime/Green route and Kyle Pratt's disk-interpolation contribution; [BEAN](BEAN.md) also credits van Dijk for the route family and Jesús Vilela for the norm-ellipse experiment. This repository does not claim priority for that route or offer a current leaderboard. The dated prior-art snapshot is not an exhaustive literature review.
+The names are workflow labels. Bean, Ender, and Formic were used in semantic priming for AI-assisted exploration and adversarial checking. They name stages of the research, not mathematical entities, independent authorities, or evidence that priming improves research quality. The claims must stand without the narrative. Review provenance and limitations belong in the [review records](review/).
+For a first reading, use [the Ender derivation](ledger/ender.txt) and its [audit record](review/ENDER_AUDIT.txt), then the experimental ledgers above. [STATUS.md](STATUS.md) preserves the broader chronology, including the unreviewed higher-class-number track; its historical entries are not all current claims. A blind-first reviewer should instead begin with [REVIEW_BRIEF.md](REVIEW_BRIEF.md), while noting that it describes the earlier route.
+Useful criticism identifies the exact statement, violated hypothesis or counterexample, consequence, and reproduction path. Unchecked, missing, and false are different findings. The same discipline applies to favorable reviews and to the Doubt the Machine framework itself.
+The aim is not an impressive verdict. It is an argument whose joints remain visible.
