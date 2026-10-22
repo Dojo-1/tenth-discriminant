@@ -40,7 +40,7 @@ theorem traceGramMatrix_factorization {n : Nat} (P : Finset Complex) (J : Nat)
   ext a b
   simp only [traceGramMatrix, traceGramEntry, traceRealFeatures, traceImagFeatures,
     Matrix.add_apply, Matrix.mul_apply, Matrix.conjTranspose_apply, star_trivial,
-    Fintype.sum_prod_type, Finset.univ_eq_attach, Finset.sum_attach,
+    Fintype.sum_prod_type, Finset.sum_coe_sort,
     Fin.sum_univ_eq_sum_range, Complex.mul_re, Complex.conj_re, Complex.conj_im,
     mul_neg, sub_neg_eq_add, Finset.sum_add_distrib]
   ring
@@ -118,7 +118,7 @@ theorem traceGramMatrix_duplicate_rows {n : Nat} (P : Finset Complex) (J : Nat)
     (rows : Fin n -> Nat × Nat) (a b : Fin n) (hab : a ≠ b) (heq : rows a = rows b) :
     (traceGramMatrix P J rows).det = 0 := by
   apply Matrix.det_zero_of_row_eq hab
-  intro k
+  funext k
   simp [traceGramMatrix, heq]
 
 /-- A single nonzero row gives the nonzero determinant 2, with the origin retained. -/
