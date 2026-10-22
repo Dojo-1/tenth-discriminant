@@ -24,3 +24,4 @@ import TenthDiscriminant.SylvesterDegree
 import TenthDiscriminant.ContactBudget
 import TenthDiscriminant.IrreducibleContact
 import TenthDiscriminant.BivariateDegree
+import TenthDiscriminant.FactorJetBudget
