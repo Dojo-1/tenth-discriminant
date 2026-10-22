@@ -1,5 +1,17 @@
 # Status — 2026-10-21
 
+## 2026-10-22: analytic radial correlation follow-up
+
+Derived a moment-only formula and a uniform annulus correlation lemma:
+eligible disjoint row pairs contribute a block/diagonal ratio at most
+9/25, with sufficient independence checked on the actual point set.
+The 18-case campaign certifies 16 cases; 8 have strict savings and 2
+fail the sufficient rank guard. The guaranteed normalized saving is
+O(1/R), so this bound alone does not improve Ender's leading slope.
+No global cutoff or Ender certificate was changed.
+Derivation, failures and commands: `ledger/radial_bounds.txt`;
+raw output: `ledger/radial_bounds.jsonl`.
+
 ## 2026-10-22: determinant structure / prime-power lifts
 
 A separate preregistered finite experiment now varies matrix size,
