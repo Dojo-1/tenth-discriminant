@@ -12,7 +12,7 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 
 ## What bound are we claiming?
 
-Write **$D=|\operatorname{disc} K|$** for the absolute fundamental discriminant of an imaginary quadratic field. It is not an unrestricted radicand. In the notation $q=|\operatorname{disc} K|$ used by [twinheterodox's contribution](https://github.com/twinheterodox/tenth-discriminant), **$q=D$**, not $\log D$.
+Write **$D=|\mathrm{disc}(K)|$** for the absolute fundamental discriminant of an imaginary quadratic field. It is not an unrestricted radicand. In the notation $q=|\mathrm{disc}(K)|$ used by [twinheterodox's contribution](https://github.com/twinheterodox/tenth-discriminant), **$q=D$**, not $\log D$.
 
 The current factorial-based route, **Ender**, claims an **analytic exclusion threshold of $D\geq 7\times10^{11}$**. Combining that argument with the recorded finite endgame is intended to establish
 
@@ -116,7 +116,7 @@ Keep fresh outputs separate from the saved evidence:
 ```bash
 mkdir -p /tmp/tenth-discriminant-rerun
 python tools/determinant_lifts.py > /tmp/tenth-discriminant-rerun/determinant_lifts.jsonl
-python tools/radial_bounds.py > /tmp/tenth-discriminant-rerun/radial_bounds.jsonl
+python tools/radial_bounds.py > /tmp/tenth-discriminant-rerun/dadial_bounds.jsonl
 cmp ledger/determinant_lifts.jsonl /tmp/tenth-discriminant-rerun/determinant_lifts.jsonl
 cmp ledger/radial_bounds.jsonl /tmp/tenth-discriminant-rerun/radial_bounds.jsonl
 ```
