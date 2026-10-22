@@ -100,6 +100,10 @@ The 18 registered cases yield:
  - 8 certified with eligible pairs and strict saving;
  - 8 certified with no eligible pairs, hence no saving.
 The maximum row count is 1024; not all largest cases certify.
+For both failed cases n=228<R+S (258 or 260); the sufficient condition
+nJ>2RS+J(R+S) is therefore impossible for EVERY positive J on that
+fixed point set. Adjusting J alone cannot repair this particular guard.
+This does not prove actual row dependence.
 
 For example D=19,R=128,S=2,J=42 has 228 points and 45 disjoint pairs.
 Normalized gain is about .00140302447934 guaranteed and .0108528954116
@@ -134,3 +138,19 @@ Existing 12 lift controls and the full Formic suite also pass, including
 250 Ender intervals and its unchanged universal-envelope margin.
 Shared code and finite controls do not independently establish Green's
 lemmas, formalization or human mathematical review.
+
+7. Review and security
+
+A read-only mathematical reviewer independently rederived the entry
+multiplier, weighted correlation inequality, moment formulas and gain
+scaling. Its design-stage concerns were the missing annulus filter in
+the OLD ellipse experiment and the possibility of zero eligible pairs.
+On reading the completed separate annulus implementation, exact guards,
+recorded zero-pair cases and derivation, it confirmed both resolved and
+reported no remaining blocking mathematical issue.
+A separate read-only code-review agent reported no significant issues.
+parallel_validation found zero CodeQL Python alerts; its built-in code
+review could not run because its configured model was unavailable.
+That unavailable component is not counted as a successful review.
+Secret scans found no secrets. Both this campaign and the previous
+108-case lift campaign reproduced byte-for-byte against saved artifacts.
