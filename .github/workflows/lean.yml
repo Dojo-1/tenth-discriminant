@@ -41,6 +41,8 @@ jobs:
         run: |
           lake update
           lake exe cache get
+          lean --version
+          git rev-parse HEAD
       - uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
         if: always() && steps.lean-cache.outputs.cache-hit != 'true'
         with:
@@ -49,7 +51,11 @@ jobs:
             ~/.cache/mathlib
             lean/.lake/packages
           key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Check source-to-certificate correspondence
+        run: python3 verify_sources.py
       - name: Build exact statements
         run: lake build
       - name: Reject incomplete or nonstandard proof dependencies
         run: python3 audit.py
+      - name: Require rejection of known-false strengthening attempts
+        run: python3 negative_controls.py
