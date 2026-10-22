@@ -12,6 +12,7 @@ def affineControlPolynomial : Polynomial (Polynomial Rat) :=
 theorem affine_control_degree : affineControlPolynomial.natDegree = 2 := by
   unfold affineControlPolynomial
   compute_degree
+  norm_num
 
 theorem affine_control_source_det :
     fixedDerivativeDeterminant affineControlPolynomial 2 = -4 * Polynomial.X := by
@@ -29,7 +30,7 @@ theorem affine_control_combined_value :
   norm_num at hh
   exact hh
 
-/-- Independent direct coefficient calculation: the slope contributes power four. -/
+/-- Direct coefficient calculation, without the transport theorem: the slope contributes power four. -/
 theorem affine_control_slope_direct :
     let F : Polynomial (Polynomial Rat) := 4 * Polynomial.X^2 - Polynomial.C Polynomial.X
     (fixedSylvesterMatrix F F.derivative 2 1).det = -64 * Polynomial.X := by
@@ -39,7 +40,8 @@ theorem affine_control_slope_direct :
   norm_num [fixedSylvesterColumns, Polynomial.derivative_X_sq,
     Polynomial.derivative_mul, Polynomial.coeff_X, Polynomial.coeff_one,
     Polynomial.coeff_C, Polynomial.coeff_X_pow, Polynomial.coeff_C_mul,
-    Polynomial.coeff_mul_X, Polynomial.coeff_X_mul] <;> ring
+    Polynomial.coeff_mul_X, Polynomial.coeff_X_mul]
+  ring
 
 /-- The same theorem gives the scalar power three, not four, in degree two. -/
 theorem affine_control_scalar_value :
