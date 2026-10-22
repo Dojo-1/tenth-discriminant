@@ -25,8 +25,8 @@ theorem comparatorR1_overpadding :
       Polynomial (Polynomial Rat)).derivative.natDegree <= 1 :=
     (Polynomial.natDegree_derivative_le _).trans (Nat.sub_le_sub_right hF 1)
   change (fixedSylvesterColumns
-    (Polynomial.X^2 - Polynomial.C Polynomial.X)
-    (Polynomial.X^2 - Polynomial.C Polynomial.X).derivative 3 2 j).coeff 4 = 0
+    (Polynomial.X^2 - Polynomial.C Polynomial.X : Polynomial (Polynomial Rat))
+    (Polynomial.X^2 - Polynomial.C Polynomial.X : Polynomial (Polynomial Rat)).derivative 3 2 j).coeff 4 = 0
   apply Polynomial.coeff_eq_zero_of_natDegree_lt
   unfold fixedSylvesterColumns
   split_ifs with hj
@@ -108,14 +108,14 @@ theorem comparatorR1_complex_translation_after :
 theorem comparatorR1_characteristic_three :
     (Polynomial.X^3 - Polynomial.C Polynomial.X :
       Polynomial (Polynomial (ZMod 3))).derivative = 0 := by
-  have h3 : (3 : ZMod 3) = 0 := by decide
-  have hp3 : (3 : Polynomial (ZMod 3)) = 0 := by
+  have h3 : ((3 : Nat) : ZMod 3) = 0 := by decide
+  have hp3 : ((3 : Nat) : Polynomial (ZMod 3)) = 0 := by
     calc
-      (3 : Polynomial (ZMod 3)) = Polynomial.C (3 : ZMod 3) :=
+      ((3 : Nat) : Polynomial (ZMod 3)) = Polynomial.C ((3 : Nat) : ZMod 3) :=
         (map_natCast (Polynomial.C : ZMod 3 →+* Polynomial (ZMod 3)) 3).symm
       _ = 0 := by rw [h3, map_zero]
-  simp only [Polynomial.derivative_sub, Polynomial.derivative_X_pow,
-    Polynomial.derivative_C, sub_zero, hp3, Polynomial.C_0, zero_mul]
+  rw [Polynomial.derivative_sub, Polynomial.derivative_C, sub_zero,
+    Polynomial.derivative_X_pow, hp3, Polynomial.C_0, zero_mul]
 
 end
 end TenthDiscriminant
