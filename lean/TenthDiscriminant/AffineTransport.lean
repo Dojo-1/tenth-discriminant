@@ -1,4 +1,4 @@
-import TenthDiscriminant.DeterminantMultiplicity
+import TenthDiscriminant.AffineCoefficients
 
 /-!
 # Affine transport for the actual fixed-size Sylvester determinant
@@ -16,7 +16,8 @@ theorem fixedSylvesterMatrix_map {K L : Type*} [Field K] [Field L]
     (phi : RingHom (Polynomial K) (Polynomial L)) :
     fixedSylvesterMatrix (F.map phi) (G.map phi) a b =
       (fixedSylvesterMatrix F G a b).map phi := by
-  ext i j
+  apply Matrix.ext
+  intro i j
   simp only [fixedSylvesterMatrix, polynomialCoefficientMatrix, Matrix.map_apply,
     fixedSylvesterColumns]
   split_ifs with h
@@ -43,9 +44,15 @@ theorem fixedSylvesterMatrix_common_scale {K : Type*} [Field K]
     (F G : Polynomial (Polynomial K)) (a b : Nat) (c : Polynomial K) :
     fixedSylvesterMatrix (Polynomial.C c * F) (Polynomial.C c * G) a b =
       Matrix.of (fun i j => c * fixedSylvesterMatrix F G a b i j) := by
-  ext i j
+  apply Matrix.ext
+  intro i j
   simp only [fixedSylvesterMatrix, polynomialCoefficientMatrix, fixedSylvesterColumns]
-  split_ifs <;> simp [mul_left_comm, Polynomial.coeff_C_mul]
+  simp only [Matrix.of_apply]
+  split_ifs with h
+  · rw [show Polynomial.X^j.val * (Polynomial.C c * F) =
+        Polynomial.C c * (Polynomial.X^j.val * F) by ring, Polynomial.coeff_C_mul]
+  · rw [show Polynomial.X^(j.val-b) * (Polynomial.C c * G) =
+        Polynomial.C c * (Polynomial.X^(j.val-b) * G) by ring, Polynomial.coeff_C_mul]
 
 /-- Every column is rescaled, including the derivative columns. -/
 theorem fixedDerivativeSylvester_scale {K : Type*} [Field K]
@@ -56,22 +63,6 @@ theorem fixedDerivativeSylvester_scale {K : Type*} [Field K]
   rw [Polynomial.derivative_C_mul, fixedSylvesterMatrix_common_scale,
     Matrix.det_mul_column]
   simp
-
--- Temporary API probes; removed before the final artifact.
-#check Matrix.det_of_upperTriangular
-#check Polynomial.coeff_pow
-#check Polynomial.coeff_pow_of_natDegree_le
-#check Polynomial.compRingHom
-#check Fin.sum_univ_add
-#check Fin.prod_univ_add
-#check Polynomial.as_sum_range'
-#check Polynomial.coeff_comp_X_add_C
-#check Polynomial.coeff_comp_C_mul_X
-#check Polynomial.coeff_X_pow
-#check Polynomial.coeff_X_add_C_pow
-#check Polynomial.sum_range_C_mul_X_pow
-#check Matrix.det_mul_row
-#check Matrix.det_mul_column
 
 end
 end TenthDiscriminant
