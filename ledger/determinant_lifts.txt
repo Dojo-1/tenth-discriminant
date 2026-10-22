@@ -1,0 +1,116 @@
+DETERMINANT STRUCTURE / LIFTS -- finite research record
+
+Scope
+Implemented the fixed grid in flow/PREREG_LIFTS.txt. These are exact
+small-matrix observations and general linear-algebra identities, not a
+new class-number proof or a theorem about arbitrary dimensions/lifts.
+The Ender bounds and certificates are unchanged.
+
+Definitions and justified relationships
+Use the existing derivative trace Gram matrix in Z[sqrt(-D)]. It is an
+integer positive semidefinite matrix, with RS rows. Exact rank determines
+whether det G>0. The sufficient interpolation conditions are reported
+separately; failure of those conditions does not assert dependence.
+
+For nonsingular G, Smith factors s_i satisfy s_i | s_(i+1) and
+prod |s_i|=det G. At an odd inert prime p, write e_i=v_p(|s_i|).
+The layer c_k=#{i:e_i>=k} describes the Smith filtration modulo p^k:
+ |ker(G mod p^k)|=p^(sum_i min(e_i,k)).
+ Thus c_k is the increment in log_p kernel size between levels k-1 and k,
+ and sum_k c_k=v_p(det G). These are nested contributions to ONE
+ valuation. Adding k*c_k instead would double-count.
+The layer identity is checked against independently enumerated modular
+kernels for a small correlated matrix. The general identity follows
+because unimodular Smith transformations are invertible modulo p^k.
+
+For a positive definite matrix and a partition into principal blocks,
+Fischer gives det G <= prod det G_block <= prod G_ii.
+One justification for two complementary blocks A,C: the Schur complement
+C-B^T A^(-1) B is positive definite and <=C, so its determinant is <=det C.
+Induct on the number of blocks. Each 2x2 block has determinant
+G_ii*G_jj-G_ij^2 <= G_ii*G_jj.
+The implementation chooses disjoint pairs by ascending exact rational
+block/diagonal ratio and leaves singletons. It is deterministic but not
+a claim of optimal matching. Overlapping or incomplete partitions fail.
+
+For EACH witness separately, compute
+ Q=prod_(odd inert p<=R) p^(2F(p)).
+Check Q<=det G<=block product<=diagonal product and
+log(diagonal product)<=upper_B. The exact integer inequalities, not
+rounded printed decimals, establish the first chain. Arb checks the
+aggregate comparison. Output gaps are (log(bound)-log Q)/(R^2*S);
+smaller is better. Block gain is log(diagonal product/block)/(R^2*S).
+Output contains actual inert primes, not a hypothetical assertion that
+all primes are inert. strict_cutoff reports 4R<D+1 separately.
+
+Outcomes
+ledger/determinant_lifts.jsonl records 108 cases:
+ 101 positive determinants; 7 singular, with no finite logdet/valuation;
+ 23 satisfy the sufficient independence test;
+ 78 are positive without satisfying that sufficient test;
+ all 101 positive cases have a strictly improved block bound;
+ all checked Green valuation bounds and exact chains pass.
+No cross-witness valuations or determinants were added.
+D=23 is a non-h1 arithmetic control, not a candidate h1 field.
+
+An instructive obstruction to a universal valuation improvement:
+ D=19, ellipse 4(x^2+19*y^2)<=171, R=4, S=2, J=16.
+There are 31 points and 8 independent rows. Both the sufficient rank
+condition and strict inertness cutoff hold. At p=3, Green's 2F(3)=2
+and the actual v_3(det G)=2, with layer list [2].
+Thus a universal replacement 2F(p)+2 is FALSE even on this guarded,
+genuine h=1 control. This does not rule out improvements with extra
+large-D or parameter hypotheses.
+Here the normalized gaps are approximately
+ exact 2.39681460759, block 2.39952131924,
+ Hadamard 2.58987912476, aggregate 3.44802697801.
+The block saving is about .190357805521. These illustrative decimals
+summarize the certified balls saved in the JSONL, not new proof inputs.
+
+Higher derivatives saturate: once J>=R, extra columns vanish identically
+because j>r for every monomial row. A control checks the unchanged Gram
+matrix at J=R and J=R+1. Increasing the printed aggregate bound beyond
+this point must not be confused with new actual matrix information.
+
+Validation and reproduction
+Python-flint 0.9.0, SymPy 1.14.0; Arb precision 160 bits.
+From any directory:
+ python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/test_determinant_lifts.py
+ python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/determinant_lifts.py > /tmp/determinant_lifts.jsonl
+The campaign emits JSONL deterministically; compare it with the saved
+ledger artifact under the recorded environment.
+Twelve unittest controls pass, including modular kernel enumeration,
+singularity, derivative saturation, known-field checks and rejected
+valuation/upper-bound/overlapping-block mutations.
+Existing regressions also run:
+ python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/formic.py
+ python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/verify_exact.py
+ python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/mutation_test.py
+Formic passes including 250 recertified intervals and asymptotic closure.
+The existing exact verifier passes 46 cases with PARI/GP 2.15.4.
+Existing mutations M1 and M3 are caught; M2 remains uncaught. The new
+correlated-matrix control catches its own overstrong block-bound mutation,
+not the old suite's different M2 instance. No existing test was weakened.
+
+Review / security
+A read-only mathematical design reviewer confirmed the layer identity
+and Fischer bound, requesting explicit Smith divisibility checks,
+complete block partitions and a correlated control with strict saving.
+Those checks are present. The campaign is capped at 27 rows and uses
+Flint's integer Smith form, not an unbounded symbolic-matrix search.
+A separate read-only code-review agent inspected the final implementation
+and reported no significant issues. parallel_validation reported zero
+CodeQL Python alerts; its built-in review executable was unavailable,
+so that component is not counted as a completed review. Secret scans
+of changed files found no secrets.
+
+Limits / next mathematical obligation
+Smith computation measures valuations AFTER constructing a small matrix;
+it is not an efficient large-D certificate or a priori stronger bound.
+A sampled block saving does not prove an asymptotic saving. The next
+obligation would be an analytic correlation estimate for a specified
+family, preserving independence and integrality. Field-extension lifts
+remain out of scope: no preservation of class number one is assumed.
+Shared Gram code means the experiment is not an independent rederivation
+of Green's determinant lemmas. Finite controls and AI review are not
+formal verification or human mathematical review.

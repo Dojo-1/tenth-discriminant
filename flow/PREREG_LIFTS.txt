@@ -1,0 +1,42 @@
+DETERMINANT STRUCTURE / LIFTS -- finite experiment, before running it
+
+Question: does retaining row correlation improve the geometric upper
+bound, and what do exact prime-power layers say about valuation slack?
+This is not an all-dimensional theorem or a new class-number proof.
+
+Fixed campaign:
+ D in {7,19,23,43,67,163}; 23 is a non-class-number-one control.
+ Points: the 3 by 3 grid and the exact ellipse 4(x^2+D*y^2)<=9D.
+ (R,S) in {(4,2),(6,2),(9,3)}; J in {1,2,L+M}.
+ L is the maximum number of points on a horizontal line; M its line count.
+ Use the existing integer trace-Gram construction without changing it.
+
+For each case report exact rank and the sufficient independence test
+ J>=L+M and nJ>2RS+J(R+S). Its failure does not imply dependence.
+ Singular cases have no finite log determinant or determinant valuation.
+ For nonsingular cases compare the Green inert-prime lower bound with:
+ exact determinant, ordinary Hadamard, aggregated upper_B, and a product
+ of disjoint principal blocks of size at most two (Fischer inequality).
+ Greedily choose pairs by their exact block/diagonal-product ratio;
+ this is a deterministic heuristic, not a globally optimal partition.
+ Compare logarithmic gaps and gains using 160-bit Arb, not float decisions.
+
+Prime-power lift means the Smith filtration of this integer Gram matrix:
+ if e_i=v_p(s_i) for Smith factors s_i, let c_k=#{i:e_i>=k}.
+ Then sum_k c_k=v_p(det G). The decreasing layer counts describe ONE
+ valuation, not extra independent divisibility. Check product |s_i|=det G
+ and each Green bound v_p(det G)>=2F(p) for actual odd inert p<=R.
+ No extrapolation from measured surplus to a universal stronger bound.
+
+Adversarial controls: singular matrices and failed independence,
+ overlapping/incomplete block partitions, the prime 2 excluded from Green,
+ nested-layer accounting, deliberately overstrong valuation and upper
+ bounds, and a correlated positive definite example. Check derivative
+ saturation at J>=R. Genuine h=1 fields must not give contradictions.
+ Compare witnesses separately; do not add their bounds or valuations.
+ Field extensions are excluded: no class-number-preserving bridge exists
+ in this experiment. Larger modulus layers are not new field extensions.
+
+Pass: all exact inequalities hold and controls catch their mutations.
+ Record any failure, including unsupported improvement claims. A finite
+ gain is useful evidence for a later analytic bound, not such a bound.

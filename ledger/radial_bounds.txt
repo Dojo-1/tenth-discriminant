@@ -1,0 +1,156 @@
+RADIAL CORRELATIONS -- analytic lemma and moment-only bounds
+
+Status: derived mathematical argument with finite exact controls, not a
+formal proof or a human-reviewed theorem. Ender is unchanged. Preregistered
+in flow/PREREG_RADIAL.txt; data in ledger/radial_bounds.jsonl.
+
+1. Exact identities, no angular averaging
+
+Let P be a finite set of distinct integer points z=x+y*sqrt(-D), D>0.
+Write t=|z|^2=x^2+D*y^2 and M_k=sum_(z in P) t^k, including M_0=|P|.
+The existing trace Gram construction uses row
+ u_(r,s)(z,j)=(r)_j*z^(r-j)*conjugate(z)^s, 0<=j<J,
+with (r)_j=r!/(r-j)! when j<=r, otherwise zero.
+Its real inner product is 2 Re sum u*conjugate(v).
+For every finite P, including nonsymmetric sets and the origin,
+ G_(r,s),(r,s)=2 sum_(j<=min(r,J-1)) (r)_j^2 M_(r+s-j),
+ G_(r,s),(r+1,s+1)
+   =2 sum_(j<=min(r,J-1)) (r)_j (r+1)_j M_(r+s+1-j).
+This follows by multiplying the powers explicitly: the cross term is
+|z|^(2(r+s+1-j)). No assumption of continuous circular symmetry is used.
+The diagonal of (r+1,s+1) includes its j=r+1 term if J>=r+2;
+that term must NOT be dropped merely because the cross entry lacks it.
+
+These formulas evaluate the selected principal blocks and all diagonals
+from R+S-1 moments. They do not construct a full Gram matrix, its rank,
+its determinant or Smith factors. Exact sufficient independence checks
+must therefore precede certification.
+
+2. An analytic correlation estimate
+
+Suppose 0<a<=t<=b for every point, and r>=J-1. The pair
+u=u_(r,s), v=u_(r+1,s+1) satisfies, in every column,
+ v=lambda*u, lambda=t*(r+1)/(r+1-j).
+There is no unmatched derivative column because j<J<=r+1.
+Thus a<=lambda<=B=b*(r+1)/(r+2-J).
+The same positive lambda multiplies both real coordinates in the trace
+inner product. Normalize their nonnegative squared u-coordinates into
+weights with sum one. Then
+ corr(u,v)^2=(E lambda)^2/E(lambda^2).
+Since (lambda-a)(lambda-B)<=0,
+ E(lambda^2)<=(a+B)*mu-a*B, mu=E lambda.
+Moreover
+ ((a+B)*mu-a*B)/mu^2 <= (a+B)^2/(4*a*B);
+after multiplying through this is
+ ((a+B)*mu-2*a*B)^2>=0.
+Consequently corr^2>=4K/(1+K)^2, K=B/a>=1.
+The 2x2 block determinant divided by its diagonal product is therefore
+at most ((K-1)/(K+1))^2.
+
+If a>=b/2 and r>=2(J-1), then
+ (r+1)/(r+2-J)<=2, hence K<=4 and the block ratio is <=9/25.
+This also covers J=1. If K=1 the two rows are proportional, so they
+cannot both occur in a positive definite full Gram matrix. The uniform
+9/25 bound remains a valid, deliberately weaker statement.
+
+Take any DISJOINT collection of m such pairs; all remaining rows are
+singleton blocks. For a positive definite G, Fischer's inequality gives
+ det G <= exact moment-block product <= Hadamard*(9/25)^m.
+The implementation verifies both the parameter-specific rational bound
+and the uniform 9/25 bound using exact integers. Its partition is a
+fixed lexicographic rule, not an assertion of optimal pairing.
+
+3. Independence, arithmetic and comparison scope
+
+For the actual selected point set count L=max points on a horizontal
+line, M=number of such lines, n=|P|. Require
+ J>=L+M and nJ>2RS+J(R+S).
+The inherited interpolation lemma then supplies nonvanishing; trace
+Gram positivity supplies det G>0. Failure is "no certificate", not a
+proof of singularity. Annular deletion preserves integrality but does
+not automatically preserve independence or point-count estimates from
+the full disk. The line and point counts are recomputed exactly.
+
+Let Q=prod_(odd inert p<=R) p^(2F(p)), with inertness computed for the
+actual D, not asserted from an h=1 hypothesis. The inherited valuation
+lemma gives Q<=det G. The campaign checks Q<=moment-block product.
+There is no combination of prime-power layers or different witnesses.
+No annulus bound is installed into Ender's all-D proof or cutoff.
+
+4. What this guarantee can and cannot buy
+
+Its guaranteed logarithmic saving is m*log(25/9), with m<=RS/2.
+After the existing normalization by R^2*S it is at most
+ log(25/9)/(2R), which tends to zero.
+Thus THIS GUARANTEE cannot change the leading log(D) slope as R grows.
+It can sharpen a finite upper bound. This is NOT an upper bound on the
+actual moment-based saving, nor an impossibility theorem for larger
+blocks, better pair estimates or other sampling sets.
+Changing a disk to an annulus also removes points. A block saving on
+the new witness is not by itself a net improvement on the disk witness.
+
+5. Fixed campaign and observations
+
+For D in {19,43,163}, use 18D<=x^2+D*y^2<=36D;
+R in {64,128,256}, S in {2,4}, J=L+M.
+All endpoints and points are integers. No full matrix is used here.
+The 18 registered cases yield:
+ - 16 certified by the sufficient independence conditions;
+ - 2 uncertified (D=19, R=256, both S), recorded without reinterpretation;
+ - 8 certified with eligible pairs and strict saving;
+ - 8 certified with no eligible pairs, hence no saving.
+The maximum row count is 1024; not all largest cases certify.
+For both failed cases n=228<R+S (258 or 260); the sufficient condition
+nJ>2RS+J(R+S) is therefore impossible for EVERY positive J on that
+fixed point set. Adjusting J alone cannot repair this particular guard.
+This does not prove actual row dependence.
+
+For example D=19,R=128,S=2,J=42 has 228 points and 45 disjoint pairs.
+Normalized gain is about .00140302447934 guaranteed and .0108528954116
+from exact moments. Normalized gap above Q drops from 3.42442912074
+(Hadamard) to 3.41357622533 (moment bound). The gap stays positive:
+this is NOT a contradiction for the genuine h=1 field D=19.
+Every registered case has strict_cutoff=false: R is above the
+Rabinowitsch range, so using ONLY actually inert primes is essential.
+No improved finite discriminant cutoff is claimed.
+
+6. Reproduction and validation
+
+Existing requirements only: python-flint 0.9.0, SymPy 1.14.0;
+Arb precision 160 bits. From any directory:
+ python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/test_radial_bounds.py
+ python /home/runner/work/tenth-discriminant/tenth-discriminant/tools/radial_bounds.py > /tmp/radial_bounds.jsonl
+Compare the latter with the saved ledger/radial_bounds.jsonl.
+
+Nine unittest controls pass. Moment diagonals and cross entries match
+the existing full-Gram construction on ellipses, asymmetric point sets,
+grids and derivative-boundary cases. They include explicit mutations
+of cross moments and unjustified derivative-range/annulus assumptions.
+The analytic ratio is checked against an explicit two-row example
+that rejects a stronger bound. Disjoint partitions, failed rank guards,
+exact annulus enumeration and zero-pair behavior are checked.
+A certified D=1 algebraic control (R=40,S=2,J=20, 80 rows) with a
+nontrivial pair compares the moment bound to the full exact determinant.
+D=1 here labels Z[i] in the algebraic control; it is NOT asserted to be
+the absolute fundamental discriminant, which would be 4.
+
+Existing 12 lift controls and the full Formic suite also pass, including
+250 Ender intervals and its unchanged universal-envelope margin.
+Shared code and finite controls do not independently establish Green's
+lemmas, formalization or human mathematical review.
+
+7. Review and security
+
+A read-only mathematical reviewer independently rederived the entry
+multiplier, weighted correlation inequality, moment formulas and gain
+scaling. Its design-stage concerns were the missing annulus filter in
+the OLD ellipse experiment and the possibility of zero eligible pairs.
+On reading the completed separate annulus implementation, exact guards,
+recorded zero-pair cases and derivation, it confirmed both resolved and
+reported no remaining blocking mathematical issue.
+A separate read-only code-review agent reported no significant issues.
+parallel_validation found zero CodeQL Python alerts; its built-in code
+review could not run because its configured model was unavailable.
+That unavailable component is not counted as a successful review.
+Secret scans found no secrets. Both this campaign and the previous
+108-case lift campaign reproduced byte-for-byte against saved artifacts.
