@@ -1,0 +1,21 @@
+{
+  "distinct_families": 38,
+  "families": 48,
+  "lean_status": "Consult the exact final-head workflow. Finite checks do not prove universal Lean statements.",
+  "negative_controls": 9,
+  "normal_final_optimized_identical": true,
+  "parameter_observations": 2592,
+  "point_order_checks": 36,
+  "product_cover_checks": 144,
+  "product_families": 48,
+  "production_gram_equalities": 36,
+  "protocol_sha256": "ab7df00b2eb281c9909029e13d5aebf27bf1e112a989fb9a4672438e7cbed6dd",
+  "qualifying_gram_matrices": 36,
+  "real_translation_checks": 36,
+  "scalar_set_checks": 144,
+  "scope": "Finite same-author exact checks. The 48 base cases contain 38 distinct polynomials; no held-out or generalization claim. Polynomial multiplicities and symbolic derivatives are different calculations on the same inputs. The production source is hash-pinned and only pure mul/powers/gram functions are executed. No performance, new cutoff or classification claim.",
+  "seed": 20261022,
+  "source_blob": "af332fc48f68c57fbe47223bf533f45fd1dbac99",
+  "source_drift_rejected": true,
+  "status": "PASS"
+}

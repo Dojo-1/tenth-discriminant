@@ -34,11 +34,11 @@ example {n : Nat} (P : Finset Complex) (R S : Nat)
 
 PAIRS = {
  'coefficient_variable_degree': (
-  'example : wDegree (Polynomial.C (Polynomial.X^3 : Polynomial Rat)) = 3 := by simp',
-  'example : wDegree (Polynomial.C (Polynomial.X^3 : Polynomial Rat)) = 2 := by simp'),
+  'example : wDegree (Polynomial.C (Polynomial.X^3 : Polynomial Rat)) = 3 := by rw [wDegree_C]; simp',
+  'example : wDegree (Polynomial.C (Polynomial.X^3 : Polynomial Rat)) = 2 := by rw [wDegree_C]; norm_num'),
  'zero_fiber_retained': (
-  'example : specialize (Polynomial.C (Polynomial.X-1 : Polynomial Rat)) 1 = 0 := by simp',
-  'example : specialize (Polynomial.C (Polynomial.X-1 : Polynomial Rat)) 1 = 1 := by simp'),
+  'example : specialize (Polynomial.C (Polynomial.X-1 : Polynomial Rat)) 1 = 0 := by rw [specialize_C]; norm_num',
+  'example : specialize (Polynomial.C (Polynomial.X-1 : Polynomial Rat)) 1 = 1 := by rw [specialize_C]; norm_num'),
  'ordinary_not_divided_derivative': (
   'example : ((Polynomial.derivative^[3]) (Polynomial.X^3 : Polynomial Rat)).eval 0 = 6 := by norm_num [Polynomial.iterate_derivative_X_pow_eq_C_mul, Nat.descFactorial]',
   'example : ((Polynomial.derivative^[3]) (Polynomial.X^3 : Polynomial Rat)).eval 0 = 1 := by norm_num [Polynomial.iterate_derivative_X_pow_eq_C_mul, Nat.descFactorial]'),
