@@ -1,5 +1,17 @@
 # Status — 2026-10-21
 
+## 2026-10-22: determinant structure / prime-power lifts
+
+A separate preregistered finite experiment now varies matrix size,
+derivative order and sampling geometry, and measures nested Smith
+prime-power layers and disjoint-block Fischer bounds. Of 108 cases,
+101 are nonsingular and all 101 improve on ordinary Hadamard.
+A genuine h=1 control with strict cutoff and sufficient independence
+has v_3(det G)=2F(3), ruling out a uniform extra two units of valuation.
+These are finite observations, not an all-dimensional improvement or
+a change to Ender's proof. Details, commands and limitations:
+`ledger/determinant_lifts.txt`; raw results: `ledger/determinant_lifts.jsonl`.
+
 ## Latest: ENDER / FORMIC
 
 Ender's computational campaign is complete: factorials and Legendre's identity replace Dusart, without any prime-distribution estimate.
