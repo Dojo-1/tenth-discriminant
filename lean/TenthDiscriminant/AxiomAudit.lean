@@ -5,11 +5,11 @@ ones, rather than treating a regex of theorem source text as authoritative. -/
 open Lean Elab Command
 
 elab "#audit_namespace " ns:ident : command => do
-  let prefix := ns.getId
+  let scopeName := ns.getId
   let env ← getEnv
   let mut count := 0
   for (name, info) in env.constants.toList do
-    if prefix.isPrefixOf (Lean.privateToUserName name) then
+    if scopeName.isPrefixOf (Lean.privateToUserName name) then
       match info with
       | .axiomInfo _ => throwError "PROJECT_AXIOM {name}"
       | .thmInfo _ =>
@@ -21,5 +21,5 @@ elab "#audit_namespace " ns:ident : command => do
         count := count + 1
       | _ => pure ()
   if count == 0 then
-    throwError "EMPTY_PROOF_AUDIT {prefix}"
-  logInfo m!"AUDIT_OK {prefix}: {count} theorem declarations (including generated auxiliaries)"
+    throwError "EMPTY_PROOF_AUDIT {scopeName}"
+  logInfo m!"AUDIT_OK {scopeName}: {count} theorem declarations (including generated auxiliaries)"
