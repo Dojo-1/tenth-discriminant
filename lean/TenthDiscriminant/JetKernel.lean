@@ -157,7 +157,7 @@ theorem realJet_eq_polynomial_jet {n : Nat} (P : Finset Complex) (J : Nat)
     (rows : Fin n -> Nat × Nat) (x : Fin n -> Real) (c : Fin J × P) :
     realJet P J rows x c =
       ((Polynomial.derivative^[c.1.val])
-        (rowSection rows (fun i => (x i : Complex)) (conj (c.2 : Complex)))).eval c.2 := by
+        (rowSection rows (fun i => (x i : Complex)) (conj (c.2 : Complex)))).eval (c.2 : Complex) := by
   rw [rowSection_iterate_eval]
   rfl
 
@@ -173,13 +173,12 @@ theorem circle_power_jet_zero (z w : Complex) (hzw : z*w=1)
     simp [mul_comm w z, hzw]
   rw [hp, zero_pow (by omega), zero_mul]
 
-theorem circle_power_nonzero (z w : Complex) (hzw : z*w=1) (m : Nat) :
+theorem circle_power_nonzero (w : Complex) (m : Nat) :
     (Polynomial.C w * Polynomial.X - 1)^m ≠ (0 : Polynomial Complex) := by
   apply pow_ne_zero
   intro h
-  have hc := congrArg (fun p : Polynomial Complex => p.coeff 1) h
-  have hw : w = 0 := by simpa using hc
-  simp [hw] at hzw
+  have hc := congrArg (fun p : Polynomial Complex => p.eval 0) h
+  norm_num at hc
 
 /-- Complex row dependence is NOT equivalent to a real trace-Gram kernel. -/
 theorem traceGramMatrix_real_complex_control :
