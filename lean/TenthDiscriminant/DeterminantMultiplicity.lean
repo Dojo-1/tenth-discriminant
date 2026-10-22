@@ -30,7 +30,7 @@ theorem row_divisors_dvd_det {n : Type*} [Fintype n] [DecidableEq n]
 /-- Vanishing selected rows supply at least their cardinality in multiplicity. -/
 theorem polynomial_rows_vanish_pow_dvd_det {n : Type*} [Fintype n] [DecidableEq n]
     (A : Matrix n n (Polynomial K)) (w : K) (s : Finset n)
-    (h : forall i ∈ s, forall j, (A i j).eval w = 0) :
+    (h : forall i, i ∈ s -> forall j, (A i j).eval w = 0) :
     (Polynomial.X - Polynomial.C w)^s.card ∣ A.det := by
   classical
   have hd : forall i j, (if i ∈ s then Polynomial.X - Polynomial.C w else 1) ∣ A i j := by
@@ -46,10 +46,10 @@ theorem polynomial_rows_vanish_pow_dvd_det {n : Type*} [Fintype n] [DecidableEq 
 theorem constant_row_transform_pow_dvd_det {n : Type*} [Fintype n] [DecidableEq n]
     (A : Matrix n n (Polynomial K)) (U : Matrix n n K) (hU : U.det = 1)
     (w : K) (s : Finset n)
-    (h : forall i ∈ s, forall j, (U * A.map (Polynomial.evalRingHom w)) i j = 0) :
+    (h : forall i, i ∈ s -> forall j, (U * A.map (Polynomial.evalRingHom w)) i j = 0) :
     (Polynomial.X - Polynomial.C w)^s.card ∣ A.det := by
   classical
-  have he : forall i ∈ s, forall j,
+  have he : forall i, i ∈ s -> forall j,
       ((U.map Polynomial.C * A) i j).eval w = 0 := by
     intro i hi j
     simpa [Matrix.mul_apply, Matrix.map_apply, Polynomial.eval_finset_sum] using h i hi j
@@ -82,9 +82,16 @@ theorem taylorCoefficientMatrix_mul {n : Nat} (z : K)
     (taylorCoefficientMatrix n z * A) i j =
       (Polynomial.taylor z (finiteColumnPolynomial A j)).coeff i.val := by
   classical
-  simp [taylorCoefficientMatrix, finiteColumnPolynomial, Matrix.mul_apply,
-    Polynomial.taylor_apply, Polynomial.sum_comp, Polynomial.mul_comp,
-    Polynomial.pow_comp, Polynomial.coeff_C_mul, mul_comm]
+  have ht (k : Fin n) :
+      Polynomial.taylor z (Polynomial.C (A k j) * Polynomial.X^k.val) =
+        Polynomial.C (A k j) * (Polynomial.X + Polynomial.C z)^k.val := by
+    simp only [Polynomial.taylor_apply, Polynomial.mul_comp, Polynomial.C_comp,
+      Polynomial.pow_comp, Polynomial.X_comp]
+  simp only [taylorCoefficientMatrix, Matrix.mul_apply, Matrix.of_apply,
+    finiteColumnPolynomial, map_sum, ht, Polynomial.coeff_sum, Polynomial.coeff_C_mul]
+  apply Finset.sum_congr rfl
+  intro k hk
+  exact mul_comm _ _
 
 /-- A root of order c has its first c Taylor coefficients zero. -/
 theorem taylor_coeff_zero_of_root_power (p : Polynomial K) (z : K) (c i : Nat)
@@ -92,7 +99,7 @@ theorem taylor_coeff_zero_of_root_power (p : Polynomial K) (z : K) (c i : Nat)
     (Polynomial.taylor z p).coeff i = 0 := by
   obtain ⟨q, rfl⟩ := hp
   simp [Polynomial.taylor_apply, Polynomial.mul_comp, Polynomial.pow_comp,
-    Polynomial.sub_comp, Polynomial.coeff_X_pow_mul, Nat.not_le_of_lt hi]
+    Polynomial.sub_comp, Polynomial.coeff_X_pow_mul', Nat.not_le_of_lt hi]
 
 /-- Generic fixed-size local multiplicity theorem, with no degree-loss exception. -/
 theorem column_root_power_dvd_det {n : Nat}
@@ -103,7 +110,7 @@ theorem column_root_power_dvd_det {n : Nat}
   classical
   let e : Fin c ↪ Fin n :=
     ⟨fun i => ⟨i.val, lt_of_lt_of_le i.isLt hc⟩,
-      by intro a b hab; apply Fin.ext; exact congrArg Fin.val hab⟩
+      by intro a b hab; apply Fin.ext; exact congrArg (fun k : Fin n => k.val) hab⟩
   let s : Finset (Fin n) := Finset.univ.map e
   have hs : s.card = c := by simp [s]
   rw [← hs]
@@ -128,8 +135,11 @@ theorem finiteColumnPolynomial_eq_specialization {n : Nat}
     ((cols j).as_sum_range' n (hdeg j))
   rw [Polynomial.map_sum] at hm
   simp only [Polynomial.map_monomial] at hm
-  rw [finiteColumnPolynomial, Fin.sum_univ_eq_sum_range]
-  simpa [polynomialCoefficientMatrix, Matrix.map_apply, Polynomial.C_mul_X_pow_eq_monomial] using hm.symm
+  change (Finset.univ.sum (fun k : Fin n =>
+    Polynomial.C ((Polynomial.evalRingHom w) ((cols j).coeff k.val)) * Polynomial.X^k.val)) = _
+  rw [Fin.sum_univ_eq_sum_range
+    (fun k => Polynomial.C ((Polynomial.evalRingHom w) ((cols j).coeff k)) * Polynomial.X^k) n]
+  simpa only [Polynomial.C_mul_X_pow_eq_monomial] using hm.symm
 
 /-- Specialized column-root divisibility implies determinant-root divisibility. -/
 theorem polynomial_columns_root_power_dvd_det {n : Nat}
@@ -157,10 +167,14 @@ theorem fixedSylvesterColumns_degree (F G : Polynomial (Polynomial K)) (a b : Na
     (fixedSylvesterColumns F G a b j).natDegree < a+b := by
   unfold fixedSylvesterColumns
   split_ifs with hj
-  · have hd := Polynomial.natDegree_mul_le (Polynomial.X^j.val) F
+  · have hd : (Polynomial.X^j.val * F).natDegree <=
+        (Polynomial.X^j.val : Polynomial (Polynomial K)).natDegree + F.natDegree :=
+      Polynomial.natDegree_mul_le
     have hx : (Polynomial.X^j.val : Polynomial (Polynomial K)).natDegree <= j.val := by simp
     omega
-  · have hd := Polynomial.natDegree_mul_le (Polynomial.X^(j.val-b)) G
+  · have hd : (Polynomial.X^(j.val-b) * G).natDegree <=
+        (Polynomial.X^(j.val-b) : Polynomial (Polynomial K)).natDegree + G.natDegree :=
+      Polynomial.natDegree_mul_le
     have hx : (Polynomial.X^(j.val-b) : Polynomial (Polynomial K)).natDegree <= j.val-b := by simp
     have hlt := j.isLt
     omega
@@ -189,7 +203,7 @@ theorem fixedDerivativeSylvester_multiplicity (F : Polynomial (Polynomial K)) (a
     ((Polynomial.natDegree_derivative_le F).trans (Nat.sub_le_sub_right hF 1)) w z (m-1)
     (by omega)
   · exact (pow_dvd_pow _ (by omega : m-1 <= m)).trans hroot
-  · rw [Polynomial.derivative_map]
+  · rw [← Polynomial.derivative_map]
     exact Polynomial.pow_sub_one_dvd_derivative_of_pow_dvd hroot
 
 end
