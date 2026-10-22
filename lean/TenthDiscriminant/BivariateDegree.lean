@@ -21,8 +21,7 @@ def swapHom : Polynomial (Polynomial K) →+* Polynomial (Polynomial K) :=
 @[simp] theorem swap_monomial_monomial (n m : Nat) (c : K) :
     swapHom (Polynomial.monomial n (Polynomial.monomial m c)) =
       Polynomial.monomial m (Polynomial.monomial n c) := by
-  simp [Polynomial.monomial_eq_C_mul_X, map_mul, map_pow]
-  ring
+  simp [← Polynomial.C_mul_X_pow_eq_monomial, map_mul, map_pow] <;> ring
 
 /-- This is an exact involution, not a lossy projection. -/
 theorem swap_involutive (p : Polynomial (Polynomial K)) : swapHom (swapHom p) = p := by
@@ -41,7 +40,7 @@ theorem swap_coeff (p : Polynomial (Polynomial K)) (i j : Nat) :
     | monomial m c =>
       rw [swap_monomial_monomial]
       simp only [Polynomial.coeff_monomial]
-      split_ifs <;> simp_all
+      split_ifs <;> simp_all [Polynomial.coeff_monomial]
 
 /-- Actual W degree, not a chosen upper bound. -/
 def wDegree (p : Polynomial (Polynomial K)) : Nat := (swapHom p).natDegree
@@ -52,6 +51,7 @@ def wDegree (p : Polynomial (Polynomial K)) : Nat := (swapHom p).natDegree
 
 theorem swap_ne_zero {p : Polynomial (Polynomial K)} (hp : p ≠ 0) : swapHom p ≠ 0 := by
   intro h
+  apply hp
   have hh := congrArg (swapHom (K := K)) h
   simpa only [swap_involutive, map_zero] using hh
 
@@ -69,9 +69,9 @@ theorem coefficient_natDegree_le_wDegree (p : Polynomial (Polynomial K)) (i : Na
   by_contra! h
   have hz : (swapHom p).coeff (p.coeff i).natDegree = 0 :=
     Polynomial.coeff_eq_zero_of_natDegree_lt h
-  have hc := congrArg (fun q : Polynomial K => q.coeff i) hz
+  have hc : ((swapHom p).coeff (p.coeff i).natDegree).coeff i = 0 := by rw [hz]; simp
   rw [swap_coeff] at hc
-  exact (Polynomial.leadingCoeff_ne_zero.mpr hi) (by simpa only [Polynomial.coeff_zero] using hc)
+  exact (Polynomial.leadingCoeff_ne_zero.mpr hi) hc
 
 /-- The degree definition agrees with uniform coefficient-degree bounds. -/
 theorem wDegree_le_of_coefficients (p : Polynomial (Polynomial K)) (b : Nat)
