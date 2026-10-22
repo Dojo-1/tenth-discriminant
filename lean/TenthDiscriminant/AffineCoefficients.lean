@@ -43,7 +43,7 @@ theorem coefficientMatrix_comp {n : Nat} (cols : Fin n -> Polynomial R)
   have hs (ps : Fin n -> Polynomial R) :
       (Finset.univ.sum ps).comp (affinePolynomial u h) =
         Finset.univ.sum (fun k => (ps k).comp (affinePolynomial u h)) :=
-    (Polynomial.compRingHom (affinePolynomial u h)).map_sum ps Finset.univ
+    map_sum (Polynomial.compRingHom (affinePolynomial u h)) ps Finset.univ
   have hc (ps : Fin n -> Polynomial R) :
       (Finset.univ.sum ps).coeff i.val = Finset.univ.sum (fun k => (ps k).coeff i.val) :=
     map_sum (Polynomial.lcoeff R i.val) ps Finset.univ
@@ -65,12 +65,14 @@ theorem sylvesterColumns_degree (F G : Polynomial R) (m n : Nat)
   · have hd : (Polynomial.X^j.val * F).natDegree <=
         (Polynomial.X^j.val : Polynomial R).natDegree + F.natDegree :=
         Polynomial.natDegree_mul_le
-    have hx : (Polynomial.X^j.val : Polynomial R).natDegree <= j.val := by simp
+    have hx : (Polynomial.X^j.val : Polynomial R).natDegree <= j.val :=
+      Polynomial.natDegree_X_pow_le
     omega
   · have hd : (Polynomial.X^(j.val-m) * G).natDegree <=
         (Polynomial.X^(j.val-m) : Polynomial R).natDegree + G.natDegree :=
         Polynomial.natDegree_mul_le
-    have hx : (Polynomial.X^(j.val-m) : Polynomial R).natDegree <= j.val-m := by simp
+    have hx : (Polynomial.X^(j.val-m) : Polynomial R).natDegree <= j.val-m :=
+      Polynomial.natDegree_X_pow_le
     have hlt := j.isLt
     omega
 
@@ -80,7 +82,6 @@ def sylvesterInputMatrix (m n : Nat) (u h : R) : Matrix (Fin (m+n)) (Fin (m+n)) 
     if i.val < m then ((affinePolynomial u h)^j.val).coeff i.val else 0
   else if i.val < m then 0
     else ((affinePolynomial u h)^(j.val-m)).coeff (i.val-m)
-
 
 /-- A degree bound that does not assume nonzero slope. -/
 theorem affinePolynomial_degree (u h : R) : (affinePolynomial u h).natDegree <= 1 := by
@@ -132,7 +133,6 @@ theorem sylvesterInputMatrix_det (m n : Nat) (u h : R) :
           ((affine_power_degree u h j.val).trans_lt hij)
       | exact Polynomial.coeff_eq_zero_of_natDegree_lt
           ((affine_power_degree u h (j.val-m)).trans_lt (by omega))
-      | omega
   have hd (i : Fin (m+n)) : sylvesterInputMatrix m n u h i i =
       if i.val < m then u^i.val else u^(i.val-m) := by
     unfold sylvesterInputMatrix
@@ -155,6 +155,7 @@ theorem sylvester_affine_matrix (F G : Polynomial R) (m n : Nat)
       sylvesterCoefficients (F.comp (affinePolynomial u h))
         (G.comp (affinePolynomial u h)) m n * sylvesterInputMatrix m n u h := by
   classical
+  change affineBasisMatrix (m+n) u h * coefficientMatrix (sylvesterColumns F G m n) = _
   rw [← coefficientMatrix_comp (sylvesterColumns F G m n) u h
     (sylvesterColumns_degree F G m n hF hG)]
   apply Matrix.ext
@@ -217,6 +218,33 @@ theorem affinePowerProduct_add (m n : Nat) (u : R) :
   simp only [pow_add, Finset.prod_mul_distrib,
     Finset.prod_const, Finset.card_univ, Fintype.card_fin, ← pow_mul]
   ring
+
+/-- Rescale only the second block of columns. -/
+theorem sylvesterCoefficients_scale_right (F G : Polynomial R) (m n : Nat) (c : R) :
+    (sylvesterCoefficients F (Polynomial.C c * G) m n).det =
+      c^n * (sylvesterCoefficients F G m n).det := by
+  classical
+  have hm : sylvesterCoefficients F (Polynomial.C c * G) m n =
+      Matrix.of (fun i j => (if j.val < m then 1 else c) *
+        sylvesterCoefficients F G m n i j) := by
+    apply Matrix.ext
+    intro i j
+    simp only [sylvesterCoefficients, coefficientMatrix, sylvesterColumns, Matrix.of_apply]
+    split_ifs with hj
+    · simp
+    · rw [show Polynomial.X^(j.val-m) * (Polynomial.C c * G) =
+          Polynomial.C c * (Polynomial.X^(j.val-m) * G) by ring, Polynomial.coeff_C_mul]
+  rw [hm, Matrix.det_mul_row]
+  have hp : Finset.univ.prod (fun j : Fin (m+n) => if j.val < m then (1 : R) else c) = c^n := by
+    rw [Fin.prod_univ_add]
+    have hl : Finset.univ.prod (fun j : Fin m => if (Fin.castAdd n j).val < m then (1 : R) else c) = 1 := by
+      apply Finset.prod_eq_one
+      intro j hj
+      simp [j.isLt]
+    have hr : Finset.univ.prod (fun j : Fin n => if (Fin.natAdd m j).val < m then (1 : R) else c) = c^n := by
+      simp
+    rw [hl, hr, one_mul]
+  rw [hp]
 
 variable [IsDomain R]
 
