@@ -17,3 +17,4 @@ import TenthDiscriminant.EnvelopeDecay
 import TenthDiscriminant.AxiomAudit
 import TenthDiscriminant.GranuleCertificates
 import TenthDiscriminant.SylvesterNonzero
+import TenthDiscriminant.SylvesterIrreducible

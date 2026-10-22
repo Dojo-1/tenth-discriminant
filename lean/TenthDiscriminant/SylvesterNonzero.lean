@@ -28,9 +28,9 @@ theorem boundedPolynomial_coeff {n : Nat} (v : Fin n -> L) (i : Fin n) :
         if j = i then v j else 0 := by
     rw [Polynomial.coeff_C_mul, Polynomial.coeff_X_pow]
     by_cases hj : j = i
-    - subst j; simp
-    - have hv : j.val ≠ i.val := fun h => hj (Fin.ext h)
-      simp [hj, hv]
+    · subst j; simp
+    · have hv : j.val ≠ i.val := fun h => hj (Fin.ext h)
+      simp [hj, hv, Ne.symm hv]
   simp_rw [ht]
   simp
 
@@ -42,7 +42,7 @@ theorem boundedPolynomial_high_coeff {n : Nat} (v : Fin n -> L) (k : Nat)
   apply Finset.sum_eq_zero
   intro i hi
   have hv : i.val ≠ k := by have := i.isLt; omega
-  simp [Polynomial.coeff_C_mul, Polynomial.coeff_X_pow, hv]
+  simp [Polynomial.coeff_C_mul, Polynomial.coeff_X_pow, hv, Ne.symm hv]
 
 /-- m shifts of F followed by n shifts of G. -/
 def columns (F G : Polynomial L) (m n : Nat) (j : Fin (m+n)) : Polynomial L :=
@@ -57,12 +57,12 @@ theorem columns_degree (F G : Polynomial L) (m n : Nat)
     (columns F G m n j).natDegree < m+n := by
   unfold columns
   split_ifs with hj
-  - have hd : (Polynomial.X^j.val * F).natDegree <=
+  · have hd : (Polynomial.X^j.val * F).natDegree <=
         (Polynomial.X^j.val : Polynomial L).natDegree + F.natDegree :=
       Polynomial.natDegree_mul_le
     have hx : (Polynomial.X^j.val : Polynomial L).natDegree <= j.val := by simp
     omega
-  - have hd : (Polynomial.X^(j.val-m) * G).natDegree <=
+  · have hd : (Polynomial.X^(j.val-m) * G).natDegree <=
         (Polynomial.X^(j.val-m) : Polynomial L).natDegree + G.natDegree :=
       Polynomial.natDegree_mul_le
     have hx : (Polynomial.X^(j.val-m) : Polynomial L).natDegree <= j.val-m := by simp
@@ -81,9 +81,9 @@ theorem kernel_syzygy (F G : Polynomial L) (m n : Nat)
     ext k
     simp only [Polynomial.finset_sum_coeff, Polynomial.coeff_C_mul, Polynomial.coeff_zero]
     by_cases hk : k < m+n
-    - have hh := congrFun hv (show Fin (m+n) from ⟨k,hk⟩)
+    · have hh := congrFun hv (show Fin (m+n) from ⟨k,hk⟩)
       simpa [Matrix.mulVec, dotProduct, coeffMatrix, mul_comm] using hh
-    - apply Finset.sum_eq_zero
+    · apply Finset.sum_eq_zero
       intro j hj
       rw [Polynomial.coeff_eq_zero_of_natDegree_lt
         ((columns_degree F G m n hF hG j).trans_le (Nat.le_of_not_lt hk)), mul_zero]
@@ -125,9 +125,9 @@ theorem coeffMatrix_kernel_eq_zero (F G : Polynomial L) (m n : Nat)
     exact (mul_eq_zero.mp hh).resolve_right hF0
   funext j
   refine Fin.addCases (fun i => ?_) (fun i => ?_) j
-  - have hh := congrArg (fun p : Polynomial L => p.coeff i.val) hA
+  · have hh := congrArg (fun p : Polynomial L => p.coeff i.val) hA
     simpa only [A, boundedPolynomial_coeff, Polynomial.coeff_zero, Pi.zero_apply] using hh
-  - have hh := congrArg (fun p : Polynomial L => p.coeff i.val) hB
+  · have hh := congrArg (fun p : Polynomial L => p.coeff i.val) hB
     simpa only [B, boundedPolynomial_coeff, Polynomial.coeff_zero, Pi.zero_apply] using hh
 
 /-- Field-level nonsingularity is proved by the actual coefficient kernel. -/
