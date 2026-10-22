@@ -1,0 +1,43 @@
+RADIAL CORRELATIONS -- registered before the campaign
+
+Goal: replace observed full-matrix pairing by explicit moment formulas
+and a uniform analytic correlation bound for a specified annular family.
+Do not modify Ender, its certificates, or its asymptotic slope.
+
+Rows (r,s) and (r+1,s+1) have matching phase at each derivative column.
+Their diagonal and cross entries can be computed from M_k=sum |z|^(2k)
+without forming a full RS by RS matrix. Verify those formulas against
+the existing independent full-Gram construction on small point sets,
+including origins, asymmetric sets and derivative orders above r+1.
+
+Proposed uniform lemma: for a<=|z|^2<=b, a>0, and r>=J-1, the second
+row equals the first times a positive column-dependent factor lambda in
+[a,b*(r+1)/(r+2-J)]. The weighted Kantorovich inequality bounds the
+squared correlation below by 4K/(1+K)^2, K=b*(r+1)/(a*(r+2-J)).
+In particular, a>=b/2 and r>=2(J-1) give K<=4 and a two-row block ratio
+at most 9/25. Prove this before calling it an analytic improvement.
+Pair rows lexicographically, without overlap, only in this safe regime.
+Keep unpaired rows as singletons. Require the existing sufficient
+independence conditions before advertising a positive determinant bound.
+If they fail, record "no certificate", not singular or contradictory.
+
+Fixed campaign: D in {19,43,163}, outer t<=36D, inner 2t>=36D,
+integer points (x,y), t=x^2+D*y^2; R in {64,128,256}, S in {2,4};
+J=L+M from exact line counts. Record failures and zero eligible pairs.
+For certified cases compare exact diagonal and moment-block products,
+the uniform diagonal*(9/25)^m bound, and Green's actual-inert-prime
+product. Report normalized logarithmic gaps, not raw dimension as gain.
+No full Gram matrix, determinant or Smith form in the larger campaign.
+
+Adversarial controls: wrong cross moments; derivative-boundary extra
+terms; origin not satisfying annulus; r below the safe derivative range;
+overlapping blocks; missing rank guard; and a strengthened correlation
+bound contradicted by an explicit positive definite example.
+Check moment bounds against full determinants on small certified cases.
+
+Crucial limitation to establish: the guaranteed saving m*log(25/9)
+is at most RS*log(25/9)/2; after division by R^2*S it is O(1/R).
+This guarantees a finite saving but cannot itself change the leading
+large-D slope. It is NOT an upper bound on the actual moment saving.
+Changing a disk to an annulus also costs points; do not compare those
+as if they were the same witness or claim an improved global cutoff.
