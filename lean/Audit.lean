@@ -1,0 +1,3 @@
+import TenthDiscriminant
+
+#audit_namespace TenthDiscriminant

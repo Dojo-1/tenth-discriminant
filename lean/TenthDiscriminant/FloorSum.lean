@@ -33,16 +33,15 @@ theorem floorSum_scaled (R q : ℕ) :
 theorem floorSum_closed (R q : ℕ) :
     floorSum R q = q*(R/q)*(R/q-1)/2 + (R/q)*(R%q) := by
   have h := floorSum_scaled R q
-  by_cases hk : R/q = 0
-  · simp [hk] at h ⊢
-    omega
-  · have hk1 : 1 ≤ R/q := by omega
-    have heq : q*(R/q)*(R/q-1) + q*(R/q) = q*(R/q)^2 := by
-      calc
-        q*(R/q)*(R/q-1) + q*(R/q) = q*(R/q)*((R/q-1)+1) := by ring
-        _ = q*(R/q)*(R/q) := by rw [Nat.sub_add_cancel hk1]
-        _ = q*(R/q)^2 := by ring
-    have h₂ : 2*floorSum R q = q*(R/q)*(R/q-1) + 2*((R/q)*(R%q)) := by nlinarith
-    omega
+  generalize hk : R/q = k at *
+  generalize hm : R%q = m at *
+  cases k with
+  | zero =>
+      simp at h ⊢
+      omega
+  | succ k =>
+      simp only [Nat.succ_eq_add_one, Nat.add_sub_cancel] at h ⊢
+      have h₂ : 2*floorSum R q = q*(k+1)*k + 2*((k+1)*m) := by nlinarith
+      omega
 
 end TenthDiscriminant
