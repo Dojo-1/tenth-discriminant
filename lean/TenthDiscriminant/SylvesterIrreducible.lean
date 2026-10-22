@@ -24,7 +24,7 @@ theorem fixedSylvesterMatrix_map_to_field
   all_goals simp [fixedSylvesterMatrix, polynomialCoefficientMatrix,
     fixedSylvesterColumns, NonzeroBridge.coeffMatrix, NonzeroBridge.columns,
     Matrix.map_apply, Matrix.submatrix, hj, Polynomial.coeff_X_pow_mul',
-    Polynomial.coeff_map]
+    Polynomial.coeff_map, apply_ite]
 
 /-- The original fixed determinant is nonzero when its field images are coprime. -/
 theorem fixedSylvester_det_ne_zero_of_coprime_map
@@ -34,7 +34,7 @@ theorem fixedSylvester_det_ne_zero_of_coprime_map
     (hcop : IsCoprime (F.map phi) (G.map phi)) :
     (fixedSylvesterMatrix F G a b).det ≠ 0 := by
   have hd : (F.map phi).natDegree = a :=
-    (Polynomial.natDegree_map_eq_of_injective hphi).trans hF
+    (Polynomial.natDegree_map_eq_of_injective hphi F).trans hF
   have hf0 : F.map phi ≠ 0 := by
     intro hf
     rw [hf, Polynomial.natDegree_zero] at hd
@@ -44,8 +44,10 @@ theorem fixedSylvester_det_ne_zero_of_coprime_map
     b a hf0 hd hg hcop
   have he : phi ((fixedSylvesterMatrix F G a b).det) =
       (NonzeroBridge.coeffMatrix (F.map phi) (G.map phi) b a).det := by
-    rw [RingHom.map_det, fixedSylvesterMatrix_map_to_field,
-      Matrix.det_submatrix_equiv_self]
+    calc
+      phi ((fixedSylvesterMatrix F G a b).det) =
+          ((fixedSylvesterMatrix F G a b).map phi).det := RingHom.map_det phi _
+      _ = _ := by rw [fixedSylvesterMatrix_map_to_field, Matrix.det_submatrix_equiv_self]
   intro hz
   apply hn
   rw [hz, map_zero] at he
@@ -67,6 +69,8 @@ theorem fixedDerivativeSylvester_ne_zero_of_primitive_irreducible
     [CharZero K] (F : Polynomial (Polynomial K)) (a : Nat) (ha : 1 <= a)
     (hF : F.natDegree = a) (hp : F.IsPrimitive) (hi : Irreducible F) :
     (fixedSylvesterMatrix F F.derivative a (a-1)).det ≠ 0 := by
+  classical
+  letI : NormalizedGCDMonoid (Polynomial K) := Classical.choice inferInstance
   let phi : Polynomial K →+* FractionRing (Polynomial K) :=
     algebraMap (Polynomial K) (FractionRing (Polynomial K))
   have hi' : Irreducible (F.map phi) :=
@@ -106,7 +110,7 @@ theorem primitive_specialization_ne_zero
   have hc (i : Nat) : (Polynomial.X - Polynomial.C w) ∣ F.coeff i := by
     apply Polynomial.dvd_iff_isRoot.mpr
     have hi := congrArg (fun p : Polynomial K => p.coeff i) hz
-    simpa only [Polynomial.coeff_map, Polynomial.evalRingHom_apply,
+    simpa only [Polynomial.coeff_map,
       Polynomial.coeff_zero, Polynomial.IsRoot] using hi
   have hd : Polynomial.C (Polynomial.X - Polynomial.C w) ∣ F :=
     (Polynomial.C_dvd_iff_dvd_coeff _ _).mpr hc
