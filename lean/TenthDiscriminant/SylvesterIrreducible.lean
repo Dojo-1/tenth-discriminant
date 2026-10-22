@@ -25,6 +25,7 @@ theorem fixedSylvesterMatrix_map_to_field
     fixedSylvesterColumns, NonzeroBridge.coeffMatrix, NonzeroBridge.columns,
     Matrix.map_apply, Matrix.submatrix, hj, Polynomial.coeff_X_pow_mul',
     Polynomial.coeff_map, apply_ite]
+  all_goals split_ifs <;> simp_all
 
 /-- The original fixed determinant is nonzero when its field images are coprime. -/
 theorem fixedSylvester_det_ne_zero_of_coprime_map
