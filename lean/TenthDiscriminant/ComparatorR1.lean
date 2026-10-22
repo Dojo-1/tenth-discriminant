@@ -15,27 +15,31 @@ noncomputable section
 theorem comparatorR1_overpadding :
     let F : Polynomial (Polynomial Rat) := Polynomial.X^2 - Polynomial.C Polynomial.X
     (fixedSylvesterMatrix F F.derivative 3 2).det = 0 := by
-  let F : Polynomial (Polynomial Rat) := Polynomial.X^2 - Polynomial.C Polynomial.X
-  change (fixedSylvesterMatrix F F.derivative 3 2).det = 0
-  have hF : F.natDegree <= 2 := by
-    dsimp only [F]
-    exact (Polynomial.natDegree_sub_le _ _).trans (by norm_num)
-  have hG : F.derivative.natDegree <= 1 :=
-    (Polynomial.natDegree_derivative_le F).trans (Nat.sub_le_sub_right hF 1)
+  dsimp only
   apply Matrix.det_eq_zero_of_row_eq_zero (4 : Fin 5)
   intro j
-  change (fixedSylvesterColumns F F.derivative 3 2 j).coeff 4 = 0
+  have hF : (Polynomial.X^2 - Polynomial.C Polynomial.X :
+      Polynomial (Polynomial Rat)).natDegree <= 2 := by
+    exact (Polynomial.natDegree_sub_le _ _).trans (by norm_num)
+  have hG : (Polynomial.X^2 - Polynomial.C Polynomial.X :
+      Polynomial (Polynomial Rat)).derivative.natDegree <= 1 :=
+    (Polynomial.natDegree_derivative_le _).trans (Nat.sub_le_sub_right hF 1)
+  change (fixedSylvesterColumns
+    (Polynomial.X^2 - Polynomial.C Polynomial.X)
+    (Polynomial.X^2 - Polynomial.C Polynomial.X).derivative 3 2 j).coeff 4 = 0
   apply Polynomial.coeff_eq_zero_of_natDegree_lt
   unfold fixedSylvesterColumns
   split_ifs with hj
-  · have hd : (Polynomial.X^j.val * F).natDegree <=
-        (Polynomial.X^j.val : Polynomial (Polynomial Rat)).natDegree + F.natDegree :=
+  · have hd : (Polynomial.X^j.val * (Polynomial.X^2 - Polynomial.C Polynomial.X) :
+        Polynomial (Polynomial Rat)).natDegree <=
+        (Polynomial.X^j.val : Polynomial (Polynomial Rat)).natDegree +
+        (Polynomial.X^2 - Polynomial.C Polynomial.X : Polynomial (Polynomial Rat)).natDegree :=
       Polynomial.natDegree_mul_le
     have hx : (Polynomial.X^j.val : Polynomial (Polynomial Rat)).natDegree <= j.val := by simp
     omega
-  · have hd : (Polynomial.X^(j.val-2) * F.derivative).natDegree <=
-        (Polynomial.X^(j.val-2) : Polynomial (Polynomial Rat)).natDegree + F.derivative.natDegree :=
-      Polynomial.natDegree_mul_le
+  · have hd := Polynomial.natDegree_mul_le
+      (p := (Polynomial.X^(j.val-2) : Polynomial (Polynomial Rat)))
+      (q := (Polynomial.X^2 - Polynomial.C Polynomial.X : Polynomial (Polynomial Rat)).derivative)
     have hx : (Polynomial.X^(j.val-2) : Polynomial (Polynomial Rat)).natDegree <= j.val-2 := by simp
     have hj5 := j.isLt
     omega
@@ -110,7 +114,8 @@ theorem comparatorR1_characteristic_three :
       (3 : Polynomial (ZMod 3)) = Polynomial.C (3 : ZMod 3) :=
         (map_natCast (Polynomial.C : ZMod 3 →+* Polynomial (ZMod 3)) 3).symm
       _ = 0 := by rw [h3, map_zero]
-  simp [Polynomial.derivative_X_pow, hp3]
+  simp only [Polynomial.derivative_sub, Polynomial.derivative_X_pow,
+    Polynomial.derivative_C, sub_zero, hp3, Polynomial.C_0, zero_mul]
 
 end
 end TenthDiscriminant
