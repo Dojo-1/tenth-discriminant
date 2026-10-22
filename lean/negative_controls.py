@@ -68,4 +68,6 @@ subprocess.run([sys.executable, str(root / 'jet_uniqueness_controls.py')],
                cwd=root, check=True, timeout=120)
 subprocess.run([sys.executable, str(root / 'jet_negative_controls.py')],
                cwd=root, check=True, timeout=120)
-print('PASS: matched mathematical controls, proof-audit controls, exact Gram and jet controls.')
+subprocess.run([sys.executable, str(root / 'multiplicity_negative_controls.py')],
+               cwd=root, check=True, timeout=120)
+print('PASS: mathematical controls, proof-audit probes, Gram, jet and multiplicity controls.')

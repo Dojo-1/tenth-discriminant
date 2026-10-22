@@ -55,8 +55,10 @@ theorem constant_row_transform_pow_dvd_det {n : Type*} [Fintype n] [DecidableEq 
     simpa [Matrix.mul_apply, Matrix.map_apply, Polynomial.eval_finset_sum] using h i hi j
   have hd := polynomial_rows_vanish_pow_dvd_det (U.map Polynomial.C * A) w s he
   have hu : (U.map Polynomial.C).det = 1 := by
-    rw [← RingHom.map_det]
-    simp [hU]
+    calc
+      (U.map Polynomial.C).det = Polynomial.C U.det :=
+        (RingHom.map_det (Polynomial.C : K →+* Polynomial K) U).symm
+      _ = 1 := by rw [hU, map_one]
   simpa [Matrix.det_mul, hu] using hd
 
 /-- The finite coefficient matrix of translation Z -> Z+z. -/
@@ -87,8 +89,13 @@ theorem taylorCoefficientMatrix_mul {n : Nat} (z : K)
         Polynomial.C (A k j) * (Polynomial.X + Polynomial.C z)^k.val := by
     simp only [Polynomial.taylor_apply, Polynomial.mul_comp, Polynomial.C_comp,
       Polynomial.pow_comp, Polynomial.X_comp]
+  have hs (f : Fin n -> Polynomial K) :
+      (Finset.univ.sum f).coeff i.val = Finset.univ.sum (fun k => (f k).coeff i.val) :=
+    map_sum (Polynomial.lcoeff K i.val) f Finset.univ
   simp only [taylorCoefficientMatrix, Matrix.mul_apply, Matrix.of_apply,
-    finiteColumnPolynomial, map_sum, ht, Polynomial.coeff_sum, Polynomial.coeff_C_mul]
+    finiteColumnPolynomial, map_sum, ht]
+  rw [hs]
+  simp only [Polynomial.coeff_C_mul]
   apply Finset.sum_congr rfl
   intro k hk
   exact mul_comm _ _
