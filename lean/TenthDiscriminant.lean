@@ -6,6 +6,7 @@ import TenthDiscriminant.TraceGram
 import TenthDiscriminant.GramHadamard
 import TenthDiscriminant.GramMatrix
 import TenthDiscriminant.JetKernel
+import TenthDiscriminant.DeterminantMultiplicity
 import TenthDiscriminant.Coverage
 import TenthDiscriminant.RecordedCoverage
 import TenthDiscriminant.Envelope
