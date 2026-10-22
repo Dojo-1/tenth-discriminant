@@ -18,3 +18,6 @@ import TenthDiscriminant.AxiomAudit
 import TenthDiscriminant.GranuleCertificates
 import TenthDiscriminant.SylvesterNonzero
 import TenthDiscriminant.SylvesterIrreducible
+import TenthDiscriminant.SylvesterDegree
+import TenthDiscriminant.ContactBudget
+import TenthDiscriminant.IrreducibleContact
