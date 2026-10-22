@@ -13,3 +13,4 @@ import TenthDiscriminant.RecordedCoverage
 import TenthDiscriminant.Envelope
 import TenthDiscriminant.EnvelopeDecay
 import TenthDiscriminant.AxiomAudit
+import TenthDiscriminant.GranuleCertificates
