@@ -8,6 +8,8 @@ import TenthDiscriminant.GramMatrix
 import TenthDiscriminant.JetKernel
 import TenthDiscriminant.DeterminantMultiplicity
 import TenthDiscriminant.SylvesterLocal
+import TenthDiscriminant.ComparatorR1
+import TenthDiscriminant.ComparatorM2
 import TenthDiscriminant.Coverage
 import TenthDiscriminant.RecordedCoverage
 import TenthDiscriminant.Envelope
