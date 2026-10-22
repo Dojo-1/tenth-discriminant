@@ -1,0 +1,27 @@
+{
+  "frozen_target": "791ebf4815d8eb4be5da3b01527ca7f0877b6d0e",
+  "training_tasks": 24,
+  "test_tasks": 96,
+  "training_probes": 168,
+  "test_reference_probes": 672,
+  "policies": {
+    "fixed": {"probes": 201, "penalized_mean": "217/96"},
+    "crisp": {"probes": 194, "penalized_mean": "35/16"},
+    "fuzzy": {"probes": 199, "penalized_mean": "215/96"},
+    "blend": {"probes": 199, "penalized_mean": "215/96"}
+  },
+  "successes_each": 80,
+  "failures_each": 16,
+  "false_certificates_observed": 0,
+  "blend_vs_crisp": {"wins": 1, "ties": 89, "losses": 6, "extra_probes": 5},
+  "blend_vs_fuzzy": {"wins": 0, "ties": 96, "losses": 0},
+  "performance_promotion": false,
+  "python_tests": 17,
+  "seeded_enclosure_cases": 512,
+  "scalar_rescaling_checks": 384,
+  "unique_test_polynomials": 92,
+  "train_test_polynomial_overlap": 3,
+  "overlap_sensitivity": "all three overlap tasks tie across policies; five-probe deficit unchanged",
+  "optimized_run": "substantive JSON identical; timing excluded",
+  "interpretation": "Finite same-author reference experiment. No empirical advantage over crisp. No global theorem."
+}
