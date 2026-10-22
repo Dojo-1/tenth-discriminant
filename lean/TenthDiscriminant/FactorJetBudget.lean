@@ -86,7 +86,8 @@ theorem bad_map_C_card (q : Polynomial K) (hq : q ≠ 0) (s : Finset K)
     exact (Polynomial.rootMultiplicity_pos hq).mp hm
 
 /-- A product can only be bad where at least one of its factors is bad. -/
-theorem bad_mul_subset (F G : Polynomial (Polynomial K)) (hF : F ≠ 0) (hG : G ≠ 0)
+theorem bad_mul_subset [DecidableEq K]
+    (F G : Polynomial (Polynomial K)) (hF : F ≠ 0) (hG : G ≠ 0)
     (s : Finset K) (z : K -> K) :
     badParameters (F*G) s z ⊆ badParameters F s z ∪ badParameters G s z := by
   classical
@@ -131,7 +132,6 @@ theorem bad_irreducible_card (F : Polynomial (Polynomial K)) (hi : Irreducible F
     have hh := bad_map_C_card q hq0 s z hz
     have hd : F.natDegree = q.natDegree := by
       rw [hq, Polynomial.natDegree_map_eq_of_injective Polynomial.C_injective]
-    rw [hq] at hh
     rw [← hq] at hh
     omega
   have hpos : 1 ≤ F.natDegree := by omega

@@ -25,3 +25,4 @@ import TenthDiscriminant.ContactBudget
 import TenthDiscriminant.IrreducibleContact
 import TenthDiscriminant.BivariateDegree
 import TenthDiscriminant.FactorJetBudget
+import TenthDiscriminant.JetCountGram
