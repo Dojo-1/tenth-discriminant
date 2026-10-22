@@ -1,0 +1,24 @@
+{
+  "frozen_main": "5bde735a86c93b938574128583b3396d07101093",
+  "upstream_degree_head": "96967b50d6479ff7e6eebc0847813ebfcfb5d4eb",
+  "protocol_sha256": "06dd0f4f4443dc69130dd97e0edb51bb9568d372c102c4ed4cf042e447b1b39b",
+  "python": "3.13.5",
+  "sympy": "1.14.0",
+  "seed": 20261023,
+  "general_pairs": 48,
+  "singular_general": 13,
+  "polynomial_cases": 48,
+  "irreducible_cases": 36,
+  "production_specializations": 144,
+  "zero_polynomial_determinants": 4,
+  "negative_controls": 6,
+  "overpadding_checks": 144,
+  "boundary": {
+    "empty": "1",
+    "unit_F": "4"
+  },
+  "status": "PASS",
+  "normal_optimized_json_identical": true,
+  "scope": "finite same-author controls; exact algebraic paths, not independent semantic review or universal Python/Lean equivalence",
+  "lean_status": "Consult the exact commit workflow. Finite Python results do not certify Lean."
+}

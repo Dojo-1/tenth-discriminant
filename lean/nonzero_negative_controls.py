@@ -27,8 +27,6 @@ example (K : Type*) [Field K] [CharZero K]
     (hc : forall w, w IN s -> b < m w) : s.card <= 2*a-1 :=
   irreducible_fixedDerivativeSylvester_excessive_contact_card F a b ha hb hdeg hi hw s z m hroot hc
 '''.replace('!=','\u2260').replace(' IN ',' \u2208 ').replace(' DIV ',' \u2223 ')
-F = '(Polynomial.X^2 - Polynomial.C Polynomial.X : Polynomial (Polynomial Rat))'
-S = '(fixedSylvesterMatrix '+F+' '+F+'.derivative 2 1).det'
 # Explicit lets avoid parsing projection notation on compound expressions.
 POINT = '''let F : Polynomial (Polynomial Rat) := Polynomial.X^2 - Polynomial.C Polynomial.X
 ((fixedSylvesterMatrix F F.derivative 2 1).det).eval 0'''
@@ -38,7 +36,12 @@ FIBER = '''let F : Polynomial (Polynomial Rat) := Polynomial.C Polynomial.X * (P
 F.map (Polynomial.evalRingHom 0)'''
 DROP = '''let F : Polynomial (Polynomial Rat) := Polynomial.C Polynomial.X * Polynomial.X + 1
 F.map (Polynomial.evalRingHom 0)'''
+CHAR3 = '''(Polynomial.X^3 - Polynomial.C Polynomial.X :
+Polynomial (Polynomial (ZMod 3))).derivative'''
 PAIRS = {
+    'characteristic_zero_not_optional': (
+        'example : '+CHAR3+' = 0 := comparatorR1_characteristic_three',
+        'example : '+CHAR3+' != 0 := by rw [comparatorR1_characteristic_three]; norm_num'),
     'exact_degree_not_upper_bound': (
         'example : '+PAD+' = 0 := comparatorR1_overpadding',
         'example : '+PAD+' != 0 := by\n  dsimp only\n  rw [comparatorR1_overpadding]\n  norm_num'),
