@@ -92,6 +92,18 @@ Existing mutations M1 and M3 are caught; M2 remains uncaught. The new
 correlated-matrix control catches its own overstrong block-bound mutation,
 not the old suite's different M2 instance. No existing test was weakened.
 
+Review / security
+A read-only mathematical design reviewer confirmed the layer identity
+and Fischer bound, requesting explicit Smith divisibility checks,
+complete block partitions and a correlated control with strict saving.
+Those checks are present. The campaign is capped at 27 rows and uses
+Flint's integer Smith form, not an unbounded symbolic-matrix search.
+A separate read-only code-review agent inspected the final implementation
+and reported no significant issues. parallel_validation reported zero
+CodeQL Python alerts; its built-in review executable was unavailable,
+so that component is not counted as a completed review. Secret scans
+of changed files found no secrets.
+
 Limits / next mathematical obligation
 Smith computation measures valuations AFTER constructing a small matrix;
 it is not an efficient large-D certificate or a priori stronger bound.
