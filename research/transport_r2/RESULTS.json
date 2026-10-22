@@ -1,0 +1,111 @@
+{
+  "frozen_main": "791ebf4815d8eb4be5da3b01527ca7f0877b6d0e",
+  "protocol_sha256": "9f5f3c519fa13e1549393ea66cf43bff83d826ef9c96587f643461b88c355631",
+  "python": "3.13.5",
+  "sympy": "1.14.0",
+  "seeds": [
+    1701,
+    2701
+  ],
+  "tasks_per_policy": 432,
+  "cache_capacity": 4,
+  "false_acceptances": 0,
+  "promotion_call_count": {
+    "euclidean": false,
+    "hyperbolic": false,
+    "euclidean_slow": false,
+    "hyperbolic_slow": false
+  },
+  "interpretation": "same-author synthetic reuse corpus, not unseen-family generalization; no Lean proof or general geometric speedup",
+  "totals": {
+    "direct": {
+      "production_calls": 1008,
+      "admission_calls": 1008,
+      "hits": 0,
+      "misses": 432,
+      "nonzero": 360,
+      "unresolved": 72,
+      "hard_resets": 0,
+      "max_entries": 0,
+      "max_bytes": 0
+    },
+    "raw_lru": {
+      "production_calls": 1008,
+      "admission_calls": 1008,
+      "hits": 0,
+      "misses": 432,
+      "nonzero": 360,
+      "unresolved": 72,
+      "hard_resets": 0,
+      "max_entries": 4,
+      "max_bytes": 1534
+    },
+    "canonical_lru": {
+      "production_calls": 664,
+      "admission_calls": 664,
+      "hits": 135,
+      "misses": 297,
+      "nonzero": 360,
+      "unresolved": 72,
+      "hard_resets": 0,
+      "max_entries": 4,
+      "max_bytes": 844
+    },
+    "euclidean": {
+      "production_calls": 658,
+      "admission_calls": 658,
+      "hits": 144,
+      "misses": 288,
+      "nonzero": 360,
+      "unresolved": 72,
+      "hard_resets": 276,
+      "max_entries": 4,
+      "max_bytes": 817
+    },
+    "hyperbolic": {
+      "production_calls": 664,
+      "admission_calls": 664,
+      "hits": 144,
+      "misses": 288,
+      "nonzero": 360,
+      "unresolved": 72,
+      "hard_resets": 276,
+      "max_entries": 4,
+      "max_bytes": 817
+    },
+    "euclidean_slow": {
+      "production_calls": 658,
+      "admission_calls": 658,
+      "hits": 144,
+      "misses": 288,
+      "nonzero": 360,
+      "unresolved": 72,
+      "hard_resets": 276,
+      "max_entries": 4,
+      "max_bytes": 817
+    },
+    "hyperbolic_slow": {
+      "production_calls": 664,
+      "admission_calls": 664,
+      "hits": 144,
+      "misses": 288,
+      "nonzero": 360,
+      "unresolved": 72,
+      "hard_resets": 276,
+      "max_entries": 4,
+      "max_bytes": 817
+    },
+    "canonical_unbounded": {
+      "production_calls": 228,
+      "admission_calls": 228,
+      "hits": 300,
+      "misses": 132,
+      "nonzero": 360,
+      "unresolved": 72,
+      "hard_resets": 0,
+      "max_entries": 22,
+      "max_bytes": 3933
+    }
+  },
+  "tests_passed": 20
+}
