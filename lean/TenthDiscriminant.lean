@@ -9,6 +9,7 @@ import TenthDiscriminant.JetKernel
 import TenthDiscriminant.DeterminantMultiplicity
 import TenthDiscriminant.SylvesterLocal
 import TenthDiscriminant.SylvesterDegree
+import TenthDiscriminant.ContactBudget
 import TenthDiscriminant.Coverage
 import TenthDiscriminant.RecordedCoverage
 import TenthDiscriminant.Envelope

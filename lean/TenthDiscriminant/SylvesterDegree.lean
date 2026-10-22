@@ -57,12 +57,14 @@ theorem derivative_coefficient_natDegree_le
     (hF : forall i, (F.coeff i).natDegree <= b) (i : Nat) :
     (F.derivative.coeff i).natDegree <= b := by
   rw [Polynomial.coeff_derivative]
-  calc
-    (F.coeff (i+1) * ((i+1 : Nat) : Polynomial K)).natDegree <=
-        (F.coeff (i+1)).natDegree + (((i+1 : Nat) : Polynomial K)).natDegree :=
-      Polynomial.natDegree_mul_le
-    _ <= b + 0 := Nat.add_le_add (hF (i+1)) (by simp)
-    _ = b := Nat.add_zero _
+  have hd : (F.coeff (i+1) * ((i+1 : Nat) : Polynomial K)).natDegree <= b := by
+    calc
+      (F.coeff (i+1) * ((i+1 : Nat) : Polynomial K)).natDegree <=
+          (F.coeff (i+1)).natDegree + (((i+1 : Nat) : Polynomial K)).natDegree :=
+        Polynomial.natDegree_mul_le
+      _ <= b + 0 := Nat.add_le_add (hF (i+1)) (by simp)
+      _ = b := Nat.add_zero _
+  simpa only [Nat.cast_add, Nat.cast_one] using hd
 
 /-- Degree control is for the existing matrix, without a new resultant convention. -/
 theorem fixedSylvesterMatrix_entry_natDegree_le
