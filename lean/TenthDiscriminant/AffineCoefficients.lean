@@ -66,13 +66,13 @@ theorem sylvesterColumns_degree (F G : Polynomial R) (m n : Nat)
         (Polynomial.X^j.val : Polynomial R).natDegree + F.natDegree :=
         Polynomial.natDegree_mul_le
     have hx : (Polynomial.X^j.val : Polynomial R).natDegree <= j.val :=
-      Polynomial.natDegree_X_pow_le
+      Polynomial.natDegree_X_pow_le j.val
     omega
   · have hd : (Polynomial.X^(j.val-m) * G).natDegree <=
         (Polynomial.X^(j.val-m) : Polynomial R).natDegree + G.natDegree :=
         Polynomial.natDegree_mul_le
     have hx : (Polynomial.X^(j.val-m) : Polynomial R).natDegree <= j.val-m :=
-      Polynomial.natDegree_X_pow_le
+      Polynomial.natDegree_X_pow_le (j.val-m)
     have hlt := j.isLt
     omega
 
