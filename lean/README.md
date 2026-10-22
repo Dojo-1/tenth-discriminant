@@ -1,43 +1,48 @@
-# Lean components — checked foundations, global theorem open
+# Lean components - checked matrix bounds, global theorem open
 
 **This is a partial formalization, not a Lean proof of the class-number-one classification.**
 
-At base commit `6ac874f` this repository had no Lean files or Lake project. The new layer is pinned to **Lean 4.19.0** and **Mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b`**. No claim to the newest toolchain is made.
+The project uses **Lean 4.19.0** and **Mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b`**. No toolchain upgrade or newest-version claim is involved. The matrix follow-up starts from merged PR #5 (`c1dbf68`).
 
-## Verified snapshot
+## The new matrix boundary
 
-At source commit [`2048b9a`](https://github.com/Dojo-1/tenth-discriminant/tree/2048b9a5f14229d118cae7e70050db54cd006281/lean), [workflow run 39758347058](https://github.com/Dojo-1/tenth-discriminant/actions/runs/39758347058) completed successfully:
+`GramMatrix.lean` assembles the existing `traceGramEntry` into a full finite real matrix. Its rows are actual complex derivative rows, not an assumed positive matrix. For every finite complex point set, natural derivative cutoff, and finite row-label family, it proves:
 
-| Check | Recorded result | What it does not establish |
-|---|---|---|
-| `lake build` | All project modules compiled. One nonfatal tactic-style linter warning in `TraceGram.lean`. | That every claim in the mathematical argument has been encoded. |
-| `verify_sources.py` | Source digest and all **250 interval endpoint pairs** match the exact Lean recurrence. | Correctness of the Arb margin values or of the inequalities they summarize. |
-| `audit.py` | **86 compiled theorem entries, including generated auxiliaries**, depend only on `propext`, `Classical.choice`, and `Quot.sound`. | 86 distinct mathematical contributions, or independent assurance of specification fidelity. |
-| `negative_controls.py` | Three valid mathematical controls accepted and three false strengthenings rejected; a valid private proof accepted and hidden `sorry`, custom-axiom and native-evaluation dependencies rejected. | Exhaustive mutation coverage or general security against malicious Lean extensions. |
+```text
+G = 2 (A A^T + B B^T), with A and B the real and imaginary row coordinates;
+x^T G x = 2 sum_c ((sum_i A_ic x_i)^2 + (sum_i B_ic x_i)^2);
+G is positive semidefinite;
+0 <= det G <= product_i G_ii.
+```
 
-The 86 entries include 47 explicit theorem declarations and compiler-generated equation/auxiliary proofs. Counts are inventory, **not a completion percentage**. Subsequent CI runs must be read against their exact commit; this recorded run is not a blanket approval of later edits.
+The upper bound is also stated using the exact diagonal-moment formula from `TraceGram.lean`. `GramHadamard.lean` derives the real PSD diagonal-product bound using Mathlib's volume-form inequality and PSD factorization. The origin, repeated labels, zero derivative range and empty dimensions are not excluded by the universal statements.
 
-## What is proved here
+**Positive semidefinite does not mean nonsingular.** Duplicate actual derivative rows have determinant zero. No theorem here claims strict positivity without independence. The geometric nonvanishing proof, integer implementation correspondence, integrality, inert-prime valuation and aggregate `upper_B` estimate remain separate obligations.
+
+## Verification record
+
+Read the CI result for the exact source commit. The matrix snapshot is `c64a8655bed0aa0a9c12def30a47d89aaf12e827`; its run is [39774302749](https://github.com/Dojo-1/tenth-discriminant/actions/runs/39774302749). **All four gates completed successfully on that snapshot.** Later commits require their own CI check or an explicit code-identity comparison.
+
+The successful gates were `verify_sources.py`, `lake build`, `audit.py`, and `negative_controls.py`. The audit examined 105 compiled theorem entries, including generated auxiliaries; this is not 105 independent mathematical results. The source check still matches all 250 saved interval endpoint pairs; it does not certify the numerical inequalities inside those intervals. The compiled axiom audit permits only `propext`, `Classical.choice`, and `Quot.sound`, including transitive dependencies and generated/private theorem entries.
+
+The negative-control suite retains the three earlier mathematical pairs and four axiom-audit probes, and adds three actual Gram good/bad pairs: duplicate-row positivity, a dropped unmatched derivative column, and the trace factor of two. Setup/type errors are not accepted as mathematical counterstatement rejection. `exact_gram_controls.py`, also run by that suite, exercises six known-answer and 64 fixed-seed Gaussian-integer cases with exact rational elimination. It checks point/row reordering and extra zero derivative columns. These are finite same-author controls, not universal proofs or independent semantic review.
+
+For historical comparison, [run 39758347058](https://github.com/Dojo-1/tenth-discriminant/actions/runs/39758347058) checked the earlier `2048b9a` component snapshot. Its 47 explicit declarations / 86 compiled entries belong to that snapshot, not to a completion percentage or the current inventory.
+
+## Component map
 
 | Module | Exact scope |
 |---|---|
-| `Arithmetic`, `FloorSum` | Principal-form integer norm bound, strict integer cutoffs, valuation-weight endpoint regressions, the finite sum-of-minima identity, and the universal quotient/remainder formula for the floor sum. |
-| `Radial`, `MomentMatrix` | Weighted-moment correlation and the `9/25` bound for an actual two-by-two moment matrix, a sharpness example in that moment class, a dropped-hypothesis counterexample, derivative-parameter inequality, and normalized pair-gain ceiling. |
-| `TraceGram` | Actual complex derivative rows; exact diagonal and radial cross-entry moment identities without angular symmetry; the lattice norm-squared embedding; origin and unmatched-derivative-column controls. |
-| `Coverage`, `RecordedCoverage` | Sound exact interval stitching and kernel-reduced verification of the recorded 250-pair chain. |
-| `Envelope`, `EnvelopeDecay` | The `15/64` coefficient, decay of the actual `C=80` error function, and positivity propagation **conditional on endpoint positivity**. |
+| `Arithmetic`, `FloorSum` | Principal-form integer bounds, strict cutoffs, valuation-weight endpoint controls, sum-of-minima identity and quotient/remainder floor sum. |
+| `Radial`, `MomentMatrix` | Weighted-moment correlation and two-by-two determinant bound, moment-class sharpness/hypothesis controls and normalized pair-gain ceiling. |
+| `TraceGram` | Complex derivative rows, exact diagonal and radial cross moments, lattice norm embedding, origin and unmatched-column controls. |
+| `GramHadamard`, `GramMatrix` | Full real trace matrix, exact real/imaginary factorization and quadratic identity, PSD, determinant nonnegativity, Hadamard bound and exact moment-diagonal upper bound. |
+| `Coverage`, `RecordedCoverage` | Exact interval stitching and kernel-reduced verification of the saved endpoint chain. |
+| `Envelope`, `EnvelopeDecay` | The `15/64` coefficient, actual `C=80` error decay and propagation conditional on endpoint positivity. |
 
-Read [FORMALIZATION.md](FORMALIZATION.md) for the claim-to-declaration map and all unresolved links.
+See [FORMALIZATION.md](FORMALIZATION.md) for the claim-to-declaration map. The field/class-group links, small-prime inertness, interpolation and determinant divisibility, complete factorial/Legendre estimates, numerical certificates, CRT/reduced-form closure and full Fischer block product remain open. No surrogate predicate or assumed structure field supplies `h(-D)=1 -> D<=163`.
 
-## What is not proved here
-
-The connection to actual quadratic fields, fundamental discriminants and class groups; small-prime inertness; the complete integer derivative Gram construction and its integrality, nonvanishing and inert-prime divisibility; ellipse counts and interpolation; the full factorial/Legendre prime-mass inequality; kernel-checkable replacements for the numerical inequalities; the full CRT sieve and reduced-form/class-group correspondence; the determinant-to-envelope inequalities and numerical starting margin; and the full disjoint-block Fischer product remain open in this project.
-
-The derivative-row moment identities are now proved, but their application through bounded multipliers to the weighted-moment determinant inequality still needs a separate bridge. A formula for Gram entries does not prove that the full matrix is nonsingular.
-
-These are documented obligations, **not assumed axioms or disguised theorem parameters**. No declaration here asserts `h(-D)=1` implies `D <= 163`.
-
-## Run from the repository root
+## Reproduce from the repository root
 
 ```sh
 cd lean
@@ -49,10 +54,6 @@ python3 audit.py
 python3 negative_controls.py
 ```
 
-The axiom audit enumerates the compiled `TenthDiscriminant` namespace, including private names and generated theorem entries. A source scan supplements that check; it is not the proof checker. Deliberately invalid probes exist only as strings in the negative-control script and are executed in temporary files, never imported into the proof library.
+Deliberately invalid probes are temporary files generated by the test script, never imports in the proof library. Earlier failed builds remain in history. The matrix follow-up required explicit finite-subtype/range sum transport and function extensionality; theorem statements were not weakened to repair those failures. One inherited tactic-style warning in `TraceGram.lean` is nonfatal.
 
-## Review boundary
-
-Build success is necessary, not sufficient: compare each declaration's hypotheses and conclusion with its source ledger. Lean provides a distinct, independently implemented proof-checking mechanism; the specification, source interpretation and test selection were authored in the same development loop. No independent semantic or human mathematical review is claimed.
-
-Two earlier build failures are preserved in Git history: the floor-sum proof needed explicit quotient/remainder generalization, and the audit utility used the reserved identifier `prefix`. Both were repaired without weakening the mathematical statements or bypassing the audit. The proof-stage branch remains separate from `main` until reviewed.
+Lean is a separately implemented proof checker, not an independent judge of whether every intended theorem was encoded. Proof selection, tests and interpretation share authorship. The next mathematical target is the actual independence/nonvanishing bridge; no global cutoff is improved by this component change.

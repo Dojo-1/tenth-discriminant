@@ -3,6 +3,8 @@ import TenthDiscriminant.FloorSum
 import TenthDiscriminant.Radial
 import TenthDiscriminant.MomentMatrix
 import TenthDiscriminant.TraceGram
+import TenthDiscriminant.GramHadamard
+import TenthDiscriminant.GramMatrix
 import TenthDiscriminant.Coverage
 import TenthDiscriminant.RecordedCoverage
 import TenthDiscriminant.Envelope
