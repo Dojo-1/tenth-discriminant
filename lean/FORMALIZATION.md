@@ -7,13 +7,13 @@ The matrix follow-up starts at merged PR #5 (`c1dbf68`). Its implementation snap
 | Source obligation | Lean artifact | Boundary |
 |---|---|---|
 | Principal quadratic form and nonrational norm threshold | `principalNorm_four`, `principalNorm_lower`, `small_norm_impossible` | Integer algebra. Identification with the ring of integers and principal ideals remains OPEN. |
-| h(-D)=1 forces prime D=3 mod 8 and inert small primes | None | OPEN: genuine fields, fundamental discriminants, class groups, ideal norms, ramification and splitting. |
+| h(-D)=1 and D>163 force prime D=3 mod 8 and inert small primes | None | OPEN: genuine fields, fundamental discriminants, class groups, ideal norms, ramification and splitting. The D>163 condition is essential. |
 | Strict R<(D+1)/4 throughout intervals | `strict_cutoff`, `interval_strict_cutoff`, endpoint controls | Integer cutoff only, not inertness. |
 | Optimized A(q)=sum of floor(r/q), r<R | `floorSum_scaled`, `floorSum_closed` | Universal identity matching the expression in `tools/ender.py` for positive q. Lean division is total at q=0; Python division is not. No Python-language semantics theorem. |
 | F(p) and sum-of-minima identity | `valuationWeight`, `sum_min_identity` | Exact arithmetic. Link to determinant valuations OPEN. |
 | Legendre superfactorial identity and logarithmic form | None | OPEN in this project. |
 | Factorial lower bound, small-prime subtraction, higher-power tail | None | OPEN: complete prime-mass inequality, positivity and truncation. |
-| Ellipse counts and interpolation/nonvanishing | None | OPEN. `rank_guard_impossible` proves only failure of a sufficient guard when n<=R+S. |
+| Ellipse counts and interpolation/nonvanishing | None | OPEN. `rank_guard_impossible` proves only failure of a sufficient guard when n<=R+S. The later jet-count candidate below is not yet a Lean theorem. |
 | Actual derivative rows and trace entries | `derivativeRow`, `traceGramEntry` | Defined over finite complex point sets with the actual derivative cutoff. Python implementation equivalence and integrality OPEN. |
 | Full real trace-Gram matrix | `traceGramMatrix`, `rectangularTraceGram` | Entries are existing trace entries. Arbitrary finite row-label families, including repeated labels; row-major rectangular specialization. |
 | Real/imaginary Gram factorization | `traceGramMatrix_factorization` | Exact equality G=H+H with H=A A^T+B B^T. Factor two and all derivative columns retained. |
@@ -59,3 +59,24 @@ Kill an attempted stronger interpretation if duplicate rows obtain a positive de
 The Lean kernel is a separately implemented checker. It is not independent assurance that the source interpretation and theorem selection capture every intended claim. Proofs, tests and interpretation share authorship; no independent semantic or human mathematical review is recorded. Standard axioms are allowed; extra axioms, incomplete proofs and native-evaluation dependencies are rejected by the audit gate.
 
 The failed matrix draft and its sum-transport repairs remain in Git history. Only proof scripts changed; definitions, hypotheses and conclusions were preserved. Existing numerical evidence, Ender/Formic computations, discriminant cutoff and global classification status are unchanged.
+
+## Jet-kernel continuation: exact bridge, candidate zero bound
+
+Code and tests at `561b2947aea42171af3534eca0dee54d4518ff34` passed [run 39781264061](https://github.com/Dojo-1/tenth-discriminant/actions/runs/39781264061): build, source correspondence, compiled axiom audit and all controls. This continuation is stacked on PR #6; neither its theorem inventory nor its merge status should be inferred from a generated image.
+
+| Claim | Artifact | Exact boundary |
+|---|---|---|
+| Actual Gram nullspace equals invisible real jets | `realJet`, `traceGramMatrix_jet_energy`, `traceGramMatrix_kernel_iff` | Universal finite equality/equivalence; no independence premise. |
+| Positive definiteness iff real jet uniqueness | `traceGramMatrix_posDef_iff`, `traceGramMatrix_det_pos_of_jet_unique` | Equivalence proved; determinant corollary explicitly conditional. The geometric uniqueness premise is not discharged. |
+| More observations preserve established PD | `traceGramMatrix_posDef_mono_jets`, `traceGramMatrix_posDef_mono_points` | Universal monotonicity under added derivative columns or points. |
+| Actual rows are polynomial jets | `rowSection_iterate_eval`, `realJet_eq_polynomial_jet` | Mathlib iterated derivative with W held fixed. Not differentiation along the conjugate graph. |
+| Circle counterexample when J>=S is dropped | `circle_power_jet_zero`, `circle_power_nonzero` | General specialized polynomial facts; four exact sampled rank controls also detect the defect. |
+| Complex dependence is not real Gram singularity | `traceGramMatrix_real_complex_control`, `complex_row_relation_control` | Actual example with complex rank 1 and real determinant 4. |
+| J>=S and n>2(R-1)+(S-1) imply independence | [JET_NONVANISHING.md](JET_NONVANISHING.md) | Conventional derivation; universal theorem NOT yet in Lean. Factorization, fixed-size Sylvester corank/order and degree accounting remain open. |
+| Finite evidence for candidate criterion | `jet_uniqueness_controls.py` | 96 full-rank modular cases, four dropped-J controls and four fixed-size resultant cases. Not universal verification. |
+
+The module adds 14 explicit declarations. Three new matched Lean pairs bring the mathematical control total to nine; four axiom probes and all earlier exact controls remain. The first jet build failed on a subtype coercion and a coefficient simplification; the repair made the coercion explicit and used a stronger constant-term nonzero proof. No failed check was disabled.
+
+The next focused gate is the fixed-size Sylvester corank-to-vanishing-order lemma, including leading-degree loss. A qualifying characteristic-zero rank defect or a failure of that order budget kills the proposed criterion. A modular rank defect alone requires exact follow-up. Numerical scripts, saved certificates and the discriminant cutoff are unchanged.
+
+Documentation correction in this continuation: the arithmetic-reduction row now explicitly includes D>163, matching the source ledger. The omitted condition was not a Lean theorem and must not be generalized to the small class-number-one discriminants.

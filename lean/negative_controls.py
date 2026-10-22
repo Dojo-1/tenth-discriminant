@@ -64,4 +64,8 @@ with tempfile.TemporaryDirectory() as tmp:
         print(output.strip(), flush=True)
 subprocess.run([sys.executable, str(root / 'exact_gram_controls.py')],
                cwd=root, check=True, timeout=120)
-print('PASS: matched mathematical controls, proof-audit controls and finite exact Gram controls.')
+subprocess.run([sys.executable, str(root / 'jet_uniqueness_controls.py')],
+               cwd=root, check=True, timeout=120)
+subprocess.run([sys.executable, str(root / 'jet_negative_controls.py')],
+               cwd=root, check=True, timeout=120)
+print('PASS: matched mathematical controls, proof-audit controls, exact Gram and jet controls.')
