@@ -28,13 +28,16 @@ theorem fixedDerivativeSylvester_multiplicity_at_nonzero
 theorem quadratic_fixedSylvester_det :
     let F : Polynomial (Polynomial Rat) := Polynomial.X^2 - Polynomial.C Polynomial.X
     (fixedSylvesterMatrix F F.derivative 2 1).det = -4 * Polynomial.X := by
-  norm_num [fixedSylvesterMatrix, polynomialCoefficientMatrix, fixedSylvesterColumns,
-    Matrix.det_fin_three, Polynomial.derivative_X_sq] <;> ring
+  dsimp only
+  unfold fixedSylvesterMatrix polynomialCoefficientMatrix
+  rw [Matrix.det_fin_three]
+  norm_num [fixedSylvesterColumns, Polynomial.derivative_X_sq] <;> ring
 
 /-- Exact counter-control for treating multiplicity m-1 as m. -/
 theorem quadratic_fixedSylvester_linear_coefficient :
     let F : Polynomial (Polynomial Rat) := Polynomial.X^2 - Polynomial.C Polynomial.X
     ((fixedSylvesterMatrix F F.derivative 2 1).det).coeff 1 = -4 := by
+  dsimp only
   rw [quadratic_fixedSylvester_det]
   norm_num
 
@@ -42,8 +45,10 @@ theorem quadratic_fixedSylvester_linear_coefficient :
 theorem repeated_fixedSylvester_det :
     let F : Polynomial (Polynomial Rat) := Polynomial.X^2
     (fixedSylvesterMatrix F F.derivative 2 1).det = 0 := by
-  norm_num [fixedSylvesterMatrix, polynomialCoefficientMatrix, fixedSylvesterColumns,
-    Matrix.det_fin_three, Polynomial.derivative_X_sq]
+  dsimp only
+  unfold fixedSylvesterMatrix polynomialCoefficientMatrix
+  rw [Matrix.det_fin_three]
+  norm_num [fixedSylvesterColumns, Polynomial.derivative_X_sq]
 
 end
 end TenthDiscriminant
