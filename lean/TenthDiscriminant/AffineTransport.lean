@@ -125,7 +125,7 @@ theorem fixedDerivativeDeterminant_affine {K : Type*} [Field K]
   unfold affineTransportPolynomial fixedDerivativeDeterminant
   rw [fixedDerivativeSylvester_scale]
   rw [fixedDerivativeSylvester_outer_affine _ a ha
-    (Polynomial.natDegree_map_le.trans hF.le) _ _ (by simpa)]
+    (Polynomial.natDegree_map_le.trans hF.le) _ _ (by simpa using hu)]
   rw [fixedDerivativeSylvester_map]
   have hn : a+(a-1) = 2*a-1 := by omega
   simp only [hn]
