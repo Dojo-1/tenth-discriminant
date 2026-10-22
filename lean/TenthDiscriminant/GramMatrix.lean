@@ -37,11 +37,27 @@ theorem traceGramMatrix_factorization {n : Nat} (P : Finset Complex) (J : Nat)
       (traceRealFeatures P J rows * (traceRealFeatures P J rows).conjTranspose +
        traceImagFeatures P J rows * (traceImagFeatures P J rows).conjTranspose) := by
   classical
+  have hsum (f : Nat -> Complex -> Real) :
+      (Finset.univ.sum (fun c : Fin J × P => f c.1 c.2)) =
+        (Finset.range J).sum (fun j => P.sum (f j)) := by
+    rw [Fintype.sum_prod_type]
+    calc
+      _ = Finset.univ.sum (fun j : Fin J => P.sum (f j)) := by
+        apply Finset.sum_congr rfl
+        intro j hj
+        exact Finset.sum_coe_sort P (f j)
+      _ = _ := Fin.sum_univ_eq_sum_range (fun j => P.sum (f j)) J
   ext a b
-  simp only [traceGramMatrix, traceGramEntry, traceRealFeatures, traceImagFeatures,
-    Matrix.add_apply, Matrix.mul_apply, Matrix.conjTranspose_apply, star_trivial,
-    Fintype.sum_prod_type, Finset.sum_coe_sort,
-    Fin.sum_univ_eq_sum_range, Complex.mul_re, Complex.conj_re, Complex.conj_im,
+  have hRe := hsum (fun j z =>
+    (derivativeRow (rows a).1 (rows a).2 j z).re *
+      (derivativeRow (rows b).1 (rows b).2 j z).re)
+  have hIm := hsum (fun j z =>
+    (derivativeRow (rows a).1 (rows a).2 j z).im *
+      (derivativeRow (rows b).1 (rows b).2 j z).im)
+  simp only [traceGramMatrix, traceGramEntry, Matrix.add_apply, Matrix.mul_apply,
+    Matrix.conjTranspose_apply, star_trivial, traceRealFeatures, traceImagFeatures]
+  rw [hRe, hIm]
+  simp only [Complex.mul_re, Complex.conj_re, Complex.conj_im,
     mul_neg, sub_neg_eq_add, Finset.sum_add_distrib]
   ring
 
