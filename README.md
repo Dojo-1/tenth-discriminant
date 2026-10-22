@@ -116,7 +116,7 @@ Keep fresh outputs separate from the saved evidence:
 ```bash
 mkdir -p /tmp/tenth-discriminant-rerun
 python tools/determinant_lifts.py > /tmp/tenth-discriminant-rerun/determinant_lifts.jsonl
-python tools/radial_bounds.py > /tmp/tenth-discriminant-rerun/dadial_bounds.jsonl
+python tools/radial_bounds.py > /tmp/tenth-discriminant-rerun/radial_bounds.jsonl
 cmp ledger/determinant_lifts.jsonl /tmp/tenth-discriminant-rerun/determinant_lifts.jsonl
 cmp ledger/radial_bounds.jsonl /tmp/tenth-discriminant-rerun/radial_bounds.jsonl
 ```
