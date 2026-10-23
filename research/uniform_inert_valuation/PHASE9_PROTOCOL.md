@@ -61,3 +61,39 @@ explicitly open across Phase 6 (`research/uniform_inert_valuation/PHASE6_PROTOCO
   analytic cutoff.
 - Run source correspondence, full pinned `lake build`, compiled axiom audit,
   and all inherited negative controls on pinned Linux CI. Keep the PR draft.
+
+## Execution record
+
+Protocol-only commit `2989c26` preceded the Lean proof edits.
+
+1. `lean/TenthDiscriminant/LocalOperators.lean`:
+   - `pairMul_congruence` and `pairPow_congruence` prove by induction that
+     coordinatewise and discriminant congruences modulo `p` are preserved
+     by `pairMul` and `pairPow`.
+   - `frobenius_congruence_of_mod_eq` proves that the residue-fiber
+     transport operator `T` preserves the explicit order-zero Frobenius
+     congruence across congruent `(D, a)` pairs modulo `p`.
+   - `frobeniusJet_of_mod_eq_dvd` and
+     `rectangular_frobenius_row_jet_of_mod_eq` compose `T` with both the
+     all-order single-factor jet theorem and the `H^k` power-jet theorem
+     in `Zsqrtd`.
+   - `frobenius_congruence_residue_transport_pilot` checks the non-real
+     pilot transporting `(D₁=1, a=(0,1))` to `(D₂=19, b=(3,-2))` modulo `3`.
+2. `lean/TenthDiscriminant/InertFrobenius.lean`:
+   - `nonsquare_of_mod_eq` and `rectangularTraceGram_valuation_of_mod_eq_nonsquare`
+     prove that the Phase 8 nonsquareness guard and exact `p^(2F(p))`
+     Gram determinant valuation transfer across any `D₁ ≡ D₂ (mod p)`.
+   - `selectedOrderNorm_eq_principalNorm` proves the exact index-2 norm
+     identity `(pairMul D (x, y) (pairConj (x, y))).1 = principalNorm D (x - y) (2 * y)`
+     for `D ≡ 3 (mod 4)`.
+   - `norm_eq_zero_iff_of_nonsquare` and
+     `dvd_four_mul_principalNorm_of_nonsquare` prove that when `-D` is
+     nonsquare in `ZMod p`, `u^2 + D * v^2 = 0` in `ZMod p` forces
+     `u = 0 ∧ v = 0`, so `p ∣ 4 * principalNorm D x y` forces
+     `p ∣ 2 * x + y` and `p ∣ y`.
+
+First CI build (`40026960495`) caught two proof-script issues: `omega`
+treating `(p : Int) * k` as nonlinear in `frobenius_congruence_of_mod_eq`
+(repaired via explicit `rw` + `ring`) and `push_cast` expanding
+`((2 * x + y : Int) : ZMod p)` in `dvd_four_mul_principalNorm_of_nonsquare`
+(repaired via `simpa only [Int.cast_add, Int.cast_mul, Int.cast_pow, Int.cast_natCast]`).
