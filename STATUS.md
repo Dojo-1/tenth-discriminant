@@ -1,5 +1,22 @@
 # Status — 2026-10-23
 
+## 2026-10-23: bounded formal ellipse bridge
+
+The registered attempt in `research/lattice_bridge_r1/PROTOCOL.md` adds
+`LatticeEllipse.lean`. For positive natural D and integer radius rho, Lean
+proves that its bounded finite construction is the full set of integer pairs
+with x²+D y²≤rho², that distinct pairs give distinct complex points, and
+that the image has the same cardinality. The original rectangular trace-Gram
+determinant is positive and satisfies Hadamard **conditional on** the explicit
+count `2*(R-1)+(S-1) < card(ellipsePairs D rho)`, R,S≥1 and J≥S. A D=rho=1
+control checks all five boundary/axis points. This is a proof bridge, not a
+new point-count estimate. Analytic count, chosen-radius instantiation,
+integer-matrix/valuation identification and classification remain open.
+
+Verification of this exact revision is reported in the associated PR; no
+earlier green CI run is evidence for it. The 22 October numerical claims below
+are unchanged.
+
 ## 2026-10-23: Tao-objective audit and bounded radial replay
 
 `TAO_OBJECTIVE_AUDIT.md` now compares the project's twelve-item status table

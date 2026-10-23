@@ -30,6 +30,15 @@ No independence, positive determinant, nonzero resultant or irreducibility
 premise occurs in these public statements. They are direct specializations of
 the existing all-factor proof, not a replacement matrix or a stronger cutoff.
 
+[`LatticeEllipse.lean`](TenthDiscriminant/LatticeEllipse.lean) now provides a
+concrete input. `ellipsePairs` is the full integer-radius norm ellipse for
+natural D>0; `ellipsePoints` is its complex image. `mem_ellipsePairs_iff`
+proves the finite box does not truncate the ellipse, `latticePoint_injective`
+and `ellipsePoints_card` prove distinctness and preserve its count, and
+`ellipseTraceGram_det_bounds` applies the same matrix theorem under the
+explicit count hypothesis. The count itself is **not** established for Ender's
+chosen D and radius.
+
 ## 2. The connected interpolation proof
 
 Names in this section are in `TenthDiscriminant`, with the `JetAssembly` prefix
@@ -63,7 +72,7 @@ replaced by a coefficient-ring endomorphism merely to shorten the proof.
 | Principal-form integer algebra and strict cutoff | [Arithmetic](TenthDiscriminant/Arithmetic.lean): `principalNorm_four`, `principalNorm_lower`, `small_norm_impossible`, `strict_cutoff`, `interval_strict_cutoff` | Identification with actual ideals/class groups; small-prime inertness. |
 | Floor sums and valuation-weight arithmetic | [FloorSum](TenthDiscriminant/FloorSum.lean), [Arithmetic](TenthDiscriminant/Arithmetic.lean): `floorSum_closed`, `floorSum_scaled`, `sum_min_identity` | Legendre/prime-mass estimates and a link to determinant valuations. Lean's total division at zero is not Python division semantics. |
 | Weighted two-row correlation and 9/25 | [Radial](TenthDiscriminant/Radial.lean), [MomentMatrix](TenthDiscriminant/MomentMatrix.lean): `weighted_correlation_bound`, `momentMatrix_bound`, `normalized_pair_gain` | Actual-row bounded-multiplier instantiation and the full Fischer product. Attainment in the moment class is not derivative-family sharpness. |
-| Actual radial cross entries and lattice norm | [TraceGram](TenthDiscriminant/TraceGram.lean): `traceGram_radial_cross`, `latticePoint_normSq` | Lattice-point injectivity/cardinality, integer implementation equivalence or arithmetic field construction. |
+| Actual radial cross entries and lattice norm | [TraceGram](TenthDiscriminant/TraceGram.lean): `traceGram_radial_cross`, `latticePoint_normSq` | Integer implementation equivalence or arithmetic field construction. |
 | Affine coefficient/determinant transport | [AffineCoefficients](TenthDiscriminant/AffineCoefficients.lean), [AffineTransport](TenthDiscriminant/AffineTransport.lean): `fixedDerivativeDeterminant_affine`, `affineTransport_witness_nonzero` | Invariance of the determinant value or prime valuations without tracking the explicit scale factor. |
 | Exact interval coverage | [Coverage](TenthDiscriminant/Coverage.lean), [RecordedCoverage](TenthDiscriminant/RecordedCoverage.lean): `checkChain_sound`, `ender_integer_coverage` | The 250 Arb inequalities. Coverage is half-open at the final endpoint in this theorem. |
 | Error decay and endpoint propagation | [Envelope](TenthDiscriminant/Envelope.lean), [EnvelopeDecay](TenthDiscriminant/EnvelopeDecay.lean): `ender_slope`, `enderError_antitone`, `ender_positive_from_endpoint` | Endpoint positivity and connection from the actual determinant to these envelopes. |
@@ -79,7 +88,7 @@ ball-arithmetic calculation into a kernel-checked inequality.
 | Required link | Current status |
 |---|---|
 | Fundamental discriminants, actual quadratic rings, ideals/class groups and small-prime inertness under the class-number-one hypothesis | OPEN; integer norm lemmas are components, not these identifications. |
-| Concrete norm ellipse as a finite set; coordinate injectivity and the required lower bound on its cardinality | OPEN; the interpolation theorem accepts a qualifying point set but does not construct or count it. |
+| Concrete integer-radius norm ellipse and required lower bound on its cardinality | Finite construction, exact membership, coordinate injectivity and image-cardinality equality PROVED in `LatticeEllipse.lean`; Ender's analytic lower count and chosen-radius instantiation OPEN. |
 | Equality between the formal real Gram matrix and an integer matrix with the intended arithmetic entries | OPEN; exact finite comparators are not a universal semantics theorem. |
 | Inert-prime divisibility and prime-adic valuation lower bound for that same integer determinant | OPEN. |
 | Full factorial/Legendre prime-mass inequality, remainder control and analytic upper bound | OPEN; selected floor-sum and moment identities are proved. |
@@ -122,7 +131,7 @@ CI running the tests is not a second mathematical author. No human readability
 study, blind independent semantic review, proof-completion percentage or
 optimality claim is made.
 
-The most economical next mathematical task remains the concrete sampling-set
-interface, not a new representation layer. Before promoting an application,
-construct the actual set, prove distinctness/counting and integer correspondence,
-and instantiate the existing public theorem without assuming its conclusion.
+The next mathematical bridge is quantitative: establish the count for the
+actual radius selected in Ender, then identify this real matrix with the
+integer matrix used in the valuation argument. Neither is supplied by the
+conditional ellipse theorem. No classification conclusion follows yet.

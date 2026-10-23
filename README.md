@@ -18,6 +18,14 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > distinguishes these two evidence classes and records a bounded preregistered
 > control replay.
 
+**Bridge update (23 October):** Lean now constructs the finite integer-radius
+ellipse, proves it contains exactly the lattice points satisfying the norm
+inequality, and applies the existing determinant theorem to its complex image
+*if its point count clears the stated threshold*. This closes the sampling-set
+interface, not Ender's analytic count estimate or the arithmetic and
+classification links. Read the [short bridge guide](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge)
+and [precise claim map](lean/FORMALIZATION.md).
+
 ## What bound are we claiming?
 
 Write **$D=|\mathrm{disc}(K)|$** for the absolute fundamental discriminant of an imaginary quadratic field. It is not an unrestricted radicand. In the notation $q=|\mathrm{disc}(K)|$ used by [twinheterodox's contribution](https://github.com/twinheterodox/tenth-discriminant), **$q=D$**, not $\log D$.

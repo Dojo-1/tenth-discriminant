@@ -46,6 +46,12 @@ callers need not supply injectivity of the canonical labels. The more general
 arbitrary-label theorem remains in
 [`JetCountGram.lean`](TenthDiscriminant/JetCountGram.lean).
 
+For a concrete positive-D integer-radius ellipse, see
+[`LatticeEllipse.lean`](TenthDiscriminant/LatticeEllipse.lean). Its theorem
+`ellipseTraceGram_det_bounds` requires the actual integer-pair count; it does
+not prove Ender's analytic estimate for the chosen radius. The explanation is
+in [guide §9](HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge).
+
 ## Read in mathematical order
 
 1. [Human guide](HUMAN_GUIDE.md): statement, definitions, proof and examples.
@@ -92,11 +98,11 @@ for the compiled audit or a semantic review.
 
 ## Revision and evidence discipline
 
-The completed interpolation base is PR #15 at
-`d6c4876a316814aa0ac4ef1a719a13ea2822e620`, checked by workflow
-`39863039414`. This clarity review is PR #16, stacked on PR #15; its check status
-belongs to its exact head. A green ancestor does not certify later changes, and
-a draft or synthetic merge is not a merge into main.
+PRs #15 and #16 are merged into `main`; the interpolation source head
+`d6c4876a316814aa0ac4ef1a719a13ea2822e620` was checked by workflow
+`39863039414`. The later apparatus review was checked at its own source head.
+Those runs do not certify this ellipse bridge or the end-to-end classification;
+verification must be reported against the bridge's exact commit.
 
 Earlier stage notes preserve their local derivations and dated evidence:
 [JET_NONVANISHING](JET_NONVANISHING.md),

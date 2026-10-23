@@ -1,0 +1,11 @@
+# Task checkpoint
+
+- 2026-10-23: Synced a fresh checkout at `4c034f9`. Contrary to the earlier cached conversation, PR #15 (`47ec647`) and PR #16 (`4c034f9`) are merged on current `main`.
+- The selected bounded replay is `flow/PREREG_RADIAL.txt`; its stated limitation forbids a cutoff improvement claim.
+- Scope: documentation/evidence audit, pinned formal checks, and one bounded replay. No merge and no claim of a full classification proof.
+- 2026-10-23: Replayed `tools/test_radial_bounds.py` in the preregistered environment: 9 tests passed. Documentation now records the objective audit, current merge state, and the distinction between this replay and a new cutoff result. Markdown local links and `git diff --check` pass; pinned CI remains to run on the branch.
+- 2026-10-23: Pinned GitHub Actions workflow `39909040311` passed at `8fb10ce`: source correspondence, full Lean build, compiled dependency audit, and inherited negative controls. Draft PR #17 is open and unmerged.
+- 2026-10-23, new bridge task: current main is `9f713b8`; PR #17 has since merged. Earlier draft status above is historical.
+- Registered `research/lattice_bridge_r1/PROTOCOL.md` before editing proof. Current branch is `codex/lattice-sampling-bridge`.
+- Lean checked exact finite ellipse membership, coordinate injectivity, cardinality transport and conditional determinant bounds; D=rho=1 cardinality control passes. The analytic lower count, Ender radius identification, integer determinant equality and valuation remain open.
+- Local pinned `lake build` and `python verify_sources.py` passed. Compiled axiom audit and negative controls still running at this checkpoint.
