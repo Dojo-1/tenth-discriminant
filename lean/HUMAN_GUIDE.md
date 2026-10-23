@@ -433,8 +433,9 @@ unitriangular; every jet receives `p^k`, so the determinant receives
 step, the exact exponent sum, and the [ordinary-jet power](TenthDiscriminant/JetPower.lean):
 all transformed `H^k` jets have both coordinate factors `p^k` under
 their explicit order-zero congruence. Phase 7 below now identifies the
-unitriangular basis change with the actual Gram. Lean still does not derive
-the inertness-to-Frobenius premise. The class-number
+unitriangular basis change with the actual Gram. Phase 8 below derives
+the Frobenius premise from odd-prime nonsquareness of `-D` in the selected
+residue order. The class-number
 classification is still open.
 
 There is now an explicit [integer binomial matrix](TenthDiscriminant/RectangularBasisMatrix.lean)
@@ -505,7 +506,37 @@ determinants yields `p^(2Σk) | det G`; the checked sum identity says
 `Σk=F(p)`. Both the [integral factor](TenthDiscriminant/RectangularGramFactor.lean)
 and this exact conditional determinant implication are now Lean theorems,
 for arbitrary finite samples, grid and derivative cutoff, including empty
-grids. This closes the algebraic row-to-Gram bridge, **not** the hypothesis
-that makes it fire. The next arithmetic obligation is to derive the stated
-universal congruence from precise inert-prime assumptions; the chosen-radius
-area argument and subsequent analytic/class-number links remain separate.
+grids. Phase 8 below supplies the local hypothesis that makes it fire,
+under an explicit odd-prime nonsquare guard. The chosen-radius area
+argument and subsequent analytic/class-number links remain separate.
+
+## 14. One local generator controls every lattice point
+
+Reduce the selected order modulo an odd prime `p`. Write `t` for the pair
+`(0,1)`; its multiplication is the repository's existing rule, so
+`t²=-D`. If `-D` is **not a square** in `𝔽_p`, Euler's criterion gives
+`(-D)^((p-1)/2)=-1`. Since `p=2((p-1)/2)+1`,
+
+$$ t^p=t(t^2)^{(p-1)/2}=t(-D)^{(p-1)/2}=-t. $$
+
+Every residue pair is `x+yt`. Characteristic `p` and Fermat's identity
+in `𝔽_p` now yield
+
+$$ (x+yt)^p=x^p+y^pt^p=x-yt. $$
+
+The new [residue-ring chart](TenthDiscriminant/QuadraticResidueRing.lean)
+is proved injective and respects the **existing** residue-pair
+multiplication and powers. Thus this equality returns to both original
+coordinates; a zero residue is exactly integer divisibility by `p`.
+[InertFrobenius.lean](TenthDiscriminant/InertFrobenius.lean) checks that
+transport and applies §13 to obtain the exact determinant exponent for
+every finite original sample set. It checks `D=19,p=3` as a nonsquare
+and `D=2,p=3` as a square counter-control.
+
+The local condition is deliberately sharper than an unqualified word
+“inert”: for a nonmaximal selected order, a prime dividing its conductor
+needs special care. The theorem assumes odd prime and nonsquare `-D`
+*in this coordinate ring*. We have not proved that the global
+class-number-one hypothesis supplies these guards at every prime used by
+Ender, nor formalized the geometric area and analytic comparison. These
+are now the visible global-to-local and determinant-to-cutoff gaps.

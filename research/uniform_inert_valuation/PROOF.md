@@ -1,7 +1,8 @@
 # Why an inert prime divides the trace-Gram determinant many times
 
-**Status (23 October 2026): human-checkable proof, not an end-to-end Lean
-theorem.** This reconstructs the valuation input stated in
+**Status (23 October 2026): the valuation is Lean-checked for the actual
+integer Gram under the explicit odd-prime nonsquare condition below;
+the class-number-one argument is not end-to-end in Lean.** This reconstructs the valuation input stated in
 [`ledger/ender.txt`](../../ledger/ender.txt); it makes no novelty claim.
 It concerns the *existing* integer trace-Gram matrix, not a replacement
 determinant. The remaining Lean and class-number/analytic links are named
@@ -101,23 +102,20 @@ Ender's `F(p)`, proving the proposition.
 
 ## Interfaces, controls, and limits
 
-- This proof supplies the **general valuation on paper** under the
-  explicit irreducibility hypothesis. Lean checks all ordinary jets of
-  `B(Z)(Z^p-W)^k` have both `p^k` coordinate factors under the explicit
-  order-zero congruence, as well as the fixed `D=19,p=3` theorem; these
-  are not a Lean proof of this proposition. A complete formal bridge
-  now has an explicit sample-independent binomial matrix with
-  Lean-checked determinant `1`. It still needs a proof that this matrix
-  acts on the actual integer derivative rows as the transformed
-  polynomials, the resulting Gram factorization, and the
-  Frobenius/inertness interface.
+- Lean now checks this valuation for the **actual** integer Gram:
+  the sample-independent binomial matrix acts on its derivative rows,
+  the factorization is integral, and nonsquareness of `-D : ZMod p`
+  for odd prime `p` implies the universal coordinatewise Frobenius
+  congruence. See [Phase 7](PHASE7_PROTOCOL.md) and
+  [Phase 8](PHASE8_PROTOCOL.md). Translating class-number-one inertness
+  into this exact selected-order nonsquare premise remains separate.
 - The `D=2,p=3` negative control must fail the local hypothesis:
   `X²+2=X²-1` splits modulo `3`, and `T^3=T`, not `-T`.
 - Positivity of `det G` comes from the separate sampling/contact theorem.
   The cell-area count at Ender's chosen radius remains paper-only.
-  Neither this divisibility proof nor the saved Arb/CRT certificates
+  Neither this checked divisibility theorem nor the saved Arb/CRT certificates
   proves the class-number classification end to end.
 - No numerical cutoff, prior-art comparison, or Tao-submission status
-  changes by this result. The next mathematical glue is to formalize
-  irreducibility from inertness and to link all analytic hypotheses to
-  these exact `D,R,S,J,Q` parameters.
+  changes by this result. The next mathematical glue is to derive the
+  nonsquare condition from exact class-number/field hypotheses and link
+  all analytic assumptions to these `D,R,S,J,Q` parameters.

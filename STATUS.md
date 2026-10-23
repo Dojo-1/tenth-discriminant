@@ -5,6 +5,22 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-23: odd-prime nonsquare condition now yields exact valuation
+
+[Phase 8](research/uniform_inert_valuation/PHASE8_PROTOCOL.md) formalizes
+the precise local arithmetic premise. In the **same** two residue
+coordinates, `t²=-D`; for an odd prime `p`, nonsquareness of `-D` modulo
+`p` and Euler's criterion give `t^p=-t`. Freshman's dream then gives
+`(x+yt)^p=x-yt` for every pair. Lean transports this back to both integer
+coordinates and applies Phase 7's actual Gram theorem, proving
+`p^(2*valuationWeight R S p) | det G` for every finite sample set,
+rectangle and derivative cutoff. The `D=19,p=3` guard passes and
+`D=2,p=3` is a square falsifier. This is a checked **local-nonsquare
+valuation theorem**, not a class-number-one theorem: deriving the guard
+from the intended global class-group/inertness hypotheses, Lean cell-area
+count, analytic cutoff and classification remain open.
+[Lean theorem](lean/TenthDiscriminant/InertFrobenius.lean).
+
 ## 2026-10-23: actual rectangular row-to-Gram bridge
 
 The [preregistered Phase 7](research/uniform_inert_valuation/PHASE7_PROTOCOL.md)
@@ -15,8 +31,8 @@ are retained. Bilinearity constructs the previously assumed **integral
 two-sided Gram factor**. Lean then proves
 `p^(2*valuationWeight R S p) | det G` for every rectangular grid and
 finite sample set, **provided** `a^p-conjugate(a)` is coordinatewise
-divisible by `p` for every integer pair `a`. Deriving that premise from
-inertness, the Lean geometric area step, analytic cutoff and class-number
+divisible by `p` for every integer pair `a`. Phase 8 above now derives
+that premise from an odd-prime nonsquare guard. The Lean geometric area step, analytic cutoff and class-number
 classification remain open. [Row identity](lean/TenthDiscriminant/RectangularRowAction.lean) ·
 [Gram factor](lean/TenthDiscriminant/RectangularGramFactor.lean).
 

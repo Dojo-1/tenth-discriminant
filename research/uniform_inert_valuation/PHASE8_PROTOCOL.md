@@ -35,3 +35,39 @@ the cell-area estimate, the analytic cutoff, or classification. Record
 failed Lean steps. Run targeted Lean, source correspondence, full build,
 compiled dependency audit and inherited negative controls on pinned CI.
 Keep the PR draft and do not merge.
+
+## Execution record
+
+`QuadraticResidueRing.lean` gives the already used residue coordinate
+pair a commutative-ring chart. Its multiplication and powers are proved
+equal to `residuePairMul` and `residuePairPow`; the chart is injective,
+so an equality proved there returns to the **same two coordinates**.
+This is not a replacement Gram or a discarded-residue sample set.
+
+`InertFrobenius.lean` proves the generator's even/odd powers directly,
+uses Euler's criterion to obtain `t^p=-t` from nonsquareness of `-D`,
+and applies characteristic-`p` Freshman's dream plus Fermat to
+`x+yt`. It transports that identity back to both integer coordinates
+of `a^p-conjugate(a)`, then applies Phase 7's actual integer Gram
+valuation theorem. The resulting exponent is the pre-existing exact
+`2*valuationWeight R S p`; no new cutoff is inferred. The `D=19,p=3`
+nonsquare and `D=2,p=3` square controls are checked.
+
+First Lean attempts failed on coordinate extensionality, unfolding the
+new ring operations, subtraction in the conjugate chart, the nonsquare
+zero witness, a dependent rewrite of `p`, and an integer-to-`ZMod`
+cast of subtraction. These were proof-script failures, not failed
+mathematical claims; the repaired targeted files compile. The odd-prime
+guard remains explicit, and nonsquareness is a hypothesis, not silently
+identified with field inertness for arbitrary `D` or a prime dividing
+the conductor. Class-number-one to local nonsquareness, cell-area
+formalization, analytic cutoff and finite classification remain open.
+
+Local verification from `lean/`: `lake env lean
+TenthDiscriminant/QuadraticResidueRing.lean`, the analogous command for
+`InertFrobenius.lean`, `lake build` (6699 steps), and
+`python verify_sources.py` passed. The source check verifies endpoint
+correspondence, not Arb inequalities. `git diff --check`, task-state JSON
+parsing and the proof-placeholder scan passed. The final-head compiled
+dependency audit and inherited negative controls belong to pinned Linux
+CI and must be reported separately.

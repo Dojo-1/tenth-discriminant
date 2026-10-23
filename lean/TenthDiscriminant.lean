@@ -37,6 +37,8 @@ import TenthDiscriminant.RectangularValuation
 import TenthDiscriminant.RectangularBasisMatrix
 import TenthDiscriminant.RectangularRowAction
 import TenthDiscriminant.RectangularGramFactor
+import TenthDiscriminant.QuadraticResidueRing
+import TenthDiscriminant.InertFrobenius
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot

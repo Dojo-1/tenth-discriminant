@@ -64,7 +64,9 @@ D, its exact integer derivative trace-Gram matrix casts entrywise to this
 same real matrix. The integer-radius ellipse is a specialization. The
 determinant casts accordingly. The later rectangular valuation theorem
 proves the exact determinant power under an explicit universal Frobenius
-congruence; the inertness-to-congruence theorem is not yet in Lean.
+congruence. [InertFrobenius.lean](TenthDiscriminant/InertFrobenius.lean)
+derives that congruence from odd-prime nonsquareness of `-D : ZMod p`.
+The global class-number-one to local-guard link is not yet in Lean.
 The [guide's coordinate explanation](HUMAN_GUIDE.md#10-the-same-gram-matrix-in-integer-and-complex-coordinates)
 includes an asymmetric control that a determinant-only comparison misses.
 
@@ -80,7 +82,8 @@ This detects divisibility but supplies no general inert-prime exponent.
 The [row-action](TenthDiscriminant/RectangularRowAction.lean) and
 [Gram-factor](TenthDiscriminant/RectangularGramFactor.lean) theorems now
 construct that exponent for the original integer matrix **under the
-universal coordinatewise Frobenius premise**. See [guide §13](HUMAN_GUIDE.md#13-why-the-rectangular-bridge-now-commutes).
+universal coordinatewise Frobenius premise**, discharged under the precise
+local nonsquare guard in [guide §14](HUMAN_GUIDE.md#14-one-local-generator-controls-every-lattice-point).
 [`InertPilot.lean`](TenthDiscriminant/InertPilot.lean) uses a matching
 row/column shear and the integral two-sided factor lemma in
 [`GramDivisibility.lean`](TenthDiscriminant/GramDivisibility.lean) to prove

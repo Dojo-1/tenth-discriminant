@@ -161,7 +161,7 @@ congruence* when the irreducible-residue condition is dropped; it does not
 disprove a determinant-divisibility statement. This fixed pilot is **not**
 Ender's general valuation estimate.
 
-## The uniform pattern: algebraic bridge checked, inertness premise open
+## The uniform pattern: local nonsquare valuation checked
 
 The fixed relation is one corner of a rectangular basis change. For an
 odd prime `p` with `X²+D` irreducible modulo `p`, let `H=Z^p-W`. Frobenius
@@ -179,8 +179,8 @@ checks the endpoints and product rule. Lean checks the abstract
 unimodular two-sided determinant factor and a
 [one-factor jet lemma](TenthDiscriminant/FrobeniusJet.lean): once
 `z^p=bar z` holds modulo `p`, **every** ordinary jet of `Z^p-W` is
-`p`-divisible. It does not yet check the `H^k` basis construction or
-derive that congruence from inertness. A further
+`p`-divisible. That earlier one-factor theorem alone did not check the
+`H^k` basis construction or supply the local premise. A further
 [Lean identity](TenthDiscriminant/RectangularValuation.lean) verifies
 `Σk=F(p)` and the determinant conclusion *if* an integral unimodular
 basis factor is supplied. The [ordinary-jet power lemma](TenthDiscriminant/JetPower.lean)
@@ -192,8 +192,11 @@ The [row-action theorem](TenthDiscriminant/RectangularRowAction.lean) now
 identifies that change with rows of the *actual* matrix, and the
 [integral Gram factor](TenthDiscriminant/RectangularGramFactor.lean) proves
 the determinant power under the displayed universal Frobenius congruence.
-Deriving that congruence from exact inert-prime hypotheses remains open in
-Lean. This is inherited valuation mathematics,
+The [local theorem](TenthDiscriminant/InertFrobenius.lean) now derives that
+congruence from `p` odd prime and `-D` nonsquare in `ZMod p`, by checking
+`t^p=-t` and then Freshman's dream on every `x+yt`. Connecting these
+selected-order local guards to the global class-number hypothesis remains
+open. This is inherited valuation mathematics,
 not a new classification or cutoff.
 
 The [explicit coefficient matrix](TenthDiscriminant/RectangularBasisMatrix.lean)
@@ -202,7 +205,8 @@ the rectangle, all non-leading terms move to earlier row-major columns,
 and its integer determinant is `1`. The missing equality between its
 action on the original derivative-jet table and the transformed polynomial
 jets is now checked. The two-sided Gram factorization is a theorem
-**conditional on the explicit universal Frobenius congruence**.
+**conditional on the explicit universal Frobenius congruence**, which the
+new local theorem supplies under the odd-prime nonsquare guard.
 
 ## Symmetry, and what it must not blur
 
@@ -227,7 +231,7 @@ these views commute on **one integer matrix with the same samples**.
 |---|---|
 | Jet energy, contact budget, positivity; exact integer matrix; residue reduction; fixed `D=19,p=3` square factor | Lean-checked under the displayed hypotheses. |
 | Ender's chosen-radius ellipse has enough points | Elementary cell-area proof on paper; exact-set and endpoint-transfer helpers in Lean, but the area inequality is not Lean-checked. |
-| Uniform inert-prime valuation, class-number-one to inertness, analytic comparison, finite classification | Lean checks the concrete row-to-Gram factor and exact exponent under an explicit universal Frobenius premise. Deriving that premise from inertness and all later links are not connected as an end-to-end theorem. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
+| Uniform inert-prime valuation, class-number-one to inertness, analytic comparison, finite classification | Lean checks the exact exponent for the actual integer Gram under an odd-prime nonsquare local condition. The global class-number link and all later links are not connected as an end-to-end theorem. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical
