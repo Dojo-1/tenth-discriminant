@@ -106,8 +106,11 @@ Ender's `F(p)`, proving the proposition.
   `B(Z)(Z^p-W)^k` have both `p^k` coordinate factors under the explicit
   order-zero congruence, as well as the fixed `D=19,p=3` theorem; these
   are not a Lean proof of this proposition. A complete formal bridge
-  still needs the unitriangular row transform on the actual integer
-  Gram and the Frobenius/inertness interface.
+  now has an explicit sample-independent binomial matrix with
+  Lean-checked determinant `1`. It still needs a proof that this matrix
+  acts on the actual integer derivative rows as the transformed
+  polynomials, the resulting Gram factorization, and the
+  Frobenius/inertness interface.
 - The `D=2,p=3` negative control must fail the local hypothesis:
   `X²+2=X²-1` splits modulo `3`, and `T^3=T`, not `-T`.
 - Positivity of `det G` comes from the separate sampling/contact theorem.

@@ -436,3 +436,9 @@ their explicit order-zero congruence. It does **not** yet identify the
 unitriangular basis change with the actual Gram, or derive the
 inertness-to-Frobenius premise. The class-number
 classification is still open.
+
+There is now an explicit [integer binomial matrix](TenthDiscriminant/RectangularBasisMatrix.lean)
+for this basis, with a Lean proof that it is lower triangular and has
+determinant `1`. What is missing is not its invertibility but the
+entrywise identity saying that this matrix acts on the **existing**
+integer derivative rows as the displayed transformed polynomials.

@@ -5,6 +5,19 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-23: the rectangular integer basis matrix is explicit
+
+Lean now defines the sample-independent binomial coefficient matrix for
+`Z^(r-pk)W^s(Z^p-W)^k` in the existing row-major indexing. For `p>0`,
+every active term remains in the rectangle, every non-leading term has
+an earlier column, the matrix is lower triangular with diagonal `1`,
+and its determinant is `1`, including empty rectangles. The full
+`4×2,p=3` pilot row is checked. **The polynomial/jet action of this
+matrix on the actual integer Gram is not yet a theorem**, so this
+does not discharge the factorization hypothesis or prove a cutoff.
+[Lean theorem](lean/TenthDiscriminant/RectangularBasisMatrix.lean) ·
+[preregistration](research/uniform_inert_valuation/PHASE5_PROTOCOL.md).
+
 ## 2026-10-23: the full ordinary-jet power is checked locally
 
 Lean proves that if all ordinary jets of `H` at a point are divisible

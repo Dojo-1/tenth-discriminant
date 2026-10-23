@@ -188,10 +188,18 @@ now proves that every jet of `B(Z)(Z^p-W)^k` has two integer-coordinate
 factors `p^k` at an original pair sample, assuming its order-zero
 Frobenius congruence. Its checked Hasse-derivative counterexample shows
 why replacing ordinary derivatives by divided ones would be invalid.
-Constructing the unitriangular change on the *actual* matrix, and
+Identifying the unitriangular change with rows of the *actual* matrix, and
 deriving that congruence from the exact inert-prime hypotheses, remain
 open in Lean. This is inherited valuation mathematics,
 not a new classification or cutoff.
+
+The [explicit coefficient matrix](TenthDiscriminant/RectangularBasisMatrix.lean)
+now checks the first half of that change: its binomial terms stay inside
+the rectangle, all non-leading terms move to earlier row-major columns,
+and its integer determinant is `1`. The missing half is an equality
+between its action on the repository's derivative-jet table and the
+transformed polynomial jets above. Until that equality is proved, the
+two-sided Gram factorization is still conditional.
 
 ## Symmetry, and what it must not blur
 

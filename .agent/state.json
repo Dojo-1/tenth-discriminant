@@ -1,8 +1,8 @@
 {
-  "task": "Formalize ordinary-jet powers toward Ender's uniform valuation",
-  "status": "phase4_local_checks_passed_pinned_ci_pending",
-  "base_commit": "7bc3ec83429929373190b117bc74ff6f30230db9",
-  "branch": "codex/frobenius-residue-bridge",
+  "task": "Construct the sample-independent rectangular binomial basis matrix",
+  "status": "phase5_local_checks_passed_pinned_ci_pending",
+  "base_commit": "d0d421f96db93a1654d3cc9908a253d214e1b186",
+  "branch": "codex/rectangular-unimodular-basis",
   "decisions": [
     "Honor flow/PREREG_ENDER.txt and register research/ender_radius_bridge/PROTOCOL.md before new proof edits.",
     "Prove the chosen-radius count by a cell-covering area argument and retain its paper-versus-Lean boundary.",
@@ -18,7 +18,8 @@
     "Register the uniform inert-prime valuation attempt before proof edits; use a rectangular unitriangular basis and an explicit irreducibility hypothesis, with paper and Lean scopes labelled separately.",
     "After PR #21 merged, preregister Phase 2 in a separate commit and prove only the universal one-factor jet implication from an explicit zero-order congruence; retain the noninert negative control.",
     "After PR #22 merged, preregister Phase 3 in commit 68a91b9; prove the exact rectangular exponent sum and only the determinant conclusion conditional on an integral basis factor. Do not post an AI-written comment as Tao's requested human-generated summary.",
-    "Preregister Phase 4 in commit 86f40e7 before Lean edits. Use ordinary iterated derivatives, not Hasse derivatives; prove transformed-row p^k divisibility in both selected quadratic-order coordinates under an explicit order-zero congruence. Retain the matrix-row and inertness interfaces as open."
+    "Preregister Phase 4 in commit 86f40e7 before Lean edits. Use ordinary iterated derivatives, not Hasse derivatives; prove transformed-row p^k divisibility in both selected quadratic-order coordinates under an explicit order-zero congruence. Retain the matrix-row and inertness interfaces as open.",
+    "After PR #23 merged externally, branch from its merge commit and preregister Phase 5 in commit 75ee2c0. Construct the actual binomial coefficient matrix and prove its determinant one; do not infer its action on the original integer Gram without a separate row identity."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
@@ -49,7 +50,8 @@
     "Phase 2 protocol-only commit 04ee81d preceded all new Lean proof edits. Targeted FrobeniusJet.lean, source correspondence and complete 6691-step local build passed; first targeted compilation errors were repaired and recorded in the Phase 2 protocol.",
     "The general zero-order Frobenius congruence, H^k product-rule divisibility and rectangular basis remain outside the Phase 2 Lean theorem. PR #22 merged externally at 7bc3ec8.",
     "Phase 3 protocol-only commit 68a91b9 preceded Lean edits. Targeted RectangularValuation.lean, source correspondence and full 6692-step local build passed; initial finite-sum proof errors were repaired and logged in the protocol. The integral factorization remains an explicit theorem hypothesis. PR #23 head 059741a passed pinned Linux CI run 39973862730 and remains draft/unmerged.",
-    "Phase 4 protocol-only commit 86f40e7 preceded Lean edits. Targeted JetPower.lean, source correspondence, and full 6693-step local build passed. The Hasse negative control and both-coordinate p^k transformed-jet theorem compiled. Initial proof-script failures are recorded in the Phase 4 protocol. Final-head pinned CI is pending."
+    "Phase 4 protocol-only commit 86f40e7 preceded Lean edits. Targeted JetPower.lean, source correspondence, and full 6693-step local build passed. The Hasse negative control and both-coordinate p^k transformed-jet theorem compiled. Initial proof-script failures are recorded in the Phase 4 protocol. PR #23 final head c11ed68 passed pinned Linux CI run 39977815145 and merged externally into main at d0d421f.",
+    "Phase 5 protocol-only commit 75ee2c0 preceded Lean edits. Targeted RectangularBasisMatrix.lean, source correspondence and final 6694-step full build passed for the binomial matrix, term bounds, every target column in range, strict lower-triangularity, diagonal one, determinant one, and full pilot rows. Pinned CI is pending. The actual derivative-row action remains open."
   ],
   "files_touched": [
     "README.md",
@@ -82,7 +84,9 @@
     "lean/TenthDiscriminant/RectangularValuation.lean",
     "TAO_REPLY_BRIEF.md",
     "research/uniform_inert_valuation/PHASE4_PROTOCOL.md",
-    "lean/TenthDiscriminant/JetPower.lean"
+    "lean/TenthDiscriminant/JetPower.lean",
+    "research/uniform_inert_valuation/PHASE5_PROTOCOL.md",
+    "lean/TenthDiscriminant/RectangularBasisMatrix.lean"
   ],
   "updated": "2026-10-23"
 }
