@@ -8,6 +8,10 @@ import TenthDiscriminant.GramMatrix
 import TenthDiscriminant.JetKernel
 import TenthDiscriminant.DeterminantMultiplicity
 import TenthDiscriminant.SylvesterLocal
+import TenthDiscriminant.SylvesterDegree
+import TenthDiscriminant.ContactBudget
+import TenthDiscriminant.AffineTransport
+import TenthDiscriminant.AffineControls
 import TenthDiscriminant.ComparatorR1
 import TenthDiscriminant.ComparatorM2
 import TenthDiscriminant.Coverage
@@ -18,6 +22,4 @@ import TenthDiscriminant.AxiomAudit
 import TenthDiscriminant.GranuleCertificates
 import TenthDiscriminant.SylvesterNonzero
 import TenthDiscriminant.SylvesterIrreducible
-import TenthDiscriminant.SylvesterDegree
-import TenthDiscriminant.ContactBudget
 import TenthDiscriminant.IrreducibleContact
