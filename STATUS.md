@@ -1,5 +1,21 @@
 # Status — 2026-10-23
 
+## 2026-10-23: integer-coordinate trace-Gram bridge
+
+For any finite set of distinct integer pairs and positive D, Lean now proves
+that the integer-pair derivative trace-Gram matrix, cast entrywise to Real, is
+the existing complex `traceGramMatrix` on the image points. Its row-major
+rectangular specialization and determinant cast equality follow. On the
+integer-radius ellipse this identifies the same determinant whose positivity
+the interpolation theorem controls. The proof preserves conjugate W,
+ordinary Z-derivatives, zero high-order columns and factor two.
+
+This is **matrix identification**, not inert-prime divisibility. It does not
+equate the integer-radius `ellipsePairs` generator with the verifier's
+half-integer-radius historical generator, or turn AI review/CI into a full
+classification proof. [Proof guide](lean/HUMAN_GUIDE.md#10-the-same-gram-matrix-in-integer-and-complex-coordinates) ·
+[protocol](research/integer_gram_bridge/PROTOCOL.md).
+
 ## 2026-10-23: geometric count for Ender's chosen radius
 
 The registered [radius proof](research/ender_radius_bridge/PROOF.md) uses

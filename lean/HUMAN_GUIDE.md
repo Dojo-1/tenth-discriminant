@@ -241,19 +241,19 @@ nonzero hypotheses wherever a degree or multiplicity argument needs them.
 
 ## 8. What this does not yet prove
 
-This interpolation theorem does not define the imaginary quadratic class group,
-prove small-prime inertness, establish Ender's quantitative ellipse count, identify
-the integer Gram matrix, prove its prime-adic divisibility, certify the analytic
-bounds or close the finite classification. It supplies one connected part of
-that longer argument. See [FORMALIZATION.md](FORMALIZATION.md).
+This interpolation theorem alone does not define the imaginary quadratic class
+group, prove small-prime inertness, count Ender's ellipse, identify the integer
+Gram matrix, prove prime-adic divisibility, certify the analytic bounds or close
+the finite classification. Later work supplies the count on paper (§9) and the
+matrix identification in Lean (§10); the remaining links are not consequences
+of interpolation alone. See [FORMALIZATION.md](FORMALIZATION.md).
 
 Put plainly: this proof says that **if** the intended ellipse supplies enough
-distinct samples, then the exact derivative Gram matrix used by the arithmetic
-argument is nonsingular. To turn that into a classification, the project still
-has to prove that Ender's chosen ellipse meets the count, that its matrix is the
-integer matrix whose prime divisibility is used, and that the analytic bounds
-apply to that same determinant. A finished interpolation theorem cannot fill
-those application-specific gaps by itself. The project-wide
+distinct samples, then its exact derivative Gram matrix is nonsingular. The
+geometric count now supplies that premise in an unformalized area argument;
+the integer-coordinate bridge identifies the same matrix, but does not yet
+prove its prime divisibility. The analytic bounds and finite classification
+also remain to be connected. The project-wide
 [Tao-objective audit](../TAO_OBJECTIVE_AUDIT.md) records this boundary without
 collapsing it into a percentage-complete claim.
 
@@ -307,3 +307,45 @@ cell. Ender's radius includes ten spare √D units; a smaller disk therefore
 fits inside cells centered at ellipse points, and its area exceeds
 `(3R+S)√D`. Lean checks the finite-set monotonicity needed to carry this
 endpoint result across an interval, but does not yet check the area argument.
+
+## 10. The same Gram matrix in integer and complex coordinates
+
+The arithmetic calculation uses a pair `(a,b)` for `a+b√(-D)`, while the
+interpolation proof uses the complex point `a+i b√D`. These are two
+coordinates for the **selected lattice** `ℤ[√(-D)]`; it need not be the full
+ring of integers of the quadratic field. Define pair multiplication by
+
+$$
+(a,b)(c,d)=(ac-Dbd,ad+bc),\qquad \overline{(a,b)}=(a,-b).
+$$
+
+The map `ι_D(a,b)=a+i b√D` preserves multiplication and conjugation. Its
+integer trace pairing is
+
+$$
+B_D((a,b),(c,d))=2(ac+Dbd)
+=2\operatorname{Re}\bigl(\iota_D(a,b)\overline{\iota_D(c,d)}\bigr).
+$$
+
+That equality is the key geometric invariant: the weighted Euclidean pairing
+does not change when we pass from lattice coordinates to the complex plane.
+Lean proves it, then transports every ordinary derivative row through `ι_D`,
+including the `j>r` zero case. Summing over one finite set of distinct pairs
+and the same derivative orders gives **entrywise equality** after casting the
+integer matrix to the reals. The row labels remain `(i/S,i%S)`, so its
+determinant casts to the determinant of the *existing* real matrix—not a new
+matrix with a convenient bound. See [`IntegerTraceGram.lean`](TenthDiscriminant/IntegerTraceGram.lean).
+
+A small asymmetric check explains why entries matter. At `D=3`, one sample
+`(0,1)`, rows `1, ZW`, and derivative orders `j=0,1`, the integer matrix is
+`[[2,6],[6,24]]`, with determinant `12`. Replacing the evaluation factor
+`\bar z` by `z` while leaving the derivative rule unchanged changes the
+off-diagonal entry to `-6` while leaving that determinant unchanged. A
+determinant-only comparison could miss the wrong derivative semantics.
+
+The generic equality concerns a supplied **finite set of distinct pairs**.
+The verifier's historical ellipse generator uses a half-integer-scaled radius,
+whereas `ellipsePairs D rho` uses integer `rho`; this bridge does not identify
+those two generators or certify the saved numerical campaign. Most importantly,
+integer entries alone do not imply the inert-prime valuation bound. That is
+the next arithmetic theorem to prove; class-number classification remains open.

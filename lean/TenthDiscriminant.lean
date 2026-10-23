@@ -28,3 +28,4 @@ import TenthDiscriminant.FactorJetBudget
 import TenthDiscriminant.JetCountGram
 import TenthDiscriminant.Interpolation
 import TenthDiscriminant.LatticeEllipse
+import TenthDiscriminant.IntegerTraceGram

@@ -33,6 +33,14 @@ The area argument is mathematical prose, **not Lean-checked**; the exact-set
 endpoint transfer is checked in Lean. No determinant or classification claim
 has been promoted by this result.
 
+**Integer-coordinate bridge:** Lean now identifies the actual real trace-Gram
+matrix, entry by entry, with an integer matrix built from the same supplied
+distinct lattice pairs, ordinary derivative rows and factor-of-two trace
+pairing. It also identifies their determinants after casting. This does not
+prove inert-prime divisibility or identify the verifier's different
+half-integer-radius ellipse generator. [Why the two coordinates agree](lean/HUMAN_GUIDE.md#10-the-same-gram-matrix-in-integer-and-complex-coordinates) ·
+[registered scope](research/integer_gram_bridge/PROTOCOL.md).
+
 ## What bound are we claiming?
 
 Write **$D=|\mathrm{disc}(K)|$** for the absolute fundamental discriminant of an imaginary quadratic field. It is not an unrestricted radicand. In the notation $q=|\mathrm{disc}(K)|$ used by [twinheterodox's contribution](https://github.com/twinheterodox/tenth-discriminant), **$q=D$**, not $\log D$.

@@ -1,18 +1,24 @@
 {
-  "task": "Prove Ender's chosen-radius lattice-point count and check its formal interface",
+  "task": "Identify the integral lattice trace-Gram matrix with the existing real matrix",
   "status": "awaiting_pinned_ci",
-  "base_commit": "6431e78",
-  "branch": "codex/ender-radius-count",
+  "base_commit": "c77049288e0eac33f72739b255d8254ff3e6aca1",
+  "branch": "codex/integer-trace-gram",
   "decisions": [
     "Honor flow/PREREG_ENDER.txt and register research/ender_radius_bridge/PROTOCOL.md before new proof edits.",
     "Prove the chosen-radius count by a cell-covering area argument and retain its paper-versus-Lean boundary.",
     "Formalize exact-set monotonicity and Ender's stronger endpoint guard without assuming the count is checked in Lean.",
-    "Leave determinant arithmetic divisibility and class-number classification open."
+    "Leave determinant arithmetic divisibility and class-number classification open.",
+    "Register research/integer_gram_bridge/PROTOCOL.md before any new Lean proof edits; prove a commuting coordinate identity, not a replacement matrix."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
     "The new paper proof is in research/ender_radius_bridge/PROOF.md, independently checked against the older horizontal-slice argument.",
-    "lake env lean TenthDiscriminant/LatticeEllipse.lean passed after endpoint monotonicity and D=19,rho=5 controls."
+    "lake env lean TenthDiscriminant/LatticeEllipse.lean passed after endpoint monotonicity and D=19,rho=5 controls.",
+    "PR #19 head d13abf86 passed pinned CI run 39922982525 and was merged externally at c77049288e0eac33f72739b255d8254ff3e6aca1.",
+    "Historical review files confirm the generic cover helper failure was not a failure of the replayed interval certificates; F5 and post-clone code lacked independent re-review in the recorded response.",
+    "Current unresolved bridge is identification of the Lean trace-Gram matrix with the integral arithmetic matrix, then inert-prime valuation and end-to-end classification.",
+    "The new IntegerTraceGram.lean entrywise, determinant-cast and positive-integer-determinant theorems compiled under pinned Lean 4.19.0; the full lake build and verify_sources.py passed.",
+    "Local Windows audit.py and negative_controls.py wrappers exited 1 on 240-second and 120-second subprocess timeouts respectively; partial successful probes are recorded in the bridge protocol, not promoted to full passes."
   ],
   "files_touched": [
     "README.md",

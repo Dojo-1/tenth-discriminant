@@ -45,6 +45,16 @@ Lean. Lean does check `ellipsePairs_antitone_D`, its card consequence, and
 `ellipseTraceGram_det_bounds_of_ender_guard`: a `3R+S` count at finite-interval
 upper endpoint D2 propagates to each D≤D2 and then to the original matrix.
 
+[`IntegerTraceGram.lean`](TenthDiscriminant/IntegerTraceGram.lean) identifies
+that matrix with exact integer coordinates. For any finite pair set and D>0,
+`integerTraceGramEntry_cast` proves the original real trace entry equals the
+cast integer pairing sum; `integerRectangularTraceGram_cast` and
+`integerRectangularTraceGram_det_cast` carry this to the canonical matrix and
+determinant. `ellipseIntegerTraceGram_cast` specializes it to `ellipsePairs`.
+The proof uses multiplication/conjugation transport, not finite-case
+comparison or an assumed matrix equality. The selected pair lattice is not
+asserted to be the full ring of integers.
+
 ## 2. The connected interpolation proof
 
 Names in this section are in `TenthDiscriminant`, with the `JetAssembly` prefix
@@ -78,7 +88,8 @@ replaced by a coefficient-ring endomorphism merely to shorten the proof.
 | Principal-form integer algebra and strict cutoff | [Arithmetic](TenthDiscriminant/Arithmetic.lean): `principalNorm_four`, `principalNorm_lower`, `small_norm_impossible`, `strict_cutoff`, `interval_strict_cutoff` | Identification with actual ideals/class groups; small-prime inertness. |
 | Floor sums and valuation-weight arithmetic | [FloorSum](TenthDiscriminant/FloorSum.lean), [Arithmetic](TenthDiscriminant/Arithmetic.lean): `floorSum_closed`, `floorSum_scaled`, `sum_min_identity` | Legendre/prime-mass estimates and a link to determinant valuations. Lean's total division at zero is not Python division semantics. |
 | Weighted two-row correlation and 9/25 | [Radial](TenthDiscriminant/Radial.lean), [MomentMatrix](TenthDiscriminant/MomentMatrix.lean): `weighted_correlation_bound`, `momentMatrix_bound`, `normalized_pair_gain` | Actual-row bounded-multiplier instantiation and the full Fischer product. Attainment in the moment class is not derivative-family sharpness. |
-| Actual radial cross entries and lattice norm | [TraceGram](TenthDiscriminant/TraceGram.lean): `traceGram_radial_cross`, `latticePoint_normSq` | Integer implementation equivalence or arithmetic field construction. |
+| Actual radial cross entries and lattice norm | [TraceGram](TenthDiscriminant/TraceGram.lean): `traceGram_radial_cross`, `latticePoint_normSq` | Arithmetic field/class-group construction. |
+| Integer-pair trace matrix, real cast and determinant | [IntegerTraceGram](TenthDiscriminant/IntegerTraceGram.lean): `integerTraceGramEntry_cast`, `integerRectangularTraceGram_det_cast`, `ellipseIntegerTraceGram_det_cast` | Prime-power divisibility; equivalence of the verifier's separate half-integer-radius point generator. |
 | Affine coefficient/determinant transport | [AffineCoefficients](TenthDiscriminant/AffineCoefficients.lean), [AffineTransport](TenthDiscriminant/AffineTransport.lean): `fixedDerivativeDeterminant_affine`, `affineTransport_witness_nonzero` | Invariance of the determinant value or prime valuations without tracking the explicit scale factor. |
 | Exact interval coverage | [Coverage](TenthDiscriminant/Coverage.lean), [RecordedCoverage](TenthDiscriminant/RecordedCoverage.lean): `checkChain_sound`, `ender_integer_coverage` | The 250 Arb inequalities. Coverage is half-open at the final endpoint in this theorem. |
 | Error decay and endpoint propagation | [Envelope](TenthDiscriminant/Envelope.lean), [EnvelopeDecay](TenthDiscriminant/EnvelopeDecay.lean): `ender_slope`, `enderError_antitone`, `ender_positive_from_endpoint` | Endpoint positivity and connection from the actual determinant to these envelopes. |
@@ -95,7 +106,7 @@ ball-arithmetic calculation into a kernel-checked inequality.
 |---|---|
 | Fundamental discriminants, actual quadratic rings, ideals/class groups and small-prime inertness under the class-number-one hypothesis | OPEN; integer norm lemmas are components, not these identifications. |
 | Concrete integer-radius norm ellipse and required lower bound on its cardinality | Finite construction, exact membership, injectivity and upper-endpoint card transfer PROVED in Lean; the chosen-radius lower count has a complete geometric proof in `research/ender_radius_bridge/PROOF.md`, but its area step and radius instantiation are NOT Lean-checked. |
-| Equality between the formal real Gram matrix and an integer matrix with the intended arithmetic entries | OPEN; exact finite comparators are not a universal semantics theorem. |
+| Equality between the formal real Gram matrix and the integer-pair matrix with the same derivative rows and supplied point set | PROVED in Lean for D>0, including row-major rectangular and integer-radius ellipse specializations and determinant cast. This does not equate distinct point-set generators or duplicate-containing Python lists. |
 | Inert-prime divisibility and prime-adic valuation lower bound for that same integer determinant | OPEN. |
 | Full factorial/Legendre prime-mass inequality, remainder control and analytic upper bound | OPEN; selected floor-sum and moment identities are proved. |
 | Kernel-checkable numerical contradictions, with their exact analytic interpretation | OPEN. |
@@ -137,7 +148,7 @@ CI running the tests is not a second mathematical author. No human readability
 study, blind independent semantic review, proof-completion percentage or
 optimality claim is made.
 
-The next formal bridge is the cell-area lower bound and its radius
-instantiation. The next arithmetic bridge is identification of this real
-matrix with the integer matrix used in the valuation argument. The latter
-does not follow from counting. No classification conclusion follows yet.
+The next formal geometric bridge is the cell-area lower bound and its radius
+instantiation. The next arithmetic bridge is inert-prime divisibility of the
+now-identified integer determinant. Neither follows from matrix equality
+alone. No classification conclusion follows yet.

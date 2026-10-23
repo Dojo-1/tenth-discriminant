@@ -56,6 +56,14 @@ now supplies that count in ordinary mathematics. Lean checks interval
 monotonicity and the conditional Ender-guard application, but the disk-area
 step is not yet formalized.
 
+[`IntegerTraceGram.lean`](TenthDiscriminant/IntegerTraceGram.lean) gives the
+next bridge: for a supplied finite set of distinct integer pairs and positive
+D, its exact integer derivative trace-Gram matrix casts entrywise to this
+same real matrix. The integer-radius ellipse is a specialization. The
+determinant casts accordingly, but its inert-prime divisibility is not proved.
+The [guide's coordinate explanation](HUMAN_GUIDE.md#10-the-same-gram-matrix-in-integer-and-complex-coordinates)
+includes an asymmetric control that a determinant-only comparison misses.
+
 ## Read in mathematical order
 
 1. [Human guide](HUMAN_GUIDE.md): statement, definitions, proof and examples.
@@ -119,8 +127,8 @@ status. The current status is [FORMALIZATION.md](FORMALIZATION.md).
 
 ## The remaining boundary
 
-Concrete ellipse construction/counting, integer-matrix correspondence,
-small-prime inertness and determinant divisibility, remaining analytic and
+The cell-area count is not Lean-checked; small-prime inertness and determinant
+divisibility, remaining analytic and
 kernel-checkable numerical estimates, and finite classification are not yet a
 connected Lean proof. The analytic cutoff and saved numerical evidence are
 unchanged. No human or blind independent semantic review is claimed.
