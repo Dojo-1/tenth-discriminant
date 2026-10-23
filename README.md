@@ -69,8 +69,8 @@ short unitriangular-basis derivation of the full `p^(2F(p))` factor for
 the same integer Gram, assuming `X²+D` irreducible modulo the odd prime
 `p`. Lean checks the abstract unimodular two-sided determinant factor
 and, in a later bounded slice, every jet of the *one* factor `Z^p-W`
-conditional on its order-zero congruence. It does not check the generic
-Frobenius premise or rectangular basis. A further Lean
+conditional on its order-zero congruence. At that earlier stage it did
+not check the generic Frobenius premise or rectangular basis. A further Lean
 lemma identifies the proposed basis-exponent sum with Ender's exact
 `F(p)` and derives divisibility **conditional on constructing** that
 integral basis factor. Lean also checks that every ordinary jet of
@@ -79,7 +79,10 @@ congruence, in both coordinates of the selected quadratic order. This
 is now paired with an explicit integer binomial basis matrix whose
 determinant is Lean-checked to be `1`. Its action on the *actual* Gram
 rows has not yet been proved, so the integral factorization remains a
-hypothesis. This
+hypothesis. A further [local-operator check](lean/TenthDiscriminant/LocalOperators.lean)
+shows that conjugating a sample preserves the explicit Frobenius premise
+and hence all ordinary one-factor jets; it does not establish that
+premise from inertness. This
 advances the *formal bridge*; it does not
 establish the analytic cutoff or class-number
 classification as a checked theorem.

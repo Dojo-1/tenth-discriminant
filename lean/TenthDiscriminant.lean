@@ -36,4 +36,5 @@ import TenthDiscriminant.FrobeniusJet
 import TenthDiscriminant.RectangularValuation
 import TenthDiscriminant.RectangularBasisMatrix
 import TenthDiscriminant.JetPower
+import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot
