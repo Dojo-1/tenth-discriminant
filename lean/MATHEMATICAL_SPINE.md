@@ -19,21 +19,21 @@ inequality needed for Ender is still missing.
 Fix an integer `D>0` and a finite set `Q` of distinct pairs `(x,y)∈ℤ²`.
 Work in the quadratic order
 
-\[
+$$
 A_D=\mathbb Z[t]/(t^2+D),\qquad
 q=x+yt,\quad \bar q=x-yt.
-\]
+$$
 
 This is the selected lattice `ℤ[√(-D)]`, **not generally the full ring of
 integers**. Its trace pairing is the concrete integral form
 
-\[
+$$
 B_D(a+bt,c+dt)=2(ac+Dbd).
-\]
+$$
 
 For `0≤r<R`, `0≤s<S` and `0≤j<J`, set
 
-\[
+$$
 v_{r,s,j}(q)=
 \begin{cases}
 (r)_j q^{r-j}\bar q^{\,s},&j\le r,\\
@@ -42,7 +42,7 @@ v_{r,s,j}(q)=
 \qquad
 G_{(r,s),(r',s')}
 =\sum_{q\in Q}\sum_{j<J}B_D(v_{r,s,j}(q),v_{r',s',j}(q)).
-\]
+$$
 
 Here `(r)_j` is the falling factorial. These are *ordinary* `Z`-derivatives
 of `Z^r W^s`, with `W` held fixed; no `j!` normalization is hidden. The
@@ -57,12 +57,12 @@ Read `G` over `ℝ` via the proved integer-to-real embedding. For real
 coefficients `c`, write
 `F(Z,W)=∑_{r,s}c_{r,s}Z^rW^s`. The Gram identity says
 
-\[
+$$
 c^{\mathsf T}Gc
 =2\sum_{q\in Q}\sum_{j<J}
 \bigl|\partial_Z^jF(z_q,\bar z_q)\bigr|^2.
 \tag{1}
-\]
+$$
 
 Thus positivity asks one clean question: can a nonzero polynomial in the
 `R×S` monomial rectangle have every observed jet vanish?
@@ -83,12 +83,12 @@ give the precise statement and proof.
 If all `J` jets vanish and `J≥S>s`, every sample is exceptional. Since
 `r≤R−1` and `s≤S−1`, the checked theorem yields
 
-\[
+$$
 R,S\ge1,\quad J\ge S,\quad
 |Q|>2(R-1)+(S-1)
 \quad\Longrightarrow\quad \det G>0.
 \tag{2}
-\]
+$$
 
 The point-count hypothesis is **sufficient**, not claimed sharp.
 [Interpolation.lean](TenthDiscriminant/Interpolation.lean) gives the public
@@ -100,12 +100,12 @@ positivity to `G`.
 For every `m>0`, Lean independently computes the same jets in the
 pair-coordinate model `(ℤ/mℤ)²` with `t²=−D`, and proves
 
-\[
+$$
 G_m=G\bmod m,\qquad
 \det G_m=(\det G)\bmod m,\qquad
 \det G_m=0\ \Longleftrightarrow\ m\mid\det G.
 \tag{3}
-\]
+$$
 
 The sum remains indexed by the original `Q`: two distinct integer points
 which become equal modulo `m` still contribute twice. This is integral
@@ -122,9 +122,9 @@ Take `D=19`, `p=3`, `R=4`, `S=2`. The polynomial `t²+1` has no root in
 pair-coordinate model modulo `3`, `t²=−19≡−1`, so
 `t³=−t`. The freshman's-dream identity in characteristic `3` gives
 
-\[
+$$
 q^3=(x+yt)^3=x-yt=\bar q\pmod3.
-\]
+$$
 
 Thus the two canonical rows `Z³` and `W` agree modulo `3`. More is true:
 the jets of `F=Z³−W` at every lattice point are all divisible by `3`.
@@ -135,13 +135,13 @@ Replace the `Z³` row by `Z³−W` and make the matching column change. The
 change of basis has determinant `1`, so it preserves `det G`. Because the
 whole new jet row is `3` times an *integral* row, the Gram structure gives
 
-\[
+$$
 TGT^{\mathsf T}=\operatorname{diag}(1,\ldots,3,\ldots,1)
 \,K\,\operatorname{diag}(1,\ldots,3,\ldots,1),
 \quad K\in M_8(\mathbb Z),
 \quad \det G=9\det K.
 \tag{4}
-\]
+$$
 
 The shared diagonal entry really has two factors of `3`; merely knowing
 that one row and one column are separately divisible by `3` would not prove
