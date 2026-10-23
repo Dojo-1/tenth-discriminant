@@ -1,6 +1,6 @@
 {
-  "task": "Derive the universal Frobenius premise and Gram valuation from a precise odd-prime nonsquare condition",
-  "status": "phase8_local_full_build_passed_pinned_ci_pending",
+  "task": "Isolate and prove the strict-small-prime norm-to-local guard conditional on principal norm lifting",
+  "status": "phase9_local_full_build_passed_pinned_ci_pending",
   "base_commit": "a4da8963fa0d94ca4858e09ab10f3195d0fe588f",
   "branch": "codex/rectangular-row-action",
   "decisions": [
@@ -22,7 +22,8 @@
     "After PR #23 merged externally, branch from its merge commit and preregister Phase 5 in commit 75ee2c0. Construct the actual binomial coefficient matrix and prove its determinant one; do not infer its action on the original integer Gram without a separate row identity.",
     "After PR #24 merged externally, preregister Phase 6 in commit 6f45b4f. Treat validity as the explicit local coordinatewise Frobenius premise; prove only closure under exact conjugation and its ordinary-jet consequence, not global class-number closure.",
     "After PR #25 merged externally, preregister Phase 7 in commit 710da33 before proof edits. Prove the action on actual original derivative rows, then an integral two-sided Gram factor under universal coordinatewise Frobenius congruence; do not infer inertness, cutoff or classification.",
-    "Preregister Phase 8 in commit c82d8f2 before proof edits. Derive the universal Frobenius premise and exact integer Gram valuation from odd-prime nonsquareness of -D in ZMod p, preserving the class-number/analytic gaps."
+    "Preregister Phase 8 in commit c82d8f2 before proof edits. Derive the universal Frobenius premise and exact integer Gram valuation from odd-prime nonsquareness of -D in ZMod p, preserving the class-number/analytic gaps.",
+    "Preregister Phase 9 in commit f4c2e56 before proof edits. Prove strict small-prime norm obstruction, polynomial irreducibility equivalence and the determinant consequence only under explicit root-to-principal-norm lifting; do not infer the lifting premise from class number one."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
@@ -57,7 +58,8 @@
     "Phase 5 protocol-only commit 75ee2c0 preceded Lean edits. Targeted RectangularBasisMatrix.lean, source correspondence and final 6694-step full build passed for the binomial matrix, term bounds, every target column in range, strict lower-triangularity, diagonal one, determinant one, and full pilot rows. Pinned CI is pending. The actual derivative-row action remains open.",
     "PR #24 merged externally at bf9ddff. Phase 6 protocol-only commit 6f45b4f preceded proof edits. Targeted LocalOperators.lean, source correspondence and the 6695-step local build pass; pinned CI is pending. Proof-script failures and repairs are recorded in Phase 6 protocol.",
     "PR #25 merged externally at a4da896. Phase 7 protocol-only commit 710da33 preceded new proof edits. Targeted RectangularRowAction.lean and RectangularGramFactor.lean compile; the full 6697-step local build passes. The general theorem constructs the original integral Gram factor and exact determinant power under a universal coordinatewise Frobenius premise. A stalled optional D=19 corollary was removed and is not claimed. PR #27 head b70cc3b passed pinned Linux run 40020475621 and CodeQL; it remains draft and unmerged.",
-    "Phase 8 protocol-only commit c82d8f2 preceded edits. Targeted QuadraticResidueRing.lean and InertFrobenius.lean compile, including the generator, all-pairs congruence, nonsquare valuation and inert/split controls. Full 6699-step local build, source correspondence, whitespace and task-state JSON checks pass. Final-head pinned CI pending; no class-number or cutoff claim."
+    "Phase 8 protocol-only commit c82d8f2 preceded edits. Targeted QuadraticResidueRing.lean and InertFrobenius.lean compile, including the generator, all-pairs congruence, nonsquare valuation and inert/split controls. Full 6699-step local build, source correspondence, whitespace and task-state JSON checks pass. PR #27 head e6241d1 passed pinned CI run 40024187867 and CodeQL; no class-number or cutoff claim.",
+    "Phase 9 protocol-only commit f4c2e56 preceded edits. SmallPrimeBridge.lean compiles with conditional norm lifting, exact irreducibility equivalence, strict endpoint and D=15,p=3 falsifier. Full 6700-step local build and source correspondence pass. Pinned CI on the new proof head is pending."
   ],
   "files_touched": [
     "README.md",
@@ -102,7 +104,9 @@
     "lean/TenthDiscriminant/QuadraticResidueRing.lean",
     "lean/TenthDiscriminant/InertFrobenius.lean",
     "research/uniform_inert_valuation/PROOF.md",
-    "TAO_OBJECTIVES_CURRENT.md"
+    "TAO_OBJECTIVES_CURRENT.md",
+    "research/uniform_inert_valuation/PHASE9_PROTOCOL.md",
+    "lean/TenthDiscriminant/SmallPrimeBridge.lean"
   ],
   "updated": "2026-10-23"
 }

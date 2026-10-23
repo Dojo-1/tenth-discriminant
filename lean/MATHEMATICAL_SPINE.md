@@ -196,7 +196,11 @@ The [local theorem](TenthDiscriminant/InertFrobenius.lean) now derives that
 congruence from `p` odd prime and `-D` nonsquare in `ZMod p`, by checking
 `t^p=-t` and then Freshman's dream on every `x+yt`. Connecting these
 selected-order local guards to the global class-number hypothesis remains
-open. This is inherited valuation mathematics,
+open. A [small-prime interface](TenthDiscriminant/SmallPrimeBridge.lean)
+now proves that *if* a residue root lifts to a principal norm-`p`
+element, the elementary norm bound supplies the local guard for
+`p<(D+1)/4`. Proving that lifting property from class number one is
+still the missing ideal-theoretic step. This is inherited valuation mathematics,
 not a new classification or cutoff.
 
 The [explicit coefficient matrix](TenthDiscriminant/RectangularBasisMatrix.lean)
@@ -231,7 +235,7 @@ these views commute on **one integer matrix with the same samples**.
 |---|---|
 | Jet energy, contact budget, positivity; exact integer matrix; residue reduction; fixed `D=19,p=3` square factor | Lean-checked under the displayed hypotheses. |
 | Ender's chosen-radius ellipse has enough points | Elementary cell-area proof on paper; exact-set and endpoint-transfer helpers in Lean, but the area inequality is not Lean-checked. |
-| Uniform inert-prime valuation, class-number-one to inertness, analytic comparison, finite classification | Lean checks the exact exponent for the actual integer Gram under an odd-prime nonsquare local condition. The global class-number link and all later links are not connected as an end-to-end theorem. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
+| Uniform inert-prime valuation, class-number-one to inertness, analytic comparison, finite classification | Lean checks the exact exponent for the actual integer Gram under an odd-prime nonsquare local condition, and the strict-small-prime consequence under explicit principal-norm lifting. The lifting property, global class-number link and all later links are not connected as an end-to-end theorem. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical

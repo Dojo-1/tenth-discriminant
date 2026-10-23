@@ -38,4 +38,25 @@ never merge automatically.
 
 ## Execution record
 
-Pending.
+`SmallPrimeBridge.lean` now proves the strict norm obstruction including
+the rational (`y=0`) prime-square case, the exact polynomial
+irreducibility/nonsquare equivalence, and the determinant consequence
+by applying the existing Phase 8 theorem. The lifting hypothesis stays
+syntactically visible. The `D=15,p=3` ramified small-prime control
+proves this hypothesis cannot simply be omitted; `D=19,p=3` checks the
+irreducible polynomial wording, and the pre-existing `D=163,p=41`
+norm witness guards strictness at the endpoint.
+
+First Lean attempt failed on `Int.natAbs` transport, `IsSquare`'s
+equality orientation and the polynomial `C(-D)` rewrite. These were
+proof-script normal-form errors, not counterexamples. The repaired
+targeted file passes pinned Lean. Full build and pinned CI are reported
+separately below rather than inferred from that targeted check.
+
+Local checks: `lake env lean TenthDiscriminant/SmallPrimeBridge.lean`
+passed; `lake build` completed all 6700 steps; `python
+verify_sources.py` passed from `lean/` with its stated endpoint-only
+scope. `git diff --check` passed. The first source-verifier invocation
+from the repository root failed because that file lives in `lean/`;
+the corrected invocation passed. Compiled dependency audit and inherited
+negative controls await pinned Linux CI on the proof head.

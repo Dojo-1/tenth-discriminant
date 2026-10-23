@@ -5,6 +5,19 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-23: a conditional small-prime norm gate
+
+[Phase 9](research/uniform_inert_valuation/PHASE9_PROTOCOL.md) adds a
+conditional global-to-local interface. Lean proves that if every root
+of `X²+D` modulo an odd prime `p<(D+1)/4` lifts to a principal norm-`p`
+representation, then no root exists and the Phase 8 valuation applies.
+It also equates the exact nonsquare guard with quadratic irreducibility.
+The norm-lifting premise is **not derived from class number one**;
+identifying the maximal order, prime ideals and principality is the
+remaining arithmetic bridge. `D=15,p=3` falsifies an unconditional
+lifting statement. [Proof](lean/TenthDiscriminant/SmallPrimeBridge.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#15-the-small-prime-gate-without-hiding-the-class-group).
+
 ## 2026-10-23: odd-prime nonsquare condition now yields exact valuation
 
 [Phase 8](research/uniform_inert_valuation/PHASE8_PROTOCOL.md) formalizes

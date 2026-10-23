@@ -107,8 +107,12 @@ Ender's `F(p)`, proving the proposition.
   the factorization is integral, and nonsquareness of `-D : ZMod p`
   for odd prime `p` implies the universal coordinatewise Frobenius
   congruence. See [Phase 7](PHASE7_PROTOCOL.md) and
-  [Phase 8](PHASE8_PROTOCOL.md). Translating class-number-one inertness
-  into this exact selected-order nonsquare premise remains separate.
+  [Phase 8](PHASE8_PROTOCOL.md). [Phase 9](PHASE9_PROTOCOL.md) additionally
+  checks that, for `D ≡ 3 (mod 4)` and strict small odd `p`, a
+  **root-to-principal-norm lifting premise** excludes roots of `X²+D`
+  modulo `p`, equivalently supplies the nonsquare guard and the same
+  determinant factor. This lifting premise is not yet derived from
+  class number one, ideals or the maximal-order interpretation.
 - The `D=2,p=3` negative control must fail the local hypothesis:
   `X²+2=X²-1` splits modulo `3`, and `T^3=T`, not `-T`.
 - Positivity of `det G` comes from the separate sampling/contact theorem.

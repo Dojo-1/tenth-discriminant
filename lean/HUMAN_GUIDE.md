@@ -540,3 +540,35 @@ needs special care. The theorem assumes odd prime and nonsquare `-D`
 class-number-one hypothesis supplies these guards at every prime used by
 Ender, nor formalized the geometric area and analytic comparison. These
 are now the visible global-to-local and determinant-to-cutoff gaps.
+
+## 15. The small-prime gate, without hiding the class group
+
+There is a short argument at the boundary of the formal proof. For
+`D ≡ 3 (mod 4)`, the relevant principal norm form is
+
+$$N(x,y)=x^2+xy+\frac{D+1}{4}y^2,
+\qquad 4N(x,y)=(2x+y)^2+Dy^2.$$
+
+If `y ≠ 0`, this forces `N(x,y) ≥ (D+1)/4`. If `y=0`, its norm is a
+square, so cannot equal a prime. Hence a prime `p<(D+1)/4` cannot be
+represented by this form. Lean checks both cases. It also checks that
+`X²+D` has no root modulo `p` exactly when `-D` is nonsquare, and that
+this is equivalent to irreducibility of `X²+D` over `𝔽_p`.
+
+The *missing sentence* is: **why would a root modulo `p` give a
+principal element of norm `p`?** In a class-number-one imaginary
+quadratic field, the intended answer passes through a prime ideal of
+norm `p`, principality, and identification of its generator's norm
+with the displayed form. We have not formalized that ideal/class-group
+passage. [SmallPrimeBridge.lean](TenthDiscriminant/SmallPrimeBridge.lean)
+names it `SmallPrimeNormLifting` and proves only the implication
+
+$$\text{small prime + norm lifting}
+\Longrightarrow X^2+D\text{ irreducible mod }p
+\Longrightarrow p^{2F(p)}\mid\det G.$$
+
+The strict inequality matters. At `D=163,p=41`, the form represents
+`41` as `N(0,1)`; the theorem deliberately says nothing at equality.
+At `D=15,p=3`, zero is a residue root and Lean proves the lifting
+premise is false. These are boundary checks, not a classification or a
+new analytic cutoff.

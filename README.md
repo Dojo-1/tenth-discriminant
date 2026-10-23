@@ -15,7 +15,9 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > `p^(2F(p))` factor for the actual integer Gram when `p` is odd prime
 > and `-D` is nonsquare modulo `p`. The chosen-radius cell-area count is
 > proved on paper but not in Lean. Deriving that local nonsquare condition
-> from the global class-number hypotheses is still open. The
+> from the global class-number hypotheses is still open: Lean now isolates
+> the needed root-to-principal-norm lifting premise and proves its
+> strict-small-prime consequence, but not the class-group premise. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.

@@ -41,3 +41,13 @@
 - 2026-10-23: Protocol-only commit `e8bb4d389c95bc24624d7b94174245314594dfba` passed pinned Linux workflow `39944972558`. New Lean modules give Zsqrtd coordinates, an independently computed residue Gram with determinant naturality and exact collision/asymmetric controls, a two-sided determinant lemma, and the fixed D=19,p=3 canonical eight-row theorem `9 ∣ det G` for arbitrary finite Q and J. The D=19 ellipse instance is positive; D=2,p=3 is a checked noninert falsifier. Targeted Lean and local source-correspondence checks passed. Full build and later checks still pending at this checkpoint; no general Ender/classification conclusion follows.
 - 2026-10-23: Full `lake build` passed for all 6690 steps. Local `audit.py` exited 1 because the Windows apparatus-controls wrapper timed out after 240 seconds, despite import coverage and the compiled `AUDIT_OK` report (526 logical declarations, 435 theorems). Local `negative_controls.py` was deliberately stopped after four matched good/bad controls passed; its full suite is incomplete locally. The exact final proof commit requires its own pinned Linux CI; do not infer a pass from partial local output.
 - 2026-10-23: Proof-head commit `d5945cf7fc5b891b54ef85986c40a55bec35843c` passed pinned Linux workflow `39954106722`, job `120415525126`: source correspondence, full build, compiled axiom audit and inherited negative controls. Draft PR #20 remains open and unmerged; its description was updated to the new fixed-pilot scope. This task-state-only follow-up will need its own CI before it can be called the final checked head.
+- 2026-10-23, Phase 9: preregistered strict small-prime norm-to-local
+  bridge in standalone commit `f4c2e56` before proof edits. Lean now
+  proves the norm obstruction including the rational prime-square case,
+  identifies `X²+D` irreducibility with nonsquareness of `-D` over
+  `ZMod p`, and applies the existing actual-Gram valuation under the
+  explicit root-to-principal-norm lifting premise. `D=15,p=3` proves
+  that premise is not unconditional; `D=163,p=41` remains the strict
+  endpoint witness. Targeted Lean, 6700-step local full build and source
+  correspondence pass. Class-number one to lifting, analytic cutoff,
+  and classification remain open; final-head pinned CI pending.
