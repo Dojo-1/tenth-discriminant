@@ -80,6 +80,15 @@
   `Algebra.norm` and the maximal-order identification are not proved;
   no checked cutoff or classification follows. Final-head CI pending.
 
+- 2026-10-24, Phase 14: Phase 13 head `ca4bb0b` passed pinned CI
+  `40037475255` and CodeQL. Protocol-only `18510c3` preceded edits.
+  Lean now checks the squarefree rational denominator lemma, parity,
+  coordinate reconstruction and converse, uniqueness, `D=15` and `D=9`
+  controls. Targeted Lean and the full 6705-step build pass. Source
+  correspondence passes endpoint-only; whitespace and state JSON checks
+  pass. This is not yet a theorem identifying the explicit order with
+  the maximal integer ring. Pinned CI on this proof head is pending.
+
 - 2026-10-24, Phase 13: Phase 12 final head `4133023` passed pinned CI
   `40034568524` and CodeQL. Preregistered the algebraic norm target
   separately in `819f3f9`. Lean now checks a true rank-two power basis

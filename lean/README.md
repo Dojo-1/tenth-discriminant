@@ -9,6 +9,12 @@ Then read the [detailed human proof guide](HUMAN_GUIDE.md). Use the
 [current claim map](FORMALIZATION.md) to distinguish proved components,
 conditional helpers, finite calculations and open links.
 
+The newest arithmetic component is the
+[rational maximal-order coordinate criterion](TenthDiscriminant/MaximalOrderCoordinates.lean):
+integer trace and norm force the half-integral shape under
+squarefreeness. The actual field-to-maximal-order identification is
+still open; see [§19 of the guide](HUMAN_GUIDE.md#19-why-the-half-integral-coordinates-are-forced).
+
 ## The result to start with
 
 For a finite set P of distinct complex points and the original R-by-S monomial

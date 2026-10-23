@@ -42,3 +42,21 @@ the exact strongest checked lemma and log the missing theorem.
 Run targeted Lean, full pinned build, source correspondence, compiled
 dependency audit and negative controls on a proof head. Update the
 human guide/current status; keep the PR draft and do not merge.
+
+## Execution and boundary (2026-10-24)
+
+`MaximalOrderCoordinates.lean` proves the rational denominator lemma,
+parity consequence, forward coordinate criterion, uniqueness, and
+converse integer trace/norm for half-integral coordinates. The `D=15`
+positive control and `D=9,q=1/3` counterexample compile.
+
+Initial scratch failures involved a reversed equality, rational
+division notation, a nonlinear modular step, an overlarge algebraic
+normalization, and squarefreeness automation for 15. They were
+repaired by explicit equalities, a parity split, and `15=3·5`.
+
+The full target remains open. The bounded pinned-Mathlib search found
+`AdjoinRoot` fields and general integral trace/norm APIs, but no direct
+identification of this explicit order with `𝓞 (ℚ(√(-D)))`. Such a
+field/order equivalence must still transport trace, norm and the
+residue quotient. This result implies no cutoff or classification.

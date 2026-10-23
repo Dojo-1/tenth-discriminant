@@ -1,6 +1,6 @@
 {
   "task": "Identify the explicit quadratic order with the maximal integer ring of the intended field",
-  "status": "phase13_local_full_build_passed_pinned_ci_pending",
+  "status": "phase14_local_full_build_passed_field_identification_open",
   "base_commit": "a4da8963fa0d94ca4858e09ab10f3195d0fe588f",
   "branch": "codex/rectangular-row-action",
   "decisions": [
@@ -27,7 +27,8 @@
     "Preregister Phase 10 in commit ac62da0 before proof edits. Use Mathlib's class-number-to-PID theorem and the kernel quotient norm formula for an arbitrary number field; retain the specific quadratic residue map and norm coordinates as separate open arrows.",
     "Preregister Phase 11 in commit 1b190b0 before proof edits. Construct a surjective root-to-quotient map from the explicit half-integral order under odd-prime and D mod 4 guards; do not identify this order with the maximal integer ring or infer principal norm lifting.",
     "Preregister Phase 12 in commit 8f3bf1e before proof edits. Check the actual quotient relation, multiplication column and 2x2 determinant; do not identify the matrix with Algebra.norm or the order with the maximal integer ring without a separate basis proof.",
-    "Preregister Phase 13 in commit 819f3f9 before proof edits. Use the actual rank-two power basis and left-multiplication matrix to identify Algebra.norm with the existing principalNorm; keep the maximal-order identification separate."
+    "Preregister Phase 13 in commit 819f3f9 before proof edits. Use the actual rank-two power basis and left-multiplication matrix to identify Algebra.norm with the existing principalNorm; keep the maximal-order identification separate.",
+    "Preregister Phase 14 in commit 18510c3 before proof edits. Prove the rational trace/norm coordinate criterion and controls; do not claim maximal-order identification without a field/order equivalence."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
@@ -67,7 +68,8 @@
     "Phase 10 protocol-only commit ac62da0 preceded edits. PrincipalIdealBridge.lean compiles with class-number-one quotient-to-principal-norm theorem and K=Q,n=3 control. Full 6701-step local build and source correspondence pass. PR #28 head 34f7690 passed pinned CI run 40029400442 and CodeQL.",
     "Phase 11 protocol-only commit 1b190b0 preceded edits. HalfOrderResidue.lean compiles with root-to-explicit-order quotient map, reversibility and D=15,p=3 control. Full 6702-step local build and source correspondence pass. PR #28 head 5beb7d7 passed pinned CI run 40031979933 and CodeQL.",
     "Phase 12 protocol-only commit 8f3bf1e preceded edits. HalfOrderNorm.lean checks T^2=T-c, the second actual multiplication column, the exact 2x2 determinant and D=15,c=4 control. Targeted Lean, 6703-step full build and source correspondence pass. PR #28 head 4133023 passed pinned CI run 40034568524 and CodeQL.",
-    "Phase 13 protocol-only commit 819f3f9 preceded edits. HalfOrderAlgebraicNorm.lean proves rank-two power basis, actual left-multiplication matrix, Algebra.norm=principalNorm, D=15 generator and scalar controls. Targeted Lean, 6704-step full build and endpoint-only source correspondence pass. The maximal-order identification, area Lean proof, analytic cutoff and classification remain open; pinned CI on the proof head is pending."
+    "Phase 13 protocol-only commit 819f3f9 preceded edits. HalfOrderAlgebraicNorm.lean proves rank-two power basis, actual left-multiplication matrix, Algebra.norm=principalNorm, D=15 generator and scalar controls. Targeted Lean, 6704-step full build and endpoint-only source correspondence pass. The maximal-order identification, area Lean proof, analytic cutoff and classification remain open; pinned CI on the proof head is pending.",
+    "Phase 13 proof head ca4bb0b passed pinned Linux CI run 40037475255 and CodeQL. Phase 14 protocol-only commit 18510c3 preceded edits. MaximalOrderCoordinates.lean targeted check and full 6705-step lake build pass: squarefree denominator, parity, forward and converse coordinate conditions, uniqueness, D=15 and D=9 controls. Source correspondence passes endpoint-only; whitespace and task JSON checks pass. The field/order equivalence remains open; pinned CI on this proof head pending."
   ],
   "files_touched": [
     "README.md",
@@ -122,7 +124,9 @@
     "research/uniform_inert_valuation/PHASE12_PROTOCOL.md",
     "lean/TenthDiscriminant/HalfOrderNorm.lean",
     "research/uniform_inert_valuation/PHASE13_PROTOCOL.md",
-    "lean/TenthDiscriminant/HalfOrderAlgebraicNorm.lean"
+    "lean/TenthDiscriminant/HalfOrderAlgebraicNorm.lean",
+    "research/uniform_inert_valuation/PHASE14_PROTOCOL.md",
+    "lean/TenthDiscriminant/MaximalOrderCoordinates.lean"
   ],
   "updated": "2026-10-24"
 }

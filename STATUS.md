@@ -5,6 +5,19 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-24: prospective maximal-order coordinates checked
+
+[Phase 14](research/uniform_inert_valuation/PHASE14_PROTOCOL.md) proves
+in Lean that, for squarefree `D ≡ 3 (mod 4)`, rational `a,b` with
+integer `2a` and `a²+Db²` have unique coordinates
+`a=x+y/2, b=y/2` with `x,y∈ℤ`; the converse is checked too.
+`D=15` is a positive control, while `D=9,q=1/3` shows why
+squarefreeness matters. This is the arithmetic heart of the
+maximal-order argument, **not** the field-to-order equivalence.
+The latter, the cutoff and classification remain open.
+[Lean source](lean/TenthDiscriminant/MaximalOrderCoordinates.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#19-why-the-half-integral-coordinates-are-forced).
+
 ## 2026-10-24: the explicit order's algebraic norm is checked
 
 [Phase 13](research/uniform_inert_valuation/PHASE13_PROTOCOL.md) proves

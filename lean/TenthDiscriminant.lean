@@ -44,6 +44,7 @@ import TenthDiscriminant.PrincipalIdealBridge
 import TenthDiscriminant.HalfOrderResidue
 import TenthDiscriminant.HalfOrderNorm
 import TenthDiscriminant.HalfOrderAlgebraicNorm
+import TenthDiscriminant.MaximalOrderCoordinates
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot

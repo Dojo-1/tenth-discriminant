@@ -10,6 +10,12 @@ Read the [mathematical spine](MATHEMATICAL_SPINE.md) first, then the
 "Proved" below means the encoded implication under its explicit hypotheses,
 not that its intended application or all of its hypotheses have been proved.
 
+Phase 14's [coordinate criterion](TenthDiscriminant/MaximalOrderCoordinates.lean)
+is checked: squarefree `D≡3 (mod 4)` plus integral rational trace/norm
+forces unique half-integral coordinates, and those coordinates have
+integer trace/norm conversely. Transport to the actual quadratic field
+and identification with its maximal integer ring are **not** checked.
+
 ## 1. One public entry point
 
 [`Interpolation.lean`](TenthDiscriminant/Interpolation.lean) exposes the original

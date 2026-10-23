@@ -666,3 +666,30 @@ under the fundamental-discriminant hypotheses. Class number one in
 §16 concerns that **maximal** ring. Until the identification is
 proved, §16 still cannot discharge §15's lifting premise; no cutoff
 or classification follows from this norm calculation alone.
+
+## 19. Why the half-integral coordinates are forced
+
+Write a prospective quadratic-field element as `a+b√(-D)` with
+rational `a,b`. Integrality should make its trace and norm integers:
+
+$$m=2a\in\mathbf Z,\qquad k=a^2+Db^2\in\mathbf Z.$$
+
+Then `D(2b)²=4k-m²`. The elementary denominator lemma is: if `D`
+is squarefree and `Dq²` is an integer, then `q` is an integer.
+In lowest terms the denominator squared divides `D`, so it must be
+one. Thus `n=2b∈ℤ`. Since `m²+Dn²=4k` and `D≡3 (mod 4)`, squares
+modulo four force `m,n` to have the same parity. Taking
+`x=(m-n)/2∈ℤ` gives
+
+$$a+b\sqrt{-D}=x+n\frac{1+\sqrt{-D}}2.$$
+
+[MaximalOrderCoordinates.lean](TenthDiscriminant/MaximalOrderCoordinates.lean)
+checks those arithmetic steps, uniqueness, and the converse integer
+trace/norm implication. `D=15` works; `D=9,q=1/3` falsifies the
+denominator claim without squarefreeness.
+
+What remains is to instantiate this calculation in the actual
+quadratic field, prove that its integral elements supply those trace
+and norm hypotheses, and identify the explicit quotient order with
+Mathlib's maximal integer ring. Until then §16 cannot be applied
+to §17's quotient map. This is a structural gap, not a classification.
