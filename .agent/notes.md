@@ -69,3 +69,13 @@
   and source correspondence pass. The maximal-order identification,
   algebraic norm formula, area formalization, analytic cutoff and
   classification remain open; final-head pinned CI pending.
+
+- 2026-10-24, Phase 12: Phase 11 head `5beb7d7` passed pinned CI run
+  `40031979933` and CodeQL. Preregistered the explicit-order norm
+  attempt separately at `8f3bf1e`. Lean now checks `T²=T-c` in the
+  actual quotient, the nontrivial multiplication column, and the
+  exact determinant `x²+xy+cy²` of the proposed 2×2 integer matrix;
+  `D=15,c=4` is a control. Targeted Lean, full 6703-step build and
+  source correspondence pass. The basis identification with
+  `Algebra.norm` and the maximal-order identification are not proved;
+  no checked cutoff or classification follows. Final-head CI pending.

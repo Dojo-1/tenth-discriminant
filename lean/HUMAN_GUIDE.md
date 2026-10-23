@@ -559,8 +559,9 @@ The *missing sentence* is: **why would a root modulo `p` give a
 principal element of norm `p`?** In a class-number-one imaginary
 quadratic field, the intended answer passes through a prime ideal of
 norm `p`, principality, and identification of its generator's norm
-with the displayed form. We have not formalized that ideal/class-group
-passage. [SmallPrimeBridge.lean](TenthDiscriminant/SmallPrimeBridge.lean)
+with the displayed form. The abstract ideal/class-group move is
+formalized in §16, but its field-specific input remains open.
+[SmallPrimeBridge.lean](TenthDiscriminant/SmallPrimeBridge.lean)
 names it `SmallPrimeNormLifting` and proves only the implication
 
 $$\text{small prime + norm lifting}
@@ -629,3 +630,31 @@ norm in that identification equals `x²+xy+cy²`. Only then can §16
 feed §15 without an extra premise. At `D=15,p=3`, the quotient map
 exists while the lifting premise fails; this is a useful guard against
 dropping class number one.
+
+## 18. The two-dimensional norm chart
+
+There is no mystery in the quadratic form once the order is written
+with basis `1,T`. Set `c=(D+1)/4`; the relation `T²=T-c` gives
+
+$$
+(x+yT)\cdot1=x+yT,
+\qquad
+(x+yT)\cdot T=-cy+(x+y)T.
+$$
+
+So the two columns of multiplication by `x+yT` are `(x,y)` and
+`(-cy,x+y)`. Its determinant is
+
+$$\det\begin{pmatrix}x&-cy\\y&x+y\end{pmatrix}
+=x^2+xy+cy^2.$$
+
+[HalfOrderNorm.lean](TenthDiscriminant/HalfOrderNorm.lean) checks the
+relation in the actual quotient, the nontrivial second-column
+identity, and this exact integer determinant (including `c=4` for
+`D=15`). The formula is therefore a genuine multiplication chart,
+not a numerically fitted expression. One formal sentence is still
+missing: Mathlib's `Algebra.norm` of `x+yT` must equal the determinant
+of this matrix under the order's power basis. A second, logically
+separate sentence must identify the explicit order with the maximal
+integer ring of the intended quadratic field. Neither is silently
+assumed; until both are proved, §16 does not discharge §15's premise.

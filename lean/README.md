@@ -159,7 +159,8 @@ under an odd-prime nonsquare condition, and the strict-small-prime norm
 argument is checked under an explicit unproved lifting premise. The
 abstract class-number-one quotient-to-principal-norm step is checked;
 transporting the checked explicit-order residue map to the maximal
-integer ring and identifying its norm coordinates, remaining analytic and
+integer ring and identifying its exact multiplication-matrix determinant
+with `Algebra.norm`, remaining analytic and
 kernel-checkable numerical estimates, and finite classification are not yet a
 connected Lean proof. The analytic cutoff and saved numerical evidence are
 unchanged. No human or blind independent semantic review is claimed.

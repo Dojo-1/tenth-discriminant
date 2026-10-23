@@ -122,6 +122,11 @@ Ender's `F(p)`, proving the proposition.
   is odd. Identifying that order with the maximal integer ring used in
   Phase 10, and matching its algebraic norm to the principal form,
   remain open.
+  [Phase 12](PHASE12_PROTOCOL.md) checks the quotient relation
+  `T²=T-c`, the nontrivial multiplication column, and the determinant
+  `x²+xy+cy²` of its explicit integer `2×2` chart. The remaining norm
+  step is to identify this chart with Mathlib's `Algebra.norm` using a
+  power basis; the maximal-order identification remains separate.
 - The `D=2,p=3` negative control must fail the local hypothesis:
   `X²+2=X²-1` splits modulo `3`, and `T^3=T`, not `-T`.
 - Positivity of `det G` comes from the separate sampling/contact theorem.

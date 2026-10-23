@@ -206,8 +206,10 @@ checks that a residue quotient of a class-number-one integer ring has
 a principal generator of norm magnitude `p`; the quadratic quotient
 map is now constructed for the explicit half-integral order by the
 [root-to-order theorem](TenthDiscriminant/HalfOrderResidue.lean).
-Identifying that order with the maximal ring and its norm coordinates
-are the remaining arrows.
+Its quadratic multiplication chart now has the [expected exact
+determinant](TenthDiscriminant/HalfOrderNorm.lean); identifying that
+determinant with `Algebra.norm` and identifying the order with the
+maximal ring are the remaining arithmetic arrows.
 This is inherited valuation mathematics,
 not a new classification or cutoff.
 

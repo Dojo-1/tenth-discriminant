@@ -6,7 +6,7 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 
 [Mathematical spine](lean/MATHEMATICAL_SPINE.md) · [Current Tao-objective accounting](TAO_OBJECTIVES_CURRENT.md) · [Candidate argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Frozen objective audit](TAO_OBJECTIVE_AUDIT.md) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)
 
-> **Current reading order · 23 October 2026:** start with the short
+> **Current reading order · 24 October 2026:** start with the short
 > [mathematical spine](lean/MATHEMATICAL_SPINE.md), then the
 > [current claim map](lean/FORMALIZATION.md) and
 > [Tao-objective accounting](TAO_OBJECTIVES_CURRENT.md). Lean checks interpolation,
@@ -19,9 +19,11 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > the needed root-to-principal-norm lifting premise and proves its
 > strict-small-prime consequence. Lean also proves that class number one
 > makes any residue-quotient ideal principal; constructing the specific
-> quotient for the explicit half-integral order is now constructed, but
-> identifying that order with the maximal integer ring and matching its
-> algebraic norm to the quadratic coordinates remain open. The
+> quotient for the explicit half-integral order is now constructed.
+> Lean also checks its defining multiplication relation and the
+> determinant of the proposed two-dimensional multiplication matrix.
+> Identifying that order with the maximal integer ring and proving the
+> matrix determinant equals its `Algebra.norm` remain open. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.

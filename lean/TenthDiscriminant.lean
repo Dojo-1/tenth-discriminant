@@ -42,6 +42,7 @@ import TenthDiscriminant.InertFrobenius
 import TenthDiscriminant.SmallPrimeBridge
 import TenthDiscriminant.PrincipalIdealBridge
 import TenthDiscriminant.HalfOrderResidue
+import TenthDiscriminant.HalfOrderNorm
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot
