@@ -596,11 +596,12 @@ necessary for a general number field. It becomes the positive norm in
 our imaginary quadratic application only after we identify that field
 and its integral coordinates.
 
-Two arrows still need formal proofs: a root of `X²+D` modulo odd `p`
-must supply the ring map from the **maximal** order, and every algebraic
-integer obtained this way must have coordinates `(x,y)` whose norm is
-the displayed `N(x,y)`. The latter also fixes the sign. Until those
-arrows are checked, the Phase 9 lifting premise is not discharged and
+The explicit order's norm coordinates are now checked in §18.
+The remaining arrow is field-specific: identify that order with the
+**maximal** integer ring for the intended fundamental discriminant.
+Only then does a residue root supply the map required here, and only
+then does the maximal-order generator inherit those norm coordinates.
+Until that arrow is checked, the Phase 9 lifting premise is not discharged and
 the class-number classification remains open.
 
 ## 17. From a residue root to an actual quotient map
@@ -625,8 +626,8 @@ surjectivity in [HalfOrderResidue.lean](TenthDiscriminant/HalfOrderResidue.lean)
 This makes one of §16's arrows concrete, but for the explicit order
 `ℤ[ω]`, **not yet** for Mathlib's maximal integer ring `𝓞_K`.
 The field-specific remaining work is to identify those rings under
-the fundamental-discriminant hypotheses and show that the algebraic
-norm in that identification equals `x²+xy+cy²`. Only then can §16
+the fundamental-discriminant hypotheses, transporting the order norm
+calculated in §18. Only then can §16
 feed §15 without an extra premise. At `D=15,p=3`, the quotient map
 exists while the lifting premise fails; this is a useful guard against
 dropping class number one.
@@ -650,11 +651,18 @@ $$\det\begin{pmatrix}x&-cy\\y&x+y\end{pmatrix}
 
 [HalfOrderNorm.lean](TenthDiscriminant/HalfOrderNorm.lean) checks the
 relation in the actual quotient, the nontrivial second-column
-identity, and this exact integer determinant (including `c=4` for
-`D=15`). The formula is therefore a genuine multiplication chart,
-not a numerically fitted expression. One formal sentence is still
-missing: Mathlib's `Algebra.norm` of `x+yT` must equal the determinant
-of this matrix under the order's power basis. A second, logically
-separate sentence must identify the explicit order with the maximal
-integer ring of the intended quadratic field. Neither is silently
-assumed; until both are proved, §16 does not discharge §15's premise.
+identity, and this exact integer determinant. Phase 13's
+[norm theorem](TenthDiscriminant/HalfOrderAlgebraicNorm.lean) proves
+that the quotient is free with basis `(1,T)`, computes all four entries
+of the *actual* multiplication map in that basis, and invokes Mathlib's
+norm-as-determinant theorem. Hence its algebraic norm is precisely
+`x²+xy+cy²`; for `c=(D+1)/4`, this is the repository's
+`principalNorm D x y`. The checks `D=15,c=4,T↦4` and scalar norm
+`x↦x²` guard the two columns.
+
+One different sentence remains: identify this explicit order with
+the maximal integer ring of the intended imaginary quadratic field
+under the fundamental-discriminant hypotheses. Class number one in
+§16 concerns that **maximal** ring. Until the identification is
+proved, §16 still cannot discharge §15's lifting premise; no cutoff
+or classification follows from this norm calculation alone.

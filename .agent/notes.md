@@ -79,3 +79,14 @@
   source correspondence pass. The basis identification with
   `Algebra.norm` and the maximal-order identification are not proved;
   no checked cutoff or classification follows. Final-head CI pending.
+
+- 2026-10-24, Phase 13: Phase 12 final head `4133023` passed pinned CI
+  `40034568524` and CodeQL. Preregistered the algebraic norm target
+  separately in `819f3f9`. Lean now checks a true rank-two power basis
+  for `ℤ[T]/(T²-T+c)`, its actual multiplication matrix, and
+  `Algebra.norm ℤ (x+yT)=x²+xy+cy²=principalNorm D x y` when
+  `c=(D+1)/4`. The `D=15` generator and scalar controls pass. Targeted
+  Lean, 6704-step full build and endpoint-only source correspondence
+  pass. The maximal-order identification remains a separate open
+  arrow, as do the area Lean proof, analytic cutoff and classification;
+  final-head pinned CI is pending.

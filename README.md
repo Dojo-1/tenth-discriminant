@@ -22,8 +22,10 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > quotient for the explicit half-integral order is now constructed.
 > Lean also checks its defining multiplication relation and the
 > determinant of the proposed two-dimensional multiplication matrix.
-> Identifying that order with the maximal integer ring and proving the
-> matrix determinant equals its `Algebra.norm` remain open. The
+> Lean now identifies that determinant with the order's actual
+> `Algebra.norm` and with the repository's `principalNorm` formula.
+> Identifying the order with the intended field's maximal integer ring
+> remains open. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.

@@ -5,15 +5,28 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-24: the explicit order's algebraic norm is checked
+
+[Phase 13](research/uniform_inert_valuation/PHASE13_PROTOCOL.md) proves
+in Lean that `ℤ[T]/(T²-T+c)` has the power basis `(1,T)` and that
+Mathlib's actual `Algebra.norm ℤ (x+yT)` equals `x²+xy+cy²` for every
+integer `c,x,y`. Specializing `c=(D+1)/4` makes this *exactly* the
+repository's `principalNorm D x y`; `D=15,T` has norm `4`, and
+scalars have norm `x²`. This closes Phase 12's formal norm transport.
+It does **not** identify this explicit order with the maximal ring of
+integers of the intended quadratic field, so Phase 9's lifting premise,
+the cutoff and the classification remain open. [Lean source](lean/TenthDiscriminant/HalfOrderAlgebraicNorm.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#18-the-two-dimensional-norm-chart).
+
 ## 2026-10-24: the order's two-dimensional norm chart
 
 [Phase 12](research/uniform_inert_valuation/PHASE12_PROTOCOL.md) checks
 `T²=T-c` inside the actual quotient order and the second column of
 multiplication by `x+yT`. The determinant of the resulting `2×2`
 matrix is exactly `x²+xy+cy²`; `D=15,c=4` is a concrete control.
-**Lean has not yet identified that matrix determinant with
-`Algebra.norm` in the power basis.** Nor has it identified this order
-with the maximal integer ring. Thus the Phase 9 lifting premise and
+Phase 13 now identifies that matrix determinant with `Algebra.norm`
+in the power basis. It has **not** identified this order with the
+maximal integer ring. Thus the Phase 9 lifting premise and
 the end-to-end classification remain open. [Lean source](lean/TenthDiscriminant/HalfOrderNorm.lean) ·
 [human explanation](lean/HUMAN_GUIDE.md#18-the-two-dimensional-norm-chart).
 
@@ -25,8 +38,8 @@ modulo `p` yields a surjective ring map from
 `ℤ[T]/(T²-T+(D+1)/4)` to `ZMod p`, sending `T` to `(1+z)/2`.
 The `D=15,p=3` ramified control has this map although Phase 9's
 principal norm lifting fails. **This is not yet a map from Mathlib's
-maximal integer ring.** The order identification and formal norm-coordinate
-transport are the remaining arithmetic arrows before Phase 10 can
+maximal integer ring.** The order identification is the remaining
+arithmetic arrow before Phase 10 can
 discharge Phase 9's lifting premise. Geometric and analytic links
 remain open. [Lean source](lean/TenthDiscriminant/HalfOrderResidue.lean) ·
 [human explanation](lean/HUMAN_GUIDE.md#17-from-a-residue-root-to-an-actual-quotient-map).
