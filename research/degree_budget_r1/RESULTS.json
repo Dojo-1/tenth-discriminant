@@ -1,0 +1,17 @@
+{
+  "protocol_sha256": "cd9a6aa00f51deb08516c2b787e4974f693773815edc229a38bb5d0158d21a23",
+  "seed": 222026,
+  "general_matrices": 60,
+  "bivariate_cases": 48,
+  "production_values": 144,
+  "overpadding_checks": 144,
+  "planted_cases": 24,
+  "zero_general_determinants": 15,
+  "zero_sylvester_determinants": 0,
+  "zero_planted_determinants": 0,
+  "negative_controls": 5,
+  "status": "PASS",
+  "normal_optimized_json_identical": true,
+  "scope": "finite same-author exact checks; no irreducible nonvanishing proof or new cutoff",
+  "lean_status": "consult the exact head workflow; Python outcomes do not certify Lean"
+}
