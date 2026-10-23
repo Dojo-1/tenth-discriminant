@@ -1,8 +1,8 @@
 {
-  "task": "Test validity-preserving local operators and their exact scope",
-  "status": "phase6_local_checks_passed_pinned_ci_pending",
-  "base_commit": "bf9ddff78dca5b4192f6ce1c94750c194848d4ea",
-  "branch": "codex/local-operator-closure",
+  "task": "Derive the universal Frobenius premise and Gram valuation from a precise odd-prime nonsquare condition",
+  "status": "phase8_local_full_build_passed_pinned_ci_pending",
+  "base_commit": "a4da8963fa0d94ca4858e09ab10f3195d0fe588f",
+  "branch": "codex/rectangular-row-action",
   "decisions": [
     "Honor flow/PREREG_ENDER.txt and register research/ender_radius_bridge/PROTOCOL.md before new proof edits.",
     "Prove the chosen-radius count by a cell-covering area argument and retain its paper-versus-Lean boundary.",
@@ -20,7 +20,9 @@
     "After PR #22 merged, preregister Phase 3 in commit 68a91b9; prove the exact rectangular exponent sum and only the determinant conclusion conditional on an integral basis factor. Do not post an AI-written comment as Tao's requested human-generated summary.",
     "Preregister Phase 4 in commit 86f40e7 before Lean edits. Use ordinary iterated derivatives, not Hasse derivatives; prove transformed-row p^k divisibility in both selected quadratic-order coordinates under an explicit order-zero congruence. Retain the matrix-row and inertness interfaces as open.",
     "After PR #23 merged externally, branch from its merge commit and preregister Phase 5 in commit 75ee2c0. Construct the actual binomial coefficient matrix and prove its determinant one; do not infer its action on the original integer Gram without a separate row identity.",
-    "After PR #24 merged externally, preregister Phase 6 in commit 6f45b4f. Treat validity as the explicit local coordinatewise Frobenius premise; prove only closure under exact conjugation and its ordinary-jet consequence, not global class-number closure."
+    "After PR #24 merged externally, preregister Phase 6 in commit 6f45b4f. Treat validity as the explicit local coordinatewise Frobenius premise; prove only closure under exact conjugation and its ordinary-jet consequence, not global class-number closure.",
+    "After PR #25 merged externally, preregister Phase 7 in commit 710da33 before proof edits. Prove the action on actual original derivative rows, then an integral two-sided Gram factor under universal coordinatewise Frobenius congruence; do not infer inertness, cutoff or classification.",
+    "Preregister Phase 8 in commit c82d8f2 before proof edits. Derive the universal Frobenius premise and exact integer Gram valuation from odd-prime nonsquareness of -D in ZMod p, preserving the class-number/analytic gaps."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
@@ -53,7 +55,9 @@
     "Phase 3 protocol-only commit 68a91b9 preceded Lean edits. Targeted RectangularValuation.lean, source correspondence and full 6692-step local build passed; initial finite-sum proof errors were repaired and logged in the protocol. The integral factorization remains an explicit theorem hypothesis. PR #23 head 059741a passed pinned Linux CI run 39973862730 and remains draft/unmerged.",
     "Phase 4 protocol-only commit 86f40e7 preceded Lean edits. Targeted JetPower.lean, source correspondence, and full 6693-step local build passed. The Hasse negative control and both-coordinate p^k transformed-jet theorem compiled. Initial proof-script failures are recorded in the Phase 4 protocol. PR #23 final head c11ed68 passed pinned Linux CI run 39977815145 and merged externally into main at d0d421f.",
     "Phase 5 protocol-only commit 75ee2c0 preceded Lean edits. Targeted RectangularBasisMatrix.lean, source correspondence and final 6694-step full build passed for the binomial matrix, term bounds, every target column in range, strict lower-triangularity, diagonal one, determinant one, and full pilot rows. Pinned CI is pending. The actual derivative-row action remains open.",
-    "PR #24 merged externally at bf9ddff. Phase 6 protocol-only commit 6f45b4f preceded proof edits. Targeted LocalOperators.lean, source correspondence and the 6695-step local build pass; pinned CI is pending. Proof-script failures and repairs are recorded in Phase 6 protocol."
+    "PR #24 merged externally at bf9ddff. Phase 6 protocol-only commit 6f45b4f preceded proof edits. Targeted LocalOperators.lean, source correspondence and the 6695-step local build pass; pinned CI is pending. Proof-script failures and repairs are recorded in Phase 6 protocol.",
+    "PR #25 merged externally at a4da896. Phase 7 protocol-only commit 710da33 preceded new proof edits. Targeted RectangularRowAction.lean and RectangularGramFactor.lean compile; the full 6697-step local build passes. The general theorem constructs the original integral Gram factor and exact determinant power under a universal coordinatewise Frobenius premise. A stalled optional D=19 corollary was removed and is not claimed. PR #27 head b70cc3b passed pinned Linux run 40020475621 and CodeQL; it remains draft and unmerged.",
+    "Phase 8 protocol-only commit c82d8f2 preceded edits. Targeted QuadraticResidueRing.lean and InertFrobenius.lean compile, including the generator, all-pairs congruence, nonsquare valuation and inert/split controls. Full 6699-step local build, source correspondence, whitespace and task-state JSON checks pass. Final-head pinned CI pending; no class-number or cutoff claim."
   ],
   "files_touched": [
     "README.md",
@@ -90,7 +94,15 @@
     "research/uniform_inert_valuation/PHASE5_PROTOCOL.md",
     "lean/TenthDiscriminant/RectangularBasisMatrix.lean",
     "research/uniform_inert_valuation/PHASE6_PROTOCOL.md",
-    "lean/TenthDiscriminant/LocalOperators.lean"
+    "lean/TenthDiscriminant/LocalOperators.lean",
+    "research/uniform_inert_valuation/PHASE7_PROTOCOL.md",
+    "lean/TenthDiscriminant/RectangularRowAction.lean",
+    "lean/TenthDiscriminant/RectangularGramFactor.lean",
+    "research/uniform_inert_valuation/PHASE8_PROTOCOL.md",
+    "lean/TenthDiscriminant/QuadraticResidueRing.lean",
+    "lean/TenthDiscriminant/InertFrobenius.lean",
+    "research/uniform_inert_valuation/PROOF.md",
+    "TAO_OBJECTIVES_CURRENT.md"
   ],
   "updated": "2026-10-23"
 }

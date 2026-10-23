@@ -432,16 +432,16 @@ unitriangular; every jet receives `p^k`, so the determinant receives
 `p^(2Σk)=p^(2F(p))`. Lean checks the abstract unimodular determinant
 step, the exact exponent sum, and the [ordinary-jet power](TenthDiscriminant/JetPower.lean):
 all transformed `H^k` jets have both coordinate factors `p^k` under
-their explicit order-zero congruence. It does **not** yet identify the
-unitriangular basis change with the actual Gram, or derive the
-inertness-to-Frobenius premise. The class-number
+their explicit order-zero congruence. Phase 7 below now identifies the
+unitriangular basis change with the actual Gram. Phase 8 below derives
+the Frobenius premise from odd-prime nonsquareness of `-D` in the selected
+residue order. The class-number
 classification is still open.
 
 There is now an explicit [integer binomial matrix](TenthDiscriminant/RectangularBasisMatrix.lean)
 for this basis, with a Lean proof that it is lower triangular and has
-determinant `1`. What is missing is not its invertibility but the
-entrywise identity saying that this matrix acts on the **existing**
-integer derivative rows as the displayed transformed polynomials.
+determinant `1`. The previously missing entrywise identity—its action on
+the **existing** integer derivative rows—is now proved in Phase 7 below.
 
 ## 12. An operator on examples, and the limit of its orbit
 
@@ -470,7 +470,73 @@ their residues modulo `p` should preserve this *local* congruence, but this
 is only a proposed next lemma, not a checked result here. Adjoining valid
 samples retains a pointwise jet statement, provided the original sample
 indices and their multiplicities are kept. The binomial change of basis
-has determinant one, but its action on the actual derivative rows is still
-unproved. Composing local operators therefore explores a residue fiber;
+has determinant one and its action on the actual derivative rows is proved
+in Phase 7. Composing local operators nevertheless explores a residue fiber;
 it does not reach a class-number classification, a radius count, or an
 analytic cutoff. Those are separate predicates requiring their own bridges.
+
+## 13. Why the rectangular bridge now commutes
+
+The hard equality is small enough to say without Lean syntax. Label a row by
+`(r,s)` and put `k=min(⌊r/p⌋,S-1-s)`. The binomial theorem gives
+
+$$
+Z^{r-pk}W^s(Z^p-W)^k
+=\sum_{t=0}^{k}(-1)^t\binom{k}{t}Z^{r-pt}W^{s+t}.
+$$
+
+Every displayed monomial is **already** a row of the original rectangle.
+The checked coefficient matrix uses exactly these integers. Evaluation,
+ordinary differentiation in `Z` (holding `W` fixed), and the coordinate
+map into `ℤ[√(-D)]` commute with that finite linear combination. Thus the
+matrix acts on the *original* jet table, not on an invented replacement.
+This is [the row-action theorem](TenthDiscriminant/RectangularRowAction.lean).
+
+Suppose now that `a^p-conjugate(a)` has both coordinates divisible by `p`
+for **every** integer pair `a`. The ordinary-jet power lemma puts `p^k`
+in every transformed jet of row `(r,s)`. Write `U` for the checked
+determinant-one binomial matrix, `G` for the actual integer Gram, and
+`D_p=diag(p^k)`. Bilinearity of the *same factor-two trace* then gives an
+integer matrix `K` with
+
+$$ UGU^{\mathsf T}=D_p K D_p. $$
+
+No point is discarded if two samples coincide modulo `p`. Taking
+determinants yields `p^(2Σk) | det G`; the checked sum identity says
+`Σk=F(p)`. Both the [integral factor](TenthDiscriminant/RectangularGramFactor.lean)
+and this exact conditional determinant implication are now Lean theorems,
+for arbitrary finite samples, grid and derivative cutoff, including empty
+grids. Phase 8 below supplies the local hypothesis that makes it fire,
+under an explicit odd-prime nonsquare guard. The chosen-radius area
+argument and subsequent analytic/class-number links remain separate.
+
+## 14. One local generator controls every lattice point
+
+Reduce the selected order modulo an odd prime `p`. Write `t` for the pair
+`(0,1)`; its multiplication is the repository's existing rule, so
+`t²=-D`. If `-D` is **not a square** in `𝔽_p`, Euler's criterion gives
+`(-D)^((p-1)/2)=-1`. Since `p=2((p-1)/2)+1`,
+
+$$ t^p=t(t^2)^{(p-1)/2}=t(-D)^{(p-1)/2}=-t. $$
+
+Every residue pair is `x+yt`. Characteristic `p` and Fermat's identity
+in `𝔽_p` now yield
+
+$$ (x+yt)^p=x^p+y^pt^p=x-yt. $$
+
+The new [residue-ring chart](TenthDiscriminant/QuadraticResidueRing.lean)
+is proved injective and respects the **existing** residue-pair
+multiplication and powers. Thus this equality returns to both original
+coordinates; a zero residue is exactly integer divisibility by `p`.
+[InertFrobenius.lean](TenthDiscriminant/InertFrobenius.lean) checks that
+transport and applies §13 to obtain the exact determinant exponent for
+every finite original sample set. It checks `D=19,p=3` as a nonsquare
+and `D=2,p=3` as a square counter-control.
+
+The local condition is deliberately sharper than an unqualified word
+“inert”: for a nonmaximal selected order, a prime dividing its conductor
+needs special care. The theorem assumes odd prime and nonsquare `-D`
+*in this coordinate ring*. We have not proved that the global
+class-number-one hypothesis supplies these guards at every prime used by
+Ender, nor formalized the geometric area and analytic comparison. These
+are now the visible global-to-local and determinant-to-cutoff gaps.

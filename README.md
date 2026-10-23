@@ -11,9 +11,11 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > [current claim map](lean/FORMALIZATION.md) and
 > [Tao-objective accounting](TAO_OBJECTIVES_CURRENT.md). Lean checks interpolation,
 > the exact integer/residue views of one Gram matrix, and a fixed
-> `D=19,p=3` nine-divisibility pilot. The chosen-radius cell-area count is
-> proved on paper but not in Lean. A new explicit paper reconstruction of
-> Ender's uniform valuation is only partially connected in Lean. The
+> `D=19,p=3` nine-divisibility pilot, and Ender's exact uniform
+> `p^(2F(p))` factor for the actual integer Gram when `p` is odd prime
+> and `-D` is nonsquare modulo `p`. The chosen-radius cell-area count is
+> proved on paper but not in Lean. Deriving that local nonsquare condition
+> from the global class-number hypotheses is still open. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.
@@ -78,11 +80,16 @@ integral basis factor. Lean also checks that every ordinary jet of
 congruence, in both coordinates of the selected quadratic order. This
 is now paired with an explicit integer binomial basis matrix whose
 determinant is Lean-checked to be `1`. Its action on the *actual* Gram
-rows has not yet been proved, so the integral factorization remains a
-hypothesis. A further [local-operator check](lean/TenthDiscriminant/LocalOperators.lean)
+rows is now proved in [Phase 7](lean/TenthDiscriminant/RectangularRowAction.lean),
+and the [integral two-sided factor](lean/TenthDiscriminant/RectangularGramFactor.lean)
+is constructed. [Phase 8](lean/TenthDiscriminant/InertFrobenius.lean) proves
+the required universal Frobenius congruence from the exact odd-prime
+nonsquare local condition, so `p^(2F(p))` divisibility is Lean-checked
+under that condition. A further
+[local-operator check](lean/TenthDiscriminant/LocalOperators.lean)
 shows that conjugating a sample preserves the explicit Frobenius premise
 and hence all ordinary one-factor jets; it does not establish that
-premise from inertness. This
+premise by itself. This
 advances the *formal bridge*; it does not
 establish the analytic cutoff or class-number
 classification as a checked theorem.

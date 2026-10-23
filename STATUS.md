@@ -5,6 +5,37 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-23: odd-prime nonsquare condition now yields exact valuation
+
+[Phase 8](research/uniform_inert_valuation/PHASE8_PROTOCOL.md) formalizes
+the precise local arithmetic premise. In the **same** two residue
+coordinates, `t²=-D`; for an odd prime `p`, nonsquareness of `-D` modulo
+`p` and Euler's criterion give `t^p=-t`. Freshman's dream then gives
+`(x+yt)^p=x-yt` for every pair. Lean transports this back to both integer
+coordinates and applies Phase 7's actual Gram theorem, proving
+`p^(2*valuationWeight R S p) | det G` for every finite sample set,
+rectangle and derivative cutoff. The `D=19,p=3` guard passes and
+`D=2,p=3` is a square falsifier. This is a checked **local-nonsquare
+valuation theorem**, not a class-number-one theorem: deriving the guard
+from the intended global class-group/inertness hypotheses, Lean cell-area
+count, analytic cutoff and classification remain open.
+[Lean theorem](lean/TenthDiscriminant/InertFrobenius.lean).
+
+## 2026-10-23: actual rectangular row-to-Gram bridge
+
+The [preregistered Phase 7](research/uniform_inert_valuation/PHASE7_PROTOCOL.md)
+identifies the integer binomial matrix's action on every original
+ordinary-derivative row with the jet of `Z^(r-pk) W^s (Z^p-W)^k`.
+The original samples, derivative cutoff, row order and factor-two trace
+are retained. Bilinearity constructs the previously assumed **integral
+two-sided Gram factor**. Lean then proves
+`p^(2*valuationWeight R S p) | det G` for every rectangular grid and
+finite sample set, **provided** `a^p-conjugate(a)` is coordinatewise
+divisible by `p` for every integer pair `a`. Phase 8 above now derives
+that premise from an odd-prime nonsquare guard. The Lean geometric area step, analytic cutoff and class-number
+classification remain open. [Row identity](lean/TenthDiscriminant/RectangularRowAction.lean) ·
+[Gram factor](lean/TenthDiscriminant/RectangularGramFactor.lean).
+
 ## 2026-10-23: local conjugation closes a valid sample orbit
 
 The next bounded operator test is preregistered in
@@ -14,7 +45,7 @@ coordinatewise `a^p ≡ conjugate(a) (mod p)` premise to another such
 sample, and composes this symmetry with the existing ordinary-jet
 theorem. Its square is the identity; the non-real `D=19,p=3` control
 checks this is not just a real-point tautology. This local orbit does
-not prove the premise for all samples, the matrix-row action, or a
+not prove the premise for all samples or a
 global class-number statement. [Lean source](lean/TenthDiscriminant/LocalOperators.lean).
 
 ## 2026-10-23: the rectangular integer basis matrix is explicit
@@ -24,9 +55,8 @@ Lean now defines the sample-independent binomial coefficient matrix for
 every active term remains in the rectangle, every non-leading term has
 an earlier column, the matrix is lower triangular with diagonal `1`,
 and its determinant is `1`, including empty rectangles. The full
-`4×2,p=3` pilot row is checked. **The polynomial/jet action of this
-matrix on the actual integer Gram is not yet a theorem**, so this
-does not discharge the factorization hypothesis or prove a cutoff.
+`4×2,p=3` pilot row is checked. The action on the actual integer Gram
+is proved in Phase 7 above; this matrix theorem alone proves no cutoff.
 [Lean theorem](lean/TenthDiscriminant/RectangularBasisMatrix.lean) ·
 [preregistration](research/uniform_inert_valuation/PHASE5_PROTOCOL.md).
 
@@ -38,9 +68,9 @@ by `p`, then all jets of `B*H^k` are divisible by `p^k`. Applied to
 both integer-coordinate factors for every proposed transformed row
 under its explicit order-zero Frobenius congruence. A checked Hasse
 derivative counterexample guards the derivative convention. The
-uniform inertness premise, the unitriangular identification with the
-actual rectangular Gram, and the analytic/class-number chain remain
-open in Lean. [Theorem](lean/TenthDiscriminant/JetPower.lean) ·
+uniform inertness premise and analytic/class-number chain remain open
+in Lean; Phase 7 supplies the Gram identification.
+[Theorem](lean/TenthDiscriminant/JetPower.lean) ·
 [preregistration](research/uniform_inert_valuation/PHASE4_PROTOCOL.md).
 
 ## 2026-10-23: exact Ender exponent, conditional on the missing basis
@@ -51,9 +81,9 @@ that a specified **integral unimodular two-sided factorization** of the
 actual integer rectangular Gram implies
 `p^(2*valuationWeight R S p) | det G`. This is checked for all natural
 `R,S,p`, including empty grids, but the factorization is an explicit
-unproved hypothesis in this theorem. The later ordinary-jet power
-result above narrows, but does not discharge, the matrix-row and
-inertness bridges; analytic inequalities and class-number argument
+unproved hypothesis in this earlier theorem. Phase 7 constructs it
+under an explicit universal Frobenius premise, without deriving that
+premise from inertness. Analytic inequalities and class-number argument
 remain open in Lean. [Exact declaration](lean/TenthDiscriminant/RectangularValuation.lean) ·
 [preregistration](research/uniform_inert_valuation/PHASE3_PROTOCOL.md).
 
