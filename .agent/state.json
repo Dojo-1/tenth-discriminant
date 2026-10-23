@@ -1,8 +1,8 @@
 {
-  "task": "Distill the checked Lean argument into a short human-readable mathematical spine",
-  "status": "documentation_local_checks_passed_ci_pending",
-  "base_commit": "c77049288e0eac33f72739b255d8254ff3e6aca1",
-  "branch": "codex/integer-trace-gram",
+  "task": "Contrast current evidence with Tao's challenge and account for side discoveries",
+  "status": "objective_accounting_local_checks_passed_external_publication_pending",
+  "base_commit": "8ab2be07dd0e6b8319ee2da148717d3cd0684c45",
+  "branch": "codex/tao-objective-accounting",
   "decisions": [
     "Honor flow/PREREG_ENDER.txt and register research/ender_radius_bridge/PROTOCOL.md before new proof edits.",
     "Prove the chosen-radius count by a cell-covering area argument and retain its paper-versus-Lean boundary.",
@@ -12,7 +12,9 @@
     "Register research/local_global_gram/PROTOCOL.md in its own commit before new Lean edits; keep sample multiplicities under reduction and do not infer inert-prime valuation from determinant naturality.",
     "Use the selected quadratic-order chart only at the first Cayley-Dickson-style doubling; retain an integral Gram as the common object for real and modular projections.",
     "For the fixed D=19,p=3,R=4,S=2 pilot, require a matching shear and an integral two-sided factorization before asserting nine-divisibility.",
-    "Lead the new human guide with one integer Gram determinant viewed over the reals and modulo m; keep the contact-budget lemma, fixed pilot, and open general valuation separate."
+    "Lead the new human guide with one integer Gram determinant viewed over the reals and modulo m; keep the contact-budget lemma, fixed pilot, and open general valuation separate.",
+    "Treat Tao's post as one main challenge plus motivations and reporting norms, not an official numbered twelve-objective checklist.",
+    "Preserve TAO_OBJECTIVE_AUDIT.md as a frozen 4c034f9 snapshot; put the current ledger and separately classified side discoveries in a new document without changing any experiment or cutoff."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
@@ -31,7 +33,11 @@
     "Local Windows python audit.py exited 1 after its 240-second apparatus-controls wrapper timeout, although import coverage and AUDIT_OK 526 logical declarations passed before timeout; this is not a full audit pass.",
     "Local Windows python negative_controls.py was intentionally stopped after four passing matched pairs to avoid a prolonged replay; this is not a full negative-controls pass.",
     "Proof-head commit d5945cf7fc5b891b54ef85986c40a55bec35843c passed pinned Linux CI run 39954106722: source correspondence, full Lean build, compiled axiom audit and inherited negative controls. A later documentation-only status commit requires its own CI before it is described as checked.",
-    "Human-distillation documentation revision passed local python verify_sources.py, lake build (6690 steps), git diff --check, task-state JSON parse, and local Markdown link resolution; pinned CI for the final commit is pending."
+    "Human-distillation documentation revision passed local python verify_sources.py, lake build (6690 steps), git diff --check, task-state JSON parse, and local Markdown link resolution; pinned CI for the final commit is pending.",
+    "PR #20 head a7b429bbc4462ced0823ec3dc511b9135bcbabf9 passed pinned Linux CI run 39963183172 and was merged externally into main at 8ab2be07dd0e6b8319ee2da148717d3cd0684c45.",
+    "Tao's 20 October post was reread directly; it frames one main bound challenge and multiple motivations/reporting norms. Current accounting is a project-derived twelve-row ledger, not a quotation of Tao's structure.",
+    "Current accounting passed local python verify_sources.py, lake build (6690 steps), Markdown local-link resolution, git diff --check, and task-state JSON parsing; no proof or experiment source was changed.",
+    "An optional GitHub Markdown rendering preview was rejected by auto-review because it would upload the draft document externally. The preview was not retried or worked around; external publication and pinned remote CI remain pending."
   ],
   "files_touched": [
     "README.md",
@@ -52,7 +58,8 @@
     ".agent/memory.fallback.md",
     "research/ender_radius_bridge/PROTOCOL.md",
     "research/ender_radius_bridge/PROOF.md",
-    "lean/MATHEMATICAL_SPINE.md"
+    "lean/MATHEMATICAL_SPINE.md",
+    "TAO_OBJECTIVES_CURRENT.md"
   ],
   "updated": "2026-10-23"
 }

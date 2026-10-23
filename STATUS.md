@@ -2,6 +2,8 @@
 
 For a concise mathematical overview of the checked result and the open
 bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
+For a comparison with Tao's challenge and a separate accounting of useful
+side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
 ## 2026-10-23: local–global determinant bridge (bounded pilot)
 

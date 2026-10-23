@@ -4,11 +4,12 @@
 
 An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/comment-page-1/): make an effective class-number-one argument explicit, without importing the known classification as a proof input.
 
-[Mathematical spine](lean/MATHEMATICAL_SPINE.md) · [Candidate argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Frozen Tao-objective audit](TAO_OBJECTIVE_AUDIT.md) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)
+[Mathematical spine](lean/MATHEMATICAL_SPINE.md) · [Current Tao-objective accounting](TAO_OBJECTIVES_CURRENT.md) · [Candidate argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Frozen objective audit](TAO_OBJECTIVE_AUDIT.md) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)
 
 > **Current reading order · 23 October 2026:** start with the short
 > [mathematical spine](lean/MATHEMATICAL_SPINE.md), then the
-> [current claim map](lean/FORMALIZATION.md). Lean checks interpolation,
+> [current claim map](lean/FORMALIZATION.md) and
+> [Tao-objective accounting](TAO_OBJECTIVES_CURRENT.md). Lean checks interpolation,
 > the exact integer/residue views of one Gram matrix, and a fixed
 > `D=19,p=3` nine-divisibility pilot. The chosen-radius cell-area count is
 > proved on paper but not in Lean. Ender's uniform valuation and the
