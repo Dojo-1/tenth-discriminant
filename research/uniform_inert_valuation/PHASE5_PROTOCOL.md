@@ -42,3 +42,24 @@ Run targeted Lean, source correspondence, full `lake build`, pinned
 dependency audit and inherited negative controls. Keep README/STATUS/
 FORMALIZATION and the human guide aligned with the exact theorem. Do
 not merge automatically or post a bound claim to Tao.
+
+## Execution record
+
+Protocol-only commit `75ee2c0` preceded Lean edits. The first targeted
+compilation exposed an invalid simplification of a `Fin` bound and an
+unproved quotient–remainder identity; both were corrected by naming
+the existing bounds and `Nat.div_add_mod'`. The next compilation
+exposed a polymorphic `OrderDual` type and a `t<k+1` versus `t≤k`
+elaboration gap; both were repaired. A whole-row pilot first failed
+because `decide` was asked to close a free index; quantifying the
+finite index repaired it. These are proof-script failures, not
+counterexamples to the basis construction.
+
+Lean now checks the term bounds, that each active target is an actual
+canonical column, strict earlier-column property,
+lower-triangularity, diagonal one, determinant one, and whole
+`4×2,p=3` pilot rows. It does **not** prove the stretch target:
+polynomial expansion into the original integer derivative rows,
+or the consequent actual-Gram factorization. Targeted Lean, source
+correspondence and the final 6694-step full build passed. Pinned CI
+on the final commit remains pending.

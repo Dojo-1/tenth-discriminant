@@ -76,6 +76,10 @@ lemma identifies the proposed basis-exponent sum with Ender's exact
 integral basis factor. Lean also checks that every ordinary jet of
 `B(Z)(Z^p-W)^k` has the required `p^k` factor under the order-zero
 congruence, in both coordinates of the selected quadratic order. This
+is now paired with an explicit integer binomial basis matrix whose
+determinant is Lean-checked to be `1`. Its action on the *actual* Gram
+rows has not yet been proved, so the integral factorization remains a
+hypothesis. This
 advances the *formal bridge*; it does not
 establish the analytic cutoff or class-number
 classification as a checked theorem.
