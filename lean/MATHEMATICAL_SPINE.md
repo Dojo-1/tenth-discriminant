@@ -180,7 +180,11 @@ unimodular two-sided determinant factor and a
 [one-factor jet lemma](TenthDiscriminant/FrobeniusJet.lean): once
 `z^p=bar z` holds modulo `p`, **every** ordinary jet of `Z^p-W` is
 `p`-divisible. It does not yet check the `H^k` basis construction or
-derive that congruence from inertness. This is inherited valuation mathematics,
+derive that congruence from inertness. A further
+[Lean identity](TenthDiscriminant/RectangularValuation.lean) verifies
+`Σk=F(p)` and the determinant conclusion *if* an integral unimodular
+basis factor is supplied. Constructing that factor is the remaining
+matrix-level bridge. This is inherited valuation mathematics,
 not a new classification or cutoff.
 
 ## The boundary of the proof

@@ -5,6 +5,19 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-23: exact Ender exponent, conditional on the missing basis
+
+Lean now proves that the proposed row-major exponents
+`min(⌊r/p⌋,S-1-s)` sum to the existing `valuationWeight R S p` and
+that a specified **integral unimodular two-sided factorization** of the
+actual integer rectangular Gram implies
+`p^(2*valuationWeight R S p) | det G`. This is checked for all natural
+`R,S,p`, including empty grids, but the factorization is an explicit
+unproved hypothesis in this theorem. The `H^k` polynomial-row and
+inertness bridges, analytic inequalities and class-number argument
+remain open in Lean. [Exact declaration](lean/TenthDiscriminant/RectangularValuation.lean) ·
+[preregistration](research/uniform_inert_valuation/PHASE3_PROTOCOL.md).
+
 ## 2026-10-23: uniform valuation reconstructed on paper
 
 The [preregistered argument](research/uniform_inert_valuation/PROOF.md)

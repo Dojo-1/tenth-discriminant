@@ -38,3 +38,14 @@ not a shifted or stronger exponent. Keep the `D=2,p=3` noninert
 negative control from Phase 2. Run targeted Lean, full `lake build`,
 source correspondence, and pinned CI with dependency and negative
 controls. Record all failures. No automatic merge or Tao submission.
+
+## Execution record
+
+The protocol-only commit was `68a91b9`, before the new Lean file.
+The first targeted Lean attempt exposed a finite-sum reflection mismatch;
+two subsequent attempts exposed the `Finset` range-membership guard. The
+proof was repaired by explicitly removing that guard. The final targeted
+check, `python verify_sources.py`, and the full `lake build` passed on
+2026-10-23. The `4 × 2`, `p=3` control verifies that row `(3,0)` has
+exponent one while `(3,1)` has zero. Pinned CI on the final commit remains
+to be recorded; no uniform factorization or bound was obtained.

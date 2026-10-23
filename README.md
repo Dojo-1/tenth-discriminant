@@ -70,8 +70,11 @@ the same integer Gram, assuming `X²+D` irreducible modulo the odd prime
 `p`. Lean checks the abstract unimodular two-sided determinant factor
 and, in a later bounded slice, every jet of the *one* factor `Z^p-W`
 conditional on its order-zero congruence. It does not check the generic
-Frobenius premise, product powers or rectangular basis. This advances the
-*paper bridge*; it does not establish the analytic cutoff or class-number
+Frobenius premise, product powers or rectangular basis. A further Lean
+lemma identifies the proposed basis-exponent sum with Ender's exact
+`F(p)` and derives divisibility **conditional on constructing** that
+integral basis factor. This advances the *formal bridge*; it does not
+establish the analytic cutoff or class-number
 classification as a checked theorem.
 The mechanism and remaining scope are explained in [guide §11](lean/HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix)
 and the [registered protocol](research/local_global_gram/PROTOCOL.md).
