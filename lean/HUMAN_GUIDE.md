@@ -256,8 +256,10 @@ distinct samples, then its exact derivative Gram matrix is nonsingular. The
 geometric count now supplies that premise in an unformalized area argument;
 the integer-coordinate bridge identifies the same matrix, and the residue
 bridge detects divisibility by a chosen modulus. Neither statement by itself
-proves Ender's uniform prime-adic lower bound. The analytic bounds and finite
-classification also remain to be connected. The project-wide
+proves Ender's uniform prime-adic lower bound; a later
+[paper argument](../research/uniform_inert_valuation/PROOF.md) supplies its
+rectangular basis mechanism, but that instantiation is not in Lean. The
+analytic bounds and finite classification also remain to be connected. The project-wide
 [Tao-objective audit](../TAO_OBJECTIVE_AUDIT.md) records this boundary without
 collapsing it into a percentage-complete claim.
 
@@ -303,7 +305,8 @@ as a premise and transports it by the proved cardinality equality. It does
 prove the determinant's arithmetic divisibility. The next paragraph supplies
 the count on paper and §10 supplies the matrix identity in Lean. The area and
 radius instantiation are not Lean-checked; **general** inert-prime divisibility
-remains open (a fixed pilot is proved in §11). The
+remains open in Lean (a fixed pilot is proved in §11 and a uniform paper
+proof is linked below). The
 full-classification claim remains candidate mathematics.
 
 A separate [geometric proof](../research/ender_radius_bridge/PROOF.md) now
@@ -353,8 +356,10 @@ The generic equality concerns a supplied **finite set of distinct pairs**.
 The verifier's historical ellipse generator uses a half-integer-scaled radius,
 whereas `ellipsePairs D rho` uses integer `rho`; this bridge does not identify
 those two generators or certify the saved numerical campaign. Most importantly,
-integer entries alone do not imply the **general** inert-prime valuation bound. That is
-the next arithmetic theorem to prove; class-number classification remains open.
+integer entries alone do not imply the **general** inert-prime valuation bound.
+The [uniform paper proof](../research/uniform_inert_valuation/PROOF.md)
+supplies an explicit basis change; its concrete Lean instantiation and the
+class-number classification remain open.
 
 ## 11. Local and global arithmetic views of one Gram matrix
 
@@ -419,5 +424,11 @@ has 21 points; the checked count criterion also proves its determinant is
 strictly positive. As a falsifier, `D=2`, `p=3`, `Z=√(-2)` gives
 `Z³-W=-Z`, which is not coordinatewise divisible by `3`; this too is a
 checked control. The [registered protocol](../research/local_global_gram/PROTOCOL.md)
-records the test and its boundary. The general Ender valuation and the
-class-number classification are still open.
+records the test and its boundary. The general Ender valuation now has a
+[paper proof](../research/uniform_inert_valuation/PROOF.md): replace each
+`Z^rW^s` by `Z^(r-pk)W^s(Z^p-W)^k`, where
+`k=min(⌊r/p⌋,S-1-s)`. The replacement stays within the rectangle and is
+unitriangular; every jet receives `p^k`, so the determinant receives
+`p^(2Σk)=p^(2F(p))`. Lean now checks the abstract unimodular determinant
+step, **not** these polynomial and Frobenius premises. The class-number
+classification is still open.

@@ -50,3 +50,22 @@ Verification target: pinned `python verify_sources.py`, `lake build`,
 Report exact checked commit, failures, and whether the valuation is
 paper-only, Lean-conditional, or fully Lean-proved. No automatic merge
 and no full-classification claim.
+
+## Execution record (append-only)
+
+- The exact polynomial-basis argument is written in `PROOF.md`; its
+  general concrete instantiation remains **paper-only**. Lean checks
+  `pow_dvd_det_of_unimodular_gram_factor`, the conditional matrix step.
+- Bounded arithmetic controls: `(R,S,p)=(4,2,3),(11,4,3),(12,3,5)`
+  gave matching exponent sums `1,36,16` and all binomial terms stayed
+  in their rectangles. `D=19,p=3` passed the local cube congruence on
+  all 49 pairs with `-3<=x,y<=3`; the noninert `D=2,p=3` sample
+  `(x,y)=(0,1)` gave second-coordinate difference `-1`, not a multiple
+  of `3`. These finite checks do not establish the theorem.
+- `lake env lean TenthDiscriminant/GramDivisibility.lean` passed.
+  `python verify_sources.py` passed source/250-interval endpoint
+  correspondence, not Arb inequality truth. `lake build` completed
+  successfully (6690 steps; inherited linter warnings).
+- The preregistration-only commit `09b6455` was pushed before proof
+  edits and opened as draft PR #21. Its pinned CI was still running at
+  the time of this entry. Final-head CI is a separate obligation.
