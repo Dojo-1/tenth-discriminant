@@ -6,6 +6,7 @@ expose a specific coverage gap. This is not a defect in already audited proofs.
 """
 from pathlib import Path
 import subprocess
+import re
 import tempfile
 from audit import project_coverage
 
@@ -69,6 +70,7 @@ PROBES = [
     ('unused_opaque_custom_axiom', False, HIDDEN, 'NONSTANDARD_AXIOMS'),
     ('unused_definition_custom_axiom', False, HIDDEN.replace('opaque unusedValue', 'noncomputable def unusedValue'), 'NONSTANDARD_AXIOMS'),
     ('private_opaque_custom_axiom', False, HIDDEN.replace('opaque unusedValue', 'private opaque unusedValue'), 'NONSTANDARD_AXIOMS'),
+    ('safe_generated_looking_name', False, HIDDEN.replace('unusedValue', 'looksGenerated._cstage2'), 'NONSTANDARD_AXIOMS'),
     ('unused_opaque_incomplete', False, HIDDEN.replace('axiom value : True', 'theorem value : True := by sorry'), 'NONSTANDARD_AXIOMS'),
     ('project_axiom', False, 'namespace ApparatusProbe\naxiom value : True\nend ApparatusProbe', 'PROJECT_AXIOM'),
     ('empty_namespace', False, '', 'EMPTY_PROOF_AUDIT'),
@@ -124,6 +126,18 @@ with tempfile.TemporaryDirectory() as tmp:
     folder = Path(tmp)
     check_import_gate(folder)
     expect(folder, 'public_rectangular_api', PUBLIC, True)
+    readme = (ROOT / 'README.md').read_text(encoding='utf-8')
+    snippets = re.findall(r'```lean\n(.*?)```', readme, re.S)
+    if not snippets:
+        raise SystemExit('No readable Lean example was found')
+    expect(folder, 'readme_examples', '\n'.join(snippets), True)
+    for name in ['README.md', 'HUMAN_GUIDE.md', 'FORMALIZATION.md']:
+        text = (ROOT / name).read_text(encoding='utf-8')
+        for target in re.findall(r'\]\(([^)]+)\)', text):
+            if '://' not in target and not target.startswith('#'):
+                if not (ROOT / target.split('#', 1)[0]).is_file():
+                    raise SystemExit(f'{name}: broken local link {target}')
+    print('PASS: all three reader documents have resolvable local links', flush=True)
     expect(folder, 'legacy_unused_opaque_gap', LEGACY+HIDDEN+'\n#legacy_audit_namespace ApparatusProbe', True, 'LEGACY_OK')
     for label, success, source, marker in PROBES:
         expect(folder, label, source+'\n#audit_namespace ApparatusProbe', success, marker)

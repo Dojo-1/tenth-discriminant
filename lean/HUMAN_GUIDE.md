@@ -47,7 +47,7 @@ v_{r,s}(z,j)=
 $$
 
 The empty product (r)_0 is 1. These are ordinary derivatives, not derivatives
-divided by j!. The row at the origin is not discarded; zero to the zeroth
+divided by j!. The observation at the origin is not discarded; zero to the zeroth
 power has its usual polynomial value 1.
 
 For row labels i and k, define
@@ -118,7 +118,7 @@ When a=1 the first block is empty. Let E(W) be its determinant.
 Three facts do the work.
 
 **E is not the zero polynomial.** Over the fraction field K(W), a vector in
-this actual matrix's kernel gives AF+BF_Z=0 (with F=H), where deg A<a-1 and
+this actual matrix's kernel gives AH+BH_Z=0, where deg A<a-1 and
 deg B<a. Irreducibility, Gauss's lemma and characteristic zero give coprimality
 of H and H_Z. Therefore H divides B; the degree window forces B=0 and then
 A=0. The square matrix has trivial kernel. The implementation proves its
@@ -126,7 +126,7 @@ coefficient correspondence and reflects the nonzero determinant back to K[W].
 Primitivity is derived from irreducibility and positive Z-degree, not assumed.
 It also rules out identically zero specializations of H.
 
-**A contact of order m uses at least m-1 zeros of E.** Translate the Z
+**A contact of order m>=1 uses at least m-1 zeros of E.** Translate the Z
 coefficient basis to Taylor coordinates at the contact point. Both specialized
 column blocks are divisible by (Z-z)^(m-1), so their first m-1 coefficients
 vanish. The translation matrix has determinant one. Each resulting zero row

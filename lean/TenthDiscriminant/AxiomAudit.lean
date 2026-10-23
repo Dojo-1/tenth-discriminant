@@ -41,4 +41,4 @@ elab "#audit_namespace " ns:ident : command => do
         | _ => pure ()
   if count == 0 then
     throwError "EMPTY_PROOF_AUDIT {scopeName}"
-  logInfo m!"AUDIT_OK {scopeName}: {count} logical declarations; {theoremCount} theorems; {runtimeCount} unsafe runtime auxiliaries excluded"
+  logInfo m!"AUDIT_OK {scopeName}: {count} logical declarations; {theoremCount} theorems; {runtimeCount} runtime-only auxiliaries excluded"
