@@ -180,8 +180,35 @@ unimodular two-sided determinant factor and a
 [one-factor jet lemma](TenthDiscriminant/FrobeniusJet.lean): once
 `z^p=bar z` holds modulo `p`, **every** ordinary jet of `Z^p-W` is
 `p`-divisible. It does not yet check the `H^k` basis construction or
-derive that congruence from inertness. This is inherited valuation mathematics,
+derive that congruence from inertness. A further
+[Lean identity](TenthDiscriminant/RectangularValuation.lean) verifies
+`Σk=F(p)` and the determinant conclusion *if* an integral unimodular
+basis factor is supplied. The [ordinary-jet power lemma](TenthDiscriminant/JetPower.lean)
+now proves that every jet of `B(Z)(Z^p-W)^k` has two integer-coordinate
+factors `p^k` at an original pair sample, assuming its order-zero
+Frobenius congruence. Its checked Hasse-derivative counterexample shows
+why replacing ordinary derivatives by divided ones would be invalid.
+Constructing the unitriangular change on the *actual* matrix, and
+deriving that congruence from the exact inert-prime hypotheses, remain
+open in Lean. This is inherited valuation mathematics,
 not a new classification or cutoff.
+
+## Symmetry, and what it must not blur
+
+The useful symmetry is integral congruence: `G ↦ U G Uᵀ` with
+`det U=1`. It changes polynomial coordinates but not `det G`; over the
+reals it also preserves positive definiteness. The local calculation
+then puts `p^k` on each transformed row, so bilinearity puts it on both
+sides of the Gram matrix. This explains the square in `2F(p)`. It is a
+precise invariant, not a metaphorical local–global principle.
+
+The projections are asymmetric. Real positivity can show `det G>0`
+but cannot supply its prime valuation; residue divisibility can supply
+a valuation but cannot show nonvanishing over the integers. Nor may
+we merge samples that become equal modulo `p`, replace the selected
+quadratic order by the maximal order without checking its index, or
+replace ordinary by Hasse derivatives. The complete proof must make
+these views commute on **one integer matrix with the same samples**.
 
 ## The boundary of the proof
 

@@ -429,8 +429,10 @@ records the test and its boundary. The general Ender valuation now has a
 `Z^rW^s` by `Z^(r-pk)W^s(Z^p-W)^k`, where
 `k=min(⌊r/p⌋,S-1-s)`. The replacement stays within the rectangle and is
 unitriangular; every jet receives `p^k`, so the determinant receives
-`p^(2Σk)=p^(2F(p))`. Lean now checks the abstract unimodular determinant
-step and the [one-factor jet implication](TenthDiscriminant/FrobeniusJet.lean)
-under its explicit order-zero congruence, **not** the `H^k` basis or the
+`p^(2Σk)=p^(2F(p))`. Lean checks the abstract unimodular determinant
+step, the exact exponent sum, and the [ordinary-jet power](TenthDiscriminant/JetPower.lean):
+all transformed `H^k` jets have both coordinate factors `p^k` under
+their explicit order-zero congruence. It does **not** yet identify the
+unitriangular basis change with the actual Gram, or derive the
 inertness-to-Frobenius premise. The class-number
 classification is still open.

@@ -13,7 +13,7 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > the exact integer/residue views of one Gram matrix, and a fixed
 > `D=19,p=3` nine-divisibility pilot. The chosen-radius cell-area count is
 > proved on paper but not in Lean. A new explicit paper reconstruction of
-> Ender's uniform valuation is likewise not yet connected in Lean. The
+> Ender's uniform valuation is only partially connected in Lean. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.
@@ -70,8 +70,14 @@ the same integer Gram, assuming `X²+D` irreducible modulo the odd prime
 `p`. Lean checks the abstract unimodular two-sided determinant factor
 and, in a later bounded slice, every jet of the *one* factor `Z^p-W`
 conditional on its order-zero congruence. It does not check the generic
-Frobenius premise, product powers or rectangular basis. This advances the
-*paper bridge*; it does not establish the analytic cutoff or class-number
+Frobenius premise or rectangular basis. A further Lean
+lemma identifies the proposed basis-exponent sum with Ender's exact
+`F(p)` and derives divisibility **conditional on constructing** that
+integral basis factor. Lean also checks that every ordinary jet of
+`B(Z)(Z^p-W)^k` has the required `p^k` factor under the order-zero
+congruence, in both coordinates of the selected quadratic order. This
+advances the *formal bridge*; it does not
+establish the analytic cutoff or class-number
 classification as a checked theorem.
 The mechanism and remaining scope are explained in [guide §11](lean/HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix)
 and the [registered protocol](research/local_global_gram/PROTOCOL.md).

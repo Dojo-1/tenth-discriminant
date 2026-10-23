@@ -95,6 +95,8 @@ replaced by a coefficient-ring endomorphism merely to shorten the proof.
 | Residue trace-Gram and determinant detector | [ResidueTraceGram](TenthDiscriminant/ResidueTraceGram.lean): `residueTraceGramMatrix_eq_map`, `residueRectangularTraceGram_det_zero_iff_dvd`, collision and asymmetric controls | A valuation lower bound; an image-set replacement that discards colliding samples. |
 | Generic two-sided determinant factor | [GramDivisibility](TenthDiscriminant/GramDivisibility.lean): `sq_dvd_det_of_gramShear_factor`, `pow_dvd_det_of_unimodular_gram_factor` | Construction of the rectangular unitriangular basis and its integral jet quotients. |
 | Universal one-factor jet under an explicit congruence | [FrobeniusJet](TenthDiscriminant/FrobeniusJet.lean): `frobeniusJet_zero`, `frobeniusJet_dvd_of_zero_congruence`, noninert negative control | Proof of the order-zero congruence from inertness; product-power and rectangular-basis instantiation. |
+| Exact exponent of the proposed rectangular basis | [RectangularValuation](TenthDiscriminant/RectangularValuation.lean): `sum_rectangularBasisExponent`, `rectangularTraceGram_valuation_of_basis_factor` | The theorem assumes an integral unimodular basis factorization; it does not construct the polynomial rows, quotient jets, or inertness premise. |
+| Ordinary-jet powers in the selected quadratic order | [JetPower](TenthDiscriminant/JetPower.lean): `jet_power_dvd`, `rectangular_frobenius_row_jet_coordinates`, Hasse negative control | The order-zero congruence is assumed. The transformed polynomial jets are not yet identified with a unitriangular change of the actual integer Gram rows. |
 | Fixed inert-prime Gram pilot | [InertPilot](TenthDiscriminant/InertPilot.lean): `inertPilotJet_dvd_three`, `inertPilotGram_factor`, `inertPilot_nine_dvd_det`, positive and noninert controls | General inert-prime theorem for arbitrary D, p and row grid. |
 | Affine coefficient/determinant transport | [AffineCoefficients](TenthDiscriminant/AffineCoefficients.lean), [AffineTransport](TenthDiscriminant/AffineTransport.lean): `fixedDerivativeDeterminant_affine`, `affineTransport_witness_nonzero` | Invariance of the determinant value or prime valuations without tracking the explicit scale factor. |
 | Exact interval coverage | [Coverage](TenthDiscriminant/Coverage.lean), [RecordedCoverage](TenthDiscriminant/RecordedCoverage.lean): `checkChain_sound`, `ender_integer_coverage` | The 250 Arb inequalities. Coverage is half-open at the final endpoint in this theorem. |
@@ -114,7 +116,7 @@ ball-arithmetic calculation into a kernel-checked inequality.
 | Concrete integer-radius norm ellipse and required lower bound on its cardinality | Finite construction, exact membership, injectivity and upper-endpoint card transfer PROVED in Lean; the chosen-radius lower count has a complete geometric proof in `research/ender_radius_bridge/PROOF.md`, but its area step and radius instantiation are NOT Lean-checked. |
 | Equality between the formal real Gram matrix and the integer-pair matrix with the same derivative rows and supplied point set | PROVED in Lean for D>0, including row-major rectangular and integer-radius ellipse specializations and determinant cast. This does not equate distinct point-set generators or duplicate-containing Python lists. |
 | Reduction of that integer matrix, with the same original sample indexing, and equivalence between local determinant vanishing and global divisibility by m>0 | PROVED in Lean; this is a detector, not a lower bound. |
-| Inert-prime divisibility and prime-adic valuation lower bound for that same integer determinant | [Uniform paper proof](../research/uniform_inert_valuation/PROOF.md) gives the full exponent under explicit residue irreducibility. Lean proves the abstract matrix factor, the conditional one-factor jet, and the fixed D=19, p=3, R=4, S=2 case, **not** the general `H^k` basis or inertness instantiation. |
+| Inert-prime divisibility and prime-adic valuation lower bound for that same integer determinant | [Uniform paper proof](../research/uniform_inert_valuation/PROOF.md) gives the full exponent under explicit residue irreducibility. Lean proves all ordinary jets of the proposed `H^k` rows have the expected coordinate factor under an explicit Frobenius congruence, the exact exponent sum, and the determinant conclusion **if** the integral basis factor exists, plus the fixed D=19, p=3 case. It does **not** identify those jets with a unimodular change of the actual Gram or derive the congruence from inertness. |
 | Full factorial/Legendre prime-mass inequality, remainder control and analytic upper bound | OPEN; selected floor-sum and moment identities are proved. |
 | Kernel-checkable numerical contradictions, with their exact analytic interpretation | OPEN. |
 | Universal envelope starting margin and its determinant bounds | OPEN; propagation is conditional. |
@@ -156,8 +158,9 @@ study, blind independent semantic review, proof-completion percentage or
 optimality claim is made.
 
 The next formal geometric bridge is the cell-area lower bound and its radius
-instantiation. The next arithmetic bridge is to formalize the concrete
-unitriangular basis, `H^k` jet-product divisibility and inertness interface of
+instantiation. The next arithmetic bridge is to identify the now-checked
+`H^k` polynomial jets with a concrete unitriangular change on the actual
+integer Gram, then establish the inertness interface of
 the [paper valuation proof](../research/uniform_inert_valuation/PROOF.md).
 Residue naturality detects divisibility once established; it does not force
 it. No classification conclusion follows yet.
