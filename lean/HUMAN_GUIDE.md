@@ -303,11 +303,11 @@ Gram matrix is substituted. The formal theorem takes the integer-pair count
 as a premise and transports it by the proved cardinality equality. It does
 **not by itself** derive Ender's lower count, formalize his radius guard, or
 prove the determinant's arithmetic divisibility. The next paragraph supplies
-the count on paper and §10 supplies the matrix identity in Lean. The area and
-radius instantiation are not Lean-checked; **general** inert-prime divisibility
-remains open in Lean (a fixed pilot is proved in §11 and a uniform paper
-proof is linked below). The
-full-classification claim remains candidate mathematics.
+the count on paper; §10 supplies the integer-to-real matrix identity, and
+§14 gives the later uniform local divisibility theorem under odd-prime
+nonsquareness of `-D`. The area and radius instantiation are not
+Lean-checked, nor is the deduction of nonsquareness from class number
+one. The full-classification claim remains candidate mathematics.
 
 A separate [geometric proof](../research/ender_radius_bridge/PROOF.md) now
 settles the count on paper. The idea is to partition the plane into cells of
@@ -358,8 +358,8 @@ whereas `ellipsePairs D rho` uses integer `rho`; this bridge does not identify
 those two generators or certify the saved numerical campaign. Most importantly,
 integer entries alone do not imply the **general** inert-prime valuation bound.
 The [uniform paper proof](../research/uniform_inert_valuation/PROOF.md)
-supplies an explicit basis change; its concrete Lean instantiation and the
-class-number classification remain open.
+supplies an explicit basis change. Its later concrete Lean instantiation
+is explained in §§13–14; the class-number classification remains open.
 
 ## 11. Local and global arithmetic views of one Gram matrix
 
