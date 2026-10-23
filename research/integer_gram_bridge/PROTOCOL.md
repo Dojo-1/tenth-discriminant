@@ -62,6 +62,13 @@ The sequential local Windows `python negative_controls.py` run is also **not
 a full pass**. Its completed probes rejected the false endpoint, coverage,
 Gram-normalization and derivative claims as expected, but the wrapper exited
 1 when `multiplicity_negative_controls.py` exceeded its 120-second subprocess
-limit. Pinned Linux CI is still required; neither timed-out wrapper is
-silently counted as green. No historical Ender certificate or cutoff was
-changed.
+limit. Neither timed-out wrapper is silently counted as green. No historical
+Ender certificate or cutoff was changed.
+
+Pinned Linux CI for the proof-head commit
+`eea5c5f94dd919072a5fb970723754695f8ca382` passed in
+[run 39930134039](https://github.com/Dojo-1/tenth-discriminant/actions/runs/39930134039):
+source correspondence, full Lean build, compiled axiom audit and inherited
+negative controls. This is validation of that exact commit, not a retroactive
+pass for the two timed-out local Windows wrappers. A later documentation
+follow-up must be checked against its own final head.

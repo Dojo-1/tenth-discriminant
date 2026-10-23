@@ -295,10 +295,11 @@ $$
 Here G is precisely `rectangularTraceGram` on `ellipsePoints D rho`; no new
 Gram matrix is substituted. The formal theorem takes the integer-pair count
 as a premise and transports it by the proved cardinality equality. It does
-**not** derive Ender's lower count, connect his chosen real-valued radius to
-an integer-radius instance, or prove the determinant's arithmetic
-divisibility. Those are the next application obligations. The full-classification
-claim remains candidate mathematics, not a checked theorem.
+**not by itself** derive Ender's lower count, formalize his radius guard, or
+prove the determinant's arithmetic divisibility. The next paragraph supplies
+the count on paper and §10 supplies the matrix identity in Lean. The area and
+radius instantiation are not Lean-checked; divisibility remains open. The
+full-classification claim remains candidate mathematics.
 
 A separate [geometric proof](../research/ender_radius_bridge/PROOF.md) now
 settles the count on paper. The idea is to partition the plane into cells of

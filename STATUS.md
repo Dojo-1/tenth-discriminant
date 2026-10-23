@@ -38,9 +38,10 @@ with x²+D y²≤rho², that distinct pairs give distinct complex points, and
 that the image has the same cardinality. The original rectangular trace-Gram
 determinant is positive and satisfies Hadamard **conditional on** the explicit
 count `2*(R-1)+(S-1) < card(ellipsePairs D rho)`, R,S≥1 and J≥S. A D=rho=1
-control checks all five boundary/axis points. This is a proof bridge, not a
-new point-count estimate. Analytic count, chosen-radius instantiation,
-integer-matrix/valuation identification and classification remain open.
+control checks all five boundary/axis points. This earlier result was a proof
+bridge, not a point-count estimate. The chosen-radius count and integer-matrix
+identification were advanced later, as described above; valuation and
+classification remain open.
 
 Verification of this exact revision is reported in the associated PR; no
 earlier green CI run is evidence for it. The 22 October numerical claims below

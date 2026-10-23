@@ -18,12 +18,13 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > distinguishes these two evidence classes and records a bounded preregistered
 > control replay.
 
-**Bridge update (23 October):** Lean now constructs the finite integer-radius
+**Initial bridge update (23 October):** Lean constructs the finite integer-radius
 ellipse, proves it contains exactly the lattice points satisfying the norm
 inequality, and applies the existing determinant theorem to its complex image
 *if its point count clears the stated threshold*. This closes the sampling-set
-interface, not Ender's analytic count estimate or the arithmetic and
-classification links. Read the [short bridge guide](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge)
+interface. By itself it supplies neither Ender's lower count nor the arithmetic
+and classification links; the later progress and remaining gaps are below.
+Read the [short bridge guide](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge)
 and [precise claim map](lean/FORMALIZATION.md).
 
 **Geometric count follow-up:** a [cell-covering proof](research/ender_radius_bridge/PROOF.md)

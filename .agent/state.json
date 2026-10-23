@@ -1,6 +1,6 @@
 {
   "task": "Identify the integral lattice trace-Gram matrix with the existing real matrix",
-  "status": "awaiting_pinned_ci",
+  "status": "proof_head_ci_passed_final_docs_ci_pending",
   "base_commit": "c77049288e0eac33f72739b255d8254ff3e6aca1",
   "branch": "codex/integer-trace-gram",
   "decisions": [
@@ -18,7 +18,8 @@
     "Historical review files confirm the generic cover helper failure was not a failure of the replayed interval certificates; F5 and post-clone code lacked independent re-review in the recorded response.",
     "Current unresolved bridge is identification of the Lean trace-Gram matrix with the integral arithmetic matrix, then inert-prime valuation and end-to-end classification.",
     "The new IntegerTraceGram.lean entrywise, determinant-cast and positive-integer-determinant theorems compiled under pinned Lean 4.19.0; the full lake build and verify_sources.py passed.",
-    "Local Windows audit.py and negative_controls.py wrappers exited 1 on 240-second and 120-second subprocess timeouts respectively; partial successful probes are recorded in the bridge protocol, not promoted to full passes."
+    "Local Windows audit.py and negative_controls.py wrappers exited 1 on 240-second and 120-second subprocess timeouts respectively; partial successful probes are recorded in the bridge protocol, not promoted to full passes.",
+    "Proof-head commit eea5c5f94dd919072a5fb970723754695f8ca382 passed pinned Linux CI run 39930134039, including source correspondence, full Lean build, compiled axiom audit and inherited negative controls; the documentation follow-up requires its own run."
   ],
   "files_touched": [
     "README.md",
@@ -27,7 +28,10 @@
     "lean/HUMAN_GUIDE.md",
     "lean/README.md",
     "lean/TenthDiscriminant.lean",
+    "lean/TenthDiscriminant/IntegerTraceGram.lean",
+    "lean/TenthDiscriminant/TraceGram.lean",
     "lean/TenthDiscriminant/LatticeEllipse.lean",
+    "research/integer_gram_bridge/PROTOCOL.md",
     "research/ender_radius_bridge/PROTOCOL.md",
     "research/ender_radius_bridge/PROOF.md"
   ],
