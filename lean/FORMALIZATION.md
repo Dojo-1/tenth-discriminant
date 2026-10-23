@@ -158,8 +158,9 @@ study, blind independent semantic review, proof-completion percentage or
 optimality claim is made.
 
 The next formal geometric bridge is the cell-area lower bound and its radius
-instantiation. The next arithmetic bridge is to formalize the concrete
-unitriangular basis, `H^k` jet-product divisibility and inertness interface of
+instantiation. The next arithmetic bridge is to identify the now-checked
+`H^k` polynomial jets with a concrete unitriangular change on the actual
+integer Gram, then establish the inertness interface of
 the [paper valuation proof](../research/uniform_inert_valuation/PROOF.md).
 Residue naturality detects divisibility once established; it does not force
 it. No classification conclusion follows yet.
