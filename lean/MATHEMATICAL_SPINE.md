@@ -11,8 +11,10 @@ Ender's **candidate** argument needs an integer determinant that is both
 nonzero and highly divisible by inert primes. Geometry and a Hadamard upper
 bound would then compete with arithmetic lower bounds. Lean now establishes
 the nonzero side for sufficiently many samples, identifies its integer
-matrix, and proves one fixed divisibility example. The uniform prime-by-prime
-inequality needed for Ender is still missing.
+matrix, and proves one fixed divisibility example. A
+[paper proof](../research/uniform_inert_valuation/PROOF.md) reconstructs
+the uniform prime-by-prime exponent; its general polynomial and
+inertness interfaces are still missing in Lean.
 
 ## The object to keep in mind
 
@@ -159,13 +161,32 @@ congruence* when the irreducible-residue condition is dropped; it does not
 disprove a determinant-divisibility statement. This fixed pilot is **not**
 Ender's general valuation estimate.
 
+## The uniform pattern, still a paper-to-Lean bridge
+
+The fixed relation is one corner of a rectangular basis change. For an
+odd prime `p` with `X²+D` irreducible modulo `p`, let `H=Z^p-W`. Frobenius
+says `z^p=bar z` locally; every ordinary `Z`-derivative of `H` is also
+`p`-divisible. At row `(r,s)` choose
+`k=min(⌊r/p⌋,S-1-s)` and replace the monomial by
+`Z^(r-pk)W^s H^k`. Its expansion has leading term `Z^rW^s`, and all
+other terms remain in the rectangle with smaller `Z`-degree. So this is
+an integral unitriangular basis change. Every transformed jet row is
+divisible by `p^k`; the two Gram sides yield
+`p^(2Σk)=p^(2F(p)) | det G`.
+
+[The full written argument](../research/uniform_inert_valuation/PROOF.md)
+checks the endpoints and product rule. Lean checks the *abstract*
+unimodular two-sided determinant factor, not yet this particular basis
+or the Frobenius implication. This is inherited valuation mathematics,
+not a new classification or cutoff.
+
 ## The boundary of the proof
 
 | Link | Present status |
 |---|---|
 | Jet energy, contact budget, positivity; exact integer matrix; residue reduction; fixed `D=19,p=3` square factor | Lean-checked under the displayed hypotheses. |
 | Ender's chosen-radius ellipse has enough points | Elementary cell-area proof on paper; exact-set and endpoint-transfer helpers in Lean, but the area inequality is not Lean-checked. |
-| Uniform inert-prime valuation, class-number-one to inertness, analytic comparison, finite classification | Not connected in Lean as an end-to-end theorem. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
+| Uniform inert-prime valuation, class-number-one to inertness, analytic comparison, finite classification | The valuation has an explicit paper proof and a checked abstract matrix step. Its concrete Lean instantiation and the remaining links are not connected as an end-to-end theorem. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical

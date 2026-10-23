@@ -2,6 +2,19 @@
 
 For a concise mathematical overview of the checked result and the open
 bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
+For a comparison with Tao's challenge and a separate accounting of useful
+side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
+
+## 2026-10-23: uniform valuation reconstructed on paper
+
+The [preregistered argument](research/uniform_inert_valuation/PROOF.md)
+uses `Z^p-W` and a unitriangular change of the rectangular monomial
+basis to derive Ender's full `p^(2F(p)) | det G` for the *same* integer
+matrix, under the explicit condition that `X²+D` is irreducible modulo
+the odd prime `p`. Lean checks the general unimodular two-sided matrix
+factor, but not yet this polynomial basis, its jet divisibility, or the
+inertness-to-irreducibility link. This is a paper proof of an inherited
+valuation input, not a new cutoff or a full classification theorem.
 
 ## 2026-10-23: local–global determinant bridge (bounded pilot)
 

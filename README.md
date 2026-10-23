@@ -4,16 +4,18 @@
 
 An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/comment-page-1/): make an effective class-number-one argument explicit, without importing the known classification as a proof input.
 
-[Mathematical spine](lean/MATHEMATICAL_SPINE.md) · [Candidate argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Frozen Tao-objective audit](TAO_OBJECTIVE_AUDIT.md) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)
+[Mathematical spine](lean/MATHEMATICAL_SPINE.md) · [Current Tao-objective accounting](TAO_OBJECTIVES_CURRENT.md) · [Candidate argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Frozen objective audit](TAO_OBJECTIVE_AUDIT.md) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)
 
 > **Current reading order · 23 October 2026:** start with the short
 > [mathematical spine](lean/MATHEMATICAL_SPINE.md), then the
-> [current claim map](lean/FORMALIZATION.md). Lean checks interpolation,
+> [current claim map](lean/FORMALIZATION.md) and
+> [Tao-objective accounting](TAO_OBJECTIVES_CURRENT.md). Lean checks interpolation,
 > the exact integer/residue views of one Gram matrix, and a fixed
 > `D=19,p=3` nine-divisibility pilot. The chosen-radius cell-area count is
-> proved on paper but not in Lean. Ender's uniform valuation and the
-> end-to-end class-number classification remain unproved in Lean and are
-> not established by that pilot. The audit linked above is explicitly a
+> proved on paper but not in Lean. A new explicit paper reconstruction of
+> Ender's uniform valuation is likewise not yet connected in Lean. The
+> end-to-end class-number classification remains unproved and is not
+> established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.
 
 > **Historical status · 22 October 2026:** candidate mathematical argument, with recorded interval certificates, finite computations, and AI review. No end-to-end Lean formalization or human mathematical review is recorded. The latest determinant experiments do **not** change the discriminant cutoff. No novelty or priority claim is made.
@@ -60,6 +62,15 @@ integer determinant (`m>0`). A separate fixed-grid pilot proves
 `9 | det G` for `D=19`, `p=3`, `R=4`, `S=2`, every finite sample set and every
 derivative cutoff; an ellipse instance has positive determinant. This is a
 nontrivial valuation example, **not** Ender's general inert-prime bound.
+
+**Uniform valuation reconstruction (23 October):** The
+[registered proof](research/uniform_inert_valuation/PROOF.md) gives a
+short unitriangular-basis derivation of the full `p^(2F(p))` factor for
+the same integer Gram, assuming `X²+D` irreducible modulo the odd prime
+`p`. Lean checks the abstract unimodular two-sided determinant factor,
+not the generic polynomial/Frobenius instantiation. This advances the
+*paper bridge*; it does not establish the analytic cutoff or class-number
+classification as a checked theorem.
 The mechanism and remaining scope are explained in [guide §11](lean/HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix)
 and the [registered protocol](research/local_global_gram/PROTOCOL.md).
 

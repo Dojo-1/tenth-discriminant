@@ -54,4 +54,43 @@ theorem sq_dvd_det_of_gramShear_factor {n : Type*} [Fintype n] [DecidableEq n]
   rw [← gramShear_det A hij c]
   exact sq_dvd_det_of_two_sided_pivot (gramShear A i j c) K i p hfactor
 
+/-- A unimodular change of all rows, followed by integral factors on both
+sides, forces the square of the product of those factors to divide the
+original determinant. This is the matrix step of the uniform inert-prime
+argument; constructing its particular change of basis remains separate. -/
+theorem prod_sq_dvd_det_of_unimodular_gram_factor
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A U K : Matrix n n Int) (d : n → Int)
+    (hU : U.det = 1)
+    (hfactor : U * A * U.transpose =
+      Matrix.diagonal d * K * Matrix.diagonal d) :
+    (∏ i, d i) ^ 2 ∣ A.det := by
+  have hdet := congrArg Matrix.det hfactor
+  simp only [Matrix.det_mul, Matrix.det_diagonal, Matrix.det_transpose, hU,
+    one_mul, mul_one] at hdet
+  refine ⟨K.det, ?_⟩
+  calc
+    A.det = (∏ i, d i) * K.det * (∏ i, d i) := hdet
+    _ = (∏ i, d i) ^ 2 * K.det := by ring
+
+/-- The exponent form of the same matrix step. The weights `k` must later
+be supplied by the concrete rectangular polynomial basis change. -/
+theorem pow_dvd_det_of_unimodular_gram_factor
+    {n : Type*} [Fintype n] [DecidableEq n]
+    (A U K : Matrix n n Int) (p : Int) (k : n → Nat)
+    (hU : U.det = 1)
+    (hfactor : U * A * U.transpose =
+      Matrix.diagonal (fun i => p ^ k i) * K *
+        Matrix.diagonal (fun i => p ^ k i)) :
+    p ^ (2 * ∑ i, k i) ∣ A.det := by
+  have h := prod_sq_dvd_det_of_unimodular_gram_factor A U K
+    (fun i => p ^ k i) hU hfactor
+  have hprod : (∏ i, p ^ k i) = p ^ (∑ i, k i) := by
+    simpa using (Finset.prod_pow_eq_pow_sum Finset.univ k p)
+  rw [hprod] at h
+  convert h using 1
+  rw [← pow_mul]
+  congr 1
+  omega
+
 end TenthDiscriminant
