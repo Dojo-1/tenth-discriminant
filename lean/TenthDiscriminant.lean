@@ -32,4 +32,5 @@ import TenthDiscriminant.IntegerTraceGram
 import TenthDiscriminant.QuadraticCoordinates
 import TenthDiscriminant.ResidueTraceGram
 import TenthDiscriminant.GramDivisibility
+import TenthDiscriminant.FrobeniusJet
 import TenthDiscriminant.InertPilot

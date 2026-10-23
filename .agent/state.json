@@ -1,8 +1,8 @@
 {
-  "task": "Account for Tao objectives and preregister a uniform inert-prime valuation bridge",
-  "status": "paper_valuation_and_conditional_lean_factor_passed_final_ci_pending",
-  "base_commit": "8ab2be07dd0e6b8319ee2da148717d3cd0684c45",
-  "branch": "codex/tao-objective-accounting",
+  "task": "Formalize the conditional one-factor Frobenius jet bridge",
+  "status": "conditional_jet_local_checks_passed_pinned_ci_pending",
+  "base_commit": "08c72603541a9e5bf478878ee1c5fd2a4a849259",
+  "branch": "codex/uniform-frobenius-jet",
   "decisions": [
     "Honor flow/PREREG_ENDER.txt and register research/ender_radius_bridge/PROTOCOL.md before new proof edits.",
     "Prove the chosen-radius count by a cell-covering area argument and retain its paper-versus-Lean boundary.",
@@ -15,7 +15,8 @@
     "Lead the new human guide with one integer Gram determinant viewed over the reals and modulo m; keep the contact-budget lemma, fixed pilot, and open general valuation separate.",
     "Treat Tao's post as one main challenge plus motivations and reporting norms, not an official numbered twelve-objective checklist.",
     "Preserve TAO_OBJECTIVE_AUDIT.md as a frozen 4c034f9 snapshot; put the current ledger and separately classified side discoveries in a new document without changing any experiment or cutoff.",
-    "Register the uniform inert-prime valuation attempt before proof edits; use a rectangular unitriangular basis and an explicit irreducibility hypothesis, with paper and Lean scopes labelled separately."
+    "Register the uniform inert-prime valuation attempt before proof edits; use a rectangular unitriangular basis and an explicit irreducibility hypothesis, with paper and Lean scopes labelled separately.",
+    "After PR #21 merged, preregister Phase 2 in a separate commit and prove only the universal one-factor jet implication from an explicit zero-order congruence; retain the noninert negative control."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
@@ -42,7 +43,9 @@
     "User-authorized draft PR #21 contains preregistration-only commit 09b6455; its pinned CI was in progress before proof edits. No merge was performed.",
     "The uniform inert-prime valuation has an explicit paper proof under X^2+D irreducibility modulo odd p; Lean checks only the abstract unimodular two-sided determinant factor, not its polynomial/Frobenius instantiation.",
     "Bounded exponent/window controls matched F(p) in three rectangles; D=19,p=3 passed 49 sample congruences and D=2,p=3 gave the registered noninert counterexample. These are controls, not proof.",
-    "The new Lean theorem compiled and local python verify_sources.py plus 6690-step lake build passed. Final-head pinned CI remains to run."
+    "The new Lean theorem compiled and local python verify_sources.py plus 6690-step lake build passed. PR #21 final-head pinned CI run 39968153279 succeeded and PR #21 merged externally at 08c7260.",
+    "Phase 2 protocol-only commit 04ee81d preceded all new Lean proof edits. Targeted FrobeniusJet.lean, source correspondence and complete 6691-step local build passed; first targeted compilation errors were repaired and recorded in the Phase 2 protocol.",
+    "The general zero-order Frobenius congruence, H^k product-rule divisibility and rectangular basis remain outside the new Lean theorem. Final-head pinned CI remains pending."
   ],
   "files_touched": [
     "README.md",
@@ -68,7 +71,9 @@
     "research/uniform_inert_valuation/PROTOCOL.md",
     "research/uniform_inert_valuation/PROOF.md",
     "lean/TenthDiscriminant/GramDivisibility.lean",
-    "lean/MATHEMATICAL_SPINE.md"
+    "lean/MATHEMATICAL_SPINE.md",
+    "research/uniform_inert_valuation/PHASE2_PROTOCOL.md",
+    "lean/TenthDiscriminant/FrobeniusJet.lean"
   ],
   "updated": "2026-10-23"
 }

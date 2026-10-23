@@ -175,9 +175,12 @@ divisible by `p^k`; the two Gram sides yield
 `p^(2Σk)=p^(2F(p)) | det G`.
 
 [The full written argument](../research/uniform_inert_valuation/PROOF.md)
-checks the endpoints and product rule. Lean checks the *abstract*
-unimodular two-sided determinant factor, not yet this particular basis
-or the Frobenius implication. This is inherited valuation mathematics,
+checks the endpoints and product rule. Lean checks the abstract
+unimodular two-sided determinant factor and a
+[one-factor jet lemma](TenthDiscriminant/FrobeniusJet.lean): once
+`z^p=bar z` holds modulo `p`, **every** ordinary jet of `Z^p-W` is
+`p`-divisible. It does not yet check the `H^k` basis construction or
+derive that congruence from inertness. This is inherited valuation mathematics,
 not a new classification or cutoff.
 
 ## The boundary of the proof
