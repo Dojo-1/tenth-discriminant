@@ -1,6 +1,6 @@
 {
-  "task": "Identify the integral lattice trace-Gram matrix with the existing real matrix",
-  "status": "proof_head_ci_passed_final_docs_ci_pending",
+  "task": "Build a bidirectional global integer-Gram and residue-coordinate bridge",
+  "status": "protocol_registered_before_proof_edits",
   "base_commit": "c77049288e0eac33f72739b255d8254ff3e6aca1",
   "branch": "codex/integer-trace-gram",
   "decisions": [
@@ -8,7 +8,8 @@
     "Prove the chosen-radius count by a cell-covering area argument and retain its paper-versus-Lean boundary.",
     "Formalize exact-set monotonicity and Ender's stronger endpoint guard without assuming the count is checked in Lean.",
     "Leave determinant arithmetic divisibility and class-number classification open.",
-    "Register research/integer_gram_bridge/PROTOCOL.md before any new Lean proof edits; prove a commuting coordinate identity, not a replacement matrix."
+    "Register research/integer_gram_bridge/PROTOCOL.md before any new Lean proof edits; prove a commuting coordinate identity, not a replacement matrix.",
+    "Register research/local_global_gram/PROTOCOL.md in its own commit before new Lean edits; keep sample multiplicities under reduction and do not infer inert-prime valuation from determinant naturality."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
@@ -19,7 +20,8 @@
     "Current unresolved bridge is identification of the Lean trace-Gram matrix with the integral arithmetic matrix, then inert-prime valuation and end-to-end classification.",
     "The new IntegerTraceGram.lean entrywise, determinant-cast and positive-integer-determinant theorems compiled under pinned Lean 4.19.0; the full lake build and verify_sources.py passed.",
     "Local Windows audit.py and negative_controls.py wrappers exited 1 on 240-second and 120-second subprocess timeouts respectively; partial successful probes are recorded in the bridge protocol, not promoted to full passes.",
-    "Proof-head commit eea5c5f94dd919072a5fb970723754695f8ca382 passed pinned Linux CI run 39930134039, including source correspondence, full Lean build, compiled axiom audit and inherited negative controls; the documentation follow-up requires its own run."
+    "Proof-head commit eea5c5f94dd919072a5fb970723754695f8ca382 passed pinned Linux CI run 39930134039, including source correspondence, full Lean build, compiled axiom audit and inherited negative controls.",
+    "Final PR #20 head f12085372078a7958f4a1fc7995853fed49efb00 passed pinned Linux CI run 39931440763 and remains draft and unmerged at this checkpoint."
   ],
   "files_touched": [
     "README.md",
@@ -32,6 +34,7 @@
     "lean/TenthDiscriminant/TraceGram.lean",
     "lean/TenthDiscriminant/LatticeEllipse.lean",
     "research/integer_gram_bridge/PROTOCOL.md",
+    "research/local_global_gram/PROTOCOL.md",
     "research/ender_radius_bridge/PROTOCOL.md",
     "research/ender_radius_bridge/PROOF.md"
   ],
