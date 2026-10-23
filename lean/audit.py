@@ -65,7 +65,7 @@ def main() -> None:
         raise SystemExit(run.returncode)
     if 'AUDIT_OK TenthDiscriminant:' not in run.stdout:
         raise SystemExit('No completed Lean environment audit')
-    print('PASS: all compiled project constants audited; only the three permitted axioms allowed.', flush=True)
+    print('PASS: all logical project constants audited; only the three permitted axioms allowed.', flush=True)
     subprocess.run([sys.executable, str(root / 'apparatus_controls.py')],
                    cwd=root, check=True, timeout=240)
 
