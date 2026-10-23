@@ -1,25 +1,36 @@
 import Lean
 
-/-! Verification infrastructure: enumerate compiled declarations, including private
-ones, rather than treating a regex of theorem source text as authoritative. -/
+/-!
+# Compiled dependency audit
+
+Check every compiled project constant, including private definitions and opaque
+values, not just declarations introduced by `theorem`. An unused definition is
+still part of the apparatus. Source/import coverage is checked by audit.py.
+
+The three allowed axioms are the existing classical Lean foundation. This gate
+checks dependency hygiene, not the external interpretation of a statement.
+-/
 open Lean Elab Command
 
 elab "#audit_namespace " ns:ident : command => do
   let scopeName := ns.getId
   let env ← getEnv
   let mut count := 0
+  let mut theoremCount := 0
   for (name, info) in env.constants.toList do
     if scopeName.isPrefixOf (Lean.privateToUserName name) then
       match info with
       | .axiomInfo _ => throwError "PROJECT_AXIOM {name}"
-      | .thmInfo _ =>
+      | _ =>
         let dependencies ← Lean.collectAxioms name
         for dep in dependencies do
           unless dep == ``propext || dep == ``Classical.choice || dep == ``Quot.sound do
             throwError "NONSTANDARD_AXIOMS {name}: {dependencies}"
         logInfo m!"AXIOMS {name}: {dependencies}"
         count := count + 1
-      | _ => pure ()
+        match info with
+        | .thmInfo _ => theoremCount := theoremCount + 1
+        | _ => pure ()
   if count == 0 then
     throwError "EMPTY_PROOF_AUDIT {scopeName}"
-  logInfo m!"AUDIT_OK {scopeName}: {count} theorem declarations (including generated auxiliaries)"
+  logInfo m!"AUDIT_OK {scopeName}: {count} declarations; {theoremCount} theorems (including generated auxiliaries)"

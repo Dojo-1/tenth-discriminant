@@ -26,3 +26,4 @@ import TenthDiscriminant.IrreducibleContact
 import TenthDiscriminant.BivariateDegree
 import TenthDiscriminant.FactorJetBudget
 import TenthDiscriminant.JetCountGram
+import TenthDiscriminant.Interpolation
