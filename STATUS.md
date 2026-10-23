@@ -5,6 +5,19 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-23: the abstract class-number-one ideal step is checked
+
+[Phase 10](research/uniform_inert_valuation/PHASE10_PROTOCOL.md) proves in
+Lean that a ring map from a number field's integer ring to `ZMod n`
+has kernel of ideal norm `n`, and class number one makes that kernel
+principal. Its generator has algebraic norm of magnitude `n`; the
+`K=ℚ,n=3` control compiles. This does **not** yet turn a root of
+`X²+D` into a map from the specific maximal quadratic order, nor
+identify the generator's norm with `principalNorm D x y`. Those
+specific-field arrows remain open, as do the Lean area estimate,
+analytic cutoff and classification. [Lean source](lean/TenthDiscriminant/PrincipalIdealBridge.lean) ·
+[human proof](lean/HUMAN_GUIDE.md#16-what-class-number-one-actually-buys).
+
 ## 2026-10-23: a conditional small-prime norm gate
 
 [Phase 9](research/uniform_inert_valuation/PHASE9_PROTOCOL.md) adds a

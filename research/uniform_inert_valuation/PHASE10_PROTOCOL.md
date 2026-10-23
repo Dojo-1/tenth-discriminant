@@ -37,4 +37,22 @@ two arrows. No saved certificates or cutoff change; do not merge.
 
 ## Execution record
 
-Pending.
+`PrincipalIdealBridge.lean` proves the target by the planned three
+identities. Pinned Mathlib's `ZMod.ringHom_surjective` discharges
+surjectivity automatically. The kernel quotient isomorphism computes
+its ideal norm as `n`; `classNumber_eq_one_iff` supplies a principal
+ideal ring; `Ideal.absNorm_span_singleton` identifies the absolute
+algebraic norm of a generator. The same proof works for every modulus
+`n`, so the theorem is stated in that harmless generality, with the
+intended prime application still explicit in this protocol. The
+`K=ℚ,n=3` control compiles.
+
+No failed Lean proof step occurred in this phase. Targeted
+`lake env lean TenthDiscriminant/PrincipalIdealBridge.lean` passed;
+the full `lake build` completed 6701 steps and `python
+verify_sources.py` passed from `lean/` with its endpoint-only scope.
+`git diff --check` passed. Pinned Linux CI, compiled dependency audit
+and inherited negative controls on the final proof head remain to be
+reported separately. The specific imaginary-quadratic residue map,
+coordinate norm identity, geometric count, analytic cutoff and
+classification are not inferred.

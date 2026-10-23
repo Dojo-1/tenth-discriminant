@@ -572,3 +572,32 @@ The strict inequality matters. At `D=163,p=41`, the form represents
 At `D=15,p=3`, zero is a residue root and Lean proves the lifting
 premise is false. These are boundary checks, not a classification or a
 new analytic cutoff.
+
+## 16. What class number one actually buys
+
+The previous section deliberately left “principal” as an assumption.
+We can now prove the middle ideal-theoretic move for **any number field**
+`K`, without yet claiming it applies to our particular root. Suppose
+there is a ring map `f : 𝓞_K → 𝔽_p`. It is onto: each element of
+`𝔽_p` is the image of an integer. Its kernel `I` therefore has
+quotient `𝓞_K/I ≅ 𝔽_p`, so the ideal norm of `I` is `p`.
+
+Mathlib identifies class number one with the assertion that every
+ideal of `𝓞_K` is principal. Thus `I=(a)` for some algebraic integer
+`a`. The principal-ideal norm formula gives
+
+$$p=N(I)=N((a))=|N_{K/\mathbb Q}(a)|.$$
+
+This entire implication is checked in
+[PrincipalIdealBridge.lean](TenthDiscriminant/PrincipalIdealBridge.lean),
+including a concrete `K=ℚ,p=3` control. The absolute value is
+necessary for a general number field. It becomes the positive norm in
+our imaginary quadratic application only after we identify that field
+and its integral coordinates.
+
+Two arrows still need formal proofs: a root of `X²+D` modulo odd `p`
+must supply the ring map from the **maximal** order, and every algebraic
+integer obtained this way must have coordinates `(x,y)` whose norm is
+the displayed `N(x,y)`. The latter also fixes the sign. Until those
+arrows are checked, the Phase 9 lifting premise is not discharged and
+the class-number classification remains open.

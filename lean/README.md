@@ -156,8 +156,9 @@ status. The current status is [FORMALIZATION.md](FORMALIZATION.md).
 
 The cell-area count is not Lean-checked; determinant divisibility is checked
 under an odd-prime nonsquare condition, and the strict-small-prime norm
-argument is checked under an explicit unproved lifting premise. Deriving
-that premise from class number one, remaining analytic and
+argument is checked under an explicit unproved lifting premise. The
+abstract class-number-one quotient-to-principal-norm step is checked;
+constructing its quadratic residue map and norm coordinates, remaining analytic and
 kernel-checkable numerical estimates, and finite classification are not yet a
 connected Lean proof. The analytic cutoff and saved numerical evidence are
 unchanged. No human or blind independent semantic review is claimed.

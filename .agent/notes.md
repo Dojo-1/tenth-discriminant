@@ -51,3 +51,12 @@
   endpoint witness. Targeted Lean, 6700-step local full build and source
   correspondence pass. Class-number one to lifting, analytic cutoff,
   and classification remain open; final-head pinned CI pending.
+- 2026-10-23, Phase 10: preregistered the abstract class-number
+  quotient-to-principal-norm proof in standalone commit `ac62da0`.
+  Lean now proves for any number field that a map from its integer ring
+  to `ZMod n`, plus class number one, gives an algebraic integer with
+  absolute norm `n`; `K=ℚ,n=3` is a positive control. Targeted Lean,
+  6701-step full local build and source correspondence passed. This
+  discharges the abstract principality arrow, not the specific
+  root-to-maximal-quadratic-order map or norm-coordinate identity.
+  Pinned CI on the final head pending; no cutoff/classification claim.

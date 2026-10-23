@@ -40,6 +40,7 @@ import TenthDiscriminant.RectangularGramFactor
 import TenthDiscriminant.QuadraticResidueRing
 import TenthDiscriminant.InertFrobenius
 import TenthDiscriminant.SmallPrimeBridge
+import TenthDiscriminant.PrincipalIdealBridge
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot
