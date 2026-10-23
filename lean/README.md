@@ -158,7 +158,8 @@ The cell-area count is not Lean-checked; determinant divisibility is checked
 under an odd-prime nonsquare condition, and the strict-small-prime norm
 argument is checked under an explicit unproved lifting premise. The
 abstract class-number-one quotient-to-principal-norm step is checked;
-constructing its quadratic residue map and norm coordinates, remaining analytic and
+transporting the checked explicit-order residue map to the maximal
+integer ring and identifying its norm coordinates, remaining analytic and
 kernel-checkable numerical estimates, and finite classification are not yet a
 connected Lean proof. The analytic cutoff and saved numerical evidence are
 unchanged. No human or blind independent semantic review is claimed.

@@ -5,6 +5,20 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-24: a residue root gives an explicit order quotient
+
+[Phase 11](research/uniform_inert_valuation/PHASE11_PROTOCOL.md) now
+checks that for `D ≡ 3 (mod 4)` and odd prime `p`, a root `z²=-D`
+modulo `p` yields a surjective ring map from
+`ℤ[T]/(T²-T+(D+1)/4)` to `ZMod p`, sending `T` to `(1+z)/2`.
+The `D=15,p=3` ramified control has this map although Phase 9's
+principal norm lifting fails. **This is not yet a map from Mathlib's
+maximal integer ring.** The order identification and norm-coordinate
+formula are the remaining arithmetic arrows before Phase 10 can
+discharge Phase 9's lifting premise. Geometric and analytic links
+remain open. [Lean source](lean/TenthDiscriminant/HalfOrderResidue.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#17-from-a-residue-root-to-an-actual-quotient-map).
+
 ## 2026-10-23: the abstract class-number-one ideal step is checked
 
 [Phase 10](research/uniform_inert_valuation/PHASE10_PROTOCOL.md) proves in

@@ -60,3 +60,12 @@
   discharges the abstract principality arrow, not the specific
   root-to-maximal-quadratic-order map or norm-coordinate identity.
   Pinned CI on the final head pending; no cutoff/classification claim.
+- 2026-10-24, Phase 11: preregistered root-to-explicit-order quotient
+  theorem in standalone commit `1b190b0`. Lean proves that odd-prime
+  `z²=-D` yields a surjective map from
+  `ℤ[T]/(T²-T+(D+1)/4)` to `ZMod p`, with `T↦(1+z)/2` and
+  `z=2T-1` after mapping. `D=15,p=3` confirms a quotient can exist
+  without principal norm lifting. Targeted Lean, 6702-step local build
+  and source correspondence pass. The maximal-order identification,
+  algebraic norm formula, area formalization, analytic cutoff and
+  classification remain open; final-head pinned CI pending.

@@ -19,7 +19,9 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > the needed root-to-principal-norm lifting premise and proves its
 > strict-small-prime consequence. Lean also proves that class number one
 > makes any residue-quotient ideal principal; constructing the specific
-> quotient and matching its norm to the quadratic coordinates remain open. The
+> quotient for the explicit half-integral order is now constructed, but
+> identifying that order with the maximal integer ring and matching its
+> algebraic norm to the quadratic coordinates remain open. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.

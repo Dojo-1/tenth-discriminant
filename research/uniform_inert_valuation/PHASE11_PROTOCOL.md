@@ -39,4 +39,26 @@ maximal-order boundary. No numerical experiment or cutoff changes.
 
 ## Execution record
 
-Pending.
+`HalfOrderResidue.lean` proves the integer coefficient identity,
+odd-prime invertibility of `2`, the root relation for
+`t=(1+z)/2`, and the actual `AdjoinRoot.lift` ring map. Lean checks
+its value on the adjoined root, recovers `z=2t-1`, and proves
+surjectivity. The `D=15,p=3,z=0` control constructs such a map even
+though Phase 9 proves that principal norm lifting fails there.
+
+The first Lean attempts failed on noncomputability declarations,
+integer-cast transport, a polynomial constant evaluation normal form,
+and the elaboration of `lift_root`; these were proof-script issues.
+An attempted extra control that normalized `(1:ZMod 3)/2` to `2`
+stalled at modular inverse evaluation. It was removed because the
+preregistered control requires the quotient map, not that incidental
+normal form; the final control proves a surjective map exists.
+
+Targeted `lake env lean TenthDiscriminant/HalfOrderResidue.lean`
+passed. Full `lake build` completed 6702 steps; `python
+verify_sources.py` passed from `lean/` with its endpoint-only scope;
+`git diff --check` and task-state JSON validation passed. The
+optional algebraic norm formula was **not** proved. The order's
+identification with the maximal integer ring remains open. Pinned
+Linux CI, compiled dependency audit and inherited negative controls
+on the final head are to be reported separately.

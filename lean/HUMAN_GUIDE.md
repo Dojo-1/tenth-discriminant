@@ -601,3 +601,31 @@ integer obtained this way must have coordinates `(x,y)` whose norm is
 the displayed `N(x,y)`. The latter also fixes the sign. Until those
 arrows are checked, the Phase 9 lifting premise is not discharged and
 the class-number classification remains open.
+
+## 17. From a residue root to an actual quotient map
+
+Let `D ≡ 3 (mod 4)` and write `c=(D+1)/4`. Put
+`ω=(1+√(-D))/2`. Its defining relation is
+
+$$\omega^2-\omega+c=0.$$
+
+For an odd prime `p`, suppose `z²=-D` in `𝔽_p`. Then
+`t=(1+z)/2` satisfies the same relation: multiply
+`t²-t+c` by `4` to obtain `(2t-1)²+D=z²+D=0`.
+Because `4` is invertible, the relation itself is zero. The universal
+property of the quotient ring therefore gives a **surjective ring map**
+
+$$\mathbf Z[T]/(T^2-T+c)\longrightarrow\mathbf F_p,
+\qquad T\longmapsto t.$$
+
+Lean checks the integer coefficient identity, the odd-prime division,
+the polynomial-root calculation, the ring map, its value on `T`, and
+surjectivity in [HalfOrderResidue.lean](TenthDiscriminant/HalfOrderResidue.lean).
+This makes one of §16's arrows concrete, but for the explicit order
+`ℤ[ω]`, **not yet** for Mathlib's maximal integer ring `𝓞_K`.
+The field-specific remaining work is to identify those rings under
+the fundamental-discriminant hypotheses and show that the algebraic
+norm in that identification equals `x²+xy+cy²`. Only then can §16
+feed §15 without an extra premise. At `D=15,p=3`, the quotient map
+exists while the lifting premise fails; this is a useful guard against
+dropping class number one.
