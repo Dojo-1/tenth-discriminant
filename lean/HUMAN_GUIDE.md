@@ -4,6 +4,8 @@
 interpolation theorem in ordinary mathematics. It is not a proof of the
 class-number-one classification. The [claim map](FORMALIZATION.md) separates
 completed components from the arithmetic and numerical links still missing.
+For the shorter conceptual route, start with the
+[mathematical spine](MATHEMATICAL_SPINE.md).
 
 ## The theorem in one paragraph
 
@@ -300,7 +302,8 @@ as a premise and transports it by the proved cardinality equality. It does
 **not by itself** derive Ender's lower count, formalize his radius guard, or
 prove the determinant's arithmetic divisibility. The next paragraph supplies
 the count on paper and §10 supplies the matrix identity in Lean. The area and
-radius instantiation are not Lean-checked; divisibility remains open. The
+radius instantiation are not Lean-checked; **general** inert-prime divisibility
+remains open (a fixed pilot is proved in §11). The
 full-classification claim remains candidate mathematics.
 
 A separate [geometric proof](../research/ender_radius_bridge/PROOF.md) now
@@ -350,7 +353,7 @@ The generic equality concerns a supplied **finite set of distinct pairs**.
 The verifier's historical ellipse generator uses a half-integer-scaled radius,
 whereas `ellipsePairs D rho` uses integer `rho`; this bridge does not identify
 those two generators or certify the saved numerical campaign. Most importantly,
-integer entries alone do not imply the inert-prime valuation bound. That is
+integer entries alone do not imply the **general** inert-prime valuation bound. That is
 the next arithmetic theorem to prove; class-number classification remains open.
 
 ## 11. Local and global arithmetic views of one Gram matrix

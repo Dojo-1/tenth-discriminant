@@ -1,5 +1,7 @@
 # Task checkpoint
 
+- 2026-10-23, human-distillation continuation: added lean/MATHEMATICAL_SPINE.md as a concise entry point organized around one integer Gram determinant, its real energy/contact proof, exact residue reduction, and the fixed D=19,p=3 nine-divisibility theorem. The guide separates Lean-checked claims, the paper-only chosen-radius area count, recorded candidate computations, and the missing uniform valuation/class-number chain. Linked it from current reader pages and corrected unqualified historical divisibility wording. Local verify_sources.py, 6690-step lake build, git diff --check, task-state JSON parse, and local Markdown link resolution passed; CI on the final documentation commit remains pending.
+
 - 2026-10-23: Synced a fresh checkout at `4c034f9`. Contrary to the earlier cached conversation, PR #15 (`47ec647`) and PR #16 (`4c034f9`) are merged on current `main`.
 - The selected bounded replay is `flow/PREREG_RADIAL.txt`; its stated limitation forbids a cutoff improvement claim.
 - Scope: documentation/evidence audit, pinned formal checks, and one bounded replay. No merge and no claim of a full classification proof.

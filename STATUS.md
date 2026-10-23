@@ -1,5 +1,8 @@
 # Status — 2026-10-23
 
+For a concise mathematical overview of the checked result and the open
+bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
+
 ## 2026-10-23: local–global determinant bridge (bounded pilot)
 
 For `D>0`, Lean identifies the integer-pair coordinates with the selected

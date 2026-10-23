@@ -4,9 +4,19 @@
 
 An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/comment-page-1/): make an effective class-number-one argument explicit, without importing the known classification as a proof input.
 
-[Current argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Tao-objective audit](TAO_OBJECTIVE_AUDIT.md) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)
+[Mathematical spine](lean/MATHEMATICAL_SPINE.md) · [Candidate argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Frozen Tao-objective audit](TAO_OBJECTIVE_AUDIT.md) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)
 
-> **Status · 22 October 2026:** candidate mathematical argument, with recorded interval certificates, finite computations, and AI review. No end-to-end Lean formalization or human mathematical review is recorded. The latest determinant experiments do **not** change the discriminant cutoff. No novelty or priority claim is made.
+> **Current reading order · 23 October 2026:** start with the short
+> [mathematical spine](lean/MATHEMATICAL_SPINE.md), then the
+> [current claim map](lean/FORMALIZATION.md). Lean checks interpolation,
+> the exact integer/residue views of one Gram matrix, and a fixed
+> `D=19,p=3` nine-divisibility pilot. The chosen-radius cell-area count is
+> proved on paper but not in Lean. Ender's uniform valuation and the
+> end-to-end class-number classification remain unproved in Lean and are
+> not established by that pilot. The audit linked above is explicitly a
+> frozen `4c034f9` snapshot, not a description of every later bridge.
+
+> **Historical status · 22 October 2026:** candidate mathematical argument, with recorded interval certificates, finite computations, and AI review. No end-to-end Lean formalization or human mathematical review is recorded. The latest determinant experiments do **not** change the discriminant cutoff. No novelty or priority claim is made.
 >
 > This overview reflects the artifacts at [`062afd2`](https://github.com/Dojo-1/tenth-discriminant/tree/062afd2a6170a7569d1801c3938f05e63030949d). Numerical summaries below describe those recorded runs; they are not substitutes for the derivations or their dependencies.
 >

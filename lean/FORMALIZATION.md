@@ -5,7 +5,8 @@ classification chain is not.** This map supersedes the PR #8-era coverage
 summary previously stored here; Git history preserves that record. Stage notes
 remain useful derivations, but their old frontier descriptions are historical.
 
-Read the [human proof](HUMAN_GUIDE.md), then inspect the linked source statement.
+Read the [mathematical spine](MATHEMATICAL_SPINE.md) first, then the
+[detailed human proof](HUMAN_GUIDE.md) and linked source statements.
 "Proved" below means the encoded implication under its explicit hypotheses,
 not that its intended application or all of its hypotheses have been proved.
 

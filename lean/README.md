@@ -3,7 +3,9 @@
 **A checked interpolation and determinant apparatus, not yet a formalized
 class-number-one classification.**
 
-Start with the [human proof guide](HUMAN_GUIDE.md). Use the
+Start with the short [mathematical spine](MATHEMATICAL_SPINE.md): one
+integer determinant, its real positivity, and its fixed modular relation.
+Then read the [detailed human proof guide](HUMAN_GUIDE.md). Use the
 [current claim map](FORMALIZATION.md) to distinguish proved components,
 conditional helpers, finite calculations and open links.
 
@@ -60,7 +62,8 @@ step is not yet formalized.
 next bridge: for a supplied finite set of distinct integer pairs and positive
 D, its exact integer derivative trace-Gram matrix casts entrywise to this
 same real matrix. The integer-radius ellipse is a specialization. The
-determinant casts accordingly, but its inert-prime divisibility is not proved.
+determinant casts accordingly, but the **general** inert-prime divisibility
+bound is not proved.
 The [guide's coordinate explanation](HUMAN_GUIDE.md#10-the-same-gram-matrix-in-integer-and-complex-coordinates)
 includes an asymmetric control that a determinant-only comparison misses.
 

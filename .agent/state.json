@@ -1,6 +1,6 @@
 {
-  "task": "Build a bidirectional global integer-Gram and residue-coordinate bridge",
-  "status": "fixed_pilot_proved_proof_head_ci_passed",
+  "task": "Distill the checked Lean argument into a short human-readable mathematical spine",
+  "status": "documentation_local_checks_passed_ci_pending",
   "base_commit": "c77049288e0eac33f72739b255d8254ff3e6aca1",
   "branch": "codex/integer-trace-gram",
   "decisions": [
@@ -11,7 +11,8 @@
     "Register research/integer_gram_bridge/PROTOCOL.md before any new Lean proof edits; prove a commuting coordinate identity, not a replacement matrix.",
     "Register research/local_global_gram/PROTOCOL.md in its own commit before new Lean edits; keep sample multiplicities under reduction and do not infer inert-prime valuation from determinant naturality.",
     "Use the selected quadratic-order chart only at the first Cayley-Dickson-style doubling; retain an integral Gram as the common object for real and modular projections.",
-    "For the fixed D=19,p=3,R=4,S=2 pilot, require a matching shear and an integral two-sided factorization before asserting nine-divisibility."
+    "For the fixed D=19,p=3,R=4,S=2 pilot, require a matching shear and an integral two-sided factorization before asserting nine-divisibility.",
+    "Lead the new human guide with one integer Gram determinant viewed over the reals and modulo m; keep the contact-budget lemma, fixed pilot, and open general valuation separate."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
@@ -29,7 +30,8 @@
     "The exact current source passed python verify_sources.py, targeted Lean, and lake build locally.",
     "Local Windows python audit.py exited 1 after its 240-second apparatus-controls wrapper timeout, although import coverage and AUDIT_OK 526 logical declarations passed before timeout; this is not a full audit pass.",
     "Local Windows python negative_controls.py was intentionally stopped after four passing matched pairs to avoid a prolonged replay; this is not a full negative-controls pass.",
-    "Proof-head commit d5945cf7fc5b891b54ef85986c40a55bec35843c passed pinned Linux CI run 39954106722: source correspondence, full Lean build, compiled axiom audit and inherited negative controls. A later documentation-only status commit requires its own CI before it is described as checked."
+    "Proof-head commit d5945cf7fc5b891b54ef85986c40a55bec35843c passed pinned Linux CI run 39954106722: source correspondence, full Lean build, compiled axiom audit and inherited negative controls. A later documentation-only status commit requires its own CI before it is described as checked.",
+    "Human-distillation documentation revision passed local python verify_sources.py, lake build (6690 steps), git diff --check, task-state JSON parse, and local Markdown link resolution; pinned CI for the final commit is pending."
   ],
   "files_touched": [
     "README.md",
@@ -49,7 +51,8 @@
     "lean/TenthDiscriminant/InertPilot.lean",
     ".agent/memory.fallback.md",
     "research/ender_radius_bridge/PROTOCOL.md",
-    "research/ender_radius_bridge/PROOF.md"
+    "research/ender_radius_bridge/PROOF.md",
+    "lean/MATHEMATICAL_SPINE.md"
   ],
   "updated": "2026-10-23"
 }
