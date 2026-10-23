@@ -71,7 +71,9 @@ subprocess.run([sys.executable, str(root / 'jet_negative_controls.py')],
 subprocess.run([sys.executable, str(root / 'multiplicity_negative_controls.py')],
                cwd=root, check=True, timeout=120)
 subprocess.run([sys.executable, str(root / 'degree_negative_controls.py')],
-               cwd=root, check=True, timeout=180)
+               cwd=root, check=True, timeout=240)
+subprocess.run([sys.executable, str(root / 'nonzero_negative_controls.py')],
+               cwd=root, check=True, timeout=360)
 subprocess.run([sys.executable, str(root / 'affine_negative_controls.py')],
                cwd=root, check=True, timeout=120)
-print('PASS: mathematical controls, proof-audit probes, Gram, jet, multiplicity, degree and affine controls.')
+print('PASS: mathematical controls, proof-audit probes, Gram, jet, multiplicity, degree, nonzero and affine controls.')
