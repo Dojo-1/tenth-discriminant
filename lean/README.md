@@ -51,6 +51,10 @@ For a concrete positive-D integer-radius ellipse, see
 `ellipseTraceGram_det_bounds` requires the actual integer-pair count; it does
 not prove Ender's analytic estimate for the chosen radius. The explanation is
 in [guide §9](HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge).
+The [separate cell-covering proof](../research/ender_radius_bridge/PROOF.md)
+now supplies that count in ordinary mathematics. Lean checks interval
+monotonicity and the conditional Ender-guard application, but the disk-area
+step is not yet formalized.
 
 ## Read in mathematical order
 

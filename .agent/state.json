@@ -1,17 +1,18 @@
 {
-  "task": "Bounded formal bridge from the integer norm ellipse to the existing trace-Gram theorem",
-  "status": "verification_in_progress",
-  "base_commit": "9f713b8a3a96c7025b1b436474bc485475b2d9c5",
+  "task": "Prove Ender's chosen-radius lattice-point count and check its formal interface",
+  "status": "awaiting_pinned_ci",
+  "base_commit": "2b69c2a6f6ecbe34eefd0fb17da3b4655c1ae675",
   "branch": "codex/lattice-sampling-bridge",
   "decisions": [
-    "Honor research/lattice_bridge_r1/PROTOCOL.md registered before editing the proof.",
-    "Construct the finite integer-radius ellipse and transport its count to the unchanged Gram theorem.",
-    "Leave Ender's analytic lower count, chosen real radius, arithmetic matrix equality and classification open."
+    "Honor flow/PREREG_ENDER.txt and register research/ender_radius_bridge/PROTOCOL.md before new proof edits.",
+    "Prove the chosen-radius count by a cell-covering area argument and retain its paper-versus-Lean boundary.",
+    "Formalize exact-set monotonicity and Ender's stronger endpoint guard without assuming the count is checked in Lean.",
+    "Leave determinant arithmetic divisibility and class-number classification open."
   ],
   "evidence": [
-    "Merged main at 9f713b8, including prior PR #17.",
-    "lake env lean TenthDiscriminant/LatticeEllipse.lean passed with Lean 4.19.0.",
-    "lake build passed; source identity check passed; audit and negative controls in progress."
+    "Draft PR #18 head 2b69c2a passed pinned CI run 39913779228; it remains unmerged.",
+    "The new paper proof is in research/ender_radius_bridge/PROOF.md, independently checked against the older horizontal-slice argument.",
+    "lake env lean TenthDiscriminant/LatticeEllipse.lean passed after endpoint monotonicity and D=19,rho=5 controls."
   ],
   "files_touched": [
     "README.md",
@@ -21,7 +22,8 @@
     "lean/README.md",
     "lean/TenthDiscriminant.lean",
     "lean/TenthDiscriminant/LatticeEllipse.lean",
-    "research/lattice_bridge_r1/PROTOCOL.md"
+    "research/ender_radius_bridge/PROTOCOL.md",
+    "research/ender_radius_bridge/PROOF.md"
   ],
   "updated": "2026-10-23"
 }

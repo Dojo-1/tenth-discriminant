@@ -1,5 +1,18 @@
 # Status — 2026-10-23
 
+## 2026-10-23: geometric count for Ender's chosen radius
+
+The registered [radius proof](research/ender_radius_bridge/PROOF.md) uses
+unit-by-√D lattice cells to establish the inherited lower count for every
+integer D≥1 and radius rho≥0. For the exact radius chosen by Ender it yields
+`card(ellipsePairs D rho) > 3R+S`; at finite intervals the count transfers
+from D2 to every D≤D2 by exact set inclusion. Lean now checks that inclusion,
+the cardinality transfer and the existing Gram application, plus a D=19,
+rho=5 exact control with 21 points. **The cell-area estimate itself remains
+unformalized.** Neither this count nor a green build establishes the integer
+matrix's inert-prime divisibility, the analytic contradiction, or class-number
+classification. The earlier numerical records are unchanged.
+
 ## 2026-10-23: bounded formal ellipse bridge
 
 The registered attempt in `research/lattice_bridge_r1/PROTOCOL.md` adds
