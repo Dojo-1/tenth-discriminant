@@ -1,62 +1,68 @@
-# Lean components - checked matrix, jet and local multiplicity layers
+# Lean: the proof you can inspect
 
-**This is a partial formalization, not a Lean proof of the class-number-one classification.**
+**A checked interpolation and determinant apparatus, not yet a formalized
+class-number-one classification.**
 
-The project uses **Lean 4.19.0** and **Mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b`**. No toolchain upgrade or newest-version claim is involved.
+Start with the [human proof guide](HUMAN_GUIDE.md). Use the
+[current claim map](FORMALIZATION.md) to distinguish proved components,
+conditional helpers, finite calculations and open links.
 
-## Current verified boundary
+## The result to start with
 
-The code/test snapshot `9c41b2482fc69d8e53f906c2d0dd4357dc4909ef` passed [run 39789129577](https://github.com/Dojo-1/tenth-discriminant/actions/runs/39789129577), job `119860130933`: source linkage, build, compiled axiom audit and the expanded controls. Its PR synthetic merge `b83a39e17fe29cd826959e83bf385c5559631e09` has the same source tree. A later green summary must still be tied to its exact revision.
+For a finite set P of distinct complex points and the original R-by-S monomial
+row grid, positive R,S and
 
-The newest theorem proves that an m-fold root of a nonzero specialization F(Z,w) forces `(W-w)^(m-1)` to divide the **original fixed-size Sylvester determinant of F and F_Z**, even if the leading degree drops at w. An explicit determinant-one Taylor coordinate change makes the required rows vanish. See [SYLVESTER_MULTIPLICITY.md](SYLVESTER_MULTIPLICITY.md) for the theorem, proof map, controls and unresolved links.
+$$
+J\ge S,\qquad |P|>2(R-1)+(S-1)
+$$
 
-This local divisibility theorem does **not** show that the determinant polynomial is nonzero. That distinction is essential before using its degree to bound the number of contacts. The full jet-uniqueness criterion in [JET_NONVANISHING.md](JET_NONVANISHING.md) remains a conventional derivation, not a Lean theorem.
+imply positive definiteness of the actual real derivative trace-Gram matrix G,
+and
 
-## Actual matrix and jet boundary
+$$
+0<\det G\le\prod_iG_{ii}.
+$$
 
-`GramMatrix.lean` assembles the existing `traceGramEntry` into the full finite real matrix. Its rows are actual complex derivative rows, not an assumed positive matrix. For every finite complex point set, natural derivative cutoff, and finite row-label family, it proves:
+No independence, irreducibility, nonzero resultant or positive determinant is
+assumed in this public criterion. The derivatives are ordinary Z-derivatives
+with W held fixed; the trace normalization is unchanged. The criterion is
+sufficient, not claimed necessary or sharp.
 
-```text
-G = 2 (A A^T + B B^T), with A and B the real and imaginary row coordinates;
-x^T G x = 2 sum_c ((sum_i A_ic x_i)^2 + (sum_i B_ic x_i)^2);
-G is positive semidefinite;
-0 <= det G <= product_i G_ii.
+The direct API is in [`Interpolation.lean`](TenthDiscriminant/Interpolation.lean):
+
+```lean
+open TenthDiscriminant
+
+example (P : Finset Complex) (J R S : Nat)
+    (hR : 1 <= R) (hS : 1 <= S) (hJ : S <= J)
+    (hc : 2*(R-1)+(S-1) < P.card) :
+    (rectangularTraceGram P J R S).PosDef :=
+  rectangularTraceGram_posDef_of_point_count P J R S hR hS hJ hc
 ```
 
-The upper bound is also stated using the exact diagonal moments. `GramHadamard.lean` derives the real PSD diagonal-product bound using Mathlib's volume-form inequality and PSD factorization. The origin, repeated labels, zero derivative range and empty dimensions are not excluded by the universal statements.
+`rectangularTraceGram_det_bounds` supplies positivity and the diagonal-product
+upper bound together. It proves the row-major index bookkeeping internally;
+callers need not supply injectivity of the canonical labels. The more general
+arbitrary-label theorem remains in
+[`JetCountGram.lean`](TenthDiscriminant/JetCountGram.lean).
 
-`JetKernel.lean` identifies the actual Gram kernel with invisible **real** coefficient jets and proves the equivalence between positive definiteness and real jet uniqueness. It also identifies those rows with Mathlib's actual iterated polynomial derivative with W held fixed. Complex jet independence is sufficient, not necessary: a checked control has complex rank one and real trace-Gram determinant four.
+## Read in mathematical order
 
-**Positive semidefinite does not mean nonsingular.** No geometric uniqueness premise is discharged merely by expressing it as a conditional determinant theorem.
+1. [Human guide](HUMAN_GUIDE.md): statement, definitions, proof and examples.
+2. [JetCountGram](TenthDiscriminant/JetCountGram.lean): the actual observations and matrix.
+3. [FactorJetBudget](TenthDiscriminant/FactorJetBudget.lean): the short exceptional-set product rule.
+4. [IrreducibleContact](TenthDiscriminant/IrreducibleContact.lean): the algebraic contact bound it uses.
 
-## Component map
+Lower-level files implement the fixed coefficient matrix, local multiplicity,
+field-level nonvanishing and degree accounting. The
+[claim map](FORMALIZATION.md) also covers the arithmetic, moment, interval,
+envelope, transport and experimental modules. Optional research contracts are
+not extra premises of the interpolation theorem.
 
-| Module | Exact scope |
-|---|---|
-| `Arithmetic`, `FloorSum` | Principal-form integer bounds, strict cutoffs, valuation-weight endpoint controls, sum-of-minima and quotient/remainder floor sum. |
-| `Radial`, `MomentMatrix` | Weighted-moment correlation and two-by-two determinant bound, moment-class sharpness/hypothesis controls and normalized pair-gain ceiling. |
-| `TraceGram` | Complex derivative rows, exact diagonal and radial cross moments, lattice norm embedding, origin and unmatched-column controls. |
-| `GramHadamard`, `GramMatrix` | Full real trace matrix, exact factorization and quadratic identity, PSD, nonnegative determinant, Hadamard and exact moment-diagonal upper bound. |
-| `JetKernel` | Actual real jet/energy/kernel equivalences, polynomial derivative correspondence, observation monotonicity and circle/real-complex controls. |
-| `DeterminantMultiplicity`, `SylvesterLocal` | Explicit Taylor coordinate matrix, row-factor extraction, fixed-size Sylvester local multiplicity including degree loss, nonzero-specialization corollary and sharp/repeated-factor examples. |
-| `Coverage`, `RecordedCoverage` | Exact interval stitching and kernel-reduced verification of the saved endpoint chain. |
-| `Envelope`, `EnvelopeDecay` | The `15/64` coefficient, actual C=80 error decay and propagation conditional on endpoint positivity. |
+## Reproduce the checks
 
-See [FORMALIZATION.md](FORMALIZATION.md) for the complete claim map. Fields/class groups, small-prime inertness, global jet uniqueness, Gram integrality and determinant divisibility, aggregate `upper_B`, full factorial/Legendre estimates, numerical certificates, CRT/reduced-form closure and the full Fischer product remain open. No surrogate predicate or assumed structure field supplies `h(-D)=1 -> D<=163`.
-
-## Verification, controls and provenance
-
-The successful audit examined **145 compiled theorem entries, including generated auxiliaries**. That is inventory, not 145 independent mathematical results or a completion percentage. Only `propext`, `Classical.choice` and `Quot.sound` are allowed, including transitive dependencies. The source linkage still matches all 250 saved interval endpoint pairs; it does not certify their Arb inequalities.
-
-All **13 matched mathematical positive/negative pairs** and four axiom-audit probes passed. The suite also retains the six exact Gram examples, 64 seeded Gram cases, 96 modular jet cases, four dropped-jet controls and four earlier resultant controls. The new multiplicity campaign has three exact reference formulas and 48 planted-root cases: 24 degree drops, but only 22 cases with a positive required exponent, nine of which also drop degree. Finite counts do not replace the universal proofs.
-
-The new negative probes must fail with an arithmetic contradiction, not a setup/type error. Hidden incomplete proofs, custom axioms and native-evaluation dependencies are rejected by the existing audit controls. Two nonfatal tactic-style warnings remain in `TraceGram.lean` and `SylvesterLocal.lean`.
-
-Historical verified snapshots are preserved: matrix `c64a865` / [39774302749](https://github.com/Dojo-1/tenth-discriminant/actions/runs/39774302749), jets `561b294` / [39781264061](https://github.com/Dojo-1/tenth-discriminant/actions/runs/39781264061), and earlier foundations `2048b9a` / [39758347058](https://github.com/Dojo-1/tenth-discriminant/actions/runs/39758347058). Their theorem inventories belong to those snapshots only. Failed drafts and their repairs remain in Git history; checks were not bypassed.
-
-PR #6 merged into main, but the stacked PR #7 merged into its feature branch after that. The main-targeted PR #8 carries the jet layer and this local multiplicity layer together, preserving both histories. Its existence is not a merge confirmation.
-
-## Reproduce from the repository root
+Pinned environment: **Lean 4.19.0**, **Mathlib
+c44e0c8ee63ca166450922a373c7409c5d26b00b**. From the repository root:
 
 ```sh
 cd lean
@@ -68,6 +74,43 @@ python3 audit.py
 python3 negative_controls.py
 ```
 
-The final command invokes the Gram, jet and multiplicity controls. Deliberately invalid probes are generated in temporary files, never imported into the proof library.
+`verify_sources.py` matches the saved interval endpoints; it does not certify
+Arb inequalities. `lake build` checks the imported formal statements.
+`audit.py` checks that all project modules are imported, audits transitive
+axiom dependencies of every logical constant in the project namespace, and runs matched tests
+of that audit and the public API. `negative_controls.py` retains the inherited
+mathematical controls. Invalid probes are generated in temporary files, not
+imported into the proof library.
 
-Lean is a separately implemented proof checker, not an independent judge of whether every intended theorem was encoded. Proof selection, tests and interpretation share authorship. The next bounded target is nonzero fixed determinant plus its W-degree bound for the intended irreducible factors; the global class-number chain remains open.
+Only `propext`, `Classical.choice` and `Quot.sound` are allowed by the dependency
+gate. An unreferenced safe definition or opaque declaration is checked too.
+Unsafe compiler-generated runtime auxiliaries are reported separately using
+Lean safety metadata, not trusted as proof objects. Source-level unsafe
+declarations remain forbidden.
+Import coverage and source scanning are structural safeguards, not substitutes
+for the compiled audit or a semantic review.
+
+## Revision and evidence discipline
+
+The completed interpolation base is PR #15 at
+`d6c4876a316814aa0ac4ef1a719a13ea2822e620`, checked by workflow
+`39863039414`. This clarity review is PR #16, stacked on PR #15; its check status
+belongs to its exact head. A green ancestor does not certify later changes, and
+a draft or synthetic merge is not a merge into main.
+
+Earlier stage notes preserve their local derivations and dated evidence:
+[JET_NONVANISHING](JET_NONVANISHING.md),
+[SYLVESTER_MULTIPLICITY](SYLVESTER_MULTIPLICITY.md),
+[SYLVESTER_NONZERO](SYLVESTER_NONZERO.md),
+[DEGREE_CONTACT_BUDGET](DEGREE_CONTACT_BUDGET.md), and
+[JET_FACTOR_ASSEMBLY](JET_FACTOR_ASSEMBLY.md).
+Their old descriptions of what was still open are historical, not the current
+status. The current status is [FORMALIZATION.md](FORMALIZATION.md).
+
+## The remaining boundary
+
+Concrete ellipse construction/counting, integer-matrix correspondence,
+small-prime inertness and determinant divisibility, remaining analytic and
+kernel-checkable numerical estimates, and finite classification are not yet a
+connected Lean proof. The analytic cutoff and saved numerical evidence are
+unchanged. No human or blind independent semantic review is claimed.
