@@ -36,8 +36,14 @@ natural D>0; `ellipsePoints` is its complex image. `mem_ellipsePairs_iff`
 proves the finite box does not truncate the ellipse, `latticePoint_injective`
 and `ellipsePoints_card` prove distinctness and preserve its count, and
 `ellipseTraceGram_det_bounds` applies the same matrix theorem under the
-explicit count hypothesis. The count itself is **not** established for Ender's
-chosen D and radius.
+explicit count hypothesis. The count itself is **not** established in Lean for
+Ender's chosen D and radius.
+
+The [cell-covering proof](../research/ender_radius_bridge/PROOF.md) establishes
+that count mathematically for the chosen radius. The area argument is not in
+Lean. Lean does check `ellipsePairs_antitone_D`, its card consequence, and
+`ellipseTraceGram_det_bounds_of_ender_guard`: a `3R+S` count at finite-interval
+upper endpoint D2 propagates to each D≤D2 and then to the original matrix.
 
 ## 2. The connected interpolation proof
 
@@ -88,7 +94,7 @@ ball-arithmetic calculation into a kernel-checked inequality.
 | Required link | Current status |
 |---|---|
 | Fundamental discriminants, actual quadratic rings, ideals/class groups and small-prime inertness under the class-number-one hypothesis | OPEN; integer norm lemmas are components, not these identifications. |
-| Concrete integer-radius norm ellipse and required lower bound on its cardinality | Finite construction, exact membership, coordinate injectivity and image-cardinality equality PROVED in `LatticeEllipse.lean`; Ender's analytic lower count and chosen-radius instantiation OPEN. |
+| Concrete integer-radius norm ellipse and required lower bound on its cardinality | Finite construction, exact membership, injectivity and upper-endpoint card transfer PROVED in Lean; the chosen-radius lower count has a complete geometric proof in `research/ender_radius_bridge/PROOF.md`, but its area step and radius instantiation are NOT Lean-checked. |
 | Equality between the formal real Gram matrix and an integer matrix with the intended arithmetic entries | OPEN; exact finite comparators are not a universal semantics theorem. |
 | Inert-prime divisibility and prime-adic valuation lower bound for that same integer determinant | OPEN. |
 | Full factorial/Legendre prime-mass inequality, remainder control and analytic upper bound | OPEN; selected floor-sum and moment identities are proved. |
@@ -131,7 +137,7 @@ CI running the tests is not a second mathematical author. No human readability
 study, blind independent semantic review, proof-completion percentage or
 optimality claim is made.
 
-The next mathematical bridge is quantitative: establish the count for the
-actual radius selected in Ender, then identify this real matrix with the
-integer matrix used in the valuation argument. Neither is supplied by the
-conditional ellipse theorem. No classification conclusion follows yet.
+The next formal bridge is the cell-area lower bound and its radius
+instantiation. The next arithmetic bridge is identification of this real
+matrix with the integer matrix used in the valuation argument. The latter
+does not follow from counting. No classification conclusion follows yet.

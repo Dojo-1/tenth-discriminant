@@ -18,6 +18,9 @@ def ellipsePairs (D rho : Nat) : Finset (Int × Int) :=
 /-- A boundary control: origin and the four unit-axis points are all retained. -/
 theorem ellipsePairs_unit_control : (ellipsePairs 1 1).card = 5 := by decide
 
+/-- A bounded exact control with a nontrivial vertical slice of the ellipse. -/
+theorem ellipsePairs_nineteen_five_control : (ellipsePairs 19 5).card = 21 := by decide
+
 noncomputable section
 
 /-- The finite point set supplied to the unchanged trace-Gram matrix. -/
@@ -52,6 +55,22 @@ theorem mem_ellipsePairs_iff (D rho : Nat) (hD : 0 < D) (x y : Int) :
     obtain ⟨hx₁, hx₂, hy₁, hy₂⟩ := ellipse_coordinate_bounds D rho hD x y h
     exact ⟨Finset.mem_product.mpr
       ⟨Finset.mem_Icc.mpr ⟨hx₁, hx₂⟩, Finset.mem_Icc.mpr ⟨hy₁, hy₂⟩⟩, h⟩
+
+/-- At fixed radius, increasing `D` can only remove lattice points. -/
+theorem ellipsePairs_antitone_D (D₁ D₂ rho : Nat) (hD : D₁ ≤ D₂) :
+    ellipsePairs D₂ rho ⊆ ellipsePairs D₁ rho := by
+  intro p hp
+  simp only [ellipsePairs, Finset.mem_filter] at hp ⊢
+  refine ⟨hp.1, ?_⟩
+  have hD' : (D₁ : Int) ≤ D₂ := by exact_mod_cast hD
+  have hy : (0 : Int) ≤ p.2 ^ 2 := sq_nonneg p.2
+  have hprod : 0 ≤ ((D₂ : Int) - D₁) * p.2 ^ 2 :=
+    mul_nonneg (by omega) hy
+  nlinarith [hp.2]
+
+theorem ellipsePairs_card_antitone_D (D₁ D₂ rho : Nat) (hD : D₁ ≤ D₂) :
+    (ellipsePairs D₂ rho).card ≤ (ellipsePairs D₁ rho).card :=
+  Finset.card_le_card (ellipsePairs_antitone_D D₁ D₂ rho hD)
 
 /-- Positive `D` keeps distinct integer coordinate pairs distinct in `ℂ`. -/
 theorem latticePoint_injective (D : Nat) (hD : 0 < D) :
@@ -105,6 +124,29 @@ theorem ellipseTraceGram_det_bounds (D rho J R S : Nat) (hD : 0 < D)
         Finset.univ.prod (fun i => rectangularTraceGram (ellipsePoints D rho) J R S i i) := by
   apply rectangularTraceGram_det_bounds (ellipsePoints D rho) J R S hR hS hJ
   rwa [ellipsePoints_card D rho hD]
+
+/-- A count certified at an interval's upper endpoint works throughout it. -/
+theorem ellipseTraceGram_det_bounds_of_upper_endpoint
+    (D D₂ rho J R S : Nat) (hD : 0 < D) (hD₂ : D ≤ D₂)
+    (hR : 1 ≤ R) (hS : 1 ≤ S) (hJ : S ≤ J)
+    (hcard : 2 * (R - 1) + (S - 1) < (ellipsePairs D₂ rho).card) :
+    0 < (rectangularTraceGram (ellipsePoints D rho) J R S).det ∧
+      (rectangularTraceGram (ellipsePoints D rho) J R S).det ≤
+        Finset.univ.prod (fun i => rectangularTraceGram (ellipsePoints D rho) J R S i i) := by
+  apply ellipseTraceGram_det_bounds D rho J R S hD hR hS hJ
+  exact lt_of_lt_of_le hcard (ellipsePairs_card_antitone_D D D₂ rho hD₂)
+
+/-- Ender's stronger `3R+S` guard at `J=S`, checked at the upper endpoint. -/
+theorem ellipseTraceGram_det_bounds_of_ender_guard
+    (D D₂ rho R S : Nat) (hD : 0 < D) (hD₂ : D ≤ D₂)
+    (hR : 1 ≤ R) (hS : 1 ≤ S)
+    (hcard : 3 * R + S < (ellipsePairs D₂ rho).card) :
+    0 < (rectangularTraceGram (ellipsePoints D rho) S R S).det ∧
+      (rectangularTraceGram (ellipsePoints D rho) S R S).det ≤
+        Finset.univ.prod (fun i => rectangularTraceGram (ellipsePoints D rho) S R S i i) := by
+  apply ellipseTraceGram_det_bounds_of_upper_endpoint D D₂ rho S R S
+    hD hD₂ hR hS le_rfl
+  omega
 
 end
 end TenthDiscriminant

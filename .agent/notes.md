@@ -9,3 +9,7 @@
 - Registered `research/lattice_bridge_r1/PROTOCOL.md` before editing proof. Current branch is `codex/lattice-sampling-bridge`.
 - Lean checked exact finite ellipse membership, coordinate injectivity, cardinality transport and conditional determinant bounds; D=rho=1 cardinality control passes. The analytic lower count, Ender radius identification, integer determinant equality and valuation remain open.
 - Local pinned `lake build` and `python verify_sources.py` passed. Compiled axiom audit and negative controls still running at this checkpoint.
+- 2026-10-23, radius-count continuation: draft PR #18 at `2b69c2a` passed pinned Linux CI run `39913779228`; it remains unmerged. Local Windows wrappers timed out and the failed runs are preserved in `research/lattice_bridge_r1/PROTOCOL.md`.
+- Registered `research/ender_radius_bridge/PROTOCOL.md` before proof edits. A cell-covering argument proves the inherited lower ellipse count and Ender's chosen-radius `n>3R+S` mathematically, with all boundary cases. It is not yet Lean-formalized; this is distinguished in `PROOF.md` and current reader docs.
+- Lean checked `ellipsePairs_antitone_D`, endpoint cardinality transfer, the conditional Ender-guard determinant theorem, and the exact `D=19,rho=5` 21-point control. Pinned full CI still pending for the new head.
+- Reconciliation: PR #18 merged externally at `6431e78` while this task was underway. The continuation was cherry-picked onto new branch `codex/ender-radius-count` based on that merge; no merge was performed by this task.
