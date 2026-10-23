@@ -67,8 +67,10 @@ nontrivial valuation example, **not** Ender's general inert-prime bound.
 [registered proof](research/uniform_inert_valuation/PROOF.md) gives a
 short unitriangular-basis derivation of the full `p^(2F(p))` factor for
 the same integer Gram, assuming `X²+D` irreducible modulo the odd prime
-`p`. Lean checks the abstract unimodular two-sided determinant factor,
-not the generic polynomial/Frobenius instantiation. This advances the
+`p`. Lean checks the abstract unimodular two-sided determinant factor
+and, in a later bounded slice, every jet of the *one* factor `Z^p-W`
+conditional on its order-zero congruence. It does not check the generic
+Frobenius premise, product powers or rectangular basis. This advances the
 *paper bridge*; it does not establish the analytic cutoff or class-number
 classification as a checked theorem.
 The mechanism and remaining scope are explained in [guide §11](lean/HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix)

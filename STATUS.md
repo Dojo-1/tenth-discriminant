@@ -12,8 +12,10 @@ uses `Z^p-W` and a unitriangular change of the rectangular monomial
 basis to derive Ender's full `p^(2F(p)) | det G` for the *same* integer
 matrix, under the explicit condition that `X²+D` is irreducible modulo
 the odd prime `p`. Lean checks the general unimodular two-sided matrix
-factor, but not yet this polynomial basis, its jet divisibility, or the
-inertness-to-irreducibility link. This is a paper proof of an inherited
+factor and, in a follow-up, [all ordinary jets of the single factor
+`Z^p-W`](lean/TenthDiscriminant/FrobeniusJet.lean), conditional on its
+order-zero congruence. The `H^k` product-rule/basis construction and
+inertness-to-irreducibility link are not yet in Lean. This is a paper proof of an inherited
 valuation input, not a new cutoff or a full classification theorem.
 
 ## 2026-10-23: local–global determinant bridge (bounded pilot)

@@ -102,10 +102,11 @@ Ender's `F(p)`, proving the proposition.
 ## Interfaces, controls, and limits
 
 - This proof supplies the **general valuation on paper** under the
-  explicit irreducibility hypothesis. The repository's Lean fixed
-  `D=19,p=3` theorem is a special case, not a Lean proof of this
-  proposition. A complete formal bridge needs the generic product-rule
-  lemma, unitriangular row transform, and Frobenius/inertness interface.
+  explicit irreducibility hypothesis. Lean checks the one-factor jet
+  implication under an explicit order-zero congruence, as well as the
+  fixed `D=19,p=3` theorem; neither is a Lean proof of this proposition.
+  A complete formal bridge still needs `H^k` product-rule divisibility,
+  the unitriangular row transform, and Frobenius/inertness interface.
 - The `D=2,p=3` negative control must fail the local hypothesis:
   `X²+2=X²-1` splits modulo `3`, and `T^3=T`, not `-T`.
 - Positivity of `det G` comes from the separate sampling/contact theorem.

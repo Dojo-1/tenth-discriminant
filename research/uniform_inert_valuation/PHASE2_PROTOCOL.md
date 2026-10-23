@@ -37,3 +37,21 @@ Verification: targeted `lake env lean`, `python verify_sources.py`,
 full `lake build`, the compiled axiom audit and negative controls in
 pinned Linux CI. Update reader documentation only to the exact extent
 of the checked declaration. No cutoff, class-number or merge claim.
+
+## Execution record
+
+- `FrobeniusJet.lean` proves `frobeniusJet_zero` and
+  `frobeniusJet_dvd_of_zero_congruence` for every derivative order.
+  `frobeniusJet_noninert_negative_control` rejects the premise at
+  `D=2,p=3,a=(0,1)`. The theorem is conditional; neither inertness nor
+  the `H^k` basis is asserted.
+- `lake env lean TenthDiscriminant/FrobeniusJet.lean` passed. The
+  first compilation exposed two proof-structure errors (an induction
+  hypothesis needing its positivity argument, and an unsimplified
+  zero W-row); these were repaired before the passing check. They were
+  proof script errors, not counterexamples to the statement.
+- `python verify_sources.py` passed endpoint/source correspondence,
+  which does not certify Arb inequalities. The complete local
+  `lake build` passed (6691 steps; inherited linter warnings).
+- Pinned Linux dependency audit and negative controls remain pending
+  until the exact final head is published and its workflow completes.

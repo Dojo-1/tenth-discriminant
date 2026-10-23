@@ -430,5 +430,7 @@ records the test and its boundary. The general Ender valuation now has a
 `k=min(⌊r/p⌋,S-1-s)`. The replacement stays within the rectangle and is
 unitriangular; every jet receives `p^k`, so the determinant receives
 `p^(2Σk)=p^(2F(p))`. Lean now checks the abstract unimodular determinant
-step, **not** these polynomial and Frobenius premises. The class-number
+step and the [one-factor jet implication](TenthDiscriminant/FrobeniusJet.lean)
+under its explicit order-zero congruence, **not** the `H^k` basis or the
+inertness-to-Frobenius premise. The class-number
 classification is still open.
