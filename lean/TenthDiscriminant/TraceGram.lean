@@ -5,8 +5,9 @@ import Mathlib
 The rows and real trace product are the complex formulation of
 `tools/verify_exact.py:gram`, with an explicit derivative cutoff.
 No symmetry, angular averaging, nonzero-point assumption or rank assertion
-is used. Identification of the entire integer implementation, divisibility
-and interpolation/nonvanishing remain separate obligations.
+is used. `IntegerTraceGram.lean` later proves a pair-coordinate matrix
+identity. Equivalence to arbitrary Python input lists and arithmetic
+divisibility remain separate; interpolation/nonvanishing are proved elsewhere.
 -/
 namespace TenthDiscriminant
 open scoped ComplexConjugate

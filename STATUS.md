@@ -1,5 +1,45 @@
 # Status — 2026-10-23
 
+For a concise mathematical overview of the checked result and the open
+bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
+
+## 2026-10-23: local–global determinant bridge (bounded pilot)
+
+For `D>0`, Lean identifies the integer-pair coordinates with the selected
+quadratic order `ℤ[√(-D)]`; this does not identify the full ring of integers
+for every D.
+It also computes the derivative trace-Gram matrix independently in residue
+coordinates. For any modulus `m>0`, the local determinant equals the reduction
+of the existing integer determinant, and vanishes exactly when `m` divides
+that determinant. Samples remain indexed by the original integer-point set:
+colliding residues retain their multiplicities. Registered controls check both
+this collision issue and the asymmetric `D=3` determinant `12` modulo `3` and
+`5`. Separately, a checked fixed-grid theorem proves `9 | det G` for the
+canonical `D=19`, `R=4`, `S=2` integer Gram for every finite sample set and
+derivative cutoff. For `ellipsePairs 19 5`, `J=2`, its determinant is also
+strictly positive. A `D=2`, `p=3` control refutes dropping inertness. This
+one-prime toy theorem does not imply Ender's uniform prime-adic lower bound.
+The proof and limitations are reported in the
+[guide](lean/HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix)
+and [protocol](research/local_global_gram/PROTOCOL.md); the general valuation
+bridge and class-number classification remain open.
+
+## 2026-10-23: integer-coordinate trace-Gram bridge
+
+For any finite set of distinct integer pairs and positive D, Lean now proves
+that the integer-pair derivative trace-Gram matrix, cast entrywise to Real, is
+the existing complex `traceGramMatrix` on the image points. Its row-major
+rectangular specialization and determinant cast equality follow. On the
+integer-radius ellipse this identifies the same determinant whose positivity
+the interpolation theorem controls. The proof preserves conjugate W,
+ordinary Z-derivatives, zero high-order columns and factor two.
+
+This is **matrix identification**, not inert-prime divisibility. It does not
+equate the integer-radius `ellipsePairs` generator with the verifier's
+half-integer-radius historical generator, or turn AI review/CI into a full
+classification proof. [Proof guide](lean/HUMAN_GUIDE.md#10-the-same-gram-matrix-in-integer-and-complex-coordinates) ·
+[protocol](research/integer_gram_bridge/PROTOCOL.md).
+
 ## 2026-10-23: geometric count for Ender's chosen radius
 
 The registered [radius proof](research/ender_radius_bridge/PROOF.md) uses
@@ -22,9 +62,10 @@ with x²+D y²≤rho², that distinct pairs give distinct complex points, and
 that the image has the same cardinality. The original rectangular trace-Gram
 determinant is positive and satisfies Hadamard **conditional on** the explicit
 count `2*(R-1)+(S-1) < card(ellipsePairs D rho)`, R,S≥1 and J≥S. A D=rho=1
-control checks all five boundary/axis points. This is a proof bridge, not a
-new point-count estimate. Analytic count, chosen-radius instantiation,
-integer-matrix/valuation identification and classification remain open.
+control checks all five boundary/axis points. This earlier result was a proof
+bridge, not a point-count estimate. The chosen-radius count and integer-matrix
+identification were advanced later, as described above; valuation and
+classification remain open.
 
 Verification of this exact revision is reported in the associated PR; no
 earlier green CI run is evidence for it. The 22 October numerical claims below

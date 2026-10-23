@@ -1,18 +1,37 @@
 {
-  "task": "Prove Ender's chosen-radius lattice-point count and check its formal interface",
-  "status": "awaiting_pinned_ci",
-  "base_commit": "6431e78",
-  "branch": "codex/ender-radius-count",
+  "task": "Distill the checked Lean argument into a short human-readable mathematical spine",
+  "status": "documentation_local_checks_passed_ci_pending",
+  "base_commit": "c77049288e0eac33f72739b255d8254ff3e6aca1",
+  "branch": "codex/integer-trace-gram",
   "decisions": [
     "Honor flow/PREREG_ENDER.txt and register research/ender_radius_bridge/PROTOCOL.md before new proof edits.",
     "Prove the chosen-radius count by a cell-covering area argument and retain its paper-versus-Lean boundary.",
     "Formalize exact-set monotonicity and Ender's stronger endpoint guard without assuming the count is checked in Lean.",
-    "Leave determinant arithmetic divisibility and class-number classification open."
+    "Leave determinant arithmetic divisibility and class-number classification open.",
+    "Register research/integer_gram_bridge/PROTOCOL.md before any new Lean proof edits; prove a commuting coordinate identity, not a replacement matrix.",
+    "Register research/local_global_gram/PROTOCOL.md in its own commit before new Lean edits; keep sample multiplicities under reduction and do not infer inert-prime valuation from determinant naturality.",
+    "Use the selected quadratic-order chart only at the first Cayley-Dickson-style doubling; retain an integral Gram as the common object for real and modular projections.",
+    "For the fixed D=19,p=3,R=4,S=2 pilot, require a matching shear and an integral two-sided factorization before asserting nine-divisibility.",
+    "Lead the new human guide with one integer Gram determinant viewed over the reals and modulo m; keep the contact-budget lemma, fixed pilot, and open general valuation separate."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
     "The new paper proof is in research/ender_radius_bridge/PROOF.md, independently checked against the older horizontal-slice argument.",
-    "lake env lean TenthDiscriminant/LatticeEllipse.lean passed after endpoint monotonicity and D=19,rho=5 controls."
+    "lake env lean TenthDiscriminant/LatticeEllipse.lean passed after endpoint monotonicity and D=19,rho=5 controls.",
+    "PR #19 head d13abf86 passed pinned CI run 39922982525 and was merged externally at c77049288e0eac33f72739b255d8254ff3e6aca1.",
+    "Historical review files confirm the generic cover helper failure was not a failure of the replayed interval certificates; F5 and post-clone code lacked independent re-review in the recorded response.",
+    "Current unresolved bridge is identification of the Lean trace-Gram matrix with the integral arithmetic matrix, then inert-prime valuation and end-to-end classification.",
+    "The new IntegerTraceGram.lean entrywise, determinant-cast and positive-integer-determinant theorems compiled under pinned Lean 4.19.0; the full lake build and verify_sources.py passed.",
+    "Local Windows audit.py and negative_controls.py wrappers exited 1 on 240-second and 120-second subprocess timeouts respectively; partial successful probes are recorded in the bridge protocol, not promoted to full passes.",
+    "Proof-head commit eea5c5f94dd919072a5fb970723754695f8ca382 passed pinned Linux CI run 39930134039, including source correspondence, full Lean build, compiled axiom audit and inherited negative controls.",
+    "Final PR #20 head f12085372078a7958f4a1fc7995853fed49efb00 passed pinned Linux CI run 39931440763 and remains draft and unmerged at this checkpoint.",
+    "Protocol-only commit e8bb4d389c95bc24624d7b94174245314594dfba passed pinned Linux CI run 39944972558 before new proof edits.",
+    "Targeted Lean checks prove Zsqrtd coordinate compatibility, independent residue Gram reduction with exact controls, and D=19,p=3 canonical eight-row nine-divisibility with positive ellipse and noninert falsifier controls.",
+    "The exact current source passed python verify_sources.py, targeted Lean, and lake build locally.",
+    "Local Windows python audit.py exited 1 after its 240-second apparatus-controls wrapper timeout, although import coverage and AUDIT_OK 526 logical declarations passed before timeout; this is not a full audit pass.",
+    "Local Windows python negative_controls.py was intentionally stopped after four passing matched pairs to avoid a prolonged replay; this is not a full negative-controls pass.",
+    "Proof-head commit d5945cf7fc5b891b54ef85986c40a55bec35843c passed pinned Linux CI run 39954106722: source correspondence, full Lean build, compiled axiom audit and inherited negative controls. A later documentation-only status commit requires its own CI before it is described as checked.",
+    "Human-distillation documentation revision passed local python verify_sources.py, lake build (6690 steps), git diff --check, task-state JSON parse, and local Markdown link resolution; pinned CI for the final commit is pending."
   ],
   "files_touched": [
     "README.md",
@@ -21,9 +40,19 @@
     "lean/HUMAN_GUIDE.md",
     "lean/README.md",
     "lean/TenthDiscriminant.lean",
+    "lean/TenthDiscriminant/IntegerTraceGram.lean",
+    "lean/TenthDiscriminant/TraceGram.lean",
     "lean/TenthDiscriminant/LatticeEllipse.lean",
+    "research/integer_gram_bridge/PROTOCOL.md",
+    "research/local_global_gram/PROTOCOL.md",
+    "lean/TenthDiscriminant/QuadraticCoordinates.lean",
+    "lean/TenthDiscriminant/ResidueTraceGram.lean",
+    "lean/TenthDiscriminant/GramDivisibility.lean",
+    "lean/TenthDiscriminant/InertPilot.lean",
+    ".agent/memory.fallback.md",
     "research/ender_radius_bridge/PROTOCOL.md",
-    "research/ender_radius_bridge/PROOF.md"
+    "research/ender_radius_bridge/PROOF.md",
+    "lean/MATHEMATICAL_SPINE.md"
   ],
   "updated": "2026-10-23"
 }

@@ -4,9 +4,19 @@
 
 An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/comment-page-1/): make an effective class-number-one argument explicit, without importing the known classification as a proof input.
 
-[Current argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Tao-objective audit](TAO_OBJECTIVE_AUDIT.md) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)
+[Mathematical spine](lean/MATHEMATICAL_SPINE.md) · [Candidate argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Frozen Tao-objective audit](TAO_OBJECTIVE_AUDIT.md) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)
 
-> **Status · 22 October 2026:** candidate mathematical argument, with recorded interval certificates, finite computations, and AI review. No end-to-end Lean formalization or human mathematical review is recorded. The latest determinant experiments do **not** change the discriminant cutoff. No novelty or priority claim is made.
+> **Current reading order · 23 October 2026:** start with the short
+> [mathematical spine](lean/MATHEMATICAL_SPINE.md), then the
+> [current claim map](lean/FORMALIZATION.md). Lean checks interpolation,
+> the exact integer/residue views of one Gram matrix, and a fixed
+> `D=19,p=3` nine-divisibility pilot. The chosen-radius cell-area count is
+> proved on paper but not in Lean. Ender's uniform valuation and the
+> end-to-end class-number classification remain unproved in Lean and are
+> not established by that pilot. The audit linked above is explicitly a
+> frozen `4c034f9` snapshot, not a description of every later bridge.
+
+> **Historical status · 22 October 2026:** candidate mathematical argument, with recorded interval certificates, finite computations, and AI review. No end-to-end Lean formalization or human mathematical review is recorded. The latest determinant experiments do **not** change the discriminant cutoff. No novelty or priority claim is made.
 >
 > This overview reflects the artifacts at [`062afd2`](https://github.com/Dojo-1/tenth-discriminant/tree/062afd2a6170a7569d1801c3938f05e63030949d). Numerical summaries below describe those recorded runs; they are not substitutes for the derivations or their dependencies.
 >
@@ -18,12 +28,13 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > distinguishes these two evidence classes and records a bounded preregistered
 > control replay.
 
-**Bridge update (23 October):** Lean now constructs the finite integer-radius
+**Initial bridge update (23 October):** Lean constructs the finite integer-radius
 ellipse, proves it contains exactly the lattice points satisfying the norm
 inequality, and applies the existing determinant theorem to its complex image
 *if its point count clears the stated threshold*. This closes the sampling-set
-interface, not Ender's analytic count estimate or the arithmetic and
-classification links. Read the [short bridge guide](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge)
+interface. By itself it supplies neither Ender's lower count nor the arithmetic
+and classification links; the later progress and remaining gaps are below.
+Read the [short bridge guide](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge)
 and [precise claim map](lean/FORMALIZATION.md).
 
 **Geometric count follow-up:** a [cell-covering proof](research/ender_radius_bridge/PROOF.md)
@@ -32,6 +43,25 @@ has more than `3R+S` points, including at finite-interval upper endpoints.
 The area argument is mathematical prose, **not Lean-checked**; the exact-set
 endpoint transfer is checked in Lean. No determinant or classification claim
 has been promoted by this result.
+
+**Integer-coordinate bridge:** Lean now identifies the actual real trace-Gram
+matrix, entry by entry, with an integer matrix built from the same supplied
+distinct lattice pairs, ordinary derivative rows and factor-of-two trace
+pairing. It also identifies their determinants after casting. This does not
+prove inert-prime divisibility or identify the verifier's different
+half-integer-radius ellipse generator. [Why the two coordinates agree](lean/HUMAN_GUIDE.md#10-the-same-gram-matrix-in-integer-and-complex-coordinates) ·
+[registered scope](research/integer_gram_bridge/PROTOCOL.md).
+
+**Local–global arithmetic bridge:** A further registered Lean slice identifies
+the pair coordinates, for `D>0`, with the selected order `ℤ[√(-D)]`. It defines
+the same Gram calculation modulo `m` without dropping samples that collide after reduction,
+and proves that the reduced determinant is zero exactly when `m` divides the
+integer determinant (`m>0`). A separate fixed-grid pilot proves
+`9 | det G` for `D=19`, `p=3`, `R=4`, `S=2`, every finite sample set and every
+derivative cutoff; an ellipse instance has positive determinant. This is a
+nontrivial valuation example, **not** Ender's general inert-prime bound.
+The mechanism and remaining scope are explained in [guide §11](lean/HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix)
+and the [registered protocol](research/local_global_gram/PROTOCOL.md).
 
 ## What bound are we claiming?
 
