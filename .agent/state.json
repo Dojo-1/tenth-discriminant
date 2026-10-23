@@ -1,0 +1,27 @@
+{
+  "task": "Bounded formal bridge from the integer norm ellipse to the existing trace-Gram theorem",
+  "status": "verification_in_progress",
+  "base_commit": "9f713b8a3a96c7025b1b436474bc485475b2d9c5",
+  "branch": "codex/lattice-sampling-bridge",
+  "decisions": [
+    "Honor research/lattice_bridge_r1/PROTOCOL.md registered before editing the proof.",
+    "Construct the finite integer-radius ellipse and transport its count to the unchanged Gram theorem.",
+    "Leave Ender's analytic lower count, chosen real radius, arithmetic matrix equality and classification open."
+  ],
+  "evidence": [
+    "Merged main at 9f713b8, including prior PR #17.",
+    "lake env lean TenthDiscriminant/LatticeEllipse.lean passed with Lean 4.19.0.",
+    "lake build passed; source identity check passed; audit and negative controls in progress."
+  ],
+  "files_touched": [
+    "README.md",
+    "STATUS.md",
+    "lean/FORMALIZATION.md",
+    "lean/HUMAN_GUIDE.md",
+    "lean/README.md",
+    "lean/TenthDiscriminant.lean",
+    "lean/TenthDiscriminant/LatticeEllipse.lean",
+    "research/lattice_bridge_r1/PROTOCOL.md"
+  ],
+  "updated": "2026-10-23"
+}

@@ -242,7 +242,7 @@ nonzero hypotheses wherever a degree or multiplicity argument needs them.
 ## 8. What this does not yet prove
 
 This interpolation theorem does not define the imaginary quadratic class group,
-prove small-prime inertness, construct and count the concrete ellipse, identify
+prove small-prime inertness, establish Ender's quantitative ellipse count, identify
 the integer Gram matrix, prove its prime-adic divisibility, certify the analytic
 bounds or close the finite classification. It supplies one connected part of
 that longer argument. See [FORMALIZATION.md](FORMALIZATION.md).
@@ -250,7 +250,7 @@ that longer argument. See [FORMALIZATION.md](FORMALIZATION.md).
 Put plainly: this proof says that **if** the intended ellipse supplies enough
 distinct samples, then the exact derivative Gram matrix used by the arithmetic
 argument is nonsingular. To turn that into a classification, the project still
-has to prove that the concrete ellipse meets the count, that its matrix is the
+has to prove that Ender's chosen ellipse meets the count, that its matrix is the
 integer matrix whose prime divisibility is used, and that the analytic bounds
 apply to that same determinant. A finished interpolation theorem cannot fill
 those application-specific gaps by itself. The project-wide
@@ -266,3 +266,36 @@ hypotheses. Human review must still examine the definitions, the intended
 application and the remaining links. This guide and the proof scripts share
 authorship; a human readability study or independent semantic review has not
 been performed.
+
+## 9. The concrete ellipse bridge
+
+The new [`LatticeEllipse.lean`](TenthDiscriminant/LatticeEllipse.lean) makes
+the sample set concrete for **positive natural D** and **natural integer
+radius rho**. It enumerates pairs in the square −rho≤x,y≤rho and keeps those
+with x²+D y²≤rho². Why is this the whole ellipse? Since D≥1, the inequality
+forces both x²≤rho² and y²≤rho²; hence neither coordinate can lie outside
+that square. This is proved, not assumed.
+
+Map (x,y) to z=x+i y√D. Its real part recovers x; because D>0, √D>0 and its
+imaginary part recovers y. Thus distinct pairs cannot collapse to one complex
+point. The stored complex set has exactly the same cardinality as the integer
+pair set. `latticePoint_normSq` verifies that the integer inequality is the
+complex norm inequality. The boundary is inclusive, and a small checked
+example D=rho=1 retains origin and the four unit-axis points.
+
+The payoff is deliberately conditional:
+
+$$
+J\ge S,\quad R,S\ge1,\quad
+|\mathcal E_{D,\rho}|>2(R-1)+(S-1)
+\quad\Longrightarrow\quad
+0<\det G\le\prod_iG_{ii}.
+$$
+
+Here G is precisely `rectangularTraceGram` on `ellipsePoints D rho`; no new
+Gram matrix is substituted. The formal theorem takes the integer-pair count
+as a premise and transports it by the proved cardinality equality. It does
+**not** derive Ender's lower count, connect his chosen real-valued radius to
+an integer-radius instance, or prove the determinant's arithmetic
+divisibility. Those are the next application obligations. The full-classification
+claim remains candidate mathematics, not a checked theorem.
