@@ -432,16 +432,15 @@ unitriangular; every jet receives `p^k`, so the determinant receives
 `p^(2Σk)=p^(2F(p))`. Lean checks the abstract unimodular determinant
 step, the exact exponent sum, and the [ordinary-jet power](TenthDiscriminant/JetPower.lean):
 all transformed `H^k` jets have both coordinate factors `p^k` under
-their explicit order-zero congruence. It does **not** yet identify the
-unitriangular basis change with the actual Gram, or derive the
-inertness-to-Frobenius premise. The class-number
+their explicit order-zero congruence. Phase 7 below now identifies the
+unitriangular basis change with the actual Gram. Lean still does not derive
+the inertness-to-Frobenius premise. The class-number
 classification is still open.
 
 There is now an explicit [integer binomial matrix](TenthDiscriminant/RectangularBasisMatrix.lean)
 for this basis, with a Lean proof that it is lower triangular and has
-determinant `1`. What is missing is not its invertibility but the
-entrywise identity saying that this matrix acts on the **existing**
-integer derivative rows as the displayed transformed polynomials.
+determinant `1`. The previously missing entrywise identity—its action on
+the **existing** integer derivative rows—is now proved in Phase 7 below.
 
 ## 12. An operator on examples, and the limit of its orbit
 
@@ -470,7 +469,43 @@ their residues modulo `p` should preserve this *local* congruence, but this
 is only a proposed next lemma, not a checked result here. Adjoining valid
 samples retains a pointwise jet statement, provided the original sample
 indices and their multiplicities are kept. The binomial change of basis
-has determinant one, but its action on the actual derivative rows is still
-unproved. Composing local operators therefore explores a residue fiber;
+has determinant one and its action on the actual derivative rows is proved
+in Phase 7. Composing local operators nevertheless explores a residue fiber;
 it does not reach a class-number classification, a radius count, or an
 analytic cutoff. Those are separate predicates requiring their own bridges.
+
+## 13. Why the rectangular bridge now commutes
+
+The hard equality is small enough to say without Lean syntax. Label a row by
+`(r,s)` and put `k=min(⌊r/p⌋,S-1-s)`. The binomial theorem gives
+
+$$
+Z^{r-pk}W^s(Z^p-W)^k
+=\sum_{t=0}^{k}(-1)^t\binom{k}{t}Z^{r-pt}W^{s+t}.
+$$
+
+Every displayed monomial is **already** a row of the original rectangle.
+The checked coefficient matrix uses exactly these integers. Evaluation,
+ordinary differentiation in `Z` (holding `W` fixed), and the coordinate
+map into `ℤ[√(-D)]` commute with that finite linear combination. Thus the
+matrix acts on the *original* jet table, not on an invented replacement.
+This is [the row-action theorem](TenthDiscriminant/RectangularRowAction.lean).
+
+Suppose now that `a^p-conjugate(a)` has both coordinates divisible by `p`
+for **every** integer pair `a`. The ordinary-jet power lemma puts `p^k`
+in every transformed jet of row `(r,s)`. Write `U` for the checked
+determinant-one binomial matrix, `G` for the actual integer Gram, and
+`D_p=diag(p^k)`. Bilinearity of the *same factor-two trace* then gives an
+integer matrix `K` with
+
+$$ UGU^{\mathsf T}=D_p K D_p. $$
+
+No point is discarded if two samples coincide modulo `p`. Taking
+determinants yields `p^(2Σk) | det G`; the checked sum identity says
+`Σk=F(p)`. Both the [integral factor](TenthDiscriminant/RectangularGramFactor.lean)
+and this exact conditional determinant implication are now Lean theorems,
+for arbitrary finite samples, grid and derivative cutoff, including empty
+grids. This closes the algebraic row-to-Gram bridge, **not** the hypothesis
+that makes it fire. The next arithmetic obligation is to derive the stated
+universal congruence from precise inert-prime assumptions; the chosen-radius
+area argument and subsequent analytic/class-number links remain separate.

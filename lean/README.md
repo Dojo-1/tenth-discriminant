@@ -62,8 +62,9 @@ step is not yet formalized.
 next bridge: for a supplied finite set of distinct integer pairs and positive
 D, its exact integer derivative trace-Gram matrix casts entrywise to this
 same real matrix. The integer-radius ellipse is a specialization. The
-determinant casts accordingly, but the **general** inert-prime divisibility
-bound is not proved.
+determinant casts accordingly. The later rectangular valuation theorem
+proves the exact determinant power under an explicit universal Frobenius
+congruence; the inertness-to-congruence theorem is not yet in Lean.
 The [guide's coordinate explanation](HUMAN_GUIDE.md#10-the-same-gram-matrix-in-integer-and-complex-coordinates)
 includes an asymmetric control that a determinant-only comparison misses.
 
@@ -76,6 +77,10 @@ determinant vanishes exactly when `m>0` divides the integer determinant.
 Distinct global points can share a residue; the original sample indexing is
 kept. See [guide §11](HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix).
 This detects divisibility but supplies no general inert-prime exponent.
+The [row-action](TenthDiscriminant/RectangularRowAction.lean) and
+[Gram-factor](TenthDiscriminant/RectangularGramFactor.lean) theorems now
+construct that exponent for the original integer matrix **under the
+universal coordinatewise Frobenius premise**. See [guide §13](HUMAN_GUIDE.md#13-why-the-rectangular-bridge-now-commutes).
 [`InertPilot.lean`](TenthDiscriminant/InertPilot.lean) uses a matching
 row/column shear and the integral two-sided factor lemma in
 [`GramDivisibility.lean`](TenthDiscriminant/GramDivisibility.lean) to prove

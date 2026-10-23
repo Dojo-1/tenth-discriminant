@@ -161,7 +161,7 @@ congruence* when the irreducible-residue condition is dropped; it does not
 disprove a determinant-divisibility statement. This fixed pilot is **not**
 Ender's general valuation estimate.
 
-## The uniform pattern, still a paper-to-Lean bridge
+## The uniform pattern: algebraic bridge checked, inertness premise open
 
 The fixed relation is one corner of a rectangular basis change. For an
 odd prime `p` with `X²+D` irreducible modulo `p`, let `H=Z^p-W`. Frobenius
@@ -188,18 +188,21 @@ now proves that every jet of `B(Z)(Z^p-W)^k` has two integer-coordinate
 factors `p^k` at an original pair sample, assuming its order-zero
 Frobenius congruence. Its checked Hasse-derivative counterexample shows
 why replacing ordinary derivatives by divided ones would be invalid.
-Identifying the unitriangular change with rows of the *actual* matrix, and
-deriving that congruence from the exact inert-prime hypotheses, remain
-open in Lean. This is inherited valuation mathematics,
+The [row-action theorem](TenthDiscriminant/RectangularRowAction.lean) now
+identifies that change with rows of the *actual* matrix, and the
+[integral Gram factor](TenthDiscriminant/RectangularGramFactor.lean) proves
+the determinant power under the displayed universal Frobenius congruence.
+Deriving that congruence from exact inert-prime hypotheses remains open in
+Lean. This is inherited valuation mathematics,
 not a new classification or cutoff.
 
 The [explicit coefficient matrix](TenthDiscriminant/RectangularBasisMatrix.lean)
 now checks the first half of that change: its binomial terms stay inside
 the rectangle, all non-leading terms move to earlier row-major columns,
-and its integer determinant is `1`. The missing half is an equality
-between its action on the repository's derivative-jet table and the
-transformed polynomial jets above. Until that equality is proved, the
-two-sided Gram factorization is still conditional.
+and its integer determinant is `1`. The missing equality between its
+action on the original derivative-jet table and the transformed polynomial
+jets is now checked. The two-sided Gram factorization is a theorem
+**conditional on the explicit universal Frobenius congruence**.
 
 ## Symmetry, and what it must not blur
 
@@ -224,7 +227,7 @@ these views commute on **one integer matrix with the same samples**.
 |---|---|
 | Jet energy, contact budget, positivity; exact integer matrix; residue reduction; fixed `D=19,p=3` square factor | Lean-checked under the displayed hypotheses. |
 | Ender's chosen-radius ellipse has enough points | Elementary cell-area proof on paper; exact-set and endpoint-transfer helpers in Lean, but the area inequality is not Lean-checked. |
-| Uniform inert-prime valuation, class-number-one to inertness, analytic comparison, finite classification | The valuation has an explicit paper proof and a checked abstract matrix step. Its concrete Lean instantiation and the remaining links are not connected as an end-to-end theorem. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
+| Uniform inert-prime valuation, class-number-one to inertness, analytic comparison, finite classification | Lean checks the concrete row-to-Gram factor and exact exponent under an explicit universal Frobenius premise. Deriving that premise from inertness and all later links are not connected as an end-to-end theorem. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical

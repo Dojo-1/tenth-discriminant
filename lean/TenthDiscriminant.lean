@@ -35,6 +35,8 @@ import TenthDiscriminant.GramDivisibility
 import TenthDiscriminant.FrobeniusJet
 import TenthDiscriminant.RectangularValuation
 import TenthDiscriminant.RectangularBasisMatrix
+import TenthDiscriminant.RectangularRowAction
+import TenthDiscriminant.RectangularGramFactor
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot
