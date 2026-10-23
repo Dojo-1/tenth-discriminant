@@ -5,6 +5,18 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-23: local conjugation closes a valid sample orbit
+
+The next bounded operator test is preregistered in
+[Phase 6](research/uniform_inert_valuation/PHASE6_PROTOCOL.md).
+Lean proves conjugation takes any sample satisfying the explicit
+coordinatewise `a^p ≡ conjugate(a) (mod p)` premise to another such
+sample, and composes this symmetry with the existing ordinary-jet
+theorem. Its square is the identity; the non-real `D=19,p=3` control
+checks this is not just a real-point tautology. This local orbit does
+not prove the premise for all samples, the matrix-row action, or a
+global class-number statement. [Lean source](lean/TenthDiscriminant/LocalOperators.lean).
+
 ## 2026-10-23: the rectangular integer basis matrix is explicit
 
 Lean now defines the sample-independent binomial coefficient matrix for

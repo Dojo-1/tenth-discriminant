@@ -41,3 +41,17 @@ Run targeted Lean, source correspondence, full pinned build, dependency
 audit and negative controls. Record failures; update reader-facing status
 to distinguish the operator theorem from the still-open row identity,
 inertness implication, radius formalization, and classification.
+
+## Execution record
+
+Protocol-only commit `6f45b4f` preceded the proof edit. The first
+targeted Lean attempt failed because divisibility has no `.neg` field;
+the repair used `dvd_neg`. A second attempt exposed Lean normalization
+of the negative imaginary-coordinate difference, and another exposed
+commutativity in the imaginary part of conjugated multiplication. These
+were proof-script failures, not false mathematical claims. Targeted
+compilation now passes for involution, multiplication and power transport,
+congruence transport, its composition with the existing all-order jet
+theorem, and the non-real `D=19,p=3` pilot. Source correspondence and
+the 6695-step full Lean build also pass locally. Pinned CI and the
+compiled audit/negative controls await the final commit.
