@@ -299,3 +299,11 @@ as a premise and transports it by the proved cardinality equality. It does
 an integer-radius instance, or prove the determinant's arithmetic
 divisibility. Those are the next application obligations. The full-classification
 claim remains candidate mathematics, not a checked theorem.
+
+A separate [geometric proof](../research/ender_radius_bridge/PROOF.md) now
+settles the count on paper. The idea is to partition the plane into cells of
+width 1 and height √D. Each cell center is within √D of every point in the
+cell. Ender's radius includes ten spare √D units; a smaller disk therefore
+fits inside cells centered at ellipse points, and its area exceeds
+`(3R+S)√D`. Lean checks the finite-set monotonicity needed to carry this
+endpoint result across an interval, but does not yet check the area argument.

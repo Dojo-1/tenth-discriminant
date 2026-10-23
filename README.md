@@ -26,6 +26,13 @@ interface, not Ender's analytic count estimate or the arithmetic and
 classification links. Read the [short bridge guide](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge)
 and [precise claim map](lean/FORMALIZATION.md).
 
+**Geometric count follow-up:** a [cell-covering proof](research/ender_radius_bridge/PROOF.md)
+now derives Ender's lower ellipse count and shows his chosen integer radius
+has more than `3R+S` points, including at finite-interval upper endpoints.
+The area argument is mathematical prose, **not Lean-checked**; the exact-set
+endpoint transfer is checked in Lean. No determinant or classification claim
+has been promoted by this result.
+
 ## What bound are we claiming?
 
 Write **$D=|\mathrm{disc}(K)|$** for the absolute fundamental discriminant of an imaginary quadratic field. It is not an unrestricted radicand. In the notation $q=|\mathrm{disc}(K)|$ used by [twinheterodox's contribution](https://github.com/twinheterodox/tenth-discriminant), **$q=D$**, not $\log D$.
