@@ -4,11 +4,19 @@
 
 An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/comment-page-1/): make an effective class-number-one argument explicit, without importing the known classification as a proof input.
 
-[Current argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)
+[Current argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Tao-objective audit](TAO_OBJECTIVE_AUDIT.md) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)
 
 > **Status · 22 October 2026:** candidate mathematical argument, with recorded interval certificates, finite computations, and AI review. No end-to-end Lean formalization or human mathematical review is recorded. The latest determinant experiments do **not** change the discriminant cutoff. No novelty or priority claim is made.
 >
 > This overview reflects the artifacts at [`062afd2`](https://github.com/Dojo-1/tenth-discriminant/tree/062afd2a6170a7569d1801c3938f05e63030949d). Numerical summaries below describe those recorded runs; they are not substitutes for the derivations or their dependencies.
+>
+> **23 October evidence update:** the later frozen checkout at
+> [`4c034f9`](https://github.com/Dojo-1/tenth-discriminant/tree/4c034f9d2bd6c66aa3a7558d8a70a842be77ad29)
+> contains merged PRs #15 and #16: a checked abstract interpolation/Gram
+> component and clearer documentation. It does **not** change the candidate
+> status of the end-to-end class-number argument. The [objective audit](TAO_OBJECTIVE_AUDIT.md)
+> distinguishes these two evidence classes and records a bounded preregistered
+> control replay.
 
 ## What bound are we claiming?
 
@@ -137,7 +145,7 @@ A successful command establishes only what that program checks. Report the commi
 
 **The names are workflow labels.** Bean, Ender, and Formic were used in semantic priming for AI-assisted exploration and adversarial checking. They name stages of the research, not mathematical entities, independent authorities, or evidence that priming improves research quality. The claims must stand without the narrative. Review provenance and limitations belong in the [review records](review/).
 
-For a first reading, use [the Ender derivation](ledger/ender.txt) and its [audit record](review/ENDER_AUDIT.txt), then the experimental ledgers above. [STATUS.md](STATUS.md) preserves the broader chronology, including the unreviewed higher-class-number track; its historical entries are not all current claims. A blind-first reviewer should instead begin with [REVIEW_BRIEF.md](REVIEW_BRIEF.md), while noting that it describes the earlier route.
+For a first reading, use [the objective audit](TAO_OBJECTIVE_AUDIT.md), then [the Ender derivation](ledger/ender.txt) and its [audit record](review/ENDER_AUDIT.txt). [STATUS.md](STATUS.md) preserves the broader chronology, including the unreviewed higher-class-number track; its historical entries are not all current claims. A blind-first reviewer should instead begin with [REVIEW_BRIEF.md](REVIEW_BRIEF.md), while noting that it describes the earlier route.
 
 Useful criticism identifies the exact statement, violated hypothesis or counterexample, consequence, and reproduction path. Unchecked, missing, and false are different findings. The same discipline applies to favorable reviews and to the [Doubt the Machine framework](https://github.com/Dojo-1/doubt-the-machine) itself.
 

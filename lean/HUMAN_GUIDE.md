@@ -247,6 +247,16 @@ the integer Gram matrix, prove its prime-adic divisibility, certify the analytic
 bounds or close the finite classification. It supplies one connected part of
 that longer argument. See [FORMALIZATION.md](FORMALIZATION.md).
 
+Put plainly: this proof says that **if** the intended ellipse supplies enough
+distinct samples, then the exact derivative Gram matrix used by the arithmetic
+argument is nonsingular. To turn that into a classification, the project still
+has to prove that the concrete ellipse meets the count, that its matrix is the
+integer matrix whose prime divisibility is used, and that the analytic bounds
+apply to that same determinant. A finished interpolation theorem cannot fill
+those application-specific gaps by itself. The project-wide
+[Tao-objective audit](../TAO_OBJECTIVE_AUDIT.md) records this boundary without
+collapsing it into a percentage-complete claim.
+
 The attached identity framing motivates the question of observation separation.
 No Picard-groupoid equivalence or geometric metaphor is an extra proof premise.
 The scalar Gram determinant and a module's determinant line are different objects.

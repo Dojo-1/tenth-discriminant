@@ -95,9 +95,15 @@ the concrete ellipse satisfies the guard. The discriminant cutoff is unchanged.
 ## 5. Verification and human-review boundary
 
 The baseline interpolation revision `d6c4876a316814aa0ac4ef1a719a13ea2822e620`
-passed workflow `39863039414`. The clarity review lives in PR #16, stacked on
-PR #15; inspect the checks for its exact head rather than inheriting an
-ancestor's status.
+passed workflow `39863039414`. As checked against frozen current history on
+23 October, PR #15 is merged at `47ec647` and PR #16 is merged at `4c034f9`.
+The PR #16 source head `8aca367` passed pinned workflow `39897529309`, job
+`120231301146`. That is the status of the checked source head; it must not be
+silently extended to later edits or to the end-to-end classification claim.
+
+For the human-facing objective audit and a record of the bounded preregistered
+radial-control replay, see [`../TAO_OBJECTIVE_AUDIT.md`](../TAO_OBJECTIVE_AUDIT.md).
+It does not add a formal premise or mathematical conclusion to this map.
 
 The strengthened apparatus checks are:
 

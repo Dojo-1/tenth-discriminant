@@ -1,4 +1,25 @@
-# Status — 2026-10-21
+# Status — 2026-10-23
+
+## 2026-10-23: Tao-objective audit and bounded radial replay
+
+`TAO_OBJECTIVE_AUDIT.md` now compares the project's twelve-item status table
+with Tao's 20 October challenge and the frozen repository evidence. The main
+correction is operational: PR #15 and PR #16 are no longer drafts; they landed
+on current `main` at `47ec647` and `4c034f9`. Their checked interpolation
+theorem and apparatus audit do not close the arithmetic-to-classification
+bridge.
+
+The fixed radial-control suite from `flow/PREREG_RADIAL.txt` was rerun with
+Python 3.13.16, python-flint 0.9.0, and SymPy 1.14.0: 9 tests passed in
+1.525 seconds. This is a bounded reproducibility check, not a rerun of the
+18-case campaign or new numerical evidence. Its registered $O(1/R)$ ceiling
+still rules out a cutoff-improvement claim from this bound alone.
+
+The audit labels the Ender route and its $7\times10^{11}$ cutoff as a
+**candidate** rather than an achieved classification, keeps the $h\le2$ track
+unreviewed, and records that no repository-supported evidence of a Tao-comment
+submission was found. See `TAO_OBJECTIVE_AUDIT.md` for the full table and
+precise evidence boundaries.
 
 ## 2026-10-22: analytic radial correlation follow-up
 
