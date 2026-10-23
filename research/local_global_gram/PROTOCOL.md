@@ -129,5 +129,9 @@ Verification on this proof head, before its final commit:
   stopped run is not presented as a pass.
 
 The pinned Linux workflow on the final proof commit is the required complete
-check and will be reported against that exact SHA; the preregistration's
-earlier green run does not certify these proof edits.
+check. Proof-head commit `d5945cf7fc5b891b54ef85986c40a55bec35843c`
+passed workflow `39954106722` (job `120415525126`): source correspondence,
+full Lean build, compiled dependency audit and inherited negative controls.
+The preregistration's earlier green run did not certify those proof edits;
+nor does this result certify any later documentation-only follow-up until its
+own exact-head workflow passes.

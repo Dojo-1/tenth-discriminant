@@ -1,6 +1,6 @@
 {
   "task": "Build a bidirectional global integer-Gram and residue-coordinate bridge",
-  "status": "fixed_pilot_proved_final_ci_pending",
+  "status": "fixed_pilot_proved_proof_head_ci_passed",
   "base_commit": "c77049288e0eac33f72739b255d8254ff3e6aca1",
   "branch": "codex/integer-trace-gram",
   "decisions": [
@@ -28,7 +28,8 @@
     "Targeted Lean checks prove Zsqrtd coordinate compatibility, independent residue Gram reduction with exact controls, and D=19,p=3 canonical eight-row nine-divisibility with positive ellipse and noninert falsifier controls.",
     "The exact current source passed python verify_sources.py, targeted Lean, and lake build locally.",
     "Local Windows python audit.py exited 1 after its 240-second apparatus-controls wrapper timeout, although import coverage and AUDIT_OK 526 logical declarations passed before timeout; this is not a full audit pass.",
-    "Local Windows python negative_controls.py was intentionally stopped after four passing matched pairs to avoid a prolonged replay; this is not a full negative-controls pass. Final-head pinned Linux CI is pending."
+    "Local Windows python negative_controls.py was intentionally stopped after four passing matched pairs to avoid a prolonged replay; this is not a full negative-controls pass.",
+    "Proof-head commit d5945cf7fc5b891b54ef85986c40a55bec35843c passed pinned Linux CI run 39954106722: source correspondence, full Lean build, compiled axiom audit and inherited negative controls. A later documentation-only status commit requires its own CI before it is described as checked."
   ],
   "files_touched": [
     "README.md",
