@@ -42,6 +42,17 @@ prove inert-prime divisibility or identify the verifier's different
 half-integer-radius ellipse generator. [Why the two coordinates agree](lean/HUMAN_GUIDE.md#10-the-same-gram-matrix-in-integer-and-complex-coordinates) ·
 [registered scope](research/integer_gram_bridge/PROTOCOL.md).
 
+**Local–global arithmetic bridge:** A further registered Lean slice identifies
+the pair coordinates, for `D>0`, with the selected order `ℤ[√(-D)]`. It defines
+the same Gram calculation modulo `m` without dropping samples that collide after reduction,
+and proves that the reduced determinant is zero exactly when `m` divides the
+integer determinant (`m>0`). A separate fixed-grid pilot proves
+`9 | det G` for `D=19`, `p=3`, `R=4`, `S=2`, every finite sample set and every
+derivative cutoff; an ellipse instance has positive determinant. This is a
+nontrivial valuation example, **not** Ender's general inert-prime bound.
+The mechanism and remaining scope are explained in [guide §11](lean/HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix)
+and the [registered protocol](research/local_global_gram/PROTOCOL.md).
+
 ## What bound are we claiming?
 
 Write **$D=|\mathrm{disc}(K)|$** for the absolute fundamental discriminant of an imaginary quadratic field. It is not an unrestricted radicand. In the notation $q=|\mathrm{disc}(K)|$ used by [twinheterodox's contribution](https://github.com/twinheterodox/tenth-discriminant), **$q=D$**, not $\log D$.

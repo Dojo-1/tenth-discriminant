@@ -245,15 +245,17 @@ This interpolation theorem alone does not define the imaginary quadratic class
 group, prove small-prime inertness, count Ender's ellipse, identify the integer
 Gram matrix, prove prime-adic divisibility, certify the analytic bounds or close
 the finite classification. Later work supplies the count on paper (§9) and the
-matrix identification in Lean (§10); the remaining links are not consequences
-of interpolation alone. See [FORMALIZATION.md](FORMALIZATION.md).
+matrix identification in Lean (§10), then an exact residue detector (§11).
+The remaining links are not consequences of interpolation alone. See
+[FORMALIZATION.md](FORMALIZATION.md).
 
 Put plainly: this proof says that **if** the intended ellipse supplies enough
 distinct samples, then its exact derivative Gram matrix is nonsingular. The
 geometric count now supplies that premise in an unformalized area argument;
-the integer-coordinate bridge identifies the same matrix, but does not yet
-prove its prime divisibility. The analytic bounds and finite classification
-also remain to be connected. The project-wide
+the integer-coordinate bridge identifies the same matrix, and the residue
+bridge detects divisibility by a chosen modulus. Neither statement by itself
+proves Ender's uniform prime-adic lower bound. The analytic bounds and finite
+classification also remain to be connected. The project-wide
 [Tao-objective audit](../TAO_OBJECTIVE_AUDIT.md) records this boundary without
 collapsing it into a percentage-complete claim.
 
@@ -350,3 +352,69 @@ whereas `ellipsePairs D rho` uses integer `rho`; this bridge does not identify
 those two generators or certify the saved numerical campaign. Most importantly,
 integer entries alone do not imply the inert-prime valuation bound. That is
 the next arithmetic theorem to prove; class-number classification remains open.
+
+## 11. Local and global arithmetic views of one Gram matrix
+
+Here “global” means the integral lattice, not an assertion about every place
+of a number field. There are two useful views of the *same* integer Gram
+matrix. For `D>0`, the pair `(a,b)` is exactly the coordinate description of
+`a+b√(-D)` in the selected order `ℤ[√(-D)]`. Multiplication, conjugation,
+the norm, and the factor-two trace pairing agree in these charts; see
+[`QuadraticCoordinates.lean`](TenthDiscriminant/QuadraticCoordinates.lean).
+For some `D`, this selected order is smaller than the full ring of integers.
+This is the useful *first* Cayley–Dickson-style doubling: conjugation and a
+quadratic norm have concrete operations that the proof uses. Quaternionic or
+octonionic doublings add no needed operator to this determinant calculation.
+
+For an integer `m>0`, reduce each pair coordinate modulo `m` and carry out
+the same multiplication, conjugation, **ordinary** derivative and trace
+pairing in `(ℤ/mℤ)²`. The local matrix is computed independently from these
+residue operations. Its sum still runs over the original points: if two
+different integer points become the same residue, they contribute twice.
+Entrywise equality with the reduced integer matrix gives
+
+$$
+G_m = G_{\mathbb Z}\bmod m,\qquad
+\det G_m = (\det G_{\mathbb Z})\bmod m,\qquad
+\det G_m=0\ \Longleftrightarrow\ m\mid\det G_{\mathbb Z}.
+$$
+
+These are the two directions of the bridge: reduce a concrete global matrix
+to make local calculations, then lift *a proved local vanishing statement*
+back to an integer divisibility statement. The complex matrix in §10 and the
+residue matrix both originate from the integer one; there is no map from
+complex numbers to `ℤ/mℤ` in this argument. See
+[`ResidueTraceGram.lean`](TenthDiscriminant/ResidueTraceGram.lean).
+
+Two exact controls prevent attractive mistakes. The asymmetric matrix in §10
+has determinant `12`, so its local determinants are `0` modulo `3` and `2`
+modulo `5`. For the constant row sampled at `(0,0)` and `(3,0)`, the global
+Gram entry is `4`, hence `1` modulo `3`; replacing the two samples by the
+*set* of their residues would wrongly give `2`. Both controls are Lean-checked.
+
+For the registered `D=19`, `p=3` pilot, `X²+19` becomes `X²+1` modulo `3`,
+which has no root. The quotient `𝔽₃[t]/(t²+1)` has nine elements;
+conjugation agrees with the cube map. Thus `Z³-W` evaluates to a multiple of
+`3` at every lattice point,
+and its ordinary derivatives of orders `1,2,3` are `3Z²,6Z,6`; higher
+derivatives vanish. The checked theorem
+`inertPilotJet_dvd_three` proves coordinatewise divisibility for *every*
+point and derivative order. This is a fixed toy case, not an inert-prime
+theorem for arbitrary `D,p,R,S`.
+
+Why is the determinant step subtler? If the row `Z³-W` replaces the canonical
+`Z³` row, the matching Gram column changes too. To obtain `9 | det G`, one
+needs an *integral* middle matrix in
+`T G Tᵀ = diag(3) K diag(3)`. Separate divisibility of the selected row and
+column does not suffice: the `1×1` matrix `[3]` has both but its determinant
+is not divisible by `9`. [`GramDivisibility.lean`](TenthDiscriminant/GramDivisibility.lean)
+proves this determinant implication under the explicit two-sided factorization.
+[`InertPilot.lean`](TenthDiscriminant/InertPilot.lean) constructs that
+factorization for the canonical eight-row matrix and proves `9 | det G` for
+*every* finite `Q` and cutoff `J`. The ellipse `Q=ellipsePairs 19 5`, `J=2`
+has 21 points; the checked count criterion also proves its determinant is
+strictly positive. As a falsifier, `D=2`, `p=3`, `Z=√(-2)` gives
+`Z³-W=-Z`, which is not coordinatewise divisible by `3`; this too is a
+checked control. The [registered protocol](../research/local_global_gram/PROTOCOL.md)
+records the test and its boundary. The general Ender valuation and the
+class-number classification are still open.

@@ -76,3 +76,58 @@ lemma and report the unsolved obligation; do not weaken the theorem
 silently or widen the task to a class-number classification. Keep the
 diff small and the explanation readable by a mathematician not following
 every Lean declaration.
+
+## Result ledger (appended after registration)
+
+The preregistration was committed alone at `e8bb4d389c95bc24624d7b94174245314594dfba`;
+its pinned Linux workflow `39944972558` passed. The following proof edits
+were made only afterward.
+
+- `QuadraticCoordinates.lean` proves a coordinate bijection with
+  `Zsqrtd (-(D : Int))` and compatibility with multiplication, conjugation,
+  powers, norm and the existing trace pairing. It is not a packaged ring
+  equivalence or an assertion that this order is the full ring of integers.
+- `ResidueTraceGram.lean` builds the local operations independently, retains
+  original `Q` indexing, proves the integer-matrix reduction and determinant
+  naturality, and proves `det G_m = 0 ↔ m | det G_Z` for `m>0`.
+- Both preregistered arithmetic controls are Lean-checked: determinant `12`
+  maps to `0` modulo `3` and `2` modulo `5`; the two colliding global
+  samples give `4 ≡ 1` modulo `3`, while incorrect image-set deduplication
+  gives `2`.
+- `InertPilot.lean` proves every ordinary derivative of `Z³-W` at `D=19`
+  has both integer coordinates divisible by `3`, for every point and every
+  derivative order. Its actual canonical eight-row Gram is related to an
+  integral normalized Gram by a determinant-preserving matching shear and a
+  two-sided diagonal factor. Hence Lean proves `9 | det G` for every finite
+  `Q` and every `J`; this is the registered `F(3)=1` pilot, not an all-prime
+  theorem. The `ellipsePairs 19 5`, `J=2` determinant is strictly positive,
+  using the existing 21-point control. The `D=2,p=3,z=(0,1)` noninert
+  falsifier is also Lean-checked.
+- The feared shortcut remains false: a divisible row and column alone do not
+  supply a square factor, as `[3]` shows. The proof instead exhibits an
+  *integer* middle matrix. Neither the general inert-prime filtration, the
+  cell-area count in Lean, Ender's global valuation bound, nor the
+  class-number classification is established by this pilot.
+
+Verification on this proof head, before its final commit:
+
+- `python verify_sources.py`: exit 0; saved source digest and all 250
+  interval endpoints match the Lean recurrence. This does not certify Arb
+  inequalities.
+- `lake env lean TenthDiscriminant/InertPilot.lean`: exit 0, including the
+  fixed-grid theorem and controls. `lake build`: exit 0, all 6690 build steps;
+  existing linter warnings in older modules and one tactic suggestion in the
+  pilot do not affect proof checking.
+- `python audit.py`: exit 1 locally on Windows. Before its 240-second
+  `apparatus_controls.py` subprocess timeout, it reported all 36 project
+  modules reachable, `AUDIT_OK` for 526 logical declarations (435 theorems;
+  only the three permitted axioms), and several matched apparatus controls.
+  This partial output is **not** a full audit pass.
+- `python negative_controls.py`: exit 1 after this local run was intentionally
+  stopped following four passing matched controls to avoid a prolonged
+  Windows replay; its full suite was **not** completed locally. The exact
+  stopped run is not presented as a pass.
+
+The pinned Linux workflow on the final proof commit is the required complete
+check and will be reported against that exact SHA; the preregistration's
+earlier green run does not certify these proof edits.

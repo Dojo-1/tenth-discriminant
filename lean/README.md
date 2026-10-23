@@ -64,6 +64,22 @@ determinant casts accordingly, but its inert-prime divisibility is not proved.
 The [guide's coordinate explanation](HUMAN_GUIDE.md#10-the-same-gram-matrix-in-integer-and-complex-coordinates)
 includes an asymmetric control that a determinant-only comparison misses.
 
+[`QuadraticCoordinates.lean`](TenthDiscriminant/QuadraticCoordinates.lean)
+identifies those pairs for `D>0` with the selected order `ℤ[√(-D)]`, not
+necessarily the full ring of integers.
+[`ResidueTraceGram.lean`](TenthDiscriminant/ResidueTraceGram.lean)
+then defines the corresponding local matrix over `ZMod m` and proves that its
+determinant vanishes exactly when `m>0` divides the integer determinant.
+Distinct global points can share a residue; the original sample indexing is
+kept. See [guide §11](HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix).
+This detects divisibility but supplies no general inert-prime exponent.
+[`InertPilot.lean`](TenthDiscriminant/InertPilot.lean) uses a matching
+row/column shear and the integral two-sided factor lemma in
+[`GramDivisibility.lean`](TenthDiscriminant/GramDivisibility.lean) to prove
+`9 | det G` for the canonical `D=19`, `R=4`, `S=2` grid and arbitrary finite
+samples and derivative depth. The positive `ellipsePairs 19 5` control makes
+this nonvacuous. It is a fixed pilot, not Ender's general valuation theorem.
+
 ## Read in mathematical order
 
 1. [Human guide](HUMAN_GUIDE.md): statement, definitions, proof and examples.

@@ -29,3 +29,7 @@ import TenthDiscriminant.JetCountGram
 import TenthDiscriminant.Interpolation
 import TenthDiscriminant.LatticeEllipse
 import TenthDiscriminant.IntegerTraceGram
+import TenthDiscriminant.QuadraticCoordinates
+import TenthDiscriminant.ResidueTraceGram
+import TenthDiscriminant.GramDivisibility
+import TenthDiscriminant.InertPilot

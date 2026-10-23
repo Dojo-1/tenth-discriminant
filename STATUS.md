@@ -1,5 +1,26 @@
 # Status — 2026-10-23
 
+## 2026-10-23: local–global determinant bridge (bounded pilot)
+
+For `D>0`, Lean identifies the integer-pair coordinates with the selected
+quadratic order `ℤ[√(-D)]`; this does not identify the full ring of integers
+for every D.
+It also computes the derivative trace-Gram matrix independently in residue
+coordinates. For any modulus `m>0`, the local determinant equals the reduction
+of the existing integer determinant, and vanishes exactly when `m` divides
+that determinant. Samples remain indexed by the original integer-point set:
+colliding residues retain their multiplicities. Registered controls check both
+this collision issue and the asymmetric `D=3` determinant `12` modulo `3` and
+`5`. Separately, a checked fixed-grid theorem proves `9 | det G` for the
+canonical `D=19`, `R=4`, `S=2` integer Gram for every finite sample set and
+derivative cutoff. For `ellipsePairs 19 5`, `J=2`, its determinant is also
+strictly positive. A `D=2`, `p=3` control refutes dropping inertness. This
+one-prime toy theorem does not imply Ender's uniform prime-adic lower bound.
+The proof and limitations are reported in the
+[guide](lean/HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix)
+and [protocol](research/local_global_gram/PROTOCOL.md); the general valuation
+bridge and class-number classification remain open.
+
 ## 2026-10-23: integer-coordinate trace-Gram bridge
 
 For any finite set of distinct integer pairs and positive D, Lean now proves
