@@ -34,4 +34,5 @@ import TenthDiscriminant.ResidueTraceGram
 import TenthDiscriminant.GramDivisibility
 import TenthDiscriminant.FrobeniusJet
 import TenthDiscriminant.RectangularValuation
+import TenthDiscriminant.JetPower
 import TenthDiscriminant.InertPilot

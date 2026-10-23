@@ -34,3 +34,23 @@ factorization.
 Verify targeted Lean, source correspondence, full `lake build`, pinned
 dependency audit and inherited negative controls. Update reader text
 only to the exact checked declaration. No automatic merge or Tao post.
+
+## Execution record
+
+The protocol-only commit `86f40e7` preceded all new Lean edits. The
+first targeted proof attempt exposed a missing evaluation-scalar lemma
+and an induction hypothesis fixed at one derivative order. Two later
+attempts exposed a power-associativity normalization and a mistaken
+`eval_zero` lemma name. These were proof-script failures, not negative
+mathematical results; each was repaired before the passing check.
+
+`JetPower.lean` proves the universal ordinary-jet product-power theorem,
+specializes it to `Z^p-W` and the selected quadratic order, and derives
+`p^k` divisibility in **both** integer coordinates of every proposed
+transformed-row jet under the explicit order-zero congruence. A Lean
+control confirms the analogous Hasse-derivative claim fails for
+`X³`, order three, modulo three. Targeted Lean, source correspondence
+and full 6693-step `lake build` passed. The unitriangular matrix-row
+identification, derivation of the Frobenius premise from inertness,
+and cutoff/classification remain open. Final-head pinned CI remains
+to be recorded.

@@ -21,8 +21,9 @@ repository work.
 - A [human-readable paper proof](research/uniform_inert_valuation/PROOF.md)
   reconstructs the inherited general `p^(2F(p))` divisibility using
   `Z^p-W` and a unitriangular rectangular basis, under explicit
-  residue irreducibility. Lean checks the single-factor derivative
-  implication, the exact proposed exponent sum, and the determinant
+  residue irreducibility. Lean checks all ordinary transformed-row
+  jets have the expected `p^k` factor under an explicit order-zero
+  congruence, the exact proposed exponent sum, and the determinant
   implication **conditional on** the integral basis factorization.
 - [Preregistered negative results](TAO_OBJECTIVES_CURRENT.md) include
   the radial `O(1/R)` ceiling, a finite lift counterexample to a

@@ -1,6 +1,6 @@
 {
-  "task": "Check the exact Ender exponent in the conditional rectangular Gram bridge",
-  "status": "phase3_local_checks_passed_pinned_ci_pending",
+  "task": "Formalize ordinary-jet powers toward Ender's uniform valuation",
+  "status": "phase4_local_checks_passed_pinned_ci_pending",
   "base_commit": "7bc3ec83429929373190b117bc74ff6f30230db9",
   "branch": "codex/frobenius-residue-bridge",
   "decisions": [
@@ -17,7 +17,8 @@
     "Preserve TAO_OBJECTIVE_AUDIT.md as a frozen 4c034f9 snapshot; put the current ledger and separately classified side discoveries in a new document without changing any experiment or cutoff.",
     "Register the uniform inert-prime valuation attempt before proof edits; use a rectangular unitriangular basis and an explicit irreducibility hypothesis, with paper and Lean scopes labelled separately.",
     "After PR #21 merged, preregister Phase 2 in a separate commit and prove only the universal one-factor jet implication from an explicit zero-order congruence; retain the noninert negative control.",
-    "After PR #22 merged, preregister Phase 3 in commit 68a91b9; prove the exact rectangular exponent sum and only the determinant conclusion conditional on an integral basis factor. Do not post an AI-written comment as Tao's requested human-generated summary."
+    "After PR #22 merged, preregister Phase 3 in commit 68a91b9; prove the exact rectangular exponent sum and only the determinant conclusion conditional on an integral basis factor. Do not post an AI-written comment as Tao's requested human-generated summary.",
+    "Preregister Phase 4 in commit 86f40e7 before Lean edits. Use ordinary iterated derivatives, not Hasse derivatives; prove transformed-row p^k divisibility in both selected quadratic-order coordinates under an explicit order-zero congruence. Retain the matrix-row and inertness interfaces as open."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
@@ -47,7 +48,8 @@
     "The new Lean theorem compiled and local python verify_sources.py plus 6690-step lake build passed. PR #21 final-head pinned CI run 39968153279 succeeded and PR #21 merged externally at 08c7260.",
     "Phase 2 protocol-only commit 04ee81d preceded all new Lean proof edits. Targeted FrobeniusJet.lean, source correspondence and complete 6691-step local build passed; first targeted compilation errors were repaired and recorded in the Phase 2 protocol.",
     "The general zero-order Frobenius congruence, H^k product-rule divisibility and rectangular basis remain outside the Phase 2 Lean theorem. PR #22 merged externally at 7bc3ec8.",
-    "Phase 3 protocol-only commit 68a91b9 preceded Lean edits. Targeted RectangularValuation.lean, source correspondence and full 6692-step local build passed; initial finite-sum proof errors were repaired and logged in the protocol. The integral factorization remains an explicit theorem hypothesis. Final-head pinned CI is pending."
+    "Phase 3 protocol-only commit 68a91b9 preceded Lean edits. Targeted RectangularValuation.lean, source correspondence and full 6692-step local build passed; initial finite-sum proof errors were repaired and logged in the protocol. The integral factorization remains an explicit theorem hypothesis. PR #23 head 059741a passed pinned Linux CI run 39973862730 and remains draft/unmerged.",
+    "Phase 4 protocol-only commit 86f40e7 preceded Lean edits. Targeted JetPower.lean, source correspondence, and full 6693-step local build passed. The Hasse negative control and both-coordinate p^k transformed-jet theorem compiled. Initial proof-script failures are recorded in the Phase 4 protocol. Final-head pinned CI is pending."
   ],
   "files_touched": [
     "README.md",
@@ -78,7 +80,9 @@
     "lean/TenthDiscriminant/FrobeniusJet.lean",
     "research/uniform_inert_valuation/PHASE3_PROTOCOL.md",
     "lean/TenthDiscriminant/RectangularValuation.lean",
-    "TAO_REPLY_BRIEF.md"
+    "TAO_REPLY_BRIEF.md",
+    "research/uniform_inert_valuation/PHASE4_PROTOCOL.md",
+    "lean/TenthDiscriminant/JetPower.lean"
   ],
   "updated": "2026-10-23"
 }

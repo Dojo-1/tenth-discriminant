@@ -5,6 +5,19 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-23: the full ordinary-jet power is checked locally
+
+Lean proves that if all ordinary jets of `H` at a point are divisible
+by `p`, then all jets of `B*H^k` are divisible by `p^k`. Applied to
+`H=Z^p-W` in the repository's selected quadratic order, this gives
+both integer-coordinate factors for every proposed transformed row
+under its explicit order-zero Frobenius congruence. A checked Hasse
+derivative counterexample guards the derivative convention. The
+uniform inertness premise, the unitriangular identification with the
+actual rectangular Gram, and the analytic/class-number chain remain
+open in Lean. [Theorem](lean/TenthDiscriminant/JetPower.lean) ·
+[preregistration](research/uniform_inert_valuation/PHASE4_PROTOCOL.md).
+
 ## 2026-10-23: exact Ender exponent, conditional on the missing basis
 
 Lean now proves that the proposed row-major exponents
@@ -13,8 +26,9 @@ that a specified **integral unimodular two-sided factorization** of the
 actual integer rectangular Gram implies
 `p^(2*valuationWeight R S p) | det G`. This is checked for all natural
 `R,S,p`, including empty grids, but the factorization is an explicit
-unproved hypothesis in this theorem. The `H^k` polynomial-row and
-inertness bridges, analytic inequalities and class-number argument
+unproved hypothesis in this theorem. The later ordinary-jet power
+result above narrows, but does not discharge, the matrix-row and
+inertness bridges; analytic inequalities and class-number argument
 remain open in Lean. [Exact declaration](lean/TenthDiscriminant/RectangularValuation.lean) ·
 [preregistration](research/uniform_inert_valuation/PHASE3_PROTOCOL.md).
 
@@ -27,8 +41,9 @@ matrix, under the explicit condition that `X²+D` is irreducible modulo
 the odd prime `p`. Lean checks the general unimodular two-sided matrix
 factor and, in a follow-up, [all ordinary jets of the single factor
 `Z^p-W`](lean/TenthDiscriminant/FrobeniusJet.lean), conditional on its
-order-zero congruence. The `H^k` product-rule/basis construction and
-inertness-to-irreducibility link are not yet in Lean. This is a paper proof of an inherited
+order-zero congruence. At that checkpoint, the `H^k` product-rule/basis
+construction and inertness-to-irreducibility link were not yet in Lean;
+the newer power-jet result above closes the product-rule part only. This is a paper proof of an inherited
 valuation input, not a new cutoff or a full classification theorem.
 
 ## 2026-10-23: local–global determinant bridge (bounded pilot)
