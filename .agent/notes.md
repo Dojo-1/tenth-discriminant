@@ -88,8 +88,10 @@
   step uses the checked four-times-norm sum-of-squares identity.
   Full 6707-step build and endpoint-only source correspondence pass;
   whitespace and state JSON checks pass. Pinned CI pending; area,
-  analytic cutoff and final
-  classification remain open.
+  analytic cutoff and final classification remain open. Proof head
+  `7fbc7fc` passed pinned CI `40044997537`, including compiled
+  dependency audit and negative controls, and CodeQL. A follow-up
+  claim-map correction is documentation-only.
 
 - 2026-10-24, Phase 15: Phase 14 head `8d15fbb` passed pinned CI
   `40039967991` and CodeQL. Protocol-only `c600ac5` preceded edits.

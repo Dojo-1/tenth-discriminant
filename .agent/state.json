@@ -1,6 +1,6 @@
 {
   "task": "Connect the checked local determinant bound to Ender's geometric and analytic cutoff",
-  "status": "phase16_classNumber_to_local_valuation_full_build_passed_pinned_ci_pending",
+  "status": "phase16_classNumber_to_local_valuation_pinned_ci_passed_geometric_analytic_open",
   "base_commit": "a4da8963fa0d94ca4858e09ab10f3195d0fe588f",
   "branch": "codex/rectangular-row-action",
   "decisions": [
@@ -73,7 +73,7 @@
     "Phase 13 protocol-only commit 819f3f9 preceded edits. HalfOrderAlgebraicNorm.lean proves rank-two power basis, actual left-multiplication matrix, Algebra.norm=principalNorm, D=15 generator and scalar controls. Targeted Lean, 6704-step full build and endpoint-only source correspondence pass. The maximal-order identification, area Lean proof, analytic cutoff and classification remain open; pinned CI on the proof head is pending.",
     "Phase 13 proof head ca4bb0b passed pinned Linux CI run 40037475255 and CodeQL. Phase 14 protocol-only commit 18510c3 preceded edits. MaximalOrderCoordinates.lean targeted check and full 6705-step lake build pass: squarefree denominator, parity, forward and converse coordinate conditions, uniqueness, D=15 and D=9 controls. Source correspondence passes endpoint-only; whitespace and task JSON checks pass. The field/order equivalence remains open; pinned CI on this proof head pending.",
     "Phase 14 proof head 8d15fbb passed pinned Linux CI run 40039967991 and CodeQL. Phase 15 protocol-only commit c600ac5 preceded edits. QuadraticFieldChart.lean targeted check and full 6706-step lake build pass: genuine number field, rational and integer bases, injective integral-order map, integral coordinate reconstruction, ring equivalence with RingOfIntegers, maximal-ring norm formula, D=15 and reducible c=0 controls. Source correspondence passes endpoint-only; whitespace and task JSON checks pass. Pinned CI pending; class-number lifting composition remains open.",
-    "Phase 15 proof head cf1c9db passed pinned Linux CI run 40043319145 and CodeQL. Phase 16 protocol-only commit c519477 preceded edits. ClassNumberInertBridge.lean targeted check and full 6707-step lake build pass: class-number-one exact norm lifting, strict nonsquare guard, actual integer-Gram valuation, and D=15 class-number-not-one negative control. Source correspondence passes endpoint-only; whitespace and task JSON checks pass. Pinned CI pending; area, analytic and classification links remain open."
+    "Phase 15 proof head cf1c9db passed pinned Linux CI run 40043319145 and CodeQL. Phase 16 protocol-only commit c519477 preceded edits. ClassNumberInertBridge.lean targeted check and full 6707-step lake build pass: class-number-one exact norm lifting, strict nonsquare guard, actual integer-Gram valuation, and D=15 class-number-not-one negative control. Source correspondence passes endpoint-only; whitespace and task JSON checks pass. Proof head 7fbc7fc passed pinned Linux CI run 40044997537 and CodeQL. Area, analytic and classification links remain open."
   ],
   "files_touched": [
     "README.md",
