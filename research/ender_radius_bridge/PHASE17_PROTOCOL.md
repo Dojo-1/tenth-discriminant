@@ -26,3 +26,15 @@ strict `>` conclusion (not `>=`) and require `D>0`, `q>0`, and the
 radius guard. Run targeted Lean, full pinned build, source
 correspondence, compiled dependency audit and inherited controls via
 pinned CI. Update human-facing status and preserve draft/unmerged PR.
+
+## Execution (2026-10-24)
+
+`LatticeEllipse.lean` now checks the exact real radius algebra with a
+strict count conclusion and composes it with upper-endpoint monotonicity
+and the original trace-Gram determinant theorem. The area inequality
+remains a named premise. Targeted Lean passed; inherited exact-count
+controls remained in the compiled module. The disk-cell coverage proof,
+analytic determinant comparison, and classification remain open.
+Local `lake build` completed all 6707 steps; `python verify_sources.py`
+passed its endpoint-only check. Whitespace and task-state JSON checks
+passed. The compiled dependency audit and negative controls await pinned CI.

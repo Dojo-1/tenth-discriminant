@@ -62,9 +62,10 @@ For a concrete positive-D integer-radius ellipse, see
 not prove Ender's analytic estimate for the chosen radius. The explanation is
 in [guide §9](HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge).
 The [separate cell-covering proof](../research/ender_radius_bridge/PROOF.md)
-now supplies that count in ordinary mathematics. Lean checks interval
-monotonicity and the conditional Ender-guard application, but the disk-area
-step is not yet formalized.
+now supplies that count in ordinary mathematics. Lean checks the exact
+chosen-radius-to-count inequality, interval monotonicity and the conditional
+application to the actual Gram. The disk-covering area inequality remains an
+explicit, unproved Lean hypothesis.
 
 [`IntegerTraceGram.lean`](TenthDiscriminant/IntegerTraceGram.lean) gives the
 next bridge: for a supplied finite set of distinct integer pairs and positive

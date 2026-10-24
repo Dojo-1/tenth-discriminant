@@ -72,6 +72,47 @@ theorem ellipsePairs_card_antitone_D (D₁ D₂ rho : Nat) (hD : D₁ ≤ D₂) 
     (ellipsePairs D₂ rho).card ≤ (ellipsePairs D₁ rho).card :=
   Finset.card_le_card (ellipsePairs_antitone_D D₁ D₂ rho hD)
 
+/-- Ender's radius turns the cell-area estimate into the strict rank count.
+The area estimate is deliberately an explicit hypothesis, not a checked theorem. -/
+theorem ellipsePairs_card_gt_of_ender_radius_and_area
+    (D rho q : Nat) (hD : 0 < D) (hq : 0 < q)
+    (hradius : (1001 / 1000 : Real) *
+        Real.sqrt ((q : Real) * Real.sqrt D / Real.pi) +
+        10 * Real.sqrt D ≤ (rho : Real))
+    (harea : Real.pi * ((rho : Real) - (1 + Real.sqrt D) / 2) ^ 2 ≤
+        ((ellipsePairs D rho).card : Real) * Real.sqrt D) :
+    q < (ellipsePairs D rho).card := by
+  let s : Real := Real.sqrt D
+  let beta : Real := Real.sqrt ((q : Real) * s / Real.pi)
+  let delta : Real := (1 + s) / 2
+  have hs : 0 < s := Real.sqrt_pos.2 (by exact_mod_cast hD)
+  have hsone : 1 ≤ s := by
+    have : (1 : Real) ≤ D := by exact_mod_cast hD
+    nlinarith [Real.sq_sqrt (by positivity : (0 : Real) ≤ D)]
+  have hpi : 0 < Real.pi := Real.pi_pos
+  have harg : 0 < (q : Real) * s / Real.pi := by positivity
+  have hbeta : 0 < beta := Real.sqrt_pos.2 harg
+  have hbeta2 : Real.pi * beta ^ 2 = (q : Real) * s := by
+    dsimp [beta]
+    rw [Real.sq_sqrt (le_of_lt harg)]
+    field_simp
+  have hdelta : delta ≤ s := by dsimp [delta]; linarith
+  have hdiff : beta < (rho : Real) - delta := by
+    dsimp [delta] at hdelta ⊢
+    dsimp [beta, s] at hradius ⊢
+    nlinarith [Real.sqrt_nonneg ((q : Real) * Real.sqrt D / Real.pi)]
+  have hsquare : beta ^ 2 < ((rho : Real) - delta) ^ 2 := by
+    nlinarith [mul_pos (sub_pos.mpr hdiff)
+      (by linarith : 0 < (rho : Real) - delta + beta)]
+  have hreal : (q : Real) * s < ((ellipsePairs D rho).card : Real) * s := by
+    calc
+      (q : Real) * s = Real.pi * beta ^ 2 := hbeta2.symm
+      _ < Real.pi * ((rho : Real) - delta) ^ 2 := by nlinarith
+      _ ≤ ((ellipsePairs D rho).card : Real) * s := harea
+  have : (q : Real) < ((ellipsePairs D rho).card : Real) :=
+    (mul_lt_mul_right hs).mp hreal
+  exact_mod_cast this
+
 /-- Positive `D` keeps distinct integer coordinate pairs distinct in `ℂ`. -/
 theorem latticePoint_injective (D : Nat) (hD : 0 < D) :
     Function.Injective (fun p : Int × Int => latticePoint (D : Real) p.1 p.2) := by
@@ -147,6 +188,26 @@ theorem ellipseTraceGram_det_bounds_of_ender_guard
   apply ellipseTraceGram_det_bounds_of_upper_endpoint D D₂ rho S R S
     hD hD₂ hR hS le_rfl
   omega
+
+/-- Conditional geometric-to-Gram bridge at the upper endpoint of an
+Ender interval. The only unproved premise here is the stated cell area bound. -/
+theorem ellipseTraceGram_det_bounds_of_ender_radius_and_area
+    (D D₂ rho R S : Nat) (hD : 0 < D) (hD₂ : D ≤ D₂)
+    (hR : 1 ≤ R) (hS : 1 ≤ S)
+    (hradius : (1001 / 1000 : Real) *
+        Real.sqrt (((3 * R + S : Nat) : Real) * Real.sqrt D₂ / Real.pi) +
+        10 * Real.sqrt D₂ ≤ (rho : Real))
+    (harea : Real.pi * ((rho : Real) - (1 + Real.sqrt D₂) / 2) ^ 2 ≤
+        ((ellipsePairs D₂ rho).card : Real) * Real.sqrt D₂) :
+    0 < (rectangularTraceGram (ellipsePoints D rho) S R S).det ∧
+      (rectangularTraceGram (ellipsePoints D rho) S R S).det ≤
+        Finset.univ.prod (fun i => rectangularTraceGram (ellipsePoints D rho) S R S i i) := by
+  have hD₂pos : 0 < D₂ := lt_of_lt_of_le hD hD₂
+  have hq : 0 < 3 * R + S := by omega
+  have hcard := ellipsePairs_card_gt_of_ender_radius_and_area
+    D₂ rho (3 * R + S) hD₂pos hq hradius harea
+  exact ellipseTraceGram_det_bounds_of_ender_guard
+    D D₂ rho R S hD hD₂ hR hS hcard
 
 end
 end TenthDiscriminant

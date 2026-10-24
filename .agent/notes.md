@@ -123,3 +123,11 @@
   pass. The maximal-order identification remains a separate open
   arrow, as do the area Lean proof, analytic cutoff and classification;
   final-head pinned CI is pending.
+- 2026-10-24, Phase 17: Protocol-only commit `328c90b` preceded edits.
+  Targeted Lean compiles the exact Ender radius-to-strict-count implication
+  from an explicit cell-area premise, then transports the upper-endpoint
+  count to positivity and Hadamard for the actual trace-Gram matrix. The
+  disk-covering/measure proof of the premise remains paper-only; analytic
+  cutoff and classification remain open. Full 6707-step local build,
+  endpoint-only source correspondence, JSON and whitespace checks pass;
+  pinned CI pending.

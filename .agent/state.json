@@ -1,6 +1,6 @@
 {
   "task": "Connect the checked local determinant bound to Ender's geometric and analytic cutoff",
-  "status": "phase16_classNumber_to_local_valuation_pinned_ci_passed_geometric_analytic_open",
+  "status": "phase17_radius_to_count_checked_area_analytic_open",
   "base_commit": "a4da8963fa0d94ca4858e09ab10f3195d0fe588f",
   "branch": "codex/rectangular-row-action",
   "decisions": [
@@ -30,7 +30,8 @@
     "Preregister Phase 13 in commit 819f3f9 before proof edits. Use the actual rank-two power basis and left-multiplication matrix to identify Algebra.norm with the existing principalNorm; keep the maximal-order identification separate.",
     "Preregister Phase 14 in commit 18510c3 before proof edits. Prove the rational trace/norm coordinate criterion and controls; do not claim maximal-order identification without a field/order equivalence.",
     "Preregister Phase 15 in commit c600ac5 before proof edits. Construct the genuine rational quadratic field and prove the explicit integer order equals its maximal integer ring; keep class-number composition separate.",
-    "Preregister Phase 16 in commit c519477 before proof edits. Compose the root quotient, maximal-order equivalence, class-number-one principal kernel and positive norm into exact lifting and the actual-Gram valuation; retain D=15,p=3 as negative control."
+    "Preregister Phase 16 in commit c519477 before proof edits. Compose the root quotient, maximal-order equivalence, class-number-one principal kernel and positive norm into exact lifting and the actual-Gram valuation; retain D=15,p=3 as negative control.",
+    "Preregister Phase 17 in commit 328c90b before proof edits. Prove the exact Ender radius-to-strict-count and endpoint Gram implication assuming the explicit cell-area inequality; do not label that inequality Lean-checked."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
@@ -73,7 +74,8 @@
     "Phase 13 protocol-only commit 819f3f9 preceded edits. HalfOrderAlgebraicNorm.lean proves rank-two power basis, actual left-multiplication matrix, Algebra.norm=principalNorm, D=15 generator and scalar controls. Targeted Lean, 6704-step full build and endpoint-only source correspondence pass. The maximal-order identification, area Lean proof, analytic cutoff and classification remain open; pinned CI on the proof head is pending.",
     "Phase 13 proof head ca4bb0b passed pinned Linux CI run 40037475255 and CodeQL. Phase 14 protocol-only commit 18510c3 preceded edits. MaximalOrderCoordinates.lean targeted check and full 6705-step lake build pass: squarefree denominator, parity, forward and converse coordinate conditions, uniqueness, D=15 and D=9 controls. Source correspondence passes endpoint-only; whitespace and task JSON checks pass. The field/order equivalence remains open; pinned CI on this proof head pending.",
     "Phase 14 proof head 8d15fbb passed pinned Linux CI run 40039967991 and CodeQL. Phase 15 protocol-only commit c600ac5 preceded edits. QuadraticFieldChart.lean targeted check and full 6706-step lake build pass: genuine number field, rational and integer bases, injective integral-order map, integral coordinate reconstruction, ring equivalence with RingOfIntegers, maximal-ring norm formula, D=15 and reducible c=0 controls. Source correspondence passes endpoint-only; whitespace and task JSON checks pass. Pinned CI pending; class-number lifting composition remains open.",
-    "Phase 15 proof head cf1c9db passed pinned Linux CI run 40043319145 and CodeQL. Phase 16 protocol-only commit c519477 preceded edits. ClassNumberInertBridge.lean targeted check and full 6707-step lake build pass: class-number-one exact norm lifting, strict nonsquare guard, actual integer-Gram valuation, and D=15 class-number-not-one negative control. Source correspondence passes endpoint-only; whitespace and task JSON checks pass. Proof head 7fbc7fc passed pinned Linux CI run 40044997537 and CodeQL. Area, analytic and classification links remain open."
+    "Phase 15 proof head cf1c9db passed pinned Linux CI run 40043319145 and CodeQL. Phase 16 protocol-only commit c519477 preceded edits. ClassNumberInertBridge.lean targeted check and full 6707-step lake build pass: class-number-one exact norm lifting, strict nonsquare guard, actual integer-Gram valuation, and D=15 class-number-not-one negative control. Source correspondence passes endpoint-only; whitespace and task JSON checks pass. Proof head 7fbc7fc passed pinned Linux CI run 40044997537 and CodeQL. Area, analytic and classification links remain open.",
+    "Phase 17 protocol-only commit 328c90b preceded proof edits. Targeted Lean and full 6707-step build prove the exact radius-to-strict-count and upper-endpoint actual-Gram implications under an explicit cell-area premise. Source correspondence passes endpoint-only; JSON and whitespace checks pass. Disk-cell area proof, analytic cutoff and classification remain open; final-head pinned CI pending."
   ],
   "files_touched": [
     "README.md",
@@ -134,7 +136,9 @@
     "research/uniform_inert_valuation/PHASE15_PROTOCOL.md",
     "lean/TenthDiscriminant/QuadraticFieldChart.lean",
     "research/uniform_inert_valuation/PHASE16_PROTOCOL.md",
-    "lean/TenthDiscriminant/ClassNumberInertBridge.lean"
+    "lean/TenthDiscriminant/ClassNumberInertBridge.lean",
+    "research/ender_radius_bridge/PHASE17_PROTOCOL.md",
+    "lean/TenthDiscriminant/LatticeEllipse.lean"
   ],
   "updated": "2026-10-24"
 }

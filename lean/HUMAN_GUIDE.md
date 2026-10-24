@@ -301,13 +301,11 @@ $$
 Here G is precisely `rectangularTraceGram` on `ellipsePoints D rho`; no new
 Gram matrix is substituted. The formal theorem takes the integer-pair count
 as a premise and transports it by the proved cardinality equality. It does
-**not by itself** derive Ender's lower count, formalize his radius guard, or
-prove the determinant's arithmetic divisibility. The next paragraph supplies
-the count on paper; §10 supplies the integer-to-real matrix identity, and
-§14 gives the later uniform local divisibility theorem under odd-prime
-nonsquareness of `-D`. The area and radius instantiation are not
-Lean-checked, nor is the deduction of nonsquareness from class number
-one. The full-classification claim remains candidate mathematics.
+**not by itself** derive Ender's lower count or prove the determinant's
+arithmetic divisibility. The next paragraph supplies the count on paper;
+§10 supplies the integer-to-real matrix identity, and §21 supplies the
+class-number-to-local-valuation theorem. The full-classification claim
+remains candidate mathematics.
 
 A separate [geometric proof](../research/ender_radius_bridge/PROOF.md) now
 settles the count on paper. The idea is to partition the plane into cells of
@@ -316,6 +314,19 @@ cell. Ender's radius includes ten spare √D units; a smaller disk therefore
 fits inside cells centered at ellipse points, and its area exceeds
 `(3R+S)√D`. Lean checks the finite-set monotonicity needed to carry this
 endpoint result across an interval, but does not yet check the area argument.
+
+Phase 17 checks the *algebraic half* of this picture. Put
+`s=√D`, `δ=(1+s)/2`, `q=3R+S`, and `β=√(q s/π)`.
+For `D>0` and `q>0`, Ender's exact guard
+`ρ≥1.001β+10s` implies `ρ−δ>β` because `s≥1` and `δ≤s`.
+Thus the explicit area inequality
+`π(ρ−δ)²≤|E(D,ρ)|s` gives `q<|E(D,ρ)|`.
+[`ellipsePairs_card_gt_of_ender_radius_and_area`](TenthDiscriminant/LatticeEllipse.lean)
+checks this strict inequality; `ellipseTraceGram_det_bounds_of_ender_radius_and_area`
+also transports it from the upper endpoint to the actual Gram matrix.
+The *geometric half*—that the half-open lattice cells cover the disk and
+therefore satisfy the displayed area inequality—is still a paper proof,
+not a Lean theorem. Neither theorem assumes the desired point count.
 
 ## 10. The same Gram matrix in integer and complex coordinates
 

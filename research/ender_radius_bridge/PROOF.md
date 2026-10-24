@@ -79,8 +79,10 @@ selects one integer radius at `D2` and checks that it lies above (3) with
 
 because `y² >= 0`. Thus `n(D,rho) >= n(D2,rho) > 3R+S` with the same
 `R,S,rho`. The inclusion and its cardinality consequence are checked in
-`LatticeEllipse.lean`; the area argument establishing the endpoint count
-is not yet checked there. For the universal part, Ender defines the exact
+`LatticeEllipse.lean`. Phase 17 also checks in Lean that (1) and the exact
+radius guard imply the strict endpoint count and actual-Gram positivity;
+the cell-covering proof of (1) itself is not yet checked there. For the
+universal part, Ender defines the exact
 ceiling of the right side of (3) at each integer `D >= 10^36`, so (3)
 holds by construction.
 
@@ -96,8 +98,10 @@ The historical finite Arb certificates and all-D determinant envelopes were
 not rerun or strengthened here. A passing `radius_for` comparison validates
 its returned integer relative to an Arb enclosure; the derivation above
 explains why that lower condition suffices mathematically. Lean still lacks
-the disk-area/cell-partition proof and a formal connection from real
-inequality (3) to `ellipsePairs` cardinality. Separately, the same Gram
-matrix must still be identified with an integer matrix and its inert-prime
-valuation bound, and the numerical and class-number steps still need their
+the disk-area/cell-partition proof. The formal connection from real
+inequality (3), **assuming (1)**, to `ellipsePairs` cardinality is now
+checked. The same Gram matrix is identified with an integer matrix, and
+Phase 16 derives its strict-small-prime valuation from class number one
+in the squarefree `D≡3 (mod 4)` chart. The analytic comparison,
+certificate interpretation and final classification still need their
 own end-to-end audit. No full classification follows from this note.

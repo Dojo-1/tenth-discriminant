@@ -5,6 +5,17 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-24: chosen-radius algebra checked; cell area still open in Lean
+
+[Phase 17](research/ender_radius_bridge/PHASE17_PROTOCOL.md) proves in Lean
+that Ender's exact `1.001` radius guard and the explicit cell-area inequality
+force the **strict** `3R+S` point count, including the finite-interval
+upper-endpoint transfer to the actual Gram determinant. The cell-covering
+area inequality is a stated hypothesis, not yet formalized. This is an
+algebraic/geometric interface, not a checked analytic cutoff or a
+classification. [Lean source](lean/TenthDiscriminant/LatticeEllipse.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge).
+
 ## 2026-10-24: class number one now supplies the local Gram valuation
 
 [Phase 16](research/uniform_inert_valuation/PHASE16_PROTOCOL.md) proves
@@ -253,8 +264,9 @@ The registered [radius proof](research/ender_radius_bridge/PROOF.md) uses
 unit-by-√D lattice cells to establish the inherited lower count for every
 integer D≥1 and radius rho≥0. For the exact radius chosen by Ender it yields
 `card(ellipsePairs D rho) > 3R+S`; at finite intervals the count transfers
-from D2 to every D≤D2 by exact set inclusion. Lean now checks that inclusion,
-the cardinality transfer and the existing Gram application, plus a D=19,
+from D2 to every D≤D2 by exact set inclusion. Phase 17 additionally checks
+that the exact radius plus the explicit area premise give this strict count;
+Lean also checks the cardinality transfer and Gram application, plus a D=19,
 rho=5 exact control with 21 points. **The cell-area estimate itself remains
 unformalized.** Neither this count nor a green build establishes the integer
 matrix's inert-prime divisibility, the analytic contradiction, or class-number

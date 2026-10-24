@@ -14,7 +14,8 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > `D=19,p=3` nine-divisibility pilot, and Ender's exact uniform
 > `p^(2F(p))` factor for the actual integer Gram when `p` is odd prime
 > and `-D` is nonsquare modulo `p`. The chosen-radius cell-area count is
-> proved on paper but not in Lean. For squarefree `D≡3 (mod 4)`, Lean now
+> proved on paper; Lean checks the radius-to-count deduction only **assuming**
+> the explicit area inequality. For squarefree `D≡3 (mod 4)`, Lean now
 > derives that local nonsquare condition from class number one at every
 > strict small odd prime. Lean also proves that class number one
 > makes any residue-quotient ideal principal; a residue root constructs

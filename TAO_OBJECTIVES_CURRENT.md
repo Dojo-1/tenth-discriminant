@@ -1,6 +1,6 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 24 October 2026, through preregistered Phase 16;
+**Living update: 24 October 2026, through preregistered Phase 17;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
@@ -45,7 +45,7 @@ the size of the proposed constant.
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
 | A contact budget of `2 deg_Z F + deg_W F` turns enough ordinary jets into a positive determinant for the **actual** trace-Gram matrix. | **Lean theorem** | General finite complex samples and rectangular monomial grids, not merely Ender's ellipse. It proves nonvanishing, not inertness or valuation. [Human proof](lean/HUMAN_GUIDE.md) · [short spine](lean/MATHEMATICAL_SPINE.md). |
-| Unit-by-`√D` cells yield an elementary lower count at Ender's chosen radius. | **Paper proof plus Lean set/endpoint helpers** | A simpler geometric route to the required sample count; its area comparison is not kernel-checked. [Proof](research/ender_radius_bridge/PROOF.md). |
+| Unit-by-`√D` cells yield an elementary lower count at Ender's chosen radius. | **Paper area proof plus Lean radius/endpoint bridge** | Lean checks that the exact radius guard and an explicit area inequality imply the strict count and actual-Gram positivity. The disk-covering area comparison is not kernel-checked. [Proof](research/ender_radius_bridge/PROOF.md). |
 | The Ender campaign records 250 contiguous Arb interval enclosures from `7×10¹¹` to `10³⁶`, an all-`D` envelope above that, and a finite CRT sieve below the cutoff. | **Recorded computation and conditional derivation** | Reproducible numerical evidence for the candidate route; source correspondence does not itself certify every Arb inequality or the missing determinant/class-group implications. [Coverage](ledger/coverage_ender.txt) · [derivation](ledger/ender.txt). |
 | One integral Gram matrix has an exact real view and a residue view retaining samples that collide modulo `m`. | **Lean theorem** | For `m>0`, the residue determinant vanishes exactly when `m` divides the integer determinant. This detects divisibility, but gives no valuation exponent. [Claim map](lean/FORMALIZATION.md). |
 | A unitriangular rectangular basis using `Z^p-W` yields Ender's full `2F(p)` valuation exponent under odd-prime nonsquareness of `-D` modulo `p`. | **Lean theorem with class-number bridge in the strict range** | Lean checks the actual Gram-row identity, integral factorization and universal Frobenius implication; Phase 16 derives the local guard from class number one for squarefree `D≡3 (mod 4)` and strict small odd primes. This is not a new analytic cutoff. [Proof](research/uniform_inert_valuation/PROOF.md). |
