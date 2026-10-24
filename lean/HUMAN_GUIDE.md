@@ -923,3 +923,29 @@ gives the formulas, rounding directions and counterexamples to dropping
 necessary terms. The same first interval is recovered. Uniformity of the
 arithmetic estimate does not prove the remaining D-dependent numerical or
 geometric comparisons, let alone a classification.
+
+## 29. The odd-discriminant cutoff closes by comparing two slopes
+
+Phase 28 supplies those remaining comparisons for a fixed, new radius
+family: `R=floor(D/4)`, `S=floor(R/20)`,
+`rho=ceil((11/20)*D^(3/4))`. This is not a silent change to the frozen
+interval campaign. Both estimates use the original Gram at the same new
+radius for each D.
+
+Divide its logarithmic bounds by positive `R^2*S`. The checked arithmetic
+lower bound is at least `0.999997*log D-5.845`; the checked geometric upper
+bound is at most `(13/16)*log D-0.7965`. Every floor, ceiling, strict prime
+endpoint and geometric/count guard is supplied. At `log D≥27` their gap is
+at least `0.013919`. Class number one would force the lower expression to
+be no larger than the upper one, a contradiction.
+
+`FirstCertificate.odd_large_classNumber_ne_one` therefore excludes **every**
+squarefree `D≡3 (mod 4)` with `D≥700000000000`, without a numerical premise.
+The [short proof](../research/ender_radius_bridge/ODD_CUTOFF_GUIDE.md) exposes
+the exact normalized formula and all errors. No extra prime tables are
+needed. The single Arb pilot remains diagnostic, not proof.
+
+This is the universal odd cutoff, not the full-discriminant classification:
+even cases, the finite endgame, independent human review and upstream
+suitability are not supplied. Earlier section frontier descriptions are
+historical checkpoints.

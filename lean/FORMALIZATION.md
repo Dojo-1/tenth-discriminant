@@ -5,6 +5,19 @@ classification chain is not.** This map supersedes the PR #8-era coverage
 summary previously stored here; Git history preserves that record. Stage notes
 remain useful derivations, but their old frontier descriptions are historical.
 
+**Phase 28 now closes the universal odd-discriminant cutoff.**
+`FirstCertificate.odd_large_classNumber_ne_one` in `UniformUpperEnvelope`
+requires only `D≥700000000000`, `Squarefree D` and `Fact ((D:Int)%4=3)`;
+it concludes actual-field class number not one. `NormalizedComparison`
+checks exact algebra and clipping, `UniformLowerEnvelope` bounds the lower
+side, `UniformRadiusFamily` supplies the new fixed family's geometric and
+arithmetic guards, and `UniformUpperEnvelope` proves the upper side and
+composes the contradiction. No numerical premise remains. The older
+campaign's other 249 certificates need not be checked for this theorem;
+their records remain unchanged. Even cases and finite classification are
+not asserted. [Short human proof](../research/ender_radius_bridge/ODD_CUTOFF_GUIDE.md).
+The phase descriptions below retain their historical scope.
+
 Phases 25–26 close the first saved interval's class-number exclusion.
 `LogEnclosure` and
 `IntegerLogCheck` bound logs; `DivisionWitness` checks supplied floor sums

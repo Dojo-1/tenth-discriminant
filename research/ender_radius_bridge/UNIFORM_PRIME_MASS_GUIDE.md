@@ -1,5 +1,9 @@
 # Keep the primes fixed; let the dimensions vary
 
+**Later update (Phase 28):** the estimates below now feed a universal
+odd-discriminant cutoff. See the [short cutoff proof](ODD_CUTOFF_GUIDE.md).
+The original Phase 27 scope and pilot below remain historical records.
+
 The first interval is already excluded in Lean. The next problem is to
 extend the argument without generating a new 1229-row prime-power table
 for every rectangle. Phase 27 proves the arithmetic estimate in a form

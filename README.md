@@ -2,6 +2,18 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
+**Phase 28: the odd-discriminant cutoff now compiles end to end.** For every
+squarefree `D≡3 (mod 4)` with `D≥700000000000`, the constructed quadratic
+field has class number different from one. A new, explicitly labelled
+auxiliary radius family supplies all geometric guards and universal upper
+and lower envelopes; no numerical premise remains. This bypasses the other
+249 campaign comparisons for this odd statement without modifying their
+records. Even discriminants and the finite classification remain open.
+Read the [short odd-cutoff proof](research/ender_radius_bridge/ODD_CUTOFF_GUIDE.md).
+Full pinned CI and axiom-audit status must be tied to the published tree.
+
+The following Phase 26–27 checkpoint is historical and superseded in range:
+
 **One fixed interval is now closed in Lean.** For squarefree `D≡3 (mod 4)`
 with `700000000000≤D≤875000000000`, the constructed quadratic field has
 class number different from one. All 1,229 rows, prime coverage, aggregate

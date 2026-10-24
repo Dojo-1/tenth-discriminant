@@ -5,6 +5,14 @@ This is the shortest route into the Lean development. The longer
 the [claim map](FORMALIZATION.md) names the checked declarations. Neither
 document, nor this one, is a proof of the class-number-one classification.
 
+**Current frontier (Phase 28):** the same chain now excludes every squarefree
+`D≡3 (mod 4)` above `700000000000`. Divide both logarithmic estimates by
+`R^2*S`; their checked slopes in `log D` are `0.999997` and `13/16`.
+A fixed auxiliary radius family supplies all guards and finite error bounds.
+The [odd-cutoff guide](../research/ender_radius_bridge/ODD_CUTOFF_GUIDE.md)
+shows the entire contradiction. Even discriminants and finite classification
+remain open; the older descriptions below record the route to this result.
+
 Phase 26 now closes one fixed interval: for squarefree `D≡3 (mod 4)` in
 `[700000000000,875000000000]`, the actual constructed quadratic field has
 class number not one. All numerical guards, prime coverage and total budgets

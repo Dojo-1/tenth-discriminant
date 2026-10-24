@@ -1,0 +1,33 @@
+{
+  "phase": 28,
+  "preregistration_commit": "b25e05e",
+  "base_commit": "7a597ba975759143fcdcbf872465825fe4e0f606",
+  "scope": "universal odd-discriminant cutoff; not full classification",
+  "theorem": "TenthDiscriminant.FirstCertificate.odd_large_classNumber_ne_one",
+  "assumptions": ["700000000000 <= D", "Squarefree D", "Fact ((D : Int) % 4 = 3)"],
+  "conclusion": "NumberField.classNumber (QuadraticField (((D : Int) + 1) / 4)) != 1",
+  "new_auxiliary_radius": "ceil((11/20)*sqrt(sqrt(D))^3)",
+  "frozen_campaign_unchanged": true,
+  "normalized_lower": "(999997/1000000)*log(D)-5845/1000",
+  "normalized_upper": "(13/16)*log(D)-1593/2000",
+  "gap_at_log_D_27": "13919/1000000",
+  "pilot": {"file": "PHASE28_PILOT.json", "D": 700000000003, "precision_bits": 256, "exit_code": 0, "universal_evidence": false},
+  "module_build": {"target": "TenthDiscriminant.UniformUpperEnvelope", "exit_code": 0, "elapsed_seconds": 31.882337, "peak_bytes": 2919776256, "runner_result": "PHASE25_INTEGER_CHUNKS_20261024183745.result.json"},
+  "runner_label_note": "The inherited monitor retains its Phase25 filename/scope prefix. build_target identifies the actual attempt; no runner settings changed.",
+  "development_failures": [
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024182808.result.json", "kind": "definition unfolding gap in clipping sum", "exit_code": 1},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024182942.result.json", "kind": "same dependency failure observed by dependent target", "exit_code": 1},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024183021.result.json", "kind": "default heartbeat limit in broad nonlinear proof search", "exit_code": 1},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024183144.result.json", "kind": "same broad nonlinear proof-search limit, then restricted inputs fixed it", "exit_code": 1},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024183304.result.json", "kind": "rational cast and rewrite association mismatches", "exit_code": 1},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024183554.result.json", "kind": "unknown lemma name, unit cast and explicit positivity interface", "exit_code": 1},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024183651.result.json", "kind": "rewrite applied to hypothesis without square root", "exit_code": 1}
+  ],
+  "resource_stops": 0,
+  "validation_checkpoint": "Full pinned root build passed (6736 steps); source correspondence passed; compiled namespace audit passed (2774 logical declarations, 2376 theorems, 14288 runtime-only auxiliaries separately excluded). Printed final theorem has only the stated large-D/squarefree/mod-4 assumptions and only propext, Classical.choice, Quot.sound. Matched apparatus controls and exact-head CI pending at checkpoint. Publication record must supply final terminal statuses.",
+  "commands_from_lean": ["lake build", "python verify_sources.py", "python audit.py", "python apparatus_controls.py", "python negative_controls.py", "lake env lean ../research/ender_radius_bridge/Phase28SignatureCheck.lean"],
+  "pilot_command_from_repository": "../numeric-env/Scripts/python.exe research/ender_radius_bridge/phase28_radius_pilot.py",
+  "remaining": ["even fundamental discriminants", "finite class-number classification", "independent human semantic review", "optimization", "systematic writeup comparison", "upstream review", "human-generated submission summary and any authorized posting"],
+  "merge_or_Tao_post": false,
+  "global_goal": "active"
+}

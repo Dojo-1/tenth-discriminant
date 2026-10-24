@@ -1,5 +1,26 @@
 # Status — 2026-10-24
 
+## Phase 28: universal odd-discriminant cutoff, not full classification
+
+`FirstCertificate.odd_large_classNumber_ne_one` compiles for every squarefree
+`D≡3 (mod 4)` with `D≥700000000000`. There is no numerical premise.
+The new fixed auxiliary radius family, all floor/ceiling/inertness/count
+guards, the exact normalized production formula, and both affine envelopes
+are proved. The same actual Gram connects both sides. The envelopes separate
+by at least `0.013919` after division by positive `R^2*S`.
+
+This bypasses the remaining interval comparisons and unbounded envelope for
+the **odd** statement; it does not validate those frozen records or cover
+even fundamental discriminants. The finite sieve/classification, independent
+human review, optimization and upstream review remain open. The one fixed
+256-bit Arb pilot passed separately; it is not the universal proof.
+Development failures and proof-search limits are retained. Full pinned
+root build/audit/controls and exact-tree CI must accompany publication.
+[Human proof](research/ender_radius_bridge/ODD_CUTOFF_GUIDE.md)
+· [Preregistration](research/ender_radius_bridge/PHASE28_PROTOCOL.md).
+
+Earlier phase sections below are historical checkpoints, not the current frontier.
+
 ## Phase 27: arithmetic now separates dimensions from fixed primes
 
 `UniformPrimeMass` proves floor, factorial/geometric and retained-weight

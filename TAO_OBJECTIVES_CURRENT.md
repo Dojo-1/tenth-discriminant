@@ -1,15 +1,24 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 24 October 2026, through preregistered Phase 27;
+**Living update: 24 October 2026, through preregistered Phase 28;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
 
-Phase 26 closes one bounded exclusion end to end: squarefree `D≡3 (mod 4)`
+Phase 28 now closes the **universal odd-discriminant cutoff**: squarefree
+`D≡3 (mod 4)` and `D≥700000000000` imply actual-field class number not one,
+with no numerical premise. A new fixed auxiliary radius family and two
+normalized affine envelopes replace the remaining interval comparisons for
+this statement; the frozen campaign is not altered or retrospectively
+certified. Even fundamental discriminants, the finite classification,
+optimization, independent human review and upstream review remain open.
+[Short human proof](research/ender_radius_bridge/ODD_CUTOFF_GUIDE.md).
+
+Earlier checkpoints: Phase 26 closes one bounded exclusion end to end: squarefree `D≡3 (mod 4)`
 in `[700000000000,875000000000]` gives actual-field class number not one.
 All rows, complete prime coverage, both budgets and exact guards are supplied.
-The strict comparison has no numerical premise. This is not a global cutoff
-or classification, so the main challenge remains open below.
+The strict comparison has no numerical premise. That bounded theorem was
+not a global cutoff or classification; Phase 28 now extends its odd range.
 As a supplementary reusable result, the staircase polynomial is proved a
 global **lower bound**, even where the guarded exact identity fails. No
 novelty claim is made. [Human numerical guide](research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
@@ -31,19 +40,19 @@ discriminant*, whose nine known values are `3,4,7,8,11,19,43,67,163`.
 The original post was re-read on 24 October for this update. Its request for
 an effective optimized bound, useful comparisons/negative results, readable
 arguments, disclosed AI assistance and a human-generated submission summary
-does not turn a bounded interval theorem into a completed entry. No comment
+does not turn an odd-discriminant cutoff into a full classification. No comment
 was posted in this cycle.
 
 ## How we are faring
 
 | # | Aspect of the challenge | Current verdict | Evidence and limit |
 |---:|---|---|---|
-| 1 | Effective bound, avoiding Heegner as proof input | **Global bound remains candidate** | [Ender](ledger/ender.txt) proposes exclusion for `D≥7×10¹¹`. [Phase 26](lean/TenthDiscriminant/FirstIntervalChecked.lean) now proves an actual class-number exclusion on the first bounded interval, for squarefree `D≡3 (mod 4)`, with no numerical premise. The other 249 intervals, unbounded range and even cases remain open. This is not yet an effective global bound. |
+| 1 | Effective bound, avoiding Heegner as proof input | **Odd cutoff checked; full-discriminant bound partial** | [Phase 28](lean/TenthDiscriminant/UniformUpperEnvelope.lean) proves actual-field class number not one for every squarefree `D≡3 (mod 4)` with `D≥7×10¹¹`, with no numerical premise. It bypasses the other interval comparisons for this odd statement. Even fundamental discriminants remain outside the proved chart. No Heegner classification is used as proof input. |
 | 2 | Best efforts to optimize the constant | **Effort documented; no improved cutoff** | The factorial arrangement removes Dusart from this route but gives a much larger threshold than the historical `1.5×10⁴` branch and the dated [prior-art](PRIOR_ART.md) report of `q<570` (not re-reviewed here). Preregistered [lift](ledger/determinant_lifts.txt) and [radial](ledger/radial_bounds.txt) investigations did not improve Ender's global cutoff. |
 | 3 | Threshold low enough for direct computation | **Conditional computational endgame** | The saved [CRT sieve](ledger/sieve_ender.txt) leaves `163` in `[92,7×10¹¹)`, and the small range has a recorded [form check](ledger/formic.txt). They finish the finite part **if** the candidate exclusions hold. |
-| 4 | High-quality Lean formalization, perhaps upstreamable | **One bounded end-to-end exclusion; classification partial** | The actual field/class-number, integer Gram, geometry, prime-mass and exact numerical chain now closes on the first saved interval in its stated arithmetic class. Other intervals, universal closure, even cases and finite classification remain open. No Mathlib upstream review or independent human semantic review is recorded. See the [claim map](lean/FORMALIZATION.md). |
+| 4 | High-quality Lean formalization, perhaps upstreamable | **Universal odd cutoff; classification partial** | The actual field/class-number, integer Gram, geometry, prime-mass and universal numerical chain closes above `7×10¹¹` for squarefree `D≡3 (mod 4)`. Even cases and finite classification remain open. No Mathlib upstream review or independent human semantic review is recorded. See the [claim map](lean/FORMALIZATION.md). |
 | 5 | Compare strengths of different writeups | **Qualitative only** | [Prior art](PRIOR_ART.md) records a dated comparison and attribution, not a controlled, current, like-for-like comparison of optimized manuscripts. |
-| 6 | Spur new arguments or arrangements | **Modest local progress** | BEAN-to-Ender changes the prime input; the checked integer/residue Gram bridge gives a useful fixed example. The overarching Green/twinheterodox route is not claimed novel, and no new global exclusion follows. |
+| 6 | Spur new arguments or arrangements | **Reusable arrangement, no novelty claim** | BEAN-to-Ender changes the prime input. Four fixed prime-log constants and normalized affine envelopes now yield a checked universal odd cutoff without replaying 249 more interval comparisons. This is an arrangement within the credited Green/twinheterodox route, not a claim of a new mathematical method. |
 | 7 | Preserve failed attempts and negative results | **Documented internally** | The [review response](review/RESPONSE_Claude.md), [BEAN audit](review/BEAN_AUDIT.txt), fixed [radial protocol](flow/PREREG_RADIAL.txt), and [lift protocol](flow/PREREG_LIFTS.txt) retain counterexamples, failed guards and ceilings. Internal preservation does not equal external reporting. |
 | 8 | Help higher class-number problems | **Not delivered** | The `h≤2` [review brief](REVIEW_BRIEF_2.md) remains unreviewed; nothing here advances a verified higher-class-number range. |
 | 9 | Disclose AI involvement | **Repository practice present** | The [README](README.md) and review records identify AI assistance. This is disclosure, not validation or a submission. |
@@ -51,12 +60,12 @@ was posted in this cycle.
 | 11 | Independent due diligence before an AI-generated submission | **Partial** | Adversarial AI review, negative controls and pinned CI cover important errors. They are not independent human semantic review, and no submission is recorded. |
 | 12 | Quality, collaboration and attribution over speed | **Visible practice, not an external verdict** | The [README](README.md) and [prior-art note](PRIOR_ART.md) credit antecedents and preserve scope limits. No Tao endorsement, human peer review or priority claim is inferred. |
 
-**Bottom line.** We have not fulfilled the main bound challenge at the
-standard of a connected, independently checked proof. The candidate
-`7×10¹¹` cutoff and finite sieve are a research program with recorded
-certificates, not a new classification. The strongest completed mathematical
-work now includes one bounded end-to-end class-number exclusion, not just an
-isolated determinant lemma. It is still not the required global bound.
+**Bottom line.** There is now a connected kernel-checked odd-discriminant
+cutoff at `7×10¹¹`, not merely a bounded interval or determinant lemma.
+The full-discriminant bound and finite classification remain incomplete,
+and independent human semantic review is not supplied by kernel checking.
+The frozen finite sieve remains computational evidence, not a new Lean
+classification. No submission or optimized threshold is claimed.
 Tao explicitly welcomes informative larger bounds and clean human-verifiable
 arguments: the central shortfall here is the unclosed proof chain, not simply
 the size of the proposed constant.
@@ -65,6 +74,7 @@ the size of the proposed constant.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
+| A fixed radius family and normalized affine envelopes exclude all large odd fundamental discriminants in the encoded chart. | **Lean-checked universal odd-cutoff theorem** | No numerical premise: lower slope `0.999997` beats upper slope `13/16` with a checked finite margin at `log D≥27`. Avoids further interval tables, not even cases or finite classification. The auxiliary radius is new and explicitly distinct from the frozen campaign. [Human proof](research/ender_radius_bridge/ODD_CUTOFF_GUIDE.md). |
 | Four fixed prime-log constants give bounds for arbitrary admissible rectangle dimensions. | **Lean theorem and checked finite constants** | Floor error, geometric prime powers, quadratic loss and both clipping terms are retained. The actual-Gram comparison keeps all radius/range/class-number guards. The same first interval is recovered; no new interval or optimized/global cutoff is claimed. [Human proof](research/ender_radius_bridge/UNIFORM_PRIME_MASS_GUIDE.md). |
 | The first saved interval is excluded for squarefree `D≡3 (mod 4)`, with no numerical premise. | **Lean-checked bounded class-number theorem** | Every local factor, geometric guard, log enclosure, row, prime label and aggregate budget is supplied; `581×10^31>572×10^31` closes the contradiction. No global cutoff, new optimized constant or novelty claim. [Human proof](research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md) · [Theorem](lean/TenthDiscriminant/FirstIntervalChecked.lean). |
 | A contact budget of `2 deg_Z F + deg_W F` turns enough ordinary jets into a positive determinant for the **actual** trace-Gram matrix. | **Lean theorem** | General finite complex samples and rectangular monomial grids, not merely Ender's ellipse. It proves nonvanishing, not inertness or valuation. [Human proof](lean/HUMAN_GUIDE.md) · [short spine](lean/MATHEMATICAL_SPINE.md). |
@@ -87,6 +97,7 @@ prime. The uniform valuation now has a Lean proof for the *same
 integer determinant* under a precise local nonsquare guard; checked
 connections through the finite analytic inequalities are now checked,
 including the tail. The first bounded numerical exclusion is now checked.
-The next decisive work is the remaining intervals, universal closure,
-even cases and the finite classification, not a new
-matrix or new algebra. No checked cutoff claim follows yet.
+Phase 28 now closes universal odd-discriminant exclusion, bypassing the
+remaining interval comparisons for that statement. The next decisive work
+is the even-discriminant chart and finite classification, not another
+isolated determinant identity. Only the odd cutoff is claimed checked.

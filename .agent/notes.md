@@ -368,3 +368,16 @@
   Current guides were updated to distinguish one bounded actual-field
   exclusion from the remaining campaign, all-D envelope, even cases and
   finite classification. Frozen tools/ledger/flow/audit/pins unchanged.
+- Phase 28 preregistered in b25e05e before edits. Previous turn was progress:
+  Phase 27 exact-tree pinned CI and security passed. No live prior proof job.
+  New auxiliary family: R=D/4, S=R/20, rho=ceil(11/20*D^(3/4)); do not call
+  this the frozen Ender campaign radius. One 256-bit Arb pilot at D=700000000003
+  passed all registered checks; it is not universal evidence. Normalization,
+  lower envelope, all dimension/log/radius guards, upper count and upper
+  envelope now compile. odd_large_classNumber_ne_one has only large D,
+  squarefreeness and D mod 4 guards. No numerical premise remains. Full root
+  build (6736), source correspondence and namespace audit (2774 logical,
+  2376 theorems, 14288 runtime-only) now passed. Printed theorem and axioms
+  verified; only three permitted axioms, no numerical premise. Matched
+  controls and exact-head CI pending. Even cases and finite classification
+  remain open, no merge/Tao post/novelty claim. Development failures retained.
