@@ -54,4 +54,7 @@ removed. Full build and pinned CI status are recorded separately.
 Local targeted Lean and the complete 6708-step `lake build` pass.
 `python verify_sources.py` passes its endpoint-only correspondence check;
 task-state JSON and whitespace checks pass. No proof placeholders occur
-in the new module. Pinned dependency audit and negative controls await CI.
+in the new module. Proof head `c513f51` passed pinned Linux CI run
+`40073516586`, including full build, compiled dependency audit and
+inherited negative controls; CodeQL run `40073513187` passed. A later
+documentation-only correction has separate final-head status.

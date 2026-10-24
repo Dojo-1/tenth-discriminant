@@ -93,7 +93,8 @@ This is stronger than the count required by the existing Lean interpolation
 theorem: when `R,S >= 1`, `3R+S > 2*(R-1)+(S-1)`. At `J=S`, the new
 `ellipseTraceGram_det_bounds_of_ender_guard` transports an *established*
 upper-endpoint count to positivity and Hadamard for the actual trace-Gram
-matrix. It does not prove the area lemma by assuming its conclusion.
+matrix. Phase 18's `ellipseTraceGram_det_bounds_of_ender_radius` now supplies
+that count from the radius guard, without an area or point-count premise.
 
 ## 3. What this does not close
 

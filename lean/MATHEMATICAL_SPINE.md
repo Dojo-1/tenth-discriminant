@@ -256,9 +256,11 @@ these views commute on **one integer matrix with the same samples**.
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical
-local-to-global principle is a missing premise. The next substantive bridge
-is a uniform arithmetic relation of the kind illustrated by (4), with the
-actual class-number and radius hypotheses made explicit. For the detailed
+local-to-global principle is a missing premise. The uniform arithmetic
+relation, class-number input, and chosen-radius count are now checked in
+their stated ranges. The next substantive bridge is the analytic determinant
+comparison that uses those results and interprets the recorded certificates.
+For the detailed
 provenance, see [STATUS.md](../STATUS.md), the
 [registered pilot protocol](../research/local_global_gram/PROTOCOL.md), and
 the [radius proof](../research/ender_radius_bridge/PROOF.md).

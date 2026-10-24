@@ -7,7 +7,9 @@
   the proof uses subadditivity, so no partition assumption is hidden.
   `D=1,rho=0` refutes dropping the radius guard. Targeted Lean and the
   complete 6708-step local build pass, along with endpoint-only source
-  correspondence, JSON and whitespace checks. Pinned CI pending.
+  correspondence, JSON and whitespace checks. Proof head `c513f51`
+  passed pinned CI `40073516586` and CodeQL `40073513187`; a later
+  documentation-only correction requires its own final-head check.
   Analytic cutoff and classification
   remain open.
 
