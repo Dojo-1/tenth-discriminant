@@ -1,5 +1,17 @@
 # Status — 2026-10-25
 
+## Phase 34: exact checker representation, bounded cost pilot
+
+`ResidueMaskBridge` proves a bit query equals the old root search for every
+positive modulus, with unchanged strict guard. Correct masks generate exactly
+the old wheel list. All 208 frozen-parameter masks passed local kernel
+checking; all four fixed translate attempts were memory-stopped at the
+registered 8192 MB threshold. No translate certificate or global coverage
+was obtained. This is an implementation/resource failure, not a refutation
+of the arithmetic theorem. Raw negative results are preserved.
+The mathematical frontier below is unchanged. No full-range campaign,
+optimization, merge or Tao post. [Human explanation](research/ender_radius_bridge/RESIDUE_MASK_GUIDE.md).
+
 ## Phase 33: all nine positive fields, bounded iff below one million
 
 Actual class number one is now proved for all nine radicands

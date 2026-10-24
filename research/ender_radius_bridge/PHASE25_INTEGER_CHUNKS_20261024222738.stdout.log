@@ -1,0 +1,38 @@
+⚠ [6655/6725] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6656/6725] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6657/6725] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6658/6725] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6661/6725] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6663/6725] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6692/6725] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+⚠ [6702/6725] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6723/6725] Replayed TenthDiscriminant.SieveWheel
+warning: .\.\.\.\TenthDiscriminant\SieveWheel.lean:62:11: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+✔ [6724/6725] Built TenthDiscriminant.ResidueMaskCore
+✖ [6725/6725] Building TenthDiscriminant.ResidueMaskBridge
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\ResidueMaskBridge.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\ResidueMaskBridge.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\ResidueMaskBridge.ilean -c .\.\.lake\build\ir\TenthDiscriminant\ResidueMaskBridge.c --json
+error: .\.\.\.\TenthDiscriminant\ResidueMaskBridge.lean:15:4: 'change' tactic failed, pattern
+  (2 ^ r ||| residueBits rs).testBit t = true ↔ t = r ∨ t ∈ rs
+is not definitionally equal to target
+  (residueBits (r :: rs)).testBit t = true ↔ t ∈ r :: rs
+error: .\.\.\.\TenthDiscriminant\ResidueMaskBridge.lean:59:8: unknown constant 'List.all_congr'
+error: .\.\.\.\TenthDiscriminant\ResidueMaskBridge.lean:60:2: no goals to be solved
+error: Lean exited with code 1
+Some required builds logged failures:
+- TenthDiscriminant.ResidueMaskBridge

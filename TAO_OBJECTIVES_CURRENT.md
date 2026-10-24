@@ -1,9 +1,18 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 33;
+**Living update: 25 October 2026, through preregistered Phase 34;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase 34 supplies a checked representation change for the remaining sieve:
+bit-mask queries equal the original guarded root tests and preserve the
+entire wheel list. This is supplementary formal infrastructure, not a new
+classification, optimized bound or completed challenge objective. Literal
+mask validation passed locally. All four fixed translate attempts hit the
+registered memory threshold; no interval or challenge objective is newly
+closed by this experiment. The failure is preserved, not recast as success.
+[Human explanation](research/ender_radius_bridge/RESIDUE_MASK_GUIDE.md).
 
 Phase 33 supplies all nine actual positive class-number equalities, via
 prime-norm residue maps, small ideal principality and Minkowski. Together

@@ -1,0 +1,55 @@
+{
+  "phase": 34,
+  "protocol_commit": "aadf7b2",
+  "base_commit": "a4a343c64c5bc296a7611ff90e704ac03983a992",
+  "status": "exact_semantic_bridge_compiled_four_translate_pilots_resource_stopped_not_classification",
+  "fixed_parameters": {
+    "base_primes": [3, 5, 7, 11, 13, 17, 19, 23],
+    "extra_count": 200,
+    "extra_first": 29,
+    "extra_last": 1289,
+    "period": 892371480,
+    "original_remaining_interval": [1000000, 700000000000],
+    "interval_convention": "lower inclusive, upper exclusive",
+    "full_padded_quotient_count": 785,
+    "registered_quotients": [0, 1, 392, 784]
+  },
+  "bridge_attempts": [
+    {"record": "PHASE25_INTEGER_CHUNKS_20261024222420.result.json", "exit_code": 1, "meaning": "recursive simplification failed; repaired with explicit bit rewrites, no limit increase"},
+    {"record": "PHASE25_INTEGER_CHUNKS_20261024222738.result.json", "exit_code": 1, "meaning": "membership not definitionally reducible and unavailable List.all_congr; repaired by explicit membership/forall proofs"},
+    {"record": "PHASE25_INTEGER_CHUNKS_20261024222826.result.json", "exit_code": 1, "meaning": "function composition required explicit reduction before rewrite"},
+    {"record": "PHASE25_INTEGER_CHUNKS_20261024222857.result.json", "exit_code": 0, "meaning": "root/guarded/list-test/exact-wheel correspondence accepted"}
+  ],
+  "literal_masks": {
+    "record": "PHASE34_CHECK_20261024222929.result.json",
+    "count": 208,
+    "exit_code": 0,
+    "elapsed_seconds": 31.828879,
+    "observed_peak_working_set_bytes": 4432859136,
+    "scope": "all literal masks equal defined masks; extra length/last value and period/count controls; local kernel check, not full interval"
+  },
+  "translate_attempts": [
+    {"quotient": 0, "record": "PHASE34_CHECK_20261024223022.result.json", "exit_code": 99, "stop_reason": "memory_limit", "elapsed_seconds": 56.0516433, "observed_peak_working_set_bytes": 8616476672},
+    {"quotient": 1, "record": "PHASE34_CHECK_20261024223119.result.json", "exit_code": 99, "stop_reason": "memory_limit", "elapsed_seconds": 59.9836394, "observed_peak_working_set_bytes": 8632459264},
+    {"quotient": 392, "record": "PHASE34_CHECK_20261024223219.result.json", "exit_code": 99, "stop_reason": "memory_limit", "elapsed_seconds": 61.7575236, "observed_peak_working_set_bytes": 8641794048},
+    {"quotient": 784, "record": "PHASE34_CHECK_20261024223321.result.json", "exit_code": 99, "stop_reason": "memory_limit", "elapsed_seconds": 62.091925, "observed_peak_working_set_bytes": 8686960640}
+  ],
+  "resource_policy": {"memory_threshold_mb": 8192, "per_pilot_time_limit_seconds": 180, "proof_budget_increased": false},
+  "verification_checkpoint": {
+    "root_build_record": "PHASE25_INTEGER_CHUNKS_20261024223210.result.json",
+    "root_build_exit_code": 0,
+    "root_build_steps": 6752,
+    "root_build_elapsed_seconds": 44.0616717,
+    "root_build_observed_peak_working_set_bytes": 2825314304,
+    "source_correspondence": "PASS: digest and all 250 endpoint pairs only; not Arb certification",
+    "project_modules": 98,
+    "compiled_audit": "PASS: 3176 logical declarations, 2723 theorems, 15007 runtime-only auxiliaries excluded; only three permitted foundational axioms",
+    "local_parent_audit": "exit 1: compiled audit passed; apparatus_controls.py aggregate subprocess exceeded unchanged 240-second limit, see PHASE34_LOCAL_AUDIT_TIMEOUT.txt (condensed transcription, not raw log)",
+    "apparatus_and_public_signatures": "full local apparatus pass NOT obtained; separate public signatures and allowed-axiom checks PASS",
+    "generated_data_reproduction_sha256": "1DB33D898602864F0F4F803102F7E1F0F0AC0E1189595FEB3744E6EEFBDCA8B3",
+    "new_guide_links": "PASS",
+    "exact_head_CI": "pending; final PR record must identify tested tree and terminal verdict"
+  },
+  "raw_log_note": "Legacy Phase25 monitor filenames/scope metadata retained unchanged; build_target and stdout identify Phase34. UTC log timestamps are 24 October; local Europe/Paris date is 25 October.",
+  "conclusion": "No registered translate certificate was obtained. The exact semantic bridge is proved, but the current combined wheel construction/evaluation exceeds the memory policy. No isolated allocation attribution or extrapolated full-range runtime is claimed. Entire upper-middle interval and other challenge shortfalls remain open. No full campaign, pin, gate, cutoff or production change; no merge or Tao post."
+}

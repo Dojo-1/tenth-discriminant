@@ -1,5 +1,14 @@
 # Current claim-to-Lean map
 
+Phase 34 adds `ResidueMaskCore` (thin Lean/Std-only computation) and
+`ResidueMaskBridge`: `maskRootTest_eq`, `maskGuardedTest_eq`, `maskTests_eq`
+and `maskWheelResidues_eq` prove exact correspondence with the old checker.
+`ResidueMaskPilotData` contains generated literals, not an interval theorem.
+Its 208 masks were checked locally in a separate experimental file. Four
+fixed translate computations all exceeded the registered memory threshold;
+none yielded a certificate. They do not supply the missing full-range
+certificate. [Human explanation](../research/ender_radius_bridge/RESIDUE_MASK_GUIDE.md).
+
 **Phase 33 closes all nine positive equalities and both directions below one million.**
 `SmallIdealClassNumber` proves prime-norm residue maps, scalar ideal norms,
 small-ideal principality and two Minkowski criteria without assuming class

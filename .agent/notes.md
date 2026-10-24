@@ -499,6 +499,25 @@
   Current guides were updated to distinguish one bounded actual-field
   exclusion from the remaining campaign, all-D envelope, even cases and
   finite classification. Frozen tools/ledger/flow/audit/pins unchanged.
+- Phase 34 preregistered in aadf7b2 before edits. Previous turn was progress:
+  Phase33 all nine positive equalities and bounded iff passed exact-head
+  pinned CI 40136870017/security 40136867529 on a4a343c. No merge/Tao post.
+  Remote state refreshed. Exact mask-root and whole wheel-list equivalence
+  compiled after preserved explicit-rewrite/list-helper repairs. All 208
+  fixed literal masks passed local kernel checking in 31.828879 seconds,
+  peak observed 4432859136 bytes. Fixed translates 0,1,392,784 all terminal:
+  each exceeded the registered 8192MB threshold (56.05/59.98/61.76/62.09s),
+  no translate certificates obtained. Preserve all raw failures, no smaller
+  replacement sample or budget increase. Full root passed 6752 steps in
+  44.0616717s, peak observed 2825314304 bytes. Source correspondence and
+  98-module import closure passed; compiled audit reports 3176 logical,
+  2723 theorem, 15007 runtime-only declarations. The local audit.py
+  parent gate timed out at its unchanged 240-second apparatus subprocess
+  limit; no full local apparatus PASS. Condensed timeout transcription is
+  preserved, explicitly not raw. Separate public signatures and permitted
+  axiom checks passed. Exact-head full Linux CI remains required. Generated
+  data reproduced with SHA256 1DB33D898602864F0F4F803102F7E1F0F0AC0E1189595FEB3744E6EEFBDCA8B3.
+  New guide links passed. No global coverage inference.
 - Phase 28 preregistered in b25e05e before edits. Previous turn was progress:
   Phase 27 exact-tree pinned CI and security passed. No live prior proof job.
   New auxiliary family: R=D/4, S=R/20, rho=ceil(11/20*D^(3/4)); do not call

@@ -1,0 +1,11 @@
+import TenthDiscriminant
+
+#check TenthDiscriminant.maskRootTest_eq
+#check TenthDiscriminant.maskGuardedTest_eq
+#check TenthDiscriminant.maskTests_eq
+#check TenthDiscriminant.maskWheelResidues_eq
+#check TenthDiscriminant.maskTranslateClear_excludes
+#print axioms TenthDiscriminant.maskRootTest_eq
+#print axioms TenthDiscriminant.maskWheelResidues_eq
+#print axioms TenthDiscriminant.maskTranslateClear_excludes
+#print axioms TenthDiscriminant.classNumber_one_iff_below_million

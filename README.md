@@ -10,6 +10,12 @@ The actual absolute field-discriminant cutoff remains `7×10¹¹`. The entire
 interval `[1000000,700000000000)` remains unclosed: no full classification
 or improved constant is claimed. [The short positive-case proof and exact gap](research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md).
 
+Phase 34 proves an exact computational bridge: precomputed residue-mask
+queries and the old root searches generate the same tests and wheel list.
+All 208 fixed masks passed a local kernel check. All four registered translate
+attempts exceeded the memory threshold; no new interval is closed.
+[What the representation change proves](research/ender_radius_bridge/RESIDUE_MASK_GUIDE.md).
+
 The following phase descriptions are historical checkpoints; their positive-case gaps are now closed.
 
 **Phase 31: the necessary candidate list is now checked below one million.**

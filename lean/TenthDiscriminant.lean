@@ -65,6 +65,8 @@ import TenthDiscriminant.FiniteSieveBridge
 import TenthDiscriminant.MillionSieve
 import TenthDiscriminant.SmallPositiveClassNumber
 import TenthDiscriminant.RemainingPositiveClassNumber
+import TenthDiscriminant.ResidueMaskBridge
+import TenthDiscriminant.ResidueMaskPilotData
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot
