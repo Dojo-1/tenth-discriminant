@@ -11,7 +11,8 @@ provided the quadratic field has class number one, `D` is squarefree
 with `D≡3 (mod 4)`, `R<(D+1)/4`, the checked chosen-radius guard holds,
 and **`n` is at least the actual ellipse point count**. Phase 21 now proves
 the needed geometric count and supplies it from an interval's lower endpoint.
-The factorial lower estimate and numerical contradictions remain open.
+The scalar factorial lower estimate is now checked separately; the full
+prime-mass lower estimate and numerical contradictions remain open.
 This theorem supplies no new discriminant cutoff.
 
 ## A row has one radius cost and one derivative cost
@@ -97,7 +98,9 @@ checks the geometric count and endpoint transfer, with radius-zero,
 negative-coordinate, integer-boundary and axis-overcount controls. Its
 public composition is `ellipse_primeMass_log_le_counted_upperB`.
 The [Phase 20](PHASE20_PROTOCOL.md) and [Phase 21](PHASE21_PROTOCOL.md)
-records preserve targets, repairs, verification and scope. The next
-arithmetic task is to put Ender's factorial expression below the exact
-prime sum on the left; the numerical task must interpret the saved
-enclosures and strict contradictions.
+records preserve targets, repairs, verification and scope. The
+[factorial bridge](FACTORIAL_LOWER_GUIDE.md) now checks the exact Legendre
+identity and scalar lower expression. Its prime-power weights are not
+the determinant's odd-prime weights: small-prime subtraction, tail bounds
+and clipping remain to be connected. The numerical task must interpret
+the saved enclosures and strict contradictions.

@@ -44,3 +44,32 @@ to be connected. Exact Arb interpretation, universal closure, even cases
 and classification also remain open. Run targeted Lean, full build,
 source correspondence, compiled dependency audit and inherited negative
 controls on the published proof head. Keep the PR draft and unmerged.
+
+## Execution record
+
+Protocol-only commit `b7a43ea4d488aff555163d3eb7a2f9fca0c0486b`
+preceded all new proof edits. `FactorialPrimeMass.lean` checks both targets:
+the exact finite identity for all natural `R`, and the unchanged production
+scalar lower expression for `R≥2`. It first proves the stronger integral
+bound with final terms `N−1/4`, then weakens to production `N/2+1/4`.
+Ten controls compile, including the omitted-two, composite-index and
+missing-domain-guard falsifiers. No production code or certificate changed.
+
+Development failures were proof-engineering repairs: a redundant `ring`
+after a closed goal was removed; the global `interior_subset` name replaced
+an incorrect namespace; natural-one versus real-one coercions at the
+integral/sum interface were normalized explicitly. No mathematical guard
+was removed and no failed strengthening was promoted to a theorem.
+
+From `lean/`, `lake env lean TenthDiscriminant/FactorialPrimeMass.lean`
+and the full `lake build` pass locally (6712 steps). `python verify_sources.py`
+passes all 250 endpoint pairs. From the repository root, `git diff --check`
+and `python -m json.tool .agent/state.json` pass; local Markdown file targets
+resolve. The generated, untracked `lean/lake-manifest.json` is not published.
+The complete published-head dependency audit and inherited negative controls
+are delegated to the pinned Linux CI workflow, not claimed from a partial
+Windows wrapper run. The current head's CI result is reported at delivery.
+The source-correspondence check only matches the saved interval endpoints;
+it does not verify Arb inequalities. Full `prime_mass` weight conversion,
+tail bounds and clipping, numerical interpretation, universal closure and
+classification remain open. The result is classical; no novelty claim.

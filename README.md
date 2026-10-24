@@ -37,8 +37,11 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > now bounds that product by production `upper_B` at the campaign's integer
 > radii. The [inward-cell count](lean/TenthDiscriminant/EllipseUpperCount.lean)
 > now supplies its upper point-count input, including interval transfer and
-> explicit line-count padding. The factorial estimate, numerical interval inequalities, and final classification
-> remain open in Lean. The
+> explicit line-count padding. The [factorial bridge](research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md)
+> now checks the exact finite Legendre identity and unchanged scalar
+> `factorial_lower` for `R≥2`. Converting that factorial mass into the
+> determinant's odd-prime mass, numerical interval inequalities, and final
+> classification remain open in Lean. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.

@@ -5,6 +5,23 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-24: the factorial identity and scalar lower bound are checked
+
+[Phase 22](research/ender_radius_bridge/PHASE22_PROTOCOL.md) proves
+`H(R)=log(product_{r<R} r!)` equals its exact finite Legendre prime-power
+sum, including prime `2`. For `R≥2`, an increasing integral envelope
+proves the unchanged production `factorial_lower(R)≤H(R)`. Ten controls
+include equality at `R=2`, `288=2^5*3^2`, strict power endpoints and rejection
+of omitting prime `2`. Full local Lean build passes (6712 steps).
+
+This factorial prime-power sum is **not** the determinant's odd-prime
+valuation mass. Small-prime subtraction, weight conversion, higher-power
+tail control and clipping still need a connected `prime_mass` theorem.
+Numerical certificate interpretation, universal closure and classification
+remain open. No production formula, certificate or cutoff changed.
+[Short human proof](research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md) ·
+[Lean source](lean/TenthDiscriminant/FactorialPrimeMass.lean).
+
 ## 2026-10-24: the upper ellipse count reaches production `upper_B`
 
 [Phase 21](research/ender_radius_bridge/PHASE21_PROTOCOL.md) proves

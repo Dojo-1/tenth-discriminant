@@ -175,3 +175,14 @@
   Eight controls and the full 6711-step local build pass. Factorial,
   numerical certificate, universal-envelope and classification links remain
   open. Pinned CI pending.
+
+- 2026-10-24, Phase 22: Phase 21 head `36e6f9a` passed pinned CI
+  `40093798308` and CodeQL `40093795078`. Protocol-only `b7a43ea`
+  preceded proof edits. `FactorialPrimeMass.lean` proves exact finite
+  factorial/Legendre decomposition including prime two, log-product equality,
+  the increasing integral envelope and unchanged production scalar lower
+  bound for `R≥2`. Ten controls and full 6712-step local build pass.
+  The short guide distinguishes factorial prime-power weights from the
+  determinant's odd-prime weights. Full `prime_mass` subtraction, conversion,
+  tail and clipping, numerical certificates and classification remain open.
+  Pinned CI pending on the published proof head.

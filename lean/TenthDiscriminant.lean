@@ -51,6 +51,7 @@ import TenthDiscriminant.ClassNumberInertBridge
 import TenthDiscriminant.PrimeMassAssembly
 import TenthDiscriminant.EnderUpperB
 import TenthDiscriminant.EllipseUpperCount
+import TenthDiscriminant.FactorialPrimeMass
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot

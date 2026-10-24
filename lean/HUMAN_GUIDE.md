@@ -836,5 +836,21 @@ This gives exactly the program's mathematical count formula.
 [EllipseUpperCount.lean](TenthDiscriminant/EllipseUpperCount.lean) checks that
 argument and its lower-endpoint interval transfer. The combined public
 theorem is `ellipse_primeMass_log_le_counted_upperB`. Any upward padding of
-the vertical floor has an explicit guard. The factorial lower estimate and
-exact interpretation of the saved numerical contradictions remain open.
+the vertical floor has an explicit guard. The full prime-mass lower estimate
+and exact interpretation of the saved numerical contradictions remain open.
+
+## 24. Factorials count prime powers
+
+[The short factorial proof](../research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md)
+explains the next checked connection. Count prime factors in the product
+`0!1!…(R−1)!`, then take logarithms: Legendre's formula gives an exact finite
+sum over primes and their powers. Prime `2` cannot be omitted. An increasing
+envelope `x log x−x+1` under `log(n!)`, integrated from `1` to `R−1`, proves
+the unchanged scalar `factorial_lower` for `R≥2`.
+
+This sum and the determinant's `2∑ F(p) log p` have **different weights**.
+The remaining arithmetic theorem must convert between them, subtract the
+small-prime contributions, bound higher powers and justify clipping.
+[FactorialPrimeMass.lean](TenthDiscriminant/FactorialPrimeMass.lean) checks the
+identity and scalar bound, not that final `prime_mass` theorem. No cutoff
+or classification follows from this phase alone.

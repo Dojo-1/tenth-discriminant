@@ -148,7 +148,8 @@ ball-arithmetic calculation into a kernel-checked inequality.
 | Reduction of that integer matrix, with the same original sample indexing, and equivalence between local determinant vanishing and global divisibility by m>0 | PROVED in Lean; this is a detector, not a lower bound. |
 | Inert-prime divisibility and prime-adic valuation lower bound for that same integer determinant | [Uniform proof](../research/uniform_inert_valuation/PROOF.md) gives the full exponent. Lean identifies the actual derivative-row action, constructs the integral Gram factor, derives universal Frobenius from **odd-prime nonsquareness of `-D : ZMod p`**, and proves the exact determinant power. Phase 16 derives that local condition from class number one for squarefree `D≡3 (mod 4)` and strict small odd primes. Phase 18 closes the separate area count; the analytic comparison and classification remain open. |
 | Ender's upper ellipse point-count estimate used as `n_up` | PROVED for `D>0` and natural radius. The exact natural floor gives the mathematical bound; any upward padding is allowed under `floor≤Y` (also derivable from `rho/sqrt(D)<Y+1`). Interpreting the program's Arb endpoint still requires a numerical certificate theorem. |
-| Full factorial/Legendre prime-mass inequality and remainder control | OPEN. The exact finite local-prime mass is checked, but no Lean theorem puts Ender's computable `prime_mass` below it. |
+| Exact factorial/Legendre identity and scalar lower estimate | PROVED in [FactorialPrimeMass](TenthDiscriminant/FactorialPrimeMass.lean): `factorialMass_eq_prime_power_sum`, `factorialLower_le_mass`, `factorialLower_le_prime_power_sum`. The finite factorial sum includes prime `2`; the unchanged scalar expression requires `R≥2`. This is not yet the determinant's odd-prime valuation mass. |
+| Full `prime_mass` weight conversion and remainder control | OPEN. Small-prime subtraction, higher-power tail bounds and clipping must still put Ender's computable `prime_mass` below the exact determinant prime mass. |
 | Kernel-checkable numerical contradictions, with their exact analytic interpretation | OPEN. |
 | Universal envelope starting margin and its determinant bounds | OPEN; propagation is conditional. |
 | CRT survivor certificate, reduced-form enumeration and class-number correspondence | OPEN. |
@@ -191,8 +192,9 @@ optimality claim is made.
 The geometric count, local factors and their exact finite-product/logarithmic
 comparison on one determinant are now checked. Production `upper_B` is also
 connected at integer radii, with its count input now proved by inward cells
-and axis accounting. The remaining bridge must prove Ender's factorial lower
-bound and the numerical certificate interpretation. Earlier stages identified
+and axis accounting. The exact factorial identity and scalar lower bound are
+now checked; conversion to the determinant's odd-prime weights, tail control
+and numerical certificate interpretation remain open. Earlier stages identified
 `H^k` polynomial jets with a concrete unitriangular change on the actual
 integer Gram, then establish the inertness interface of
 the [paper valuation proof](../research/uniform_inert_valuation/PROOF.md).
