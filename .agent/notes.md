@@ -206,3 +206,46 @@
   saved Arb inequality or numerical guard is assumed verified. Eight controls
   and full 6714-step local build pass. Numerical interpretation, universal
   closure, even cases and classification remain open; published-head CI pending.
+
+- 2026-10-24, Phase 25 in progress: Phase 24 head `6717eee` passed
+  CI `40100457533` and CodeQL `40100456379`. Protocol `f109533`
+  precedes all edits/replay. First production replay (flint 0.9.0,
+  numpy 2.5.4, 160 bits) passed at rho `408406701`, Y `488`.
+  Targeted `FirstIntervalGuards`, `LogEnclosure` with binary reduction,
+  and `NumericalWeights` pass. Exact rational candidate outside Lean has
+  a positive gap even with coarse valuation weights. The remaining work
+  is kernel checking the 1229-row table and aggregate strict inequality;
+  do not claim an interval exclusion from the replay/candidate. No full
+  build/import/audit of the new Phase 25 files has yet been run.
+
+- Phase 25 continuation checkpoint: `NumericalCertificate.lean` now proves
+  sound complete-table aggregation and rejects empty coverage.
+  `FirstIntervalScalars.lean` proves all six scalar log enclosures, the
+  actual upper bound `572*10^31`, and lower bound `581*10^31` conditional
+  on small-mass budgets. Efficient weights truncate to 38 powers and a
+  universal staircase inequality; no F_exact identity is assumed.
+  A 32-row kernel pilot passed. Monolithic full check failed with Windows
+  `lean::stack_space_exception` after 77.335612 seconds; preserved in
+  `PHASE25_PROOF_FAILURES.json`. Generator now packages 39 chunks of ≤32
+  rows. Full attempt is LIVE in exec session `5421`, command `lake env lean
+  -s 16384 --profile ../research/ender_radius_bridge/FirstIntervalTableCheck.lean`.
+  Re-poll it; do not infer terminal status from notes or observation expiry.
+  If accepted, move attempt into audited library, compose its coverage/budget
+  proofs through `table_mass_bounds` and `strict_comparison_of_table_budgets`,
+  then apply `FirstEnderInterval.exclusion_of_strict_comparison`. Root imports,
+  current docs, full build and exact-head pinned CI remain to be done.
+  No checked interval or cutoff claim yet. Generated table is untrusted data
+  until all checks and CI pass. Preserve untracked generated lake manifest.
+
+- Phase 25 terminal/checkpoint update: session `5421` crashed after
+  539.5711452 s with stack exception. Session `77433` (integer monolith)
+  was stopped after 306.3307974 s at observed 10646298624 bytes. Monitored
+  sequential integer chunks, session `56662`, exited resource-stop 99 after
+  222.7429775 s at 8590958592 bytes; logs in
+  `PHASE25_INTEGER_CHUNKS_20261024154815.*`. No live proof process remains.
+  All soundness/scalar/guard/conditional-conclusion modules have built.
+  Registered next repair is quotient/remainder witnesses so the Boolean
+  verifier never computes the enormous Nat divisions. Witness soundness
+  must be proved using `Nat.div_mod_unique` and `floorSum_scaled`; power
+  coverage and all existing row/list/budget checks remain required. No full
+  table or interval theorem accepted. Old proof layouts archived as .txt.

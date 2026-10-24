@@ -1,0 +1,17 @@
+import TenthDiscriminant.FirstIntervalData
+
+/-! Phase-25 full-table proof attempt; no interval claim until accepted and audited. -/
+namespace TenthDiscriminant.FirstCertificate
+set_option autoImplicit false
+set_option maxRecDepth 100000
+set_option maxHeartbeats 20000000
+
+theorem first_rows_checked : firstRows.all checkRow = true := by decide
+
+theorem first_rows_coverage : firstRows.map Row.p = primeList := by decide
+
+theorem first_rows_budgets :
+    (firstRows.map (fun r => r.coefficient * r.hi)).sum ≤ 1324 * 10 ^ 20 * scale ∧
+      7995 * 10 ^ 29 * scale ≤ (firstRows.map (fun r => r.weight * r.lo)).sum := by decide
+
+end TenthDiscriminant.FirstCertificate

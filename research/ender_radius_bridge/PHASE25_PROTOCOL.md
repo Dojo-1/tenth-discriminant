@@ -60,3 +60,16 @@ cross-multiplication, with a kernel reduction proof of the Boolean result.
 No `native_decide`, trusted native arithmetic oracle, changed bound or relaxed
 row/coverage/budget obligation. The purpose is a smaller proof representation,
 not a weaker statement. Keep all earlier proof attempts and negative records.
+
+### Registered division-witness refinement
+
+The monitored sequential integer attempt was stopped at 222.7429775 s after
+its sampled working set reached 8590958592 bytes. The current Boolean row
+checker still evaluates large divisions/remainders in factorial and valuation
+coefficients. Before the next repair, register their removal from verification:
+the generator may supply quotient, remainder and floor-sum witnesses, checked
+by `R=q*k+m`, `m<q` and the exact scaled floor-sum identity. Prime-power witness
+lists must include every contributing power or prove the remainder is zero.
+The fixed square-sum coefficient is also supplied and proved once. Keep the
+same input, coefficients, weights, log bounds, coverage and budget obligations.
+Prove the new checker sound; no trusted division oracle or weakened target.

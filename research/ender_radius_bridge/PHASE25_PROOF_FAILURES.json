@@ -19,6 +19,23 @@
     "result": "individual chunks progressed, but no accepted full-table proof",
     "next_action": "prove a raw integer cross-multiplication checker sound against the same rational prefix/remainder; no native_decide"
   },
+  "documented_memory_flag_unavailable": {
+    "command_from_lean": "lake env lean -M 8192 -s 16384 --profile ../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+    "exit_code": 1,
+    "elapsed_seconds": 16.4954707,
+    "error": "invalid -D parameter, unknown configuration option 'max_memory'",
+    "scope": "pinned Lean 4.19.0 documents -M but rejected the option before any table proof ran",
+    "next_action": "run without the rejected flag and monitor only the owned proof process against the explicit 8-GB working-set bound"
+  },
+  "integer_monolithic_memory_stop": {
+    "command_from_lean": "lake env lean -s 16384 --profile ../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+    "exit_code": -1,
+    "elapsed_seconds": 306.3307974,
+    "observed_working_set_bytes_at_stop": 10646298624,
+    "result": "agent stopped only the owned proof process after its observed working set exceeded the 8-GB threshold",
+    "scope": "integer checker soundness and individual controls had passed, but no complete-table proof was accepted",
+    "next_action": "32-row integer kernel reductions, sequential verification and explicit composition; continuous process memory monitor"
+  },
   "rational_checker_reduction": {
     "result": "plain decide and rfl did not reduce the rational checker to true",
     "repair": "kernel-checked norm_num arithmetic proofs; first and largest prime controls pass"

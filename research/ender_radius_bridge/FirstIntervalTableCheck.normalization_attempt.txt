@@ -1,0 +1,214 @@
+import TenthDiscriminant.FirstIntervalData
+
+/-! Phase-25 full-table proof attempt; no interval claim until accepted and audited. -/
+namespace TenthDiscriminant.FirstCertificate
+set_option autoImplicit false
+set_option maxRecDepth 100000
+set_option maxHeartbeats 20000000
+
+theorem firstChunk00_checked : firstChunk00.all checkRow = true := by
+  norm_num [firstChunk00, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk01_checked : firstChunk01.all checkRow = true := by
+  norm_num [firstChunk01, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk02_checked : firstChunk02.all checkRow = true := by
+  norm_num [firstChunk02, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk03_checked : firstChunk03.all checkRow = true := by
+  norm_num [firstChunk03, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk04_checked : firstChunk04.all checkRow = true := by
+  norm_num [firstChunk04, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk05_checked : firstChunk05.all checkRow = true := by
+  norm_num [firstChunk05, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk06_checked : firstChunk06.all checkRow = true := by
+  norm_num [firstChunk06, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk07_checked : firstChunk07.all checkRow = true := by
+  norm_num [firstChunk07, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk08_checked : firstChunk08.all checkRow = true := by
+  norm_num [firstChunk08, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk09_checked : firstChunk09.all checkRow = true := by
+  norm_num [firstChunk09, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk10_checked : firstChunk10.all checkRow = true := by
+  norm_num [firstChunk10, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk11_checked : firstChunk11.all checkRow = true := by
+  norm_num [firstChunk11, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk12_checked : firstChunk12.all checkRow = true := by
+  norm_num [firstChunk12, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk13_checked : firstChunk13.all checkRow = true := by
+  norm_num [firstChunk13, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk14_checked : firstChunk14.all checkRow = true := by
+  norm_num [firstChunk14, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk15_checked : firstChunk15.all checkRow = true := by
+  norm_num [firstChunk15, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk16_checked : firstChunk16.all checkRow = true := by
+  norm_num [firstChunk16, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk17_checked : firstChunk17.all checkRow = true := by
+  norm_num [firstChunk17, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk18_checked : firstChunk18.all checkRow = true := by
+  norm_num [firstChunk18, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk19_checked : firstChunk19.all checkRow = true := by
+  norm_num [firstChunk19, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk20_checked : firstChunk20.all checkRow = true := by
+  norm_num [firstChunk20, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk21_checked : firstChunk21.all checkRow = true := by
+  norm_num [firstChunk21, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk22_checked : firstChunk22.all checkRow = true := by
+  norm_num [firstChunk22, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk23_checked : firstChunk23.all checkRow = true := by
+  norm_num [firstChunk23, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk24_checked : firstChunk24.all checkRow = true := by
+  norm_num [firstChunk24, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk25_checked : firstChunk25.all checkRow = true := by
+  norm_num [firstChunk25, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk26_checked : firstChunk26.all checkRow = true := by
+  norm_num [firstChunk26, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk27_checked : firstChunk27.all checkRow = true := by
+  norm_num [firstChunk27, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk28_checked : firstChunk28.all checkRow = true := by
+  norm_num [firstChunk28, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk29_checked : firstChunk29.all checkRow = true := by
+  norm_num [firstChunk29, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk30_checked : firstChunk30.all checkRow = true := by
+  norm_num [firstChunk30, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk31_checked : firstChunk31.all checkRow = true := by
+  norm_num [firstChunk31, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk32_checked : firstChunk32.all checkRow = true := by
+  norm_num [firstChunk32, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk33_checked : firstChunk33.all checkRow = true := by
+  norm_num [firstChunk33, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk34_checked : firstChunk34.all checkRow = true := by
+  norm_num [firstChunk34, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk35_checked : firstChunk35.all checkRow = true := by
+  norm_num [firstChunk35, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk36_checked : firstChunk36.all checkRow = true := by
+  norm_num [firstChunk36, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk37_checked : firstChunk37.all checkRow = true := by
+  norm_num [firstChunk37, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem firstChunk38_checked : firstChunk38.all checkRow = true := by
+  norm_num [firstChunk38, checkRow, checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+    oddLogPrefixRat, oddLogRemainderRat, factorialCoefficient, floorSumClosed,
+    checkValuationLower, scale, Finset.sum_Ico_eq_sum_range, Finset.sum_range_succ]
+
+theorem first_rows_checked : firstRows.all checkRow = true := by
+  simp only [firstRows, List.all_flatten, List.all_cons, List.all_nil, Bool.and_true,
+    firstChunk00_checked, firstChunk01_checked, firstChunk02_checked, firstChunk03_checked, firstChunk04_checked, firstChunk05_checked, firstChunk06_checked, firstChunk07_checked, firstChunk08_checked, firstChunk09_checked, firstChunk10_checked, firstChunk11_checked, firstChunk12_checked, firstChunk13_checked, firstChunk14_checked, firstChunk15_checked, firstChunk16_checked, firstChunk17_checked, firstChunk18_checked, firstChunk19_checked, firstChunk20_checked, firstChunk21_checked, firstChunk22_checked, firstChunk23_checked, firstChunk24_checked, firstChunk25_checked, firstChunk26_checked, firstChunk27_checked, firstChunk28_checked, firstChunk29_checked, firstChunk30_checked, firstChunk31_checked, firstChunk32_checked, firstChunk33_checked, firstChunk34_checked, firstChunk35_checked, firstChunk36_checked, firstChunk37_checked, firstChunk38_checked]
+
+theorem first_rows_coverage : firstRows.map Row.p = primeList := by decide
+
+theorem first_rows_budgets :
+    (firstRows.map (fun r => r.coefficient * r.hi)).sum ≤ 1324 * 10 ^ 20 * scale ∧
+      7995 * 10 ^ 29 * scale ≤ (firstRows.map (fun r => r.weight * r.lo)).sum := by decide
+
+end TenthDiscriminant.FirstCertificate

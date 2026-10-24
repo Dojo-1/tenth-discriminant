@@ -1,6 +1,6 @@
 {
   "task": "Connect the checked local determinant bound to Ender's geometric and analytic cutoff",
-  "status": "phase24_reciprocal_tail_discharged_finite_production_comparison_full_local_build_passed_pinned_ci_pending_numerical_universal_classification_open",
+  "status": "phase25_sound_numerical_ingredients_checkpoint_full_table_unproved_resource_failures_preserved_division_witness_repair_registered_no_live_proof_process",
   "base_commit": "a4da8963fa0d94ca4858e09ab10f3195d0fe588f",
   "branch": "codex/rectangular-row-action",
   "decisions": [
@@ -38,7 +38,8 @@
     "Preregister Phase 21 in 157ba64 before proof edits. Prove the unchanged upper ellipse count by disjoint inward cells and exact axis accounting, transport from the lower interval endpoint and compose with upper_B. Keep floor padding explicit; do not infer Arb endpoint-floor equality or a numerical cutoff.",
     "Preregister Phase 22 in b7a43ea before proof edits. Prove the exact finite factorial/Legendre identity including prime two and unchanged factorial_lower for R>=2. Do not confuse factorial prime-power weights with the determinant's odd-prime weights; full prime_mass tail/subtraction/clipping and numerical/classification closure remain open.",
     "Preregister Phase 23 in e4736fd before proof edits. Prove finite staircase weight conversion, small-prime subtraction, loss coefficients, geometric/floor-square estimates and clipping. Compose to the actual counted upper_B under an explicit reciprocal-prime tail bound; do not claim that analytic bound, Arb interpretation or classification has been discharged.",
-    "Preregister Phase 24 in e1fa9be before proof edits. Discharge the exact production reciprocal-prime tail using positive potential drops and finite telescoping, then remove that analytic premise from the actual-Gram comparison. Preserve all arithmetic/radius/count guards and make the strict numerical exclusion premise explicit; no numerical cutoff or classification claim."
+    "Preregister Phase 24 in e1fa9be before proof edits. Discharge the exact production reciprocal-prime tail using positive potential drops and finite telescoping, then remove that analytic premise from the actual-Gram comparison. Preserve all arithmetic/radius/count guards and make the strict numerical exclusion premise explicit; no numerical cutoff or classification claim.",
+    "Preregister Phase 25 in f109533 before proof edits or replay. Use only the first recorded interval, C=20/P=10000/160-bit Arb and unchanged radius. Prove rational log remainder and exact guards, then attempt kernel aggregation of the fixed strict comparison. Never promote Arb replay or a rational candidate outside Lean into a checked interval exclusion."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
@@ -88,7 +89,8 @@
     "Phase 21 protocol-only 157ba64 preceded proof edits. EllipseUpperCount.lean and full 6711-step lake build prove inward-cell area/disjointness/containment, exact axis counts, unchanged upper ellipse count, interval transfer, safe floor padding and the counted class-number upper_B composition. Eight controls compile including false axis-area and D=0 strengthenings. Head 36e6f9a passed pinned CI 40093798308 and CodeQL 40093795078.",
     "Phase 22 protocol-only b7a43ea preceded proof edits. FactorialPrimeMass.lean and full 6712-step lake build prove the exact finite Legendre identity, log-product equality, increasing-envelope integral and unchanged scalar factorial_lower bound for R>=2. Ten controls compile, including omitted-two, composite-index and missing-R-guard falsifiers. Head c8a42a5 passed pinned CI 40096404959 and CodeQL 40096403109.",
     "Phase 23 protocol-only e4736fd preceded proof edits. PrimeMassLower.lean and full 6713-step lake build prove finite staircase conversion, exact prime split, production integer coefficients and padded enumeration, geometric/floor-square loss bounds, clipping and actual counted upper_B composition conditional on one reciprocal-prime tail estimate. Eight controls compile including false omitted-quadratic and missing-quotient-guard strengthenings. Head 035454e passed pinned CI 40098513168 and CodeQL 40098510944.",
-    "Phase 24 protocol-only e1fa9be preceded proof edits. PrimeTail.lean and full 6714-step local build prove the exact reciprocal-prime tail estimate by positive potential drops, finite telescoping and integer-subset domination. The production lower/upper comparison now composes on the actual Gram without a tail premise; a strict real comparison gives a checked exclusion criterion, not a verified numerical instance. Eight controls compile. Numerical enclosure/guard interpretation, universal closure, even cases and classification remain open; pinned CI pending on the published head."
+    "Phase 24 protocol-only e1fa9be preceded proof edits. Head 6717eee passed pinned CI 40100457533 and CodeQL 40100456379. PrimeTail.lean closes the analytic tail and finite production comparison; the numerical strict comparison remains an explicit premise.",
+    "Phase 25 in progress: isolated work/numeric-env uses declared python-flint 0.9.0 and numpy 2.5.4. Fixed first replay passed with rho=408406701, Y=488 and ratio 1.0277477921752666. All numerical-ingredient modules build, including log remainder/binary reduction, integer log reflection, global staircase lower bound, guarded first-interval comparison and sound complete-table aggregation. FirstIntervalScalars proves upper<=572*10^31 and lower>=581*10^31 given table budgets; FirstIntervalConclusion composes valid complete table evidence into exclusion. Candidate 1229-row strict gap is positive outside Lean. Full proof attempts failed or were resource-stopped: rational monolith 77.335612s; rational chunks 539.5711452s with observed 16653869056 bytes; integer monolith stopped at 306.3307974s/10646298624 bytes; continuously monitored sequential integer chunks stopped at 222.7429775s/8590958592 bytes. All handles are terminal; no live proof process. Exact logs/failures preserved. Division-witness refinement registered before edits: remove large division evaluation from Boolean checking, retain identical bounds and data meaning. No accepted full table, checked interval, cutoff or classification."
   ],
   "files_touched": [
     "README.md",
@@ -170,7 +172,20 @@
     "research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md",
     "lean/TenthDiscriminant/PrimeMassLower.lean",
     "research/ender_radius_bridge/PHASE24_PROTOCOL.md",
-    "lean/TenthDiscriminant/PrimeTail.lean"
+    "lean/TenthDiscriminant/PrimeTail.lean",
+    "research/ender_radius_bridge/PHASE25_PROTOCOL.md",
+    "research/ender_radius_bridge/PHASE25_REPLAY.json",
+    "research/ender_radius_bridge/PHASE25_RATIONAL_CANDIDATE.json",
+    "research/ender_radius_bridge/replay_first_interval.py",
+    "research/ender_radius_bridge/generate_first_rational_candidate.py",
+    "lean/TenthDiscriminant/FirstIntervalGuards.lean",
+    "lean/TenthDiscriminant/LogEnclosure.lean",
+    "lean/TenthDiscriminant/NumericalWeights.lean",
+    "lean/TenthDiscriminant/NumericalCertificate.lean",
+    "lean/TenthDiscriminant/FirstIntervalData.lean",
+    "lean/TenthDiscriminant/FirstIntervalScalars.lean",
+    "research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+    "research/ender_radius_bridge/PHASE25_PROOF_FAILURES.json"
   ],
   "updated": "2026-10-24"
 }
