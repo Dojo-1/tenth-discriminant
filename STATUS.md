@@ -5,6 +5,20 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-24: production `upper_B` is connected to the actual Gram
+
+[Phase 20](research/ender_radius_bridge/PHASE20_PROTOCOL.md) checks the
+unchanged `R>rho` upper expression for positive **integer** radii, including
+the falling factorials, row-major rectangle, logarithmic integral correction
+and Python's exact integer coefficients. Chosen-radius positivity and the
+class-number/local-factor chain compose to `∑ 2F(p) log p ≤ upper_B`,
+under the explicit premise that its real input `n` bounds the actual ellipse
+count. Seven boundary/false-strengthening controls compile. The geometric
+`n_up` estimate, factorial lower bound, numerical certificates, universal
+closure and classification still require their own proofs.
+[Lean source](lean/TenthDiscriminant/EnderUpperB.lean) ·
+[short human proof](research/ender_radius_bridge/UPPER_BOUND_GUIDE.md).
+
 ## 2026-10-24: the finite local-to-global determinant sandwich is Lean-checked
 
 [Phase 19](research/ender_radius_bridge/PHASE19_PROTOCOL.md) now assembles

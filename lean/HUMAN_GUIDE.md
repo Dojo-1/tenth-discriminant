@@ -813,3 +813,20 @@ the left sum, that his `upper_B` lies above `log H`, and that the saved
 interval inequalities (plus the universal envelope and finite sieve)
 have the needed exact interpretation. None of those conclusions is
 asserted by this theorem.
+
+## 23. The upper formula reaches the same matrix
+
+[The short upper-bound proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.md)
+explains the next checked connection. Each ordinary derivative costs a
+radius power and a factor `max(1,r/rho)`. Summing the positive diagonal
+logarithms over the original rectangle, then bounding the derivative
+correction by its exact integral, gives production `upper_B` at the
+integer radii used by Ender. The combined theorem is
+`ellipse_primeMass_log_le_upperB` in
+[EnderUpperB.lean](TenthDiscriminant/EnderUpperB.lean).
+
+Its real input `n` must bound the actual ellipse point count. The lower
+count already proves positivity; the distinct **upper** count estimate
+used by the interval program remains to be checked. The factorial lower
+estimate and exact interpretation of the saved numerical contradictions
+also remain open. This is the next part of the same determinant argument.

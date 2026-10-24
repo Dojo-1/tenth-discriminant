@@ -9,13 +9,20 @@ Then read the [detailed human proof guide](HUMAN_GUIDE.md). Use the
 [current claim map](FORMALIZATION.md) to distinguish proved components,
 conditional helpers, finite calculations and open links.
 
-The newest arithmetic component is the
+The arithmetic foundation includes the
 [maximal-order equivalence](TenthDiscriminant/QuadraticFieldChart.lean):
 Phase 14's rational trace/norm criterion identifies every algebraic
 integer in the constructed quadratic field with the explicit
 half-integral order. The [class-number bridge](TenthDiscriminant/ClassNumberInertBridge.lean)
 now turns this into the strict-small-prime local valuation for the
 actual integer Gram; see [§21 of the guide](HUMAN_GUIDE.md#21-the-global-hypothesis-reaches-the-local-determinant).
+
+The current bridge reaches the finite prime mass and production `upper_B`
+on that same chosen-radius matrix. [EnderUpperB.lean](TenthDiscriminant/EnderUpperB.lean)
+checks the full upper expression for the campaign's integer radii with its
+upper sample-count premise explicit. The [short upper-bound proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.md)
+explains the row estimate and integral. The upper ellipse count, factorial
+lower estimate and numerical/classification closure remain open.
 
 ## The result to start with
 

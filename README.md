@@ -32,9 +32,12 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > [prime-mass assembly](lean/TenthDiscriminant/PrimeMassAssembly.lean)
 > now combines all distinct odd primes below `R` on this **same**
 > positive determinant and checks their exact finite logarithmic lower
-> bound against its Hadamard diagonal product. The factorial estimate,
-> numerical interval inequalities, and final classification are still open
-> in Lean. The
+> bound against its Hadamard diagonal product. The
+> [upper-bound proof](research/ender_radius_bridge/UPPER_BOUND_GUIDE.md)
+> now bounds that product by production `upper_B` at the campaign's integer
+> radii, with its upper point-count input explicit. The upper ellipse count,
+> factorial estimate, numerical interval inequalities, and final classification
+> remain open in Lean. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.

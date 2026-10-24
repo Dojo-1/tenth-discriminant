@@ -153,3 +153,15 @@
   deleting assumptions. The factorial/Arb analytic bounds and classification
   remain unproved. Full 6709-step local Lean build and endpoint-only
   source correspondence pass; pinned CI is pending.
+- 2026-10-24, Phase 20: Phase 19 head `f7fe3cf` passed pinned CI
+  `40075949893` and CodeQL. Protocol `6afa007` preceded proof edits and
+  became `fc6427b` after preserving the external merge at `90b0f53`.
+  `EnderUpperB.lean` targeted checks pass for the actual diagonal bound,
+  original row-major sum, exact integral correction and production integer
+  coefficients. The chosen-radius class-number theorem now reaches unchanged
+  `upper_B` at positive integer radii, with its upper count input explicit.
+  Seven controls compile; automatic implicit variables are disabled after
+  detecting and repairing a sum-scope ambiguity. The upper ellipse count,
+  factorial lower estimate and numerical/classification links remain open.
+  Full 6710-step local build and endpoint-only source correspondence pass;
+  pinned CI is pending.

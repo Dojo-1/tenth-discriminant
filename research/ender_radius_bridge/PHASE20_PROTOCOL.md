@@ -45,3 +45,39 @@ and leave `upper_B` unverified in Lean. No `sorry`, new axioms, or
 unproved numerical premise. Run targeted Lean, the full pinned build,
 source correspondence, compiled dependency audit and negative controls
 on the proof head. Preserve this draft PR and do not merge.
+
+## Execution (2026-10-24)
+
+Protocol-only `6afa007` preceded proof edits; after the shared branch advanced
+to `90b0f53` with merged PR #26, that protocol commit was rebased to `fc6427b`.
+All upstream changes were preserved. `EnderUpperB.lean` now checks the actual
+diagonal moment bound, falling-factorial/radius correction, original row-major
+sum, exact logarithmic integral, production integer `//2` coefficients,
+and `log(prod G_ii) <= enderUpperB`.
+
+The completed result specializes `B` to a positive integer `rho`, covering
+every radius selected by production `ender.py`. The preregistered arbitrary
+real-radius generalization is not claimed. The integer specialization gives
+a stronger intermediate correction: the integral alone bounds the discrete
+sum, and production's extra `log(R/rho)` is nonnegative. No production formula,
+radius, threshold, or saved numerical certificate was changed.
+
+The final `ellipse_primeMass_log_le_upperB` composes class number one, all odd
+prime factors, chosen-radius positivity and this exact upper formula. It has
+an explicit `card(ellipsePairs D rho) <= n` premise. Ender's particular upper
+count formula remains open, along with the factorial lower estimate, exact
+Arb interpretation, universal envelope and finite classification.
+
+The seven registered boundary/false-strengthening controls compile: radius
+one, the constant row's factor two, a derivative above the degree, zero
+derivative observations, empty samples, understated sample radius and
+understated count. Development failures were proof-interface errors in
+nonnegative factor placement, Nat/Real casts, integral namespaces and
+rectangular reindexing. A sum-binder ambiguity was caught before any theorem
+was accepted; the statements were parenthesized and `autoImplicit` disabled
+for the whole module. No guard or mathematical premise was removed to repair
+these failures. A subsequent warning cleanup briefly broke a control's tactic
+sequencing; the final proof uses an explicit inequality and linear arithmetic.
+Targeted Lean and the complete 6710-step local build pass on the reconciled
+branch. Endpoint-only source correspondence, JSON and whitespace checks pass.
+Pinned CI status is recorded separately for the published proof head.
