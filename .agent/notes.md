@@ -196,3 +196,13 @@
   tail bound. Eight controls and full 6713-step local build pass. The
   analytic integral bound, numerical certificates, universal closure and
   classification remain open. Pinned CI pending on this published head.
+
+- 2026-10-24, Phase 24: Phase 23 head `035454e` passed pinned CI
+  `40098513168` and CodeQL `40098510944`. Protocol-only `e1fa9be`
+  preceded proof edits. `PrimeTail.lean` proves the production tail bound
+  by positive potential drops and finite telescoping, then composes the
+  actual-Gram mathematical lower/upper comparison with no tail hypothesis.
+  A strict real comparison now gives an explicit exclusion criterion; no
+  saved Arb inequality or numerical guard is assumed verified. Eight controls
+  and full 6714-step local build pass. Numerical interpretation, universal
+  closure, even cases and classification remain open; published-head CI pending.

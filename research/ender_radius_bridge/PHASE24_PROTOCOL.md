@@ -37,3 +37,32 @@ staircase guide. Verify the exact published head with pinned full build,
 dependency audit and inherited negative controls. Keep PR #28 draft and
 unmerged. Arb enclosure interpretation, numerical contradictions, universal
 closure, even cases and full classification remain open; no novelty claim.
+
+## Execution record
+
+Protocol-only `e1fa9be822e91f3210bd9161f6fd8e05498ad7cc` preceded proof
+edits. `PrimeTail.lean` proves the positive potential, its derivative,
+unit-step comparison, finite telescoping, integer-subset domination and
+equality with production `I(P)`. It composes Phase 23 without a remaining
+analytic tail premise and exposes the strict real inequality needed for
+class-number exclusion. That inequality and the numerical radius/count
+guards have not been certified by the saved Arb output in Lean.
+
+Eight controls compile, including the positive `m=2` endpoint, empty and
+nonempty prime tails, the prime-split boundary, positive production constant,
+and false zero-tail/zero-input strengthenings. Development repairs removed
+redundant function-equality goals from derivative conversion and normalized
+the real numeral `2−1` in the endpoint control. No mathematical guard was
+weakened or new numerical premise assumed. Automatic implicit variables
+are disabled; no new axiom or proof escape is introduced.
+
+From `lean/`, targeted `lake env lean TenthDiscriminant/PrimeTail.lean`
+and full `lake build` pass (6714 steps). Pinned published-head CI must
+also run `python verify_sources.py`, `python audit.py` and
+`python negative_controls.py`. Endpoint correspondence is not an Arb
+inequality verifier. The generated untracked manifest is excluded.
+No production tool, formula, cutoff, saved certificate or frozen objective
+audit changed. Numerical interpretation, universal closure, even cases and
+classification remain open. This is classical mathematics, not a novelty claim.
+Local `python verify_sources.py`, root `git diff --check`,
+`python -m json.tool .agent/state.json` and local Markdown file-link checks pass.

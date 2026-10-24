@@ -103,6 +103,7 @@ records preserve targets, repairs, verification and scope. The
 identity and scalar lower expression. Its prime-power weights are not
 the determinant's odd-prime weights. The [staircase proof](PRIME_MASS_LOWER_GUIDE.md)
 now checks their finite conversion, small-prime subtraction, geometric
-loss bounds and clipping, conditional on one reciprocal-prime tail estimate.
-That analytic estimate remains open; the numerical task must still interpret
-the saved enclosures and strict contradictions.
+loss bounds and clipping. Phase 24 discharges the reciprocal-prime estimate
+by finite potential drops, so both mathematical production expressions now
+apply to the actual Gram under their documented guards. The numerical task
+must still interpret the saved enclosures and strict contradictions.

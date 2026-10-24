@@ -1,6 +1,6 @@
 {
   "task": "Connect the checked local determinant bound to Ender's geometric and analytic cutoff",
-  "status": "phase23_finite_weight_conversion_geometric_losses_clipping_full_local_build_passed_pinned_ci_pending_reciprocal_tail_numerical_open",
+  "status": "phase24_reciprocal_tail_discharged_finite_production_comparison_full_local_build_passed_pinned_ci_pending_numerical_universal_classification_open",
   "base_commit": "a4da8963fa0d94ca4858e09ab10f3195d0fe588f",
   "branch": "codex/rectangular-row-action",
   "decisions": [
@@ -37,7 +37,8 @@
     "Preregister Phase 20 in 6afa007 before proof edits, rebased to fc6427b after the shared branch advanced to 90b0f53. Prove unchanged production upper_B for the integer radii used by Ender, expose its upper-count input, retain all imported residue-transport work, and keep factorial/certificate/classification links open.",
     "Preregister Phase 21 in 157ba64 before proof edits. Prove the unchanged upper ellipse count by disjoint inward cells and exact axis accounting, transport from the lower interval endpoint and compose with upper_B. Keep floor padding explicit; do not infer Arb endpoint-floor equality or a numerical cutoff.",
     "Preregister Phase 22 in b7a43ea before proof edits. Prove the exact finite factorial/Legendre identity including prime two and unchanged factorial_lower for R>=2. Do not confuse factorial prime-power weights with the determinant's odd-prime weights; full prime_mass tail/subtraction/clipping and numerical/classification closure remain open.",
-    "Preregister Phase 23 in e4736fd before proof edits. Prove finite staircase weight conversion, small-prime subtraction, loss coefficients, geometric/floor-square estimates and clipping. Compose to the actual counted upper_B under an explicit reciprocal-prime tail bound; do not claim that analytic bound, Arb interpretation or classification has been discharged."
+    "Preregister Phase 23 in e4736fd before proof edits. Prove finite staircase weight conversion, small-prime subtraction, loss coefficients, geometric/floor-square estimates and clipping. Compose to the actual counted upper_B under an explicit reciprocal-prime tail bound; do not claim that analytic bound, Arb interpretation or classification has been discharged.",
+    "Preregister Phase 24 in e1fa9be before proof edits. Discharge the exact production reciprocal-prime tail using positive potential drops and finite telescoping, then remove that analytic premise from the actual-Gram comparison. Preserve all arithmetic/radius/count guards and make the strict numerical exclusion premise explicit; no numerical cutoff or classification claim."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
@@ -86,7 +87,8 @@
     "Phase 20 protocol 6afa007 preceded proof edits and was rebased as fc6427b onto external shared head 90b0f53. Head 5f5614c passed pinned CI 40091741093 and CodeQL 40091739149. EnderUpperB.lean and the full 6710-step local build prove the actual diagonal bound, production coefficients with positive-J subtraction, logarithmic integral correction and chosen-radius class-number upper_B theorem. Seven controls pass. The upper count was explicit at this checkpoint; Phase 21 now supplies it. Generic real-radius, factorial and numerical/classification closure are not claimed.",
     "Phase 21 protocol-only 157ba64 preceded proof edits. EllipseUpperCount.lean and full 6711-step lake build prove inward-cell area/disjointness/containment, exact axis counts, unchanged upper ellipse count, interval transfer, safe floor padding and the counted class-number upper_B composition. Eight controls compile including false axis-area and D=0 strengthenings. Head 36e6f9a passed pinned CI 40093798308 and CodeQL 40093795078.",
     "Phase 22 protocol-only b7a43ea preceded proof edits. FactorialPrimeMass.lean and full 6712-step lake build prove the exact finite Legendre identity, log-product equality, increasing-envelope integral and unchanged scalar factorial_lower bound for R>=2. Ten controls compile, including omitted-two, composite-index and missing-R-guard falsifiers. Head c8a42a5 passed pinned CI 40096404959 and CodeQL 40096403109.",
-    "Phase 23 protocol-only e4736fd preceded proof edits. PrimeMassLower.lean and full 6713-step lake build prove finite staircase conversion, exact prime split, production integer coefficients and padded enumeration, geometric/floor-square loss bounds, clipping and actual counted upper_B composition conditional on one reciprocal-prime tail estimate. Eight controls compile including false omitted-quadratic and missing-quotient-guard strengthenings. The analytic tail, numerical interpretation, universal closure and classification remain open; pinned CI pending on the published head."
+    "Phase 23 protocol-only e4736fd preceded proof edits. PrimeMassLower.lean and full 6713-step lake build prove finite staircase conversion, exact prime split, production integer coefficients and padded enumeration, geometric/floor-square loss bounds, clipping and actual counted upper_B composition conditional on one reciprocal-prime tail estimate. Eight controls compile including false omitted-quadratic and missing-quotient-guard strengthenings. Head 035454e passed pinned CI 40098513168 and CodeQL 40098510944.",
+    "Phase 24 protocol-only e1fa9be preceded proof edits. PrimeTail.lean and full 6714-step local build prove the exact reciprocal-prime tail estimate by positive potential drops, finite telescoping and integer-subset domination. The production lower/upper comparison now composes on the actual Gram without a tail premise; a strict real comparison gives a checked exclusion criterion, not a verified numerical instance. Eight controls compile. Numerical enclosure/guard interpretation, universal closure, even cases and classification remain open; pinned CI pending on the published head."
   ],
   "files_touched": [
     "README.md",
@@ -166,7 +168,9 @@
     "lean/TenthDiscriminant/FactorialPrimeMass.lean",
     "research/ender_radius_bridge/PHASE23_PROTOCOL.md",
     "research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md",
-    "lean/TenthDiscriminant/PrimeMassLower.lean"
+    "lean/TenthDiscriminant/PrimeMassLower.lean",
+    "research/ender_radius_bridge/PHASE24_PROTOCOL.md",
+    "lean/TenthDiscriminant/PrimeTail.lean"
   ],
   "updated": "2026-10-24"
 }

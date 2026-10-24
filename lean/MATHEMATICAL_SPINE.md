@@ -255,16 +255,17 @@ these views commute on **one integer matrix with the same samples**.
 | Uniform inert-prime valuation and finite assembly | For squarefree `D≡3 (mod 4)`, class number one gives every strict small odd-prime factor on the actual integer Gram. Lean now assembles their product, proves the chosen-radius determinant positive, and obtains the exact finite logarithmic prime-mass versus Hadamard inequality. |
 | Production upper formula and its count input | Lean bounds the actual diagonal product by unchanged `upper_B` for the campaign's positive integer radii `rho<R`. Disjoint inward cells and exact axis accounting now supply the upper ellipse count and interval transfer, with line-count padding explicit. [Short proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.md). |
 | Factorial identity and scalar lower estimate | Lean checks the exact finite Legendre prime-power sum (including `2`) and unchanged `factorial_lower` for `R≥2`. Its weights differ from the determinant's. [Short proof](../research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md). |
-| Finite conversion to determinant weights | Lean checks the staircase identity, small-prime split, finite geometric and quadratic losses, coefficients and clipping. The production-shaped lower bound reaches the same upper formula conditional on one reciprocal-prime tail bound. [Short proof](../research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md). |
-| Analytic cutoff and finite classification | The reciprocal-prime sum's integral bound, numerical certificate interpretation and finite endgame remain open in Lean. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
+| Finite conversion to determinant weights and analytic tail | Lean checks the staircase identity, small-prime split, finite losses, coefficients, clipping and the exact reciprocal-prime bound by positive potential drops. Both mathematical production expressions now apply to the same Gram without a tail premise. [Short proof](../research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md). |
+| Numerical cutoff and finite classification | Numerical enclosure/guard interpretation, universal closure, even cases and finite endgame remain open in Lean. The strict-comparison exclusion criterion is checked, but its numerical premises are not. Recorded certificates remain candidate evidence. |
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical
 local-to-global principle is a missing premise. The uniform arithmetic
 relation, class-number input, chosen-radius count, and exact finite prime
 comparison are now checked in their stated ranges. The next substantive
-bridges are the analytic reciprocal-prime tail bound and the
-interpretation of the recorded certificates. The production upper expression
+bridges are the numerical enclosure/guard interpretation, universal closure
+and finite classification. The production lower/upper comparison, including
+the reciprocal-prime tail, is checked under the documented guards. The upper expression
 and both geometric counts are now checked at the integer radii.
 For the detailed
 provenance, see [STATUS.md](../STATUS.md), the

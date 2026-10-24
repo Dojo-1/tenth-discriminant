@@ -28,9 +28,11 @@ explains the row estimate, integral and inward-cell count. The
 now checks the finite Legendre identity and scalar `factorial_lower`.
 The [staircase proof](../research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md)
 now converts to the determinant's odd-prime weights, bounds both finite
-losses and justifies clipping, conditional on one reciprocal-prime tail
-inequality. That analytic estimate and numerical/classification closure
-remain open.
+losses and justifies clipping. [PrimeTail.lean](TenthDiscriminant/PrimeTail.lean)
+now proves the reciprocal-prime bound by finite potential drops and
+connects the unchanged lower/upper expressions under the documented guards.
+Numerical enclosure/guard interpretation, universal closure and
+classification remain open.
 
 ## The result to start with
 
@@ -186,8 +188,8 @@ from class number one in the squarefree `D≡3 (mod 4)` strict small-prime
 range. The abstract class-number-one quotient-to-principal-norm step is checked;
 the explicit order is now identified with the maximal integer ring,
 including its principal norm coordinates, and the class-number-one
-ideal step is composed with the strict local valuation. Remaining
-analytic and
-kernel-checkable numerical estimates, and finite classification are not yet a
-connected Lean proof. The analytic cutoff and saved numerical evidence are
+ideal step is composed with the strict local valuation. The finite
+mathematical lower/upper comparison is now connected, including the tail.
+Kernel-checkable numerical enclosure/guard estimates, universal closure and
+finite classification remain open. The candidate cutoff and saved numerical evidence are
 unchanged. No human or blind independent semantic review is claimed.

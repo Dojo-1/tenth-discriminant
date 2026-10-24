@@ -59,9 +59,9 @@ Here `F` is the rectangular valuation weight, not the factorial
 prime-power weight above. Thus `factorial_lower≤H` does **not** imply
 `prime_mass≤L`. [Phase 23's staircase proof](PRIME_MASS_LOWER_GUIDE.md)
 now checks the small-prime split, weight conversion, finite geometric
-loss bounds and clipping. One analytic reciprocal-prime tail inequality
-remains explicit. Only after that and the numerical interpretation can
-the saved comparisons yield contradictions under class number one.
+loss bounds and clipping. Phase 24 now proves the analytic reciprocal-prime
+tail estimate too. The numerical enclosure/guard interpretation must still
+be checked before saved comparisons yield contradictions under class number one.
 
 This is a classical counting identity and elementary integral estimate;
 no novelty, improved cutoff or class-number classification is claimed.

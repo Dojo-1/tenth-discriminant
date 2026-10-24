@@ -40,9 +40,11 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > explicit line-count padding. The [factorial bridge](research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md)
 > now checks the exact finite Legendre identity and unchanged scalar
 > `factorial_lower` for `R≥2`. The [staircase conversion](research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md)
-> now checks finite weight conversion, higher-power losses and clipping,
-> conditional on one explicit reciprocal-prime tail inequality. That
-> analytic inequality, numerical interval interpretation and final
+> now checks finite weight conversion, higher-power losses and clipping.
+> The [finite tail proof](lean/TenthDiscriminant/PrimeTail.lean) discharges
+> the reciprocal-prime estimate: class number one now forces the unchanged
+> mathematical `prime_mass≤upper_B` comparison under the documented guards.
+> Numerical interval interpretation, universal closure and final
 > classification remain open in Lean. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a

@@ -1,9 +1,10 @@
 # The lower bridge: count a staircase, then control its tail
 
-Phase 23 checks the finite conversion from factorial weights to the
-determinant's odd-prime weights. It reaches the actual counted `upper_B`
-**conditional on one explicit reciprocal-prime tail bound**. That analytic
-bound and numerical certificate interpretation are not proved by this phase.
+Phases 23–24 check the finite conversion from factorial weights to the
+determinant's odd-prime weights and discharge the analytic tail estimate.
+Under the documented arithmetic, radius and interval guards, class number
+one now forces the unchanged mathematical `prime_mass≤upper_B` comparison
+on the actual Gram. Numerical certificate interpretation is still separate.
 
 ## Why the quadratic correction is there
 
@@ -57,22 +58,53 @@ production `prime_mass`. The production enumeration through `P` agrees
 with the restricted finite sums: primes at or above `R` have zero weight.
 Lean checks these coefficient, padding and branch identities too.
 
-## The remaining analytic inequality is explicit
+## A positive potential pays for the tail
 
-To use production's unchanged `I`, the next proof must establish
+Phase 24 proves production's unchanged tail bound
 
 $$J\le I(P)=\frac{\log(P+1)}P+\log(1+1/P).$$
 
-The paper compares the summands with the integral of `log(t+1)/t²`.
-That comparison is **still open in Lean here**. The public theorem
-`ellipse_enderPrimeMassLower_le_upperB` exposes `J≤I` as a hypothesis;
-it does not hide it inside a numerical premise or a new axiom. Once
-supplied, the same original Gram gives the full mathematical lower/upper
-comparison. Interpreting Arb enclosures, universal closure, even cases and
-finite classification remain separate. No new cutoff or novelty is claimed.
+Use the positive potential
+
+$$K(x)=\frac{\log(x+1)}x+\log(x+1)-\log x,\qquad x>0.$$
+
+Its derivative is `−log(x+1)/x²`, and `K(P)=I(P)`. To compare one integer
+summand, set `g(x)=−K(x)+log(m)/x` on `[m−1,m]`, for `m>1`. Then
+
+$$g'(x)=\frac{\log(x+1)-\log m}{x^2}\ge0.$$
+
+Comparing its endpoints gives
+
+$$\frac{\log m}{m(m-1)}\le K(m-1)-K(m).$$
+
+Sum over the integers from `P+1` through `R`. The right side telescopes
+to `K(P)−K(R)≤K(P)`. The prime indices are a subset and all omitted terms
+are nonnegative. If `R≤P`, the prime sum is empty. This is the paper's
+integral comparison expressed as a finite potential-drop proof: no infinite
+sum, convergence theorem or estimate for prime distribution is needed.
+
+## Exactly what is now connected
+
+`ellipse_enderPrimeMassLower_le_counted_upperB` uses the proven tail bound,
+not an analytic hypothesis. For squarefree `D≡3 (mod 4)`, class number one,
+strict small-prime range and the displayed radius/count guards, it gives
+
+$$\texttt{prime\_mass}\le L(R,S)\le\texttt{upper\_B}.$$
+
+`classNumber_ne_one_of_ender_comparison` consequently rules out class number
+one **if a strict real comparison `upper_B<prime_mass` is supplied**.
+The saved Arb output is not assumed to supply that comparison. Interpreting
+its enclosures and guards, proving the universal closure, handling even
+cases and checking the finite classification remain open. No checked cutoff,
+new numerical run or novelty is claimed.
 
 [Lean source](../../lean/TenthDiscriminant/PrimeMassLower.lean) ·
 [Preregistration and execution](PHASE23_PROTOCOL.md). Eight controls cover
 the split boundary, empty large-prime set, guard endpoint, both clipping
 branches and the two false strengthenings. From `lean/`: `lake build`,
 `python verify_sources.py`, `python audit.py`, `python negative_controls.py`.
+
+[PrimeTail.lean](../../lean/TenthDiscriminant/PrimeTail.lean) and
+[Phase 24](PHASE24_PROTOCOL.md) check the tail, composition and exclusion
+criterion. Eight further controls include `m=2`, empty and nonempty prime
+tails, the split boundary, positivity, and false zero-tail/zero-input claims.

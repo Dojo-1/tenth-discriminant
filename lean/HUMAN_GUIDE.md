@@ -850,8 +850,8 @@ the unchanged scalar `factorial_lower` for `R≥2`.
 
 This sum and the determinant's `2∑ F(p) log p` have **different weights**.
 Phase 23 now converts between them, subtracts the small-prime contributions,
-bounds the finite higher-power losses and justifies clipping, under one
-explicit analytic tail hypothesis; see the staircase argument below.
+bounds the finite higher-power losses and justifies clipping. Its helper
+exposes an analytic tail hypothesis; Phase 24 discharges it below.
 [FactorialPrimeMass.lean](TenthDiscriminant/FactorialPrimeMass.lean) checks the
 identity and scalar bound, not that final `prime_mass` theorem. No cutoff
 or classification follows from this phase alone.
@@ -866,8 +866,23 @@ program's `P*S≥R` ensures this identity applies to all large primes.
 
 Lean now checks the small-prime split, finite geometric bound for higher
 powers, floor-square loss, exact integer coefficients, padded enumeration
-and both clipping branches. The same actual Gram supplies `upper_B` after
-one remaining analytic inequality is supplied: the finite sum of
-`log(p)/(p(p−1))` over large primes must be bounded by production `I(P)`.
-That inequality is still an explicit hypothesis, not a completed proof.
-Numerical interpretation and classification remain open.
+and both clipping branches. Phase 24 now supplies the needed bound of
+the finite `log(p)/(p(p−1))` sum by production `I(P)`. Thus the same actual
+Gram connects the mathematical lower and upper expressions, with no tail
+premise left. Numerical interpretation and classification remain open.
+
+## 26. Pay for the tail by a finite potential drop
+
+The [short proof](../research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md#a-positive-potential-pays-for-the-tail)
+uses a positive function `K(x)` whose drop from `m−1` to `m` pays for
+`log(m)/(m(m−1))`. Sum those drops: the interior terms cancel, and the
+remaining endpoint is positive. Prime indices are only a subset of the
+integers, so this also bounds the prime tail. There is no infinite-sum exchange.
+
+[PrimeTail.lean](TenthDiscriminant/PrimeTail.lean) checks the derivative,
+unit-step comparison, telescoping, exact production constant and composition.
+Class number one now forces `prime_mass≤upper_B` under the documented guards.
+The exclusion criterion still needs a strict real numerical comparison in
+the opposite direction. The saved Arb output has not yet been translated
+into that checked comparison or its numerical guards. No cutoff or full
+classification follows just from the connected mathematical comparison.

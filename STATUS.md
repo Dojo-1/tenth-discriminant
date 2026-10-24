@@ -5,6 +5,28 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-24: the analytic tail is discharged; the finite comparison connects
+
+[Phase 24](research/ender_radius_bridge/PHASE24_PROTOCOL.md) proves
+`J≤I(P)` for every natural `R` and `P≥2`. A positive potential
+`K(x)=log(x+1)/x+log(x+1)−log(x)` pays for each integer summand; its finite
+drops telescope. Prime indices form a subset of that integer interval.
+No infinite-series interchange or prime-distribution estimate is used.
+
+`ellipse_enderPrimeMassLower_le_counted_upperB` now connects both unchanged
+mathematical production expressions on the same actual Gram without a tail
+hypothesis. Arithmetic, class-number, strict range, radius and floor-padding
+guards remain explicit. `classNumber_ne_one_of_ender_comparison` gives an
+exclusion criterion conditional on a strict real numerical comparison.
+It does not assume that the saved Arb output supplies that comparison.
+Eight controls and full local Lean build (6714 steps) pass.
+
+Numerical enclosure/guard interpretation, universal closure, even cases and
+finite classification remain open. No checked cutoff, new numerical run
+or change to a production formula/certificate is claimed.
+[Human proof](research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md) ·
+[Lean source](lean/TenthDiscriminant/PrimeTail.lean).
+
 ## 2026-10-24: finite weight conversion and clipping reach the same Gram
 
 [Phase 23](research/ender_radius_bridge/PHASE23_PROTOCOL.md) checks

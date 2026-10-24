@@ -53,6 +53,7 @@ import TenthDiscriminant.EnderUpperB
 import TenthDiscriminant.EllipseUpperCount
 import TenthDiscriminant.FactorialPrimeMass
 import TenthDiscriminant.PrimeMassLower
+import TenthDiscriminant.PrimeTail
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot
