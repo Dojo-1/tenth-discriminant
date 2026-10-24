@@ -499,6 +499,40 @@
   Current guides were updated to distinguish one bounded actual-field
   exclusion from the remaining campaign, all-D envelope, even cases and
   finite classification. Frozen tools/ledger/flow/audit/pins unchanged.
+- Phase35 preregistered in d56f17d before edits. Previous turn was progress:
+  Phase34 exact semantic bridge and preserved negative pilot passed pinned
+  CI 40139545303/security 40139542493 on 29a155e, tree4cbf8da; final record
+  issuecomment-6390577005 supersedes its explicit pending checkpoint fields.
+  Live shared head/main and draft/unmerged PR28 refreshed, no local jobs.
+  Universal fused-all correspondence and complete eleven-seed partition
+  compiled after one preserved partial-application unfolding repair. Seed
+  literal list checked (11 entries). Fixed 44-block pilot terminal: q0 all
+  eleven pass; q1 first five pass, next aggregate-time-stopped with 1s left;
+  27 planned blocks skipped. Aggregate observed721.4877611s including startup
+  and polling overhead, unchanged720s budget. No memory stop in pilot.
+  Per-literal masks + exact aggregate, grouped odd-prime checks and actual
+  field bridge compile. Preserved first field memory stop, nested-simp
+  failures and Boolean lemma repair; no larger limits or changed labels.
+  All eleven q0 library blocks rebuilt/assembled:483.338083s, peak5336363008B.
+  Full incremental root6771 passed73.4582038s, peak2804408320B; source
+  correspondence and117-module coverage passed. Compiled audit3726 logical,
+  3242 theorems,15669 runtime-only passed. Printed public bounded iff has
+  only positivity, squarefreeness and d<892371480; three permitted axioms.
+  No certificate premise. Exact-head full CI pending. Current mathematical
+  gap is entire[892371480,700000000000), not the already closed first period.
+  Old Phase34 resource failures/local timeout preserved; no full local
+  parent/apparatus/eight-script suite rerun is claimed for Phase35.
+  Candidate NEXT full-gap strategy, NOT preregistered, implemented or tested:
+  invert the enumeration. For each base-wheel residue r, store ALL 785
+  possible quotient indices k in one natural-number bitset, initially
+  filtered by 1000000<=r+892371480*k<700000000000. Intersect with each
+  extra prime's allowed-k mask. Prove every actual class-number-one d
+  retains its k-bit; prove the final bitset zero for every covered r.
+  This would check the full original interval, not extrapolate one period.
+  Candidate implementation: affine rotations and periodic repeats of small
+  prime masks; generic testBit/AND semantics and interval guards mandatory.
+  No speed, memory, correctness or completion claim. Fresh preregistration
+  required before any implementation/test. All 208 labels stay fixed.
 - Phase 34 preregistered in aadf7b2 before edits. Previous turn was progress:
   Phase33 all nine positive equalities and bounded iff passed exact-head
   pinned CI 40136870017/security 40136867529 on a4a343c. No merge/Tao post.

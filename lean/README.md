@@ -1,10 +1,12 @@
 # Lean: the proof you can inspect
 
-Phase 33 proves actual class number one for all nine radicands and the
-iff characterization below one million, for positive squarefree d.
-The actual absolute field-discriminant cutoff is checked, but the whole
-upper interval [1000000,700000000000) is not. No full classification or
-improved constant is claimed. [Read the short proof](../research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md).
+Phase35 proves the iff characterization below 892371480, for positive
+squarefree d, with all nine positive cases and every first-translate
+certificate supplied. The actual absolute field-discriminant cutoff is
+checked, but the whole [892371480,700000000000) is unclosed. No full
+classification or improved global constant is claimed.
+[Read the short proof and exact pilot limits](../research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md).
+The phase descriptions below are historical finite checkpoints.
 
 Phase 31 proves the necessary nine-element list for actual class number one
 below one million. The wheel's no-loss invariant and complete interval

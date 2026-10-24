@@ -1,0 +1,332 @@
+﻿{
+    "scope":  "fixed Phase35 pilot, not full-range coverage",
+    "aggregate_time_limit_seconds":  720,
+    "elapsed_seconds":  721.4877611,
+    "blocks":  [
+                   {
+                       "quotient":  0,
+                       "seed_index":  0,
+                       "seed":  3,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024230314807.result.json"
+                   },
+                   {
+                       "quotient":  0,
+                       "seed_index":  1,
+                       "seed":  27,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024230359225.result.json"
+                   },
+                   {
+                       "quotient":  0,
+                       "seed_index":  2,
+                       "seed":  35,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024230446471.result.json"
+                   },
+                   {
+                       "quotient":  0,
+                       "seed_index":  3,
+                       "seed":  59,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024230532302.result.json"
+                   },
+                   {
+                       "quotient":  0,
+                       "seed_index":  4,
+                       "seed":  75,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024230622225.result.json"
+                   },
+                   {
+                       "quotient":  0,
+                       "seed_index":  5,
+                       "seed":  123,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024230707539.result.json"
+                   },
+                   {
+                       "quotient":  0,
+                       "seed_index":  6,
+                       "seed":  131,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024230748809.result.json"
+                   },
+                   {
+                       "quotient":  0,
+                       "seed_index":  7,
+                       "seed":  139,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024230833221.result.json"
+                   },
+                   {
+                       "quotient":  0,
+                       "seed_index":  8,
+                       "seed":  147,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024230916153.result.json"
+                   },
+                   {
+                       "quotient":  0,
+                       "seed_index":  9,
+                       "seed":  163,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024231000285.result.json"
+                   },
+                   {
+                       "quotient":  0,
+                       "seed_index":  10,
+                       "seed":  179,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024231049709.result.json"
+                   },
+                   {
+                       "quotient":  1,
+                       "seed_index":  0,
+                       "seed":  3,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024231135982.result.json"
+                   },
+                   {
+                       "quotient":  1,
+                       "seed_index":  1,
+                       "seed":  27,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024231217675.result.json"
+                   },
+                   {
+                       "quotient":  1,
+                       "seed_index":  2,
+                       "seed":  35,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024231301446.result.json"
+                   },
+                   {
+                       "quotient":  1,
+                       "seed_index":  3,
+                       "seed":  59,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024231347264.result.json"
+                   },
+                   {
+                       "quotient":  1,
+                       "seed_index":  4,
+                       "seed":  75,
+                       "status":  "terminal",
+                       "exit_code":  0,
+                       "record":  "PHASE35_CHECK_20261024231429416.result.json"
+                   },
+                   {
+                       "quotient":  1,
+                       "seed_index":  5,
+                       "seed":  123,
+                       "status":  "terminal",
+                       "exit_code":  99,
+                       "record":  "PHASE35_CHECK_20261024231513709.result.json"
+                   },
+                   {
+                       "quotient":  1,
+                       "seed_index":  6,
+                       "seed":  131,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  1,
+                       "seed_index":  7,
+                       "seed":  139,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  1,
+                       "seed_index":  8,
+                       "seed":  147,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  1,
+                       "seed_index":  9,
+                       "seed":  163,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  1,
+                       "seed_index":  10,
+                       "seed":  179,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  392,
+                       "seed_index":  0,
+                       "seed":  3,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  392,
+                       "seed_index":  1,
+                       "seed":  27,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  392,
+                       "seed_index":  2,
+                       "seed":  35,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  392,
+                       "seed_index":  3,
+                       "seed":  59,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  392,
+                       "seed_index":  4,
+                       "seed":  75,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  392,
+                       "seed_index":  5,
+                       "seed":  123,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  392,
+                       "seed_index":  6,
+                       "seed":  131,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  392,
+                       "seed_index":  7,
+                       "seed":  139,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  392,
+                       "seed_index":  8,
+                       "seed":  147,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  392,
+                       "seed_index":  9,
+                       "seed":  163,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  392,
+                       "seed_index":  10,
+                       "seed":  179,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  784,
+                       "seed_index":  0,
+                       "seed":  3,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  784,
+                       "seed_index":  1,
+                       "seed":  27,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  784,
+                       "seed_index":  2,
+                       "seed":  35,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  784,
+                       "seed_index":  3,
+                       "seed":  59,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  784,
+                       "seed_index":  4,
+                       "seed":  75,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  784,
+                       "seed_index":  5,
+                       "seed":  123,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  784,
+                       "seed_index":  6,
+                       "seed":  131,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  784,
+                       "seed_index":  7,
+                       "seed":  139,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  784,
+                       "seed_index":  8,
+                       "seed":  147,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  784,
+                       "seed_index":  9,
+                       "seed":  163,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   },
+                   {
+                       "quotient":  784,
+                       "seed_index":  10,
+                       "seed":  179,
+                       "status":  "skipped",
+                       "reason":  "aggregate_time_limit"
+                   }
+               ]
+}

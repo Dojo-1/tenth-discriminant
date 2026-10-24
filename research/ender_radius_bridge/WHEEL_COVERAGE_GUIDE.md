@@ -1,5 +1,9 @@
 # Why the wheel does not lose a solution
 
+Current frontier: Phase35's [complete-seed proof](FUSED_WHEEL_GUIDE.md)
+extends the bounded iff to d<892371480. The Phase31 scope below records
+the original complete one-million check, not the latest endpoint.
+
 A sieve output is not a proof of exhaustive coverage. Phase31 separates the
 two questions: **did we enumerate every possible solution?** and **which of
 those candidates pass the tests?** Its fixed target is [92,1000000), not the

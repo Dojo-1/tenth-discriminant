@@ -1,5 +1,16 @@
 # Current claim-to-Lean map
 
+Phase35 proves `classNumber_one_iff_below_first_period`, with only positivity,
+squarefreeness and d<892371480 as hypotheses. `FusedWheelCore/Bridge` prove
+universal all-predicate traversal equivalence and complete seed coverage;
+`FusedWheelMasks/Primes` supply all literal checks. Eleven generated,
+serialized `Fused35Q0S..` modules and `FusedWheelPilot` certify translate0.
+`FusedWheelFieldBridge/Conclusion` connect it to the actual class number.
+The cost pilot's five extra passing blocks are not a complete translate,
+and its time stop/skips are preserved. Full classification above this finite
+endpoint is not claimed. [Human proof](../research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md).
+All earlier finite-frontier descriptions below are historical.
+
 Phase 34 adds `ResidueMaskCore` (thin Lean/Std-only computation) and
 `ResidueMaskBridge`: `maskRootTest_eq`, `maskGuardedTest_eq`, `maskTests_eq`
 and `maskWheelResidues_eq` prove exact correspondence with the old checker.

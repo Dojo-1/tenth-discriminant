@@ -1,9 +1,19 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 34;
+**Living update: 25 October 2026, through preregistered Phase 35;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase35 extends both actual-field classification directions to positive
+squarefree d<892371480, by a complete eleven-seed certificate for the first
+wheel translate. All masks, prime labels, coverage and the field implication
+are supplied. The unchanged 720-second pilot budget left the next translate
+partial and two others untested; those are not complete coverage. The whole
+[892371480,700000000000) is still unclosed. No global cutoff improvement,
+novelty or independent human review is claimed.
+[Human proof and exact limits](research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md).
+Earlier finite-frontier statements below are historical checkpoints.
 
 Phase 34 supplies a checked representation change for the remaining sieve:
 bit-mask queries equal the original guarded root tests and preserve the
@@ -96,8 +106,8 @@ was posted in this cycle.
 |---:|---|---|---|
 | 1 | Effective bound, avoiding Heegner as proof input | **Actual absolute field-discriminant bound checked; semantic review pending** | [Phase 32](lean/TenthDiscriminant/QuadraticDiscriminant.lean) proves the actual discriminant identity, so class number one bounds both d and the actual absolute field discriminant below `7×10¹¹`. Both parity charts are supplied; no numerical premise or Heegner classification input. This is a bound, not full classification or independent human review. |
 | 2 | Best efforts to optimize the constant | **Effort documented; no improved cutoff** | The factorial arrangement removes Dusart from this route but gives a much larger threshold than the historical `1.5×10⁴` branch and the dated [prior-art](PRIOR_ART.md) report of `q<570` (not re-reviewed here). Preregistered [lift](ledger/determinant_lifts.txt) and [radial](ledger/radial_bounds.txt) investigations did not improve Ender's global cutoff. |
-| 3 | Threshold low enough for direct computation | **Checked cutoff; finite certification partial** | The saved [CRT sieve](ledger/sieve_ender.txt) leaves `163` in `[92,7×10¹¹)`. The complete initial interval and all nine positive fields are now supplied, giving a bounded iff below one million. The entire upper interval remains unclosed in Lean. |
-| 4 | High-quality Lean formalization, perhaps upstreamable | **Actual discriminant bound, all nine positives, bounded iff; global classification partial** | The actual field discriminant, cutoff, all nine positive equalities and both classification directions below one million are checked. Complete upper-middle certification, independent human semantic review and Mathlib upstream review remain open. See the [claim map](lean/FORMALIZATION.md). |
+| 3 | Threshold low enough for direct computation | **Checked cutoff; finite certification partial** | The saved [CRT sieve](ledger/sieve_ender.txt) leaves `163` in `[92,7×10¹¹)`. A complete first wheel translate and all nine positive fields now give a bounded iff below 892371480. The entire [892371480,700000000000) remains unclosed in Lean; partial/skipped pilot blocks are not coverage. |
+| 4 | High-quality Lean formalization, perhaps upstreamable | **Actual discriminant bound, all nine positives, bounded iff; global classification partial** | The actual field discriminant, cutoff, all nine positive equalities and both classification directions below 892371480 are checked. Complete remaining-range certification, independent human semantic review and Mathlib upstream review remain open. See the [claim map](lean/FORMALIZATION.md). |
 | 5 | Compare strengths of different writeups | **Qualitative only** | [Prior art](PRIOR_ART.md) records a dated comparison and attribution, not a controlled, current, like-for-like comparison of optimized manuscripts. |
 | 6 | Spur new arguments or arrangements | **Reusable arrangement, no novelty claim** | BEAN-to-Ender changes the prime input. Four fixed prime-log constants and normalized affine envelopes now yield a checked universal odd cutoff without replaying 249 more interval comparisons. This is an arrangement within the credited Green/twinheterodox route, not a claim of a new mathematical method. |
 | 7 | Preserve failed attempts and negative results | **Documented internally** | The [review response](review/RESPONSE_Claude.md), [BEAN audit](review/BEAN_AUDIT.txt), fixed [radial protocol](flow/PREREG_RADIAL.txt), and [lift protocol](flow/PREREG_LIFTS.txt) retain counterexamples, failed guards and ceilings. Internal preservation does not equal external reporting. |
@@ -110,7 +120,7 @@ was posted in this cycle.
 **Bottom line.** There is now a connected kernel-checked effective bound
 on both d and the actual absolute field discriminant below `7×10¹¹`, for the
 actual imaginary quadratic field family with both parity cases supplied.
-All nine positive cases and the bounded iff below one million are proved.
+All nine positive cases and the bounded iff below 892371480 are proved.
 The full finite classification remains incomplete, and independent
 human semantic review is not supplied by kernel checking.
 The frozen finite sieve remains computational evidence, not a new Lean
@@ -123,6 +133,7 @@ optimization and systematic comparison, not an unsupplied cutoff premise.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
+| Complete-seed fused traversal preserves every leaf predicate. | **Lean theorem plus one complete concrete translate** | Checks below 892371480 now compose to an actual-field bounded iff. Translation does not preserve extra-prime tests (checked p=29 control). The fixed pilot had 16 passing blocks, one aggregate-time stop and 27 skipped blocks; no full-range runtime or isolated fusion speedup is established. [Human proof](research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md). |
 | Actual field discriminant and all nine positive class numbers. | **Lean theorems using maximal integral bases, small ideal norms and pinned Minkowski** | The actual absolute-discriminant cutoff and all nine positive equalities are supplied. Prime-norm quotients give root obstructions; the legitimate norm-four ideal (2) is retained. d=23 refutes omitting local hypotheses. No novelty or full classification claim. [Human proof](research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md). |
 | Prime 2 forces d=1 or 2 in the even fundamental chart under class number one. | **Lean theorem on the actual maximal order** | Squarefree denominator and mod-4 parity give integer coordinates; an F2 quotient ideal becomes principal and forces norm two. d=1,2 controls are retained; d=3 refutes dropping the chart guard. No claim of a new argument or a full classification. [Human proof](research/ender_radius_bridge/FULL_CUTOFF_GUIDE.md). |
 | The explicit generator change theta=2*omega-1 joins both parity charts in one actual `Q[X]/(X²+d)` family. | **Lean field equivalence and effective-bound theorem** | Both inverse maps, actual integer-ring/PID transport and the universal radicand bound are supplied, not a piecewise class-number proxy. Finite classification and independent review remain open. [Theorem](lean/TenthDiscriminant/QuadraticChartEquivalence.lean). |

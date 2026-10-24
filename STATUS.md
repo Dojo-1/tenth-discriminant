@@ -1,5 +1,25 @@
 # Status — 2026-10-25
 
+## Phase 35: one complete wheel translate, bounded iff below 892371480
+
+`classNumber_one_iff_below_first_period` proves both directions for the
+actual field and positive squarefree d<892371480. All 208 masks/odd-prime
+labels, the universal fused-all identity, complete seed decomposition,
+eleven concrete first-translate blocks and actual-field composition are
+supplied. No certificate premise remains in this public bounded iff.
+
+The unchanged cost pilot budget completed 16 blocks: all eleven for
+translate0, five for translate1. One final block was aggregate-time-stopped
+with one second remaining; 27 were skipped, including all of 392 and784.
+Only translate0 is complete. Whole root build passed; exact-head CI and
+audit/signature verification accompany publication. No speedup attribution
+or full-range runtime is inferred. The entire [892371480,700000000000)
+remains unclosed; no optimized global cutoff, merge or Tao post.
+[Human proof](research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md) ·
+[Protocol](research/ender_radius_bridge/PHASE35_PROTOCOL.md) ·
+[Records](research/ender_radius_bridge/PHASE35_RESULTS.json).
+Older entries below preserve historical checkpoint scopes.
+
 ## Phase 34: exact checker representation, bounded cost pilot
 
 `ResidueMaskBridge` proves a bit query equals the old root search for every

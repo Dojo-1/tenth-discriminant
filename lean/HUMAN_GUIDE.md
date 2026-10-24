@@ -1,11 +1,12 @@
 # Why the derivative Gram determinant is positive
 
 For the current arithmetic result, start with the
-[all-nine positive guide](../research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md).
-It explains how local residue obstructions and small ideal representatives
-prove all nine positive class numbers and the bounded iff below one million.
-The upper middle interval is still open. The field discriminant used there
-is distinct from the large jet-Gram determinant explained below.
+[complete-seed proof](../research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md):
+the bounded iff now holds below 892371480, not globally. Then read the
+[all-nine positive guide](../research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md)
+for the local-obstruction/Minkowski argument. The whole upper interval
+remains open. The field discriminant is distinct from the large jet-Gram
+determinant explained below. Older phase-frontier descriptions are historical.
 
 The current finite frontier is explained in the
 [wheel-coverage guide](../research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md):

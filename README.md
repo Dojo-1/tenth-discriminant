@@ -2,13 +2,16 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
-**Phase 33: all nine positive cases, and both classification directions below one million.**
-For positive squarefree `d<1000000`, Lean proves actual class number one
+**Phase 35: both classification directions below 892371480.**
+For positive squarefree `d<892371480`, Lean proves actual class number one
 iff `d` is in `1,2,3,7,11,19,43,67,163`. All nine positive equalities are
 supplied through Minkowski and small-ideal arguments, not sieve acceptance.
 The actual absolute field-discriminant cutoff remains `7×10¹¹`. The entire
-interval `[1000000,700000000000)` remains unclosed: no full classification
-or improved constant is claimed. [The short positive-case proof and exact gap](research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md).
+interval `[892371480,700000000000)` remains unclosed: no full classification
+or improved global constant is claimed. Eleven complete seed-block certificates
+extend the finite proof window; the pilot's partial and skipped blocks do not.
+[The short coverage proof and exact gap](research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md) ·
+[Why all nine fields have class number one](research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md).
 
 Phase 34 proves an exact computational bridge: precomputed residue-mask
 queries and the old root searches generate the same tests and wheel list.
@@ -16,7 +19,7 @@ All 208 fixed masks passed a local kernel check. All four registered translate
 attempts exceeded the memory threshold; no new interval is closed.
 [What the representation change proves](research/ender_radius_bridge/RESIDUE_MASK_GUIDE.md).
 
-The following phase descriptions are historical checkpoints; their positive-case gaps are now closed.
+The following phase descriptions are historical checkpoints; their old finite frontiers and positive-case gaps are superseded above.
 
 **Phase 31: the necessary candidate list is now checked below one million.**
 For positive squarefree `d<1000000`, Lean proves actual class number one

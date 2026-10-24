@@ -1,8 +1,10 @@
 # All nine positive cases, without assuming class number one
 
 Lean now proves actual class number one for all nine fields Q(sqrt(-d)),
-with d=1,2,3,7,11,19,43,67,163. Together with the complete checked sieve
-below one million, this gives BOTH directions of the classification there.
+with d=1,2,3,7,11,19,43,67,163. Phase35's complete first-translate certificate
+now extends BOTH classification directions to d<892371480; see the
+[new finite-coverage proof](FUSED_WHEEL_GUIDE.md). The positive-case argument
+below is unchanged.
 The full upper interval remains open; see the precise range map at the end.
 
 ## The same bridge, in the other direction
@@ -78,8 +80,8 @@ All statements concern positive squarefree radicands and the actual field.
 
 | Radicand range | Current proof status |
 | --- | --- |
-| below 1000000 | class number one iff d is in the nine-element list |
-| [1000000,700000000000) | complete exclusion certificate still missing |
+| below 892371480 | class number one iff d is in the nine-element list |
+| [892371480,700000000000) | complete exclusion certificate still missing |
 | at least 700000000000 | class number different from one |
 
 The nine positive proofs are complete. The full classification is not.

@@ -1,0 +1,12 @@
+﻿{
+    "scope":  "fixed Phase35 pilot only; no global coverage claim",
+    "proof_file":  "../research/ender_radius_bridge/Phase35Block1_5Check.lean",
+    "exit_code":  99,
+    "elapsed_seconds":  2.181429,
+    "observed_peak_working_set_bytes":  38387712,
+    "memory_threshold_mb":  8192,
+    "time_limit_seconds":  1,
+    "stop_reason":  "time_limit",
+    "stdout":  "PHASE35_CHECK_20261024231513709.stdout.log",
+    "stderr":  "PHASE35_CHECK_20261024231513709.stderr.log"
+}

@@ -1,0 +1,9 @@
+✖ [6/6] Building TenthDiscriminant.FusedWheelMasks
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\FusedWheelMasks.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\FusedWheelMasks.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\FusedWheelMasks.ilean -c .\.\.lake\build\ir\TenthDiscriminant\FusedWheelMasks.c --json
+error: .\.\.\.\TenthDiscriminant\FusedWheelMasks.lean:219:2: tactic 'simp' failed, nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+error: Lean exited with code 1
+Some required builds logged failures:
+- TenthDiscriminant.FusedWheelMasks

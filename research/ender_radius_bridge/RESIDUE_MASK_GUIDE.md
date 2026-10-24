@@ -1,5 +1,9 @@
 # One arithmetic test, two representations
 
+Phase35 update: the [complete-seed certificate](FUSED_WHEEL_GUIDE.md) now
+extends the actual-field bounded iff to d<892371480. The Phase34 resource
+failures and its original frontier below remain historical evidence.
+
 Purpose: make verification of the remaining interval practical without
 changing which integers it excludes. This is a computational bridge, not
 a new class-number theorem or an improved cutoff.
