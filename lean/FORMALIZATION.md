@@ -5,16 +5,19 @@ classification chain is not.** This map supersedes the PR #8-era coverage
 summary previously stored here; Git history preserves that record. Stage notes
 remain useful derivations, but their old frontier descriptions are historical.
 
-Phase 25 adds a sound exact numerical-certificate interface for the first
-saved interval, not a concrete interval exclusion yet. `LogEnclosure` and
+Phases 25–26 close the first saved interval's class-number exclusion.
+`LogEnclosure` and
 `IntegerLogCheck` bound logs; `DivisionWitness` checks supplied floor sums
 and complete prime-power lists; `NumericalCertificate` aggregates a complete
 checked table. `FirstIntervalGuards` proves the exact radius/padding guards,
 and `FirstIntervalScalars`/`FirstIntervalConclusion` reduce exclusion to two
-integer budgets on that table. All these modules have built locally.
+integer budgets on that table.
 `FirstIntervalData` contains generated data; `FirstIntervalRows` now proves
-every row valid. Its coverage and total-budget checks remain separate
-obligations. Resource failures
+every row valid. `FirstIntervalCoverage` proves complete prime coverage and
+`FirstIntervalTotals` proves both budgets. `FirstIntervalChecked` composes
+them into `first_interval_classNumber_ne_one` for squarefree `D≡3 (mod 4)`
+in `[700000000000,875000000000]`, with no numerical premise. These modules
+have built locally. Resource failures
 are preserved, not silently converted into a proof.
 
 Read the [mathematical spine](MATHEMATICAL_SPINE.md) first, then the
@@ -164,7 +167,7 @@ ball-arithmetic calculation into a kernel-checked inequality.
 | Finite `prime_mass` weight conversion and clipping | PROVED in [PrimeMassLower](TenthDiscriminant/PrimeMassLower.lean): exact staircase identity, small-prime split, finite geometric and floor-square losses, production integer coefficients/padding/branch, and `enderPrimeMassLower_le_exact_of_tail`. The actual-Gram composition `ellipse_enderPrimeMassLower_le_upperB` is CONDITIONAL on the displayed finite reciprocal-prime sum being at most the supplied `I`. |
 | Analytic tail estimate supplying production `I(P)` | PROVED in [PrimeTail](TenthDiscriminant/PrimeTail.lean): `largeReciprocalTail_le_enderTailIntegral`. A positive potential and finite telescoping dominate all integer summands, hence their prime subset, for `P≥2`. No prime-distribution input or infinite sum. |
 | Connected finite mathematical lower/upper comparison | PROVED: `ellipse_enderPrimeMassLower_le_counted_upperB` in [PrimeTail](TenthDiscriminant/PrimeTail.lean) has no tail premise. Arithmetic, class-number, strict range, radius and floor-padding guards remain. `classNumber_ne_one_of_ender_comparison` excludes class number one only when the strict real numerical comparison is supplied. No saved Arb inequality is assumed true. |
-| Kernel-checkable numerical contradictions, with their exact analytic interpretation | OPEN. |
+| Kernel-checkable numerical contradictions, with their exact analytic interpretation | PROVED for the first saved interval, squarefree `D≡3 (mod 4)`: `first_interval_numeric_bounds`, `first_interval_strict_comparison`, `first_interval_classNumber_ne_one` in [FirstIntervalChecked](TenthDiscriminant/FirstIntervalChecked.lean). No numerical premise remains there. Other 249 intervals remain open; no global cutoff. |
 | Universal envelope starting margin and its determinant bounds | OPEN; propagation is conditional. |
 | CRT survivor certificate, reduced-form enumeration and class-number correspondence | OPEN. |
 | End-to-end class-number-one classification | OPEN. |
@@ -209,7 +212,8 @@ connected at integer radii, with its count input now proved by inward cells
 and axis accounting. The exact factorial identity and scalar lower bound are
 now checked. Finite weight conversion, geometric losses and clipping reach
 the same Gram. The reciprocal-prime tail is now proved by finite potential
-drops; numerical enclosure/guard interpretation, universal closure and
+drops. Phase 26 also closes the first bounded numerical exclusion with
+its exact guards. The other intervals, universal closure, even cases and
 classification remain open. Earlier stages identified
 `H^k` polynomial jets with a concrete unitriangular change on the actual
 integer Gram, then establish the inertness interface of

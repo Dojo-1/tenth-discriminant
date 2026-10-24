@@ -5,10 +5,10 @@ This is the shortest route into the Lean development. The longer
 the [claim map](FORMALIZATION.md) names the checked declarations. Neither
 document, nor this one, is a proof of the class-number-one classification.
 
-The Phase-25 numerical frontier is deliberately narrower: one fixed interval,
-exact log and quotient witnesses, and an intended `581>572` separation.
-The ingredients, all 1,229 rows and conditional conclusion have built;
-table completeness and the total budgets remain pending. The
+Phase 26 now closes one fixed interval: for squarefree `D≡3 (mod 4)` in
+`[700000000000,875000000000]`, the actual constructed quadratic field has
+class number not one. All numerical guards, prime coverage and total budgets
+are supplied; the strict separation is `581>572`. The
 [short numerical guide](../research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md)
 separates these facts from a concrete exclusion or global cutoff.
 
@@ -16,12 +16,14 @@ separates these facts from a concrete exclusion or global cutoff.
 
 Ender's **candidate** argument needs an integer determinant that is both
 nonzero and highly divisible by inert primes. Geometry and a Hadamard upper
-bound would then compete with arithmetic lower bounds. Lean now establishes
-the nonzero side for sufficiently many samples, identifies its integer
-matrix, and proves one fixed divisibility example. A
-[paper proof](../research/uniform_inert_valuation/PROOF.md) reconstructs
-the uniform prime-by-prime exponent; its general polynomial and
-inertness interfaces are still missing in Lean.
+bound then competes with arithmetic lower bounds. Lean now establishes
+positivity, identifies the integer matrix, proves the uniform prime factors
+from class number one in the stated strict range, and assembles their finite
+mass against the geometric upper bound. Phase 26 supplies all numerical
+premises on one bounded interval. The [paper proof](../research/uniform_inert_valuation/PROOF.md)
+explains the prime-by-prime mechanism; the remaining global gaps are not
+missing matrix identities, but the rest of the interval campaign, universal
+closure, even cases and the finite classification.
 
 ## The object to keep in mind
 
@@ -263,14 +265,14 @@ these views commute on **one integer matrix with the same samples**.
 | Production upper formula and its count input | Lean bounds the actual diagonal product by unchanged `upper_B` for the campaign's positive integer radii `rho<R`. Disjoint inward cells and exact axis accounting now supply the upper ellipse count and interval transfer, with line-count padding explicit. [Short proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.md). |
 | Factorial identity and scalar lower estimate | Lean checks the exact finite Legendre prime-power sum (including `2`) and unchanged `factorial_lower` for `R≥2`. Its weights differ from the determinant's. [Short proof](../research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md). |
 | Finite conversion to determinant weights and analytic tail | Lean checks the staircase identity, small-prime split, finite losses, coefficients, clipping and the exact reciprocal-prime bound by positive potential drops. Both mathematical production expressions now apply to the same Gram without a tail premise. [Short proof](../research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md). |
-| Numerical cutoff and finite classification | Numerical enclosure/guard interpretation, universal closure, even cases and finite endgame remain open in Lean. The strict-comparison exclusion criterion is checked, but its numerical premises are not. Recorded certificates remain candidate evidence. |
+| Bounded numerical exclusion; global cutoff and classification | The first saved interval is excluded for squarefree `D≡3 (mod 4)` by `FirstIntervalChecked`, with no numerical premise. The other 249 intervals, universal closure, even cases and finite endgame remain open. A bounded exclusion is not a global cutoff or classification. |
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical
 local-to-global principle is a missing premise. The uniform arithmetic
 relation, class-number input, chosen-radius count, and exact finite prime
 comparison are now checked in their stated ranges. The next substantive
-bridges are the numerical enclosure/guard interpretation, universal closure
+bridges are numerical interpretation for the remaining intervals, universal closure
 and finite classification. The production lower/upper comparison, including
 the reciprocal-prime tail, is checked under the documented guards. The upper expression
 and both geometric counts are now checked at the integer radii.

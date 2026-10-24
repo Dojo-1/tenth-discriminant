@@ -3,10 +3,10 @@
 **A checked interpolation and determinant apparatus, not yet a formalized
 class-number-one classification.**
 
-The current numerical work fixes only the first saved interval. Sound log
-enclosures, quotient witnesses, radius/padding guards and a conditional
-exclusion theorem have built locally. All 1,229 rows pass; completeness and
-the two total budgets do not yet have accepted proofs. See the
+The first saved interval is now closed: for squarefree `D≡3 (mod 4)` in
+`[700000000000,875000000000]`, the constructed quadratic field has class
+number not one. Coverage, both total budgets and exact guards are proved;
+`FirstIntervalChecked.lean` has no remaining numerical hypothesis. See the
 [numerical bridge guide](../research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
 
 Start with the short [mathematical spine](MATHEMATICAL_SPINE.md): one
@@ -37,7 +37,7 @@ now converts to the determinant's odd-prime weights, bounds both finite
 losses and justifies clipping. [PrimeTail.lean](TenthDiscriminant/PrimeTail.lean)
 now proves the reciprocal-prime bound by finite potential drops and
 connects the unchanged lower/upper expressions under the documented guards.
-Numerical enclosure/guard interpretation, universal closure and
+Numerical enclosure/guard interpretation for the remaining intervals, universal closure and
 classification remain open.
 
 ## The result to start with
@@ -196,6 +196,7 @@ the explicit order is now identified with the maximal integer ring,
 including its principal norm coordinates, and the class-number-one
 ideal step is composed with the strict local valuation. The finite
 mathematical lower/upper comparison is now connected, including the tail.
-Kernel-checkable numerical enclosure/guard estimates, universal closure and
-finite classification remain open. The candidate cutoff and saved numerical evidence are
+Phase 26 closes the first bounded numerical exclusion with all guards.
+The other 249 intervals, universal closure, even cases and finite
+classification remain open. The candidate cutoff and saved numerical evidence are
 unchanged. No human or blind independent semantic review is claimed.

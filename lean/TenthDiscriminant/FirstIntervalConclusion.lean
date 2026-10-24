@@ -8,11 +8,12 @@ namespace TenthDiscriminant.FirstCertificate
 set_option autoImplicit false
 noncomputable section
 
-theorem strict_comparison_of_checked_rows (rows : List Row)
+theorem mass_budgets_of_checked_rows (rows : List Row)
     (hcover : rows.map Row.p = primeList) (hrows : ∀ r ∈ rows, checkRow r = true)
     (hbudgets : (rows.map (fun r => r.coefficient * r.hi)).sum ≤ 1324 * 10 ^ 20 * scale ∧
       7995 * 10 ^ 29 * scale ≤ (rows.map (fun r => r.weight * r.lo)).sum) :
-    FirstEnderInterval.upper < FirstEnderInterval.lower := by
+    factorialSmallMass 175000000000 10000 ≤ FirstEnderInterval.smallBudget ∧
+      FirstEnderInterval.oddBudget ≤ smallOddValuationMass 175000000000 8750000000 10000 := by
   have hm := table_mass_bounds rows hcover hrows
   have hscale : (0 : Real) < (scale : Real) := by norm_num [scale]
   have hsmall : (((rows.map (fun r => r.coefficient * r.hi)).sum : Nat) : Real) / scale ≤
@@ -25,7 +26,15 @@ theorem strict_comparison_of_checked_rows (rows : List Row)
     apply (le_div_iff₀ hscale).mpr
     unfold FirstEnderInterval.oddBudget
     exact_mod_cast hbudgets.2
-  exact FirstEnderInterval.strict_comparison_of_table_budgets (hm.1.trans hsmall) (hodd.trans hm.2)
+  exact ⟨hm.1.trans hsmall, hodd.trans hm.2⟩
+
+theorem strict_comparison_of_checked_rows (rows : List Row)
+    (hcover : rows.map Row.p = primeList) (hrows : ∀ r ∈ rows, checkRow r = true)
+    (hbudgets : (rows.map (fun r => r.coefficient * r.hi)).sum ≤ 1324 * 10 ^ 20 * scale ∧
+      7995 * 10 ^ 29 * scale ≤ (rows.map (fun r => r.weight * r.lo)).sum) :
+    FirstEnderInterval.upper < FirstEnderInterval.lower := by
+  have hm := mass_budgets_of_checked_rows rows hcover hrows hbudgets
+  exact FirstEnderInterval.strict_comparison_of_table_budgets hm.1 hm.2
 
 theorem exclusion_of_checked_rows (rows : List Row)
     (hcover : rows.map Row.p = primeList) (hrows : ∀ r ∈ rows, checkRow r = true)

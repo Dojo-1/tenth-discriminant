@@ -9,8 +9,8 @@ For the shorter conceptual route, start with the
 
 For the current numerical frontier, read the short
 [numerical bridge guide](../research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
-It explains how a prospective `581>572` certificate would exclude one fixed
-interval, and why a sound checker or successful replay is not that certificate.
+It explains the now-checked `581>572` contradiction on one fixed interval,
+and why that is not a global cutoff or classification.
 
 ## The theorem in one paragraph
 
@@ -874,7 +874,8 @@ powers, floor-square loss, exact integer coefficients, padded enumeration
 and both clipping branches. Phase 24 now supplies the needed bound of
 the finite `log(p)/(p(p−1))` sum by production `I(P)`. Thus the same actual
 Gram connects the mathematical lower and upper expressions, with no tail
-premise left. Numerical interpretation and classification remain open.
+premise left. Section 27 supplies the first interval's numerical contradiction;
+the remaining interval campaign and classification stay open.
 
 ## 26. Pay for the tail by a finite potential drop
 
@@ -887,7 +888,24 @@ integers, so this also bounds the prime tail. There is no infinite-sum exchange.
 [PrimeTail.lean](TenthDiscriminant/PrimeTail.lean) checks the derivative,
 unit-step comparison, telescoping, exact production constant and composition.
 Class number one now forces `prime_mass≤upper_B` under the documented guards.
-The exclusion criterion still needs a strict real numerical comparison in
-the opposite direction. The saved Arb output has not yet been translated
-into that checked comparison or its numerical guards. No cutoff or full
-classification follows just from the connected mathematical comparison.
+At this stage the exclusion criterion still required a strict numerical
+comparison in the opposite direction. Section 27 supplies that comparison
+and its guards for the first interval, using exact certificates rather than
+assuming the saved Arb output is true. No global cutoff or classification
+follows just from the connected mathematical comparison.
+
+## 27. One complete bounded contradiction
+
+Phase 26 supplies the first saved interval's numerical premise rather than
+assuming the Arb replay proves it. If `D` is squarefree, `D≡3 (mod 4)`, and
+`700000000000≤D≤875000000000`, class number one would force `L≤U` for the
+same actual determinant's bounds. Checked finite certificates give
+`581×10^31≤L` and `U≤572×10^31`. These inequalities contradict `581>572`.
+
+[FirstIntervalChecked.lean](TenthDiscriminant/FirstIntervalChecked.lean)
+states the resulting actual-field class-number exclusion without a numerical
+hypothesis. Coverage checks every integer through 10000; exact chunk sums
+prove both total budgets. The [short numerical guide](../research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md)
+explains why the proof is finite and how the generator remains untrusted.
+The other 249 intervals, the unbounded range, even cases and finite
+classification are not closed by this result.

@@ -1,6 +1,6 @@
 {
   "task": "Connect the checked local determinant bound to Ender's geometric and analytic cutoff",
-  "status": "phase25_partial_checkpoint_all_1229_rows_checked_full_build_and_namespace_audit_passed_local_parent_control_timeouts_preserved_idle_audit_rerun_and_exact_head_CI_pending_no_interval_claim",
+  "status": "phase26_bounded_actual_class_number_exclusion_compiled_all_fixed_estimates_proved_full_build_namespace_audit_passed_local_control_parent_timeout_preserved_publication_and_exact_head_CI_pending_global_goal_active",
   "base_commit": "a4da8963fa0d94ca4858e09ab10f3195d0fe588f",
   "branch": "codex/rectangular-row-action",
   "decisions": [
@@ -185,8 +185,14 @@
     "lean/TenthDiscriminant/FirstIntervalData.lean",
     "lean/TenthDiscriminant/FirstIntervalScalars.lean",
     "research/ender_radius_bridge/FirstIntervalTableCheck.lean",
-    "research/ender_radius_bridge/PHASE25_PROOF_FAILURES.json"
+    "research/ender_radius_bridge/PHASE25_PROOF_FAILURES.json",
+    "research/ender_radius_bridge/PHASE26_PROTOCOL.md",
+    "research/ender_radius_bridge/PHASE26_RESULTS.json",
+    "research/ender_radius_bridge/generate_phase26_closure.py",
+    "lean/TenthDiscriminant/FirstIntervalCoverage.lean",
+    "lean/TenthDiscriminant/FirstIntervalTotals.lean",
+    "lean/TenthDiscriminant/FirstIntervalChecked.lean"
   ],
-  "phase25_frontier": "Every prime row is checked. Coverage and two total budgets are unproved. All totals/coverage failures are preserved outside the audited library. No live numerical proof attempt remains.",
+  "phase25_frontier": "Closed by Phase 26: all 1229 rows, prime coverage, both total budgets and actual-field bounded exclusion compile. Global cutoff, other intervals, even cases and classification remain open. No live numerical proof attempt remains.",
   "updated": "2026-10-24"
 }

@@ -291,3 +291,44 @@
   failure; start an idle rerun and require exact-head remote CI. Initial
   pushed checkpoint was `c3590eb62833f99ab715130f6c052a5b4ff8ad51`; the following
   evidence-only commit corrects pending local-control status. No proof changes.
+
+- Phase 26 starts from clean tracked head `260c6ba`; previous goal turn was
+  progress, not no-progress. Refreshed remote branch and PR: same head, draft,
+  open. Preregistered fixed-input bounded-coverage/totals repair in `cf5ec1d`
+  before proof edits. No subagents spawned. First pilot classifies 16 integers
+  near 9973 and the zero endpoint, with an omitted-prime negative control.
+  All prior failures remain preserved. A mismatched checkpoint patch failed
+  atomically before any file change; inspected and retried it.
+
+- Phase 26: direct Boolean normalization and proposition rewriting still
+  caused kernel recursion. Standalone prime/nonprime propositions passed.
+  Explicit `decide_eq_true/false` certificates followed by `simp only` on
+  Boolean equalities now pass the 16-integer pilot and omitted-prime control.
+  One unsupported simplifier name was rejected and removed, not bypassed.
+  Both exact 1229-row totals and the two target budgets passed independently
+  in `Phase26Totals.lean` (47.9981834 s, 2949898240 bytes). Complete bounded
+  integer coverage is running under the same monitor; no exclusion yet.
+
+- Phase 26 milestone: full integer coverage passed (95.0764805 s,
+  4643332096 bytes), now `FirstIntervalCoverage.lean`. `FirstIntervalTotals`
+  and its two invalid tighter-budget controls compile. Refactored the
+  existing conditional conclusion to expose mass budgets, without changing
+  its statement. `FirstIntervalChecked.first_interval_classNumber_ne_one`
+  compiles: squarefree D congruent 3 mod 4 in [700000000000,875000000000]
+  has actual constructed-field class number not one, no numerical premise.
+  Its conservative numeric bounds are 581*10^31 and 572*10^31.
+  Full build passes (6727); namespace audit passes all 2381 logical roots,
+  2070 theorems, 11661 runtime-only auxiliaries reported; only permitted
+  classical foundation. Matched controls are running. Global goal active:
+  other 249 intervals, unbounded range, even cases and finite classification
+  remain open. Re-read Tao's original official article on 24 October;
+  corrected ledger keeps global objective incomplete and posting/human
+  summary obligations separate. No novelty or optimized cutoff claim.
+
+- Full Phase-26 root build passed; namespace audit passed as above. The
+  parent apparatus-control subprocess exceeded its unchanged 240-s limit,
+  so do not call the whole local audit.py driver green. Preserve this local
+  failure and require direct matched-control completion / exact-head CI.
+  Current guides were updated to distinguish one bounded actual-field
+  exclusion from the remaining campaign, all-D envelope, even cases and
+  finite classification. Frozen tools/ledger/flow/audit/pins unchanged.

@@ -55,3 +55,13 @@ Success here would exclude **one bounded interval** in the stated arithmetic
 class, not establish the global cutoff, even-discriminant cases, remaining
 249 intervals, unbounded tail, finite classification, optimality or novelty.
 If an obligation remains open, name it and keep the overall goal active.
+
+## Pilot repair, registered after the first terminal result
+
+The 16-integer high Boolean filter still hit kernel recursion (19.7898659 s,
+2922381312 observed bytes; raw result `PHASE25_INTEGER_CHUNKS_20261024170031`).
+The pinned `Mathlib/Tactic/NormNum/Prime.lean` provides proof-producing
+extensions for the *proposition* `Nat.Prime n`, whereas Boolean evaluation can
+retain expensive decision reduction. First prove each of the same 16 prime
+or nonprime propositions by that extension, then rewrite the Boolean filter
+with those proofs. Keep the same finite ranges and missing-prime control.

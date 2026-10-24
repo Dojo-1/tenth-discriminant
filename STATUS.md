@@ -1,6 +1,29 @@
 # Status — 2026-10-24
 
-## Phase 25 checkpoint: a sound numerical bridge, table verification pending
+## Phase 26: first bounded class-number exclusion closes end to end
+
+`FirstCertificate.first_interval_classNumber_ne_one` compiles with no
+numerical premise. For squarefree `D≡3 (mod 4)` and
+`700000000000≤D≤875000000000`, the actual constructed quadratic field's
+class number is not one. Exact log enclosures, all 1,229 row checks,
+complete prime coverage, both aggregate budgets and radius/padding guards
+are supplied. The conservative contradiction is `581×10^31>572×10^31`.
+
+Coverage is proved on integer windows of at most 16, then joined by exact
+range identities. Both totals are proved on the existing 32-row chunks,
+then joined symbolically. No production tool, parameter, saved certificate
+or dependency pin changed. Failed pilots and prior resource limits remain
+preserved. Local bounded-module build passes; full audit/CI status belongs
+to the exact published head, not to a proof-attempt label.
+
+This excludes one bounded interval in the stated arithmetic class, not the
+global cutoff. The remaining 249 intervals, unbounded range, even cases and
+finite classification are still open. No novelty, optimization or human
+peer-review claim. [Human proof](research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md)
+· [Theorem](lean/TenthDiscriminant/FirstIntervalChecked.lean)
+· [Preregistration](research/ender_radius_bridge/PHASE26_PROTOCOL.md).
+
+## Historical Phase 25 checkpoint: sound bridge, table verification then pending
 
 The fixed first interval is `[700000000000,875000000000]`, for squarefree
 `D≡3 (mod 4)`. Local pinned builds accept the eight-term log enclosure and

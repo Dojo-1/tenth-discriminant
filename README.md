@@ -2,12 +2,11 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
-Phase 25 is closing the numerical bridge on **one fixed saved interval**.
-The log enclosures, exact radius/padding guards, division-witness checker
-and conditional interval conclusion have built locally. All 1,229 prime
-rows now pass in Lean; table completeness and the two total budgets remain
-separate verification obligations. No checked
-interval, global cutoff or classification is claimed from these ingredients.
+**One fixed interval is now closed in Lean.** For squarefree `D≡3 (mod 4)`
+with `700000000000≤D≤875000000000`, the constructed quadratic field has
+class number different from one. All 1,229 rows, prime coverage, aggregate
+budgets and exact guards are supplied; no numerical hypothesis remains.
+This is not a checked global cutoff or a class-number classification.
 Start with the [short numerical bridge guide](research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
 
 An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/comment-page-1/): make an effective class-number-one argument explicit, without importing the known classification as a proof input.
@@ -52,8 +51,9 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > The [finite tail proof](lean/TenthDiscriminant/PrimeTail.lean) discharges
 > the reciprocal-prime estimate: class number one now forces the unchanged
 > mathematical `prime_mass≤upper_B` comparison under the documented guards.
-> Numerical interval interpretation, universal closure and final
-> classification remain open in Lean. The
+> Phase 26 now supplies the strict numerical contradiction and all guards
+> for the first saved interval. The other 249 intervals, universal closure,
+> even-discriminant cases and final classification remain open in Lean. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.
