@@ -47,16 +47,18 @@ natural D>0; `ellipsePoints` is its complex image. `mem_ellipsePairs_iff`
 proves the finite box does not truncate the ellipse, `latticePoint_injective`
 and `ellipsePoints_card` prove distinctness and preserve its count, and
 `ellipseTraceGram_det_bounds` applies the same matrix theorem under the
-explicit count hypothesis. The count itself is **not** established in Lean for
-Ender's chosen D and radius.
+explicit count hypothesis. Phase 18 now discharges that count for Ender's
+chosen-radius guard.
 
-The [cell-covering proof](../research/ender_radius_bridge/PROOF.md) establishes
+The [cell-covering proof](../research/ender_radius_bridge/PROOF.md) explains
 that count mathematically for the chosen radius. Phase 17 checks the exact
 radius-to-strict-count step (`ellipsePairs_card_gt_of_ender_radius_and_area`)
 and its upper-endpoint composition with the actual Gram
-(`ellipseTraceGram_det_bounds_of_ender_radius_and_area`). Both state the
-cell-area inequality as an explicit hypothesis. The disk-covering/measure
-proof of that inequality is **not** in Lean. Existing
+(`ellipseTraceGram_det_bounds_of_ender_radius_and_area`). Phase 18's
+[`EllipseCellArea.lean`](TenthDiscriminant/EllipseCellArea.lean) proves the
+missing area inequality by an exact closed-cell covering and measure bound,
+then exposes unconditional `ellipsePairs_card_gt_of_ender_radius` and
+`ellipseTraceGram_det_bounds_of_ender_radius`. Existing
 `ellipsePairs_antitone_D` carries the upper-endpoint count to each D≤D2.
 
 [`IntegerTraceGram.lean`](TenthDiscriminant/IntegerTraceGram.lean) identifies
@@ -138,7 +140,7 @@ ball-arithmetic calculation into a kernel-checked inequality.
 | Required link | Current status |
 |---|---|
 | Fundamental discriminants, actual quadratic rings, ideals/class groups and small-prime inertness under the class-number-one hypothesis | PROVED in Lean for squarefree `D≡3 (mod 4)` and strict small odd primes: the explicit order is the maximal integer ring; a residue root gives a quotient, class number one gives a principal element of absolute norm `p`, norm nonnegativity gives exact norm `p`, and the actual integer Gram has the required valuation. Even-discriminant variants and later analytic/classification links remain open. |
-| Concrete integer-radius norm ellipse and required lower bound on its cardinality | Finite construction, exact membership, injectivity, radius-to-count implication and upper-endpoint Gram transfer PROVED in Lean. The chosen-radius lower count has a complete geometric proof in `research/ender_radius_bridge/PROOF.md`, but its cell-covering area inequality is NOT Lean-checked. |
+| Concrete integer-radius norm ellipse and required lower bound on its cardinality | Finite construction, exact membership, injectivity, cell-area inequality, chosen-radius strict count and upper-endpoint Gram transfer PROVED in Lean for `D>0` under the exact radius guard. The area proof uses closed cells; boundary overlap is harmless because only finite-union subadditivity is needed. |
 | Equality between the formal real Gram matrix and the integer-pair matrix with the same derivative rows and supplied point set | PROVED in Lean for D>0, including row-major rectangular and integer-radius ellipse specializations and determinant cast. This does not equate distinct point-set generators or duplicate-containing Python lists. |
 | Reduction of that integer matrix, with the same original sample indexing, and equivalence between local determinant vanishing and global divisibility by m>0 | PROVED in Lean; this is a detector, not a lower bound. |
 | Inert-prime divisibility and prime-adic valuation lower bound for that same integer determinant | [Uniform proof](../research/uniform_inert_valuation/PROOF.md) gives the full exponent. Lean identifies the actual derivative-row action, constructs the integral Gram factor, derives universal Frobenius from **odd-prime nonsquareness of `-D : ZMod p`**, and proves the exact determinant power. Phase 16 derives that local condition from class number one for squarefree `D≡3 (mod 4)` and strict small odd primes. It does **not** close the area/analytic/classification chain. |
@@ -182,8 +184,8 @@ CI running the tests is not a second mathematical author. No human readability
 study, blind independent semantic review, proof-completion percentage or
 optimality claim is made.
 
-The next formal geometric bridge is the cell-area lower bound; its exact
-radius-to-count instantiation is now checked. The remaining analytic bridge
+The geometric cell-area bound and exact radius-to-count instantiation are
+now checked. The remaining analytic bridge
 must connect that count and the local valuations to Ender's determinant
 comparison and numerical certificates. Earlier stages identified
 `H^k` polynomial jets with a concrete unitriangular change on the actual

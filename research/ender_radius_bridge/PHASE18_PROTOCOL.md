@@ -31,3 +31,27 @@ only genuinely checked helper lemmas and record the precise remaining
 measure/covering obligations. Update the claim map honestly; run targeted
 Lean and the complete pinned checks on any proof head. Keep PR draft and
 unmerged.
+
+## Execution (2026-10-24)
+
+`EllipseCellArea.lean` compiles the full target. It measures each closed
+cell exactly, constructs a containing cell for every complex point with
+integer floors, bounds the distance to its lattice center, proves the
+smaller disk is covered by cells from the *actual* `ellipsePairs`, and
+applies finite-union subadditivity plus Mathlib's exact complex disk
+volume. The resulting `ellipsePairs_cell_area_bound` has no area or
+point-count premise. `ellipsePairs_card_gt_of_ender_radius` composes it
+with Phase 17; `ellipseTraceGram_det_bounds_of_ender_radius` transports
+the strict count to the original Gram at an interval upper endpoint.
+
+The registered `D=rho=1` endpoint and negative-boundary controls compile.
+At `D=1,rho=0`, the unchecked strengthening without `rho>=delta` is
+formally refuted (`pi>1` versus the one-point ellipse). Initial proof
+errors were tactic/coercion issues: nesting the second floor case,
+selecting the ENNReal top/coercion lemmas, and making square-root
+nonnegativity explicit. They were repaired; no mathematical guard was
+removed. Full build and pinned CI status are recorded separately.
+Local targeted Lean and the complete 6708-step `lake build` pass.
+`python verify_sources.py` passes its endpoint-only correspondence check;
+task-state JSON and whitespace checks pass. No proof placeholders occur
+in the new module. Pinned dependency audit and negative controls await CI.

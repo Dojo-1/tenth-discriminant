@@ -1,7 +1,9 @@
 # Why Ender's chosen radius has enough lattice points
 
 **Status:** complete elementary mathematical proof of the geometric count;
-**not yet a Lean proof** of the area estimate. This note concerns only point
+Phase 18 also checks the cell-area inequality and chosen-radius count in
+[`EllipseCellArea.lean`](../../lean/TenthDiscriminant/EllipseCellArea.lean).
+This note concerns only point
 counting, not determinant divisibility, the analytic contradiction, or class
 numbers. It keeps the original Ender parameters and certificates unchanged.
 The older horizontal-slice proof is in `review/PHASE2_GPT-6.1-Sol.md:172-186`;
@@ -81,7 +83,8 @@ because `y² >= 0`. Thus `n(D,rho) >= n(D2,rho) > 3R+S` with the same
 `R,S,rho`. The inclusion and its cardinality consequence are checked in
 `LatticeEllipse.lean`. Phase 17 also checks in Lean that (1) and the exact
 radius guard imply the strict endpoint count and actual-Gram positivity;
-the cell-covering proof of (1) itself is not yet checked there. For the
+Phase 18 checks the cell-covering proof of (1) in `EllipseCellArea.lean`.
+For the
 universal part, Ender defines the exact
 ceiling of the right side of (3) at each integer `D >= 10^36`, so (3)
 holds by construction.
@@ -97,10 +100,12 @@ matrix. It does not prove the area lemma by assuming its conclusion.
 The historical finite Arb certificates and all-D determinant envelopes were
 not rerun or strengthened here. A passing `radius_for` comparison validates
 its returned integer relative to an Arb enclosure; the derivation above
-explains why that lower condition suffices mathematically. Lean still lacks
-the disk-area/cell-partition proof. The formal connection from real
-inequality (3), **assuming (1)**, to `ellipsePairs` cardinality is now
-checked. The same Gram matrix is identified with an integer matrix, and
+explains why that lower condition suffices mathematically. Lean now checks
+the disk-area proof using **closed** cells and finite-union subadditivity;
+boundary overlap does not affect the upper bound. Phase 17 checks the formal
+connection from real inequality (3), assuming (1), to `ellipsePairs`
+cardinality; Phase 18 supplies (1), so its public count theorem has no
+area premise. The same Gram matrix is identified with an integer matrix, and
 Phase 16 derives its strict-small-prime valuation from class number one
 in the squarefree `D≡3 (mod 4)` chart. The analytic comparison,
 certificate interpretation and final classification still need their

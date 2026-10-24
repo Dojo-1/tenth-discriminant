@@ -5,14 +5,30 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
-## 2026-10-24: chosen-radius algebra checked; cell area still open in Lean
+## 2026-10-24: the chosen-radius cell-area count is Lean-checked
+
+[Phase 18](research/ender_radius_bridge/PHASE18_PROTOCOL.md) proves the
+previously paper-only cell-area inequality for the **actual finite ellipse**.
+Closed width-one, height-`√D` cells cover the plane by integer floors;
+each point in the smaller disk lies in a cell whose center meets the
+ellipse inequality. Complex disk volume and finite-union subadditivity
+give `π(ρ−δ)²≤|E(D,ρ)|√D`, where `δ=(1+√D)/2` and `ρ≥δ`.
+Composing with Phase 17 checks Ender's exact radius gives
+`|E(D,ρ)|>3R+S` and positivity/Hadamard of the actual trace-Gram
+throughout a certified interval once its upper-endpoint radius guard
+is supplied. This does **not** formalize the analytic determinant
+comparison, certify Arb inequalities, or classify class-number-one fields.
+[Lean source](lean/TenthDiscriminant/EllipseCellArea.lean) ·
+[human proof](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge).
+
+## 2026-10-24: Phase 17 radius algebra, before the area proof
 
 [Phase 17](research/ender_radius_bridge/PHASE17_PROTOCOL.md) proves in Lean
 that Ender's exact `1.001` radius guard and the explicit cell-area inequality
 force the **strict** `3R+S` point count, including the finite-interval
 upper-endpoint transfer to the actual Gram determinant. The cell-covering
-area inequality is a stated hypothesis, not yet formalized. This is an
-algebraic/geometric interface, not a checked analytic cutoff or a
+area inequality was a stated hypothesis; Phase 18 now proves it. Phase 17
+alone was an algebraic/geometric interface, not a checked analytic cutoff or a
 classification. [Lean source](lean/TenthDiscriminant/LatticeEllipse.lean) ·
 [human explanation](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge).
 
@@ -107,8 +123,9 @@ principal. Its generator has algebraic norm of magnitude `n`; the
 `K=ℚ,n=3` control compiles. This does **not** yet turn a root of
 `X²+D` into a map from the specific maximal quadratic order, nor
 identify the generator's norm with `principalNorm D x y`. Those
-specific-field arrows remain open, as do the Lean area estimate,
-analytic cutoff and classification. [Lean source](lean/TenthDiscriminant/PrincipalIdealBridge.lean) ·
+specific-field arrows were open at this historical checkpoint; Phases
+16 and 18 now close those arithmetic and area links. The analytic cutoff
+and classification remain open. [Lean source](lean/TenthDiscriminant/PrincipalIdealBridge.lean) ·
 [human proof](lean/HUMAN_GUIDE.md#16-what-class-number-one-actually-buys).
 
 ## 2026-10-23: a conditional small-prime norm gate
@@ -135,9 +152,10 @@ coordinates and applies Phase 7's actual Gram theorem, proving
 `p^(2*valuationWeight R S p) | det G` for every finite sample set,
 rectangle and derivative cutoff. The `D=19,p=3` guard passes and
 `D=2,p=3` is a square falsifier. This is a checked **local-nonsquare
-valuation theorem**, not a class-number-one theorem: deriving the guard
-from the intended global class-group/inertness hypotheses, Lean cell-area
-count, analytic cutoff and classification remain open.
+valuation theorem**, not by itself a class-number-one theorem. At this
+historical checkpoint the global guard and cell-area count were open;
+Phases 16 and 18 now check those separate links. The analytic cutoff
+and classification remain open.
 [Lean theorem](lean/TenthDiscriminant/InertFrobenius.lean).
 
 ## 2026-10-23: actual rectangular row-to-Gram bridge
@@ -267,10 +285,10 @@ integer D≥1 and radius rho≥0. For the exact radius chosen by Ender it yields
 from D2 to every D≤D2 by exact set inclusion. Phase 17 additionally checks
 that the exact radius plus the explicit area premise give this strict count;
 Lean also checks the cardinality transfer and Gram application, plus a D=19,
-rho=5 exact control with 21 points. **The cell-area estimate itself remains
-unformalized.** Neither this count nor a green build establishes the integer
-matrix's inert-prime divisibility, the analytic contradiction, or class-number
-classification. The earlier numerical records are unchanged.
+rho=5 exact control with 21 points. **At this checkpoint** the cell-area
+estimate was unformalized; Phase 18 now checks it. The geometric count alone
+does not establish the analytic contradiction or class-number classification.
+The earlier numerical records are unchanged.
 
 ## 2026-10-23: bounded formal ellipse bridge
 

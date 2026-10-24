@@ -246,14 +246,14 @@ nonzero hypotheses wherever a degree or multiplicity argument needs them.
 This interpolation theorem alone does not define the imaginary quadratic class
 group, prove small-prime inertness, count Ender's ellipse, identify the integer
 Gram matrix, prove prime-adic divisibility, certify the analytic bounds or close
-the finite classification. Later work supplies the count on paper (§9) and the
+the finite classification. Later work supplies the checked count (§9) and the
 matrix identification in Lean (§10), then an exact residue detector (§11).
 The remaining links are not consequences of interpolation alone. See
 [FORMALIZATION.md](FORMALIZATION.md).
 
 Put plainly: this proof says that **if** the intended ellipse supplies enough
 distinct samples, then its exact derivative Gram matrix is nonsingular. The
-geometric count now supplies that premise in an unformalized area argument;
+geometric count now supplies that premise through the checked cell-area argument;
 the integer-coordinate bridge identifies the same matrix, and the residue
 bridge detects divisibility by a chosen modulus. Neither statement by itself
 proves Ender's uniform prime-adic lower bound; a later
@@ -312,8 +312,8 @@ settles the count on paper. The idea is to partition the plane into cells of
 width 1 and height √D. Each cell center is within √D of every point in the
 cell. Ender's radius includes ten spare √D units; a smaller disk therefore
 fits inside cells centered at ellipse points, and its area exceeds
-`(3R+S)√D`. Lean checks the finite-set monotonicity needed to carry this
-endpoint result across an interval, but does not yet check the area argument.
+`(3R+S)√D`. Lean checks this covering and the finite-set monotonicity
+needed to carry the endpoint result across an interval.
 
 Phase 17 checks the *algebraic half* of this picture. Put
 `s=√D`, `δ=(1+s)/2`, `q=3R+S`, and `β=√(q s/π)`.
@@ -324,9 +324,20 @@ Thus the explicit area inequality
 [`ellipsePairs_card_gt_of_ender_radius_and_area`](TenthDiscriminant/LatticeEllipse.lean)
 checks this strict inequality; `ellipseTraceGram_det_bounds_of_ender_radius_and_area`
 also transports it from the upper endpoint to the actual Gram matrix.
-The *geometric half*—that the half-open lattice cells cover the disk and
-therefore satisfy the displayed area inequality—is still a paper proof,
-not a Lean theorem. Neither theorem assumes the desired point count.
+Phase 18 checks the *geometric half* in
+[`EllipseCellArea.lean`](TenthDiscriminant/EllipseCellArea.lean).
+It uses **closed** cells: integer floors provide a center for every point,
+including boundary ties; each cell has area `s`; and a point in a cell is
+at most `δ` from its center. The disk of radius `ρ−δ` is therefore covered
+by cells whose centers are in `E(D,ρ)`. The area of a finite union is at
+most the sum of its cell areas. Since no equality of union and sum is
+needed, overlapping cell boundaries cause no gap. Mathlib's exact complex
+disk-volume theorem supplies `π(ρ−δ)²`. The public theorems
+`ellipsePairs_card_gt_of_ender_radius` and
+`ellipseTraceGram_det_bounds_of_ender_radius` now need **only** `D>0`,
+positive `R,S`, the same radius guard, and (for interval transfer) `D≤D₂`.
+They do not assume area or point count. They do not prove the later
+analytic determinant comparison or class-number classification.
 
 ## 10. The same Gram matrix in integer and complex coordinates
 

@@ -1,6 +1,6 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 24 October 2026, through preregistered Phase 17;
+**Living update: 24 October 2026, through preregistered Phase 18;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
@@ -21,7 +21,7 @@ discriminant*, whose nine known values are `3,4,7,8,11,19,43,67,163`.
 | 1 | Effective bound, avoiding Heegner as proof input | **Candidate, not established** | [Ender](ledger/ender.txt) proposes exclusion for `D≥7×10¹¹`; the determinant valuation, class-group input and analytic-to-certificate chain are not connected end-to-end. |
 | 2 | Best efforts to optimize the constant | **Effort documented; no improved cutoff** | The factorial arrangement removes Dusart from this route but gives a much larger threshold than the historical `1.5×10⁴` branch and the dated [prior-art](PRIOR_ART.md) report of `q<570` (not re-reviewed here). Preregistered [lift](ledger/determinant_lifts.txt) and [radial](ledger/radial_bounds.txt) investigations did not improve Ender's global cutoff. |
 | 3 | Threshold low enough for direct computation | **Conditional computational endgame** | The saved [CRT sieve](ledger/sieve_ender.txt) leaves `163` in `[92,7×10¹¹)`, and the small range has a recorded [form check](ledger/formic.txt). They finish the finite part **if** the candidate exclusions hold. |
-| 4 | High-quality Lean formalization, perhaps upstreamable | **Substantial component, not the classification** | Lean checks jet-contact/Gram positivity, the exact ellipse set, integer-to-real matrix identity, residue reduction, and Ender's exact uniform valuation for the **actual** integer Gram. For squarefree `D≡3 (mod 4)`, Phase 16 now derives the required strict-small-odd-prime nonsquare condition from class number one through the actual maximal integer ring. The chosen-radius cell-area count remains paper-only, as do analytic and final classification links. No Mathlib upstream review is recorded. See the [claim map](lean/FORMALIZATION.md). |
+| 4 | High-quality Lean formalization, perhaps upstreamable | **Substantial component, not the classification** | Lean checks jet-contact/Gram positivity, the chosen-radius cell-area count, integer-to-real matrix identity, residue reduction, and Ender's exact uniform valuation for the **actual** integer Gram. For squarefree `D≡3 (mod 4)`, Phase 16 derives the required strict-small-odd-prime nonsquare condition from class number one through the actual maximal integer ring. The analytic and final classification links remain candidate mathematics. No Mathlib upstream review is recorded. See the [claim map](lean/FORMALIZATION.md). |
 | 5 | Compare strengths of different writeups | **Qualitative only** | [Prior art](PRIOR_ART.md) records a dated comparison and attribution, not a controlled, current, like-for-like comparison of optimized manuscripts. |
 | 6 | Spur new arguments or arrangements | **Modest local progress** | BEAN-to-Ender changes the prime input; the checked integer/residue Gram bridge gives a useful fixed example. The overarching Green/twinheterodox route is not claimed novel, and no new global exclusion follows. |
 | 7 | Preserve failed attempts and negative results | **Documented internally** | The [review response](review/RESPONSE_Claude.md), [BEAN audit](review/BEAN_AUDIT.txt), fixed [radial protocol](flow/PREREG_RADIAL.txt), and [lift protocol](flow/PREREG_LIFTS.txt) retain counterexamples, failed guards and ceilings. Internal preservation does not equal external reporting. |
@@ -45,7 +45,7 @@ the size of the proposed constant.
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
 | A contact budget of `2 deg_Z F + deg_W F` turns enough ordinary jets into a positive determinant for the **actual** trace-Gram matrix. | **Lean theorem** | General finite complex samples and rectangular monomial grids, not merely Ender's ellipse. It proves nonvanishing, not inertness or valuation. [Human proof](lean/HUMAN_GUIDE.md) · [short spine](lean/MATHEMATICAL_SPINE.md). |
-| Unit-by-`√D` cells yield an elementary lower count at Ender's chosen radius. | **Paper area proof plus Lean radius/endpoint bridge** | Lean checks that the exact radius guard and an explicit area inequality imply the strict count and actual-Gram positivity. The disk-covering area comparison is not kernel-checked. [Proof](research/ender_radius_bridge/PROOF.md). |
+| Unit-by-`√D` cells yield an elementary lower count at Ender's chosen radius. | **Lean-checked geometric theorem** | Lean checks the actual disk covering, cell volumes, strict chosen-radius count, and interval transfer to actual-Gram positivity. This is not the analytic cutoff. [Proof](lean/TenthDiscriminant/EllipseCellArea.lean) · [human explanation](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge). |
 | The Ender campaign records 250 contiguous Arb interval enclosures from `7×10¹¹` to `10³⁶`, an all-`D` envelope above that, and a finite CRT sieve below the cutoff. | **Recorded computation and conditional derivation** | Reproducible numerical evidence for the candidate route; source correspondence does not itself certify every Arb inequality or the missing determinant/class-group implications. [Coverage](ledger/coverage_ender.txt) · [derivation](ledger/ender.txt). |
 | One integral Gram matrix has an exact real view and a residue view retaining samples that collide modulo `m`. | **Lean theorem** | For `m>0`, the residue determinant vanishes exactly when `m` divides the integer determinant. This detects divisibility, but gives no valuation exponent. [Claim map](lean/FORMALIZATION.md). |
 | A unitriangular rectangular basis using `Z^p-W` yields Ender's full `2F(p)` valuation exponent under odd-prime nonsquareness of `-D` modulo `p`. | **Lean theorem with class-number bridge in the strict range** | Lean checks the actual Gram-row identity, integral factorization and universal Frobenius implication; Phase 16 derives the local guard from class number one for squarefree `D≡3 (mod 4)` and strict small odd primes. This is not a new analytic cutoff. [Proof](research/uniform_inert_valuation/PROOF.md). |
@@ -57,6 +57,6 @@ the size of the proposed constant.
 The next decisive step is **not** another isolated zero determinant modulo a
 prime. The uniform valuation now has a Lean proof for the *same
 integer determinant* under a precise local nonsquare guard; checked
-connections to the class-number and analytic
-inequalities. Formalizing the paper cell-area argument would close a
-separate geometric gap. No new cutoff claim follows.
+connections to the analytic inequalities remain necessary. The
+class-number-to-local and cell-area bridges are now Lean-checked under
+their stated hypotheses. No new cutoff claim follows.

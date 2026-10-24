@@ -62,10 +62,10 @@ For a concrete positive-D integer-radius ellipse, see
 not prove Ender's analytic estimate for the chosen radius. The explanation is
 in [guide §9](HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge).
 The [separate cell-covering proof](../research/ender_radius_bridge/PROOF.md)
-now supplies that count in ordinary mathematics. Lean checks the exact
-chosen-radius-to-count inequality, interval monotonicity and the conditional
-application to the actual Gram. The disk-covering area inequality remains an
-explicit, unproved Lean hypothesis.
+explains the count in ordinary mathematics.
+[`EllipseCellArea.lean`](TenthDiscriminant/EllipseCellArea.lean) now checks the
+disk-covering inequality, exact chosen-radius count, interval transfer and
+actual-Gram positivity without a point-count or area premise.
 
 [`IntegerTraceGram.lean`](TenthDiscriminant/IntegerTraceGram.lean) gives the
 next bridge: for a supplied finite set of distinct integer pairs and positive
@@ -165,10 +165,10 @@ status. The current status is [FORMALIZATION.md](FORMALIZATION.md).
 
 ## The remaining boundary
 
-The cell-area count is not Lean-checked; determinant divisibility is checked
-under an odd-prime nonsquare condition, and the strict-small-prime norm
-argument is checked under an explicit unproved lifting premise. The
-abstract class-number-one quotient-to-principal-norm step is checked;
+The chosen-radius cell-area count is Lean-checked. Determinant divisibility
+is checked under an odd-prime nonsquare condition, which Phase 16 derives
+from class number one in the squarefree `D≡3 (mod 4)` strict small-prime
+range. The abstract class-number-one quotient-to-principal-norm step is checked;
 the explicit order is now identified with the maximal integer ring,
 including its principal norm coordinates, and the class-number-one
 ideal step is composed with the strict local valuation. Remaining

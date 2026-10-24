@@ -1,5 +1,16 @@
 # Task checkpoint
 
+- 2026-10-24, Phase 18: Protocol-only commit `766c739` preceded edits.
+  Lean now checks the missing disk-to-cell covering, exact cell area,
+  finite-union bound, chosen-radius strict count, and upper-endpoint
+  actual-Gram positivity. Closed cells intentionally overlap on edges;
+  the proof uses subadditivity, so no partition assumption is hidden.
+  `D=1,rho=0` refutes dropping the radius guard. Targeted Lean and the
+  complete 6708-step local build pass, along with endpoint-only source
+  correspondence, JSON and whitespace checks. Pinned CI pending.
+  Analytic cutoff and classification
+  remain open.
+
 - 2026-10-23, Phase 8 on draft PR #27: preregistered `c82d8f2` before proof edits. A local commutative-ring chart was proved identical to the repository's `ZMod p` pair multiplication/power and injective. Lean checks Euler's criterion gives `t^p=-t` for odd prime `p` and nonsquare `-D`, then Freshman's dream yields `a^p=conjugate(a)` for every original residue pair. The integer-coordinate transport discharges Phase 7's universal premise and proves exact `p^(2F(p))` divisibility for the actual Gram under that local guard. D=19,p=3 nonsquare and D=2,p=3 square controls pass. This is not a class-number-one to inertness theorem or a checked cutoff. First proof-script failures are in the Phase 8 protocol. Full 6699-step local build and source correspondence pass; final pinned CI pending.
 
 - 2026-10-23, Phase 7 after PR #25 merged externally at `a4da896`: preregistered the actual-row bridge first in `710da33`. The exact binomial matrix now acts on the existing integer ordinary-derivative rows; bilinearity of the unchanged factor-two trace constructs `UGUᵀ=D_p K D_p` with integral `K`, yielding the exact `p^(2F(p))` determinant power under a universal coordinatewise Frobenius congruence. Targeted Lean files and full 6697-step local build pass. Optional D=19 corollary stalled locally and was removed. Inertness-to-Frobenius, Lean cell area, analytic cutoff and class-number classification remain open. Pinned Linux CI pending.

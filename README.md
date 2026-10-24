@@ -13,9 +13,9 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > the exact integer/residue views of one Gram matrix, and a fixed
 > `D=19,p=3` nine-divisibility pilot, and Ender's exact uniform
 > `p^(2F(p))` factor for the actual integer Gram when `p` is odd prime
-> and `-D` is nonsquare modulo `p`. The chosen-radius cell-area count is
-> proved on paper; Lean checks the radius-to-count deduction only **assuming**
-> the explicit area inequality. For squarefree `D≡3 (mod 4)`, Lean now
+> and `-D` is nonsquare modulo `p`. The chosen-radius cell-area count,
+> including its disk covering and exact radius deduction, is now checked in
+> Lean. For squarefree `D≡3 (mod 4)`, Lean now
 > derives that local nonsquare condition from class number one at every
 > strict small odd prime. Lean also proves that class number one
 > makes any residue-quotient ideal principal; a residue root constructs
@@ -57,9 +57,11 @@ and [precise claim map](lean/FORMALIZATION.md).
 **Geometric count follow-up:** a [cell-covering proof](research/ender_radius_bridge/PROOF.md)
 now derives Ender's lower ellipse count and shows his chosen integer radius
 has more than `3R+S` points, including at finite-interval upper endpoints.
-The area argument is mathematical prose, **not Lean-checked**; the exact-set
-endpoint transfer is checked in Lean. No determinant or classification claim
-has been promoted by this result.
+The [cell-area theorem](lean/TenthDiscriminant/EllipseCellArea.lean) now
+checks the geometric inequality, exact radius deduction and endpoint
+transfer in Lean. This establishes positivity and Hadamard for the actual
+trace-Gram at that radius; it does not establish Ender's analytic cutoff
+or the class-number classification.
 
 **Integer-coordinate bridge:** Lean now identifies the actual real trace-Gram
 matrix, entry by entry, with an integer matrix built from the same supplied
