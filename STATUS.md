@@ -5,6 +5,20 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-24: the finite local-to-global determinant sandwich is Lean-checked
+
+[Phase 19](research/ender_radius_bridge/PHASE19_PROTOCOL.md) now assembles
+the exact factors `p^(2F(p))` for **all distinct odd primes `p<R`** on the
+same positive integer ellipse Gram, under squarefree `D≡3 (mod 4)`, class
+number one, strict `R<(D+1)/4`, and Ender's chosen-radius guard. Lean proves
+the product divides the determinant and its finite logarithmic prime mass
+is at most the logarithm of the Hadamard diagonal product. Empty, singleton
+and duplicate-prime controls compile. This connects local arithmetic to
+real geometry; it does **not** prove the factorial lower estimate, the
+recorded Arb interval margins, the universal envelope, or classification.
+[Lean source](lean/TenthDiscriminant/PrimeMassAssembly.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#22-the-finite-prime-mass-sandwich).
+
 ## 2026-10-24: the chosen-radius cell-area count is Lean-checked
 
 [Phase 18](research/ender_radius_bridge/PHASE18_PROTOCOL.md) proves the

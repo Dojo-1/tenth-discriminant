@@ -740,8 +740,8 @@ the ring equivalence, and the maximal-ring norm formula
 `N(x+yT)=principalNorm D x y`. The `D=15` field works; dropping
 positivity allows the reducible `T²-T` control.
 
-Section 21 checks the next implication. The paper area and analytic
-cutoff remain separate gaps.
+Section 21 checks the next implication. The area is now checked in §9;
+the analytic cutoff remains a separate gap.
 
 ## 21. The global hypothesis reaches the local determinant
 
@@ -769,5 +769,40 @@ checks that sequence under those explicit hypotheses. At
 field's class number is **not** one. This adversarial control ensures
 the global hypothesis cannot disappear. Equality at the norm
 threshold, even fundamental discriminants, the chosen-radius cell
-count in Lean, and the analytic-to-numerical cutoff remain outside
-this theorem. It is not an end-to-end classification.
+count, and the analytic-to-numerical cutoff remain outside
+this particular theorem. The chosen-radius count is now checked separately
+in §9. It is not an end-to-end classification.
+
+## 22. The finite prime-mass sandwich
+
+Fix one discriminant `D`, one integer radius `ρ`, and the **same**
+integer Gram determinant `g` throughout. Let `P` be the odd primes
+`p<R`. Assume `D` is positive and squarefree, `D≡3 (mod 4)`, its
+quadratic field has class number one, and `R<(D+1)/4`. Section 21 gives
+`p^(2F(p)) ∣ g` for each `p∈P`. The primes in a set are distinct;
+hence these prime powers are pairwise coprime. Therefore their product
+
+$$A=\prod_{p\in P}p^{2F(p)}$$
+
+divides `g`. This is where *local* congruences become a *global*
+integer statement; no prime-distribution estimate is needed.
+
+At Ender's chosen radius, §9 proves that the same Gram is positive.
+An integer `A≥1` dividing a positive integer `g` satisfies `A≤g`.
+The integer-to-real identity of §10 identifies `g` with the real
+trace-Gram determinant, and Hadamard gives its diagonal product `H`.
+Consequently
+
+$$1\le A\le g\le H,\qquad
+2\sum_{p\in P}F(p)\log p\le\log H.$$
+
+All logarithm arguments are positive; the empty prime set gives
+`A=1`, and duplicating one prime would invalidate the coprime-product
+step. [PrimeMassAssembly.lean](TenthDiscriminant/PrimeMassAssembly.lean)
+checks this exact chain, including empty, singleton, and duplicate
+controls. The **remaining** task is not to discover another determinant:
+it is to prove that Ender's computable factorial expression lies below
+the left sum, that his `upper_B` lies above `log H`, and that the saved
+interval inequalities (plus the universal envelope and finite sieve)
+have the needed exact interpretation. None of those conclusions is
+asserted by this theorem.

@@ -37,3 +37,19 @@ If the full specialization does not compile, retain only checked abstract
 assembly lemmas and record the exact remaining bridge. Run targeted Lean,
 the full pinned build/audit/negative controls, source correspondence,
 and report exact head and PR status without merging.
+
+## Execution (2026-10-24)
+
+Protocol-only commit `65bbaed` preceded Lean edits. The target now compiles
+in `PrimeMassAssembly.lean`: the coprime product divides the original
+integer ellipse Gram; the checked chosen-radius count makes it positive;
+the determinant cast and Hadamard give the exact product sandwich and finite
+sum-of-logs inequality for **all** odd primes below `R`. Empty, singleton,
+and duplicate-factor controls compile. A first targeted check exposed only
+proof-interface errors (quadratic-field `Fact` guard, an unsupported `on`
+notation, and a Nat/Int cast); the guard was retained and the proof repaired.
+No mathematical claim was weakened. Factorial, aggregate analytic, Arb,
+universal-envelope, and classification links remain open. Targeted Lean,
+the full 6709-step `lake build`, and endpoint-only source correspondence
+pass locally. Final-head pinned CI status is recorded separately in the
+task state.

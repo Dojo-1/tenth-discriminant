@@ -252,14 +252,16 @@ these views commute on **one integer matrix with the same samples**.
 |---|---|
 | Jet energy, contact budget, positivity; exact integer matrix; residue reduction; fixed `D=19,p=3` square factor | Lean-checked under the displayed hypotheses. |
 | Ender's chosen-radius ellipse has enough points | Lean checks the disk-cell area inequality, exact chosen-radius strict count, and upper-endpoint transfer to actual-Gram positivity. |
-| Uniform inert-prime valuation, class-number-one to inertness, analytic comparison, finite classification | Lean checks the exact exponent for the actual integer Gram and, for squarefree `D≡3 (mod 4)` at strict small odd primes, derives its nonsquare premise from class number one through the maximal integer ring. The analytic and finite-classification links are not connected as an end-to-end theorem. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
+| Uniform inert-prime valuation and finite assembly | For squarefree `D≡3 (mod 4)`, class number one gives every strict small odd-prime factor on the actual integer Gram. Lean now assembles their product, proves the chosen-radius determinant positive, and obtains the exact finite logarithmic prime-mass versus Hadamard inequality. |
+| Analytic cutoff and finite classification | Ender's factorial lower estimate, computable upper bound, certificate interpretation and finite endgame are not connected in Lean. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical
 local-to-global principle is a missing premise. The uniform arithmetic
-relation, class-number input, and chosen-radius count are now checked in
-their stated ranges. The next substantive bridge is the analytic determinant
-comparison that uses those results and interprets the recorded certificates.
+relation, class-number input, chosen-radius count, and exact finite prime
+comparison are now checked in their stated ranges. The next substantive
+bridge is the analytic estimate that bounds those two exact sides by
+Ender's executable formulas and interprets the recorded certificates.
 For the detailed
 provenance, see [STATUS.md](../STATUS.md), the
 [registered pilot protocol](../research/local_global_gram/PROTOCOL.md), and

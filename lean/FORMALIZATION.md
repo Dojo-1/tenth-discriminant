@@ -122,6 +122,7 @@ replaced by a coefficient-ring endomorphism merely to shorten the proof.
 | Explicit order algebraic norm | [HalfOrderAlgebraicNorm](TenthDiscriminant/HalfOrderAlgebraicNorm.lean): `quadraticOrder_norm`, `halfOrder_norm_eq_principalNorm` | A reindexed power basis and the actual left-multiplication matrix identify Mathlib's `Algebra.norm ℤ (x+yT)` with `x²+xy+cy²`, and with the existing `principalNorm`. This is an order theorem, not a maximal-order identification. |
 | Maximal-order field chart | [QuadraticFieldChart](TenthDiscriminant/QuadraticFieldChart.lean): `quadraticFieldPoly_irreducible`, `quadraticField_integral_coordinates`, `halfOrderEquivRingOfIntegers`, `halfOrder_ringOfIntegers_norm` | For squarefree `D ≡ 3 (mod 4)`, the explicit order is exactly the maximal integer ring of the genuine quadratic field and its norm is `principalNorm`. |
 | Class-number-one to local determinant valuation | [ClassNumberInertBridge](TenthDiscriminant/ClassNumberInertBridge.lean): `smallPrimeNormLifting_of_classNumber_one`, `rectangularTraceGram_valuation_of_classNumber_one`, `fifteen_classNumber_ne_one` | For squarefree `D≡3 (mod 4)` and odd prime `p<(D+1)/4`, class number one gives Ender's exact exponent for the actual integer Gram. The area/analytic/classification chain is separate. |
+| Finite prime-mass assembly on the chosen-radius Gram | [PrimeMassAssembly](TenthDiscriminant/PrimeMassAssembly.lean): `ellipse_allOddPrimeMass_hadamard_sandwich`, `ellipse_allOddPrimeMass_log_le_hadamard` | The product of all distinct odd-prime factors below `R` divides the same positive integer determinant, and `∑ 2F(p) log p ≤ log(∏ Gᵢᵢ)`. Requires squarefree `D≡3 (mod 4)`, class number one, strict `R<(D+1)/4`, and the exact radius guard. It does not supply Ender's factorial estimate or certify Arb margins. |
 | Ordinary-jet powers in the selected quadratic order | [JetPower](TenthDiscriminant/JetPower.lean): `jet_power_dvd`, `rectangular_frobenius_row_jet_coordinates`, Hasse negative control | The order-zero congruence is assumed. The later row-action theorem identifies these jets with the actual integer Gram rows. |
 | Conjugation operator on local samples | [LocalOperators](TenthDiscriminant/LocalOperators.lean): `pairConj_involutive`, `frobenius_congruence_conj`, `frobeniusJet_conj_dvd`, non-real pilot | Closes the explicit Frobenius premise under one symmetry; does not derive the premise from inertness or change the global class-number hypothesis. |
 | Fixed inert-prime Gram pilot | [InertPilot](TenthDiscriminant/InertPilot.lean): `inertPilotJet_dvd_three`, `inertPilotGram_factor`, `inertPilot_nine_dvd_det`, positive and noninert controls | General inert-prime theorem for arbitrary D, p and row grid. |
@@ -144,7 +145,7 @@ ball-arithmetic calculation into a kernel-checked inequality.
 | Equality between the formal real Gram matrix and the integer-pair matrix with the same derivative rows and supplied point set | PROVED in Lean for D>0, including row-major rectangular and integer-radius ellipse specializations and determinant cast. This does not equate distinct point-set generators or duplicate-containing Python lists. |
 | Reduction of that integer matrix, with the same original sample indexing, and equivalence between local determinant vanishing and global divisibility by m>0 | PROVED in Lean; this is a detector, not a lower bound. |
 | Inert-prime divisibility and prime-adic valuation lower bound for that same integer determinant | [Uniform proof](../research/uniform_inert_valuation/PROOF.md) gives the full exponent. Lean identifies the actual derivative-row action, constructs the integral Gram factor, derives universal Frobenius from **odd-prime nonsquareness of `-D : ZMod p`**, and proves the exact determinant power. Phase 16 derives that local condition from class number one for squarefree `D≡3 (mod 4)` and strict small odd primes. Phase 18 closes the separate area count; the analytic comparison and classification remain open. |
-| Full factorial/Legendre prime-mass inequality, remainder control and analytic upper bound | OPEN; selected floor-sum and moment identities are proved. |
+| Full factorial/Legendre prime-mass inequality, remainder control and analytic upper bound | OPEN. The exact finite local-prime mass is now bounded by the actual Hadamard product, but no Lean theorem identifies Ender's computable `prime_mass` or `upper_B` bounds with these sides. |
 | Kernel-checkable numerical contradictions, with their exact analytic interpretation | OPEN. |
 | Universal envelope starting margin and its determinant bounds | OPEN; propagation is conditional. |
 | CRT survivor certificate, reduced-form enumeration and class-number correspondence | OPEN. |
@@ -184,10 +185,10 @@ CI running the tests is not a second mathematical author. No human readability
 study, blind independent semantic review, proof-completion percentage or
 optimality claim is made.
 
-The geometric cell-area bound and exact radius-to-count instantiation are
-now checked. The remaining analytic bridge
-must connect that count and the local valuations to Ender's determinant
-comparison and numerical certificates. Earlier stages identified
+The geometric count, local factors and their exact finite-product/logarithmic
+comparison on one determinant are now checked. The remaining analytic bridge
+must connect that exact comparison to Ender's factorial lower bound,
+computable Hadamard upper bound and numerical certificates. Earlier stages identified
 `H^k` polynomial jets with a concrete unitriangular change on the actual
 integer Gram, then establish the inertness interface of
 the [paper valuation proof](../research/uniform_inert_valuation/PROOF.md).

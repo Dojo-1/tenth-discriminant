@@ -144,3 +144,12 @@
   cutoff and classification remain open. Full 6707-step local build,
   endpoint-only source correspondence, JSON and whitespace checks pass;
   pinned CI pending.
+- 2026-10-24, Phase 19: Protocol-only commit `65bbaed` preceded proof edits.
+  `PrimeMassAssembly.lean` now compiles a finite coprime-product divisor,
+  a chosen-radius determinant/Hadamard sandwich, and the exact log-prime-mass
+  inequality for all odd primes below `R` under squarefree `D≡3 (mod 4)`,
+  class number one and strict `R<(D+1)/4`. Empty, singleton and duplicate
+  controls compile. Initial elaboration/cast errors were repaired without
+  deleting assumptions. The factorial/Arb analytic bounds and classification
+  remain unproved. Full 6709-step local Lean build and endpoint-only
+  source correspondence pass; pinned CI is pending.

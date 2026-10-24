@@ -1,6 +1,6 @@
 {
   "task": "Connect the checked local determinant bound to Ender's geometric and analytic cutoff",
-  "status": "phase18_cell_area_proof_pinned_ci_passed_final_docs_ci_pending_analytic_open",
+  "status": "phase19_prime_mass_assembly_full_local_build_passed_pinned_ci_pending_analytic_open",
   "base_commit": "a4da8963fa0d94ca4858e09ab10f3195d0fe588f",
   "branch": "codex/rectangular-row-action",
   "decisions": [
@@ -32,7 +32,8 @@
     "Preregister Phase 15 in commit c600ac5 before proof edits. Construct the genuine rational quadratic field and prove the explicit integer order equals its maximal integer ring; keep class-number composition separate.",
     "Preregister Phase 16 in commit c519477 before proof edits. Compose the root quotient, maximal-order equivalence, class-number-one principal kernel and positive norm into exact lifting and the actual-Gram valuation; retain D=15,p=3 as negative control.",
     "Preregister Phase 17 in commit 328c90b before proof edits. Prove the exact Ender radius-to-strict-count and endpoint Gram implication assuming the explicit cell-area inequality; do not label that inequality Lean-checked.",
-    "Preregister Phase 18 in commit 766c739 before proof edits. Prove the actual finite-ellipse cell-area bound using closed cells, exact disk volume and finite-union subadditivity; preserve the radius guard and compose to the original Gram."
+    "Preregister Phase 18 in commit 766c739 before proof edits. Prove the actual finite-ellipse cell-area bound using closed cells, exact disk volume and finite-union subadditivity; preserve the radius guard and compose to the original Gram.",
+    "Preregister Phase 19 in commit 65bbaed before proof edits. Assemble all distinct odd-prime factors on the same positive chosen-radius integer Gram and derive its exact finite logarithmic Hadamard comparison; keep factorial, Arb and classification links open."
   ],
   "evidence": [
     "PR #18 head 2b69c2a passed pinned CI run 39913779228 and merged externally during this continuation.",
@@ -76,7 +77,8 @@
     "Phase 13 proof head ca4bb0b passed pinned Linux CI run 40037475255 and CodeQL. Phase 14 protocol-only commit 18510c3 preceded edits. MaximalOrderCoordinates.lean targeted check and full 6705-step lake build pass: squarefree denominator, parity, forward and converse coordinate conditions, uniqueness, D=15 and D=9 controls. Source correspondence passes endpoint-only; whitespace and task JSON checks pass. The field/order equivalence remains open; pinned CI on this proof head pending.",
     "Phase 14 proof head 8d15fbb passed pinned Linux CI run 40039967991 and CodeQL. Phase 15 protocol-only commit c600ac5 preceded edits. QuadraticFieldChart.lean targeted check and full 6706-step lake build pass: genuine number field, rational and integer bases, injective integral-order map, integral coordinate reconstruction, ring equivalence with RingOfIntegers, maximal-ring norm formula, D=15 and reducible c=0 controls. Source correspondence passes endpoint-only; whitespace and task JSON checks pass. Pinned CI pending; class-number lifting composition remains open.",
     "Phase 15 proof head cf1c9db passed pinned Linux CI run 40043319145 and CodeQL. Phase 16 protocol-only commit c519477 preceded edits. ClassNumberInertBridge.lean targeted check and full 6707-step lake build pass: class-number-one exact norm lifting, strict nonsquare guard, actual integer-Gram valuation, and D=15 class-number-not-one negative control. Source correspondence passes endpoint-only; whitespace and task JSON checks pass. Proof head 7fbc7fc passed pinned Linux CI run 40044997537 and CodeQL. Area, analytic and classification links remain open.",
-    "Phase 17 protocol-only commit 328c90b preceded proof edits. Targeted Lean and full 6707-step build prove the exact radius-to-strict-count and upper-endpoint actual-Gram implications under an explicit cell-area premise. Source correspondence passes endpoint-only; JSON and whitespace checks pass. Phase 17 final head be426b0 passed pinned CI 40047725905 and CodeQL. Phase 18 protocol-only commit 766c739 preceded new edits; targeted EllipseCellArea.lean and full 6708-step local build check the area inequality, unconditional chosen-radius count, endpoint actual-Gram theorem, and a D=1,rho=0 falsifier. Source correspondence passes endpoint-only; JSON and whitespace checks pass. Proof head c513f51 passed pinned CI run 40073516586 and CodeQL run 40073513187. A documentation-only correction has final-head CI pending; analytic cutoff and classification remain open."
+    "Phase 17 protocol-only commit 328c90b preceded proof edits. Targeted Lean and full 6707-step build prove the exact radius-to-strict-count and upper-endpoint actual-Gram implications under an explicit cell-area premise. Source correspondence passes endpoint-only; JSON and whitespace checks pass. Phase 17 final head be426b0 passed pinned CI 40047725905 and CodeQL. Phase 18 protocol-only commit 766c739 preceded new edits; targeted EllipseCellArea.lean and full 6708-step local build check the area inequality, unconditional chosen-radius count, endpoint actual-Gram theorem, and a D=1,rho=0 falsifier. Source correspondence passes endpoint-only; JSON and whitespace checks pass. Proof head c513f51 passed pinned CI run 40073516586 and CodeQL run 40073513187. Final head ce60ba4 passed pinned CI 40074461750 and CodeQL 40074459438; analytic cutoff and classification remain open.",
+    "Phase 19 protocol-only commit 65bbaed preceded Lean edits. Targeted PrimeMassAssembly.lean and full 6709-step lake build compile the local-prime product divisor, chosen-radius exact determinant sandwich, finite logarithmic prime-mass inequality, and empty/singleton/duplicate controls. Endpoint-only source correspondence, whitespace and task JSON checks pass locally; pinned CI pending. Factorial/Arb/classification links remain open."
   ],
   "files_touched": [
     "README.md",
@@ -143,7 +145,9 @@
     "research/ender_radius_bridge/PHASE18_PROTOCOL.md",
     "lean/TenthDiscriminant/EllipseCellArea.lean",
     "lean/TenthDiscriminant.lean",
-    "lean/MATHEMATICAL_SPINE.md"
+    "lean/MATHEMATICAL_SPINE.md",
+    "research/ender_radius_bridge/PHASE19_PROTOCOL.md",
+    "lean/TenthDiscriminant/PrimeMassAssembly.lean"
   ],
   "updated": "2026-10-24"
 }

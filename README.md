@@ -29,6 +29,12 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > squarefree denominators and parity. It then composes that equivalence
 > with class number one to prove the specific norm-lifting premise and
 > the local valuation for the actual integer Gram. The
+> [prime-mass assembly](lean/TenthDiscriminant/PrimeMassAssembly.lean)
+> now combines all distinct odd primes below `R` on this **same**
+> positive determinant and checks their exact finite logarithmic lower
+> bound against its Hadamard diagonal product. The factorial estimate,
+> numerical interval inequalities, and final classification are still open
+> in Lean. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.
@@ -62,6 +68,14 @@ checks the geometric inequality, exact radius deduction and endpoint
 transfer in Lean. This establishes positivity and Hadamard for the actual
 trace-Gram at that radius; it does not establish Ender's analytic cutoff
 or the class-number classification.
+
+**Finite prime-mass follow-up:** [Phase 19](research/ender_radius_bridge/PHASE19_PROTOCOL.md)
+now checks the precise local-to-global assembly: class number one supplies
+each odd small-prime factor; pairwise coprimality makes their product divide
+the positive chosen-radius integer determinant; casting and Hadamard give
+the exact finite sum `∑ 2F(p) log p ≤ log(∏ Gᵢᵢ)` for all odd primes `p<R`
+under the strict cutoff. This does not certify Ender's numerical lower
+estimate or analytic exclusion.
 
 **Integer-coordinate bridge:** Lean now identifies the actual real trace-Gram
 matrix, entry by entry, with an integer matrix built from the same supplied
