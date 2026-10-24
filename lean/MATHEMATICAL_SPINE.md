@@ -255,14 +255,15 @@ these views commute on **one integer matrix with the same samples**.
 | Uniform inert-prime valuation and finite assembly | For squarefree `D≡3 (mod 4)`, class number one gives every strict small odd-prime factor on the actual integer Gram. Lean now assembles their product, proves the chosen-radius determinant positive, and obtains the exact finite logarithmic prime-mass versus Hadamard inequality. |
 | Production upper formula and its count input | Lean bounds the actual diagonal product by unchanged `upper_B` for the campaign's positive integer radii `rho<R`. Disjoint inward cells and exact axis accounting now supply the upper ellipse count and interval transfer, with line-count padding explicit. [Short proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.md). |
 | Factorial identity and scalar lower estimate | Lean checks the exact finite Legendre prime-power sum (including `2`) and unchanged `factorial_lower` for `R≥2`. Its weights differ from the determinant's. [Short proof](../research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md). |
-| Analytic cutoff and finite classification | Conversion to the determinant's odd-prime weights, higher-power tail bounds, clipping, certificate interpretation and finite endgame remain open in Lean. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
+| Finite conversion to determinant weights | Lean checks the staircase identity, small-prime split, finite geometric and quadratic losses, coefficients and clipping. The production-shaped lower bound reaches the same upper formula conditional on one reciprocal-prime tail bound. [Short proof](../research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md). |
+| Analytic cutoff and finite classification | The reciprocal-prime sum's integral bound, numerical certificate interpretation and finite endgame remain open in Lean. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical
 local-to-global principle is a missing premise. The uniform arithmetic
 relation, class-number input, chosen-radius count, and exact finite prime
 comparison are now checked in their stated ranges. The next substantive
-bridges are the full `prime_mass` estimate below the exact determinant mass and the
+bridges are the analytic reciprocal-prime tail bound and the
 interpretation of the recorded certificates. The production upper expression
 and both geometric counts are now checked at the integer radii.
 For the detailed

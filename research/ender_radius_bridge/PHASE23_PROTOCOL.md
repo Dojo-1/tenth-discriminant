@@ -40,3 +40,30 @@ living objective ledger. Run pinned full build, dependency audit and
 negative controls on the exact published head; keep PR #28 draft/unmerged.
 Even cases, numerical certificates, universal closure and classification
 remain open. No novelty claim or automatic public comment.
+
+## Execution record
+
+Protocol-only `e4736fdf6b947968c17df5a69683d498da83381e` preceded proof
+edits. `PrimeMassLower.lean` proves the finite conversion, exact split,
+production integer coefficients, zero-weight padded enumeration and clipping.
+Both requested finite losses are independently bounded using natural-floor
+comparison, polynomial row sums and a finite geometric series. They share
+one reciprocal-prime sum, so the public actual-Gram composition exposes
+only its upper bound `J≤I`. Production's `I(P)` is defined but its analytic
+domination theorem remains open. No numerical/cutoff conclusion is inferred.
+
+Eight controls compile. The omitted-quadratic and missing-quotient-guard
+claims are proved false, not discarded. Development repairs normalized
+sum association/distribution, an unsimplified `True` in the prime partition,
+cast rewriting order, and explicit positive denominator guards. No domain
+guard was weakened. All proof code has automatic implicit variables disabled.
+
+From `lean/`, `lake env lean TenthDiscriminant/PrimeMassLower.lean` and
+the full `lake build` pass locally (6713 steps). The final published head
+must also pass `python verify_sources.py`, `python audit.py` and
+`python negative_controls.py` in pinned Linux CI. The correspondence check
+only matches interval endpoints; it does not certify Arb inequalities.
+The generated untracked manifest is excluded. No production code, formula,
+cutoff, certificate or frozen objective audit was changed.
+Local `python verify_sources.py`, root `git diff --check`,
+`python -m json.tool .agent/state.json` and Markdown file-link checks pass.

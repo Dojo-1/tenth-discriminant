@@ -39,8 +39,10 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > now supplies its upper point-count input, including interval transfer and
 > explicit line-count padding. The [factorial bridge](research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md)
 > now checks the exact finite Legendre identity and unchanged scalar
-> `factorial_lower` for `R≥2`. Converting that factorial mass into the
-> determinant's odd-prime mass, numerical interval inequalities, and final
+> `factorial_lower` for `R≥2`. The [staircase conversion](research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md)
+> now checks finite weight conversion, higher-power losses and clipping,
+> conditional on one explicit reciprocal-prime tail inequality. That
+> analytic inequality, numerical interval interpretation and final
 > classification remain open in Lean. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a

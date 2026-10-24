@@ -186,3 +186,13 @@
   determinant's odd-prime weights. Full `prime_mass` subtraction, conversion,
   tail and clipping, numerical certificates and classification remain open.
   Pinned CI pending on the published proof head.
+
+- 2026-10-24, Phase 23: Phase 22 head `c8a42a5` passed pinned CI
+  `40096404959` and CodeQL `40096403109`. Protocol `e4736fd` preceded
+  proof edits. `PrimeMassLower.lean` checks the staircase identity, exact
+  small/large prime split, integer loss coefficients, padded enumeration,
+  finite geometric and floor-square bounds, both clipping branches and
+  actual counted `upper_B` composition conditional on one reciprocal-prime
+  tail bound. Eight controls and full 6713-step local build pass. The
+  analytic integral bound, numerical certificates, universal closure and
+  classification remain open. Pinned CI pending on this published head.

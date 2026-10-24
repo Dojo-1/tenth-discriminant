@@ -57,11 +57,11 @@ $$L(R,S)=2\sum_{\substack{p<R\\p\text{ odd prime}}}F_{R,S}(p)\log p
 
 Here `F` is the rectangular valuation weight, not the factorial
 prime-power weight above. Thus `factorial_lower≤H` does **not** imply
-`prime_mass≤L`. The next theorem must justify the program's exact
-small-prime subtraction, convert the remaining factorial weights into
-`F`, bound the higher-power tail, and validate its clipping to the
-nonnegative tail. Only then can the saved numerical comparisons be
-interpreted as contradictions under class number one.
+`prime_mass≤L`. [Phase 23's staircase proof](PRIME_MASS_LOWER_GUIDE.md)
+now checks the small-prime split, weight conversion, finite geometric
+loss bounds and clipping. One analytic reciprocal-prime tail inequality
+remains explicit. Only after that and the numerical interpretation can
+the saved comparisons yield contradictions under class number one.
 
 This is a classical counting identity and elementary integral estimate;
 no novelty, improved cutoff or class-number classification is claimed.

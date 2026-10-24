@@ -5,6 +5,23 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-24: finite weight conversion and clipping reach the same Gram
+
+[Phase 23](research/ender_radius_bridge/PHASE23_PROTOCOL.md) checks
+`F(p)=(S−1/2)A(p)−Q(p)/2` under the production quotient guard, the exact
+small-prime split, both integer loss coefficients, padded enumeration and
+clipping. Finite geometric and floor-square bounds reduce both losses to
+`J=∑_{P<p<R,prime} log(p)/(p(p−1))`. The clipped lower expression reaches
+the actual counted `upper_B` **assuming `J≤I`**. Eight controls include
+counterexamples to dropping the quadratic loss or quotient guard.
+
+The remaining analytic target is `J≤log(P+1)/P+log(1+1/P)`; it has not
+been discharged in Lean. Numerical interpretation, universal closure,
+even cases and classification remain open. No production tool, formula,
+cutoff or certificate changed.
+[Short staircase proof](research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md) ·
+[Lean source](lean/TenthDiscriminant/PrimeMassLower.lean).
+
 ## 2026-10-24: the factorial identity and scalar lower bound are checked
 
 [Phase 22](research/ender_radius_bridge/PHASE22_PROTOCOL.md) proves

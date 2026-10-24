@@ -101,6 +101,8 @@ The [Phase 20](PHASE20_PROTOCOL.md) and [Phase 21](PHASE21_PROTOCOL.md)
 records preserve targets, repairs, verification and scope. The
 [factorial bridge](FACTORIAL_LOWER_GUIDE.md) now checks the exact Legendre
 identity and scalar lower expression. Its prime-power weights are not
-the determinant's odd-prime weights: small-prime subtraction, tail bounds
-and clipping remain to be connected. The numerical task must interpret
+the determinant's odd-prime weights. The [staircase proof](PRIME_MASS_LOWER_GUIDE.md)
+now checks their finite conversion, small-prime subtraction, geometric
+loss bounds and clipping, conditional on one reciprocal-prime tail estimate.
+That analytic estimate remains open; the numerical task must still interpret
 the saved enclosures and strict contradictions.

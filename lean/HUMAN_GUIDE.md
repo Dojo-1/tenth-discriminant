@@ -849,8 +849,25 @@ envelope `x log x−x+1` under `log(n!)`, integrated from `1` to `R−1`, proves
 the unchanged scalar `factorial_lower` for `R≥2`.
 
 This sum and the determinant's `2∑ F(p) log p` have **different weights**.
-The remaining arithmetic theorem must convert between them, subtract the
-small-prime contributions, bound higher powers and justify clipping.
+Phase 23 now converts between them, subtracts the small-prime contributions,
+bounds the finite higher-power losses and justifies clipping, under one
+explicit analytic tail hypothesis; see the staircase argument below.
 [FactorialPrimeMass.lean](TenthDiscriminant/FactorialPrimeMass.lean) checks the
 identity and scalar bound, not that final `prime_mass` theorem. No cutoff
 or classification follows from this phase alone.
+
+## 25. The staircase explains the loss
+
+[The short staircase proof](../research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md)
+starts with `k=floor(r/p)≤S`. The row weight `∑_{t<S} min(k,t)` is a
+rectangle `S*k` minus the triangular corner `k(k+1)/2`. Summing rows gives
+the exact linear contribution minus the necessary quadratic loss. The
+program's `P*S≥R` ensures this identity applies to all large primes.
+
+Lean now checks the small-prime split, finite geometric bound for higher
+powers, floor-square loss, exact integer coefficients, padded enumeration
+and both clipping branches. The same actual Gram supplies `upper_B` after
+one remaining analytic inequality is supplied: the finite sum of
+`log(p)/(p(p−1))` over large primes must be bounded by production `I(P)`.
+That inequality is still an explicit hypothesis, not a completed proof.
+Numerical interpretation and classification remain open.

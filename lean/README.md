@@ -26,8 +26,11 @@ The [short upper-bound proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.
 explains the row estimate, integral and inward-cell count. The
 [factorial proof](../research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md)
 now checks the finite Legendre identity and scalar `factorial_lower`.
-Conversion to the determinant's odd-prime weights, tail control, and
-numerical/classification closure remain open.
+The [staircase proof](../research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md)
+now converts to the determinant's odd-prime weights, bounds both finite
+losses and justifies clipping, conditional on one reciprocal-prime tail
+inequality. That analytic estimate and numerical/classification closure
+remain open.
 
 ## The result to start with
 
