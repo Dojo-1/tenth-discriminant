@@ -9,10 +9,10 @@ $$2\sum_{\substack{p<R\\p\text{ odd prime}}}F(p)\log p
 
 provided the quadratic field has class number one, `D` is squarefree
 with `D≡3 (mod 4)`, `R<(D+1)/4`, the checked chosen-radius guard holds,
-and **`n` is at least the actual ellipse point count**. The last premise
-is visible: Ender's particular upper point-count estimate remains to be
-proved in Lean. The factorial lower estimate and numerical contradictions
-also remain open. This theorem supplies no new discriminant cutoff.
+and **`n` is at least the actual ellipse point count**. Phase 21 now proves
+the needed geometric count and supplies it from an interval's lower endpoint.
+The factorial lower estimate and numerical contradictions remain open.
+This theorem supplies no new discriminant cutoff.
 
 ## A row has one radius cost and one derivative cost
 
@@ -55,6 +55,32 @@ Lean also checks that Python's two integer `//2` operations equal the
 displayed triangular-number coefficients exactly. The spare endpoint
 term is checked slack, with no optimization experiment or novelty claim.
 
+## Why the geometric count is valid
+
+Give every lattice point `(x,y)` with both coordinates nonzero an open
+rectangle directed inward toward the two axes. In the first quadrant it
+is `(x-1,x) × (sqrt(D)*(y-1),sqrt(D)*y)`; the other quadrants use the
+corresponding inward rectangle. Every coordinate has smaller absolute
+value than its lattice center, so the rectangle stays in the same disk.
+Different points have disjoint rectangles, each of area `sqrt(D)`.
+Thus the number `K` of points off the axes satisfies
+
+$$K\sqrt D\le\pi\rho^2.$$
+
+The remaining points lie on the axes. The nonzero horizontal axis has
+`2rho` possible points. The vertical axis has
+`2 floor(rho/sqrt(D))+1`, including the origin. Consequently
+
+$$|E(D,\rho)|\le\frac{\pi\rho^2}{\sqrt D}
++2\rho+2\left\lfloor\frac\rho{\sqrt D}\right\rfloor+1.$$
+
+At fixed radius the ellipse loses points as `D` increases, so an upper
+count at the lower interval endpoint works throughout the interval. The
+program floors an Arb **upper endpoint** when selecting its vertical
+line count. Lean allows any upward padding `Y` of the exact floor; a
+strict bound `rho/sqrt(D)<Y+1` suffices. Interpreting the recorded Arb
+enclosures as those exact inequalities is still a numerical proof task.
+
 ## Where to inspect the proof
 
 [EnderUpperB.lean](../../lean/TenthDiscriminant/EnderUpperB.lean) names the
@@ -63,11 +89,15 @@ steps: `traceGram_diagonal_le_uniform`, `rectangular_log_row_sum`,
 `ellipse_primeMass_log_le_upperB`. All variables must be explicitly bound;
 automatic implicit variables are disabled in this module.
 
-The controls include radius one, the constant row's factor two,
+The upper-formula controls include radius one, the constant row's factor two,
 derivatives above the degree, zero observations, and empty samples.
 Concrete one-row counterexamples reject an understated radius or count.
-The [Phase 20 record](PHASE20_PROTOCOL.md) preserves the target, proof
-repairs, verification and scope. The next geometric task is to prove that
-Ender's specific `n_up` really bounds the full ellipse count; the next
-arithmetic task is to put his factorial expression below the exact prime
-sum on the left.
+[EllipseUpperCount.lean](../../lean/TenthDiscriminant/EllipseUpperCount.lean)
+checks the geometric count and endpoint transfer, with radius-zero,
+negative-coordinate, integer-boundary and axis-overcount controls. Its
+public composition is `ellipse_primeMass_log_le_counted_upperB`.
+The [Phase 20](PHASE20_PROTOCOL.md) and [Phase 21](PHASE21_PROTOCOL.md)
+records preserve targets, repairs, verification and scope. The next
+arithmetic task is to put Ender's factorial expression below the exact
+prime sum on the left; the numerical task must interpret the saved
+enclosures and strict contradictions.

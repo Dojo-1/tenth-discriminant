@@ -5,6 +5,24 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-24: the upper ellipse count reaches production `upper_B`
+
+[Phase 21](research/ender_radius_bridge/PHASE21_PROTOCOL.md) proves
+`|E(D,rho)| ≤ pi*rho²/sqrt(D)+2rho+(2Y+1)` for `D>0`, integer `rho≥0`,
+and `Y=floor(rho/sqrt(D))`. Off-axis points own disjoint open inward cells
+of area `sqrt(D)` inside the same disk. The horizontal axis excluding the
+origin contributes `2rho` possible points; the vertical axis contributes
+`2Y+1`. The theorem handles radius zero exactly and rejects counting axis
+points as full inward cells. Endpoint antitonicity supplies the upper count
+throughout an interval. Safe upward line-count padding is explicit.
+
+`ellipse_primeMass_log_le_counted_upperB` now joins both geometric counts,
+class number one, the actual integer Gram, finite prime mass and unchanged
+production upper formula. The factorial lower estimate, Arb certificate
+interpretation, universal closure and classification remain open.
+[Lean source](lean/TenthDiscriminant/EllipseUpperCount.lean) ·
+[human proof](research/ender_radius_bridge/UPPER_BOUND_GUIDE.md).
+
 ## 2026-10-24: production `upper_B` is connected to the actual Gram
 
 [Phase 20](research/ender_radius_bridge/PHASE20_PROTOCOL.md) checks the

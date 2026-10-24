@@ -35,8 +35,9 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > bound against its Hadamard diagonal product. The
 > [upper-bound proof](research/ender_radius_bridge/UPPER_BOUND_GUIDE.md)
 > now bounds that product by production `upper_B` at the campaign's integer
-> radii, with its upper point-count input explicit. The upper ellipse count,
-> factorial estimate, numerical interval inequalities, and final classification
+> radii. The [inward-cell count](lean/TenthDiscriminant/EllipseUpperCount.lean)
+> now supplies its upper point-count input, including interval transfer and
+> explicit line-count padding. The factorial estimate, numerical interval inequalities, and final classification
 > remain open in Lean. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a

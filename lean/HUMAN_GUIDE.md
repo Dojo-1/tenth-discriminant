@@ -825,8 +825,16 @@ integer radii used by Ender. The combined theorem is
 `ellipse_primeMass_log_le_upperB` in
 [EnderUpperB.lean](TenthDiscriminant/EnderUpperB.lean).
 
-Its real input `n` must bound the actual ellipse point count. The lower
-count already proves positivity; the distinct **upper** count estimate
-used by the interval program remains to be checked. The factorial lower
-estimate and exact interpretation of the saved numerical contradictions
-also remain open. This is the next part of the same determinant argument.
+Its real input `n` must bound the actual ellipse point count. Phase 21 now
+supplies the distinct **upper** count estimate: give every point off the
+axes its open unit cell directed inward toward the origin. Those cells
+are disjoint, stay inside the disk and have area `sqrt(D)`. Disk area bounds
+their number. The nonzero horizontal axis adds `2rho` possible points;
+the vertical axis adds `2 floor(rho/sqrt(D))+1`, including the origin once.
+This gives exactly the program's mathematical count formula.
+
+[EllipseUpperCount.lean](TenthDiscriminant/EllipseUpperCount.lean) checks that
+argument and its lower-endpoint interval transfer. The combined public
+theorem is `ellipse_primeMass_log_le_counted_upperB`. Any upward padding of
+the vertical floor has an explicit guard. The factorial lower estimate and
+exact interpretation of the saved numerical contradictions remain open.

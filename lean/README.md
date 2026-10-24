@@ -19,9 +19,11 @@ actual integer Gram; see [§21 of the guide](HUMAN_GUIDE.md#21-the-global-hypoth
 
 The current bridge reaches the finite prime mass and production `upper_B`
 on that same chosen-radius matrix. [EnderUpperB.lean](TenthDiscriminant/EnderUpperB.lean)
-checks the full upper expression for the campaign's integer radii with its
-upper sample-count premise explicit. The [short upper-bound proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.md)
-explains the row estimate and integral. The upper ellipse count, factorial
+checks the full upper expression for the campaign's integer radii.
+[EllipseUpperCount.lean](TenthDiscriminant/EllipseUpperCount.lean) now supplies
+its upper sample count and interval transfer, with safe floor padding explicit.
+The [short upper-bound proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.md)
+explains the row estimate, integral and inward-cell count. The factorial
 lower estimate and numerical/classification closure remain open.
 
 ## The result to start with

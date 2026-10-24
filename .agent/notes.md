@@ -165,3 +165,13 @@
   factorial lower estimate and numerical/classification links remain open.
   Full 6710-step local build and endpoint-only source correspondence pass;
   pinned CI is pending.
+- 2026-10-24, Phase 21: Phase 20 head `5f5614c` passed pinned CI
+  `40091741093` and CodeQL `40091739149`. Protocol `157ba64` preceded
+  proof edits. `EllipseUpperCount.lean` proves the unchanged upper count
+  using disjoint open inward cells for off-axis points and exact axis
+  boxes, including the origin once. It checks lower-endpoint interval
+  transfer and safe line-count padding; the counted class-number theorem
+  now reaches production `upper_B` without an abstract sample-count premise.
+  Eight controls and the full 6711-step local build pass. Factorial,
+  numerical certificate, universal-envelope and classification links remain
+  open. Pinned CI pending.

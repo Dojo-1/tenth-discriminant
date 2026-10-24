@@ -253,17 +253,17 @@ these views commute on **one integer matrix with the same samples**.
 | Jet energy, contact budget, positivity; exact integer matrix; residue reduction; fixed `D=19,p=3` square factor | Lean-checked under the displayed hypotheses. |
 | Ender's chosen-radius ellipse has enough points | Lean checks the disk-cell area inequality, exact chosen-radius strict count, and upper-endpoint transfer to actual-Gram positivity. |
 | Uniform inert-prime valuation and finite assembly | For squarefree `D≡3 (mod 4)`, class number one gives every strict small odd-prime factor on the actual integer Gram. Lean now assembles their product, proves the chosen-radius determinant positive, and obtains the exact finite logarithmic prime-mass versus Hadamard inequality. |
-| Production upper formula | Lean bounds the actual diagonal product by unchanged `upper_B` for the campaign's positive integer radii `rho<R`. Its real count input must bound the actual ellipse count. [Short proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.md). |
-| Analytic cutoff and finite classification | The upper ellipse count, Ender's factorial lower estimate, certificate interpretation and finite endgame remain open in Lean. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
+| Production upper formula and its count input | Lean bounds the actual diagonal product by unchanged `upper_B` for the campaign's positive integer radii `rho<R`. Disjoint inward cells and exact axis accounting now supply the upper ellipse count and interval transfer, with line-count padding explicit. [Short proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.md). |
+| Analytic cutoff and finite classification | Ender's factorial lower estimate, certificate interpretation and finite endgame remain open in Lean. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical
 local-to-global principle is a missing premise. The uniform arithmetic
 relation, class-number input, chosen-radius count, and exact finite prime
 comparison are now checked in their stated ranges. The next substantive
-bridges are the upper point count, the factorial estimate below the exact
-prime mass, and the interpretation of the recorded certificates. The
-production upper expression itself is now checked at the integer radii.
+bridges are the factorial estimate below the exact prime mass and the
+interpretation of the recorded certificates. The production upper expression
+and both geometric counts are now checked at the integer radii.
 For the detailed
 provenance, see [STATUS.md](../STATUS.md), the
 [registered pilot protocol](../research/local_global_gram/PROTOCOL.md), and
