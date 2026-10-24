@@ -6,16 +6,46 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 
 [Mathematical spine](lean/MATHEMATICAL_SPINE.md) · [Current Tao-objective accounting](TAO_OBJECTIVES_CURRENT.md) · [Candidate argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Frozen objective audit](TAO_OBJECTIVE_AUDIT.md) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)
 
-> **Current reading order · 23 October 2026:** start with the short
+> **Current reading order · 24 October 2026:** start with the short
 > [mathematical spine](lean/MATHEMATICAL_SPINE.md), then the
 > [current claim map](lean/FORMALIZATION.md) and
 > [Tao-objective accounting](TAO_OBJECTIVES_CURRENT.md). Lean checks interpolation,
 > the exact integer/residue views of one Gram matrix, and a fixed
 > `D=19,p=3` nine-divisibility pilot, and Ender's exact uniform
 > `p^(2F(p))` factor for the actual integer Gram when `p` is odd prime
-> and `-D` is nonsquare modulo `p`. The chosen-radius cell-area count is
-> proved on paper but not in Lean. Deriving that local nonsquare condition
-> from the global class-number hypotheses is still open. The
+> and `-D` is nonsquare modulo `p`. The chosen-radius cell-area count,
+> including its disk covering and exact radius deduction, is now checked in
+> Lean. For squarefree `D≡3 (mod 4)`, Lean now
+> derives that local nonsquare condition from class number one at every
+> strict small odd prime. Lean also proves that class number one
+> makes any residue-quotient ideal principal; a residue root constructs
+> the specific quotient for the explicit half-integral order.
+> Lean also checks its defining multiplication relation and the
+> determinant of the proposed two-dimensional multiplication matrix.
+> Lean now identifies that determinant with the order's actual
+> `Algebra.norm` and with the repository's `principalNorm` formula.
+> Lean now also constructs the genuine quadratic field and identifies
+> this order with its maximal integer ring using trace, norm,
+> squarefree denominators and parity. It then composes that equivalence
+> with class number one to prove the specific norm-lifting premise and
+> the local valuation for the actual integer Gram. The
+> [prime-mass assembly](lean/TenthDiscriminant/PrimeMassAssembly.lean)
+> now combines all distinct odd primes below `R` on this **same**
+> positive determinant and checks their exact finite logarithmic lower
+> bound against its Hadamard diagonal product. The
+> [upper-bound proof](research/ender_radius_bridge/UPPER_BOUND_GUIDE.md)
+> now bounds that product by production `upper_B` at the campaign's integer
+> radii. The [inward-cell count](lean/TenthDiscriminant/EllipseUpperCount.lean)
+> now supplies its upper point-count input, including interval transfer and
+> explicit line-count padding. The [factorial bridge](research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md)
+> now checks the exact finite Legendre identity and unchanged scalar
+> `factorial_lower` for `R≥2`. The [staircase conversion](research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md)
+> now checks finite weight conversion, higher-power losses and clipping.
+> The [finite tail proof](lean/TenthDiscriminant/PrimeTail.lean) discharges
+> the reciprocal-prime estimate: class number one now forces the unchanged
+> mathematical `prime_mass≤upper_B` comparison under the documented guards.
+> Numerical interval interpretation, universal closure and final
+> classification remain open in Lean. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.
@@ -44,9 +74,19 @@ and [precise claim map](lean/FORMALIZATION.md).
 **Geometric count follow-up:** a [cell-covering proof](research/ender_radius_bridge/PROOF.md)
 now derives Ender's lower ellipse count and shows his chosen integer radius
 has more than `3R+S` points, including at finite-interval upper endpoints.
-The area argument is mathematical prose, **not Lean-checked**; the exact-set
-endpoint transfer is checked in Lean. No determinant or classification claim
-has been promoted by this result.
+The [cell-area theorem](lean/TenthDiscriminant/EllipseCellArea.lean) now
+checks the geometric inequality, exact radius deduction and endpoint
+transfer in Lean. This establishes positivity and Hadamard for the actual
+trace-Gram at that radius; it does not establish Ender's analytic cutoff
+or the class-number classification.
+
+**Finite prime-mass follow-up:** [Phase 19](research/ender_radius_bridge/PHASE19_PROTOCOL.md)
+now checks the precise local-to-global assembly: class number one supplies
+each odd small-prime factor; pairwise coprimality makes their product divide
+the positive chosen-radius integer determinant; casting and Hadamard give
+the exact finite sum `∑ 2F(p) log p ≤ log(∏ Gᵢᵢ)` for all odd primes `p<R`
+under the strict cutoff. This does not certify Ender's numerical lower
+estimate or analytic exclusion.
 
 **Integer-coordinate bridge:** Lean now identifies the actual real trace-Gram
 matrix, entry by entry, with an integer matrix built from the same supplied
@@ -87,12 +127,11 @@ the required universal Frobenius congruence from the exact odd-prime
 nonsquare local condition, so `p^(2F(p))` divisibility is Lean-checked
 under that condition. A further
 [local-operator and norm-bridge check](lean/TenthDiscriminant/LocalOperators.lean)
-([Phase 9](research/uniform_inert_valuation/PHASE9_PROTOCOL.md))
 shows that both conjugation and residue-fiber transport modulo `p`
 preserve the explicit Frobenius premise and all ordinary one-factor and
 `H^k` power jets, and links the selected-order norm to `principalNorm`
-for `D ≡ 3 (mod 4)`; it does not establish global class-number closure by itself. This
-advances the *formal bridge*; it does not
+for `D ≡ 3 (mod 4)`; it does not establish global class-number closure
+by itself. This advances the *formal bridge*; it does not
 establish the analytic cutoff or class-number
 classification as a checked theorem.
 The mechanism and remaining scope are explained in [guide §11](lean/HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix)

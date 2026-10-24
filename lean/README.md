@@ -9,6 +9,31 @@ Then read the [detailed human proof guide](HUMAN_GUIDE.md). Use the
 [current claim map](FORMALIZATION.md) to distinguish proved components,
 conditional helpers, finite calculations and open links.
 
+The arithmetic foundation includes the
+[maximal-order equivalence](TenthDiscriminant/QuadraticFieldChart.lean):
+Phase 14's rational trace/norm criterion identifies every algebraic
+integer in the constructed quadratic field with the explicit
+half-integral order. The [class-number bridge](TenthDiscriminant/ClassNumberInertBridge.lean)
+now turns this into the strict-small-prime local valuation for the
+actual integer Gram; see [§21 of the guide](HUMAN_GUIDE.md#21-the-global-hypothesis-reaches-the-local-determinant).
+
+The current bridge reaches the finite prime mass and production `upper_B`
+on that same chosen-radius matrix. [EnderUpperB.lean](TenthDiscriminant/EnderUpperB.lean)
+checks the full upper expression for the campaign's integer radii.
+[EllipseUpperCount.lean](TenthDiscriminant/EllipseUpperCount.lean) now supplies
+its upper sample count and interval transfer, with safe floor padding explicit.
+The [short upper-bound proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.md)
+explains the row estimate, integral and inward-cell count. The
+[factorial proof](../research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md)
+now checks the finite Legendre identity and scalar `factorial_lower`.
+The [staircase proof](../research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md)
+now converts to the determinant's odd-prime weights, bounds both finite
+losses and justifies clipping. [PrimeTail.lean](TenthDiscriminant/PrimeTail.lean)
+now proves the reciprocal-prime bound by finite potential drops and
+connects the unchanged lower/upper expressions under the documented guards.
+Numerical enclosure/guard interpretation, universal closure and
+classification remain open.
+
 ## The result to start with
 
 For a finite set P of distinct complex points and the original R-by-S monomial
@@ -54,9 +79,10 @@ For a concrete positive-D integer-radius ellipse, see
 not prove Ender's analytic estimate for the chosen radius. The explanation is
 in [guide §9](HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge).
 The [separate cell-covering proof](../research/ender_radius_bridge/PROOF.md)
-now supplies that count in ordinary mathematics. Lean checks interval
-monotonicity and the conditional Ender-guard application, but the disk-area
-step is not yet formalized.
+explains the count in ordinary mathematics.
+[`EllipseCellArea.lean`](TenthDiscriminant/EllipseCellArea.lean) now checks the
+disk-covering inequality, exact chosen-radius count, interval transfer and
+actual-Gram positivity without a point-count or area premise.
 
 [`IntegerTraceGram.lean`](TenthDiscriminant/IntegerTraceGram.lean) gives the
 next bridge: for a supplied finite set of distinct integer pairs and positive
@@ -66,7 +92,9 @@ determinant casts accordingly. The later rectangular valuation theorem
 proves the exact determinant power under an explicit universal Frobenius
 congruence. [InertFrobenius.lean](TenthDiscriminant/InertFrobenius.lean)
 derives that congruence from odd-prime nonsquareness of `-D : ZMod p`.
-The global class-number-one to local-guard link is not yet in Lean.
+For squarefree `D≡3 (mod 4)`, the
+[class-number bridge](TenthDiscriminant/ClassNumberInertBridge.lean)
+now supplies that local guard at strict small odd primes.
 The [guide's coordinate explanation](HUMAN_GUIDE.md#10-the-same-gram-matrix-in-integer-and-complex-coordinates)
 includes an asymmetric control that a determinant-only comparison misses.
 
@@ -154,8 +182,14 @@ status. The current status is [FORMALIZATION.md](FORMALIZATION.md).
 
 ## The remaining boundary
 
-The cell-area count is not Lean-checked; small-prime inertness and determinant
-divisibility, remaining analytic and
-kernel-checkable numerical estimates, and finite classification are not yet a
-connected Lean proof. The analytic cutoff and saved numerical evidence are
+The chosen-radius cell-area count is Lean-checked. Determinant divisibility
+is checked under an odd-prime nonsquare condition, which Phase 16 derives
+from class number one in the squarefree `D≡3 (mod 4)` strict small-prime
+range. The abstract class-number-one quotient-to-principal-norm step is checked;
+the explicit order is now identified with the maximal integer ring,
+including its principal norm coordinates, and the class-number-one
+ideal step is composed with the strict local valuation. The finite
+mathematical lower/upper comparison is now connected, including the tail.
+Kernel-checkable numerical enclosure/guard estimates, universal closure and
+finite classification remain open. The candidate cutoff and saved numerical evidence are
 unchanged. No human or blind independent semantic review is claimed.

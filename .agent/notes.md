@@ -1,6 +1,17 @@
 # Task checkpoint
 
-- 2026-10-23, Phase 9 after PR #27 merged externally at `2c9f05b`: rebased `codex/residue-transport-closure` onto `2c9f05b` and preregistered `research/uniform_inert_valuation/PHASE9_PROTOCOL.md` in protocol-only commit `2989c26` before Lean edits. In `LocalOperators.lean`, proved `pairMul_congruence`, `pairPow_congruence`, `frobenius_congruence_of_mod_eq`, `frobeniusJet_of_mod_eq_dvd`, `rectangular_frobenius_row_jet_of_mod_eq`, and `frobenius_congruence_residue_transport_pilot`, closing the deferred residue-fiber transport operator `T` from Phase 6. In `InertFrobenius.lean`, proved `nonsquare_of_mod_eq`, `rectangularTraceGram_valuation_of_mod_eq_nonsquare`, `selectedOrderNorm_eq_principalNorm`, `norm_eq_zero_iff_of_nonsquare`, and `dvd_four_mul_principalNorm_of_nonsquare`, linking the selected-order norm to `principalNorm` and establishing the modulo-`p` norm obstruction under nonsquareness.
+- 2026-10-24, Phase 18: Protocol-only commit `766c739` preceded edits.
+  Lean now checks the missing disk-to-cell covering, exact cell area,
+  finite-union bound, chosen-radius strict count, and upper-endpoint
+  actual-Gram positivity. Closed cells intentionally overlap on edges;
+  the proof uses subadditivity, so no partition assumption is hidden.
+  `D=1,rho=0` refutes dropping the radius guard. Targeted Lean and the
+  complete 6708-step local build pass, along with endpoint-only source
+  correspondence, JSON and whitespace checks. Proof head `c513f51`
+  passed pinned CI `40073516586` and CodeQL `40073513187`; a later
+  documentation-only correction requires its own final-head check.
+  Analytic cutoff and classification
+  remain open.
 
 - 2026-10-23, Phase 8 on draft PR #27: preregistered `c82d8f2` before proof edits. A local commutative-ring chart was proved identical to the repository's `ZMod p` pair multiplication/power and injective. Lean checks Euler's criterion gives `t^p=-t` for odd prime `p` and nonsquare `-D`, then Freshman's dream yields `a^p=conjugate(a)` for every original residue pair. The integer-coordinate transport discharges Phase 7's universal premise and proves exact `p^(2F(p))` divisibility for the actual Gram under that local guard. D=19,p=3 nonsquare and D=2,p=3 square controls pass. This is not a class-number-one to inertness theorem or a checked cutoff. First proof-script failures are in the Phase 8 protocol. Full 6699-step local build and source correspondence pass; final pinned CI pending.
 
@@ -43,3 +54,155 @@
 - 2026-10-23: Protocol-only commit `e8bb4d389c95bc24624d7b94174245314594dfba` passed pinned Linux workflow `39944972558`. New Lean modules give Zsqrtd coordinates, an independently computed residue Gram with determinant naturality and exact collision/asymmetric controls, a two-sided determinant lemma, and the fixed D=19,p=3 canonical eight-row theorem `9 ∣ det G` for arbitrary finite Q and J. The D=19 ellipse instance is positive; D=2,p=3 is a checked noninert falsifier. Targeted Lean and local source-correspondence checks passed. Full build and later checks still pending at this checkpoint; no general Ender/classification conclusion follows.
 - 2026-10-23: Full `lake build` passed for all 6690 steps. Local `audit.py` exited 1 because the Windows apparatus-controls wrapper timed out after 240 seconds, despite import coverage and the compiled `AUDIT_OK` report (526 logical declarations, 435 theorems). Local `negative_controls.py` was deliberately stopped after four matched good/bad controls passed; its full suite is incomplete locally. The exact final proof commit requires its own pinned Linux CI; do not infer a pass from partial local output.
 - 2026-10-23: Proof-head commit `d5945cf7fc5b891b54ef85986c40a55bec35843c` passed pinned Linux workflow `39954106722`, job `120415525126`: source correspondence, full build, compiled axiom audit and inherited negative controls. Draft PR #20 remains open and unmerged; its description was updated to the new fixed-pilot scope. This task-state-only follow-up will need its own CI before it can be called the final checked head.
+- 2026-10-23, Phase 9: preregistered strict small-prime norm-to-local
+  bridge in standalone commit `f4c2e56` before proof edits. Lean now
+  proves the norm obstruction including the rational prime-square case,
+  identifies `X²+D` irreducibility with nonsquareness of `-D` over
+  `ZMod p`, and applies the existing actual-Gram valuation under the
+  explicit root-to-principal-norm lifting premise. `D=15,p=3` proves
+  that premise is not unconditional; `D=163,p=41` remains the strict
+  endpoint witness. Targeted Lean, 6700-step local full build and source
+  correspondence pass. Class-number one to lifting, analytic cutoff,
+  and classification remain open; final-head pinned CI pending.
+- 2026-10-23, Phase 10: preregistered the abstract class-number
+  quotient-to-principal-norm proof in standalone commit `ac62da0`.
+  Lean now proves for any number field that a map from its integer ring
+  to `ZMod n`, plus class number one, gives an algebraic integer with
+  absolute norm `n`; `K=ℚ,n=3` is a positive control. Targeted Lean,
+  6701-step full local build and source correspondence passed. This
+  discharges the abstract principality arrow, not the specific
+  root-to-maximal-quadratic-order map or norm-coordinate identity.
+  Pinned CI on the final head pending; no cutoff/classification claim.
+- 2026-10-24, Phase 11: preregistered root-to-explicit-order quotient
+  theorem in standalone commit `1b190b0`. Lean proves that odd-prime
+  `z²=-D` yields a surjective map from
+  `ℤ[T]/(T²-T+(D+1)/4)` to `ZMod p`, with `T↦(1+z)/2` and
+  `z=2T-1` after mapping. `D=15,p=3` confirms a quotient can exist
+  without principal norm lifting. Targeted Lean, 6702-step local build
+  and source correspondence pass. The maximal-order identification,
+  algebraic norm formula, area formalization, analytic cutoff and
+  classification remain open; final-head pinned CI pending.
+
+- 2026-10-24, Phase 12: Phase 11 head `5beb7d7` passed pinned CI run
+  `40031979933` and CodeQL. Preregistered the explicit-order norm
+  attempt separately at `8f3bf1e`. Lean now checks `T²=T-c` in the
+  actual quotient, the nontrivial multiplication column, and the
+  exact determinant `x²+xy+cy²` of the proposed 2×2 integer matrix;
+  `D=15,c=4` is a control. Targeted Lean, full 6703-step build and
+  source correspondence pass. The basis identification with
+  `Algebra.norm` and the maximal-order identification are not proved;
+  no checked cutoff or classification follows. Final-head CI pending.
+
+- 2026-10-24, Phase 16: Phase 15 head `cf1c9db` passed pinned CI
+  `40043319145` and CodeQL. Protocol-only `c519477` preceded edits.
+  Targeted Lean proves class-number-one exact norm lifting, the
+  strict-small-prime nonsquare guard and Ender's actual integer-Gram
+  valuation, with `D=15,p=3` deriving class number not one. The sign
+  step uses the checked four-times-norm sum-of-squares identity.
+  Full 6707-step build and endpoint-only source correspondence pass;
+  whitespace and state JSON checks pass. Pinned CI pending; area,
+  analytic cutoff and final classification remain open. Proof head
+  `7fbc7fc` passed pinned CI `40044997537`, including compiled
+  dependency audit and negative controls, and CodeQL. A follow-up
+  claim-map correction is documentation-only.
+
+- 2026-10-24, Phase 15: Phase 14 head `8d15fbb` passed pinned CI
+  `40039967991` and CodeQL. Protocol-only `c600ac5` preceded edits.
+  Targeted Lean now proves the actual quadratic field and rational
+  basis, an injective explicit order-to-integer-ring map, integer
+  coordinates for every algebraic integer, the resulting ring
+  equivalence, and the maximal-ring norm identity. `D=15,c=4` and
+  reducible `c=0` controls compile. The full 6706-step build and
+  endpoint-only source correspondence pass; whitespace and state JSON
+  checks pass. Pinned dependency audit and negative controls are pending. The
+  class-number-to-small-prime lifting composition is not yet checked.
+
+- 2026-10-24, Phase 14: Phase 13 head `ca4bb0b` passed pinned CI
+  `40037475255` and CodeQL. Protocol-only `18510c3` preceded edits.
+  Lean now checks the squarefree rational denominator lemma, parity,
+  coordinate reconstruction and converse, uniqueness, `D=15` and `D=9`
+  controls. Targeted Lean and the full 6705-step build pass. Source
+  correspondence passes endpoint-only; whitespace and state JSON checks
+  pass. This is not yet a theorem identifying the explicit order with
+  the maximal integer ring. Pinned CI on this proof head is pending.
+
+- 2026-10-24, Phase 13: Phase 12 final head `4133023` passed pinned CI
+  `40034568524` and CodeQL. Preregistered the algebraic norm target
+  separately in `819f3f9`. Lean now checks a true rank-two power basis
+  for `ℤ[T]/(T²-T+c)`, its actual multiplication matrix, and
+  `Algebra.norm ℤ (x+yT)=x²+xy+cy²=principalNorm D x y` when
+  `c=(D+1)/4`. The `D=15` generator and scalar controls pass. Targeted
+  Lean, 6704-step full build and endpoint-only source correspondence
+  pass. The maximal-order identification remains a separate open
+  arrow, as do the area Lean proof, analytic cutoff and classification;
+  final-head pinned CI is pending.
+- 2026-10-24, Phase 17: Protocol-only commit `328c90b` preceded edits.
+  Targeted Lean compiles the exact Ender radius-to-strict-count implication
+  from an explicit cell-area premise, then transports the upper-endpoint
+  count to positivity and Hadamard for the actual trace-Gram matrix. The
+  disk-covering/measure proof of the premise remains paper-only; analytic
+  cutoff and classification remain open. Full 6707-step local build,
+  endpoint-only source correspondence, JSON and whitespace checks pass;
+  pinned CI pending.
+- 2026-10-24, Phase 19: Protocol-only commit `65bbaed` preceded proof edits.
+  `PrimeMassAssembly.lean` now compiles a finite coprime-product divisor,
+  a chosen-radius determinant/Hadamard sandwich, and the exact log-prime-mass
+  inequality for all odd primes below `R` under squarefree `D≡3 (mod 4)`,
+  class number one and strict `R<(D+1)/4`. Empty, singleton and duplicate
+  controls compile. Initial elaboration/cast errors were repaired without
+  deleting assumptions. The factorial/Arb analytic bounds and classification
+  remain unproved. Full 6709-step local Lean build and endpoint-only
+  source correspondence pass; pinned CI is pending.
+- 2026-10-24, Phase 20: Phase 19 head `f7fe3cf` passed pinned CI
+  `40075949893` and CodeQL. Protocol `6afa007` preceded proof edits and
+  became `fc6427b` after preserving the external merge at `90b0f53`.
+  `EnderUpperB.lean` targeted checks pass for the actual diagonal bound,
+  original row-major sum, exact integral correction and production integer
+  coefficients. The chosen-radius class-number theorem now reaches unchanged
+  `upper_B` at positive integer radii, with its upper count input explicit.
+  Seven controls compile; automatic implicit variables are disabled after
+  detecting and repairing a sum-scope ambiguity. The upper ellipse count,
+  factorial lower estimate and numerical/classification links remain open.
+  Full 6710-step local build and endpoint-only source correspondence pass;
+  pinned CI is pending.
+- 2026-10-24, Phase 21: Phase 20 head `5f5614c` passed pinned CI
+  `40091741093` and CodeQL `40091739149`. Protocol `157ba64` preceded
+  proof edits. `EllipseUpperCount.lean` proves the unchanged upper count
+  using disjoint open inward cells for off-axis points and exact axis
+  boxes, including the origin once. It checks lower-endpoint interval
+  transfer and safe line-count padding; the counted class-number theorem
+  now reaches production `upper_B` without an abstract sample-count premise.
+  Eight controls and the full 6711-step local build pass. Factorial,
+  numerical certificate, universal-envelope and classification links remain
+  open. Pinned CI pending.
+
+- 2026-10-24, Phase 22: Phase 21 head `36e6f9a` passed pinned CI
+  `40093798308` and CodeQL `40093795078`. Protocol-only `b7a43ea`
+  preceded proof edits. `FactorialPrimeMass.lean` proves exact finite
+  factorial/Legendre decomposition including prime two, log-product equality,
+  the increasing integral envelope and unchanged production scalar lower
+  bound for `R≥2`. Ten controls and full 6712-step local build pass.
+  The short guide distinguishes factorial prime-power weights from the
+  determinant's odd-prime weights. Full `prime_mass` subtraction, conversion,
+  tail and clipping, numerical certificates and classification remain open.
+  Pinned CI pending on the published proof head.
+
+- 2026-10-24, Phase 23: Phase 22 head `c8a42a5` passed pinned CI
+  `40096404959` and CodeQL `40096403109`. Protocol `e4736fd` preceded
+  proof edits. `PrimeMassLower.lean` checks the staircase identity, exact
+  small/large prime split, integer loss coefficients, padded enumeration,
+  finite geometric and floor-square bounds, both clipping branches and
+  actual counted `upper_B` composition conditional on one reciprocal-prime
+  tail bound. Eight controls and full 6713-step local build pass. The
+  analytic integral bound, numerical certificates, universal closure and
+  classification remain open. Pinned CI pending on this published head.
+
+- 2026-10-24, Phase 24: Phase 23 head `035454e` passed pinned CI
+  `40098513168` and CodeQL `40098510944`. Protocol-only `e1fa9be`
+  preceded proof edits. `PrimeTail.lean` proves the production tail bound
+  by positive potential drops and finite telescoping, then composes the
+  actual-Gram mathematical lower/upper comparison with no tail hypothesis.
+  A strict real comparison now gives an explicit exclusion criterion; no
+  saved Arb inequality or numerical guard is assumed verified. Eight controls
+  and full 6714-step local build pass. Numerical interpretation, universal
+  closure, even cases and classification remain open; published-head CI pending.

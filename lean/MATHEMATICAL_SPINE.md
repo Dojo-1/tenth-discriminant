@@ -196,7 +196,28 @@ The [local theorem](TenthDiscriminant/InertFrobenius.lean) now derives that
 congruence from `p` odd prime and `-D` nonsquare in `ZMod p`, by checking
 `t^p=-t` and then Freshman's dream on every `x+yt`. Connecting these
 selected-order local guards to the global class-number hypothesis remains
-open. This is inherited valuation mathematics,
+open. A [small-prime interface](TenthDiscriminant/SmallPrimeBridge.lean)
+now proves that *if* a residue root lifts to a principal norm-`p`
+element, the elementary norm bound supplies the local guard for
+`p<(D+1)/4`. Proving that lifting property from class number one is
+still open for the specific quadratic field. The abstract
+[class-number step](TenthDiscriminant/PrincipalIdealBridge.lean) now
+checks that a residue quotient of a class-number-one integer ring has
+a principal generator of norm magnitude `p`; the quadratic quotient
+map is now constructed for the explicit half-integral order by the
+[root-to-order theorem](TenthDiscriminant/HalfOrderResidue.lean).
+Its quadratic multiplication chart has the [expected exact
+determinant](TenthDiscriminant/HalfOrderNorm.lean), and the
+[power-basis calculation](TenthDiscriminant/HalfOrderAlgebraicNorm.lean)
+identifies it with `Algebra.norm` and the existing principal form.
+The [field chart](TenthDiscriminant/QuadraticFieldChart.lean) identifies
+this order with the actual maximal integer ring: every integral field
+element has integer coordinates by trace, norm and squarefreeness.
+The [class-number bridge](TenthDiscriminant/ClassNumberInertBridge.lean)
+now composes this with the quotient map and positive norm to discharge
+the norm-lifting premise and prove the local valuation for the actual
+integer Gram, for squarefree `D≡3 (mod 4)` and strict small odd primes.
+This is inherited valuation mathematics,
 not a new classification or cutoff.
 
 The [explicit coefficient matrix](TenthDiscriminant/RectangularBasisMatrix.lean)
@@ -230,14 +251,23 @@ these views commute on **one integer matrix with the same samples**.
 | Link | Present status |
 |---|---|
 | Jet energy, contact budget, positivity; exact integer matrix; residue reduction; fixed `D=19,p=3` square factor | Lean-checked under the displayed hypotheses. |
-| Ender's chosen-radius ellipse has enough points | Elementary cell-area proof on paper; exact-set and endpoint-transfer helpers in Lean, but the area inequality is not Lean-checked. |
-| Uniform inert-prime valuation, class-number-one to inertness, analytic comparison, finite classification | Lean checks the exact exponent for the actual integer Gram under an odd-prime nonsquare local condition. The global class-number link and all later links are not connected as an end-to-end theorem. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
+| Ender's chosen-radius ellipse has enough points | Lean checks the disk-cell area inequality, exact chosen-radius strict count, and upper-endpoint transfer to actual-Gram positivity. |
+| Uniform inert-prime valuation and finite assembly | For squarefree `D≡3 (mod 4)`, class number one gives every strict small odd-prime factor on the actual integer Gram. Lean now assembles their product, proves the chosen-radius determinant positive, and obtains the exact finite logarithmic prime-mass versus Hadamard inequality. |
+| Production upper formula and its count input | Lean bounds the actual diagonal product by unchanged `upper_B` for the campaign's positive integer radii `rho<R`. Disjoint inward cells and exact axis accounting now supply the upper ellipse count and interval transfer, with line-count padding explicit. [Short proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.md). |
+| Factorial identity and scalar lower estimate | Lean checks the exact finite Legendre prime-power sum (including `2`) and unchanged `factorial_lower` for `R≥2`. Its weights differ from the determinant's. [Short proof](../research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md). |
+| Finite conversion to determinant weights and analytic tail | Lean checks the staircase identity, small-prime split, finite losses, coefficients, clipping and the exact reciprocal-prime bound by positive potential drops. Both mathematical production expressions now apply to the same Gram without a tail premise. [Short proof](../research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md). |
+| Numerical cutoff and finite classification | Numerical enclosure/guard interpretation, universal closure, even cases and finite endgame remain open in Lean. The strict-comparison exclusion criterion is checked, but its numerical premises are not. Recorded certificates remain candidate evidence. |
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical
-local-to-global principle is a missing premise. The next substantive bridge
-is a uniform arithmetic relation of the kind illustrated by (4), with the
-actual class-number and radius hypotheses made explicit. For the detailed
+local-to-global principle is a missing premise. The uniform arithmetic
+relation, class-number input, chosen-radius count, and exact finite prime
+comparison are now checked in their stated ranges. The next substantive
+bridges are the numerical enclosure/guard interpretation, universal closure
+and finite classification. The production lower/upper comparison, including
+the reciprocal-prime tail, is checked under the documented guards. The upper expression
+and both geometric counts are now checked at the integer radii.
+For the detailed
 provenance, see [STATUS.md](../STATUS.md), the
 [registered pilot protocol](../research/local_global_gram/PROTOCOL.md), and
 the [radius proof](../research/ender_radius_bridge/PROOF.md).

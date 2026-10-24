@@ -1,26 +1,247 @@
-# Status — 2026-10-23
+# Status — 2026-10-24
 
 For a concise mathematical overview of the checked result and the open
 bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
-## 2026-10-23: residue-fiber transport and index-2 norm bridge
+## 2026-10-24: the analytic tail is discharged; the finite comparison connects
 
-[Phase 9](research/uniform_inert_valuation/PHASE9_PROTOCOL.md) closes the
-deferred residue-fiber operator `T` from Phase 6 and links the selected
-order `ℤ[√(-D)]` norm to the maximal-order `principalNorm` in
-`Arithmetic.lean`. In [`LocalOperators.lean`](lean/TenthDiscriminant/LocalOperators.lean),
-Lean proves that coordinatewise and discriminant congruences modulo `p`
-preserve `pairMul`, `pairPow`, the order-zero Frobenius congruence, and
-both one-factor and `H^k` ordinary jets, with a non-real `(1,(0,1)) → (19,(3,-2))`
-pilot modulo `3`. In [`InertFrobenius.lean`](lean/TenthDiscriminant/InertFrobenius.lean),
-Lean proves that the odd-prime nonsquare guard and exact `p^(2F(p))`
-valuation transfer across `D₁ ≡ D₂ (mod p)`, identifies the index-2 norm
-`x² + Dy² = principalNorm D (x-y) (2y)` for `D ≡ 3 (mod 4)`, and proves
-that `¬ IsSquare (-(D : ZMod p))` forces `p ∣ 2x+y` and `p ∣ y` whenever
-`p ∣ 4 * principalNorm D x y`. Global ideal/class-group formalization,
-the cell-area count, analytic cutoff and classification remain open.
+[Phase 24](research/ender_radius_bridge/PHASE24_PROTOCOL.md) proves
+`J≤I(P)` for every natural `R` and `P≥2`. A positive potential
+`K(x)=log(x+1)/x+log(x+1)−log(x)` pays for each integer summand; its finite
+drops telescope. Prime indices form a subset of that integer interval.
+No infinite-series interchange or prime-distribution estimate is used.
+
+`ellipse_enderPrimeMassLower_le_counted_upperB` now connects both unchanged
+mathematical production expressions on the same actual Gram without a tail
+hypothesis. Arithmetic, class-number, strict range, radius and floor-padding
+guards remain explicit. `classNumber_ne_one_of_ender_comparison` gives an
+exclusion criterion conditional on a strict real numerical comparison.
+It does not assume that the saved Arb output supplies that comparison.
+Eight controls and full local Lean build (6714 steps) pass.
+
+Numerical enclosure/guard interpretation, universal closure, even cases and
+finite classification remain open. No checked cutoff, new numerical run
+or change to a production formula/certificate is claimed.
+[Human proof](research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md) ·
+[Lean source](lean/TenthDiscriminant/PrimeTail.lean).
+
+## 2026-10-24: finite weight conversion and clipping reach the same Gram
+
+[Phase 23](research/ender_radius_bridge/PHASE23_PROTOCOL.md) checks
+`F(p)=(S−1/2)A(p)−Q(p)/2` under the production quotient guard, the exact
+small-prime split, both integer loss coefficients, padded enumeration and
+clipping. Finite geometric and floor-square bounds reduce both losses to
+`J=∑_{P<p<R,prime} log(p)/(p(p−1))`. The clipped lower expression reaches
+the actual counted `upper_B` **assuming `J≤I`**. Eight controls include
+counterexamples to dropping the quadratic loss or quotient guard.
+
+The remaining analytic target is `J≤log(P+1)/P+log(1+1/P)`; it has not
+been discharged in Lean. Numerical interpretation, universal closure,
+even cases and classification remain open. No production tool, formula,
+cutoff or certificate changed.
+[Short staircase proof](research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md) ·
+[Lean source](lean/TenthDiscriminant/PrimeMassLower.lean).
+
+## 2026-10-24: the factorial identity and scalar lower bound are checked
+
+[Phase 22](research/ender_radius_bridge/PHASE22_PROTOCOL.md) proves
+`H(R)=log(product_{r<R} r!)` equals its exact finite Legendre prime-power
+sum, including prime `2`. For `R≥2`, an increasing integral envelope
+proves the unchanged production `factorial_lower(R)≤H(R)`. Ten controls
+include equality at `R=2`, `288=2^5*3^2`, strict power endpoints and rejection
+of omitting prime `2`. Full local Lean build passes (6712 steps).
+
+This factorial prime-power sum is **not** the determinant's odd-prime
+valuation mass. Small-prime subtraction, weight conversion, higher-power
+tail control and clipping still need a connected `prime_mass` theorem.
+Numerical certificate interpretation, universal closure and classification
+remain open. No production formula, certificate or cutoff changed.
+[Short human proof](research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md) ·
+[Lean source](lean/TenthDiscriminant/FactorialPrimeMass.lean).
+
+## 2026-10-24: the upper ellipse count reaches production `upper_B`
+
+[Phase 21](research/ender_radius_bridge/PHASE21_PROTOCOL.md) proves
+`|E(D,rho)| ≤ pi*rho²/sqrt(D)+2rho+(2Y+1)` for `D>0`, integer `rho≥0`,
+and `Y=floor(rho/sqrt(D))`. Off-axis points own disjoint open inward cells
+of area `sqrt(D)` inside the same disk. The horizontal axis excluding the
+origin contributes `2rho` possible points; the vertical axis contributes
+`2Y+1`. The theorem handles radius zero exactly and rejects counting axis
+points as full inward cells. Endpoint antitonicity supplies the upper count
+throughout an interval. Safe upward line-count padding is explicit.
+
+`ellipse_primeMass_log_le_counted_upperB` now joins both geometric counts,
+class number one, the actual integer Gram, finite prime mass and unchanged
+production upper formula. The factorial lower estimate, Arb certificate
+interpretation, universal closure and classification remain open.
+[Lean source](lean/TenthDiscriminant/EllipseUpperCount.lean) ·
+[human proof](research/ender_radius_bridge/UPPER_BOUND_GUIDE.md).
+
+## 2026-10-24: production `upper_B` is connected to the actual Gram
+
+[Phase 20](research/ender_radius_bridge/PHASE20_PROTOCOL.md) checks the
+unchanged `R>rho` upper expression for positive **integer** radii, including
+the falling factorials, row-major rectangle, logarithmic integral correction
+and Python's exact integer coefficients. Chosen-radius positivity and the
+class-number/local-factor chain compose to `∑ 2F(p) log p ≤ upper_B`,
+under the explicit premise that its real input `n` bounds the actual ellipse
+count. Seven boundary/false-strengthening controls compile. The geometric
+`n_up` estimate, factorial lower bound, numerical certificates, universal
+closure and classification still require their own proofs.
+[Lean source](lean/TenthDiscriminant/EnderUpperB.lean) ·
+[short human proof](research/ender_radius_bridge/UPPER_BOUND_GUIDE.md).
+
+## 2026-10-24: the finite local-to-global determinant sandwich is Lean-checked
+
+[Phase 19](research/ender_radius_bridge/PHASE19_PROTOCOL.md) now assembles
+the exact factors `p^(2F(p))` for **all distinct odd primes `p<R`** on the
+same positive integer ellipse Gram, under squarefree `D≡3 (mod 4)`, class
+number one, strict `R<(D+1)/4`, and Ender's chosen-radius guard. Lean proves
+the product divides the determinant and its finite logarithmic prime mass
+is at most the logarithm of the Hadamard diagonal product. Empty, singleton
+and duplicate-prime controls compile. This connects local arithmetic to
+real geometry; it does **not** prove the factorial lower estimate, the
+recorded Arb interval margins, the universal envelope, or classification.
+[Lean source](lean/TenthDiscriminant/PrimeMassAssembly.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#22-the-finite-prime-mass-sandwich).
+
+## 2026-10-24: the chosen-radius cell-area count is Lean-checked
+
+[Phase 18](research/ender_radius_bridge/PHASE18_PROTOCOL.md) proves the
+previously paper-only cell-area inequality for the **actual finite ellipse**.
+Closed width-one, height-`√D` cells cover the plane by integer floors;
+each point in the smaller disk lies in a cell whose center meets the
+ellipse inequality. Complex disk volume and finite-union subadditivity
+give `π(ρ−δ)²≤|E(D,ρ)|√D`, where `δ=(1+√D)/2` and `ρ≥δ`.
+Composing with Phase 17 checks Ender's exact radius gives
+`|E(D,ρ)|>3R+S` and positivity/Hadamard of the actual trace-Gram
+throughout a certified interval once its upper-endpoint radius guard
+is supplied. This does **not** formalize the analytic determinant
+comparison, certify Arb inequalities, or classify class-number-one fields.
+[Lean source](lean/TenthDiscriminant/EllipseCellArea.lean) ·
+[human proof](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge).
+
+## 2026-10-24: Phase 17 radius algebra, before the area proof
+
+[Phase 17](research/ender_radius_bridge/PHASE17_PROTOCOL.md) proves in Lean
+that Ender's exact `1.001` radius guard and the explicit cell-area inequality
+force the **strict** `3R+S` point count, including the finite-interval
+upper-endpoint transfer to the actual Gram determinant. The cell-covering
+area inequality was a stated hypothesis; Phase 18 now proves it. Phase 17
+alone was an algebraic/geometric interface, not a checked analytic cutoff or a
+classification. [Lean source](lean/TenthDiscriminant/LatticeEllipse.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge).
+
+## 2026-10-24: class number one now supplies the local Gram valuation
+
+[Phase 16](research/uniform_inert_valuation/PHASE16_PROTOCOL.md) proves
+in Lean that, for squarefree `D ≡ 3 (mod 4)`, class number one of the
+actual quadratic field implies Ender's exact
+`p^(2·valuationWeight R S p)` divisor of the original integer Gram
+determinant at every odd prime `p < (D+1)/4`. The proof composes the
+residue quotient, maximal-order equivalence, principal-kernel norm,
+nonnegative imaginary quadratic norm, and the existing valuation
+theorem. `D=15,p=3` yields a checked `classNumber ≠ 1` control.
+This closes the previously open *class-number-to-local-valuation*
+arrow, **not** the chosen-radius area formalization, analytic cutoff,
+or class-number classification. [Lean source](lean/TenthDiscriminant/ClassNumberInertBridge.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#21-the-global-hypothesis-reaches-the-local-determinant).
+
+## 2026-10-24: explicit order equals the maximal integer ring
+
+[Phase 15](research/uniform_inert_valuation/PHASE15_PROTOCOL.md) now
+constructs the genuine quadratic number field for squarefree
+`D ≡ 3 (mod 4)` and proves in Lean that its maximal integer ring is
+isomorphic to `ℤ[T]/(T²-T+(D+1)/4)`. The proof uses the actual field
+trace and norm, Phase 14's denominator/parity argument, and an
+injective order-to-field map; the norm on the maximal ring agrees
+with the repository's `principalNorm`. This closes the previously
+open *order-identification* arrow. Phase 16 now checks the next
+class-number-to-lifting arrow. Neither the analytic
+cutoff nor classification is established. [Lean source](lean/TenthDiscriminant/QuadraticFieldChart.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#20-why-this-is-the-whole-integer-ring).
+
+## 2026-10-24: prospective maximal-order coordinates checked
+
+[Phase 14](research/uniform_inert_valuation/PHASE14_PROTOCOL.md) proves
+in Lean that, for squarefree `D ≡ 3 (mod 4)`, rational `a,b` with
+integer `2a` and `a²+Db²` have unique coordinates
+`a=x+y/2, b=y/2` with `x,y∈ℤ`; the converse is checked too.
+`D=15` is a positive control, while `D=9,q=1/3` shows why
+squarefreeness matters. This is the arithmetic heart of the
+maximal-order argument, **not by itself** the field-to-order equivalence.
+Phase 15 now proves that equivalence; the cutoff and classification
+remain open.
+[Lean source](lean/TenthDiscriminant/MaximalOrderCoordinates.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#19-why-the-half-integral-coordinates-are-forced).
+
+## 2026-10-24: the explicit order's algebraic norm is checked
+
+[Phase 13](research/uniform_inert_valuation/PHASE13_PROTOCOL.md) proves
+in Lean that `ℤ[T]/(T²-T+c)` has the power basis `(1,T)` and that
+Mathlib's actual `Algebra.norm ℤ (x+yT)` equals `x²+xy+cy²` for every
+integer `c,x,y`. Specializing `c=(D+1)/4` makes this *exactly* the
+repository's `principalNorm D x y`; `D=15,T` has norm `4`, and
+scalars have norm `x²`. This closes Phase 12's formal norm transport.
+Phase 13 alone did **not** identify this explicit order with the maximal ring of
+integers of the intended quadratic field (Phase 15 now does), so Phase 9's lifting premise,
+the cutoff and the classification remain open. [Lean source](lean/TenthDiscriminant/HalfOrderAlgebraicNorm.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#18-the-two-dimensional-norm-chart).
+
+## 2026-10-24: the order's two-dimensional norm chart
+
+[Phase 12](research/uniform_inert_valuation/PHASE12_PROTOCOL.md) checks
+`T²=T-c` inside the actual quotient order and the second column of
+multiplication by `x+yT`. The determinant of the resulting `2×2`
+matrix is exactly `x²+xy+cy²`; `D=15,c=4` is a concrete control.
+Phase 13 identifies that matrix determinant with `Algebra.norm`
+in the power basis, and Phase 15 identifies the order with the
+maximal integer ring. The Phase 9 lifting premise and
+the end-to-end classification remain open. [Lean source](lean/TenthDiscriminant/HalfOrderNorm.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#18-the-two-dimensional-norm-chart).
+
+## 2026-10-24: a residue root gives an explicit order quotient
+
+[Phase 11](research/uniform_inert_valuation/PHASE11_PROTOCOL.md) now
+checks that for `D ≡ 3 (mod 4)` and odd prime `p`, a root `z²=-D`
+modulo `p` yields a surjective ring map from
+`ℤ[T]/(T²-T+(D+1)/4)` to `ZMod p`, sending `T` to `(1+z)/2`.
+The `D=15,p=3` ramified control has this map although Phase 9's
+principal norm lifting fails. Phase 15 now transports this map to
+Mathlib's maximal integer ring; composing it with Phase 10 and a
+sign-safe norm identity is the remaining arithmetic arrow before
+Phase 9's lifting premise. Geometric and analytic links
+remain open. [Lean source](lean/TenthDiscriminant/HalfOrderResidue.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#17-from-a-residue-root-to-an-actual-quotient-map).
+
+## 2026-10-23: the abstract class-number-one ideal step is checked
+
+[Phase 10](research/uniform_inert_valuation/PHASE10_PROTOCOL.md) proves in
+Lean that a ring map from a number field's integer ring to `ZMod n`
+has kernel of ideal norm `n`, and class number one makes that kernel
+principal. Its generator has algebraic norm of magnitude `n`; the
+`K=ℚ,n=3` control compiles. This does **not** yet turn a root of
+`X²+D` into a map from the specific maximal quadratic order, nor
+identify the generator's norm with `principalNorm D x y`. Those
+specific-field arrows were open at this historical checkpoint; Phases
+16 and 18 now close those arithmetic and area links. The analytic cutoff
+and classification remain open. [Lean source](lean/TenthDiscriminant/PrincipalIdealBridge.lean) ·
+[human proof](lean/HUMAN_GUIDE.md#16-what-class-number-one-actually-buys).
+
+## 2026-10-23: a conditional small-prime norm gate
+
+[Phase 9](research/uniform_inert_valuation/PHASE9_PROTOCOL.md) adds a
+conditional global-to-local interface. Lean proves that if every root
+of `X²+D` modulo an odd prime `p<(D+1)/4` lifts to a principal norm-`p`
+representation, then no root exists and the Phase 8 valuation applies.
+It also equates the exact nonsquare guard with quadratic irreducibility.
+The norm-lifting premise is **not derived from class number one**;
+identifying the maximal order, prime ideals and principality is the
+remaining arithmetic bridge. `D=15,p=3` falsifies an unconditional
+lifting statement. [Proof](lean/TenthDiscriminant/SmallPrimeBridge.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#15-the-small-prime-gate-without-hiding-the-class-group).
 
 ## 2026-10-23: odd-prime nonsquare condition now yields exact valuation
 
@@ -33,9 +254,10 @@ coordinates and applies Phase 7's actual Gram theorem, proving
 `p^(2*valuationWeight R S p) | det G` for every finite sample set,
 rectangle and derivative cutoff. The `D=19,p=3` guard passes and
 `D=2,p=3` is a square falsifier. This is a checked **local-nonsquare
-valuation theorem**, not a class-number-one theorem: deriving the guard
-from the intended global class-group/inertness hypotheses, Lean cell-area
-count, analytic cutoff and classification remain open.
+valuation theorem**, not by itself a class-number-one theorem. At this
+historical checkpoint the global guard and cell-area count were open;
+Phases 16 and 18 now check those separate links. The analytic cutoff
+and classification remain open.
 [Lean theorem](lean/TenthDiscriminant/InertFrobenius.lean).
 
 ## 2026-10-23: actual rectangular row-to-Gram bridge
@@ -84,9 +306,9 @@ by `p`, then all jets of `B*H^k` are divisible by `p^k`. Applied to
 `H=Z^p-W` in the repository's selected quadratic order, this gives
 both integer-coordinate factors for every proposed transformed row
 under its explicit order-zero Frobenius congruence. A checked Hasse
-derivative counterexample guards the derivative convention. The
-uniform inertness premise and analytic/class-number chain remain open
-in Lean; Phase 7 supplies the Gram identification.
+derivative counterexample guards the derivative convention. At this
+Phase 4 checkpoint the uniform premise and analytic/class-number chain
+were open; Phases 7–16 now supply the Gram and strict-small-prime links.
 [Theorem](lean/TenthDiscriminant/JetPower.lean) ·
 [preregistration](research/uniform_inert_valuation/PHASE4_PROTOCOL.md).
 
@@ -136,8 +358,9 @@ strictly positive. A `D=2`, `p=3` control refutes dropping inertness. This
 one-prime toy theorem does not imply Ender's uniform prime-adic lower bound.
 The proof and limitations are reported in the
 [guide](lean/HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix)
-and [protocol](research/local_global_gram/PROTOCOL.md); the general valuation
-bridge and class-number classification remain open.
+and [protocol](research/local_global_gram/PROTOCOL.md). At this pilot
+checkpoint the general valuation was open; Phase 16 now supplies its
+strict-small-prime form, while the classification remains open.
 
 ## 2026-10-23: integer-coordinate trace-Gram bridge
 
@@ -161,12 +384,13 @@ The registered [radius proof](research/ender_radius_bridge/PROOF.md) uses
 unit-by-√D lattice cells to establish the inherited lower count for every
 integer D≥1 and radius rho≥0. For the exact radius chosen by Ender it yields
 `card(ellipsePairs D rho) > 3R+S`; at finite intervals the count transfers
-from D2 to every D≤D2 by exact set inclusion. Lean now checks that inclusion,
-the cardinality transfer and the existing Gram application, plus a D=19,
-rho=5 exact control with 21 points. **The cell-area estimate itself remains
-unformalized.** Neither this count nor a green build establishes the integer
-matrix's inert-prime divisibility, the analytic contradiction, or class-number
-classification. The earlier numerical records are unchanged.
+from D2 to every D≤D2 by exact set inclusion. Phase 17 additionally checks
+that the exact radius plus the explicit area premise give this strict count;
+Lean also checks the cardinality transfer and Gram application, plus a D=19,
+rho=5 exact control with 21 points. **At this checkpoint** the cell-area
+estimate was unformalized; Phase 18 now checks it. The geometric count alone
+does not establish the analytic contradiction or class-number classification.
+The earlier numerical records are unchanged.
 
 ## 2026-10-23: bounded formal ellipse bridge
 
