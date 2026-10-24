@@ -284,3 +284,10 @@
   Next proof work should use small, independently checked integer coverage
   blocks and bounded sum proofs, not another unbounded whole-table reduction.
   This is a new implementation repair to preregister, not a parameter search.
+
+- Publication correction: compiled audit succeeded, but its matched-control
+  parent exceeded the unchanged 240-s limit while local verification still
+  overlapped. This is not a complete `python audit.py` pass. Preserved the
+  failure; start an idle rerun and require exact-head remote CI. Initial
+  pushed checkpoint was `c3590eb62833f99ab715130f6c052a5b4ff8ad51`; the following
+  evidence-only commit corrects pending local-control status. No proof changes.

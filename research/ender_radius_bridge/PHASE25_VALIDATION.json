@@ -14,7 +14,7 @@
     "theorems": 1221,
     "runtime_only_auxiliaries_reported": 11661,
     "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"],
-    "matched_apparatus_controls": "pending at publication checkpoint"
+    "matched_apparatus_controls": "first parent run exceeded unchanged 240-second deadline after the compiled audit passed; idle rerun and exact-head pinned CI pending"
   },
   "remaining_numerical_obligations": ["complete prime coverage", "small-prime factorial total budget", "odd valuation total budget"],
   "candidate_only": ["Arb replay gap", "exact rational comparison outside Lean"],

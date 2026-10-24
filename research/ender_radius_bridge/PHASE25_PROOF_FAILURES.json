@@ -122,6 +122,12 @@
     "result": "the jet_negative_controls.py subprocess exceeded its existing 120-second deadline during concurrent heavy proof builds; partial preceding controls passed, but the complete suite did not finish",
     "next_action": "rerun without heavy local proof workloads and require exact-head pinned CI; keep the inherited test driver and its deadlines unchanged"
   },
+  "matched_apparatus_controls_timeout": {
+    "command_from_lean": "python audit.py",
+    "result": "compiled namespace audit passed, but apparatus_controls.py exceeded the unchanged 240-second parent deadline during overlapping local verification; no complete audit-command pass",
+    "observed_controls": "public API, reader links, legacy-gap demonstration, safe definition/opaque/private probes, unused/private/custom/incomplete dependencies and project-axiom rejection progressed successfully; parent suite did not finish",
+    "next_action": "idle rerun with the same controls and exact-head pinned CI; do not conflate the passed namespace audit with the complete driver"
+  },
   "rational_checker_reduction": {
     "result": "plain decide and rfl did not reduce the rational checker to true",
     "repair": "kernel-checked norm_num arithmetic proofs; first and largest prime controls pass"

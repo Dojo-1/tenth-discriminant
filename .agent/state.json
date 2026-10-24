@@ -1,6 +1,6 @@
 {
   "task": "Connect the checked local determinant bound to Ender's geometric and analytic cutoff",
-  "status": "phase25_partial_checkpoint_all_1229_rows_checked_full_root_build_and_shared_namespace_audit_passed_apparatus_controls_running_publication_and_exact_head_CI_pending_no_interval_claim",
+  "status": "phase25_partial_checkpoint_all_1229_rows_checked_full_build_and_namespace_audit_passed_local_parent_control_timeouts_preserved_idle_audit_rerun_and_exact_head_CI_pending_no_interval_claim",
   "base_commit": "a4da8963fa0d94ca4858e09ab10f3195d0fe588f",
   "branch": "codex/rectangular-row-action",
   "decisions": [
