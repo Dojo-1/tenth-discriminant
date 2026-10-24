@@ -1,5 +1,32 @@
 # Task checkpoint
 
+- Phase32 protocol-only 55b4639 preceded proof edits. Prior goal turn was
+  verified progress: Phase31 pinned CI 40130787539/security 40130786275 passed
+  on matching tree a5fd0ef8d66ddb2214acf700a3626ea861681f51. Live refresh
+  zero divergence, PR28 draft/unmerged, inherited lake manifest preserved.
+- QuadraticDiscriminant computes actual NumberField.discr from maximal
+  integral bases and proves its natAbs equals the d-or-4d parameter. The
+  existing cutoff now bounds the actual absolute field discriminant.
+  SmallPositiveClassNumber uses the pinned Minkowski PID criterion to prove
+  actual class number one for d=1,2,3,7. This is not sieve acceptance.
+  Five positive cases and [1000000,700000000000) remain open; goal active.
+- Human proof isolates the 2-by-2 trace pairing from the large jet Gram.
+  The d=3 control distinguishes order discriminant -12 from actual field -3;
+  d=11 is outside the small sufficient criterion, not a negative h1 claim.
+- Preserve failed build stamps 210600 (integer scalar-instance diamond/API),
+  210747 (finite basis-index normalization), 210907 (absolute-value cast).
+  No proof budget was raised. Target 211033 passed, 26.0218235 seconds,
+  peak 2840100864 bytes. Whole root 211234 passed, 6747 steps,
+  22.3284182 seconds, peak 2788835328 bytes under the same 8192 MB cap.
+- Local source correspondence/import closure and compiled audit passed:
+  93 modules; 3037 logical/2604 theorem declarations; 14368 runtime-only
+  auxiliaries excluded. Printed actual discriminant and four positive
+  signatures have only propext/choice/Quot.sound. Local apparatus controls
+  running at checkpoint. Full unchanged audit.py/negative_controls.py gates
+  remain mandatory in exact-head Linux CI; no separate full local driver or
+  eight-script mathematical rerun claimed in this phase. Final PR publication
+  record supersedes pending checkpoint fields without a metadata-only CI loop.
+
 - Phase31 protocol-only b0f7913 preceded proof edits and exact control. Prior
   turn was verified progress: Phase30 passed full pinned CI 40128348264 and
   security 40128344427 on matching merge/head/local tree. Refreshed branch

@@ -63,6 +63,7 @@ import TenthDiscriminant.UniformUpperEnvelope
 import TenthDiscriminant.QuadraticChartEquivalence
 import TenthDiscriminant.FiniteSieveBridge
 import TenthDiscriminant.MillionSieve
+import TenthDiscriminant.SmallPositiveClassNumber
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot

@@ -1,0 +1,26 @@
+{
+  "phase": 32,
+  "preregistration_commit": "55b4639",
+  "base_commit": "6a16da7a14670da793103cf908847d6e2109845d",
+  "scope": "actual field-discriminant identity, actual absolute-discriminant cutoff, four positive class-number proofs; not full classification",
+  "results": ["generic integral-basis trace pairing has discriminant s^2-4*t for u^2=s*u-t", "positive squarefree d has actual signed field discriminant -d if d=3 mod 4, otherwise -4*d", "actual discriminant natAbs equals absoluteDiscriminantParameter d", "actual class number one implies actual field discriminant natAbs<700000000000", "every degree-two number field with discriminant natAbs<=8 has class number one", "actual fields for d=1,2,3,7 have class number one"],
+  "positive_cases": [1,2,3,7],
+  "positive_cases_not_supplied": [11,19,43,67,163],
+  "method": "maximal integral-basis transport, direct trace-matrix determinant, pinned Mathlib Minkowski small-discriminant PID criterion; no classification or Heegner-method input",
+  "controls": ["actual absolute discriminants 4,8,3,7", "at d=3 trace-zero order basis discriminant -12 differs from actual field -3", "d=11 lies outside <=8 sufficient criterion, not a negative class-number claim"],
+  "attempts": [
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024210600.result.json", "exit_code": 1, "seconds": 59.485612599999996, "peak_bytes": 2884747264, "failure": "generic integer scalar-instance diamond and explicit field argument API; removed unnecessary abstract Algebra Int instance"},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024210747.result.json", "exit_code": 1, "seconds": 24.630710399999998, "peak_bytes": 2874060800, "failure": "generated Fin literal blocked basis rewrite; explicit j=0 or j=1 normalization"},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024210907.result.json", "exit_code": 1, "seconds": 48.3801245, "peak_bytes": 2880864256, "failure": "Int abs coerced to Real did not syntactically match Real abs; explicit Int.cast_abs rewrite"},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024211033.result.json", "exit_code": 0, "seconds": 26.0218235, "peak_bytes": 2840100864},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024211234.result.json", "exit_code": 0, "seconds": 22.328418199999998, "peak_bytes": 2788835328, "target": "full TenthDiscriminant root, 6747 steps"}
+  ],
+  "monitor_note": "All raw attempts preserved unchanged. Legacy Phase25 filenames/scope/proof_file metadata retained; build_target and stdout identify actual Phase32 targets. Same 8192 MB cap, no resource stop or proof-budget increase.",
+  "local_checkpoint": {"root_build": "passed", "source_correspondence": "passed, endpoint identity only, not Arb certification", "import_coverage": "93 modules", "compiled_audit": "passed: 3037 logical declarations, 2604 theorems, 14368 runtime-only auxiliaries excluded", "signatures": "passed, four unconditional concrete positive equalities; actual discriminant identity/bound retain positivity and squarefreeness", "axioms": ["propext", "Classical.choice", "Quot.sound"], "apparatus_controls": "running at checkpoint", "inherited_full_driver_and_mathematical_suite": "required in exact-head pinned Linux CI, not claimed as separately rerun in full locally"},
+  "commands_from_lean": ["lake build", "python verify_sources.py", "lake env lean Audit.lean", "python apparatus_controls.py", "lake env lean ../research/ender_radius_bridge/Phase32SignatureCheck.lean", "python audit.py (full pinned CI)", "python negative_controls.py (full pinned CI)"],
+  "exact_head_CI": "pending at publication checkpoint; final PR28 record must give terminal full checks and matching head/merge/local tree",
+  "unchanged": ["700000000000 threshold", "production tools", "frozen campaigns", "old ledgers and audit snapshots", "dependency pins and CI/audit gates"],
+  "remaining": ["complete interval [1000000,700000000000)", "five positive class-number equalities", "full classification", "independent human semantic review", "optimization and systematic comparison", "higher class-number track", "upstream review and authorized human submission"],
+  "merge_or_Tao_post": false,
+  "global_goal": "active"
+}

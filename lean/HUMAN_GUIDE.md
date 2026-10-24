@@ -1,5 +1,11 @@
 # Why the derivative Gram determinant is positive
 
+For the current positive-class-number result, start with the
+[discriminant guide](../research/ender_radius_bridge/DISCRIMINANT_POSITIVE_GUIDE.md).
+It explains why a maximal integral basis matters and how Minkowski proves
+class number one for d=1,2,3,7. This field discriminant is distinct from
+the large jet-Gram determinant explained below.
+
 The current finite frontier is explained in the
 [wheel-coverage guide](../research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md):
 quotient and remainder prove no candidate was skipped; kernel evaluation

@@ -1,12 +1,18 @@
 # Factual brief for a possible human comment on Tao's challenge
 
-**24 October 2026, through Phase 31. This is an AI-prepared evidence brief, not the
+**24 October 2026, through Phase 32. This is an AI-prepared evidence brief, not the
 human-generated summary requested by [Tao's post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).**
 The contributor should write the actual comment in their own words
 after reviewing the linked work. No comment has been submitted by this
 repository work.
 
 ## What can be stated now
+
+- Phase32 proves the actual field-discriminant identity and therefore the
+  actual absolute-discriminant bound below `7×10¹¹`. It also proves actual
+  class number one for d=1,2,3,7 through the pinned Minkowski criterion.
+  Five positive cases and the upper middle interval remain open.
+  [Human proof](research/ender_radius_bridge/DISCRIMINANT_POSITIVE_GUIDE.md).
 
 - Phase 31 proves the necessary nine-candidate list below one million.
   Universal wheel and interval-coverage proofs connect the actual class-number
@@ -55,8 +61,8 @@ repository work.
 Do **not** say the project proved `D<=163`, solved class number one,
 or obtained an upstream-ready Mathlib formalization. The effective radicand
 bound is checked in both parity cases; the finite classification is not.
-Do not confuse the proved conventional parameter formula with an as-yet
-unsupplied identity about Mathlib's `NumberField.discr`.
+Phase32 now supplies the identity with Mathlib's `NumberField.discr`; it
+does not supply all positive cases or the complete upper-middle certificate.
 The new auxiliary radius is not the frozen
 campaign's radius. Green CI is evidence about the statements
 encoded in Lean, not independent semantic review of their intended

@@ -78,8 +78,10 @@ identification left in the radicand-bound statement.
 
 The supplementary `absoluteDiscriminantParameter` uses the conventional
 formula d or 4d and is also bounded by 7e11 under class number one. This
-phase does not prove a separate identity with Mathlib's `NumberField.discr`;
-the principal radicand cutoff requires no such identity.
+Phase29 did not prove a separate identity with Mathlib's `NumberField.discr`;
+the principal radicand cutoff requires no such identity. Phase32 now proves
+that identity and the actual absolute field-discriminant bound; see the
+[discriminant and positive-case guide](DISCRIMINANT_POSITIVE_GUIDE.md).
 
 ## What changed, and what did not
 

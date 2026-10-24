@@ -63,6 +63,8 @@ then gives the necessary nine-element list for the actual field. Its
 certificate premise is explicit and is NOT supplied in this phase.
 Proving class number one for each of the nine fields is a separate obligation
 for an if-and-only-if classification.
+Phase32 supplies four of these positive proofs, for d=1,2,3,7; see the
+[discriminant and positive-case guide](DISCRIMINANT_POSITIVE_GUIDE.md).
 
 The frozen Python CRT campaign reports [163] on that interval. Its saved
 output is computational evidence, not a kernel certificate. A future bridge

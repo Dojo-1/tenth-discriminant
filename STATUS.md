@@ -1,5 +1,28 @@
 # Status — 2026-10-24
 
+## Phase 32: actual discriminant and four positive class-number equalities
+
+`imaginaryQuadratic_discr` proves the signed actual field discriminant is
+-d in the odd chart and -4*d otherwise, for positive squarefree d. The
+absolute value equals `absoluteDiscriminantParameter d`, not merely by
+definition. The existing cutoff therefore gives an actual Mathlib field-
+discriminant bound below 700000000000 under class number one.
+
+The two-dimensional trace-pairing lemma uses maximal integral bases.
+Its control distinguishes the order discriminant -12 from the actual field
+discriminant -3 at d=3. The pinned small-discriminant Minkowski criterion
+then proves actual class number one for d=1,2,3,7. At d=11 it no longer
+applies; no negative class-number conclusion is drawn.
+
+Still open: positive proofs for 11,19,43,67,163; the complete interval
+[1000000,700000000000); full classification and other challenge shortfalls.
+The cutoff, production campaign, pins and gates are unchanged.
+[Human proof](research/ender_radius_bridge/DISCRIMINANT_POSITIVE_GUIDE.md) ·
+[Protocol](research/ender_radius_bridge/PHASE32_PROTOCOL.md) ·
+[Verification checkpoint](research/ender_radius_bridge/PHASE32_RESULTS.json).
+Exact published-head CI must accompany the local build/audit checkpoint.
+Older phase descriptions below are historical where these gaps are now closed.
+
 ## Phase 31: necessary nine-candidate list below one million
 
 `classNumber_one_middle_below_million` compiles: for positive squarefree d

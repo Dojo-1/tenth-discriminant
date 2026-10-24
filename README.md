@@ -2,6 +2,14 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
+**Phase 32: actual field discriminant identified; four positive cases proved.**
+Lean now proves the absolute value of `NumberField.discr` equals the d-or-4d
+parameter, so the checked `7×10¹¹` cutoff is an actual field-discriminant
+bound. It also proves actual class number one for `d=1,2,3,7` using the
+pinned Minkowski criterion. Five positive cases and the entire upper interval
+remain open; no full classification or improved constant is claimed.
+[The short discriminant and positive-case proof](research/ender_radius_bridge/DISCRIMINANT_POSITIVE_GUIDE.md).
+
 **Phase 31: the necessary candidate list is now checked below one million.**
 For positive squarefree `d<1000000`, Lean proves actual class number one
 implies `d` is one of `1,2,3,7,11,19,43,67,163`. A universal no-loss wheel

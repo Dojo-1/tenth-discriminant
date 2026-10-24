@@ -1,5 +1,17 @@
 # Current claim-to-Lean map
 
+**Phase 32 supplies the actual discriminant identity and four positive cases.**
+`QuadraticDiscriminant` proves a generic integral-basis trace determinant,
+transports maximal-order bases, and proves actual `NumberField.discr` is
+-d or -4*d. Its natAbs equals the previous parameter; the existing cutoff
+is therefore an actual absolute field-discriminant bound.
+`SmallPositiveClassNumber` applies the pinned Minkowski criterion to prove
+actual class number one for d=1,2,3,7. The other five positive cases and
+the whole upper interval remain open, so full classification is not asserted.
+[Human proof](../research/ender_radius_bridge/DISCRIMINANT_POSITIVE_GUIDE.md).
+Older phase descriptions retain historical scope; their missing-discriminant
+identity and all-nine-positive-case caveats are superseded by this update.
+
 **Phase 31 closes the necessary candidate list below one million.**
 `SieveWheel` proves universal residue-lift and interval-coverage invariants.
 `MillionSieve` checks the entire fixed interval [92,1000000) and proves that
