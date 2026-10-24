@@ -5,6 +5,20 @@ classification chain is not.** This map supersedes the PR #8-era coverage
 summary previously stored here; Git history preserves that record. Stage notes
 remain useful derivations, but their old frontier descriptions are historical.
 
+**Phase 29: the effective bound now covers every positive squarefree radicand.**
+`imaginaryQuadratic_classNumber_one_radicand_bound` concludes d<700000000000
+from positivity, squarefreeness and Mathlib class number one of the actual
+`AdjoinRoot (X^2+C(d:Rat))`. `EvenOrderCoordinates`, `EvenQuadraticField`,
+`EvenMaximalOrder` and `EvenClassNumber` prove the trace-zero chart's
+maximality and prime-two norm obstruction. `QuadraticChartEquivalence`
+constructs both field maps/inverses, transports class number one through
+the actual integer rings, and joins the two parity cases. The cutoff has
+no mod-4, numerical or field-identification premise. Finite classification
+is not asserted. The conventional absolute-discriminant parameter bound is
+separate from any as-yet-unsupplied identity with `NumberField.discr`.
+[Short human proof](../research/ender_radius_bridge/FULL_CUTOFF_GUIDE.md).
+The following phase descriptions retain their historical frontier scope.
+
 **Phase 28 now closes the universal odd-discriminant cutoff.**
 `FirstCertificate.odd_large_classNumber_ne_one` in `UniformUpperEnvelope`
 requires only `D≥700000000000`, `Squarefree D` and `Fact ((D:Int)%4=3)`;

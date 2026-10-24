@@ -1,5 +1,10 @@
 # Why the odd-discriminant bridge now closes
 
+**Later update (Phase 29):** the even chart and an explicit field equivalence
+now give an effective bound for every positive squarefree radicand. See the
+[full-cutoff guide](FULL_CUTOFF_GUIDE.md). The Phase28 scope and remaining-gap
+descriptions below are historical, not the current frontier.
+
 ## The result, before the machinery
 
 Lean accepts the following statement:

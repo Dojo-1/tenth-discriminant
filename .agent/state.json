@@ -1,6 +1,6 @@
 {
   "task": "Connect the checked local determinant bound to Ender's geometric and analytic cutoff",
-  "status": "phase28_universal_odd_cutoff_full_root_build_source_correspondence_namespace_audit_and_printed_signature_passed_matched_controls_and_exact_head_CI_pending_even_cases_and_finite_classification_open_global_goal_active",
+  "status": "phase29_effective_bound_for_all_positive_squarefree_radicands_in_one_actual_field_family_compiled_final_full_root_build_source_correspondence_namespace_audit_and_printed_signatures_passed_local_parent_timeout_preserved_direct_controls_and_exact_head_CI_pending_finite_classification_and_other_objectives_open_global_goal_active",
   "base_commit": "a4da8963fa0d94ca4858e09ab10f3195d0fe588f",
   "branch": "codex/rectangular-row-action",
   "decisions": [

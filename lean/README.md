@@ -3,12 +3,12 @@
 **A checked interpolation and determinant apparatus, not yet a formalized
 class-number-one classification.**
 
-**Current frontier (Phase 28):** every squarefree `D≡3 (mod 4)` with
-`D≥700000000000` is excluded by `odd_large_classNumber_ne_one`, with all
-geometric and numerical guards supplied. This is a universal odd-discriminant
-cutoff, not a classification or a theorem for even discriminants.
-[Read the short proof](../research/ender_radius_bridge/ODD_CUTOFF_GUIDE.md).
-The bounded-interval/Phase 27 descriptions below are historical checkpoints.
+**Current frontier (Phase 29):** for every positive squarefree radicand d,
+actual class number one of `Q(sqrt(-d))` implies d<700000000000. The even
+maximal order, prime-two obstruction and explicit odd-chart field equivalence
+are supplied. This is an effective bound, not the finite classification.
+[Read the short proof](../research/ender_radius_bridge/FULL_CUTOFF_GUIDE.md).
+Earlier bounded-interval/arithmetic descriptions below are historical checkpoints.
 
 The first saved interval is now closed: for squarefree `D≡3 (mod 4)` in
 `[700000000000,875000000000]`, the constructed quadratic field has class

@@ -1,5 +1,37 @@
 # Task checkpoint
 
+- Phase 29 preregistered in 21f6d30 before mathematical edits. Prior turn
+  was progress: Phase28 odd cutoff passed full pinned CI 40122029696 and
+  security 40122028111 on the identical published/merge/local tree. Live
+  branch refreshed with zero divergence; only inherited lake manifest
+  untracked. New trace-zero field, rational/integer bases, actual trace/norm,
+  integer-coordinate criterion, maximal-order equivalence and prime-two
+  obstruction compile. d=1,2 norm-two exceptions retained; d=3 refutes dropping
+  mod-4 guard; d=5 actual class number not one. Explicit theta=2*omega-1
+  field equivalence is in progress to unify the cutoff in one actual family,
+  not a piecewise class-number proxy. Cast/simp and default elaboration-budget
+  failures preserved; no mathematical counterexample to the target so far.
+  No full classification, merge or Tao post. Global goal active.
+
+- Phase29 final proof checkpoint: both generator maps/inverses and actual
+  integer-ring/PID transport compile. ImaginaryQuadraticField d is the single
+  actual quotient Q[X]/(X^2+d), not a selector. Class number one now implies
+  d<700000000000 for every positive squarefree d. The supplementary d/4d
+  conventional parameter is also bounded; a NumberField.discr identity is
+  not silently assumed. The d=3 control now supplies an actual algebraic
+  integer through the field map. Full root build 6741, source correspondence
+  and final namespace audit pass (2890 logical, 2477 theorems, 14292 runtime-only).
+  Printed main theorem has only positivity, squarefreeness and actual class
+  number one; only three permitted axioms. Initial audit.py parent timed out
+  at its unchanged 240-second apparatus deadline after namespace pass; preserve
+  as a failed complete-driver run. Direct controls and exact-head CI pending
+  at publication. Core proof uses default heartbeats; failed one-million-
+  heartbeat attempt retained. Human guide and current ledger updated, including
+  old stale frontier sentences. Frozen tools/ledger/flow/audit/pins unchanged.
+  Remaining: finite odd classification, independent semantic review, optimization,
+  systematic comparison, higher-class-number track, upstream review and human
+  submission. No merge or Tao post; do not mark the whole goal complete.
+
 - 2026-10-24, Phase 18: Protocol-only commit `766c739` preceded edits.
   Lean now checks the missing disk-to-cell covering, exact cell area,
   finite-union bound, chosen-radius strict count, and upper-endpoint

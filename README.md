@@ -2,14 +2,15 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
-**Phase 28: the odd-discriminant cutoff now compiles end to end.** For every
-squarefree `D≡3 (mod 4)` with `D≥700000000000`, the constructed quadratic
-field has class number different from one. A new, explicitly labelled
-auxiliary radius family supplies all geometric guards and universal upper
-and lower envelopes; no numerical premise remains. This bypasses the other
-249 campaign comparisons for this odd statement without modifying their
-records. Even discriminants and the finite classification remain open.
-Read the [short odd-cutoff proof](research/ender_radius_bridge/ODD_CUTOFF_GUIDE.md).
+**Phase 29: an effective bound now covers both parity cases.** For every
+positive squarefree radicand `d`, Lean proves that class number one of the
+actual constructed `Q(sqrt(-d))` implies `d<700000000000`, with no numerical
+premise or congruence restriction. The odd determinant cutoff, the new even
+maximal-order/prime-two obstruction, and an explicit field equivalence are
+connected. This is an effective bound, **not the finite classification**.
+The constant is not improved or claimed optimized; human semantic review
+and Mathlib upstream review remain separate.
+Read the [short full-cutoff proof](research/ender_radius_bridge/FULL_CUTOFF_GUIDE.md).
 Full pinned CI and axiom-audit status must be tied to the published tree.
 
 The following Phase 26–27 checkpoint is historical and superseded in range:

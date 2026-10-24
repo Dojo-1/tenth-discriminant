@@ -1,5 +1,27 @@
 # Status — 2026-10-24
 
+## Phase 29: effective radicand bound, with both parity cases supplied
+
+`imaginaryQuadratic_classNumber_one_radicand_bound` compiles for every
+positive squarefree d: actual-field class number one implies d<700000000000.
+`ImaginaryQuadraticField d` is the actual quotient `Q[X]/(X^2+d)`, not a
+piecewise proxy. The even maximal-order theorem and prime-two obstruction
+force d=1 or 2 when d=1,2 mod 4. An explicit theta=2*omega-1 field equivalence
+and integer-ring/PID transport connect the d=3 mod 4 branch to Phase28.
+The new public cutoff has no mod-4, numerical, maximal-order or equivalence
+premise. It assumes only positivity, squarefreeness and actual class number one.
+
+The supplementary conventional absolute-discriminant parameter is also
+bounded; its equality with Mathlib's NumberField.discr is not asserted.
+The finite odd classification, independent human semantic review,
+optimization, systematic writeup comparison and submission remain open.
+All exact controls and development failures are retained. Full root
+build/audit and exact-head CI status must accompany publication.
+[Human proof](research/ender_radius_bridge/FULL_CUTOFF_GUIDE.md)
+· [Preregistration](research/ender_radius_bridge/PHASE29_PROTOCOL.md).
+
+The Phase28 and earlier frontier descriptions below are historical.
+
 ## Phase 28: universal odd-discriminant cutoff, not full classification
 
 `FirstCertificate.odd_large_classNumber_ne_one` compiles for every squarefree

@@ -1,0 +1,62 @@
+⚠ [6655/6720] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6656/6720] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6657/6720] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6658/6720] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6661/6720] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6663/6720] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6692/6720] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+⚠ [6702/6720] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✖ [6720/6720] Building TenthDiscriminant.QuadraticChartEquivalence
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\QuadraticChartEquivalence.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\QuadraticChartEquivalence.ilean -c .\.\.lake\build\ir\TenthDiscriminant\QuadraticChartEquivalence.c --json
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:39:6: 'change' tactic failed, pattern
+  eval₂ ?m.46890 ?m.46891 (X ^ 2 + C ↑d) = 0
+is not definitionally equal to target
+  eval₂ (AdjoinRoot.of (quadraticFieldPoly c)) (2 * t - 1) (evenFieldPoly d) = 0
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:59:6: 'change' tactic failed, pattern
+  eval₂ ?m.87813 ?m.87814 (X ^ 2 - X + C ↑c) = 0
+is not definitionally equal to target
+  eval₂ (AdjoinRoot.of (evenFieldPoly d)) ((1 + t) / 2) (quadraticFieldPoly c) = 0
+info: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:69:4: Try this: ring_nf
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:67:2: unsolved goals
+case h₁.h
+d : ℕ
+inst✝¹ : Fact (↑d % 4 = 3)
+inst✝ : Fact (0 < d)
+⊢ AdjoinRoot.root (quadraticFieldPoly ((↑d + 1) / 4)) *
+        ((AdjoinRoot.lift (AdjoinRoot.of (quadraticFieldPoly ((↑d + 1) / 4)))
+              (-1 + AdjoinRoot.root (quadraticFieldPoly ((↑d + 1) / 4)) * 2) ⋯)
+            2)⁻¹ *
+      2 =
+    AdjoinRoot.root (quadraticFieldPoly ((↑d + 1) / 4))
+info: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:72:4: Try this: ring_nf
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:70:2: unsolved goals
+case h₂.h
+d : ℕ
+inst✝¹ : Fact (↑d % 4 = 3)
+inst✝ : Fact (0 < d)
+⊢ -1 +
+        AdjoinRoot.root (evenFieldPoly d) *
+            (AdjoinRoot.lift (AdjoinRoot.of (evenFieldPoly d)) (1 / 2 + AdjoinRoot.root (evenFieldPoly d) * (1 / 2)) ⋯)
+              2 *
+          (1 / 2) +
+      (AdjoinRoot.lift (AdjoinRoot.of (evenFieldPoly d)) (1 / 2 + AdjoinRoot.root (evenFieldPoly d) * (1 / 2)) ⋯) 2 *
+        (1 / 2) =
+    AdjoinRoot.root (evenFieldPoly d)
+error: Lean exited with code 1
+Some required builds logged failures:
+- TenthDiscriminant.QuadraticChartEquivalence

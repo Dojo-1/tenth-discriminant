@@ -949,3 +949,27 @@ This is the universal odd cutoff, not the full-discriminant classification:
 even cases, the finite endgame, independent human review and upstream
 suitability are not supplied. Earlier section frontier descriptions are
 historical checkpoints.
+
+## 30. Prime two closes the even chart; a field equivalence joins both cases
+
+For squarefree positive d=1 or 2 mod 4, the actual maximal integer ring is
+`Z[sqrt(-d)]`. Integral trace and norm, together with parity modulo four,
+force integer coordinates. Its quotient onto F2 has a kernel ideal of norm
+two. Class number one makes that ideal principal, producing
+`x^2+d*y^2=2`. This is impossible for d>2, while the norm-two examples for
+d=1,2 remain valid. The d=3 half-integral counterexample explains the guard.
+
+The actual field family `ImaginaryQuadraticField d=Q[X]/(X^2+d)` is not a
+piecewise selector. For d=3 mod 4, Lean constructs and inverts the field
+maps theta=2*omega-1 and omega=(1+theta)/2. Their integer-ring equivalence
+transports the PID property and hence class number one to the old odd chart.
+
+`imaginaryQuadratic_classNumber_one_radicand_bound` therefore proves
+`d<700000000000` for **every positive squarefree d** whose actual field has
+class number one. No congruence or numerical premise remains. This is an
+effective bound, not a classification of the remaining finite odd range.
+The [short full-cutoff proof](../research/ender_radius_bridge/FULL_CUTOFF_GUIDE.md)
+keeps radicands, conventional discriminant parameters and the unproved
+`NumberField.discr` identification distinct. The earlier even-gap descriptions
+are historical. Independent semantic review and other objective-ledger items
+remain open.

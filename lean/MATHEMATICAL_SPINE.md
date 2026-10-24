@@ -5,13 +5,15 @@ This is the shortest route into the Lean development. The longer
 the [claim map](FORMALIZATION.md) names the checked declarations. Neither
 document, nor this one, is a proof of the class-number-one classification.
 
-**Current frontier (Phase 28):** the same chain now excludes every squarefree
-`D≡3 (mod 4)` above `700000000000`. Divide both logarithmic estimates by
-`R^2*S`; their checked slopes in `log D` are `0.999997` and `13/16`.
-A fixed auxiliary radius family supplies all guards and finite error bounds.
-The [odd-cutoff guide](../research/ender_radius_bridge/ODD_CUTOFF_GUIDE.md)
-shows the entire contradiction. Even discriminants and finite classification
-remain open; the older descriptions below record the route to this result.
+**Current frontier (Phase 29):** the effective radicand bound now covers
+both parity cases. Positive squarefree d and class number one of the actual
+`Q(sqrt(-d))` imply d<700000000000. The odd branch compares normalized
+arithmetic and geometric slopes; the even branch uses a prime-two ideal
+whose principal generator would have impossible norm two. The explicit
+change theta=2*omega-1 joins the charts. The
+[full-cutoff guide](../research/ender_radius_bridge/FULL_CUTOFF_GUIDE.md)
+shows the argument. Finite classification remains open; older descriptions
+below record the route to the current bound.
 
 Phase 26 now closes one fixed interval: for squarefree `D≡3 (mod 4)` in
 `[700000000000,875000000000]`, the actual constructed quadratic field has
