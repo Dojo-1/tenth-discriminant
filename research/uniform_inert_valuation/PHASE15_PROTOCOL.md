@@ -33,3 +33,27 @@ theorem, exact failed attempts and next obligation. Run targeted Lean,
 full pinned build, source correspondence, dependency audit and
 negative controls on the proof head. Update human documentation,
 keep the PR draft and do not merge.
+
+## Execution (2026-10-24)
+
+The full target compiled in `QuadraticFieldChart.lean`. Negative
+discriminant gives irreducibility; `AdjoinRoot` supplies the genuine
+number field and its rational `(1,T)` basis. The existing integer
+order maps injectively into this field and its ring of integers.
+Trace and norm of an arbitrary field coordinate pair are computed
+from the actual left-multiplication matrix. Mathlib's integrality
+of trace/norm and Phase 14's squarefree/parity lemma force integer
+coordinates for every algebraic integer. Hence the map is onto:
+`halfOrderEquivRingOfIntegers` is a checked ring equivalence.
+`halfOrder_ringOfIntegers_norm` identifies the maximal-ring norm of
+the explicit coordinates with the repository's `principalNorm`.
+
+The `D=15,c=4` irreducibility control and `c=0` reducibility
+counterexample compile. Initial failed scripts exposed a needed
+noncomputable field declaration, a degree-cast mismatch, ring-hom
+constructor field order, and basis-projection normalization; all
+were repaired. This equivalence does **not** itself prove that class
+number one supplies `SmallPrimeNormLifting`: the quotient and norm
+steps still need composition, including the sign of the norm.
+The chosen-radius area, analytic comparison and classification also
+remain open.

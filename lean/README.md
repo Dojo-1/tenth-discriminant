@@ -10,10 +10,11 @@ Then read the [detailed human proof guide](HUMAN_GUIDE.md). Use the
 conditional helpers, finite calculations and open links.
 
 The newest arithmetic component is the
-[rational maximal-order coordinate criterion](TenthDiscriminant/MaximalOrderCoordinates.lean):
-integer trace and norm force the half-integral shape under
-squarefreeness. The actual field-to-maximal-order identification is
-still open; see [§19 of the guide](HUMAN_GUIDE.md#19-why-the-half-integral-coordinates-are-forced).
+[maximal-order equivalence](TenthDiscriminant/QuadraticFieldChart.lean):
+Phase 14's rational trace/norm criterion identifies every algebraic
+integer in the constructed quadratic field with the explicit
+half-integral order. The class-number-one-to-lifting composition is
+still open; see [§20 of the guide](HUMAN_GUIDE.md#20-why-this-is-the-whole-integer-ring).
 
 ## The result to start with
 
@@ -164,9 +165,9 @@ The cell-area count is not Lean-checked; determinant divisibility is checked
 under an odd-prime nonsquare condition, and the strict-small-prime norm
 argument is checked under an explicit unproved lifting premise. The
 abstract class-number-one quotient-to-principal-norm step is checked;
-the explicit order's actual `Algebra.norm` is now identified with the
-principal form. Transporting its residue map and norm formula to the
-maximal integer ring, remaining analytic and
+the explicit order is now identified with the maximal integer ring,
+including its principal norm coordinates. Composing this with the
+class-number-one ideal step, remaining analytic and
 kernel-checkable numerical estimates, and finite classification are not yet a
 connected Lean proof. The analytic cutoff and saved numerical evidence are
 unchanged. No human or blind independent semantic review is claimed.

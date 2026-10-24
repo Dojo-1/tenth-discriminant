@@ -596,13 +596,13 @@ necessary for a general number field. It becomes the positive norm in
 our imaginary quadratic application only after we identify that field
 and its integral coordinates.
 
-The explicit order's norm coordinates are now checked in §18.
-The remaining arrow is field-specific: identify that order with the
-**maximal** integer ring for the intended fundamental discriminant.
-Only then does a residue root supply the map required here, and only
-then does the maximal-order generator inherit those norm coordinates.
-Until that arrow is checked, the Phase 9 lifting premise is not discharged and
-the class-number classification remains open.
+The explicit order's norm coordinates are checked in §18, and §20
+now identifies it with the **maximal** integer ring for the intended
+fundamental discriminant. A residue root can therefore supply a map
+from that ring. The remaining unproved composition is to use the
+principal generator here, transport its norm formula, and prove the
+sign needed for Phase 9's exact norm-`p` lifting premise. The
+classification remains open.
 
 ## 17. From a residue root to an actual quotient map
 
@@ -623,12 +623,10 @@ $$\mathbf Z[T]/(T^2-T+c)\longrightarrow\mathbf F_p,
 Lean checks the integer coefficient identity, the odd-prime division,
 the polynomial-root calculation, the ring map, its value on `T`, and
 surjectivity in [HalfOrderResidue.lean](TenthDiscriminant/HalfOrderResidue.lean).
-This makes one of §16's arrows concrete, but for the explicit order
-`ℤ[ω]`, **not yet** for Mathlib's maximal integer ring `𝓞_K`.
-The field-specific remaining work is to identify those rings under
-the fundamental-discriminant hypotheses, transporting the order norm
-calculated in §18. Only then can §16
-feed §15 without an extra premise. At `D=15,p=3`, the quotient map
+This makes one of §16's arrows concrete for the explicit order
+`ℤ[ω]`. Section 20 now identifies this order with Mathlib's maximal
+integer ring `𝓞_K`, but the residue and principal-norm theorems have
+not yet been composed into one checked class-number theorem. At `D=15,p=3`, the quotient map
 exists while the lifting premise fails; this is a useful guard against
 dropping class number one.
 
@@ -660,12 +658,12 @@ norm-as-determinant theorem. Hence its algebraic norm is precisely
 `principalNorm D x y`. The checks `D=15,c=4,T↦4` and scalar norm
 `x↦x²` guard the two columns.
 
-One different sentence remains: identify this explicit order with
-the maximal integer ring of the intended imaginary quadratic field
-under the fundamental-discriminant hypotheses. Class number one in
-§16 concerns that **maximal** ring. Until the identification is
-proved, §16 still cannot discharge §15's lifting premise; no cutoff
-or classification follows from this norm calculation alone.
+Section 20 now proves that this explicit order *is* the maximal
+integer ring of the intended imaginary quadratic field under the
+squarefree congruence hypotheses. Class number one in §16 concerns
+that ring, but the composition to §15's lifting premise is still
+unproved; no cutoff or classification follows from the norm
+calculation alone.
 
 ## 19. Why the half-integral coordinates are forced
 
@@ -688,8 +686,41 @@ checks those arithmetic steps, uniqueness, and the converse integer
 trace/norm implication. `D=15` works; `D=9,q=1/3` falsifies the
 denominator claim without squarefreeness.
 
-What remains is to instantiate this calculation in the actual
-quadratic field, prove that its integral elements supply those trace
-and norm hypotheses, and identify the explicit quotient order with
-Mathlib's maximal integer ring. Until then §16 cannot be applied
-to §17's quotient map. This is a structural gap, not a classification.
+Section 20 now instantiates this calculation in the actual quadratic
+field and proves that its integral elements supply those trace and
+norm hypotheses. The structural gap has moved from order identity
+to the sign-safe class-number composition; this is not a classification.
+
+## 20. Why this is the whole integer ring
+
+Put `c=(D+1)/4` and form the rational field
+`K=ℚ[T]/(T²-T+c)`. Its polynomial has discriminant `-D<0`, so it
+has no rational root and is irreducible; `1,T` is a rational basis.
+The integral quotient `A=ℤ[T]/(T²-T+c)` maps into `K` by sending its
+generator to `T`. Comparing the two basis coordinates proves this
+map injective. The monic relation makes every element of `A`
+integral, so the map lands in the full integer ring `𝓞_K`.
+
+For the reverse inclusion, write any `z∈𝓞_K` as `a+bT` with rational
+`a,b`. Its actual field trace and norm—computed from multiplication
+by `z` in the `(1,T)` basis—are
+
+$$\operatorname{Tr}(z)=2a+b,\qquad
+\operatorname{N}(z)=a^2+ab+cb^2.$$
+
+Because `z` is integral, both are rational algebraic integers, hence
+ordinary integers. Rewrite `z` as
+`(a+b/2)+(b/2)√(-D)` and apply §19: it forces `a,b∈ℤ`.
+Thus every element of `𝓞_K` comes from `A`, proving the two rings
+equivalent. [QuadraticFieldChart.lean](TenthDiscriminant/QuadraticFieldChart.lean)
+checks irreducibility, both bases, the injection, both inclusions,
+the ring equivalence, and the maximal-ring norm formula
+`N(x+yT)=principalNorm D x y`. The `D=15` field works; dropping
+positivity allows the reducible `T²-T` control.
+
+The next implication has a clean shape but is **not yet one Lean
+theorem**: a residue root gives a map `𝓞_K→𝔽_p`; class number one
+should give an element of algebraic norm magnitude `p`; positivity
+of the imaginary quadratic norm should turn magnitude into `p`;
+the coordinates above should then discharge §15's lifting premise.
+The paper area and analytic cutoff remain separate gaps.

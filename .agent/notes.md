@@ -80,6 +80,17 @@
   `Algebra.norm` and the maximal-order identification are not proved;
   no checked cutoff or classification follows. Final-head CI pending.
 
+- 2026-10-24, Phase 15: Phase 14 head `8d15fbb` passed pinned CI
+  `40039967991` and CodeQL. Protocol-only `c600ac5` preceded edits.
+  Targeted Lean now proves the actual quadratic field and rational
+  basis, an injective explicit order-to-integer-ring map, integer
+  coordinates for every algebraic integer, the resulting ring
+  equivalence, and the maximal-ring norm identity. `D=15,c=4` and
+  reducible `c=0` controls compile. The full 6706-step build and
+  endpoint-only source correspondence pass; whitespace and state JSON
+  checks pass. Pinned dependency audit and negative controls are pending. The
+  class-number-to-small-prime lifting composition is not yet checked.
+
 - 2026-10-24, Phase 14: Phase 13 head `ca4bb0b` passed pinned CI
   `40037475255` and CodeQL. Protocol-only `18510c3` preceded edits.
   Lean now checks the squarefree rational denominator lemma, parity,

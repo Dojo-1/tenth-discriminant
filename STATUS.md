@@ -5,6 +5,21 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-24: explicit order equals the maximal integer ring
+
+[Phase 15](research/uniform_inert_valuation/PHASE15_PROTOCOL.md) now
+constructs the genuine quadratic number field for squarefree
+`D ≡ 3 (mod 4)` and proves in Lean that its maximal integer ring is
+isomorphic to `ℤ[T]/(T²-T+(D+1)/4)`. The proof uses the actual field
+trace and norm, Phase 14's denominator/parity argument, and an
+injective order-to-field map; the norm on the maximal ring agrees
+with the repository's `principalNorm`. This closes the previously
+open *order-identification* arrow. The next arrow—composing a residue
+root, class number one, and the sign-safe norm identity into
+`SmallPrimeNormLifting`—is **not yet checked**. Neither the analytic
+cutoff nor classification is established. [Lean source](lean/TenthDiscriminant/QuadraticFieldChart.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#20-why-this-is-the-whole-integer-ring).
+
 ## 2026-10-24: prospective maximal-order coordinates checked
 
 [Phase 14](research/uniform_inert_valuation/PHASE14_PROTOCOL.md) proves
@@ -13,8 +28,9 @@ integer `2a` and `a²+Db²` have unique coordinates
 `a=x+y/2, b=y/2` with `x,y∈ℤ`; the converse is checked too.
 `D=15` is a positive control, while `D=9,q=1/3` shows why
 squarefreeness matters. This is the arithmetic heart of the
-maximal-order argument, **not** the field-to-order equivalence.
-The latter, the cutoff and classification remain open.
+maximal-order argument, **not by itself** the field-to-order equivalence.
+Phase 15 now proves that equivalence; the cutoff and classification
+remain open.
 [Lean source](lean/TenthDiscriminant/MaximalOrderCoordinates.lean) ·
 [human explanation](lean/HUMAN_GUIDE.md#19-why-the-half-integral-coordinates-are-forced).
 
@@ -26,8 +42,8 @@ Mathlib's actual `Algebra.norm ℤ (x+yT)` equals `x²+xy+cy²` for every
 integer `c,x,y`. Specializing `c=(D+1)/4` makes this *exactly* the
 repository's `principalNorm D x y`; `D=15,T` has norm `4`, and
 scalars have norm `x²`. This closes Phase 12's formal norm transport.
-It does **not** identify this explicit order with the maximal ring of
-integers of the intended quadratic field, so Phase 9's lifting premise,
+Phase 13 alone did **not** identify this explicit order with the maximal ring of
+integers of the intended quadratic field (Phase 15 now does), so Phase 9's lifting premise,
 the cutoff and the classification remain open. [Lean source](lean/TenthDiscriminant/HalfOrderAlgebraicNorm.lean) ·
 [human explanation](lean/HUMAN_GUIDE.md#18-the-two-dimensional-norm-chart).
 
@@ -37,9 +53,9 @@ the cutoff and the classification remain open. [Lean source](lean/TenthDiscrimin
 `T²=T-c` inside the actual quotient order and the second column of
 multiplication by `x+yT`. The determinant of the resulting `2×2`
 matrix is exactly `x²+xy+cy²`; `D=15,c=4` is a concrete control.
-Phase 13 now identifies that matrix determinant with `Algebra.norm`
-in the power basis. It has **not** identified this order with the
-maximal integer ring. Thus the Phase 9 lifting premise and
+Phase 13 identifies that matrix determinant with `Algebra.norm`
+in the power basis, and Phase 15 identifies the order with the
+maximal integer ring. The Phase 9 lifting premise and
 the end-to-end classification remain open. [Lean source](lean/TenthDiscriminant/HalfOrderNorm.lean) ·
 [human explanation](lean/HUMAN_GUIDE.md#18-the-two-dimensional-norm-chart).
 
@@ -50,10 +66,10 @@ checks that for `D ≡ 3 (mod 4)` and odd prime `p`, a root `z²=-D`
 modulo `p` yields a surjective ring map from
 `ℤ[T]/(T²-T+(D+1)/4)` to `ZMod p`, sending `T` to `(1+z)/2`.
 The `D=15,p=3` ramified control has this map although Phase 9's
-principal norm lifting fails. **This is not yet a map from Mathlib's
-maximal integer ring.** The order identification is the remaining
-arithmetic arrow before Phase 10 can
-discharge Phase 9's lifting premise. Geometric and analytic links
+principal norm lifting fails. Phase 15 now transports this map to
+Mathlib's maximal integer ring; composing it with Phase 10 and a
+sign-safe norm identity is the remaining arithmetic arrow before
+Phase 9's lifting premise. Geometric and analytic links
 remain open. [Lean source](lean/TenthDiscriminant/HalfOrderResidue.lean) ·
 [human explanation](lean/HUMAN_GUIDE.md#17-from-a-residue-root-to-an-actual-quotient-map).
 

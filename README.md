@@ -24,9 +24,11 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > determinant of the proposed two-dimensional multiplication matrix.
 > Lean now identifies that determinant with the order's actual
 > `Algebra.norm` and with the repository's `principalNorm` formula.
-> Identifying the order with the intended field's maximal integer ring
-> remains open. Lean now checks the underlying rational trace/norm
-> coordinate criterion, but not its transport to that field. The
+> Lean now also constructs the genuine quadratic field and identifies
+> this order with its maximal integer ring using trace, norm,
+> squarefree denominators and parity. Composing that equivalence
+> with class number one to prove the specific norm-lifting premise
+> remains open. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.
