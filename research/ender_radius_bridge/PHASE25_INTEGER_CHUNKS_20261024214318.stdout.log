@@ -1,0 +1,68 @@
+⚠ [6655/6723] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6656/6723] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6657/6723] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6658/6723] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6661/6723] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6663/6723] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6692/6723] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+⚠ [6702/6723] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✖ [6723/6723] Building TenthDiscriminant.SmallIdealClassNumber
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\SmallIdealClassNumber.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\SmallIdealClassNumber.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\SmallIdealClassNumber.ilean -c .\.\.lake\build\ir\TenthDiscriminant\SmallIdealClassNumber.c --json
+error: .\.\.\.\TenthDiscriminant\SmallIdealClassNumber.lean:15:68: omega could not prove the goal:
+No usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.
+error: .\.\.\.\TenthDiscriminant\SmallIdealClassNumber.lean:30:2: simp made no progress
+error: .\.\.\.\TenthDiscriminant\SmallIdealClassNumber.lean:116:47: unsolved goals
+K : Type u_1
+inst✝¹ : Field K
+inst✝ : NumberField K
+hdegree : Module.finrank ℚ K = 2
+hno : ∀ (J : Ideal (𝓞 K)), ∀ p ∈ [2, 3, 5, 7], Ideal.absNorm J ≠ p
+I : Ideal (𝓞 K)
+hpos : 0 < Ideal.absNorm I
+hsmall : Ideal.absNorm I < 9
+hunit : ¬Ideal.absNorm I = 1
+hnotunit : ¬IsUnit I
+hirr : Irreducible I
+this✝⁴ : I.IsPrime := Ideal.isPrime_of_prime (UniqueFactorizationMonoid.irreducible_iff_prime.mp hirr)
+hIbot : I ≠ ⊥
+this✝³ : I.IsMaximal := Ideal.IsPrime.isMaximal inferInstance hIbot
+this✝² : Field (𝓞 K ⧸ I) := Ideal.Quotient.field I
+this✝¹ : Finite (𝓞 K ⧸ I) :=
+  (Ideal.absNorm_ne_zero_iff I).mp fun a => quadratic_small_ideal_principal._proof_8 K I hpos hsmall a
+this✝ : Fintype (𝓞 K ⧸ I) := Fintype.ofFinite (𝓞 K ⧸ I)
+hcard : Fintype.card (𝓞 K ⧸ I) = Ideal.absNorm I
+p : ℕ
+hchar : CharP (𝓞 K ⧸ I) p
+_e : ℕ+
+hp : Nat.Prime p
+_hpow : Fintype.card (𝓞 K ⧸ I) = p ^ ↑_e
+this : CharP (𝓞 K ⧸ I) p := hchar
+hpzero : ↑p = 0
+hpn : p ∣ Ideal.absNorm I
+hpmem : ↑p ∈ I
+hle : Ideal.span {↑p} ≤ I
+hnp : Ideal.absNorm I ∣ p ^ 2
+harith : Ideal.absNorm I = 4 ∧ p = 2
+⊢ 4 = 2 ^ 2
+error: .\.\.\.\TenthDiscriminant\SmallIdealClassNumber.lean:118:2: failed to synthesize
+  Submodule.IsPrincipal (Ideal.span {↑p})
+
+Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Lean exited with code 1
+Some required builds logged failures:
+- TenthDiscriminant.SmallIdealClassNumber

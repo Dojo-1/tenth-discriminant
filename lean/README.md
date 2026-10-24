@@ -1,16 +1,16 @@
 # Lean: the proof you can inspect
 
-Phase 32 proves the actual field discriminant identity and actual class
-number one for d=1,2,3,7. The original cutoff now applies to the absolute
-value of Mathlib's `NumberField.discr`. Five positive cases and the upper
-middle interval remain open; the constant has not improved.
-[Read the short proof](../research/ender_radius_bridge/DISCRIMINANT_POSITIVE_GUIDE.md).
+Phase 33 proves actual class number one for all nine radicands and the
+iff characterization below one million, for positive squarefree d.
+The actual absolute field-discriminant cutoff is checked, but the whole
+upper interval [1000000,700000000000) is not. No full classification or
+improved constant is claimed. [Read the short proof](../research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md).
 
 Phase 31 proves the necessary nine-element list for actual class number one
 below one million. The wheel's no-loss invariant and complete interval
 enumeration are proved, and the finite survivor identity is kernel checked.
-The range from one million to the effective cutoff remains open, as do the
-five remaining positive class-number equalities.
+The range from one million to the effective cutoff remains open; Phase33
+now supplies all nine positive equalities and therefore both directions below one million.
 [Read the wheel proof](../research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md).
 
 Phase 30 now derives the finite sieve's modulo-eight prefilter from actual

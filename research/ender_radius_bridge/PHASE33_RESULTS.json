@@ -1,0 +1,27 @@
+{
+  "phase": 33,
+  "preregistration_commit": "4fa17b72f5d5ef9f4721aade53509d9f8867921a",
+  "base_commit": "7c7f2c7f33fc38a1caee977b3db4d5e3660b0e4a",
+  "scope": "all five remaining actual positive class-number equalities; all-nine sufficiency and both directions below one million; not full classification",
+  "new_positive_cases": [11,19,43,67,163],
+  "all_positive_cases": [1,2,3,7,11,19,43,67,163],
+  "generic_results": ["prime-norm ideal supplies a map from the actual integer ring to ZMod p", "quadratic scalar ideal (p) has norm p^2", "inclusion and equal nonzero ideal norms imply equality", "excluding norms 2,3,5,7 makes every nonzero ideal of norm<9 principal, with (2) allowed", "two Minkowski criteria at discr natAbs<=19 and <=163"],
+  "main_actual_results": ["known_nine_classNumber_one supplies all nine positive equalities without a classification input", "classNumber_one_iff_below_million has only positivity, squarefreeness and d<1000000 hypotheses"],
+  "fixed_tiers": [{"radicands": [11,19], "representative_norm_lt": 3, "forbidden_prime_norms": [2], "numeric_guard": "4*19<9*3^2"}, {"radicands": [43,67,163], "representative_norm_lt": 9, "forbidden_prime_norms": [2,3,5,7], "numeric_guard": "4*163<9*9^2"}],
+  "noncircularity": "unique factorization used is of ideals in the Dedekind integer ring; no PID of elements or class-number-one premise is assumed",
+  "controls": ["norm((2))=4 in degree two", "d=11 polynomial root zero modulo three", "d=23 polynomial root zero modulo two", "actual d=23 has discr natAbs<=163 but class number !=1"],
+  "attempts": [
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024214318.result.json", "exit_code": 1, "seconds": 54.4403363, "peak_bytes": 2846093312, "failure": "explicit prime positivity, natAbs power normalization, numeric equality normalization and principal-span constructor were needed"},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024214600.result.json", "exit_code": 0, "seconds": 29.0451546, "peak_bytes": 2893971456, "target": "SmallIdealClassNumber including both Minkowski tiers"},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024214810.result.json", "exit_code": 0, "seconds": 22.4675193, "peak_bytes": 2847166464, "target": "RemainingPositiveClassNumber including all five applications and bounded iff"},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024215257.result.json", "exit_code": 0, "seconds": 127.4487642, "peak_bytes": 2789187584, "target": "full TenthDiscriminant root, 6749 steps"}
+  ],
+  "monitor_note": "All raw records retained unchanged; legacy Phase25 filenames and scope/proof_file metadata preserved. build_target/stdout identify actual Phase33 targets. Same 8192 MB cap; no resource stop or budget increase.",
+  "local_checkpoint": {"root_build": "passed", "source_correspondence": "passed, endpoint identity only", "import_coverage": "95 modules", "compiled_audit": "passed: 3110 logical declarations, 2677 theorems, 14368 runtime-only auxiliaries excluded", "signatures": "passed, including five unconditional concrete equalities and bounded iff with explicit finite endpoint", "axioms": ["propext", "Classical.choice", "Quot.sound"], "apparatus_controls": "passed", "full_parent_drivers_and_mathematical_suite": "required in exact-head pinned Linux CI, not separately claimed rerun in full locally"},
+  "commands_from_lean": ["lake build", "python verify_sources.py", "lake env lean Audit.lean", "python apparatus_controls.py", "lake env lean ../research/ender_radius_bridge/Phase33SignatureCheck.lean", "python audit.py (full pinned CI)", "python negative_controls.py (full pinned CI)"],
+  "exact_head_CI": "pending at publication checkpoint; final PR28 record must identify terminal full checks and exact head/merge/local tree correspondence",
+  "unchanged": ["700000000000 cutoff", "production tools", "frozen campaigns and old ledgers", "dependency pins and verification gates"],
+  "remaining": ["complete interval [1000000,700000000000)", "global class-number-one classification", "optimization", "independent human semantic review", "systematic comparison", "higher class-number track", "upstream review and authorized human submission"],
+  "merge_or_Tao_post": false,
+  "global_goal": "active"
+}

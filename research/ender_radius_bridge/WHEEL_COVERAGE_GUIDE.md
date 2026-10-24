@@ -65,9 +65,9 @@ passing the tests.
 
 Together with the already checked small end below 92, this gives the
 necessary nine-element list below one million. The interval
-[1000000,700000000000) remains unclosed. Phase32 separately proves four
-positive equalities (d=1,2,3,7); five remain open. See the
-[positive-case guide](DISCRIMINANT_POSITIVE_GUIDE.md). This is not full classification.
+[1000000,700000000000) remains unclosed. Phase33 separately proves all nine
+positive equalities, so both directions are now checked below one million.
+See the [positive-case guide](NINE_POSITIVE_GUIDE.md). This is not full classification.
 
 ## Evidence and source map
 

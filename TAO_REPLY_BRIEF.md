@@ -1,6 +1,6 @@
 # Factual brief for a possible human comment on Tao's challenge
 
-**24 October 2026, through Phase 32. This is an AI-prepared evidence brief, not the
+**25 October 2026, through Phase 33. This is an AI-prepared evidence brief, not the
 human-generated summary requested by [Tao's post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).**
 The contributor should write the actual comment in their own words
 after reviewing the linked work. No comment has been submitted by this
@@ -8,17 +8,17 @@ repository work.
 
 ## What can be stated now
 
-- Phase32 proves the actual field-discriminant identity and therefore the
-  actual absolute-discriminant bound below `7×10¹¹`. It also proves actual
-  class number one for d=1,2,3,7 through the pinned Minkowski criterion.
-  Five positive cases and the upper middle interval remain open.
-  [Human proof](research/ender_radius_bridge/DISCRIMINANT_POSITIVE_GUIDE.md).
+- Phase33 proves actual class number one for all nine radicands and both
+  directions of the classification below one million, for positive squarefree d.
+  The actual absolute field-discriminant bound remains `7×10¹¹`. The entire
+  upper middle interval is still unclosed, so this is not full classification.
+  [Human proof and exact gap](research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md).
 
 - Phase 31 proves the necessary nine-candidate list below one million.
   Universal wheel and interval-coverage proofs connect the actual class-number
   hypothesis to a kernel-checked complete finite computation on [92,1000000).
-  The upper middle interval and positive class-number equalities remain open;
-  this is not the full classification.
+  The positive equalities are now supplied by Phase33; the upper middle
+  interval remains open. This is not the full classification.
   [Human wheel proof](research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md).
 
 - Phase 30 proves the finite sieve's entry conditions from actual class
@@ -61,8 +61,8 @@ repository work.
 Do **not** say the project proved `D<=163`, solved class number one,
 or obtained an upstream-ready Mathlib formalization. The effective radicand
 bound is checked in both parity cases; the finite classification is not.
-Phase32 now supplies the identity with Mathlib's `NumberField.discr`; it
-does not supply all positive cases or the complete upper-middle certificate.
+Phase32 supplies the identity with Mathlib's `NumberField.discr`, and Phase33
+supplies all nine positive cases, but not the complete upper-middle certificate.
 The new auxiliary radius is not the frozen
 campaign's radius. Green CI is evidence about the statements
 encoded in Lean, not independent semantic review of their intended

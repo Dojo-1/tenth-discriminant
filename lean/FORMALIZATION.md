@@ -1,16 +1,16 @@
 # Current claim-to-Lean map
 
-**Phase 32 supplies the actual discriminant identity and four positive cases.**
-`QuadraticDiscriminant` proves a generic integral-basis trace determinant,
-transports maximal-order bases, and proves actual `NumberField.discr` is
--d or -4*d. Its natAbs equals the previous parameter; the existing cutoff
-is therefore an actual absolute field-discriminant bound.
-`SmallPositiveClassNumber` applies the pinned Minkowski criterion to prove
-actual class number one for d=1,2,3,7. The other five positive cases and
-the whole upper interval remain open, so full classification is not asserted.
-[Human proof](../research/ender_radius_bridge/DISCRIMINANT_POSITIVE_GUIDE.md).
-Older phase descriptions retain historical scope; their missing-discriminant
-identity and all-nine-positive-case caveats are superseded by this update.
+**Phase 33 closes all nine positive equalities and both directions below one million.**
+`SmallIdealClassNumber` proves prime-norm residue maps, scalar ideal norms,
+small-ideal principality and two Minkowski criteria without assuming class
+number one. `RemainingPositiveClassNumber` supplies all five remaining
+concrete applications, `known_nine_classNumber_one`, and
+`classNumber_one_iff_below_million`. The iff requires only positive squarefree
+d<1000000; the prime tests and finite certificate are supplied.
+The actual field-discriminant identity/bound remains checked in
+`QuadraticDiscriminant`. The whole upper interval is still unclosed, so
+full classification is not asserted. [Human proof](../research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md).
+Older phase descriptions are historical where positive-case gaps are now closed.
 
 **Phase 31 closes the necessary candidate list below one million.**
 `SieveWheel` proves universal residue-lift and interval-coverage invariants.

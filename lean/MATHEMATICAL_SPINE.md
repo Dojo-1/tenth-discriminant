@@ -1,10 +1,10 @@
 # One determinant, two kinds of information
 
-**Phase 32:** maximal integral bases identify the actual field discriminant
-with the d-or-4d parameter. The checked cutoff now bounds its actual absolute
-value. Minkowski supplies four genuine positive class-number proofs, for
-d=1,2,3,7. Five positive cases and the complete upper interval remain open.
-[Trace pairing, maximal order and the positive cases](../research/ender_radius_bridge/DISCRIMINANT_POSITIVE_GUIDE.md).
+**Phase 33:** local residue maps forbid small prime ideal norms; Minkowski
+supplies a small representative in every class. The remaining small ideals
+are principal, proving all nine positive class numbers and the iff below
+one million. The actual field-discriminant cutoff is checked, but the entire
+upper middle interval remains open. [The two-way bridge and exact gap](../research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md).
 
 **Phase 31:** the sieve now has a proved no-loss wheel operator and interval
 coverage. Exact kernel evaluation gives d=163 for actual class number one

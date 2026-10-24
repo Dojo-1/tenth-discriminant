@@ -1,5 +1,33 @@
 # Task checkpoint
 
+- Phase33 protocol-only 4fa17b7 preceded proof edits. Prior turn was verified
+  progress: actual field discriminant and four positives passed pinned CI
+  40133608384/security 40133605897 on identical tree 77af1da68e5127c2691e3d3afe3918310d9564d1.
+  Live refresh zero divergence; PR28 draft/unmerged; inherited manifest preserved.
+- SmallIdealClassNumber proves prime-norm residue maps, quadratic scalar
+  ideal norm p^2, equal-norm inclusion, small-ideal principality and both
+  Minkowski tiers. RemainingPositiveClassNumber supplies all five remaining
+  positive equalities, all-nine sufficiency and actual-field iff below one
+  million. No hidden class-number or root-check premise in the concrete cases.
+  The entire upper interval remains open; full classification not claimed.
+- The upper norm tier retains (2) of norm four. Irreducibility uses unique
+  factorization of ideals, not an assumed PID of elements. Actual d=23
+  refutes dropping local hypotheses; d=11 has a root modulo three and uses
+  the lower tier. New human guide NINE_POSITIVE_GUIDE.md includes a range map.
+- Preserve failed 214318 build: prime positivity not visible to omega,
+  natAbs normalization, numeric equal-norm normalization and principal-span
+  constructor. Target and budgets unchanged. Generic 214600 passed in
+  29.0451546 seconds, peak 2893971456 bytes; concrete 214810 passed in
+  22.4675193 seconds, peak 2847166464 bytes; whole root 215257 passed in
+  127.4487642 seconds, peak 2789187584 bytes (6749 steps), same 8192 MB cap.
+- Local source/import closure, compiled audit and signatures passed: 95
+  modules, 3110 logical/2677 theorem declarations, 14368 runtime-only
+  auxiliaries excluded; only propext/choice/Quot.sound. Local apparatus
+  controls passed. Complete unchanged parent-driver and mathematical
+  negative suite remain mandatory in exact-head Linux CI; no separate full
+  local eight-script rerun claimed. Final PR record supersedes pending
+  checkpoint fields without a metadata-only CI cycle. Global goal active.
+
 - Phase32 protocol-only 55b4639 preceded proof edits. Prior goal turn was
   verified progress: Phase31 pinned CI 40130787539/security 40130786275 passed
   on matching tree a5fd0ef8d66ddb2214acf700a3626ea861681f51. Live refresh

@@ -1,5 +1,9 @@
 # The field's discriminant, and four positive class-number proofs
 
+Phase33 now supplies all nine positive proofs and both classification
+directions below one million. See the [all-nine guide](NINE_POSITIVE_GUIDE.md).
+This guide retains the discriminant calculation and initial four-case argument.
+
 There are now two kinds of checked class-number result. The sieve gives a
 necessary nine-element list below one million. This phase proves actual
 class number one for four of those fields: d=1,2,3,7. It also identifies the
@@ -64,8 +68,8 @@ positive proofs, not the weaker assertion that they pass a necessary sieve.
 
 The sufficient criterion stops here: d=11 has absolute discriminant 11,
 outside the <=8 hypothesis. This is not evidence against its class number
-being one. The other five positive proofs, the complete upper interval
-[1000000,700000000000), and the full classification remain open.
+being one. Phase33 now supplies the other five positive proofs. The complete
+upper interval [1000000,700000000000) and full classification remain open.
 
 ## Proof and verification map
 

@@ -1,4 +1,28 @@
-# Status — 2026-10-24
+# Status — 2026-10-25
+
+## Phase 33: all nine positive fields, bounded iff below one million
+
+Actual class number one is now proved for all nine radicands
+1,2,3,7,11,19,43,67,163. `classNumber_one_iff_below_million` proves both
+directions for positive squarefree d<1000000, using the previously checked
+complete finite interval for necessity and the new positive proofs for sufficiency.
+
+An ideal of prime norm gives a residue map. Finite polynomial root absence
+rules out norm two for 11,19, and norms 2,3,5,7 for 43,67,163. Minkowski's
+representatives have norm below three or nine respectively. In the latter
+tier the only nonunit small ideal is the legitimate principal ideal (2),
+of norm four. Unique factorization used is of ideals, not an assumed PID
+property of the integer ring. No class-number-one hypothesis is used in
+the positive bridge. Controls retain (2), the root at d=11 modulo three,
+and the actual d=23 counterexample to omitting local hypotheses.
+
+The entire interval [1000000,700000000000), full classification and other
+challenge shortfalls remain open. No cutoff/pin/gate/campaign changes.
+[Human proof](research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md) ·
+[Protocol](research/ender_radius_bridge/PHASE33_PROTOCOL.md) ·
+[Verification checkpoint](research/ender_radius_bridge/PHASE33_RESULTS.json).
+Local root build/audit/signatures passed; full exact-head CI must accompany publication.
+Older positive-case gap descriptions below are historical.
 
 ## Phase 32: actual discriminant and four positive class-number equalities
 
