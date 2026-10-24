@@ -2,6 +2,14 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
+Phase 25 is closing the numerical bridge on **one fixed saved interval**.
+The log enclosures, exact radius/padding guards, division-witness checker
+and conditional interval conclusion have built locally. All 1,229 prime
+rows now pass in Lean; table completeness and the two total budgets remain
+separate verification obligations. No checked
+interval, global cutoff or classification is claimed from these ingredients.
+Start with the [short numerical bridge guide](research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
+
 An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/comment-page-1/): make an effective class-number-one argument explicit, without importing the known classification as a proof input.
 
 [Mathematical spine](lean/MATHEMATICAL_SPINE.md) · [Current Tao-objective accounting](TAO_OBJECTIVES_CURRENT.md) · [Candidate argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Frozen objective audit](TAO_OBJECTIVE_AUDIT.md) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)

@@ -54,6 +54,8 @@ import TenthDiscriminant.EllipseUpperCount
 import TenthDiscriminant.FactorialPrimeMass
 import TenthDiscriminant.PrimeMassLower
 import TenthDiscriminant.PrimeTail
+import TenthDiscriminant.FirstIntervalConclusion
+import TenthDiscriminant.FirstIntervalRows
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot

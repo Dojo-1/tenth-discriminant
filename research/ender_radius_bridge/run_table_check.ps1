@@ -1,4 +1,6 @@
-param([int]$MemoryLimitMB = 8192)
+param([int]$MemoryLimitMB = 8192,
+      [string]$ProofFile = '../research/ender_radius_bridge/FirstIntervalTableCheck.lean',
+      [string]$BuildTarget = '', [int]$StackKB = 16384)
 $ErrorActionPreference = 'Stop'
 $taskRepo = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '../..')).Path
 $taskLeanDir = Join-Path $taskRepo 'lean'
@@ -8,10 +10,13 @@ $taskErr = Join-Path $PSScriptRoot "PHASE25_INTEGER_CHUNKS_$taskStamp.stderr.log
 $taskResult = Join-Path $PSScriptRoot "PHASE25_INTEGER_CHUNKS_$taskStamp.result.json"
 $taskLake = (Get-Command lake.exe).Source
 $taskStart = [DateTime]::UtcNow
+$taskArguments = if ($BuildTarget) { @('build', $BuildTarget) } else {
+    @('env','lean','-j','1','-s',"$StackKB",'--profile', $ProofFile)
+}
 $taskRun = Start-Process -FilePath $taskLake -WorkingDirectory $taskLeanDir -PassThru -WindowStyle Hidden `
-    -ArgumentList @('env','lean','-j','1','-s','16384','--profile',
-        '../research/ender_radius_bridge/FirstIntervalTableCheck.lean') `
+    -ArgumentList $taskArguments `
     -RedirectStandardOutput $taskOut -RedirectStandardError $taskErr
+$taskHandle = $taskRun.Handle
 $taskOwned = [System.Collections.Generic.HashSet[int]]::new()
 [void]$taskOwned.Add($taskRun.Id)
 $taskPeak = 0L
@@ -42,16 +47,18 @@ while (-not $taskRun.HasExited) {
     $taskRun.Refresh()
 }
 $taskRun.WaitForExit()
-$taskCode = if ($taskStopped) { 99 } else { $taskRun.ExitCode }
+$taskCode = if ($taskStopped) { 99 } elseif ($null -eq $taskRun.ExitCode) { 98 } else { $taskRun.ExitCode }
 $taskSummary = [ordered]@{
     scope = 'fixed Phase-25 integer table proof; no interval claim until accepted and audited'
+    proof_file = $ProofFile
+    build_target = $BuildTarget
     exit_code = $taskCode
     elapsed_seconds = ([DateTime]::UtcNow - $taskStart).TotalSeconds
     observed_peak_working_set_bytes = $taskPeak
     memory_threshold_mb = $MemoryLimitMB
     resource_stop = $taskStopped
-    threads = 1
-    stack_kb = 16384
+    threads = if ($BuildTarget) { 'Lake defaults, multiple child processes possible' } else { 1 }
+    stack_kb = if ($BuildTarget) { 'Lean build default' } else { $StackKB }
     stdout = [IO.Path]::GetFileName($taskOut)
     stderr = [IO.Path]::GetFileName($taskErr)
 }

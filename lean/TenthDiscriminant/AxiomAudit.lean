@@ -21,6 +21,8 @@ elab "#audit_namespace " ns:ident : command => do
   let mut count := 0
   let mut theoremCount := 0
   let mut runtimeCount := 0
+  -- The same Lean traversal and roots, but do not rewalk their shared graph.
+  let mut dependencyState : Lean.CollectAxioms.State := {}
   for (name, info) in env.constants.toList do
     if scopeName.isPrefixOf (Lean.privateToUserName name) then
       if info.isUnsafe then
@@ -30,11 +32,13 @@ elab "#audit_namespace " ns:ident : command => do
       match info with
       | .axiomInfo _ => throwError "PROJECT_AXIOM {name}"
       | _ =>
-        let dependencies ← Lean.collectAxioms name
+        let (_, nextState) := ((Lean.CollectAxioms.collect name).run env).run dependencyState
+        dependencyState := nextState
+        let dependencies := dependencyState.axioms
         for dep in dependencies do
           unless dep == ``propext || dep == ``Classical.choice || dep == ``Quot.sound do
             throwError "NONSTANDARD_AXIOMS {name}: {dependencies}"
-        logInfo m!"AXIOMS {name}: {dependencies}"
+        logInfo m!"DEPENDENCIES_CHECKED {name}; cumulative allowed axioms: {dependencies}"
         count := count + 1
         match info with
         | .thmInfo _ => theoremCount := theoremCount + 1

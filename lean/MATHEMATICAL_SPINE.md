@@ -5,6 +5,13 @@ This is the shortest route into the Lean development. The longer
 the [claim map](FORMALIZATION.md) names the checked declarations. Neither
 document, nor this one, is a proof of the class-number-one classification.
 
+The Phase-25 numerical frontier is deliberately narrower: one fixed interval,
+exact log and quotient witnesses, and an intended `581>572` separation.
+The ingredients, all 1,229 rows and conditional conclusion have built;
+table completeness and the total budgets remain pending. The
+[short numerical guide](../research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md)
+separates these facts from a concrete exclusion or global cutoff.
+
 ## The question
 
 Ender's **candidate** argument needs an integer determinant that is both

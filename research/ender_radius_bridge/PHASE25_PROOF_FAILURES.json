@@ -36,6 +36,92 @@
     "scope": "integer checker soundness and individual controls had passed, but no complete-table proof was accepted",
     "next_action": "32-row integer kernel reductions, sequential verification and explicit composition; continuous process memory monitor"
   },
+  "division_witness_ordinary_reduction": {
+    "result": "agent stopped the identified proof process before exhausting memory; no chunk accepted",
+    "elapsed_seconds": 130.2452844,
+    "observed_peak_working_set_bytes": 6634688512,
+    "raw_record": "PHASE25_INTEGER_CHUNKS_20261024160652.result.json",
+    "raw_exit_code_note": "null is not success; the driver was repaired to fail closed and retain the process handle",
+    "next_action": "same table, pure-kernel decide reduction"
+  },
+  "division_witness_kernel_batch": {
+    "exit_code": 99,
+    "elapsed_seconds": 58.6666361,
+    "observed_peak_working_set_bytes": 8633757696,
+    "raw_record": "PHASE25_INTEGER_CHUNKS_20261024160910.result.json",
+    "result": "8-GB resource stop, no complete table proof",
+    "next_action": "individual row proofs with exact composition, unchanged data and checks"
+  },
+  "division_witness_rowwise_kernel_table": {
+    "exit_code": 99,
+    "elapsed_seconds": 126.11854629999999,
+    "observed_peak_working_set_bytes": 8604975104,
+    "raw_record": "PHASE25_INTEGER_CHUNKS_20261024161229.result.json",
+    "result": "8-GB resource stop; no complete table proof",
+    "next_action": "isolate row checks from coverage and budget checks; do not infer which stage failed from absent profiling output"
+  },
+  "division_witness_pilot_definition_error": {
+    "raw_record": "PHASE25_INTEGER_CHUNKS_20261024161044.result.json",
+    "result": "head! required an unavailable Inhabited Row instance; no mathematical check passed in this attempt",
+    "repair": "explicit index with nonempty-list proof",
+    "corrected_pilot_record": "PHASE25_INTEGER_CHUNKS_20261024161121.result.json",
+    "corrected_pilot_exit_code": 0,
+    "scope": "first row only, not the full table"
+  },
+  "full_namespace_audit_timeout": {
+    "command_from_lean": "python audit.py",
+    "result": "compiled audit subprocess exceeded its 300-second limit; not an audit pass",
+    "repair": "increase only the subprocess deadline to 900 seconds; retain complete source/import coverage and every existing dependency/control check"
+  },
+  "isolated_monolithic_totals": {
+    "exit_code": 99,
+    "elapsed_seconds": 59.5162738,
+    "observed_peak_working_set_bytes": 8645980160,
+    "raw_record": "PHASE25_INTEGER_CHUNKS_20261024161915.result.json",
+    "result": "resource stop; isolate and compose bounded total and coverage blocks"
+  },
+  "blocked_decision_totals": {
+    "exit_code": 99,
+    "elapsed_seconds": 138.6913389,
+    "observed_peak_working_set_bytes": 8592879616,
+    "raw_record": "PHASE25_INTEGER_CHUNKS_20261024162223.result.json",
+    "result": "resource stop; no completed total/coverage proof"
+  },
+  "blocked_normalized_totals_one_module": {
+    "exit_code": 99,
+    "elapsed_seconds": 169.33697379999998,
+    "observed_peak_working_set_bytes": 8662102016,
+    "raw_record": "PHASE25_INTEGER_CHUNKS_20261024162545.result.json",
+    "result": "resource stop; retain proof-producing arithmetic and separate bounded compilation units"
+  },
+  "divided_totals_build": {
+    "exit_code": 99,
+    "elapsed_seconds": 256.05670449999997,
+    "observed_peak_working_set_bytes": 8600145920,
+    "raw_record": "PHASE25_INTEGER_CHUNKS_20261024162921.result.json",
+    "result": "resource cap stopped children; agent stopped the remaining identified research children, no completed build",
+    "metadata_correction": "build mode used Lake defaults with multiple Lean children and default stacks, not the raw record's inherited single-thread/16384-KB labels; driver now reports build mode correctly",
+    "archive": "divided_totals_attempt/"
+  },
+  "normalized_coverage_kernel_recursion": {
+    "exit_code": 1,
+    "elapsed_seconds": 28.9451005,
+    "raw_record": "PHASE25_INTEGER_CHUNKS_20261024163142.result.json",
+    "result": "kernel deep recursion detected on fixed final coverage block"
+  },
+  "normalized_coverage_larger_stack": {
+    "exit_code": 99,
+    "elapsed_seconds": 62.512708499999995,
+    "observed_peak_working_set_bytes": 8606306304,
+    "stack_kb": 65536,
+    "raw_record": "PHASE25_INTEGER_CHUNKS_20261024163347.result.json",
+    "result": "resource stop; no coverage proof accepted"
+  },
+  "inherited_controls_concurrent_run_timeout": {
+    "command_from_lean": "python negative_controls.py",
+    "result": "the jet_negative_controls.py subprocess exceeded its existing 120-second deadline during concurrent heavy proof builds; partial preceding controls passed, but the complete suite did not finish",
+    "next_action": "rerun without heavy local proof workloads and require exact-head pinned CI; keep the inherited test driver and its deadlines unchanged"
+  },
   "rational_checker_reduction": {
     "result": "plain decide and rfl did not reduce the rational checker to true",
     "repair": "kernel-checked norm_num arithmetic proofs; first and largest prime controls pass"

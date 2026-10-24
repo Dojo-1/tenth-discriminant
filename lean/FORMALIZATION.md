@@ -5,6 +5,18 @@ classification chain is not.** This map supersedes the PR #8-era coverage
 summary previously stored here; Git history preserves that record. Stage notes
 remain useful derivations, but their old frontier descriptions are historical.
 
+Phase 25 adds a sound exact numerical-certificate interface for the first
+saved interval, not a concrete interval exclusion yet. `LogEnclosure` and
+`IntegerLogCheck` bound logs; `DivisionWitness` checks supplied floor sums
+and complete prime-power lists; `NumericalCertificate` aggregates a complete
+checked table. `FirstIntervalGuards` proves the exact radius/padding guards,
+and `FirstIntervalScalars`/`FirstIntervalConclusion` reduce exclusion to two
+integer budgets on that table. All these modules have built locally.
+`FirstIntervalData` contains generated data; `FirstIntervalRows` now proves
+every row valid. Its coverage and total-budget checks remain separate
+obligations. Resource failures
+are preserved, not silently converted into a proof.
+
 Read the [mathematical spine](MATHEMATICAL_SPINE.md) first, then the
 [detailed human proof](HUMAN_GUIDE.md) and linked source statements.
 "Proved" below means the encoded implication under its explicit hypotheses,

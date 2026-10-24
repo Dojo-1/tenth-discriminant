@@ -58,7 +58,7 @@ def main() -> None:
         if bad:
             raise SystemExit(f'{path.name}: forbidden proof escape: {bad.group(0)}')
     run = subprocess.run(['lake', 'env', 'lean', 'Audit.lean'], cwd=root,
-                         text=True, capture_output=True, timeout=300)
+                         text=True, capture_output=True, timeout=900)
     print(run.stdout, end='')
     print(run.stderr, end='')
     if run.returncode:

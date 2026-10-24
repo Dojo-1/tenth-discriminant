@@ -3,6 +3,12 @@
 **A checked interpolation and determinant apparatus, not yet a formalized
 class-number-one classification.**
 
+The current numerical work fixes only the first saved interval. Sound log
+enclosures, quotient witnesses, radius/padding guards and a conditional
+exclusion theorem have built locally. All 1,229 rows pass; completeness and
+the two total budgets do not yet have accepted proofs. See the
+[numerical bridge guide](../research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
+
 Start with the short [mathematical spine](MATHEMATICAL_SPINE.md): one
 integer determinant, its real positivity, and its fixed modular relation.
 Then read the [detailed human proof guide](HUMAN_GUIDE.md). Use the

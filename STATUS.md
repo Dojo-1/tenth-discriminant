@@ -1,5 +1,20 @@
 # Status — 2026-10-24
 
+## Phase 25 checkpoint: a sound numerical bridge, table verification pending
+
+The fixed first interval is `[700000000000,875000000000]`, for squarefree
+`D≡3 (mod 4)`. Local pinned builds accept the eight-term log enclosure and
+integer checker, exact radius/padding guards, globally valid staircase lower
+bound, quotient-witness soundness, scalar budget reductions and conditional
+class-number conclusion. `FirstIntervalRows` additionally checks all 1,229
+individual rows. The unchanged Arb replay and exact rational
+candidate have a positive gap, but neither proves the missing completeness
+and total-budget obligations in Lean.
+Full-table attempts encountered stack/memory failures; all records are
+preserved in `research/ender_radius_bridge/PHASE25_PROOF_FAILURES.json`.
+No concrete interval exclusion, new cutoff or classification is claimed.
+[Human explanation](research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
+
 For a concise mathematical overview of the checked result and the open
 bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
 For a comparison with Tao's challenge and a separate accounting of useful

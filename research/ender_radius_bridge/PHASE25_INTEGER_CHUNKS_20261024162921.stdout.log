@@ -1,0 +1,37 @@
+⚠ [6654/6707] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6655/6707] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6656/6707] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6657/6707] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6660/6707] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6662/6707] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6669/6707] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+✖ [6703/6707] Building TenthDiscriminant.FirstIntervalTotalsPart00
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\FirstIntervalTotalsPart00.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\FirstIntervalTotalsPart00.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\FirstIntervalTotalsPart00.ilean -c .\.\.lake\build\ir\TenthDiscriminant\FirstIntervalTotalsPart00.c --json
+error: Lean exited with code 4294967295
+✖ [6704/6707] Building TenthDiscriminant.FirstIntervalTotalsPart01
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\FirstIntervalTotalsPart01.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\FirstIntervalTotalsPart01.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\FirstIntervalTotalsPart01.ilean -c .\.\.lake\build\ir\TenthDiscriminant\FirstIntervalTotalsPart01.c --json
+error: Lean exited with code 4294967295
+✖ [6705/6707] Building TenthDiscriminant.FirstIntervalTotalsPart02
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\FirstIntervalTotalsPart02.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\FirstIntervalTotalsPart02.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\FirstIntervalTotalsPart02.ilean -c .\.\.lake\build\ir\TenthDiscriminant\FirstIntervalTotalsPart02.c --json
+error: Lean exited with code 4294967295
+✖ [6706/6707] Building TenthDiscriminant.FirstIntervalTotalsPart03
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\FirstIntervalTotalsPart03.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\FirstIntervalTotalsPart03.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\FirstIntervalTotalsPart03.ilean -c .\.\.lake\build\ir\TenthDiscriminant\FirstIntervalTotalsPart03.c --json
+error: Lean exited with code 4294967295
+Some required builds logged failures:
+- TenthDiscriminant.FirstIntervalTotalsPart00
+- TenthDiscriminant.FirstIntervalTotalsPart01
+- TenthDiscriminant.FirstIntervalTotalsPart02
+- TenthDiscriminant.FirstIntervalTotalsPart03

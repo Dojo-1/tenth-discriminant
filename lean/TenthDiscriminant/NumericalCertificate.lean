@@ -1,6 +1,6 @@
 import TenthDiscriminant.LogEnclosure
 import TenthDiscriminant.IntegerLogCheck
-import TenthDiscriminant.NumericalWeights
+import TenthDiscriminant.DivisionWitness
 
 /-!
 # Sound aggregation of a complete first-interval prime table
@@ -20,27 +20,34 @@ structure Row where
   hi : Nat
   coefficient : Nat
   weight : Nat
+  linear : FloorWitness
+  powers : List FloorWitness
 deriving DecidableEq, Repr
 
 def scale : Nat := 1000000000000
 def primeList : List Nat := (List.range 10001).filter (fun p => decide p.Prime)
 
 def checkRow (r : Row) : Bool := decide (
-  2 ≤ r.p ∧ r.coefficient = factorialCoefficient 175000000000 r.p 38 ∧
+  2 ≤ r.p ∧ r.coefficient = (r.powers.map FloorWitness.value).sum ∧
+  checkPowerWitnesses 175000000000 r.p r.p 37 r.powers = true ∧
+  checkFloorWitness 175000000000 r.p r.linear = true ∧
   (r.p = 2 → r.weight = 0) ∧
   checkIntegerLogBounds r.p 1 r.k r.lo r.hi scale = true ∧
-  checkIntegerValuationLower 175000000000 8750000000 r.p r.weight = true)
+  checkWitnessWeight 8750000000 r.p r.weight r.linear.value
+    1786458333318020833333362500000000 = true)
 
 theorem checkRow_sound (r : Row) (hc : checkRow r = true) :
     r.coefficient = factorialPowerSum 175000000000 r.p ∧
       ((r.lo : Real) / scale ≤ Real.log r.p ∧ Real.log r.p ≤ (r.hi : Real) / scale) ∧
       (r.weight : Real) ≤ valuationWeight 175000000000 8750000000 r.p ∧
       (r.p = 2 → r.weight = 0) := by
-  rcases of_decide_eq_true hc with ⟨hp, hcoeff, hzero, hlog, hw⟩
+  rcases of_decide_eq_true hc with ⟨hp, hcoeff, hpowers, hlinear, hzero, hlog, hw⟩
   have hl := checkIntegerLogBounds_sound r.p 1 r.k r.lo r.hi scale hlog
   simp only [Nat.cast_one, div_one] at hl
-  exact ⟨hcoeff.trans (first_factorial_coefficient r.p hp).symm, hl,
-    checkIntegerValuationLower_sound _ _ _ _ (by decide) (by omega) hw, hzero⟩
+  have hmass := checkPowerWitnesses_sound 175000000000 r.p r.p 37 r.powers (by omega) hpowers
+  exact ⟨hcoeff.trans (hmass.trans (first_powerMass r.p hp)), hl,
+    checkWitnessWeight_sound _ _ _ _ _ _ (by decide) (by omega)
+      (checkFloorWitness_sound _ _ _ hlinear) first_squareMass.symm hw, hzero⟩
 
 theorem primeList_nodup : primeList.Nodup := by
   exact (show (List.range 10001).Nodup from List.nodup_range).filter _

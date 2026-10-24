@@ -7,6 +7,11 @@ completed components from the arithmetic and numerical links still missing.
 For the shorter conceptual route, start with the
 [mathematical spine](MATHEMATICAL_SPINE.md).
 
+For the current numerical frontier, read the short
+[numerical bridge guide](../research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
+It explains how a prospective `581>572` certificate would exclude one fixed
+interval, and why a sound checker or successful replay is not that certificate.
+
 ## The theorem in one paragraph
 
 Choose a finite set P of distinct complex numbers, positive integers R and S,

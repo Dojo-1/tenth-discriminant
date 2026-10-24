@@ -73,3 +73,27 @@ lists must include every contributing power or prove the remainder is zero.
 The fixed square-sum coefficient is also supplied and proved once. Keep the
 same input, coefficients, weights, log bounds, coverage and budget obligations.
 Prove the new checker sound; no trusted division oracle or weakened target.
+
+### Pure kernel reduction option
+
+The pinned Lean source (`Lean/Elab/Tactic/ElabTerm.lean`, `evalDecideCore`)
+provides `decide +kernel`: it constructs the same decision proof directly in
+the kernel instead of first reducing it in the elaborator. Register its use
+as a representation/resource repair if ordinary `decide` remains too costly.
+It is not `+native`, introduces no native arithmetic oracle, and retains
+every row, coverage and budget obligation with the same fixed numerical data.
+
+Proof-producing normalization accepted a totals/coverage pilot, but its final
+234-integer coverage block encountered the kernel's recursion safeguard at
+the 16384-KB thread stack. Before retrying, register a 65536-KB **per-process**
+stack pilot with unchanged bounds and the existing 8-GB working-set cap.
+This does not alter system stack settings, permitted axioms, or proof content.
+
+The namespace audit exceeded its original 300-second deadline after adding
+the numerical library. Register shared traversal using the pinned
+`Lean.CollectAxioms.collect` and its `State`: visit every logical project root
+as before, retain the visited dependency graph between roots, and check the
+cumulative axiom set after each root. A previously visited dependency has
+already been inspected. Keep project-axiom rejection, unsafe-runtime reporting,
+private/unused roots, all three permitted axioms and every adversarial control.
+Logs must label cumulative axioms as cumulative, not as per-theorem dependencies.

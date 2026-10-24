@@ -1,9 +1,18 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 24 October 2026, through preregistered Phase 24;
+**Living update: 24 October 2026, with a partial preregistered Phase 25;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase 25 now supplies sound log enclosures, exact first-interval guards,
+division witnesses and a conditional numerical exclusion interface. All
+1,229 rows pass, but table completeness and the two total budgets remain
+pending after preserved resource failures.
+This does not upgrade the main bound/classification verdict below.
+As a supplementary reusable result, the staircase polynomial is proved a
+global **lower bound**, even where the guarded exact identity fails. No
+novelty claim is made. [Human numerical guide](research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
 
 [Tao's 20 October post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)
 poses a main challenge—an effective bound for a hypothetical tenth

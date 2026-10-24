@@ -59,8 +59,12 @@ def main():
     for p in ender.small_primes():
         lp, up, k = log_bounds(Q(p))
         coefficient, power = 0, p
+        powers = []
         while power < R:
-            coefficient += ender.floor_sum(R, power)
+            value = ender.floor_sum(R, power)
+            quotient, rem = divmod(R, power)
+            powers.append([quotient, rem, value])
+            coefficient += value
             power *= p
         exact = ender.F_exact(p, R, S) if p != 2 else 0
         # A potential lower bound on the same original valuationWeight.
@@ -73,8 +77,13 @@ def main():
         rows.append({"p": p, "binary_k": k,
                      "log_lo_units": int(lp*SCALE), "log_hi_units": int(up*SCALE),
                      "factorial_coefficient": coefficient,
-                     "exact_odd_weight": exact, "coarse_odd_weight": coarse})
+                     "exact_odd_weight": exact, "coarse_odd_weight": coarse,
+                     "linear_witness": [R//p, R%p, ender.floor_sum(R, p)],
+                     "power_witnesses": powers})
     n = R-1
+    assert len(rows) == 1229
+    assert int(small_up*SCALE) == 132393875135023553259473658533593129
+    assert int(coarse_down*SCALE) == 799592313080280706345663778036662106229815220
     l_n = scalar_bounds("factorial_N", Q(n))[0]
     h_low = Q(n*n, 2)*l_n - Q(3*n*n, 4) + Q(n, 2) + Q(1, 4)
     i_up = scalar_bounds("tail_P_plus_one", Q(P+1))[1]/P + scalar_bounds("tail_ratio", 1+Q(1, P))[1]
@@ -106,7 +115,7 @@ def main():
     metadata = {key: value for key, value in result.items() if key != "rows"}
     text = json.dumps(metadata, indent=2)[:-2] + ',\n  "rows": [\n'
     text += ",\n".join("    "+json.dumps(row, separators=(",", ":")) for row in rows)
-    target.write_text(text+"\n  ]\n}\n", encoding="utf-8")
+    target.write_text(text+"\n  ]\n}\n", encoding="utf-8", newline="\n")
     lean_target = Path(__file__).resolve().parents[2] / "lean" / "TenthDiscriminant" / "FirstIntervalData.lean"
     lean_rows = ["import TenthDiscriminant.NumericalCertificate", "",
                  "/-! Mechanically generated candidate data; validity is a separate proof obligation. -/",
@@ -117,12 +126,15 @@ def main():
         for index, row in enumerate(chunk):
             fields = [row["p"], row["binary_k"], row["log_lo_units"], row["log_hi_units"],
                       row["factorial_coefficient"], row["coarse_odd_weight"]]
-            lean_rows.append("  ⟨" + ", ".join(map(str, fields)) + "⟩" + ("," if index+1 < len(chunk) else ""))
+            witness = lambda w: "⟨" + ", ".join(map(str, w)) + "⟩"
+            extra = witness(row["linear_witness"]) + ", [" + ", ".join(
+                witness(w) for w in row["power_witnesses"]) + "]"
+            lean_rows.append("  ⟨" + ", ".join(map(str, fields)) + ", " + extra + "⟩" + ("," if index+1 < len(chunk) else ""))
         lean_rows.extend(["]", ""])
     lean_rows.append("def firstRows : List Row := ["+
                      ", ".join(f"firstChunk{i:02}" for i in range(len(chunks)))+"].flatten")
     lean_rows.extend(["", "end TenthDiscriminant.FirstCertificate", ""])
-    lean_target.write_text("\n".join(lean_rows), encoding="utf-8")
+    lean_target.write_text("\n".join(lean_rows), encoding="utf-8", newline="\n")
     attempt = Path(__file__).with_name("FirstIntervalTableCheck.lean")
     proof_lines = ["import TenthDiscriminant.FirstIntervalData", "",
                    "/-! Phase-25 full-table proof attempt; no interval claim until accepted and audited. -/",
@@ -131,7 +143,7 @@ def main():
                    "set_option maxHeartbeats 20000000", ""]
     for chunk_index in range(len(chunks)):
         name = f"firstChunk{chunk_index:02}"
-        proof_lines.extend([f"theorem {name}_checked : {name}.all checkRow = true := by decide", ""])
+        proof_lines.extend([f"theorem {name}_checked : {name}.all checkRow = true := by decide +kernel", ""])
     proof_lines.extend(["theorem first_rows_checked : firstRows.all checkRow = true := by",
         "  rw [firstRows, List.all_flatten]",
         "  apply List.all_eq_true.mpr", "  intro chunk hmem",
@@ -139,13 +151,86 @@ def main():
         "  rcases hmem with "+" | ".join("rfl" for _ in chunks)])
     for chunk_index in range(len(chunks)):
         proof_lines.append(f"  · exact firstChunk{chunk_index:02}_checked")
+    row_pilot = lean_target.with_name("FirstIntervalRows.lean")
+    row_pilot.write_text("\n".join(proof_lines + ["", "end TenthDiscriminant.FirstCertificate", ""]),
+                        encoding="utf-8", newline="\n")
+    # Verify bounded blocks, then compose symbolically; do not reduce one
+    # enormous 1229-row fold or a 10001-integer prime filter in the kernel.
+    totals = ["import TenthDiscriminant.FirstIntervalData", "",
+              "namespace TenthDiscriminant.FirstCertificate",
+              "set_option maxRecDepth 100000", "set_option maxHeartbeats 20000000", ""]
+    starts, lengths, smalls, odds = [], [], [], []
+    block_sources = []
+    start = 0
+    for i, chunk in enumerate(chunks):
+        end = chunk[-1]["p"]+1 if i+1 < len(chunks) else 10001
+        starts.append(start); lengths.append(end-start)
+        small = sum(r["factorial_coefficient"]*r["log_hi_units"] for r in chunk)
+        odd = sum(r["coarse_odd_weight"]*r["log_lo_units"] for r in chunk)
+        smalls.append(small); odds.append(odd)
+        name = f"firstChunk{i:02}"
+        totals.extend([f"theorem {name}_totals :",
+            f"    ({name}.map (fun r => r.coefficient * r.hi)).sum = {small} ∧",
+            f"      ({name}.map (fun r => r.weight * r.lo)).sum = {odd} := by",
+            f"  norm_num [{name}, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]", "",
+            f"theorem {name}_coverage : {name}.map Row.p =",
+            f"    (List.range' {start} {end-start}).filter (fun p => decide p.Prime) := by decide +kernel", ""])
+        block_sources.append(totals[-8:])
+        start = end
+    part_count = (len(chunks)+9)//10
+    attempt_dir = Path(__file__).with_name("divided_totals_attempt")
+    attempt_dir.mkdir(exist_ok=True)
+    for group in range(part_count):
+        part = totals[:6] + [line for block in block_sources[group*10:(group+1)*10]
+                             for line in block]
+        part += ["end TenthDiscriminant.FirstCertificate", ""]
+        (attempt_dir / f"FirstIntervalTotalsPart{group:02}.lean").write_text(
+            "\n".join(part), encoding="utf-8", newline="\n")
+    totals = [f"import TenthDiscriminant.FirstIntervalTotalsPart{i:02}" for i in range(part_count)]
+    totals += ["", "namespace TenthDiscriminant.FirstCertificate",
+               "set_option maxRecDepth 100000", "set_option maxHeartbeats 20000000", ""]
+    ranges = ", ".join(f"List.range' {s} {n}" for s,n in zip(starts,lengths))
+    coverage_pilot = ["import TenthDiscriminant.FirstIntervalData",
+        "namespace TenthDiscriminant.FirstCertificate", "set_option maxRecDepth 100000",
+        "set_option maxHeartbeats 20000000", "theorem normalized_coverage_pilot :",
+        "    firstChunk38.map Row.p =",
+        f"      (List.range' {starts[-1]} {lengths[-1]}).filter (fun p => decide p.Prime) := by",
+        "  norm_num [firstChunk38, List.range', List.filter]",
+        "end TenthDiscriminant.FirstCertificate", ""]
+    Path(__file__).with_name("CoverageNormalizationPilot.lean").write_text(
+        "\n".join(coverage_pilot), encoding="utf-8", newline="\n")
+    totals.extend([f"theorem first_range_split : List.range 10001 = [{ranges}].flatten := by",
+        "  rw [List.range_eq_range']",
+        "  simp only [List.flatten_cons, List.flatten_nil, List.append_nil]"])
+    for i in reversed(range(len(chunks)-1)):
+        totals.append(f"  rw [List.range'_append_1 (s := {starts[i]}) (m := {lengths[i]}) (n := {10001-starts[i+1]})]")
+    totals.extend(["", "theorem first_rows_coverage : firstRows.map Row.p = primeList := by",
+        "  unfold primeList", "  rw [first_range_split, List.filter_flatten, firstRows, List.map_flatten]",
+        "  simp only [List.map_cons, List.map_nil, "+
+        ", ".join(f"firstChunk{i:02}_coverage" for i in range(len(chunks)))+"]", "",
+        "theorem first_rows_unit_sums :",
+        f"    (firstRows.map (fun r => r.coefficient * r.hi)).sum = {sum(smalls)} ∧",
+        f"      (firstRows.map (fun r => r.weight * r.lo)).sum = {sum(odds)} := by",
+        "  constructor"])
+    for side in [1, 2]:
+        totals.extend(["  · simp only [firstRows, List.map_flatten, List.sum_flatten, List.map_map,",
+            "      List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, "+
+            ", ".join(f"firstChunk{i:02}_totals.{side}" for i in range(len(chunks)))+"]",
+            "    norm_num"])
+    totals.extend(["", "theorem first_rows_budgets :",
+        "    (firstRows.map (fun r => r.coefficient * r.hi)).sum ≤ 1324 * 10 ^ 20 * scale ∧",
+        "      7995 * 10 ^ 29 * scale ≤ (firstRows.map (fun r => r.weight * r.lo)).sum := by",
+        "  rw [first_rows_unit_sums.1, first_rows_unit_sums.2]", "  decide +kernel", "",
+        "end TenthDiscriminant.FirstCertificate", ""])
+    (attempt_dir / "FirstIntervalTotals.lean").write_text(
+        "\n".join(totals), encoding="utf-8", newline="\n")
     proof_lines.extend(["",
-        "theorem first_rows_coverage : firstRows.map Row.p = primeList := by decide", "",
+        "theorem first_rows_coverage : firstRows.map Row.p = primeList := by decide +kernel", "",
         "theorem first_rows_budgets :",
         "    (firstRows.map (fun r => r.coefficient * r.hi)).sum ≤ 1324 * 10 ^ 20 * scale ∧",
-        "      7995 * 10 ^ 29 * scale ≤ (firstRows.map (fun r => r.weight * r.lo)).sum := by decide", "",
+        "      7995 * 10 ^ 29 * scale ≤ (firstRows.map (fun r => r.weight * r.lo)).sum := by decide +kernel", "",
         "end TenthDiscriminant.FirstCertificate", ""])
-    attempt.write_text("\n".join(proof_lines), encoding="utf-8")
+    attempt.write_text("\n".join(proof_lines), encoding="utf-8", newline="\n")
     summary = {k: value for k, value in result.items() if k != "rows"}
     print(json.dumps(summary, indent=2))
     return 0 if lower_exact > upper and lower_coarse > upper else 1

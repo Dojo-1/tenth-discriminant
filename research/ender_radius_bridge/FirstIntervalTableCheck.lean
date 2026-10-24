@@ -6,83 +6,83 @@ set_option autoImplicit false
 set_option maxRecDepth 100000
 set_option maxHeartbeats 20000000
 
-theorem firstChunk00_checked : firstChunk00.all checkRow = true := by decide
+theorem firstChunk00_checked : firstChunk00.all checkRow = true := by decide +kernel
 
-theorem firstChunk01_checked : firstChunk01.all checkRow = true := by decide
+theorem firstChunk01_checked : firstChunk01.all checkRow = true := by decide +kernel
 
-theorem firstChunk02_checked : firstChunk02.all checkRow = true := by decide
+theorem firstChunk02_checked : firstChunk02.all checkRow = true := by decide +kernel
 
-theorem firstChunk03_checked : firstChunk03.all checkRow = true := by decide
+theorem firstChunk03_checked : firstChunk03.all checkRow = true := by decide +kernel
 
-theorem firstChunk04_checked : firstChunk04.all checkRow = true := by decide
+theorem firstChunk04_checked : firstChunk04.all checkRow = true := by decide +kernel
 
-theorem firstChunk05_checked : firstChunk05.all checkRow = true := by decide
+theorem firstChunk05_checked : firstChunk05.all checkRow = true := by decide +kernel
 
-theorem firstChunk06_checked : firstChunk06.all checkRow = true := by decide
+theorem firstChunk06_checked : firstChunk06.all checkRow = true := by decide +kernel
 
-theorem firstChunk07_checked : firstChunk07.all checkRow = true := by decide
+theorem firstChunk07_checked : firstChunk07.all checkRow = true := by decide +kernel
 
-theorem firstChunk08_checked : firstChunk08.all checkRow = true := by decide
+theorem firstChunk08_checked : firstChunk08.all checkRow = true := by decide +kernel
 
-theorem firstChunk09_checked : firstChunk09.all checkRow = true := by decide
+theorem firstChunk09_checked : firstChunk09.all checkRow = true := by decide +kernel
 
-theorem firstChunk10_checked : firstChunk10.all checkRow = true := by decide
+theorem firstChunk10_checked : firstChunk10.all checkRow = true := by decide +kernel
 
-theorem firstChunk11_checked : firstChunk11.all checkRow = true := by decide
+theorem firstChunk11_checked : firstChunk11.all checkRow = true := by decide +kernel
 
-theorem firstChunk12_checked : firstChunk12.all checkRow = true := by decide
+theorem firstChunk12_checked : firstChunk12.all checkRow = true := by decide +kernel
 
-theorem firstChunk13_checked : firstChunk13.all checkRow = true := by decide
+theorem firstChunk13_checked : firstChunk13.all checkRow = true := by decide +kernel
 
-theorem firstChunk14_checked : firstChunk14.all checkRow = true := by decide
+theorem firstChunk14_checked : firstChunk14.all checkRow = true := by decide +kernel
 
-theorem firstChunk15_checked : firstChunk15.all checkRow = true := by decide
+theorem firstChunk15_checked : firstChunk15.all checkRow = true := by decide +kernel
 
-theorem firstChunk16_checked : firstChunk16.all checkRow = true := by decide
+theorem firstChunk16_checked : firstChunk16.all checkRow = true := by decide +kernel
 
-theorem firstChunk17_checked : firstChunk17.all checkRow = true := by decide
+theorem firstChunk17_checked : firstChunk17.all checkRow = true := by decide +kernel
 
-theorem firstChunk18_checked : firstChunk18.all checkRow = true := by decide
+theorem firstChunk18_checked : firstChunk18.all checkRow = true := by decide +kernel
 
-theorem firstChunk19_checked : firstChunk19.all checkRow = true := by decide
+theorem firstChunk19_checked : firstChunk19.all checkRow = true := by decide +kernel
 
-theorem firstChunk20_checked : firstChunk20.all checkRow = true := by decide
+theorem firstChunk20_checked : firstChunk20.all checkRow = true := by decide +kernel
 
-theorem firstChunk21_checked : firstChunk21.all checkRow = true := by decide
+theorem firstChunk21_checked : firstChunk21.all checkRow = true := by decide +kernel
 
-theorem firstChunk22_checked : firstChunk22.all checkRow = true := by decide
+theorem firstChunk22_checked : firstChunk22.all checkRow = true := by decide +kernel
 
-theorem firstChunk23_checked : firstChunk23.all checkRow = true := by decide
+theorem firstChunk23_checked : firstChunk23.all checkRow = true := by decide +kernel
 
-theorem firstChunk24_checked : firstChunk24.all checkRow = true := by decide
+theorem firstChunk24_checked : firstChunk24.all checkRow = true := by decide +kernel
 
-theorem firstChunk25_checked : firstChunk25.all checkRow = true := by decide
+theorem firstChunk25_checked : firstChunk25.all checkRow = true := by decide +kernel
 
-theorem firstChunk26_checked : firstChunk26.all checkRow = true := by decide
+theorem firstChunk26_checked : firstChunk26.all checkRow = true := by decide +kernel
 
-theorem firstChunk27_checked : firstChunk27.all checkRow = true := by decide
+theorem firstChunk27_checked : firstChunk27.all checkRow = true := by decide +kernel
 
-theorem firstChunk28_checked : firstChunk28.all checkRow = true := by decide
+theorem firstChunk28_checked : firstChunk28.all checkRow = true := by decide +kernel
 
-theorem firstChunk29_checked : firstChunk29.all checkRow = true := by decide
+theorem firstChunk29_checked : firstChunk29.all checkRow = true := by decide +kernel
 
-theorem firstChunk30_checked : firstChunk30.all checkRow = true := by decide
+theorem firstChunk30_checked : firstChunk30.all checkRow = true := by decide +kernel
 
-theorem firstChunk31_checked : firstChunk31.all checkRow = true := by decide
+theorem firstChunk31_checked : firstChunk31.all checkRow = true := by decide +kernel
 
-theorem firstChunk32_checked : firstChunk32.all checkRow = true := by decide
+theorem firstChunk32_checked : firstChunk32.all checkRow = true := by decide +kernel
 
-theorem firstChunk33_checked : firstChunk33.all checkRow = true := by decide
+theorem firstChunk33_checked : firstChunk33.all checkRow = true := by decide +kernel
 
-theorem firstChunk34_checked : firstChunk34.all checkRow = true := by decide
+theorem firstChunk34_checked : firstChunk34.all checkRow = true := by decide +kernel
 
-theorem firstChunk35_checked : firstChunk35.all checkRow = true := by decide
+theorem firstChunk35_checked : firstChunk35.all checkRow = true := by decide +kernel
 
-theorem firstChunk36_checked : firstChunk36.all checkRow = true := by decide
+theorem firstChunk36_checked : firstChunk36.all checkRow = true := by decide +kernel
 
-theorem firstChunk37_checked : firstChunk37.all checkRow = true := by decide
+theorem firstChunk37_checked : firstChunk37.all checkRow = true := by decide +kernel
 
-theorem firstChunk38_checked : firstChunk38.all checkRow = true := by decide
+theorem firstChunk38_checked : firstChunk38.all checkRow = true := by decide +kernel
 
 theorem first_rows_checked : firstRows.all checkRow = true := by
   rw [firstRows, List.all_flatten]
@@ -130,10 +130,10 @@ theorem first_rows_checked : firstRows.all checkRow = true := by
   · exact firstChunk37_checked
   · exact firstChunk38_checked
 
-theorem first_rows_coverage : firstRows.map Row.p = primeList := by decide
+theorem first_rows_coverage : firstRows.map Row.p = primeList := by decide +kernel
 
 theorem first_rows_budgets :
     (firstRows.map (fun r => r.coefficient * r.hi)).sum ≤ 1324 * 10 ^ 20 * scale ∧
-      7995 * 10 ^ 29 * scale ≤ (firstRows.map (fun r => r.weight * r.lo)).sum := by decide
+      7995 * 10 ^ 29 * scale ≤ (firstRows.map (fun r => r.weight * r.lo)).sum := by decide +kernel
 
 end TenthDiscriminant.FirstCertificate

@@ -249,3 +249,38 @@
   must be proved using `Nat.div_mod_unique` and `floorSum_scaled`; power
   coverage and all existing row/list/budget checks remain required. No full
   table or interval theorem accepted. Old proof layouts archived as .txt.
+
+- Phase 25 resumed from `bba9870`. `DivisionWitness.lean` now proves
+  quotient/remainder, complete prime-power witness and fixed-square-mass
+  checker soundness. Same numerical values and bounds throughout.
+  All 1229 rows passed in an isolated row-wise proof (127.3084388 s,
+  6014193664 bytes), then in compact 32-row blocks (25.814322 s,
+  3632619520 bytes); the compact proof is `FirstIntervalRows.lean` and builds.
+  Exact accepted row-wise source is archived as
+  `FirstIntervalRowsOnly.rowwise_accepted.txt`.
+  Full table/totals reductions still hit the 8-GB cap; logs are preserved.
+  A `norm_num` proof-producing totals pilot plus first coverage block passed
+  (18.9080559 s, 2931294208 bytes). Complete bounded-block composition is
+  running. No concrete interval exclusion yet.
+  Full root build passed (6724 steps); audit exceeded 300 s, preserved as
+  failure and deadline increased to 900 s without removing any gate.
+  An accidental build from repository root failed before proving anything;
+  rerun from `lean/` built the new module successfully. Preserve manifest.
+
+- Publication checkpoint: all totals/coverage attempts terminated without a
+  complete proof. The four-part attempt hit the 8-GB cap, remaining identified
+  child processes were stopped; its files are recoverably moved under
+  `research/ender_radius_bridge/divided_totals_attempt/`, not deleted.
+  The 16-MB coverage normalization pilot hit kernel recursion; its registered
+  64-MB retry hit the 8-GB cap. No live numerical proof process remains.
+  Root imports only accepted ingredients and `FirstIntervalRows`.
+  Full build passes (6724). Shared use of the *same* pinned Lean axiom
+  collector passes all 1532 logical roots (1221 theorems); matched apparatus
+  controls are still running at this checkpoint. The inherited suite's
+  concurrent local run timed out at its unchanged 120-s jet deadline; preserve
+  the failure and require an idle rerun / exact-head pinned CI.
+  New numerical guide and README/STATUS/claim map explicitly retain missing
+  coverage and total budgets, no interval/cutoff/classification assertion.
+  Next proof work should use small, independently checked integer coverage
+  blocks and bounded sum proofs, not another unbounded whole-table reduction.
+  This is a new implementation repair to preregister, not a parameter search.

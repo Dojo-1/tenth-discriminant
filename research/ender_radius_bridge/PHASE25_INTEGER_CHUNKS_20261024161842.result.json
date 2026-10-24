@@ -1,0 +1,13 @@
+﻿{
+    "scope":  "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+    "proof_file":  "../research/ender_radius_bridge/FirstIntervalRowsOnly.lean",
+    "exit_code":  0,
+    "elapsed_seconds":  25.814321999999997,
+    "observed_peak_working_set_bytes":  3632619520,
+    "memory_threshold_mb":  8192,
+    "resource_stop":  false,
+    "threads":  1,
+    "stack_kb":  16384,
+    "stdout":  "PHASE25_INTEGER_CHUNKS_20261024161842.stdout.log",
+    "stderr":  "PHASE25_INTEGER_CHUNKS_20261024161842.stderr.log"
+}
