@@ -1,0 +1,48 @@
+⚠ [6657/6745] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6662/6745] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6663/6745] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6666/6745] Replayed TenthDiscriminant.AffineTransport
+warning: .\.\.\.\TenthDiscriminant\AffineTransport.lean:24:4: 'change
+  (Polynomial.X ^ j.val * F.map phi).coeff i.val = phi ((Polynomial.X ^ j.val * F).coeff i.val)' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+warning: .\.\.\.\TenthDiscriminant\AffineTransport.lean:28:4: 'change
+  (Polynomial.X ^ (j.val - b) * G.map phi).coeff i.val =
+    phi ((Polynomial.X ^ (j.val - b) * G).coeff i.val)' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+warning: .\.\.\.\TenthDiscriminant\AffineTransport.lean:148:24: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+warning: .\.\.\.\TenthDiscriminant\AffineTransport.lean:148:24: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [6668/6745] Replayed TenthDiscriminant.ComparatorR1
+warning: .\.\.\.\TenthDiscriminant\ComparatorR1.lean:58:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: .\.\.\.\TenthDiscriminant\ComparatorR1.lean:71:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6676/6745] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6677/6745] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6679/6745] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6684/6745] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+ℹ [6702/6745] Replayed TenthDiscriminant.InertPilot
+info: .\.\.\.\TenthDiscriminant\InertPilot.lean:147:2: Try this: ring_nf
+⚠ [6726/6745] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6742/6745] Replayed TenthDiscriminant.SieveWheel
+warning: .\.\.\.\TenthDiscriminant\SieveWheel.lean:62:11: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+✔ [6743/6745] Built TenthDiscriminant.MillionSieve
+✔ [6744/6745] Built TenthDiscriminant
+Build completed successfully.

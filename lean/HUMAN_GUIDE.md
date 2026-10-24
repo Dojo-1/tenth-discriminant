@@ -1,5 +1,11 @@
 # Why the derivative Gram determinant is positive
 
+The current finite frontier is explained in the
+[wheel-coverage guide](../research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md):
+quotient and remainder prove no candidate was skipped; kernel evaluation
+then closes [92,1000000). The resulting necessary nine-element list below
+one million is not a full classification or nine positive class-number proofs.
+
 For the current arithmetic frontier, the
 [finite-sieve guide](../research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md)
 explains the norm-two argument behind d=3 mod 8, the checked small

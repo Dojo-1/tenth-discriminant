@@ -1,5 +1,15 @@
 # Current claim-to-Lean map
 
+**Phase 31 closes the necessary candidate list below one million.**
+`SieveWheel` proves universal residue-lift and interval-coverage invariants.
+`MillionSieve` checks the entire fixed interval [92,1000000) and proves that
+actual class number one there forces d=163. With the checked small end,
+`classNumber_one_candidates_below_million` gives the necessary nine-element
+list below one million. Its upper-middle certificate theorem explicitly
+leaves [1000000,700000000000) unclosed. Positive class-number equalities
+and the full classification are not asserted.
+[Human wheel proof](../research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md).
+
 **Phase 30 adds the finite-sieve entry bridge.** `OddPrimeTwo` proves
 actual class number one implies d=3 mod 8 above 7. `FiniteSieveBridge`
 proves necessity of guarded checked-odd-prime tests and the necessary

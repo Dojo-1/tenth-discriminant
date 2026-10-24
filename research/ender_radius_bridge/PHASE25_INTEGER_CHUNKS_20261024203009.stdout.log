@@ -1,0 +1,58 @@
+⚠ [6654/6710] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6655/6710] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6656/6710] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6657/6710] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6660/6710] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6662/6710] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6671/6710] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+⚠ [6702/6723] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✖ [6723/6723] Building TenthDiscriminant.SieveWheel
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\SieveWheel.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\SieveWheel.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\SieveWheel.ilean -c .\.\.lake\build\ir\TenthDiscriminant\SieveWheel.c --json
+error: .\.\.\.\TenthDiscriminant\SieveWheel.lean:11:2: tactic 'simp' failed, nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+error: .\.\.\.\TenthDiscriminant\SieveWheel.lean:18:13: unexpected token ')'; expected term
+warning: .\.\.\.\TenthDiscriminant\SieveWheel.lean:57:11: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+error: .\.\.\.\TenthDiscriminant\SieveWheel.lean:60:10: unknown identifier 'wheelLift_covers'
+error: .\.\.\.\TenthDiscriminant\SieveWheel.lean:61:4: no goals to be solved
+error: .\.\.\.\TenthDiscriminant\SieveWheel.lean:74:56: invalid argument name 'k' for function 'Nat.div_le_div_right'
+error: .\.\.\.\TenthDiscriminant\SieveWheel.lean:81:28: application type mismatch
+  of_decide_eq_true rfl
+argument
+  rfl
+has type
+  ?m.2513 = ?m.2513 : Prop
+but is expected to have type
+  decide ?m.2509 = true : Prop
+error: .\.\.\.\TenthDiscriminant\SieveWheel.lean:104:4: type mismatch
+  Nat.Prime.pos hpair.left
+has type
+  0 < p : Prop
+but is expected to have type
+  modularRootTest d p = false : Prop
+error: .\.\.\.\TenthDiscriminant\SieveWheel.lean:111:4: type mismatch, term
+  htest
+after simplification has type
+  modularRootTest d p = false : Prop
+but is expected to have type
+  0 < p : Prop
+error: Lean exited with code 1
+Some required builds logged failures:
+- TenthDiscriminant.SieveWheel

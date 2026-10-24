@@ -1,5 +1,11 @@
 # One determinant, two kinds of information
 
+**Phase 31:** the sieve now has a proved no-loss wheel operator and interval
+coverage. Exact kernel evaluation gives d=163 for actual class number one
+in [92,1000000); the necessary nine-candidate list follows below one million.
+The entire upper middle range and positive class-number proofs remain open.
+[Why the wheel loses nothing](../research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md).
+
 **Phase 30:** the passage to the finite sieve is now proved necessary:
 class number one gives d=3 mod 8 above 7 and every guarded odd-prime test.
 The small end below 92 is kernel checked. The full middle-interval survivor

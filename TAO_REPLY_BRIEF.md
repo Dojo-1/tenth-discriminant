@@ -1,12 +1,19 @@
 # Factual brief for a possible human comment on Tao's challenge
 
-**24 October 2026, through Phase 30. This is an AI-prepared evidence brief, not the
+**24 October 2026, through Phase 31. This is an AI-prepared evidence brief, not the
 human-generated summary requested by [Tao's post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).**
 The contributor should write the actual comment in their own words
 after reviewing the linked work. No comment has been submitted by this
 repository work.
 
 ## What can be stated now
+
+- Phase 31 proves the necessary nine-candidate list below one million.
+  Universal wheel and interval-coverage proofs connect the actual class-number
+  hypothesis to a kernel-checked complete finite computation on [92,1000000).
+  The upper middle interval and positive class-number equalities remain open;
+  this is not the full classification.
+  [Human wheel proof](research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md).
 
 - Phase 30 proves the finite sieve's entry conditions from actual class
   number one, including d=3 mod 8 above 7 and strict guarded prime tests.

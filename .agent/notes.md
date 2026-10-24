@@ -1,5 +1,31 @@
 # Task checkpoint
 
+- Phase31 protocol-only b0f7913 preceded proof edits and exact control. Prior
+  turn was verified progress: Phase30 passed full pinned CI 40128348264 and
+  security 40128344427 on matching merge/head/local tree. Refreshed branch
+  had zero divergence; only inherited lake manifest untracked. No subagents.
+- SieveWheel proves universal root-test congruence, no-loss residue lifting,
+  composed wheel coverage and quotient/remainder interval coverage.
+  MillionSieve proves actual class number one forces d=163 throughout the
+  complete fixed interval [92,1000000), giving the necessary nine-element
+  list below one million. Original cutoff unchanged; [1000000,700000000000)
+  and positive class-number equalities remain open. Global goal active.
+- Fixed independent exact control: modulus 9240, 30 residues, 3245 candidates,
+  survivors [163]. It is not a proof input. No prime/endpoint tuning or frozen
+  campaign rerun. Universal proof carries coverage, not the observed count.
+- Preserve two failed builds (203009 and 203149 UTC stamps): syntax/API,
+  recursive modular simp and local-definition rewrite issues. Explicit
+  arithmetic normalization repairs these without larger proof budgets.
+  First accepted target 203237 took 62.7968462 seconds, peak 4532649984 bytes.
+  Final root 203519 passed in 88.9676823 seconds, peak 4535230464 bytes under
+  the unchanged 8192 MB monitor cap, including new endpoint/coverage controls.
+- Local source correspondence/import coverage passed (91 modules). Compiled
+  audit passed (3009 logical/2576 theorem declarations; 14368 runtime-only
+  auxiliaries excluded). Public signatures and only propext/choice/Quot.sound
+  checked. Direct inherited controls are running at checkpoint.
+  Full unchanged audit.py/negative_controls.py gates must pass exact-head CI;
+  final PR publication record supersedes pending checkpoint fields.
+
 - Phase 30 protocol-only c73d526 preceded proof edits. The refreshed base
   was 165d110 with passed full pinned CI 40125864965/security 40125864826;
   PR28 remains draft/unmerged. No numerical campaign, pin or threshold changed.

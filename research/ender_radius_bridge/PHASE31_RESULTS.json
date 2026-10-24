@@ -1,0 +1,25 @@
+{
+  "phase": 31,
+  "preregistration_commit": "b0f791316f2a7d4d367b5cb7fd5071f8e0f3bfe4",
+  "base_commit": "9102f8a065613c796a7640eb80a61087063788b5",
+  "scope": "universal no-loss wheel/interval coverage plus complete fixed exclusion on [92,1000000); not full classification",
+  "universal_results": ["modularRootTest depends only on d mod p", "wheelLift preserves every admissible remainder for arbitrary positive m,p", "composed wheel preserves all specified nonsquare conditions", "quotient/remainder enumerates every covered point in any half-open interval"],
+  "actual_field_results": ["positive squarefree d with actual class number one and 92<=d<1000000 imply d=163", "positive squarefree d<1000000 with actual class number one belong to [1,2,3,7,11,19,43,67,163]", "explicit remaining-certificate reduction on [1000000,700000000000)"],
+  "fixed_data": {"wheel_primes": [3,5,7,11], "extra_primes": [13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127], "modulus": 9240, "residue_count": 30, "lo": 92, "hi_exclusive": 1000000, "candidate_count": 3245, "survivors": [163], "prime_lists_checked": true, "guard": "4*p<=d"},
+  "independent_exact_control": {"command": "python research/ender_radius_bridge/phase31_exact_check.py", "exit_code": 0, "agrees_with_fixed_data": true, "not_a_proof_input": true},
+  "controls": ["kernel candidate count 3245", "lift 8,[3],3 retains translate 19", "interval [11,19) retains 11 and excludes 19", "omitting quotient loses 11", "omitting residues loses 163", "163 retained by final necessary tests", "inherited strict 163/41 endpoint control"],
+  "attempts": [
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024203009.result.json", "target": "SieveWheel", "exit_code": 1, "seconds": 59.228097899999995, "peak_bytes": 2899042304, "failure": "syntax/API errors, recursive add_mod simplification, proof-goal ordering"},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024203149.result.json", "target": "SieveWheel", "exit_code": 1, "seconds": 24.668620399999998, "peak_bytes": 2881900544, "failure": "local z abbreviation blocked final root-test rewrite; repaired by explicit change/rw"},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024203237.result.json", "target": "MillionSieve", "exit_code": 0, "seconds": 62.7968462, "peak_bytes": 4532649984},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024203519.result.json", "target": "TenthDiscriminant", "exit_code": 0, "seconds": 88.967682299999993, "peak_bytes": 4535230464}
+  ],
+  "monitor_note": "All raw records retained unchanged; legacy Phase25 filenames and scope/proof_file metadata do not identify the target. build_target and stdout identify the actual Phase31 modules. Same 8192 MB cap; no resource stop or proof-budget increase.",
+  "local_checkpoint": {"full_root_build": "passed, 6745 build steps", "source_correspondence": "passed, endpoint identity only", "import_coverage": "91 project modules reachable", "compiled_audit": "passed: 3009 logical declarations, 2576 theorems, 14368 runtime-only auxiliaries excluded", "signatures": "passed: actual class number hypothesis and explicit finite bound; upper-middle certificate remains an unsupplied premise", "axioms": ["propext", "Classical.choice", "Quot.sound"], "direct_controls": "running at checkpoint; final publication must record actual terminal results", "local_audit_driver": "decomposed checks run directly; full unchanged audit.py and negative_controls.py drivers required in exact-head Linux CI, no local full-driver pass claimed"},
+  "commands_from_lean": ["lake build", "python verify_sources.py", "python audit.py", "python apparatus_controls.py", "python negative_controls.py", "lake env lean Audit.lean", "lake env lean ../research/ender_radius_bridge/Phase31SignatureCheck.lean"],
+  "exact_head_CI": "pending at publication checkpoint; final PR28 record must identify head/merge/tree and complete CI verdicts",
+  "unchanged": ["700000000000 cutoff", "production tools", "frozen full CRT campaign", "old ledgers", "pins and audit/CI gates"],
+  "open": ["complete upper middle interval", "nine positive class-number equalities", "full classification", "optimization", "independent human semantic review", "systematic comparison", "higher class-number track", "upstream review and authorized human submission"],
+  "merge_or_Tao_post": false,
+  "global_goal": "active"
+}

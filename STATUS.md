@@ -1,5 +1,24 @@
 # Status — 2026-10-24
 
+## Phase 31: necessary nine-candidate list below one million
+
+`classNumber_one_middle_below_million` compiles: for positive squarefree d
+with actual class number one and 92<=d<1000000, d=163.
+`classNumber_one_candidates_below_million` joins the small end to give the
+necessary nine-element list below one million. Universal wheel-lift and
+quotient/remainder interval coverage are proved, not inferred from output.
+The fixed 9240 wheel has 30 residues and 3245 interval candidates; exact
+kernel evaluation leaves [163]. Extra primes and strict guards are checked.
+The independent exact control agrees but is not used as a proof input.
+
+The remaining interval is [1000000,700000000000), not silently discarded.
+The positive class-number equalities, full classification and other open
+challenge objectives remain open. No cutoff or production-campaign change.
+[Human guide](research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md) ·
+[Protocol](research/ender_radius_bridge/PHASE31_PROTOCOL.md) ·
+[Verification checkpoint](research/ender_radius_bridge/PHASE31_RESULTS.json).
+Whole-library and exact-head CI terminal status must accompany publication.
+
 ## Phase 30: checked finite-sieve preconditions, not classification
 
 `imaginaryQuadratic_classNumber_one_mod_eight` proves d=3 mod 8 for

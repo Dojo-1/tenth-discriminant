@@ -1,9 +1,18 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 24 October 2026, through preregistered Phase 30;
+**Living update: 24 October 2026, through preregistered Phase 31;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase 31 advances the finite proof bridge: a universal no-loss wheel theorem
+and exact complete check on [92,1000000) prove the necessary nine-element
+list below one million for the actual field. The original effective cutoff
+is unchanged. The upper middle interval [1000000,700000000000) and positive
+class-number equalities remain open, so the full classification objective
+is not achieved. Supplementary result: the wheel/interval coverage operators
+are proved generically and may be reused for the full interval.
+[Human explanation](research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md).
 
 Phase 30 advances formalization, not the optimization or classification
 status: the actual class-number hypothesis now supplies the saved sieve's

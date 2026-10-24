@@ -2,6 +2,13 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
+**Phase 31: the necessary candidate list is now checked below one million.**
+For positive squarefree `d<1000000`, Lean proves actual class number one
+implies `d` is one of `1,2,3,7,11,19,43,67,163`. A universal no-loss wheel
+proof and exact finite evaluation cover the whole interval `[92,1000000)`.
+The range `[1000000,700000000000)` and positive class-number proofs remain
+open. [Why the wheel covers every candidate](research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md).
+
 **Phase 30: the finite sieve now has checked mathematical entry conditions.**
 Actual class number one forces `d=3 mod 8` above 7. Guarded odd-prime
 tests are proved necessary, and kernel evaluation below 92 leaves exactly
