@@ -210,11 +210,13 @@ Its quadratic multiplication chart has the [expected exact
 determinant](TenthDiscriminant/HalfOrderNorm.lean), and the
 [power-basis calculation](TenthDiscriminant/HalfOrderAlgebraicNorm.lean)
 identifies it with `Algebra.norm` and the existing principal form.
-The [field chart](TenthDiscriminant/QuadraticFieldChart.lean) now
-identifies this order with the actual maximal integer ring: every
-integral field element has integer coordinates by trace, norm and
-squarefreeness. Composing that equivalence with the class-number
-theorem to discharge the norm-lifting premise remains open.
+The [field chart](TenthDiscriminant/QuadraticFieldChart.lean) identifies
+this order with the actual maximal integer ring: every integral field
+element has integer coordinates by trace, norm and squarefreeness.
+The [class-number bridge](TenthDiscriminant/ClassNumberInertBridge.lean)
+now composes this with the quotient map and positive norm to discharge
+the norm-lifting premise and prove the local valuation for the actual
+integer Gram, for squarefree `D≡3 (mod 4)` and strict small odd primes.
 This is inherited valuation mathematics,
 not a new classification or cutoff.
 
@@ -250,7 +252,7 @@ these views commute on **one integer matrix with the same samples**.
 |---|---|
 | Jet energy, contact budget, positivity; exact integer matrix; residue reduction; fixed `D=19,p=3` square factor | Lean-checked under the displayed hypotheses. |
 | Ender's chosen-radius ellipse has enough points | Elementary cell-area proof on paper; exact-set and endpoint-transfer helpers in Lean, but the area inequality is not Lean-checked. |
-| Uniform inert-prime valuation, class-number-one to inertness, analytic comparison, finite classification | Lean checks the exact exponent for the actual integer Gram under an odd-prime nonsquare local condition, the strict-small-prime consequence under explicit principal-norm lifting, the abstract class-number-one quotient-to-norm step, a root-to-quotient map for the explicit half-order, and that order's equivalence with the maximal integer ring and norm coordinates. The class-number-to-lifting composition and later links are not connected as an end-to-end theorem. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
+| Uniform inert-prime valuation, class-number-one to inertness, analytic comparison, finite classification | Lean checks the exact exponent for the actual integer Gram and, for squarefree `D≡3 (mod 4)` at strict small odd primes, now derives its nonsquare premise from class number one through the maximal integer ring. The area, analytic and finite-classification links are not connected as an end-to-end theorem. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical

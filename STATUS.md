@@ -5,6 +5,21 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-24: class number one now supplies the local Gram valuation
+
+[Phase 16](research/uniform_inert_valuation/PHASE16_PROTOCOL.md) proves
+in Lean that, for squarefree `D ≡ 3 (mod 4)`, class number one of the
+actual quadratic field implies Ender's exact
+`p^(2·valuationWeight R S p)` divisor of the original integer Gram
+determinant at every odd prime `p < (D+1)/4`. The proof composes the
+residue quotient, maximal-order equivalence, principal-kernel norm,
+nonnegative imaginary quadratic norm, and the existing valuation
+theorem. `D=15,p=3` yields a checked `classNumber ≠ 1` control.
+This closes the previously open *class-number-to-local-valuation*
+arrow, **not** the chosen-radius area formalization, analytic cutoff,
+or class-number classification. [Lean source](lean/TenthDiscriminant/ClassNumberInertBridge.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#21-the-global-hypothesis-reaches-the-local-determinant).
+
 ## 2026-10-24: explicit order equals the maximal integer ring
 
 [Phase 15](research/uniform_inert_valuation/PHASE15_PROTOCOL.md) now
@@ -14,9 +29,8 @@ isomorphic to `ℤ[T]/(T²-T+(D+1)/4)`. The proof uses the actual field
 trace and norm, Phase 14's denominator/parity argument, and an
 injective order-to-field map; the norm on the maximal ring agrees
 with the repository's `principalNorm`. This closes the previously
-open *order-identification* arrow. The next arrow—composing a residue
-root, class number one, and the sign-safe norm identity into
-`SmallPrimeNormLifting`—is **not yet checked**. Neither the analytic
+open *order-identification* arrow. Phase 16 now checks the next
+class-number-to-lifting arrow. Neither the analytic
 cutoff nor classification is established. [Lean source](lean/TenthDiscriminant/QuadraticFieldChart.lean) ·
 [human explanation](lean/HUMAN_GUIDE.md#20-why-this-is-the-whole-integer-ring).
 
@@ -161,9 +175,9 @@ by `p`, then all jets of `B*H^k` are divisible by `p^k`. Applied to
 `H=Z^p-W` in the repository's selected quadratic order, this gives
 both integer-coordinate factors for every proposed transformed row
 under its explicit order-zero Frobenius congruence. A checked Hasse
-derivative counterexample guards the derivative convention. The
-uniform inertness premise and analytic/class-number chain remain open
-in Lean; Phase 7 supplies the Gram identification.
+derivative counterexample guards the derivative convention. At this
+Phase 4 checkpoint the uniform premise and analytic/class-number chain
+were open; Phases 7–16 now supply the Gram and strict-small-prime links.
 [Theorem](lean/TenthDiscriminant/JetPower.lean) ·
 [preregistration](research/uniform_inert_valuation/PHASE4_PROTOCOL.md).
 
@@ -213,8 +227,9 @@ strictly positive. A `D=2`, `p=3` control refutes dropping inertness. This
 one-prime toy theorem does not imply Ender's uniform prime-adic lower bound.
 The proof and limitations are reported in the
 [guide](lean/HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix)
-and [protocol](research/local_global_gram/PROTOCOL.md); the general valuation
-bridge and class-number classification remain open.
+and [protocol](research/local_global_gram/PROTOCOL.md). At this pilot
+checkpoint the general valuation was open; Phase 16 now supplies its
+strict-small-prime form, while the classification remains open.
 
 ## 2026-10-23: integer-coordinate trace-Gram bridge
 

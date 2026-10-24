@@ -33,3 +33,25 @@ The strict endpoint `p<(D+1)/4` is inherited unchanged; equality is
 not asserted. Run targeted Lean, full pinned build, source
 correspondence, compiled dependency audit and negative controls on
 the proof head. Update human documentation; keep PR draft/unmerged.
+
+## Execution (2026-10-24)
+
+`ClassNumberInertBridge.lean` compiles the full targeted composition:
+`smallPrimeNormLifting_of_classNumber_one` transports the Phase 11
+residue map through the Phase 15 maximal-order equivalence, invokes
+Phase 10's principal-kernel norm theorem, expands the generator in
+the integral basis, and proves its principal norm nonnegative using
+`4N=(2x+y)²+Dy²`. Thus absolute norm `p` is exactly norm `p`.
+`smallPrime_nonsquare_of_classNumber_one` and
+`rectangularTraceGram_valuation_of_classNumber_one` propagate the
+strict local conclusion to the actual integer Gram with Ender's full
+exponent. `fifteen_classNumber_ne_one` uses the registered
+`D=15,p=3` root obstruction to ensure the global hypothesis was not
+dropped. The first control script required an explicit concrete
+field-positivity instance; this was repaired.
+
+This does not prove Ender's chosen-radius cell count in Lean, his
+analytic comparison, numerical certificate interpretation, or the
+end-to-end class-number classification. The theorem is for the
+squarefree `D≡3 (mod 4)` field chart and strict odd-prime range;
+no even-discriminant case or endpoint equality is inferred.

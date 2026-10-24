@@ -46,6 +46,7 @@ import TenthDiscriminant.HalfOrderNorm
 import TenthDiscriminant.HalfOrderAlgebraicNorm
 import TenthDiscriminant.MaximalOrderCoordinates
 import TenthDiscriminant.QuadraticFieldChart
+import TenthDiscriminant.ClassNumberInertBridge
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot

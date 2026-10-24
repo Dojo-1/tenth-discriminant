@@ -80,6 +80,17 @@
   `Algebra.norm` and the maximal-order identification are not proved;
   no checked cutoff or classification follows. Final-head CI pending.
 
+- 2026-10-24, Phase 16: Phase 15 head `cf1c9db` passed pinned CI
+  `40043319145` and CodeQL. Protocol-only `c519477` preceded edits.
+  Targeted Lean proves class-number-one exact norm lifting, the
+  strict-small-prime nonsquare guard and Ender's actual integer-Gram
+  valuation, with `D=15,p=3` deriving class number not one. The sign
+  step uses the checked four-times-norm sum-of-squares identity.
+  Full 6707-step build and endpoint-only source correspondence pass;
+  whitespace and state JSON checks pass. Pinned CI pending; area,
+  analytic cutoff and final
+  classification remain open.
+
 - 2026-10-24, Phase 15: Phase 14 head `8d15fbb` passed pinned CI
   `40039967991` and CodeQL. Protocol-only `c600ac5` preceded edits.
   Targeted Lean now proves the actual quadratic field and rational

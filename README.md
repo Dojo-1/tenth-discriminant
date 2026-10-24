@@ -14,21 +14,20 @@ An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](htt
 > `D=19,p=3` nine-divisibility pilot, and Ender's exact uniform
 > `p^(2F(p))` factor for the actual integer Gram when `p` is odd prime
 > and `-D` is nonsquare modulo `p`. The chosen-radius cell-area count is
-> proved on paper but not in Lean. Deriving that local nonsquare condition
-> from the global class-number hypotheses is still open: Lean now isolates
-> the needed root-to-principal-norm lifting premise and proves its
-> strict-small-prime consequence. Lean also proves that class number one
-> makes any residue-quotient ideal principal; constructing the specific
-> quotient for the explicit half-integral order is now constructed.
+> proved on paper but not in Lean. For squarefree `D≡3 (mod 4)`, Lean now
+> derives that local nonsquare condition from class number one at every
+> strict small odd prime. Lean also proves that class number one
+> makes any residue-quotient ideal principal; a residue root constructs
+> the specific quotient for the explicit half-integral order.
 > Lean also checks its defining multiplication relation and the
 > determinant of the proposed two-dimensional multiplication matrix.
 > Lean now identifies that determinant with the order's actual
 > `Algebra.norm` and with the repository's `principalNorm` formula.
 > Lean now also constructs the genuine quadratic field and identifies
 > this order with its maximal integer ring using trace, norm,
-> squarefree denominators and parity. Composing that equivalence
-> with class number one to prove the specific norm-lifting premise
-> remains open. The
+> squarefree denominators and parity. It then composes that equivalence
+> with class number one to prove the specific norm-lifting premise and
+> the local valuation for the actual integer Gram. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.

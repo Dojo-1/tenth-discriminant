@@ -13,8 +13,9 @@ The newest arithmetic component is the
 [maximal-order equivalence](TenthDiscriminant/QuadraticFieldChart.lean):
 Phase 14's rational trace/norm criterion identifies every algebraic
 integer in the constructed quadratic field with the explicit
-half-integral order. The class-number-one-to-lifting composition is
-still open; see [§20 of the guide](HUMAN_GUIDE.md#20-why-this-is-the-whole-integer-ring).
+half-integral order. The [class-number bridge](TenthDiscriminant/ClassNumberInertBridge.lean)
+now turns this into the strict-small-prime local valuation for the
+actual integer Gram; see [§21 of the guide](HUMAN_GUIDE.md#21-the-global-hypothesis-reaches-the-local-determinant).
 
 ## The result to start with
 
@@ -73,7 +74,9 @@ determinant casts accordingly. The later rectangular valuation theorem
 proves the exact determinant power under an explicit universal Frobenius
 congruence. [InertFrobenius.lean](TenthDiscriminant/InertFrobenius.lean)
 derives that congruence from odd-prime nonsquareness of `-D : ZMod p`.
-The global class-number-one to local-guard link is not yet in Lean.
+For squarefree `D≡3 (mod 4)`, the
+[class-number bridge](TenthDiscriminant/ClassNumberInertBridge.lean)
+now supplies that local guard at strict small odd primes.
 The [guide's coordinate explanation](HUMAN_GUIDE.md#10-the-same-gram-matrix-in-integer-and-complex-coordinates)
 includes an asymmetric control that a determinant-only comparison misses.
 
@@ -166,8 +169,9 @@ under an odd-prime nonsquare condition, and the strict-small-prime norm
 argument is checked under an explicit unproved lifting premise. The
 abstract class-number-one quotient-to-principal-norm step is checked;
 the explicit order is now identified with the maximal integer ring,
-including its principal norm coordinates. Composing this with the
-class-number-one ideal step, remaining analytic and
+including its principal norm coordinates, and the class-number-one
+ideal step is composed with the strict local valuation. Remaining
+analytic and
 kernel-checkable numerical estimates, and finite classification are not yet a
 connected Lean proof. The analytic cutoff and saved numerical evidence are
 unchanged. No human or blind independent semantic review is claimed.

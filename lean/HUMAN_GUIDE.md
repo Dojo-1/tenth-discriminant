@@ -599,10 +599,10 @@ and its integral coordinates.
 The explicit order's norm coordinates are checked in §18, and §20
 now identifies it with the **maximal** integer ring for the intended
 fundamental discriminant. A residue root can therefore supply a map
-from that ring. The remaining unproved composition is to use the
-principal generator here, transport its norm formula, and prove the
-sign needed for Phase 9's exact norm-`p` lifting premise. The
-classification remains open.
+from that ring. Section 21 now checks the composition: the principal
+generator has the required positive norm in the explicit coordinates.
+The classification remains open because the geometric and analytic
+links are not completed in Lean.
 
 ## 17. From a residue root to an actual quotient map
 
@@ -625,8 +625,8 @@ the polynomial-root calculation, the ring map, its value on `T`, and
 surjectivity in [HalfOrderResidue.lean](TenthDiscriminant/HalfOrderResidue.lean).
 This makes one of §16's arrows concrete for the explicit order
 `ℤ[ω]`. Section 20 now identifies this order with Mathlib's maximal
-integer ring `𝓞_K`, but the residue and principal-norm theorems have
-not yet been composed into one checked class-number theorem. At `D=15,p=3`, the quotient map
+integer ring `𝓞_K`, and §21 composes the residue and principal-norm
+theorems into a checked class-number theorem. At `D=15,p=3`, the quotient map
 exists while the lifting premise fails; this is a useful guard against
 dropping class number one.
 
@@ -661,8 +661,8 @@ norm-as-determinant theorem. Hence its algebraic norm is precisely
 Section 20 now proves that this explicit order *is* the maximal
 integer ring of the intended imaginary quadratic field under the
 squarefree congruence hypotheses. Class number one in §16 concerns
-that ring, but the composition to §15's lifting premise is still
-unproved; no cutoff or classification follows from the norm
+that ring, and §21 now composes it with §15's lifting premise. No
+cutoff or classification follows from the local norm
 calculation alone.
 
 ## 19. Why the half-integral coordinates are forced
@@ -688,8 +688,8 @@ denominator claim without squarefreeness.
 
 Section 20 now instantiates this calculation in the actual quadratic
 field and proves that its integral elements supply those trace and
-norm hypotheses. The structural gap has moved from order identity
-to the sign-safe class-number composition; this is not a classification.
+norm hypotheses. Section 21 closes the sign-safe class-number
+composition; this is still not a classification.
 
 ## 20. Why this is the whole integer ring
 
@@ -718,9 +718,34 @@ the ring equivalence, and the maximal-ring norm formula
 `N(x+yT)=principalNorm D x y`. The `D=15` field works; dropping
 positivity allows the reducible `T²-T` control.
 
-The next implication has a clean shape but is **not yet one Lean
-theorem**: a residue root gives a map `𝓞_K→𝔽_p`; class number one
-should give an element of algebraic norm magnitude `p`; positivity
-of the imaginary quadratic norm should turn magnitude into `p`;
-the coordinates above should then discharge §15's lifting premise.
-The paper area and analytic cutoff remain separate gaps.
+Section 21 checks the next implication. The paper area and analytic
+cutoff remain separate gaps.
+
+## 21. The global hypothesis reaches the local determinant
+
+Suppose `D` is squarefree with `D≡3 (mod 4)`, and the quadratic field
+of §20 has class number one. If an odd prime `p` admitted a root of
+`X²+D` modulo `p`, §17 would give a quotient of the explicit order,
+hence of the maximal integer ring by §20. Its kernel has norm `p`;
+class number one makes it principal (§16). Let its generator have
+coordinates `x+yT`. Its algebraic norm has **magnitude** `p`.
+
+The sign is not a formality. It is forced by the exact identity
+
+$$4N(x+yT)=(2x+y)^2+Dy^2\ge0.$$
+
+Thus the norm equals `p`, not `−p`. Below the strict threshold
+`p<(D+1)/4`, §15's elementary norm bound excludes such a root.
+Equivalently `−D` is nonsquare modulo `p`. The checked Frobenius and
+row-factorization chain then gives, for the *original* integer Gram,
+
+$$p^{2F(p)}\mid\det G.$$
+
+[ClassNumberInertBridge.lean](TenthDiscriminant/ClassNumberInertBridge.lean)
+checks that sequence under those explicit hypotheses. At
+`D=15,p=3`, a residue root exists; Lean therefore derives that this
+field's class number is **not** one. This adversarial control ensures
+the global hypothesis cannot disappear. Equality at the norm
+threshold, even fundamental discriminants, the chosen-radius cell
+count in Lean, and the analytic-to-numerical cutoff remain outside
+this theorem. It is not an end-to-end classification.
