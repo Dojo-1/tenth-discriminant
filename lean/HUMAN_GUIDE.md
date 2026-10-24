@@ -466,8 +466,10 @@ all-orders one-factor jet theorem in
 [`LocalOperators.lean`](TenthDiscriminant/LocalOperators.lean).
 
 Other possible operators have different guards. Changing `D` or `a` within
-their residues modulo `p` should preserve this *local* congruence, but this
-is only a proposed next lemma, not a checked result here. Adjoining valid
+their residues modulo `p` preserves this *local* congruence and all
+ordinary one-factor and `H^k` power jets (`pairPow_congruence`,
+`frobenius_congruence_of_mod_eq`, `frobeniusJet_of_mod_eq_dvd`,
+`rectangular_frobenius_row_jet_of_mod_eq`). Adjoining valid
 samples retains a pointwise jet statement, provided the original sample
 indices and their multiplicities are kept. The binomial change of basis
 has determinant one and its action on the actual derivative rows is proved
@@ -536,7 +538,11 @@ and `D=2,p=3` as a square counter-control.
 The local condition is deliberately sharper than an unqualified word
 “inert”: for a nonmaximal selected order, a prime dividing its conductor
 needs special care. The theorem assumes odd prime and nonsquare `-D`
-*in this coordinate ring*. We have not proved that the global
+*in this coordinate ring*. Phase 9 also checks that this nonsquare guard
+transfers across congruent `D₁ ≡ D₂ (mod p)`, links the selected-order
+norm `x² + Dy²` to `principalNorm D (x-y) (2y)` when `D ≡ 3 (mod 4)`, and
+proves that `¬ IsSquare (-(D : ZMod p))` forces `p ∣ 2x+y` and `p ∣ y`
+whenever `p ∣ 4 * principalNorm D x y`. We have not proved that the global
 class-number-one hypothesis supplies these guards at every prime used by
 Ender, nor formalized the geometric area and analytic comparison. These
 are now the visible global-to-local and determinant-to-cutoff gaps.

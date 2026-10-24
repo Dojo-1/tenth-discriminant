@@ -5,6 +5,23 @@ bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
+## 2026-10-23: residue-fiber transport and index-2 norm bridge
+
+[Phase 9](research/uniform_inert_valuation/PHASE9_PROTOCOL.md) closes the
+deferred residue-fiber operator `T` from Phase 6 and links the selected
+order `ℤ[√(-D)]` norm to the maximal-order `principalNorm` in
+`Arithmetic.lean`. In [`LocalOperators.lean`](lean/TenthDiscriminant/LocalOperators.lean),
+Lean proves that coordinatewise and discriminant congruences modulo `p`
+preserve `pairMul`, `pairPow`, the order-zero Frobenius congruence, and
+both one-factor and `H^k` ordinary jets, with a non-real `(1,(0,1)) → (19,(3,-2))`
+pilot modulo `3`. In [`InertFrobenius.lean`](lean/TenthDiscriminant/InertFrobenius.lean),
+Lean proves that the odd-prime nonsquare guard and exact `p^(2F(p))`
+valuation transfer across `D₁ ≡ D₂ (mod p)`, identifies the index-2 norm
+`x² + Dy² = principalNorm D (x-y) (2y)` for `D ≡ 3 (mod 4)`, and proves
+that `¬ IsSquare (-(D : ZMod p))` forces `p ∣ 2x+y` and `p ∣ y` whenever
+`p ∣ 4 * principalNorm D x y`. Global ideal/class-group formalization,
+the cell-area count, analytic cutoff and classification remain open.
+
 ## 2026-10-23: odd-prime nonsquare condition now yields exact valuation
 
 [Phase 8](research/uniform_inert_valuation/PHASE8_PROTOCOL.md) formalizes

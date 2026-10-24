@@ -136,4 +136,78 @@ theorem two_three_square : IsSquare (-(2 : ZMod 3)) := by
   refine ⟨1, ?_⟩
   decide
 
+/-- Nonsquareness of `-D` modulo `p` depends only on the residue class of `D`
+modulo `p`. -/
+theorem nonsquare_of_mod_eq (D₁ D₂ p : Nat)
+    (hD : (D₁ : ZMod p) = (D₂ : ZMod p))
+    (hnonsquare : ¬ IsSquare (-(D₁ : ZMod p))) :
+    ¬ IsSquare (-(D₂ : ZMod p)) := by
+  rwa [← hD]
+
+/-- Residue-fiber transport for the exact integer Gram valuation: if `D₁` and
+`D₂` have the same residue modulo an odd prime `p`, nonsquareness of `-D₁`
+yields the full `p^(2F(p))` determinant factor for `D₂`. -/
+theorem rectangularTraceGram_valuation_of_mod_eq_nonsquare
+    (Q : Finset (Int × Int)) (D₁ D₂ J R S p : Nat) [Fact p.Prime]
+    (hp2 : p ≠ 2) (hD : (D₁ : ZMod p) = (D₂ : ZMod p))
+    (hnonsquare : ¬ IsSquare (-(D₁ : ZMod p))) :
+    (p : Int) ^ (2 * valuationWeight R S p) ∣
+      (integerRectangularTraceGram Q D₂ J R S).det :=
+  rectangularTraceGram_valuation_of_nonsquare Q D₂ J R S p hp2
+    (nonsquare_of_mod_eq D₁ D₂ p hD hnonsquare)
+
+/-- Index-2 norm embedding: the norm `(pairMul D (x, y) (pairConj (x, y))).1 = x^2 + D * y^2`
+in the selected order `ℤ[√(-D)]` equals `principalNorm D (x - y) (2 * y)` in the
+maximal-order principal form whenever `D ≡ 3 (mod 4)`. -/
+theorem selectedOrderNorm_eq_principalNorm (D : Nat) (x y : Int)
+    (hD : (D : Int) % 4 = 3) :
+    (pairMul D (x, y) (pairConj (x, y))).1 =
+      principalNorm (D : Int) (x - y) (2 * y) := by
+  have h4 := principalNorm_four (D : Int) (x - y) (2 * y) hD
+  have hpair : (pairMul D (x, y) (pairConj (x, y))).1 = x ^ 2 + (D : Int) * y ^ 2 := by
+    simp [pairMul, pairConj]
+    ring
+  rw [hpair]
+  have hring : 4 * (x ^ 2 + (D : Int) * y ^ 2) =
+      (2 * (x - y) + 2 * y) ^ 2 + (D : Int) * (2 * y) ^ 2 := by ring
+  omega
+
+/-- Local norm obstruction under nonsquareness: if `-D` is nonsquare in `ZMod p`,
+then any residue pair `(u, v)` with `u^2 + D * v^2 = 0` in `ZMod p` has `u = 0`
+and `v = 0`. -/
+theorem norm_eq_zero_iff_of_nonsquare (D p : Nat) [Fact p.Prime]
+    (hnonsquare : ¬ IsSquare (-(D : ZMod p))) (u v : ZMod p)
+    (hnorm : u ^ 2 + (D : ZMod p) * v ^ 2 = 0) :
+    u = 0 ∧ v = 0 := by
+  have hv : v = 0 := by
+    by_contra hv0
+    apply hnonsquare
+    refine ⟨u * v⁻¹, ?_⟩
+    have h1 : u ^ 2 = -(D : ZMod p) * v ^ 2 := by
+      linear_combination hnorm
+    have h2 : (u * v⁻¹) * (u * v⁻¹) = u ^ 2 * (v ^ 2)⁻¹ := by ring
+    rw [h2, h1, mul_assoc, mul_inv_cancel₀ (pow_ne_zero 2 hv0), mul_one]
+  subst hv
+  simp only [ne_eq, OfNat.ofNat_ne_zero, not_false_eq_true, zero_pow, mul_zero,
+    add_zero, sq_eq_zero_iff] at hnorm
+  exact ⟨hnorm, rfl⟩
+
+/-- If `-D` is nonsquare modulo a prime `p` and `D ≡ 3 (mod 4)`, then `p` can
+only divide `4 * principalNorm D x y` when `p` divides both `2 * x + y` and `y`. -/
+theorem dvd_four_mul_principalNorm_of_nonsquare (D p : Nat) [Fact p.Prime]
+    (hnonsquare : ¬ IsSquare (-(D : ZMod p))) (x y : Int)
+    (hD : (D : Int) % 4 = 3)
+    (hdvd : (p : Int) ∣ 4 * principalNorm (D : Int) x y) :
+    (p : Int) ∣ 2 * x + y ∧ (p : Int) ∣ y := by
+  rw [principalNorm_four (D : Int) x y hD] at hdvd
+  have hz : (((2 * x + y) ^ 2 + (D : Int) * y ^ 2 : Int) : ZMod p) = 0 :=
+    (ZMod.intCast_zmod_eq_zero_iff_dvd _ p).mpr hdvd
+  have hz' : ((2 * x + y : Int) : ZMod p) ^ 2 +
+      (D : ZMod p) * ((y : Int) : ZMod p) ^ 2 = 0 := by
+    simpa only [Int.cast_add, Int.cast_mul, Int.cast_pow, Int.cast_natCast] using hz
+  obtain ⟨hu, hv⟩ := norm_eq_zero_iff_of_nonsquare D p hnonsquare
+    ((2 * x + y : Int) : ZMod p) ((y : Int) : ZMod p) hz'
+  exact ⟨(ZMod.intCast_zmod_eq_zero_iff_dvd _ p).mp hu,
+    (ZMod.intCast_zmod_eq_zero_iff_dvd _ p).mp hv⟩
+
 end TenthDiscriminant
