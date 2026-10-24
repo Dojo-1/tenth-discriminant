@@ -115,11 +115,12 @@ is constructed. [Phase 8](lean/TenthDiscriminant/InertFrobenius.lean) proves
 the required universal Frobenius congruence from the exact odd-prime
 nonsquare local condition, so `p^(2F(p))` divisibility is Lean-checked
 under that condition. A further
-[local-operator check](lean/TenthDiscriminant/LocalOperators.lean)
-shows that conjugating a sample preserves the explicit Frobenius premise
-and hence all ordinary one-factor jets; it does not establish that
-premise by itself. This
-advances the *formal bridge*; it does not
+[local-operator and norm-bridge check](lean/TenthDiscriminant/LocalOperators.lean)
+shows that both conjugation and residue-fiber transport modulo `p`
+preserve the explicit Frobenius premise and all ordinary one-factor and
+`H^k` power jets, and links the selected-order norm to `principalNorm`
+for `D ≡ 3 (mod 4)`; it does not establish global class-number closure
+by itself. This advances the *formal bridge*; it does not
 establish the analytic cutoff or class-number
 classification as a checked theorem.
 The mechanism and remaining scope are explained in [guide §11](lean/HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix)
