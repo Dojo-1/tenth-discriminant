@@ -1,5 +1,23 @@
 # Task checkpoint
 
+- Phase 30 protocol-only c73d526 preceded proof edits. The refreshed base
+  was 165d110 with passed full pinned CI 40125864965/security 40125864826;
+  PR28 remains draft/unmerged. No numerical campaign, pin or threshold changed.
+- OddPrimeTwo proves the F2 quotient without division by two, actual-field
+  modulo-eight prefilter above 7, the norm-two exception at 7 and exclusion
+  at 23. FiniteSieveBridge proves necessary guarded prime tests and the
+  exact necessary list below 92. Its nine-candidate result still takes an
+  explicit full middle-range certificate. Positive class-number proofs and
+  classification remain open. Short guide: FINITE_SIEVE_GUIDE.md.
+- Preserve the failed 20261024195828 build: an unparenthesized Boolean RHS
+  parsed as the wrong proposition; repaired in the statement, not papered
+  over by a proof. Both modules then compile under the same 8192 MB cap.
+- Root build (6743 steps), source correspondence, printed signatures and
+  compiled namespace audit passed: 2948 logical/2528 theorem declarations,
+  14315 runtime-only auxiliaries excluded; only propext/choice/Quot.sound.
+  Controls and exact-head publication CI are running at this checkpoint;
+  final PR record must report their actual terminal states. Global goal active.
+
 - Phase 29 preregistered in 21f6d30 before mathematical edits. Prior turn
   was progress: Phase28 odd cutoff passed full pinned CI 40122029696 and
   security 40122028111 on the identical published/merge/local tree. Live

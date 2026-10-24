@@ -1,5 +1,12 @@
 # Why the derivative Gram determinant is positive
 
+For the current arithmetic frontier, the
+[finite-sieve guide](../research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md)
+explains the norm-two argument behind d=3 mod 8, the checked small
+candidate list, and the full middle-interval certificate still missing.
+The [full-cutoff guide](../research/ender_radius_bridge/FULL_CUTOFF_GUIDE.md)
+explains the already proved effective bound. Neither is a classification.
+
 **A proof to read, with a source map to check.** This guide explains the
 interpolation theorem in ordinary mathematics. It is not a proof of the
 class-number-one classification. The [claim map](FORMALIZATION.md) separates

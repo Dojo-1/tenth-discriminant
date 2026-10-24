@@ -1,9 +1,17 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 24 October 2026, through preregistered Phase 29;
+**Living update: 24 October 2026, through preregistered Phase 30;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase 30 advances formalization, not the optimization or classification
+status: the actual class-number hypothesis now supplies the saved sieve's
+modulo-eight entry condition and guarded prime tests. A kernel-checked
+necessary list below 92 and explicit conditional middle-range reduction
+are supplementary results. The saved CRT campaign is not thereby a checked
+full-range certificate; positive class-number proofs remain separate.
+[Human explanation](research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md).
 
 Phase 29 now gives an **effective bound for every positive squarefree
 radicand d**: actual class number one of the constructed `Q(sqrt(-d))`

@@ -1,0 +1,26 @@
+{
+  "phase": 30,
+  "preregistration_commit": "c73d526",
+  "base_commit": "165d11082da069a45b44620e89c72b3c45dc81f6",
+  "scope": "derive the finite sieve's necessary conditions from actual class number one; bounded kernel control below 92; not classification",
+  "main_results": [
+    "positive squarefree d>7 and actual class number one imply d mod 8 = 3",
+    "the half-integral F2 quotient forces norm two; d=7 exception retained",
+    "sound modular-root Boolean rejection under checked odd primality and exact guard 4*p<=d",
+    "class number one and d<92 imply d in [1,2,3,7,11,19,43,67]",
+    "conditional necessary nine-candidate reduction with explicit unsupplied complete middle-range certificate"
+  ],
+  "not_claimed": ["complete survivor certificate on [92,700000000000)", "positive class-number proofs for the nine fields", "classification", "optimized threshold", "new numerical campaign", "novelty or independent human review"],
+  "controls": ["norm-two exception at 7", "actual field at 23 has class number not one", "all nine familiar candidates pass the necessary Boolean test", "163/41 strict endpoint accepts while incorrect inclusive endpoint rejects", "composite list rejected", "prime two list rejected"],
+  "attempts": [
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024195502.result.json", "target": "OddPrimeTwo", "exit_code": 0, "seconds": 65.0476016, "peak_bytes": 2834907136},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024195828.result.json", "target": "FiniteSieveBridge", "exit_code": 1, "seconds": 25.4342443, "peak_bytes": 2856374272, "failure": "Boolean equality precedence in append statement produced the wrong proposition; repair parenthesized RHS without changing the mathematical target"},
+    {"result": "PHASE25_INTEGER_CHUNKS_20261024200228.result.json", "target": "FiniteSieveBridge", "exit_code": 0, "seconds": 25.573311099999998, "peak_bytes": 2846208000}
+  ],
+  "raw_monitor_note": "Inherited monitor filenames and scope/proof_file fields retain Phase25 wording. The build_target, command, stdout and exit status identify these Phase30 builds. All raw logs preserved unchanged; 8192 MB cap, no resource stop.",
+  "local_checkpoint": {"full_build": "passed, 6743 steps", "source_correspondence": "passed; endpoint identity only, not Arb certification", "namespace_audit": "passed: 2948 logical declarations, 2528 theorems, 14315 runtime-only auxiliaries excluded", "signature_check": "passed, including explicit middle certificate premise", "axioms": ["propext", "Classical.choice", "Quot.sound"], "controls_and_parent_audit": "running at checkpoint; terminal results must be recorded before publication"},
+  "commands_from_lean": ["lake build", "python verify_sources.py", "python audit.py", "python apparatus_controls.py", "python exact_gram_controls.py", "python jet_uniqueness_controls.py", "python jet_negative_controls.py", "python multiplicity_negative_controls.py", "python degree_negative_controls.py", "python nonzero_negative_controls.py", "python affine_negative_controls.py", "python assembly_negative_controls.py", "lake env lean ../research/ender_radius_bridge/Phase30SignatureCheck.lean"],
+  "published_exact_head_CI": "pending at publication checkpoint; PR28 final record must identify head, synthetic merge, matching tree and terminal CI states",
+  "merge_or_Tao_post": false,
+  "global_goal": "active"
+}

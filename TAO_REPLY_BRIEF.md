@@ -1,12 +1,18 @@
 # Factual brief for a possible human comment on Tao's challenge
 
-**24 October 2026, through Phase 29. This is an AI-prepared evidence brief, not the
+**24 October 2026, through Phase 30. This is an AI-prepared evidence brief, not the
 human-generated summary requested by [Tao's post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).**
 The contributor should write the actual comment in their own words
 after reviewing the linked work. No comment has been submitted by this
 repository work.
 
 ## What can be stated now
+
+- Phase 30 proves the finite sieve's entry conditions from actual class
+  number one, including d=3 mod 8 above 7 and strict guarded prime tests.
+  The necessary list below 92 is kernel checked. The complete middle-range
+  certificate is still missing: the conditional nine-candidate theorem is
+  not a classification. [Human bridge guide](research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md).
 
 - The repository studies an effective tenth-discriminant bound by a
   Green-style derivative trace-Gram determinant, an elementary

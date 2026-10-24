@@ -1,5 +1,11 @@
 # Lean: the proof you can inspect
 
+Phase 30 now derives the finite sieve's modulo-eight prefilter from actual
+class number one, proves guarded prime tests necessary, and checks the
+small candidate list below 92. The middle-range certificate and positive
+class-number proofs remain open. Start with the
+[finite-sieve guide](../research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md).
+
 **A checked interpolation and determinant apparatus, not yet a formalized
 class-number-one classification.**
 

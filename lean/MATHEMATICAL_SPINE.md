@@ -1,5 +1,11 @@
 # One determinant, two kinds of information
 
+**Phase 30:** the passage to the finite sieve is now proved necessary:
+class number one gives d=3 mod 8 above 7 and every guarded odd-prime test.
+The small end below 92 is kernel checked. The full middle-interval survivor
+certificate is still a premise, not a theorem supplied by the old Python run.
+[The short arithmetic bridge](../research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md).
+
 This is the shortest route into the Lean development. The longer
 [human proof guide](HUMAN_GUIDE.md) explains the contact-count argument;
 the [claim map](FORMALIZATION.md) names the checked declarations. Neither

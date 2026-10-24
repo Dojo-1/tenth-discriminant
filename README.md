@@ -2,6 +2,13 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
+**Phase 30: the finite sieve now has checked mathematical entry conditions.**
+Actual class number one forces `d=3 mod 8` above 7. Guarded odd-prime
+tests are proved necessary, and kernel evaluation below 92 leaves exactly
+`1,2,3,7,11,19,43,67`. The full middle interval and positive class-number
+proofs remain open; the conditional nine-candidate reduction does not close
+them. [Read the finite-sieve bridge](research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md).
+
 **Phase 29: an effective bound now covers both parity cases.** For every
 positive squarefree radicand `d`, Lean proves that class number one of the
 actual constructed `Q(sqrt(-d))` implies `d<700000000000`, with no numerical

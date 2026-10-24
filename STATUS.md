@@ -1,5 +1,21 @@
 # Status — 2026-10-24
 
+## Phase 30: checked finite-sieve preconditions, not classification
+
+`imaginaryQuadratic_classNumber_one_mod_eight` proves d=3 mod 8 for
+positive squarefree d>7 with actual class number one. The F2 quotient is
+constructed without dividing by two. Norm-two at 7 and exclusion of the
+actual field at 23 are checked controls. Guarded odd-prime tests are proved
+necessary; their primality/oddness checks and strict endpoint are explicit.
+Kernel evaluation on [0,92) gives the necessary list 1,2,3,7,11,19,43,67.
+The conditional nine-candidate theorem still requires a complete survivor
+certificate on [92,700000000000). No positive class-number classification,
+new numerical run, changed threshold or optimization is claimed.
+[Human guide](research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md) ·
+[Protocol](research/ender_radius_bridge/PHASE30_PROTOCOL.md) ·
+[Verification checkpoint](research/ender_radius_bridge/PHASE30_RESULTS.json).
+Exact published-head CI must accompany this checkpoint.
+
 ## Phase 29: effective radicand bound, with both parity cases supplied
 
 `imaginaryQuadratic_classNumber_one_radicand_bound` compiles for every

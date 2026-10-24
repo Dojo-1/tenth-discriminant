@@ -61,6 +61,7 @@ import TenthDiscriminant.FirstIntervalChecked
 import TenthDiscriminant.UniformPrimeMassCertified
 import TenthDiscriminant.UniformUpperEnvelope
 import TenthDiscriminant.QuadraticChartEquivalence
+import TenthDiscriminant.FiniteSieveBridge
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot

@@ -1,5 +1,13 @@
 # Current claim-to-Lean map
 
+**Phase 30 adds the finite-sieve entry bridge.** `OddPrimeTwo` proves
+actual class number one implies d=3 mod 8 above 7. `FiniteSieveBridge`
+proves necessity of guarded checked-odd-prime tests and the necessary
+eight-candidate list below 92. Its nine-candidate theorem has an explicit,
+unsupplied middle-range survivor-certificate premise. All-nine acceptance
+is only a test control, not a positive class-number theorem.
+[Short proof and remaining obligation](../research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md).
+
 **The interpolation/Gram positivity chain is connected. The class-number
 classification chain is not.** This map supersedes the PR #8-era coverage
 summary previously stored here; Git history preserves that record. Stage notes
