@@ -20,6 +20,15 @@ in `[700000000000,875000000000]`, with no numerical premise. These modules
 have built locally. Resource failures
 are preserved, not silently converted into a proof.
 
+Phase 27 adds bounds uniform in the rectangle dimensions, not another
+class-number range. `UniformPrimeMass` proves the floor/geometric and
+retained-prime estimates plus clipping on the same production masses.
+`PrimeLogCertificate` and `PrimeLogConstants` certify four fixed prime-log
+constants. `UniformPrimeMassCertified` gives arbitrary-R,S bounds and
+`classNumber_ne_one_of_certified_budget_comparison`, retaining all geometric,
+arithmetic and strict-comparison guards. The unchanged first interval's
+budgets are recovered as a checked pilot. [Human guide](../research/ender_radius_bridge/UNIFORM_PRIME_MASS_GUIDE.md).
+
 Read the [mathematical spine](MATHEMATICAL_SPINE.md) first, then the
 [detailed human proof](HUMAN_GUIDE.md) and linked source statements.
 "Proved" below means the encoded implication under its explicit hypotheses,

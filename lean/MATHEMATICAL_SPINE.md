@@ -10,7 +10,12 @@ Phase 26 now closes one fixed interval: for squarefree `D≡3 (mod 4)` in
 class number not one. All numerical guards, prime coverage and total budgets
 are supplied; the strict separation is `581>572`. The
 [short numerical guide](../research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md)
-separates these facts from a concrete exclusion or global cutoff.
+explains that bounded exclusion and why it is not a global cutoff.
+
+Phase 27 separates the arithmetic into polynomial R,S dependence and four
+certified prime-log constants. Those estimates are uniform in the dimensions;
+new D-dependent geometric/numerical comparisons are still needed. See the
+[uniform arithmetic guide](../research/ender_radius_bridge/UNIFORM_PRIME_MASS_GUIDE.md).
 
 ## The question
 

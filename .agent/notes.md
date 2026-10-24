@@ -329,6 +329,42 @@
   parent apparatus-control subprocess exceeded its unchanged 240-s limit,
   so do not call the whole local audit.py driver green. Preserve this local
   failure and require direct matched-control completion / exact-head CI.
+
+- Phase 27 starts from refreshed clean tracked head `44ee9ca`, same open
+  draft remote PR. Previous turn was progress: first bounded exclusion
+  proved with passing CI. Preregistered uniform envelope and ONE fixed
+  rational pilot in `1417908` before edits. No subagents spawned.
+  Proved general floor lower, factorial/geometric upper, retained-weight
+  lower and clipped production/actual-Gram comparison in UniformPrimeMass.
+  Controls reject dropping S>=1, floor error, quadratic loss or prime-two
+  exclusion. Two development gaps (cast factor order and explicit singleton
+  normalization in a control) corrected; not mathematical counterexamples.
+  External exact-rational pilot with unchanged Q=7/P=10000 meets both old
+  first-interval budgets. A/B/C/E units are recorded in PHASE27_RESULTS.
+  The fixed four-constant checker, exact pairing/chunk totals and wrong-
+  rounding controls compiled under the 8-GB monitor (45.6180409 s,
+  3141103616 bytes). UniformPrimeMassCertified general composition is
+  running; no new interval/cutoff/classification claim.
+
+- Phase 27: all certified uniform modules compiled, including an antitone
+  tail lemma and reusable rational-tail-budget exclusion criterion. The same
+  first-interval budgets and actual-field exclusion are recovered from the
+  four constants, not from per-R prime-power certificates. Constants and
+  generic R,S scope are explained in UNIFORM_PRIME_MASS_GUIDE.md. No further
+  interval was tested and Q/P/radius/budgets stayed fixed. Full root build
+  passed (6732), namespace audit passed 2693 logical declarations / 2301
+  theorems, with 14282 runtime-only auxiliaries reported and only permitted
+  foundational axioms. Matched controls are still running. Main global
+  objective remains active; do not mark completion from this arithmetic
+  engine alone.
+
+- Phase 27 publication checkpoint: complete local audit.py driver hit its
+  unchanged 240-s apparatus parent limit after the namespace audit passed.
+  Preserve that failure; require direct matched controls and full remote CI.
+  Fixed exact input was rerun only for deterministic generation, with no
+  new configuration, parameter search or interval. Generated proof/data
+  hashes were identical across reproduction. All production tools, ledgers,
+  flow protocols, frozen audit and dependency pins remain unchanged.
   Current guides were updated to distinguish one bounded actual-field
   exclusion from the remaining campaign, all-D envelope, even cases and
   finite classification. Frozen tools/ledger/flow/audit/pins unchanged.

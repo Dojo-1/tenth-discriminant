@@ -1,6 +1,6 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 24 October 2026, through preregistered Phase 26;
+**Living update: 24 October 2026, through preregistered Phase 27;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
@@ -13,6 +13,11 @@ or classification, so the main challenge remains open below.
 As a supplementary reusable result, the staircase polynomial is proved a
 global **lower bound**, even where the guarded exact identity fails. No
 novelty claim is made. [Human numerical guide](research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
+
+Phase 27 now proves the arithmetic estimates uniformly in R,S, with four
+certified prime-log constants reused from fixed prime information. It recovers
+the same first-interval budgets; it does not extend the excluded D range.
+[Uniform arithmetic guide](research/ender_radius_bridge/UNIFORM_PRIME_MASS_GUIDE.md).
 
 [Tao's 20 October post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)
 poses a main challenge—an effective bound for a hypothetical tenth
@@ -60,6 +65,7 @@ the size of the proposed constant.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
+| Four fixed prime-log constants give bounds for arbitrary admissible rectangle dimensions. | **Lean theorem and checked finite constants** | Floor error, geometric prime powers, quadratic loss and both clipping terms are retained. The actual-Gram comparison keeps all radius/range/class-number guards. The same first interval is recovered; no new interval or optimized/global cutoff is claimed. [Human proof](research/ender_radius_bridge/UNIFORM_PRIME_MASS_GUIDE.md). |
 | The first saved interval is excluded for squarefree `D≡3 (mod 4)`, with no numerical premise. | **Lean-checked bounded class-number theorem** | Every local factor, geometric guard, log enclosure, row, prime label and aggregate budget is supplied; `581×10^31>572×10^31` closes the contradiction. No global cutoff, new optimized constant or novelty claim. [Human proof](research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md) · [Theorem](lean/TenthDiscriminant/FirstIntervalChecked.lean). |
 | A contact budget of `2 deg_Z F + deg_W F` turns enough ordinary jets into a positive determinant for the **actual** trace-Gram matrix. | **Lean theorem** | General finite complex samples and rectangular monomial grids, not merely Ender's ellipse. It proves nonvanishing, not inertness or valuation. [Human proof](lean/HUMAN_GUIDE.md) · [short spine](lean/MATHEMATICAL_SPINE.md). |
 | Unit-by-`√D` cells yield an elementary lower count at Ender's chosen radius. | **Lean-checked geometric theorem** | Lean checks the actual disk covering, cell volumes, strict chosen-radius count, and interval transfer to actual-Gram positivity. This is not the analytic cutoff. [Proof](lean/TenthDiscriminant/EllipseCellArea.lean) · [human explanation](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge). |

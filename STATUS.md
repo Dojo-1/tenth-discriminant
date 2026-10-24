@@ -1,5 +1,25 @@
 # Status — 2026-10-24
 
+## Phase 27: arithmetic now separates dimensions from fixed primes
+
+`UniformPrimeMass` proves floor, factorial/geometric and retained-weight
+estimates for arbitrary admissible R,S,Q,P, including the floor error,
+quadratic loss and clipping. `PrimeLogConstants` certifies four fixed bounds
+for P=10000/Q=7 using exact paired row checks and chunk totals.
+`UniformPrimeMassCertified` turns these into bounds valid for every R>=2,
+S>=1, composed with the original actual-Gram comparison and its explicit
+range/radius/class-number guards. The fixed tail budget is reused with a
+proved monotonicity direction.
+
+The unchanged first-interval pilot meets the old budgets, now proved in Lean.
+No new interval or global cutoff is claimed. The gain is a reusable arithmetic
+engine instead of duplicated prime-power tables. Four omission controls,
+missing-row and wrong-rounding controls compile. Development failures and
+the single exact-rational observational pilot are preserved separately.
+Full root audit and exact-head CI status must accompany publication.
+[Human explanation](research/ender_radius_bridge/UNIFORM_PRIME_MASS_GUIDE.md)
+· [Preregistration](research/ender_radius_bridge/PHASE27_PROTOCOL.md).
+
 ## Phase 26: first bounded class-number exclusion closes end to end
 
 `FirstCertificate.first_interval_classNumber_ne_one` compiles with no

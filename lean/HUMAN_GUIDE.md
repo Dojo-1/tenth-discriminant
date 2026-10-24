@@ -909,3 +909,17 @@ prove both total budgets. The [short numerical guide](../research/ender_radius_b
 explains why the proof is finite and how the generator remains untrusted.
 The other 249 intervals, the unbounded range, even cases and finite
 classification are not closed by this result.
+
+## 28. Separate fixed prime information from changing dimensions
+
+The next arithmetic step is uniform rather than another large table.
+Every floor is at least its real quotient minus one. Every factorial
+prime-power sum is at most a geometric-series bound. Combining those with
+the global staircase lower bound leaves four sums depending only on the
+prime cutoffs, not on R or S. Lean certifies those four constants once.
+
+The [short uniform arithmetic guide](../research/ender_radius_bridge/UNIFORM_PRIME_MASS_GUIDE.md)
+gives the formulas, rounding directions and counterexamples to dropping
+necessary terms. The same first interval is recovered. Uniformity of the
+arithmetic estimate does not prove the remaining D-dependent numerical or
+geometric comparisons, let alone a classification.

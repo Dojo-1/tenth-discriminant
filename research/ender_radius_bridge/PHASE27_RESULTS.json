@@ -1,0 +1,21 @@
+{
+  "scope": "dimension-uniform mass estimates and one fixed first-interval pilot; no new interval or cutoff",
+  "preregistration_commit": "1417908",
+  "uniform_estimate_module": "UniformPrimeMass compiled, including omission controls and actual-Gram comparison",
+  "development_failures": [
+    "Initial cast proof had multiplication factors reversed; corrected using the exact Nat.div_add_mod order.",
+    "Prime-two exclusion control needed an explicit singleton retained-set identity; generic filter normalization did not close it."
+  ],
+  "fixed_external_rational_pilot": "both existing budgets met; observational evidence only until Lean verification",
+  "fixed_constants": {"scale": 1000000000000, "A_upper_units": 8646130782816, "B_lower_units": 6856198325360, "C_upper_units": 133259338177, "E_upper_units": 9892590181957053},
+  "constant_certificate": {"record": "PHASE25_INTEGER_CHUNKS_20261024174734.result.json", "exit_code": 0, "elapsed_seconds": 45.6180409, "observed_peak_working_set_bytes": 3141103616},
+  "certified_uniform_composition": {"record": "PHASE25_INTEGER_CHUNKS_20261024174953.result.json", "exit_code": 0, "elapsed_seconds": 108.0667703, "observed_peak_working_set_bytes": 3137748992},
+  "reusable_tail_budget_criterion": {"record": "PHASE25_INTEGER_CHUNKS_20261024175306.result.json", "exit_code": 0, "elapsed_seconds": 24.9779512, "observed_peak_working_set_bytes": 2837860352},
+  "monitor_note": "The existing monitor retains its historical PHASE25 filename prefix; build_target identifies the current proof scope.",
+  "full_local_build": "passed, 6732 steps",
+  "compiled_namespace_audit": {"result": "passed", "logical_declarations": 2693, "theorems": 2301, "runtime_only_auxiliaries_reported": 14282, "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"]},
+  "local_audit_driver": "compiled namespace audit passed; apparatus_controls.py exceeded its unchanged 240-second parent deadline, so the complete local driver did not pass",
+  "reproduction": "the same exact configuration was rerun for deterministic generation checks; no new sample, parameter search or interval was introduced",
+  "complete_direct_controls_and_exact_head_CI": "required at publication checkpoint",
+  "remaining_global_obligations": ["other interval comparisons", "unbounded closure", "even-discriminant cases", "finite classification", "other unfulfilled Tao objectives"]
+}

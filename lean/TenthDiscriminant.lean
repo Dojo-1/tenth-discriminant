@@ -58,6 +58,7 @@ import TenthDiscriminant.FirstIntervalConclusion
 import TenthDiscriminant.FirstIntervalRows
 import TenthDiscriminant.FirstIntervalTotals
 import TenthDiscriminant.FirstIntervalChecked
+import TenthDiscriminant.UniformPrimeMassCertified
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot

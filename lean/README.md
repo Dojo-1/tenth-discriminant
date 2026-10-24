@@ -9,6 +9,12 @@ number not one. Coverage, both total budgets and exact guards are proved;
 `FirstIntervalChecked.lean` has no remaining numerical hypothesis. See the
 [numerical bridge guide](../research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
 
+[The uniform arithmetic guide](../research/ender_radius_bridge/UNIFORM_PRIME_MASS_GUIDE.md)
+explains Phase 27: four certified prime-log constants now give bounds for
+arbitrary admissible R,S. The first interval is recovered without new per-R
+prime-power certificates. Other interval comparisons and the global cutoff
+are still open.
+
 Start with the short [mathematical spine](MATHEMATICAL_SPINE.md): one
 integer determinant, its real positivity, and its fixed modular relation.
 Then read the [detailed human proof guide](HUMAN_GUIDE.md). Use the

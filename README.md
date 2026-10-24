@@ -9,6 +9,11 @@ budgets and exact guards are supplied; no numerical hypothesis remains.
 This is not a checked global cutoff or a class-number classification.
 Start with the [short numerical bridge guide](research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
 
+Phase 27 also proves [reusable four-constant arithmetic bounds](research/ender_radius_bridge/UNIFORM_PRIME_MASS_GUIDE.md),
+valid for arbitrary admissible rectangle dimensions. Prime certificates can
+be reused rather than regenerated per interval. This recovers the same first
+interval; it does not establish another interval or a new global cutoff.
+
 An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/comment-page-1/): make an effective class-number-one argument explicit, without importing the known classification as a proof input.
 
 [Mathematical spine](lean/MATHEMATICAL_SPINE.md) · [Current Tao-objective accounting](TAO_OBJECTIVES_CURRENT.md) · [Candidate argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Frozen objective audit](TAO_OBJECTIVE_AUDIT.md) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)

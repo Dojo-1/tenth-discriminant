@@ -1,6 +1,6 @@
 {
   "task": "Connect the checked local determinant bound to Ender's geometric and analytic cutoff",
-  "status": "phase26_bounded_actual_class_number_exclusion_compiled_all_fixed_estimates_proved_full_build_namespace_audit_passed_local_control_parent_timeout_preserved_publication_and_exact_head_CI_pending_global_goal_active",
+  "status": "phase27_uniform_estimates_and_certified_four_constant_criterion_passed_full_build_namespace_audit_passed_local_control_parent_timeout_preserved_direct_controls_and_exact_head_CI_pending_global_goal_active",
   "base_commit": "a4da8963fa0d94ca4858e09ab10f3195d0fe588f",
   "branch": "codex/rectangular-row-action",
   "decisions": [
@@ -191,7 +191,17 @@
     "research/ender_radius_bridge/generate_phase26_closure.py",
     "lean/TenthDiscriminant/FirstIntervalCoverage.lean",
     "lean/TenthDiscriminant/FirstIntervalTotals.lean",
-    "lean/TenthDiscriminant/FirstIntervalChecked.lean"
+    "lean/TenthDiscriminant/FirstIntervalChecked.lean",
+    "research/ender_radius_bridge/PHASE27_PROTOCOL.md",
+    "research/ender_radius_bridge/PHASE27_RESULTS.json",
+    "research/ender_radius_bridge/phase27_constants_pilot.py",
+    "research/ender_radius_bridge/generate_phase27_constants.py",
+    "research/ender_radius_bridge/UNIFORM_PRIME_MASS_GUIDE.md",
+    "lean/TenthDiscriminant/UniformPrimeMass.lean",
+    "lean/TenthDiscriminant/PrimeLogCertificate.lean",
+    "lean/TenthDiscriminant/PrimeLogConstantData.lean",
+    "lean/TenthDiscriminant/PrimeLogConstants.lean",
+    "lean/TenthDiscriminant/UniformPrimeMassCertified.lean"
   ],
   "phase25_frontier": "Closed by Phase 26: all 1229 rows, prime coverage, both total budgets and actual-field bounded exclusion compile. Global cutoff, other intervals, even cases and classification remain open. No live numerical proof attempt remains.",
   "updated": "2026-10-24"
