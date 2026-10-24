@@ -1,0 +1,26 @@
+{
+  "full_table_monolithic_attempt": {
+    "scope": "same fixed 1229-row candidate; not a scientific counterexample",
+    "command_from_lean": "lake env lean ../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+    "exit_code": -1073740791,
+    "elapsed_seconds": 77.335612,
+    "stderr": "libc++abi: terminating due to uncaught exception of type lean::stack_space_exception: deep recursion was detected at 'expression equality test' (potential solution: increase stack space in your system)",
+    "result": "no full-table proof accepted",
+    "next_action": "bounded 32-row proof chunks; retain complete coverage and integer budget checks"
+  },
+  "chunked_normalization_attempt": {
+    "scope": "same fixed 1229-row candidate, chunks of at most 32",
+    "command_from_lean": "lake env lean -s 16384 --profile ../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+    "exit_code": -1073740791,
+    "elapsed_seconds": 539.5711452,
+    "thread_stack_kb": 16384,
+    "observed_working_set_bytes": 16653869056,
+    "stderr": "libc++abi: terminating due to uncaught exception of type lean::stack_space_exception: deep recursion was detected at 'expression equality test' (potential solution: increase stack space in your system)",
+    "result": "individual chunks progressed, but no accepted full-table proof",
+    "next_action": "prove a raw integer cross-multiplication checker sound against the same rational prefix/remainder; no native_decide"
+  },
+  "rational_checker_reduction": {
+    "result": "plain decide and rfl did not reduce the rational checker to true",
+    "repair": "kernel-checked norm_num arithmetic proofs; first and largest prime controls pass"
+  }
+}

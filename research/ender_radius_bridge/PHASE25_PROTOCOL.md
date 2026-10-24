@@ -43,3 +43,20 @@ Update current README/STATUS/FORMALIZATION and the human guide. Run full
 pinned CI on the exact published head. Keep PR #28 draft/unmerged.
 All other intervals, universal closure, even cases and classification remain
 open until separately proved. No novelty or checked-cutoff claim from partial work.
+
+## Registered implementation repair after observed verifier failures
+
+The monolithic rational-normalization table proof crashed after 77.335612 s.
+The 32-row pilot passed, but the full chunked version with a 16384-KB thread
+stack crashed after 539.5711452 s and was observed using 16653869056 bytes
+of working memory. Exact records are in `PHASE25_PROOF_FAILURES.json`.
+Neither failure is a mathematical counterexample or an accepted table proof.
+
+Before further implementation, register this repair: retain the identical
+fixed interval, radius, prime table, eight-term series and 10^12 rounding.
+Prove that a raw integer polynomial/common-denominator representation equals
+the already checked rational prefix and remainder. Check enclosures by integer
+cross-multiplication, with a kernel reduction proof of the Boolean result.
+No `native_decide`, trusted native arithmetic oracle, changed bound or relaxed
+row/coverage/budget obligation. The purpose is a smaller proof representation,
+not a weaker statement. Keep all earlier proof attempts and negative records.
