@@ -10,7 +10,23 @@ or older-cutoff premise. Full root, fresh input checks and axiom audit pass;
 exact publication-head pinned CI is separate. Phase42's failure/time stop
 remain preserved, not relabelled success. No optimality or novelty claim.
 [Read the short human proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md).
-Earlier phase entries below retain their historical scopes.
+For the argument itself, start with [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
+The [interpolation guide](lean/HUMAN_GUIDE.md) explains the hard positivity
+step; the [verification record](research/ender_radius_bridge/PHASE43_VERIFICATION.md)
+gives exact commands and evidence limits.
+
+The [canonical-family iff](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md)
+separately joins the original complete finite certificate to all nine positive
+cases. Independent human semantic/API review and arbitrary-field-type
+representation remain unclaimed. The [challenge accounting](TAO_OBJECTIVES_CURRENT.md)
+distinguishes this result from the remaining objectives and side discoveries.
+
+<details>
+<summary>Historical checkpoints and original campaign record (not current theorem status)</summary>
+
+The dated statements below preserve what was known at each checkpoint.
+In particular, their open-gap descriptions and 700-billion campaign cutoff
+must not be read as the status of the current mathematical library.
 
 **Phase42: universal radius geometry, cutoff attempt incomplete.** The
 new family's dimension, rounding, lower-budget and chosen-radius bounds
@@ -69,9 +85,6 @@ equivalence and Minkowski bounds, not a borrowed classification theorem.
 This is internal provenance evidence, not independent human review or a
 new permanent CI gate. [Read the short input map](research/ender_radius_bridge/PROOF_INPUT_GUIDE.md).
 
-<details>
-<summary>Historical proof checkpoints and earlier limits</summary>
-
 Historical Phase 34 proves an exact computational bridge: precomputed residue-mask
 queries and the old root searches generate the same tests and wheel list.
 All 208 fixed masks passed a local kernel check. All four registered translate
@@ -118,8 +131,6 @@ Phase 27 also proves [reusable four-constant arithmetic bounds](research/ender_r
 valid for arbitrary admissible rectangle dimensions. Prime certificates can
 be reused rather than regenerated per interval. This recovers the same first
 interval; it does not establish another interval or a new global cutoff.
-
-</details>
 
 An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/comment-page-1/): make an effective class-number-one argument explicit, without importing the known classification as a proof input.
 
@@ -378,13 +389,15 @@ gp -q tools/verify_exact_large.gp
 
 A successful command establishes only what that program checks. Report the commit, environment, command, output, and any disagreement; do not replace a failed record with a passing one without preserving the correction.
 
+</details>
+
 ## Provenance, AI assistance, and review
 
 **Credit comes before comparison.** Ben Green supplies the derivative determinant method. The [prior-art record](PRIOR_ART.md) acknowledges twinheterodox's earlier split-prime/Green route and Kyle Pratt's disk-interpolation contribution; [BEAN](BEAN.md) also credits van Dijk for the route family and Jesús Vilela for the norm-ellipse experiment. This repository does not claim priority for that route or offer a current leaderboard. The dated prior-art snapshot is not an exhaustive literature review.
 
 **The names are workflow labels.** Bean, Ender, and Formic were used in semantic priming for AI-assisted exploration and adversarial checking. They name stages of the research, not mathematical entities, independent authorities, or evidence that priming improves research quality. The claims must stand without the narrative. Review provenance and limitations belong in the [review records](review/).
 
-For a first reading, use [the objective audit](TAO_OBJECTIVE_AUDIT.md), then [the Ender derivation](ledger/ender.txt) and its [audit record](review/ENDER_AUDIT.txt). [STATUS.md](STATUS.md) preserves the broader chronology, including the unreviewed higher-class-number track; its historical entries are not all current claims. A blind-first reviewer should instead begin with [REVIEW_BRIEF.md](REVIEW_BRIEF.md), while noting that it describes the earlier route.
+For a first reading, use [the mathematical spine](lean/MATHEMATICAL_SPINE.md), then [the current cutoff proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md) and [objective accounting](TAO_OBJECTIVES_CURRENT.md). The [original Ender derivation](ledger/ender.txt), its [audit](review/ENDER_AUDIT.txt) and [frozen objective audit](TAO_OBJECTIVE_AUDIT.md) retain their dated scopes. [STATUS.md](STATUS.md) preserves the chronology, including the unreviewed higher-class-number track. The blind-first [REVIEW_BRIEF.md](REVIEW_BRIEF.md) describes the earlier route and must not be treated as a review of the current Lean cutoff.
 
 Useful criticism identifies the exact statement, violated hypothesis or counterexample, consequence, and reproduction path. Unchecked, missing, and false are different findings. The same discipline applies to favorable reviews and to the [Doubt the Machine framework](https://github.com/Dojo-1/doubt-the-machine) itself.
 

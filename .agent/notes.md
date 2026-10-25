@@ -721,3 +721,32 @@
   Same-tree mergefbc24b0 verified; final exact-tree record6394778750 posted
   before next push. New-head CI is separate. Goal active; independent
   semantic/API review, broader comparison and human reporting remain open.
+
+# Phase44 current human entry points
+
+- Previous goal turn made progress: published e2848c8 with local100-billion
+  direct cutoff verification; exact pinned CI40172177485 remains live,
+  security40172174676 and separate CodeQL passed. No restart/new push yet.
+- Protocol6447409 preceded documentation-only edits. Corrected stale
+  open-gap claims in the short spine and HUMAN_GUIDE navigation; README
+  now presents the current proof before a collapsible historical record.
+  Actual field, iff, complete certificate, positive cases, strict-prime
+  valuation and new cutoff signatures were inspected in their real sources.
+- Read-only document check:182 local link targets,54 retained headings,
+  44 retained display blocks PASS; mathematical/pin/workflow/production
+  diff EMPTY. Initial single-disclosure assertion failed because README
+  retained an older nested wrapper; removed only its redundant tags and
+  the unchanged assertion passed. Not a rendered visual review.
+- Existing Phase43 evidence verifier PASS507 reader targets; no new Lean
+  attempt, pilot or mathematical change. Independent semantic/API review,
+  broader comparison and human external reporting remain open. Goal active.
+- User explicitly clarified that Gemini Argor reviewed only earlier work,
+  not e2848c8's100-billion proof. Preserve attribution but do not transfer
+  peer-review status to that head. PR28 latestReviews was empty when read.
+- Final baseline verification: e2848c8 CI40172177485 SUCCESS completed
+  07:36:56 UTC25 October2026; security40172174676/separate CodeQL SUCCESS.
+  Audit4602 logical/3868 theorem/16955 runtime; full inherited controls pass.
+  Same-tree synthetic mergeac9d4f11 parents392b6db+e2848c8 verified.
+  Final mathematical-head record6394963969 posted before the docs push.
+  Next head changes documentation only and has separate CI; no theorem
+  change or transferred peer review. No merge/Tao post. Goal active.

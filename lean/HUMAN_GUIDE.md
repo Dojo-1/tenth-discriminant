@@ -1,49 +1,29 @@
 # Why the derivative Gram determinant is positive
 
-For the current analytic optimization, read [the100-billion proof](../research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md).
-It balances the smaller rectangle/disk against explicit divisibility loss,
-independently of finite classification or old cutoffs. The earlier
-[floor/log proof](../research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md)
-records the historical2e11 threshold. Local proof checks and exact-head
-publication CI remain separate; Phase42's prior time stop is preserved.
+**A proof to read, with a source map to check.** This page explains why
+the actual derivative Gram determinant is positive, then connects its real,
+integer and residue views. Start with the [mathematical spine](MATHEMATICAL_SPINE.md)
+for the invariant that holds the argument together. The field discriminant
+is a different object from this large jet-Gram determinant.
 
-The [proof-input map](../research/ender_radius_bridge/PROOF_INPUT_GUIDE.md)
-now distinguishes generic class-group/Minkowski facts from the classification
-being proved. It is an internal provenance audit, not independent human review.
+For the direct analytic bound, read [the 100-billion proof](../research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md).
+It balances a smaller rectangle and disk against an explicit divisibility
+loss, independently of finite classification or old cutoffs. It retains
+every rounding and radius guard, and the earlier failed/stopped attempt.
 
-For the current arithmetic result, start with the
-[one-page classification proof](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md):
-the complete quotient-fiber certificate joins the cutoff to all nine
-positive cases for the canonical actual field family. Then read the
-[all-nine positive guide](../research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md)
-for the local-obstruction/Minkowski argument. Independent human semantic
-review remains open. The field discriminant is distinct from the large jet-Gram
-determinant explained below. Older phase-frontier descriptions are historical.
+For the full finite computation and the reverse implication, read the
+[canonical-family proof](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md)
+and [all-nine positive guide](../research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md).
+The complete interval certificate and all nine positive cases are supplied;
+the small-range and first-interval guides describe historical component
+milestones, not the current frontier. The iff is about the constructed
+actual field family, not an arbitrary-field-type representation theorem.
 
-The current finite frontier is explained in the
-[wheel-coverage guide](../research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md):
-quotient and remainder prove no candidate was skipped; kernel evaluation
-then closes [92,1000000). The resulting necessary nine-element list below
-one million is not a full classification or nine positive class-number proofs.
-
-For the current arithmetic frontier, the
-[finite-sieve guide](../research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md)
-explains the norm-two argument behind d=3 mod 8, the checked small
-candidate list, and the full middle-interval certificate still missing.
-The [full-cutoff guide](../research/ender_radius_bridge/FULL_CUTOFF_GUIDE.md)
-explains the already proved effective bound. Neither is a classification.
-
-**A proof to read, with a source map to check.** This guide explains the
-interpolation theorem in ordinary mathematics. It is not a proof of the
-class-number-one classification. The [claim map](FORMALIZATION.md) separates
-completed components from the arithmetic and numerical links still missing.
-For the shorter conceptual route, start with the
-[mathematical spine](MATHEMATICAL_SPINE.md).
-
-For the current numerical frontier, read the short
-[numerical bridge guide](../research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
-It explains the now-checked `581>572` contradiction on one fixed interval,
-and why that is not a global cutoff or classification.
+The [claim map](FORMALIZATION.md) gives exact declarations and validation
+scope. The frozen [proof-input map](../research/ender_radius_bridge/PROOF_INPUT_GUIDE.md)
+distinguishes generic class-group/Minkowski facts from the answer being
+proved. Local checks, exact-head CI and independent human semantic review
+are separate; the last remains open. No exposition replaces those checks.
 
 ## The theorem in one paragraph
 

@@ -1,84 +1,41 @@
 # One determinant, two kinds of information
 
-**Phase43:** narrow the rectangle and disk while paying the aspect-ratio
-loss and proving every geometric guard. The SAME positive integer Gram
-cannot meet both budgets above1e11. Direct actual-radicand and actual-
-discriminant bounds now compile without classification or older cutoffs;
-fresh input/axiom and full local root checks pass. Publication-head CI is
-separate. [The human proof](../research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md)
-also preserves the earlier failed/stopped attempt as negative evidence.
-Earlier entries retain their dated scopes.
+The argument has one central object: a positive integer determinant.
+Geometry bounds its size from above. Arithmetic makes it divisible by
+enough prime powers to force a larger size. The contradiction supplies an
+effective cutoff; finite exclusion and positive examples are separate steps.
 
-**Phase39:** sharpen the floor/log loss without changing the determinant
-or auxiliary radius family. The direct analytic cutoff is2e11; it does
-not borrow the completed classification. [The short proof](../research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md)
-separates new input/axiom checks from exact publication-head CI.
+For positive squarefree d, actual class number one of the canonical field
+`Q(sqrt(-d))` implies both `d<10^11` and an actual absolute field discriminant
+below `10^11`. The [short cutoff proof](../research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md)
+explains the two affine budgets and every rounding/radius guard. It uses
+neither the finite answer nor an older cutoff.
 
-**Phase37:** one actual field, two independent directions. The determinant
-argument supplies the effective cutoff; a proved no-loss quotient-fiber
-certificate excludes the entire remaining interval. Minkowski and small
-ideals supply all nine positive cases. The resulting iff has only positive
-squarefree d hypotheses. Its field-family scope and independent human-review
-limit are explicit in the [one-page proof](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md).
-Earlier finite-frontier paragraphs below are historical checkpoints.
+The [canonical-family iff](TenthDiscriminant/ClassNumberClassification.lean)
+joins a complete finite certificate to all nine positive cases. Its existing
+proof uses the original 700-billion cutoff; that certificate and proof are
+unchanged by the newer analytic optimization. The
+[classification guide](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md)
+separates those directions. This is not a representation theorem for
+arbitrary field types or a claim of independent human semantic review.
 
-**Phase 33:** local residue maps forbid small prime ideal norms; Minkowski
-supplies a small representative in every class. The remaining small ideals
-are principal, proving all nine positive class numbers and the iff below
-one million. The actual field-discriminant cutoff is checked, but the entire
-upper middle interval remains open. [The two-way bridge and exact gap](../research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md).
-
-**Phase 31:** the sieve now has a proved no-loss wheel operator and interval
-coverage. Exact kernel evaluation gives d=163 for actual class number one
-in [92,1000000); the necessary nine-candidate list follows below one million.
-The entire upper middle range and positive class-number proofs remain open.
-[Why the wheel loses nothing](../research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md).
-
-**Phase 30:** the passage to the finite sieve is now proved necessary:
-class number one gives d=3 mod 8 above 7 and every guarded odd-prime test.
-The small end below 92 is kernel checked. The full middle-interval survivor
-certificate is still a premise, not a theorem supplied by the old Python run.
-[The short arithmetic bridge](../research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md).
-
-This is the shortest route into the Lean development. The longer
-[human proof guide](HUMAN_GUIDE.md) explains the contact-count argument;
-the [claim map](FORMALIZATION.md) names the checked declarations. Neither
-document, nor this one, replaces the Lean proof or independent human review.
-
-**Current frontier (Phase 29):** the effective radicand bound now covers
-both parity cases. Positive squarefree d and class number one of the actual
-`Q(sqrt(-d))` imply d<700000000000. The odd branch compares normalized
-arithmetic and geometric slopes; the even branch uses a prime-two ideal
-whose principal generator would have impossible norm two. The explicit
-change theta=2*omega-1 joins the charts. The
-[full-cutoff guide](../research/ender_radius_bridge/FULL_CUTOFF_GUIDE.md)
-shows the argument. Finite classification remains open; older descriptions
-below record the route to the current bound.
-
-Phase 26 now closes one fixed interval: for squarefree `D≡3 (mod 4)` in
-`[700000000000,875000000000]`, the actual constructed quadratic field has
-class number not one. All numerical guards, prime coverage and total budgets
-are supplied; the strict separation is `581>572`. The
-[short numerical guide](../research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md)
-explains that bounded exclusion and why it is not a global cutoff.
-
-Phase 27 separates the arithmetic into polynomial R,S dependence and four
-certified prime-log constants. Those estimates are uniform in the dimensions;
-new D-dependent geometric/numerical comparisons are still needed. See the
-[uniform arithmetic guide](../research/ender_radius_bridge/UNIFORM_PRIME_MASS_GUIDE.md).
+Read this page for the invariant and transformations, the
+[human guide](HUMAN_GUIDE.md) for the contact-count proof, and the
+[claim map](FORMALIZATION.md) for exact declarations and validation scope.
+Local acceptance, exact-head CI and independent review are distinct evidence.
+Historical checkpoints and failed attempts remain in [STATUS](../STATUS.md)
+and their registered records, rather than being prerequisites to reading this proof.
 
 ## The question
 
-Ender's **candidate** argument needs an integer determinant that is both
-nonzero and highly divisible by inert primes. Geometry and a Hadamard upper
-bound then competes with arithmetic lower bounds. Lean now establishes
-positivity, identifies the integer matrix, proves the uniform prime factors
-from class number one in the stated strict range, and assembles their finite
-mass against the geometric upper bound. Phase 26 supplies all numerical
-premises on one bounded interval. The [paper proof](../research/uniform_inert_valuation/PROOF.md)
-explains the prime-by-prime mechanism; the remaining global gaps are not
-missing matrix identities, but the rest of the interval campaign, universal
-closure, even cases and the finite classification.
+Why should class number one be incompatible with a large discriminant?
+It forces a Frobenius relation at small odd primes. An integral change of
+polynomial basis turns those relations into prime-power divisibility of
+the actual Gram determinant. A point count makes that same determinant
+positive, while Hadamard bounds it above. The
+[paper proof](../research/uniform_inert_valuation/PROOF.md) explains the local
+arithmetic. The universal cutoff compares the resulting budgets directly;
+it does not need a replay of the other 249 historical interval estimates.
 
 ## The object to keep in mind
 
@@ -258,13 +215,12 @@ identifies that change with rows of the *actual* matrix, and the
 the determinant power under the displayed universal Frobenius congruence.
 The [local theorem](TenthDiscriminant/InertFrobenius.lean) now derives that
 congruence from `p` odd prime and `-D` nonsquare in `ZMod p`, by checking
-`t^p=-t` and then Freshman's dream on every `x+yt`. Connecting these
-selected-order local guards to the global class-number hypothesis remains
-open. A [small-prime interface](TenthDiscriminant/SmallPrimeBridge.lean)
-now proves that *if* a residue root lifts to a principal norm-`p`
-element, the elementary norm bound supplies the local guard for
-`p<(D+1)/4`. Proving that lifting property from class number one is
-still open for the specific quadratic field. The abstract
+`t^p=-t` and then Freshman's dream on every `x+yt`. The global hypothesis
+reaches this local guard through the actual maximal order, rather than by
+identifying it with the selected lattice order. A
+[small-prime interface](TenthDiscriminant/SmallPrimeBridge.lean) shows that
+a residue root lifting to a principal norm-`p` element would contradict
+the elementary norm bound for `p<(D+1)/4`. The abstract
 [class-number step](TenthDiscriminant/PrincipalIdealBridge.lean) now
 checks that a residue quotient of a class-number-one integer ring has
 a principal generator of norm magnitude `p`; the quadratic quotient
@@ -320,17 +276,19 @@ these views commute on **one integer matrix with the same samples**.
 | Production upper formula and its count input | Lean bounds the actual diagonal product by unchanged `upper_B` for the campaign's positive integer radii `rho<R`. Disjoint inward cells and exact axis accounting now supply the upper ellipse count and interval transfer, with line-count padding explicit. [Short proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.md). |
 | Factorial identity and scalar lower estimate | Lean checks the exact finite Legendre prime-power sum (including `2`) and unchanged `factorial_lower` for `R≥2`. Its weights differ from the determinant's. [Short proof](../research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md). |
 | Finite conversion to determinant weights and analytic tail | Lean checks the staircase identity, small-prime split, finite losses, coefficients, clipping and the exact reciprocal-prime bound by positive potential drops. Both mathematical production expressions now apply to the same Gram without a tail premise. [Short proof](../research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md). |
-| Bounded numerical exclusion; global cutoff and classification | The first saved interval is excluded for squarefree `D≡3 (mod 4)` by `FirstIntervalChecked`, with no numerical premise. The other 249 intervals, universal closure, even cases and finite endgame remain open. A bounded exclusion is not a global cutoff or classification. |
+| Universal analytic cutoff | The thinner auxiliary family gives direct radicand and actual absolute-discriminant bounds below `10^11`, for positive squarefree d and actual class number one. Both parity charts are supplied. No numerical, old-cutoff or finite-classification premise; see [the current cutoff proof](../research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md). |
+| Finite exclusion and positive cases | The complete original interval certificate and all nine positive equalities supply the actual canonical-family iff. This uses the original cutoff independently of the new optimization. See [the two-direction proof](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md). |
+| Review and generality | Exact-head CI records encoded-proof validation. Independent human semantic/API review, arbitrary-field-type representation and Mathlib acceptance remain separate and unclaimed. |
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical
 local-to-global principle is a missing premise. The uniform arithmetic
 relation, class-number input, chosen-radius count, and exact finite prime
-comparison are now checked in their stated ranges. The next substantive
-bridges are numerical interpretation for the remaining intervals, universal closure
-and finite classification. The production lower/upper comparison, including
-the reciprocal-prime tail, is checked under the documented guards. The upper expression
-and both geometric counts are now checked at the integer radii.
+comparison are checked in their stated ranges and connected to a universal
+cutoff. The finite certificate and positive cases have their own proofs.
+The remaining review task is to inspect the definitions, parameter guards
+and the composition against the intended number-theoretic statement;
+kernel checking does not supply that independent mathematical judgment.
 For the detailed
 provenance, see [STATUS.md](../STATUS.md), the
 [registered pilot protocol](../research/local_global_gram/PROTOCOL.md), and
