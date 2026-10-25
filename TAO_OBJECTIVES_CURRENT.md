@@ -1,6 +1,6 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 40;
+**Living update: 25 October 2026, through preregistered Phase 41;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
@@ -162,6 +162,7 @@ completion is separately registered and separately costed.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
+| Explicit aspect-ratio price in the same prime-mass lower budget. | **Lean lemma plus one separately labelled Arb pilot** | [Phase41](research/ender_radius_bridge/ASPECT_RATIO_GUIDE.md) exposes loss3.294+0.0448K for R<=K*S, with old/new ratio controls and a floor counterexample. One fixed new-family input passes17 guards/comparisons. Universal new-family geometry and upper envelopes remain open; the checked cutoff is still2e11. No optimality or stronger cutoff claim. |
 | Frozen same-route comparison with explicit object/parameter alignment. | **Internal primary-source analysis, not a theorem or independent review** | [Phase40](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) separates rank mechanisms, trace-Gram versus minor-norm integers, strict prime endpoints and analytic versus finite bounds. Seven source hashes and two historical blob controls are reproducible. It suggests a future auxiliary-prime proof bridge, but imports no external constants and proves no stronger cutoff. |
 | Complete-seed fused traversal preserves every leaf predicate. | **Lean theorem plus one complete concrete translate** | Checks below 892371480 now compose to an actual-field bounded iff. Translation does not preserve extra-prime tests (checked p=29 control). The fixed pilot had 16 passing blocks, one aggregate-time stop and 27 skipped blocks; no full-range runtime or isolated fusion speedup is established. [Human proof](research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md). |
 | Actual field discriminant and all nine positive class numbers. | **Lean theorems using maximal integral bases, small ideal norms and pinned Minkowski** | The actual absolute-discriminant cutoff and all nine positive equalities are supplied. Prime-norm quotients give root obstructions; the legitimate norm-four ideal (2) is retained. d=23 refutes omitting local hypotheses. No novelty or full classification claim. [Human proof](research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md). |

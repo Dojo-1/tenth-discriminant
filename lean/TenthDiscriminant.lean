@@ -76,3 +76,4 @@ import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot
 import TenthDiscriminant.OptimizedAnalyticCutoff
+import TenthDiscriminant.AspectRatioLowerEnvelope

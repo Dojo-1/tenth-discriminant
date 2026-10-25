@@ -1,0 +1,20 @@
+﻿{
+    "phase":  41,
+    "mode":  "build",
+    "scope":  "Preregistered aspect-ratio bridge or separately labelled verification",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  72.5397946,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  600,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2870804480,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "build",
+                      "TenthDiscriminant.AspectRatioLowerEnvelope"
+                  ],
+    "stdout":  "PHASE41_build_20261025023836659.stdout.log",
+    "stderr":  "PHASE41_build_20261025023836659.stderr.log"
+}

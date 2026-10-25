@@ -2,6 +2,13 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
+**Phase41: the price of a thinner rectangle.** A new checked lower-bound
+lemma exposes the aspect-ratio loss instead of hiding a fixed ratio.
+One preregistered100-billion-scale pilot passes the original guards;
+universal new-family geometry and upper bounds remain open. **The checked
+analytic cutoff remains200 billion.**
+[Short human explanation](research/ender_radius_bridge/ASPECT_RATIO_GUIDE.md).
+
 **Phase40: what our bound buys, and what it costs.** A preregistered
 [same-route comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md)
 reads two frozen primary manuscripts: the elementary `q<32768` companion

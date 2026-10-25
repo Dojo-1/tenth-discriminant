@@ -1,5 +1,27 @@
 # Status — 2026-10-25
 
+## Phase41: aspect-ratio lower bridge, not a new cutoff
+
+Protocol35dbd4c preceded one generic lower-envelope proof and one fixed
+pilot. `rawPrimeMassLower_aspect_ratio` keeps the original raw budget and
+four constants; under explicit dimension/log/ratio guards its loss is
+at most3.294+0.0448K when R<=K*S. The first target passed72.5397946s;
+full root6808 steps,154-module closure and fresh input/compiled axiom
+checks pass. Audit4543 logical/3812 theorem/16951 runtime-only declarations;
+the new root excludes13 listed old cutoff/classification/finite-answer
+inputs. Exact publication-head CI remains separate. Previous publication
+f7bbfaa passed CI40154838691/security40154836580; final record6394261827
+was posted before the newer proof push. It is not a verdict on new math.
+
+The single Arb256 pilot D=100000000003,C=25,rho=ceil(.52*D^(3/4)) passed
+all17 checks in1.5159136s, with positive raw normalized gap above.08781.
+This is one observational input, not universal geometry or a new cutoff.
+The candidate affine comparison fails at logD=25 (Lean control retained).
+Current checked analytic cutoff remains2e11. No old radius/campaign or
+finite certificate changes. [Human guide](research/ender_radius_bridge/ASPECT_RATIO_GUIDE.md) ·
+[Registered protocol](research/ender_radius_bridge/PHASE41_PROTOCOL.md) ·
+[Evidence](research/ender_radius_bridge/PHASE41_RESULTS.json).
+
 ## Phase40: bounded primary-source comparison
 
 Protocol945b149 fixes two external manuscripts at44c7d6f and our proof

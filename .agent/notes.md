@@ -1,5 +1,22 @@
 # Task checkpoint
 
+- Phase41 protocol35dbd4c before new math/pilot. Prior turn was progress.
+  One fixed D100000000003/C25/rho.52 Arb256 pilot PASS17 checks1.5159136s;
+  no rerun/search, no universal100b claim. Generic aspect-ratio lower lemma
+  accepted attempt1 in72.5397946s/2870804480B. Only post-acceptance change:
+  hK renamed _hK to avoid unused-variable warning; same statement/proof.
+  Full root6808 PASS49.3788185s,154 modules acyclic/no escapes. Fresh input
+  closure13525 excludes13 listed cutoff/finite-answer/old fixed-ratio roots.
+  Compiled audit4543/3812/16951 PASS35.178561s, standard3 axioms; raw stdout
+  archived losslessly, hash/readback verified before duplicate removal.
+  Universal new-family geometry/upper envelopes and cutoff remain open;
+  checked analytic endpoint2e11 unchanged. Prior publication f7bbfaa passed
+  CI40154838691/security40154836580/CodeQL, same-tree merge9dca199, final
+  record6394261827 before newer push. Results helper initially rejected a
+  valid directory link; repaired target existence and preserved scope error.
+  Five records/17 pilot assertions/hash recovery/326 links PASS. New-head CI
+  required; no merge/Tao/optimality/review claim. Goal active.
+
 - Phase40: protocol-only945b149 before reading two fixed external manuscripts.
   Full sources at44c7d6f and five context files read; source-reported32768/570
   bounds and review claims remain distinct from our verified200b theorem.

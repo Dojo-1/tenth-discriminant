@@ -1,5 +1,15 @@
 # Current claim-to-Lean map
 
+Phase41 adds `AspectRatioLowerEnvelope`: the same actual raw prime-mass
+lower expression now has an explicit linear aspect-ratio cost. Its guarded
+statement, K=21/K=25.1 specializations, scalar separation/rejection and
+floor counterexample compile. Fresh input closure and namespace audit pass;
+no old cutoff/finite classification is used. This is not an all-D radius
+or upper-envelope theorem. The separate one-input Arb pilot is not Lean
+evidence. The actual checked cutoff stays200 billion; new-family universal
+geometry, upper/lower conversion and composition remain open.
+[Human guide](../research/ender_radius_bridge/ASPECT_RATIO_GUIDE.md).
+
 Phase40 adds a [frozen same-route source comparison](../research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md),
 not a Lean theorem or an external-proof audit. Its key interface warning:
 our factor-two trace-Gram determinant and the external minor-norm integers
