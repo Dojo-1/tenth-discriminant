@@ -1,6 +1,6 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 39;
+**Living update: 25 October 2026, through preregistered Phase 40;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
@@ -126,7 +126,7 @@ was posted in this cycle.
 | 2 | Best efforts to optimize the constant | **Modest direct analytic improvement; no optimality claim** | A sharper guarded floor/log bound reduces the pre-computation cutoff from `7×10¹¹` to `2×10¹¹` on the same family, a factor3.5. The finite d≤163 consequence is separate. This remains much larger than historical/differently reviewed bounds in the dated [prior-art](PRIOR_ART.md) note; no controlled like-for-like superiority claim. Earlier [lift](ledger/determinant_lifts.txt)/[radial](ledger/radial_bounds.txt) negative results remain preserved. |
 | 3 | Threshold low enough for direct computation | **Complete finite certificate supplied for the canonical field family** | The original remaining interval is covered by quotient/remainder, eleven complete seed proofs and all785 quotient positions. With the cutoff and nine positive cases, `imaginaryQuadratic_classNumber_one_iff` has no range or certificate premise. Exact-head CI and semantic-review status must accompany this claim. |
 | 4 | High-quality Lean formalization, perhaps upstreamable | **Connected actual-field-family iff; external quality judgment open** | Actual class number/discriminant, cutoff, full finite exclusion and all nine positives are supplied. This is not an arbitrary-field-type representation theorem. Independent human semantic review, API/style review and Mathlib upstream acceptance remain open. See the [claim map](lean/FORMALIZATION.md). |
-| 5 | Compare strengths of different writeups | **Qualitative only** | [Prior art](PRIOR_ART.md) records a dated comparison and attribution, not a controlled, current, like-for-like comparison of optimized manuscripts. |
+| 5 | Compare strengths of different writeups | **Bounded controlled comparison supplied; broad objective partial** | [Phase40](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) compares two frozen complete same-route manuscripts with our proof head across parameter, analytic threshold, finite finish, rank, normalization, inputs and review. Original-byte source hashes and recency controls are recorded. External results are source claims, not newly audited or replayed; this is not an all-writeup optimized survey. [Prior art](PRIOR_ART.md) remains a frozen historical note. |
 | 6 | Spur new arguments or arrangements | **Reusable arrangement, no novelty claim** | BEAN-to-Ender changes the prime input. Four fixed prime-log constants and normalized affine envelopes now yield a checked universal odd cutoff without replaying 249 more interval comparisons. This is an arrangement within the credited Green/twinheterodox route, not a claim of a new mathematical method. |
 | 7 | Preserve failed attempts and negative results | **Documented internally** | The [review response](review/RESPONSE_Claude.md), [BEAN audit](review/BEAN_AUDIT.txt), fixed [radial protocol](flow/PREREG_RADIAL.txt), and [lift protocol](flow/PREREG_LIFTS.txt) retain counterexamples, failed guards and ceilings. Internal preservation does not equal external reporting. |
 | 8 | Help higher class-number problems | **Not delivered** | The `h≤2` [review brief](REVIEW_BRIEF_2.md) remains unreviewed; nothing here advances a verified higher-class-number range. |
@@ -146,7 +146,7 @@ own provenance. The analytic threshold is improved, not claimed optimal;
 no submission is claimed.
 Tao explicitly welcomes informative larger bounds and clean human-verifiable
 arguments. Remaining shortfalls include independent review, upstream quality,
-optimization, systematic comparison and human-authored external reporting.
+optimization, broader comparison and human-authored external reporting.
 
 ## Supplementary accounting: useful results even if the main route stalls
 
@@ -162,6 +162,7 @@ completion is separately registered and separately costed.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
+| Frozen same-route comparison with explicit object/parameter alignment. | **Internal primary-source analysis, not a theorem or independent review** | [Phase40](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) separates rank mechanisms, trace-Gram versus minor-norm integers, strict prime endpoints and analytic versus finite bounds. Seven source hashes and two historical blob controls are reproducible. It suggests a future auxiliary-prime proof bridge, but imports no external constants and proves no stronger cutoff. |
 | Complete-seed fused traversal preserves every leaf predicate. | **Lean theorem plus one complete concrete translate** | Checks below 892371480 now compose to an actual-field bounded iff. Translation does not preserve extra-prime tests (checked p=29 control). The fixed pilot had 16 passing blocks, one aggregate-time stop and 27 skipped blocks; no full-range runtime or isolated fusion speedup is established. [Human proof](research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md). |
 | Actual field discriminant and all nine positive class numbers. | **Lean theorems using maximal integral bases, small ideal norms and pinned Minkowski** | The actual absolute-discriminant cutoff and all nine positive equalities are supplied. Prime-norm quotients give root obstructions; the legitimate norm-four ideal (2) is retained. d=23 refutes omitting local hypotheses. No novelty or full classification claim. [Human proof](research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md). |
 | Prime 2 forces d=1 or 2 in the even fundamental chart under class number one. | **Lean theorem on the actual maximal order** | Squarefree denominator and mod-4 parity give integer coordinates; an F2 quotient ideal becomes principal and forces norm two. d=1,2 controls are retained; d=3 refutes dropping the chart guard. No claim of a new argument or a full classification. [Human proof](research/ender_radius_bridge/FULL_CUTOFF_GUIDE.md). |

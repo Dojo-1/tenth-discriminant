@@ -2,13 +2,23 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
+**Phase40: what our bound buys, and what it costs.** A preregistered
+[same-route comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md)
+reads two frozen primary manuscripts: the elementary `q<32768` companion
+and refined `q<570` note. Both source-reported analytic bounds are much
+smaller than ours. The comparison explains the different nonvanishing,
+analytic and verification choices; it does not certify those external
+proofs or claim that our method is optimal. No mathematical sources change.
+
 **Phase39: a smaller direct analytic cutoff.** For positive squarefree d,
 actual class number one now forces both d and the actual absolute field
 discriminant below `2×10¹¹`, locally checked through the same auxiliary
 radius family. Sharper floor/log accounting lowers the former `7×10¹¹`
 threshold by a factor3.5, without borrowing the completed classification.
-Whole-library, signature, input-exclusion and axiom checks pass; exact-head
-pinned CI must accompany publication. No optimality or novelty is claimed.
+Whole-library, signature, input-exclusion and axiom checks pass. Proof head
+`f163801` passed pinned CI40153287923 and security40153286062;
+[exact-head record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6392486504).
+Newer documentation heads have separate CI records. No optimality or novelty is claimed.
 [Read the short optimization proof](research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md).
 
 **Phase 37: closing the complete finite bridge.**

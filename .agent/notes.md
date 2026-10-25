@@ -1,5 +1,18 @@
 # Task checkpoint
 
+- Phase40: protocol-only945b149 before reading two fixed external manuscripts.
+  Full sources at44c7d6f and five context files read; source-reported32768/570
+  bounds and review claims remain distinct from our verified200b theorem.
+  Both manuscript blobs equal historical95e8fe6; no recency-based improvement
+  inferred. No external code run, mathematical edits, new gate, merge or Tao
+  post. All7 source hashes/blob/byte counts and both historical blob controls
+  PASS;319 local links in5 current docs PASS; frozen250 endpoint source
+  correspondence and diff checks PASS. Publication pending.
+  Exact f163801 CI40153287923 SUCCESS02:30:05Z/job21m57s; full build,
+  audit4534/3803/16951 and all rejection suites PASS. Security40153286062
+  and CodeQL PASS. Same-tree merge27ff84a verified; final record6392486504
+  posted before newer push. New documentation-head CI separate. Goal active.
+
 - Phase39: previous publication580c0b9 passed CI40151064234 and security
   40151062335, record6392200072 before any new push. Protocol-only35a6b4b
   preceded fixed200-billion direct analytic proof. Attempt1 PASS129.0500323s,

@@ -1,5 +1,12 @@
 # Current claim-to-Lean map
 
+Phase40 adds a [frozen same-route source comparison](../research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md),
+not a Lean theorem or an external-proof audit. Its key interface warning:
+our factor-two trace-Gram determinant and the external minor-norm integers
+are different objects. Shared ordinary derivatives/Frobenius relations do
+not permit transferring constants or rank arguments without a new bridge.
+No mathematical library or CI-gate source changes in this phase.
+
 Phase39 adds `OptimizedAnalyticCutoff` and public actual radicand/absolute
 field-discriminant bounds below200000000000, requiring only positive
 squarefree d and actual class number one. `UniformRadiusFamily` supplies
@@ -13,7 +20,10 @@ controls and compiled axiom audit pass. `Phase39InputCheck.lean` separately
 checks that the new proofs do not depend on classification, finite
 certificates, nine positives or the old cutoff. The frozen Phase38 input
 inventory is not silently transferred to this changed proof tree. Exact-head
-pinned CI is a separate publication gate. [Human proof](../research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md).
+pinned CI40153287923 passed on mathematical headf163801, with security
+40153286062 and all inherited rejection suites;
+[final exact-head record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6392486504).
+New documentation heads require their own CI. [Human proof](../research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md).
 
 Phase38 adds an internally performed **local provenance snapshot**, outside
 the mathematical library and existing CI gates. `Phase38Provenance.lean`

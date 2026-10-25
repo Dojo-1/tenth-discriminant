@@ -1,5 +1,22 @@
 # Status — 2026-10-25
 
+## Phase40: bounded primary-source comparison
+
+Protocol945b149 fixes two external manuscripts at44c7d6f and our proof
+headf163801. Both manuscripts and five README/review files were read in
+full. Original-byte hashes, blob IDs and historical recency controls are
+recorded in the [manifest](research/ender_radius_bridge/PHASE40_SOURCES.json).
+The [human comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md)
+separates analytic bound, finite finish, matrix normalization, rank mechanism,
+arithmetic/analytic inputs and review status. External code was not run;
+external claims are not newly audited. The elementary owner-reported review
+has no supplied reviewer identity/report; v6.1 review remains pending.
+Objective5 advances to a controlled two-writeup comparison, not an all-method
+survey. No theorem, frozen campaign, dependency pin or CI gate changes.
+The mathematical headf163801 passed CI40153287923/security40153286062;
+[final record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6392486504)
+was posted before the next push. New documentation-head CI is separate.
+
 ## Phase39: direct analytic cutoff reduced to200 billion
 
 `imaginaryQuadratic_classNumber_one_radicand_bound_200b` and
@@ -18,7 +35,9 @@ compiled input checks exclude classification, positive cases, finite
 certificates and the old cutoff from all three new cutoff roots. The
 full compiled audit passes4534 logical/3803 theorem declarations,16951
 runtime-only auxiliaries excluded; only the three permitted axioms.
-Exact publication-head CI remains a separate required record.
+Exact mathematical-head CI40153287923 and security40153286062 passed on
+f163801; record6392486504 supersedes pending checkpoints. Full CI confirms
+the same4534/3803/16951 counts and all inherited rejection suites.
 
 The Phase38 publication at580c0b9 passed CI40151064234/security40151062335;
 record issuecomment-6392200072 supersedes its pending checkpoints. That
