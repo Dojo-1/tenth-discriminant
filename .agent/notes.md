@@ -904,3 +904,15 @@ All local command handles terminal. No CI cancellation/restart or merge.
 Local Phase48 and reader corrections remain unpublished at6823227 before
 this state checkpoint. No Lean, tools or gates differ from published head.
 The prior goal turn was progress plus verified waiting; full goal active.
+
+## Phase48 published, new CI handles live
+
+Published diagnostic/current accounting/reader corrections as deab8c2,
+tree1a333946, after baseline final6399919070. Five frozen input hashes
+verified against preregistration commit a9dbd668 (original checkout newline
+variants); exact saved fractions checked without another experiment run.
+Phase47 verifier418 reader targets PASS. No Lean/tools/pins/gates change.
+Merge8d17afe2 same tree, parents392b6dbb+deab8c2. New pinned CI40225506827
+and security40225504572 confirmed live; checkpoint6402048354 posted and
+PR body updated. Follow these exact runs; no restart merely on timeout.
+Only inherited untracked lean/lake-manifest.json excluded. Goal active.
