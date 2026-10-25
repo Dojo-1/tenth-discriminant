@@ -891,3 +891,16 @@ actual determinant budgets. ENVELOPE_LIMIT_GUIDE.md states the consequence.
 This local protocol/results have not been pushed while published CI is live.
 Full goal remains active; human/API review, optimization and broader Tao
 objectives are not discharged by this small arithmetic diagnostic.
+
+## Exact published Phase47 CI completed
+
+Run40208552511 SUCCESS, completed2026-10-25T16:02:54Z, head2f519884,
+tree8026d064. Downloaded ../phase47-pinned-ci.log; inspected actual audit
+4627 logical/3890 theorem/16958 runtime-only and all inherited rejection
+controls. Security40208549438/separate CodeQL PASS. Same-tree synthetic
+merge152ac0c5 parents392b6dbb+2f519884 verified again. Final record posted
+before any later push: PR28 comment6399919070; PR body now completed record.
+All local command handles terminal. No CI cancellation/restart or merge.
+Local Phase48 and reader corrections remain unpublished at6823227 before
+this state checkpoint. No Lean, tools or gates differ from published head.
+The prior goal turn was progress plus verified waiting; full goal active.
