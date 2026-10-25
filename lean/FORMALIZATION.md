@@ -1,5 +1,16 @@
 # Current claim-to-Lean map
 
+Phase38 adds an internally performed **local provenance snapshot**, outside
+the mathematical library and existing CI gates. `Phase38Provenance.lean`
+reuses Lean's compiled traversal, inventories types and opaque/private
+bodies, and passes three matched traversal controls. Five fixed roots and
+their reached source modules are recorded, with exact generic input
+signatures checked separately. No mathematical source or theorem changes.
+The class-number frontier inspected uses generic finiteness/PID/Minkowski
+facts; no pre-existing classification input was identified. This does not
+certify all methods by name matching or replace independent semantic review.
+[Human proof-input map](../research/ender_radius_bridge/PROOF_INPUT_GUIDE.md).
+
 Phase37 supplies the complete original finite interval and the public
 `imaginaryQuadratic_classNumber_one_iff`: for positive squarefree d, actual
 class number one iff d belongs to the nine-element list, with no range,

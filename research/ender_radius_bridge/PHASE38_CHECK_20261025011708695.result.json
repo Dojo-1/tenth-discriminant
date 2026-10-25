@@ -1,0 +1,12 @@
+﻿{
+    "scope":  "Phase38 compiled proof-input provenance snapshot; not independent human review",
+    "proof_file":  "../research/ender_radius_bridge/Phase38Provenance.lean",
+    "exit_code":  0,
+    "elapsed_seconds":  98.31123079999999,
+    "observed_peak_working_set_bytes":  3305865216,
+    "memory_threshold_mb":  8192,
+    "time_limit_seconds":  180,
+    "stop_reason":  "",
+    "stdout":  "PHASE38_CHECK_20261025011708695.stdout.log",
+    "stderr":  "PHASE38_CHECK_20261025011708695.stderr.log"
+}

@@ -73,6 +73,14 @@ commit; no PR is automatically merged.
 
 ## What still needs human judgment
 
+The new [proof-input map](PROOF_INPUT_GUIDE.md) checks a specific circularity
+risk. In the compiled dependency inventory, the cutoff does not borrow the
+finite answer; the nine positive cases do not borrow the sieve; and the
+finite certificate does not even reach the class-number definition. The
+class-number library inputs inspected are generic finiteness, PID equivalence
+and Minkowski bounds. This is internally gathered source evidence, not a
+substitute for independent human semantic review.
+
 Read the field definitions and the two proof directions first, then review
 the cutoff's arithmetic/real normalization and the bit-retention/coverage
 lemmas. A kernel verifies implications, not our choice of the right model.

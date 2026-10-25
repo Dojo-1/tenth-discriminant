@@ -1,6 +1,6 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 37;
+**Living update: 25 October 2026, through preregistered Phase 38;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
@@ -14,6 +14,13 @@ Exact-head build/audit/pinned CI records accompany publication. No arbitrary
 field-type representation theorem, improved analytic constant, novelty or
 independent human review is claimed.
 [One-page human proof](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md).
+
+Phase38 supplies an internal compiled proof-input inventory, with source
+inspection of the generic class-number/PID/Minkowski frontier and explicit
+separation of cutoff, positive cases and finite certificate. No pre-existing
+classification input was identified in that reviewed frontier. This
+strengthens provenance evidence, not independent review or optimization.
+[Input map and limitations](research/ender_radius_bridge/PROOF_INPUT_GUIDE.md).
 Earlier finite-frontier statements below are historical checkpoints.
 
 Phase 34 supplies a checked representation change for the remaining sieve:
@@ -106,7 +113,7 @@ was posted in this cycle.
 | # | Aspect of the challenge | Current verdict | Evidence and limit |
 |---:|---|---|---|
 | 1 | Effective bound, avoiding Heegner as proof input | **Actual absolute field-discriminant bound checked; semantic review pending** | [Phase 32](lean/TenthDiscriminant/QuadraticDiscriminant.lean) proves the actual discriminant identity, so class number one bounds both d and the actual absolute field discriminant below `7×10¹¹`. Both parity charts are supplied; no numerical premise or Heegner classification input. This is a bound, not full classification or independent human review. |
-| 2 | Best efforts to optimize the constant | **Effort documented; no improved cutoff** | The factorial arrangement removes Dusart from this route but gives a much larger threshold than the historical `1.5×10⁴` branch and the dated [prior-art](PRIOR_ART.md) report of `q<570` (not re-reviewed here). Preregistered [lift](ledger/determinant_lifts.txt) and [radial](ledger/radial_bounds.txt) investigations did not improve Ender's global cutoff. |
+| 2 | Best efforts to optimize the constant | **Effort documented; analytic cutoff unchanged** | The finite classification entails d≤163, but the pre-computation analytic cutoff remains `7×10¹¹`: this is not a new optimized analytic estimate. The factorial arrangement removes Dusart but remains weaker numerically than the historical `1.5×10⁴` branch and dated [prior-art](PRIOR_ART.md) `q<570` report (not re-reviewed here). Registered [lift](ledger/determinant_lifts.txt) and [radial](ledger/radial_bounds.txt) investigations did not improve that analytic threshold. |
 | 3 | Threshold low enough for direct computation | **Complete finite certificate supplied for the canonical field family** | The original remaining interval is covered by quotient/remainder, eleven complete seed proofs and all785 quotient positions. With the cutoff and nine positive cases, `imaginaryQuadratic_classNumber_one_iff` has no range or certificate premise. Exact-head CI and semantic-review status must accompany this claim. |
 | 4 | High-quality Lean formalization, perhaps upstreamable | **Connected actual-field-family iff; external quality judgment open** | Actual class number/discriminant, cutoff, full finite exclusion and all nine positives are supplied. This is not an arbitrary-field-type representation theorem. Independent human semantic review, API/style review and Mathlib upstream acceptance remain open. See the [claim map](lean/FORMALIZATION.md). |
 | 5 | Compare strengths of different writeups | **Qualitative only** | [Prior art](PRIOR_ART.md) records a dated comparison and attribution, not a controlled, current, like-for-like comparison of optimized manuscripts. |
@@ -115,7 +122,7 @@ was posted in this cycle.
 | 8 | Help higher class-number problems | **Not delivered** | The `h≤2` [review brief](REVIEW_BRIEF_2.md) remains unreviewed; nothing here advances a verified higher-class-number range. |
 | 9 | Disclose AI involvement | **Repository practice present** | The [README](README.md) and review records identify AI assistance. This is disclosure, not validation or a submission. |
 | 10 | Contribute a repository link and human summary in Tao's comments | **No documented submission** | The repository has no submission permalink or posting record. This cycle posted nothing to Tao. The article was re-read, but a new sitewide/comment-pagination submission search was not performed. |
-| 11 | Independent due diligence before an AI-generated submission | **Partial** | Adversarial AI review, negative controls and pinned CI cover important errors. They are not independent human semantic review, and no submission is recorded. |
+| 11 | Independent due diligence before an AI-generated submission | **Partial** | Historical adversarial AI review, negative controls, pinned CI and the new [internal input audit](research/ender_radius_bridge/PROOF_INPUT_GUIDE.md) cover distinct risks. The last is not independent review; no new independent human semantic review or submission is recorded. |
 | 12 | Quality, collaboration and attribution over speed | **Visible practice, not an external verdict** | The [README](README.md) and [prior-art note](PRIOR_ART.md) credit antecedents and preserve scope limits. No Tao endorsement, human peer review or priority claim is inferred. |
 
 **Bottom line.** There is now a connected kernel-checked effective bound

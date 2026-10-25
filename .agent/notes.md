@@ -1,5 +1,18 @@
 # Task checkpoint
 
+- Phase38: previous turn was verified progress. ebf14c2 passed pinned
+  CI40148050189/security40148047110, final PR record6391797752. Protocol
+  b514c46 preceded one compiled five-root provenance run:98.3112308s,
+  peak3305865216 bytes,180s/8192MB, PASS. Three traversal controls and
+  component-closure subset checks pass. Final closure61044, finite699.
+  Generic class-number/PID/Minkowski sources and exact signatures inspected;
+  no borrowed classification identified in that frontier. This is internal
+  review, not independent human due diligence. V1 SpecialFunctions matcher
+  false positive preserved; corrected parser controls pass. Raw36.8MB
+  inventory archived losslessly with verified hash and automatic readback.
+  Mathematical source/pins unchanged; cached root and auxiliary signature
+  inspection pass. Publication-head CI pending; no merge or Tao post.
+
 - Phase37 local final root PASS6806 steps (37.1909225s incremental after
   full certificate rebuild),152 modules acyclic. Compiled audit PASS4507
   logical/3776 theorem/16951 runtime-only, only three permitted axioms.

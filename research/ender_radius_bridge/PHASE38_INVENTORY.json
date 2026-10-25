@@ -1,0 +1,4189 @@
+{
+  "phase": 38,
+  "protocol_commit": "b514c46",
+  "audited_proof_head": "ebf14c2564102ef54139024ce9f9c46228307692",
+  "auditor_source_SHA256": "b0d867f196050c9369c09693dd478a58ec46d27dff125f3229e6dfae2a71b475",
+  "run_record": "PHASE38_CHECK_20261025011708695.result.json",
+  "run": {
+    "scope": "Phase38 compiled proof-input provenance snapshot; not independent human review",
+    "proof_file": "../research/ender_radius_bridge/Phase38Provenance.lean",
+    "exit_code": 0,
+    "elapsed_seconds": 98.31123079999999,
+    "observed_peak_working_set_bytes": 3305865216,
+    "memory_threshold_mb": 8192,
+    "time_limit_seconds": 180,
+    "stop_reason": "",
+    "stdout": "PHASE38_CHECK_20261025011708695.stdout.log",
+    "stderr": "PHASE38_CHECK_20261025011708695.stderr.log"
+  },
+  "raw_archive_metadata": {
+    "raw_archive": "PHASE38_RAW.zip",
+    "raw_entry": "PHASE38_CHECK_20261025011708695.stdout.log",
+    "raw_bytes": 36786783,
+    "raw_SHA256": "58afe2cb99c996561bb4d4bff7cfe6477e1c224096ea0d479d9de2c96a8b25ae",
+    "raw_round_trip_verified": true,
+    "discovery_v1_archive": "PHASE38_DISCOVERY_V1.zip",
+    "discovery_v1_entry": "PHASE38_INVENTORY.json",
+    "discovery_v1_SHA256": "91d1a6c1b5e99125ea4d066bf41f100099595e42ae0ab2ba782615ad79ea82f4",
+    "discovery_v1_round_trip_verified": true,
+    "recovery": "Extract the named entries to restore exact original bytes. The raw duplicate was removed only after hash equality; the parser reads its ZIP automatically. V1 preserves the SpecialFunctions matcher false positive."
+  },
+  "traversal_controls": "PASS: unused exclusion, private/opaque relay and type-only dependency",
+  "roots": [
+    {
+      "root": "TenthDiscriminant.FirstCertificate.odd_large_classNumber_ne_one",
+      "visited_count": 55435,
+      "axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ]
+    },
+    {
+      "root": "TenthDiscriminant.imaginaryQuadratic_classNumber_one_radicand_bound",
+      "visited_count": 55568,
+      "axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ]
+    },
+    {
+      "root": "TenthDiscriminant.phase36_all_fibers",
+      "visited_count": 699,
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "root": "TenthDiscriminant.known_nine_classNumber_one",
+      "visited_count": 54971,
+      "axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ]
+    },
+    {
+      "root": "TenthDiscriminant.imaginaryQuadratic_classNumber_one_iff",
+      "visited_count": 61044,
+      "axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ]
+    }
+  ],
+  "component_closures_are_subsets_of_final": true,
+  "external_class_number_related_rows_for_source_review": {
+    "TenthDiscriminant.FirstCertificate.odd_large_classNumber_ne_one": [
+      {
+        "user_name": "_proof_14",
+        "unsafe": false,
+        "name": "_private.Mathlib.RingTheory.ClassGroup.0._proof_14",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_1._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_1._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_6",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_6",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_integralRep",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_integralRep",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_8._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_8._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_2",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_2",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "wrapped._proof_9._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "wrapped._proof_9._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.Quot_mk_eq_mk",
+        "unsafe": false,
+        "name": "ClassGroup.Quot_mk_eq_mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_4._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_4._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff._proof_24",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff._proof_24",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_20",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_20",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "mem_principal_ideals_iff",
+        "unsafe": false,
+        "name": "mem_principal_ideals_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound_pos",
+        "unsafe": false,
+        "name": "ClassGroup.normBound_pos",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "instCommGroupClassGroup",
+        "unsafe": false,
+        "name": "instCommGroupClassGroup",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_one_iff",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_one_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_13",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_13",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.finsetApprox",
+        "unsafe": false,
+        "name": "ClassGroup.finsetApprox",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "AbsoluteValue.exists_partition_int",
+        "unsafe": false,
+        "name": "AbsoluteValue.exists_partition_int",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbs",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.absIsAdmissible",
+        "unsafe": false,
+        "name": "AbsoluteValue.absIsAdmissible",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbs",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_10",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_10",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_8",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_8",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.distinctElems",
+        "unsafe": false,
+        "name": "ClassGroup.distinctElems",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_8",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_8",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_20",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_20",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound._proof_1",
+        "unsafe": false,
+        "name": "ClassGroup.normBound._proof_1",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_14",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_14",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv.eq_1",
+        "unsafe": false,
+        "name": "ClassGroup.equiv.eq_1",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_22",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "coe_toPrincipalIdeal",
+        "unsafe": false,
+        "name": "coe_toPrincipalIdeal",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mkMMem_surjective",
+        "unsafe": false,
+        "name": "ClassGroup.mkMMem_surjective",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "wrapped._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "wrapped._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "opaque"
+      },
+      {
+        "user_name": "_proof_15",
+        "unsafe": false,
+        "name": "_private.Mathlib.RingTheory.ClassGroup.0._proof_15",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.canonicalEquiv_mk0",
+        "unsafe": false,
+        "name": "FractionalIdeal.canonicalEquiv_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_1",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_1",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0",
+        "unsafe": false,
+        "name": "ClassGroup.mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "PrincipalIdeals.normal",
+        "unsafe": false,
+        "name": "PrincipalIdeals.normal",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mem_finsetApprox._proof_3",
+        "unsafe": false,
+        "name": "ClassGroup.mem_finsetApprox._proof_3",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.classNumber_eq_one_iff",
+        "unsafe": false,
+        "name": "NumberField.classNumber_eq_one_iff",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "card_classGroup_eq_one_iff",
+        "unsafe": false,
+        "name": "card_classGroup_eq_one_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound._proof_2",
+        "unsafe": false,
+        "name": "ClassGroup.normBound._proof_2",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.prod_finsetApprox_ne_zero._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.prod_finsetApprox_ne_zero._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_5",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_5",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk._proof_13",
+        "unsafe": false,
+        "name": "ClassGroup.mk._proof_13",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_5",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_5",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_3",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_3",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.integralRep",
+        "unsafe": false,
+        "name": "ClassGroup.integralRep",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_9",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_9",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.card",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.card",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.cardM",
+        "unsafe": false,
+        "name": "ClassGroup.cardM",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_approx",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_approx",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_mk0",
+        "unsafe": false,
+        "name": "ClassGroup.mk_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_15",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_15",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "toPrincipalIdeal_eq_iff",
+        "unsafe": false,
+        "name": "toPrincipalIdeal_eq_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_lt",
+        "unsafe": false,
+        "name": "ClassGroup.norm_lt",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff._proof_23",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff._proof_23",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv._proof_16",
+        "unsafe": false,
+        "name": "ClassGroup.equiv._proof_16",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup._proof_11",
+        "unsafe": false,
+        "name": "ClassGroup._proof_11",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_partition",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_partition",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_19",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_19",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_mk",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "toPrincipalIdeal",
+        "unsafe": false,
+        "name": "toPrincipalIdeal",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_18",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_18",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_partition'",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_partition'",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "instFintypeClassGroupOfIsPrincipalIdealRing",
+        "unsafe": false,
+        "name": "instFintypeClassGroupOfIsPrincipalIdealRing",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup",
+        "unsafe": false,
+        "name": "ClassGroup",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_6",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_6",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_25",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_25",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_7",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_7",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0.eq_1",
+        "unsafe": false,
+        "name": "ClassGroup.mk0.eq_1",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "inductive"
+      },
+      {
+        "user_name": "mem_principal_ideals_iff._proof_11",
+        "unsafe": false,
+        "name": "mem_principal_ideals_iff._proof_11",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound",
+        "unsafe": false,
+        "name": "ClassGroup.normBound",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mk0_eq_mk0",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mk0_eq_mk0",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_le._proof_3",
+        "unsafe": false,
+        "name": "ClassGroup.norm_le._proof_3",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "instFintypeClassGroupOfIsPrincipalIdealRing._proof_22",
+        "unsafe": false,
+        "name": "instFintypeClassGroupOfIsPrincipalIdealRing._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_surjective",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_surjective",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv",
+        "unsafe": false,
+        "name": "ClassGroup.equiv",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.finsetApprox.zero_not_mem",
+        "unsafe": false,
+        "name": "ClassGroup.finsetApprox.zero_not_mem",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.mk",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.mk",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "constructor"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_approx_aux",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_approx_aux",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_7._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_7._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_min",
+        "unsafe": false,
+        "name": "ClassGroup.exists_min",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk._proof_12",
+        "unsafe": false,
+        "name": "ClassGroup.mk._proof_12",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.map_canonicalEquiv_mk0",
+        "unsafe": false,
+        "name": "FractionalIdeal.map_canonicalEquiv_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "_proof_10",
+        "unsafe": false,
+        "name": "_private.Mathlib.RingTheory.ClassGroup.0._proof_10",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.ne_bot_of_prod_finsetApprox_mem",
+        "unsafe": false,
+        "name": "ClassGroup.ne_bot_of_prod_finsetApprox_mem",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_6._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_6._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mkMMem",
+        "unsafe": false,
+        "name": "ClassGroup.mkMMem",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "toPrincipalIdeal_def",
+        "unsafe": false,
+        "name": "toPrincipalIdeal_def",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_12",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_12",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_23",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_23",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.induction",
+        "unsafe": false,
+        "name": "ClassGroup.induction",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mem_finsetApprox._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.mem_finsetApprox._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.prod_finsetApprox_ne_zero",
+        "unsafe": false,
+        "name": "ClassGroup.prod_finsetApprox_ne_zero",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv_mk0",
+        "unsafe": false,
+        "name": "ClassGroup.equiv_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mem_finsetApprox",
+        "unsafe": false,
+        "name": "ClassGroup.mem_finsetApprox",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_18",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_18",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.prod_finsetApprox_ne_zero._proof_5",
+        "unsafe": false,
+        "name": "ClassGroup.prod_finsetApprox_ne_zero._proof_5",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_24",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_24",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.classNumber",
+        "unsafe": false,
+        "name": "NumberField.classNumber",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "definition"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_17",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_17",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_2._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_2._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv_mk0._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.equiv_mk0._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_11",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_11",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_canonicalEquiv",
+        "unsafe": false,
+        "name": "ClassGroup.mk_canonicalEquiv",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff.match_1",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff.match_1",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_23",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_23",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_le",
+        "unsafe": false,
+        "name": "ClassGroup.norm_le",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_19",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_19",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mkMMem._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.mkMMem._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "card_classGroup_eq_one",
+        "unsafe": false,
+        "name": "card_classGroup_eq_one",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_26",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_26",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_3._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_3._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.integralRep_mem_nonZeroDivisors",
+        "unsafe": false,
+        "name": "ClassGroup.integralRep_mem_nonZeroDivisors",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_lt._proof_3",
+        "unsafe": false,
+        "name": "ClassGroup.norm_lt._proof_3",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_def",
+        "unsafe": false,
+        "name": "ClassGroup.mk_def",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_21",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_21",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_7",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_7",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv_mk",
+        "unsafe": false,
+        "name": "ClassGroup.equiv_mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.induction._proof_14",
+        "unsafe": false,
+        "name": "ClassGroup.induction._proof_14",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk",
+        "unsafe": false,
+        "name": "ClassGroup.mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finset_approx'",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finset_approx'",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_16",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_16",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_17",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_17",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_21",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_21",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_9",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_9",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_24",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_24",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_5._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_5._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      }
+    ],
+    "TenthDiscriminant.imaginaryQuadratic_classNumber_one_radicand_bound": [
+      {
+        "user_name": "_proof_14",
+        "unsafe": false,
+        "name": "_private.Mathlib.RingTheory.ClassGroup.0._proof_14",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_1._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_1._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_6",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_6",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_integralRep",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_integralRep",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_8._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_8._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_2",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_2",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "wrapped._proof_9._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "wrapped._proof_9._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.Quot_mk_eq_mk",
+        "unsafe": false,
+        "name": "ClassGroup.Quot_mk_eq_mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_4._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_4._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff._proof_24",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff._proof_24",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_20",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_20",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "mem_principal_ideals_iff",
+        "unsafe": false,
+        "name": "mem_principal_ideals_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound_pos",
+        "unsafe": false,
+        "name": "ClassGroup.normBound_pos",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "instCommGroupClassGroup",
+        "unsafe": false,
+        "name": "instCommGroupClassGroup",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_one_iff",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_one_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_13",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_13",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.finsetApprox",
+        "unsafe": false,
+        "name": "ClassGroup.finsetApprox",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "AbsoluteValue.exists_partition_int",
+        "unsafe": false,
+        "name": "AbsoluteValue.exists_partition_int",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbs",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.absIsAdmissible",
+        "unsafe": false,
+        "name": "AbsoluteValue.absIsAdmissible",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbs",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_10",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_10",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_8",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_8",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.distinctElems",
+        "unsafe": false,
+        "name": "ClassGroup.distinctElems",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_8",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_8",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_20",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_20",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound._proof_1",
+        "unsafe": false,
+        "name": "ClassGroup.normBound._proof_1",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_14",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_14",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv.eq_1",
+        "unsafe": false,
+        "name": "ClassGroup.equiv.eq_1",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_22",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "coe_toPrincipalIdeal",
+        "unsafe": false,
+        "name": "coe_toPrincipalIdeal",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mkMMem_surjective",
+        "unsafe": false,
+        "name": "ClassGroup.mkMMem_surjective",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "wrapped._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "wrapped._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "opaque"
+      },
+      {
+        "user_name": "_proof_15",
+        "unsafe": false,
+        "name": "_private.Mathlib.RingTheory.ClassGroup.0._proof_15",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.canonicalEquiv_mk0",
+        "unsafe": false,
+        "name": "FractionalIdeal.canonicalEquiv_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_1",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_1",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0",
+        "unsafe": false,
+        "name": "ClassGroup.mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "PrincipalIdeals.normal",
+        "unsafe": false,
+        "name": "PrincipalIdeals.normal",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mem_finsetApprox._proof_3",
+        "unsafe": false,
+        "name": "ClassGroup.mem_finsetApprox._proof_3",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.classNumber_eq_one_iff",
+        "unsafe": false,
+        "name": "NumberField.classNumber_eq_one_iff",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "card_classGroup_eq_one_iff",
+        "unsafe": false,
+        "name": "card_classGroup_eq_one_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound._proof_2",
+        "unsafe": false,
+        "name": "ClassGroup.normBound._proof_2",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.prod_finsetApprox_ne_zero._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.prod_finsetApprox_ne_zero._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_5",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_5",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk._proof_13",
+        "unsafe": false,
+        "name": "ClassGroup.mk._proof_13",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_5",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_5",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_3",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_3",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.integralRep",
+        "unsafe": false,
+        "name": "ClassGroup.integralRep",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_9",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_9",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.card",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.card",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.cardM",
+        "unsafe": false,
+        "name": "ClassGroup.cardM",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_approx",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_approx",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_mk0",
+        "unsafe": false,
+        "name": "ClassGroup.mk_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_15",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_15",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "toPrincipalIdeal_eq_iff",
+        "unsafe": false,
+        "name": "toPrincipalIdeal_eq_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_lt",
+        "unsafe": false,
+        "name": "ClassGroup.norm_lt",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff._proof_23",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff._proof_23",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv._proof_16",
+        "unsafe": false,
+        "name": "ClassGroup.equiv._proof_16",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup._proof_11",
+        "unsafe": false,
+        "name": "ClassGroup._proof_11",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_partition",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_partition",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_19",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_19",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_mk",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "toPrincipalIdeal",
+        "unsafe": false,
+        "name": "toPrincipalIdeal",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_18",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_18",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_partition'",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_partition'",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "instFintypeClassGroupOfIsPrincipalIdealRing",
+        "unsafe": false,
+        "name": "instFintypeClassGroupOfIsPrincipalIdealRing",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup",
+        "unsafe": false,
+        "name": "ClassGroup",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_6",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_6",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_25",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_25",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_7",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_7",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0.eq_1",
+        "unsafe": false,
+        "name": "ClassGroup.mk0.eq_1",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "inductive"
+      },
+      {
+        "user_name": "mem_principal_ideals_iff._proof_11",
+        "unsafe": false,
+        "name": "mem_principal_ideals_iff._proof_11",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound",
+        "unsafe": false,
+        "name": "ClassGroup.normBound",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mk0_eq_mk0",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mk0_eq_mk0",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_le._proof_3",
+        "unsafe": false,
+        "name": "ClassGroup.norm_le._proof_3",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "instFintypeClassGroupOfIsPrincipalIdealRing._proof_22",
+        "unsafe": false,
+        "name": "instFintypeClassGroupOfIsPrincipalIdealRing._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_surjective",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_surjective",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv",
+        "unsafe": false,
+        "name": "ClassGroup.equiv",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.finsetApprox.zero_not_mem",
+        "unsafe": false,
+        "name": "ClassGroup.finsetApprox.zero_not_mem",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.mk",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.mk",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "constructor"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_approx_aux",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_approx_aux",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_7._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_7._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_min",
+        "unsafe": false,
+        "name": "ClassGroup.exists_min",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk._proof_12",
+        "unsafe": false,
+        "name": "ClassGroup.mk._proof_12",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.map_canonicalEquiv_mk0",
+        "unsafe": false,
+        "name": "FractionalIdeal.map_canonicalEquiv_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "_proof_10",
+        "unsafe": false,
+        "name": "_private.Mathlib.RingTheory.ClassGroup.0._proof_10",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.ne_bot_of_prod_finsetApprox_mem",
+        "unsafe": false,
+        "name": "ClassGroup.ne_bot_of_prod_finsetApprox_mem",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_6._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_6._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mkMMem",
+        "unsafe": false,
+        "name": "ClassGroup.mkMMem",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "toPrincipalIdeal_def",
+        "unsafe": false,
+        "name": "toPrincipalIdeal_def",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_12",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_12",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_23",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_23",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.induction",
+        "unsafe": false,
+        "name": "ClassGroup.induction",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mem_finsetApprox._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.mem_finsetApprox._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.prod_finsetApprox_ne_zero",
+        "unsafe": false,
+        "name": "ClassGroup.prod_finsetApprox_ne_zero",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv_mk0",
+        "unsafe": false,
+        "name": "ClassGroup.equiv_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mem_finsetApprox",
+        "unsafe": false,
+        "name": "ClassGroup.mem_finsetApprox",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_18",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_18",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.prod_finsetApprox_ne_zero._proof_5",
+        "unsafe": false,
+        "name": "ClassGroup.prod_finsetApprox_ne_zero._proof_5",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_24",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_24",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.classNumber",
+        "unsafe": false,
+        "name": "NumberField.classNumber",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "definition"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_17",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_17",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_2._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_2._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv_mk0._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.equiv_mk0._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_11",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_11",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_canonicalEquiv",
+        "unsafe": false,
+        "name": "ClassGroup.mk_canonicalEquiv",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff.match_1",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff.match_1",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_23",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_23",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_le",
+        "unsafe": false,
+        "name": "ClassGroup.norm_le",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_19",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_19",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mkMMem._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.mkMMem._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "card_classGroup_eq_one",
+        "unsafe": false,
+        "name": "card_classGroup_eq_one",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_26",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_26",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_3._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_3._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.integralRep_mem_nonZeroDivisors",
+        "unsafe": false,
+        "name": "ClassGroup.integralRep_mem_nonZeroDivisors",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_lt._proof_3",
+        "unsafe": false,
+        "name": "ClassGroup.norm_lt._proof_3",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_def",
+        "unsafe": false,
+        "name": "ClassGroup.mk_def",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_21",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_21",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_7",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_7",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv_mk",
+        "unsafe": false,
+        "name": "ClassGroup.equiv_mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.induction._proof_14",
+        "unsafe": false,
+        "name": "ClassGroup.induction._proof_14",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk",
+        "unsafe": false,
+        "name": "ClassGroup.mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finset_approx'",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finset_approx'",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_16",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_16",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_17",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_17",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_21",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_21",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_9",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_9",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_24",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_24",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_5._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_5._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      }
+    ],
+    "TenthDiscriminant.phase36_all_fibers": [],
+    "TenthDiscriminant.known_nine_classNumber_one": [
+      {
+        "user_name": "_proof_14",
+        "unsafe": false,
+        "name": "_private.Mathlib.RingTheory.ClassGroup.0._proof_14",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_1._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_1._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_6",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_6",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_integralRep",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_integralRep",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_8._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_8._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_2",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_2",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "wrapped._proof_9._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "wrapped._proof_9._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.Quot_mk_eq_mk",
+        "unsafe": false,
+        "name": "ClassGroup.Quot_mk_eq_mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_4._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_4._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff._proof_24",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff._proof_24",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_20",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_20",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "mem_principal_ideals_iff",
+        "unsafe": false,
+        "name": "mem_principal_ideals_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound_pos",
+        "unsafe": false,
+        "name": "ClassGroup.normBound_pos",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "instCommGroupClassGroup",
+        "unsafe": false,
+        "name": "instCommGroupClassGroup",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_one_iff",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_one_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_13",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_13",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.finsetApprox",
+        "unsafe": false,
+        "name": "ClassGroup.finsetApprox",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "AbsoluteValue.exists_partition_int",
+        "unsafe": false,
+        "name": "AbsoluteValue.exists_partition_int",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbs",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.absIsAdmissible",
+        "unsafe": false,
+        "name": "AbsoluteValue.absIsAdmissible",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbs",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_10",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_10",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_8",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_8",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.distinctElems",
+        "unsafe": false,
+        "name": "ClassGroup.distinctElems",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_8",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_8",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_20",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_20",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound._proof_1",
+        "unsafe": false,
+        "name": "ClassGroup.normBound._proof_1",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_14",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_14",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv.eq_1",
+        "unsafe": false,
+        "name": "ClassGroup.equiv.eq_1",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_inv_iff.match_1",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_inv_iff.match_1",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_22",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "coe_toPrincipalIdeal",
+        "unsafe": false,
+        "name": "coe_toPrincipalIdeal",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mkMMem_surjective",
+        "unsafe": false,
+        "name": "ClassGroup.mkMMem_surjective",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "RingOfIntegers.isPrincipalIdealRing_of_abs_discr_lt",
+        "unsafe": false,
+        "name": "RingOfIntegers.isPrincipalIdealRing_of_abs_discr_lt",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "wrapped._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "wrapped._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "opaque"
+      },
+      {
+        "user_name": "_proof_15",
+        "unsafe": false,
+        "name": "_private.Mathlib.RingTheory.ClassGroup.0._proof_15",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.canonicalEquiv_mk0",
+        "unsafe": false,
+        "name": "FractionalIdeal.canonicalEquiv_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_1",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_1",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0",
+        "unsafe": false,
+        "name": "ClassGroup.mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "PrincipalIdeals.normal",
+        "unsafe": false,
+        "name": "PrincipalIdeals.normal",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mem_finsetApprox._proof_3",
+        "unsafe": false,
+        "name": "ClassGroup.mem_finsetApprox._proof_3",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.classNumber.eq_1",
+        "unsafe": false,
+        "name": "NumberField.classNumber.eq_1",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.classNumber_eq_one_iff",
+        "unsafe": false,
+        "name": "NumberField.classNumber_eq_one_iff",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "card_classGroup_eq_one_iff",
+        "unsafe": false,
+        "name": "card_classGroup_eq_one_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound._proof_2",
+        "unsafe": false,
+        "name": "ClassGroup.normBound._proof_2",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.prod_finsetApprox_ne_zero._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.prod_finsetApprox_ne_zero._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_5",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_5",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk._proof_13",
+        "unsafe": false,
+        "name": "ClassGroup.mk._proof_13",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_5",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_5",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_3",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_3",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.integralRep",
+        "unsafe": false,
+        "name": "ClassGroup.integralRep",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_9",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_9",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.card",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.card",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.cardM",
+        "unsafe": false,
+        "name": "ClassGroup.cardM",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_approx",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_approx",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_mk0",
+        "unsafe": false,
+        "name": "ClassGroup.mk_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_15",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_15",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "toPrincipalIdeal_eq_iff",
+        "unsafe": false,
+        "name": "toPrincipalIdeal_eq_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_lt",
+        "unsafe": false,
+        "name": "ClassGroup.norm_lt",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff._proof_23",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff._proof_23",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv._proof_16",
+        "unsafe": false,
+        "name": "ClassGroup.equiv._proof_16",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup._proof_11",
+        "unsafe": false,
+        "name": "ClassGroup._proof_11",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_partition",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_partition",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_19",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_19",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_mk",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "toPrincipalIdeal",
+        "unsafe": false,
+        "name": "toPrincipalIdeal",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_18",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_18",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_partition'",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_partition'",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "instFintypeClassGroupOfIsPrincipalIdealRing",
+        "unsafe": false,
+        "name": "instFintypeClassGroupOfIsPrincipalIdealRing",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup",
+        "unsafe": false,
+        "name": "ClassGroup",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_6",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_6",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.exists_ideal_in_class_of_norm_le",
+        "unsafe": false,
+        "name": "NumberField.exists_ideal_in_class_of_norm_le",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_25",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_25",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_7",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_7",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_inv_iff.match_2",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_inv_iff.match_2",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0.eq_1",
+        "unsafe": false,
+        "name": "ClassGroup.mk0.eq_1",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "inductive"
+      },
+      {
+        "user_name": "mem_principal_ideals_iff._proof_11",
+        "unsafe": false,
+        "name": "mem_principal_ideals_iff._proof_11",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound",
+        "unsafe": false,
+        "name": "ClassGroup.normBound",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mk0_eq_mk0",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mk0_eq_mk0",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_le._proof_3",
+        "unsafe": false,
+        "name": "ClassGroup.norm_le._proof_3",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "instFintypeClassGroupOfIsPrincipalIdealRing._proof_22",
+        "unsafe": false,
+        "name": "instFintypeClassGroupOfIsPrincipalIdealRing._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_surjective",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_surjective",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv",
+        "unsafe": false,
+        "name": "ClassGroup.equiv",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.finsetApprox.zero_not_mem",
+        "unsafe": false,
+        "name": "ClassGroup.finsetApprox.zero_not_mem",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.mk",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.mk",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "constructor"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_approx_aux",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_approx_aux",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_7._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_7._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_min",
+        "unsafe": false,
+        "name": "ClassGroup.exists_min",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk._proof_12",
+        "unsafe": false,
+        "name": "ClassGroup.mk._proof_12",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.map_canonicalEquiv_mk0",
+        "unsafe": false,
+        "name": "FractionalIdeal.map_canonicalEquiv_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "_proof_10",
+        "unsafe": false,
+        "name": "_private.Mathlib.RingTheory.ClassGroup.0._proof_10",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.ne_bot_of_prod_finsetApprox_mem",
+        "unsafe": false,
+        "name": "ClassGroup.ne_bot_of_prod_finsetApprox_mem",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_6._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_6._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mkMMem",
+        "unsafe": false,
+        "name": "ClassGroup.mkMMem",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "toPrincipalIdeal_def",
+        "unsafe": false,
+        "name": "toPrincipalIdeal_def",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_12",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_12",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_23",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_23",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.induction",
+        "unsafe": false,
+        "name": "ClassGroup.induction",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mem_finsetApprox._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.mem_finsetApprox._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.prod_finsetApprox_ne_zero",
+        "unsafe": false,
+        "name": "ClassGroup.prod_finsetApprox_ne_zero",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv_mk0",
+        "unsafe": false,
+        "name": "ClassGroup.equiv_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mem_finsetApprox",
+        "unsafe": false,
+        "name": "ClassGroup.mem_finsetApprox",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_18",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_18",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.prod_finsetApprox_ne_zero._proof_5",
+        "unsafe": false,
+        "name": "ClassGroup.prod_finsetApprox_ne_zero._proof_5",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_24",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_24",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.classNumber",
+        "unsafe": false,
+        "name": "NumberField.classNumber",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "definition"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_17",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_17",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_inv_iff",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_inv_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_2._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_2._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv_mk0._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.equiv_mk0._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_11",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_11",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_canonicalEquiv",
+        "unsafe": false,
+        "name": "ClassGroup.mk_canonicalEquiv",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff.match_1",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff.match_1",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_23",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_23",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_le",
+        "unsafe": false,
+        "name": "ClassGroup.norm_le",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_19",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_19",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mkMMem._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.mkMMem._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "card_classGroup_eq_one",
+        "unsafe": false,
+        "name": "card_classGroup_eq_one",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_26",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_26",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_3._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_3._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.integralRep_mem_nonZeroDivisors",
+        "unsafe": false,
+        "name": "ClassGroup.integralRep_mem_nonZeroDivisors",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_lt._proof_3",
+        "unsafe": false,
+        "name": "ClassGroup.norm_lt._proof_3",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.coe_mk0",
+        "unsafe": false,
+        "name": "FractionalIdeal.coe_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_def",
+        "unsafe": false,
+        "name": "ClassGroup.mk_def",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_21",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_21",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_7",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_7",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv_mk",
+        "unsafe": false,
+        "name": "ClassGroup.equiv_mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.induction._proof_14",
+        "unsafe": false,
+        "name": "ClassGroup.induction._proof_14",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk",
+        "unsafe": false,
+        "name": "ClassGroup.mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finset_approx'",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finset_approx'",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_16",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_16",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_17",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_17",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_21",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_21",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_9",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_9",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_24",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_24",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_5._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_5._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      }
+    ],
+    "TenthDiscriminant.imaginaryQuadratic_classNumber_one_iff": [
+      {
+        "user_name": "_proof_14",
+        "unsafe": false,
+        "name": "_private.Mathlib.RingTheory.ClassGroup.0._proof_14",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_1._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_1._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_6",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_6",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_integralRep",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_integralRep",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_8._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_8._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_2",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_2",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "wrapped._proof_9._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "wrapped._proof_9._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.Quot_mk_eq_mk",
+        "unsafe": false,
+        "name": "ClassGroup.Quot_mk_eq_mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_4._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_4._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff._proof_24",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff._proof_24",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_20",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_20",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "mem_principal_ideals_iff",
+        "unsafe": false,
+        "name": "mem_principal_ideals_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound_pos",
+        "unsafe": false,
+        "name": "ClassGroup.normBound_pos",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "instCommGroupClassGroup",
+        "unsafe": false,
+        "name": "instCommGroupClassGroup",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_one_iff",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_one_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_13",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_13",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.finsetApprox",
+        "unsafe": false,
+        "name": "ClassGroup.finsetApprox",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "AbsoluteValue.exists_partition_int",
+        "unsafe": false,
+        "name": "AbsoluteValue.exists_partition_int",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbs",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.absIsAdmissible",
+        "unsafe": false,
+        "name": "AbsoluteValue.absIsAdmissible",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbs",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_10",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_10",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_8",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_8",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.distinctElems",
+        "unsafe": false,
+        "name": "ClassGroup.distinctElems",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_8",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_8",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_20",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_20",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound._proof_1",
+        "unsafe": false,
+        "name": "ClassGroup.normBound._proof_1",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_14",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_14",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv.eq_1",
+        "unsafe": false,
+        "name": "ClassGroup.equiv.eq_1",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_inv_iff.match_1",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_inv_iff.match_1",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_22",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "coe_toPrincipalIdeal",
+        "unsafe": false,
+        "name": "coe_toPrincipalIdeal",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mkMMem_surjective",
+        "unsafe": false,
+        "name": "ClassGroup.mkMMem_surjective",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "RingOfIntegers.isPrincipalIdealRing_of_abs_discr_lt",
+        "unsafe": false,
+        "name": "RingOfIntegers.isPrincipalIdealRing_of_abs_discr_lt",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "wrapped._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "wrapped._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "opaque"
+      },
+      {
+        "user_name": "_proof_15",
+        "unsafe": false,
+        "name": "_private.Mathlib.RingTheory.ClassGroup.0._proof_15",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.canonicalEquiv_mk0",
+        "unsafe": false,
+        "name": "FractionalIdeal.canonicalEquiv_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_1",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_1",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0",
+        "unsafe": false,
+        "name": "ClassGroup.mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "PrincipalIdeals.normal",
+        "unsafe": false,
+        "name": "PrincipalIdeals.normal",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mem_finsetApprox._proof_3",
+        "unsafe": false,
+        "name": "ClassGroup.mem_finsetApprox._proof_3",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.classNumber.eq_1",
+        "unsafe": false,
+        "name": "NumberField.classNumber.eq_1",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.classNumber_eq_one_iff",
+        "unsafe": false,
+        "name": "NumberField.classNumber_eq_one_iff",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "card_classGroup_eq_one_iff",
+        "unsafe": false,
+        "name": "card_classGroup_eq_one_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound._proof_2",
+        "unsafe": false,
+        "name": "ClassGroup.normBound._proof_2",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.prod_finsetApprox_ne_zero._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.prod_finsetApprox_ne_zero._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_5",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_5",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk._proof_13",
+        "unsafe": false,
+        "name": "ClassGroup.mk._proof_13",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_5",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_5",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_3",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup._proof_3",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.integralRep",
+        "unsafe": false,
+        "name": "ClassGroup.integralRep",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_9",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_9",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.card",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.card",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.cardM",
+        "unsafe": false,
+        "name": "ClassGroup.cardM",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_approx",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_approx",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_mk0",
+        "unsafe": false,
+        "name": "ClassGroup.mk_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_15",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_15",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "toPrincipalIdeal_eq_iff",
+        "unsafe": false,
+        "name": "toPrincipalIdeal_eq_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_lt",
+        "unsafe": false,
+        "name": "ClassGroup.norm_lt",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff._proof_23",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff._proof_23",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv._proof_16",
+        "unsafe": false,
+        "name": "ClassGroup.equiv._proof_16",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup._proof_11",
+        "unsafe": false,
+        "name": "ClassGroup._proof_11",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_partition",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_partition",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_19",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_19",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_mk",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "toPrincipalIdeal",
+        "unsafe": false,
+        "name": "toPrincipalIdeal",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_18",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_18",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_partition'",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_partition'",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "instFintypeClassGroupOfIsPrincipalIdealRing",
+        "unsafe": false,
+        "name": "instFintypeClassGroupOfIsPrincipalIdealRing",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup",
+        "unsafe": false,
+        "name": "ClassGroup",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_6",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_6",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.exists_ideal_in_class_of_norm_le",
+        "unsafe": false,
+        "name": "NumberField.exists_ideal_in_class_of_norm_le",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_25",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_25",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_7",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic._proof_7",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_inv_iff.match_2",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_inv_iff.match_2",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfAlgebraic",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0.eq_1",
+        "unsafe": false,
+        "name": "ClassGroup.mk0.eq_1",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "inductive"
+      },
+      {
+        "user_name": "mem_principal_ideals_iff._proof_11",
+        "unsafe": false,
+        "name": "mem_principal_ideals_iff._proof_11",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.normBound",
+        "unsafe": false,
+        "name": "ClassGroup.normBound",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mk0_eq_mk0",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mk0_eq_mk0",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_le._proof_3",
+        "unsafe": false,
+        "name": "ClassGroup.norm_le._proof_3",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "instFintypeClassGroupOfIsPrincipalIdealRing._proof_22",
+        "unsafe": false,
+        "name": "instFintypeClassGroupOfIsPrincipalIdealRing._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_surjective",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_surjective",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv",
+        "unsafe": false,
+        "name": "ClassGroup.equiv",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.finsetApprox.zero_not_mem",
+        "unsafe": false,
+        "name": "ClassGroup.finsetApprox.zero_not_mem",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.mk",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.mk",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "constructor"
+      },
+      {
+        "user_name": "AbsoluteValue.IsAdmissible.exists_approx_aux",
+        "unsafe": false,
+        "name": "AbsoluteValue.IsAdmissible.exists_approx_aux",
+        "module": "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_7._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_7._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_min",
+        "unsafe": false,
+        "name": "ClassGroup.exists_min",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk._proof_12",
+        "unsafe": false,
+        "name": "ClassGroup.mk._proof_12",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.map_canonicalEquiv_mk0",
+        "unsafe": false,
+        "name": "FractionalIdeal.map_canonicalEquiv_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "_proof_10",
+        "unsafe": false,
+        "name": "_private.Mathlib.RingTheory.ClassGroup.0._proof_10",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.ne_bot_of_prod_finsetApprox_mem",
+        "unsafe": false,
+        "name": "ClassGroup.ne_bot_of_prod_finsetApprox_mem",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_6._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_6._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mkMMem",
+        "unsafe": false,
+        "name": "ClassGroup.mkMMem",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "definition"
+      },
+      {
+        "user_name": "toPrincipalIdeal_def",
+        "unsafe": false,
+        "name": "toPrincipalIdeal_def",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_12",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_12",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_23",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_23",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.induction",
+        "unsafe": false,
+        "name": "ClassGroup.induction",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mem_finsetApprox._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.mem_finsetApprox._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.prod_finsetApprox_ne_zero",
+        "unsafe": false,
+        "name": "ClassGroup.prod_finsetApprox_ne_zero",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv_mk0",
+        "unsafe": false,
+        "name": "ClassGroup.equiv_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mem_finsetApprox",
+        "unsafe": false,
+        "name": "ClassGroup.mem_finsetApprox",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_18",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_18",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.prod_finsetApprox_ne_zero._proof_5",
+        "unsafe": false,
+        "name": "ClassGroup.prod_finsetApprox_ne_zero._proof_5",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.RingOfIntegers.instFintypeClassGroup",
+        "unsafe": false,
+        "name": "NumberField.RingOfIntegers.instFintypeClassGroup",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_24",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_24",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "NumberField.classNumber",
+        "unsafe": false,
+        "name": "NumberField.classNumber",
+        "module": "Mathlib.NumberTheory.NumberField.ClassNumber",
+        "kind": "definition"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_17",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_17",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_inv_iff",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_inv_iff",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_2._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_2._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv_mk0._proof_22",
+        "unsafe": false,
+        "name": "ClassGroup.equiv_mk0._proof_22",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_11",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_11",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_canonicalEquiv",
+        "unsafe": false,
+        "name": "ClassGroup.mk_canonicalEquiv",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_eq_one_iff.match_1",
+        "unsafe": false,
+        "name": "ClassGroup.mk_eq_one_iff.match_1",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_23",
+        "unsafe": false,
+        "name": "ClassGroup.mk0_eq_mk0_iff_exists_fraction_ring._proof_23",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_le",
+        "unsafe": false,
+        "name": "ClassGroup.norm_le",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_19",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_19",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mkMMem._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.mkMMem._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "card_classGroup_eq_one",
+        "unsafe": false,
+        "name": "card_classGroup_eq_one",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_26",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_26",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_3._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_3._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.integralRep_mem_nonZeroDivisors",
+        "unsafe": false,
+        "name": "ClassGroup.integralRep_mem_nonZeroDivisors",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.norm_lt._proof_3",
+        "unsafe": false,
+        "name": "ClassGroup.norm_lt._proof_3",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.coe_mk0",
+        "unsafe": false,
+        "name": "FractionalIdeal.coe_mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk_def",
+        "unsafe": false,
+        "name": "ClassGroup.mk_def",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_21",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_21",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_7",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_7",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox._proof_4",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox._proof_4",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.equiv_mk",
+        "unsafe": false,
+        "name": "ClassGroup.equiv_mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.induction._proof_14",
+        "unsafe": false,
+        "name": "ClassGroup.induction._proof_14",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.mk",
+        "unsafe": false,
+        "name": "ClassGroup.mk",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finset_approx'",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finset_approx'",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_16",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_16",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.exists_mem_finsetApprox",
+        "unsafe": false,
+        "name": "ClassGroup.exists_mem_finsetApprox",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_17",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_17",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0._proof_21",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0._proof_21",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "FractionalIdeal.mk0",
+        "unsafe": false,
+        "name": "FractionalIdeal.mk0",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "definition"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_9",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_9",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_24",
+        "unsafe": false,
+        "name": "ClassGroup.fintypeOfAdmissibleOfFinite._proof_24",
+        "module": "Mathlib.NumberTheory.ClassNumber.Finite",
+        "kind": "theorem"
+      },
+      {
+        "user_name": "definition._proof_5._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "unsafe": false,
+        "name": "definition._proof_5._@.Mathlib.RingTheory.ClassGroup._hyg.46",
+        "module": "Mathlib.RingTheory.ClassGroup",
+        "kind": "theorem"
+      }
+    ]
+  },
+  "discovery_flags_not_a_verdict": {
+    "TenthDiscriminant.FirstCertificate.odd_large_classNumber_ne_one": [],
+    "TenthDiscriminant.imaginaryQuadratic_classNumber_one_radicand_bound": [],
+    "TenthDiscriminant.phase36_all_fibers": [],
+    "TenthDiscriminant.known_nine_classNumber_one": [],
+    "TenthDiscriminant.imaginaryQuadratic_classNumber_one_iff": []
+  },
+  "discovery_filter_repair": "V1 matched lfunction inside SpecialFunctions; V1 is preserved in PHASE38_DISCOVERY_V1.zip. V2 requires LSeries/LFunction namespace-token prefixes. No Lean run was repeated.",
+  "semantic_review": "See PROOF_INPUT_GUIDE.md for internal pinned-source inspection. This inventory alone is not method exclusion or independent human review.",
+  "scope": "Frozen internally performed compiled dependency-closure inventory, not independent human review or a permanent CI gate",
+  "dependency_separation": {
+    "cutoff_reaches_positive_cases": false,
+    "cutoff_reaches_full_fiber_certificate": false,
+    "cutoff_reaches_final_classification": false,
+    "positive_cases_reach_full_fiber_certificate": false,
+    "positive_cases_reach_million_sieve_module": false,
+    "full_fiber_certificate_reaches_actual_class_number": false,
+    "final_classification_reaches_positive_cases": true,
+    "final_classification_reaches_full_fiber_certificate": true
+  },
+  "reached_number_theory_modules": {
+    "TenthDiscriminant.FirstCertificate.odd_large_classNumber_ne_one": [
+      "Mathlib.NumberTheory.ClassNumber.AdmissibleAbs",
+      "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+      "Mathlib.NumberTheory.ClassNumber.Finite",
+      "Mathlib.NumberTheory.Divisors",
+      "Mathlib.NumberTheory.LegendreSymbol.Basic",
+      "Mathlib.NumberTheory.NumberField.Basic",
+      "Mathlib.NumberTheory.NumberField.ClassNumber",
+      "Mathlib.NumberTheory.NumberField.Norm",
+      "Mathlib.NumberTheory.Padics.PadicVal.Basic",
+      "Mathlib.NumberTheory.Padics.PadicVal.Defs",
+      "Mathlib.NumberTheory.Zsqrtd.Basic"
+    ],
+    "TenthDiscriminant.imaginaryQuadratic_classNumber_one_radicand_bound": [
+      "Mathlib.NumberTheory.ClassNumber.AdmissibleAbs",
+      "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+      "Mathlib.NumberTheory.ClassNumber.Finite",
+      "Mathlib.NumberTheory.Divisors",
+      "Mathlib.NumberTheory.LegendreSymbol.Basic",
+      "Mathlib.NumberTheory.NumberField.Basic",
+      "Mathlib.NumberTheory.NumberField.ClassNumber",
+      "Mathlib.NumberTheory.NumberField.Norm",
+      "Mathlib.NumberTheory.Padics.PadicVal.Basic",
+      "Mathlib.NumberTheory.Padics.PadicVal.Defs",
+      "Mathlib.NumberTheory.Zsqrtd.Basic"
+    ],
+    "TenthDiscriminant.phase36_all_fibers": [],
+    "TenthDiscriminant.known_nine_classNumber_one": [
+      "Mathlib.NumberTheory.ClassNumber.AdmissibleAbs",
+      "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+      "Mathlib.NumberTheory.ClassNumber.Finite",
+      "Mathlib.NumberTheory.Divisors",
+      "Mathlib.NumberTheory.NumberField.Basic",
+      "Mathlib.NumberTheory.NumberField.CanonicalEmbedding.Basic",
+      "Mathlib.NumberTheory.NumberField.CanonicalEmbedding.ConvexBody",
+      "Mathlib.NumberTheory.NumberField.ClassNumber",
+      "Mathlib.NumberTheory.NumberField.Discriminant.Basic",
+      "Mathlib.NumberTheory.NumberField.Discriminant.Defs",
+      "Mathlib.NumberTheory.NumberField.Embeddings",
+      "Mathlib.NumberTheory.NumberField.FractionalIdeal"
+    ],
+    "TenthDiscriminant.imaginaryQuadratic_classNumber_one_iff": [
+      "Mathlib.NumberTheory.ClassNumber.AdmissibleAbs",
+      "Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue",
+      "Mathlib.NumberTheory.ClassNumber.Finite",
+      "Mathlib.NumberTheory.Divisors",
+      "Mathlib.NumberTheory.LegendreSymbol.Basic",
+      "Mathlib.NumberTheory.NumberField.Basic",
+      "Mathlib.NumberTheory.NumberField.CanonicalEmbedding.Basic",
+      "Mathlib.NumberTheory.NumberField.CanonicalEmbedding.ConvexBody",
+      "Mathlib.NumberTheory.NumberField.ClassNumber",
+      "Mathlib.NumberTheory.NumberField.Discriminant.Basic",
+      "Mathlib.NumberTheory.NumberField.Discriminant.Defs",
+      "Mathlib.NumberTheory.NumberField.Embeddings",
+      "Mathlib.NumberTheory.NumberField.FractionalIdeal",
+      "Mathlib.NumberTheory.NumberField.Norm",
+      "Mathlib.NumberTheory.Padics.PadicVal.Basic",
+      "Mathlib.NumberTheory.Padics.PadicVal.Defs",
+      "Mathlib.NumberTheory.Zsqrtd.Basic"
+    ]
+  }
+}

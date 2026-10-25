@@ -1,5 +1,29 @@
 # Status — 2026-10-25
 
+## Phase38: frozen internal proof-input provenance
+
+The fixed five-root audit passed locally in98.3112308s, peak3305865216
+bytes, within180s/8192MB. Three traversal controls passed: unused inputs
+excluded, private/opaque relays exposed, statement-type dependencies retained.
+The final theorem reaches61044 constants; the complete finite certificate
+reaches699 and no Mathlib number-theory module or actual class-number
+definition. Cutoff and nine-positive roots have the documented separation
+from finite certification. All component closures occur in the final one.
+
+The147 reached class-number/class-group declarations belong to five generic
+Mathlib source files. Internal pinned-source/signature inspection identified
+finiteness, PID equivalence and Minkowski inputs, not a pre-existing
+classification theorem. `classNumber.eq_1` is the defining cardinality
+equation, not class number one. Keyword absence is not method exclusion.
+An overbroad SpecialFunctions/LFunction discovery match was repaired; its
+original output and full raw inventory are checksum-preserved in archives.
+
+No mathematical source, statement, proof, pin, campaign or CI gate changed.
+This is a local snapshot rooted at ebf14c2, not independent human review or
+a newly enforced CI audit. Exact publication-head CI must be recorded
+separately. [Human input map](research/ender_radius_bridge/PROOF_INPUT_GUIDE.md) ·
+[Protocol](research/ender_radius_bridge/PHASE38_PROTOCOL.md).
+
 ## Phase 37: complete quotient-fiber certificate and actual-field composition
 
 `imaginaryQuadratic_classNumber_one_iff` has only positive-squarefree d

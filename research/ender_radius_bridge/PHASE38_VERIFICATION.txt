@@ -1,0 +1,55 @@
+Phase38 local verification, 2026-10-25. Condensed terminal transcription,
+NOT a raw log. Original inventory and first discovery output are archived.
+
+Previous turn was verified progress: ebf14c2564102ef54139024ce9f9c46228307692
+passed full pinned CI40148050189 and security40148047110. Final record
+issuecomment-6391797752 supersedes its pending checkpoints. Live PR28 is
+draft/open/unmerged at that head before this new publication.
+
+Protocol-only commit b514c46 preceded new code and the single audit run.
+powershell -NoProfile -File research/ender_radius_bridge/run_phase38_check.ps1 -ProofFile ../research/ender_radius_bridge/Phase38Provenance.lean
+PASS: PHASE38_CHECK_20261025011708695, exit0,98.3112308s,
+observed peak3305865216 bytes,180s/8192MB,one thread/16384KB stack.
+All three traversal controls pass. Real root closure sizes:
+odd cutoff55435, combined cutoff55568, finite certificate699,
+nine positives54971, final iff61044. No missing/unsafe constant.
+Only the three permitted axioms; finite certificate uses propext only.
+Each component closure is a subset of the final one.
+
+python research/ender_radius_bridge/collect_phase38_provenance.py PHASE38_CHECK_20261025011708695.result.json
+PASS: eight exact records, control expectations, source/safety checks,
+archive hash, all component subset checks and discovery-filter controls.
+The collector reads the raw ZIP automatically. V1's false SpecialFunctions
+match is preserved in PHASE38_DISCOVERY_V1.zip. The corrected discovery
+flags are zero, but that is NOT a semantic proof of method absence.
+An auxiliary inspection command initially used Windows' default decoding
+and failed; explicit UTF-8 fixed the read. Frozen raw bytes were unchanged.
+
+powershell -NoProfile -File research/ender_radius_bridge/run_table_check.ps1 -ProofFile ../research/ender_radius_bridge/Phase38InputSignatures.lean
+PASS: PHASE25_INTEGER_CHUNKS_20261025012345, exit0,20.8250873s,
+peak2799177728 bytes. Generic class-number/PID/Minkowski signatures checked.
+In particular classNumber.eq_1 is the definition equation, not h=1.
+Legacy monitor filename/scope metadata are preserved; proof_file/stdout
+identify the actual auxiliary Phase38 source inspection.
+
+powershell -NoProfile -File research/ender_radius_bridge/run_table_check.ps1 -BuildTarget TenthDiscriminant
+PASS: PHASE25_INTEGER_CHUNKS_20261025012914, exit0,8.0823879s, cached6806-step
+root. Peak0 means no Lean child sampled in this cached replay, NOT zero
+memory consumption. No fresh full local audit.py/negative-suite claim.
+
+git diff --quiet ebf14c2 -- lean/TenthDiscriminant lean/TenthDiscriminant.lean lean/lakefile.toml lean/lean-toolchain
+PASS: mathematical source and pins unchanged. Other production/frozen/CI
+gate checks are recorded at publication. Mathlib source files inspected
+match c44e0c8ee63ca166450922a373c7409c5d26b00b; fingerprints recorded.
+Edited-reader link check:386 local targets exist, including intentional
+review-directory links. An initial file-only diagnostic falsely flagged
+those two directory links; correcting the check required no document edit.
+Task JSON parses; edited source/docs whitespace check passes. Immutable
+raw monitor records retain their original CRLF bytes.
+
+This is an internal frozen dependency-closure/source audit, not independent
+human semantic review or a new permanent CI gate. Publication-head pinned
+CI is separate and cannot be described as executing the new auditor.
+Final exact head/tree/run statuses belong to the final PR verification
+record; it supersedes pending checkpoints without a metadata-only CI loop.
+No theorem change, analytic cutoff improvement, merge or Tao post.

@@ -18,6 +18,13 @@ unchanged last seed; the library rechecks every seed. There is no optimized
 analytic constant, arbitrary-field-type representation theorem, novelty
 claim, automatic merge or submission to Tao.
 
+**Phase38: a frozen proof-input audit.** The compiled dependency inventory
+separates the cutoff, nine positive cases and finite certificate. Inspection
+of the reached class-number sources identified generic finiteness, PID
+equivalence and Minkowski bounds, not a borrowed classification theorem.
+This is internal provenance evidence, not independent human review or a
+new permanent CI gate. [Read the short input map](research/ender_radius_bridge/PROOF_INPUT_GUIDE.md).
+
 <details>
 <summary>Historical proof checkpoints and earlier limits</summary>
 

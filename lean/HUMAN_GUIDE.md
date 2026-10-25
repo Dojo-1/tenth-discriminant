@@ -1,5 +1,9 @@
 # Why the derivative Gram determinant is positive
 
+The [proof-input map](../research/ender_radius_bridge/PROOF_INPUT_GUIDE.md)
+now distinguishes generic class-group/Minkowski facts from the classification
+being proved. It is an internal provenance audit, not independent human review.
+
 For the current arithmetic result, start with the
 [one-page classification proof](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md):
 the complete quotient-fiber certificate joins the cutoff to all nine
