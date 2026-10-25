@@ -19,6 +19,11 @@ The [exact envelope diagnostic](research/ender_radius_bridge/ENVELOPE_LIMIT_GUID
 explains why a substantial further improvement needs stronger estimates;
 it proves no new cutoff and does not rule out the underlying method.
 
+The [central-symmetry lemma](research/ender_radius_bridge/CENTRAL_SYMMETRY_GUIDE.md)
+also separates even- and odd-degree rows of the original Gram. Its local
+Lean checks pass; this structural result supplies no extra valuation or
+smaller cutoff.
+
 For the argument itself, start with [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
 The [interpolation guide](lean/HUMAN_GUIDE.md) explains the hard positivity
 step; the [verification record](research/ender_radius_bridge/PHASE47_VERIFICATION.md)

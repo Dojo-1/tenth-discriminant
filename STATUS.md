@@ -1,5 +1,17 @@
 # Status — 2026-10-25
 
+## Phase49: two sign sectors of the original Gram
+
+The original integer trace-Gram entry is zero between opposite total-degree
+parities on any sample set closed under simultaneous negation. The ellipse
+instance and a nonsymmetric entry2 control are Lean-checked. No Z/W swap,
+replacement minor, extra prime valuation or smaller cutoff is inferred.
+Two elaboration failures are retained; third attempt PASS23.291557s,
+total110.0297908s. Root6813, public signatures and audit4637/3900/16958 pass;
+159 modules reachable with no escapes. Exact publication-head CI and human
+review remain separate. [Guide](research/ender_radius_bridge/CENTRAL_SYMMETRY_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE49_VERIFICATION.md).
+
 ## Phase48: exact diagnostic, unchanged cutoff
 
 Protocol `a9dbd668` preceded one Python Fraction execution, PASS in

@@ -1,0 +1,20 @@
+﻿{
+    "phase":  49,
+    "mode":  "build",
+    "scope":  "Fixed central-negation parity orthogonality of the original ordinary-jet Gram; no cutoff or strict saving",
+    "attempt":  1,
+    "exit_code":  1,
+    "elapsed_seconds":  63.792740599999995,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  600,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2815213568,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "build",
+                      "TenthDiscriminant.CentralSymmetry"
+                  ],
+    "stdout":  "PHASE49_build_20261025192345045.stdout.log",
+    "stderr":  "PHASE49_build_20261025192345045.stderr.log"
+}

@@ -1,5 +1,12 @@
 # Current claim-to-Lean map
 
+`TenthDiscriminant.integerTraceGramEntry_eq_zero_of_central_symmetry`
+proves mixed-parity zero entries of the original integer Gram under
+sample negation stability; the ellipse instance and nonsymmetric entry2
+control are checked. Local root/signature/audit checks pass. No stronger
+valuation or smaller cutoff follows solely from this structure.
+[Human sign-sector guide](../research/ender_radius_bridge/CENTRAL_SYMMETRY_GUIDE.md).
+
 `ImaginaryQuadraticRepresentation` proves the missing generator existence
 from standard field hypotheses, organized through conjugation and the
 anti-invariant projector. The public

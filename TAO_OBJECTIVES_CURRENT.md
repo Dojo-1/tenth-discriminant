@@ -1,9 +1,16 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 48;
+**Living update: 25 October 2026, through preregistered Phase 49;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase49 adds a structural side result: central negation makes opposite
+total-degree parity rows orthogonal in the original integer trace-Gram.
+The generic theorem, ellipse instance and nonsymmetric control pass local
+Lean checks. This preserves the thin rectangle and ordinary derivatives;
+it supplies no new prime exponent or analytic cutoff. [Human explanation](research/ender_radius_bridge/CENTRAL_SYMMETRY_GUIDE.md).
+No challenge objective is newly marked complete by this decomposition.
 
 Phase48 supplies one exact rational diagnostic of the existing affine
 envelopes, not an improved cutoff: their crossing is `5007000/199997`

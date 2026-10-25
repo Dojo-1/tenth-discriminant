@@ -916,3 +916,25 @@ Merge8d17afe2 same tree, parents392b6dbb+deab8c2. New pinned CI40225506827
 and security40225504572 confirmed live; checkpoint6402048354 posted and
 PR body updated. Follow these exact runs; no restart merely on timeout.
 Only inherited untracked lean/lake-manifest.json excluded. Goal active.
+
+## Phase49 local symmetry bridge accepted
+
+Preregistered6cada73 before source: actual integer trace-Gram mixed-parity
+zero entries under central-negation sample stability, ellipse instance and
+nonsymmetric entry2 control. New module104 lines plus root import only;
+no inherited proof, determinant, sample convention, pin or gate changed.
+FAIL63.7927406s (power-simp recursion/cast argument), FAIL22.9454932s
+(remaining distributivity), PASS23.291557s. Full failed sources and raw
+logs retained; cumulative110.0297908s, no cap stop or fourth attempt.
+Root6813 PASS23.8260569s, input PASS24.233005s, compiled namespace audit
+PASS35.3512301s,4637logical/3900theorem/16958runtime; standard three axioms.
+Coverage159 acyclic modules/no escapes and source250endpointpairs PASS.
+Raw audit archived/readback verified before sole duplicate removed;
+manifest and evidence verifier PASS. All six local process handles consumed.
+Guide distinguishes checked orthogonality from inferred block structure;
+odd-p row-action parity calculation is not a newly exported Lean theorem.
+No strict Hadamard saving, extra prime exponent or cutoff improvement.
+Current-root verifier is nowPhase49; do not rerun Phase47 historical-root
+fingerprint as a current check. Existing Phase47/48 records unchanged.
+Published deab8c2 CI40225506827 remains the same confirmed-live build;
+security40225504572 passed. No new push while that gate is live. Goal active.

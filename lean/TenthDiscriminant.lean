@@ -81,3 +81,4 @@ import TenthDiscriminant.TunedRadiusFamily
 import TenthDiscriminant.TunedAnalyticCutoff
 import TenthDiscriminant.QuadraticGeneratorBridge
 import TenthDiscriminant.ImaginaryQuadraticRepresentation
+import TenthDiscriminant.CentralSymmetry

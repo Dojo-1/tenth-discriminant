@@ -1,0 +1,40 @@
+{
+  "scope": "central-negation parity orthogonality, no cutoff improvement",
+  "status": "LOCAL_PASS",
+  "protocol_commit": "6cada73",
+  "cumulative_build_seconds": "110.029790799999990",
+  "raw_sha256": {
+    "research\\ender_radius_bridge\\PHASE49_audit_20261025192751774.result.json": "083b063a6de7957a4c253ed9998326d8e69a21616cb9a3a9830e61ccfd5cd1a6",
+    "research\\ender_radius_bridge\\PHASE49_build_20261025192345045.result.json": "56ddbb9db336742c16a8cd120ebd7c25b886641307a685be3912e50fcf498e6a",
+    "research\\ender_radius_bridge\\PHASE49_build_20261025192542163.result.json": "a63f9e9d9a9f2d494da16a5c185f63b3671727671d08db3351410551b66f7073",
+    "research\\ender_radius_bridge\\PHASE49_build_20261025192624532.result.json": "5699d97d5388cc5187f7483cab4b389043a354e7f490997759335d8bf5a1f497",
+    "research\\ender_radius_bridge\\PHASE49_input_20261025192749415.result.json": "750d66720a63524efb16f709078c433532e4e5deb4dd54cb2c7b4bb3c0251caa",
+    "research\\ender_radius_bridge\\PHASE49_root_20261025192717400.result.json": "986b19d7f17bf401288ace7319065010dbdb90f50b5b764cc02ff115c1eb3709",
+    "research\\ender_radius_bridge\\PHASE49_audit_20261025192751774.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research\\ender_radius_bridge\\PHASE49_build_20261025192345045.stderr.log": "c4a27db198c4d8632369ee6102944ef46e83c20d685f7c17a6aaff9cfcfc710f",
+    "research\\ender_radius_bridge\\PHASE49_build_20261025192345045.stdout.log": "d1233925c589f1d33fc0771b9bac2f69788ef22130913a012d9260bebe14841f",
+    "research\\ender_radius_bridge\\PHASE49_build_20261025192542163.stderr.log": "c4a27db198c4d8632369ee6102944ef46e83c20d685f7c17a6aaff9cfcfc710f",
+    "research\\ender_radius_bridge\\PHASE49_build_20261025192542163.stdout.log": "a94bdb526e9a334f5959f471d5ae9911c3e4ffbe4f3f2111cb22595ad66cb60d",
+    "research\\ender_radius_bridge\\PHASE49_build_20261025192624532.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research\\ender_radius_bridge\\PHASE49_build_20261025192624532.stdout.log": "8c38dd9a8e9f423c9aad409c3c8333c4ceb9cf4089838c47fa8062ec25315c24",
+    "research\\ender_radius_bridge\\PHASE49_input_20261025192749415.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research\\ender_radius_bridge\\PHASE49_input_20261025192749415.stdout.log": "a350e7dae7f88de5c7591dd8e3243a21326020c58a3c1464d43f1e4843dca19c",
+    "research\\ender_radius_bridge\\PHASE49_root_20261025192717400.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research\\ender_radius_bridge\\PHASE49_root_20261025192717400.stdout.log": "1bb95733670c002c59aa65952de6579351244f8041165a85669d4367507ca4a0",
+    "research\\ender_radius_bridge\\PHASE49_AXIOM_AUDIT_RAW.zip": "fd95e353baf1d4814681ea4bf05a8f02d85063bf6c1cab6e4a4662b2de2e8861"
+  },
+  "source_sha256_lf": {
+    "lean\\TenthDiscriminant\\CentralSymmetry.lean": "f44f89cf1cd8e2cec9834ca4cbfa60fcb3e99802f2bd5477bd4cf873e9c35760",
+    "lean\\TenthDiscriminant.lean": "15bc3deca3cb2b52a883255cbe4676dfbc558bce94b58eac64ceb334581b92d1",
+    "research\\ender_radius_bridge\\PHASE49_PROTOCOL.md": "dec5c61d1e1d304a7469e2f16db934c02d5624a31e429fe518bb052ecb6dfe4a",
+    "research\\ender_radius_bridge\\Phase49Attempt1.lean": "ea97d2c574cbb1da11708fa3e2d72daaecac800cd6a150faed1b65ce7e2b93cc",
+    "research\\ender_radius_bridge\\Phase49Attempt2.lean": "6f226df7c1a533d4b6ae6dfc80bb2f6210fbdd27f6bf7fa62d8db109b864cb83",
+    "research\\ender_radius_bridge\\Phase49InputCheck.lean": "3d9445a4a37eb23dbcb19918f7d90b5d7dd8562b8882d9c1b958c1a78dc7fbe7",
+    "research\\ender_radius_bridge\\run_phase49.ps1": "0ea9b2411c8604e5533991a002d5d89cbaba2d883c20d0d42bbe00f210769b65",
+    "research\\ender_radius_bridge\\CENTRAL_SYMMETRY_GUIDE.md": "8c1f0732397954623a5b1b237b007a11e6a599f2541ba439a92a7fcc5445604b"
+  },
+  "audit_entry": "PHASE49_audit_20261025192751774.stdout.log",
+  "audit_raw_sha256": "67674bcfe2072fd1e5715a0da16cc9e4eefb4ef0174582ebeecc3ae6c4ac4d19",
+  "audit_raw_bytes": 2011113,
+  "exact_head_ci": "separate; not yet published"
+}
