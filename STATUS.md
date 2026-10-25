@@ -1,5 +1,29 @@
 # Status — 2026-10-25
 
+## Phase42: geometry compiled, fixed100-billion attempt incomplete
+
+Protocol d356519 fixed C25,rho=ceil(.52*D^(3/4)),K25.1 and the100-billion
+target before edits. Attempt1 failed in66.9683539s only at an unsimplified
+ceiling in the small-D rejection control. The explicit Nat.ceil_pos repair
+changed no parameter or proposition. Attempt2 built TunedRadiusFamily,
+then hit the600s cap (600.8587502s, observed peak2887528448 bytes) before
+the upper/cutoff target completed. No retry or cap increase follows.
+
+The new family supplies universal dimension/floor, rounding, strict radius,
+chosen-radius and normalized-lower lemmas. The unaccepted upper/actual-field
+candidate is parked outside the library, not silently imported or checked
+through a differently named verification job. Old cutoff/campaign/finite
+certificate sources remain unchanged; checked analytic cutoff stays2e11.
+Only the accepted geometry module is added to the root. Partial root6809
+steps PASS218.059089s;155 modules reachable/acyclic. Fresh geometry-input
+check PASS134.0465353s, closures13721/23486 exclude16 listed cutoff/finite
+answer inputs; the100-billion cutoff declarations are confirmed absent.
+Compiled audit PASS136.5587361s:4573 logical/3839 theorem/16955 runtime-only
+declarations, standard3 axioms. These are NOT a retry or acceptance of the
+time-stopped cutoff. Prior publication3b0c018 passed CI40168480662/security
+40168478985 and CodeQL; final record6394531507 precedes the new push.
+New-head CI remains separate. [Human guide](research/ender_radius_bridge/TUNED_CUTOFF_GUIDE.md).
+
 ## Phase41: aspect-ratio lower bridge, not a new cutoff
 
 Protocol35dbd4c preceded one generic lower-envelope proof and one fixed

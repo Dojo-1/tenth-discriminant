@@ -2,6 +2,14 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
+**Phase42: universal radius geometry, cutoff attempt incomplete.** The
+new family's dimension, rounding, lower-budget and chosen-radius bounds
+compiled. The remaining upper/cutoff target hit its registered time cap;
+its unaccepted candidate and both attempts are preserved. **The checked
+cutoff remains200 billion.** Partial root, fresh input/leak check and axiom
+audit pass locally; exact-head publication CI is separate.
+[Human explanation](research/ender_radius_bridge/TUNED_CUTOFF_GUIDE.md).
+
 **Phase41: the price of a thinner rectangle.** A new checked lower-bound
 lemma exposes the aspect-ratio loss instead of hiding a fixed ratio.
 One preregistered100-billion-scale pilot passes the original guards;

@@ -1,5 +1,18 @@
 # Current claim-to-Lean map
 
+Phase42's TunedRadiusFamily compiled: universal dimensions, log/floor
+bounds, normalized lower budget, integer radius rounding and chosen-radius
+geometry on the fixed100-billion-scale family. Its upper/cutoff target
+stopped at the registered time limit, so the unaccepted candidate is kept
+outside the library. The root imports only the accepted geometry module;
+no new100-billion cutoff declaration is supplied. Partial root/input/audit
+verification passes locally:6809 steps,155 modules; geometry/lower input
+closures13721/23486 exclude16 listed old inputs, and the no100b-declaration
+check passes. Namespace audit4573 logical/3839 theorem declarations passes,
+only permitted axioms. These checks do not compile the parked upper/cutoff
+candidate; publication-head CI is separate. The checked actual cutoff
+remains200 billion. [Human guide](../research/ender_radius_bridge/TUNED_CUTOFF_GUIDE.md).
+
 Phase41 adds `AspectRatioLowerEnvelope`: the same actual raw prime-mass
 lower expression now has an explicit linear aspect-ratio cost. Its guarded
 statement, K=21/K=25.1 specializations, scalar separation/rejection and

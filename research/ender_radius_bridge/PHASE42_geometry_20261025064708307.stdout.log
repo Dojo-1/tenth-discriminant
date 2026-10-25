@@ -1,0 +1,35 @@
+TenthDiscriminant.FirstCertificate.Tuned.dimensions (D : ℕ) (hD : 100000000000 ≤ D) :
+  100000000 ≤ TenthDiscriminant.FirstCertificate.Tuned.R D ∧
+    500000 ≤ TenthDiscriminant.FirstCertificate.Tuned.S D ∧
+      10 * TenthDiscriminant.FirstCertificate.Tuned.R D ≤ 251 * TenthDiscriminant.FirstCertificate.Tuned.S D ∧
+        TenthDiscriminant.FirstCertificate.Tuned.R D ≤ 10000 * TenthDiscriminant.FirstCertificate.Tuned.S D ∧
+          ↑D / 5 ≤ ↑(TenthDiscriminant.FirstCertificate.Tuned.R D) ∧
+            ↑(TenthDiscriminant.FirstCertificate.Tuned.R D) ≤ ↑D / 4 ∧
+              ↑(TenthDiscriminant.FirstCertificate.Tuned.S D) ≤ ↑(TenthDiscriminant.FirstCertificate.Tuned.R D) / 25
+TenthDiscriminant.FirstCertificate.Tuned.radius_bounds (D : ℕ) (hD : 100000000000 ≤ D) :
+  13 / 25 * TenthDiscriminant.FirstCertificate.fourthRoot D ^ 3 ≤ ↑(TenthDiscriminant.FirstCertificate.Tuned.rho D) ∧
+    ↑(TenthDiscriminant.FirstCertificate.Tuned.rho D) ≤ 521 / 1000 * TenthDiscriminant.FirstCertificate.fourthRoot D ^ 3
+TenthDiscriminant.FirstCertificate.Tuned.chosen_radius (D : ℕ) (hD : 100000000000 ≤ D) :
+  1001 / 1000 *
+        √(↑(3 * TenthDiscriminant.FirstCertificate.Tuned.R D + TenthDiscriminant.FirstCertificate.Tuned.S D) * √↑D /
+            Real.pi) +
+      10 * √↑D ≤
+    ↑(TenthDiscriminant.FirstCertificate.Tuned.rho D)
+TenthDiscriminant.FirstCertificate.Tuned.normalized_lower (D : ℕ) (hD : 100000000000 ≤ D) :
+  999997 / 1000000 * Real.log ↑D - 5820 / 1000 ≤
+    TenthDiscriminant.FirstCertificate.rawPrimeMassLower (TenthDiscriminant.FirstCertificate.Tuned.R D)
+        (TenthDiscriminant.FirstCertificate.Tuned.S D) TenthDiscriminant.FirstEnderInterval.tailBudget /
+      TenthDiscriminant.FirstCertificate.comparisonScale (TenthDiscriminant.FirstCertificate.Tuned.R D)
+        (TenthDiscriminant.FirstCertificate.Tuned.S D)
+TenthDiscriminant.FirstCertificate.Tuned.unguarded_radius_rounding_rejected :
+  ¬↑(TenthDiscriminant.FirstCertificate.Tuned.rho 1) ≤ 521 / 1000 * TenthDiscriminant.FirstCertificate.fourthRoot 1 ^ 3
+TenthDiscriminant.FirstCertificate.Tuned.inclusive_inertness_endpoint_rejected : ¬41 < (163 + 1) / 4
+TenthDiscriminant.imaginaryQuadratic_classNumber_one_radicand_bound_200b (d : ℕ) [Fact (0 < d)] (hsq : Squarefree d)
+  (hc : NumberField.classNumber (TenthDiscriminant.ImaginaryQuadraticField d) = 1) : d < 200000000000
+GEOMETRY_INPUTS_OK TenthDiscriminant.FirstCertificate.Tuned.chosen_radius: 13721 reached; none of16 listed cutoff/classification/finite-answer inputs; axioms [propext,
+ Quot.sound,
+ Classical.choice]
+GEOMETRY_INPUTS_OK TenthDiscriminant.FirstCertificate.Tuned.normalized_lower: 23486 reached; none of16 listed cutoff/classification/finite-answer inputs; axioms [propext,
+ Quot.sound,
+ Classical.choice]
+NO_UNACCEPTED_100B_CUTOFF_IN_LIBRARY

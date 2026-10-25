@@ -1,5 +1,44 @@
 # Task checkpoint
 
+- Latest Phase42 partial delivery: whole-cutoff attempt INCOMPLETE after
+  first ceil-control failure66.9683539s and repaired attempt time-stop
+  600.8587502s; no retry/cap increase. Accepted geometry only imported;
+  unaccepted candidate parked outside library with identical math body.
+  Full partial root6809 PASS218.059089s;155 modules/no escapes. Fresh
+  geometry check PASS134.0465353s, closures13721/23486 exclude16 roots;
+  NO_UNACCEPTED_100B_CUTOFF_IN_LIBRARY confirmed; positive1,2,163 controls.
+  Audit4573/3839/16955 PASS136.5587361s, standard3 axioms. Raw audit archived
+  losslessly and recovery verified before duplicate removal. All handles
+  for local proof/verification are terminal, no live local compiler job.
+  Source/candidate/hash/failure-record checks pass; no new pilot. Old3b0c018
+  CI40168480662/security40168478985/CodeQL SUCCESS, same-tree merge1d750065,
+  record6394531507 before new push. New-head CI separate. Cutoff2e11 stays.
+  Broad goal active, no merge/Tao/novelty/optimality/independent-review claim.
+
+- Phase42 protocol d356519 before proof edits. Fixed100b target uses the
+  Phase41 family C25/rho13over25/K25.1 and same original Gram/constants.
+  No new pilot/search. Attempt1 main target TunedAnalyticCutoff running
+  session95232; runner600s/8192MB,1200s cumulative and max3 generic repairs,
+  no retry after resource stop. Check its live handle/result before action.
+  Prior publication3b0c018 CI40168480662 confirmed live/security40168478985
+  PASS, CodeQL separate neutral observed. Finish same run before new push.
+  New universal cutoff is a target only until all proof/audit gates pass.
+  Attempt1 terminalFAIL66.9683539s/2883031040B (no resource stop): only
+  small-D radius rejection control left an unevaluated real ceiling.
+  Repair1 supplies Nat.ceil_pos and an explicit integer lower bound; no
+  parameter, proposition, guard or budget changed. Preserve raw failure.
+  Attempt2 terminalRESOURCE_STOP600.8587502s/2887528448B, time_limit;
+  geometry module Built, upper/cutoff not accepted. NO RETRY in Phase42.
+  Candidate moved outside library to Phase42UnacceptedCutoff.lean, only
+  header changed to label unaccepted; attempted LF hash826089fc3e695ceb38c08f8c695f58c45580daf804322dd014caba1bcf3f4c9a.
+  Root imports accepted geometry only. Partial root verification running
+  session93896, NOT a retry of the unaccepted cutoff. Whole-cutoff input
+  checker retained unexecuted; separate GeometryCheck has no100b leakage
+  check. External query68346 disappeared without a delivered result;
+  app diagnostics timed out and bounded web read was stopped (not CI).
+  Fresh exact old-CI query session63407 pending. Do not infer job failure,
+  cancel CI, restart target or publish before verified terminal old CI.
+
 - Phase41 protocol35dbd4c before new math/pilot. Prior turn was progress.
   One fixed D100000000003/C25/rho.52 Arb256 pilot PASS17 checks1.5159136s;
   no rerun/search, no universal100b claim. Generic aspect-ratio lower lemma

@@ -1,0 +1,20 @@
+﻿{
+    "phase":  42,
+    "mode":  "build",
+    "scope":  "Fixed100-billion analytic proof attempt or separately labelled verification; no new observational pilot",
+    "attempt":  1,
+    "exit_code":  1,
+    "elapsed_seconds":  66.9683539,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  600,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2883031040,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "build",
+                      "TenthDiscriminant.TunedAnalyticCutoff"
+                  ],
+    "stdout":  "PHASE42_build_20261025062242792.stdout.log",
+    "stderr":  "PHASE42_build_20261025062242792.stderr.log"
+}
