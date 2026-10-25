@@ -827,3 +827,14 @@
   degree-two surjectivity and why rescaling breaks squarefree labels while
   actual discriminant stays unchanged. Universal normalized-generator
   existence remains open. New exact-head CI needed; no merge/Tao post.
+
+# Phase47 abstract-field normalization
+
+- Previous goal turn was progress: Phase46 explicit-root constructor and
+  actual bound transport were published at2def070. Exact CI40203394568
+  remains live; security40203392082 passed. No newer push until final record.
+- Fixed full target: degree-two totally-complex number field supplies its
+  own positive squarefree root witness, then actual-discriminant100b follows.
+  Primitive power basis -> negative rational square -> denominator clearing
+  -> Nat squarefree decomposition. No supplied-root/isomorphism fallback,
+  numerical/classification input, new constant or extra reviewer agent.
