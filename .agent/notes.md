@@ -809,3 +809,21 @@
   hold but D is not squarefree and exceeds the proposed radicand bound.
   Keep it outside the bound proof and library. This explains the remaining
   normalization obligation; no universal representation/classification claim.
+- Main target accepted after sole arity repair; full root6811 PASS24.5555875s.
+  Static import graph157 reachable/acyclic/no source escapes. Input1 failed
+  33.0731518s only in external controls (duplicate anonymous instance,
+  noncomputable context, unsimplified polynomial numeral); source100bc97d...
+  and raw failure retained. Explicit names/context/numeral simplification
+  keep all original statements/witnesses; input2 PASS26.2956286s. Closures
+  55578/55781 exclude16 named old-bound/finite-answer inputs; deliberate
+  new100b inputs retained. Negative19/half5/rescaled-Qi controls all pass.
+- Compiled audit PASS29.3093956s:4614 logical/3878 theorem/16955 runtime-only,
+  standard3 axioms. Raw2007231 bytes retained in138839-byte ZIP, exact
+  readback verified before removing only unpacked duplicate. Source/record/
+  archive verifier PASS405 reader targets. Main cumulative cost93.9021171s;
+  no resource stop, new parameter or numerical pilot. All owned local handles
+  terminal. Prior AI review predates this new constructor; do not transfer it.
+- Current human guide explains quotient universal property, injective map,
+  degree-two surjectivity and why rescaling breaks squarefree labels while
+  actual discriminant stays unchanged. Universal normalized-generator
+  existence remains open. New exact-head CI needed; no merge/Tao post.

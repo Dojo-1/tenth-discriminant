@@ -79,3 +79,4 @@ import TenthDiscriminant.OptimizedAnalyticCutoff
 import TenthDiscriminant.AspectRatioLowerEnvelope
 import TenthDiscriminant.TunedRadiusFamily
 import TenthDiscriminant.TunedAnalyticCutoff
+import TenthDiscriminant.QuadraticGeneratorBridge

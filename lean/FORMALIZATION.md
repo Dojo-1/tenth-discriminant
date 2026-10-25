@@ -1,5 +1,17 @@
 # Current claim-to-Lean map
 
+`QuadraticGeneratorBridge` now constructs `imaginaryQuadraticEquivOfRoot`
+from a supplied root a^2+d=0 and rational degree two of an actual number
+field K. Root preservation and necessary degree are proved. The new
+`classNumber_one_radicand_bound_of_quadratic_root` and
+`classNumber_one_discriminant_bound_of_quadratic_root` transport the100b
+bound with positive squarefree d and actual class number one; no field
+isomorphism is assumed. [Scope and guard explanation](../research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md).
+The existence of a positive squarefree generator for every abstract
+imaginary quadratic field remains a separate unproved representation step.
+Local root/input/audit checks pass; exact publication-head CI is separate.
+The Phase45 review predates and does not cover this constructor.
+
 Phase45 adds a [bounded fresh-context AI review](../research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md)
 of the new cutoff, with three arguments rederived and two inherited paths
 source-traced. It changes no Lean declaration or proof. No contradiction

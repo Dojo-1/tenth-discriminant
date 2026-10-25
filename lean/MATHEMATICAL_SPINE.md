@@ -19,6 +19,12 @@ unchanged by the newer analytic optimization. The
 separates those directions. This is not a representation theorem for
 arbitrary field types or a claim of independent human semantic review.
 
+For a caller's field with a specified root of X^2+d and degree two, the
+[generator dictionary](../research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md)
+now constructs the field equivalence and transfers the actual bound for
+positive squarefree d. The squarefree-generator existence step for a
+completely abstract imaginary quadratic field remains separate.
+
 Read this page for the invariant and transformations, the
 [human guide](HUMAN_GUIDE.md) for the contact-count proof, and the
 [claim map](FORMALIZATION.md) for exact declarations and validation scope.

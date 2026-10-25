@@ -1,0 +1,23 @@
+﻿{
+    "phase":  46,
+    "mode":  "audit",
+    "scope":  "Fixed quadratic-generator bridge or separately labelled verification; no numerical pilot",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  29.3093956,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  180,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  3330441216,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "env",
+                      "lean",
+                      "-j",
+                      "1",
+                      "Audit.lean"
+                  ],
+    "stdout":  "PHASE46_audit_20261025142853520.stdout.log",
+    "stderr":  "PHASE46_audit_20261025142853520.stderr.log"
+}

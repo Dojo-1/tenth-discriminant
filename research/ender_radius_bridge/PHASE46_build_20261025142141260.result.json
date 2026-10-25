@@ -1,0 +1,20 @@
+﻿{
+    "phase":  46,
+    "mode":  "build",
+    "scope":  "Fixed quadratic-generator bridge or separately labelled verification; no numerical pilot",
+    "attempt":  1,
+    "exit_code":  1,
+    "elapsed_seconds":  69.393486,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  600,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2821320704,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "build",
+                      "TenthDiscriminant.QuadraticGeneratorBridge"
+                  ],
+    "stdout":  "PHASE46_build_20261025142141260.stdout.log",
+    "stderr":  "PHASE46_build_20261025142141260.stderr.log"
+}

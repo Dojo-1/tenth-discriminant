@@ -10,6 +10,14 @@ or older-cutoff premise. Full root, fresh input checks and axiom audit pass;
 exact publication-head pinned CI is separate. Phase42's failure/time stop
 remain preserved, not relabelled success. No optimality or novelty claim.
 [Read the short human proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md).
+
+For a caller's differently constructed number field, the new
+[generator bridge](research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md)
+constructs the identification from a specified root of `X^2+d` and degree
+two, then transfers the actual bound for positive squarefree d. Producing
+such a squarefree generator for every abstract imaginary quadratic field
+remains a separate obligation; the prior AI review does not cover this new API.
+
 For the argument itself, start with [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
 The [interpolation guide](lean/HUMAN_GUIDE.md) explains the hard positivity
 step; the [verification record](research/ender_radius_bridge/PHASE43_VERIFICATION.md)

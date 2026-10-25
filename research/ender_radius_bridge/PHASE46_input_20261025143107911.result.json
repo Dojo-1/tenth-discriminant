@@ -1,0 +1,23 @@
+﻿{
+    "phase":  46,
+    "mode":  "input",
+    "scope":  "Fixed quadratic-generator bridge or separately labelled verification; no numerical pilot",
+    "attempt":  2,
+    "exit_code":  0,
+    "elapsed_seconds":  26.2956286,
+    "cumulative_before_seconds":  33.0731518,
+    "time_limit_seconds":  180,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  3214102528,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "env",
+                      "lean",
+                      "-j",
+                      "1",
+                      "../research/ender_radius_bridge/Phase46InputCheck.lean"
+                  ],
+    "stdout":  "PHASE46_input_20261025143107911.stdout.log",
+    "stderr":  "PHASE46_input_20261025143107911.stderr.log"
+}

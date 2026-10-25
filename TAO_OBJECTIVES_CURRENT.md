@@ -1,9 +1,19 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 45;
+**Living update: 25 October 2026, through preregistered Phase 46;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase46 constructs the field identification from a specified root a^2+d=0
+and rational degree two, then transfers the actual100-billion bounds for
+positive squarefree d and class number one. It supplies a usable conditional
+representation bridge, not the universal squarefree-generator existence
+theorem. A fixed rescaling control shows why the radicand bound cannot omit
+squarefreeness. [Human field dictionary](research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md).
+New local build/input/audit checks pass; publication-head CI is separate.
+No analytic constant, finite certificate or previous proof is changed.
+The prior bounded AI review does not cover this new constructor.
 
 Phase45 supplies one user-authorized fresh-context AI review of the new
 100-billion proof. It rederived the scalar, floor/aspect-ratio and field/
@@ -182,6 +192,7 @@ completion is separately registered and separately costed.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
+| A concrete root and degree two construct the caller's field dictionary. | **Local Lean constructor and actual-discriminant transport** | [Phase46](research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md) assumes a root equation and degree, rather than an isomorphism. Negative-root and alternate-chart controls pass; rescaling in Q(i) refutes an unguarded radicand bound. The cutoff is unchanged and universal squarefree-generator existence remains open. Prior review does not cover this new API. |
 | Fixed completion of the thinner-family analytic cutoff. | **Local Lean proof, fresh input closures and full namespace audit** | [Phase43](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md) supplies the upper envelope and actual100-billion field bounds without borrowing classification. Main build76.3502975s; combined earlier/current proof cost744.1774016s. Exact-head publication CI and independent review remain separate; no new pilot or parameter search. |
 | Universal geometry for the thinner fixed auxiliary family. | **Historical Phase42 geometry acceptance; cutoff attempt incomplete** | [Phase42](research/ender_radius_bridge/TUNED_CUTOFF_GUIDE.md) proves radius admissibility, while its upper/cutoff target hit600s. Original failure/stop records, candidate and no-cutoff-leak checkpoint are retained unchanged. The later Phase43 completion does not retrospectively change that outcome. |
 | Explicit aspect-ratio price in the same prime-mass lower budget. | **Lean lemma plus one separately labelled Arb pilot** | [Phase41](research/ender_radius_bridge/ASPECT_RATIO_GUIDE.md) exposes loss3.294+0.0448K for R<=K*S, with old/new ratio controls and a floor counterexample. One fixed new-family input passes17 checks. Its then-open universal geometry/upper obligations are supplied separately by Phases42–43; the pilot itself proves no universal cutoff. |

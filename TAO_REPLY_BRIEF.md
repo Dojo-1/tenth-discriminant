@@ -1,6 +1,6 @@
 # Factual brief for a possible human comment on Tao's challenge
 
-**25 October 2026, through Phase43. This is an AI-prepared evidence brief, not the
+**25 October 2026, through Phase46. This is an AI-prepared evidence brief, not the
 human-generated summary requested by [Tao's post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).**
 The contributor should write the actual comment in their own words
 after reviewing the linked work. No comment has been submitted by this
@@ -36,6 +36,12 @@ determinant apparatus. The exact model identifier was unavailable; no
 independence between model families or human peer review is inferred.
 
 ## What can be stated now
+
+- A [field dictionary](research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md)
+  now constructs the caller's field identification from a specified root
+  of X^2+d and degree two. Positive squarefree d and actual class number one
+  then give the same actual100-billion bounds. Universal squarefree-generator
+  existence remains open; the prior AI review does not cover this new API.
 
 - The direct analytic radicand and actual absolute field-discriminant
   bounds are reduced to `10¹¹`, without using the finite classification

@@ -1,5 +1,27 @@
 # Status — 2026-10-25
 
+## Phase46: construct the field dictionary from a root and degree two
+
+Protocol e3619c66 preceded the main proof; control addendum bc2574c1 preceded
+its fixed rescaling check. A root a^2+d=0 in an actual degree-two number
+field K now constructs the rational equivalence, with no isomorphism premise.
+For positive squarefree d and actual class number one, both the radicand
+and actual absolute-discriminant bounds transfer. Cutoff stays100 billion.
+Universal squarefree-generator existence for arbitrary imaginary quadratic
+field types remains unproved here. [Human explanation](research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md).
+
+Attempt1 FAIL69.393486s on an extra API argument; sole arity repair gives
+attempt2 PASS24.5086311s. Root6811 PASS24.5555875s;157 modules reachable and
+acyclic, no source escapes. Fresh input attempt1 failed on control elaboration;
+same witnesses pass after explicit names/noncomputable/constant simplification
+in26.2956286s. Closures55578/55781 exclude16 old-bound/finite-answer inputs.
+Negative-root, alternate-chart and fixed non-squarefree rescaling controls
+pass. The rescaling counterexample rejects the unguarded radicand claim,
+not the actual-discriminant bound. Both raw failures and sources are retained.
+Compiled audit PASS4614 logical/3878 theorem/16955 runtime-only, standard
+three axioms. New publication-head CI remains separate. No numerical pilot,
+new cutoff, independent review of this constructor, merge or Tao post.
+
 ## Phase45: one separate AI review of the 100-billion proof
 
 User-authorized protocol5bc3d172 preceded one fresh-context read-only review.
