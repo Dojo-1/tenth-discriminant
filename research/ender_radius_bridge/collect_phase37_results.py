@@ -41,5 +41,5 @@ result = {
     'publication': 'Exact tested head/tree and terminal pinned CI status belong to the final PR verification record; no full local parent/apparatus or negative-control-suite pass inferred.',
     'scope': 'Canonical actual positive-squarefree imaginary quadratic field family; no arbitrary-field representation theorem, optimized constant, independent human review, merge or Tao post.',
 }
-(here/'PHASE37_RESULTS.json').write_text(json.dumps(result, indent=2)+'\n', encoding='utf-8')
+(here/'PHASE37_RESULTS.json').write_text(json.dumps(result, indent=2)+'\n', encoding='utf-8', newline='\n')
 print(json.dumps({'completion': record['exit_code'], 'local_records': len(builds)}))
