@@ -1,0 +1,41 @@
+⚠ [6658/6742] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6659/6742] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6660/6742] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6661/6742] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6664/6742] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6666/6742] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6695/6742] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+⚠ [6705/6742] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6726/6742] Replayed TenthDiscriminant.SieveWheel
+warning: .\.\.\.\TenthDiscriminant\SieveWheel.lean:62:11: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+✔ [6729/6742] Built TenthDiscriminant.QuotientFiberCheck00
+✔ [6730/6742] Built TenthDiscriminant.QuotientFiberCheck01
+✔ [6731/6742] Built TenthDiscriminant.QuotientFiberCheck02
+✔ [6732/6742] Built TenthDiscriminant.QuotientFiberCheck03
+✔ [6733/6742] Built TenthDiscriminant.QuotientFiberCheck04
+✔ [6734/6742] Built TenthDiscriminant.QuotientFiberCheck05
+✔ [6735/6742] Built TenthDiscriminant.QuotientFiberCheck06
+✔ [6736/6742] Built TenthDiscriminant.QuotientFiberCheck07
+✔ [6737/6742] Built TenthDiscriminant.QuotientFiberCheck08
+✔ [6738/6742] Built TenthDiscriminant.QuotientFiberCheck09
+✔ [6739/6742] Built TenthDiscriminant.QuotientFiberCheck10
+✔ [6740/6742] Built TenthDiscriminant.QuotientFiberCheck11
+✔ [6741/6742] Built TenthDiscriminant.QuotientFiberCheck12
+✔ [6742/6742] Built TenthDiscriminant.QuotientFiberChecked
+Build completed successfully.

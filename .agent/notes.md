@@ -499,6 +499,26 @@
   Current guides were updated to distinguish one bounded actual-field
   exclusion from the remaining campaign, all-D envelope, even cases and
   finite classification. Frozen tools/ledger/flow/audit/pins unchanged.
+- Phase36 preregistered in aad9ac8 before edits. Previous turn was progress:
+  Phase35 bounded iff below892371480 passed exact-head pinnedCI40143185318
+  andsecurity40143183607 onf0f6bae, treef7baecfb; finalrecord6391087799
+  supersedes its pending checkpoints. Shared head/main refreshed; draftPR28.
+  Generic affine inverse/periodic bit meaning, exact initial interval,
+  survivor retention, no phantom bits and shift/inverse/endpoint controls
+  compile after one preserved numeral-cast normalization failure. All200
+  generated inverse/wide-pattern entries and complete aggregate kernel
+  checked in144.7489056s, observed peak2802823168B. Fixed ALL785 seed pilot
+  live; first three pass at71.45/71.61/63.50s, peaks below8192MB. No changed
+  prime order, width, interval or budget. Actual-field full-gap reduction
+  building; no global claim unless all eleven seeds and full assembly pass.
+  Phase36 pilot now TERMINAL: all785 positions for first ten seeds passed;
+  last seed179 stopped after61.5587795s against60s remaining aggregate
+  allowance, observed peak7942934528B. Total721.7588028s includes polling/
+  termination overhead; unchanged720s budget. This pilot is INCOMPLETE,
+  not a global classification. All data, exact full-gap field reduction,
+  conditional classification closure and acyclic old-q0 transport compile.
+  Freeze Phase36 before any separate completion protocol; do not reinterpret
+  its stopped seed as passing or silently raise/restart its budget.
 - Phase35 preregistered in d56f17d before edits. Previous turn was progress:
   Phase34 exact semantic bridge and preserved negative pilot passed pinned
   CI 40139545303/security 40139542493 on 29a155e, tree4cbf8da; final record

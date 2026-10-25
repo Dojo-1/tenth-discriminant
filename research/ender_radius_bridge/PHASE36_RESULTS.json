@@ -1,0 +1,383 @@
+{
+  "phase": 36,
+  "protocol_commit": "aad9ac8",
+  "base_commit": "f0f6bae9c4191e9326ab0fd3e993d50c1eca1cd2",
+  "original_interval": [
+    1000000,
+    700000000000
+  ],
+  "upper_endpoint_exclusive": true,
+  "quotient_positions_per_seed": 785,
+  "all_extra_prime_labels_unchanged": true,
+  "literal_inverse_pattern_entries": 200,
+  "literal_validation_record": "PHASE25_INTEGER_CHUNKS_20261025000643.result.json",
+  "pilot_outcome": "INCOMPLETE: ten seeds pass; seed179 time-stopped under remaining aggregate allowance",
+  "passed_seeds": [
+    3,
+    27,
+    35,
+    59,
+    75,
+    123,
+    131,
+    139,
+    147,
+    163
+  ],
+  "stopped_seeds": [
+    179
+  ],
+  "aggregate_limit_seconds": 720,
+  "observed_elapsed_seconds": 721.7588028,
+  "stop_note": "Last seed retained nominal per-seed cap180 but only60 seconds remained in aggregate. Observed721.7588028s includes startup/polling/termination overshoot. No old budget was increased.",
+  "seeds": [
+    {
+      "seed_index": 0,
+      "seed": 3,
+      "status": "terminal",
+      "exit_code": 0,
+      "record": "PHASE36_CHECK_20261025000630892.result.json",
+      "measurement": {
+        "scope": "fixed Phase36 candidate ALL785 pilot; no field claim until all data and semantics validated",
+        "proof_file": "../research/ender_radius_bridge/Phase36Seed0Check.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 71.44556,
+        "observed_peak_working_set_bytes": 7938887680,
+        "memory_threshold_mb": 8192,
+        "time_limit_seconds": 180,
+        "stop_reason": "",
+        "stdout": "PHASE36_CHECK_20261025000630892.stdout.log",
+        "stderr": "PHASE36_CHECK_20261025000630892.stderr.log"
+      }
+    },
+    {
+      "seed_index": 1,
+      "seed": 27,
+      "status": "terminal",
+      "exit_code": 0,
+      "record": "PHASE36_CHECK_20261025000742883.result.json",
+      "measurement": {
+        "scope": "fixed Phase36 candidate ALL785 pilot; no field claim until all data and semantics validated",
+        "proof_file": "../research/ender_radius_bridge/Phase36Seed1Check.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 71.6065266,
+        "observed_peak_working_set_bytes": 7949221888,
+        "memory_threshold_mb": 8192,
+        "time_limit_seconds": 180,
+        "stop_reason": "",
+        "stdout": "PHASE36_CHECK_20261025000742883.stdout.log",
+        "stderr": "PHASE36_CHECK_20261025000742883.stderr.log"
+      }
+    },
+    {
+      "seed_index": 2,
+      "seed": 35,
+      "status": "terminal",
+      "exit_code": 0,
+      "record": "PHASE36_CHECK_20261025000854918.result.json",
+      "measurement": {
+        "scope": "fixed Phase36 candidate ALL785 pilot; no field claim until all data and semantics validated",
+        "proof_file": "../research/ender_radius_bridge/Phase36Seed2Check.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 63.502311299999995,
+        "observed_peak_working_set_bytes": 7933784064,
+        "memory_threshold_mb": 8192,
+        "time_limit_seconds": 180,
+        "stop_reason": "",
+        "stdout": "PHASE36_CHECK_20261025000854918.stdout.log",
+        "stderr": "PHASE36_CHECK_20261025000854918.stderr.log"
+      }
+    },
+    {
+      "seed_index": 3,
+      "seed": 59,
+      "status": "terminal",
+      "exit_code": 0,
+      "record": "PHASE36_CHECK_20261025000958795.result.json",
+      "measurement": {
+        "scope": "fixed Phase36 candidate ALL785 pilot; no field claim until all data and semantics validated",
+        "proof_file": "../research/ender_radius_bridge/Phase36Seed3Check.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 65.9263922,
+        "observed_peak_working_set_bytes": 7940829184,
+        "memory_threshold_mb": 8192,
+        "time_limit_seconds": 180,
+        "stop_reason": "",
+        "stdout": "PHASE36_CHECK_20261025000958795.stdout.log",
+        "stderr": "PHASE36_CHECK_20261025000958795.stderr.log"
+      }
+    },
+    {
+      "seed_index": 4,
+      "seed": 75,
+      "status": "terminal",
+      "exit_code": 0,
+      "record": "PHASE36_CHECK_20261025001105156.result.json",
+      "measurement": {
+        "scope": "fixed Phase36 candidate ALL785 pilot; no field claim until all data and semantics validated",
+        "proof_file": "../research/ender_radius_bridge/Phase36Seed4Check.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 60.5137733,
+        "observed_peak_working_set_bytes": 7939547136,
+        "memory_threshold_mb": 8192,
+        "time_limit_seconds": 180,
+        "stop_reason": "",
+        "stdout": "PHASE36_CHECK_20261025001105156.stdout.log",
+        "stderr": "PHASE36_CHECK_20261025001105156.stderr.log"
+      }
+    },
+    {
+      "seed_index": 5,
+      "seed": 123,
+      "status": "terminal",
+      "exit_code": 0,
+      "record": "PHASE36_CHECK_20261025001206062.result.json",
+      "measurement": {
+        "scope": "fixed Phase36 candidate ALL785 pilot; no field claim until all data and semantics validated",
+        "proof_file": "../research/ender_radius_bridge/Phase36Seed5Check.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 66.0666923,
+        "observed_peak_working_set_bytes": 7945052160,
+        "memory_threshold_mb": 8192,
+        "time_limit_seconds": 180,
+        "stop_reason": "",
+        "stdout": "PHASE36_CHECK_20261025001206062.stdout.log",
+        "stderr": "PHASE36_CHECK_20261025001206062.stderr.log"
+      }
+    },
+    {
+      "seed_index": 6,
+      "seed": 131,
+      "status": "terminal",
+      "exit_code": 0,
+      "record": "PHASE36_CHECK_20261025001312578.result.json",
+      "measurement": {
+        "scope": "fixed Phase36 candidate ALL785 pilot; no field claim until all data and semantics validated",
+        "proof_file": "../research/ender_radius_bridge/Phase36Seed6Check.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 63.7756574,
+        "observed_peak_working_set_bytes": 7935262720,
+        "memory_threshold_mb": 8192,
+        "time_limit_seconds": 180,
+        "stop_reason": "",
+        "stdout": "PHASE36_CHECK_20261025001312578.stdout.log",
+        "stderr": "PHASE36_CHECK_20261025001312578.stderr.log"
+      }
+    },
+    {
+      "seed_index": 7,
+      "seed": 139,
+      "status": "terminal",
+      "exit_code": 0,
+      "record": "PHASE36_CHECK_20261025001416743.result.json",
+      "measurement": {
+        "scope": "fixed Phase36 candidate ALL785 pilot; no field claim until all data and semantics validated",
+        "proof_file": "../research/ender_radius_bridge/Phase36Seed7Check.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 61.1027965,
+        "observed_peak_working_set_bytes": 7938596864,
+        "memory_threshold_mb": 8192,
+        "time_limit_seconds": 180,
+        "stop_reason": "",
+        "stdout": "PHASE36_CHECK_20261025001416743.stdout.log",
+        "stderr": "PHASE36_CHECK_20261025001416743.stderr.log"
+      }
+    },
+    {
+      "seed_index": 8,
+      "seed": 147,
+      "status": "terminal",
+      "exit_code": 0,
+      "record": "PHASE36_CHECK_20261025001518225.result.json",
+      "measurement": {
+        "scope": "fixed Phase36 candidate ALL785 pilot; no field claim until all data and semantics validated",
+        "proof_file": "../research/ender_radius_bridge/Phase36Seed8Check.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 62.7407894,
+        "observed_peak_working_set_bytes": 7947268096,
+        "memory_threshold_mb": 8192,
+        "time_limit_seconds": 180,
+        "stop_reason": "",
+        "stdout": "PHASE36_CHECK_20261025001518225.stdout.log",
+        "stderr": "PHASE36_CHECK_20261025001518225.stderr.log"
+      }
+    },
+    {
+      "seed_index": 9,
+      "seed": 163,
+      "status": "terminal",
+      "exit_code": 0,
+      "record": "PHASE36_CHECK_20261025001621366.result.json",
+      "measurement": {
+        "scope": "fixed Phase36 candidate ALL785 pilot; no field claim until all data and semantics validated",
+        "proof_file": "../research/ender_radius_bridge/Phase36Seed9Check.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 68.7696795,
+        "observed_peak_working_set_bytes": 7937671168,
+        "memory_threshold_mb": 8192,
+        "time_limit_seconds": 129,
+        "stop_reason": "",
+        "stdout": "PHASE36_CHECK_20261025001621366.stdout.log",
+        "stderr": "PHASE36_CHECK_20261025001621366.stderr.log"
+      }
+    },
+    {
+      "seed_index": 10,
+      "seed": 179,
+      "status": "terminal",
+      "exit_code": 99,
+      "record": "PHASE36_CHECK_20261025001730628.result.json",
+      "measurement": {
+        "scope": "fixed Phase36 candidate ALL785 pilot; no field claim until all data and semantics validated",
+        "proof_file": "../research/ender_radius_bridge/Phase36Seed10Check.lean",
+        "exit_code": 99,
+        "elapsed_seconds": 61.5587795,
+        "observed_peak_working_set_bytes": 7942934528,
+        "memory_threshold_mb": 8192,
+        "time_limit_seconds": 60,
+        "stop_reason": "time_limit",
+        "stdout": "PHASE36_CHECK_20261025001730628.stdout.log",
+        "stderr": "PHASE36_CHECK_20261025001730628.stderr.log"
+      }
+    }
+  ],
+  "library_build_records": [
+    {
+      "record": "PHASE25_INTEGER_CHUNKS_20261024235808.result.json",
+      "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+      "proof_file": "../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+      "build_target": "TenthDiscriminant.QuotientFiberBridge",
+      "exit_code": 1,
+      "elapsed_seconds": 52.7684581,
+      "observed_peak_working_set_bytes": 2834239488,
+      "memory_threshold_mb": 8192,
+      "resource_stop": false,
+      "threads": "Lake defaults, multiple child processes possible",
+      "stack_kb": "Lean build default",
+      "stdout": "PHASE25_INTEGER_CHUNKS_20261024235808.stdout.log",
+      "stderr": "PHASE25_INTEGER_CHUNKS_20261024235808.stderr.log"
+    },
+    {
+      "record": "PHASE25_INTEGER_CHUNKS_20261025000112.result.json",
+      "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+      "proof_file": "../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+      "build_target": "TenthDiscriminant.QuotientFiberBridge",
+      "exit_code": 0,
+      "elapsed_seconds": 22.8736648,
+      "observed_peak_working_set_bytes": 2825711616,
+      "memory_threshold_mb": 8192,
+      "resource_stop": false,
+      "threads": "Lake defaults, multiple child processes possible",
+      "stack_kb": "Lean build default",
+      "stdout": "PHASE25_INTEGER_CHUNKS_20261025000112.stdout.log",
+      "stderr": "PHASE25_INTEGER_CHUNKS_20261025000112.stderr.log"
+    },
+    {
+      "record": "PHASE25_INTEGER_CHUNKS_20261025000351.result.json",
+      "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+      "proof_file": "../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+      "build_target": "TenthDiscriminant.QuotientFiberBridge",
+      "exit_code": 0,
+      "elapsed_seconds": 21.0488261,
+      "observed_peak_working_set_bytes": 2831675392,
+      "memory_threshold_mb": 8192,
+      "resource_stop": false,
+      "threads": "Lake defaults, multiple child processes possible",
+      "stack_kb": "Lean build default",
+      "stdout": "PHASE25_INTEGER_CHUNKS_20261025000351.stdout.log",
+      "stderr": "PHASE25_INTEGER_CHUNKS_20261025000351.stderr.log"
+    },
+    {
+      "record": "PHASE25_INTEGER_CHUNKS_20261025000614.result.json",
+      "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+      "proof_file": "../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+      "build_target": "TenthDiscriminant.QuotientFiberParameters",
+      "exit_code": 0,
+      "elapsed_seconds": 5.0798353,
+      "observed_peak_working_set_bytes": 268722176,
+      "memory_threshold_mb": 8192,
+      "resource_stop": false,
+      "threads": "Lake defaults, multiple child processes possible",
+      "stack_kb": "Lean build default",
+      "stdout": "PHASE25_INTEGER_CHUNKS_20261025000614.stdout.log",
+      "stderr": "PHASE25_INTEGER_CHUNKS_20261025000614.stderr.log"
+    },
+    {
+      "record": "PHASE25_INTEGER_CHUNKS_20261025000643.result.json",
+      "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+      "proof_file": "../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+      "build_target": "TenthDiscriminant.QuotientFiberChecked",
+      "exit_code": 0,
+      "elapsed_seconds": 144.7489056,
+      "observed_peak_working_set_bytes": 2802823168,
+      "memory_threshold_mb": 8192,
+      "resource_stop": false,
+      "threads": "Lake defaults, multiple child processes possible",
+      "stack_kb": "Lean build default",
+      "stdout": "PHASE25_INTEGER_CHUNKS_20261025000643.stdout.log",
+      "stderr": "PHASE25_INTEGER_CHUNKS_20261025000643.stderr.log"
+    },
+    {
+      "record": "PHASE25_INTEGER_CHUNKS_20261025001040.result.json",
+      "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+      "proof_file": "../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+      "build_target": "TenthDiscriminant.QuotientFiberField",
+      "exit_code": 0,
+      "elapsed_seconds": 23.1001101,
+      "observed_peak_working_set_bytes": 2784370688,
+      "memory_threshold_mb": 8192,
+      "resource_stop": false,
+      "threads": "Lake defaults, multiple child processes possible",
+      "stack_kb": "Lean build default",
+      "stdout": "PHASE25_INTEGER_CHUNKS_20261025001040.stdout.log",
+      "stderr": "PHASE25_INTEGER_CHUNKS_20261025001040.stderr.log"
+    },
+    {
+      "record": "PHASE25_INTEGER_CHUNKS_20261025001304.result.json",
+      "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+      "proof_file": "../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+      "build_target": "TenthDiscriminant.QuotientFiberTransport",
+      "exit_code": 0,
+      "elapsed_seconds": 24.870276399999998,
+      "observed_peak_working_set_bytes": 2788536320,
+      "memory_threshold_mb": 8192,
+      "resource_stop": false,
+      "threads": "Lake defaults, multiple child processes possible",
+      "stack_kb": "Lean build default",
+      "stdout": "PHASE25_INTEGER_CHUNKS_20261025001304.stdout.log",
+      "stderr": "PHASE25_INTEGER_CHUNKS_20261025001304.stderr.log"
+    },
+    {
+      "record": "PHASE25_INTEGER_CHUNKS_20261025001626.result.json",
+      "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+      "proof_file": "../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+      "build_target": "TenthDiscriminant.QuotientFiberClassification",
+      "exit_code": 0,
+      "elapsed_seconds": 22.646780099999997,
+      "observed_peak_working_set_bytes": 2784964608,
+      "memory_threshold_mb": 8192,
+      "resource_stop": false,
+      "threads": "Lake defaults, multiple child processes possible",
+      "stack_kb": "Lean build default",
+      "stdout": "PHASE25_INTEGER_CHUNKS_20261025001626.stdout.log",
+      "stderr": "PHASE25_INTEGER_CHUNKS_20261025001626.stderr.log"
+    },
+    {
+      "record": "PHASE25_INTEGER_CHUNKS_20261025002050.result.json",
+      "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+      "proof_file": "../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+      "build_target": "TenthDiscriminant",
+      "exit_code": 0,
+      "elapsed_seconds": 23.2959559,
+      "observed_peak_working_set_bytes": 2793570304,
+      "memory_threshold_mb": 8192,
+      "resource_stop": false,
+      "threads": "Lake defaults, multiple child processes possible",
+      "stack_kb": "Lean build default",
+      "stdout": "PHASE25_INTEGER_CHUNKS_20261025002050.stdout.log",
+      "stderr": "PHASE25_INTEGER_CHUNKS_20261025002050.stderr.log"
+    }
+  ],
+  "raw_metadata_note": "Legacy Phase25 file/scope metadata kept unchanged; build_target/stdout identify actual Phase36 targets.",
+  "claim_boundary": "Phase36 alone does NOT supply a complete all-fiber certificate or new global classification. Existing bounded iff remains below892371480. A separately preregistered continuation must preserve this failure and may not relabel this pilot as complete."
+}
