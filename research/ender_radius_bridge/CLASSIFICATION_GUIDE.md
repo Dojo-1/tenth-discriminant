@@ -1,5 +1,10 @@
 # The bridge in one page: one field, two directions
 
+Later analytic improvement: [Phase39](ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md)
+reduces the direct cutoff to200 billion without using this classification.
+The reconstruction below keeps the original700-billion finite interval;
+no saved certificate is shortened or retrospectively changed.
+
 ## The statement a mathematician should read first
 
 For a positive squarefree integer d, let K = Q(sqrt(-d)). The public theorem

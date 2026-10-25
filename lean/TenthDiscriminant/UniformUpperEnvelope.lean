@@ -5,7 +5,7 @@ namespace TenthDiscriminant.FirstCertificate
 set_option autoImplicit false
 noncomputable section
 
-theorem envelope_radius_pos (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_radius_pos (D : Nat) (hD : 200000000000 ≤ D) :
     0 < envelopeRadius D := by
   have ht := fourthRoot_large D hD
   have hl := (envelope_radius_bounds D hD).1
@@ -13,7 +13,7 @@ theorem envelope_radius_pos (D : Nat) (hD : 700000000000 ≤ D) :
   have : (0 : Real) < envelopeRadius D := hp.trans_le hl
   exact_mod_cast this
 
-theorem envelope_count_le (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_count_le (D : Nat) (hD : 200000000000 ≤ D) :
     ellipsePaddedUpperCount D (envelopeRadius D)
       (ellipseVerticalBound D (envelopeRadius D)) ≤ 4*(D : Real) := by
   have hi := fourthRoot_identities D
@@ -48,7 +48,7 @@ theorem envelope_count_le (D : Nat) (hD : 700000000000 ≤ D) :
   rw [← hi.2.2]
   nlinarith only [hfm, hpi, hrsq, haxis, hr, hp3, hp2, hp5]
 
-theorem envelope_log_radius_upper (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_log_radius_upper (D : Nat) (hD : 200000000000 ≤ D) :
     Real.log (envelopeRadius D) ≤ (3/4 : Real)*Real.log D-59/100 := by
   have hi := fourthRoot_identities D
   have ht := fourthRoot_large D hD
@@ -70,7 +70,7 @@ theorem envelope_log_radius_upper (D : Nat) (hD : 700000000000 ≤ D) :
   norm_num only [Nat.cast_ofNat] at hlog
   linarith
 
-theorem envelope_log_R_upper (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_log_R_upper (D : Nat) (hD : 200000000000 ≤ D) :
     Real.log (envelopeR D) ≤ Real.log D-138/100 := by
   have hd := envelope_dimensions D hD
   have hrpos : (0 : Real) < envelopeR D := by exact_mod_cast (show 0 < envelopeR D by omega)
@@ -86,7 +86,7 @@ theorem envelope_log_R_upper (D : Nat) (hD : 700000000000 ≤ D) :
 
 /-- The elementary log inequality controls u/R; exponential monotonicity
 and a high-precision numerical tail are unnecessary here. -/
-theorem envelope_log_over_R (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_log_over_R (D : Nat) (hD : 200000000000 ≤ D) :
     Real.log D/(envelopeR D : Real) ≤ 1/9000 := by
   have hi := fourthRoot_identities D
   have ht := fourthRoot_large D hD
@@ -107,7 +107,7 @@ theorem envelope_log_over_R (D : Nat) (hD : 700000000000 ≤ D) :
   have hR := hd.2.2.2.2.1
   nlinarith only [hlog, he, hg, hsq, hR]
 
-theorem envelope_radius_over_R (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_radius_over_R (D : Nat) (hD : 200000000000 ≤ D) :
     (envelopeRadius D : Real)/envelopeR D ≤ 551/60000 := by
   have hi := fourthRoot_identities D
   have ht := fourthRoot_large D hD
@@ -119,7 +119,7 @@ theorem envelope_radius_over_R (D : Nat) (hD : 700000000000 ≤ D) :
   apply (div_le_iff₀ hrpos).2
   nlinarith only [hlarge, hR, hr, hi.2.2]
 
-theorem envelope_log_ratio_bounds (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_log_ratio_bounds (D : Nat) (hD : 200000000000 ≤ D) :
     0 ≤ Real.log ((envelopeR D : Real)/envelopeRadius D) ∧
     Real.log ((envelopeR D : Real)/envelopeRadius D) ≤ Real.log D := by
   have hrho := envelope_radius_pos D hD
@@ -135,7 +135,7 @@ theorem envelope_log_ratio_bounds (D : Nat) (hD : 700000000000 ≤ D) :
   rw [Real.log_div hRp.ne' hp.ne']
   linarith
 
-theorem envelope_count_log_error (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_count_log_error (D : Nat) (hD : 200000000000 ≤ D) :
     Real.log (2*ellipsePaddedUpperCount D (envelopeRadius D)
       (ellipseVerticalBound D (envelopeRadius D))*envelopeS D)/(envelopeR D : Real) ≤ 1/4000 := by
   have hd := envelope_dimensions D hD
@@ -167,7 +167,7 @@ theorem envelope_count_log_error (D : Nat) (hD : 700000000000 ≤ D) :
   norm_num only [Nat.cast_ofNat] at hl
   linarith
 
-theorem envelope_endpoint_error (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_endpoint_error (D : Nat) (hD : 200000000000 ≤ D) :
     2*((envelopeS D : Real)-1)/(envelopeR D : Real)^2*
       (envelopeRadius D+Real.log ((envelopeR D : Real)/envelopeRadius D)) ≤ 1/1000 := by
   have hd := envelope_dimensions D hD
@@ -195,7 +195,7 @@ theorem envelope_endpoint_error (D : Nat) (hD : 700000000000 ≤ D) :
   convert hdiv using 1
   ring
 
-theorem envelope_normalized_upper (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_normalized_upper (D : Nat) (hD : 200000000000 ≤ D) :
     enderUpperB (envelopeR D) (envelopeS D) (envelopeS D) (envelopeRadius D)
       (ellipsePaddedUpperCount D (envelopeRadius D) (ellipseVerticalBound D (envelopeRadius D))) /
       comparisonScale (envelopeR D) (envelopeS D) ≤
@@ -208,7 +208,7 @@ theorem envelope_normalized_upper (D : Nat) (hD : 700000000000 ≤ D) :
   rw [upperB_normalized _ _ _ _ hRn hSn (envelope_radius_pos D hD)]
   have hfirst := envelope_count_log_error D hD
   have hend := envelope_endpoint_error D hD
-  have hu := large_D_log D hD
+  have hu := moderate_D_log D hD
   have hlogR := envelope_log_R_upper D hD
   have hlogrho := envelope_log_radius_upper D hD
   have hlowR := envelope_log_R_lower D hD
@@ -239,13 +239,14 @@ even-discriminant case is asserted by this chart. -/
 theorem odd_large_classNumber_ne_one (D : Nat) (hD : 700000000000 ≤ D)
     [Fact ((D : Int)%4=3)] (hsq : Squarefree D) :
     NumberField.classNumber (QuadraticField (((D : Int)+1)/4)) ≠ 1 := by
-  have hd := envelope_dimensions D hD
+  have hDom : 200000000000 ≤ D := by omega
+  have hd := envelope_dimensions D hDom
   apply classNumber_ne_one_of_normalized_envelopes D D D (envelopeRadius D)
     (envelopeR D) (envelopeS D) (ellipseVerticalBound D (envelopeRadius D))
     (by omega) le_rfl le_rfl (by omega) (by omega) hd.2.2.2.1 hsq
-    (envelope_strict_inertness D) (envelope_radius_lt_R D hD) le_rfl
-    (envelope_chosen_radius D hD) (large_D_log D hD)
-    (envelope_normalized_upper D hD) (envelope_normalized_lower D hD)
+    (envelope_strict_inertness D) (envelope_radius_lt_R D hDom) le_rfl
+    (envelope_chosen_radius D hDom) (large_D_log D hD)
+    (envelope_normalized_upper D hDom) (envelope_normalized_lower D hDom)
 
 end
 end TenthDiscriminant.FirstCertificate

@@ -1,0 +1,84 @@
+⚠ [6657/6807] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6662/6807] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6663/6807] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6666/6807] Replayed TenthDiscriminant.AffineTransport
+warning: .\.\.\.\TenthDiscriminant\AffineTransport.lean:24:4: 'change
+  (Polynomial.X ^ j.val * F.map phi).coeff i.val = phi ((Polynomial.X ^ j.val * F).coeff i.val)' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+warning: .\.\.\.\TenthDiscriminant\AffineTransport.lean:28:4: 'change
+  (Polynomial.X ^ (j.val - b) * G.map phi).coeff i.val =
+    phi ((Polynomial.X ^ (j.val - b) * G).coeff i.val)' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+warning: .\.\.\.\TenthDiscriminant\AffineTransport.lean:148:24: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+warning: .\.\.\.\TenthDiscriminant\AffineTransport.lean:148:24: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [6668/6807] Replayed TenthDiscriminant.ComparatorR1
+warning: .\.\.\.\TenthDiscriminant\ComparatorR1.lean:58:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: .\.\.\.\TenthDiscriminant\ComparatorR1.lean:71:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6676/6807] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6677/6807] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6679/6807] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6684/6807] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+⚠ [6721/6807] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6763/6807] Replayed TenthDiscriminant.InertPilot
+info: .\.\.\.\TenthDiscriminant\InertPilot.lean:147:2: Try this: ring_nf
+✔ [6776/6807] Built TenthDiscriminant.OddPrimeTwo
+✔ [6777/6807] Built TenthDiscriminant.SmallPositiveClassNumber
+✔ [6778/6807] Built TenthDiscriminant.FiniteSieveBridge
+⚠ [6779/6807] Built TenthDiscriminant.SmallIdealClassNumber
+warning: .\.\.\.\TenthDiscriminant\SmallIdealClassNumber.lean:151:54: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: .\.\.\.\TenthDiscriminant\SmallIdealClassNumber.lean:151:68: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: .\.\.\.\TenthDiscriminant\SmallIdealClassNumber.lean:153:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: .\.\.\.\TenthDiscriminant\SmallIdealClassNumber.lean:153:39: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6780/6807] Built TenthDiscriminant.SieveWheel
+warning: .\.\.\.\TenthDiscriminant\SieveWheel.lean:62:11: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+✔ [6781/6807] Built TenthDiscriminant.ResidueMaskBridge
+✔ [6782/6807] Built TenthDiscriminant.MillionSieve
+✔ [6783/6807] Built TenthDiscriminant.FusedWheelBridge
+✔ [6784/6807] Built TenthDiscriminant.FusedWheelPrimes
+✔ [6785/6807] Built TenthDiscriminant.QuotientFiberBridge
+✔ [6786/6807] Built TenthDiscriminant.RemainingPositiveClassNumber
+✔ [6787/6807] Built TenthDiscriminant.FusedWheelFieldBridge
+✔ [6788/6807] Built TenthDiscriminant.QuotientFiberChecked
+✔ [6789/6807] Built TenthDiscriminant.QuotientFiberField
+✔ [6790/6807] Built TenthDiscriminant.QuotientFiberClassification
+✔ [6791/6807] Built TenthDiscriminant.QuotientFiberTransport
+✔ [6792/6807] Built TenthDiscriminant.Fused35Q0S00
+✔ [6793/6807] Built TenthDiscriminant.ClassNumberClassification
+✔ [6794/6807] Built TenthDiscriminant.Fused35Q0S01
+✔ [6795/6807] Built TenthDiscriminant.Fused35Q0S02
+✔ [6796/6807] Built TenthDiscriminant.Fused35Q0S03
+✔ [6797/6807] Built TenthDiscriminant.Fused35Q0S04
+✔ [6798/6807] Built TenthDiscriminant.Fused35Q0S05
+✔ [6799/6807] Built TenthDiscriminant.Fused35Q0S06
+✔ [6800/6807] Built TenthDiscriminant.Fused35Q0S07
+✔ [6801/6807] Built TenthDiscriminant.Fused35Q0S08
+✔ [6802/6807] Built TenthDiscriminant.Fused35Q0S09
+✔ [6803/6807] Built TenthDiscriminant.Fused35Q0S10
+✔ [6804/6807] Built TenthDiscriminant.FusedWheelPilot
+✔ [6805/6807] Built TenthDiscriminant.FusedWheelConclusion
+✔ [6806/6807] Built TenthDiscriminant
+Build completed successfully.

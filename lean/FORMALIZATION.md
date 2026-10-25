@@ -1,5 +1,20 @@
 # Current claim-to-Lean map
 
+Phase39 adds `OptimizedAnalyticCutoff` and public actual radicand/absolute
+field-discriminant bounds below200000000000, requiring only positive
+squarefree d and actual class number one. `UniformRadiusFamily` supplies
+the sharper guarded floor/log inequality and stronger normalized lower
+bound; radius/dimension/error helper domains extend to the new endpoint.
+The actual radius family and prime constants are unchanged. Old public
+700-billion cutoff and classification STATEMENTS are retained.
+
+The local whole library153-module build, public signatures, retained old/new
+controls and compiled axiom audit pass. `Phase39InputCheck.lean` separately
+checks that the new proofs do not depend on classification, finite
+certificates, nine positives or the old cutoff. The frozen Phase38 input
+inventory is not silently transferred to this changed proof tree. Exact-head
+pinned CI is a separate publication gate. [Human proof](../research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md).
+
 Phase38 adds an internally performed **local provenance snapshot**, outside
 the mathematical library and existing CI gates. `Phase38Provenance.lean`
 reuses Lean's compiled traversal, inventories types and opaque/private

@@ -1,6 +1,6 @@
 # Factual brief for a possible human comment on Tao's challenge
 
-**25 October 2026, through Phase38. This is an AI-prepared evidence brief, not the
+**25 October 2026, through Phase39. This is an AI-prepared evidence brief, not the
 human-generated summary requested by [Tao's post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).**
 The contributor should write the actual comment in their own words
 after reviewing the linked work. No comment has been submitted by this
@@ -8,20 +8,29 @@ repository work.
 
 ## What can be stated now
 
+- The direct analytic radicand and actual absolute field-discriminant
+  bounds are reduced to `2×10¹¹`, without using the finite classification
+  or old cutoff. The same auxiliary radius and prime constants are retained;
+  sharper floor/log accounting supplies the gain. Local full build, input
+  and axiom checks pass; cite exact-head publication CI separately. This
+  is a modest optimization, not an optimality or novelty claim.
+  [Human analytic proof](research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md).
+
 - A frozen internal proof-input audit inventories five compiled roots and
   checks their separation. The inspected class-number inputs are generic
   finiteness/PID/Minkowski facts, not an identified borrowed classification.
   This is not independent human review or a new permanent CI gate. The
-  finite d≤163 conclusion must not be confused with optimizing the unchanged
-  analytic7e11 cutoff. [Input map](research/ender_radius_bridge/PROOF_INPUT_GUIDE.md).
+  finite d≤163 conclusion must not be confused with an analytic estimate.
+  Phase39 separately improves the latter to2e11; that new proof has its own
+  input check. [Frozen input map](research/ender_radius_bridge/PROOF_INPUT_GUIDE.md).
 
 - Phase37 supplies a complete quotient-fiber certificate for the original
   remaining interval. The public actual-field iff has only positive-squarefree
-  d hypotheses; the nine positive cases and unchanged `7×10¹¹` cutoff are
+  d hypotheses; the nine positive cases and original `7×10¹¹` cutoff are
   supplied. This is the canonical field family, not an arbitrary-field-type
   representation theorem. Cite the exact published commit and pinned CI
   result, not an earlier partial pilot. Independent human semantic/upstream
-  review and constant optimization remain open. No novelty, generalized
+  review and further constant optimization remain open. No novelty, generalized
   Siegel-zero result, higher-class-number progress or Tao endorsement is claimed.
   [Human proof and failure accounting](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md).
 

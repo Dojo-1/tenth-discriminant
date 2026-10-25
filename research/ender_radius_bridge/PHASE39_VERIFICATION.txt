@@ -1,0 +1,55 @@
+Phase39 local verification,2026-10-25. Condensed terminal transcription,
+NOT raw logs. All raw records remain preserved, the full audit in a ZIP.
+
+Previous turn was verified progress. Publication580c0b9 completed pinned
+CI40151064234/security40151062335 SUCCESS, final record6392200072. This
+was recorded before pushing newer changes; no duplicate/cancelled CI run.
+
+Protocol-only35a6b4b preceded changed proofs. One fixed target200000000000,
+same R,S,rho, prime constants and all geometric/error terms. Old public
+cutoff/classification statements and original finite certificates retained.
+
+powershell -NoProfile -File research/ender_radius_bridge/run_phase39_build.ps1
+PASS attempt1,129.0500323s,peak2919235584 bytes,600s/8192MB,
+cumulative allowance900s. No repair or alternative target. The target
+compiles actual odd-chart exclusion, canonical radicand and actual absolute
+field-discriminant bounds. No numerical or finite-certificate premise.
+
+powershell -NoProfile -File research/ender_radius_bridge/run_table_check.ps1 -BuildTarget TenthDiscriminant
+PASS6807-step full root,409.5247376s,peak4534480896 bytes. Legacy raw prefix
+PHASE25_INTEGER_CHUNKS_20261025014958 retains its original metadata;
+build_target/stdout identify Phase39 integration, not a new table check.
+
+python verify_sources.py (from lean)
+PASS frozen digest and250 endpoint pairs ONLY, not all Arb inequalities.
+audit.project_coverage(Path.cwd()) from lean:153 modules reachable/acyclic.
+
+powershell -NoProfile -File research/ender_radius_bridge/run_phase39_verify.ps1 -ProofFile ../research/ender_radius_bridge/Phase39InputCheck.lean
+PASS38.465596s,peak3200864256 bytes,180s/8192MB. Exact new signatures have
+only positive-squarefree d and actual h=1 hypotheses. Old700-billion and
+classification signatures retained. New affine26/false25 and guarded-floor
+controls checked; old false26 control remains for the OLD envelope.
+Compiled new cutoff closure sizes55439/55572/55775. All exclude the listed
+classification, nine-positive, finite-certificate and old-cutoff inputs;
+no unresolved/unsafe inputs and only the three permitted axioms.
+
+powershell -NoProfile -File research/ender_radius_bridge/run_phase39_verify.ps1 -ProofFile Audit.lean
+PASS29.671244s,peak3325202432 bytes,180s/8192MB.4534 logical declarations,
+3803 theorems,16951 runtime-only auxiliaries excluded; only standard
+propext,Classical.choice,Quot.sound. PHASE39_ARCHIVES.json gives the exact
+raw1994698-byte trace and verified recovery hash. Only duplicate unpacked
+stdout was removed after hash equality.
+
+python research/ender_radius_bridge/collect_phase39_results.py
+Checks all accepted records, input exclusions, archive hash and source
+fingerprints; records exact current local outcome without running a proof.
+All153 source modules pass the proof-escape scan;488 reader-link targets
+exist. Task JSON parses; edited source/docs whitespace check passes.
+Production tools, frozen campaigns, dependency pins, workflow and existing
+audit/rejection gates have no diff from publication baseline580c0b9.
+
+No separate full local parent/apparatus/eight-script negative-suite pass
+is claimed. Unchanged exact-head pinned CI must supply those full gates.
+The final PR record identifies head/tree/terminal statuses and supersedes
+pending checkpoints. No merge,Tao post,novelty,optimality or independent
+human semantic review claim. New cutoffs remain canonical-family statements.

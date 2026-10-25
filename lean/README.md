@@ -1,11 +1,16 @@
 # Lean: the proof you can inspect
 
+Phase39 independently reduces the direct analytic cutoff to2e11 on the
+same auxiliary family, without using the finite classification. Local
+whole-library, signature, fresh input-exclusion and axiom checks pass;
+publication-head CI is reported separately. [Short optimization proof](../research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md).
+
 Phase37 joins the unchanged effective cutoff to a complete finite certificate
 and all nine positive cases. `imaginaryQuadratic_classNumber_one_iff` states
 the nine-radicand iff for the canonical actual field, assuming only positive
 squarefree d. No range or certificate premise remains. Exact-head build,
 axiom-audit and pinned CI records accompany publication; independent human
-semantic/upstream review remains open. No improved analytic constant or
+semantic/upstream review remains open. No optimal analytic constant or
 arbitrary-field representation theorem is claimed.
 [Read the one-page proof](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md).
 The phase descriptions below are historical finite checkpoints.

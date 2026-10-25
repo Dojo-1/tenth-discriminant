@@ -1,0 +1,15 @@
+﻿{
+    "scope":  "Phase39 fixed200-billion direct analytic cutoff proof attempt, not finite-classification recycling",
+    "build_target":  "TenthDiscriminant.OptimizedAnalyticCutoff",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  129.0500323,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  600,
+    "cumulative_allowance_seconds":  900,
+    "observed_peak_working_set_bytes":  2919235584,
+    "memory_threshold_mb":  8192,
+    "stop_reason":  "",
+    "stdout":  "PHASE39_BUILD_20261025014608928.stdout.log",
+    "stderr":  "PHASE39_BUILD_20261025014608928.stderr.log"
+}

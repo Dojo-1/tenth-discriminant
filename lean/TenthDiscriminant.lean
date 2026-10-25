@@ -75,3 +75,4 @@ import TenthDiscriminant.QuotientFiberControls
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot
+import TenthDiscriminant.OptimizedAnalyticCutoff

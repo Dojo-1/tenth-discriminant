@@ -1,5 +1,34 @@
 # Status — 2026-10-25
 
+## Phase39: direct analytic cutoff reduced to200 billion
+
+`imaginaryQuadratic_classNumber_one_radicand_bound_200b` and
+`imaginaryQuadratic_classNumber_one_discriminant_bound_200b` have only
+positive-squarefree d and actual class number one as hypotheses. The latter
+uses Mathlib's actual field discriminant. The fixed first target build
+passed in129.0500323s, peak2919235584 bytes; no repair or alternative target.
+The same R,S,rho and prime constants remain. A sharper guarded floor/log
+bound changes the normalized lower intercept from5.845 to5.635; the upper
+envelope is unchanged. All geometry/error guards are checked at the new
+endpoint, not merely the scalar crossing. The old public700-billion cutoff
+and classification statements and all finite certificates remain intact.
+
+Full local root passes6807 steps;153 modules reachable/acyclic. Fresh
+compiled input checks exclude classification, positive cases, finite
+certificates and the old cutoff from all three new cutoff roots. The
+full compiled audit passes4534 logical/3803 theorem declarations,16951
+runtime-only auxiliaries excluded; only the three permitted axioms.
+Exact publication-head CI remains a separate required record.
+
+The Phase38 publication at580c0b9 passed CI40151064234/security40151062335;
+record issuecomment-6392200072 supersedes its pending checkpoints. That
+frozen provenance inventory is NOT automatically an audit of changed
+Phase39 mathematics. Its new input check is separately recorded.
+No optimality, novelty, independent review, merge or Tao post is claimed.
+[Human proof](research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md) ·
+[Registered target](research/ender_radius_bridge/PHASE39_PROTOCOL.md).
+Earlier entries below are historical checkpoints.
+
 ## Phase38: frozen internal proof-input provenance
 
 The fixed five-root audit passed locally in98.3112308s, peak3305865216

@@ -1,0 +1,31 @@
+TenthDiscriminant.FirstCertificate.sharp_affine_envelopes_separated (u : ℝ) (hu : 26 ≤ u) :
+  13 / 16 * u - 1593 / 2000 < 999997 / 1000000 * u - 5635 / 1000
+TenthDiscriminant.FirstCertificate.sharp_affine_log25_rejected :
+  ¬13 / 16 * 25 - 1593 / 2000 < 999997 / 1000000 * 25 - 5635 / 1000
+TenthDiscriminant.FirstCertificate.envelope_floor_ratio (D : ℕ) (hD : 1000 ≤ D) :
+  249 * D ≤ 1000 * TenthDiscriminant.FirstCertificate.envelopeR D
+TenthDiscriminant.FirstCertificate.envelope_floor_ratio_without_guard_rejected :
+  ¬249 * 3 ≤ 1000 * TenthDiscriminant.FirstCertificate.envelopeR 3
+TenthDiscriminant.FirstCertificate.smaller_log_threshold_rejected :
+  ¬13 / 16 * 26 - 1593 / 2000 < 999997 / 1000000 * 26 - 5845 / 1000
+TenthDiscriminant.FirstCertificate.odd_large_classNumber_ne_one (D : ℕ) (hD : 700000000000 ≤ D) [Fact (↑D % 4 = 3)]
+  (hsq : Squarefree D) : NumberField.classNumber (TenthDiscriminant.QuadraticField ((↑D + 1) / 4)) ≠ 1
+TenthDiscriminant.imaginaryQuadratic_classNumber_one_iff (d : ℕ) [Fact (0 < d)] (hsq : Squarefree d) :
+  NumberField.classNumber (TenthDiscriminant.ImaginaryQuadraticField d) = 1 ↔ d ∈ [1, 2, 3, 7, 11, 19, 43, 67, 163]
+TenthDiscriminant.imaginaryQuadratic_classNumber_one_radicand_bound_200b (d : ℕ) [Fact (0 < d)] (hsq : Squarefree d)
+  (hc : NumberField.classNumber (TenthDiscriminant.ImaginaryQuadraticField d) = 1) : d < 200000000000
+TenthDiscriminant.imaginaryQuadratic_classNumber_one_discriminant_bound_200b (d : ℕ) [Fact (0 < d)] (hsq : Squarefree d)
+  (hc : NumberField.classNumber (TenthDiscriminant.ImaginaryQuadraticField d) = 1) :
+  (NumberField.discr (TenthDiscriminant.ImaginaryQuadraticField d)).natAbs < 200000000000
+'TenthDiscriminant.imaginaryQuadratic_classNumber_one_discriminant_bound_200b' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ANALYTIC_INPUTS_OK TenthDiscriminant.FirstCertificate.odd_large_classNumber_ne_one_200b: 55439 reached; no listed classification, certificate or old cutoff input; axioms [propext,
+ Quot.sound,
+ Classical.choice]
+ANALYTIC_INPUTS_OK TenthDiscriminant.imaginaryQuadratic_classNumber_one_radicand_bound_200b: 55572 reached; no listed classification, certificate or old cutoff input; axioms [propext,
+ Quot.sound,
+ Classical.choice]
+ANALYTIC_INPUTS_OK TenthDiscriminant.imaginaryQuadratic_classNumber_one_discriminant_bound_200b: 55775 reached; no listed classification, certificate or old cutoff input; axioms [propext,
+ Quot.sound,
+ Classical.choice]

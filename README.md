@@ -2,20 +2,29 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
+**Phase39: a smaller direct analytic cutoff.** For positive squarefree d,
+actual class number one now forces both d and the actual absolute field
+discriminant below `2×10¹¹`, locally checked through the same auxiliary
+radius family. Sharper floor/log accounting lowers the former `7×10¹¹`
+threshold by a factor3.5, without borrowing the completed classification.
+Whole-library, signature, input-exclusion and axiom checks pass; exact-head
+pinned CI must accompany publication. No optimality or novelty is claimed.
+[Read the short optimization proof](research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md).
+
 **Phase 37: closing the complete finite bridge.**
 The public `imaginaryQuadratic_classNumber_one_iff` states that for every
 positive squarefree `d`, the actual canonical field `Q(sqrt(-d))` has class
 number one iff `d` is in `1,2,3,7,11,19,43,67,163`. No finite-range,
 numerical or sieve-certificate premise remains. The proof supplies the
-unchanged `7×10¹¹` cutoff, complete remaining-interval coverage and all nine
+original `7×10¹¹` cutoff, complete remaining-interval coverage and all nine
 positive equalities. Verification is tied to the exact published commit in
 the draft PR; independent human semantic review remains open.
 [Read the one-page mathematical proof](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md).
 
 Phase36's aggregate-budget pilot remains **incomplete** (ten successes,
 one time stop). The separately preregistered Phase37 check accepted the
-unchanged last seed; the library rechecks every seed. There is no optimized
-analytic constant, arbitrary-field-type representation theorem, novelty
+unchanged last seed; the library rechecks every seed. There is no claim of
+an optimal analytic constant, arbitrary-field-type representation theorem, novelty
 claim, automatic merge or submission to Tao.
 
 **Phase38: a frozen proof-input audit.** The compiled dependency inventory

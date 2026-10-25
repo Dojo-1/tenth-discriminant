@@ -1,5 +1,9 @@
 # One field family; both parity cases; an effective bound
 
+Later improvement: [Phase39](ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md) reduces
+the direct analytic bound to200 billion. This Phase29 guide preserves the
+original700-billion reconstruction; its public statements remain valid.
+
 ## The precise result
 
 For every positive squarefree integer d, Lean proves

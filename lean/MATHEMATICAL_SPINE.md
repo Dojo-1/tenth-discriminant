@@ -1,5 +1,10 @@
 # One determinant, two kinds of information
 
+**Phase39:** sharpen the floor/log loss without changing the determinant
+or auxiliary radius family. The direct analytic cutoff is2e11; it does
+not borrow the completed classification. [The short proof](../research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md)
+separates new input/axiom checks from exact publication-head CI.
+
 **Phase37:** one actual field, two independent directions. The determinant
 argument supplies the effective cutoff; a proved no-loss quotient-fiber
 certificate excludes the entire remaining interval. Minkowski and small

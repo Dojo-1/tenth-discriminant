@@ -1,9 +1,19 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 38;
+**Living update: 25 October 2026, through preregistered Phase 39;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase39 improves the DIRECT analytic cutoff from700 billion to200 billion
+for both the actual radicand and absolute field discriminant. It sharpens
+floor/log loss on the same auxiliary radius family and prime constants.
+The new bound does not borrow the finite classification or old cutoff:
+fresh compiled input checks and a full local axiom audit pass. Publication
+requires exact-head pinned CI. This is a modest improvement within the
+credited method, not an optimality or novelty claim.
+[Short analytic proof](research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md).
+Earlier phase statements below retain their checkpoint scopes.
 
 Phase37 joins the entire original finite interval to the existing cutoff
 and all nine positive equalities. The actual canonical field-family iff
@@ -112,8 +122,8 @@ was posted in this cycle.
 
 | # | Aspect of the challenge | Current verdict | Evidence and limit |
 |---:|---|---|---|
-| 1 | Effective bound, avoiding Heegner as proof input | **Actual absolute field-discriminant bound checked; semantic review pending** | [Phase 32](lean/TenthDiscriminant/QuadraticDiscriminant.lean) proves the actual discriminant identity, so class number one bounds both d and the actual absolute field discriminant below `7×10¹¹`. Both parity charts are supplied; no numerical premise or Heegner classification input. This is a bound, not full classification or independent human review. |
-| 2 | Best efforts to optimize the constant | **Effort documented; analytic cutoff unchanged** | The finite classification entails d≤163, but the pre-computation analytic cutoff remains `7×10¹¹`: this is not a new optimized analytic estimate. The factorial arrangement removes Dusart but remains weaker numerically than the historical `1.5×10⁴` branch and dated [prior-art](PRIOR_ART.md) `q<570` report (not re-reviewed here). Registered [lift](ledger/determinant_lifts.txt) and [radial](ledger/radial_bounds.txt) investigations did not improve that analytic threshold. |
+| 1 | Effective bound, avoiding Heegner as proof input | **Stronger actual field-discriminant bound supplied; semantic review pending** | [Phase39](lean/TenthDiscriminant/OptimizedAnalyticCutoff.lean) gives actual radicand and absolute field-discriminant bounds below `2×10¹¹`. Both parity charts and actual discriminant identity are supplied. No numerical or classification premise; fresh compiled input checks exclude the old cutoff and finite answer. Independent semantic review remains open. |
+| 2 | Best efforts to optimize the constant | **Modest direct analytic improvement; no optimality claim** | A sharper guarded floor/log bound reduces the pre-computation cutoff from `7×10¹¹` to `2×10¹¹` on the same family, a factor3.5. The finite d≤163 consequence is separate. This remains much larger than historical/differently reviewed bounds in the dated [prior-art](PRIOR_ART.md) note; no controlled like-for-like superiority claim. Earlier [lift](ledger/determinant_lifts.txt)/[radial](ledger/radial_bounds.txt) negative results remain preserved. |
 | 3 | Threshold low enough for direct computation | **Complete finite certificate supplied for the canonical field family** | The original remaining interval is covered by quotient/remainder, eleven complete seed proofs and all785 quotient positions. With the cutoff and nine positive cases, `imaginaryQuadratic_classNumber_one_iff` has no range or certificate premise. Exact-head CI and semantic-review status must accompany this claim. |
 | 4 | High-quality Lean formalization, perhaps upstreamable | **Connected actual-field-family iff; external quality judgment open** | Actual class number/discriminant, cutoff, full finite exclusion and all nine positives are supplied. This is not an arbitrary-field-type representation theorem. Independent human semantic review, API/style review and Mathlib upstream acceptance remain open. See the [claim map](lean/FORMALIZATION.md). |
 | 5 | Compare strengths of different writeups | **Qualitative only** | [Prior art](PRIOR_ART.md) records a dated comparison and attribution, not a controlled, current, like-for-like comparison of optimized manuscripts. |
@@ -126,13 +136,14 @@ was posted in this cycle.
 | 12 | Quality, collaboration and attribution over speed | **Visible practice, not an external verdict** | The [README](README.md) and [prior-art note](PRIOR_ART.md) credit antecedents and preserve scope limits. No Tao endorsement, human peer review or priority claim is inferred. |
 
 **Bottom line.** There is now a connected kernel-checked effective bound
-on both d and the actual absolute field discriminant below `7×10¹¹`, for the
+on both d and the actual absolute field discriminant below `2×10¹¹`, for the
 actual imaginary quadratic field family with both parity cases supplied.
 All nine positive cases and the complete finite certificate now supply the
 canonical-field-family iff without a range premise. Independent human
 semantic review is not supplied by kernel checking. The frozen external
 CRT run remains computational evidence; the new Lean certificate has its
-own provenance. No submission or optimized analytic threshold is claimed.
+own provenance. The analytic threshold is improved, not claimed optimal;
+no submission is claimed.
 Tao explicitly welcomes informative larger bounds and clean human-verifiable
 arguments. Remaining shortfalls include independent review, upstream quality,
 optimization, systematic comparison and human-authored external reporting.

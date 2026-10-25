@@ -1,5 +1,8 @@
 # Why the derivative Gram determinant is positive
 
+For the new analytic optimization, read [the floor/log proof](../research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md).
+It lowers the direct cutoff to2e11, independently of the finite classification.
+
 The [proof-input map](../research/ender_radius_bridge/PROOF_INPUT_GUIDE.md)
 now distinguishes generic class-group/Minkowski facts from the classification
 being proved. It is an internal provenance audit, not independent human review.

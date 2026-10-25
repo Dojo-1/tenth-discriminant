@@ -12,7 +12,7 @@ def envelopeS (D : Nat) : Nat := envelopeR D/20
 def fourthRoot (D : Nat) : Real := Real.sqrt (Real.sqrt D)
 def envelopeRadius (D : Nat) : Nat := ⌈(11/20 : Real)*fourthRoot D^3⌉₊
 
-theorem envelope_dimensions (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_dimensions (D : Nat) (hD : 200000000000 ≤ D) :
     100000000 ≤ envelopeR D ∧ 500000 ≤ envelopeS D ∧
     envelopeR D ≤ 21*envelopeS D ∧ envelopeR D ≤ 10000*envelopeS D ∧
     (D : Real)/5 ≤ envelopeR D ∧ (envelopeR D : Real) ≤ (D : Real)/4 ∧
@@ -56,7 +56,50 @@ theorem log_five_upper : Real.log (5 : Real) ≤ 161/100 := by
   push_cast at h
   exact h.2
 
-theorem envelope_log_R_lower (D : Nat) (hD : 700000000000 ≤ D) :
+theorem log_five_lower : (1609/1000 : Real) ≤ Real.log 5 := by
+  have h := checkPositiveLogBounds_sound 8 5 2 (1609/1000) (161/100)
+    (by norm_num [checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+      oddLogPrefixRat, oddLogRemainderRat, Finset.sum_range_succ])
+  push_cast at h
+  exact h.1
+
+theorem moderate_D_log (D : Nat) (hD : 200000000000 ≤ D) : 26 ≤ Real.log D := by
+  have hb : (200000000000 : Real) ≤ D := by exact_mod_cast hD
+  have hl := Real.log_le_log (by norm_num : (0 : Real) < 200000000000) hb
+  have he : (200000000000 : Real)=2^12*5^11 := by norm_num
+  rw [he, Real.log_mul (by norm_num : (2 : Real)^12 ≠ 0)
+    (by norm_num : (5 : Real)^11 ≠ 0), Real.log_pow, Real.log_pow] at hl
+  norm_num only [Nat.cast_ofNat] at hl
+  linarith [Real.log_two_gt_d9, log_five_lower]
+
+theorem envelope_floor_ratio (D : Nat) (hD : 1000 ≤ D) :
+    249*D ≤ 1000*envelopeR D := by
+  unfold envelopeR
+  omega
+
+theorem log_floor_ratio_upper : Real.log (1000/249 : Real) ≤ 140/100 := by
+  have h := checkPositiveLogBounds_sound 8 (1000/249) 2 (139/100) (140/100)
+    (by norm_num [checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
+      oddLogPrefixRat, oddLogRemainderRat, Finset.sum_range_succ])
+  push_cast at h
+  exact h.2
+
+theorem envelope_log_R_lower_sharp (D : Nat) (hD : 200000000000 ≤ D) :
+    Real.log D-140/100 ≤ Real.log (envelopeR D) := by
+  have hn := envelope_floor_ratio D (by omega)
+  have hr : (249 : Real)*D ≤ 1000*envelopeR D := by exact_mod_cast hn
+  have hp : (0 : Real)<D := by exact_mod_cast (show 0<D by omega)
+  have hR : (D : Real)/(1000/249) ≤ envelopeR D := by
+    apply (div_le_iff₀ (by norm_num : (0 : Real)<1000/249)).2
+    linarith
+  have hl := Real.log_le_log (div_pos hp (by norm_num)) hR
+  rw [Real.log_div hp.ne' (by norm_num : (1000/249 : Real)≠0)] at hl
+  linarith [log_floor_ratio_upper]
+
+theorem envelope_floor_ratio_without_guard_rejected :
+    ¬ 249*3 ≤ 1000*envelopeR 3 := by norm_num [envelopeR]
+
+theorem envelope_log_R_lower (D : Nat) (hD : 200000000000 ≤ D) :
     Real.log D-161/100 ≤ Real.log (envelopeR D) := by
   have hdim := (envelope_dimensions D hD).2.2.2.2.1
   have hd : (0 : Real) < D := by exact_mod_cast (show 0 < D by omega)
@@ -66,15 +109,26 @@ theorem envelope_log_R_lower (D : Nat) (hD : 700000000000 ≤ D) :
 
 /-- One side of the proposed all-D comparison is now unconditional on
 the fixed family's dimensions. This alone is not a class-number cutoff. -/
-theorem envelope_normalized_lower (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_normalized_lower (D : Nat) (hD : 200000000000 ≤ D) :
     (999997/1000000 : Real)*Real.log D-5845/1000 ≤
       rawPrimeMassLower (envelopeR D) (envelopeS D) FirstEnderInterval.tailBudget /
         comparisonScale (envelopeR D) (envelopeS D) := by
   have hdim := envelope_dimensions D hD
   have hl := envelope_log_R_lower D hD
-  have hu := large_D_log D hD
+  have hu := moderate_D_log D hD
   have hlow := rawPrimeMassLower_uniform_normalized (envelopeR D) (envelopeS D)
     hdim.1 hdim.2.1 hdim.2.2.1 (by linarith)
+  linarith
+
+theorem envelope_normalized_lower_sharp (D : Nat) (hD : 200000000000 ≤ D) :
+    (999997/1000000 : Real)*Real.log D-5635/1000 ≤
+      rawPrimeMassLower (envelopeR D) (envelopeS D) FirstEnderInterval.tailBudget /
+        comparisonScale (envelopeR D) (envelopeS D) := by
+  have hd := envelope_dimensions D hD
+  have hl := envelope_log_R_lower_sharp D hD
+  have hu := moderate_D_log D hD
+  have hm := rawPrimeMassLower_uniform_normalized (envelopeR D) (envelopeS D)
+    hd.1 hd.2.1 hd.2.2.1 (by linarith)
   linarith
 
 theorem fourthRoot_identities (D : Nat) :
@@ -87,13 +141,13 @@ theorem fourthRoot_identities (D : Nat) :
     _ = ((Real.sqrt (Real.sqrt D))^2)^2 := by ring
     _ = (D : Real) := by rw [h, hD]
 
-theorem fourthRoot_large (D : Nat) (hD : 700000000000 ≤ D) : 300 ≤ fourthRoot D := by
+theorem fourthRoot_large (D : Nat) (hD : 200000000000 ≤ D) : 300 ≤ fourthRoot D := by
   unfold fourthRoot
   apply Real.le_sqrt_of_sq_le
   apply Real.le_sqrt_of_sq_le
   exact_mod_cast (show 300^2^2 ≤ D by omega)
 
-theorem envelope_radius_bounds (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_radius_bounds (D : Nat) (hD : 200000000000 ≤ D) :
     (11/20 : Real)*fourthRoot D^3 ≤ envelopeRadius D ∧
     (envelopeRadius D : Real) ≤ (551/1000 : Real)*fourthRoot D^3 := by
   have ht := fourthRoot_large D hD
@@ -104,7 +158,7 @@ theorem envelope_radius_bounds (D : Nat) (hD : 700000000000 ≤ D) :
   unfold envelopeRadius
   linarith
 
-theorem envelope_radius_lt_R (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_radius_lt_R (D : Nat) (hD : 200000000000 ≤ D) :
     envelopeRadius D < envelopeR D := by
   have ht := fourthRoot_large D hD
   have ht0 := (fourthRoot_identities D).1
@@ -117,7 +171,7 @@ theorem envelope_radius_lt_R (D : Nat) (hD : 700000000000 ≤ D) :
     nlinarith only [h, hl, hu, hp]
   exact_mod_cast hr
 
-theorem envelope_chosen_radius (D : Nat) (hD : 700000000000 ≤ D) :
+theorem envelope_chosen_radius (D : Nat) (hD : 200000000000 ≤ D) :
     (1001/1000 : Real)*Real.sqrt
       (((3*envelopeR D+envelopeS D : Nat) : Real)*Real.sqrt D/Real.pi)+
       10*Real.sqrt D ≤ (envelopeRadius D : Real) := by
