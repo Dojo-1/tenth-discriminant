@@ -13,6 +13,11 @@ independence is established. [Report](research/ender_radius_bridge/PHASE51_REVIE
 and [provenance/correction](research/ender_radius_bridge/PHASE51_VERIFICATION.md).
 Current exact-head CI remains separate; broader objectives remain open.
 
+The reviewed proof head69010f4 completed pinned CI40227162534 SUCCESS at
+20:03:40 UTC, with audit4650/3910/16968 and all inherited rejection controls;
+security/CodeQL passed. [Final verification before the next push](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6402519232).
+The documentation/review publication has distinct CI; no result transfers.
+
 ## Phase50: geometry and arithmetic preserve the same sign sectors
 
 The actual odd-p Frobenius basis matrix and the centrally symmetric-sample

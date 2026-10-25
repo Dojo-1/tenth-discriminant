@@ -8,8 +8,8 @@ class number one, the actual absolute field discriminant is below `10¹¹`.
 Conjugation and its anti-invariant projector now produce the positive
 squarefree generator; the caller supplies no root or isomorphism. The
 analytic cutoff itself is unchanged and has no finite-answer or old-cutoff
-premise. Full pinned CI passed at proof commit `2f51988`, including the
-dependency audit and rejection controls; [exact verification record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6399919070).
+premise. Full pinned CI passed at proof commit `69010f4`, including the
+dependency audit and rejection controls; [exact verification record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6402519232).
 Later documentation heads require their own CI. Earlier failures remain
 preserved. No novelty or optimality claim.
 [Operator proof](research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md) ·

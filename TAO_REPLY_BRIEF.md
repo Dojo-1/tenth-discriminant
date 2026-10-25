@@ -23,10 +23,10 @@ novelty nor optimality or completed independent human semantic review.
 
 Attach the [short proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md)
 and exact verification record after reviewing the current publication
-status. The abstract-field proof head `2f519884` passed full pinned CI;
-its [final record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6399919070)
-states the scope. The current symmetry head `69010f4` has separate CI40227162534;
-check its actual result before citing it as passed. The earlier
+status. Proof head `69010f4`, including the abstract-field and symmetry
+bridges, passed full pinned CI40227162534;
+its [final record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6402519232)
+states the scope. Later review/documentation heads require distinct checks. The earlier
 [cutoff review](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md) and new
 [bridge review](research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md) cover
 different sources. The new first report found no FATAL/GAP issue in its five

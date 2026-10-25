@@ -56,6 +56,8 @@ reading fixed only the verifier. The original report/manifest bytes were
 not changed, no reviewer was rerun, and subsequent verification passes.
 These scripts validate provenance/correspondence, not another semantic
 review or fresh proof execution. All mathematical/tool/pin/gate diffs
-against69010f4 are empty. Current pinned CI40227162534 remains separate;
-its outcome must be observed before claiming success. No full goal,
+against69010f4 are empty. Pinned CI40227162534 subsequently completed
+SUCCESS at20:03:40 UTC, with audit4650/3910/16968 and all inherited controls;
+security/CodeQL also passed. Its [final record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6402519232)
+was posted before the review publication. Later-head CI remains separate. No full goal,
 classification, novelty, optimality, Mathlib acceptance or human review claim.
