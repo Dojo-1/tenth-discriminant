@@ -2,18 +2,26 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
-**Phase 35: both classification directions below 892371480.**
-For positive squarefree `d<892371480`, Lean proves actual class number one
-iff `d` is in `1,2,3,7,11,19,43,67,163`. All nine positive equalities are
-supplied through Minkowski and small-ideal arguments, not sieve acceptance.
-The actual absolute field-discriminant cutoff remains `7×10¹¹`. The entire
-interval `[892371480,700000000000)` remains unclosed: no full classification
-or improved global constant is claimed. Eleven complete seed-block certificates
-extend the finite proof window; the pilot's partial and skipped blocks do not.
-[The short coverage proof and exact gap](research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md) ·
-[Why all nine fields have class number one](research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md).
+**Phase 37: closing the complete finite bridge.**
+The public `imaginaryQuadratic_classNumber_one_iff` states that for every
+positive squarefree `d`, the actual canonical field `Q(sqrt(-d))` has class
+number one iff `d` is in `1,2,3,7,11,19,43,67,163`. No finite-range,
+numerical or sieve-certificate premise remains. The proof supplies the
+unchanged `7×10¹¹` cutoff, complete remaining-interval coverage and all nine
+positive equalities. Verification is tied to the exact published commit in
+the draft PR; independent human semantic review remains open.
+[Read the one-page mathematical proof](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md).
 
-Phase 34 proves an exact computational bridge: precomputed residue-mask
+Phase36's aggregate-budget pilot remains **incomplete** (ten successes,
+one time stop). The separately preregistered Phase37 check accepted the
+unchanged last seed; the library rechecks every seed. There is no optimized
+analytic constant, arbitrary-field-type representation theorem, novelty
+claim, automatic merge or submission to Tao.
+
+<details>
+<summary>Historical proof checkpoints and earlier limits</summary>
+
+Historical Phase 34 proves an exact computational bridge: precomputed residue-mask
 queries and the old root searches generate the same tests and wheel list.
 All 208 fixed masks passed a local kernel check. All four registered translate
 attempts exceeded the memory threshold; no new interval is closed.
@@ -59,6 +67,8 @@ Phase 27 also proves [reusable four-constant arithmetic bounds](research/ender_r
 valid for arbitrary admissible rectangle dimensions. Prime certificates can
 be reused rather than regenerated per interval. This recovers the same first
 interval; it does not establish another interval or a new global cutoff.
+
+</details>
 
 An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/comment-page-1/): make an effective class-number-one argument explicit, without importing the known classification as a proof input.
 

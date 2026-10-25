@@ -1,6 +1,6 @@
 # Factual brief for a possible human comment on Tao's challenge
 
-**25 October 2026, through Phase35. This is an AI-prepared evidence brief, not the
+**25 October 2026, through Phase37. This is an AI-prepared evidence brief, not the
 human-generated summary requested by [Tao's post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).**
 The contributor should write the actual comment in their own words
 after reviewing the linked work. No comment has been submitted by this
@@ -8,14 +8,15 @@ repository work.
 
 ## What can be stated now
 
-- All nine actual positive class numbers are proved. Phase35 extends both
-  classification directions to positive squarefree d<892371480 through one
-  complete wheel translate and a proved no-loss seed decomposition. The
-  actual absolute field-discriminant bound remains `7×10¹¹`; the whole
-  [892371480,700000000000) is still unclosed. A fixed-budget pilot's partial
-  and skipped blocks are not full coverage, and no full classification,
-  optimized global cutoff or full-range runtime is claimed.
-  [Human proof and exact limits](research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md).
+- Phase37 supplies a complete quotient-fiber certificate for the original
+  remaining interval. The public actual-field iff has only positive-squarefree
+  d hypotheses; the nine positive cases and unchanged `7×10¹¹` cutoff are
+  supplied. This is the canonical field family, not an arbitrary-field-type
+  representation theorem. Cite the exact published commit and pinned CI
+  result, not an earlier partial pilot. Independent human semantic/upstream
+  review and constant optimization remain open. No novelty, generalized
+  Siegel-zero result, higher-class-number progress or Tao endorsement is claimed.
+  [Human proof and failure accounting](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md).
 
 The following phase descriptions preserve earlier checkpoint scopes.
 

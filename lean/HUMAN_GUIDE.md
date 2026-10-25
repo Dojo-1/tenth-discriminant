@@ -1,11 +1,12 @@
 # Why the derivative Gram determinant is positive
 
 For the current arithmetic result, start with the
-[complete-seed proof](../research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md):
-the bounded iff now holds below 892371480, not globally. Then read the
+[one-page classification proof](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md):
+the complete quotient-fiber certificate joins the cutoff to all nine
+positive cases for the canonical actual field family. Then read the
 [all-nine positive guide](../research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md)
-for the local-obstruction/Minkowski argument. The whole upper interval
-remains open. The field discriminant is distinct from the large jet-Gram
+for the local-obstruction/Minkowski argument. Independent human semantic
+review remains open. The field discriminant is distinct from the large jet-Gram
 determinant explained below. Older phase-frontier descriptions are historical.
 
 The current finite frontier is explained in the

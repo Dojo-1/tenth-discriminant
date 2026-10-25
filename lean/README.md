@@ -1,11 +1,13 @@
 # Lean: the proof you can inspect
 
-Phase35 proves the iff characterization below 892371480, for positive
-squarefree d, with all nine positive cases and every first-translate
-certificate supplied. The actual absolute field-discriminant cutoff is
-checked, but the whole [892371480,700000000000) is unclosed. No full
-classification or improved global constant is claimed.
-[Read the short proof and exact pilot limits](../research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md).
+Phase37 joins the unchanged effective cutoff to a complete finite certificate
+and all nine positive cases. `imaginaryQuadratic_classNumber_one_iff` states
+the nine-radicand iff for the canonical actual field, assuming only positive
+squarefree d. No range or certificate premise remains. Exact-head build,
+axiom-audit and pinned CI records accompany publication; independent human
+semantic/upstream review remains open. No improved analytic constant or
+arbitrary-field representation theorem is claimed.
+[Read the one-page proof](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md).
 The phase descriptions below are historical finite checkpoints.
 
 Phase 31 proves the necessary nine-element list for actual class number one

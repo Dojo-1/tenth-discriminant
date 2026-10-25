@@ -1,0 +1,14 @@
+import TenthDiscriminant
+
+#check TenthDiscriminant.quotientInitial_testBit
+#check TenthDiscriminant.quotientFilter_retains
+#check TenthDiscriminant.phase36_patterns_checked
+#check TenthDiscriminant.phase36_all_fibers
+#check TenthDiscriminant.quotient_zero_residue_control
+#check TenthDiscriminant.quotient_omitted_seed_control
+#check TenthDiscriminant.imaginaryQuadratic_classNumber_one_iff
+#check TenthDiscriminant.imaginaryQuadratic_classNumber_one_discriminant_mem
+#print axioms TenthDiscriminant.phase36_all_fibers
+#print axioms TenthDiscriminant.imaginaryQuadratic_classNumber_one_iff
+#print axioms TenthDiscriminant.imaginaryQuadratic_classNumber_one_discriminant_mem
+

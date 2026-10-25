@@ -1,0 +1,32 @@
+TenthDiscriminant.quotientInitial_testBit (r k : ℕ) (hr : r < 892371480) :
+  (TenthDiscriminant.quotientInitial r).testBit k = true ↔
+    1000000 ≤ r + 892371480 * k ∧ r + 892371480 * k < 700000000000
+TenthDiscriminant.quotientFilter_retains (M r k current : ℕ) (es : List TenthDiscriminant.QuotientPattern)
+  (hk : k < 785)
+  (hvalid :
+    ∀ e ∈ es,
+      0 < e.modulus ∧
+        M * e.inverse % e.modulus = 1 ∧ e.wide = TenthDiscriminant.quotientWidePattern e.modulus e.inverse)
+  (hno : ∀ e ∈ es, TenthDiscriminant.modularRootTest (r + M * k) e.modulus = false) (hbit : current.testBit k = true) :
+  (TenthDiscriminant.quotientFilter r current es).testBit k = true
+TenthDiscriminant.phase36_patterns_checked :
+  TenthDiscriminant.quotientPatternsCheck 892371480 TenthDiscriminant.phase36Entries = true
+TenthDiscriminant.phase36_all_fibers : TenthDiscriminant.phase35Seeds.all TenthDiscriminant.phase36Seed = true
+TenthDiscriminant.quotient_zero_residue_control :
+  (TenthDiscriminant.quotientInitial 0).testBit 0 = false ∧
+    (TenthDiscriminant.quotientInitial 0).testBit 1 = true ∧
+      (TenthDiscriminant.quotientWidePattern 29 3).testBit 0 = false
+TenthDiscriminant.quotient_omitted_seed_control :
+  179 ∈ TenthDiscriminant.phase35Seeds ∧ 179 ∉ List.take 10 TenthDiscriminant.phase35Seeds
+TenthDiscriminant.imaginaryQuadratic_classNumber_one_iff (d : ℕ) [Fact (0 < d)] (hsq : Squarefree d) :
+  NumberField.classNumber (TenthDiscriminant.ImaginaryQuadraticField d) = 1 ↔ d ∈ [1, 2, 3, 7, 11, 19, 43, 67, 163]
+TenthDiscriminant.imaginaryQuadratic_classNumber_one_discriminant_mem (d : ℕ) [Fact (0 < d)] (hsq : Squarefree d)
+  (hc : NumberField.classNumber (TenthDiscriminant.ImaginaryQuadraticField d) = 1) :
+  NumberField.discr (TenthDiscriminant.ImaginaryQuadraticField d) ∈ [-4, -8, -3, -7, -11, -19, -43, -67, -163]
+'TenthDiscriminant.phase36_all_fibers' depends on axioms: [propext]
+'TenthDiscriminant.imaginaryQuadratic_classNumber_one_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+elaboration took 3.64s
+'TenthDiscriminant.imaginaryQuadratic_classNumber_one_discriminant_mem' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+elaboration took 3.24s

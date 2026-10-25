@@ -1,5 +1,31 @@
 # Status — 2026-10-25
 
+## Phase 37: complete quotient-fiber certificate and actual-field composition
+
+`imaginaryQuadratic_classNumber_one_iff` has only positive-squarefree d
+hypotheses and states both directions for the canonical actual field
+`ImaginaryQuadraticField d`. The certificate covers the whole original
+[1000000,700000000000), not just one translate. Combined with the existing
+cutoff, small range and all nine positive proofs, no finite-range,
+certificate or numerical premise remains. The signed-discriminant corollary
+uses Mathlib's actual `NumberField.discr`.
+
+Phase36 is frozen INCOMPLETE: ten seeds passed; seed179 was time-stopped
+under the720-second aggregate cap. Protocol-only commit22d0ac4 registered
+one independent unchanged completion before execution. It passed in
+69.6638481s, peak7942955008 bytes, under180s/8192MB. All eleven source
+certificates are rechecked in serialized library modules. Old first-translate
+theorem statements are unchanged; proved transport derives them from the
+stronger certificate, without circular imports or repeated expensive checks.
+
+Publication requires full exact-head pinned CI, compiled transitive audit
+and public signature checks; the final PR record supersedes pending local
+checkpoints. No independent human semantic/upstream review, optimized cutoff,
+arbitrary-field representation theorem, higher-class-number result, merge
+or Tao post is asserted. [One-page proof](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md) ·
+[Separate protocol](research/ender_radius_bridge/PHASE37_PROTOCOL.md).
+All finite-frontier descriptions below are historical checkpoints.
+
 ## Phase 35: one complete wheel translate, bounded iff below 892371480
 
 `classNumber_one_iff_below_first_period` proves both directions for the

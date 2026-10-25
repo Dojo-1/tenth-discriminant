@@ -1,0 +1,121 @@
+{
+  "phase": 37,
+  "protocol_commit": "22d0ac4",
+  "frozen_incomplete_phase36_commit": "c1bafe7",
+  "phase36_outcome_unchanged": "ten pass; seed179 aggregate-time-stopped; INCOMPLETE",
+  "new_completion_record": "PHASE37_CHECK_20261025002509049.result.json",
+  "new_completion": {
+    "scope": "Phase37 single unchanged seed179 completion; separate from incomplete Phase36 pilot",
+    "proof_file": "../research/ender_radius_bridge/Phase36Seed10Check.lean",
+    "exit_code": 0,
+    "elapsed_seconds": 69.6638481,
+    "observed_peak_working_set_bytes": 7942955008,
+    "memory_threshold_mb": 8192,
+    "time_limit_seconds": 180,
+    "stop_reason": "",
+    "stdout": "PHASE37_CHECK_20261025002509049.stdout.log",
+    "stderr": "PHASE37_CHECK_20261025002509049.stderr.log"
+  },
+  "unchanged_input_SHA256": {
+    "research/ender_radius_bridge/Phase36Seed10Check.lean": "51a84e994cbc787eddf780cb628bcc8b4b4f51c0ca3ff0fd739c957a08481a2f",
+    "lean/TenthDiscriminant/QuotientFiberCore.lean": "b491038e32519f7f8ab2c90822ed918c408880f30ffb42d683a3d1cac8e454a8",
+    "lean/TenthDiscriminant/QuotientFiberData.lean": "4ba7c0f7a3a9c7f017f56cad22e320643f6d678f30fac09cd4591da399b42a10",
+    "lean/TenthDiscriminant/QuotientFiberParameters.lean": "925d2b14598675e4b9f15a3fb500a03797d67b6704759197620bf55d9e6bbcf5"
+  },
+  "original_interval": [
+    1000000,
+    700000000000
+  ],
+  "upper_endpoint_exclusive": true,
+  "quotient_positions": 785,
+  "all_200_extra_primes_unchanged": true,
+  "local_build_records_including_failures": [
+    {
+      "record": "PHASE25_INTEGER_CHUNKS_20261025002646.result.json",
+      "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+      "proof_file": "../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+      "build_target": "TenthDiscriminant",
+      "exit_code": 1,
+      "elapsed_seconds": 930.4745926999999,
+      "observed_peak_working_set_bytes": 7949860864,
+      "memory_threshold_mb": 8192,
+      "resource_stop": false,
+      "threads": "Lake defaults, multiple child processes possible",
+      "stack_kb": "Lean build default",
+      "stdout": "PHASE25_INTEGER_CHUNKS_20261025002646.stdout.log",
+      "stderr": "PHASE25_INTEGER_CHUNKS_20261025002646.stderr.log"
+    },
+    {
+      "record": "PHASE25_INTEGER_CHUNKS_20261025004013.result.json",
+      "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+      "proof_file": "TenthDiscriminant/ClassNumberClassification.lean",
+      "build_target": "",
+      "exit_code": 0,
+      "elapsed_seconds": 21.450924699999998,
+      "observed_peak_working_set_bytes": 2802708480,
+      "memory_threshold_mb": 8192,
+      "resource_stop": false,
+      "threads": 1,
+      "stack_kb": 16384,
+      "stdout": "PHASE25_INTEGER_CHUNKS_20261025004013.stdout.log",
+      "stderr": "PHASE25_INTEGER_CHUNKS_20261025004013.stderr.log"
+    },
+    {
+      "record": "PHASE25_INTEGER_CHUNKS_20261025004307.result.json",
+      "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+      "proof_file": "../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+      "build_target": "TenthDiscriminant",
+      "exit_code": 0,
+      "elapsed_seconds": 37.1909225,
+      "observed_peak_working_set_bytes": 2804486144,
+      "memory_threshold_mb": 8192,
+      "resource_stop": false,
+      "threads": "Lake defaults, multiple child processes possible",
+      "stack_kb": "Lean build default",
+      "stdout": "PHASE25_INTEGER_CHUNKS_20261025004307.stdout.log",
+      "stderr": "PHASE25_INTEGER_CHUNKS_20261025004307.stderr.log"
+    },
+    {
+      "record": "PHASE25_INTEGER_CHUNKS_20261025004404.result.json",
+      "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+      "proof_file": "Audit.lean",
+      "build_target": "",
+      "exit_code": 0,
+      "elapsed_seconds": 28.5931964,
+      "observed_peak_working_set_bytes": 3326918656,
+      "memory_threshold_mb": 8192,
+      "resource_stop": false,
+      "threads": 1,
+      "stack_kb": 16384,
+      "stdout": "PHASE25_INTEGER_CHUNKS_20261025004404.stdout.log",
+      "stderr": "PHASE25_INTEGER_CHUNKS_20261025004404.stderr.log"
+    },
+    {
+      "record": "PHASE25_INTEGER_CHUNKS_20261025004417.result.json",
+      "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+      "proof_file": "../research/ender_radius_bridge/Phase37SignatureCheck.lean",
+      "build_target": "",
+      "exit_code": 0,
+      "elapsed_seconds": 28.324387599999998,
+      "observed_peak_working_set_bytes": 3216232448,
+      "memory_threshold_mb": 8192,
+      "resource_stop": false,
+      "threads": 1,
+      "stack_kb": 16384,
+      "stdout": "PHASE25_INTEGER_CHUNKS_20261025004417.stdout.log",
+      "stderr": "PHASE25_INTEGER_CHUNKS_20261025004417.stderr.log"
+    }
+  ],
+  "archived_raw_audit_stdout": {
+    "archive": "PHASE37_AXIOM_AUDIT_RAW.zip",
+    "entry": "PHASE25_INTEGER_CHUNKS_20261025004404.stdout.log",
+    "uncompressed_bytes": 1990462,
+    "SHA256": "bc20cf4463fcb90934da1f314b643946e17376cee22d9e1dc25ca00d8340d3b0",
+    "round_trip_hash_verified": true,
+    "recovery": "Extract the original-named single log from the ZIP. The duplicate unpacked copy was removed only after checksum equality."
+  },
+  "repair": "First root build retained: list-normalization elaboration error in signed-discriminant corollary; fixed with List.not_mem_nil/or_false, unchanged statements and limits.",
+  "raw_metadata_note": "Legacy Phase25 filenames/scope metadata preserved. build_target, proof_file and stdout identify actual Phase37 checks.",
+  "publication": "Exact tested head/tree and terminal pinned CI status belong to the final PR verification record; no full local parent/apparatus or negative-control-suite pass inferred.",
+  "scope": "Canonical actual positive-squarefree imaginary quadratic field family; no arbitrary-field representation theorem, optimized constant, independent human review, merge or Tao post."
+}

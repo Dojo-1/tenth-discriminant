@@ -1,0 +1,14 @@
+﻿{
+    "scope":  "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+    "proof_file":  "Audit.lean",
+    "build_target":  "",
+    "exit_code":  0,
+    "elapsed_seconds":  28.5931964,
+    "observed_peak_working_set_bytes":  3326918656,
+    "memory_threshold_mb":  8192,
+    "resource_stop":  false,
+    "threads":  1,
+    "stack_kb":  16384,
+    "stdout":  "PHASE25_INTEGER_CHUNKS_20261025004404.stdout.log",
+    "stderr":  "PHASE25_INTEGER_CHUNKS_20261025004404.stderr.log"
+}

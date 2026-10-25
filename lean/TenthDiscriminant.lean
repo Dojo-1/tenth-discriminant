@@ -70,6 +70,8 @@ import TenthDiscriminant.ResidueMaskPilotData
 import TenthDiscriminant.FusedWheelConclusion
 import TenthDiscriminant.QuotientFiberClassification
 import TenthDiscriminant.QuotientFiberTransport
+import TenthDiscriminant.ClassNumberClassification
+import TenthDiscriminant.QuotientFiberControls
 import TenthDiscriminant.JetPower
 import TenthDiscriminant.LocalOperators
 import TenthDiscriminant.InertPilot

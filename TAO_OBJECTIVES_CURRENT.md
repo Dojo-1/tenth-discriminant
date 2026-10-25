@@ -1,18 +1,19 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 35;
+**Living update: 25 October 2026, through preregistered Phase 37;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
 
-Phase35 extends both actual-field classification directions to positive
-squarefree d<892371480, by a complete eleven-seed certificate for the first
-wheel translate. All masks, prime labels, coverage and the field implication
-are supplied. The unchanged 720-second pilot budget left the next translate
-partial and two others untested; those are not complete coverage. The whole
-[892371480,700000000000) is still unclosed. No global cutoff improvement,
-novelty or independent human review is claimed.
-[Human proof and exact limits](research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md).
+Phase37 joins the entire original finite interval to the existing cutoff
+and all nine positive equalities. The actual canonical field-family iff
+requires only positive-squarefree d; no range or certificate premise remains.
+Phase36's aggregate pilot remains incomplete; Phase37's separately registered
+unchanged last-seed check passed, followed by serialized library rechecking.
+Exact-head build/audit/pinned CI records accompany publication. No arbitrary
+field-type representation theorem, improved analytic constant, novelty or
+independent human review is claimed.
+[One-page human proof](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md).
 Earlier finite-frontier statements below are historical checkpoints.
 
 Phase 34 supplies a checked representation change for the remaining sieve:
@@ -94,7 +95,7 @@ radicands such as `1,2,3`, as does the new Phase29 public theorem's d.
 Earlier repository `D` is the *absolute fundamental
 discriminant*, whose nine known values are `3,4,7,8,11,19,43,67,163`.
 
-The original post was re-read on 24 October for this update. Its request for
+The original post was re-read on 25 October for this update. Its request for
 an effective optimized bound, useful comparisons/negative results, readable
 arguments, disclosed AI assistance and a human-generated submission summary
 does not turn an effective bound into a full classification. No comment
@@ -106,8 +107,8 @@ was posted in this cycle.
 |---:|---|---|---|
 | 1 | Effective bound, avoiding Heegner as proof input | **Actual absolute field-discriminant bound checked; semantic review pending** | [Phase 32](lean/TenthDiscriminant/QuadraticDiscriminant.lean) proves the actual discriminant identity, so class number one bounds both d and the actual absolute field discriminant below `7×10¹¹`. Both parity charts are supplied; no numerical premise or Heegner classification input. This is a bound, not full classification or independent human review. |
 | 2 | Best efforts to optimize the constant | **Effort documented; no improved cutoff** | The factorial arrangement removes Dusart from this route but gives a much larger threshold than the historical `1.5×10⁴` branch and the dated [prior-art](PRIOR_ART.md) report of `q<570` (not re-reviewed here). Preregistered [lift](ledger/determinant_lifts.txt) and [radial](ledger/radial_bounds.txt) investigations did not improve Ender's global cutoff. |
-| 3 | Threshold low enough for direct computation | **Checked cutoff; finite certification partial** | The saved [CRT sieve](ledger/sieve_ender.txt) leaves `163` in `[92,7×10¹¹)`. A complete first wheel translate and all nine positive fields now give a bounded iff below 892371480. The entire [892371480,700000000000) remains unclosed in Lean; partial/skipped pilot blocks are not coverage. |
-| 4 | High-quality Lean formalization, perhaps upstreamable | **Actual discriminant bound, all nine positives, bounded iff; global classification partial** | The actual field discriminant, cutoff, all nine positive equalities and both classification directions below 892371480 are checked. Complete remaining-range certification, independent human semantic review and Mathlib upstream review remain open. See the [claim map](lean/FORMALIZATION.md). |
+| 3 | Threshold low enough for direct computation | **Complete finite certificate supplied for the canonical field family** | The original remaining interval is covered by quotient/remainder, eleven complete seed proofs and all785 quotient positions. With the cutoff and nine positive cases, `imaginaryQuadratic_classNumber_one_iff` has no range or certificate premise. Exact-head CI and semantic-review status must accompany this claim. |
+| 4 | High-quality Lean formalization, perhaps upstreamable | **Connected actual-field-family iff; external quality judgment open** | Actual class number/discriminant, cutoff, full finite exclusion and all nine positives are supplied. This is not an arbitrary-field-type representation theorem. Independent human semantic review, API/style review and Mathlib upstream acceptance remain open. See the [claim map](lean/FORMALIZATION.md). |
 | 5 | Compare strengths of different writeups | **Qualitative only** | [Prior art](PRIOR_ART.md) records a dated comparison and attribution, not a controlled, current, like-for-like comparison of optimized manuscripts. |
 | 6 | Spur new arguments or arrangements | **Reusable arrangement, no novelty claim** | BEAN-to-Ender changes the prime input. Four fixed prime-log constants and normalized affine envelopes now yield a checked universal odd cutoff without replaying 249 more interval comparisons. This is an arrangement within the credited Green/twinheterodox route, not a claim of a new mathematical method. |
 | 7 | Preserve failed attempts and negative results | **Documented internally** | The [review response](review/RESPONSE_Claude.md), [BEAN audit](review/BEAN_AUDIT.txt), fixed [radial protocol](flow/PREREG_RADIAL.txt), and [lift protocol](flow/PREREG_LIFTS.txt) retain counterexamples, failed guards and ceilings. Internal preservation does not equal external reporting. |
@@ -120,16 +121,26 @@ was posted in this cycle.
 **Bottom line.** There is now a connected kernel-checked effective bound
 on both d and the actual absolute field discriminant below `7×10¹¹`, for the
 actual imaginary quadratic field family with both parity cases supplied.
-All nine positive cases and the bounded iff below 892371480 are proved.
-The full finite classification remains incomplete, and independent
-human semantic review is not supplied by kernel checking.
-The frozen finite sieve remains computational evidence, not a new Lean
-classification. No submission or optimized threshold is claimed.
+All nine positive cases and the complete finite certificate now supply the
+canonical-field-family iff without a range premise. Independent human
+semantic review is not supplied by kernel checking. The frozen external
+CRT run remains computational evidence; the new Lean certificate has its
+own provenance. No submission or optimized analytic threshold is claimed.
 Tao explicitly welcomes informative larger bounds and clean human-verifiable
-arguments. The remaining shortfalls are finite classification, review,
-optimization and systematic comparison, not an unsupplied cutoff premise.
+arguments. Remaining shortfalls include independent review, upstream quality,
+optimization, systematic comparison and human-authored external reporting.
 
 ## Supplementary accounting: useful results even if the main route stalls
+
+The entries below describe each component's own scope. Earlier finite
+frontiers are historical; the Phase37 composition above is the current result.
+
+Phase36–37 adds a reusable exact representation: pull periodic prime tests
+back along r+Mk using checked modular inverses, then prove survivor-bit
+retention and exact interval coverage. This is a formal/computational
+arrangement, not a new number-theoretic method or a measured universal speedup.
+The incomplete aggregate pilot remains negative evidence; its later
+completion is separately registered and separately costed.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
@@ -155,12 +166,8 @@ optimization and systematic comparison, not an unsupplied cutoff premise.
 | The radial guarantee has an `O(1/R)` normalized ceiling; a finite `D=19` lift case rules out a universal extra `+2` in the proposed valuation exponent. | **Preregistered negative/finite results** | They eliminate tempting upgrades without changing the cutoff. Finite controls must not be generalized. [Radial](ledger/radial_bounds.txt) · [lifts](ledger/determinant_lifts.txt). |
 | A short proof spine separates the hard contact lemma, fixed arithmetic pilot and open bridge. | **Expository/process artifact** | Makes the apparatus more inspectable; readability is not independent mathematical review. [Guide](lean/MATHEMATICAL_SPINE.md). |
 
-The next decisive step is **not** another isolated zero determinant modulo a
-prime. The uniform valuation now has a Lean proof for the *same
-integer determinant* under a precise local nonsquare guard; checked
-connections through the finite analytic inequalities are now checked,
-including the tail. The first bounded numerical exclusion is now checked.
-Phase28 closes universal odd exclusion, and Phase29 supplies the even chart
-and actual field equivalence. The next decisive work is the finite odd
-classification and independent semantic review, not another isolated
-determinant identity. The effective bound is checked; classification is not.
+The next decisive work is independent semantic review of the connected
+field-family theorem, followed by API/style refinement, comparison and
+constant optimization. The finite interval is no longer an unsupplied
+premise in the new iff. Neither a complete kernel proof nor this accounting
+establishes novelty, upstream acceptance or a human-authored submission.

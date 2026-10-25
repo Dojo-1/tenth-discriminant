@@ -1,5 +1,27 @@
 # Current claim-to-Lean map
 
+Phase37 supplies the complete original finite interval and the public
+`imaginaryQuadratic_classNumber_one_iff`: for positive squarefree d, actual
+class number one iff d belongs to the nine-element list, with no range,
+certificate or numerical premise. `ClassNumberClassification` composes
+`QuotientFiberClassification` with `QuotientFiberCertified` and the existing
+cutoff/positive cases. Its signed-discriminant corollary uses the actual
+maximal-order discriminant. This is the canonical constructed field family;
+a representation theorem for arbitrary field types is not asserted.
+
+`QuotientFiberCore/Bridge` prove exact initial bits, periodic affine prime
+transport, bit retention and absence of phantom bits. Data and thirteen
+check groups supply all200 literal inverses/patterns. Eleven serialized
+`QuotientFiberSeed..` modules cover every wheel seed and all785 quotient
+positions. `QuotientFiberField` connects this certificate to the actual
+class-number hypothesis. `QuotientFiberTransport` derives the unchanged old
+first-translate statements from the stronger result; imports are acyclic.
+The incomplete Phase36 pilot and separately registered Phase37 completion
+are distinct evidence. Full build, compiled dependency audit and exact-head
+pinned CI are required in the publication record. Independent human semantic
+and upstream review remain open. [Human proof](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md).
+All earlier finite-frontier descriptions below are historical.
+
 Phase35 proves `classNumber_one_iff_below_first_period`, with only positivity,
 squarefreeness and d<892371480 as hypotheses. `FusedWheelCore/Bridge` prove
 universal all-predicate traversal equivalence and complete seed coverage;
@@ -50,8 +72,8 @@ unsupplied middle-range survivor-certificate premise. All-nine acceptance
 is only a test control, not a positive class-number theorem.
 [Short proof and remaining obligation](../research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md).
 
-**The interpolation/Gram positivity chain is connected. The class-number
-classification chain is not.** This map supersedes the PR #8-era coverage
+**Historical checkpoint: the interpolation/Gram positivity chain was connected,
+but the class-number classification chain was not yet connected.** This map supersedes the PR #8-era coverage
 summary previously stored here; Git history preserves that record. Stage notes
 remain useful derivations, but their old frontier descriptions are historical.
 

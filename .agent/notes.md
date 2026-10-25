@@ -1,5 +1,26 @@
 # Task checkpoint
 
+- Phase37 local final root PASS6806 steps (37.1909225s incremental after
+  full certificate rebuild),152 modules acyclic. Compiled audit PASS4507
+  logical/3776 theorem/16951 runtime-only, only three permitted axioms.
+  Public actual-field iff has only positive-squarefree d hypotheses; signed
+  actual discriminant corollary also checked. First930.4745927s root failed
+  only at list-normalization in that corollary; raw failure preserved, fixed
+  without statement/limit changes. Direct repaired proof and final root
+  passed. Phase36 incomplete outcome remains frozen. Exact-head CI pending.
+
+- Phase36 protocol aad9ac8 preceded edits; implementation and incomplete
+  aggregate outcome frozen in c1bafe7. Ten ALL785 seeds passed, last179
+  time-stopped with60 seconds remaining; raw records immutable. Phase37
+  protocol-only22d0ac4 preceded one unchanged seed179 completion: PASS,
+  69.6638481s, peak7942955008 bytes,180s/8192MB. Full library rebuilding
+  eleven serialized closed proofs; actual-field iff and signed-discriminant
+  corollary added without range/certificate premises. Old q0 statements
+  derived by the already proved transport, imports acyclic151 modules.
+  Source endpoint correspondence and457 local reader links pass. Final
+  root/audit/signatures and exact-head pinned CI still pending; no merge,
+  Tao post, arbitrary-field representation or independent human review claim.
+
 - Phase33 protocol-only 4fa17b7 preceded proof edits. Prior turn was verified
   progress: actual field discriminant and four positives passed pinned CI
   40133608384/security 40133605897 on identical tree 77af1da68e5127c2691e3d3afe3918310d9564d1.

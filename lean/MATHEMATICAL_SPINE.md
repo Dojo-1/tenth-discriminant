@@ -1,5 +1,13 @@
 # One determinant, two kinds of information
 
+**Phase37:** one actual field, two independent directions. The determinant
+argument supplies the effective cutoff; a proved no-loss quotient-fiber
+certificate excludes the entire remaining interval. Minkowski and small
+ideals supply all nine positive cases. The resulting iff has only positive
+squarefree d hypotheses. Its field-family scope and independent human-review
+limit are explicit in the [one-page proof](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md).
+Earlier finite-frontier paragraphs below are historical checkpoints.
+
 **Phase 33:** local residue maps forbid small prime ideal norms; Minkowski
 supplies a small representative in every class. The remaining small ideals
 are principal, proving all nine positive class numbers and the iff below
@@ -21,7 +29,7 @@ certificate is still a premise, not a theorem supplied by the old Python run.
 This is the shortest route into the Lean development. The longer
 [human proof guide](HUMAN_GUIDE.md) explains the contact-count argument;
 the [claim map](FORMALIZATION.md) names the checked declarations. Neither
-document, nor this one, is a proof of the class-number-one classification.
+document, nor this one, replaces the Lean proof or independent human review.
 
 **Current frontier (Phase 29):** the effective radicand bound now covers
 both parity cases. Positive squarefree d and class number one of the actual
