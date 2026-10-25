@@ -799,3 +799,13 @@
   actual class-number/discriminant transport. The universal existence of a
   squarefree generator for every abstract imaginary quadratic field remains
   a separate gap. No new cutoff/classification claim or extra reviewer.
+- Protocol e3619c66 preceded Lean edits. Attempt1 failed69.393486s on an
+  extra explicit argument to liftHom_root; source snapshot22402111... and
+  raw logs/result retained. Removing that one argument is the sole repair.
+  Attempt2 accepted24.5086311s, observed peak2818105344 bytes, unchanged
+  600s/8192MB cap. No numerical experiment or theorem change.
+- Register one fixed rescaling control before first input verification:
+  K=canonical d1, a=1000000*sqrt(-1), D=10^12. Root, degree2 and class1
+  hold but D is not squarefree and exceeds the proposed radicand bound.
+  Keep it outside the bound proof and library. This explains the remaining
+  normalization obligation; no universal representation/classification claim.
