@@ -959,3 +959,20 @@ and still-unproved quantitative gains. No extra valuation or new cutoff.
 Publisheddeab8c2 CI40225506827 remains same live final rejection controls;
 security40225504572 passed. No push/cancel/restart while that run is live.
 Goal active; no full classification/independent review/merge/Tao submission.
+
+## Phase49/50 published together after completed baseline CI
+
+Prior deab8c2 CI40225506827 SUCCESS19:39:29Z; actual downloaded log
+../phase48-pinned-ci.log confirms4627logical/3890theorem/16958runtime,
+250endpointpairs/full build/all inherited controls. Security40225504572
+and CodeQL PASS. Same-tree merge8d17afe2 verified. Final6402261574 posted
+BEFORE next push, without a metadata-only CI restart.
+Published69010f4e5d2e0adc44c70932d20583e669b7b7c2, treebb909671,
+two mathematical modules104+91lines and two imports; inherited math intact.
+New same-tree merge9c491026 parents392b6dbb+69010f4. Pinned CI40227162534
+confirmed live (job121270862473); security40227159821 Python job live,
+Actions and separate CodeQL passed at last check. PR checkpoint6402272616
+and body contain current scope. Follow exact runs; no restart on timeout.
+All local owned proof/check handles consumed; no new source changes after
+sealing. Local task-state update only; do not push it just to trigger CI.
+Goal active, quantitative gains/human review/broader objectives still open.
