@@ -6,6 +6,35 @@ The contributor should write the actual comment in their own words
 after reviewing the linked work. No comment has been submitted by this
 repository work.
 
+## Short AI-assisted draft for human revision
+
+This draft follows the contributor's emphasis on making the local and
+global views meet at one object. It remains AI-written; it is not a
+human-generated submission or a claim that review has finished.
+
+Building on Ben Green's derivative-determinant method and the credited
+prior route, we used AI assistance to bring geometry and arithmetic back
+to one integer: under class number one in the odd-discriminant case,
+the same Gram determinant is
+positive, highly divisible, and too small to satisfy both demands once
+the radicand reaches `10^11`. With a prime-two argument for the even case,
+the Lean result concerns the canonical
+`Q(sqrt(-d))` family for positive squarefree d and bounds both d and the
+actual absolute field discriminant, without borrowing the finite answer
+or an older cutoff. Our aim is a proof whose joints remain human-readable;
+this is still a large bound, we claim neither novelty nor optimality,
+and independent human semantic review remains open.
+
+Attach the [short proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md)
+and exact verification record after reviewing the current publication
+status. The mathematical head e2848c8 passed pinned CI40172177485; the
+[final record](research/ender_radius_bridge/PHASE43_PUBLICATION_FINAL.md)
+states its full scope. A [separate AI review](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md)
+found no semantic contradiction in five bounded checks. It rederived the
+scalar/floor/field arguments, but traced rather than reproved the inherited
+determinant apparatus. The exact model identifier was unavailable; no
+independence between model families or human peer review is inferred.
+
 ## What can be stated now
 
 - The direct analytic radicand and actual absolute field-discriminant

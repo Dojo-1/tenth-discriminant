@@ -393,6 +393,8 @@ A successful command establishes only what that program checks. Report the commi
 
 ## Provenance, AI assistance, and review
 
+The new 100-billion cutoff has one [fresh-context AI review](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md): no semantic contradiction was established in five bounded checks. It rederived the scalar, rounding and field/discriminant arguments, while tracing rather than reproving the inherited determinant apparatus. This is a separate review process with no verified independence between model families. Human semantic review remains open; Gemini Argor's earlier review covers earlier work.
+
 **Credit comes before comparison.** Ben Green supplies the derivative determinant method. The [prior-art record](PRIOR_ART.md) acknowledges twinheterodox's earlier split-prime/Green route and Kyle Pratt's disk-interpolation contribution; [BEAN](BEAN.md) also credits van Dijk for the route family and Jesús Vilela for the norm-ellipse experiment. This repository does not claim priority for that route or offer a current leaderboard. The dated prior-art snapshot is not an exhaustive literature review.
 
 **The names are workflow labels.** Bean, Ender, and Formic were used in semantic priming for AI-assisted exploration and adversarial checking. They name stages of the research, not mathematical entities, independent authorities, or evidence that priming improves research quality. The claims must stand without the narrative. Review provenance and limitations belong in the [review records](review/).

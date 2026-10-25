@@ -1,9 +1,19 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 43;
+**Living update: 25 October 2026, through preregistered Phase 45;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase45 supplies one user-authorized fresh-context AI review of the new
+100-billion proof. It rederived the scalar, floor/aspect-ratio and field/
+discriminant arguments, traced the inherited determinant/circularity paths,
+and established no semantic contradiction in those five bounded checks.
+The [first report](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md)
+preserves the unreviewed inherited obligations and exact provenance.
+It is neither independent human review nor established independence
+between model families. Mathematical-head CI40172177485 passed separately;
+the theorem and analytic threshold are unchanged by this review.
 
 Phase43 supplies a DIRECT analytic cutoff below100 billion for both the
 actual radicand and absolute field discriminant. Its separately registered
@@ -142,7 +152,7 @@ was posted in this cycle.
 | 8 | Help higher class-number problems | **Not delivered** | The `h≤2` [review brief](REVIEW_BRIEF_2.md) remains unreviewed; nothing here advances a verified higher-class-number range. |
 | 9 | Disclose AI involvement | **Repository practice present** | The [README](README.md) and review records identify AI assistance. This is disclosure, not validation or a submission. |
 | 10 | Contribute a repository link and human summary in Tao's comments | **No documented submission** | The repository has no submission permalink or posting record. This cycle posted nothing to Tao. The article was re-read, but a new sitewide/comment-pagination submission search was not performed. |
-| 11 | Independent due diligence before an AI-generated submission | **Partial** | Historical adversarial AI review, negative controls, pinned CI and the new [internal input audit](research/ender_radius_bridge/PROOF_INPUT_GUIDE.md) cover distinct risks. The last is not independent review; no new independent human semantic review or submission is recorded. |
+| 11 | Independent due diligence before an AI-generated submission | **Strengthened, still partial** | The [new separate AI review](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md) rederives three cutoff arguments and traces two inherited source paths. No contradiction established in its bounded scope; no verified model-family independence. Historical AI reviews, controls, pinned CI and the frozen internal input audit cover different risks. No independent human review or submission is recorded. |
 | 12 | Quality, collaboration and attribution over speed | **Visible practice, not an external verdict** | The [README](README.md) and [prior-art note](PRIOR_ART.md) credit antecedents and preserve scope limits. No Tao endorsement, human peer review or priority claim is inferred. |
 
 **Bottom line.** There is now a connected kernel-checked effective bound
