@@ -1,9 +1,19 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 47;
+**Living update: 25 October 2026, through preregistered Phase 48;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase48 supplies one exact rational diagnostic of the existing affine
+envelopes, not an improved cutoff: their crossing is `5007000/199997`
+in log D. Large improvements need stronger estimates than these fixed
+envelopes; overlapping envelopes do not refute the underlying method.
+[Explanation and exact controls](research/ender_radius_bridge/ENVELOPE_LIMIT_GUIDE.md).
+Proof head `2f519884` passed pinned CI40208552511, security and CodeQL;
+[completed verification](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6399919070)
+precedes the next push. Later-head CI remains separate. No objective is
+newly marked complete by this diagnostic.
 
 Phase47 closes the normalized-generator existence step for an abstract
 degree-two totally-complex number field, using conjugation, its anti-invariant

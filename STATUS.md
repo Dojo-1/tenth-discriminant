@@ -1,5 +1,22 @@
 # Status — 2026-10-25
 
+## Phase48: exact diagnostic, unchanged cutoff
+
+Protocol `a9dbd668` preceded one Python Fraction execution, PASS in
+0.047546 seconds. The current affine-envelope gap is exactly
+`(199997/1000000)*u-5007/1000`, crossing at `u=5007000/199997`.
+The fixed controls at25 and25.3 are respectively negative and positive.
+This diagnoses the limits of these particular estimates; it is no new
+Lean proof, cutoff, or impossibility result for the underlying method.
+[Human explanation](research/ender_radius_bridge/ENVELOPE_LIMIT_GUIDE.md).
+
+Proof head `2f519884790c8c38bc8ffae4a2d0dba4c74e1876` completed pinned
+CI40208552511 SUCCESS at16:02:54 UTC, with audit4627/3890/16958 and all
+inherited rejection controls. Security40208549438 and CodeQL also passed.
+[Final record posted before the follow-up push](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6399919070).
+The new diagnostic/documentation head requires its own checks. No merge,
+independent human review, improved constant or Tao submission is inferred.
+
 ## Phase47: operator normalization supplies the abstract-field cutoff
 
 The caller now needs only an actual number field K, rational degree two,

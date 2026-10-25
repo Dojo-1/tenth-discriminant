@@ -8,8 +8,14 @@ actual number field K, total complexity, rational degree two and actual
 class number one only. No root, isomorphism, radicand or numerical premise
 remains. [Operator guide](../research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md).
 Normalization excludes class-number/cutoff inputs in its fresh compiled
-closure. Local root/input/audit checks pass; exact-head CI is separate.
+closure. Local root/input/audit checks pass. Pinned CI40208552511 passed at
+proof head `2f519884`; its [final record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6399919070)
+does not substitute for later-head CI or human semantic review.
 No general full-classification theorem is asserted by this addition.
+
+The Phase48 [envelope diagnostic](../research/ender_radius_bridge/ENVELOPE_LIMIT_GUIDE.md)
+is exact rational arithmetic outside Lean. It changes no declaration or
+constant and does not establish failure of the determinant method.
 
 `QuadraticGeneratorBridge` now constructs `imaginaryQuadraticEquivOfRoot`
 from a supplied root a^2+d=0 and rational degree two of an actual number
