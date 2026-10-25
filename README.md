@@ -20,9 +20,11 @@ explains why a substantial further improvement needs stronger estimates;
 it proves no new cutoff and does not rule out the underlying method.
 
 The [central-symmetry lemma](research/ender_radius_bridge/CENTRAL_SYMMETRY_GUIDE.md)
-also separates even- and odd-degree rows of the original Gram. Its local
-Lean checks pass; this structural result supplies no extra valuation or
-smaller cutoff.
+separates even- and odd-degree rows of the original Gram. The
+[operator compatibility theorem](research/ender_radius_bridge/PARITY_COMPATIBILITY_GUIDE.md)
+proves that its Gram and the actual odd-p Frobenius basis change commute
+with the same sign operator. Local Lean checks pass; this structure
+supplies no extra valuation or smaller cutoff.
 
 For the argument itself, start with [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
 The [interpolation guide](lean/HUMAN_GUIDE.md) explains the hard positivity

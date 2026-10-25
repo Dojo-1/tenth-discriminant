@@ -1,9 +1,16 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 49;
+**Living update: 25 October 2026, through preregistered Phase 50;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase50 checks that the actual odd-p Frobenius basis matrix and original
+centrally symmetric-sample Gram commute with the same parity-sign
+operator. The prime-two mixing control shows why oddness matters.
+This [structural bridge](research/ender_radius_bridge/PARITY_COMPATIBILITY_GUIDE.md)
+connects the Phase49 symmetry to arithmetic, with local Lean checks.
+It changes no challenge-objective completion, prime exponent or cutoff.
 
 Phase49 adds a structural side result: central negation makes opposite
 total-degree parity rows orthogonal in the original integer trace-Gram.

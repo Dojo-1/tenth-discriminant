@@ -1,0 +1,31 @@
+{
+  "scope": "same parity-sign operator commutes with actual odd-p basis and symmetric-sample Gram; no quantitative gain",
+  "status": "LOCAL_PASS",
+  "protocol_commit": "f2dd1f7d89d29581f0d41ed7fe12b526bd2dca22",
+  "raw_sha256": {
+    "research/ender_radius_bridge/PHASE50_audit_20261025193604911.result.json": "9eea835b0b62104c28aaf4e701dfa5c609e8ce56ddbe34b7608421669e2854ff",
+    "research/ender_radius_bridge/PHASE50_build_20261025193411623.result.json": "2a7d1f04b05242eb2061c29208c60c304a9064072981d3d1126bea3f2d381a92",
+    "research/ender_radius_bridge/PHASE50_input_20261025193603394.result.json": "15ab2ab885d61e5a01ad8f1c8fa09d595ce703793662c475c1d08ced63f79815",
+    "research/ender_radius_bridge/PHASE50_root_20261025193523737.result.json": "44b3cd861de4348e6f295b3be26e0ced1f17ac5084b48462b2c0f7adf8e0f58f",
+    "research/ender_radius_bridge/PHASE50_audit_20261025193604911.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE50_build_20261025193411623.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE50_build_20261025193411623.stdout.log": "2cbe4ad159ee48370d2b48b2bee10bec84403d27e303685e7e2b172b63fc0efe",
+    "research/ender_radius_bridge/PHASE50_input_20261025193603394.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE50_input_20261025193603394.stdout.log": "f5b728f0606207963d33c28b98a38405e42ded3934d45f42b51fda712d8b5e08",
+    "research/ender_radius_bridge/PHASE50_root_20261025193523737.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE50_root_20261025193523737.stdout.log": "7e6a0c6271d858238184657b648aafab2ce0ec5d95e795579c017e5b56de505d",
+    "research/ender_radius_bridge/PHASE50_AXIOM_AUDIT_RAW.zip": "88567c19922e0f8b11666969fbc88953e31fe6feab108f3c58c49ec054de8533"
+  },
+  "source_sha256_lf": {
+    "lean/TenthDiscriminant/ParityCompatibility.lean": "b91642afad2af0e0cd4aba81a4cc2d10e890a6ae430c5c263be667c5bec85d22",
+    "lean/TenthDiscriminant.lean": "28f635ebf6a06b56ea0a622a81d8b341569156e161a51aa24cc20981d680ef57",
+    "research/ender_radius_bridge/PHASE50_PROTOCOL.md": "2f9190a6fb1b109ecbdc1b71d5c87753c5f081a3d18c50e8b4642bb937ce4f6c",
+    "research/ender_radius_bridge/Phase50InputCheck.lean": "6f3bb54e4ec21b7a17c9dbec8be98430a37c76c4775a9945361476e7964c5665",
+    "research/ender_radius_bridge/run_phase50.ps1": "30cba15693e187ae2ee8ebc5b79ae5196af6c77a3d4593b644ce33678d729923",
+    "research/ender_radius_bridge/PARITY_COMPATIBILITY_GUIDE.md": "8cffa2896e0f65dca6da9c154c1472039f4c1c223731bd52a808c633ee7c3190"
+  },
+  "audit_entry": "PHASE50_audit_20261025193604911.stdout.log",
+  "audit_raw_sha256": "4a830ef9853315b5c59315876a001826c2e9a00bac72812838136729226383c5",
+  "audit_raw_bytes": 2013761,
+  "exact_head_ci": "separate; not yet published"
+}

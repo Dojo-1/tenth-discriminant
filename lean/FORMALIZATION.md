@@ -1,5 +1,13 @@
 # Current claim-to-Lean map
 
+`rectangularBasisMatrix_commutes_sign` and
+`integerRectangularTraceGram_commutes_sign` prove compatibility of the
+actual arithmetic and geometric matrices with the same integer diagonal
+sign operator. The former requires positive odd p; the latter requires
+central sample symmetry. The mixed-parity support theorem and prime-two
+control are checked. [Typed operator guide](../research/ender_radius_bridge/PARITY_COMPATIBILITY_GUIDE.md).
+Local root/signature/axiom checks pass; no quantitative gain is inferred.
+
 `TenthDiscriminant.integerTraceGramEntry_eq_zero_of_central_symmetry`
 proves mixed-parity zero entries of the original integer Gram under
 sample negation stability; the ellipse instance and nonsymmetric entry2

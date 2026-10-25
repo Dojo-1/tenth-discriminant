@@ -1,5 +1,18 @@
 # Status — 2026-10-25
 
+## Phase50: geometry and arithmetic preserve the same sign sectors
+
+The actual odd-p Frobenius basis matrix and the centrally symmetric-sample
+integer Gram both commute with the same diagonal parity-sign operator.
+Active row-label bounds and a p=2 mixed-parity entry-1 control are checked.
+First target PASS23.8670444s without repair; root6814 PASS23.6392964s;
+signature/controls PASS22.8116426s; audit4650/3910/16968 PASS29.1667922s.
+Coverage160 reachable/acyclic modules/no escapes. This is compatibility,
+not a stronger prime exponent, strict size saving or cutoff improvement.
+[Guide](research/ender_radius_bridge/PARITY_COMPATIBILITY_GUIDE.md) and
+[verification](research/ender_radius_bridge/PHASE50_VERIFICATION.md).
+Exact publication-head CI and independent human review remain separate.
+
 ## Phase49: two sign sectors of the original Gram
 
 The original integer trace-Gram entry is zero between opposite total-degree

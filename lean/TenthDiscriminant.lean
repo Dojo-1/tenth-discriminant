@@ -82,3 +82,4 @@ import TenthDiscriminant.TunedAnalyticCutoff
 import TenthDiscriminant.QuadraticGeneratorBridge
 import TenthDiscriminant.ImaginaryQuadraticRepresentation
 import TenthDiscriminant.CentralSymmetry
+import TenthDiscriminant.ParityCompatibility

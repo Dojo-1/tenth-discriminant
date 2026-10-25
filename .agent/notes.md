@@ -938,3 +938,24 @@ Current-root verifier is nowPhase49; do not rerun Phase47 historical-root
 fingerprint as a current check. Existing Phase47/48 records unchanged.
 Published deab8c2 CI40225506827 remains the same confirmed-live build;
 security40225504572 passed. No new push while that gate is live. Goal active.
+
+## Phase50 local compatibility accepted
+
+Protocolf2dd1f7 before source. New91-line ParityCompatibility module proves
+actual rectangularBasisMatrix parity support for positive odd p, its sign
+commutation, and actual symmetric-sample integer Gram commutation with the
+same sign matrix. Prime-two3-by2 row4/col1=-1 control checks mixing.
+First target PASS23.8670444s, no repair/search/stop/extra agent; root6814
+PASS23.6392964s; public signatures/control PASS22.8116426s; compiled audit
+PASS29.1667922s,4650logical/3910theorem/16968runtime, standard three axioms.
+160 modules reachable/acyclic/no escapes, source250endpointpairs PASS.
+Raw audit archived/readback verified; manifest/current verifier PASS and
+all priorPhase49 raw/source hashes intact (historical root checked atf0fe28a).
+Current-root verifier is Phase50; do not run Phase49 snapshot checker on
+the newer root. All four local command handles terminal and consumed.
+PARITY_COMPATIBILITY_GUIDE distinguishes checked support/commutation from
+projector/transformed-Gram consequences, integral-coordinate splitting,
+and still-unproved quantitative gains. No extra valuation or new cutoff.
+Publisheddeab8c2 CI40225506827 remains same live final rejection controls;
+security40225504572 passed. No push/cancel/restart while that run is live.
+Goal active; no full classification/independent review/merge/Tao submission.
