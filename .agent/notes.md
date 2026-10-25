@@ -838,3 +838,12 @@
   Primitive power basis -> negative rational square -> denominator clearing
   -> Nat squarefree decomposition. No supplied-root/isomorphism fallback,
   numerical/classification input, new constant or extra reviewer agent.
+- User said WAIT against the coordinate/scalar-centered organization, then
+  explicitly chose "Continue through operators and symmetries". At that
+  point no Phase47 Lean source or proof attempt existed. Preserve original
+  protocol2566f9fe as an unexecuted route, not a failed experiment.
+- Register intrinsic route before execution: unique nonidentity quadratic
+  Galois automorphism realizes complex conjugation; its anti-invariant
+  projector has nonzero image, whose square lies in the rational fixed
+  field and is negative under a complex embedding. Normalize the square
+  class only afterwards. Full target/budget unchanged; no extra agent.
