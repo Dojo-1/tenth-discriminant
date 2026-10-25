@@ -19,8 +19,10 @@ joins a complete finite certificate to all nine positive cases. Its existing
 proof uses the original 700-billion cutoff; that certificate and proof are
 unchanged by the newer analytic optimization. The
 [classification guide](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md)
-separates those directions. This is not a representation theorem for
-arbitrary field types or a claim of independent human semantic review.
+separates those directions. That canonical-family theorem does not itself
+supply field-type generality; the operator normalization above supplies
+that separate bridge for the cutoff. Independent human semantic review
+remains open, and no full-classification announcement is made here.
 
 For a caller's field with a specified root of X^2+d and degree two, the
 [generator dictionary](../research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md)

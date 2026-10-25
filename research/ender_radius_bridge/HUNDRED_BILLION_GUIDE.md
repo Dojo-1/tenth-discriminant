@@ -83,6 +83,8 @@ The raw negative history is not relabelled PASS.
 [Results](PHASE43_RESULTS.json) and [verification](PHASE43_VERIFICATION.md)
 separate local proofs from exact-head CI. The earlier comparison, no-leak
 check and provenance snapshots retain their dated scopes. No frozen
-campaign, finite certificate, dependency pin or gate is changed. No
-arbitrary-field-type representation, independent human review, general
-Siegel-zero theorem, higher-class-number result, merge or Tao post is claimed.
+campaign, finite certificate, dependency pin or gate is changed. Phase43
+alone did not supply arbitrary-field-type representation; the newer
+[operator bridge](CONJUGATION_BRIDGE_GUIDE.md) now supplies that step.
+Independent human review, a general Siegel-zero theorem, a higher-class-number
+result, merge and Tao submission remain outside this analytic result.

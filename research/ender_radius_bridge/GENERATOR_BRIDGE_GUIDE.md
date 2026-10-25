@@ -57,7 +57,7 @@ These are ordinary algebraic coordinate changes. Composing sign changes
 and integer rescalings preserves the field but need not preserve the
 squarefree label. Removing square factors is a substantive normalization step.
 
-## The exact remaining bridge
+## How the two bridges now compose
 
 This theorem starts with a specified positive squarefree root witness
 and degree two. The new operator normalizer produces that witness for an

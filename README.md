@@ -13,6 +13,10 @@ separate. Earlier failures remain preserved. No novelty or optimality claim.
 [Operator proof](research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md) ·
 [Analytic comparison](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md).
 
+The [exact envelope diagnostic](research/ender_radius_bridge/ENVELOPE_LIMIT_GUIDE.md)
+explains why a substantial further improvement needs stronger estimates;
+it proves no new cutoff and does not rule out the underlying method.
+
 For the argument itself, start with [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
 The [interpolation guide](lean/HUMAN_GUIDE.md) explains the hard positivity
 step; the [verification record](research/ender_radius_bridge/PHASE47_VERIFICATION.md)
