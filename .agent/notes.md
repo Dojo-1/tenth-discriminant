@@ -874,3 +874,20 @@
   gates pass. Same-tree merge07c15c1d parents392b6db+2def070 verified; final
   record6399320782 posted before new push, without metadata-only CI restart.
   New publication requires its own exact-head CI; no merge/Tao post.
+# Phase48 local checkpoint
+
+Previous goal turn made progress: a human review packet for exact published
+head 2f519884790c8c38bc8ffae4a2d0dba4c74e1876 was saved outside the repo at
+../PHASE47_HUMAN_REVIEW_PACKET.md. Security40208549438 and CodeQL passed;
+pinned CI40208552511 remains the same live run, last observed building.
+No restart, replacement run, merge or additional agent.
+
+Protocol a9dbd668d007fa0474d45796418b21cb8ed8a736 registered one exact
+rational envelope diagnostic before execution. Single execution PASS in
+0.047546s, crossing5007000/199997; fixed gaps at25 and25.3 are -283/40000
+and529241/10000000. Raw source hashes and execution record preserved.
+No new analytic cutoff: overlapping envelopes are inconclusive about the
+actual determinant budgets. ENVELOPE_LIMIT_GUIDE.md states the consequence.
+This local protocol/results have not been pushed while published CI is live.
+Full goal remains active; human/API review, optimization and broader Tao
+objectives are not discharged by this small arithmetic diagnostic.
