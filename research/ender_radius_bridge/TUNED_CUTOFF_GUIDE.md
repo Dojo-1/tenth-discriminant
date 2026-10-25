@@ -1,5 +1,10 @@
 # From a promising radius to a universal cutoff
 
+**Historical Phase42 checkpoint.** The separately registered Phase43
+completion and current100-billion result are explained in the
+[current proof guide](HUNDRED_BILLION_GUIDE.md). The failure/stop outcome
+below remains unchanged.
+
 Phase42 targets a direct100-billion analytic cutoff, not a consequence of
 the finite classification. The new radius-family module compiled, but the
 counted upper-envelope/field-composition target hit its registered600-second

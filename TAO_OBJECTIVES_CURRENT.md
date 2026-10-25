@@ -1,11 +1,21 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 42;
+**Living update: 25 October 2026, through preregistered Phase 43;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
 
-Phase39 improves the DIRECT analytic cutoff from700 billion to200 billion
+Phase43 supplies a DIRECT analytic cutoff below100 billion for both the
+actual radicand and absolute field discriminant. Its separately registered
+fixed completion uses the unchanged Phase42 candidate, not the finite
+classification or an old cutoff. The new upper envelope and actual-field
+composition, full local build, fresh input checks and namespace audit pass.
+Exact new-head pinned CI is a separate publication check. Phase42's failure
+and600-second stop remain INCOMPLETE; combined proof-build cost is744.1774016s.
+This halves the previous analytic cutoff and divides the original by seven,
+without an optimality or novelty claim. [Current short proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md).
+
+Historical Phase39 improves the DIRECT analytic cutoff from700 billion to200 billion
 for both the actual radicand and absolute field discriminant. It sharpens
 floor/log loss on the same auxiliary radius family and prime constants.
 The new bound does not borrow the finite classification or old cutoff:
@@ -122,8 +132,8 @@ was posted in this cycle.
 
 | # | Aspect of the challenge | Current verdict | Evidence and limit |
 |---:|---|---|---|
-| 1 | Effective bound, avoiding Heegner as proof input | **Stronger actual field-discriminant bound supplied; semantic review pending** | [Phase39](lean/TenthDiscriminant/OptimizedAnalyticCutoff.lean) gives actual radicand and absolute field-discriminant bounds below `2×10¹¹`. Both parity charts and actual discriminant identity are supplied. No numerical or classification premise; fresh compiled input checks exclude the old cutoff and finite answer. Independent semantic review remains open. |
-| 2 | Best efforts to optimize the constant | **Modest direct analytic improvement; no optimality claim** | A sharper guarded floor/log bound reduces the pre-computation cutoff from `7×10¹¹` to `2×10¹¹` on the same family, a factor3.5. The finite d≤163 consequence is separate. This remains much larger than historical/differently reviewed bounds in the dated [prior-art](PRIOR_ART.md) note; no controlled like-for-like superiority claim. Earlier [lift](ledger/determinant_lifts.txt)/[radial](ledger/radial_bounds.txt) negative results remain preserved. |
+| 1 | Effective bound, avoiding Heegner as proof input | **Stronger actual field-discriminant bound supplied locally; semantic review pending** | [Phase43](lean/TenthDiscriminant/TunedAnalyticCutoff.lean) gives actual radicand and absolute field-discriminant bounds below `10¹¹`. Both parity charts and actual discriminant identity are supplied. No numerical or classification premise; fresh compiled input checks exclude the old cutoff and finite answer. Exact-head pinned CI and independent semantic review remain separate. |
+| 2 | Best efforts to optimize the constant | **Modest direct analytic improvement; no optimality claim** | The fixed thinner rectangle and smaller auxiliary radius reduce the direct cutoff from `2×10¹¹` to `10¹¹`, a factor2; the original was `7×10¹¹`. The finite d≤163 consequence is separate. This remains much larger than both external source claims in the frozen [comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md), whose own snapshot remains dated. Earlier [lift](ledger/determinant_lifts.txt)/[radial](ledger/radial_bounds.txt) negatives and the Phase42 time stop remain preserved. |
 | 3 | Threshold low enough for direct computation | **Complete finite certificate supplied for the canonical field family** | The original remaining interval is covered by quotient/remainder, eleven complete seed proofs and all785 quotient positions. With the cutoff and nine positive cases, `imaginaryQuadratic_classNumber_one_iff` has no range or certificate premise. Exact-head CI and semantic-review status must accompany this claim. |
 | 4 | High-quality Lean formalization, perhaps upstreamable | **Connected actual-field-family iff; external quality judgment open** | Actual class number/discriminant, cutoff, full finite exclusion and all nine positives are supplied. This is not an arbitrary-field-type representation theorem. Independent human semantic review, API/style review and Mathlib upstream acceptance remain open. See the [claim map](lean/FORMALIZATION.md). |
 | 5 | Compare strengths of different writeups | **Bounded controlled comparison supplied; broad objective partial** | [Phase40](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) compares two frozen complete same-route manuscripts with our proof head across parameter, analytic threshold, finite finish, rank, normalization, inputs and review. Original-byte source hashes and recency controls are recorded. External results are source claims, not newly audited or replayed; this is not an all-writeup optimized survey. [Prior art](PRIOR_ART.md) remains a frozen historical note. |
@@ -136,7 +146,7 @@ was posted in this cycle.
 | 12 | Quality, collaboration and attribution over speed | **Visible practice, not an external verdict** | The [README](README.md) and [prior-art note](PRIOR_ART.md) credit antecedents and preserve scope limits. No Tao endorsement, human peer review or priority claim is inferred. |
 
 **Bottom line.** There is now a connected kernel-checked effective bound
-on both d and the actual absolute field discriminant below `2×10¹¹`, for the
+on both d and the actual absolute field discriminant below `10¹¹`, for the
 actual imaginary quadratic field family with both parity cases supplied.
 All nine positive cases and the complete finite certificate now supply the
 canonical-field-family iff without a range premise. Independent human
@@ -162,8 +172,9 @@ completion is separately registered and separately costed.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
-| Universal geometry for the thinner fixed auxiliary family. | **Locally verified radius/lower module; full-cutoff attempt incomplete** | [Phase42](research/ender_radius_bridge/TUNED_CUTOFF_GUIDE.md) proves the radius admissible on the proposed domain, but the upper/cutoff target hit600s. Both failure/stop records and the unaccepted candidate are retained. Partial root, fresh input/no-cutoff-leak check and namespace audit pass locally; exact-head CI remains separate. The checked analytic cutoff stays2e11. No100-billion cutoff or completed optimization objective. |
-| Explicit aspect-ratio price in the same prime-mass lower budget. | **Lean lemma plus one separately labelled Arb pilot** | [Phase41](research/ender_radius_bridge/ASPECT_RATIO_GUIDE.md) exposes loss3.294+0.0448K for R<=K*S, with old/new ratio controls and a floor counterexample. One fixed new-family input passes17 guards/comparisons. Universal new-family geometry and upper envelopes remain open; the checked cutoff is still2e11. No optimality or stronger cutoff claim. |
+| Fixed completion of the thinner-family analytic cutoff. | **Local Lean proof, fresh input closures and full namespace audit** | [Phase43](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md) supplies the upper envelope and actual100-billion field bounds without borrowing classification. Main build76.3502975s; combined earlier/current proof cost744.1774016s. Exact-head publication CI and independent review remain separate; no new pilot or parameter search. |
+| Universal geometry for the thinner fixed auxiliary family. | **Historical Phase42 geometry acceptance; cutoff attempt incomplete** | [Phase42](research/ender_radius_bridge/TUNED_CUTOFF_GUIDE.md) proves radius admissibility, while its upper/cutoff target hit600s. Original failure/stop records, candidate and no-cutoff-leak checkpoint are retained unchanged. The later Phase43 completion does not retrospectively change that outcome. |
+| Explicit aspect-ratio price in the same prime-mass lower budget. | **Lean lemma plus one separately labelled Arb pilot** | [Phase41](research/ender_radius_bridge/ASPECT_RATIO_GUIDE.md) exposes loss3.294+0.0448K for R<=K*S, with old/new ratio controls and a floor counterexample. One fixed new-family input passes17 checks. Its then-open universal geometry/upper obligations are supplied separately by Phases42–43; the pilot itself proves no universal cutoff. |
 | Frozen same-route comparison with explicit object/parameter alignment. | **Internal primary-source analysis, not a theorem or independent review** | [Phase40](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) separates rank mechanisms, trace-Gram versus minor-norm integers, strict prime endpoints and analytic versus finite bounds. Seven source hashes and two historical blob controls are reproducible. It suggests a future auxiliary-prime proof bridge, but imports no external constants and proves no stronger cutoff. |
 | Complete-seed fused traversal preserves every leaf predicate. | **Lean theorem plus one complete concrete translate** | Checks below 892371480 now compose to an actual-field bounded iff. Translation does not preserve extra-prime tests (checked p=29 control). The fixed pilot had 16 passing blocks, one aggregate-time stop and 27 skipped blocks; no full-range runtime or isolated fusion speedup is established. [Human proof](research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md). |
 | Actual field discriminant and all nine positive class numbers. | **Lean theorems using maximal integral bases, small ideal norms and pinned Minkowski** | The actual absolute-discriminant cutoff and all nine positive equalities are supplied. Prime-norm quotients give root obstructions; the legitimate norm-four ideal (2) is retained. d=23 refutes omitting local hypotheses. No novelty or full classification claim. [Human proof](research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md). |

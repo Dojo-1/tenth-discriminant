@@ -1,5 +1,17 @@
 # Current claim-to-Lean map
 
+Phase43's `TunedAnalyticCutoff` completes the preserved upper/actual-field
+candidate with the unchanged mathematical body. Public actual radicand and
+Mathlib absolute-discriminant bounds below100000000000 require only
+positive-squarefree d and actual class number one. Full local root/input/
+axiom checks pass; closures55436/55569/55772 exclude16 listed old cutoff,
+classification and finite-answer inputs. Library156 modules, audit4602
+logical/3868 theorem declarations. Publication-head CI is separate.
+Phase42's incomplete attempt and its snapshot-specific no-leak check remain
+historical; they are not rewritten to PASS on the new root. The Phase43
+completion has its own evidence and preserves all original controls.
+[Human proof](../research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md).
+
 Phase42's TunedRadiusFamily compiled: universal dimensions, log/floor
 bounds, normalized lower budget, integer radius rounding and chosen-radius
 geometry on the fixed100-billion-scale family. Its upper/cutoff target

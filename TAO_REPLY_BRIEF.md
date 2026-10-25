@@ -1,6 +1,6 @@
 # Factual brief for a possible human comment on Tao's challenge
 
-**25 October 2026, through Phase39. This is an AI-prepared evidence brief, not the
+**25 October 2026, through Phase43. This is an AI-prepared evidence brief, not the
 human-generated summary requested by [Tao's post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).**
 The contributor should write the actual comment in their own words
 after reviewing the linked work. No comment has been submitted by this
@@ -9,20 +9,26 @@ repository work.
 ## What can be stated now
 
 - The direct analytic radicand and actual absolute field-discriminant
-  bounds are reduced to `2×10¹¹`, without using the finite classification
-  or old cutoff. The same auxiliary radius and prime constants are retained;
-  sharper floor/log accounting supplies the gain. Local full build, input
+  bounds are reduced to `10¹¹`, without using the finite classification
+  or old cutoff. A fixed thinner rectangle `S=floor(R/25)` and auxiliary
+  radius `ceil(0.52 D^(3/4))` retain the same prime constants and actual
+  factor-two trace-Gram determinant. Local full build, fresh input
   and axiom checks pass; cite exact-head publication CI separately. This
   is a modest optimization, not an optimality or novelty claim.
-  [Human analytic proof](research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md).
+  [Human analytic proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md).
+
+- Phase42's failed control and600-second cutoff attempt remain preserved
+  as incomplete. Phase43's separately preregistered, unchanged completion
+  passed in76.3502975s; combined proof-build cost is744.1774016s. No new
+  pilot, parameter search or larger cap supplied the completion.
 
 - A frozen internal proof-input audit inventories five compiled roots and
   checks their separation. The inspected class-number inputs are generic
   finiteness/PID/Minkowski facts, not an identified borrowed classification.
   This is not independent human review or a new permanent CI gate. The
   finite d≤163 conclusion must not be confused with an analytic estimate.
-  Phase39 separately improves the latter to2e11; that new proof has its own
-  input check. [Frozen input map](research/ender_radius_bridge/PROOF_INPUT_GUIDE.md).
+  Phases39/43 separately improve the latter to2e11/1e11, each with fresh
+  input checks. [Frozen input map](research/ender_radius_bridge/PROOF_INPUT_GUIDE.md).
 
 - Phase37 supplies a complete quotient-fiber certificate for the original
   remaining interval. The public actual-field iff has only positive-squarefree
@@ -80,12 +86,14 @@ The following phase descriptions preserve earlier checkpoint scopes.
 
 ## What must not be said
 
-Do **not** say the project proved `D<=163`, solved class number one,
-or obtained an upstream-ready Mathlib formalization. The effective radicand
-bound is checked in both parity cases; the finite classification is not.
-Phase32 supplies the identity with Mathlib's `NumberField.discr`, and Phase33
-supplies all nine positive cases, but not the complete upper-middle certificate.
-The new auxiliary radius is not the frozen
+Do **not** make an unqualified full class-number classification claim,
+claim an arbitrary imaginary-quadratic field-type representation theorem,
+or call this upstream-ready Mathlib work. The canonical constructed family
+has a connected checked iff with nine radicands; this needs independent
+semantic review of the intended mathematical application. The100-billion
+analytic estimate is distinct from the finite d<=163 conclusion. Phase32
+supplies Mathlib's actual discriminant identity, Phase33 the nine positives,
+and Phase37 the entire finite certificate. The new auxiliary radius is not the frozen
 campaign's radius. Green CI is evidence about the statements
 encoded in Lean, not independent semantic review of their intended
 number-theoretic application.
@@ -93,8 +101,8 @@ number-theoretic application.
 ## Decision gate for an actual challenge entry
 
 A comment may describe the precise checked effective radicand bound, but
-must not turn the recorded CRT sieve into a Lean classification or assert
-human semantic review. Obtain independent semantic review before submission.
+must distinguish the historical CRT run from the complete Lean certificate
+and must not assert human semantic review. Obtain independent semantic review before submission.
 Before posting even a progress note, the
 human contributor should inspect the evidence, write their own short
 summary, decide whether a non-bound progress report fits the thread,

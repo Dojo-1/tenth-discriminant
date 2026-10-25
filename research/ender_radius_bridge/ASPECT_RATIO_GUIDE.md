@@ -1,5 +1,10 @@
 # Why a thinner rectangle helps—and eventually hurts
 
+**Historical Phase41 checkpoint.** Universal completion and the current
+100-billion cutoff are recorded separately in the
+[Phase43 guide](HUNDRED_BILLION_GUIDE.md). The pilot below retains its
+original limited scope.
+
 The new result is a Lean-checked trade-off in the existing determinant
 argument. A single new-radius pilot also passes. **The checked analytic
 cutoff is still200 billion, not100 billion.**

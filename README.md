@@ -2,6 +2,16 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
+**Phase43: the direct analytic cutoff is now100 billion locally checked.**
+The separately registered completion accepts the preserved upper/field
+candidate without changing its mathematical body. Both actual-radicand and
+actual-field-discriminant bounds below `10¹¹` have no finite-classification
+or older-cutoff premise. Full root, fresh input checks and axiom audit pass;
+exact publication-head pinned CI is separate. Phase42's failure/time stop
+remain preserved, not relabelled success. No optimality or novelty claim.
+[Read the short human proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md).
+Earlier phase entries below retain their historical scopes.
+
 **Phase42: universal radius geometry, cutoff attempt incomplete.** The
 new family's dimension, rounding, lower-budget and chosen-radius bounds
 compiled. The remaining upper/cutoff target hit its registered time cap;

@@ -701,3 +701,23 @@
   verified; only three permitted axioms, no numerical premise. Matched
   controls and exact-head CI pending. Even cases and finite classification
   remain open, no merge/Tao post/novelty claim. Development failures retained.
+
+# Phase43 current checkpoint, 25 October 2026
+
+- Protocol605d01ab933676c13044d4475b4eceb29b302758 preceded the unchanged
+  completion. Same mathematical body as preserved Phase42 candidate;
+  no new pilot, tuning, repair or larger resource cap. First Phase43
+  build PASS76.3502975s; previous failure/time stop remain incomplete.
+  Combined proof-build cost744.1774016s. All local handles terminal.
+- Full root6810 steps PASS27.2377286s. Fresh input/controls PASS53.200717s,
+  three closures55436/55569/55772 exclude16 old-answer/cutoff inputs.
+  Namespace audit PASS36.5992777s:4602 logical/3868 theorem/16955 runtime.
+  Raw audit retained losslessly with manifest hashes. Local actual radicand
+  and absolute actual-discriminant bound is now100 billion; no classification
+  recycling. Previous public statements, finite certificate and pins unchanged.
+- Current reader docs and human guide explain the two affine budgets,
+  earlier negative outcome and limits. Prior head2c020e0 CI40170752901
+  SUCCESS at07:14:58 UTC; security40170751248/separate CodeQL SUCCESS.
+  Same-tree mergefbc24b0 verified; final exact-tree record6394778750 posted
+  before next push. New-head CI is separate. Goal active; independent
+  semantic/API review, broader comparison and human reporting remain open.

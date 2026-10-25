@@ -1,5 +1,13 @@
 # Lean: the proof you can inspect
 
+Phase43 completes a separately registered direct analytic bound below1e11
+for both actual radicand and actual absolute field discriminant. The same
+preserved upper candidate now compiles, with full root, fresh input and
+axiom checks; no classification or old-cutoff input. Exact-head pinned CI
+is separate. The earlier failed/stopped Phase42 attempt stays in the
+record. [Short human proof](../research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md).
+The following earlier-phase descriptions retain their checkpoint scopes.
+
 Phase39 independently reduces the direct analytic cutoff to2e11 on the
 same auxiliary family, without using the finite classification. Local
 whole-library, signature, fresh input-exclusion and axiom checks pass;

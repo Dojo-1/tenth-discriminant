@@ -78,3 +78,4 @@ import TenthDiscriminant.InertPilot
 import TenthDiscriminant.OptimizedAnalyticCutoff
 import TenthDiscriminant.AspectRatioLowerEnvelope
 import TenthDiscriminant.TunedRadiusFamily
+import TenthDiscriminant.TunedAnalyticCutoff

@@ -1,7 +1,11 @@
 # Why the derivative Gram determinant is positive
 
-For the new analytic optimization, read [the floor/log proof](../research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md).
-It lowers the direct cutoff to2e11, independently of the finite classification.
+For the current analytic optimization, read [the100-billion proof](../research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md).
+It balances the smaller rectangle/disk against explicit divisibility loss,
+independently of finite classification or old cutoffs. The earlier
+[floor/log proof](../research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md)
+records the historical2e11 threshold. Local proof checks and exact-head
+publication CI remain separate; Phase42's prior time stop is preserved.
 
 The [proof-input map](../research/ender_radius_bridge/PROOF_INPUT_GUIDE.md)
 now distinguishes generic class-group/Minkowski facts from the classification

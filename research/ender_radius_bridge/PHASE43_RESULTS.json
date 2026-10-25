@@ -1,0 +1,29 @@
+{
+  "phase":43,
+  "protocol_commit":"605d01ab933676c13044d4475b4eceb29b302758",
+  "publication_baseline":"2c020e043077af016826ac5ca9c3daedb73f8c1e",
+  "baseline_publication_final":{"pinned_ci_run":40170752901,"conclusion":"success","completed_utc":"2026-10-25T07:14:58Z","security_run":40170751248,"security_conclusion":"success","separate_CodeQL":"SUCCESS","tree":"9ccb0d80f6bc36cd5eb9bf1266f5492985ebfaa5","synthetic_merge":"fbc24b0e8ed9e1cd72ff8d90a6d9964e772e7711","final_comment":"https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6394778750","posted_before_newer_push":true,"does_not_verify_new_Phase43_mathematics":true},
+  "scope":"Separate fixed completion of unchanged upper/actual-field candidate; local100-billion direct cutoff acceptance, not retrospective Phase42 success",
+  "local_analytic_cutoff":100000000000,
+  "previous_analytic_cutoff":200000000000,
+  "original_analytic_cutoff":700000000000,
+  "no_new_pilot_or_parameter_tuning":true,
+  "mathematical_body_sha256":"f6a1478126c4a72226d602bdd4e7294e79c24774b8801a0c7f88c6e39d482fa8",
+  "mathematical_body_equal_preserved_candidate_before_first_execution":true,
+  "source_fingerprints_lf_sha256":{
+    "lean/TenthDiscriminant/TunedAnalyticCutoff.lean":"d0d5c0887d0f03dba52e4e0b8644359827763e7cbd8b3cc2f30479e47395db5b",
+    "lean/TenthDiscriminant.lean":"78089120e8067b5c31e38bde0b191368e35ee8242f9e86f5ec49ded0ca77045b",
+    "research/ender_radius_bridge/Phase42UnacceptedCutoff.lean":"80ae19ebbfa43f9b8624405c6a7be4d2c0281497e398ee4386ad993ee45c0a9a"
+  },
+  "proof_attempts":[{"record":"PHASE43_build_20261025065829876.result.json","attempt":1,"exit_code":0,"elapsed_seconds":76.3502975,"observed_peak_working_set_bytes":2910982144,"stop_reason":"","per_attempt_limit_seconds":600,"cumulative_allowance_seconds":1200}],
+  "prior_negative_history":{"phase42_status":"INCOMPLETE, unchanged","records":["PHASE42_build_20261025062242792.result.json","PHASE42_build_20261025062509066.result.json"],"exit_codes":[1,99],"elapsed_seconds":[66.9683539,600.85875019999992],"combined_Phase42_and_Phase43_proof_build_seconds":744.1774016,"not_relabelled_first_try_success":true},
+  "verification":[
+    {"mode":"root","record":"PHASE43_root_20261025070022345.result.json","exit_code":0,"elapsed_seconds":27.2377286,"observed_peak_working_set_bytes":2788212736,"build_steps":6810},
+    {"mode":"input","record":"PHASE43_input_20261025070118439.result.json","exit_code":0,"elapsed_seconds":53.200717,"observed_peak_working_set_bytes":3200696320,"closures":{"odd_cutoff":55436,"actual_radicand_bound":55569,"actual_discriminant_bound":55772},"forbidden_inputs":16},
+    {"mode":"audit","record":"PHASE43_audit_20261025070131786.result.json","exit_code":0,"elapsed_seconds":36.5992777,"observed_peak_working_set_bytes":3330232320,"logical_declarations":4602,"theorems":3868,"runtime_only_auxiliaries_excluded":16955}
+  ],
+  "import_closure":{"reachable_acyclic_modules":156,"proof_source_escape_flags":0},
+  "allowed_axioms":["propext","Quot.sound","Classical.choice"],
+  "audit_raw_archive":{"path":"PHASE43_AXIOM_AUDIT_RAW.zip","bytes":148946,"sha256":"70ab8119d7d34ca6e5047cbdc906538fd8b741be63dd832723486b4367e338f9","entry":"PHASE43_audit_20261025070131786.stdout.log","raw_bytes":2005464,"raw_sha256":"e9e1c66e9b56a52a0d058c2f1dc89dc31dda1ff983894a3fcfa3cc633fe2084c","recovery_verified_before_duplicate_removal":true},
+  "limitations":["Exact new-head pinned CI required separately","Old frozen Phase42 no-leak/root-fingerprint checks apply at2c020e0, not to the new root with accepted100b theorems","No new local full parent-apparatus/rejection replay inferred from compiled audit","No optimality, novelty, independent human review, arbitrary-field representation, higher-class-number or general Siegel-zero claim","No merge or Tao post"]
+}

@@ -1,5 +1,26 @@
 # Status — 2026-10-25
 
+## Phase43: direct actual-field cutoff below100 billion, local checks pass
+
+Protocol605d01a registered one separate completion of the preserved upper
+candidate. Its mathematical body was verified identical before the first
+run. Target PASS76.3502975s/2910982144B within the same600s/8192MB cap,
+no repair, tuning or new pilot. Phase42 remains INCOMPLETE with its failure
+and600-second time stop. Combined proof-build cost is744.1774016s.
+
+New public `radicand_bound_100b` and `discriminant_bound_100b` theorems
+require positive-squarefree d and actual class number one only. Full root
+6810 steps PASS27.2377286s;156 modules reachable/acyclic/no escapes.
+Fresh input check PASS53.200717s; three closures55436/55569/55772 exclude16
+listed old-cutoff/classification/finite-answer inputs. Compiled audit
+PASS36.5992777s:4602 logical/3868 theorem/16955 runtime-only declarations,
+only standard3 axioms. Actual positive1,2,163 and retained boundary controls
+pass separately. Exact-head pinned CI remains a separate publication gate.
+No frozen campaign, finite interval, old proof/pin/gate changes.
+[Human proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md) ·
+[Evidence](research/ender_radius_bridge/PHASE43_RESULTS.json).
+Earlier phase entries remain historical, including the genuine Phase42 stop.
+
 ## Phase42: geometry compiled, fixed100-billion attempt incomplete
 
 Protocol d356519 fixed C25,rho=ceil(.52*D^(3/4)),K25.1 and the100-billion

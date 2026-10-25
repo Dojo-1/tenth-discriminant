@@ -1,5 +1,14 @@
 # One determinant, two kinds of information
 
+**Phase43:** narrow the rectangle and disk while paying the aspect-ratio
+loss and proving every geometric guard. The SAME positive integer Gram
+cannot meet both budgets above1e11. Direct actual-radicand and actual-
+discriminant bounds now compile without classification or older cutoffs;
+fresh input/axiom and full local root checks pass. Publication-head CI is
+separate. [The human proof](../research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md)
+also preserves the earlier failed/stopped attempt as negative evidence.
+Earlier entries retain their dated scopes.
+
 **Phase39:** sharpen the floor/log loss without changing the determinant
 or auxiliary radius family. The direct analytic cutoff is2e11; it does
 not borrow the completed classification. [The short proof](../research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md)
