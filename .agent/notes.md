@@ -786,3 +786,16 @@
   inherited controls pass. Same-tree merge66d0b0e3 parents392b6db+08ddb3e
   verified. Final record6395176476 posted before next review/reporting push.
   Final current-document correspondence515 links PASS; new-head CI separate.
+
+# Phase46 generator-to-field dictionary
+
+- Previous goal turn was progress: bounded AI review and reporting draft
+  published. Baseline9f5bf6a now passed CI40175210613 completed08:24:40 UTC,
+  security40175208401/separate CodeQL SUCCESS. Audit4602/3868/16955 and full
+  inherited gates pass. Final record6398734105 posted without a new
+  metadata-only commit; same-tree mergeee39023 parents392b6db+9f5bf6a verified.
+- Register a fixed constructor from a concrete root a^2+d=0 in a degree-two
+  number field to the canonical rational quotient, with root action and
+  actual class-number/discriminant transport. The universal existence of a
+  squarefree generator for every abstract imaginary quadratic field remains
+  a separate gap. No new cutoff/classification claim or extra reviewer.
