@@ -2,31 +2,26 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
-**Phase43: the direct analytic cutoff is now100 billion locally checked.**
-The separately registered completion accepts the preserved upper/field
-candidate without changing its mathematical body. Both actual-radicand and
-actual-field-discriminant bounds below `10¹¹` have no finite-classification
-or older-cutoff premise. Full root, fresh input checks and axiom audit pass;
-exact publication-head pinned CI is separate. Phase42's failure/time stop
-remain preserved, not relabelled success. No optimality or novelty claim.
-[Read the short human proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md).
-
-For a caller's differently constructed number field, the new
-[generator bridge](research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md)
-constructs the identification from a specified root of `X^2+d` and degree
-two, then transfers the actual bound for positive squarefree d. Producing
-such a squarefree generator for every abstract imaginary quadratic field
-remains a separate obligation; the prior AI review does not cover this new API.
+**A checked 100-billion discriminant bound for imaginary quadratic number fields.**
+For any actual number field with rational degree two, no real places and
+class number one, the actual absolute field discriminant is below `10¹¹`.
+Conjugation and its anti-invariant projector now produce the positive
+squarefree generator; the caller supplies no root or isomorphism. The
+analytic cutoff itself is unchanged and has no finite-answer or old-cutoff
+premise. Local full build/input/axiom checks pass; publication-head CI is
+separate. Earlier failures remain preserved. No novelty or optimality claim.
+[Operator proof](research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md) ·
+[Analytic comparison](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md).
 
 For the argument itself, start with [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
 The [interpolation guide](lean/HUMAN_GUIDE.md) explains the hard positivity
-step; the [verification record](research/ender_radius_bridge/PHASE43_VERIFICATION.md)
+step; the [verification record](research/ender_radius_bridge/PHASE47_VERIFICATION.md)
 gives exact commands and evidence limits.
 
 The [canonical-family iff](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md)
 separately joins the original complete finite certificate to all nine positive
-cases. Independent human semantic/API review and arbitrary-field-type
-representation remain unclaimed. The [challenge accounting](TAO_OBJECTIVES_CURRENT.md)
+cases. This update generalizes the cutoff; full classification is not
+announced. Independent human semantic/API review remains open. The [challenge accounting](TAO_OBJECTIVES_CURRENT.md)
 distinguishes this result from the remaining objectives and side discoveries.
 
 <details>

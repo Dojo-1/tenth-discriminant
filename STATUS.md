@@ -1,5 +1,29 @@
 # Status — 2026-10-25
 
+## Phase47: operator normalization supplies the abstract-field cutoff
+
+The caller now needs only an actual number field K, rational degree two,
+NumberField.IsTotallyComplex K and actual class number one: its actual
+absolute field discriminant is below100000000000. No supplied root,
+isomorphism, radicand, numerical estimate or finite-certificate premise.
+Conjugation and the anti-invariant projector supply a positive squarefree
+generator without any class-number or cutoff input.
+[Human operator proof](research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md).
+
+The user redirected the unexecuted coordinate plan to operators/symmetries;
+route a4b486d6 preceded every Phase47 source and attempt. Two elaboration
+failures61.7936045s/24.6032722s and their sources are preserved. Full target
+PASS23.8555171s on attempt3; cumulative110.2523938s, unchanged cap/statements.
+Root6812 PASS22.6721045s;158 modules reachable/acyclic/no source escapes.
+Fresh input PASS38.5912324s: normalization45866 and canonical-complexity20732
+closures exclude24 inputs including class number/cutoffs; bound58569 excludes
+16 old-bound/finite-answer inputs. Canonical d1,d2,d19 controls pass outside
+the general proof. Compiled audit PASS4627 logical/3890 theorem/16958 runtime-only,
+standard three axioms. Full publication-head CI remains separate.
+Projection image/idempotence laws have no degree restriction; degree two
+enters rational fixed-field identification. No new constant, full classification,
+independent review of this proof, higher-class-number result, merge or Tao post.
+
 ## Phase46: construct the field dictionary from a root and degree two
 
 Protocol e3619c66 preceded the main proof; control addendum bc2574c1 preceded

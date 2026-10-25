@@ -1,5 +1,10 @@
 # A checked direct analytic bound below 100 billion
 
+This is the core analytic comparison. The newer
+[conjugation-based bridge](CONJUGATION_BRIDGE_GUIDE.md) supplies field-type
+generality from the standard abstract imaginary-quadratic hypotheses;
+its proof and verification are separate from this unchanged comparison.
+
 For positive squarefree d, actual class number one of the canonical field
 `Q(sqrt(-d))` now implies both `d<100000000000` and an actual absolute field
 discriminant below 100000000000. Local target, whole-library, signature,

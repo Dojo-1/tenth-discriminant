@@ -847,3 +847,30 @@
   projector has nonzero image, whose square lies in the rational fixed
   field and is negative under a complex embedding. Normalize the square
   class only afterwards. Full target/budget unchanged; no extra agent.
+- Operator routea4b486d6 preceded all source/attempts. Build1 FAIL61.7936045s
+  on local-instance syntax and division transport; full snapshot a47b065d...
+  retained. Build2 FAIL24.6032722s on explicit involution rewrite/Galois TFAE
+  implicit arguments; snapshot f96ea519... retained. Build3 PASS23.8555171s;
+  cumulative110.2523938s. Same target/hypotheses/caps, no resource stop,
+  supplied-root fallback, new numerical pilot or parameter change.
+- Full root6812 PASS22.6721045s;158 modules reachable/acyclic/no source
+  escapes. Fresh input PASS38.5912324s: normalizer45866 and canonicalTC20732
+  closures exclude24 named inputs, including class number/cutoffs; the
+  actual-field bound58569 excludes16 old-bound/finite-answer inputs.
+  Actual public bound takes only NumberField K, IsTotallyComplex K,
+  finrankRatK=2 and actual classNo1. Controls1,2,19 pass outside proofs.
+- Audit PASS32.5595364s:4627 logical/3890 theorem/16958 runtime-only;
+  standard3 axioms. Raw2009489 bytes in verified139253-byte ZIP; byte-exact
+  readback before duplicate removal. Correspondence414 reader targets PASS.
+  All owned proof/check handles terminal. Generic projection image/idempotence
+  laws have no degree assumption; rational fixed-field step uses degree2.
+- Current operator guide keeps map domains distinct, explains C2 sign
+  averaging/square-class normalization and preserves the large jet module.
+  No unsupported variable swap on thin rectangles or new residue-Frobenius
+  comparison API. Prior AI review predates this new proof. No full-classification
+  or higher-class-number claim. Goal active; human review/reporting open.
+- Baseline2def070 CI40203394568 SUCCESS completed14:57:35 UTC; security
+  40203392082/separate CodeQL SUCCESS. Audit4614/3878/16955 and all inherited
+  gates pass. Same-tree merge07c15c1d parents392b6db+2def070 verified; final
+  record6399320782 posted before new push, without metadata-only CI restart.
+  New publication requires its own exact-head CI; no merge/Tao post.

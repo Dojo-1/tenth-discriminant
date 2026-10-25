@@ -80,3 +80,4 @@ import TenthDiscriminant.AspectRatioLowerEnvelope
 import TenthDiscriminant.TunedRadiusFamily
 import TenthDiscriminant.TunedAnalyticCutoff
 import TenthDiscriminant.QuadraticGeneratorBridge
+import TenthDiscriminant.ImaginaryQuadraticRepresentation

@@ -5,9 +5,12 @@ Geometry bounds its size from above. Arithmetic makes it divisible by
 enough prime powers to force a larger size. The contradiction supplies an
 effective cutoff; finite exclusion and positive examples are separate steps.
 
-For positive squarefree d, actual class number one of the canonical field
-`Q(sqrt(-d))` implies both `d<10^11` and an actual absolute field discriminant
-below `10^11`. The [short cutoff proof](../research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md)
+For any actual degree-two totally-complex number field, class number one
+implies an actual absolute field discriminant below `10^11`. The
+[operator normalization](../research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md)
+supplies a positive squarefree generator without class-number input. In
+the canonical `Q(sqrt(-d))` chart, both d and the absolute discriminant
+are below `10^11`. The [short cutoff proof](../research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md)
 explains the two affine budgets and every rounding/radius guard. It uses
 neither the finite answer nor an older cutoff.
 
@@ -22,8 +25,8 @@ arbitrary field types or a claim of independent human semantic review.
 For a caller's field with a specified root of X^2+d and degree two, the
 [generator dictionary](../research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md)
 now constructs the field equivalence and transfers the actual bound for
-positive squarefree d. The squarefree-generator existence step for a
-completely abstract imaginary quadratic field remains separate.
+positive squarefree d. The new conjugation proof supplies that witness
+for an abstract degree-two totally-complex number field.
 
 Read this page for the invariant and transformations, the
 [human guide](HUMAN_GUIDE.md) for the contact-count proof, and the
@@ -284,7 +287,7 @@ these views commute on **one integer matrix with the same samples**.
 | Finite conversion to determinant weights and analytic tail | Lean checks the staircase identity, small-prime split, finite losses, coefficients, clipping and the exact reciprocal-prime bound by positive potential drops. Both mathematical production expressions now apply to the same Gram without a tail premise. [Short proof](../research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md). |
 | Universal analytic cutoff | The thinner auxiliary family gives direct radicand and actual absolute-discriminant bounds below `10^11`, for positive squarefree d and actual class number one. Both parity charts are supplied. No numerical, old-cutoff or finite-classification premise; see [the current cutoff proof](../research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md). |
 | Finite exclusion and positive cases | The complete original interval certificate and all nine positive equalities supply the actual canonical-family iff. This uses the original cutoff independently of the new optimization. See [the two-direction proof](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md). |
-| Review and generality | Exact-head CI records encoded-proof validation. Independent human semantic/API review, arbitrary-field-type representation and Mathlib acceptance remain separate and unclaimed. |
+| Review and generality | Normalized-generator existence and the cutoff now cover abstract degree-two totally-complex number fields. Exact-head CI and human semantic/API review remain distinct; no full-classification announcement or Mathlib acceptance is claimed. |
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical

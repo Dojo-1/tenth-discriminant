@@ -1,6 +1,6 @@
 # Factual brief for a possible human comment on Tao's challenge
 
-**25 October 2026, through Phase46. This is an AI-prepared evidence brief, not the
+**25 October 2026, through Phase47. This is an AI-prepared evidence brief, not the
 human-generated summary requested by [Tao's post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).**
 The contributor should write the actual comment in their own words
 after reviewing the linked work. No comment has been submitted by this
@@ -17,11 +17,12 @@ prior route, we used AI assistance to bring geometry and arithmetic back
 to one integer: under class number one in the odd-discriminant case,
 the same Gram determinant is
 positive, highly divisible, and too small to satisfy both demands once
-the radicand reaches `10^11`. With a prime-two argument for the even case,
-the Lean result concerns the canonical
-`Q(sqrt(-d))` family for positive squarefree d and bounds both d and the
-actual absolute field discriminant, without borrowing the finite answer
-or an older cutoff. Our aim is a proof whose joints remain human-readable;
+the normalized radicand reaches `10^11`. Conjugation and its anti-invariant
+projector now supply the squarefree generator for any degree-two number
+field with no real places, so the checked argument, including the prime-two
+case, bounds its actual absolute field discriminant below `10^11` under
+class number one without a supplied root, isomorphism, finite answer or
+older cutoff. Our aim is a proof whose joints remain human-readable;
 this is still a large bound, we claim neither novelty nor optimality,
 and independent human semantic review remains open.
 
@@ -34,14 +35,16 @@ found no semantic contradiction in five bounded checks. It rederived the
 scalar/floor/field arguments, but traced rather than reproved the inherited
 determinant apparatus. The exact model identifier was unavailable; no
 independence between model families or human peer review is inferred.
+That review predates and does not cover the newer constructor or operator
+normalization proof; their formal checks are separate evidence.
 
 ## What can be stated now
 
-- A [field dictionary](research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md)
-  now constructs the caller's field identification from a specified root
-  of X^2+d and degree two. Positive squarefree d and actual class number one
-  then give the same actual100-billion bounds. Universal squarefree-generator
-  existence remains open; the prior AI review does not cover this new API.
+- The [operator normalizer](research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md)
+  now supplies a positive squarefree root witness for an abstract degree-two
+  totally-complex number field. Its actual-discriminant bound has only those
+  standard field hypotheses and actual class number one. No presentation
+  premise remains; no new constant or full classification is claimed.
 
 - The direct analytic radicand and actual absolute field-discriminant
   bounds are reduced to `10¹¹`, without using the finite classification

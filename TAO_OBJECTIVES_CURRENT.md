@@ -1,11 +1,22 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 46;
+**Living update: 25 October 2026, through preregistered Phase 47;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
 
-Phase46 constructs the field identification from a specified root a^2+d=0
+Phase47 closes the normalized-generator existence step for an abstract
+degree-two totally-complex number field, using conjugation, its anti-invariant
+projector and the rational fixed field. The resulting actual-discriminant
+cutoff takes standard field hypotheses and actual class number one only,
+with no supplied root or isomorphism. The constant remains100 billion.
+The [operator guide](research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md)
+keeps the high-dimensional jet module distinct from the field operators.
+Local root/input/axiom checks pass; exact-head CI and human review are
+separate. The older AI review does not cover this new proof. Full
+classification is not asserted by this addition.
+
+Historical Phase46 constructs the field identification from a specified root a^2+d=0
 and rational degree two, then transfers the actual100-billion bounds for
 positive squarefree d and class number one. It supplies a usable conditional
 representation bridge, not the universal squarefree-generator existence
@@ -152,10 +163,10 @@ was posted in this cycle.
 
 | # | Aspect of the challenge | Current verdict | Evidence and limit |
 |---:|---|---|---|
-| 1 | Effective bound, avoiding Heegner as proof input | **Stronger actual field-discriminant bound supplied locally; semantic review pending** | [Phase43](lean/TenthDiscriminant/TunedAnalyticCutoff.lean) gives actual radicand and absolute field-discriminant bounds below `10¹¹`. Both parity charts and actual discriminant identity are supplied. No numerical or classification premise; fresh compiled input checks exclude the old cutoff and finite answer. Exact-head pinned CI and independent semantic review remain separate. |
+| 1 | Effective bound, avoiding Heegner as proof input | **Abstract-field discriminant bound supplied locally; human review pending** | [Phase47](lean/TenthDiscriminant/ImaginaryQuadraticRepresentation.lean) gives actual absolute field discriminant below `10¹¹` for any degree-two totally-complex number field of class number one. Its normalization uses no class-number/cutoff input; the final bound excludes old cutoffs and finite answers. No supplied root/isomorphism or numerical premise. Exact-head CI and independent human review remain separate. |
 | 2 | Best efforts to optimize the constant | **Modest direct analytic improvement; no optimality claim** | The fixed thinner rectangle and smaller auxiliary radius reduce the direct cutoff from `2×10¹¹` to `10¹¹`, a factor2; the original was `7×10¹¹`. The finite d≤163 consequence is separate. This remains much larger than both external source claims in the frozen [comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md), whose own snapshot remains dated. Earlier [lift](ledger/determinant_lifts.txt)/[radial](ledger/radial_bounds.txt) negatives and the Phase42 time stop remain preserved. |
 | 3 | Threshold low enough for direct computation | **Complete finite certificate supplied for the canonical field family** | The original remaining interval is covered by quotient/remainder, eleven complete seed proofs and all785 quotient positions. With the cutoff and nine positive cases, `imaginaryQuadratic_classNumber_one_iff` has no range or certificate premise. Exact-head CI and semantic-review status must accompany this claim. |
-| 4 | High-quality Lean formalization, perhaps upstreamable | **Connected actual-field-family iff; external quality judgment open** | Actual class number/discriminant, cutoff, full finite exclusion and all nine positives are supplied. This is not an arbitrary-field-type representation theorem. Independent human semantic review, API/style review and Mathlib upstream acceptance remain open. See the [claim map](lean/FORMALIZATION.md). |
+| 4 | High-quality Lean formalization, perhaps upstreamable | **Canonical iff and abstract-field cutoff connected; external quality judgment open** | Actual class number/discriminant, normalized-generator existence, universal imaginary-quadratic cutoff, canonical finite exclusion and all nine positives are supplied. No full-classification announcement is made. Independent human semantic/API review and Mathlib acceptance remain open. See the [claim map](lean/FORMALIZATION.md). |
 | 5 | Compare strengths of different writeups | **Bounded controlled comparison supplied; broad objective partial** | [Phase40](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) compares two frozen complete same-route manuscripts with our proof head across parameter, analytic threshold, finite finish, rank, normalization, inputs and review. Original-byte source hashes and recency controls are recorded. External results are source claims, not newly audited or replayed; this is not an all-writeup optimized survey. [Prior art](PRIOR_ART.md) remains a frozen historical note. |
 | 6 | Spur new arguments or arrangements | **Reusable arrangement, no novelty claim** | BEAN-to-Ender changes the prime input. Four fixed prime-log constants and normalized affine envelopes now yield a checked universal odd cutoff without replaying 249 more interval comparisons. This is an arrangement within the credited Green/twinheterodox route, not a claim of a new mathematical method. |
 | 7 | Preserve failed attempts and negative results | **Documented internally** | The [review response](review/RESPONSE_Claude.md), [BEAN audit](review/BEAN_AUDIT.txt), fixed [radial protocol](flow/PREREG_RADIAL.txt), and [lift protocol](flow/PREREG_LIFTS.txt) retain counterexamples, failed guards and ceilings. Internal preservation does not equal external reporting. |
@@ -166,8 +177,9 @@ was posted in this cycle.
 | 12 | Quality, collaboration and attribution over speed | **Visible practice, not an external verdict** | The [README](README.md) and [prior-art note](PRIOR_ART.md) credit antecedents and preserve scope limits. No Tao endorsement, human peer review or priority claim is inferred. |
 
 **Bottom line.** There is now a connected kernel-checked effective bound
-on both d and the actual absolute field discriminant below `10¹¹`, for the
-actual imaginary quadratic field family with both parity cases supplied.
+on the actual absolute field discriminant below `10¹¹` for any degree-two
+totally-complex number field of actual class number one. No presentation
+premise remains. The canonical squarefree-radicand bound is also below `10¹¹`.
 All nine positive cases and the complete finite certificate now supply the
 canonical-field-family iff without a range premise. Independent human
 semantic review is not supplied by kernel checking. The frozen external
@@ -192,6 +204,7 @@ completion is separately registered and separately costed.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
+| Conjugation and anti-invariant projection normalize an abstract imaginary quadratic field. | **Local Lean operator laws, normalized-generator existence and actual-field cutoff** | [Phase47](research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md) supplies the former presentation premise without class-number input. Projection identities are dimension-independent; degree two identifies the fixed field with Q. This is representation infrastructure, not a new constant, higher-class-number bound or independently reviewed full classification. |
 | A concrete root and degree two construct the caller's field dictionary. | **Local Lean constructor and actual-discriminant transport** | [Phase46](research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md) assumes a root equation and degree, rather than an isomorphism. Negative-root and alternate-chart controls pass; rescaling in Q(i) refutes an unguarded radicand bound. The cutoff is unchanged and universal squarefree-generator existence remains open. Prior review does not cover this new API. |
 | Fixed completion of the thinner-family analytic cutoff. | **Local Lean proof, fresh input closures and full namespace audit** | [Phase43](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md) supplies the upper envelope and actual100-billion field bounds without borrowing classification. Main build76.3502975s; combined earlier/current proof cost744.1774016s. Exact-head publication CI and independent review remain separate; no new pilot or parameter search. |
 | Universal geometry for the thinner fixed auxiliary family. | **Historical Phase42 geometry acceptance; cutoff attempt incomplete** | [Phase42](research/ender_radius_bridge/TUNED_CUTOFF_GUIDE.md) proves radius admissibility, while its upper/cutoff target hit600s. Original failure/stop records, candidate and no-cutoff-leak checkpoint are retained unchanged. The later Phase43 completion does not retrospectively change that outcome. |

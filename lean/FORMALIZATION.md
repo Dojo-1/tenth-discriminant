@@ -1,5 +1,16 @@
 # Current claim-to-Lean map
 
+`ImaginaryQuadraticRepresentation` proves the missing generator existence
+from standard field hypotheses, organized through conjugation and the
+anti-invariant projector. The public
+`totallyComplex_degree_two_classNumber_one_discriminant_bound` takes an
+actual number field K, total complexity, rational degree two and actual
+class number one only. No root, isomorphism, radicand or numerical premise
+remains. [Operator guide](../research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md).
+Normalization excludes class-number/cutoff inputs in its fresh compiled
+closure. Local root/input/audit checks pass; exact-head CI is separate.
+No general full-classification theorem is asserted by this addition.
+
 `QuadraticGeneratorBridge` now constructs `imaginaryQuadraticEquivOfRoot`
 from a supplied root a^2+d=0 and rational degree two of an actual number
 field K. Root preservation and necessary degree are proved. The new
@@ -7,10 +18,10 @@ field K. Root preservation and necessary degree are proved. The new
 `classNumber_one_discriminant_bound_of_quadratic_root` transport the100b
 bound with positive squarefree d and actual class number one; no field
 isomorphism is assumed. [Scope and guard explanation](../research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md).
-The existence of a positive squarefree generator for every abstract
-imaginary quadratic field remains a separate unproved representation step.
+Phase47 now supplies its former squarefree-generator existence obligation
+under the standard degree-two/total-complexity hypotheses.
 Local root/input/audit checks pass; exact publication-head CI is separate.
-The Phase45 review predates and does not cover this constructor.
+The Phase45 review predates and covers neither new representation module.
 
 Phase45 adds a [bounded fresh-context AI review](../research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md)
 of the new cutoff, with three arguments rederived and two inherited paths

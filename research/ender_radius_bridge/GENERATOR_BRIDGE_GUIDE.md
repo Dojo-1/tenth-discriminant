@@ -1,5 +1,10 @@
 # A field is more than its name
 
+The former generator-existence gap is now supplied by the
+[conjugation-based normalization](CONJUGATION_BRIDGE_GUIDE.md) under standard
+degree-two/total-complexity hypotheses. This page explains the reusable
+conditional dictionary used after that normalization.
+
 The cutoff was proved for an actual rational quotient called
 `ImaginaryQuadraticField d`. A caller may construct the same field using
 a different type and generator. The new bridge proves that identification
@@ -55,10 +60,9 @@ squarefree label. Removing square factors is a substantive normalization step.
 ## The exact remaining bridge
 
 This theorem starts with a specified positive squarefree root witness
-and degree two. It does not yet produce such a witness from an abstract
-definition of "imaginary quadratic number field". That normalization and
-existence theorem remains a separate obligation. No unconditional
-arbitrary-field-type representation or full classification is claimed.
+and degree two. The new operator normalizer produces that witness for an
+abstract degree-two totally-complex number field, so the composed actual
+cutoff no longer assumes a presentation. No full classification is claimed.
 
 The public constructor and both transported bounds are in
 [QuadraticGeneratorBridge.lean](../../lean/TenthDiscriminant/QuadraticGeneratorBridge.lean).

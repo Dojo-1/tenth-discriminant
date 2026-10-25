@@ -1,0 +1,29 @@
+TenthDiscriminant.quadratic_nonidentity_aut_eq.{u_1} (K : Type u_1) [Field K] [NumberField K]
+  (hdegree : Module.finrank ℚ K = 2) {sigma tau : K ≃ₐ[ℚ] K} (hsigma : sigma ≠ 1) (htau : tau ≠ 1) : sigma = tau
+TenthDiscriminant.exists_conjugation_operator.{u_1} (K : Type u_1) [Field K] [NumberField K]
+  [NumberField.IsTotallyComplex K] (hdegree : Module.finrank ℚ K = 2) :
+  ∃ phi sigma, NumberField.ComplexEmbedding.IsConj phi sigma ∧ sigma ≠ 1 ∧ Function.Involutive ⇑sigma
+TenthDiscriminant.antiInvariantProjection_anti.{u_1} (K : Type u_1) [Field K] [NumberField K] (sigma : K ≃ₐ[ℚ] K)
+  (hinv : Function.Involutive ⇑sigma) (x : K) :
+  sigma (TenthDiscriminant.antiInvariantProjection K sigma x) = -TenthDiscriminant.antiInvariantProjection K sigma x
+TenthDiscriminant.antiInvariantProjection_idempotent.{u_1} (K : Type u_1) [Field K] [NumberField K] (sigma : K ≃ₐ[ℚ] K)
+  (hinv : Function.Involutive ⇑sigma) (x : K) :
+  TenthDiscriminant.antiInvariantProjection K sigma (TenthDiscriminant.antiInvariantProjection K sigma x) =
+    TenthDiscriminant.antiInvariantProjection K sigma x
+TenthDiscriminant.exists_squarefree_root_of_totallyComplex_degree_two.{u_1} (K : Type u_1) [Field K] [NumberField K]
+  [NumberField.IsTotallyComplex K] (hdegree : Module.finrank ℚ K = 2) : ∃ d, 0 < d ∧ Squarefree d ∧ ∃ a, a ^ 2 + ↑d = 0
+TenthDiscriminant.totallyComplex_degree_two_classNumber_one_discriminant_bound.{u_1} (K : Type u_1) [Field K]
+  [NumberField K] [NumberField.IsTotallyComplex K] (hdegree : Module.finrank ℚ K = 2)
+  (hclass : NumberField.classNumber K = 1) : (NumberField.discr K).natAbs < 100000000000
+'TenthDiscriminant.totallyComplex_degree_two_classNumber_one_discriminant_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+OPERATOR_INPUTS_OK TenthDiscriminant.exists_squarefree_root_of_totallyComplex_degree_two: 45866 reached; none of24 named forbidden inputs; axioms [propext,
+ Quot.sound,
+ Classical.choice]
+OPERATOR_INPUTS_OK TenthDiscriminant.imaginaryQuadratic_isTotallyComplex: 20732 reached; none of24 named forbidden inputs; axioms [propext,
+ Quot.sound,
+ Classical.choice]
+OPERATOR_INPUTS_OK TenthDiscriminant.totallyComplex_degree_two_classNumber_one_discriminant_bound: 58569 reached; none of16 named forbidden inputs; axioms [propext,
+ Quot.sound,
+ Classical.choice]

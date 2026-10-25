@@ -1,0 +1,34 @@
+{
+  "phase":47,
+  "original_protocol_commit":"2566f9fe24b165be2d5df15e812c5834ebe80d79",
+  "original_coordinate_route":"NOT EXECUTED; no source or proof attempt before user steering",
+  "operator_route_commit":"a4b486d625708d040c2f4cdf57a1e50a021bc9cb",
+  "user_direction":"Continue through operators and symmetries",
+  "baseline":"2def0702450e9b3fd526a85a70a11439653fcd97",
+  "baseline_verification":{"pinned_ci":40203394568,"security":40203392082,"separate_CodeQL":"SUCCESS","conclusion":"success","completed_utc":"2026-10-25T14:57:35Z","final_comment":"https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6399320782","same_tree_merge":"07c15c1d09fae9864aebe7cd0a0c9774ee888157"},
+  "accepted_scope":"Every actual degree-two totally-complex number field supplies a positive squarefree root witness; actual class number one implies actual absolute field discriminant below100000000000, without supplied root/isomorphism/numerical/classification premise",
+  "operator_laws":"Unique nonidentity quadratic automorphism, conjugation compatibility and involution; anti-invariant image and projector idempotence; projection laws have no degree-two hypothesis",
+  "source_fingerprints_lf_sha256":{
+    "lean/TenthDiscriminant/ImaginaryQuadraticRepresentation.lean":"57975c7b9af10af5bf72a4629b5a32377c99030dce2bc17f1c91a2bc06b72843",
+    "lean/TenthDiscriminant.lean":"1d7b403218b4fd5d5f078b850dac05635ef52cc4ee3db3839aff65abbbb821f0",
+    "research/ender_radius_bridge/Phase47Attempt1.lean":"a47b065db5070cb37340cd68a76f8b7f7e934dcbdf7e846bcc8a1120302427d6",
+    "research/ender_radius_bridge/Phase47Attempt2.lean":"f96ea5197f3cb0062be182e35210629d5706fb7208500fca1d27d47ea120a79a",
+    "research/ender_radius_bridge/Phase47InputCheck.lean":"7a9aa9966137c4c905a76984b358d9e351bce3fc6580e8f76282ec303c48d74a"
+  },
+  "records":[
+    {"record":"PHASE47_build_20261025150812865.result.json","mode":"build","exit_code":1,"elapsed_seconds":61.7936045,"observed_peak_working_set_bytes":2847997952,"finding":"Local-instance syntax and field-division transport elaboration"},
+    {"record":"PHASE47_build_20261025151049828.result.json","mode":"build","exit_code":1,"elapsed_seconds":24.6032722,"observed_peak_working_set_bytes":2879324160,"finding":"Explicit involution rewrite and implicit Galois TFAE arguments required"},
+    {"record":"PHASE47_build_20261025151228186.result.json","mode":"build","exit_code":0,"elapsed_seconds":23.8555171,"observed_peak_working_set_bytes":2873511936,"finding":"Full original universal target accepted after two elaboration repairs"},
+    {"record":"PHASE47_root_20261025151539587.result.json","mode":"root","exit_code":0,"elapsed_seconds":22.6721045,"observed_peak_working_set_bytes":2787274752,"build_steps":6812},
+    {"record":"PHASE47_input_20261025151821347.result.json","mode":"input","exit_code":0,"elapsed_seconds":38.591232399999996,"observed_peak_working_set_bytes":3222794240},
+    {"record":"PHASE47_audit_20261025151823267.result.json","mode":"audit","exit_code":0,"elapsed_seconds":32.5595364,"observed_peak_working_set_bytes":3333820416,"logical_declarations":4627,"theorems":3890,"runtime_only_auxiliaries_excluded":16958}
+  ],
+  "cumulative_main_build_seconds":110.2523938,
+  "resource_stops":0,
+  "input_closures":{"squarefree_generator":45866,"canonical_total_complexity":20732,"abstract_field_discriminant_bound":58569,"normalization_forbidden_inputs":24,"cutoff_forbidden_old_inputs":16,"normalization_excludes_NumberField_classNumber":true,"accepted100b_core_is_deliberate_cutoff_input":true},
+  "controls":"Canonical d1,d2,d19 total-complexity/degree/class-number instantiations PASS, outside the cutoff proof inputs",
+  "import_coverage":{"reachable_acyclic_modules":158,"proof_source_escapes":0},
+  "allowed_axioms":["propext","Classical.choice","Quot.sound"],
+  "audit_raw_archive":{"path":"PHASE47_AXIOM_AUDIT_RAW.zip","bytes":139253,"sha256":"ee25273817a9cf2392b0bbf8edaf1e75195f594a810e2099a6583613fb0157a9","entry":"PHASE47_audit_20261025151823267.stdout.log","raw_bytes":2009489,"raw_sha256":"d5e490eb4a975b8208d37337be64920701869e3cba1f0c34eb1bcd3b0d095366","exact_recovery_verified_before_duplicate_removal":true},
+  "limitations":["New publication-head pinned CI required separately","Prior AI review does not cover this new proof","No new constant or full-classification claim","No new residue-Frobenius/global-conjugation comparison API exported","No squarefree-generator uniqueness/computation API claimed","No fresh full local parent-apparatus/rejection replay inferred from compiled audit","No old source/certificate/pin/workflow changes","No independent human review, novelty, optimality, higher-class-number, merge or Tao-post claim"]
+}

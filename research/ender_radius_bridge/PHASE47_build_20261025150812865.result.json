@@ -1,0 +1,20 @@
+﻿{
+    "phase":  47,
+    "mode":  "build",
+    "scope":  "Fixed conjugation/anti-invariant normalization and abstract-field cutoff, or separate verification; no numerical pilot",
+    "attempt":  1,
+    "exit_code":  1,
+    "elapsed_seconds":  61.7936045,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  600,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2847997952,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "build",
+                      "TenthDiscriminant.ImaginaryQuadraticRepresentation"
+                  ],
+    "stdout":  "PHASE47_build_20261025150812865.stdout.log",
+    "stderr":  "PHASE47_build_20261025150812865.stderr.log"
+}

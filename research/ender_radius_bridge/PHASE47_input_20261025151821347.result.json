@@ -1,0 +1,23 @@
+﻿{
+    "phase":  47,
+    "mode":  "input",
+    "scope":  "Fixed conjugation/anti-invariant normalization and abstract-field cutoff, or separate verification; no numerical pilot",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  38.591232399999996,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  180,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  3222794240,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "env",
+                      "lean",
+                      "-j",
+                      "1",
+                      "../research/ender_radius_bridge/Phase47InputCheck.lean"
+                  ],
+    "stdout":  "PHASE47_input_20261025151821347.stdout.log",
+    "stderr":  "PHASE47_input_20261025151821347.stderr.log"
+}
