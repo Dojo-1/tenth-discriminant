@@ -26,6 +26,13 @@ proves that its Gram and the actual odd-p Frobenius basis change commute
 with the same sign operator. Local Lean checks pass; this structure
 supplies no extra valuation or smaller cutoff.
 
+One [fresh-context review of the new bridges](research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md)
+established no FATAL/GAP issue in five bounded checks and found one guide
+dependency error, now corrected: degree two supplies both quadratic
+Galoisness and rational fixed-field identification. This AI source review
+does not establish human or model-family independence or re-prove every
+inherited argument. [Scope and correction](research/ender_radius_bridge/PHASE51_VERIFICATION.md).
+
 For the argument itself, start with [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
 The [interpolation guide](lean/HUMAN_GUIDE.md) explains the hard positivity
 step; the [verification record](research/ender_radius_bridge/PHASE47_VERIFICATION.md)

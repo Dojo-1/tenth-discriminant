@@ -1,0 +1,45 @@
+{
+  "scope": "one fresh-context bounded AI source review; no inherited exhaustive audit",
+  "target": "69010f4e5d2e0adc44c70932d20583e669b7b7c2",
+  "protocol_commit": "7e6cd1ce5e7641746509ed0587180dd93e4cfbe5",
+  "user_authorization": "Run one bounded reviewer",
+  "agent": "/root/bridge_semantic_review",
+  "fork_turns": "none",
+  "model_override": null,
+  "exact_model_identifier": "not exposed by tool",
+  "dispatch_marker": "2026-10-25T19:44:52Z",
+  "deadline": "2026-10-25T20:14:52Z",
+  "last_inspection_reported": "2026-10-25T19:47:16.4020468Z",
+  "return_confirmed_before": "2026-10-25T19:50:00Z",
+  "reviewer_count": 1,
+  "rerolls": 0,
+  "report_kind": "verbatim returned-review transcription, not raw tool archive",
+  "report_bytes": 12965,
+  "report_sha256": "279b4d313bb8ad94347a72e6415c4e552db0b9cef09b86bc4bb36af35d6eedfe",
+  "reviewed_source_sha256_lf": {
+    "lean/TenthDiscriminant/QuadraticGeneratorBridge.lean": "0754b22f7080bfe28e4b4af815de3df4e2a38743b7e8a2afe41b246cf1799bdb",
+    "lean/TenthDiscriminant/ImaginaryQuadraticRepresentation.lean": "57975c7b9af10af5bf72a4629b5a32377c99030dce2bc17f1c91a2bc06b72843",
+    "lean/TenthDiscriminant/CentralSymmetry.lean": "f44f89cf1cd8e2cec9834ca4cbfa60fcb3e99802f2bd5477bd4cf873e9c35760",
+    "lean/TenthDiscriminant/ParityCompatibility.lean": "b91642afad2af0e0cd4aba81a4cc2d10e890a6ae430c5c263be667c5bec85d22"
+  },
+  "protocol_sha256_lf": "239d4d99ab7485f47a7a4086e383236f9cf1e1ead5d8bff61d98c6dec19a630c",
+  "brief_sha256_lf": "ef569efe31308c7a6600b123f445d30b2e95d5b61f2d94c1abd334bad72c2797",
+  "findings": [
+    {
+      "severity": "SLOPPY",
+      "effect": "documentation degree-two dependency, no proof repair",
+      "correction": "quadratic Galoisness/conjugation and two-element-group/rationality distinguished",
+      "parent_inspected": true,
+      "corrected": true,
+      "re_reviewed": false
+    }
+  ],
+  "conclusion": "No contradiction established in five bounded checks; no FATAL/GAP finding established",
+  "limitations": [
+    "inherited analytic proof not reconstructed",
+    "no new build/audit by reviewer",
+    "no human or model-family independence established",
+    "no publication-readiness verdict"
+  ],
+  "correction_sha256_lf": "c7e9135f62f48f6c55725c21bc24691277f92a5240ee19dd9216700f5f415cb0"
+}

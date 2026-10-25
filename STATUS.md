@@ -1,5 +1,18 @@
 # Status — 2026-10-25
 
+## Phase51: one fresh-context adversarial bridge review
+
+The explicitly authorized reviewer checked five fixed obligations on
+mathematical head69010f4. No FATAL/GAP finding was established; one SLOPPY
+guide dependency error was preserved and corrected after source inspection.
+Degree two supplies quadratic Galoisness as well as rationality of the
+whole-group invariants. No proof changed. The first report is retained,
+with no reroll; inherited analytic arguments and compiled/CI measurements
+were not independently verified by this reviewer. No model-family or human
+independence is established. [Report](research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md)
+and [provenance/correction](research/ender_radius_bridge/PHASE51_VERIFICATION.md).
+Current exact-head CI remains separate; broader objectives remain open.
+
 ## Phase50: geometry and arithmetic preserve the same sign sectors
 
 The actual odd-p Frobenius basis matrix and the centrally symmetric-sample

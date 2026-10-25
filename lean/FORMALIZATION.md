@@ -1,5 +1,13 @@
 # Current claim-to-Lean map
 
+The [Phase51 source review](../research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md)
+covers five bounded obligations in the new representation and symmetry
+modules. It established no FATAL/GAP finding and identified one guide
+dependency error, corrected after preservation; no Lean source changed.
+It did not re-prove the inherited analytic chain or rerun compiled checks.
+Exact-head CI, this bounded AI review and independent human semantic/API
+review are distinct evidence. [Correction and provenance](../research/ender_radius_bridge/PHASE51_VERIFICATION.md).
+
 `rectangularBasisMatrix_commutes_sign` and
 `integerRectangularTraceGram_commutes_sign` prove compatibility of the
 actual arithmetic and geometric matrices with the same integer diagonal

@@ -1,9 +1,17 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 50;
+**Living update: 25 October 2026, through preregistered Phase 51;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase51 supplies one user-authorized fresh-context source review of the
+new representation and symmetry modules. Five bounded checks established
+no FATAL/GAP finding and one guide dependency error, now corrected. The
+[first report](research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md) preserves
+the finding and all inherited/compiled/CI limitations. This strengthens
+due-diligence evidence; it is not human/model-family independence or
+completion of the broader challenge.
 
 Phase50 checks that the actual odd-p Frobenius basis matrix and original
 centrally symmetric-sample Gram commute with the same parity-sign
@@ -197,7 +205,7 @@ was posted in this cycle.
 | 8 | Help higher class-number problems | **Not delivered** | The `h≤2` [review brief](REVIEW_BRIEF_2.md) remains unreviewed; nothing here advances a verified higher-class-number range. |
 | 9 | Disclose AI involvement | **Repository practice present** | The [README](README.md) and review records identify AI assistance. This is disclosure, not validation or a submission. |
 | 10 | Contribute a repository link and human summary in Tao's comments | **No documented submission** | The repository has no submission permalink or posting record. This cycle posted nothing to Tao. The article was re-read, but a new sitewide/comment-pagination submission search was not performed. |
-| 11 | Independent due diligence before an AI-generated submission | **Strengthened, still partial** | The [new separate AI review](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md) rederives three cutoff arguments and traces two inherited source paths. No contradiction established in its bounded scope; no verified model-family independence. Historical AI reviews, controls, pinned CI and the frozen internal input audit cover different risks. No independent human review or submission is recorded. |
+| 11 | Independent due diligence before an AI-generated submission | **Strengthened, still partial** | The [cutoff review](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md) and [new bridge review](research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md) cover different five-check scopes. The latter established no FATAL/GAP finding and one guide dependency error, now corrected. Neither re-proves every inherited argument or establishes model-family/human independence. Controls, pinned CI and the frozen internal input audit cover different risks. No submission is recorded. |
 | 12 | Quality, collaboration and attribution over speed | **Visible practice, not an external verdict** | The [README](README.md) and [prior-art note](PRIOR_ART.md) credit antecedents and preserve scope limits. No Tao endorsement, human peer review or priority claim is inferred. |
 
 **Bottom line.** There is now a connected kernel-checked effective bound

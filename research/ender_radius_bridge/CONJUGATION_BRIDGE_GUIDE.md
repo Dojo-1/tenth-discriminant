@@ -7,13 +7,16 @@ square root nor an identification with a named quotient field.
 
 The proof begins with operators. The existing large jet module and integer
 Gram determinant remain intact; their dimension is R*S, not two. Degree
-two is used at one specific field-theoretic step: identifying the fixed
-field with Q.
+two has two field-theoretic roles: quadratic Galoisness lets complex
+conjugation act on K, and the two-element automorphism group makes its
+fixed field Q. The projector identities themselves need no degree-two
+hypothesis once a rational algebra involution is supplied.
 
 ## The harmonic decomposition
 
-Complex conjugation transports through an embedding into an automorphism
-sigma of K. It is nonidentity and squares to the identity. A quadratic
+Because the quadratic extension of Q is Galois, complex conjugation
+transports through an embedding into an automorphism sigma of K.
+It is nonidentity and squares to the identity. A quadratic
 Galois group has only two elements, so the nonidentity operator is unique:
 choosing a different complex embedding cannot choose a different sigma.
 
@@ -31,6 +34,12 @@ Because sigma is nonidentity, some nonzero u lies in this anti-invariant
 part. Multiplication sends u*u back to the invariant part: (-u)*(-u)=u*u.
 Uniqueness of the nonidentity automorphism makes this square fixed by the
 whole quadratic Galois group. Its fixed field is Q.
+
+This rationality conclusion does not extend to every number field with an
+involution. In Q(i,sqrt(2)), conjugation negates u=i*(1+sqrt(2)), but
+u^2=-3-2*sqrt(2) is not rational. The projector identities still hold;
+the invariant part is larger. The large jet module never needed to have
+dimension two for this distinction to matter.
 
 ## From an invariant to a normalized label
 

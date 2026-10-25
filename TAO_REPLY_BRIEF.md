@@ -1,6 +1,6 @@
 # Factual brief for a possible human comment on Tao's challenge
 
-**25 October 2026, through Phase47. This is an AI-prepared evidence brief, not the
+**25 October 2026, through Phase51. This is an AI-prepared evidence brief, not the
 human-generated summary requested by [Tao's post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).**
 The contributor should write the actual comment in their own words
 after reviewing the linked work. No comment has been submitted by this
@@ -12,31 +12,27 @@ This draft follows the contributor's emphasis on making the local and
 global views meet at one object. It remains AI-written; it is not a
 human-generated submission or a claim that review has finished.
 
-Building on Ben Green's derivative-determinant method and the credited
-prior route, we used AI assistance to bring geometry and arithmetic back
-to one integer: under class number one in the odd-discriminant case,
-the same Gram determinant is
-positive, highly divisible, and too small to satisfy both demands once
-the normalized radicand reaches `10^11`. Conjugation and its anti-invariant
-projector now supply the squarefree generator for any degree-two number
-field with no real places, so the checked argument, including the prime-two
-case, bounds its actual absolute field discriminant below `10^11` under
-class number one without a supplied root, isomorphism, finite answer or
-older cutoff. Our aim is a proof whose joints remain human-readable;
-this is still a large bound, we claim neither novelty nor optimality,
-and independent human semantic review remains open.
+Following Ben Green's determinant method and the credited preceding work,
+we used AI assistance to keep local prime divisibility and global geometry
+attached to the same positive integer Gram determinant. The Lean development
+gives the explicit bound `|disc K|<10^11` for totally complex quadratic number
+fields of class number one, with no supplied generator or isomorphism.
+We want the joints of the argument to remain visible: this is a large bound,
+stronger compared writeups exist, failures are preserved, and we claim neither
+novelty nor optimality or completed independent human semantic review.
 
 Attach the [short proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md)
 and exact verification record after reviewing the current publication
-status. The mathematical head e2848c8 passed pinned CI40172177485; the
-[final record](research/ender_radius_bridge/PHASE43_PUBLICATION_FINAL.md)
-states its full scope. A [separate AI review](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md)
-found no semantic contradiction in five bounded checks. It rederived the
-scalar/floor/field arguments, but traced rather than reproved the inherited
-determinant apparatus. The exact model identifier was unavailable; no
-independence between model families or human peer review is inferred.
-That review predates and does not cover the newer constructor or operator
-normalization proof; their formal checks are separate evidence.
+status. The abstract-field proof head `2f519884` passed full pinned CI;
+its [final record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6399919070)
+states the scope. The current symmetry head `69010f4` has separate CI40227162534;
+check its actual result before citing it as passed. The earlier
+[cutoff review](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md) and new
+[bridge review](research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md) cover
+different sources. The new first report found no FATAL/GAP issue in its five
+bounded checks and identified one documentation dependency error, corrected
+after preservation. Neither review re-proves every inherited argument or
+establishes model-family independence or independent human review.
 
 ## What can be stated now
 
@@ -78,55 +74,19 @@ normalization proof; their formal checks are separate evidence.
   Siegel-zero result, higher-class-number progress or Tao endorsement is claimed.
   [Human proof and failure accounting](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md).
 
-The following phase descriptions preserve earlier checkpoint scopes.
-
-- Phase 31 proves the necessary nine-candidate list below one million.
-  Universal wheel and interval-coverage proofs connect the actual class-number
-  hypothesis to a kernel-checked complete finite computation on [92,1000000).
-  The positive equalities are now supplied by Phase33; the upper middle
-  interval remains open. This is not the full classification.
-  [Human wheel proof](research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md).
-
-- Phase 30 proves the finite sieve's entry conditions from actual class
-  number one, including d=3 mod 8 above 7 and strict guarded prime tests.
-  The necessary list below 92 is kernel checked. The complete middle-range
-  certificate is still missing: the conditional nine-candidate theorem is
-  not a classification. [Human bridge guide](research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md).
-
-- The repository studies an effective tenth-discriminant bound by a
-  Green-style derivative trace-Gram determinant, an elementary
-  factorial prime-mass input, and finite interval/CRT computations.
-  Lean now proves: for every positive squarefree radicand d, actual class
-  number one of the constructed `Q(sqrt(-d))` implies `d<7×10¹¹`. Both
-  parity cases and an explicit field equivalence are supplied; there is no
-  numerical premise. This is an effective bound, not the finite classification.
-  The [short proof](research/ender_radius_bridge/FULL_CUTOFF_GUIDE.md)
-  explains the even prime-two obstruction and its connection to the odd cutoff.
-- The real determinant's positivity for sufficiently many samples,
-  its exact integer-coordinate realization, and its reduction modulo
-  `m` have Lean proofs. A fixed `D=19,p=3` example is both positive
-  and divisible by `9`.
-- A [human-readable paper proof](research/uniform_inert_valuation/PROOF.md)
-  reconstructs the inherited general `p^(2F(p))` divisibility using
-  `Z^p-W` and a unitriangular rectangular basis. Lean now supplies its
-  actual-row action, integral factorization, maximal-order and class-number
-  bridge in the stated odd, squarefree, strict-small-prime range. Geometry,
-  finite prime mass, factorial conversion, tail and universal comparison
-  are also connected. This is more than the earlier conditional helper.
-- [Preregistered negative results](TAO_OBJECTIVES_CURRENT.md) include
-  the radial `O(1/R)` ceiling, a finite lift counterexample to a
-  universal extra valuation, and a noninert prime at which the local
-  Frobenius premise fails. The numerical cutoff was not improved.
-- Prior work must be credited: [Ben Green and the dated
-  comparisons](PRIOR_ART.md), as well as the repository's named
-  contributors and adversarial reviewers. AI involvement must be
-  disclosed plainly.
+Historical partial-frontier descriptions remain in Git and
+[STATUS](STATUS.md). For present limitations and the exact frozen comparisons,
+use [the current objective ledger](TAO_OBJECTIVES_CURRENT.md). Credit Ben
+Green, the repository's named contributors and the compared prior sources;
+disclose AI assistance plainly. The original post's Lean/upstream and
+higher-class-number directions are possible research benefits, not reasons
+to claim those results have been achieved.
 
 ## What must not be said
 
 Do **not** make an unqualified full class-number classification claim,
-claim an arbitrary imaginary-quadratic field-type representation theorem,
-or call this upstream-ready Mathlib work. The canonical constructed family
+claim a representation theorem beyond the stated degree-two/no-real-place
+hypotheses, or call this upstream-ready Mathlib work. The canonical constructed family
 has a connected checked iff with nine radicands; this needs independent
 semantic review of the intended mathematical application. The100-billion
 analytic estimate is distinct from the finite d<=163 conclusion. Phase32
@@ -140,7 +100,8 @@ number-theoretic application.
 
 A comment may describe the precise checked effective radicand bound, but
 must distinguish the historical CRT run from the complete Lean certificate
-and must not assert human semantic review. Obtain independent semantic review before submission.
+and must not assert human semantic review. The bounded source reviews do
+not provide exhaustive semantic verification of the inherited apparatus.
 Before posting even a progress note, the
 human contributor should inspect the evidence, write their own short
 summary, decide whether a non-bound progress report fits the thread,
