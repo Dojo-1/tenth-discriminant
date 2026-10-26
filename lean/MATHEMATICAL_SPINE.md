@@ -20,9 +20,10 @@ count gives at least81/1000 after normalization, improving the lower
 constant from5.820 to5.739. Geometry is checked at450^4 and the two budgets
 separate at50b. No new valuation exponent or parity-derived gain is
 asserted. Local acceptance and exact-head CI remain distinct. The
-[earlier review brief](../research/ender_radius_bridge/RECOVERED_CUTOFF_REVIEW_BRIEF.md)
-identifies the structural joints; its completed review covers the frozen
-62.5b proof86abe21, not these new gain/guard changes.
+[final bounded review](../research/ender_radius_bridge/PHASE58_VERIFICATION.md)
+covers these gain/guard changes and the exact staircase at frozen63be64b.
+Local calculations were re-derived; inherited machinery was source-traced.
+Lean/CI were NOT RERUN by the reviewer; human review remains open.
 
 The [canonical-family iff](TenthDiscriminant/ClassNumberClassification.lean)
 joins a complete finite certificate to all nine positive cases. Its existing

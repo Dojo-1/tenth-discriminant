@@ -1,121 +1,33 @@
-# Factual brief for a possible human comment on Tao's challenge
+# Factual brief for a possible reply to Tao
 
-**26 October 2026, through Phase56. This is an AI-prepared evidence brief, not the
-human-generated summary requested by [Tao's post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).**
-The contributor should write the actual comment in their own words
-after reviewing the linked work. No comment has been submitted by this
-repository work.
+**AI-prepared, through Phase 58. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
 
-## Short AI-assisted draft for human revision
+## Short draft for human revision
 
-This draft follows the contributor's emphasis on making the local and
-global views meet at one object. It remains AI-written; it is not a
-human-generated submission or a claim that review has finished.
+Following Ben Green's derivative-determinant method and the credited preceding work, we used AI assistance to connect local prime divisibility and global geometry on the same positive integer determinant. The Lean development proves that every imaginary quadratic number field of class number one has absolute field discriminant below 50 billion, without assuming the known list or an older cutoff. We want the joints of the argument to remain visible: this is a large bound, stronger compared results exist, failures are preserved, and we claim neither novelty nor optimality nor completed independent human review.
 
-Following Ben Green's determinant method and the credited preceding work,
-we used AI assistance to keep local prime divisibility and global geometry
-attached to the same positive integer Gram determinant. The Lean development
-locally proves `|disc K|<50000000000` for totally complex quadratic number
-fields of class number one, with no supplied generator or isomorphism.
-We want the joints of the argument to remain visible: this is a large bound,
-stronger compared writeups exist, failures are preserved, and we claim neither
-novelty nor optimality or completed independent human semantic review.
+## Facts behind those sentences
 
-Attach the [short proof](research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md)
-and exact verification record after reviewing the current publication
-status. Mathematical head `86abe21` passed pinned CI40355317865 for the
-older62.5b endpoint, including the build,4710/3967/16968 dependency audit and
-inherited rejection controls; security/CodeQL passed. Its [final record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6421231717)
-was posted before the next review/documentation push. Later publication
-heads require separate CI; [local evidence](research/ender_radius_bridge/PHASE54_VERIFICATION.md).
-The new50b target/full build, fresh25-input exclusions and4755/4012/16968
-audit pass locally; its exact-head CI and human semantic review remain
-separate. Review55 predates these changes. [Current evidence](research/ender_radius_bridge/PHASE56_VERIFICATION.md).
-The earlier
-[cutoff review](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md) and new
-[bridge review](research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md) cover
-different sources. The new first report found no FATAL/GAP issue in its five
-bounded checks and identified one documentation dependency error, corrected
-after preservation. Neither review re-proves every inherited argument or
-establishes model-family independence or independent human review.
+| Question | Supported answer |
+| --- | --- |
+| Exact result? | Every actual number field K of rational degree two, with no real places and actual class number one, satisfies `(NumberField.discr K).natAbs < 50000000000`. No supplied generator or isomorphism is needed. |
+| Why does it work? | Geometry bounds one positive integer determinant above. Class number one forces prime-power divisibility of that same determinant, bounding it below. Above the cutoff the two bounds conflict. |
+| What was optimized? | Sharper accounting of the existing prime 3/5 terms lowers the direct cutoff from 62.5 to 50 billion. The determinant, ordinary derivatives and valuation exponents stay the same. This is best-effort progress, not an optimality result. |
+| What is verified? | Mathematical source `63be64b` passed pinned CI 40367229446: full build,4,772 logical declarations / 4,028 theorems dependency audit, source correspondence and rejection controls. Same-head security/CodeQL passed. [Exact completed record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6423129650). Later documentation heads have separate CI. |
+| What did the review do? | One registered fresh-context AI reviewer checked six obligations at `63be64b`. No concrete FATAL/GAP/SLOPPY finding; local calculations re-derived, inherited machinery source-traced. Lean/CI NOT RERUN by the reviewer. Its first report is preserved, with no reroll. [Scope and limits](research/ender_radius_bridge/PHASE58_VERIFICATION.md). |
 
-The [Phase55 first report](research/ender_radius_bridge/PHASE55_REVIEW_REPORT.md)
-then checks six joints of the new62.5-billion proof at86abe21. It
-established no FATAL/GAP finding, re-derived new recovery/endpoint
-calculations and source-traced inherited machinery. It did not rerun
-Lean or CI. This adds bounded AI due diligence, not independent human
-certification; [provenance](research/ender_radius_bridge/PHASE55_VERIFICATION.md).
+Read the [short mathematical spine](lean/MATHEMATICAL_SPINE.md), [50-billion proof](research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md) and [current objective accounting](TAO_OBJECTIVES_CURRENT.md). The separate finite certificate and canonical-family iff have their own [guide](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md); this proposed reply makes no full-classification announcement.
 
-## What can be stated now
+## What the entry would contribute
 
-- The [operator normalizer](research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md)
-  now supplies a positive squarefree root witness for an abstract degree-two
-  totally-complex number field. Its actual-discriminant bound has only those
-  standard field hypotheses and actual class number one. No presentation
-  premise remains; no new constant or full classification is claimed.
+A connected formal development of this credited determinant route, a direct effective cutoff and human explanations of its geometric/arithmetic bridges. The [exact staircase count](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) is a supplementary simplification, not an extra divisibility exponent or smaller cutoff. Credit and frozen external comparisons belong in [prior art](PRIOR_ART.md) and the [same-route comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md). External bounds are source claims, not computations replayed here.
 
-- The direct analytic radicand and actual absolute field-discriminant
-  bounds are reduced to `10¹¹`, without using the finite classification
-  or old cutoff. A fixed thinner rectangle `S=floor(R/25)` and auxiliary
-  radius `ceil(0.52 D^(3/4))` retain the same prime constants and actual
-  factor-two trace-Gram determinant. Local full build, fresh input
-  and axiom checks pass; cite exact-head publication CI separately. This
-  is a modest optimization, not an optimality or novelty claim.
-  [Human analytic proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md).
+## Limits that must travel with the result
 
-- Phase42's failed control and600-second cutoff attempt remain preserved
-  as incomplete. Phase43's separately preregistered, unchanged completion
-  passed in76.3502975s; combined proof-build cost is744.1774016s. No new
-  pilot, parameter search or larger cap supplied the completion.
+Independent human semantic review, verified model-family independence, Mathlib acceptance, optimality and higher-class-number progress are not established. A passing Lean build checks the encoded statement; it does not itself establish that the intended mathematical interpretation has received independent review.
 
-- A frozen internal proof-input audit inventories five compiled roots and
-  checks their separation. The inspected class-number inputs are generic
-  finiteness/PID/Minkowski facts, not an identified borrowed classification.
-  This is not independent human review or a new permanent CI gate. The
-  finite d≤163 conclusion must not be confused with an analytic estimate.
-  Phases39/43 separately improve the latter to2e11/1e11, each with fresh
-  input checks. [Frozen input map](research/ender_radius_bridge/PROOF_INPUT_GUIDE.md).
+The quoted 1933 Lehmer announcement reports a strict finite range `163 < D < 5 billion` in radicand notation. It cannot alone complete our 50-billion cutoff. Nor does deriving a later theorem from older foundations establish an earliest historical year. No such year is claimed.
 
-- Phase37 supplies a complete quotient-fiber certificate for the original
-  remaining interval. The public actual-field iff has only positive-squarefree
-  d hypotheses; the nine positive cases and original `7×10¹¹` cutoff are
-  supplied. This is the canonical field family, not an arbitrary-field-type
-  representation theorem. Cite the exact published commit and pinned CI
-  result, not an earlier partial pilot. Independent human semantic/upstream
-  review and further constant optimization remain open. No novelty, generalized
-  Siegel-zero result, higher-class-number progress or Tao endorsement is claimed.
-  [Human proof and failure accounting](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md).
+The question about a zero-free region Re(s)>3/4 is a separate possible analytic input. It is not assumed by this determinant proof. The quoted zero-existence estimate only starts at `d >= 655`, so replacing 7/8 by 3/4 does not automatically yield a 164 cutoff. Do not confuse zeta(3/4) in the Chowla-Selberg evaluation at 7/8 with a 3/4 zero-free theorem.
 
-Historical partial-frontier descriptions remain in Git and
-[STATUS](STATUS.md). For present limitations and the exact frozen comparisons,
-use [the current objective ledger](TAO_OBJECTIVES_CURRENT.md). Credit Ben
-Green, the repository's named contributors and the compared prior sources;
-disclose AI assistance plainly. The original post's Lean/upstream and
-higher-class-number directions are possible research benefits, not reasons
-to claim those results have been achieved.
-
-## What must not be said
-
-Do **not** make an unqualified full class-number classification claim,
-claim a representation theorem beyond the stated degree-two/no-real-place
-hypotheses, or call this upstream-ready Mathlib work. The canonical constructed family
-has a connected checked iff with nine radicands; this needs independent
-semantic review of the intended mathematical application. The100-billion
-analytic estimate is distinct from the finite d<=163 conclusion. Phase32
-supplies Mathlib's actual discriminant identity, Phase33 the nine positives,
-and Phase37 the entire finite certificate. The new auxiliary radius is not the frozen
-campaign's radius. Green CI is evidence about the statements
-encoded in Lean, not independent semantic review of their intended
-number-theoretic application.
-
-## Decision gate for an actual challenge entry
-
-A comment may describe the precise checked effective radicand bound, but
-must distinguish the historical CRT run from the complete Lean certificate
-and must not assert human semantic review. The bounded source reviews do
-not provide exhaustive semantic verification of the inherited apparatus.
-Before posting even a progress note, the
-human contributor should inspect the evidence, write their own short
-summary, decide whether a non-bound progress report fits the thread,
-and disclose the AI assistance. Large detail belongs in a repository
-link, as Tao requests. This brief does not authorize posting.
+No Tao comment or submission permalink is recorded. The contributor retains the decision to post, the wording of a human summary and responsibility for the linked claims. The older briefing and failed attempts remain in Git and [STATUS](STATUS.md).
