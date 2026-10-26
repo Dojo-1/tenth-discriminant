@@ -1,5 +1,13 @@
 # Lean: the proof you can inspect
 
+Phase54 supplies a locally checked actual-field discriminant bound below
+62500000000 for totally complex degree-two fields of class number one.
+It recovers exact existing prime3/5 weights and checks geometry at500^4;
+fresh dependency closures exclude21 listed old-cutoff/finite-answer roots.
+Full root and axiom audit pass. Exact-head CI and independent human review
+remain separate. [Human proof](../research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md)
+and [verification](../research/ender_radius_bridge/PHASE54_VERIFICATION.md).
+
 Phase43 completes a separately registered direct analytic bound below1e11
 for both actual radicand and actual absolute field discriminant. The same
 preserved upper candidate now compiles, with full root, fresh input and

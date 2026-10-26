@@ -1,5 +1,26 @@
 # Status — 2026-10-26
 
+## Phase54: recovered mass lowers the direct cutoff to62.5 billion
+
+The fixed target theorem and full local root build pass. For any actual
+totally complex rational degree-two field of class number one, its actual
+absolute discriminant is below62500000000. The same R,S,J,radius, Gram
+and valuation weights are retained. Existing helper guards extend to500^4;
+the recovered3/50 turns the old lower constant5.820 into5.760. LogD>=24.8
+then separates the budgets. [Human proof](research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md).
+
+Protocol58f984c preceded source. One failed build66.1649854s is preserved
+with all three changed source files; only the old100b caller needed an
+explicit weaker-helper guard. Second target build PASS100.1674636s.
+The first root run was interrupted without a result or surviving process;
+its logs remain. Reconciled retry root PASS59.315637s. Fresh input checks
+PASS41.3241577s exclude21 named old-cutoff/finite-answer roots from all
+three new bounds; axiom audit PASS32.1187411s,4710/3967/16968. Coverage163
+modules/no escapes and250 source endpoint pairs pass. Sealed evidence and
+exact helper/repair checks pass. [Verification](research/ender_radius_bridge/PHASE54_VERIFICATION.md).
+Exact-head publication CI remains separate.
+Phase51 review predates this proof. No classification/optimality claim.
+
 ## Phase53: a uniform gain from the recovered small primes
 
 The new Lean module proves a normalized gain of at least3/50 for
@@ -8,7 +29,8 @@ already saturated monomial rows; the original determinant weights and
 production expression are unchanged. The p=0 and S=1 controls show why
 guards matter. One elaboration failure and its full source are retained;
 the only repair normalizes two numerical casts. No new cutoff follows
-until endpoint and comparison guards are proved. [Human guide](research/ender_radius_bridge/NORMALIZED_RECOVERY_GUIDE.md).
+at this checkpoint; Phase54 now supplies the endpoint composition.
+[Human guide](research/ender_radius_bridge/NORMALIZED_RECOVERY_GUIDE.md).
 
 Local checks pass: root6816, signatures/two controls/four axiom prints,
 compiled audit4687/3944/16968,162 reachable modules/no escapes, source250

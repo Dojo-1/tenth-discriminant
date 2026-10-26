@@ -1,5 +1,17 @@
 # Current claim-to-Lean map
 
+`totallyComplex_degree_two_classNumber_one_discriminant_bound_recovered`
+proves actual absolute discriminant<62500000000 from standard degree-two,
+totally-complex and actual class-number-one hypotheses. It composes
+the recovered prime weights with geometry checked at500^4, then transports
+through the conjugation-based squarefree generator. The canonical and
+odd-chart versions are in `RecoveredAnalyticCutoff.lean`.
+Target/full root build, fresh21-input closure checks and4710/3967/16968
+axiom audit pass. [Verification](../research/ender_radius_bridge/PHASE54_VERIFICATION.md)
+and [human argument](../research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md).
+The checked dependency closures exclude the listed finite-answer and
+earlier-cutoff roots; publication CI remains separate.
+
 `FirstCertificate.recovered_normalized_gap` proves a gain of at least3/50
 over the certified proxy for S>=100 and25*S<=R<=26*S.
 `raw_normalized_add_gain_le_recovered` transfers it to the raw expression.

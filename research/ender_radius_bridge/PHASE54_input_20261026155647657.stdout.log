@@ -1,0 +1,31 @@
+TenthDiscriminant.FirstCertificate.Tuned.recovered_dimensions (D : ℕ) (hD : 62500000000 ≤ D) :
+  100 ≤ TenthDiscriminant.FirstCertificate.Tuned.S D ∧
+    25 * TenthDiscriminant.FirstCertificate.Tuned.S D ≤ TenthDiscriminant.FirstCertificate.Tuned.R D ∧
+      TenthDiscriminant.FirstCertificate.Tuned.R D ≤ 26 * TenthDiscriminant.FirstCertificate.Tuned.S D
+TenthDiscriminant.FirstCertificate.Tuned.recovered_normalized_lower (D : ℕ) (hD : 62500000000 ≤ D) :
+  999997 / 1000000 * Real.log ↑D - 5760 / 1000 ≤
+    TenthDiscriminant.FirstCertificate.recoveredPrimeMassLower (TenthDiscriminant.FirstCertificate.Tuned.R D)
+        (TenthDiscriminant.FirstCertificate.Tuned.S D) TenthDiscriminant.FirstEnderInterval.tailBudget /
+      TenthDiscriminant.FirstCertificate.comparisonScale (TenthDiscriminant.FirstCertificate.Tuned.R D)
+        (TenthDiscriminant.FirstCertificate.Tuned.S D)
+TenthDiscriminant.FirstCertificate.Tuned.recovered_log247_rejected :
+  ¬4 / 5 * (247 / 10) - 813 / 1000 < 999997 / 1000000 * (247 / 10) - 5820 / 1000 + 3 / 50
+TenthDiscriminant.FirstCertificate.Tuned.recovered_endpoint_identity : 500 ^ 4 = 62500000000
+TenthDiscriminant.FirstCertificate.Tuned.unguarded_radius_rounding_rejected :
+  ¬↑(TenthDiscriminant.FirstCertificate.Tuned.rho 1) ≤ 521 / 1000 * TenthDiscriminant.FirstCertificate.fourthRoot 1 ^ 3
+TenthDiscriminant.FirstCertificate.Tuned.inclusive_inertness_endpoint_rejected : ¬41 < (163 + 1) / 4
+TenthDiscriminant.totallyComplex_degree_two_classNumber_one_discriminant_bound_recovered.{u_1} (K : Type u_1) [Field K]
+  [NumberField K] [NumberField.IsTotallyComplex K] (hdegree : Module.finrank ℚ K = 2)
+  (hc : NumberField.classNumber K = 1) : (NumberField.discr K).natAbs < 62500000000
+'TenthDiscriminant.totallyComplex_degree_two_classNumber_one_discriminant_bound_recovered' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+TUNED_INPUTS_OK TenthDiscriminant.FirstCertificate.Tuned.odd_large_classNumber_ne_one_recovered: 55469 reached; none of21 listed old-cutoff/classification/finite-answer/fixed-ratio inputs; axioms [propext,
+ Quot.sound,
+ Classical.choice]
+TUNED_INPUTS_OK TenthDiscriminant.imaginaryQuadratic_classNumber_one_discriminant_bound_recovered: 55804 reached; none of21 listed old-cutoff/classification/finite-answer/fixed-ratio inputs; axioms [propext,
+ Quot.sound,
+ Classical.choice]
+TUNED_INPUTS_OK TenthDiscriminant.totallyComplex_degree_two_classNumber_one_discriminant_bound_recovered: 58598 reached; none of21 listed old-cutoff/classification/finite-answer/fixed-ratio inputs; axioms [propext,
+ Quot.sound,
+ Classical.choice]

@@ -1,6 +1,6 @@
 # Factual brief for a possible human comment on Tao's challenge
 
-**25 October 2026, through Phase51. This is an AI-prepared evidence brief, not the
+**26 October 2026, through Phase54. This is an AI-prepared evidence brief, not the
 human-generated summary requested by [Tao's post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).**
 The contributor should write the actual comment in their own words
 after reviewing the linked work. No comment has been submitted by this
@@ -15,18 +15,19 @@ human-generated submission or a claim that review has finished.
 Following Ben Green's determinant method and the credited preceding work,
 we used AI assistance to keep local prime divisibility and global geometry
 attached to the same positive integer Gram determinant. The Lean development
-gives the explicit bound `|disc K|<10^11` for totally complex quadratic number
+locally proves `|disc K|<62500000000` for totally complex quadratic number
 fields of class number one, with no supplied generator or isomorphism.
 We want the joints of the argument to remain visible: this is a large bound,
 stronger compared writeups exist, failures are preserved, and we claim neither
 novelty nor optimality or completed independent human semantic review.
 
-Attach the [short proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md)
+Attach the [short proof](research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md)
 and exact verification record after reviewing the current publication
-status. Proof head `69010f4`, including the abstract-field and symmetry
-bridges, passed full pinned CI40227162534;
-its [final record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6402519232)
-states the scope. Later review/documentation heads require distinct checks. The earlier
+status. Previous head `bd2a207` passed pinned CI40331755630 for the fixed
+normalized gain; its [final record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6420605867)
+does not cover the new endpoint. Phase54 local build, input closure checks
+and whole-project axiom audit pass; [verification](research/ender_radius_bridge/PHASE54_VERIFICATION.md).
+New exact-head CI must accompany publication. The earlier
 [cutoff review](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md) and new
 [bridge review](research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md) cover
 different sources. The new first report found no FATAL/GAP issue in its five

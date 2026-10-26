@@ -1,0 +1,20 @@
+﻿{
+    "phase":  54,
+    "mode":  "build",
+    "scope":  "Fixed62500000000 actual-field cutoff; recovered3and5 budget",
+    "attempt":  1,
+    "exit_code":  1,
+    "elapsed_seconds":  66.164985399999992,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  600,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2916904960,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "build",
+                      "TenthDiscriminant.RecoveredAnalyticCutoff"
+                  ],
+    "stdout":  "PHASE54_build_20261026133902594.stdout.log",
+    "stderr":  "PHASE54_build_20261026133902594.stderr.log"
+}

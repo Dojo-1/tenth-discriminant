@@ -11,7 +11,7 @@ def R (D : Nat) : Nat := envelopeR D
 def S (D : Nat) : Nat := R D/25
 def rho (D : Nat) : Nat := ⌈(13/25 : Real)*fourthRoot D^3⌉₊
 
-theorem dimensions (D : Nat) (hD : 100000000000 ≤ D) :
+theorem dimensions (D : Nat) (hD : 62500000000 ≤ D) :
     100000000 ≤ R D ∧ 500000 ≤ S D ∧ 10*R D ≤ 251*S D ∧
     R D ≤ 10000*S D ∧ (D : Real)/5 ≤ R D ∧
     (R D : Real) ≤ (D : Real)/4 ∧ (S D : Real) ≤ (R D : Real)/25 := by
@@ -33,7 +33,7 @@ theorem dimensions (D : Nat) (hD : 100000000000 ≤ D) :
 theorem strict_inertness (D : Nat) [Fact ((D : Int)%4=3)] :
     (R D : Int) < ((D : Int)+1)/4 := envelope_strict_inertness D
 
-theorem root_large (D : Nat) (hD : 100000000000 ≤ D) : 500 ≤ fourthRoot D := by
+theorem root_large (D : Nat) (hD : 62500000000 ≤ D) : 500 ≤ fourthRoot D := by
   unfold fourthRoot
   apply Real.le_sqrt_of_sq_le
   apply Real.le_sqrt_of_sq_le
@@ -48,7 +48,16 @@ theorem log_large (D : Nat) (hD : 100000000000 ≤ D) : 253/10 ≤ Real.log D :=
   norm_num only [Nat.cast_ofNat] at hl
   linarith [Real.log_two_gt_d9, log_five_lower]
 
-theorem log_R_bounds (D : Nat) (hD : 100000000000 ≤ D) :
+theorem log_large_recovered (D : Nat) (hD : 62500000000 ≤ D) : 248/10 ≤ Real.log D := by
+  have hb : (62500000000 : Real) ≤ D := by exact_mod_cast hD
+  have hl := Real.log_le_log (by norm_num : (0 : Real)<62500000000) hb
+  have he : (62500000000 : Real)=2^8*5^12 := by norm_num
+  rw [he, Real.log_mul (by norm_num : (2 : Real)^8≠0)
+    (by norm_num : (5 : Real)^12≠0), Real.log_pow, Real.log_pow] at hl
+  norm_num only [Nat.cast_ofNat] at hl
+  linarith [Real.log_two_gt_d9, log_five_lower]
+
+theorem log_R_bounds (D : Nat) (hD : 62500000000 ≤ D) :
     Real.log D-140/100 ≤ Real.log (R D) ∧
     Real.log (R D) ≤ Real.log D-138/100 := by
   have hd := dimensions D hD
@@ -72,18 +81,18 @@ theorem log_R_bounds (D : Nat) (hD : 100000000000 ≤ D) :
     rw [h4] at hl
     linarith [Real.log_two_gt_d9]
 
-theorem normalized_lower (D : Nat) (hD : 100000000000 ≤ D) :
+theorem normalized_lower (D : Nat) (hD : 62500000000 ≤ D) :
     (999997/1000000 : Real)*Real.log D-5820/1000 ≤
       rawPrimeMassLower (R D) (S D) FirstEnderInterval.tailBudget/comparisonScale (R D) (S D) := by
   have hd := dimensions D hD
   have hl := (log_R_bounds D hD).1
-  have hu := log_large D hD
+  have hu := log_large_recovered D hD
   have hr : (10 : Real)*R D ≤ 251*S D := by exact_mod_cast hd.2.2.1
   have hratio : (R D : Real) ≤ (251/10)*S D := by linarith
   have hm := aspect_ratio_25_point_1_control (R D) (S D) hd.1 hd.2.1 hratio (by linarith)
   linarith
 
-theorem radius_bounds (D : Nat) (hD : 100000000000 ≤ D) :
+theorem radius_bounds (D : Nat) (hD : 62500000000 ≤ D) :
     (13/25 : Real)*fourthRoot D^3 ≤ rho D ∧
     (rho D : Real) ≤ (521/1000 : Real)*fourthRoot D^3 := by
   have ht := root_large D hD
@@ -94,14 +103,14 @@ theorem radius_bounds (D : Nat) (hD : 100000000000 ≤ D) :
   unfold rho
   linarith
 
-theorem radius_pos (D : Nat) (hD : 100000000000 ≤ D) : 0<rho D := by
+theorem radius_pos (D : Nat) (hD : 62500000000 ≤ D) : 0<rho D := by
   have ht := root_large D hD
   have hl := (radius_bounds D hD).1
   have hp : 0<(13/25 : Real)*fourthRoot D^3 := by positivity
   have : (0 : Real)<rho D := hp.trans_le hl
   exact_mod_cast this
 
-theorem radius_lt_R (D : Nat) (hD : 100000000000 ≤ D) : rho D<R D := by
+theorem radius_lt_R (D : Nat) (hD : 62500000000 ≤ D) : rho D<R D := by
   have ht := root_large D hD
   have ht0 := (fourthRoot_identities D).1
   have hp := (fourthRoot_identities D).2.2
@@ -112,7 +121,7 @@ theorem radius_lt_R (D : Nat) (hD : 100000000000 ≤ D) : rho D<R D := by
   have hr : (rho D : Real)<R D := by nlinarith only [h,hl,hu,hp]
   exact_mod_cast hr
 
-theorem chosen_radius (D : Nat) (hD : 100000000000 ≤ D) :
+theorem chosen_radius (D : Nat) (hD : 62500000000 ≤ D) :
     (1001/1000 : Real)*Real.sqrt (((3*R D+S D : Nat) : Real)*Real.sqrt D/Real.pi)+
       10*Real.sqrt D ≤ (rho D : Real) := by
   have hd := dimensions D hD

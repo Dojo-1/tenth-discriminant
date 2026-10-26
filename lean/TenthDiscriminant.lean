@@ -85,3 +85,4 @@ import TenthDiscriminant.CentralSymmetry
 import TenthDiscriminant.ParityCompatibility
 import TenthDiscriminant.SmallPrimeRecovery
 import TenthDiscriminant.SmallPrimeRecoveryGain
+import TenthDiscriminant.RecoveredAnalyticCutoff

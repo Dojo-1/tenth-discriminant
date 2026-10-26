@@ -7,7 +7,7 @@ namespace TenthDiscriminant.FirstCertificate.Tuned
 set_option autoImplicit false
 noncomputable section
 
-theorem count_le (D : Nat) (hD : 100000000000 ≤ D) :
+theorem count_le (D : Nat) (hD : 62500000000 ≤ D) :
     ellipsePaddedUpperCount D (rho D) (ellipseVerticalBound D (rho D)) ≤ 4*(D : Real) := by
   have hi := fourthRoot_identities D
   have ht := root_large D hD
@@ -38,7 +38,7 @@ theorem count_le (D : Nat) (hD : 100000000000 ≤ D) :
   rw [← hi.2.2]
   nlinarith only [hfm,hpi,hrsq,haxis,hr,hp3,hp2,hp5]
 
-theorem log_radius_upper (D : Nat) (hD : 100000000000 ≤ D) :
+theorem log_radius_upper (D : Nat) (hD : 62500000000 ≤ D) :
     Real.log (rho D) ≤ (3/4 : Real)*Real.log D-65/100 := by
   have hi := fourthRoot_identities D
   have ht := root_large D hD
@@ -58,7 +58,7 @@ theorem log_radius_upper (D : Nat) (hD : 100000000000 ≤ D) :
   norm_num only [Nat.cast_ofNat] at hlog
   linarith
 
-theorem log_over_R (D : Nat) (hD : 100000000000 ≤ D) :
+theorem log_over_R (D : Nat) (hD : 62500000000 ≤ D) :
     Real.log D/(R D : Real) ≤ 1/9000 := by
   have hi := fourthRoot_identities D
   have ht := root_large D hD
@@ -79,7 +79,7 @@ theorem log_over_R (D : Nat) (hD : 100000000000 ≤ D) :
   have hR := hd.2.2.2.2.1
   nlinarith only [hlog,he,hg,hsq,hR]
 
-theorem radius_over_R (D : Nat) (hD : 100000000000 ≤ D) :
+theorem radius_over_R (D : Nat) (hD : 62500000000 ≤ D) :
     (rho D : Real)/R D ≤ 521/100000 := by
   have hi := fourthRoot_identities D
   have ht := root_large D hD
@@ -91,7 +91,7 @@ theorem radius_over_R (D : Nat) (hD : 100000000000 ≤ D) :
   apply (div_le_iff₀ hrpos).2
   nlinarith only [hlarge,hR,hr,hi.2.2]
 
-theorem log_ratio_bounds (D : Nat) (hD : 100000000000 ≤ D) :
+theorem log_ratio_bounds (D : Nat) (hD : 62500000000 ≤ D) :
     0≤Real.log ((R D : Real)/rho D) ∧ Real.log ((R D : Real)/rho D) ≤ Real.log D := by
   have hrho := radius_pos D hD
   have hr := radius_lt_R D hD
@@ -106,7 +106,7 @@ theorem log_ratio_bounds (D : Nat) (hD : 100000000000 ≤ D) :
   rw [Real.log_div hRp.ne' hp.ne']
   linarith
 
-theorem count_log_error (D : Nat) (hD : 100000000000 ≤ D) :
+theorem count_log_error (D : Nat) (hD : 62500000000 ≤ D) :
     Real.log (2*ellipsePaddedUpperCount D (rho D) (ellipseVerticalBound D (rho D))*S D)/(R D : Real) ≤ 1/4000 := by
   have hd := dimensions D hD
   have hr : (0 : Real)<R D := by exact_mod_cast (show 0<R D by omega)
@@ -134,7 +134,7 @@ theorem count_log_error (D : Nat) (hD : 100000000000 ≤ D) :
   norm_num only [Nat.cast_ofNat] at hl
   linarith
 
-theorem endpoint_error (D : Nat) (hD : 100000000000 ≤ D) :
+theorem endpoint_error (D : Nat) (hD : 62500000000 ≤ D) :
     2*((S D : Real)-1)/(R D : Real)^2*(rho D+Real.log ((R D : Real)/rho D)) ≤ 1/1000 := by
   have hd := dimensions D hD
   have hr : (0 : Real)<R D := by exact_mod_cast (show 0<R D by omega)
@@ -156,7 +156,7 @@ theorem endpoint_error (D : Nat) (hD : 100000000000 ≤ D) :
   convert hdiv using 1
   ring
 
-theorem normalized_upper (D : Nat) (hD : 100000000000 ≤ D) :
+theorem normalized_upper (D : Nat) (hD : 62500000000 ≤ D) :
     enderUpperB (R D) (S D) (S D) (rho D)
       (ellipsePaddedUpperCount D (rho D) (ellipseVerticalBound D (rho D)))/comparisonScale (R D) (S D) ≤
       (4/5 : Real)*Real.log D-813/1000 := by
@@ -168,7 +168,7 @@ theorem normalized_upper (D : Nat) (hD : 100000000000 ≤ D) :
   rw [upperB_normalized _ _ _ _ hRn hSn (radius_pos D hD)]
   have hfirst := count_log_error D hD
   have hend := endpoint_error D hD
-  have hu := log_large D hD
+  have hu := log_large_recovered D hD
   have hlogR := (log_R_bounds D hD).2
   have hlogrho := log_radius_upper D hD
   have hx : (S D : Real)/R D ≤ 1/25 := (div_le_iff₀ hr).2 (by linarith [hd.2.2.2.2.2.2])
@@ -194,13 +194,14 @@ theorem normalized_upper (D : Nat) (hD : 100000000000 ≤ D) :
 theorem odd_large_classNumber_ne_one (D : Nat) (hD : 100000000000≤D)
     [Fact ((D : Int)%4=3)] (hsq : Squarefree D) :
     NumberField.classNumber (QuadraticField (((D : Int)+1)/4))≠1 := by
-  have hd := dimensions D hD
+  have hbase : 62500000000 ≤ D := by omega
+  have hd := dimensions D hbase
   apply classNumber_ne_one_of_certified_budget_comparison D D D (rho D) (R D) (S D)
     (ellipseVerticalBound D (rho D)) (by omega) le_rfl le_rfl (by omega) (by omega)
-    hd.2.2.2.1 hsq (strict_inertness D) (radius_lt_R D hD) le_rfl (chosen_radius D hD)
+    hd.2.2.2.1 hsq (strict_inertness D) (radius_lt_R D hbase) le_rfl (chosen_radius D hbase)
   have ht := comparisonScale_pos (R D) (S D) (by omega) (by omega)
   have hg := candidate_aspect_affine_separation (Real.log D) (log_large D hD)
-  have hh := lt_of_le_of_lt (normalized_upper D hD) (hg.trans_le (normalized_lower D hD))
+  have hh := lt_of_le_of_lt (normalized_upper D hbase) (hg.trans_le (normalized_lower D hbase))
   exact ((div_lt_div_iff_of_pos_right ht).mp hh).trans_le (rawPrimeMassLower_le_certified _ _ _)
 
 end
