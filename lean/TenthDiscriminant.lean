@@ -95,3 +95,4 @@ import TenthDiscriminant.QuadraticRowCount
 import TenthDiscriminant.QuadraticAreaCount
 import TenthDiscriminant.PrimeDivisorLoss
 import TenthDiscriminant.ClassFiber
+import TenthDiscriminant.ResidueMultiplicity
