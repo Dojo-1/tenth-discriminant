@@ -53,3 +53,7 @@ The original standalone source is frozen; its exact production transport has
 a [combined local audit](PHASE67_VERIFICATION.md), with new-head CI still
 required. No arithmetic count B,
 new cutoff or classification is inferred.
+
+The later standalone [odd-chart multiplicity theorem](RESIDUE_MULTIPLICITY_GUIDE.md)
+constructs actual residue pairs and4*card(P) selected labelled elements locally.
+It does not fill the basis/coefficient gap above or provide the even chart.

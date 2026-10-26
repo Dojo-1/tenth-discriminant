@@ -1,5 +1,18 @@
 # Status — 2026-10-27
 
+## Phase68: finite four-representation multiplicity in the odd chart
+
+A standalone Lean theorem constructs a selected set of exactly4*card(P)
+class-labelled norm elements for eligible odd non-divisor square-residue
+primes. It proves actual maximal-order residue-kernel separation, sign
+separation, exact recovery and disjointness across primes. One fixed class
+ideal family serves all primes. Attempts FAIL/PASS/PASS preserve all12
+public types/4 definitions; final run changes prints only. Audit20/16/0,
+standard3 axioms. Outside production CI; no common norm-form coordinates,
+even-chart result, arithmetic B or new cutoff.
+[Human proof](research/ender_radius_bridge/RESIDUE_MULTIPLICITY_GUIDE.md) and
+[evidence](research/ender_radius_bridge/PHASE68_VERIFICATION.md).
+
 ## Phase67: actual arithmetic bridges are production-root reachable
 
 The frozen Phase65/66 definitions, targets, proofs and controls are now in

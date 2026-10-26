@@ -5,7 +5,7 @@ field-discriminant bound is 50 billion.** Class number one means unique factoriz
 integers. The geometric count is proved on the draft branch; the
 higher-class-number arithmetic bridge remains open. This page tracks
 Tao's [challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)
-through proof source `70f9217` and local production Phase67, 27 October 2026. No full-classification
+through proof source `70f9217` and standalone Phase68, 27 October 2026. No full-classification
 announcement, novelty, optimality or independent human review is claimed.
 
 Lean checks encoded statements. A source claim, a checked theorem and a
@@ -38,6 +38,7 @@ spells out assumptions and the exact statements.
 | Excluded-prime loss | Production [count-to-loss theorem](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md) uses log(p)/p. An integrated local [prime-divisor budget](research/ender_radius_bridge/PRIME_DIVISOR_LOSS_GUIDE.md) pays for parameter divisors separately; B remains an input for the others. |
 | Off-axis quadratic point count | Production-root draft bound: cardU<=2pi*t/sqrt(D)+4sqrt(at/D), for finite U with Q<=t,y!=0,a>0,D=4ac-b²>0,t>=0. [Human proof](research/ender_radius_bridge/QUADRATIC_AREA_GUIDE.md). |
 | Fixed ideal-class norm lattice | Integrated local [class-fiber lifting](research/ender_radius_bridge/CLASS_FIBER_GUIDE.md) proves (z)=IJ, norm multiplication and exact recovery, with one bounded J per class. No binary-form basis or multiplicity yet. |
+| Odd-chart finite multiplicity | Standalone local [four-representation construction](research/ender_radius_bridge/RESIDUE_MULTIPLICITY_GUIDE.md) gives a selected set of4*card(P) distinct class-labelled actual norm elements. Coordinates and coefficient bounds are still missing. |
 | Prime-axis accounting | Standalone Lean gives at most two prime points, none when a=1; two-class aggregation remains conditional on representation inputs. [Guide](research/ender_radius_bridge/TWO_CLASS_AXIS_GUIDE.md). |
 | Limits that prevented overclaiming | A radial O(1/R) saving ceiling and the per-form zero-row failure remain preserved. [History and controls](STATUS.md). |
 
@@ -54,7 +55,7 @@ establish human review. The later arithmetic production roots pass local
 full build/audit at `7406e4d`; their [new-head CI remains separate](research/ender_radius_bridge/PHASE67_VERIFICATION.md).
 
 The next arithmetic bridge must choose controlled binary-form coordinates
-for the fixed ideal lattices and justify prime multiplicity. The local
+for the fixed ideal lattices and complete even-chart transport. The local
 parameter-divisor bound still needs field-discriminant transport.
 [PR30](https://github.com/Dojo-1/tenth-discriminant/pull/30) has completed
 pinned CI/security checks; merging still requires explicit authorization.

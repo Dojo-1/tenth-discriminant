@@ -1,5 +1,16 @@
 # Current claim-to-Lean map
 
+Standalone `ResidueMultiplicity.finite_odd_square_representations` now
+constructs exactly4*card(P) selected class-labelled norm elements in the
+actual squarefree odd maximal-order chart. Actual residue-map kernels are
+separated under odd/non-divisor guards; class recovery, signs and positive
+ideal-norm cancellation justify finite aggregation without a supplied pair
+or count premise. One bounded family precedes all primes. Final local
+audit20/16/0 allows only standard3 axioms; source remains outside root/CI.
+No controlled binary-form basis/coefficient bounds, even chart, usable B
+or new cutoff follows. [Human proof](../research/ender_radius_bridge/RESIDUE_MULTIPLICITY_GUIDE.md)
+and [verification](../research/ender_radius_bridge/PHASE68_VERIFICATION.md).
+
 Current Phase67 imports `PrimeDivisorLoss` and `ClassFiber` into production.
 The frozen Phase65/66 bodies/types/controls are unchanged; only their imports
 were replaced. Target/root/type-input/full audit pass locally:4897/4139/16985,
