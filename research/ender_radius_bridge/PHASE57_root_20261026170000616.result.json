@@ -1,0 +1,17 @@
+﻿{
+    "phase":  57,
+    "mode":  "root",
+    "scope":  "Exact saturated-regime original staircase count; no new cutoff",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  21.7516481,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  1200,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2792579072,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  "build",
+    "stdout":  "PHASE57_root_20261026170000616.stdout.log",
+    "stderr":  "PHASE57_root_20261026170000616.stderr.log"
+}

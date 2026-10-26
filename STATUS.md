@@ -1,5 +1,22 @@
 # Status — 2026-10-26
 
+## Phase57: exact weight by counting columns
+
+For positive p with p(S-1)<=R, the original prime weight satisfies
+6F=S(S-1)(3R-p(S+1)), interpreted over the reals. A column increment counts
+the rows beyond one threshold; summing gives the closed formula. It
+includes partially filled rows omitted by the earlier lower bound.
+[Human explanation](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md).
+
+Protocola0765da preceded source. First target PASS22.5869066s without
+repair/stop; root6820 PASS21.7516481s; signatures/controls/axioms
+PASS20.3948414s; whole-project audit PASS27.9744318s,4772/4028/16971.
+Coverage166 modules/no escapes,250 source endpoint pairs and sealed
+evidence/Git-byte integrity pass. [Verification](research/ender_radius_bridge/PHASE57_VERIFICATION.md).
+Only one new module/root import; the50b proof and production are unchanged.
+No new cutoff, valuation, optimality or transferred review. New exact-head
+CI and independent human semantic review remain separate.
+
 ## Phase56: sharper existing weights give a50-billion cutoff
 
 The actual totally complex degree-two field discriminant bound is now

@@ -1,0 +1,10 @@
+clippedFloorSum_succ : ∀ (R p t : ℕ), 0 < p → clippedFloorSum R p (t + 1) = clippedFloorSum R p t + (R - p * (t + 1))
+clippedFloorSum_closed : ∀ (R p t : ℕ), 0 < p → p * t ≤ R → 2 * ↑(clippedFloorSum R p t) = ↑t * (2 * ↑R - ↑p * (↑t + 1))
+valuationWeight_exact_of_last_threshold : ∀ (R S p : ℕ),
+  0 < p → p * (S - 1) ≤ R → 6 * ↑(valuationWeight R S p) = ↑S * (↑S - 1) * (3 * ↑R - ↑p * (↑S + 1))
+exact_weight_zero_p_rejected : ¬6 * ↑(valuationWeight 4 2 0) = 2 * (2 - 1) * (3 * 4 - 0 * (2 + 1))
+exact_weight_missing_threshold_rejected : ¬6 * ↑(valuationWeight 1 3 2) = 3 * (3 - 1) * (3 * 1 - 2 * (3 + 1))
+exact_weight_saturated_control : valuationWeight 8 2 2 = 6
+'TenthDiscriminant.clippedFloorSum_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TenthDiscriminant.clippedFloorSum_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TenthDiscriminant.valuationWeight_exact_of_last_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]

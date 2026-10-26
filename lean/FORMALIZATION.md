@@ -1,5 +1,15 @@
 # Current claim-to-Lean map
 
+`valuationWeight_exact_of_last_threshold` proves the exact real-cast
+identity6F=S(S-1)(3R-p(S+1)) under p>0 and p(S-1)<=R.
+`clippedFloorSum_succ` counts rows reaching the next column level;
+`clippedFloorSum_closed` sums those increments. Guard counterexamples and
+coexistence with the old false unguarded floor identity are checked.
+Target/full build, signatures and4772/4028/16971 audit pass locally.
+[Human count](../research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) and
+[scope](../research/ender_radius_bridge/PHASE57_VERIFICATION.md). No change
+to the50b cutoff or existing valuation exponents; no new semantic review.
+
 `totallyComplex_degree_two_classNumber_one_discriminant_bound_50b`
 proves actual absolute discriminant<50000000000 under the standard
 totally-complex/degree-two/actual-class-number-one hypotheses.

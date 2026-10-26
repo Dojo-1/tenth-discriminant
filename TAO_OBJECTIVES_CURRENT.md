@@ -1,9 +1,16 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 26 October 2026, through preregistered Phase 56;
+**Living update: 26 October 2026, through preregistered Phase 57;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase57 gives a human-readable exact count of the existing prime weight:
+6F=S(S-1)(3R-p(S+1)) for p>0 and p(S-1)<=R. It follows by counting the
+same integer boxes by columns. Local full build, guard/coexistence controls
+and axiom audit pass. This is a supplementary formal simplification;
+the50b cutoff and existing determinant exponents are unchanged, and no
+challenge objective is newly marked complete. [Human count](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md).
 
 Phase56 lowers the direct actual-field cutoff from62.5 to50 billion by
 retaining sharper logarithm bounds on the same recovered3/5 weights.
@@ -281,6 +288,7 @@ completion is separately registered and separately costed.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
+| Exact staircase weight from counting by column levels. | **Local Lean identity and guard controls** | [Phase57](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) proves6F=S(S-1)(3R-p(S+1)) for p>0 and p(S-1)<=R. It counts the original weight, including partially filled rows, and preserves the old unguarded-polynomial falsifier. No new valuation, cutoff, measured speedup or novelty claim. |
 | Recovering omitted prime mass yields a fixed normalized gain and lower endpoint. | **Local Lean count, actual-field cutoff and dependency audit** | [Phases52–54](research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md) retain the original determinant weights and restore exact3/5 terms. Saturated rows give at least3/50 after normalization; all endpoint guards compose at500^4. No new prime exponent, optimality or independent review is inferred. |
 | Conjugation and anti-invariant projection normalize an abstract imaginary quadratic field. | **Local Lean operator laws, normalized-generator existence and actual-field cutoff** | [Phase47](research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md) supplies the former presentation premise without class-number input. Given an involution, projection identities are dimension-independent; degree two supplies quadratic Galoisness and identifies the whole-group fixed field with Q. This is representation infrastructure, not a new constant, higher-class-number bound or independently reviewed full classification. |
 | A concrete root and degree two construct the caller's field dictionary. | **Local Lean constructor and actual-discriminant transport** | [Phase46](research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md) assumes a root equation and degree, rather than an isomorphism. Negative-root and alternate-chart controls pass; rescaling in Q(i) refutes an unguarded radicand bound. The cutoff is unchanged and universal squarefree-generator existence remains open. Prior review does not cover this new API. |

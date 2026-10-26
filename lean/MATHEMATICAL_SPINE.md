@@ -216,6 +216,13 @@ an integral unitriangular basis change. Every transformed jet row is
 divisible by `p^k`; the two Gram sides yield
 `p^(2Σk)=p^(2F(p)) | det G`.
 
+There is now an exact [column-count description](../research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md):
+if p>0 and p(S-1)<=R, then6F(p)=S(S-1)(3R-p(S+1)), over the reals.
+Here the sum's second index reindexes S-1-s; its levels are degree weights,
+not ordinary derivative orders. The operation counts the same finite
+set of integer triples in another order, including partially filled rows.
+It changes neither the determinant exponent nor the50b cutoff.
+
 [The full written argument](../research/uniform_inert_valuation/PROOF.md)
 checks the endpoints and product rule. Lean checks the abstract
 unimodular two-sided determinant factor and a

@@ -33,6 +33,11 @@ Geometric helpers now hold at450^4; the fixed endpoint50b composes with
 the same production/tail comparison. The Phase55 review covers the older
 62.5b proof, not these new edits.
 
+An [exact staircase count](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md)
+now replaces the weight's double sum by one polynomial when its last
+threshold fits. It counts the same integer boxes in a different order;
+the cutoff stays50 billion.
+
 The [central-symmetry lemma](research/ender_radius_bridge/CENTRAL_SYMMETRY_GUIDE.md)
 separates even- and odd-degree rows of the original Gram. The
 [operator compatibility theorem](research/ender_radius_bridge/PARITY_COMPATIBILITY_GUIDE.md)

@@ -88,3 +88,4 @@ import TenthDiscriminant.SmallPrimeRecoveryGain
 import TenthDiscriminant.RecoveredAnalyticCutoff
 import TenthDiscriminant.StrongSmallPrimeRecoveryGain
 import TenthDiscriminant.FiftyBillionCutoff
+import TenthDiscriminant.StaircaseExact
