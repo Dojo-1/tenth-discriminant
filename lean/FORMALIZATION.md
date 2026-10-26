@@ -1,5 +1,11 @@
 # Current claim-to-Lean map
 
+The [Phase60 boundary diagnostic](../research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md)
+finds a counterexample to a suggested per-form estimate in the unreviewed
+higher-class-number count derivation. This is exact arithmetic and a paper
+argument, not a new Lean result. The aggregate bound and h<=2 cutoff are
+not refuted by this test; no production proof depends on this candidate.
+
 A [standalone Phase59 prototype](../research/ender_radius_bridge/EXCLUDED_PRIME_PROTOTYPE_GUIDE.md)
 now checks the actual-Gram excluded-prime budget and positive-kernel count
 transfer. Its arithmetic count/weight inputs stay explicit. It is outside

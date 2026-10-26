@@ -1,9 +1,16 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 26 October 2026, through preregistered Phase 59;
+**Living update: 26 October 2026, through preregistered Phase 60;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase60 supplies one exact fixed-case counterexample to the suggested
+per-form split-count estimate: two prime representations exceed an upper
+expression below34/25. This exposes a zero-row justification gap in the
+unreviewed higher-class-number track, not a disproof of its aggregate
+inequality or cutoff. No revised coefficient/campaign was certified.
+[Case and scope](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md).
 
 Phase59 checks a standalone conditional excluded-prime bridge on the same
 actual Gram, using existing Mathlib Abel summation and explicit count/weight
@@ -266,8 +273,8 @@ was posted in this cycle.
 | 4 | High-quality Lean formalization, perhaps upstreamable | **Canonical iff and abstract-field cutoff connected; external quality judgment open** | Actual class number/discriminant, normalized-generator existence, universal imaginary-quadratic cutoff, canonical finite exclusion and all nine positives are supplied. No full-classification announcement is made. Independent human semantic/API review and Mathlib acceptance remain open. See the [claim map](lean/FORMALIZATION.md). |
 | 5 | Compare strengths of different writeups | **Bounded controlled comparison supplied; broad objective partial** | [Phase40](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) compares two frozen complete same-route manuscripts with our proof head across parameter, analytic threshold, finite finish, rank, normalization, inputs and review. Original-byte source hashes and recency controls are recorded. External results are source claims, not newly audited or replayed; this is not an all-writeup optimized survey. [Prior art](PRIOR_ART.md) remains a frozen historical note. |
 | 6 | Spur new arguments or arrangements | **Reusable arrangement, no novelty claim** | BEAN-to-Ender changes the prime input. Four fixed prime-log constants and normalized affine envelopes now yield a checked universal odd cutoff without replaying 249 more interval comparisons. This is an arrangement within the credited Green/twinheterodox route, not a claim of a new mathematical method. |
-| 7 | Preserve failed attempts and negative results | **Documented internally** | The [review response](review/RESPONSE_Claude.md), [BEAN audit](review/BEAN_AUDIT.txt), fixed [radial protocol](flow/PREREG_RADIAL.txt), and [lift protocol](flow/PREREG_LIFTS.txt) retain counterexamples, failed guards and ceilings. Internal preservation does not equal external reporting. |
-| 8 | Help higher class-number problems | **Conditional bridge only; no new verified range** | [Phase59](research/ender_radius_bridge/EXCLUDED_PRIME_PROTOTYPE_GUIDE.md) checks a standalone actual-Gram budget and count-to-weight transfer with explicit arithmetic inputs. No class-number-at-most-two count bound or numerical exclusion is proved; the historical [review brief](REVIEW_BRIEF_2.md) remains unreviewed. |
+| 7 | Preserve failed attempts and negative results | **Documented internally, with a new scoped boundary failure** | [Phase60](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md) refutes a suggested per-form count justification; the aggregate/h<=2 conclusion is not thereby refuted. Its fixed case and raw records, earlier reviews/failed guards, and both Phase59 proof failures are preserved. No repair campaign or external scientific review is inferred. |
+| 8 | Help higher class-number problems | **Conditional bridge only; no new verified range** | [Phase59](research/ender_radius_bridge/EXCLUDED_PRIME_PROTOTYPE_GUIDE.md) checks a standalone actual-Gram budget and count-to-weight transfer with explicit arithmetic inputs. No class-number-at-most-two count bound or numerical exclusion is proved; the historical [review brief](REVIEW_BRIEF_2.md) remains unreviewed. The [Phase60 diagnostic](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md) identifies a per-form justification gap that must be resolved before reusing the old input. |
 | 9 | Disclose AI involvement | **Repository practice present** | The [README](README.md) and review records identify AI assistance. This is disclosure, not validation or a submission. |
 | 10 | Contribute a repository link and human summary in Tao's comments | **No documented submission** | The repository has no submission permalink or posting record. This cycle posted nothing to Tao. The article was re-read, but a new sitewide/comment-pagination submission search was not performed. |
 | 11 | Independent due diligence before an AI-generated submission | **Strengthened, still partial** | [Phase58](research/ender_radius_bridge/PHASE58_REVIEW_REPORT.md) covers six joints of final63be64b/50b and the exact staircase. No concrete FATAL/GAP/SLOPPY finding; new local calculations re-derived, inherited machinery source-traced. Lean/CI NOT RERUN. The first native report is preserved without reroll; human and model-family independence remain unestablished. No submission recorded. |

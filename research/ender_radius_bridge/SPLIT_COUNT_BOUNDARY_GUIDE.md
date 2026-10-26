@@ -25,6 +25,6 @@ The documented split-prime argument sums per-form estimates and divides by four 
 
 On y=0, a*x^2 can be prime only for x=+/-1 and prime a, giving at most two contributions per form. Separating this row would suggest a conservative +2 allowance, hence an H/2 constant after dividing by four, if the nonzero-row and all-class steps are justified. No revised interval campaign or cutoff calculation was run. Do not substitute this proposed coefficient into the old certificates and call them verified.
 
-The conditional excluded-prime bridge in [PR30](https://github.com/Dojo-1/tenth-discriminant/pull/30) deliberately keeps its count estimate as an assumption. This case explains why supplying that estimate is a substantive arithmetic task. The checked class-number-one result remains unchanged at 50 billion.
+The conditional excluded-prime bridge in [the standalone prototype](EXCLUDED_PRIME_PROTOTYPE_GUIDE.md) deliberately keeps its count estimate as an assumption. This case explains why supplying that estimate is a substantive arithmetic task. The checked class-number-one result remains unchanged at 50 billion.
 
 [Registered case](PHASE60_PROTOCOL.md) · [Raw result manifest](PHASE60_RESULTS.json). The raw output, source snapshot and process record are preserved in PHASE60_RAW.zip. No Lean verification or independent/human review is claimed for this boundary test.

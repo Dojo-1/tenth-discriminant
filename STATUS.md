@@ -1,5 +1,16 @@
 # Status — 2026-10-26
 
+## Phase60: a zero-row gap in the suggested per-form count
+
+A fixed registered exact-arithmetic case finds two odd-prime
+representations in Q=3x^2+xy+1001y^2 at t=3, while the suggested per-form
+upper expression is below34/25. The primitive reduced form has fundamental
+discriminant -12011. The y=0 row carries both representations.
+This refutes the suggested per-form estimate, not the aggregate bound or
+the historical h<=2 cutoff. No class number or revised cutoff was computed.
+The checked h=1 result and conditional Phase59 prototype are unchanged.
+[Counterexample and limits](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md).
+
 ## Phase59: conditional excluded-prime bridge prototype
 
 A standalone Lean prototype keeps the actual Gram and explicitly charges
