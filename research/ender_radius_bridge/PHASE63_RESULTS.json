@@ -1,0 +1,89 @@
+{
+  "status": "PASS_STANDALONE_ACTUAL_OFF_AXIS_INTEGRAL_BOUND",
+  "registered_commit": "e19131e",
+  "base": "74d02d305cabc4bde1a46ed066bff3ad12f3e9da",
+  "builds": [
+    {
+      "phase": 63,
+      "mode": "build",
+      "scope": "Actual finite quadratic off-axis count bounded by row-width integral; no closed area or class-number cutoff",
+      "source_sha256": "5ac42d29358c89dcad4f7d699b369510ca8e5cd3491ddaab1efe2c7bb10db09a",
+      "source_snapshot": "PHASE63_build_20261026215321412.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 28.4400993,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3077615616,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase63NonzeroRows.lean"
+      ],
+      "stdout": "PHASE63_build_20261026215321412.stdout.log",
+      "stderr": "PHASE63_build_20261026215321412.stderr.log"
+    },
+    {
+      "phase": 63,
+      "mode": "build",
+      "scope": "Actual finite quadratic off-axis count bounded by row-width integral; no closed area or class-number cutoff",
+      "source_sha256": "fe3c98adaeac9401b349cc1890fdfcbb471beb151946ebaa4bcf0840328588c3",
+      "source_snapshot": "PHASE63_build_20261026215548260.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 29.0818965,
+      "cumulative_before_seconds": 28.4400993,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3080224768,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase63NonzeroRows.lean"
+      ],
+      "stdout": "PHASE63_build_20261026215548260.stdout.log",
+      "stderr": "PHASE63_build_20261026215548260.stderr.log"
+    }
+  ],
+  "target_seconds": "57.5219958",
+  "sha256": {
+    "PHASE63_PROTOCOL.md": "17af4713554ed0b4ac8fa7380f7e4e32eeb7bf50e6574b0dd49c6fdda1ae337e",
+    "Phase63NonzeroRows.lean": "fe3c98adaeac9401b349cc1890fdfcbb471beb151946ebaa4bcf0840328588c3",
+    "run_phase63.ps1": "711ccf2f2ee04f0b489196126953a6fdc1f9b1983761cc5601b3a5255721ee47"
+  },
+  "raw_archive": {
+    "path": "PHASE63_RAW.zip",
+    "sha256": "a519e0e0c44ca0e1f8f850e2b15f707ebf5bcc329b965a59b80b8fd8355537b5"
+  },
+  "raw_sha256": {
+    "PHASE63_build_20261026215321412.result.json": "50e37657f24fe135b3a37a54515d9e71707387204e76b8304441299efcbcd1f9",
+    "PHASE63_build_20261026215321412.source.lean": "5ac42d29358c89dcad4f7d699b369510ca8e5cd3491ddaab1efe2c7bb10db09a",
+    "PHASE63_build_20261026215321412.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE63_build_20261026215321412.stdout.log": "e9e41e4ef7493f3934d662db0d4814ed82dcd847289c68106f3d4cf9d24efb4e",
+    "PHASE63_build_20261026215548260.result.json": "bedd76912d59b0ed4ab9b0babc275c82097458633ffaa415178773d192b30a08",
+    "PHASE63_build_20261026215548260.source.lean": "fe3c98adaeac9401b349cc1890fdfcbb471beb151946ebaa4bcf0840328588c3",
+    "PHASE63_build_20261026215548260.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE63_build_20261026215548260.stdout.log": "ca44d9727d8f5f37b810a5603075bbe5c3d5d9ab80804f3f9461f309b2339e16"
+  },
+  "audit": {
+    "logical": 34,
+    "theorems": 29,
+    "runtime": 4
+  },
+  "scope": "Actual finite integer-pair count under positive-definite real quadratic form and y!=0, bounded by explicit row-width integral. No supplied count premise. Integral unevaluated, no class dictionary/four representations/ramifiedB/cutoff claimed. Research-only outside production CI.",
+  "repairs": [
+    "Explicit endpoints in Int.card_Icc_of_le",
+    "Reduce row-index lambda before omega",
+    "Specify adjacent-integral result type to fix measure inference",
+    "Remove ring after simp already closes reflection identity"
+  ]
+}

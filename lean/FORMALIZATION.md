@@ -1,5 +1,15 @@
 # Current claim-to-Lean map
 
+Standalone `NonzeroRows.off_axis_count` now bounds the actual finite
+integer off-axis count for positive-definite real quadratic forms by an
+explicit row-width integral. The integer interval, fiber count, height,
+monotone sum/integral and reflection steps are checked together;14 public
+types unchanged, namespace34/29/4 passes. The area integral is not yet
+evaluated in Lean here. No arithmetic count B or higher-class-number cutoff
+follows; this research file is outside production/root/CI.
+[Human proof](../research/ender_radius_bridge/NONZERO_ROWS_GUIDE.md).
+
+
 The standalone `PrimeAxisRepair` file now checks prime-axis factorization,
 the at-most-two cardinal bound, principal-axis emptiness and conditional
 two-class accounting. It is outside the production root and CI. The

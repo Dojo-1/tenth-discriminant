@@ -1,5 +1,17 @@
 # Status — 2026-10-26
 
+## Phase63: actual off-axis points are bounded by a width integral
+
+Lean checks card(U)<=2 integral_0^Y w+2Y for finite integer points of
+Q=ax²+bxy+cy²<=t with y!=0, a>0,4ac-b²>0,t>=0. Integer intervals,
+row fibers, a decreasing-width integral and reflection supply the bound;
+no supplied count premise. The area evaluation, class dictionary,
+prime multiplicity and ramified budget remain open; no new B/cutoff.
+Two builds FAIL28.4400993s/PASS29.0818965s, unchanged14 public types and
+5 definitions, audit34/29/4, no resource stop. Research-only, outside CI.
+[Human proof](research/ender_radius_bridge/NONZERO_ROWS_GUIDE.md) and
+[verification](research/ender_radius_bridge/PHASE63_VERIFICATION.md).
+
 ## Phase62: the principal row saves the two-class constant
 
 A standalone pinned Lean file proves that a*x² prime forces a=p and

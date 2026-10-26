@@ -1,9 +1,15 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 26 October 2026, through preregistered Phase 62;
+**Living update: 26 October 2026, through preregistered Phase 63;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase63 checks the actual finite off-axis quadratic point count up to an
+explicit width integral, using row fibers and reflection. This closes
+that discrete-to-integral step; evaluating the area and supplying the
+class/prime/ramified inputs remain open. No actual B, new cutoff or newly
+completed challenge objective. [Human count](research/ender_radius_bridge/NONZERO_ROWS_GUIDE.md).
 
 Phase62 checks the missing zero-row factorization and a conditional repair
 of the two-class constant: the principal form contributes no prime points
@@ -325,6 +331,7 @@ completion is separately registered and separately costed.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
+| Actual off-axis quadratic points become a row-width integral. | **Standalone Lean finite count and symmetry theorem** | [Phase63](research/ender_radius_bridge/NONZERO_ROWS_GUIDE.md) bounds integer pairs directly, through interval cardinality, row fibers, a monotone integral and central reflection. The area evaluation and class/prime/ramified inputs remain open; no new B, cutoff or numerical campaign. |
 | The principal axis saves the two-class counting constant. | **Standalone Lean factorization and conditional finite accounting** | [Phase62](research/ender_radius_bridge/TWO_CLASS_AXIS_GUIDE.md) proves at most2 prime-axis points per form and none for the principal form; 2(h-1)<=h for h<=2. Nonzero-row geometry and four-representation inputs are still needed; no actual count B or numerical range is delivered. |
 | Counts of excluded primes become an explicit loss on the same determinant. | **Production Lean theorem and compiled dependency audit** | [Phase61](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md) proves 2pF<=R(R-1)S and uses the decreasing log(p)/p kernel with finite Abel summation. The remaining input is an arithmetic prefix bound B; no higher-class-number range, new cutoff or sharpness claim. |
 | Exact staircase weight from counting by column levels. | **Local Lean identity and guard controls** | [Phase57](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) proves6F=S(S-1)(3R-p(S+1)) for p>0 and p(S-1)<=R. It counts the original weight, including partially filled rows, and preserves the old unguarded-polynomial falsifier. No new valuation, cutoff, measured speedup or novelty claim. |
