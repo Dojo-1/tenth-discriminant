@@ -1,0 +1,17 @@
+{
+  "kind": "DOCUMENTATION_ONLY_DISTILLATION",
+  "source_commit": "70f92177c9bd46fa8447fa0a19ab4be4f86fd3c3",
+  "source_path": "TAO_OBJECTIVES_CURRENT.md",
+  "history_path": "TAO_OBJECTIVES_HISTORY.md",
+  "history_sha256": "5408f79b1d29bc3730b8f81b6e3af93e002c4297b19350d19db04dfe238172c5",
+  "source_lines": 379,
+  "current_lines": 62,
+  "invariants": [
+    "All12 objectives retained with inline limits and evidence links.",
+    "Frozen history is byte-identical to original Git source, including superseded status language.",
+    "No mathematical source, experiment, result archive, pin, CI gate or README changed.",
+    "No full-classification, novelty, optimality, human-review, upstream-acceptance or submission claim introduced.",
+    "No proof/experiment rerun; existing exact-head CI is left untouched."
+  ],
+  "self_audit": "Kept imaginary-quadratic domain, class-number-one hypothesis and absolute-discriminant meaning explicit; distinguished draft production-root geometry from merged cutoff and human review."
+}
