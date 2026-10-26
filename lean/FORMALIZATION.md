@@ -1,5 +1,12 @@
 # Current claim-to-Lean map
 
+The standalone `PrimeAxisRepair` file now checks prime-axis factorization,
+the at-most-two cardinal bound, principal-axis emptiness and conditional
+two-class accounting. It is outside the production root and CI. The
+nonzero-row geometry, four-representation input and actual count B remain
+unproved by this file. [Explanation and scope](../research/ender_radius_bridge/TWO_CLASS_AXIS_GUIDE.md).
+
+
 `ExcludedPrime.excluded_prime_budget_log_div` is now production-root reachable.
 It bounds the original total prime mass by the actual Gram Hadamard ceiling
 plus an explicit loss from a supplied excluded-prime prefix bound B. The

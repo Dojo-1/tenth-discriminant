@@ -1,5 +1,18 @@
 # Status — 2026-10-26
 
+## Phase62: the principal row saves the two-class constant
+
+A standalone pinned Lean file proves that a*x² prime forces a=p and
+x=+-1, so a zero row supplies at most two prime points and the principal
+form (a=1) supplies none. Conditional finite accounting then gives
+2(h-1)<=h for h<=2. Thus the old h/4 allowance can follow from corrected
+row accounting if the nonzero-row and four-representation inputs are proved.
+Those inputs, the actual excluded-prime bound B and any h<=2 cutoff
+remain open. This does not erase the Phase60 per-form counterexample.
+Two bounded builds: FAIL22.8003626s, PASS22.7932198s; unchanged eight public
+theorem types, one proof repair, namespace audit18/16/2, no resource stop.
+Research-only and outside production CI. [Human explanation](research/ender_radius_bridge/TWO_CLASS_AXIS_GUIDE.md).
+
 ## Phase61: the count-to-loss conversion is in the production library
 
 The canonical kernel log(p)/p and loss scale R(R-1)S discharge the

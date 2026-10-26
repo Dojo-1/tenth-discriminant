@@ -1,9 +1,16 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 26 October 2026, through preregistered Phase 61;
+**Living update: 26 October 2026, through preregistered Phase 62;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase62 checks the missing zero-row factorization and a conditional repair
+of the two-class constant: the principal form contributes no prime points
+on that row, so total allowance2(h-1)<=h when h<=2. The nonzero-row and
+representation-count inputs remain obligations; no count B or numerical
+range is delivered. This refines the negative result without suppressing it.
+[Human accounting](research/ender_radius_bridge/TWO_CLASS_AXIS_GUIDE.md).
 
 Phase61 integrates the excluded-prime assembly into production and proves
 the canonical log(p)/p count-to-loss conversion. This advances formal reuse
@@ -317,6 +324,7 @@ completion is separately registered and separately costed.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
+| The principal axis saves the two-class counting constant. | **Standalone Lean factorization and conditional finite accounting** | [Phase62](research/ender_radius_bridge/TWO_CLASS_AXIS_GUIDE.md) proves at most2 prime-axis points per form and none for the principal form; 2(h-1)<=h for h<=2. Nonzero-row geometry and four-representation inputs are still needed; no actual count B or numerical range is delivered. |
 | Counts of excluded primes become an explicit loss on the same determinant. | **Production Lean theorem and compiled dependency audit** | [Phase61](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md) proves 2pF<=R(R-1)S and uses the decreasing log(p)/p kernel with finite Abel summation. The remaining input is an arithmetic prefix bound B; no higher-class-number range, new cutoff or sharpness claim. |
 | Exact staircase weight from counting by column levels. | **Local Lean identity and guard controls** | [Phase57](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) proves6F=S(S-1)(3R-p(S+1)) for p>0 and p(S-1)<=R. It counts the original weight, including partially filled rows, and preserves the old unguarded-polynomial falsifier. No new valuation, cutoff, measured speedup or novelty claim. |
 | Recovering omitted prime mass yields a fixed normalized gain and lower endpoint. | **Local Lean count, actual-field cutoff and dependency audit** | [Phases52–54](research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md) retain the original determinant weights and restore exact3/5 terms. Saturated rows give at least3/50 after normalization; all endpoint guards compose at500^4. No new prime exponent, optimality or independent review is inferred. |
