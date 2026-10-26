@@ -29,7 +29,7 @@ The hard part is making both estimates refer to exactly the same positive intege
 
 Lean checks the encoded theorem and its dependencies; the audit checks for incomplete or nonstandard proof dependencies. [Exact statements and scope](lean/FORMALIZATION.md) distinguish these checks from human mathematical review.
 
-Independent human semantic review remains open. The latest bounded AI review covers the older **62.5-billion** proof, not the subsequent 50-billion improvement or exact staircase formula. [Review and limitations](research/ender_radius_bridge/PHASE55_VERIFICATION.md).
+Independent human semantic review remains open. One bounded AI review covers the final **50-billion** proof and exact staircase lemma at `63be64b`. It re-derived new local calculations and source-traced inherited machinery; **Lean/CI were not rerun by that reviewer**. [Review and limitations](research/ender_radius_bridge/PHASE58_VERIFICATION.md).
 
 The repository also contains a separate canonical-family classification theorem and finite certificates. Their scope is explained in the [classification guide](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md); this README makes no full-classification announcement. Mathlib acceptance, optimal constants and higher-class-number results remain open.
 
