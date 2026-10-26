@@ -1,5 +1,23 @@
 # Status — 2026-10-26
 
+## Phase61: the count-to-loss conversion is in the production library
+
+The canonical kernel log(p)/p and loss scale R(R-1)S discharge the
+separate kernel/sign/weight assumptions of Phase59. The actual-Gram
+conclusion now asks only for an excluded-prime prefix count bound, alongside
+the original prime/good-set/geometry hypotheses. The count itself and any
+higher-class-number cutoff remain open. The50b result is unchanged.
+Three target builds (first cast-definition failure preserved; final EOF
+cleanup only), full root,
+34-input exclusions and compiled audit pass locally:4821 logical declarations,
+4071 theorems,16978 runtime auxiliaries. API/audit controls pass; the local
+negative suite times out at its existing120-second multiplicity cap and
+remains INCOMPLETE, without rerun. New exact-head CI is pending,
+recorded separately in [verification](research/ender_radius_bridge/PHASE61_VERIFICATION.md).
+[Human argument](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md).
+Phase59/60 source and evidence stay frozen; their old current-tree integrity
+checks are historical after this explicit production integration.
+
 ## Phase60: a zero-row gap in the suggested per-form count
 
 A fixed registered exact-arithmetic case finds two odd-prime

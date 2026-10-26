@@ -223,4 +223,3 @@ theorem negative_endpoint_rejected :
 theorem split_input_control : IsSquare (-(19 : ZMod 5)) := ⟨1, by decide⟩
 end
 end TenthDiscriminant.ExcludedPrime
-

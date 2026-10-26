@@ -1,5 +1,19 @@
 # Current claim-to-Lean map
 
+`ExcludedPrime.excluded_prime_budget_log_div` is now production-root reachable.
+It bounds the original total prime mass by the actual Gram Hadamard ceiling
+plus an explicit loss from a supplied excluded-prime prefix bound B. The
+canonical log(n)/n kernel, its signs and monotonicity, and the domination
+2pF<=R(R-1)S are proved internally. Phase59 core is transported with a
+namespace change; all old production proofs/pins/tools stay unchanged.
+Local target/root,34-input exclusions and4821/4071/16978 audit pass; controls
+and exact-head CI have their own status in the [record](../research/ender_radius_bridge/PHASE61_VERIFICATION.md).
+[Human proof](../research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md).
+API/audit controls pass; the local full negative suite is INCOMPLETE after
+its existing120-second multiplicity limit, with no rerun. New CI is pending.
+No arithmetic B, higher-class-number cutoff or new semantic review follows.
+
+
 The [Phase60 boundary diagnostic](../research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md)
 finds a counterexample to a suggested per-form estimate in the unreviewed
 higher-class-number count derivation. This is exact arithmetic and a paper
