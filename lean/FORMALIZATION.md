@@ -1,5 +1,12 @@
 # Current claim-to-Lean map
 
+The [Phase58 bounded review](../research/ender_radius_bridge/PHASE58_VERIFICATION.md)
+now covers the final50b and exact-staircase changes at frozen63be64b.
+It established no concrete FATAL/GAP/SLOPPY finding in six obligations;
+local calculations were re-derived and inherited machinery source-traced.
+Lean/CI were NOT RERUN by the reviewer. This is not human review or
+whole-library certification; the first native report remains unchanged.
+
 `valuationWeight_exact_of_last_threshold` proves the exact real-cast
 identity6F=S(S-1)(3R-p(S+1)) under p>0 and p(S-1)<=R.
 `clippedFloorSum_succ` counts rows reaching the next column level;
