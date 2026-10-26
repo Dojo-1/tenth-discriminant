@@ -11,9 +11,10 @@ new cutoff recovers exact prime3/5 contributions omitted by the earlier
 uniform estimate. It keeps the same determinant and has no finite-answer
 or old-cutoff premise. The new theorem, full local build, fresh input
 checks and axiom audit pass; [local verification](research/ender_radius_bridge/PHASE54_VERIFICATION.md).
-Exact-head CI is separate. Previous commit
-`bd2a207` passed pinned CI for the normalized gain alone;
-[verification record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6420605867).
+Proof head `86abe21` passed pinned CI40355317865, including the full build,
+dependency audit and inherited rejection controls; security/CodeQL passed.
+[Exact verification](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6421231717).
+Later review/documentation publication heads require their own CI.
 Earlier failures remain preserved. No novelty or optimality claim.
 [Operator proof](research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md) ·
 [Recovered-budget comparison](research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md).
@@ -37,7 +38,13 @@ proves that its Gram and the actual odd-p Frobenius basis change commute
 with the same sign operator. Local Lean checks pass; this structure
 supplies no extra valuation or smaller cutoff.
 
-One [fresh-context review of the new bridges](research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md)
+One [bounded review of the62.5-billion proof](research/ender_radius_bridge/PHASE55_REVIEW_REPORT.md)
+established no FATAL/GAP finding in six checks. It re-derived the new
+recovery and endpoint calculations and source-traced inherited machinery;
+Lean and CI were not rerun by the reviewer. [Provenance and limits](research/ender_radius_bridge/PHASE55_VERIFICATION.md).
+Independent human semantic review remains open.
+
+The earlier [fresh-context bridge review](research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md)
 established no FATAL/GAP issue in five bounded checks and found one guide
 dependency error, now corrected: degree two supplies both quadratic
 Galoisness and rational fixed-field identification. This AI source review

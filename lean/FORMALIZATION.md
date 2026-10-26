@@ -1,5 +1,11 @@
 # Current claim-to-Lean map
 
+The [Phase55 review](../research/ender_radius_bridge/PHASE55_REVIEW_REPORT.md)
+checked six joints of the new62.5-billion proof at frozen86abe21. It
+established no FATAL/GAP finding, re-derived new local calculations and
+source-traced inherited apparatus. It did not rerun Lean/CI or establish
+human/model-family independence. No proof changed; [limits and provenance](../research/ender_radius_bridge/PHASE55_VERIFICATION.md).
+
 `totallyComplex_degree_two_classNumber_one_discriminant_bound_recovered`
 proves actual absolute discriminant<62500000000 from standard degree-two,
 totally-complex and actual class-number-one hypotheses. It composes

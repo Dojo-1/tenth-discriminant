@@ -1,0 +1,8 @@
+{
+  "received_utc": "2026-10-26T16:19:08Z",
+  "reviewer_reported_finalized_utc": "2026-10-26T16:18:37Z",
+  "report_sha256": "b8d659d555d8f2be460771ad03037f9cfbe8c7ed724004f4ed75b7ff1260c0da",
+  "report_bytes": 17286,
+  "origin": "first final native report written once by /root/recovered_cutoff_review",
+  "finding_summary": "No FATAL/GAP established in six bounded obligations; new finite algebra/endpoint composition rederived; inherited apparatus source-traced; compiled closure/Lean/CI not independently rerun"
+}

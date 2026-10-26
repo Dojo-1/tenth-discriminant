@@ -1,6 +1,6 @@
 # Factual brief for a possible human comment on Tao's challenge
 
-**26 October 2026, through Phase54. This is an AI-prepared evidence brief, not the
+**26 October 2026, through Phase55. This is an AI-prepared evidence brief, not the
 human-generated summary requested by [Tao's post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).**
 The contributor should write the actual comment in their own words
 after reviewing the linked work. No comment has been submitted by this
@@ -23,17 +23,25 @@ novelty nor optimality or completed independent human semantic review.
 
 Attach the [short proof](research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md)
 and exact verification record after reviewing the current publication
-status. Previous head `bd2a207` passed pinned CI40331755630 for the fixed
-normalized gain; its [final record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6420605867)
-does not cover the new endpoint. Phase54 local build, input closure checks
-and whole-project axiom audit pass; [verification](research/ender_radius_bridge/PHASE54_VERIFICATION.md).
-New exact-head CI must accompany publication. The earlier
+status. Mathematical head `86abe21` passed pinned CI40355317865 for the
+new endpoint, including the build,4710/3967/16968 dependency audit and
+inherited rejection controls; security/CodeQL passed. Its [final record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6421231717)
+was posted before the next review/documentation push. Later publication
+heads require separate CI; [local evidence](research/ender_radius_bridge/PHASE54_VERIFICATION.md).
+The earlier
 [cutoff review](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md) and new
 [bridge review](research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md) cover
 different sources. The new first report found no FATAL/GAP issue in its five
 bounded checks and identified one documentation dependency error, corrected
 after preservation. Neither review re-proves every inherited argument or
 establishes model-family independence or independent human review.
+
+The [Phase55 first report](research/ender_radius_bridge/PHASE55_REVIEW_REPORT.md)
+then checks six joints of the new62.5-billion proof at86abe21. It
+established no FATAL/GAP finding, re-derived new recovery/endpoint
+calculations and source-traced inherited machinery. It did not rerun
+Lean or CI. This adds bounded AI due diligence, not independent human
+certification; [provenance](research/ender_radius_bridge/PHASE55_VERIFICATION.md).
 
 ## What can be stated now
 
