@@ -1,0 +1,20 @@
+﻿{
+    "phase":  52,
+    "mode":  "build",
+    "scope":  "Fixed exact3/5 recovery in the certified uniform proxy; no new valuation or numerical cutoff",
+    "attempt":  3,
+    "exit_code":  0,
+    "elapsed_seconds":  24.5180664,
+    "cumulative_before_seconds":  69.6062757,
+    "time_limit_seconds":  600,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2857779200,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "build",
+                      "TenthDiscriminant.SmallPrimeRecovery"
+                  ],
+    "stdout":  "PHASE52_build_20261025201756086.stdout.log",
+    "stderr":  "PHASE52_build_20261025201756086.stderr.log"
+}

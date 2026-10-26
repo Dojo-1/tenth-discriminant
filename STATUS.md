@@ -1,4 +1,20 @@
-# Status — 2026-10-25
+# Status — 2026-10-26
+
+## Phase52: recover exact3/5 mass in the certified uniform proxy
+
+The new proxy equals certifiedPrimeMassLower+2*(F3log3+F5log5), bounded
+by the same production expression for R>=2,S>=1. It is strictly larger
+for R>=4,S>=2. The proof separates the retained>=7 sum before restoring
+the omitted terms; it changes no determinant exponent. Strict-gain and
+zero-gain controls pass. [Guide](research/ender_radius_bridge/SMALL_PRIME_RECOVERY_GUIDE.md).
+Two elaboration failures are preserved; third build PASS24.5180664s,
+total94.1243421s. Root6815 and saved signature/control checks pass.
+Audit launch was initially unexecuted because approval-service credits
+were exhausted; after user-confirmed restoration, the audit ran once and
+PASS93.8236292s,4672/3929/16968. Coverage161 modules/no escapes and source
+correspondence pass. [Verification](research/ender_radius_bridge/PHASE52_VERIFICATION.md).
+No uniform scaled-gain bound or new endpoint is proved yet: cutoff10^11.
+The earlier reviewed/published head does not cover this new module.
 
 ## Phase51: one fresh-context adversarial bridge review
 

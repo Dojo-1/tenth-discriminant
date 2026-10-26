@@ -1,0 +1,23 @@
+﻿{
+    "phase":  52,
+    "mode":  "input",
+    "scope":  "Fixed exact3/5 recovery in the certified uniform proxy; no new valuation or numerical cutoff",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  24.5030993,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  180,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2949238784,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "env",
+                      "lean",
+                      "-j",
+                      "1",
+                      "../research/ender_radius_bridge/Phase52InputCheck.lean"
+                  ],
+    "stdout":  "PHASE52_input_20261025202111330.stdout.log",
+    "stderr":  "PHASE52_input_20261025202111330.stderr.log"
+}

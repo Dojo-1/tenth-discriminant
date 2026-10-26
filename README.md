@@ -19,6 +19,12 @@ The [exact envelope diagnostic](research/ender_radius_bridge/ENVELOPE_LIMIT_GUID
 explains why a substantial further improvement needs stronger estimates;
 it proves no new cutoff and does not rule out the underlying method.
 
+The [small-prime recovery theorem](research/ender_radius_bridge/SMALL_PRIME_RECOVERY_GUIDE.md)
+now restores the exact3/5 terms omitted by the certified uniform proxy.
+Local Lean checks prove a strictly stronger proxy for R>=4,S>=2 without
+double-counting or changing production. A new numerical cutoff still needs
+a uniform scaled-gain estimate and endpoint guards; it remains10^11.
+
 The [central-symmetry lemma](research/ender_radius_bridge/CENTRAL_SYMMETRY_GUIDE.md)
 separates even- and odd-degree rows of the original Gram. The
 [operator compatibility theorem](research/ender_radius_bridge/PARITY_COMPATIBILITY_GUIDE.md)

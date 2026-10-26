@@ -1,9 +1,16 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 25 October 2026, through preregistered Phase 51;
+**Living update: 26 October 2026, through preregistered Phase 52;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase52 proves a strictly stronger certified uniform proxy by recovering
+the exact3/5 contributions omitted from its retained>=7 sum. The same
+production budget bounds it; no extra determinant valuation is claimed.
+Local Lean checks pass. A uniform normalized gain and new endpoint remain
+open, so the actual-field cutoff is still10^11. [Human explanation](research/ender_radius_bridge/SMALL_PRIME_RECOVERY_GUIDE.md).
+Earlier review and CI scopes do not automatically cover this new proof.
 
 Phase51 supplies one user-authorized fresh-context source review of the
 new representation and symmetry modules. Five bounded checks established

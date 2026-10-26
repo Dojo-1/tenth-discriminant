@@ -1,0 +1,19 @@
+small35_add_retained_le_production : ∀ (R S : ℕ),
+  small35Mass R S + retainedSevenMass R S ≤ smallOddValuationMass R S 10000
+recoveredPrimeMassLower_le_production : ∀ (R S : ℕ) (I : ℝ),
+  2 ≤ R → 1 ≤ S → recoveredPrimeMassLower R S I ≤ enderPrimeMassLower R S 10000 I
+certified_lt_recoveredPrimeMassLower : ∀ (R S : ℕ) (I : ℝ),
+  4 ≤ R → 2 ≤ S → certifiedPrimeMassLower R S I < recoveredPrimeMassLower R S I
+recovered_three_two_zero_control : ∀ (I : ℝ), recoveredPrimeMassLower 3 2 I = certifiedPrimeMassLower 3 2 I
+'TenthDiscriminant.FirstCertificate.small35_add_retained_le_production' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TenthDiscriminant.FirstCertificate.recoveredPrimeMassLower_le_production' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TenthDiscriminant.FirstCertificate.certified_lt_recoveredPrimeMassLower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TenthDiscriminant.FirstCertificate.recovered_three_two_zero_control' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

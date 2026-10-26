@@ -1,0 +1,42 @@
+{
+  "scope": "strict recovery of exact existing3/5 terms in the certified proxy; no numerical cutoff",
+  "status": "LOCAL_PASS",
+  "protocol_commit": "ce1456f00baa2c3aad2a4ba6a50bdfd5c7241e62",
+  "cumulative_build_seconds": "94.124342099999995",
+  "interruption": "audit launch not executed: approval-service workspace credits exhausted; user restored credits; saved input reconciled PASS, not rerun; audit attempt1 then PASS",
+  "raw_sha256": {
+    "research/ender_radius_bridge/PHASE52_audit_20261026075716230.result.json": "fe85088a2d74199a7566648de32ea6c05f1ec19a3dd31b14e87d70ddba15fa4c",
+    "research/ender_radius_bridge/PHASE52_build_20261025201423085.result.json": "a715c0d16b0a4794a5f978f98320c725ec643be2cd9fa0051cc32f73ca66fef1",
+    "research/ender_radius_bridge/PHASE52_build_20261025201609032.result.json": "1ec948b63da99ce0bb5f225cfa4f0ed64300ca2a6f8e1f5d2847971c7daedbae",
+    "research/ender_radius_bridge/PHASE52_build_20261025201756086.result.json": "2c6b61f81c8b41b0bb0ff5127aef257e3e23fe25bed28c2ed763c68758284f38",
+    "research/ender_radius_bridge/PHASE52_input_20261025202111330.result.json": "439ea46fe28c4d00022b90d498b0f44678cd9d66151df2dcfed6d8a9c73ce3bf",
+    "research/ender_radius_bridge/PHASE52_root_20261025202006197.result.json": "013f67deeb64381cf80ce60150ac01803b10ed496739be7e7aca2c81f6cfea44",
+    "research/ender_radius_bridge/PHASE52_audit_20261026075716230.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE52_build_20261025201423085.stderr.log": "c4a27db198c4d8632369ee6102944ef46e83c20d685f7c17a6aaff9cfcfc710f",
+    "research/ender_radius_bridge/PHASE52_build_20261025201423085.stdout.log": "2376dc48266d260a080d4624aa472f0826e6e4d7eec6798f8e2c052756f9631e",
+    "research/ender_radius_bridge/PHASE52_build_20261025201609032.stderr.log": "c4a27db198c4d8632369ee6102944ef46e83c20d685f7c17a6aaff9cfcfc710f",
+    "research/ender_radius_bridge/PHASE52_build_20261025201609032.stdout.log": "3e13abe9d12eab1b7edef34b1dd1d7d974aa2b9c5c0815b8dedb84dc24474507",
+    "research/ender_radius_bridge/PHASE52_build_20261025201756086.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE52_build_20261025201756086.stdout.log": "29911ac9d3677b3fded0418f47a261358b0521ade202c5a36a5d234ce36125e0",
+    "research/ender_radius_bridge/PHASE52_input_20261025202111330.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE52_input_20261025202111330.stdout.log": "db490a475f7a9ee19e653d171ece972f89b444ba325c11e493fbbd1d18364c07",
+    "research/ender_radius_bridge/PHASE52_root_20261025202006197.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE52_root_20261025202006197.stdout.log": "8d88ec6ff25813d2e03ed278bb66489c30b3e3438f7c84a10b3ca7a823bead5e",
+    "research/ender_radius_bridge/PHASE52_AXIOM_AUDIT_RAW.zip": "aa0be80fa8b1f16a423202a4ce6ab7a8e5a76a098aaf9028a9d283bc94bff67b"
+  },
+  "source_sha256_lf": {
+    "lean/TenthDiscriminant/SmallPrimeRecovery.lean": "0714650366b6b6283abd556d3e6d9828ddf75cc395e8cbdd2ac70e030e5508b5",
+    "lean/TenthDiscriminant.lean": "d2887a732faa3981b35404e4f06ec0ca7e1ac0f21828c10aa89f637d56c2ddca",
+    "research/ender_radius_bridge/PHASE52_PROTOCOL.md": "f171224a0a138cff04a6195e13aa12e0cbfbb74112df3b467133f789e3ba6519",
+    "research/ender_radius_bridge/Phase52Attempt1.lean": "b59f79bccbfb52259ee359cb9fc53552ca606b46a9a17eaa650df80eec959fb7",
+    "research/ender_radius_bridge/Phase52Attempt2.lean": "e17fd890c9140164601f2308213488b22ad51961020992f5edf3079c8f67f7a9",
+    "research/ender_radius_bridge/Phase52InputCheck.lean": "c6407081d61ba78b5cce2ad8e0fe45593274ea80c4dec815e4356ab79e38e00c",
+    "research/ender_radius_bridge/run_phase52.ps1": "a7f9f7f3f0a4d1b638219b3aada4f420fd0d9537cc48ae0619c4ee4f9eb2d505",
+    "research/ender_radius_bridge/SMALL_PRIME_RECOVERY_GUIDE.md": "96dedb97e788bf5c9d8f38a8864ace31dd26ba3acddae15264dd9c7580c15dc7"
+  },
+  "audit_entry": "PHASE52_audit_20261026075716230.stdout.log",
+  "audit_raw_sha256": "15e42c3545dbbcb67b3404cbd1973e85b3d312829fc9ab9bb09676754ce67e98",
+  "audit_raw_bytes": 2017145,
+  "exact_head_ci": "separate; not yet published",
+  "semantic_review": "Phase51 predates this module"
+}

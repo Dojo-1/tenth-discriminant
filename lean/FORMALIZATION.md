@@ -1,5 +1,14 @@
 # Current claim-to-Lean map
 
+`FirstCertificate.recoveredPrimeMassLower_le_production` restores the
+exact3/5 contributions omitted by the uniform proxy, with no double-counting.
+`certified_lt_recoveredPrimeMassLower` proves strict proxy improvement for
+R>=4,S>=2. The production expression and determinant weights are unchanged;
+the theorem does not export a new scaled affine envelope or cutoff.
+Local root/signature/axiom checks pass. [Guide](../research/ender_radius_bridge/SMALL_PRIME_RECOVERY_GUIDE.md)
+and [evidence scope](../research/ender_radius_bridge/PHASE52_VERIFICATION.md).
+The Phase51 reviewer predates this addition; new-head CI remains separate.
+
 The [Phase51 source review](../research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md)
 covers five bounded obligations in the new representation and symmetry
 modules. It established no FATAL/GAP finding and identified one guide
