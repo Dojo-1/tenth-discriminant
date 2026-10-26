@@ -1,0 +1,82 @@
+{
+  "phase": 66,
+  "status": "STANDALONE_LOCAL_ACTUAL_CLASS_FIBER_AND_RESIDUE_LIFT_PASS_NOT_PRODUCTION_CI",
+  "base": "2dd80eb233833e33f01fb87dca2e10fc06ca77d0",
+  "registered_commit": "cca390f2dbb3eaf0f5d2c94699fbdb3fe477dd5f",
+  "target_seconds": "35.6280967",
+  "builds": [
+    {
+      "phase": 66,
+      "mode": "build",
+      "scope": "Actual fixed ideal-class norm lattice and residue-ideal lifting; no binary form or arithmetic B",
+      "source_sha256": "8fcaa6ca081b1b73b7734f95978aa6cd61ecd59289fa70877f4e028b3de58ff2",
+      "source_snapshot": "PHASE66_build_20261026231438662.source.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 35.6280967,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3227930624,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase66ClassFiber.lean"
+      ],
+      "stdout": "PHASE66_build_20261026231438662.stdout.log",
+      "stderr": "PHASE66_build_20261026231438662.stderr.log"
+    }
+  ],
+  "public_theorems": [
+    "lift_in_inverse_class",
+    "class_fiber_lifting",
+    "residue_class_lifting",
+    "negation_control",
+    "zero_ideal_guard_control",
+    "zero_modulus_control",
+    "rational_three_control"
+  ],
+  "public_definitions": [
+    "normBound",
+    "NormLift",
+    "residueIdeal"
+  ],
+  "namespace_audit": {
+    "logical": 15,
+    "theorems": 12,
+    "runtime_only": 3,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "sha256": {
+    "PHASE66_PROTOCOL.md": "e19f1c33589948ec11bf0a81b3b74f0a34b3a44ae94026f0d756e89e27ca85dd",
+    "Phase66ClassFiber.lean": "8fcaa6ca081b1b73b7734f95978aa6cd61ecd59289fa70877f4e028b3de58ff2",
+    "run_phase66.ps1": "f594b7c5a1b2ef365eb3cfd67eabff0ad5fbe0466d67c8ead39cc41526b2d7fc"
+  },
+  "raw_archive": {
+    "path": "PHASE66_RAW.zip",
+    "sha256": "60a8dea8e105bb44b018b2aa71e3ccf174783fcad7abaf0f81c1fbb9fee90fef",
+    "members": 4
+  },
+  "raw_sha256": {
+    "PHASE66_build_20261026231438662.source.lean": "8fcaa6ca081b1b73b7734f95978aa6cd61ecd59289fa70877f4e028b3de58ff2",
+    "PHASE66_build_20261026231438662.stdout.log": "05a3e05db17f78d58b71185354a715bc8750b044a5b5509daae103c69cd76472",
+    "PHASE66_build_20261026231438662.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE66_build_20261026231438662.result.json": "4801a6334ae5294806332e88db0585675b3cff064e0ce74e24a71535757d55d4"
+  },
+  "quantifiers": "For each actual class C, choose a single nonzero bounded inverse-class ideal J before all ideals I and all positive moduli p/residue maps f in C.",
+  "interpretation": "Actual field norms and ideal recovery, with no class-number-one/PID assumption. Bound is on ideal norm, not the leading coefficient of a future binary form.",
+  "limits": [
+    "No binary-form basis, coefficients, discriminant or leading-coefficient bound.",
+    "No proof of two unramified norm-p ideals or four distinct representations.",
+    "No arithmetic B, ramification identification, new cutoff, classification, novelty or independent review.",
+    "No production/root/pin/gate/numerical-certificate changes or old campaign rerun."
+  ]
+}

@@ -1,5 +1,17 @@
 # Status — 2026-10-27
 
+## Phase66: each actual ideal class now has one fixed norm lattice
+
+A standalone Lean theorem chooses one bounded nonzero inverse-class ideal
+J before every I in a class C, then proves (z)=I*J, z in J, the actual norm
+identity and recovery of I by cancellation. Actual residue kernels have
+norm p without a class-number-one assumption. First attempt PASS35.6280967s;
+audit15/12/3, standard3 axioms,4 fixed controls. This is outside production
+CI. A binary-form basis/coefficient bound and representation multiplicity
+remain open; no arithmetic B or new cutoff.
+[Human proof](research/ender_radius_bridge/CLASS_FIBER_GUIDE.md) and
+[verification](research/ender_radius_bridge/PHASE66_VERIFICATION.md).
+
 ## Phase65: parameter-prime-divisor loss is checked locally
 
 The standalone original-Gram theorem pays at most R*S*(S-1)*log D for
