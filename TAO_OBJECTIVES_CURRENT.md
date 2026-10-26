@@ -5,7 +5,7 @@ field-discriminant bound is 50 billion.** Class number one means unique factoriz
 integers. The geometric count is proved on the draft branch; the
 higher-class-number arithmetic bridge remains open. This page tracks
 Tao's [challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)
-through proof source `70f9217`, 26 October 2026. No full-classification
+through proof source `70f9217` and local Phase65, 27 October 2026. No full-classification
 announcement, novelty, optimality or independent human review is claimed.
 
 Lean checks encoded statements. A source claim, a checked theorem and a
@@ -23,7 +23,7 @@ spells out assumptions and the exact statements.
 | 5 | Compare different writeups | **Partial:** frozen [same-route comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) and [current source comparison](METHOD_COMPARISON_CURRENT.md). External proofs were not independently replayed. |
 | 6 | Stimulate new arguments or arrangements | **Reusable arrangements:** factorial prime mass, exact staircase weights and geometric operators, within the credited route. No novelty claim. |
 | 7 | Preserve and report negative results | **Preserved:** failed attempts and a [per-form counting counterexample](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md). It does not refute the aggregate h<=2 claim. |
-| 8 | Help higher class-number problems | **No new verified range.** Geometry is checked locally; class/form transport, prime multiplicity and ramified accounting still block an arithmetic count B. |
+| 8 | Help higher class-number problems | **No new verified range.** Geometry has pinned CI; local parameter-prime-divisor accounting is checked. Class/form transport, prime multiplicity and field-discriminant transport still block an arithmetic count B. |
 | 9 | Disclose AI use | **Disclosed** in the [README](README.md) and research/review records. Disclosure is not validation. |
 | 10 | Post a repository link and human summary | **Not posted.** The [AI-prepared brief](TAO_REPLY_BRIEF.md) awaits human revision and a posting decision. No submission permalink exists in our records. |
 | 11 | Independent due diligence | **Partial:** one bounded AI [review](research/ender_radius_bridge/PHASE58_VERIFICATION.md) at `63be64b`/50 billion. That reviewer did not rerun Lean/CI; later geometry is outside its scope. |
@@ -35,7 +35,7 @@ spells out assumptions and the exact statements.
 |---|---|
 | Exact staircase weight | A guarded double-sum identity from counting columns. No extra divisibility exponent. [Guide](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md). |
 | Symmetry of the original Gram | Central negation separates opposite total-degree parity rows. No new cutoff. [Guide](research/ender_radius_bridge/CENTRAL_SYMMETRY_GUIDE.md). |
-| Excluded-prime count→determinant loss | Production theorem uses log(p)/p; the arithmetic count B remains an input. [Guide](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md). |
+| Excluded-prime loss | Production [count-to-loss theorem](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md) uses log(p)/p. A standalone local [prime-divisor budget](research/ender_radius_bridge/PRIME_DIVISOR_LOSS_GUIDE.md) pays for parameter divisors separately; B remains an input for the others. |
 | Off-axis quadratic point count | Production-root draft bound: cardU<=2pi*t/sqrt(D)+4sqrt(at/D), for finite U with Q<=t,y!=0,a>0,D=4ac-b²>0,t>=0. [Human proof](research/ender_radius_bridge/QUADRATIC_AREA_GUIDE.md). |
 | Prime-axis accounting | Standalone Lean gives at most two prime points, none when a=1; two-class aggregation remains conditional on representation inputs. [Guide](research/ender_radius_bridge/TWO_CLASS_AXIS_GUIDE.md). |
 | Limits that prevented overclaiming | A radial O(1/R) saving ceiling and the per-form zero-row failure remain preserved. [History and controls](STATUS.md). |
@@ -52,8 +52,8 @@ keeps source versions, checks and review distinct. Passing code does not
 establish human review.
 
 The next arithmetic bridge must place split-prime representations in the
-actual ideal-class norm forms and justify their multiplicity. It must also
-account for ramified primes. The geometric bound alone supplies neither.
+actual ideal-class norm forms and justify their multiplicity. The local
+parameter-divisor bound still needs field-discriminant transport.
 [PR30](https://github.com/Dojo-1/tenth-discriminant/pull/30) has completed
 pinned CI/security checks; merging still requires explicit authorization.
 

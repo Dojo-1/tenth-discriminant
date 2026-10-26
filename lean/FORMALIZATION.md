@@ -1,5 +1,15 @@
 # Current claim-to-Lean map
 
+Standalone `PrimeDivisorLoss.excluded_budget_without_divisors` keeps the
+original Gram and Ender-radius guards, but requires a prefix-count B only
+for excluded primes not dividing D. The actual mass of parameter divisors
+is bounded by R*S*(S-1)*log D. All9 public types and5 controls pass locally,
+with namespace audit13/13/0; the file is outside the production root/CI.
+No field-discriminant ramification transport, ideal-class/form dictionary,
+representation multiplicity, actual B or new cutoff is inferred.
+[Human proof](../research/ender_radius_bridge/PRIME_DIVISOR_LOSS_GUIDE.md) and
+[verification](../research/ender_radius_bridge/PHASE65_VERIFICATION.md).
+
 Production `QuadraticRows.off_axis_area_bound` now proves the actual
 finite off-axis count<=2pi*t/sqrt(D)+4sqrt(at/D), D=4ac-b², under positive
 a,D and t>=0. The exact width integral and zero-height case are closed,

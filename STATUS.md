@@ -1,4 +1,15 @@
-# Status — 2026-10-26
+# Status — 2026-10-27
+
+## Phase65: parameter-prime-divisor loss is checked locally
+
+The standalone original-Gram theorem pays at most R*S*(S-1)*log D for
+excluded primes dividing D, so its prefix-count input covers only the
+other excluded primes. This is not yet field ramification or an actual B.
+Two registered attempts FAIL33.2369437s/PASS29.0058835s preserve all9 public
+types and5 controls; audit13/13/0 allows only the standard3 axioms. No
+production source, old evidence or gate changed; this research file is
+outside production CI. [Human proof](research/ender_radius_bridge/PRIME_DIVISOR_LOSS_GUIDE.md)
+and [evidence](research/ender_radius_bridge/PHASE65_VERIFICATION.md).
 
 ## Phase64: the geometric count now has its closed area formula
 

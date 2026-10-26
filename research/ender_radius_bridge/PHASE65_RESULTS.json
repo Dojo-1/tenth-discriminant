@@ -1,0 +1,107 @@
+{
+  "phase": 65,
+  "status": "STANDALONE_LOCAL_PROOF_AND_CONTROLS_PASS_NOT_PRODUCTION_CI",
+  "base": "9705cac06cab2a6a14f78795fd4778b2b5b9ce01",
+  "registered_commit": "0d7392a29bb6325f87ad2f31804819fd3cac1207",
+  "target_seconds": "62.2428272",
+  "builds": [
+    {
+      "phase": 65,
+      "mode": "build",
+      "scope": "Actual parameter-prime-divisor mass and original-Gram loss partition; no arithmetic B or cutoff",
+      "source_sha256": "1ac8601325f3d5865057ca3115b232b17cc2aeaad4ce818c1de0bb7e4b5add34",
+      "source_snapshot": "PHASE65_build_20261026230535771.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 33.2369437,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3193200640,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase65PrimeDivisorLoss.lean"
+      ],
+      "stdout": "PHASE65_build_20261026230535771.stdout.log",
+      "stderr": "PHASE65_build_20261026230535771.stderr.log"
+    },
+    {
+      "phase": 65,
+      "mode": "build",
+      "scope": "Actual parameter-prime-divisor mass and original-Gram loss partition; no arithmetic B or cutoff",
+      "source_sha256": "97648cdb2cf3ce0bd558d7d9669ad65ae7c4ba64941acb74d4c4c6607613acc3",
+      "source_snapshot": "PHASE65_build_20261026230653782.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 29.0058835,
+      "cumulative_before_seconds": 33.2369437,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3194916864,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase65PrimeDivisorLoss.lean"
+      ],
+      "stdout": "PHASE65_build_20261026230653782.stdout.log",
+      "stderr": "PHASE65_build_20261026230653782.stderr.log"
+    }
+  ],
+  "public_theorems": [
+    "valuationWeight_uniform",
+    "prime_divisor_log_sum",
+    "prime_divisor_mass",
+    "excluded_budget_without_divisors",
+    "one_column_control",
+    "divisor_pair_control",
+    "empty_control",
+    "unit_parameter_control",
+    "divisibility_guard_needed"
+  ],
+  "namespace_audit": {
+    "logical": 13,
+    "theorems": 13,
+    "runtime_only": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "sha256": {
+    "PHASE65_PROTOCOL.md": "aba5363ce458a1b47ea34c6d1d535e4c36dd8ca877e50296b46ec05ef2a567dd",
+    "Phase65PrimeDivisorLoss.lean": "97648cdb2cf3ce0bd558d7d9669ad65ae7c4ba64941acb74d4c4c6607613acc3",
+    "run_phase65.ps1": "a954fba40a7823d80b21fe2256b341c83ed1df2c31a30af6f3463e798e99b8bd"
+  },
+  "raw_archive": {
+    "path": "PHASE65_RAW.zip",
+    "sha256": "0e8e5adb60be5a74f4242d6cb2fa2e3b68c3809ad62aa8ece62a459f23d60c42",
+    "members": 8
+  },
+  "raw_sha256": {
+    "PHASE65_build_20261026230535771.source.lean": "1ac8601325f3d5865057ca3115b232b17cc2aeaad4ce818c1de0bb7e4b5add34",
+    "PHASE65_build_20261026230535771.stdout.log": "ee956f311cbb8498b3ad9abdc27995659b2f808dd312cf7291fd21df3d807d0f",
+    "PHASE65_build_20261026230535771.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE65_build_20261026230535771.result.json": "689261c4d9bb7d95c62c721a5c3dc35389138ba94f079e5711afd7419b07baf7",
+    "PHASE65_build_20261026230653782.source.lean": "97648cdb2cf3ce0bd558d7d9669ad65ae7c4ba64941acb74d4c4c6607613acc3",
+    "PHASE65_build_20261026230653782.stdout.log": "cbdd6f792f3391e0bbb737f7fb1182730d714df84726431c803744daa3a8c514",
+    "PHASE65_build_20261026230653782.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE65_build_20261026230653782.result.json": "092d16df65e0207cb07c210cec924eb2886a05d9d8c9798209ce34ebaa667528"
+  },
+  "repair": "Only product cast and explicit Real.log_prod arguments changed; all9 public types and5 controls unchanged.",
+  "limits": [
+    "Standalone research source; not production root or CI.",
+    "Parameter prime divisors are not identified with ramified field primes.",
+    "No ideal-class/form dictionary, representation multiplicity, arithmetic B, new cutoff, classification, novelty or independent review.",
+    "No prior campaign rerun. PR32 doc-head CI remains separate and live."
+  ]
+}
