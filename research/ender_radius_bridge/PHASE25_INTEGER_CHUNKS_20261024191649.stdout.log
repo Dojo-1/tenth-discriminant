@@ -1,0 +1,40 @@
+⚠ [6655/6720] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6656/6720] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6657/6720] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6658/6720] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6661/6720] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6663/6720] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6692/6720] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+⚠ [6702/6720] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✖ [6720/6720] Building TenthDiscriminant.QuadraticChartEquivalence
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\QuadraticChartEquivalence.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\QuadraticChartEquivalence.ilean -c .\.\.lake\build\ir\TenthDiscriminant\QuadraticChartEquivalence.c --json
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:80:15: ambiguous, possible interpretations 
+  _root_.map_div : ∀ (f : ?m.95886) (a b : ?m.95884), f (a / b) = f a / f b
+  
+  Polynomial.map_div : ∀ (f : ?m.96595 →+* ?m.96596), map f (?m.96598 / ?m.96599) = map f ?m.96598 / map f ?m.96599
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:80:4: simp made no progress
+info: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:86:4: Try this: ring_nf
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:82:2: unsolved goals
+case h₂.h
+d : ℕ
+inst✝¹ : Fact (↑d % 4 = 3)
+inst✝ : Fact (0 < d)
+⊢ AdjoinRoot.root (evenFieldPoly d) = (AlgHom.id ℚ (EvenQuadraticField d)) (AdjoinRoot.root (evenFieldPoly d))
+error: Lean exited with code 1
+Some required builds logged failures:
+- TenthDiscriminant.QuadraticChartEquivalence

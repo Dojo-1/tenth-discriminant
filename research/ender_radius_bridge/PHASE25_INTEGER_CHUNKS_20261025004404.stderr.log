@@ -1,0 +1,8 @@
+import took 9.33s
+cumulative profiling times:
+	elaboration 4.42ms
+	import 9.33s
+	initialization 37.7ms
+	interpretation 16.8s
+	linting 0.975ms
+	parsing 0.0388ms

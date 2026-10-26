@@ -1,0 +1,12 @@
+﻿{
+    "scope":  "fixed Phase34 pilot only; no global coverage claim",
+    "proof_file":  "../research/ender_radius_bridge/Phase34Translate1Check.lean",
+    "exit_code":  99,
+    "elapsed_seconds":  59.983639399999994,
+    "observed_peak_working_set_bytes":  8632459264,
+    "memory_threshold_mb":  8192,
+    "time_limit_seconds":  180,
+    "stop_reason":  "memory_limit",
+    "stdout":  "PHASE34_CHECK_20261024223119.stdout.log",
+    "stderr":  "PHASE34_CHECK_20261024223119.stderr.log"
+}

@@ -1,0 +1,18 @@
+{
+  "review_type": "Internal source inspection by the same agent, not independent human peer review",
+  "audited_proof_head": "ebf14c2564102ef54139024ce9f9c46228307692",
+  "Lean": "4.19.0",
+  "Mathlib_commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+  "pinned_sources_match_git_HEAD": true,
+  "source_SHA256": {
+    "Mathlib/NumberTheory/NumberField/ClassNumber.lean": "ca798dffc9f4497bd9db31169b5b7cc7573da234e60f9486144ffa9332771489",
+    "Mathlib/NumberTheory/ClassNumber/Finite.lean": "696c9a0b4e7fa70e86411d69f5f057861ab3bef253562e5b99439e3d6437ca32",
+    "Mathlib/NumberTheory/ClassNumber/AdmissibleAbs.lean": "fe0e768486d5844f19fe7cf2e7d918eef6fc16aa73b9c1b096a6135bb4045854",
+    "Mathlib/NumberTheory/ClassNumber/AdmissibleAbsoluteValue.lean": "a1ce94dab517f08cba8df19cc849c37c6840f67e7f160cb0155d4a228046503f",
+    "Mathlib/RingTheory/ClassGroup.lean": "9861bfff8912ef5c39310bb9ec163adecf3875fb1912a2b2008a9c9f09c997cb",
+    "Mathlib/NumberTheory/NumberField/Discriminant/Basic.lean": "37785dc37ab11e567e697104b80b3b4ccb8cbd2d6ffa1b93074a11d30cfaf794"
+  },
+  "finding": "No pre-existing class-number-one classification input identified in the inventoried and inspected class-number frontier. Its inputs are generic class-group finiteness, class-number/PID equivalence and Minkowski bounds.",
+  "important_disambiguation": "NumberField.classNumber.eq_1 is the defining equation classNumber K = card(ClassGroup(O_K)), not a theorem classNumber K = 1. Exact signature checked separately.",
+  "limits": "Not a line-by-line human review of all 61044 reached constants, not semantic method exclusion by keywords, not a new theorem, not a permanent CI gate. General analytic special-function dependencies are present."
+}

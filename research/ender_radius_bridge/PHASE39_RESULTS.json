@@ -1,0 +1,104 @@
+{
+  "phase": 39,
+  "protocol_commit": "35a6b4b392c294da259dbb84b155bb1ac2a8976c",
+  "publication_baseline": "580c0b95fdb788857e29f61a7bdc2d13b559fd3d",
+  "baseline_CI": "40151064234 SUCCESS; final record issuecomment-6392200072 before any newer publication",
+  "fixed_direct_analytic_cutoff": 200000000000,
+  "previous_analytic_cutoff": 700000000000,
+  "classification_endgame_unchanged": true,
+  "attempts_including_failures": [
+    {
+      "record": "PHASE39_BUILD_20261025014608928.result.json",
+      "scope": "Phase39 fixed200-billion direct analytic cutoff proof attempt, not finite-classification recycling",
+      "build_target": "TenthDiscriminant.OptimizedAnalyticCutoff",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 129.0500323,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "cumulative_allowance_seconds": 900,
+      "observed_peak_working_set_bytes": 2919235584,
+      "memory_threshold_mb": 8192,
+      "stop_reason": "",
+      "stdout": "PHASE39_BUILD_20261025014608928.stdout.log",
+      "stderr": "PHASE39_BUILD_20261025014608928.stderr.log"
+    }
+  ],
+  "post_acceptance_checks": [
+    {
+      "record": "PHASE39_VERIFY_20261025015725158.result.json",
+      "scope": "Phase39 post-acceptance signature, input-exclusion or axiom verification",
+      "proof_file": "../research/ender_radius_bridge/Phase39InputCheck.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 38.465596,
+      "observed_peak_working_set_bytes": 3200864256,
+      "memory_threshold_mb": 8192,
+      "time_limit_seconds": 180,
+      "stop_reason": "",
+      "stdout": "PHASE39_VERIFY_20261025015725158.stdout.log",
+      "stderr": "PHASE39_VERIFY_20261025015725158.stderr.log"
+    },
+    {
+      "record": "PHASE39_VERIFY_20261025015738371.result.json",
+      "scope": "Phase39 post-acceptance signature, input-exclusion or axiom verification",
+      "proof_file": "Audit.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 29.671243999999998,
+      "observed_peak_working_set_bytes": 3325202432,
+      "memory_threshold_mb": 8192,
+      "time_limit_seconds": 180,
+      "stop_reason": "",
+      "stdout": "PHASE39_VERIFY_20261025015738371.stdout.log",
+      "stderr": "PHASE39_VERIFY_20261025015738371.stderr.log"
+    }
+  ],
+  "whole_root_build": {
+    "scope": "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+    "proof_file": "../research/ender_radius_bridge/FirstIntervalTableCheck.lean",
+    "build_target": "TenthDiscriminant",
+    "exit_code": 0,
+    "elapsed_seconds": 409.5247376,
+    "observed_peak_working_set_bytes": 4534480896,
+    "memory_threshold_mb": 8192,
+    "resource_stop": false,
+    "threads": "Lake defaults, multiple child processes possible",
+    "stack_kb": "Lean build default",
+    "stdout": "PHASE25_INTEGER_CHUNKS_20261025014958.stdout.log",
+    "stderr": "PHASE25_INTEGER_CHUNKS_20261025014958.stderr.log"
+  },
+  "root_import_count": 153,
+  "input_exclusion_closures": {
+    "TenthDiscriminant.FirstCertificate.odd_large_classNumber_ne_one_200b": 55439,
+    "TenthDiscriminant.imaginaryQuadratic_classNumber_one_radicand_bound_200b": 55572,
+    "TenthDiscriminant.imaginaryQuadratic_classNumber_one_discriminant_bound_200b": 55775
+  },
+  "compiled_audit": {
+    "logical": 4534,
+    "theorems": 3803,
+    "runtime_only": 16951,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "audit_archive": {
+    "archive": "PHASE39_AXIOM_AUDIT_RAW.zip",
+    "entry": "PHASE39_VERIFY_20261025015738371.stdout.log",
+    "raw_bytes": 1994698,
+    "SHA256": "672b2d525f97afbf10213b43a5971abbc7a10d39cfb159e0604e13af7f524f20",
+    "round_trip_verified": true,
+    "recovery": "Extract the named entry to recover exact original bytes. Only its duplicate unpacked copy was removed after verified hash equality."
+  },
+  "source_SHA256": {
+    "lean/TenthDiscriminant.lean": "6bcbbd205f3d8101cf62f7ce8fd8c466cc896153a73afc42dfb6a788a2e37063",
+    "lean/TenthDiscriminant/UniformRadiusFamily.lean": "7767b63537dc701d7abc88ed7066c132c3f6ffa6e3082c2a7055622f6b54fd7f",
+    "lean/TenthDiscriminant/UniformUpperEnvelope.lean": "60355c07f711f14682f6e7d66160d706df89d32022d92284530dd44f03da7de8",
+    "lean/TenthDiscriminant/OptimizedAnalyticCutoff.lean": "2e1d90441407c906a0aa215d392d0955fd4688cb2f9da3f96126a01a7c04d632",
+    "research/ender_radius_bridge/Phase39InputCheck.lean": "b0446be0a87bf74b4bc04f1b1394b2547d11a815bc8cdc8ace66a4647a908eac",
+    "research/ender_radius_bridge/run_phase39_build.ps1": "e2d6fcc119ec47b7847ac9f131db797db2db10d4d11da43435dd1b6dc950ae76"
+  },
+  "claim_boundary": "Direct new analytic bound in the canonical actual positive-squarefree family, not classification recycling. No optimality, novelty or independent human review claim.",
+  "publication_CI": "Pending exact-head pinned CI; final PR verification record supersedes pending checkpoints.",
+  "frozen_phase38_snapshot": "Remains at ebf14c2; not automatically transferred to this changed mathematical source."
+}

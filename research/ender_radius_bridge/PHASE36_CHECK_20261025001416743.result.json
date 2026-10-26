@@ -1,0 +1,12 @@
+﻿{
+    "scope":  "fixed Phase36 candidate ALL785 pilot; no field claim until all data and semantics validated",
+    "proof_file":  "../research/ender_radius_bridge/Phase36Seed7Check.lean",
+    "exit_code":  0,
+    "elapsed_seconds":  61.1027965,
+    "observed_peak_working_set_bytes":  7938596864,
+    "memory_threshold_mb":  8192,
+    "time_limit_seconds":  180,
+    "stop_reason":  "",
+    "stdout":  "PHASE36_CHECK_20261025001416743.stdout.log",
+    "stderr":  "PHASE36_CHECK_20261025001416743.stderr.log"
+}

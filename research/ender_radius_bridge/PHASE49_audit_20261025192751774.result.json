@@ -1,0 +1,23 @@
+﻿{
+    "phase":  49,
+    "mode":  "audit",
+    "scope":  "Fixed central-negation parity orthogonality of the original ordinary-jet Gram; no cutoff or strict saving",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  35.351230099999995,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  180,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  3333885952,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "env",
+                      "lean",
+                      "-j",
+                      "1",
+                      "Audit.lean"
+                  ],
+    "stdout":  "PHASE49_audit_20261025192751774.stdout.log",
+    "stderr":  "PHASE49_audit_20261025192751774.stderr.log"
+}

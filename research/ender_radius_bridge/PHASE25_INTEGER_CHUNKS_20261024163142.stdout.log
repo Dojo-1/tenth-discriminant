@@ -1,0 +1,3 @@
+interpretation of Mathlib.Tactic._aux_Mathlib_Tactic_NormNum_Core___elabRules_Mathlib_Tactic_normNum_1 took 237ms
+../research/ender_radius_bridge/CoverageNormalizationPilot.lean:5:8: error: (kernel) deep recursion detected
+type checking took 1.27s

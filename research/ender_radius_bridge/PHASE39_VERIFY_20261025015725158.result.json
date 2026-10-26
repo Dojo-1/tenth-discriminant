@@ -1,0 +1,12 @@
+﻿{
+    "scope":  "Phase39 post-acceptance signature, input-exclusion or axiom verification",
+    "proof_file":  "../research/ender_radius_bridge/Phase39InputCheck.lean",
+    "exit_code":  0,
+    "elapsed_seconds":  38.465596,
+    "observed_peak_working_set_bytes":  3200864256,
+    "memory_threshold_mb":  8192,
+    "time_limit_seconds":  180,
+    "stop_reason":  "",
+    "stdout":  "PHASE39_VERIFY_20261025015725158.stdout.log",
+    "stderr":  "PHASE39_VERIFY_20261025015725158.stderr.log"
+}

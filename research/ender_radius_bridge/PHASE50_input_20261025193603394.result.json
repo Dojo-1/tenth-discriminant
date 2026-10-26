@@ -1,0 +1,23 @@
+﻿{
+    "phase":  50,
+    "mode":  "input",
+    "scope":  "Fixed parity-sector compatibility of the original Frobenius basis and Gram; no cutoff or strict saving",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  22.8116426,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  180,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2824200192,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "env",
+                      "lean",
+                      "-j",
+                      "1",
+                      "../research/ender_radius_bridge/Phase50InputCheck.lean"
+                  ],
+    "stdout":  "PHASE50_input_20261025193603394.stdout.log",
+    "stderr":  "PHASE50_input_20261025193603394.stderr.log"
+}

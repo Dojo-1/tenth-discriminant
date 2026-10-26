@@ -1,0 +1,57 @@
+⚠ [6654/6712] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6655/6712] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6656/6712] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6657/6712] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6660/6712] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6662/6712] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6669/6712] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+⚠ [6698/6712] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✖ [6712/6712] Building TenthDiscriminant.SmallPrimeRecovery
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\SmallPrimeRecovery.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\SmallPrimeRecovery.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\SmallPrimeRecovery.ilean -c .\.\.lake\build\ir\TenthDiscriminant\SmallPrimeRecovery.c --json
+error: .\.\.\.\TenthDiscriminant\SmallPrimeRecovery.lean:63:46: mod_cast has type
+  (1 : ℕ) ≤ S : Prop
+but is expected to have type
+  (0 : ℝ) ≤ ↑S - 1 / 2 : Prop
+error: .\.\.\.\TenthDiscriminant\SmallPrimeRecovery.lean:63:65: no goals to be solved
+error: .\.\.\.\TenthDiscriminant\SmallPrimeRecovery.lean:117:84: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  d ≥ 0
+  d - e ≥ 0
+  c ≥ 0
+  c ≥ 1
+  b ≥ 2
+  a ≥ 4
+where
+ a := ↑R
+ b := ↑S
+ c := ↑(∑ t ∈ Finset.range S, min (3 / 3) t)
+ d := ↑?m.3187
+ e := ↑?m.3186
+error: .\.\.\.\TenthDiscriminant\SmallPrimeRecovery.lean:119:64: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≥ 1
+  b ≥ 2
+  a ≥ 4
+where
+ a := ↑R
+ b := ↑S
+ c := ↑(∑ x ∈ Finset.range S, min 1 x)
+error: Lean exited with code 1
+Some required builds logged failures:
+- TenthDiscriminant.SmallPrimeRecovery

@@ -1,0 +1,20 @@
+{
+  "protocol_commit": "2a943fd1572bd57f50023c6033ecbcd87e4e12f4",
+  "target_commit": "86abe21f1ca023f9f62f99d1f785cdb361d86010",
+  "target_tree": "7383bdcc0fa035bc83628420785813240b0e535e",
+  "brief_commit": "5fb50a1518f692e4674e2dc0bfda1bff0dd354db",
+  "dispatch_marker_utc": "2026-10-26T16:12:55Z",
+  "deadline_utc": "2026-10-26T16:42:55Z",
+  "agent": "/root/recovered_cutoff_review",
+  "context": "fresh fork_turns=none; no model override; exact model-family independence unavailable",
+  "authorized_reviewers": 1,
+  "source_sha256_lf": {
+    "lean/TenthDiscriminant/RecoveredAnalyticCutoff.lean": "5655292e75bdf25459dff6a0f73fc93377b4b795fc9dda5ca2f33dd7c530977d",
+    "lean/TenthDiscriminant/SmallPrimeRecovery.lean": "0714650366b6b6283abd556d3e6d9828ddf75cc395e8cbdd2ac70e030e5508b5",
+    "lean/TenthDiscriminant/SmallPrimeRecoveryGain.lean": "28bb15a91543e6834365fcd1b9bdc38b9dddc3b83b848c565ad3d3f9fb8e8883",
+    "lean/TenthDiscriminant/TunedRadiusFamily.lean": "7f3f7df3d2c3ca8fb5b124c31d122ef61dad8e6b1985e85df6afa0a8d5f7d3e1",
+    "lean/TenthDiscriminant/TunedAnalyticCutoff.lean": "e1c4f52e26fe65e5998b593f08e0575fda202a5be89d2509c3631eb96da06fac",
+    "lean/TenthDiscriminant/ImaginaryQuadraticRepresentation.lean": "57975c7b9af10af5bf72a4629b5a32377c99030dce2bc17f1c91a2bc06b72843",
+    "lean/TenthDiscriminant/QuadraticGeneratorBridge.lean": "0754b22f7080bfe28e4b4af815de3df4e2a38743b7e8a2afe41b246cf1799bdb"
+  }
+}

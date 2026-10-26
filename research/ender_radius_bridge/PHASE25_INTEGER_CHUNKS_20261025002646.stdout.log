@@ -1,0 +1,93 @@
+⚠ [6657/6805] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6662/6805] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6663/6805] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6666/6805] Replayed TenthDiscriminant.AffineTransport
+warning: .\.\.\.\TenthDiscriminant\AffineTransport.lean:24:4: 'change
+  (Polynomial.X ^ j.val * F.map phi).coeff i.val = phi ((Polynomial.X ^ j.val * F).coeff i.val)' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+warning: .\.\.\.\TenthDiscriminant\AffineTransport.lean:28:4: 'change
+  (Polynomial.X ^ (j.val - b) * G.map phi).coeff i.val =
+    phi ((Polynomial.X ^ (j.val - b) * G).coeff i.val)' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+warning: .\.\.\.\TenthDiscriminant\AffineTransport.lean:148:24: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+warning: .\.\.\.\TenthDiscriminant\AffineTransport.lean:148:24: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [6668/6805] Replayed TenthDiscriminant.ComparatorR1
+warning: .\.\.\.\TenthDiscriminant\ComparatorR1.lean:58:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: .\.\.\.\TenthDiscriminant\ComparatorR1.lean:71:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6676/6805] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6677/6805] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6679/6805] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6684/6805] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+ℹ [6734/6805] Replayed TenthDiscriminant.InertPilot
+info: .\.\.\.\TenthDiscriminant\InertPilot.lean:147:2: Try this: ring_nf
+⚠ [6751/6805] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6763/6805] Replayed TenthDiscriminant.SieveWheel
+warning: .\.\.\.\TenthDiscriminant\SieveWheel.lean:62:11: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6767/6805] Replayed TenthDiscriminant.SmallIdealClassNumber
+warning: .\.\.\.\TenthDiscriminant\SmallIdealClassNumber.lean:151:54: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: .\.\.\.\TenthDiscriminant\SmallIdealClassNumber.lean:151:68: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: .\.\.\.\TenthDiscriminant\SmallIdealClassNumber.lean:153:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: .\.\.\.\TenthDiscriminant\SmallIdealClassNumber.lean:153:39: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [6778/6805] Built TenthDiscriminant.QuotientFiberSeed00
+✔ [6779/6805] Built TenthDiscriminant.QuotientFiberSeed01
+✔ [6780/6805] Built TenthDiscriminant.QuotientFiberSeed02
+✔ [6781/6805] Built TenthDiscriminant.QuotientFiberSeed03
+✔ [6782/6805] Built TenthDiscriminant.QuotientFiberSeed04
+✔ [6783/6805] Built TenthDiscriminant.QuotientFiberSeed05
+✔ [6784/6805] Built TenthDiscriminant.QuotientFiberSeed06
+✔ [6785/6805] Built TenthDiscriminant.QuotientFiberSeed07
+✔ [6786/6805] Built TenthDiscriminant.QuotientFiberSeed08
+✔ [6787/6805] Built TenthDiscriminant.QuotientFiberSeed09
+✔ [6788/6805] Built TenthDiscriminant.QuotientFiberSeed10
+✔ [6789/6805] Built TenthDiscriminant.QuotientFiberCertified
+✔ [6790/6805] Built TenthDiscriminant.Fused35Q0S00
+✖ [6791/6805] Building TenthDiscriminant.ClassNumberClassification
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\ClassNumberClassification.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\ClassNumberClassification.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\ClassNumberClassification.ilean -c .\.\.lake\build\ir\TenthDiscriminant\ClassNumberClassification.c --json
+error: .\.\.\.\TenthDiscriminant\ClassNumberClassification.lean:25:65: tactic 'subst' failed, invalid equality proof, it is not of the form (x = t) or (t = x)
+  d = 163 ∨ d ∈ []
+case inr.inr.inr.inr.inr.inr.inr.inr
+d : ℕ
+inst✝ : Fact (0 < d)
+hsq : Squarefree d
+hc : NumberField.classNumber (ImaginaryQuadraticField d) = 1
+h✝ : d = 163 ∨ d ∈ []
+⊢ NumberField.discr (ImaginaryQuadraticField d) ∈ [-4, -8, -3, -7, -11, -19, -43, -67, -163]
+error: Lean exited with code 1
+✔ [6792/6805] Built TenthDiscriminant.Fused35Q0S01
+✔ [6793/6805] Built TenthDiscriminant.Fused35Q0S02
+✔ [6794/6805] Built TenthDiscriminant.Fused35Q0S03
+✔ [6795/6805] Built TenthDiscriminant.Fused35Q0S04
+✔ [6796/6805] Built TenthDiscriminant.Fused35Q0S05
+✔ [6797/6805] Built TenthDiscriminant.Fused35Q0S06
+✔ [6798/6805] Built TenthDiscriminant.Fused35Q0S07
+✔ [6799/6805] Built TenthDiscriminant.Fused35Q0S08
+✔ [6800/6805] Built TenthDiscriminant.Fused35Q0S09
+✔ [6801/6805] Built TenthDiscriminant.Fused35Q0S10
+✔ [6802/6805] Built TenthDiscriminant.FusedWheelPilot
+✔ [6803/6805] Built TenthDiscriminant.FusedWheelConclusion
+Some required builds logged failures:
+- TenthDiscriminant.ClassNumberClassification

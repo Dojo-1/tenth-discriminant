@@ -1,0 +1,34 @@
+TenthDiscriminant.imaginaryQuadraticEquivOfRoot.{u_1} (d : ℕ) [Fact (0 < d)] (K : Type u_1) [Field K] [NumberField K]
+  (a : K) (ha : a ^ 2 + ↑d = 0) (hdegree : Module.finrank ℚ K = 2) : TenthDiscriminant.ImaginaryQuadraticField d ≃ₐ[ℚ] K
+TenthDiscriminant.imaginaryQuadraticEquivOfRoot_root.{u_1} (d : ℕ) [Fact (0 < d)] (K : Type u_1) [Field K]
+  [NumberField K] (a : K) (ha : a ^ 2 + ↑d = 0) (hdegree : Module.finrank ℚ K = 2) :
+  (TenthDiscriminant.imaginaryQuadraticEquivOfRoot d K a ha hdegree)
+      (AdjoinRoot.root (TenthDiscriminant.evenFieldPoly d)) =
+    a
+TenthDiscriminant.imaginaryQuadratic_degree_of_equiv.{u_1} (d : ℕ) [Fact (0 < d)] (K : Type u_1) [Field K]
+  [NumberField K] (e : TenthDiscriminant.ImaginaryQuadraticField d ≃ₐ[ℚ] K) : Module.finrank ℚ K = 2
+TenthDiscriminant.classNumber_one_radicand_bound_of_quadratic_root.{u_1} (d : ℕ) [Fact (0 < d)] (hsq : Squarefree d)
+  (K : Type u_1) [Field K] [NumberField K] (a : K) (ha : a ^ 2 + ↑d = 0) (hdegree : Module.finrank ℚ K = 2)
+  (hclass : NumberField.classNumber K = 1) : d < 100000000000
+TenthDiscriminant.classNumber_one_discriminant_bound_of_quadratic_root.{u_1} (d : ℕ) [Fact (0 < d)] (hsq : Squarefree d)
+  (K : Type u_1) [Field K] [NumberField K] (a : K) (ha : a ^ 2 + ↑d = 0) (hdegree : Module.finrank ℚ K = 2)
+  (hclass : NumberField.classNumber K = 1) : (NumberField.discr K).natAbs < 100000000000
+'TenthDiscriminant.classNumber_one_discriminant_bound_of_quadratic_root' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GENERATOR_INPUTS_OK TenthDiscriminant.classNumber_one_radicand_bound_of_quadratic_root: 55578 reached; none of16 listed forbidden inputs; axioms [propext,
+ Quot.sound,
+ Classical.choice]
+GENERATOR_INPUTS_OK TenthDiscriminant.classNumber_one_discriminant_bound_of_quadratic_root: 55781 reached; none of16 listed forbidden inputs; axioms [propext,
+ Quot.sound,
+ Classical.choice]
+../research/ender_radius_bridge/Phase46InputCheck.lean:56:8: error: private declaration 'Phase46Controls.instFactLtNatOfNat__stdin' has already been declared
+../research/ender_radius_bridge/Phase46InputCheck.lean:58:4: error: failed to compile definition, consider marking it as 'noncomputable' because it depends on 'TenthDiscriminant.evenFieldInstance', and it does not have executable code
+../research/ender_radius_bridge/Phase46InputCheck.lean:69:4: error: failed to compile definition, consider marking it as 'noncomputable' because it depends on 'TenthDiscriminant.instFieldQuadraticFieldOfFactLtIntOfNatHSubHMul', and it does not have executable code
+../research/ender_radius_bridge/Phase46InputCheck.lean:77:2: error: ring failed, ring expressions not equal
+h :
+  AdjoinRoot.root (quadraticFieldPoly 5) ^ 2 - AdjoinRoot.root (quadraticFieldPoly 5) +
+      eval₂ (AdjoinRoot.of (quadraticFieldPoly 5)) (AdjoinRoot.root (quadraticFieldPoly 5)) 5 =
+    0
+⊢ 20 - eval₂ (AdjoinRoot.of (quadraticFieldPoly 5)) (AdjoinRoot.root (quadraticFieldPoly 5)) 5 * 4 = 0
+../research/ender_radius_bridge/Phase46InputCheck.lean:84:4: error: failed to compile definition, consider marking it as 'noncomputable' because it depends on 'TenthDiscriminant.evenFieldInstance', and it does not have executable code

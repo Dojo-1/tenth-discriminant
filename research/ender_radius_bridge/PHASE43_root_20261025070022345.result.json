@@ -1,0 +1,17 @@
+﻿{
+    "phase":  43,
+    "mode":  "root",
+    "scope":  "Fixed100-billion analytic proof attempt or separately labelled verification; no new observational pilot",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  27.2377286,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  1200,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2788212736,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  "build",
+    "stdout":  "PHASE43_root_20261025070022345.stdout.log",
+    "stderr":  "PHASE43_root_20261025070022345.stderr.log"
+}

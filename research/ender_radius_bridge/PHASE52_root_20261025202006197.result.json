@@ -1,0 +1,17 @@
+﻿{
+    "phase":  52,
+    "mode":  "root",
+    "scope":  "Fixed exact3/5 recovery in the certified uniform proxy; no new valuation or numerical cutoff",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  21.314998499999998,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  1200,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2792333312,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  "build",
+    "stdout":  "PHASE52_root_20261025202006197.stdout.log",
+    "stderr":  "PHASE52_root_20261025202006197.stderr.log"
+}

@@ -1,0 +1,288 @@
+{
+  "scope": "fixed Phase35 cost pilot; generated inputs, not outcomes",
+  "quotients": [
+    0,
+    1,
+    392,
+    784
+  ],
+  "seeds": [
+    3,
+    27,
+    35,
+    59,
+    75,
+    123,
+    131,
+    139,
+    147,
+    163,
+    179
+  ],
+  "blocks": [
+    {
+      "quotient": 0,
+      "seed_index": 0,
+      "seed": 3,
+      "proof_file": "Phase35Block0_0Check.lean"
+    },
+    {
+      "quotient": 0,
+      "seed_index": 1,
+      "seed": 27,
+      "proof_file": "Phase35Block0_1Check.lean"
+    },
+    {
+      "quotient": 0,
+      "seed_index": 2,
+      "seed": 35,
+      "proof_file": "Phase35Block0_2Check.lean"
+    },
+    {
+      "quotient": 0,
+      "seed_index": 3,
+      "seed": 59,
+      "proof_file": "Phase35Block0_3Check.lean"
+    },
+    {
+      "quotient": 0,
+      "seed_index": 4,
+      "seed": 75,
+      "proof_file": "Phase35Block0_4Check.lean"
+    },
+    {
+      "quotient": 0,
+      "seed_index": 5,
+      "seed": 123,
+      "proof_file": "Phase35Block0_5Check.lean"
+    },
+    {
+      "quotient": 0,
+      "seed_index": 6,
+      "seed": 131,
+      "proof_file": "Phase35Block0_6Check.lean"
+    },
+    {
+      "quotient": 0,
+      "seed_index": 7,
+      "seed": 139,
+      "proof_file": "Phase35Block0_7Check.lean"
+    },
+    {
+      "quotient": 0,
+      "seed_index": 8,
+      "seed": 147,
+      "proof_file": "Phase35Block0_8Check.lean"
+    },
+    {
+      "quotient": 0,
+      "seed_index": 9,
+      "seed": 163,
+      "proof_file": "Phase35Block0_9Check.lean"
+    },
+    {
+      "quotient": 0,
+      "seed_index": 10,
+      "seed": 179,
+      "proof_file": "Phase35Block0_10Check.lean"
+    },
+    {
+      "quotient": 1,
+      "seed_index": 0,
+      "seed": 3,
+      "proof_file": "Phase35Block1_0Check.lean"
+    },
+    {
+      "quotient": 1,
+      "seed_index": 1,
+      "seed": 27,
+      "proof_file": "Phase35Block1_1Check.lean"
+    },
+    {
+      "quotient": 1,
+      "seed_index": 2,
+      "seed": 35,
+      "proof_file": "Phase35Block1_2Check.lean"
+    },
+    {
+      "quotient": 1,
+      "seed_index": 3,
+      "seed": 59,
+      "proof_file": "Phase35Block1_3Check.lean"
+    },
+    {
+      "quotient": 1,
+      "seed_index": 4,
+      "seed": 75,
+      "proof_file": "Phase35Block1_4Check.lean"
+    },
+    {
+      "quotient": 1,
+      "seed_index": 5,
+      "seed": 123,
+      "proof_file": "Phase35Block1_5Check.lean"
+    },
+    {
+      "quotient": 1,
+      "seed_index": 6,
+      "seed": 131,
+      "proof_file": "Phase35Block1_6Check.lean"
+    },
+    {
+      "quotient": 1,
+      "seed_index": 7,
+      "seed": 139,
+      "proof_file": "Phase35Block1_7Check.lean"
+    },
+    {
+      "quotient": 1,
+      "seed_index": 8,
+      "seed": 147,
+      "proof_file": "Phase35Block1_8Check.lean"
+    },
+    {
+      "quotient": 1,
+      "seed_index": 9,
+      "seed": 163,
+      "proof_file": "Phase35Block1_9Check.lean"
+    },
+    {
+      "quotient": 1,
+      "seed_index": 10,
+      "seed": 179,
+      "proof_file": "Phase35Block1_10Check.lean"
+    },
+    {
+      "quotient": 392,
+      "seed_index": 0,
+      "seed": 3,
+      "proof_file": "Phase35Block392_0Check.lean"
+    },
+    {
+      "quotient": 392,
+      "seed_index": 1,
+      "seed": 27,
+      "proof_file": "Phase35Block392_1Check.lean"
+    },
+    {
+      "quotient": 392,
+      "seed_index": 2,
+      "seed": 35,
+      "proof_file": "Phase35Block392_2Check.lean"
+    },
+    {
+      "quotient": 392,
+      "seed_index": 3,
+      "seed": 59,
+      "proof_file": "Phase35Block392_3Check.lean"
+    },
+    {
+      "quotient": 392,
+      "seed_index": 4,
+      "seed": 75,
+      "proof_file": "Phase35Block392_4Check.lean"
+    },
+    {
+      "quotient": 392,
+      "seed_index": 5,
+      "seed": 123,
+      "proof_file": "Phase35Block392_5Check.lean"
+    },
+    {
+      "quotient": 392,
+      "seed_index": 6,
+      "seed": 131,
+      "proof_file": "Phase35Block392_6Check.lean"
+    },
+    {
+      "quotient": 392,
+      "seed_index": 7,
+      "seed": 139,
+      "proof_file": "Phase35Block392_7Check.lean"
+    },
+    {
+      "quotient": 392,
+      "seed_index": 8,
+      "seed": 147,
+      "proof_file": "Phase35Block392_8Check.lean"
+    },
+    {
+      "quotient": 392,
+      "seed_index": 9,
+      "seed": 163,
+      "proof_file": "Phase35Block392_9Check.lean"
+    },
+    {
+      "quotient": 392,
+      "seed_index": 10,
+      "seed": 179,
+      "proof_file": "Phase35Block392_10Check.lean"
+    },
+    {
+      "quotient": 784,
+      "seed_index": 0,
+      "seed": 3,
+      "proof_file": "Phase35Block784_0Check.lean"
+    },
+    {
+      "quotient": 784,
+      "seed_index": 1,
+      "seed": 27,
+      "proof_file": "Phase35Block784_1Check.lean"
+    },
+    {
+      "quotient": 784,
+      "seed_index": 2,
+      "seed": 35,
+      "proof_file": "Phase35Block784_2Check.lean"
+    },
+    {
+      "quotient": 784,
+      "seed_index": 3,
+      "seed": 59,
+      "proof_file": "Phase35Block784_3Check.lean"
+    },
+    {
+      "quotient": 784,
+      "seed_index": 4,
+      "seed": 75,
+      "proof_file": "Phase35Block784_4Check.lean"
+    },
+    {
+      "quotient": 784,
+      "seed_index": 5,
+      "seed": 123,
+      "proof_file": "Phase35Block784_5Check.lean"
+    },
+    {
+      "quotient": 784,
+      "seed_index": 6,
+      "seed": 131,
+      "proof_file": "Phase35Block784_6Check.lean"
+    },
+    {
+      "quotient": 784,
+      "seed_index": 7,
+      "seed": 139,
+      "proof_file": "Phase35Block784_7Check.lean"
+    },
+    {
+      "quotient": 784,
+      "seed_index": 8,
+      "seed": 147,
+      "proof_file": "Phase35Block784_8Check.lean"
+    },
+    {
+      "quotient": 784,
+      "seed_index": 9,
+      "seed": 163,
+      "proof_file": "Phase35Block784_9Check.lean"
+    },
+    {
+      "quotient": 784,
+      "seed_index": 10,
+      "seed": 179,
+      "proof_file": "Phase35Block784_10Check.lean"
+    }
+  ]
+}

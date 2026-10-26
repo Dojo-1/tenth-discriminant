@@ -1,0 +1,17 @@
+﻿{
+    "phase":  46,
+    "mode":  "root",
+    "scope":  "Fixed quadratic-generator bridge or separately labelled verification; no numerical pilot",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  24.555587499999998,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  1200,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2794729472,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  "build",
+    "stdout":  "PHASE46_root_20261025142741026.stdout.log",
+    "stderr":  "PHASE46_root_20261025142741026.stderr.log"
+}

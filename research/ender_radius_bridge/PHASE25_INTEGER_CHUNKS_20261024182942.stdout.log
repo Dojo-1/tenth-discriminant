@@ -1,0 +1,57 @@
+⚠ [6654/6713] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6655/6713] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6656/6713] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6657/6713] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6660/6713] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6662/6713] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6669/6713] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+⚠ [6698/6713] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✖ [6712/6713] Building TenthDiscriminant.NormalizedComparison
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\NormalizedComparison.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\NormalizedComparison.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\NormalizedComparison.ilean -c .\.\.lake\build\ir\TenthDiscriminant\NormalizedComparison.c --json
+warning: .\.\.\.\TenthDiscriminant\NormalizedComparison.lean:32:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+error: .\.\.\.\TenthDiscriminant\NormalizedComparison.lean:50:2: linarith failed to find a contradiction
+case a
+R S : ℕ
+I : ℝ
+hs :
+  (↑S - 1 / 2) * triangularMass R * linearConstantLower - (↑S - 1 / 2) * ↑R * errorConstantUpper -
+      squareMass R * squareConstantUpper / 2 ≤
+    max
+      ((↑S - 1 / 2) * triangularMass R * linearConstantLower - (↑S - 1 / 2) * ↑R * errorConstantUpper -
+        squareMass R * squareConstantUpper / 2)
+      0
+ht :
+  (↑S - 1 / 2) * (factorialLower R - certifiedFactorialUpper R - triangularMass R * I) - squareMass R * I / 2 ≤
+    max ((↑S - 1 / 2) * (factorialLower R - certifiedFactorialUpper R - triangularMass R * I) - squareMass R * I / 2) 0
+a✝ :
+  2 * (↑S - 1 / 2) * factorialLower R -
+          2 * (↑S - 1 / 2) * triangularMass R * (factorialConstantUpper + I - linearConstantLower) -
+        2 * (↑S - 1 / 2) * ↑R * errorConstantUpper -
+      squareMass R * (squareConstantUpper + I) >
+    2 *
+      (max (certifiedSmallOddLower R S) 0 +
+        max
+          ((↑S - 1 / 2) * (factorialLower R - certifiedFactorialUpper R - triangularMass R * I) - squareMass R * I / 2)
+          0)
+⊢ False failed
+warning: .\.\.\.\TenthDiscriminant\NormalizedComparison.lean:71:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+error: Lean exited with code 1
+Some required builds logged failures:
+- TenthDiscriminant.NormalizedComparison

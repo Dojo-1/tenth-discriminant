@@ -1,0 +1,20 @@
+﻿{
+    "phase":  53,
+    "mode":  "build",
+    "scope":  "Fixed3over50 normalized recovery gain in ratio25to26; no numerical cutoff",
+    "attempt":  2,
+    "exit_code":  0,
+    "elapsed_seconds":  27.846394399999998,
+    "cumulative_before_seconds":  66.801599799999991,
+    "time_limit_seconds":  600,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2840387584,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "build",
+                      "TenthDiscriminant.SmallPrimeRecoveryGain"
+                  ],
+    "stdout":  "PHASE53_build_20261026082115782.stdout.log",
+    "stderr":  "PHASE53_build_20261026082115782.stderr.log"
+}

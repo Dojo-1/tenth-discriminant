@@ -1,0 +1,26 @@
+{
+  "phase":41,
+  "protocol_commit":"35dbd4c7ce3e3d5c6c7dce5d3cfdf3d4b1b1f2af",
+  "publication_baseline":"f7bbfaa0d20b561f67bf9627ee2ecf782a751e28",
+  "publication_baseline_CI":"40154838691 SUCCESS; security40154836580 and CodeQL SUCCESS; same-tree merge9dca199; final record6394261827 before newer push",
+  "scope":"Generic aspect-ratio lower lemma and exactly one fixed observational pilot; no new analytic cutoff",
+  "checked_analytic_cutoff_unchanged":200000000000,
+  "source_fingerprints_lf_sha256":{
+    "lean/TenthDiscriminant/AspectRatioLowerEnvelope.lean":"14f6d5538de95423c40aceb2e4f55209561979020c75c0ca06aa68505d9dcde0",
+    "lean/TenthDiscriminant.lean":"4f09e3169b6214998f8925c38e7eb74085f93da8317331f9141772f2b25d711f",
+    "research/ender_radius_bridge/phase41_aspect_pilot.py":"9e8335ad9c1b7c219dd28218384a71bb583470de2f467d0e880a7459467116dc"
+  },
+  "pilot":{"record":"PHASE41_pilot_20261025023831233.result.json","output":"PHASE41_pilot_20261025023831233.stdout.log","D":100000000003,"C":25,"radius_coefficient":"13/25","K":"251/10","precision_bits":256,"checks_passed":17,"elapsed_seconds":1.5159136,"observed_peak_working_set_bytes":14815232,"exit_code":0,"no_parameter_search_or_rerun":true,"not_universal_or_Lean_evidence":true},
+  "proof_attempts":[{"record":"PHASE41_build_20261025023836659.result.json","attempt":1,"elapsed_seconds":72.5397946,"observed_peak_working_set_bytes":2870804480,"exit_code":0,"stop_reason":"","limit_seconds":600,"cumulative_allowance_seconds":900}],
+  "post_acceptance_change":"Rename unused sign hypothesis hK to _hK; same statement and proof; rechecked in full root, no linter suppression",
+  "verification_helper_failure_and_repair":{"kind":"link_checker_scope_error","first_failure":"README valid review/ directory link rejected by is_file predicate","repair":"Accept existing targets, including directories; no mathematical or experimental change","not_a_second_pilot":true},
+  "verification":[
+    {"mode":"root","record":"PHASE41_root_20261025024032618.result.json","elapsed_seconds":49.3788185,"observed_peak_working_set_bytes":2869440512,"exit_code":0,"build_steps":6808},
+    {"mode":"input","record":"PHASE41_input_20261025024123475.result.json","elapsed_seconds":22.5338803,"observed_peak_working_set_bytes":2856136704,"exit_code":0,"closure_count":13525,"forbidden_declarations_checked":13,"allowed_axioms":["propext","Quot.sound","Classical.choice"]},
+    {"mode":"audit","record":"PHASE41_audit_20261025024135750.result.json","elapsed_seconds":35.178560999999995,"observed_peak_working_set_bytes":3326144512,"exit_code":0,"logical_declarations":4543,"theorems":3812,"runtime_only_auxiliaries_excluded":16951}
+  ],
+  "import_closure":{"reachable_acyclic_modules":154,"proof_source_escape_flags":0},
+  "frozen_source_check":"Ledger hash and250 interval pairs match; NOT a replay/certification of all saved Arb inequalities",
+  "audit_raw_archive":{"path":"PHASE41_AXIOM_AUDIT_RAW.zip","bytes":147985,"sha256":"727e38363a907e32b3bb8bc7498b24f1ef538ae20c94b38cbc9fa3e82e153578","entry":"PHASE41_audit_20261025024135750.stdout.log","raw_bytes":1996145,"raw_sha256":"7ff1d36ad738f84b459805d555908b512a9c03ae007e2c4c5cc7d56e01a61bb5","byte_identical_recovery_verified_before_duplicate_removal":true},
+  "limitations":["Universal new-family geometry and upper/lower envelopes remain open","Scalar crossing is not a class-number theorem","Pilot does not test squarefreeness or establish a universal cutoff","Local compiled audit is not a newly replayed full parent apparatus/rejection run","Exact publication-head pinned CI required; final PR record supersedes pending checkpoints","No independent human review, novelty, optimality, merge or Tao post"]
+}

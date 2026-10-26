@@ -1,0 +1,63 @@
+⚠ [6654/6715] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6655/6715] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6656/6715] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6657/6715] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6660/6715] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6662/6715] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6669/6715] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+⚠ [6698/6715] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6712/6715] Replayed TenthDiscriminant.NormalizedComparison
+warning: .\.\.\.\TenthDiscriminant\NormalizedComparison.lean:32:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: .\.\.\.\TenthDiscriminant\NormalizedComparison.lean:71:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✖ [6715/6715] Building TenthDiscriminant.UniformUpperEnvelope
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\UniformUpperEnvelope.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\UniformUpperEnvelope.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\UniformUpperEnvelope.ilean -c .\.\.lake\build\ir\TenthDiscriminant\UniformUpperEnvelope.c --json
+error: .\.\.\.\TenthDiscriminant\UniformUpperEnvelope.lean:47:6: tactic 'rewrite' failed, did not find instance of the pattern in the target expression
+  √↑D
+D : ℕ
+hD : 700000000000 ≤ D
+hi : 0 ≤ fourthRoot D ∧ fourthRoot D ^ 2 = √↑D ∧ fourthRoot D ^ 4 = ↑D
+ht : 300 ≤ fourthRoot D
+htpos : 0 < fourthRoot D
+hdpos : 0 < √↑D
+hu : ↑(envelopeRadius D) ≤ 551 / 1000 * fourthRoot D ^ 3
+hr0 : 0 ≤ ↑(envelopeRadius D)
+hr : ↑(envelopeRadius D) ≤ 3 / 5 * fourthRoot D ^ 3
+hrsq : ↑(envelopeRadius D) ^ 2 ≤ (3 / 5 * fourthRoot D ^ 3) ^ 2
+hpi : Real.pi * ↑(envelopeRadius D) ^ 2 ≤ 4 * ↑(envelopeRadius D) ^ 2
+hf : ↑(ellipseVerticalBound D (envelopeRadius D)) ≤ ↑(envelopeRadius D) / √↑D
+hfm : ↑(ellipseVerticalBound D (envelopeRadius D)) * fourthRoot D ^ 2 ≤ ↑(envelopeRadius D)
+haxis : ↑(envelopeRadius D) * fourthRoot D ^ 2 ≤ 3 / 5 * fourthRoot D ^ 3 * fourthRoot D ^ 2
+hp3 : fourthRoot D ^ 3 ≤ fourthRoot D ^ 6
+hp2 : fourthRoot D ^ 2 ≤ fourthRoot D ^ 6
+hp5 : 300 * fourthRoot D ^ 5 ≤ fourthRoot D ^ 6
+⊢ Real.pi * ↑(envelopeRadius D) ^ 2 + 2 * ↑(envelopeRadius D) * √↑D +
+      (2 * ↑(ellipseVerticalBound D (envelopeRadius D)) + 1) * √↑D ≤
+    4 * ↑D * √↑D
+warning: .\.\.\.\TenthDiscriminant\UniformUpperEnvelope.lean:194:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: .\.\.\.\TenthDiscriminant\UniformUpperEnvelope.lean:229:10: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+warning: .\.\.\.\TenthDiscriminant\UniformUpperEnvelope.lean:231:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: .\.\.\.\TenthDiscriminant\UniformUpperEnvelope.lean:229:10: 'nlinarith' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+error: Lean exited with code 1
+Some required builds logged failures:
+- TenthDiscriminant.UniformUpperEnvelope

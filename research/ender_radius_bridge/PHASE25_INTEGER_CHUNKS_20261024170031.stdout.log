@@ -1,0 +1,2 @@
+../research/ender_radius_bridge/Phase26CoveragePilot.lean:7:8: error: (kernel) deep recursion detected
+type checking took 743ms

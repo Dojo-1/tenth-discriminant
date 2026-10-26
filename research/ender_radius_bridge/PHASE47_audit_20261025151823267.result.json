@@ -1,0 +1,23 @@
+﻿{
+    "phase":  47,
+    "mode":  "audit",
+    "scope":  "Fixed conjugation/anti-invariant normalization and abstract-field cutoff, or separate verification; no numerical pilot",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  32.5595364,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  180,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  3333820416,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "env",
+                      "lean",
+                      "-j",
+                      "1",
+                      "Audit.lean"
+                  ],
+    "stdout":  "PHASE47_audit_20261025151823267.stdout.log",
+    "stderr":  "PHASE47_audit_20261025151823267.stderr.log"
+}

@@ -1,0 +1,31 @@
+{
+  "phase":46,
+  "protocol_commit":"e3619c66c36e5d3c39303d8ec248f5dbe9b675b4",
+  "control_addendum_commit":"bc2574c14a21e8410b76f1a98b5488eb1aac6ca6",
+  "baseline":"9f5bf6adb0e980fc04659bd72644ed291422bdd8",
+  "baseline_verification":{"pinned_ci":40175210613,"security":40175208401,"separate_CodeQL":"SUCCESS","conclusion":"success","completed_utc":"2026-10-25T08:24:40Z","final_comment":"https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6398734105","same_tree_merge":"ee39023cec88b6285ae90c00e895961b14e78d49"},
+  "result_scope":"Construct equivalence from positive d, specified root and rational degree two; transport existing actual100-billion bounds for squarefree d and actual class number one",
+  "source_fingerprints_lf_sha256":{
+    "lean/TenthDiscriminant/QuadraticGeneratorBridge.lean":"0754b22f7080bfe28e4b4af815de3df4e2a38743b7e8a2afe41b246cf1799bdb",
+    "lean/TenthDiscriminant.lean":"bc7a2848c22067c22721330db9494069df7cfade4575d27498c5d51b7449a598",
+    "research/ender_radius_bridge/Phase46Attempt1.lean":"224021115f1367f8630dc7df4fd5528291acc89619b5500f2bc940e3fa344ef0",
+    "research/ender_radius_bridge/Phase46InputAttempt1.lean":"100bc97d180f250838715aa0235d0e1157ca48c2be7418a11591c1ab48bb2e3f",
+    "research/ender_radius_bridge/Phase46InputCheck.lean":"6695528b8fc204e6768b3c4d0902ac31ebcd9a3319fb15a34e5c81ff245a14a2"
+  },
+  "records":[
+    {"record":"PHASE46_build_20261025142141260.result.json","mode":"build","exit_code":1,"elapsed_seconds":69.393486,"observed_peak_working_set_bytes":2821320704,"finding":"One extra explicit argument to liftHom_root; source preserved"},
+    {"record":"PHASE46_build_20261025142341219.result.json","mode":"build","exit_code":0,"elapsed_seconds":24.5086311,"observed_peak_working_set_bytes":2818105344,"finding":"Accepted after sole arity repair, unchanged statements/cap"},
+    {"record":"PHASE46_root_20261025142741026.result.json","mode":"root","exit_code":0,"elapsed_seconds":24.555587499999998,"observed_peak_working_set_bytes":2794729472,"build_steps":6811},
+    {"record":"PHASE46_input_20261025142854582.result.json","mode":"input","exit_code":1,"elapsed_seconds":33.0731518,"observed_peak_working_set_bytes":3214782464,"finding":"Bounds/input closures passed; controls had duplicate instance name, missing noncomputable context and unsimplified polynomial numeral"},
+    {"record":"PHASE46_input_20261025143107911.result.json","mode":"input","exit_code":0,"elapsed_seconds":26.2956286,"observed_peak_working_set_bytes":3214102528,"finding":"All original controls and signatures pass after elaboration-only repair"},
+    {"record":"PHASE46_audit_20261025142853520.result.json","mode":"audit","exit_code":0,"elapsed_seconds":29.3093956,"observed_peak_working_set_bytes":3330441216,"logical_declarations":4614,"theorems":3878,"runtime_only_auxiliaries_excluded":16955}
+  ],
+  "cumulative_main_build_seconds":93.9021171,
+  "resource_stops":0,
+  "input_closures":{"radicand_bound":55578,"actual_discriminant_bound":55781,"excluded_named_old_cutoff_finite_answer_fixed_ratio_inputs":16,"new100b_cutoff_is_deliberate_input":true},
+  "controls":{"negative_canonical_root_d19":"PASS","half_integral_chart_c5_root_2w_minus1":"PASS","rescaling_Qi_D1000000000000":"PASS; root,degree2,class1 but non-squarefree radicand exceeds bound; actual discriminant bound not refuted"},
+  "import_coverage":{"reachable_acyclic_modules":157,"proof_source_escapes":0},
+  "allowed_axioms":["propext","Classical.choice","Quot.sound"],
+  "audit_raw_archive":{"path":"PHASE46_AXIOM_AUDIT_RAW.zip","bytes":138839,"sha256":"e961b5fc980047cd623c9db5361cd59b05bda5a67acfcc41a4b9bb37a1205f6f","entry":"PHASE46_audit_20261025142853520.stdout.log","raw_bytes":2007231,"raw_sha256":"8bab3b6f0c6cb7c584bb6aee1709e71941cf3888d603ae4b7effdf2638aa37e2","exact_recovery_verified_before_duplicate_removal":true},
+  "limitations":["Positive squarefree generator existence for arbitrary imaginary quadratic field remains unproved here","No new cutoff or unconditional arbitrary-field classification","No old proof/certificate/pin/workflow change","Phase45 AI review does not cover this new constructor","New-head pinned CI required separately","No fresh full local parent-apparatus/rejection replay inferred from compiled audit","No merge or Tao post"]
+}

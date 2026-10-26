@@ -1,0 +1,12 @@
+{
+  "raw_archive": "PHASE38_RAW.zip",
+  "raw_entry": "PHASE38_CHECK_20261025011708695.stdout.log",
+  "raw_bytes": 36786783,
+  "raw_SHA256": "58afe2cb99c996561bb4d4bff7cfe6477e1c224096ea0d479d9de2c96a8b25ae",
+  "raw_round_trip_verified": true,
+  "discovery_v1_archive": "PHASE38_DISCOVERY_V1.zip",
+  "discovery_v1_entry": "PHASE38_INVENTORY.json",
+  "discovery_v1_SHA256": "91d1a6c1b5e99125ea4d066bf41f100099595e42ae0ab2ba782615ad79ea82f4",
+  "discovery_v1_round_trip_verified": true,
+  "recovery": "Extract the named entries to restore exact original bytes. The raw duplicate was removed only after hash equality; the parser reads its ZIP automatically. V1 preserves the SpecialFunctions matcher false positive."
+}

@@ -1,0 +1,23 @@
+﻿{
+    "phase":  54,
+    "mode":  "input",
+    "scope":  "Fixed62500000000 actual-field cutoff; recovered3and5 budget",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  41.3241577,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  180,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  3222376448,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "env",
+                      "lean",
+                      "-j",
+                      "1",
+                      "../research/ender_radius_bridge/Phase54InputCheck.lean"
+                  ],
+    "stdout":  "PHASE54_input_20261026155647657.stdout.log",
+    "stderr":  "PHASE54_input_20261026155647657.stderr.log"
+}

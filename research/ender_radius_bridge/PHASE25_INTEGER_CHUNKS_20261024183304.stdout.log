@@ -1,0 +1,66 @@
+⚠ [6654/6714] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6655/6714] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6656/6714] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6657/6714] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6660/6714] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6662/6714] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6669/6714] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+⚠ [6698/6714] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6712/6714] Replayed TenthDiscriminant.NormalizedComparison
+warning: .\.\.\.\TenthDiscriminant\NormalizedComparison.lean:32:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: .\.\.\.\TenthDiscriminant\NormalizedComparison.lean:71:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [6713/6714] Built TenthDiscriminant.UniformLowerEnvelope
+✖ [6714/6714] Building TenthDiscriminant.UniformRadiusFamily
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\UniformRadiusFamily.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\UniformRadiusFamily.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\UniformRadiusFamily.ilean -c .\.\.lake\build\ir\TenthDiscriminant\UniformRadiusFamily.c --json
+error: .\.\.\.\TenthDiscriminant\UniformRadiusFamily.lean:56:2: mod_cast has type
+  Real.log 5 ≤ ↑(161 / 100) : Prop
+but is expected to have type
+  Real.log 5 ≤ 161 / 100 : Prop
+error: .\.\.\.\TenthDiscriminant\UniformRadiusFamily.lean:143:6: type mismatch, term
+  hqm
+after simplification has type
+  ↑(3 * envelopeR D + envelopeS D) * √↑D ≤ 61 / 80 * ↑D * √↑D : Prop
+but is expected to have type
+  ↑(3 * envelopeR D + envelopeS D) * √↑D ≤ 61 / 80 * fourthRoot D ^ 6 : Prop
+error: .\.\.\.\TenthDiscriminant\UniformRadiusFamily.lean:149:2: linarith failed to find a contradiction
+case a
+D : ℕ
+hD : 700000000000 ≤ D
+hd :
+  100000000 ≤ envelopeR D ∧
+    500000 ≤ envelopeS D ∧
+      envelopeR D ≤ 21 * envelopeS D ∧
+        envelopeR D ≤ 10000 * envelopeS D ∧
+          ↑D / 5 ≤ ↑(envelopeR D) ∧ ↑(envelopeR D) ≤ ↑D / 4 ∧ ↑(envelopeS D) ≤ ↑(envelopeR D) / 20
+ht : 300 ≤ fourthRoot D
+hi : 0 ≤ fourthRoot D ∧ fourthRoot D ^ 2 = √↑D ∧ fourthRoot D ^ 4 = ↑D
+hq : ↑(3 * envelopeR D + envelopeS D) ≤ 61 / 80 * ↑D
+hqm : ↑(3 * envelopeR D + envelopeS D) * √↑D ≤ 61 / 80 * ↑D * √↑D
+hpow : ↑D * √↑D = fourthRoot D ^ 6
+hinner : √(↑(3 * envelopeR D + envelopeS D) * √↑D / Real.pi) ≤ 51 / 100 * fourthRoot D ^ 3
+herror : 0 ≤ fourthRoot D ^ 2 * ((11 / 20 - 1001 / 1000 * 51 / 100) * fourthRoot D - 10)
+hl : 11 / 20 * fourthRoot D ^ 3 ≤ ↑(envelopeRadius D)
+a✝ :
+  1001 / 1000 * √(↑(3 * envelopeR D + envelopeS D) * fourthRoot D ^ 2 / Real.pi) + 10 * fourthRoot D ^ 2 >
+    ↑(envelopeRadius D)
+⊢ False failed
+error: Lean exited with code 1
+Some required builds logged failures:
+- TenthDiscriminant.UniformRadiusFamily

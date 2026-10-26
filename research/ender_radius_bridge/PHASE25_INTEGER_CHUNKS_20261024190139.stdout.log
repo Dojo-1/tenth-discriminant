@@ -1,0 +1,53 @@
+⚠ [6655/6689] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6656/6689] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6657/6689] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6658/6689] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6661/6689] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6663/6689] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✖ [6688/6689] Building TenthDiscriminant.EvenOrderCoordinates
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\EvenOrderCoordinates.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\EvenOrderCoordinates.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\EvenOrderCoordinates.ilean -c .\.\.lake\build\ir\TenthDiscriminant\EvenOrderCoordinates.c --json
+error: .\.\.\.\TenthDiscriminant\EvenOrderCoordinates.lean:23:33: unknown identifier 'h1'
+error: .\.\.\.\TenthDiscriminant\EvenOrderCoordinates.lean:35:4: linarith failed to find a contradiction
+case h1.h
+d : ℕ
+hsq : Squarefree d
+hmod : ↑d % 4 = 1 ∨ ↑d % 4 = 2
+a b : ℚ
+m : ℤ
+hm : 2 * a = ↑m
+k : ℤ
+hk : a ^ 2 + ↑d * b ^ 2 = ↑k
+hm2 : (fun x => x ^ 2) (2 * a) = (fun x => x ^ 2) ↑m
+a✝ : ↑d * (2 * b) ^ 2 < 4 * ↑k - ↑m ^ 2
+⊢ False failed
+error: .\.\.\.\TenthDiscriminant\EvenOrderCoordinates.lean:39:4: linarith failed to find a contradiction
+case h1.h
+d : ℕ
+hsq : Squarefree d
+hmod : ↑d % 4 = 1 ∨ ↑d % 4 = 2
+a b : ℚ
+m : ℤ
+hm : 2 * a = ↑m
+k : ℤ
+hk : a ^ 2 + ↑d * b ^ 2 = ↑k
+hm2 : (fun x => x ^ 2) (2 * a) = (fun x => x ^ 2) ↑m
+hb2 : ↑d * (2 * b) ^ 2 = ↑(4 * k - m ^ 2)
+n : ℤ
+hn : 2 * b = ↑n
+a✝ : ↑m ^ 2 + ↑d * ↑n ^ 2 < 4 * ↑k
+⊢ False failed
+error: Lean exited with code 1
+Some required builds logged failures:
+- TenthDiscriminant.EvenOrderCoordinates

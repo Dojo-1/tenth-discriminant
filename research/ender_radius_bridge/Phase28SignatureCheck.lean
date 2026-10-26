@@ -1,0 +1,9 @@
+import TenthDiscriminant.UniformUpperEnvelope
+
+#print TenthDiscriminant.FirstCertificate.odd_large_classNumber_ne_one
+#print axioms TenthDiscriminant.FirstCertificate.odd_large_classNumber_ne_one
+#check TenthDiscriminant.FirstCertificate.envelope_normalized_lower
+#check TenthDiscriminant.FirstCertificate.envelope_normalized_upper
+#check TenthDiscriminant.FirstCertificate.envelope_chosen_radius
+#check TenthDiscriminant.FirstCertificate.omitted_normalized_correction_rejected
+#check TenthDiscriminant.FirstCertificate.smaller_log_threshold_rejected

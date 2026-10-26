@@ -1,0 +1,20 @@
+{
+  "scope": "fixed first interval class-number exclusion compiles; no global cutoff or classification",
+  "preregistration_commit": "cf5ec1d",
+  "pilot_failures": [
+    {"record": "PHASE25_INTEGER_CHUNKS_20261024170031.result.json", "result": "kernel recursion in direct Boolean normalization", "exit_code": 1},
+    {"record": "PHASE25_INTEGER_CHUNKS_20261024170156.result.json", "result": "kernel recursion when rewriting propositions under decide", "exit_code": 1},
+    {"record": "PHASE25_INTEGER_CHUNKS_20261024170359.result.json", "result": "unknown helper Bool.true_eq_true; removed unsupported name", "exit_code": 1}
+  ],
+  "standalone_prime_probe": {"record": "PHASE25_INTEGER_CHUNKS_20261024170255.result.json", "exit_code": 0},
+  "accepted_boolean_rewrite_pilot": {"record": "PHASE25_INTEGER_CHUNKS_20261024170554.result.json", "exit_code": 0, "elapsed_seconds": 64.4797237, "observed_peak_working_set_bytes": 2784841728},
+  "accepted_total_budgets": {"record": "PHASE25_INTEGER_CHUNKS_20261024170620.result.json", "exit_code": 0, "elapsed_seconds": 47.998183399999995, "observed_peak_working_set_bytes": 2949898240},
+  "coverage": {"record": "PHASE25_INTEGER_CHUNKS_20261024170920.result.json", "exit_code": 0, "elapsed_seconds": 95.0764805, "observed_peak_working_set_bytes": 4643332096},
+  "composition": {"record": "PHASE25_INTEGER_CHUNKS_20261024171239.result.json", "exit_code": 0, "elapsed_seconds": 63.4403435, "observed_peak_working_set_bytes": 4560556032},
+  "totals_library_and_invalid_budget_controls": {"record": "PHASE25_INTEGER_CHUNKS_20261024171133.result.json", "exit_code": 0},
+  "full_local_build": "passed, 6727 build steps",
+  "namespace_audit": {"result": "passed", "logical_declarations": 2381, "theorems": 2070, "runtime_only_auxiliaries": 11661, "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"]},
+  "local_audit_driver": "namespace audit passed; apparatus_controls.py parent exceeded its unchanged 240-second deadline, so this is not a complete audit.py pass",
+  "matched_controls_and_exact_head_CI": "direct matched controls and exact-head pinned CI required at publication checkpoint",
+  "global_cutoff_and_classification": "open"
+}

@@ -1,0 +1,31 @@
+{
+  "phase":42,
+  "protocol_commit":"d35651962c2f05872ac2bb58d90f270b2f9af39b",
+  "publication_baseline":"3b0c018963741e8cdb449b915ea6092394cfade2",
+  "baseline_CI":"40168480662 SUCCESS; security40168478985 and CodeQL SUCCESS; same-tree merge1d750065; final record6394531507 before newer push",
+  "scope":"Fixed100-billion direct cutoff attempt incomplete; accepted radius/lower module separately verified; no new pilot",
+  "new_100b_cutoff_accepted":false,
+  "checked_analytic_cutoff_unchanged":200000000000,
+  "fixed_family":{"R":"floor(D/4)","S_and_J":"floor(R/25)","rho":"ceil((13/25)*D^(3/4))","K":"251/10","P":10000},
+  "proof_attempts":[
+    {"record":"PHASE42_build_20261025062242792.result.json","attempt":1,"exit_code":1,"elapsed_seconds":66.9683539,"observed_peak_working_set_bytes":2883031040,"stop_reason":"","classification":"elaboration gap in small-D ceiling rejection control; no parameter/proposition change"},
+    {"record":"PHASE42_build_20261025062509066.result.json","attempt":2,"exit_code":99,"elapsed_seconds":600.85875019999992,"observed_peak_working_set_bytes":2887528448,"stop_reason":"time_limit","classification":"radius module Built, upper/actual-cutoff target unaccepted; no retry after resource stop"}
+  ],
+  "repair":"Explicit Nat.ceil_pos integer lower bound in the unchanged small-D rejection control",
+  "attempt_budget":{"per_attempt_seconds":600,"cumulative_seconds":1200,"memory_threshold_mb":8192,"no_retry_after_resource_stop":true},
+  "partial_verification":[
+    {"mode":"root","record":"PHASE42_root_20261025064231573.result.json","exit_code":0,"elapsed_seconds":218.059089,"observed_peak_working_set_bytes":2795376640,"build_steps":6809},
+    {"mode":"geometry","record":"PHASE42_geometry_20261025064708307.result.json","exit_code":0,"elapsed_seconds":134.0465353,"observed_peak_working_set_bytes":2923659264,"closures":{"chosen_radius":13721,"normalized_lower":23486},"forbidden_inputs":16,"no_unaccepted_100b_declaration_in_library":true},
+    {"mode":"audit","record":"PHASE42_audit_20261025064717822.result.json","exit_code":0,"elapsed_seconds":136.5587361,"observed_peak_working_set_bytes":3328065536,"logical_declarations":4573,"theorems":3839,"runtime_only_auxiliaries_excluded":16955}
+  ],
+  "import_closure":{"reachable_acyclic_modules":155,"proof_source_escape_flags":0},
+  "source_fingerprints_lf_sha256":{
+    "lean/TenthDiscriminant/TunedRadiusFamily.lean":"1953669fae261b42948781201a7b3cb7d6a66322ae0617200aded0be9f17d079",
+    "lean/TenthDiscriminant.lean":"292dc9f79545a18629e158fb9c9e569d218ffed745f47824071f0b2f9b90bb03",
+    "research/ender_radius_bridge/Phase42UnacceptedCutoff.lean":"80ae19ebbfa43f9b8624405c6a7be4d2c0281497e398ee4386ad993ee45c0a9a"
+  },
+  "unaccepted_candidate":{"original_path":"lean/TenthDiscriminant/TunedAnalyticCutoff.lean","attempted_lf_sha256":"826089fc3e695ceb38c08f8c695f58c45580daf804322dd014caba1bcf3f4c9a","preserved_path":"research/ender_radius_bridge/Phase42UnacceptedCutoff.lean","only_post_stop_change":"Move outside library and replace header comment with explicit unaccepted status; mathematical body unchanged","full_cutoff_input_check":"Phase42InputCheck.lean preserved UNEXECUTED, not evidence"},
+  "audit_raw_archive":{"path":"PHASE42_AXIOM_AUDIT_RAW.zip","bytes":148513,"sha256":"634cc4609c73e91df5409c8b46fbbfaf97447342011fba617b3e5c8102e0e2f6","entry":"PHASE42_audit_20261025064717822.stdout.log","raw_bytes":2000847,"raw_sha256":"6c9f799ce1f6cc9164e7c6b300c5dd5c71f27874dfba2912bff4aae0d572dfd0","recovery_verified_before_duplicate_removal":true},
+  "diagnostic_limits":"During attempt2, compiler alive with little sampled CPU and no output; concurrent external reads also stalled/timed out. Cause NOT established. Registered elapsed-time stop remains a resource failure, not proof success or mathematical disproof. External status eventually verified on the same CI run, never restarted.",
+  "limits":["No100-billion cutoff accepted","Verification root imports geometry only, never the unaccepted cutoff candidate","No local full parent apparatus/rejection replay inferred from compiled audit","Exact new-head pinned CI required","No new observational pilot, changed campaign/certificate/pins/gates, merge, Tao post, optimality, novelty or independent human semantic review"]
+}

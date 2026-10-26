@@ -1,0 +1,23 @@
+﻿{
+    "phase":  42,
+    "mode":  "geometry",
+    "scope":  "Fixed100-billion analytic proof attempt or separately labelled verification; no new observational pilot",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  134.0465353,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  180,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2923659264,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "env",
+                      "lean",
+                      "-j",
+                      "1",
+                      "../research/ender_radius_bridge/Phase42GeometryCheck.lean"
+                  ],
+    "stdout":  "PHASE42_geometry_20261025064708307.stdout.log",
+    "stderr":  "PHASE42_geometry_20261025064708307.stderr.log"
+}

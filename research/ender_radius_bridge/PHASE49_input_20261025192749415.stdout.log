@@ -1,0 +1,932 @@
+theorem TenthDiscriminant.integerTraceGramEntry_eq_zero_of_central_symmetry : ∀ (Q : Finset (ℤ × ℤ)) (D J r s t u : ℕ),
+  (∀ a ∈ Q, -a ∈ Q) → (r + s + t + u) % 2 = 1 → TenthDiscriminant.integerTraceGramEntry Q D J r s t u = 0 :=
+fun Q D J r s t u hQ hodd =>
+  id
+    (Finset.sum_eq_zero fun j hj =>
+      let f := fun a =>
+        TenthDiscriminant.integerPairTrace D (TenthDiscriminant.integerDerivativeRow D r s j a)
+          (TenthDiscriminant.integerDerivativeRow D t u j a);
+      let_fun hs :=
+        Finset.sum_bij (fun a x => -a) (fun a ha => hQ a ha) (fun a ha b hb hab => neg_injective hab)
+          (fun b hb => Exists.intro (-b) (Exists.intro (hQ b hb) (neg_neg b))) fun a ha => Eq.refl (f (-a));
+      let_fun hn :=
+        Eq.mpr (id (congrArg (fun _a => ∑ a ∈ Q, f (-a) = _a) (Eq.symm Finset.sum_neg_distrib)))
+          (Finset.sum_congr rfl fun a ha => TenthDiscriminant.integer_pairing_neg✝ D r s t u j a hodd);
+      Decidable.byContradiction fun a =>
+        TenthDiscriminant.integerTraceGramEntry_eq_zero_of_central_symmetry._proof_1 Q D r s t u j hs hn a)
+theorem TenthDiscriminant.ellipsePairs_central_symmetry : ∀ (D rho : ℕ),
+  0 < D → ∀ a ∈ TenthDiscriminant.ellipsePairs D rho, -a ∈ TenthDiscriminant.ellipsePairs D rho :=
+fun D rho hD a ha =>
+  Eq.mpr (id (congrArg (fun _a => _a) (propext (TenthDiscriminant.mem_ellipsePairs_iff D rho hD (-a).1 (-a).2))))
+    (Eq.mpr
+      (id
+        (congrArg (fun x => x ≤ ↑rho ^ 2)
+          (congr (congrArg HAdd.hAdd (Even.neg_pow (of_eq_true _proof_2✝) a.1))
+            (congrArg (HMul.hMul ↑D) (Even.neg_pow (of_eq_true _proof_2✝) a.2)))))
+      (Eq.mp (congrArg (fun _a => _a) (propext (TenthDiscriminant.mem_ellipsePairs_iff D rho hD a.1 a.2))) ha))
+theorem TenthDiscriminant.ellipseTraceGramEntry_eq_zero_of_odd_degree : ∀ (D rho J r s t u : ℕ),
+  0 < D →
+    (r + s + t + u) % 2 = 1 →
+      TenthDiscriminant.integerTraceGramEntry (TenthDiscriminant.ellipsePairs D rho) D J r s t u = 0 :=
+fun D rho J r s t u hD hodd =>
+  TenthDiscriminant.integerTraceGramEntry_eq_zero_of_central_symmetry (TenthDiscriminant.ellipsePairs D rho) D J r s t u
+    (TenthDiscriminant.ellipsePairs_central_symmetry D rho hD) hodd
+theorem TenthDiscriminant.central_symmetry_required_control : TenthDiscriminant.integerTraceGramEntry {(1, 0)} 1 1 0 0 1
+    0 =
+  2 :=
+of_eq_true
+  (Eq.trans
+    (Eq.trans
+      (congrArg (fun x => x = 2)
+        (Eq.trans
+          (Eq.trans
+            (Finset.sum_congr (Eq.refl {0}) fun x a =>
+              Eq.trans
+                (Finset.sum_congr (Eq.refl {(1, 0)}) fun x_1 a =>
+                  congrArg (HMul.hMul 2)
+                    (congr
+                      (congrArg HAdd.hAdd
+                        (congr
+                          (congrArg (fun x => HMul.hMul x.1)
+                            (ite_congr _proof_10✝
+                              (fun a =>
+                                congr
+                                  (congrArg Prod.mk
+                                    (Eq.trans
+                                      (congrArg (HMul.hMul ↑(Nat.descFactorial 0 x))
+                                        (Eq.trans
+                                          (congrArg Prod.fst
+                                            (congr
+                                              (congrArg Prod.mk
+                                                (Eq.trans
+                                                  (congr
+                                                    (congrArg HSub.hSub
+                                                      (Eq.trans
+                                                        (congr
+                                                          (congrArg HMul.hMul
+                                                            (Eq.trans
+                                                              (congrArg (fun x => (TenthDiscriminant.pairPow 1 x_1 x).1)
+                                                                (zero_tsub x))
+                                                              (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                                (Eq.refl 1))))
+                                                          (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                            (Eq.refl 1)))
+                                                        (mul_one 1)))
+                                                    (Eq.trans
+                                                      (congr
+                                                        (congrArg HMul.hMul
+                                                          (Eq.trans
+                                                            (congr
+                                                              (congrArg HMul.hMul
+                                                                (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                  (Mathlib.Meta.NormNum.isNat_natCast 1 1
+                                                                    (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1)))
+                                                                  (Eq.refl 1)))
+                                                              (Eq.trans
+                                                                (congrArg
+                                                                  (fun x => (TenthDiscriminant.pairPow 1 x_1 x).2)
+                                                                  (zero_tsub x))
+                                                                (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                                  (Eq.refl 0))))
+                                                            (mul_zero 1)))
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                      (mul_zero 0)))
+                                                  (sub_zero 1)))
+                                              (Eq.trans
+                                                (congr
+                                                  (congrArg HAdd.hAdd
+                                                    (Eq.trans
+                                                      (congr
+                                                        (congrArg HMul.hMul
+                                                          (Eq.trans
+                                                            (congrArg (fun x => (TenthDiscriminant.pairPow 1 x_1 x).1)
+                                                              (zero_tsub x))
+                                                            (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                              (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                              (Eq.refl 1))))
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                      (mul_zero 1)))
+                                                  (Eq.trans
+                                                    (congr
+                                                      (congrArg HMul.hMul
+                                                        (Eq.trans
+                                                          (congrArg (fun x => (TenthDiscriminant.pairPow 1 x_1 x).2)
+                                                            (zero_tsub x))
+                                                          (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                            (Eq.refl 0))))
+                                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                        (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                    (mul_one 0)))
+                                                (add_zero 0))))
+                                          (Mathlib.Meta.NormNum.IsNat.to_eq
+                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1))))
+                                      (mul_one ↑(Nat.descFactorial 0 x))))
+                                  (Eq.trans
+                                    (congrArg (HMul.hMul ↑(Nat.descFactorial 0 x))
+                                      (Eq.trans
+                                        (congrArg Prod.snd
+                                          (congr
+                                            (congrArg Prod.mk
+                                              (Eq.trans
+                                                (congr
+                                                  (congrArg HSub.hSub
+                                                    (Eq.trans
+                                                      (congr
+                                                        (congrArg HMul.hMul
+                                                          (Eq.trans
+                                                            (congrArg (fun x => (TenthDiscriminant.pairPow 1 x_1 x).1)
+                                                              (zero_tsub x))
+                                                            (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                              (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                              (Eq.refl 1))))
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                      (mul_one 1)))
+                                                  (Eq.trans
+                                                    (congr
+                                                      (congrArg HMul.hMul
+                                                        (Eq.trans
+                                                          (congr
+                                                            (congrArg HMul.hMul
+                                                              (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                (Mathlib.Meta.NormNum.isNat_natCast 1 1
+                                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1)))
+                                                                (Eq.refl 1)))
+                                                            (Eq.trans
+                                                              (congrArg (fun x => (TenthDiscriminant.pairPow 1 x_1 x).2)
+                                                                (zero_tsub x))
+                                                              (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                                (Eq.refl 0))))
+                                                          (mul_zero 1)))
+                                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                        (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                    (mul_zero 0)))
+                                                (sub_zero 1)))
+                                            (Eq.trans
+                                              (congr
+                                                (congrArg HAdd.hAdd
+                                                  (Eq.trans
+                                                    (congr
+                                                      (congrArg HMul.hMul
+                                                        (Eq.trans
+                                                          (congrArg (fun x => (TenthDiscriminant.pairPow 1 x_1 x).1)
+                                                            (zero_tsub x))
+                                                          (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                            (Eq.refl 1))))
+                                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                        (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                    (mul_zero 1)))
+                                                (Eq.trans
+                                                  (congr
+                                                    (congrArg HMul.hMul
+                                                      (Eq.trans
+                                                        (congrArg (fun x => (TenthDiscriminant.pairPow 1 x_1 x).2)
+                                                          (zero_tsub x))
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                          (Eq.refl 0))))
+                                                    (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                      (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                  (mul_one 0)))
+                                              (add_zero 0))))
+                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0))))
+                                    (mul_zero ↑(Nat.descFactorial 0 x))))
+                              fun a => Eq.refl 0))
+                          (congrArg Prod.fst
+                            (ite_congr (Eq.refl (x ≤ 1))
+                              (fun a =>
+                                congr
+                                  (congrArg (fun x_2 => Prod.mk (↑(Nat.descFactorial 1 x) * x_2.1))
+                                    (Eq.trans
+                                      (congr
+                                        (congrArg Prod.mk
+                                          (Eq.trans
+                                            (congr
+                                              (congrArg HSub.hSub
+                                                (Eq.trans
+                                                  (congrArg (HMul.hMul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)
+                                                    (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                      (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                  (mul_one (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)))
+                                              (Eq.trans
+                                                (congr
+                                                  (congrArg HMul.hMul
+                                                    (Eq.trans
+                                                      (congrArg
+                                                        (fun x_2 => x_2 * (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_natCast 1 1
+                                                            (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1)))
+                                                          (Eq.refl 1)))
+                                                      (one_mul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                                  (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                    (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                (mul_zero (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                            (sub_zero (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)))
+                                        (Eq.trans
+                                          (congr
+                                            (congrArg HAdd.hAdd
+                                              (Eq.trans
+                                                (congrArg (HMul.hMul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)
+                                                  (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                    (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                (mul_zero (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)))
+                                            (Eq.trans
+                                              (congrArg (HMul.hMul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)
+                                                (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                              (mul_one (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                          (zero_add (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                      Prod.mk.eta))
+                                  (congrArg (fun x_2 => ↑(Nat.descFactorial 1 x) * x_2.2)
+                                    (Eq.trans
+                                      (congr
+                                        (congrArg Prod.mk
+                                          (Eq.trans
+                                            (congr
+                                              (congrArg HSub.hSub
+                                                (Eq.trans
+                                                  (congrArg (HMul.hMul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)
+                                                    (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                      (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                  (mul_one (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)))
+                                              (Eq.trans
+                                                (congr
+                                                  (congrArg HMul.hMul
+                                                    (Eq.trans
+                                                      (congrArg
+                                                        (fun x_2 => x_2 * (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_natCast 1 1
+                                                            (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1)))
+                                                          (Eq.refl 1)))
+                                                      (one_mul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                                  (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                    (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                (mul_zero (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                            (sub_zero (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)))
+                                        (Eq.trans
+                                          (congr
+                                            (congrArg HAdd.hAdd
+                                              (Eq.trans
+                                                (congrArg (HMul.hMul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)
+                                                  (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                    (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                (mul_zero (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)))
+                                            (Eq.trans
+                                              (congrArg (HMul.hMul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)
+                                                (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                              (mul_one (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                          (zero_add (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                      Prod.mk.eta)))
+                              fun a => Eq.refl 0))))
+                      (congr
+                        (congrArg HMul.hMul
+                          (Eq.trans
+                            (congr
+                              (congrArg HMul.hMul
+                                (Mathlib.Meta.NormNum.IsNat.to_eq
+                                  (Mathlib.Meta.NormNum.isNat_natCast 1 1
+                                    (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1)))
+                                  (Eq.refl 1)))
+                              (congrArg Prod.snd
+                                (ite_congr _proof_10✝
+                                  (fun a =>
+                                    congr
+                                      (congrArg Prod.mk
+                                        (Eq.trans
+                                          (congrArg (HMul.hMul ↑(Nat.descFactorial 0 x))
+                                            (Eq.trans
+                                              (congrArg Prod.fst
+                                                (congr
+                                                  (congrArg Prod.mk
+                                                    (Eq.trans
+                                                      (congr
+                                                        (congrArg HSub.hSub
+                                                          (Eq.trans
+                                                            (congr
+                                                              (congrArg HMul.hMul
+                                                                (Eq.trans
+                                                                  (congrArg
+                                                                    (fun x => (TenthDiscriminant.pairPow 1 x_1 x).1)
+                                                                    (zero_tsub x))
+                                                                  (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                    (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                                    (Eq.refl 1))))
+                                                              (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                                (Eq.refl 1)))
+                                                            (mul_one 1)))
+                                                        (Eq.trans
+                                                          (congr
+                                                            (congrArg HMul.hMul
+                                                              (Eq.trans
+                                                                (congr
+                                                                  (congrArg HMul.hMul
+                                                                    (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                      (Mathlib.Meta.NormNum.isNat_natCast 1 1
+                                                                        (Mathlib.Meta.NormNum.isNat_ofNat ℕ
+                                                                          (Eq.refl 1)))
+                                                                      (Eq.refl 1)))
+                                                                  (Eq.trans
+                                                                    (congrArg
+                                                                      (fun x => (TenthDiscriminant.pairPow 1 x_1 x).2)
+                                                                      (zero_tsub x))
+                                                                    (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                      (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                                      (Eq.refl 0))))
+                                                                (mul_zero 1)))
+                                                            (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                              (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                              (Eq.refl 0)))
+                                                          (mul_zero 0)))
+                                                      (sub_zero 1)))
+                                                  (Eq.trans
+                                                    (congr
+                                                      (congrArg HAdd.hAdd
+                                                        (Eq.trans
+                                                          (congr
+                                                            (congrArg HMul.hMul
+                                                              (Eq.trans
+                                                                (congrArg
+                                                                  (fun x => (TenthDiscriminant.pairPow 1 x_1 x).1)
+                                                                  (zero_tsub x))
+                                                                (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                                  (Eq.refl 1))))
+                                                            (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                              (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                              (Eq.refl 0)))
+                                                          (mul_zero 1)))
+                                                      (Eq.trans
+                                                        (congr
+                                                          (congrArg HMul.hMul
+                                                            (Eq.trans
+                                                              (congrArg (fun x => (TenthDiscriminant.pairPow 1 x_1 x).2)
+                                                                (zero_tsub x))
+                                                              (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                                (Eq.refl 0))))
+                                                          (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                            (Eq.refl 1)))
+                                                        (mul_one 0)))
+                                                    (add_zero 0))))
+                                              (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1))))
+                                          (mul_one ↑(Nat.descFactorial 0 x))))
+                                      (Eq.trans
+                                        (congrArg (HMul.hMul ↑(Nat.descFactorial 0 x))
+                                          (Eq.trans
+                                            (congrArg Prod.snd
+                                              (congr
+                                                (congrArg Prod.mk
+                                                  (Eq.trans
+                                                    (congr
+                                                      (congrArg HSub.hSub
+                                                        (Eq.trans
+                                                          (congr
+                                                            (congrArg HMul.hMul
+                                                              (Eq.trans
+                                                                (congrArg
+                                                                  (fun x => (TenthDiscriminant.pairPow 1 x_1 x).1)
+                                                                  (zero_tsub x))
+                                                                (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                                  (Eq.refl 1))))
+                                                            (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                              (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                              (Eq.refl 1)))
+                                                          (mul_one 1)))
+                                                      (Eq.trans
+                                                        (congr
+                                                          (congrArg HMul.hMul
+                                                            (Eq.trans
+                                                              (congr
+                                                                (congrArg HMul.hMul
+                                                                  (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                    (Mathlib.Meta.NormNum.isNat_natCast 1 1
+                                                                      (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1)))
+                                                                    (Eq.refl 1)))
+                                                                (Eq.trans
+                                                                  (congrArg
+                                                                    (fun x => (TenthDiscriminant.pairPow 1 x_1 x).2)
+                                                                    (zero_tsub x))
+                                                                  (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                    (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                                    (Eq.refl 0))))
+                                                              (mul_zero 1)))
+                                                          (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                            (Eq.refl 0)))
+                                                        (mul_zero 0)))
+                                                    (sub_zero 1)))
+                                                (Eq.trans
+                                                  (congr
+                                                    (congrArg HAdd.hAdd
+                                                      (Eq.trans
+                                                        (congr
+                                                          (congrArg HMul.hMul
+                                                            (Eq.trans
+                                                              (congrArg (fun x => (TenthDiscriminant.pairPow 1 x_1 x).1)
+                                                                (zero_tsub x))
+                                                              (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                                (Eq.refl 1))))
+                                                          (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                            (Eq.refl 0)))
+                                                        (mul_zero 1)))
+                                                    (Eq.trans
+                                                      (congr
+                                                        (congrArg HMul.hMul
+                                                          (Eq.trans
+                                                            (congrArg (fun x => (TenthDiscriminant.pairPow 1 x_1 x).2)
+                                                              (zero_tsub x))
+                                                            (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                              (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                              (Eq.refl 0))))
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                      (mul_one 0)))
+                                                  (add_zero 0))))
+                                            (Mathlib.Meta.NormNum.IsNat.to_eq
+                                              (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0))))
+                                        (mul_zero ↑(Nat.descFactorial 0 x))))
+                                  fun a => Eq.refl 0)))
+                            (one_mul (if x = 0 then (↑(Nat.descFactorial 0 x), 0) else 0).2)))
+                        (congrArg Prod.snd
+                          (ite_congr (Eq.refl (x ≤ 1))
+                            (fun a =>
+                              congr
+                                (congrArg (fun x_2 => Prod.mk (↑(Nat.descFactorial 1 x) * x_2.1))
+                                  (Eq.trans
+                                    (congr
+                                      (congrArg Prod.mk
+                                        (Eq.trans
+                                          (congr
+                                            (congrArg HSub.hSub
+                                              (Eq.trans
+                                                (congrArg (HMul.hMul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)
+                                                  (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                    (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                (mul_one (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)))
+                                            (Eq.trans
+                                              (congr
+                                                (congrArg HMul.hMul
+                                                  (Eq.trans
+                                                    (congrArg
+                                                      (fun x_2 => x_2 * (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)
+                                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                        (Mathlib.Meta.NormNum.isNat_natCast 1 1
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1)))
+                                                        (Eq.refl 1)))
+                                                    (one_mul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                                (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                              (mul_zero (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                          (sub_zero (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)))
+                                      (Eq.trans
+                                        (congr
+                                          (congrArg HAdd.hAdd
+                                            (Eq.trans
+                                              (congrArg (HMul.hMul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)
+                                                (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                              (mul_zero (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)))
+                                          (Eq.trans
+                                            (congrArg (HMul.hMul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)
+                                              (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                            (mul_one (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                        (zero_add (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                    Prod.mk.eta))
+                                (congrArg (fun x_2 => ↑(Nat.descFactorial 1 x) * x_2.2)
+                                  (Eq.trans
+                                    (congr
+                                      (congrArg Prod.mk
+                                        (Eq.trans
+                                          (congr
+                                            (congrArg HSub.hSub
+                                              (Eq.trans
+                                                (congrArg (HMul.hMul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)
+                                                  (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                    (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                (mul_one (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)))
+                                            (Eq.trans
+                                              (congr
+                                                (congrArg HMul.hMul
+                                                  (Eq.trans
+                                                    (congrArg
+                                                      (fun x_2 => x_2 * (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)
+                                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                        (Mathlib.Meta.NormNum.isNat_natCast 1 1
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1)))
+                                                        (Eq.refl 1)))
+                                                    (one_mul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                                (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                              (mul_zero (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                          (sub_zero (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)))
+                                      (Eq.trans
+                                        (congr
+                                          (congrArg HAdd.hAdd
+                                            (Eq.trans
+                                              (congrArg (HMul.hMul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)
+                                                (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                              (mul_zero (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1)))
+                                          (Eq.trans
+                                            (congrArg (HMul.hMul (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)
+                                              (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                            (mul_one (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                        (zero_add (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)))
+                                    Prod.mk.eta)))
+                            fun a => Eq.refl 0)))))
+                (Finset.sum_singleton
+                  (fun x_1 =>
+                    2 *
+                      ((if x = 0 then (↑(Nat.descFactorial 0 x), 0) else 0).1 *
+                          (if x ≤ 1 then
+                              (↑(Nat.descFactorial 1 x) * (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1,
+                                ↑(Nat.descFactorial 1 x) * (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)
+                            else 0).1 +
+                        (if x = 0 then (↑(Nat.descFactorial 0 x), 0) else 0).2 *
+                          (if x ≤ 1 then
+                              (↑(Nat.descFactorial 1 x) * (TenthDiscriminant.pairPow 1 x_1 (1 - x)).1,
+                                ↑(Nat.descFactorial 1 x) * (TenthDiscriminant.pairPow 1 x_1 (1 - x)).2)
+                            else 0).2))
+                  (1, 0)))
+            (Finset.sum_singleton
+              (fun x =>
+                2 *
+                  ((if x = 0 then (↑(Nat.descFactorial 0 x), 0) else 0).1 *
+                      (if x ≤ 1 then
+                          (↑(Nat.descFactorial 1 x) * (TenthDiscriminant.pairPow 1 (1, 0) (1 - x)).1,
+                            ↑(Nat.descFactorial 1 x) * (TenthDiscriminant.pairPow 1 (1, 0) (1 - x)).2)
+                        else 0).1 +
+                    (if x = 0 then (↑(Nat.descFactorial 0 x), 0) else 0).2 *
+                      (if x ≤ 1 then
+                          (↑(Nat.descFactorial 1 x) * (TenthDiscriminant.pairPow 1 (1, 0) (1 - x)).1,
+                            ↑(Nat.descFactorial 1 x) * (TenthDiscriminant.pairPow 1 (1, 0) (1 - x)).2)
+                        else 0).2))
+              0))
+          (Eq.trans
+            (congrArg (HMul.hMul 2)
+              (Eq.trans
+                (congr
+                  (congrArg HAdd.hAdd
+                    (Eq.trans
+                      (congr
+                        (congrArg HMul.hMul
+                          (Eq.trans
+                            (congrArg Prod.fst
+                              (ite_congr
+                                (eq_true
+                                  (Mathlib.Meta.NormNum.isNat_eq_true (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0))
+                                    (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0))))
+                                (fun a =>
+                                  congrArg (fun x => (x, 0))
+                                    (Mathlib.Meta.NormNum.IsNat.to_eq
+                                      (Mathlib.Meta.NormNum.isNat_natCast (Nat.descFactorial 0 0) 1
+                                        (Mathlib.Meta.NormNum.isNat_descFactorial 0
+                                          (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0))
+                                          (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0)) rfl 1 (Eq.refl 1)))
+                                      (Eq.refl 1)))
+                                fun a => Eq.refl 0))
+                            (Mathlib.Meta.NormNum.IsNat.to_eq (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                              (Eq.refl 1))))
+                        (Eq.trans
+                          (congrArg Prod.fst
+                            (ite_congr
+                              (eq_true
+                                (Mathlib.Meta.NormNum.isNat_le_true (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0))
+                                  (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1)) (Eq.refl true)))
+                              (fun a =>
+                                congr
+                                  (congrArg Prod.mk
+                                    (Eq.trans
+                                      (congr
+                                        (congrArg HMul.hMul
+                                          (Mathlib.Meta.NormNum.IsNat.to_eq
+                                            (Mathlib.Meta.NormNum.isNat_natCast (Nat.descFactorial 1 0) 1
+                                              (Mathlib.Meta.NormNum.isNat_descFactorial 1
+                                                (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1))
+                                                (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0)) rfl 1 (Eq.refl 1)))
+                                            (Eq.refl 1)))
+                                        (Eq.trans
+                                          (congrArg Prod.fst
+                                            (congr
+                                              (congrArg Prod.mk
+                                                (Eq.trans
+                                                  (congr
+                                                    (congrArg HSub.hSub
+                                                      (Eq.trans
+                                                        (congr
+                                                          (congrArg HMul.hMul
+                                                            (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                              (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                              (Eq.refl 1)))
+                                                          (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                            (Eq.refl 1)))
+                                                        (mul_one 1)))
+                                                    (Eq.trans
+                                                      (congr
+                                                        (congrArg HMul.hMul
+                                                          (Eq.trans
+                                                            (congr
+                                                              (congrArg HMul.hMul
+                                                                (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                  (Mathlib.Meta.NormNum.isNat_natCast 1 1
+                                                                    (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1)))
+                                                                  (Eq.refl 1)))
+                                                              (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                                (Eq.refl 0)))
+                                                            (mul_zero 1)))
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                      (mul_zero 0)))
+                                                  (sub_zero 1)))
+                                              (Eq.trans
+                                                (congr
+                                                  (congrArg HAdd.hAdd
+                                                    (Eq.trans
+                                                      (congr
+                                                        (congrArg HMul.hMul
+                                                          (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                            (Eq.refl 1)))
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                      (mul_zero 1)))
+                                                  (Eq.trans
+                                                    (congr
+                                                      (congrArg HMul.hMul
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                        (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                    (mul_one 0)))
+                                                (add_zero 0))))
+                                          (Mathlib.Meta.NormNum.IsNat.to_eq
+                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1))))
+                                      (mul_one 1)))
+                                  (Eq.trans
+                                    (congr
+                                      (congrArg HMul.hMul
+                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                          (Mathlib.Meta.NormNum.isNat_natCast (Nat.descFactorial 1 0) 1
+                                            (Mathlib.Meta.NormNum.isNat_descFactorial 1
+                                              (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1))
+                                              (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0)) rfl 1 (Eq.refl 1)))
+                                          (Eq.refl 1)))
+                                      (Eq.trans
+                                        (congrArg Prod.snd
+                                          (congr
+                                            (congrArg Prod.mk
+                                              (Eq.trans
+                                                (congr
+                                                  (congrArg HSub.hSub
+                                                    (Eq.trans
+                                                      (congr
+                                                        (congrArg HMul.hMul
+                                                          (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                            (Eq.refl 1)))
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                      (mul_one 1)))
+                                                  (Eq.trans
+                                                    (congr
+                                                      (congrArg HMul.hMul
+                                                        (Eq.trans
+                                                          (congr
+                                                            (congrArg HMul.hMul
+                                                              (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                (Mathlib.Meta.NormNum.isNat_natCast 1 1
+                                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1)))
+                                                                (Eq.refl 1)))
+                                                            (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                              (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                              (Eq.refl 0)))
+                                                          (mul_zero 1)))
+                                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                        (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                    (mul_zero 0)))
+                                                (sub_zero 1)))
+                                            (Eq.trans
+                                              (congr
+                                                (congrArg HAdd.hAdd
+                                                  (Eq.trans
+                                                    (congr
+                                                      (congrArg HMul.hMul
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                        (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                    (mul_zero 1)))
+                                                (Eq.trans
+                                                  (congr
+                                                    (congrArg HMul.hMul
+                                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                        (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                    (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                      (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                  (mul_one 0)))
+                                              (add_zero 0))))
+                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0))))
+                                    (mul_zero 1)))
+                              fun a => Eq.refl 0))
+                          (Mathlib.Meta.NormNum.IsNat.to_eq (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                            (Eq.refl 1))))
+                      (mul_one 1)))
+                  (Eq.trans
+                    (congr
+                      (congrArg HMul.hMul
+                        (Eq.trans
+                          (congrArg Prod.snd
+                            (ite_congr
+                              (eq_true
+                                (Mathlib.Meta.NormNum.isNat_eq_true (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0))
+                                  (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0))))
+                              (fun a =>
+                                congrArg (fun x => (x, 0))
+                                  (Mathlib.Meta.NormNum.IsNat.to_eq
+                                    (Mathlib.Meta.NormNum.isNat_natCast (Nat.descFactorial 0 0) 1
+                                      (Mathlib.Meta.NormNum.isNat_descFactorial 0
+                                        (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0))
+                                        (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0)) rfl 1 (Eq.refl 1)))
+                                    (Eq.refl 1)))
+                              fun a => Eq.refl 0))
+                          (Mathlib.Meta.NormNum.IsNat.to_eq (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                            (Eq.refl 0))))
+                      (Eq.trans
+                        (congrArg Prod.snd
+                          (ite_congr
+                            (eq_true
+                              (Mathlib.Meta.NormNum.isNat_le_true (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0))
+                                (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1)) (Eq.refl true)))
+                            (fun a =>
+                              congr
+                                (congrArg Prod.mk
+                                  (Eq.trans
+                                    (congr
+                                      (congrArg HMul.hMul
+                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                          (Mathlib.Meta.NormNum.isNat_natCast (Nat.descFactorial 1 0) 1
+                                            (Mathlib.Meta.NormNum.isNat_descFactorial 1
+                                              (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1))
+                                              (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0)) rfl 1 (Eq.refl 1)))
+                                          (Eq.refl 1)))
+                                      (Eq.trans
+                                        (congrArg Prod.fst
+                                          (congr
+                                            (congrArg Prod.mk
+                                              (Eq.trans
+                                                (congr
+                                                  (congrArg HSub.hSub
+                                                    (Eq.trans
+                                                      (congr
+                                                        (congrArg HMul.hMul
+                                                          (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1))
+                                                            (Eq.refl 1)))
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                      (mul_one 1)))
+                                                  (Eq.trans
+                                                    (congr
+                                                      (congrArg HMul.hMul
+                                                        (Eq.trans
+                                                          (congr
+                                                            (congrArg HMul.hMul
+                                                              (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                                (Mathlib.Meta.NormNum.isNat_natCast 1 1
+                                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1)))
+                                                                (Eq.refl 1)))
+                                                            (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                              (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                              (Eq.refl 0)))
+                                                          (mul_zero 1)))
+                                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                        (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                    (mul_zero 0)))
+                                                (sub_zero 1)))
+                                            (Eq.trans
+                                              (congr
+                                                (congrArg HAdd.hAdd
+                                                  (Eq.trans
+                                                    (congr
+                                                      (congrArg HMul.hMul
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                        (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                    (mul_zero 1)))
+                                                (Eq.trans
+                                                  (congr
+                                                    (congrArg HMul.hMul
+                                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                        (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                    (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                      (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                  (mul_one 0)))
+                                              (add_zero 0))))
+                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1))))
+                                    (mul_one 1)))
+                                (Eq.trans
+                                  (congr
+                                    (congrArg HMul.hMul
+                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                        (Mathlib.Meta.NormNum.isNat_natCast (Nat.descFactorial 1 0) 1
+                                          (Mathlib.Meta.NormNum.isNat_descFactorial 1
+                                            (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1))
+                                            (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0)) rfl 1 (Eq.refl 1)))
+                                        (Eq.refl 1)))
+                                    (Eq.trans
+                                      (congrArg Prod.snd
+                                        (congr
+                                          (congrArg Prod.mk
+                                            (Eq.trans
+                                              (congr
+                                                (congrArg HSub.hSub
+                                                  (Eq.trans
+                                                    (congr
+                                                      (congrArg HMul.hMul
+                                                        (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                          (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                        (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                    (mul_one 1)))
+                                                (Eq.trans
+                                                  (congr
+                                                    (congrArg HMul.hMul
+                                                      (Eq.trans
+                                                        (congr
+                                                          (congrArg HMul.hMul
+                                                            (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                              (Mathlib.Meta.NormNum.isNat_natCast 1 1
+                                                                (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 1)))
+                                                              (Eq.refl 1)))
+                                                          (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                                            (Eq.refl 0)))
+                                                        (mul_zero 1)))
+                                                    (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                      (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                  (mul_zero 0)))
+                                              (sub_zero 1)))
+                                          (Eq.trans
+                                            (congr
+                                              (congrArg HAdd.hAdd
+                                                (Eq.trans
+                                                  (congr
+                                                    (congrArg HMul.hMul
+                                                      (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                        (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                    (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                      (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                  (mul_zero 1)))
+                                              (Eq.trans
+                                                (congr
+                                                  (congrArg HMul.hMul
+                                                    (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                      (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)) (Eq.refl 0)))
+                                                  (Mathlib.Meta.NormNum.IsNat.to_eq
+                                                    (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)) (Eq.refl 1)))
+                                                (mul_one 0)))
+                                            (add_zero 0))))
+                                      (Mathlib.Meta.NormNum.IsNat.to_eq (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                                        (Eq.refl 0))))
+                                  (mul_zero 1)))
+                            fun a => Eq.refl 0))
+                        (Mathlib.Meta.NormNum.IsNat.to_eq (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0))
+                          (Eq.refl 0))))
+                    (mul_zero 0)))
+                (add_zero 1)))
+            (mul_one 2))))
+      (eq_self 2))
+    (eq_true True.intro))
+'TenthDiscriminant.integerTraceGramEntry_eq_zero_of_central_symmetry' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TenthDiscriminant.ellipsePairs_central_symmetry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TenthDiscriminant.ellipseTraceGramEntry_eq_zero_of_odd_degree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TenthDiscriminant.central_symmetry_required_control' depends on axioms: [propext, Classical.choice, Quot.sound]

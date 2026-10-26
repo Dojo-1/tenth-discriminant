@@ -1,0 +1,33 @@
+{
+  "status": "LOCAL_PASS",
+  "scope": "exact original weight under positive-p/last-threshold guards; no cutoff change",
+  "protocol_commit": "a0765da675694d37f03bb8c789f9a7f797d1c189",
+  "target_attempts": 1,
+  "raw_sha256": {
+    "research/ender_radius_bridge/PHASE57_audit_20261026170123260.result.json": "1916ddec4ef9c0d415927ebbea27c6d1dcfb5d043ab4fe62e2bc10464947b127",
+    "research/ender_radius_bridge/PHASE57_build_20261026165833671.result.json": "c927697cbb6e07dbc92ce2c8e7f519f70c685c4c9d1323d7fdec29ab14331f9a",
+    "research/ender_radius_bridge/PHASE57_input_20261026170124344.result.json": "856c8651fc581a42a00d6e158792219bbff8a00ccaf62deb1f9d1932c8e78ba0",
+    "research/ender_radius_bridge/PHASE57_root_20261026170000616.result.json": "f54430bc98184ee7d7eb536654e0b61af4c9f43296fb81d8f3f48b5fa7b907ef",
+    "research/ender_radius_bridge/PHASE57_audit_20261026170123260.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE57_build_20261026165833671.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE57_build_20261026165833671.stdout.log": "a3db5f10c168e05da91762f33ef5ddb4acbf0f65443b80ab2e641c5b1e076a9a",
+    "research/ender_radius_bridge/PHASE57_input_20261026170124344.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE57_input_20261026170124344.stdout.log": "7727040ab4b517d2b060a4c6b9dd6a8587dd4a02270336e0ee7cfdab1282b9d2",
+    "research/ender_radius_bridge/PHASE57_root_20261026170000616.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE57_root_20261026170000616.stdout.log": "26426726732b057c19451c5cec4fd3640a9847ad79c3ac4fc4a97a0b12c9d5c2",
+    "research/ender_radius_bridge/PHASE57_AXIOM_AUDIT_RAW.zip": "d9676dfa744a24d181462f0e4606c0e086a13e1a3bfd94837a95e71910c04ef3"
+  },
+  "source_sha256_lf": {
+    "lean/TenthDiscriminant/StaircaseExact.lean": "1e478e54b1f4c249757e4cfdd64afdac4e884bd566f8163e171fef8f73f79815",
+    "lean/TenthDiscriminant.lean": "df0e748ba62466fb961f1a0f566cf8fc7fe0e45b8cf10a20197dd3062a131384",
+    "research/ender_radius_bridge/PHASE57_PROTOCOL.md": "0d42e44170ce056d4c8e96270247181f238965fff461bd278390548f7add9bbd",
+    "research/ender_radius_bridge/Phase57InputCheck.lean": "88f9be5fc014b401d8bcb465472058bc81c1868502728150d3981f079983e646",
+    "research/ender_radius_bridge/run_phase57.ps1": "f950d0b13ad478c064a3e5977e65ee14dac0fbc5c098fe7fcdf67396649362e1",
+    "research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md": "1576ad3849ce6258663cb33023e7128b92ec01e8e64b5d55464aa11a4456247e"
+  },
+  "audit_entry": "PHASE57_audit_20261026170123260.stdout.log",
+  "audit_raw_sha256": "af018d6cb712f4a898e9309c73c8405fed331f962c1c370c049df65c564a2463",
+  "audit_raw_bytes": 2033625,
+  "exact_head_ci": "separate; not yet published",
+  "semantic_review": "earlier reviews predate this lemma"
+}

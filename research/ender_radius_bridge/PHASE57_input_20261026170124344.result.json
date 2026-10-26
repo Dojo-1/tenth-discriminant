@@ -1,0 +1,23 @@
+﻿{
+    "phase":  57,
+    "mode":  "input",
+    "scope":  "Exact saturated-regime original staircase count; no new cutoff",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  20.3948414,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  180,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2827653120,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "env",
+                      "lean",
+                      "-j",
+                      "1",
+                      "../research/ender_radius_bridge/Phase57InputCheck.lean"
+                  ],
+    "stdout":  "PHASE57_input_20261026170124344.stdout.log",
+    "stderr":  "PHASE57_input_20261026170124344.stderr.log"
+}

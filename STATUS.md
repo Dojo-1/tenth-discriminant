@@ -1,26 +1,864 @@
-# Status — 2026-10-23
+# Status — 2026-10-26
+
+## Phase57: exact weight by counting columns
+
+For positive p with p(S-1)<=R, the original prime weight satisfies
+6F=S(S-1)(3R-p(S+1)), interpreted over the reals. A column increment counts
+the rows beyond one threshold; summing gives the closed formula. It
+includes partially filled rows omitted by the earlier lower bound.
+[Human explanation](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md).
+
+Protocola0765da preceded source. First target PASS22.5869066s without
+repair/stop; root6820 PASS21.7516481s; signatures/controls/axioms
+PASS20.3948414s; whole-project audit PASS27.9744318s,4772/4028/16971.
+Coverage166 modules/no escapes,250 source endpoint pairs and sealed
+evidence/Git-byte integrity pass. [Verification](research/ender_radius_bridge/PHASE57_VERIFICATION.md).
+Only one new module/root import; the50b proof and production are unchanged.
+No new cutoff, valuation, optimality or transferred review. New exact-head
+CI and independent human semantic review remain separate.
+
+## Phase56: sharper existing weights give a50-billion cutoff
+
+The actual totally complex degree-two field discriminant bound is now
+locally<50000000000. Same Gram, radius, row family and valuation weights;
+log3>=1.09 and log5>=1.6 strengthen the guaranteed normalized recovery
+to81/1000. Helpers extend to450^4; exact log/affine estimates separate
+at50b. [Human argument](research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md).
+
+Protocola42ab4f preceded source. First target PASS121.4529248s, no repair
+or resource stop; root6819 PASS40.6872364s; signatures/controls/three fresh
+25-input closure exclusions PASS40.0445155s. Audit PASS31.8192312s,
+4755/4012/16968;165 reachable modules/no escapes,250 source endpoint pairs
+and sealed evidence integrity pass. Earlier raw failures and the first
+Phase55 report are preserved against frozen sources. [Verification](research/ender_radius_bridge/PHASE56_VERIFICATION.md).
+New exact-head CI and human semantic review remain separate. Review55
+covers86abe21/62.5b, not this increment. No optimality/classification claim.
+
+## Phase55: one bounded review of the new endpoint
+
+The explicitly authorized fresh-context reviewer checked six obligations
+at frozen mathematical head86abe21. No FATAL/GAP finding was established.
+Local recovery, saturated-row gain, endpoint estimates and strict budget
+composition were re-derived; inherited machinery and saved compiled
+evidence were source-traced. Lean/CI were not rerun. The first native
+report remains byte-for-byte preserved; no reroll or proof repair.
+[Report](research/ender_radius_bridge/PHASE55_REVIEW_REPORT.md) and
+[provenance/scope](research/ender_radius_bridge/PHASE55_VERIFICATION.md).
+Conservative elapsed6m13s within30 minutes; seven frozen source hashes
+and Phase54 evidence remain intact. This adds bounded AI due diligence,
+not human/model-family independence, optimality or broader certification.
+
+Mathematical head86abe21 completed pinned CI40355317865 SUCCESS: full
+build,4710/3967/16968 dependency audit,250 source endpoint pairs and all
+inherited rejection controls; final PASS marker16:22:47.6590544 UTC.
+Security/CodeQL passed at the same head. [Final record before the next push](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6421231717).
+The later review/documentation publication requires distinct exact-head CI.
+
+## Phase54: recovered mass lowers the direct cutoff to62.5 billion
+
+The fixed target theorem and full local root build pass. For any actual
+totally complex rational degree-two field of class number one, its actual
+absolute discriminant is below62500000000. The same R,S,J,radius, Gram
+and valuation weights are retained. Existing helper guards extend to500^4;
+the recovered3/50 turns the old lower constant5.820 into5.760. LogD>=24.8
+then separates the budgets. [Human proof](research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md).
+
+Protocol58f984c preceded source. One failed build66.1649854s is preserved
+with all three changed source files; only the old100b caller needed an
+explicit weaker-helper guard. Second target build PASS100.1674636s.
+The first root run was interrupted without a result or surviving process;
+its logs remain. Reconciled retry root PASS59.315637s. Fresh input checks
+PASS41.3241577s exclude21 named old-cutoff/finite-answer roots from all
+three new bounds; axiom audit PASS32.1187411s,4710/3967/16968. Coverage163
+modules/no escapes and250 source endpoint pairs pass. Sealed evidence and
+exact helper/repair checks pass. [Verification](research/ender_radius_bridge/PHASE54_VERIFICATION.md).
+Exact-head publication CI remains separate.
+Phase51 review predates this proof. No classification/optimality claim.
+
+## Phase53: a uniform gain from the recovered small primes
+
+The new Lean module proves a normalized gain of at least3/50 for
+S>=100 and25*S<=R<=26*S, for every real tail parameter. It counts
+already saturated monomial rows; the original determinant weights and
+production expression are unchanged. The p=0 and S=1 controls show why
+guards matter. One elaboration failure and its full source are retained;
+the only repair normalizes two numerical casts. No new cutoff follows
+at this checkpoint; Phase54 now supplies the endpoint composition.
+[Human guide](research/ender_radius_bridge/NORMALIZED_RECOVERY_GUIDE.md).
+
+Local checks pass: root6816, signatures/two controls/four axiom prints,
+compiled audit4687/3944/16968,162 reachable modules/no escapes, source250
+endpoint pairs, and sealed evidence integrity. Target builds FAIL66.8015998s
+then PASS27.8463944s; no resource stop. [Exact commands and evidence](research/ender_radius_bridge/PHASE53_VERIFICATION.md).
+
+Published Phase52 head9154317 completed pinned CI40290045330 SUCCESS,
+including audit4672/3929/16968 and all inherited controls; final record
+[6417227384](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6417227384).
+That CI does not cover the newer Phase53 source. Neither addition was
+covered by the earlier bounded Phase51 reviewer. PR28 remains draft/unmerged.
+
+## Phase52: recover exact3/5 mass in the certified uniform proxy
+
+The new proxy equals certifiedPrimeMassLower+2*(F3log3+F5log5), bounded
+by the same production expression for R>=2,S>=1. It is strictly larger
+for R>=4,S>=2. The proof separates the retained>=7 sum before restoring
+the omitted terms; it changes no determinant exponent. Strict-gain and
+zero-gain controls pass. [Guide](research/ender_radius_bridge/SMALL_PRIME_RECOVERY_GUIDE.md).
+Two elaboration failures are preserved; third build PASS24.5180664s,
+total94.1243421s. Root6815 and saved signature/control checks pass.
+Audit launch was initially unexecuted because approval-service credits
+were exhausted; after user-confirmed restoration, the audit ran once and
+PASS93.8236292s,4672/3929/16968. Coverage161 modules/no escapes and source
+correspondence pass. [Verification](research/ender_radius_bridge/PHASE52_VERIFICATION.md).
+At this historical checkpoint no scaled gain or new endpoint was proved;
+Phase53 now supplies the fixed scaled gain, while cutoff10^11 remains.
+The earlier reviewed/published head does not cover this new module.
+
+## Phase51: one fresh-context adversarial bridge review
+
+The explicitly authorized reviewer checked five fixed obligations on
+mathematical head69010f4. No FATAL/GAP finding was established; one SLOPPY
+guide dependency error was preserved and corrected after source inspection.
+Degree two supplies quadratic Galoisness as well as rationality of the
+whole-group invariants. No proof changed. The first report is retained,
+with no reroll; inherited analytic arguments and compiled/CI measurements
+were not independently verified by this reviewer. No model-family or human
+independence is established. [Report](research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md)
+and [provenance/correction](research/ender_radius_bridge/PHASE51_VERIFICATION.md).
+Current exact-head CI remains separate; broader objectives remain open.
+
+The reviewed proof head69010f4 completed pinned CI40227162534 SUCCESS at
+20:03:40 UTC, with audit4650/3910/16968 and all inherited rejection controls;
+security/CodeQL passed. [Final verification before the next push](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6402519232).
+The documentation/review publication has distinct CI; no result transfers.
+
+## Phase50: geometry and arithmetic preserve the same sign sectors
+
+The actual odd-p Frobenius basis matrix and the centrally symmetric-sample
+integer Gram both commute with the same diagonal parity-sign operator.
+Active row-label bounds and a p=2 mixed-parity entry-1 control are checked.
+First target PASS23.8670444s without repair; root6814 PASS23.6392964s;
+signature/controls PASS22.8116426s; audit4650/3910/16968 PASS29.1667922s.
+Coverage160 reachable/acyclic modules/no escapes. This is compatibility,
+not a stronger prime exponent, strict size saving or cutoff improvement.
+[Guide](research/ender_radius_bridge/PARITY_COMPATIBILITY_GUIDE.md) and
+[verification](research/ender_radius_bridge/PHASE50_VERIFICATION.md).
+Exact publication-head CI and independent human review remain separate.
+
+## Phase49: two sign sectors of the original Gram
+
+The original integer trace-Gram entry is zero between opposite total-degree
+parities on any sample set closed under simultaneous negation. The ellipse
+instance and a nonsymmetric entry2 control are Lean-checked. No Z/W swap,
+replacement minor, extra prime valuation or smaller cutoff is inferred.
+Two elaboration failures are retained; third attempt PASS23.291557s,
+total110.0297908s. Root6813, public signatures and audit4637/3900/16958 pass;
+159 modules reachable with no escapes. Exact publication-head CI and human
+review remain separate. [Guide](research/ender_radius_bridge/CENTRAL_SYMMETRY_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE49_VERIFICATION.md).
+
+## Phase48: exact diagnostic, unchanged cutoff
+
+Protocol `a9dbd668` preceded one Python Fraction execution, PASS in
+0.047546 seconds. The current affine-envelope gap is exactly
+`(199997/1000000)*u-5007/1000`, crossing at `u=5007000/199997`.
+The fixed controls at25 and25.3 are respectively negative and positive.
+This diagnoses the limits of these particular estimates; it is no new
+Lean proof, cutoff, or impossibility result for the underlying method.
+[Human explanation](research/ender_radius_bridge/ENVELOPE_LIMIT_GUIDE.md).
+
+Proof head `2f519884790c8c38bc8ffae4a2d0dba4c74e1876` completed pinned
+CI40208552511 SUCCESS at16:02:54 UTC, with audit4627/3890/16958 and all
+inherited rejection controls. Security40208549438 and CodeQL also passed.
+[Final record posted before the follow-up push](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6399919070).
+The new diagnostic/documentation head requires its own checks. No merge,
+independent human review, improved constant or Tao submission is inferred.
+
+## Phase47: operator normalization supplies the abstract-field cutoff
+
+The caller now needs only an actual number field K, rational degree two,
+NumberField.IsTotallyComplex K and actual class number one: its actual
+absolute field discriminant is below100000000000. No supplied root,
+isomorphism, radicand, numerical estimate or finite-certificate premise.
+Conjugation and the anti-invariant projector supply a positive squarefree
+generator without any class-number or cutoff input.
+[Human operator proof](research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md).
+
+The user redirected the unexecuted coordinate plan to operators/symmetries;
+route a4b486d6 preceded every Phase47 source and attempt. Two elaboration
+failures61.7936045s/24.6032722s and their sources are preserved. Full target
+PASS23.8555171s on attempt3; cumulative110.2523938s, unchanged cap/statements.
+Root6812 PASS22.6721045s;158 modules reachable/acyclic/no source escapes.
+Fresh input PASS38.5912324s: normalization45866 and canonical-complexity20732
+closures exclude24 inputs including class number/cutoffs; bound58569 excludes
+16 old-bound/finite-answer inputs. Canonical d1,d2,d19 controls pass outside
+the general proof. Compiled audit PASS4627 logical/3890 theorem/16958 runtime-only,
+standard three axioms. Full publication-head CI remains separate.
+Projection image/idempotence laws have no degree restriction; degree two
+enters rational fixed-field identification. No new constant, full classification,
+independent review of this proof, higher-class-number result, merge or Tao post.
+
+## Phase46: construct the field dictionary from a root and degree two
+
+Protocol e3619c66 preceded the main proof; control addendum bc2574c1 preceded
+its fixed rescaling check. A root a^2+d=0 in an actual degree-two number
+field K now constructs the rational equivalence, with no isomorphism premise.
+For positive squarefree d and actual class number one, both the radicand
+and actual absolute-discriminant bounds transfer. Cutoff stays100 billion.
+Universal squarefree-generator existence for arbitrary imaginary quadratic
+field types remains unproved here. [Human explanation](research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md).
+
+Attempt1 FAIL69.393486s on an extra API argument; sole arity repair gives
+attempt2 PASS24.5086311s. Root6811 PASS24.5555875s;157 modules reachable and
+acyclic, no source escapes. Fresh input attempt1 failed on control elaboration;
+same witnesses pass after explicit names/noncomputable/constant simplification
+in26.2956286s. Closures55578/55781 exclude16 old-bound/finite-answer inputs.
+Negative-root, alternate-chart and fixed non-squarefree rescaling controls
+pass. The rescaling counterexample rejects the unguarded radicand claim,
+not the actual-discriminant bound. Both raw failures and sources are retained.
+Compiled audit PASS4614 logical/3878 theorem/16955 runtime-only, standard
+three axioms. New publication-head CI remains separate. No numerical pilot,
+new cutoff, independent review of this constructor, merge or Tao post.
+
+## Phase45: one separate AI review of the 100-billion proof
+
+User-authorized protocol5bc3d172 preceded one fresh-context read-only review.
+No semantic contradiction was established in five bounded checks: scalar,
+floor/aspect-ratio and actual-field/discriminant arguments were rederived;
+the inherited same-determinant and circularity paths were source-traced.
+No rebuild, parameter search, reroll or mathematical repair. Exact model
+identifier unavailable; no model-family independence or human review claim.
+The [first report](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md)
+retains its CANNOT-VERIFY limits and provenance. Mathematical heade2848c8
+already passed pinned CI40172177485/security40172174676/separate CodeQL.
+Prior documentation-head CI40173563338 finished SUCCESS at08:01:53 UTC,
+with security40173561912 and separate CodeQL SUCCESS. Its [final record](research/ender_radius_bridge/PHASE44_PUBLICATION_FINAL.md)
+was posted before this review/reporting push. New publication CI is separate.
+The short reporting draft is explicitly AI-written for human revision;
+no merge or Tao post. Earlier failure/stop and frozen records unchanged.
+
+## Phase43: direct actual-field cutoff below100 billion, local checks pass
+
+Protocol605d01a registered one separate completion of the preserved upper
+candidate. Its mathematical body was verified identical before the first
+run. Target PASS76.3502975s/2910982144B within the same600s/8192MB cap,
+no repair, tuning or new pilot. Phase42 remains INCOMPLETE with its failure
+and600-second time stop. Combined proof-build cost is744.1774016s.
+
+New public `radicand_bound_100b` and `discriminant_bound_100b` theorems
+require positive-squarefree d and actual class number one only. Full root
+6810 steps PASS27.2377286s;156 modules reachable/acyclic/no escapes.
+Fresh input check PASS53.200717s; three closures55436/55569/55772 exclude16
+listed old-cutoff/classification/finite-answer inputs. Compiled audit
+PASS36.5992777s:4602 logical/3868 theorem/16955 runtime-only declarations,
+only standard3 axioms. Actual positive1,2,163 and retained boundary controls
+pass separately. Exact-head pinned CI remains a separate publication gate.
+No frozen campaign, finite interval, old proof/pin/gate changes.
+[Human proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md) ·
+[Evidence](research/ender_radius_bridge/PHASE43_RESULTS.json).
+Earlier phase entries remain historical, including the genuine Phase42 stop.
+
+## Phase42: geometry compiled, fixed100-billion attempt incomplete
+
+Protocol d356519 fixed C25,rho=ceil(.52*D^(3/4)),K25.1 and the100-billion
+target before edits. Attempt1 failed in66.9683539s only at an unsimplified
+ceiling in the small-D rejection control. The explicit Nat.ceil_pos repair
+changed no parameter or proposition. Attempt2 built TunedRadiusFamily,
+then hit the600s cap (600.8587502s, observed peak2887528448 bytes) before
+the upper/cutoff target completed. No retry or cap increase follows.
+
+The new family supplies universal dimension/floor, rounding, strict radius,
+chosen-radius and normalized-lower lemmas. The unaccepted upper/actual-field
+candidate is parked outside the library, not silently imported or checked
+through a differently named verification job. Old cutoff/campaign/finite
+certificate sources remain unchanged; checked analytic cutoff stays2e11.
+Only the accepted geometry module is added to the root. Partial root6809
+steps PASS218.059089s;155 modules reachable/acyclic. Fresh geometry-input
+check PASS134.0465353s, closures13721/23486 exclude16 listed cutoff/finite
+answer inputs; the100-billion cutoff declarations are confirmed absent.
+Compiled audit PASS136.5587361s:4573 logical/3839 theorem/16955 runtime-only
+declarations, standard3 axioms. These are NOT a retry or acceptance of the
+time-stopped cutoff. Prior publication3b0c018 passed CI40168480662/security
+40168478985 and CodeQL; final record6394531507 precedes the new push.
+New-head CI remains separate. [Human guide](research/ender_radius_bridge/TUNED_CUTOFF_GUIDE.md).
+
+## Phase41: aspect-ratio lower bridge, not a new cutoff
+
+Protocol35dbd4c preceded one generic lower-envelope proof and one fixed
+pilot. `rawPrimeMassLower_aspect_ratio` keeps the original raw budget and
+four constants; under explicit dimension/log/ratio guards its loss is
+at most3.294+0.0448K when R<=K*S. The first target passed72.5397946s;
+full root6808 steps,154-module closure and fresh input/compiled axiom
+checks pass. Audit4543 logical/3812 theorem/16951 runtime-only declarations;
+the new root excludes13 listed old cutoff/classification/finite-answer
+inputs. Exact publication-head CI remains separate. Previous publication
+f7bbfaa passed CI40154838691/security40154836580; final record6394261827
+was posted before the newer proof push. It is not a verdict on new math.
+
+The single Arb256 pilot D=100000000003,C=25,rho=ceil(.52*D^(3/4)) passed
+all17 checks in1.5159136s, with positive raw normalized gap above.08781.
+This is one observational input, not universal geometry or a new cutoff.
+The candidate affine comparison fails at logD=25 (Lean control retained).
+Current checked analytic cutoff remains2e11. No old radius/campaign or
+finite certificate changes. [Human guide](research/ender_radius_bridge/ASPECT_RATIO_GUIDE.md) ·
+[Registered protocol](research/ender_radius_bridge/PHASE41_PROTOCOL.md) ·
+[Evidence](research/ender_radius_bridge/PHASE41_RESULTS.json).
+
+## Phase40: bounded primary-source comparison
+
+Protocol945b149 fixes two external manuscripts at44c7d6f and our proof
+headf163801. Both manuscripts and five README/review files were read in
+full. Original-byte hashes, blob IDs and historical recency controls are
+recorded in the [manifest](research/ender_radius_bridge/PHASE40_SOURCES.json).
+The [human comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md)
+separates analytic bound, finite finish, matrix normalization, rank mechanism,
+arithmetic/analytic inputs and review status. External code was not run;
+external claims are not newly audited. The elementary owner-reported review
+has no supplied reviewer identity/report; v6.1 review remains pending.
+Objective5 advances to a controlled two-writeup comparison, not an all-method
+survey. No theorem, frozen campaign, dependency pin or CI gate changes.
+The mathematical headf163801 passed CI40153287923/security40153286062;
+[final record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6392486504)
+was posted before the next push. New documentation-head CI is separate.
+
+## Phase39: direct analytic cutoff reduced to200 billion
+
+`imaginaryQuadratic_classNumber_one_radicand_bound_200b` and
+`imaginaryQuadratic_classNumber_one_discriminant_bound_200b` have only
+positive-squarefree d and actual class number one as hypotheses. The latter
+uses Mathlib's actual field discriminant. The fixed first target build
+passed in129.0500323s, peak2919235584 bytes; no repair or alternative target.
+The same R,S,rho and prime constants remain. A sharper guarded floor/log
+bound changes the normalized lower intercept from5.845 to5.635; the upper
+envelope is unchanged. All geometry/error guards are checked at the new
+endpoint, not merely the scalar crossing. The old public700-billion cutoff
+and classification statements and all finite certificates remain intact.
+
+Full local root passes6807 steps;153 modules reachable/acyclic. Fresh
+compiled input checks exclude classification, positive cases, finite
+certificates and the old cutoff from all three new cutoff roots. The
+full compiled audit passes4534 logical/3803 theorem declarations,16951
+runtime-only auxiliaries excluded; only the three permitted axioms.
+Exact mathematical-head CI40153287923 and security40153286062 passed on
+f163801; record6392486504 supersedes pending checkpoints. Full CI confirms
+the same4534/3803/16951 counts and all inherited rejection suites.
+
+The Phase38 publication at580c0b9 passed CI40151064234/security40151062335;
+record issuecomment-6392200072 supersedes its pending checkpoints. That
+frozen provenance inventory is NOT automatically an audit of changed
+Phase39 mathematics. Its new input check is separately recorded.
+No optimality, novelty, independent review, merge or Tao post is claimed.
+[Human proof](research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md) ·
+[Registered target](research/ender_radius_bridge/PHASE39_PROTOCOL.md).
+Earlier entries below are historical checkpoints.
+
+## Phase38: frozen internal proof-input provenance
+
+The fixed five-root audit passed locally in98.3112308s, peak3305865216
+bytes, within180s/8192MB. Three traversal controls passed: unused inputs
+excluded, private/opaque relays exposed, statement-type dependencies retained.
+The final theorem reaches61044 constants; the complete finite certificate
+reaches699 and no Mathlib number-theory module or actual class-number
+definition. Cutoff and nine-positive roots have the documented separation
+from finite certification. All component closures occur in the final one.
+
+The147 reached class-number/class-group declarations belong to five generic
+Mathlib source files. Internal pinned-source/signature inspection identified
+finiteness, PID equivalence and Minkowski inputs, not a pre-existing
+classification theorem. `classNumber.eq_1` is the defining cardinality
+equation, not class number one. Keyword absence is not method exclusion.
+An overbroad SpecialFunctions/LFunction discovery match was repaired; its
+original output and full raw inventory are checksum-preserved in archives.
+
+No mathematical source, statement, proof, pin, campaign or CI gate changed.
+This is a local snapshot rooted at ebf14c2, not independent human review or
+a newly enforced CI audit. Exact publication-head CI must be recorded
+separately. [Human input map](research/ender_radius_bridge/PROOF_INPUT_GUIDE.md) ·
+[Protocol](research/ender_radius_bridge/PHASE38_PROTOCOL.md).
+
+## Phase 37: complete quotient-fiber certificate and actual-field composition
+
+`imaginaryQuadratic_classNumber_one_iff` has only positive-squarefree d
+hypotheses and states both directions for the canonical actual field
+`ImaginaryQuadraticField d`. The certificate covers the whole original
+[1000000,700000000000), not just one translate. Combined with the existing
+cutoff, small range and all nine positive proofs, no finite-range,
+certificate or numerical premise remains. The signed-discriminant corollary
+uses Mathlib's actual `NumberField.discr`.
+
+Phase36 is frozen INCOMPLETE: ten seeds passed; seed179 was time-stopped
+under the720-second aggregate cap. Protocol-only commit22d0ac4 registered
+one independent unchanged completion before execution. It passed in
+69.6638481s, peak7942955008 bytes, under180s/8192MB. All eleven source
+certificates are rechecked in serialized library modules. Old first-translate
+theorem statements are unchanged; proved transport derives them from the
+stronger certificate, without circular imports or repeated expensive checks.
+
+Publication requires full exact-head pinned CI, compiled transitive audit
+and public signature checks; the final PR record supersedes pending local
+checkpoints. No independent human semantic/upstream review, optimized cutoff,
+arbitrary-field representation theorem, higher-class-number result, merge
+or Tao post is asserted. [One-page proof](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md) ·
+[Separate protocol](research/ender_radius_bridge/PHASE37_PROTOCOL.md).
+All finite-frontier descriptions below are historical checkpoints.
+
+## Phase 35: one complete wheel translate, bounded iff below 892371480
+
+`classNumber_one_iff_below_first_period` proves both directions for the
+actual field and positive squarefree d<892371480. All 208 masks/odd-prime
+labels, the universal fused-all identity, complete seed decomposition,
+eleven concrete first-translate blocks and actual-field composition are
+supplied. No certificate premise remains in this public bounded iff.
+
+The unchanged cost pilot budget completed 16 blocks: all eleven for
+translate0, five for translate1. One final block was aggregate-time-stopped
+with one second remaining; 27 were skipped, including all of 392 and784.
+Only translate0 is complete. Whole root build passed; exact-head CI and
+audit/signature verification accompany publication. No speedup attribution
+or full-range runtime is inferred. The entire [892371480,700000000000)
+remains unclosed; no optimized global cutoff, merge or Tao post.
+[Human proof](research/ender_radius_bridge/FUSED_WHEEL_GUIDE.md) ·
+[Protocol](research/ender_radius_bridge/PHASE35_PROTOCOL.md) ·
+[Records](research/ender_radius_bridge/PHASE35_RESULTS.json).
+Older entries below preserve historical checkpoint scopes.
+
+## Phase 34: exact checker representation, bounded cost pilot
+
+`ResidueMaskBridge` proves a bit query equals the old root search for every
+positive modulus, with unchanged strict guard. Correct masks generate exactly
+the old wheel list. All 208 frozen-parameter masks passed local kernel
+checking; all four fixed translate attempts were memory-stopped at the
+registered 8192 MB threshold. No translate certificate or global coverage
+was obtained. This is an implementation/resource failure, not a refutation
+of the arithmetic theorem. Raw negative results are preserved.
+The mathematical frontier below is unchanged. No full-range campaign,
+optimization, merge or Tao post. [Human explanation](research/ender_radius_bridge/RESIDUE_MASK_GUIDE.md).
+
+## Phase 33: all nine positive fields, bounded iff below one million
+
+Actual class number one is now proved for all nine radicands
+1,2,3,7,11,19,43,67,163. `classNumber_one_iff_below_million` proves both
+directions for positive squarefree d<1000000, using the previously checked
+complete finite interval for necessity and the new positive proofs for sufficiency.
+
+An ideal of prime norm gives a residue map. Finite polynomial root absence
+rules out norm two for 11,19, and norms 2,3,5,7 for 43,67,163. Minkowski's
+representatives have norm below three or nine respectively. In the latter
+tier the only nonunit small ideal is the legitimate principal ideal (2),
+of norm four. Unique factorization used is of ideals, not an assumed PID
+property of the integer ring. No class-number-one hypothesis is used in
+the positive bridge. Controls retain (2), the root at d=11 modulo three,
+and the actual d=23 counterexample to omitting local hypotheses.
+
+The entire interval [1000000,700000000000), full classification and other
+challenge shortfalls remain open. No cutoff/pin/gate/campaign changes.
+[Human proof](research/ender_radius_bridge/NINE_POSITIVE_GUIDE.md) ·
+[Protocol](research/ender_radius_bridge/PHASE33_PROTOCOL.md) ·
+[Verification checkpoint](research/ender_radius_bridge/PHASE33_RESULTS.json).
+Local root build/audit/signatures passed; full exact-head CI must accompany publication.
+Older positive-case gap descriptions below are historical.
+
+## Phase 32: actual discriminant and four positive class-number equalities
+
+`imaginaryQuadratic_discr` proves the signed actual field discriminant is
+-d in the odd chart and -4*d otherwise, for positive squarefree d. The
+absolute value equals `absoluteDiscriminantParameter d`, not merely by
+definition. The existing cutoff therefore gives an actual Mathlib field-
+discriminant bound below 700000000000 under class number one.
+
+The two-dimensional trace-pairing lemma uses maximal integral bases.
+Its control distinguishes the order discriminant -12 from the actual field
+discriminant -3 at d=3. The pinned small-discriminant Minkowski criterion
+then proves actual class number one for d=1,2,3,7. At d=11 it no longer
+applies; no negative class-number conclusion is drawn.
+
+Still open: positive proofs for 11,19,43,67,163; the complete interval
+[1000000,700000000000); full classification and other challenge shortfalls.
+The cutoff, production campaign, pins and gates are unchanged.
+[Human proof](research/ender_radius_bridge/DISCRIMINANT_POSITIVE_GUIDE.md) ·
+[Protocol](research/ender_radius_bridge/PHASE32_PROTOCOL.md) ·
+[Verification checkpoint](research/ender_radius_bridge/PHASE32_RESULTS.json).
+Exact published-head CI must accompany the local build/audit checkpoint.
+Older phase descriptions below are historical where these gaps are now closed.
+
+## Phase 31: necessary nine-candidate list below one million
+
+`classNumber_one_middle_below_million` compiles: for positive squarefree d
+with actual class number one and 92<=d<1000000, d=163.
+`classNumber_one_candidates_below_million` joins the small end to give the
+necessary nine-element list below one million. Universal wheel-lift and
+quotient/remainder interval coverage are proved, not inferred from output.
+The fixed 9240 wheel has 30 residues and 3245 interval candidates; exact
+kernel evaluation leaves [163]. Extra primes and strict guards are checked.
+The independent exact control agrees but is not used as a proof input.
+
+The remaining interval is [1000000,700000000000), not silently discarded.
+The positive class-number equalities, full classification and other open
+challenge objectives remain open. No cutoff or production-campaign change.
+[Human guide](research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md) ·
+[Protocol](research/ender_radius_bridge/PHASE31_PROTOCOL.md) ·
+[Verification checkpoint](research/ender_radius_bridge/PHASE31_RESULTS.json).
+Whole-library and exact-head CI terminal status must accompany publication.
+
+## Phase 30: checked finite-sieve preconditions, not classification
+
+`imaginaryQuadratic_classNumber_one_mod_eight` proves d=3 mod 8 for
+positive squarefree d>7 with actual class number one. The F2 quotient is
+constructed without dividing by two. Norm-two at 7 and exclusion of the
+actual field at 23 are checked controls. Guarded odd-prime tests are proved
+necessary; their primality/oddness checks and strict endpoint are explicit.
+Kernel evaluation on [0,92) gives the necessary list 1,2,3,7,11,19,43,67.
+The conditional nine-candidate theorem still requires a complete survivor
+certificate on [92,700000000000). No positive class-number classification,
+new numerical run, changed threshold or optimization is claimed.
+[Human guide](research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md) ·
+[Protocol](research/ender_radius_bridge/PHASE30_PROTOCOL.md) ·
+[Verification checkpoint](research/ender_radius_bridge/PHASE30_RESULTS.json).
+Exact published-head CI must accompany this checkpoint.
+
+## Phase 29: effective radicand bound, with both parity cases supplied
+
+`imaginaryQuadratic_classNumber_one_radicand_bound` compiles for every
+positive squarefree d: actual-field class number one implies d<700000000000.
+`ImaginaryQuadraticField d` is the actual quotient `Q[X]/(X^2+d)`, not a
+piecewise proxy. The even maximal-order theorem and prime-two obstruction
+force d=1 or 2 when d=1,2 mod 4. An explicit theta=2*omega-1 field equivalence
+and integer-ring/PID transport connect the d=3 mod 4 branch to Phase28.
+The new public cutoff has no mod-4, numerical, maximal-order or equivalence
+premise. It assumes only positivity, squarefreeness and actual class number one.
+
+The supplementary conventional absolute-discriminant parameter is also
+bounded; its equality with Mathlib's NumberField.discr is not asserted.
+The finite odd classification, independent human semantic review,
+optimization, systematic writeup comparison and submission remain open.
+All exact controls and development failures are retained. Full root
+build/audit and exact-head CI status must accompany publication.
+[Human proof](research/ender_radius_bridge/FULL_CUTOFF_GUIDE.md)
+· [Preregistration](research/ender_radius_bridge/PHASE29_PROTOCOL.md).
+
+The Phase28 and earlier frontier descriptions below are historical.
+
+## Phase 28: universal odd-discriminant cutoff, not full classification
+
+`FirstCertificate.odd_large_classNumber_ne_one` compiles for every squarefree
+`D≡3 (mod 4)` with `D≥700000000000`. There is no numerical premise.
+The new fixed auxiliary radius family, all floor/ceiling/inertness/count
+guards, the exact normalized production formula, and both affine envelopes
+are proved. The same actual Gram connects both sides. The envelopes separate
+by at least `0.013919` after division by positive `R^2*S`.
+
+This bypasses the remaining interval comparisons and unbounded envelope for
+the **odd** statement; it does not validate those frozen records or cover
+even fundamental discriminants. The finite sieve/classification, independent
+human review, optimization and upstream review remain open. The one fixed
+256-bit Arb pilot passed separately; it is not the universal proof.
+Development failures and proof-search limits are retained. Full pinned
+root build/audit/controls and exact-tree CI must accompany publication.
+[Human proof](research/ender_radius_bridge/ODD_CUTOFF_GUIDE.md)
+· [Preregistration](research/ender_radius_bridge/PHASE28_PROTOCOL.md).
+
+Earlier phase sections below are historical checkpoints, not the current frontier.
+
+## Phase 27: arithmetic now separates dimensions from fixed primes
+
+`UniformPrimeMass` proves floor, factorial/geometric and retained-weight
+estimates for arbitrary admissible R,S,Q,P, including the floor error,
+quadratic loss and clipping. `PrimeLogConstants` certifies four fixed bounds
+for P=10000/Q=7 using exact paired row checks and chunk totals.
+`UniformPrimeMassCertified` turns these into bounds valid for every R>=2,
+S>=1, composed with the original actual-Gram comparison and its explicit
+range/radius/class-number guards. The fixed tail budget is reused with a
+proved monotonicity direction.
+
+The unchanged first-interval pilot meets the old budgets, now proved in Lean.
+No new interval or global cutoff is claimed. The gain is a reusable arithmetic
+engine instead of duplicated prime-power tables. Four omission controls,
+missing-row and wrong-rounding controls compile. Development failures and
+the single exact-rational observational pilot are preserved separately.
+Full root audit and exact-head CI status must accompany publication.
+[Human explanation](research/ender_radius_bridge/UNIFORM_PRIME_MASS_GUIDE.md)
+· [Preregistration](research/ender_radius_bridge/PHASE27_PROTOCOL.md).
+
+## Phase 26: first bounded class-number exclusion closes end to end
+
+`FirstCertificate.first_interval_classNumber_ne_one` compiles with no
+numerical premise. For squarefree `D≡3 (mod 4)` and
+`700000000000≤D≤875000000000`, the actual constructed quadratic field's
+class number is not one. Exact log enclosures, all 1,229 row checks,
+complete prime coverage, both aggregate budgets and radius/padding guards
+are supplied. The conservative contradiction is `581×10^31>572×10^31`.
+
+Coverage is proved on integer windows of at most 16, then joined by exact
+range identities. Both totals are proved on the existing 32-row chunks,
+then joined symbolically. No production tool, parameter, saved certificate
+or dependency pin changed. Failed pilots and prior resource limits remain
+preserved. Local bounded-module build passes; full audit/CI status belongs
+to the exact published head, not to a proof-attempt label.
+
+This excludes one bounded interval in the stated arithmetic class, not the
+global cutoff. The remaining 249 intervals, unbounded range, even cases and
+finite classification are still open. No novelty, optimization or human
+peer-review claim. [Human proof](research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md)
+· [Theorem](lean/TenthDiscriminant/FirstIntervalChecked.lean)
+· [Preregistration](research/ender_radius_bridge/PHASE26_PROTOCOL.md).
+
+## Historical Phase 25 checkpoint: sound bridge, table verification then pending
+
+The fixed first interval is `[700000000000,875000000000]`, for squarefree
+`D≡3 (mod 4)`. Local pinned builds accept the eight-term log enclosure and
+integer checker, exact radius/padding guards, globally valid staircase lower
+bound, quotient-witness soundness, scalar budget reductions and conditional
+class-number conclusion. `FirstIntervalRows` additionally checks all 1,229
+individual rows. The unchanged Arb replay and exact rational
+candidate have a positive gap, but neither proves the missing completeness
+and total-budget obligations in Lean.
+Full-table attempts encountered stack/memory failures; all records are
+preserved in `research/ender_radius_bridge/PHASE25_PROOF_FAILURES.json`.
+No concrete interval exclusion, new cutoff or classification is claimed.
+[Human explanation](research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
 
 For a concise mathematical overview of the checked result and the open
 bridge, read [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
 For a comparison with Tao's challenge and a separate accounting of useful
 side results, see [the current objective ledger](TAO_OBJECTIVES_CURRENT.md).
 
-## 2026-10-23: residue-fiber transport and index-2 norm bridge
+## 2026-10-24: the analytic tail is discharged; the finite comparison connects
 
-[Phase 9](research/uniform_inert_valuation/PHASE9_PROTOCOL.md) closes the
-deferred residue-fiber operator `T` from Phase 6 and links the selected
-order `ℤ[√(-D)]` norm to the maximal-order `principalNorm` in
-`Arithmetic.lean`. In [`LocalOperators.lean`](lean/TenthDiscriminant/LocalOperators.lean),
-Lean proves that coordinatewise and discriminant congruences modulo `p`
-preserve `pairMul`, `pairPow`, the order-zero Frobenius congruence, and
-both one-factor and `H^k` ordinary jets, with a non-real `(1,(0,1)) → (19,(3,-2))`
-pilot modulo `3`. In [`InertFrobenius.lean`](lean/TenthDiscriminant/InertFrobenius.lean),
-Lean proves that the odd-prime nonsquare guard and exact `p^(2F(p))`
-valuation transfer across `D₁ ≡ D₂ (mod p)`, identifies the index-2 norm
-`x² + Dy² = principalNorm D (x-y) (2y)` for `D ≡ 3 (mod 4)`, and proves
-that `¬ IsSquare (-(D : ZMod p))` forces `p ∣ 2x+y` and `p ∣ y` whenever
-`p ∣ 4 * principalNorm D x y`. Global ideal/class-group formalization,
-the cell-area count, analytic cutoff and classification remain open.
+[Phase 24](research/ender_radius_bridge/PHASE24_PROTOCOL.md) proves
+`J≤I(P)` for every natural `R` and `P≥2`. A positive potential
+`K(x)=log(x+1)/x+log(x+1)−log(x)` pays for each integer summand; its finite
+drops telescope. Prime indices form a subset of that integer interval.
+No infinite-series interchange or prime-distribution estimate is used.
+
+`ellipse_enderPrimeMassLower_le_counted_upperB` now connects both unchanged
+mathematical production expressions on the same actual Gram without a tail
+hypothesis. Arithmetic, class-number, strict range, radius and floor-padding
+guards remain explicit. `classNumber_ne_one_of_ender_comparison` gives an
+exclusion criterion conditional on a strict real numerical comparison.
+It does not assume that the saved Arb output supplies that comparison.
+Eight controls and full local Lean build (6714 steps) pass.
+
+Numerical enclosure/guard interpretation, universal closure, even cases and
+finite classification remain open. No checked cutoff, new numerical run
+or change to a production formula/certificate is claimed.
+[Human proof](research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md) ·
+[Lean source](lean/TenthDiscriminant/PrimeTail.lean).
+
+## 2026-10-24: finite weight conversion and clipping reach the same Gram
+
+[Phase 23](research/ender_radius_bridge/PHASE23_PROTOCOL.md) checks
+`F(p)=(S−1/2)A(p)−Q(p)/2` under the production quotient guard, the exact
+small-prime split, both integer loss coefficients, padded enumeration and
+clipping. Finite geometric and floor-square bounds reduce both losses to
+`J=∑_{P<p<R,prime} log(p)/(p(p−1))`. The clipped lower expression reaches
+the actual counted `upper_B` **assuming `J≤I`**. Eight controls include
+counterexamples to dropping the quadratic loss or quotient guard.
+
+The remaining analytic target is `J≤log(P+1)/P+log(1+1/P)`; it has not
+been discharged in Lean. Numerical interpretation, universal closure,
+even cases and classification remain open. No production tool, formula,
+cutoff or certificate changed.
+[Short staircase proof](research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md) ·
+[Lean source](lean/TenthDiscriminant/PrimeMassLower.lean).
+
+## 2026-10-24: the factorial identity and scalar lower bound are checked
+
+[Phase 22](research/ender_radius_bridge/PHASE22_PROTOCOL.md) proves
+`H(R)=log(product_{r<R} r!)` equals its exact finite Legendre prime-power
+sum, including prime `2`. For `R≥2`, an increasing integral envelope
+proves the unchanged production `factorial_lower(R)≤H(R)`. Ten controls
+include equality at `R=2`, `288=2^5*3^2`, strict power endpoints and rejection
+of omitting prime `2`. Full local Lean build passes (6712 steps).
+
+This factorial prime-power sum is **not** the determinant's odd-prime
+valuation mass. Small-prime subtraction, weight conversion, higher-power
+tail control and clipping still need a connected `prime_mass` theorem.
+Numerical certificate interpretation, universal closure and classification
+remain open. No production formula, certificate or cutoff changed.
+[Short human proof](research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md) ·
+[Lean source](lean/TenthDiscriminant/FactorialPrimeMass.lean).
+
+## 2026-10-24: the upper ellipse count reaches production `upper_B`
+
+[Phase 21](research/ender_radius_bridge/PHASE21_PROTOCOL.md) proves
+`|E(D,rho)| ≤ pi*rho²/sqrt(D)+2rho+(2Y+1)` for `D>0`, integer `rho≥0`,
+and `Y=floor(rho/sqrt(D))`. Off-axis points own disjoint open inward cells
+of area `sqrt(D)` inside the same disk. The horizontal axis excluding the
+origin contributes `2rho` possible points; the vertical axis contributes
+`2Y+1`. The theorem handles radius zero exactly and rejects counting axis
+points as full inward cells. Endpoint antitonicity supplies the upper count
+throughout an interval. Safe upward line-count padding is explicit.
+
+`ellipse_primeMass_log_le_counted_upperB` now joins both geometric counts,
+class number one, the actual integer Gram, finite prime mass and unchanged
+production upper formula. The factorial lower estimate, Arb certificate
+interpretation, universal closure and classification remain open.
+[Lean source](lean/TenthDiscriminant/EllipseUpperCount.lean) ·
+[human proof](research/ender_radius_bridge/UPPER_BOUND_GUIDE.md).
+
+## 2026-10-24: production `upper_B` is connected to the actual Gram
+
+[Phase 20](research/ender_radius_bridge/PHASE20_PROTOCOL.md) checks the
+unchanged `R>rho` upper expression for positive **integer** radii, including
+the falling factorials, row-major rectangle, logarithmic integral correction
+and Python's exact integer coefficients. Chosen-radius positivity and the
+class-number/local-factor chain compose to `∑ 2F(p) log p ≤ upper_B`,
+under the explicit premise that its real input `n` bounds the actual ellipse
+count. Seven boundary/false-strengthening controls compile. The geometric
+`n_up` estimate, factorial lower bound, numerical certificates, universal
+closure and classification still require their own proofs.
+[Lean source](lean/TenthDiscriminant/EnderUpperB.lean) ·
+[short human proof](research/ender_radius_bridge/UPPER_BOUND_GUIDE.md).
+
+## 2026-10-24: the finite local-to-global determinant sandwich is Lean-checked
+
+[Phase 19](research/ender_radius_bridge/PHASE19_PROTOCOL.md) now assembles
+the exact factors `p^(2F(p))` for **all distinct odd primes `p<R`** on the
+same positive integer ellipse Gram, under squarefree `D≡3 (mod 4)`, class
+number one, strict `R<(D+1)/4`, and Ender's chosen-radius guard. Lean proves
+the product divides the determinant and its finite logarithmic prime mass
+is at most the logarithm of the Hadamard diagonal product. Empty, singleton
+and duplicate-prime controls compile. This connects local arithmetic to
+real geometry; it does **not** prove the factorial lower estimate, the
+recorded Arb interval margins, the universal envelope, or classification.
+[Lean source](lean/TenthDiscriminant/PrimeMassAssembly.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#22-the-finite-prime-mass-sandwich).
+
+## 2026-10-24: the chosen-radius cell-area count is Lean-checked
+
+[Phase 18](research/ender_radius_bridge/PHASE18_PROTOCOL.md) proves the
+previously paper-only cell-area inequality for the **actual finite ellipse**.
+Closed width-one, height-`√D` cells cover the plane by integer floors;
+each point in the smaller disk lies in a cell whose center meets the
+ellipse inequality. Complex disk volume and finite-union subadditivity
+give `π(ρ−δ)²≤|E(D,ρ)|√D`, where `δ=(1+√D)/2` and `ρ≥δ`.
+Composing with Phase 17 checks Ender's exact radius gives
+`|E(D,ρ)|>3R+S` and positivity/Hadamard of the actual trace-Gram
+throughout a certified interval once its upper-endpoint radius guard
+is supplied. This does **not** formalize the analytic determinant
+comparison, certify Arb inequalities, or classify class-number-one fields.
+[Lean source](lean/TenthDiscriminant/EllipseCellArea.lean) ·
+[human proof](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge).
+
+## 2026-10-24: Phase 17 radius algebra, before the area proof
+
+[Phase 17](research/ender_radius_bridge/PHASE17_PROTOCOL.md) proves in Lean
+that Ender's exact `1.001` radius guard and the explicit cell-area inequality
+force the **strict** `3R+S` point count, including the finite-interval
+upper-endpoint transfer to the actual Gram determinant. The cell-covering
+area inequality was a stated hypothesis; Phase 18 now proves it. Phase 17
+alone was an algebraic/geometric interface, not a checked analytic cutoff or a
+classification. [Lean source](lean/TenthDiscriminant/LatticeEllipse.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#9-the-concrete-ellipse-bridge).
+
+## 2026-10-24: class number one now supplies the local Gram valuation
+
+[Phase 16](research/uniform_inert_valuation/PHASE16_PROTOCOL.md) proves
+in Lean that, for squarefree `D ≡ 3 (mod 4)`, class number one of the
+actual quadratic field implies Ender's exact
+`p^(2·valuationWeight R S p)` divisor of the original integer Gram
+determinant at every odd prime `p < (D+1)/4`. The proof composes the
+residue quotient, maximal-order equivalence, principal-kernel norm,
+nonnegative imaginary quadratic norm, and the existing valuation
+theorem. `D=15,p=3` yields a checked `classNumber ≠ 1` control.
+This closes the previously open *class-number-to-local-valuation*
+arrow, **not** the chosen-radius area formalization, analytic cutoff,
+or class-number classification. [Lean source](lean/TenthDiscriminant/ClassNumberInertBridge.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#21-the-global-hypothesis-reaches-the-local-determinant).
+
+## 2026-10-24: explicit order equals the maximal integer ring
+
+[Phase 15](research/uniform_inert_valuation/PHASE15_PROTOCOL.md) now
+constructs the genuine quadratic number field for squarefree
+`D ≡ 3 (mod 4)` and proves in Lean that its maximal integer ring is
+isomorphic to `ℤ[T]/(T²-T+(D+1)/4)`. The proof uses the actual field
+trace and norm, Phase 14's denominator/parity argument, and an
+injective order-to-field map; the norm on the maximal ring agrees
+with the repository's `principalNorm`. This closes the previously
+open *order-identification* arrow. Phase 16 now checks the next
+class-number-to-lifting arrow. Neither the analytic
+cutoff nor classification is established. [Lean source](lean/TenthDiscriminant/QuadraticFieldChart.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#20-why-this-is-the-whole-integer-ring).
+
+## 2026-10-24: prospective maximal-order coordinates checked
+
+[Phase 14](research/uniform_inert_valuation/PHASE14_PROTOCOL.md) proves
+in Lean that, for squarefree `D ≡ 3 (mod 4)`, rational `a,b` with
+integer `2a` and `a²+Db²` have unique coordinates
+`a=x+y/2, b=y/2` with `x,y∈ℤ`; the converse is checked too.
+`D=15` is a positive control, while `D=9,q=1/3` shows why
+squarefreeness matters. This is the arithmetic heart of the
+maximal-order argument, **not by itself** the field-to-order equivalence.
+Phase 15 now proves that equivalence; the cutoff and classification
+remain open.
+[Lean source](lean/TenthDiscriminant/MaximalOrderCoordinates.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#19-why-the-half-integral-coordinates-are-forced).
+
+## 2026-10-24: the explicit order's algebraic norm is checked
+
+[Phase 13](research/uniform_inert_valuation/PHASE13_PROTOCOL.md) proves
+in Lean that `ℤ[T]/(T²-T+c)` has the power basis `(1,T)` and that
+Mathlib's actual `Algebra.norm ℤ (x+yT)` equals `x²+xy+cy²` for every
+integer `c,x,y`. Specializing `c=(D+1)/4` makes this *exactly* the
+repository's `principalNorm D x y`; `D=15,T` has norm `4`, and
+scalars have norm `x²`. This closes Phase 12's formal norm transport.
+Phase 13 alone did **not** identify this explicit order with the maximal ring of
+integers of the intended quadratic field (Phase 15 now does), so Phase 9's lifting premise,
+the cutoff and the classification remain open. [Lean source](lean/TenthDiscriminant/HalfOrderAlgebraicNorm.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#18-the-two-dimensional-norm-chart).
+
+## 2026-10-24: the order's two-dimensional norm chart
+
+[Phase 12](research/uniform_inert_valuation/PHASE12_PROTOCOL.md) checks
+`T²=T-c` inside the actual quotient order and the second column of
+multiplication by `x+yT`. The determinant of the resulting `2×2`
+matrix is exactly `x²+xy+cy²`; `D=15,c=4` is a concrete control.
+Phase 13 identifies that matrix determinant with `Algebra.norm`
+in the power basis, and Phase 15 identifies the order with the
+maximal integer ring. The Phase 9 lifting premise and
+the end-to-end classification remain open. [Lean source](lean/TenthDiscriminant/HalfOrderNorm.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#18-the-two-dimensional-norm-chart).
+
+## 2026-10-24: a residue root gives an explicit order quotient
+
+[Phase 11](research/uniform_inert_valuation/PHASE11_PROTOCOL.md) now
+checks that for `D ≡ 3 (mod 4)` and odd prime `p`, a root `z²=-D`
+modulo `p` yields a surjective ring map from
+`ℤ[T]/(T²-T+(D+1)/4)` to `ZMod p`, sending `T` to `(1+z)/2`.
+The `D=15,p=3` ramified control has this map although Phase 9's
+principal norm lifting fails. Phase 15 now transports this map to
+Mathlib's maximal integer ring; composing it with Phase 10 and a
+sign-safe norm identity is the remaining arithmetic arrow before
+Phase 9's lifting premise. Geometric and analytic links
+remain open. [Lean source](lean/TenthDiscriminant/HalfOrderResidue.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#17-from-a-residue-root-to-an-actual-quotient-map).
+
+## 2026-10-23: the abstract class-number-one ideal step is checked
+
+[Phase 10](research/uniform_inert_valuation/PHASE10_PROTOCOL.md) proves in
+Lean that a ring map from a number field's integer ring to `ZMod n`
+has kernel of ideal norm `n`, and class number one makes that kernel
+principal. Its generator has algebraic norm of magnitude `n`; the
+`K=ℚ,n=3` control compiles. This does **not** yet turn a root of
+`X²+D` into a map from the specific maximal quadratic order, nor
+identify the generator's norm with `principalNorm D x y`. Those
+specific-field arrows were open at this historical checkpoint; Phases
+16 and 18 now close those arithmetic and area links. The analytic cutoff
+and classification remain open. [Lean source](lean/TenthDiscriminant/PrincipalIdealBridge.lean) ·
+[human proof](lean/HUMAN_GUIDE.md#16-what-class-number-one-actually-buys).
+
+## 2026-10-23: a conditional small-prime norm gate
+
+[Phase 9](research/uniform_inert_valuation/PHASE9_PROTOCOL.md) adds a
+conditional global-to-local interface. Lean proves that if every root
+of `X²+D` modulo an odd prime `p<(D+1)/4` lifts to a principal norm-`p`
+representation, then no root exists and the Phase 8 valuation applies.
+It also equates the exact nonsquare guard with quadratic irreducibility.
+The norm-lifting premise is **not derived from class number one**;
+identifying the maximal order, prime ideals and principality is the
+remaining arithmetic bridge. `D=15,p=3` falsifies an unconditional
+lifting statement. [Proof](lean/TenthDiscriminant/SmallPrimeBridge.lean) ·
+[human explanation](lean/HUMAN_GUIDE.md#15-the-small-prime-gate-without-hiding-the-class-group).
 
 ## 2026-10-23: odd-prime nonsquare condition now yields exact valuation
 
@@ -33,9 +871,10 @@ coordinates and applies Phase 7's actual Gram theorem, proving
 `p^(2*valuationWeight R S p) | det G` for every finite sample set,
 rectangle and derivative cutoff. The `D=19,p=3` guard passes and
 `D=2,p=3` is a square falsifier. This is a checked **local-nonsquare
-valuation theorem**, not a class-number-one theorem: deriving the guard
-from the intended global class-group/inertness hypotheses, Lean cell-area
-count, analytic cutoff and classification remain open.
+valuation theorem**, not by itself a class-number-one theorem. At this
+historical checkpoint the global guard and cell-area count were open;
+Phases 16 and 18 now check those separate links. The analytic cutoff
+and classification remain open.
 [Lean theorem](lean/TenthDiscriminant/InertFrobenius.lean).
 
 ## 2026-10-23: actual rectangular row-to-Gram bridge
@@ -84,9 +923,9 @@ by `p`, then all jets of `B*H^k` are divisible by `p^k`. Applied to
 `H=Z^p-W` in the repository's selected quadratic order, this gives
 both integer-coordinate factors for every proposed transformed row
 under its explicit order-zero Frobenius congruence. A checked Hasse
-derivative counterexample guards the derivative convention. The
-uniform inertness premise and analytic/class-number chain remain open
-in Lean; Phase 7 supplies the Gram identification.
+derivative counterexample guards the derivative convention. At this
+Phase 4 checkpoint the uniform premise and analytic/class-number chain
+were open; Phases 7–16 now supply the Gram and strict-small-prime links.
 [Theorem](lean/TenthDiscriminant/JetPower.lean) ·
 [preregistration](research/uniform_inert_valuation/PHASE4_PROTOCOL.md).
 
@@ -136,8 +975,9 @@ strictly positive. A `D=2`, `p=3` control refutes dropping inertness. This
 one-prime toy theorem does not imply Ender's uniform prime-adic lower bound.
 The proof and limitations are reported in the
 [guide](lean/HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix)
-and [protocol](research/local_global_gram/PROTOCOL.md); the general valuation
-bridge and class-number classification remain open.
+and [protocol](research/local_global_gram/PROTOCOL.md). At this pilot
+checkpoint the general valuation was open; Phase 16 now supplies its
+strict-small-prime form, while the classification remains open.
 
 ## 2026-10-23: integer-coordinate trace-Gram bridge
 
@@ -161,12 +1001,13 @@ The registered [radius proof](research/ender_radius_bridge/PROOF.md) uses
 unit-by-√D lattice cells to establish the inherited lower count for every
 integer D≥1 and radius rho≥0. For the exact radius chosen by Ender it yields
 `card(ellipsePairs D rho) > 3R+S`; at finite intervals the count transfers
-from D2 to every D≤D2 by exact set inclusion. Lean now checks that inclusion,
-the cardinality transfer and the existing Gram application, plus a D=19,
-rho=5 exact control with 21 points. **The cell-area estimate itself remains
-unformalized.** Neither this count nor a green build establishes the integer
-matrix's inert-prime divisibility, the analytic contradiction, or class-number
-classification. The earlier numerical records are unchanged.
+from D2 to every D≤D2 by exact set inclusion. Phase 17 additionally checks
+that the exact radius plus the explicit area premise give this strict count;
+Lean also checks the cardinality transfer and Gram application, plus a D=19,
+rho=5 exact control with 21 points. **At this checkpoint** the cell-area
+estimate was unformalized; Phase 18 now checks it. The geometric count alone
+does not establish the analytic contradiction or class-number classification.
+The earlier numerical records are unchanged.
 
 ## 2026-10-23: bounded formal ellipse bridge
 

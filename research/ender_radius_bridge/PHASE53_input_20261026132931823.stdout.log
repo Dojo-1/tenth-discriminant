@@ -1,0 +1,23 @@
+saturated_rows_lower_weight : ∀ (R S p : ℕ), 0 < p → (R - p * S) * S * (S - 1) ≤ 2 * valuationWeight R S p
+recovered_scale_gain : ∀ (R S : ℕ),
+  100 ≤ S → 25 * S ≤ R → R ≤ 26 * S → comparisonScale R S * (3 / 50) ≤ 2 * small35Mass R S
+recovered_normalized_gap : ∀ (R S : ℕ) (I : ℝ),
+  100 ≤ S →
+    25 * S ≤ R →
+      R ≤ 26 * S → 3 / 50 ≤ (recoveredPrimeMassLower R S I - certifiedPrimeMassLower R S I) / comparisonScale R S
+raw_normalized_add_gain_le_recovered : ∀ (R S : ℕ) (I : ℝ),
+  100 ≤ S →
+    25 * S ≤ R →
+      R ≤ 26 * S →
+        rawPrimeMassLower R S I / comparisonScale R S + 3 / 50 ≤ recoveredPrimeMassLower R S I / comparisonScale R S
+saturated_rows_zero_p_rejected : ¬(4 - 0 * 2) * 2 * (2 - 1) ≤ 2 * valuationWeight 4 2 0
+normalized_gain_missing_S_guard_false : ∀ (I : ℝ),
+  ¬3 / 50 ≤ (recoveredPrimeMassLower 25 1 I - certifiedPrimeMassLower 25 1 I) / comparisonScale 25 1
+'TenthDiscriminant.FirstCertificate.saturated_rows_lower_weight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TenthDiscriminant.FirstCertificate.recovered_scale_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TenthDiscriminant.FirstCertificate.recovered_normalized_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TenthDiscriminant.FirstCertificate.raw_normalized_add_gain_le_recovered' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

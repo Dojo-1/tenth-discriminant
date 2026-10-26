@@ -1,0 +1,26 @@
+TenthDiscriminant.FirstCertificate.rawPrimeMassLower_aspect_ratio (R S : ℕ) (K : ℝ) (hR : 100000000 ≤ R)
+  (hS : 500000 ≤ S) (_hK : 0 ≤ K) (hRS : ↑R ≤ K * ↑S) (hlog : 2 ≤ Real.log ↑R) :
+  999997 / 1000000 * Real.log ↑R - (3294 / 1000 + 56 / 1250 * K) ≤
+    TenthDiscriminant.FirstCertificate.rawPrimeMassLower R S TenthDiscriminant.FirstEnderInterval.tailBudget /
+      TenthDiscriminant.FirstCertificate.comparisonScale R S
+TenthDiscriminant.FirstCertificate.aspect_ratio_21_control (R S : ℕ) (hR : 100000000 ≤ R) (hS : 500000 ≤ S)
+  (hRS : R ≤ 21 * S) (hlog : 2 ≤ Real.log ↑R) :
+  999997 / 1000000 * Real.log ↑R - 4235 / 1000 ≤
+    TenthDiscriminant.FirstCertificate.rawPrimeMassLower R S TenthDiscriminant.FirstEnderInterval.tailBudget /
+      TenthDiscriminant.FirstCertificate.comparisonScale R S
+TenthDiscriminant.FirstCertificate.aspect_ratio_25_point_1_control (R S : ℕ) (hR : 100000000 ≤ R) (hS : 500000 ≤ S)
+  (hRS : ↑R ≤ 251 / 10 * ↑S) (hlog : 2 ≤ Real.log ↑R) :
+  999997 / 1000000 * Real.log ↑R - 4419 / 1000 ≤
+    TenthDiscriminant.FirstCertificate.rawPrimeMassLower R S TenthDiscriminant.FirstEnderInterval.tailBudget /
+      TenthDiscriminant.FirstCertificate.comparisonScale R S
+TenthDiscriminant.FirstCertificate.candidate_aspect_affine_separation (u : ℝ) (hu : 253 / 10 ≤ u) :
+  4 / 5 * u - 813 / 1000 < 999997 / 1000000 * u - 5820 / 1000
+TenthDiscriminant.FirstCertificate.candidate_aspect_log25_rejected :
+  ¬4 / 5 * 25 - 813 / 1000 < 999997 / 1000000 * 25 - 5820 / 1000
+TenthDiscriminant.FirstCertificate.aspect_ratio_floor25_equality_rejected : ¬100000024 ≤ 25 * (100000024 / 25)
+'TenthDiscriminant.FirstCertificate.rawPrimeMassLower_aspect_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ASPECT_INPUTS_OK TenthDiscriminant.FirstCertificate.rawPrimeMassLower_aspect_ratio: 13525 reached; no listed cutoff, classification, finite answer or old fixed-ratio lower theorem; axioms [propext,
+ Quot.sound,
+ Classical.choice]

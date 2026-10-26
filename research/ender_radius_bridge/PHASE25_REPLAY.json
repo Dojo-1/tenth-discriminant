@@ -1,0 +1,27 @@
+{
+  "scope": "one fixed production replay; no Lean numerical exclusion claim",
+  "python_flint": "0.9.0",
+  "numpy": "2.5.4",
+  "precision_bits": 160,
+  "D1": 700000000000,
+  "D2": 875000000000,
+  "C": 20,
+  "P": 10000,
+  "R": 175000000000,
+  "S": 8750000000,
+  "J": 8750000000,
+  "rho": 408406701,
+  "Y": 488,
+  "small_prime_count": 1229,
+  "lower_ball_display": "[5873113254986382625877250979088260.65176636878 +/- 8.82e-12]",
+  "upper_ball_display": "[5714547187258577314005903961186166.3303802297422 +/- 3.84e-14]",
+  "ratio_ball_display": "[1.02774779217526660040178482495892021351918604 +/- 5.44e-45]",
+  "production_certify_passed": true,
+  "strict_ball_comparison_passed": true,
+  "source_sha256": {
+    "tools/ender.py": "450cc20b39d0ad5564fcb8a76f802d2221c279833b911c3ab39424f7869553ed",
+    "tools/green_h1.py": "0bc340f027b1df6bdc18f2930d04d2fad6b39caff56101069201fd229b44ef71",
+    "tools/green_h1_ellipse.py": "2844f4a606eba0a3e266baeba7c2cf1a503163bd2d7dd8705372e3660bd271d0",
+    "ledger/coverage_ender.txt": "4e82ce50fd49436582af584d5cdc30d2449d59317582f846803d0d37da587fd8"
+  }
+}

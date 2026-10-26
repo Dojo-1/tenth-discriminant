@@ -1,0 +1,42 @@
+{
+  "status": "LOCAL_PASS",
+  "scope": "fixed 3/50 normalized recovery; no new cutoff",
+  "protocol_commit": "a1428e61e42cfa2943c57c60bfe21a3b6d6f445f",
+  "cumulative_build_seconds": "94.647994199999988",
+  "interruption": "first input/audit observation aborted; empty logs and absence of live lake/lean processes reconciled before retry. Two retry launcher failures (execution policy, missing PATH) occurred before Lean launch; no proof attempt consumed.",
+  "raw_sha256": {
+    "research/ender_radius_bridge/PHASE53_audit_20261026132944871.result.json": "89c241435094e4bece879d032f45e6c1e220b3966f0c923fe9cdd5bdb36ecd25",
+    "research/ender_radius_bridge/PHASE53_build_20261026081903543.result.json": "7a26b5d456073ae0b0c2e2357e3994dc4959cdbf80b59d523ab6f9fef85432fc",
+    "research/ender_radius_bridge/PHASE53_build_20261026082115782.result.json": "d3619ba82bff815de82d692a92a2bd4844f97bc6eff0610d539a939fca1aa9c5",
+    "research/ender_radius_bridge/PHASE53_input_20261026132931823.result.json": "64c5ec854be10674281d4ad4628934ed45bcc3a5180cd007a13672c94223f8bd",
+    "research/ender_radius_bridge/PHASE53_root_20261026082303890.result.json": "543d7200af3c1c7a2cb060e3696a41227b7d40a1b27277e6b9f1d6fc46f85256",
+    "research/ender_radius_bridge/PHASE53_audit_20261026082533715.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE53_audit_20261026082533715.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE53_audit_20261026132944871.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE53_build_20261026081903543.stderr.log": "c4a27db198c4d8632369ee6102944ef46e83c20d685f7c17a6aaff9cfcfc710f",
+    "research/ender_radius_bridge/PHASE53_build_20261026081903543.stdout.log": "5daf1a67ee6f0cc4b3624bbf6b8fba54a62a09495aac9c70e3e1723648a329a8",
+    "research/ender_radius_bridge/PHASE53_build_20261026082115782.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE53_build_20261026082115782.stdout.log": "6823c9d37e77075194bee97ee714afdabab492fc593d0853dcde0cc73c885743",
+    "research/ender_radius_bridge/PHASE53_input_20261026082530347.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE53_input_20261026082530347.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE53_input_20261026132931823.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE53_input_20261026132931823.stdout.log": "b1510bcda4f98a206ca0e93797eb471da7d1a19fde904d8ab61bfd99672adaef",
+    "research/ender_radius_bridge/PHASE53_root_20261026082303890.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE53_root_20261026082303890.stdout.log": "9a206cdb05a9af9cf0b4ad6117dabf5bb164e9c89dc07c6ec49171cd73a32e35",
+    "research/ender_radius_bridge/PHASE53_AXIOM_AUDIT_RAW.zip": "35148d45374be0f59da107057ff2db25c0f2c93897c3ec7606e41aa35f942914"
+  },
+  "source_sha256_lf": {
+    "lean/TenthDiscriminant/SmallPrimeRecoveryGain.lean": "28bb15a91543e6834365fcd1b9bdc38b9dddc3b83b848c565ad3d3f9fb8e8883",
+    "lean/TenthDiscriminant.lean": "74a1f81838bf79bb202cfe709338dfc6b7fc4c79831d6f4a1ae992dce61874e7",
+    "research/ender_radius_bridge/PHASE53_PROTOCOL.md": "20c364d0ac2a0b40b06f2259f6e84fad2fe017f294ff36519997c3bd05f04dd2",
+    "research/ender_radius_bridge/Phase53Attempt1.lean": "9a396809670378aa2eb5d81fdbce973379092315e5f9c33b0944226949452d1c",
+    "research/ender_radius_bridge/Phase53InputCheck.lean": "7e5d69c91a7a472cc8bc7c05c9fdafd8d052906730dfcbfd2384736981b72d0a",
+    "research/ender_radius_bridge/run_phase53.ps1": "7576dc99758cd074e700d4d6b341c90f22209805bb49ef3e548d4be17c245810",
+    "research/ender_radius_bridge/NORMALIZED_RECOVERY_GUIDE.md": "4f24e359a0a5beb57c1bba64c49ee2d7f0527a216ba46ea6e861e0c84a59cd20"
+  },
+  "audit_entry": "PHASE53_audit_20261026132944871.stdout.log",
+  "audit_raw_sha256": "d9e0372f5bd5e19747787fd231858116226dddc471221c2e2eb08637a7e6799a",
+  "audit_raw_bytes": 2019580,
+  "exact_head_ci": "separate, not yet published",
+  "semantic_review": "Phase51 predates Phase52 and Phase53"
+}

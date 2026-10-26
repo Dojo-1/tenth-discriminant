@@ -1,0 +1,10 @@
+import TenthDiscriminant
+
+#check TenthDiscriminant.maskWheelVisit_all
+#check TenthDiscriminant.phase35_partition
+#check TenthDiscriminant.phase35_q0_translate
+#check TenthDiscriminant.phase35_first_period_classNumber_ne_one
+#check TenthDiscriminant.classNumber_one_iff_below_first_period
+#print axioms TenthDiscriminant.phase35_q0_translate
+#print axioms TenthDiscriminant.phase35_first_period_classNumber_ne_one
+#print axioms TenthDiscriminant.classNumber_one_iff_below_first_period

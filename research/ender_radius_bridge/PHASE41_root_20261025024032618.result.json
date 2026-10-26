@@ -1,0 +1,17 @@
+﻿{
+    "phase":  41,
+    "mode":  "root",
+    "scope":  "Preregistered aspect-ratio bridge or separately labelled verification",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  49.3788185,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  1200,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2869440512,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  "build",
+    "stdout":  "PHASE41_root_20261025024032618.stdout.log",
+    "stderr":  "PHASE41_root_20261025024032618.stderr.log"
+}

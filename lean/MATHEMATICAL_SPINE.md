@@ -1,20 +1,62 @@
 # One determinant, two kinds of information
 
-This is the shortest route into the Lean development. The longer
-[human proof guide](HUMAN_GUIDE.md) explains the contact-count argument;
-the [claim map](FORMALIZATION.md) names the checked declarations. Neither
-document, nor this one, is a proof of the class-number-one classification.
+The argument has one central object: a positive integer determinant.
+Geometry bounds its size from above. Arithmetic makes it divisible by
+enough prime powers to force a larger size. The contradiction supplies an
+effective cutoff; finite exclusion and positive examples are separate steps.
+
+For any actual degree-two totally-complex number field, class number one
+implies an actual absolute field discriminant below50000000000. The
+[operator normalization](../research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md)
+supplies a positive squarefree generator without class-number input. In
+the canonical `Q(sqrt(-d))` chart, both d and the absolute discriminant
+are below50000000000. The [short cutoff proof](../research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md)
+explains the two affine budgets and every rounding/radius guard. It uses
+neither the finite answer nor an older cutoff.
+
+The recovery restores existing prime3/5 weights omitted by a simpler
+uniform estimate. Keeping log3>=1.09 and log5>=1.6 in the saturated-row
+count gives at least81/1000 after normalization, improving the lower
+constant from5.820 to5.739. Geometry is checked at450^4 and the two budgets
+separate at50b. No new valuation exponent or parity-derived gain is
+asserted. Local acceptance and exact-head CI remain distinct. The
+[earlier review brief](../research/ender_radius_bridge/RECOVERED_CUTOFF_REVIEW_BRIEF.md)
+identifies the structural joints; its completed review covers the frozen
+62.5b proof86abe21, not these new gain/guard changes.
+
+The [canonical-family iff](TenthDiscriminant/ClassNumberClassification.lean)
+joins a complete finite certificate to all nine positive cases. Its existing
+proof uses the original 700-billion cutoff; that certificate and proof are
+unchanged by the newer analytic optimization. The
+[classification guide](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md)
+separates those directions. That canonical-family theorem does not itself
+supply field-type generality; the operator normalization above supplies
+that separate bridge for the cutoff. Independent human semantic review
+remains open, and no full-classification announcement is made here.
+
+For a caller's field with a specified root of X^2+d and degree two, the
+[generator dictionary](../research/ender_radius_bridge/GENERATOR_BRIDGE_GUIDE.md)
+now constructs the field equivalence and transfers the actual bound for
+positive squarefree d. The new conjugation proof supplies that witness
+for an abstract degree-two totally-complex number field.
+
+Read this page for the invariant and transformations, the
+[human guide](HUMAN_GUIDE.md) for the contact-count proof, and the
+[claim map](FORMALIZATION.md) for exact declarations and validation scope.
+Local acceptance, exact-head CI and independent review are distinct evidence.
+Historical checkpoints and failed attempts remain in [STATUS](../STATUS.md)
+and their registered records, rather than being prerequisites to reading this proof.
 
 ## The question
 
-Ender's **candidate** argument needs an integer determinant that is both
-nonzero and highly divisible by inert primes. Geometry and a Hadamard upper
-bound would then compete with arithmetic lower bounds. Lean now establishes
-the nonzero side for sufficiently many samples, identifies its integer
-matrix, and proves one fixed divisibility example. A
-[paper proof](../research/uniform_inert_valuation/PROOF.md) reconstructs
-the uniform prime-by-prime exponent; its general polynomial and
-inertness interfaces are still missing in Lean.
+Why should class number one be incompatible with a large discriminant?
+It forces a Frobenius relation at small odd primes. An integral change of
+polynomial basis turns those relations into prime-power divisibility of
+the actual Gram determinant. A point count makes that same determinant
+positive, while Hadamard bounds it above. The
+[paper proof](../research/uniform_inert_valuation/PROOF.md) explains the local
+arithmetic. The universal cutoff compares the resulting budgets directly;
+it does not need a replay of the other 249 historical interval estimates.
 
 ## The object to keep in mind
 
@@ -174,6 +216,13 @@ an integral unitriangular basis change. Every transformed jet row is
 divisible by `p^k`; the two Gram sides yield
 `p^(2Σk)=p^(2F(p)) | det G`.
 
+There is now an exact [column-count description](../research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md):
+if p>0 and p(S-1)<=R, then6F(p)=S(S-1)(3R-p(S+1)), over the reals.
+Here the sum's second index reindexes S-1-s; its levels are degree weights,
+not ordinary derivative orders. The operation counts the same finite
+set of integer triples in another order, including partially filled rows.
+It changes neither the determinant exponent nor the50b cutoff.
+
 [The full written argument](../research/uniform_inert_valuation/PROOF.md)
 checks the endpoints and product rule. Lean checks the abstract
 unimodular two-sided determinant factor and a
@@ -194,9 +243,29 @@ identifies that change with rows of the *actual* matrix, and the
 the determinant power under the displayed universal Frobenius congruence.
 The [local theorem](TenthDiscriminant/InertFrobenius.lean) now derives that
 congruence from `p` odd prime and `-D` nonsquare in `ZMod p`, by checking
-`t^p=-t` and then Freshman's dream on every `x+yt`. Connecting these
-selected-order local guards to the global class-number hypothesis remains
-open. This is inherited valuation mathematics,
+`t^p=-t` and then Freshman's dream on every `x+yt`. The global hypothesis
+reaches this local guard through the actual maximal order, rather than by
+identifying it with the selected lattice order. A
+[small-prime interface](TenthDiscriminant/SmallPrimeBridge.lean) shows that
+a residue root lifting to a principal norm-`p` element would contradict
+the elementary norm bound for `p<(D+1)/4`. The abstract
+[class-number step](TenthDiscriminant/PrincipalIdealBridge.lean) now
+checks that a residue quotient of a class-number-one integer ring has
+a principal generator of norm magnitude `p`; the quadratic quotient
+map is now constructed for the explicit half-integral order by the
+[root-to-order theorem](TenthDiscriminant/HalfOrderResidue.lean).
+Its quadratic multiplication chart has the [expected exact
+determinant](TenthDiscriminant/HalfOrderNorm.lean), and the
+[power-basis calculation](TenthDiscriminant/HalfOrderAlgebraicNorm.lean)
+identifies it with `Algebra.norm` and the existing principal form.
+The [field chart](TenthDiscriminant/QuadraticFieldChart.lean) identifies
+this order with the actual maximal integer ring: every integral field
+element has integer coordinates by trace, norm and squarefreeness.
+The [class-number bridge](TenthDiscriminant/ClassNumberInertBridge.lean)
+now composes this with the quotient map and positive norm to discharge
+the norm-lifting premise and prove the local valuation for the actual
+integer Gram, for squarefree `D≡3 (mod 4)` and strict small odd primes.
+This is inherited valuation mathematics,
 not a new classification or cutoff.
 
 The [explicit coefficient matrix](TenthDiscriminant/RectangularBasisMatrix.lean)
@@ -230,14 +299,25 @@ these views commute on **one integer matrix with the same samples**.
 | Link | Present status |
 |---|---|
 | Jet energy, contact budget, positivity; exact integer matrix; residue reduction; fixed `D=19,p=3` square factor | Lean-checked under the displayed hypotheses. |
-| Ender's chosen-radius ellipse has enough points | Elementary cell-area proof on paper; exact-set and endpoint-transfer helpers in Lean, but the area inequality is not Lean-checked. |
-| Uniform inert-prime valuation, class-number-one to inertness, analytic comparison, finite classification | Lean checks the exact exponent for the actual integer Gram under an odd-prime nonsquare local condition. The global class-number link and all later links are not connected as an end-to-end theorem. The recorded numerical certificates belong to the candidate argument, not to (1)–(4). |
+| Ender's chosen-radius ellipse has enough points | Lean checks the disk-cell area inequality, exact chosen-radius strict count, and upper-endpoint transfer to actual-Gram positivity. |
+| Uniform inert-prime valuation and finite assembly | For squarefree `D≡3 (mod 4)`, class number one gives every strict small odd-prime factor on the actual integer Gram. Lean now assembles their product, proves the chosen-radius determinant positive, and obtains the exact finite logarithmic prime-mass versus Hadamard inequality. |
+| Production upper formula and its count input | Lean bounds the actual diagonal product by unchanged `upper_B` for the campaign's positive integer radii `rho<R`. Disjoint inward cells and exact axis accounting now supply the upper ellipse count and interval transfer, with line-count padding explicit. [Short proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.md). |
+| Factorial identity and scalar lower estimate | Lean checks the exact finite Legendre prime-power sum (including `2`) and unchanged `factorial_lower` for `R≥2`. Its weights differ from the determinant's. [Short proof](../research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md). |
+| Finite conversion to determinant weights and analytic tail | Lean checks the staircase identity, small-prime split, finite losses, coefficients, clipping and the exact reciprocal-prime bound by positive potential drops. Both mathematical production expressions now apply to the same Gram without a tail premise. [Short proof](../research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md). |
+| Universal analytic cutoff | The recovered prime3/5 mass lowers the direct radicand and actual absolute-discriminant bounds to50000000000. Both parity charts and actual-field transport are supplied. Local target/full build, fresh input and axiom checks pass; exact-head CI remains separate. No numerical, old-cutoff or finite-classification premise; see [the current cutoff proof](../research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md). |
+| Finite exclusion and positive cases | The complete original interval certificate and all nine positive equalities supply the actual canonical-family iff. This uses the original cutoff independently of the new optimization. See [the two-direction proof](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md). |
+| Review and generality | Normalized-generator existence and the cutoff now cover abstract degree-two totally-complex number fields. Exact-head CI and human semantic/API review remain distinct; no full-classification announcement or Mathlib acceptance is claimed. |
 
 The quadratic order above is a useful *first doubling* with multiplication,
 conjugation and trace. No higher Cayley–Dickson algebra or philosophical
-local-to-global principle is a missing premise. The next substantive bridge
-is a uniform arithmetic relation of the kind illustrated by (4), with the
-actual class-number and radius hypotheses made explicit. For the detailed
+local-to-global principle is a missing premise. The uniform arithmetic
+relation, class-number input, chosen-radius count, and exact finite prime
+comparison are checked in their stated ranges and connected to a universal
+cutoff. The finite certificate and positive cases have their own proofs.
+The remaining review task is to inspect the definitions, parameter guards
+and the composition against the intended number-theoretic statement;
+kernel checking does not supply that independent mathematical judgment.
+For the detailed
 provenance, see [STATUS.md](../STATUS.md), the
 [registered pilot protocol](../research/local_global_gram/PROTOCOL.md), and
 the [radius proof](../research/ender_radius_bridge/PROOF.md).

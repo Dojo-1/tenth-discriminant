@@ -1,0 +1,23 @@
+﻿{
+    "phase":  56,
+    "mode":  "audit",
+    "scope":  "Fixed50000000000 actual-field cutoff; stronger existing3and5 recovery",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  31.819231199999997,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  180,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  3338752000,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "env",
+                      "lean",
+                      "-j",
+                      "1",
+                      "Audit.lean"
+                  ],
+    "stdout":  "PHASE56_audit_20261026163710600.stdout.log",
+    "stderr":  "PHASE56_audit_20261026163710600.stderr.log"
+}

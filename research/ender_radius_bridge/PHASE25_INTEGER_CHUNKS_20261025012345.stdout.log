@@ -1,0 +1,44 @@
+NumberField.classNumber.{u_1} (K : Type u_1) [Field K] [NumberField K] : ℕ
+NumberField.classNumber.eq_1.{u_1} (K : Type u_1) [Field K] [NumberField K] :
+  NumberField.classNumber K = Fintype.card (ClassGroup (NumberField.RingOfIntegers K))
+NumberField.classNumber_eq_one_iff.{u_1} {K : Type u_1} [Field K] [NumberField K] :
+  NumberField.classNumber K = 1 ↔ IsPrincipalIdealRing (NumberField.RingOfIntegers K)
+NumberField.RingOfIntegers.instFintypeClassGroup.{u_1} (K : Type u_1) [Field K] [NumberField K] :
+  Fintype (ClassGroup (NumberField.RingOfIntegers K))
+NumberField.exists_ideal_in_class_of_norm_le.{u_1} {K : Type u_1} [Field K] [NumberField K]
+  (C : ClassGroup (NumberField.RingOfIntegers K)) :
+  ∃ I,
+    ClassGroup.mk0 I = C ∧
+      ↑(Ideal.absNorm ↑I) ≤
+        (4 / Real.pi) ^ NumberField.InfinitePlace.nrComplexPlaces K *
+          (↑(Module.finrank ℚ K).factorial / ↑(Module.finrank ℚ K) ^ Module.finrank ℚ K * √|↑(NumberField.discr K)|)
+RingOfIntegers.isPrincipalIdealRing_of_abs_discr_lt.{u_1} {K : Type u_1} [Field K] [NumberField K]
+  (h :
+    ↑|NumberField.discr K| <
+      (2 * (Real.pi / 4) ^ NumberField.InfinitePlace.nrComplexPlaces K *
+          (↑(Module.finrank ℚ K) ^ Module.finrank ℚ K / ↑(Module.finrank ℚ K).factorial)) ^
+        2) :
+  IsPrincipalIdealRing (NumberField.RingOfIntegers K)
+NumberField.exists_ne_zero_mem_ideal_of_norm_le_mul_sqrt_discr.{u_1} (K : Type u_1) [Field K] [NumberField K]
+  (I : (FractionalIdeal (nonZeroDivisors (NumberField.RingOfIntegers K)) K)ˣ) :
+  ∃ a ∈ ↑I,
+    a ≠ 0 ∧
+      ↑|(Algebra.norm ℚ) a| ≤
+        ↑(FractionalIdeal.absNorm ↑I) * (4 / Real.pi) ^ NumberField.InfinitePlace.nrComplexPlaces K *
+              ↑(Module.finrank ℚ K).factorial /
+            ↑(Module.finrank ℚ K) ^ Module.finrank ℚ K *
+          √|↑(NumberField.discr K)|
+ClassGroup.fintypeOfAdmissibleOfFinite.{u_1, u_2, u_3, u_4} {R : Type u_1} {S : Type u_2} (K : Type u_3) (L : Type u_4)
+  [EuclideanDomain R] [CommRing S] [IsDomain S] [Field K] [Field L] [Algebra R K] [IsFractionRing R K] [Algebra K L]
+  [FiniteDimensional K L] [Algebra.IsSeparable K L] [algRL : Algebra R L] [IsScalarTower R K L] [Algebra R S]
+  [Algebra S L] [ist : IsScalarTower R S L] {abv : AbsoluteValue R ℤ} (adm : abv.IsAdmissible) [Infinite R]
+  [DecidableEq R] [IsIntegralClosure S R L] : Fintype (ClassGroup S)
+ClassGroup.fintypeOfAdmissibleOfAlgebraic.{u_1, u_2, u_5} {R : Type u_1} {S : Type u_2} [EuclideanDomain R] [CommRing S]
+  [IsDomain S] [Algebra R S] {abv : AbsoluteValue R ℤ} {ι : Type u_5} [DecidableEq ι] [Fintype ι] (bS : Basis ι R S)
+  (adm : abv.IsAdmissible) [Infinite R] [DecidableEq R] [IsDedekindDomain S] [Algebra.IsAlgebraic R S] :
+  Fintype (ClassGroup S)
+card_classGroup_eq_one_iff.{u_1} {R : Type u_1} [CommRing R] [IsDomain R] [IsDedekindDomain R]
+  [Fintype (ClassGroup R)] : Fintype.card (ClassGroup R) = 1 ↔ IsPrincipalIdealRing R
+IsPrincipalIdealRing.of_surjective.{u, u_1, u_3} {R : Type u} {S : Type u_1} {F : Type u_3} [Ring R] [Ring S]
+  [FunLike F R S] [RingHomClass F R S] [IsPrincipalIdealRing R] (f : F) (hf : Function.Surjective ⇑f) :
+  IsPrincipalIdealRing S

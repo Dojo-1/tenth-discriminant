@@ -1,0 +1,45 @@
+⚠ [6654/6702] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6655/6702] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6656/6702] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6657/6702] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6660/6702] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6662/6702] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6670/6702] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+⚠ [6702/6721] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✖ [6721/6721] Building TenthDiscriminant.QuadraticDiscriminant
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\QuadraticDiscriminant.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\QuadraticDiscriminant.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\QuadraticDiscriminant.ilean -c .\.\.lake\build\ir\TenthDiscriminant\QuadraticDiscriminant.c --json
+error: .\.\.\.\TenthDiscriminant\QuadraticDiscriminant.lean:29:39: application type mismatch
+  Algebra.leftMulMatrix b
+argument
+  b
+has type
+  @Basis (Fin 2) ℤ A Int.instSemiring NonUnitalNonAssocSemiring.toAddCommMonoid (AddCommGroup.toIntModule A) : Type u_1
+but is expected to have type
+  @Basis (Fin 2) ℤ A CommSemiring.toSemiring NonUnitalNonAssocSemiring.toAddCommMonoid
+    Algebra.toModule : Type (max 0 u_1)
+error: .\.\.\.\TenthDiscriminant\QuadraticDiscriminant.lean:123:50: application type mismatch
+  @NumberField.discr_eq_discr_of_algEquiv (quadraticChartEquiv d)
+argument
+  quadraticChartEquiv d
+has type
+  EvenQuadraticField d ≃ₐ[ℚ] QuadraticField ((↑d + 1) / 4) : Type
+but is expected to have type
+  Type ?u.73845 : Type (?u.73845 + 1)
+error: Lean exited with code 1
+Some required builds logged failures:
+- TenthDiscriminant.QuadraticDiscriminant

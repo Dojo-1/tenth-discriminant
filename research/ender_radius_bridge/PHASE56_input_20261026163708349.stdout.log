@@ -1,0 +1,36 @@
+TenthDiscriminant.FirstCertificate.recovery_log_controls : 109 / 100 ≤ Real.log 3 ∧ 8 / 5 ≤ Real.log 5
+TenthDiscriminant.FirstCertificate.strong_recovered_scale_gain (R S : ℕ) (hS : 100 ≤ S) (h25 : 25 * S ≤ R)
+  (h26 : R ≤ 26 * S) :
+  TenthDiscriminant.FirstCertificate.comparisonScale R S * (81 / 1000) ≤
+    2 * TenthDiscriminant.FirstCertificate.small35Mass R S
+TenthDiscriminant.FirstCertificate.strong_gain_missing_S_guard_rejected (I : ℝ) :
+  ¬81 / 1000 ≤
+      (TenthDiscriminant.FirstCertificate.recoveredPrimeMassLower 25 1 I -
+          TenthDiscriminant.FirstCertificate.certifiedPrimeMassLower 25 1 I) /
+        TenthDiscriminant.FirstCertificate.comparisonScale 25 1
+TenthDiscriminant.FirstCertificate.Tuned.log_large_geometry (D : ℕ) (hD : 41006250000 ≤ D) : 24 ≤ Real.log ↑D
+TenthDiscriminant.FirstCertificate.Tuned.log_large_50b (D : ℕ) (hD : 50000000000 ≤ D) : 246304 / 10000 ≤ Real.log ↑D
+TenthDiscriminant.FirstCertificate.Tuned.fifty_endpoint_identity : 2 ^ 10 * 5 ^ 11 = 50000000000
+TenthDiscriminant.FirstCertificate.Tuned.fifty_log246_rejected :
+  ¬4 / 5 * (246 / 10) - 813 / 1000 < 999997 / 1000000 * (246 / 10) - 5820 / 1000 + 81 / 1000
+TenthDiscriminant.FirstCertificate.Tuned.unguarded_radius_rounding_rejected :
+  ¬↑(TenthDiscriminant.FirstCertificate.Tuned.rho 1) ≤ 521 / 1000 * TenthDiscriminant.FirstCertificate.fourthRoot 1 ^ 3
+TenthDiscriminant.FirstCertificate.Tuned.inclusive_inertness_endpoint_rejected : ¬41 < (163 + 1) / 4
+TenthDiscriminant.totallyComplex_degree_two_classNumber_one_discriminant_bound_50b.{u_1} (K : Type u_1) [Field K]
+  [NumberField K] [NumberField.IsTotallyComplex K] (hdegree : Module.finrank ℚ K = 2)
+  (hc : NumberField.classNumber K = 1) : (NumberField.discr K).natAbs < 50000000000
+'TenthDiscriminant.FirstCertificate.strong_recovered_scale_gain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TenthDiscriminant.totallyComplex_degree_two_classNumber_one_discriminant_bound_50b' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+TUNED_INPUTS_OK TenthDiscriminant.FirstCertificate.Tuned.odd_large_classNumber_ne_one_50b: 55475 reached; none of25 listed old-cutoff/classification/finite-answer/fixed-ratio inputs; axioms [propext,
+ Quot.sound,
+ Classical.choice]
+TUNED_INPUTS_OK TenthDiscriminant.imaginaryQuadratic_classNumber_one_discriminant_bound_50b: 55810 reached; none of25 listed old-cutoff/classification/finite-answer/fixed-ratio inputs; axioms [propext,
+ Quot.sound,
+ Classical.choice]
+TUNED_INPUTS_OK TenthDiscriminant.totallyComplex_degree_two_classNumber_one_discriminant_bound_50b: 58604 reached; none of25 listed old-cutoff/classification/finite-answer/fixed-ratio inputs; axioms [propext,
+ Quot.sound,
+ Classical.choice]

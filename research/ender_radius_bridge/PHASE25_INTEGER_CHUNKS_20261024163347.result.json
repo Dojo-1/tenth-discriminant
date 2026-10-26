@@ -1,0 +1,14 @@
+﻿{
+    "scope":  "fixed Phase-25 integer table proof; no interval claim until accepted and audited",
+    "proof_file":  "../research/ender_radius_bridge/CoverageNormalizationPilot.lean",
+    "build_target":  "",
+    "exit_code":  99,
+    "elapsed_seconds":  62.512708499999995,
+    "observed_peak_working_set_bytes":  8606306304,
+    "memory_threshold_mb":  8192,
+    "resource_stop":  true,
+    "threads":  1,
+    "stack_kb":  65536,
+    "stdout":  "PHASE25_INTEGER_CHUNKS_20261024163347.stdout.log",
+    "stderr":  "PHASE25_INTEGER_CHUNKS_20261024163347.stderr.log"
+}

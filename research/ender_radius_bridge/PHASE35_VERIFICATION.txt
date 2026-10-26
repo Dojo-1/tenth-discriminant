@@ -1,0 +1,46 @@
+Phase35 LOCAL verification checkpoint (condensed terminal transcription,
+NOT a raw log). Exact-head full Linux CI remains required at publication.
+
+Commands run from repo root:
+powershell -NoProfile -File research/ender_radius_bridge/run_table_check.ps1 -BuildTarget TenthDiscriminant.FusedWheelPilot
+PASS: all eleven separate q0 proofs and their assembly.
+Record PHASE25_INTEGER_CHUNKS_20261024231558.result.json:
+483.338083 seconds; observed peak 5336363008 bytes; unchanged 8192 MB cap.
+
+powershell -NoProfile -File research/ender_radius_bridge/run_table_check.ps1 -BuildTarget TenthDiscriminant
+PASS: full incremental root build, 6771 steps.
+Record PHASE25_INTEGER_CHUNKS_20261024232415.result.json:
+73.4582038 seconds; observed peak 2804408320 bytes. The separately rebuilt
+eleven-certificate cost above is NOT hidden in this incremental timing.
+
+Commands run from lean/:
+python verify_sources.py
+PASS: source digest/all 250 endpoint pairs only; NOT Arb certification.
+
+python -c "from pathlib import Path; import audit; print('IMPORT_COVERAGE_OK:',len(audit.project_coverage(Path.cwd())))"
+PASS: 117 project modules reachable.
+
+lake env lean Audit.lean
+PASS: AUDIT_OK TenthDiscriminant: 3726 logical declarations; 3242 theorems;
+15669 runtime-only auxiliaries excluded. Only propext, Classical.choice,
+Quot.sound permitted. Terminal exit code 0.
+
+lake env lean ../research/ender_radius_bridge/Phase35SignatureCheck.lean
+PASS, terminal exit code 0. Public bounded iff requires only d>0,
+Squarefree d and d<892371480, for the actual ImaginaryQuadraticField d.
+No certificate, root-check, numerical or class-number premise is hidden.
+Printed axiom dependencies:
+phase35_q0_translate: propext, Quot.sound.
+phase35_first_period_classNumber_ne_one and
+classNumber_one_iff_below_first_period: propext, Classical.choice, Quot.sound.
+
+New-guide local links: PASS.
+No separate full local audit.py parent/apparatus or inherited eight-script
+suite rerun is claimed in this phase. Full unchanged audit.py and
+negative_controls.py gates must pass exact-head pinned Linux CI.
+Prior Phase34's local timeout and four failed monolithic cost attempts
+remain frozen records, not retroactively reclassified as successes.
+
+Pilot: 16 pass, 1 aggregate-time stop, 27 skipped; only q0 complete.
+Scope: no full classification, optimized cutoff, merge or Tao post.
+Final PR record must give exact tested head/tree and terminal CI status.

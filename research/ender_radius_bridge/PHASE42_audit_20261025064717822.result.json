@@ -1,0 +1,23 @@
+﻿{
+    "phase":  42,
+    "mode":  "audit",
+    "scope":  "Fixed100-billion analytic proof attempt or separately labelled verification; no new observational pilot",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  136.5587361,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  180,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  3328065536,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  [
+                      "env",
+                      "lean",
+                      "-j",
+                      "1",
+                      "Audit.lean"
+                  ],
+    "stdout":  "PHASE42_audit_20261025064717822.stdout.log",
+    "stderr":  "PHASE42_audit_20261025064717822.stderr.log"
+}

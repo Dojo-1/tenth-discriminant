@@ -1,0 +1,8 @@
+{
+  "archive": "PHASE37_AXIOM_AUDIT_RAW.zip",
+  "entry": "PHASE25_INTEGER_CHUNKS_20261025004404.stdout.log",
+  "uncompressed_bytes": 1990462,
+  "SHA256": "bc20cf4463fcb90934da1f314b643946e17376cee22d9e1dc25ca00d8340d3b0",
+  "round_trip_hash_verified": true,
+  "recovery": "Extract the original-named single log from the ZIP. The duplicate unpacked copy was removed only after checksum equality."
+}

@@ -1,0 +1,24 @@
+Command: python audit.py
+Cwd: lean
+Terminal exit code: 1
+
+IMPORT_COVERAGE_OK: 98 project modules reachable
+AUDIT_OK TenthDiscriminant: 3176 logical declarations; 2723 theorems; 15007 runtime-only auxiliaries excluded
+PASS: all logical project constants audited; only the three permitted axioms allowed.
+
+The apparatus subprocess reported passing import-closure probes, the public
+rectangular API, README examples, reader links, legacy-gap probe,
+definition_only, opaque_safe, private_safe, unused_opaque_custom_axiom,
+unused_definition_custom_axiom, private_opaque_custom_axiom,
+safe_generated_looking_name and unused_opaque_incomplete. Expected failures
+in the negative probes were correctly rejected. The aggregate parent gate
+then terminated the subprocess at its existing 240-second timeout:
+
+subprocess.TimeoutExpired: Command '[C:\Program Files\Python313\python.exe,
+...\lean\apparatus_controls.py]' timed out after 240 seconds
+
+This is a condensed terminal-output transcription, NOT a raw log.
+No full local apparatus PASS is claimed. The chained signature check did
+not execute after this exit; it must be run separately. No timeout or gate
+has been relaxed. Exact-head pinned Linux CI must still run audit.py and
+the inherited negative_controls.py in full before publication is verified.

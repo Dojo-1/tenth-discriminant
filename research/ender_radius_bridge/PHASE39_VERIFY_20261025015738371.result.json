@@ -1,0 +1,12 @@
+﻿{
+    "scope":  "Phase39 post-acceptance signature, input-exclusion or axiom verification",
+    "proof_file":  "Audit.lean",
+    "exit_code":  0,
+    "elapsed_seconds":  29.671243999999998,
+    "observed_peak_working_set_bytes":  3325202432,
+    "memory_threshold_mb":  8192,
+    "time_limit_seconds":  180,
+    "stop_reason":  "",
+    "stdout":  "PHASE39_VERIFY_20261025015738371.stdout.log",
+    "stderr":  "PHASE39_VERIFY_20261025015738371.stderr.log"
+}

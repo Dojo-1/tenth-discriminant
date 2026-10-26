@@ -1,0 +1,12 @@
+﻿{
+    "scope":  "fixed Phase35 pilot only; no global coverage claim",
+    "proof_file":  "../research/ender_radius_bridge/Phase35SeedsCheck.lean",
+    "exit_code":  0,
+    "elapsed_seconds":  2.9220154,
+    "observed_peak_working_set_bytes":  251613184,
+    "memory_threshold_mb":  8192,
+    "time_limit_seconds":  180,
+    "stop_reason":  "",
+    "stdout":  "PHASE35_CHECK_20261024230305262.stdout.log",
+    "stderr":  "PHASE35_CHECK_20261024230305262.stderr.log"
+}

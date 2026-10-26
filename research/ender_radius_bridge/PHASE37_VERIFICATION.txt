@@ -1,0 +1,52 @@
+Phase37 local verification, 2026-10-25. This file is a condensed terminal
+transcription, NOT a raw log. Raw records remain separately preserved.
+The1990462-byte raw audit stdout is losslessly stored in
+PHASE37_AXIOM_AUDIT_RAW.zip; PHASE37_AUDIT_ARCHIVE.json records the entry
+and verified original/archived SHA256. Only its recoverable duplicate was
+removed. Extracting that entry restores the exact original-named raw log.
+
+cd lean
+lake build TenthDiscriminant
+PASS: 6806-step root, including all eleven ALL785 certificates, aggregate,
+actual-field iff, actual signed-discriminant corollary and boundary controls.
+Successful final incremental record: PHASE25_INTEGER_CHUNKS_20261025004307.
+37.1909225s, peak2804486144 bytes. The earlier root record002646 FAILED
+after accepting all eleven certificates because the corollary's list
+simplifier left an empty-list branch. Its930.4745927s/7949860864-byte raw
+record remains intact. List.not_mem_nil/or_false fixed only that script.
+The separate direct corollary check004013 passed in21.4509247s.
+
+python verify_sources.py
+PASS: frozen digest and all250 endpoint pairs; endpoint identity ONLY.
+This check does not certify every Arb inequality in the historical campaign.
+
+python -c "from pathlib import Path; import audit; print(len(audit.project_coverage(Path.cwd())))"
+PASS:152 project modules reachable, imports acyclic.
+
+lake env lean Audit.lean
+PASS:4507 logical declarations;3776 theorems;16951 runtime-only auxiliaries
+excluded. Only propext,Classical.choice,Quot.sound permitted. Raw record004404,
+28.5931964s, peak3326918656 bytes, exit0.
+
+lake env lean ../research/ender_radius_bridge/Phase37SignatureCheck.lean
+PASS: record004417,28.3243876s, peak3216232448 bytes, exit0.
+imaginaryQuadratic_classNumber_one_iff (d : Nat) [Fact (0<d)]
+  (hsq : Squarefree d) :
+  NumberField.classNumber (ImaginaryQuadraticField d)=1 iff
+    d belongs to [1,2,3,7,11,19,43,67,163].
+No range, Boolean-certificate, root-test or numerical premise remains.
+phase36_all_fibers depends on propext only; the public iff and signed
+discriminant corollary use only the three permitted axioms.
+
+Phase36 remains INCOMPLETE, frozen in c1bafe7. Phase37 protocol22d0ac4
+preceded the ONE unchanged seed179 completion:69.6638481s,7942955008 bytes,
+180s/8192MB, exit0. All original inputs remain byte-identical to preregistration.
+No isolated speedup or full-range runtime inference from pilot timings.
+
+Reader local links checked:457 targets, none missing. git diff --check passes
+for edited source/docs; immutable raw monitor CRLF files are excluded.
+No separate full local audit.py parent/apparatus or inherited negative-suite
+rerun is claimed. These unchanged full gates must pass exact-head pinned CI.
+The final PR record identifies the tested head/tree and terminal CI status.
+No automatic merge, Tao post, arbitrary-field representation theorem,
+independent human semantic review, optimized analytic constant or novelty claim.

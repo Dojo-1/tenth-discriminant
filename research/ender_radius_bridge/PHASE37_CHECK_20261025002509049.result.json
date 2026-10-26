@@ -1,0 +1,12 @@
+﻿{
+    "scope":  "Phase37 single unchanged seed179 completion; separate from incomplete Phase36 pilot",
+    "proof_file":  "../research/ender_radius_bridge/Phase36Seed10Check.lean",
+    "exit_code":  0,
+    "elapsed_seconds":  69.6638481,
+    "observed_peak_working_set_bytes":  7942955008,
+    "memory_threshold_mb":  8192,
+    "time_limit_seconds":  180,
+    "stop_reason":  "",
+    "stdout":  "PHASE37_CHECK_20261025002509049.stdout.log",
+    "stderr":  "PHASE37_CHECK_20261025002509049.stderr.log"
+}

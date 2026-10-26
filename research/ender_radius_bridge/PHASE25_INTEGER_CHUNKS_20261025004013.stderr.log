@@ -1,0 +1,18 @@
+import took 10.6s
+cumulative profiling times:
+	attribute application 0.0289ms
+	elaboration 12ms
+	fix level params 0.259ms
+	import 10.6s
+	initialization 48.7ms
+	instantiate metavars 0.618ms
+	interpretation 7.98s
+	linting 4.51ms
+	norm_num 150ms
+	parsing 1.36ms
+	process pre-definitions 1.81ms
+	share common exprs 2.79ms
+	simp 6.33ms
+	tactic execution 22.3ms
+	type checking 31.1ms
+	typeclass inference 50.2ms

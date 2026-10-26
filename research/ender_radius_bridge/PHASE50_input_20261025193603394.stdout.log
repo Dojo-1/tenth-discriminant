@@ -1,0 +1,23 @@
+TenthDiscriminant.rectangularBasisMatrix_eq_zero_of_parity_ne : ∀ (R S p : ℕ),
+  0 < p →
+    p % 2 = 1 →
+      ∀ (i j : Fin (R * S)),
+        TenthDiscriminant.rectangularRowParity R S i ≠ TenthDiscriminant.rectangularRowParity R S j →
+          TenthDiscriminant.rectangularBasisMatrix R S p i j = 0
+TenthDiscriminant.rectangularBasisMatrix_commutes_sign : ∀ (R S p : ℕ),
+  0 < p →
+    p % 2 = 1 →
+      TenthDiscriminant.rectangularBasisMatrix R S p * TenthDiscriminant.rectangularSignMatrix R S =
+        TenthDiscriminant.rectangularSignMatrix R S * TenthDiscriminant.rectangularBasisMatrix R S p
+TenthDiscriminant.integerRectangularTraceGram_commutes_sign : ∀ (Q : Finset (ℤ × ℤ)) (D J R S : ℕ),
+  (∀ a ∈ Q, -a ∈ Q) →
+    TenthDiscriminant.integerRectangularTraceGram Q D J R S * TenthDiscriminant.rectangularSignMatrix R S =
+      TenthDiscriminant.rectangularSignMatrix R S * TenthDiscriminant.integerRectangularTraceGram Q D J R S
+TenthDiscriminant.oddness_required_parity_control : TenthDiscriminant.rectangularBasisMatrix 3 2 2 4 1 = -1 ∧
+  TenthDiscriminant.rectangularRowParity 3 2 4 = 0 ∧ TenthDiscriminant.rectangularRowParity 3 2 1 = 1
+'TenthDiscriminant.rectangularBasisMatrix_eq_zero_of_parity_ne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TenthDiscriminant.rectangularBasisMatrix_commutes_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TenthDiscriminant.integerRectangularTraceGram_commutes_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TenthDiscriminant.oddness_required_parity_control' depends on axioms: [propext, Classical.choice, Quot.sound]

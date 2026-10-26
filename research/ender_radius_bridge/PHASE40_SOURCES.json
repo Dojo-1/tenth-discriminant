@@ -1,0 +1,25 @@
+{
+  "phase": 40,
+  "protocol_commit": "945b14910c1405478f12786cd345edf9625bb33c",
+  "scope": "Two complete primary manuscripts and five context/review files, read in full; no external code execution or independent mathematical audit",
+  "local_mathematical_head": "f1638018085b0167dedd6f7ef13d69dedd51f148",
+  "external_repository": "twinheterodox/tenth-discriminant",
+  "external_commit": "44c7d6fcd8737df8a65cc13024677a14e4e451fb",
+  "immutable_url_template": "https://github.com/twinheterodox/tenth-discriminant/blob/44c7d6fcd8737df8a65cc13024677a14e4e451fb/{path}",
+  "hash_basis": "Original bytes decoded from GitHub contents API base64, not re-encoded console output",
+  "sources": [
+    {"path":"versions/v6.1/proof.tex","blob":"b5726d5f9f74dd60155363b75cab2c30a628a6cd","bytes":50513,"sha256":"1a706146eb28fcddf4c5c5ca399978dbe34194fe5de21d3b9e31fe1eb118ab11"},
+    {"path":"companions/elementary/proof.tex","blob":"506fd941d85b03d682b8b1755c09c90e0075d270","bytes":20354,"sha256":"53b6259284dffe44e89a50d11bac16c761aca53f58b469095e6092032ce536f7"},
+    {"path":"versions/v6.1/README.md","blob":"f32bf0f885444b915e7bb64c227edc3eff653b94","bytes":6989,"sha256":"9c599492c49d06f9909c96adca82d4b9d62bacfe26e73f01700994da20fb95b6"},
+    {"path":"versions/v6.1/REVIEW.md","blob":"5251a7ee85c34bb0504edc75e88d210ec12859a5","bytes":3494,"sha256":"ec502a378900a3a0df36c1f75097457f75a3be940ea15682cfd2bff2f7c4de35"},
+    {"path":"companions/elementary/README.md","blob":"770dda229c36a8cd5be17aa5d69179b526542d61","bytes":5829,"sha256":"246fecf24986168efe09956b79e0b8a7150e0429c622d6abaf611343a5dd3682"},
+    {"path":"companions/elementary/REVIEW.md","blob":"a92a86664639654403d8e78609109fafd5c384b4","bytes":4064,"sha256":"870dec74b1a6f66b3ad7cbbf71ccb5640795cc4a2094b5eecf818981689f8b93"},
+    {"path":"README.md","blob":"d0c8f4d7b0086af663589938b4c20e79e8973b3d","bytes":24536,"sha256":"5b033f6d08f5f92c464cb0d0dfa8ce0cf3a22bd8d6c719e74ff59489c3f162b9"}
+  ],
+  "historical_recency_control": {
+    "commit": "95e8fe68da05790b99d828b5b6aff3f6dc479aa2",
+    "method": "Contents metadata for the two preselected manuscript paths, no third manuscript review",
+    "both_manuscript_blobs_equal_current_frozen_sources": true
+  },
+  "limitations": ["External results and computation counts are source-reported, not replayed", "No reviewer identity or detailed independent elementary review supplied in the selected sources", "V6.1 depends on earlier-version tail results not audited here", "No all-method survey, novelty or optimality claim", "Source comparison is outside unchanged Lean CI gates"]
+}

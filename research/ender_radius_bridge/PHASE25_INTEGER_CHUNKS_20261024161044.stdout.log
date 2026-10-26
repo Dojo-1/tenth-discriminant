@@ -1,0 +1,62 @@
+../research/ender_radius_bridge/DivisionWitnessPilot.lean:7:22: error: failed to synthesize
+  Inhabited Row
+
+Additional diagnostic information may be available using the `set_option diagnostics true` command.
+../research/ender_radius_bridge/DivisionWitnessPilot.lean:9:85: error: tactic 'decide' failed for proposition
+  checkFloorWitness 175000000000 2 pilotRow.linear = true
+since its 'Decidable' instance
+  instDecidableEqBool (checkFloorWitness 175000000000 2 pilotRow.linear) true
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match checkFloorWitness 175000000000 2 pilotRow.linear, true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯
+../research/ender_radius_bridge/DivisionWitnessPilot.lean:10:92: error: tactic 'decide' failed for proposition
+  checkPowerWitnesses 175000000000 2 2 37 pilotRow.powers = true
+since its 'Decidable' instance
+  instDecidableEqBool (checkPowerWitnesses 175000000000 2 2 37 pilotRow.powers) true
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match checkPowerWitnesses 175000000000 2 2 37 pilotRow.powers, true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯
+../research/ender_radius_bridge/DivisionWitnessPilot.lean:11:102: error: tactic 'decide' failed for proposition
+  pilotRow.coefficient = (List.map FloorWitness.value pilotRow.powers).sum
+since its 'Decidable' instance
+  instDecidableEqNat pilotRow.coefficient (List.map FloorWitness.value pilotRow.powers).sum
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match h : pilotRow.coefficient.beq (List.map FloorWitness.value pilotRow.powers).sum with
+  | true => isTrue ⋯
+  | false => isFalse ⋯
+../research/ender_radius_bridge/DivisionWitnessPilot.lean:12:109: error: tactic 'decide' failed for proposition
+  checkIntegerLogBounds pilotRow.p 1 pilotRow.k pilotRow.lo pilotRow.hi scale = true
+since its 'Decidable' instance
+  instDecidableEqBool (checkIntegerLogBounds pilotRow.p 1 pilotRow.k pilotRow.lo pilotRow.hi scale) true
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match checkIntegerLogBounds pilotRow.p 1 pilotRow.k pilotRow.lo pilotRow.hi scale, true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯
+../research/ender_radius_bridge/DivisionWitnessPilot.lean:13:56: error: tactic 'decide' failed for proposition
+  checkRow pilotRow = true
+since its 'Decidable' instance
+  instDecidableEqBool (checkRow pilotRow) true
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match checkRow pilotRow, true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯

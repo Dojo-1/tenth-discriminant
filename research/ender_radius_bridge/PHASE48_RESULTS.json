@@ -1,0 +1,22 @@
+{
+  "scope": "exact rational envelope diagnostic only",
+  "status": "PASS",
+  "python": "3.13.17",
+  "protocol_commit": "a9dbd668d007fa0474d45796418b21cb8ed8a736",
+  "source_sha256_raw": {
+    "research/ender_radius_bridge/PHASE48_PROTOCOL.md": "4859f6d713af7cf580631c1a68df2d9328552f35f02cd7debf184acc01586da2",
+    "research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md": "03b547d627ae16997f3f15c25ca5cf54cb852fc4b917c524242006e199f0450d",
+    "lean/TenthDiscriminant/TunedRadiusFamily.lean": "1953669fae261b42948781201a7b3cb7d6a66322ae0617200aded0be9f17d079",
+    "lean/TenthDiscriminant/TunedAnalyticCutoff.lean": "d0d5c0887d0f03dba52e4e0b8644359827763e7cbd8b3cc2f30479e47395db5b",
+    "lean/TenthDiscriminant/AspectRatioLowerEnvelope.lean": "14f6d5538de95423c40aceb2e4f55209561979020c75c0ca06aa68505d9dcde0"
+  },
+  "gap_slope": "199997/1000000",
+  "gap_loss": "5007/1000",
+  "crossing": "5007000/199997",
+  "controls": {
+    "25": "-283/40000",
+    "253/10": "529241/10000000"
+  },
+  "inference": "These envelopes separate iff u exceeds the crossing; overlap is inconclusive about the actual budgets. No new D cutoff.",
+  "elapsed_seconds": 0.047546000001602806
+}

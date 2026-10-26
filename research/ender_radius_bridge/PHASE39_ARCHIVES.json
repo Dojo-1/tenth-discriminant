@@ -1,0 +1,8 @@
+{
+  "archive": "PHASE39_AXIOM_AUDIT_RAW.zip",
+  "entry": "PHASE39_VERIFY_20261025015738371.stdout.log",
+  "raw_bytes": 1994698,
+  "SHA256": "672b2d525f97afbf10213b43a5971abbc7a10d39cfb159e0604e13af7f524f20",
+  "round_trip_verified": true,
+  "recovery": "Extract the named entry to recover exact original bytes. Only its duplicate unpacked copy was removed after verified hash equality."
+}

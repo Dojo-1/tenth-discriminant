@@ -1,0 +1,20 @@
+import TenthDiscriminant.SmallPositiveClassNumber
+
+#check TenthDiscriminant.quadraticBasis_discr
+#check TenthDiscriminant.imaginaryQuadratic_discr
+#check TenthDiscriminant.imaginaryQuadratic_discr_natAbs
+#check TenthDiscriminant.imaginaryQuadratic_classNumber_one_discriminant_bound
+#check TenthDiscriminant.quadratic_classNumber_one_of_discr_le_eight
+#check TenthDiscriminant.one_classNumber_one
+#check TenthDiscriminant.two_classNumber_one
+#check TenthDiscriminant.three_classNumber_one
+#check TenthDiscriminant.seven_classNumber_one
+#print axioms TenthDiscriminant.imaginaryQuadratic_discr
+#print axioms TenthDiscriminant.imaginaryQuadratic_classNumber_one_discriminant_bound
+#print axioms TenthDiscriminant.one_classNumber_one
+#print axioms TenthDiscriminant.two_classNumber_one
+#print axioms TenthDiscriminant.three_classNumber_one
+#print axioms TenthDiscriminant.seven_classNumber_one
+#check TenthDiscriminant.small_positive_discriminant_controls
+#check TenthDiscriminant.three_order_field_discriminant_control
+#check TenthDiscriminant.eleven_outside_small_criterion_control

@@ -1,0 +1,77 @@
+⚠ [6654/6691] Replayed TenthDiscriminant.SylvesterLocal
+warning: .\.\.\.\TenthDiscriminant\SylvesterLocal.lean:34:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6655/6691] Replayed TenthDiscriminant.SylvesterNonzero
+warning: .\.\.\.\TenthDiscriminant\SylvesterNonzero.lean:142:4: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6656/6691] Replayed TenthDiscriminant.SylvesterIrreducible
+warning: .\.\.\.\TenthDiscriminant\SylvesterIrreducible.lean:121:2: try 'simp at hdeg' instead of 'simpa using hdeg'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [6657/6691] Replayed TenthDiscriminant.SylvesterDegree
+warning: .\.\.\.\TenthDiscriminant\SylvesterDegree.lean:115:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6660/6691] Replayed TenthDiscriminant.BivariateDegree
+warning: .\.\.\.\TenthDiscriminant\BivariateDegree.lean:24:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [6662/6691] Replayed TenthDiscriminant.TraceGram
+warning: .\.\.\.\TenthDiscriminant\TraceGram.lean:38:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [6692/6720] Replayed TenthDiscriminant.EllipseCellArea
+info: .\.\.\.\TenthDiscriminant\EllipseCellArea.lean:106:62: Try this: ring_nf
+⚠ [6702/6720] Replayed TenthDiscriminant.UniformPrimeMass
+warning: .\.\.\.\TenthDiscriminant\UniformPrimeMass.lean:94:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✖ [6720/6720] Building TenthDiscriminant.QuadraticChartEquivalence
+trace: .> LEAN_PATH=.\.\.lake/packages\Cli\.lake\build\lib\lean;.\.\.lake/packages\batteries\.lake\build\lib\lean;.\.\.lake/packages\Qq\.lake\build\lib\lean;.\.\.lake/packages\aesop\.lake\build\lib\lean;.\.\.lake/packages\proofwidgets\.lake\build\lib\lean;.\.\.lake/packages\importGraph\.lake\build\lib\lean;.\.\.lake/packages\LeanSearchClient\.lake\build\lib\lean;.\.\.lake/packages\plausible\.lake\build\lib\lean;.\.\.lake/packages\mathlib\.lake\build\lib\lean;.\.\.lake\build\lib\lean c:\Users\HAL900\.elan\toolchains\leanprover--lean4---v4.19.0\bin\lean.exe .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean -R .\.\.\. -o .\.\.lake\build\lib\lean\TenthDiscriminant\QuadraticChartEquivalence.olean -i .\.\.lake\build\lib\lean\TenthDiscriminant\QuadraticChartEquivalence.ilean -c .\.\.lake\build\ir\TenthDiscriminant\QuadraticChartEquivalence.c --json
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:18:4: mod_cast has type
+  (4 : ℕ) * ((d + 1) / 4) = d + 1 : Prop
+but is expected to have type
+  (4 : ℤ) * c = ↑(d + 1) : Prop
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:21:4: type mismatch, term
+  h
+after simplification has type
+  AdjoinRoot.root (X ^ 2 - X + C ↑c) ^ 2 - AdjoinRoot.root (X ^ 2 - X + C ↑c) +
+      eval₂ (AdjoinRoot.of (X ^ 2 - X + C ↑c)) (AdjoinRoot.root (X ^ 2 - X + C ↑c)) ↑c =
+    0 : Prop
+but is expected to have type
+  AdjoinRoot.root (X ^ 2 - X + C ↑c) ^ 2 - AdjoinRoot.root (X ^ 2 - X + C ↑c) + ↑c = 0 : Prop
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:14:69: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+Use `set_option maxHeartbeats <num>` to set the limit.
+
+Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:32:4: mod_cast has type
+  (4 : ℕ) * ((d + 1) / 4) = d + 1 : Prop
+but is expected to have type
+  (4 : ℤ) * c = ↑(d + 1) : Prop
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:28:69: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+Use `set_option maxHeartbeats <num>` to set the limit.
+
+Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:43:27: unknown identifier 'traceZeroToHalf'
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:43:47: unknown identifier 'halfToTraceZero'
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:45:10: unknown identifier 'traceZeroToHalf'
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:45:27: unknown identifier 'halfToTraceZero'
+info: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:46:4: Try this: ring_nf
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:44:2: unsolved goals
+case h₁.h
+d : ℕ
+inst✝¹ : Fact (↑d % 4 = 3)
+inst✝ : Fact (0 < d)
+⊢ (sorry ()) ((sorry ()) (AdjoinRoot.root (quadraticFieldPoly ((↑d + 1) / 4)))) =
+    AdjoinRoot.root (quadraticFieldPoly ((↑d + 1) / 4))
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:48:10: unknown identifier 'traceZeroToHalf'
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:48:27: unknown identifier 'halfToTraceZero'
+info: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:49:4: Try this: ring_nf
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:47:2: unsolved goals
+case h₂.h
+d : ℕ
+inst✝¹ : Fact (↑d % 4 = 3)
+inst✝ : Fact (0 < d)
+⊢ (sorry ()) ((sorry ()) (AdjoinRoot.root (evenFieldPoly d))) = AdjoinRoot.root (evenFieldPoly d)
+error: .\.\.\.\TenthDiscriminant\QuadraticChartEquivalence.lean:58:5: failed to synthesize
+  IsPrincipalIdealRing ↥(integralClosure ℤ K)
+
+Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Lean exited with code 1
+Some required builds logged failures:
+- TenthDiscriminant.QuadraticChartEquivalence

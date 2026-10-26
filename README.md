@@ -2,20 +2,229 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
+**A locally Lean-checked 50-billion discriminant bound for imaginary quadratic number fields.**
+For any actual number field with rational degree two, no real places and
+class number one, the actual absolute field discriminant is below `50,000,000,000`.
+Conjugation and its anti-invariant projector now produce the positive
+squarefree generator; the caller supplies no root or isomorphism. The
+new cutoff keeps sharper logarithm bounds on the recovered prime3/5
+contributions. It keeps the same determinant and has no finite-answer
+or old-cutoff premise. The new theorem, full local build, fresh input
+checks and axiom audit pass; [local verification](research/ender_radius_bridge/PHASE56_VERIFICATION.md).
+Earlier62.5b proof head `86abe21` passed pinned CI40355317865, including the full build,
+dependency audit and inherited rejection controls; security/CodeQL passed.
+[Exact verification](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6421231717).
+New50b source and later publication heads require their own CI.
+Earlier failures remain preserved. No novelty or optimality claim.
+[Operator proof](research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md) ·
+[Sharper recovered-budget comparison](research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md).
+
+The [exact envelope diagnostic](research/ender_radius_bridge/ENVELOPE_LIMIT_GUIDE.md)
+explains why a substantial further improvement needs stronger estimates;
+it proves no new cutoff and does not rule out the underlying method.
+
+The [small-prime recovery theorem](research/ender_radius_bridge/SMALL_PRIME_RECOVERY_GUIDE.md)
+now restores the exact3/5 terms omitted by the certified uniform proxy.
+Local Lean checks prove a strictly stronger proxy for R>=4,S>=2 without
+double-counting or changing production. A [fixed normalized gain](research/ender_radius_bridge/NORMALIZED_RECOVERY_GUIDE.md)
+supplied at least3/50 when S>=100 and25*S<=R<=26*S. The stronger
+Phase56 estimate supplies81/1000 using log3>=1.09 and log5>=1.6.
+Geometric helpers now hold at450^4; the fixed endpoint50b composes with
+the same production/tail comparison. The Phase55 review covers the older
+62.5b proof, not these new edits.
+
+An [exact staircase count](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md)
+now replaces the weight's double sum by one polynomial when its last
+threshold fits. It counts the same integer boxes in a different order;
+the cutoff stays50 billion.
+
+The [central-symmetry lemma](research/ender_radius_bridge/CENTRAL_SYMMETRY_GUIDE.md)
+separates even- and odd-degree rows of the original Gram. The
+[operator compatibility theorem](research/ender_radius_bridge/PARITY_COMPATIBILITY_GUIDE.md)
+proves that its Gram and the actual odd-p Frobenius basis change commute
+with the same sign operator. Local Lean checks pass; this structure
+supplies no extra valuation or smaller cutoff.
+
+One [bounded review of the62.5-billion proof](research/ender_radius_bridge/PHASE55_REVIEW_REPORT.md)
+established no FATAL/GAP finding in six checks. It re-derived the new
+recovery and endpoint calculations and source-traced inherited machinery;
+Lean and CI were not rerun by the reviewer. [Provenance and limits](research/ender_radius_bridge/PHASE55_VERIFICATION.md).
+Independent human semantic review remains open.
+
+The earlier [fresh-context bridge review](research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md)
+established no FATAL/GAP issue in five bounded checks and found one guide
+dependency error, now corrected: degree two supplies both quadratic
+Galoisness and rational fixed-field identification. This AI source review
+does not establish human or model-family independence or re-prove every
+inherited argument. [Scope and correction](research/ender_radius_bridge/PHASE51_VERIFICATION.md).
+
+For the argument itself, start with [one determinant, two kinds of information](lean/MATHEMATICAL_SPINE.md).
+The [interpolation guide](lean/HUMAN_GUIDE.md) explains the hard positivity
+step; the [verification record](research/ender_radius_bridge/PHASE47_VERIFICATION.md)
+gives exact commands and evidence limits.
+
+The [canonical-family iff](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md)
+separately joins the original complete finite certificate to all nine positive
+cases. This update generalizes the cutoff; full classification is not
+announced. Independent human semantic/API review remains open. The [challenge accounting](TAO_OBJECTIVES_CURRENT.md)
+distinguishes this result from the remaining objectives and side discoveries.
+
+<details>
+<summary>Historical checkpoints and original campaign record (not current theorem status)</summary>
+
+The dated statements below preserve what was known at each checkpoint.
+In particular, their open-gap descriptions and 700-billion campaign cutoff
+must not be read as the status of the current mathematical library.
+
+**Phase42: universal radius geometry, cutoff attempt incomplete.** The
+new family's dimension, rounding, lower-budget and chosen-radius bounds
+compiled. The remaining upper/cutoff target hit its registered time cap;
+its unaccepted candidate and both attempts are preserved. **The checked
+cutoff remains200 billion.** Partial root, fresh input/leak check and axiom
+audit pass locally; exact-head publication CI is separate.
+[Human explanation](research/ender_radius_bridge/TUNED_CUTOFF_GUIDE.md).
+
+**Phase41: the price of a thinner rectangle.** A new checked lower-bound
+lemma exposes the aspect-ratio loss instead of hiding a fixed ratio.
+One preregistered100-billion-scale pilot passes the original guards;
+universal new-family geometry and upper bounds remain open. **The checked
+analytic cutoff remains200 billion.**
+[Short human explanation](research/ender_radius_bridge/ASPECT_RATIO_GUIDE.md).
+
+**Phase40: what our bound buys, and what it costs.** A preregistered
+[same-route comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md)
+reads two frozen primary manuscripts: the elementary `q<32768` companion
+and refined `q<570` note. Both source-reported analytic bounds are much
+smaller than ours. The comparison explains the different nonvanishing,
+analytic and verification choices; it does not certify those external
+proofs or claim that our method is optimal. No mathematical sources change.
+
+**Phase39: a smaller direct analytic cutoff.** For positive squarefree d,
+actual class number one now forces both d and the actual absolute field
+discriminant below `2×10¹¹`, locally checked through the same auxiliary
+radius family. Sharper floor/log accounting lowers the former `7×10¹¹`
+threshold by a factor3.5, without borrowing the completed classification.
+Whole-library, signature, input-exclusion and axiom checks pass. Proof head
+`f163801` passed pinned CI40153287923 and security40153286062;
+[exact-head record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6392486504).
+Newer documentation heads have separate CI records. No optimality or novelty is claimed.
+[Read the short optimization proof](research/ender_radius_bridge/ANALYTIC_CUTOFF_OPTIMIZATION_GUIDE.md).
+
+**Phase 37: closing the complete finite bridge.**
+The public `imaginaryQuadratic_classNumber_one_iff` states that for every
+positive squarefree `d`, the actual canonical field `Q(sqrt(-d))` has class
+number one iff `d` is in `1,2,3,7,11,19,43,67,163`. No finite-range,
+numerical or sieve-certificate premise remains. The proof supplies the
+original `7×10¹¹` cutoff, complete remaining-interval coverage and all nine
+positive equalities. Verification is tied to the exact published commit in
+the draft PR; independent human semantic review remains open.
+[Read the one-page mathematical proof](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md).
+
+Phase36's aggregate-budget pilot remains **incomplete** (ten successes,
+one time stop). The separately preregistered Phase37 check accepted the
+unchanged last seed; the library rechecks every seed. There is no claim of
+an optimal analytic constant, arbitrary-field-type representation theorem, novelty
+claim, automatic merge or submission to Tao.
+
+**Phase38: a frozen proof-input audit.** The compiled dependency inventory
+separates the cutoff, nine positive cases and finite certificate. Inspection
+of the reached class-number sources identified generic finiteness, PID
+equivalence and Minkowski bounds, not a borrowed classification theorem.
+This is internal provenance evidence, not independent human review or a
+new permanent CI gate. [Read the short input map](research/ender_radius_bridge/PROOF_INPUT_GUIDE.md).
+
+Historical Phase 34 proves an exact computational bridge: precomputed residue-mask
+queries and the old root searches generate the same tests and wheel list.
+All 208 fixed masks passed a local kernel check. All four registered translate
+attempts exceeded the memory threshold; no new interval is closed.
+[What the representation change proves](research/ender_radius_bridge/RESIDUE_MASK_GUIDE.md).
+
+The following phase descriptions are historical checkpoints; their old finite frontiers and positive-case gaps are superseded above.
+
+**Phase 31: the necessary candidate list is now checked below one million.**
+For positive squarefree `d<1000000`, Lean proves actual class number one
+implies `d` is one of `1,2,3,7,11,19,43,67,163`. A universal no-loss wheel
+proof and exact finite evaluation cover the whole interval `[92,1000000)`.
+The range `[1000000,700000000000)` and positive class-number proofs remain
+open. [Why the wheel covers every candidate](research/ender_radius_bridge/WHEEL_COVERAGE_GUIDE.md).
+
+**Phase 30: the finite sieve now has checked mathematical entry conditions.**
+Actual class number one forces `d=3 mod 8` above 7. Guarded odd-prime
+tests are proved necessary, and kernel evaluation below 92 leaves exactly
+`1,2,3,7,11,19,43,67`. The full middle interval and positive class-number
+proofs remain open; the conditional nine-candidate reduction does not close
+them. [Read the finite-sieve bridge](research/ender_radius_bridge/FINITE_SIEVE_GUIDE.md).
+
+**Phase 29: an effective bound now covers both parity cases.** For every
+positive squarefree radicand `d`, Lean proves that class number one of the
+actual constructed `Q(sqrt(-d))` implies `d<700000000000`, with no numerical
+premise or congruence restriction. The odd determinant cutoff, the new even
+maximal-order/prime-two obstruction, and an explicit field equivalence are
+connected. This is an effective bound, **not the finite classification**.
+The constant is not improved or claimed optimized; human semantic review
+and Mathlib upstream review remain separate.
+Read the [short full-cutoff proof](research/ender_radius_bridge/FULL_CUTOFF_GUIDE.md).
+Full pinned CI and axiom-audit status must be tied to the published tree.
+
+The following Phase 26–27 checkpoint is historical and superseded in range:
+
+**One fixed interval is now closed in Lean.** For squarefree `D≡3 (mod 4)`
+with `700000000000≤D≤875000000000`, the constructed quadratic field has
+class number different from one. All 1,229 rows, prime coverage, aggregate
+budgets and exact guards are supplied; no numerical hypothesis remains.
+This is not a checked global cutoff or a class-number classification.
+Start with the [short numerical bridge guide](research/ender_radius_bridge/NUMERICAL_BRIDGE_GUIDE.md).
+
+Phase 27 also proves [reusable four-constant arithmetic bounds](research/ender_radius_bridge/UNIFORM_PRIME_MASS_GUIDE.md),
+valid for arbitrary admissible rectangle dimensions. Prime certificates can
+be reused rather than regenerated per interval. This recovers the same first
+interval; it does not establish another interval or a new global cutoff.
+
 An AI-assisted investigation of [Terence Tao's tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/comment-page-1/): make an effective class-number-one argument explicit, without importing the known classification as a proof input.
 
 [Mathematical spine](lean/MATHEMATICAL_SPINE.md) · [Current Tao-objective accounting](TAO_OBJECTIVES_CURRENT.md) · [Candidate argument](ledger/ender.txt) · [Latest experiments](#beyond-hadamard-two-bounded-results) · [Frozen objective audit](TAO_OBJECTIVE_AUDIT.md) · [Reproduction](#reproduce-the-record) · [Review history](review/) · [Prior art](PRIOR_ART.md)
 
-> **Current reading order · 23 October 2026:** start with the short
+> **Current reading order · 24 October 2026:** start with the short
 > [mathematical spine](lean/MATHEMATICAL_SPINE.md), then the
 > [current claim map](lean/FORMALIZATION.md) and
 > [Tao-objective accounting](TAO_OBJECTIVES_CURRENT.md). Lean checks interpolation,
 > the exact integer/residue views of one Gram matrix, and a fixed
 > `D=19,p=3` nine-divisibility pilot, and Ender's exact uniform
 > `p^(2F(p))` factor for the actual integer Gram when `p` is odd prime
-> and `-D` is nonsquare modulo `p`. The chosen-radius cell-area count is
-> proved on paper but not in Lean. Deriving that local nonsquare condition
-> from the global class-number hypotheses is still open. The
+> and `-D` is nonsquare modulo `p`. The chosen-radius cell-area count,
+> including its disk covering and exact radius deduction, is now checked in
+> Lean. For squarefree `D≡3 (mod 4)`, Lean now
+> derives that local nonsquare condition from class number one at every
+> strict small odd prime. Lean also proves that class number one
+> makes any residue-quotient ideal principal; a residue root constructs
+> the specific quotient for the explicit half-integral order.
+> Lean also checks its defining multiplication relation and the
+> determinant of the proposed two-dimensional multiplication matrix.
+> Lean now identifies that determinant with the order's actual
+> `Algebra.norm` and with the repository's `principalNorm` formula.
+> Lean now also constructs the genuine quadratic field and identifies
+> this order with its maximal integer ring using trace, norm,
+> squarefree denominators and parity. It then composes that equivalence
+> with class number one to prove the specific norm-lifting premise and
+> the local valuation for the actual integer Gram. The
+> [prime-mass assembly](lean/TenthDiscriminant/PrimeMassAssembly.lean)
+> now combines all distinct odd primes below `R` on this **same**
+> positive determinant and checks their exact finite logarithmic lower
+> bound against its Hadamard diagonal product. The
+> [upper-bound proof](research/ender_radius_bridge/UPPER_BOUND_GUIDE.md)
+> now bounds that product by production `upper_B` at the campaign's integer
+> radii. The [inward-cell count](lean/TenthDiscriminant/EllipseUpperCount.lean)
+> now supplies its upper point-count input, including interval transfer and
+> explicit line-count padding. The [factorial bridge](research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md)
+> now checks the exact finite Legendre identity and unchanged scalar
+> `factorial_lower` for `R≥2`. The [staircase conversion](research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md)
+> now checks finite weight conversion, higher-power losses and clipping.
+> The [finite tail proof](lean/TenthDiscriminant/PrimeTail.lean) discharges
+> the reciprocal-prime estimate: class number one now forces the unchanged
+> mathematical `prime_mass≤upper_B` comparison under the documented guards.
+> Phase 26 now supplies the strict numerical contradiction and all guards
+> for the first saved interval. The other 249 intervals, universal closure,
+> even-discriminant cases and final classification remain open in Lean. The
 > end-to-end class-number classification remains unproved and is not
 > established by these components. The audit linked above is explicitly a
 > frozen `4c034f9` snapshot, not a description of every later bridge.
@@ -44,9 +253,19 @@ and [precise claim map](lean/FORMALIZATION.md).
 **Geometric count follow-up:** a [cell-covering proof](research/ender_radius_bridge/PROOF.md)
 now derives Ender's lower ellipse count and shows his chosen integer radius
 has more than `3R+S` points, including at finite-interval upper endpoints.
-The area argument is mathematical prose, **not Lean-checked**; the exact-set
-endpoint transfer is checked in Lean. No determinant or classification claim
-has been promoted by this result.
+The [cell-area theorem](lean/TenthDiscriminant/EllipseCellArea.lean) now
+checks the geometric inequality, exact radius deduction and endpoint
+transfer in Lean. This establishes positivity and Hadamard for the actual
+trace-Gram at that radius; it does not establish Ender's analytic cutoff
+or the class-number classification.
+
+**Finite prime-mass follow-up:** [Phase 19](research/ender_radius_bridge/PHASE19_PROTOCOL.md)
+now checks the precise local-to-global assembly: class number one supplies
+each odd small-prime factor; pairwise coprimality makes their product divide
+the positive chosen-radius integer determinant; casting and Hadamard give
+the exact finite sum `∑ 2F(p) log p ≤ log(∏ Gᵢᵢ)` for all odd primes `p<R`
+under the strict cutoff. This does not certify Ender's numerical lower
+estimate or analytic exclusion.
 
 **Integer-coordinate bridge:** Lean now identifies the actual real trace-Gram
 matrix, entry by entry, with an integer matrix built from the same supplied
@@ -87,12 +306,11 @@ the required universal Frobenius congruence from the exact odd-prime
 nonsquare local condition, so `p^(2F(p))` divisibility is Lean-checked
 under that condition. A further
 [local-operator and norm-bridge check](lean/TenthDiscriminant/LocalOperators.lean)
-([Phase 9](research/uniform_inert_valuation/PHASE9_PROTOCOL.md))
 shows that both conjugation and residue-fiber transport modulo `p`
 preserve the explicit Frobenius premise and all ordinary one-factor and
 `H^k` power jets, and links the selected-order norm to `principalNorm`
-for `D ≡ 3 (mod 4)`; it does not establish global class-number closure by itself. This
-advances the *formal bridge*; it does not
+for `D ≡ 3 (mod 4)`; it does not establish global class-number closure
+by itself. This advances the *formal bridge*; it does not
 establish the analytic cutoff or class-number
 classification as a checked theorem.
 The mechanism and remaining scope are explained in [guide §11](lean/HUMAN_GUIDE.md#11-local-and-global-arithmetic-views-of-one-gram-matrix)
@@ -219,13 +437,17 @@ gp -q tools/verify_exact_large.gp
 
 A successful command establishes only what that program checks. Report the commit, environment, command, output, and any disagreement; do not replace a failed record with a passing one without preserving the correction.
 
+</details>
+
 ## Provenance, AI assistance, and review
+
+The new 100-billion cutoff has one [fresh-context AI review](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md): no semantic contradiction was established in five bounded checks. It rederived the scalar, rounding and field/discriminant arguments, while tracing rather than reproving the inherited determinant apparatus. This is a separate review process with no verified independence between model families. Human semantic review remains open; Gemini Argor's earlier review covers earlier work.
 
 **Credit comes before comparison.** Ben Green supplies the derivative determinant method. The [prior-art record](PRIOR_ART.md) acknowledges twinheterodox's earlier split-prime/Green route and Kyle Pratt's disk-interpolation contribution; [BEAN](BEAN.md) also credits van Dijk for the route family and Jesús Vilela for the norm-ellipse experiment. This repository does not claim priority for that route or offer a current leaderboard. The dated prior-art snapshot is not an exhaustive literature review.
 
 **The names are workflow labels.** Bean, Ender, and Formic were used in semantic priming for AI-assisted exploration and adversarial checking. They name stages of the research, not mathematical entities, independent authorities, or evidence that priming improves research quality. The claims must stand without the narrative. Review provenance and limitations belong in the [review records](review/).
 
-For a first reading, use [the objective audit](TAO_OBJECTIVE_AUDIT.md), then [the Ender derivation](ledger/ender.txt) and its [audit record](review/ENDER_AUDIT.txt). [STATUS.md](STATUS.md) preserves the broader chronology, including the unreviewed higher-class-number track; its historical entries are not all current claims. A blind-first reviewer should instead begin with [REVIEW_BRIEF.md](REVIEW_BRIEF.md), while noting that it describes the earlier route.
+For a first reading, use [the mathematical spine](lean/MATHEMATICAL_SPINE.md), then [the current cutoff proof](research/ender_radius_bridge/HUNDRED_BILLION_GUIDE.md) and [objective accounting](TAO_OBJECTIVES_CURRENT.md). The [original Ender derivation](ledger/ender.txt), its [audit](review/ENDER_AUDIT.txt) and [frozen objective audit](TAO_OBJECTIVE_AUDIT.md) retain their dated scopes. [STATUS.md](STATUS.md) preserves the chronology, including the unreviewed higher-class-number track. The blind-first [REVIEW_BRIEF.md](REVIEW_BRIEF.md) describes the earlier route and must not be treated as a review of the current Lean cutoff.
 
 Useful criticism identifies the exact statement, violated hypothesis or counterexample, consequence, and reproduction path. Unchecked, missing, and false are different findings. The same discipline applies to favorable reviews and to the [Doubt the Machine framework](https://github.com/Dojo-1/doubt-the-machine) itself.
 
