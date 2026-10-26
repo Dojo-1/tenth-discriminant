@@ -91,3 +91,5 @@ import TenthDiscriminant.FiftyBillionCutoff
 import TenthDiscriminant.StaircaseExact
 import TenthDiscriminant.ExcludedPrimeAssembly
 import TenthDiscriminant.PrimeWeightKernel
+import TenthDiscriminant.QuadraticRowCount
+import TenthDiscriminant.QuadraticAreaCount
