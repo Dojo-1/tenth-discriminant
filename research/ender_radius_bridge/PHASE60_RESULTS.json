@@ -1,0 +1,161 @@
+{
+  "registered_commit": "856ba40283c7111994c6e3f41a583276886316f9",
+  "base": "21c7b78cae7da1fbaec14d1c96c751677f3f0082",
+  "run": {
+    "phase": 60,
+    "attempt": 1,
+    "exit_code": 0,
+    "elapsed_seconds": 0.18433349999999998,
+    "time_limit_seconds": 60,
+    "memory_threshold_mb": 256,
+    "observed_peak_working_set_bytes": 2641920,
+    "stop_reason": "",
+    "source_sha256": "df37f60bbce73dd23edfec7d30625b94ca70335d9e31dd4ff2618e355f9449b9",
+    "source_snapshot": "PHASE60_run_20261026191629364.source.py",
+    "stdout": "PHASE60_run_20261026191629364.stdout.json",
+    "stderr": "PHASE60_run_20261026191629364.stderr.log",
+    "executable": "C:\\Users\\HAL900\\AppData\\Local\\Programs\\Python\\Python313\\python.exe"
+  },
+  "output": {
+    "python": "3.13.15",
+    "fixed_case": [
+      3,
+      1,
+      1001,
+      3,
+      3
+    ],
+    "D": 12011,
+    "D_factorization": [
+      [
+        12011,
+        1
+      ]
+    ],
+    "guards": {
+      "positive": true,
+      "primitive": true,
+      "reduced": true,
+      "D_mod4": true,
+      "squarefree": true,
+      "odd_prime": true,
+      "unramified": true,
+      "nonzero_square": true,
+      "rational_enclosure_guards": true
+    },
+    "square_residue": 1,
+    "square_witnesses": [
+      1,
+      2
+    ],
+    "class_number": "NOT_COMPUTED",
+    "aggregate_split_bound": "NOT_TESTED",
+    "h_le_2_cutoff": "NOT_REFUTED_BY_THIS_TEST",
+    "h1_result": "UNCHANGED",
+    "status": "PER_FORM_ESTIMATE_VIOLATED",
+    "case": {
+      "form": [
+        3,
+        1,
+        1001
+      ],
+      "D": 12011,
+      "t": 3,
+      "coordinate_bounds": {
+        "X": 1,
+        "Y": 0
+      },
+      "bound_justification": "4aQ=(2ax+by)^2+D*y^2;4cQ=(2cy+bx)^2+D*x^2",
+      "prime_representations": [
+        [
+          -1,
+          0,
+          3
+        ],
+        [
+          1,
+          0,
+          3
+        ]
+      ],
+      "all_points_Q_le_t": [
+        [
+          -1,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          3
+        ]
+      ]
+    },
+    "principal_control": {
+      "form": [
+        1,
+        1,
+        3003
+      ],
+      "D": 12011,
+      "t": 3,
+      "coordinate_bounds": {
+        "X": 1,
+        "Y": 0
+      },
+      "bound_justification": "4aQ=(2ax+by)^2+D*y^2;4cQ=(2cy+bx)^2+D*x^2",
+      "prime_representations": [],
+      "all_points_Q_le_t": [
+        [
+          -1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ]
+    },
+    "candidate_expression": "2*pi*t/sqrt(D)+4*sqrt(a*t/D)+1",
+    "rigorous_upper_exclusive": "34/25",
+    "actual_prime_representation_count": 2,
+    "enclosure_basis": "pi<4;D>100^2;a*t=9;all comparisons exact",
+    "interpretation": "Counterexample to the suggested per-form estimate only; no aggregate or higher-class-number conclusion."
+  },
+  "interpretation": "Suggested per-form estimate false; aggregate bound/h<=2 cutoff not tested or refuted; checked h=1 result unchanged",
+  "raw_archive": {
+    "path": "PHASE60_RAW.zip",
+    "sha256": "76d6cf754b5af8fc5cba8fd34599c941f1bc5480b9a50759492ec4fd778b4b93",
+    "entries": 4
+  },
+  "sha256": {
+    "PHASE60_PROTOCOL.md": "0a42242e61fccfb5d51e4f34a6071192cc628b4dd04ae6e642b7383cb5808ac9",
+    "Phase60BoundaryCheck.py": "df37f60bbce73dd23edfec7d30625b94ca70335d9e31dd4ff2618e355f9449b9",
+    "run_phase60.ps1": "63dbe914feb4cf670c22cdabe895de8ce28cf12d63f9cf467278efcbf00c4847",
+    "PHASE60_run_20261026191629364.result.json": "11571cfd2d5394792bf01b484fc8788b3d61ee5389fb3604aa67a8b0d247ee59",
+    "PHASE60_run_20261026191629364.stdout.json": "1f4b35199b4ba4bee7a66a81ccee7552f0379041ecc36371e451bad28060e10f",
+    "PHASE60_run_20261026191629364.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE60_run_20261026191629364.source.py": "df37f60bbce73dd23edfec7d30625b94ca70335d9e31dd4ff2618e355f9449b9"
+  },
+  "source_context_sha256": {
+    "flow/x.md": "8c3cb8d49032168936380aad3864dd3ca9e89c328d5d277c4d9028d6a8ad4e26",
+    "tools/cover_h.py": "2e8c2021c9ed2daad73278e53d34fbecd76022f3fc331e68e01029927e475a99",
+    "tools/verify_split_h.py": "c9152ab085b9a59ef2a9c4c5aaba4b3bd1f0d0973dbb92d3812b733f4f27d435",
+    "REVIEW_BRIEF_2.md": "1b64996af8877312688c9438f705fb3acd635c8c0157463bf0e817669bfb42a4",
+    "flow/c.md": "67e60b2235842843d64554b2b5a9390362b59d4dd130d1508e656f07c23d13b0",
+    "flow/PREREG_H2.md": "c536a6350e4176405441fa71aafb70bcb5b707f97a6bf55586eccb30821cf0ac",
+    "flow/z.md": "2055b3d9186b1b42e2d20d759daa90b8c67f99591ac243e90a7914a07c05b683"
+  }
+}
