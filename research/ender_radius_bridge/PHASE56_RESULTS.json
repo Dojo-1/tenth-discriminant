@@ -1,0 +1,38 @@
+{
+  "status": "LOCAL_PASS",
+  "scope": "fixed actual-field discriminant bound50000000000; stronger existing weights",
+  "protocol_commit": "a42ab4fdbc7da06e1fb528703b4c6904e09db567",
+  "target_attempts": 1,
+  "target_build_seconds": 121.45292479999999,
+  "raw_sha256": {
+    "research/ender_radius_bridge/PHASE56_audit_20261026163710600.result.json": "76414826642557fdc2c8510a85c6a98838b45b60b8d3e14de96a04508afe5c15",
+    "research/ender_radius_bridge/PHASE56_build_20261026163340527.result.json": "0a6fa496242d878376e7fbcca6ce0395ae8a1c81848c803794a81b3a74ca4e9d",
+    "research/ender_radius_bridge/PHASE56_input_20261026163708349.result.json": "fccc08305af9ed9d57152d62fa4a5e414b928beb3e204b10b485f3ec3a672437",
+    "research/ender_radius_bridge/PHASE56_root_20261026163611816.result.json": "d265ae3b0f86cee4d28870f0ecce9ef32aa1761628543f4c1957e46969d7c653",
+    "research/ender_radius_bridge/PHASE56_audit_20261026163710600.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE56_build_20261026163340527.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE56_build_20261026163340527.stdout.log": "36232573b9dbaa9858d1730c7f43fd0dbbe15ee286d382915d4fec3bd80a6233",
+    "research/ender_radius_bridge/PHASE56_input_20261026163708349.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE56_input_20261026163708349.stdout.log": "99bbe243d8c299f6365496830b1cccb1ff3732f83e8cd99ebd682b640b7e78e1",
+    "research/ender_radius_bridge/PHASE56_root_20261026163611816.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/ender_radius_bridge/PHASE56_root_20261026163611816.stdout.log": "1d84377e96b620b35c2e1859d918fdb10f79d66ab748a526eddbeddc8d6ad187",
+    "research/ender_radius_bridge/PHASE56_AXIOM_AUDIT_RAW.zip": "2705b5295ceea684fad6412a3be61bb88be41e6c37f83c4a5b43e72b4bb5e7bc"
+  },
+  "source_sha256_lf": {
+    "lean/TenthDiscriminant/TunedRadiusFamily.lean": "a1e904b7d332221ee50163406af28676f954589c88155e6df713e770ab55ff73",
+    "lean/TenthDiscriminant/TunedAnalyticCutoff.lean": "d8a2da0463bfb050bfe89f90b51e4d238dece6205469fcd14de28b1737e0baa3",
+    "lean/TenthDiscriminant/RecoveredAnalyticCutoff.lean": "716128c12c7e2c85991a7a38fa0e0b69080ab7a1a4d141e125cc5fe4da1890b1",
+    "lean/TenthDiscriminant/StrongSmallPrimeRecoveryGain.lean": "b1cdd93d240331030eb809dbb3d524ee2e4730c0ec88c0ed7a49ff540ea2b632",
+    "lean/TenthDiscriminant/FiftyBillionCutoff.lean": "9abb0bd01eacf4a7acfb4d7d7aa85fd47e7a4a8a45847416be410ea0262ab2cf",
+    "lean/TenthDiscriminant.lean": "e87411aac8daa411297a3e39f57aacef67c259b7684238114ea81d5d687c55f9",
+    "research/ender_radius_bridge/PHASE56_PROTOCOL.md": "9056712f4e13d02d367b11df439ceaf7c545bdc46244f1aa499a5527f268af32",
+    "research/ender_radius_bridge/Phase56InputCheck.lean": "1b4ff2d088e28d61735fbedd65caf84d5b4c063d846bbdb8e7b760377e3958cc",
+    "research/ender_radius_bridge/run_phase56.ps1": "dcb004ca88479caa5da5d38476a984e8d1a0fde81738fb85dbd8abcdb5ea1a40",
+    "research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md": "6ac007b9ffa04e295d78913a4af5a10e05c93717c1613f350c3041b75be964cc"
+  },
+  "audit_entry": "PHASE56_audit_20261026163710600.stdout.log",
+  "audit_raw_sha256": "3b79a26a58711df6d879a95d4abf4a915fccacde35e7e446c750977642f75152",
+  "audit_raw_bytes": 2030917,
+  "semantic_review": "Phase55 frozen86abe21 predates these edits",
+  "exact_head_ci": "separate; not yet published"
+}

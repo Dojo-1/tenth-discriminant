@@ -2,22 +2,22 @@
 
 **A determinant argument you can reconstruct, run, and try to break.**
 
-**A locally Lean-checked 62.5-billion discriminant bound for imaginary quadratic number fields.**
+**A locally Lean-checked 50-billion discriminant bound for imaginary quadratic number fields.**
 For any actual number field with rational degree two, no real places and
-class number one, the actual absolute field discriminant is below `62,500,000,000`.
+class number one, the actual absolute field discriminant is below `50,000,000,000`.
 Conjugation and its anti-invariant projector now produce the positive
 squarefree generator; the caller supplies no root or isomorphism. The
-new cutoff recovers exact prime3/5 contributions omitted by the earlier
-uniform estimate. It keeps the same determinant and has no finite-answer
+new cutoff keeps sharper logarithm bounds on the recovered prime3/5
+contributions. It keeps the same determinant and has no finite-answer
 or old-cutoff premise. The new theorem, full local build, fresh input
-checks and axiom audit pass; [local verification](research/ender_radius_bridge/PHASE54_VERIFICATION.md).
-Proof head `86abe21` passed pinned CI40355317865, including the full build,
+checks and axiom audit pass; [local verification](research/ender_radius_bridge/PHASE56_VERIFICATION.md).
+Earlier62.5b proof head `86abe21` passed pinned CI40355317865, including the full build,
 dependency audit and inherited rejection controls; security/CodeQL passed.
 [Exact verification](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6421231717).
-Later review/documentation publication heads require their own CI.
+New50b source and later publication heads require their own CI.
 Earlier failures remain preserved. No novelty or optimality claim.
 [Operator proof](research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md) ·
-[Recovered-budget comparison](research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md).
+[Sharper recovered-budget comparison](research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md).
 
 The [exact envelope diagnostic](research/ender_radius_bridge/ENVELOPE_LIMIT_GUIDE.md)
 explains why a substantial further improvement needs stronger estimates;
@@ -27,9 +27,11 @@ The [small-prime recovery theorem](research/ender_radius_bridge/SMALL_PRIME_RECO
 now restores the exact3/5 terms omitted by the certified uniform proxy.
 Local Lean checks prove a strictly stronger proxy for R>=4,S>=2 without
 double-counting or changing production. A [fixed normalized gain](research/ender_radius_bridge/NORMALIZED_RECOVERY_GUIDE.md)
-now supplies at least3/50 when S>=100 and25*S<=R<=26*S. The Phase54
-composition verifies the endpoint guards at500^4 and lowers the cutoff
-from100 to62.5 billion. The Phase51 review predates these additions.
+supplied at least3/50 when S>=100 and25*S<=R<=26*S. The stronger
+Phase56 estimate supplies81/1000 using log3>=1.09 and log5>=1.6.
+Geometric helpers now hold at450^4; the fixed endpoint50b composes with
+the same production/tail comparison. The Phase55 review covers the older
+62.5b proof, not these new edits.
 
 The [central-symmetry lemma](research/ender_radius_bridge/CENTRAL_SYMMETRY_GUIDE.md)
 separates even- and odd-degree rows of the original Gram. The

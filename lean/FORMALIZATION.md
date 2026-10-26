@@ -1,5 +1,17 @@
 # Current claim-to-Lean map
 
+`totallyComplex_degree_two_classNumber_one_discriminant_bound_50b`
+proves actual absolute discriminant<50000000000 under the standard
+totally-complex/degree-two/actual-class-number-one hypotheses.
+`StrongSmallPrimeRecoveryGain` proves the81/1000 gain from the same
+weights; `FiftyBillionCutoff` composes the450^4 geometry helpers, certified
+tail and actual-Gram comparison. Old100b/62.5b conclusions remain.
+Full local root, controls, fresh25-input exclusions and4755/4012/16968
+audit pass. [Human proof](../research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md)
+and [verification](../research/ender_radius_bridge/PHASE56_VERIFICATION.md).
+Earlier review55 is frozen at86abe21 and does not cover these edits.
+New exact-head CI and independent human semantic review remain separate.
+
 The [Phase55 review](../research/ender_radius_bridge/PHASE55_REVIEW_REPORT.md)
 checked six joints of the new62.5-billion proof at frozen86abe21. It
 established no FATAL/GAP finding, re-derived new local calculations and

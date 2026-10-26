@@ -1,11 +1,20 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 26 October 2026, through preregistered Phase 55;
+**Living update: 26 October 2026, through preregistered Phase 56;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
 
-Phase55 adds one explicitly authorized bounded AI review of the new
+Phase56 lowers the direct actual-field cutoff from62.5 to50 billion by
+retaining sharper logarithm bounds on the same recovered3/5 weights.
+The normalized gain is81/1000; geometry is checked down to450^4 and
+composed at the fixed50b endpoint. Target/full build, controls, fresh
+25-input exclusions and axiom audit pass locally. New exact-head CI
+and independent human review remain separate. [Human explanation](research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md).
+This is20% below62.5b and half the100b checkpoint, not optimality.
+The earlier review55 remains tied to86abe21 and62.5b.
+
+Phase55 adds one explicitly authorized bounded AI review of the older
 endpoint. Six obligations established no FATAL/GAP finding; new recovery
 and endpoint calculations were re-derived while inherited apparatus and
 saved compiled results were source-traced. Lean/CI were not rerun. The
@@ -14,7 +23,7 @@ its [limits](research/ender_radius_bridge/PHASE55_VERIFICATION.md) remain.
 This strengthens due diligence without completing independent human
 review, optimality or all challenge objectives.
 
-Phase54 lowers the direct actual-field discriminant cutoff from100 to
+Historical Phase54 lowers the direct actual-field discriminant cutoff from100 to
 62.5 billion. The recovered3/50 is now composed with all endpoint guards
 at500^4, the certified tail and the original actual-Gram comparison.
 Target/full build, fresh21-input exclusion checks and the whole-project
@@ -231,8 +240,8 @@ was posted in this cycle.
 
 | # | Aspect of the challenge | Current verdict | Evidence and limit |
 |---:|---|---|---|
-| 1 | Effective bound, avoiding Heegner as proof input | **Abstract-field bound supplied locally; human review pending** | [Phase54](lean/TenthDiscriminant/RecoveredAnalyticCutoff.lean) proves actual absolute field discriminant below62500000000 for every totally complex degree-two number field of class number one. No supplied root/isomorphism or numerical premise. Fresh compiled closures exclude21 listed old-cutoff/finite-answer inputs; exact-head CI and independent human review remain separate. |
-| 2 | Best efforts to optimize the constant | **Further conservative improvement; no optimality claim** | Recovering omitted prime3/5 mass lowers the direct cutoff from100 to62.5 billion, a37.5% reduction. The original was700 billion. The same determinant, radius and valuation weights remain. This is still much larger than the external source claims in the frozen [comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md); they were not independently replayed. Earlier failed attempts remain preserved. |
+| 1 | Effective bound, avoiding Heegner as proof input | **Abstract-field50b bound supplied locally; human review pending** | [Phase56](lean/TenthDiscriminant/FiftyBillionCutoff.lean) proves actual absolute field discriminant below50000000000 for every totally complex degree-two number field of class number one. No supplied root/isomorphism or numerical premise. Fresh closures exclude25 listed old-cutoff/finite-answer roots, including62.5b; new exact-head CI and independent human review remain separate. |
+| 2 | Best efforts to optimize the constant | **Further conservative improvement; no optimality claim** | Sharper log weights lower the direct cutoff from62.5 to50 billion (20%), half the100b checkpoint; the original was700b. Same determinant/radius/valuation exponents. Still much larger than source claims in the frozen [comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md), which were not independently replayed. Earlier failures remain preserved. |
 | 3 | Threshold low enough for direct computation | **Complete finite certificate supplied for the canonical field family** | The original remaining interval is covered by quotient/remainder, eleven complete seed proofs and all785 quotient positions. With the cutoff and nine positive cases, `imaginaryQuadratic_classNumber_one_iff` has no range or certificate premise. Exact-head CI and semantic-review status must accompany this claim. |
 | 4 | High-quality Lean formalization, perhaps upstreamable | **Canonical iff and abstract-field cutoff connected; external quality judgment open** | Actual class number/discriminant, normalized-generator existence, universal imaginary-quadratic cutoff, canonical finite exclusion and all nine positives are supplied. No full-classification announcement is made. Independent human semantic/API review and Mathlib acceptance remain open. See the [claim map](lean/FORMALIZATION.md). |
 | 5 | Compare strengths of different writeups | **Bounded controlled comparison supplied; broad objective partial** | [Phase40](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) compares two frozen complete same-route manuscripts with our proof head across parameter, analytic threshold, finite finish, rank, normalization, inputs and review. Original-byte source hashes and recency controls are recorded. External results are source claims, not newly audited or replayed; this is not an all-writeup optimized survey. [Prior art](PRIOR_ART.md) remains a frozen historical note. |
@@ -245,7 +254,7 @@ was posted in this cycle.
 | 12 | Quality, collaboration and attribution over speed | **Visible practice, not an external verdict** | The [README](README.md) and [prior-art note](PRIOR_ART.md) credit antecedents and preserve scope limits. No Tao endorsement, human peer review or priority claim is inferred. |
 
 There is now a connected locally kernel-checked effective bound
-on the actual absolute field discriminant below62500000000 for any degree-two
+on the actual absolute field discriminant below50000000000 for any degree-two
 totally-complex number field of actual class number one. No presentation
 premise remains. The canonical radicand exclusion uses the same endpoint.
 All nine positive cases and the complete finite certificate now supply the

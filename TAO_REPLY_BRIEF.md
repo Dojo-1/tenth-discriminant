@@ -1,6 +1,6 @@
 # Factual brief for a possible human comment on Tao's challenge
 
-**26 October 2026, through Phase55. This is an AI-prepared evidence brief, not the
+**26 October 2026, through Phase56. This is an AI-prepared evidence brief, not the
 human-generated summary requested by [Tao's post](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).**
 The contributor should write the actual comment in their own words
 after reviewing the linked work. No comment has been submitted by this
@@ -15,19 +15,22 @@ human-generated submission or a claim that review has finished.
 Following Ben Green's determinant method and the credited preceding work,
 we used AI assistance to keep local prime divisibility and global geometry
 attached to the same positive integer Gram determinant. The Lean development
-locally proves `|disc K|<62500000000` for totally complex quadratic number
+locally proves `|disc K|<50000000000` for totally complex quadratic number
 fields of class number one, with no supplied generator or isomorphism.
 We want the joints of the argument to remain visible: this is a large bound,
 stronger compared writeups exist, failures are preserved, and we claim neither
 novelty nor optimality or completed independent human semantic review.
 
-Attach the [short proof](research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md)
+Attach the [short proof](research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md)
 and exact verification record after reviewing the current publication
 status. Mathematical head `86abe21` passed pinned CI40355317865 for the
-new endpoint, including the build,4710/3967/16968 dependency audit and
+older62.5b endpoint, including the build,4710/3967/16968 dependency audit and
 inherited rejection controls; security/CodeQL passed. Its [final record](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6421231717)
 was posted before the next review/documentation push. Later publication
 heads require separate CI; [local evidence](research/ender_radius_bridge/PHASE54_VERIFICATION.md).
+The new50b target/full build, fresh25-input exclusions and4755/4012/16968
+audit pass locally; its exact-head CI and human semantic review remain
+separate. Review55 predates these changes. [Current evidence](research/ender_radius_bridge/PHASE56_VERIFICATION.md).
 The earlier
 [cutoff review](research/ender_radius_bridge/PHASE45_REVIEW_REPORT.md) and new
 [bridge review](research/ender_radius_bridge/PHASE51_REVIEW_REPORT.md) cover

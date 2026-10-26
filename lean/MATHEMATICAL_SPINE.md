@@ -6,22 +6,23 @@ enough prime powers to force a larger size. The contradiction supplies an
 effective cutoff; finite exclusion and positive examples are separate steps.
 
 For any actual degree-two totally-complex number field, class number one
-implies an actual absolute field discriminant below62500000000. The
+implies an actual absolute field discriminant below50000000000. The
 [operator normalization](../research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md)
 supplies a positive squarefree generator without class-number input. In
 the canonical `Q(sqrt(-d))` chart, both d and the absolute discriminant
-are below62500000000. The [short cutoff proof](../research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md)
+are below50000000000. The [short cutoff proof](../research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md)
 explains the two affine budgets and every rounding/radius guard. It uses
 neither the finite answer nor an older cutoff.
 
-The last improvement restores existing prime3/5 weights that the simpler
-uniform estimate had omitted. A saturated-row count supplies at least3/50
-after normalization, improving the lower constant from5.820 to5.760.
-The radius still works at500^4, where the two budgets are strictly
-separated. No new valuation exponent or consequence of parity symmetry
-is asserted. Local proof acceptance and exact-head CI remain distinct;
-the [review brief](../research/ender_radius_bridge/RECOVERED_CUTOFF_REVIEW_BRIEF.md)
-identifies the six joints that need semantic inspection.
+The recovery restores existing prime3/5 weights omitted by a simpler
+uniform estimate. Keeping log3>=1.09 and log5>=1.6 in the saturated-row
+count gives at least81/1000 after normalization, improving the lower
+constant from5.820 to5.739. Geometry is checked at450^4 and the two budgets
+separate at50b. No new valuation exponent or parity-derived gain is
+asserted. Local acceptance and exact-head CI remain distinct. The
+[earlier review brief](../research/ender_radius_bridge/RECOVERED_CUTOFF_REVIEW_BRIEF.md)
+identifies the structural joints; its completed review covers the frozen
+62.5b proof86abe21, not these new gain/guard changes.
 
 The [canonical-family iff](TenthDiscriminant/ClassNumberClassification.lean)
 joins a complete finite certificate to all nine positive cases. Its existing
@@ -296,7 +297,7 @@ these views commute on **one integer matrix with the same samples**.
 | Production upper formula and its count input | Lean bounds the actual diagonal product by unchanged `upper_B` for the campaign's positive integer radii `rho<R`. Disjoint inward cells and exact axis accounting now supply the upper ellipse count and interval transfer, with line-count padding explicit. [Short proof](../research/ender_radius_bridge/UPPER_BOUND_GUIDE.md). |
 | Factorial identity and scalar lower estimate | Lean checks the exact finite Legendre prime-power sum (including `2`) and unchanged `factorial_lower` for `R≥2`. Its weights differ from the determinant's. [Short proof](../research/ender_radius_bridge/FACTORIAL_LOWER_GUIDE.md). |
 | Finite conversion to determinant weights and analytic tail | Lean checks the staircase identity, small-prime split, finite losses, coefficients, clipping and the exact reciprocal-prime bound by positive potential drops. Both mathematical production expressions now apply to the same Gram without a tail premise. [Short proof](../research/ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md). |
-| Universal analytic cutoff | The recovered prime3/5 mass lowers the direct radicand and actual absolute-discriminant bounds to62500000000. Both parity charts and actual-field transport are supplied. Local target/full build, fresh input and axiom checks pass; exact-head CI remains separate. No numerical, old-cutoff or finite-classification premise; see [the current cutoff proof](../research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md). |
+| Universal analytic cutoff | The recovered prime3/5 mass lowers the direct radicand and actual absolute-discriminant bounds to50000000000. Both parity charts and actual-field transport are supplied. Local target/full build, fresh input and axiom checks pass; exact-head CI remains separate. No numerical, old-cutoff or finite-classification premise; see [the current cutoff proof](../research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md). |
 | Finite exclusion and positive cases | The complete original interval certificate and all nine positive equalities supply the actual canonical-family iff. This uses the original cutoff independently of the new optimization. See [the two-direction proof](../research/ender_radius_bridge/CLASSIFICATION_GUIDE.md). |
 | Review and generality | Normalized-generator existence and the cutoff now cover abstract degree-two totally-complex number fields. Exact-head CI and human semantic/API review remain distinct; no full-classification announcement or Mathlib acceptance is claimed. |
 

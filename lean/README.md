@@ -1,6 +1,15 @@
 # Lean: the proof you can inspect
 
-Phase54 supplies a locally checked actual-field discriminant bound below
+Phase56 supplies a locally checked actual-field discriminant bound below
+50000000000. Stronger logarithm bounds on the same3/5 weights give a
+normalized gain81/1000; the same geometric construction is checked at450^4.
+First target/full build, controls, fresh25-input exclusions and axiom audit
+pass. [Human proof](../research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md)
+and [verification](../research/ender_radius_bridge/PHASE56_VERIFICATION.md).
+Exact-head CI and independent human review remain separate; the earlier
+review55 is frozen at86abe21/62.5b and does not cover these edits.
+
+Historical Phase54 supplies a locally checked actual-field discriminant bound below
 62500000000 for totally complex degree-two fields of class number one.
 It recovers exact existing prime3/5 weights and checks geometry at500^4;
 fresh dependency closures exclude21 listed old-cutoff/finite-answer roots.

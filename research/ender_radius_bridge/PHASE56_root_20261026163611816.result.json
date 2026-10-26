@@ -1,0 +1,17 @@
+﻿{
+    "phase":  56,
+    "mode":  "root",
+    "scope":  "Fixed50000000000 actual-field cutoff; stronger existing3and5 recovery",
+    "attempt":  1,
+    "exit_code":  0,
+    "elapsed_seconds":  40.687236399999996,
+    "cumulative_before_seconds":  0,
+    "time_limit_seconds":  1200,
+    "memory_threshold_mb":  8192,
+    "observed_peak_working_set_bytes":  2850246656,
+    "stop_reason":  "",
+    "executable":  "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments":  "build",
+    "stdout":  "PHASE56_root_20261026163611816.stdout.log",
+    "stderr":  "PHASE56_root_20261026163611816.stderr.log"
+}

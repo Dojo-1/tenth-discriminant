@@ -1,5 +1,22 @@
 # Status — 2026-10-26
 
+## Phase56: sharper existing weights give a50-billion cutoff
+
+The actual totally complex degree-two field discriminant bound is now
+locally<50000000000. Same Gram, radius, row family and valuation weights;
+log3>=1.09 and log5>=1.6 strengthen the guaranteed normalized recovery
+to81/1000. Helpers extend to450^4; exact log/affine estimates separate
+at50b. [Human argument](research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md).
+
+Protocola42ab4f preceded source. First target PASS121.4529248s, no repair
+or resource stop; root6819 PASS40.6872364s; signatures/controls/three fresh
+25-input closure exclusions PASS40.0445155s. Audit PASS31.8192312s,
+4755/4012/16968;165 reachable modules/no escapes,250 source endpoint pairs
+and sealed evidence integrity pass. Earlier raw failures and the first
+Phase55 report are preserved against frozen sources. [Verification](research/ender_radius_bridge/PHASE56_VERIFICATION.md).
+New exact-head CI and human semantic review remain separate. Review55
+covers86abe21/62.5b, not this increment. No optimality/classification claim.
+
 ## Phase55: one bounded review of the new endpoint
 
 The explicitly authorized fresh-context reviewer checked six obligations
