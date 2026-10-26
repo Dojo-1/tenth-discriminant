@@ -1071,3 +1071,19 @@ security40229148012 analysis jobsPASS. PR28stillopen/draft/head10b684c.
 Final baseline comment6411099568 posted BEFORE future push. No merge/post.
 Next math obligation: useful normalized uniform gain and new endpoint;
 neither proved here. Cutoff remains10^11, broad goal active.
+
+## Phase52 published with new exact CI
+
+Published915431702593800474eca846407fe2233f25c37b, tree2873575a,
+after prior10b final6411099568. Same-tree merge1ac05f79 parents392b6dbb
+and9154317 verified. PR28stillopen/draft/unmerged; title/body now describe
+the quadratic-field cutoff and recovered omitted prime mass. Checkpoint
+6411227335 records exact local scope, two failures, credit interruption,
+audit recovery and no normalized-gain/new-endpoint claim.
+Pinned CI40290045330/job121462694310 confirmed live at Build exact
+statements via GitHub connector; security40290041111 analysis jobs
+121462685857/121462686290 completedSUCCESS. Follow these exact handles;
+do not restart on observation timeout or push metadata just to retrigger.
+New module148lines+one root import, existing math/tools/pins/gates intact.
+Phase51 review does not cover it. All local proof/check handles terminal,
+inherited untracked lean/lake-manifest.json preserved/excluded. Goal active.
