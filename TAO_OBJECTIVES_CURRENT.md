@@ -1,9 +1,16 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 26 October 2026, through preregistered Phase 57;
+**Living update: 26 October 2026, through preregistered Phase 58;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase58 adds one bounded review of frozen63be64b, including the final50b
+and exact-staircase changes. No concrete FATAL/GAP/SLOPPY issue was found
+in six obligations. New local calculations were re-derived; inherited
+apparatus was source-traced and Lean/CI were NOT RERUN. The first native
+report is preserved. [Coverage and limits](research/ender_radius_bridge/PHASE58_VERIFICATION.md).
+This advances due diligence, not human review or a new cutoff.
 
 Phase57 gives a human-readable exact count of the existing prime weight:
 6F=S(S-1)(3R-p(S+1)) for p>0 and p(S-1)<=R. It follows by counting the
@@ -257,7 +264,7 @@ was posted in this cycle.
 | 8 | Help higher class-number problems | **Not delivered** | The `h≤2` [review brief](REVIEW_BRIEF_2.md) remains unreviewed; nothing here advances a verified higher-class-number range. |
 | 9 | Disclose AI involvement | **Repository practice present** | The [README](README.md) and review records identify AI assistance. This is disclosure, not validation or a submission. |
 | 10 | Contribute a repository link and human summary in Tao's comments | **No documented submission** | The repository has no submission permalink or posting record. This cycle posted nothing to Tao. The article was re-read, but a new sitewide/comment-pagination submission search was not performed. |
-| 11 | Independent due diligence before an AI-generated submission | **Strengthened, still partial** | Earlier cutoff/bridge reports cover different five-check scopes. The new [Phase55 review](research/ender_radius_bridge/PHASE55_REVIEW_REPORT.md) checks six joints at86abe21: no FATAL/GAP established, new calculations re-derived, inherited apparatus/source records traced. Lean/CI were not rerun by that reviewer. The first report is preserved without reroll. No whole-project, human or exact model-family independence is established; no submission recorded. |
+| 11 | Independent due diligence before an AI-generated submission | **Strengthened, still partial** | [Phase58](research/ender_radius_bridge/PHASE58_REVIEW_REPORT.md) covers six joints of final63be64b/50b and the exact staircase. No concrete FATAL/GAP/SLOPPY finding; new local calculations re-derived, inherited machinery source-traced. Lean/CI NOT RERUN. The first native report is preserved without reroll; human and model-family independence remain unestablished. No submission recorded. |
 | 12 | Quality, collaboration and attribution over speed | **Visible practice, not an external verdict** | The [README](README.md) and [prior-art note](PRIOR_ART.md) credit antecedents and preserve scope limits. No Tao endorsement, human peer review or priority claim is inferred. |
 
 There is now a connected locally kernel-checked effective bound

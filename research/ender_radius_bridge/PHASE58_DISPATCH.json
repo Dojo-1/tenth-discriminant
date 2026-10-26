@@ -1,0 +1,14 @@
+{
+  "registered_commit": "610f750d36eb05f81c92d0421c997a6189bd2d35",
+  "target": "63be64b4ba3ff9795f552dd34bc415f6ea3acb25",
+  "dispatch_not_before_utc": "2026-10-26T17:50:40.685250+00:00",
+  "wall_cap_seconds": 1800,
+  "authorization": "Human reply: Run one bounded review",
+  "fresh_context": true,
+  "children_allowed": false,
+  "rerolls_allowed": false,
+  "brief_sha256": "22c305eab20c6cbce0a135829df248eb813027cd30b979378358f5e9db754fef",
+  "protocol_sha256": "8fb3ac95bcab6e972af6fef2dcb36f91534fff0934b2a5da388d8a92cede292b",
+  "agent": "/root/final_cutoff_review",
+  "spawn_returned": true
+}

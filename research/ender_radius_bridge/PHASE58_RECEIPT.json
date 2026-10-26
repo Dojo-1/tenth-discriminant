@@ -1,0 +1,14 @@
+{
+  "parent_receipt_utc": "2026-10-26T17:59:06.992070+00:00",
+  "conservative_elapsed_seconds": 506.30682,
+  "first_report_sha256": "d1f013bc9bb75f466d46263553b393983411321bcc38f61f2d854da2e9b5fd22",
+  "reviewer_reported_sha256": "d1f013bc9bb75f466d46263553b393983411321bcc38f61f2d854da2e9b5fd22",
+  "source_manifest_sha256": "459d4b748425154fd4d7fb9fb1deb3d7f99854b86cb880bd6c319a92883b0046",
+  "agent": "/root/final_cutoff_review",
+  "native_report_written_utc": "2026-10-26T17:58:41.9961660Z",
+  "reviewer_reported_elapsed_seconds": 481.311,
+  "coverage": "No concrete FATAL/GAP/SLOPPY in six obligations; local derivations checked; inherited machinery source-traced; Lean/CI NOT RERUN",
+  "timing_limit": "Exact agent task receipt not independently captured; parent dispatch-to-receipt is conservative bound",
+  "rerolls": 0,
+  "children": 0
+}

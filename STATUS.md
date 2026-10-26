@@ -1,5 +1,14 @@
 # Status — 2026-10-26
 
+## Phase58: one bounded review of the final cutoff
+
+The first native review of frozen63be64b found no concrete FATAL/GAP/SLOPPY
+issue in six obligations. New gain, geometry, endpoint and staircase
+calculations were re-derived; inherited apparatus was source-traced.
+Lean/CI were NOT RERUN by the reviewer. The report is preserved unchanged,
+within its30-minute cap, with no reroll. [Coverage and limits](research/ender_radius_bridge/PHASE58_VERIFICATION.md).
+The cutoff stays50 billion. Human review and broader objectives remain open.
+
 ## Phase57: exact weight by counting columns
 
 For positive p with p(S-1)<=R, the original prime weight satisfies
