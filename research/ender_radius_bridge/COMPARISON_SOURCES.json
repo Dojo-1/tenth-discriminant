@@ -1,0 +1,32 @@
+{
+  "kind": "DESCRIPTIVE_PRIMARY_SOURCE_INSPECTION_NOT_EXPERIMENT_OR_PROOF_REPLAY",
+  "date": "2026-10-26",
+  "external_repository": "DrMurphyIsIn/tenth-discriminant",
+  "external_commit": "f0995bf604056a98f0af0d182ed152c6bd996419",
+  "external_files_git_blob_sha1": {
+    "hcn/README.md": "28eb34fb38aa4ccaa3c639bfbf4e57b0f524f79d",
+    "hcn/formalization/README.md": "a0c50edcf2b0b1e9bafa43ba0eccc0ab3a1a6e3e",
+    "hcn/formalization/HCN/Main.lean": "219631d465f3b2738f12da587d89ba3a8afac846",
+    "hcn/formalization/HCN/Statements/ClassPartition.lean": "0782c216e739932378ccae2e89efdd1a54ad1701",
+    "comparison/REPRODUCE.md": "de2441e5dc975d05ed1cd2664e08fcf00956bc7a"
+  },
+  "reported_external_pins": {
+    "Lean": "4.34.1",
+    "Mathlib": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "openai_math": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+  },
+  "local_production_evidence": {
+    "head": "b4cff273f620ead13fc60097222fac01cce4ab67",
+    "CI_run": 40403267176,
+    "CI_job": 121854391609,
+    "conclusion": "SUCCESS",
+    "final_comment": "https://github.com/Dojo-1/tenth-discriminant/pull/30#issuecomment-6428022437"
+  },
+  "limits": [
+    "No external Lean build, comparator, axiom audit, numerical replay or independent semantic validation was executed.",
+    "Source-reported results are kept separate from locally checked theorems.",
+    "Compiler and library pins differ; no source or theorem was imported.",
+    "Original21October prior-art body remains historical; no priority claim.",
+    "This selected comparison does not complete an all-writeup optimized survey."
+  ]
+}

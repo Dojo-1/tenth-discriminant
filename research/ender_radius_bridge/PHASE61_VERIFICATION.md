@@ -37,10 +37,15 @@ limit or rerunning it. No matching surviving child was found on inspection.
 Root/input/global-audit records above precede the final EOF-only cleanup;
 target3 checks the final formatted modules. No proof token changed.
 
-New exact-head remote CI has not yet run. Earlier c6cbb1f CI succeeded and
-was recorded before this change; it does not cover these new modules.
-Independent pinned Linux CI must still compile/audit the new production
-root and execute its complete required controls. No CI result is assumed.
+Exact-head Linux CI at `b4cff273f620ead13fc60097222fac01cce4ab67` now
+PASSES: run40403267176/job121854391609. Decoded logs give250 source pairs
+at21:19:24.7819216Z, audit4821/4071/16978 at21:35:06.0529577Z, and the
+entire final control suite at21:40:28.3892260Z on26October2026. Same-head
+CodeQL121854700666/actions121854377421/python121854377037 all pass.
+[Final public record](https://github.com/Dojo-1/tenth-discriminant/pull/30#issuecomment-6428022437)
+was posted before any later publication. This covers the integrated
+production theorem. It does not rewrite the local Windows timeout as a
+local pass or execute the separate Phase62 research file.
 
 ## Preservation and scope
 

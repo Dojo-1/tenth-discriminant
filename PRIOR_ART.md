@@ -1,5 +1,12 @@
 # Prior art — read this first (updated 21 Oct 2026, 21:40, from github.com/twinheterodox/tenth-discriminant @ 95e8fe6)
 
+**Historical snapshot, not a current absence claim.** A26October source
+check finds later reported QRH-based Lean developments, including h<=2,
+in a different repository. They have not been replayed here. See the
+[pinned, premise-aware comparison](METHOD_COMPARISON_CURRENT.md). The
+original dated record below is retained; it does not establish priority.
+
+
 **For class number one, our track GREEN-H1-E is an independent rediscovery of an already-published route.**
 
 twinheterodox (Codex-assisted), same route (h=1 split-prime lattice count + Green's derivative determinant):

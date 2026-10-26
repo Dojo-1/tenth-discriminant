@@ -25,8 +25,8 @@ cleanup only), full root,
 34-input exclusions and compiled audit pass locally:4821 logical declarations,
 4071 theorems,16978 runtime auxiliaries. API/audit controls pass; the local
 negative suite times out at its existing120-second multiplicity cap and
-remains INCOMPLETE, without rerun. New exact-head CI is pending,
-recorded separately in [verification](research/ender_radius_bridge/PHASE61_VERIFICATION.md).
+remains INCOMPLETE, without rerun. Exact b4cff27 Linux CI40403267176
+now passes the complete suite and security checks, recorded separately in [verification](research/ender_radius_bridge/PHASE61_VERIFICATION.md).
 [Human argument](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md).
 Phase59/60 source and evidence stay frozen; their old current-tree integrity
 checks are historical after this explicit production integration.
