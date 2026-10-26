@@ -9,8 +9,9 @@ the integral; no supplied count/area premise. The t=0, circle and sheared
 controls pass. The ideal-class/form dictionary, prime multiplicity and
 ramified budget remain open; no actual B or new cutoff is inferred.
 First target52.9580334s/root20.1056496s/input26.1582986s/audit27.9050467s
-all PASS;4869 logical/4114 theorem/16982 runtime,170 modules. New exact-head
-remote CI is still required. [Human proof](research/ender_radius_bridge/QUADRATIC_AREA_GUIDE.md)
+all PASS;4869 logical/4114 theorem/16982 runtime,170 modules. Exact70f9217
+Linux CI40412438935 also passes the complete build/audit/regression suite;
+only Lean is reported, with no security pass inferred from absence. [Human proof](research/ender_radius_bridge/QUADRATIC_AREA_GUIDE.md)
 and [verification](research/ender_radius_bridge/PHASE64_VERIFICATION.md).
 
 ## Phase63: actual off-axis points are bounded by a width integral

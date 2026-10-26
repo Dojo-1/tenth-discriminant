@@ -44,11 +44,12 @@ spells out assumptions and the exact statements.
 
 The cutoff's [bounded review](research/ender_radius_bridge/PHASE58_VERIFICATION.md)
 and its versioned CI records remain distinct from later additions.
-Geometry source `70f9217` passes local target/root/type/input/axiom checks:
-4,869 logical declarations, 4,114 theorems, 170 reachable modules. Its own
-[pinned CI run](https://github.com/Dojo-1/tenth-discriminant/actions/runs/40412438935)
-and [verification record](research/ender_radius_bridge/PHASE64_VERIFICATION.md)
-supply exact-version status. Passing code does not establish human review.
+Geometry source `70f9217` passes the full
+[pinned Lean CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/40412438935),
+including final regression controls: 4,869 logical declarations, 4,114
+theorems, 170 reachable modules. The [exact record](research/ender_radius_bridge/PHASE64_VERIFICATION.md)
+keeps source versions, checks and review distinct. Passing code does not
+establish human review.
 
 The next arithmetic bridge must place split-prime representations in the
 actual ideal-class norm forms and justify their multiplicity. It must also

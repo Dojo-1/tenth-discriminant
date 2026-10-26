@@ -5,13 +5,14 @@
   "history_path": "TAO_OBJECTIVES_HISTORY.md",
   "history_sha256": "5408f79b1d29bc3730b8f81b6e3af93e002c4297b19350d19db04dfe238172c5",
   "source_lines": 379,
-  "current_lines": 62,
+  "current_lines": 63,
   "invariants": [
     "All12 objectives retained with inline limits and evidence links.",
     "Frozen history is byte-identical to original Git source, including superseded status language.",
-    "No mathematical source, experiment, result archive, pin, CI gate or README changed.",
+    "No mathematical source, experiment, result archive, pin or CI gate changed. README retains61 lines with its verification link refreshed.",
     "No full-classification, novelty, optimality, human-review, upstream-acceptance or submission claim introduced.",
     "No proof/experiment rerun; existing exact-head CI is left untouched."
   ],
-  "self_audit": "Kept imaginary-quadratic domain, class-number-one hypothesis and absolute-discriminant meaning explicit; distinguished draft production-root geometry from merged cutoff and human review."
+  "self_audit": "Kept imaginary-quadratic domain, class-number-one hypothesis and absolute-discriminant meaning explicit; distinguished draft production-root geometry from merged cutoff and human review.",
+  "verification_update": "Exact70f9217 full LeanCI40412438935/job121886253061 passed; finalrecord6429308121 before docpublication. No securitychecks reported forstack; laterdocheadstatusseparate."
 }

@@ -1,7 +1,6 @@
 # Phase64: closed quadratic point count in production
 
-**All registered local checks PASS**, with new exact-head remote CI still
-required. Protocol20d1db3 preceded proof source; basee92d05b. This cycle
+**All registered local checks and exact70f9217 Linux CI PASS.** Protocol20d1db3 preceded proof source; basee92d05b. This cycle
 integrates the frozen Phase63 proof and evaluates its actual width integral.
 
 - Target first build PASS52.9580334s; no repair, second build or resource stop.
@@ -34,9 +33,23 @@ frozen. Prior current-root verifiers are historical after the new imports;
 this cycle preserves their bytes at frozen refs without weakening their
 original manifests or misrepresenting their old scope.
 
-The timed-out local Phase61 negative campaign was NOT rerun. The unchanged
-complete regression suite is reserved for independent pinned Linux CI at
-the newly published head. No remote pass is assumed from the local checks.
+The timed-out local Phase61 negative campaign was NOT rerun. Independent
+Linux CI at exact70f9217 passes the unchanged full regression suite; that
+does not relabel the Windows timeout as a local pass.
+
+## Completed mathematical-head verification
+
+Run40412438935/job121886253061 at70f92177c9bd46fa8447fa0a19ab4be4f86fd3c3
+completed SUCCESS. Decoded UTC logs on26October2026 record250 source pairs
+at22:28:18.3842213Z, closed-area namespace48/43/4 at22:29:26.2711756Z,
+global audit4869/4114/16982 at22:45:08.0932401Z, and the complete final
+regression controls at22:51:04.8831844Z. Merge8a771036 has the same tree
+f65f41b2 and parents74d02d3/70f9217. [Final public record](https://github.com/Dojo-1/tenth-discriminant/pull/32#issuecomment-6429308121)
+preceded the documentation-only follow-up. Only Lean is reported for this
+stacked PR; no security checks are reported, so no security pass is inferred.
+Later documentation heads have their own CI status. The mathematical sources
+are unchanged by the compact-ledger/history update. The README remains61
+lines; its verification pointer is refreshed to this record.
 
 ## Publication baseline
 

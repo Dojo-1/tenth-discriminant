@@ -6,7 +6,8 @@ a,D and t>=0. The exact width integral and zero-height case are closed,
 using Mathlib's semicircle identity and homogeneous scaling. Two new modules
 and Root imports integrate the frozen Phase63 row proof; no old proof/pin/
 tool/gate changes. Target/root/type-input/global audit pass locally:
-4869/4114/16982,170 modules; new exact-head CI remains required.
+4869/4114/16982,170 modules. Exact70f9217 Linux CI40412438935 passes the
+complete production suite; no security checks are reported for the stack.
 No ideal-class dictionary, four-representation input, ramified budget,
 arithmetic B or higher-class-number cutoff is supplied.
 [Human proof](../research/ender_radius_bridge/QUADRATIC_AREA_GUIDE.md) and
