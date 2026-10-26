@@ -93,3 +93,5 @@ import TenthDiscriminant.ExcludedPrimeAssembly
 import TenthDiscriminant.PrimeWeightKernel
 import TenthDiscriminant.QuadraticRowCount
 import TenthDiscriminant.QuadraticAreaCount
+import TenthDiscriminant.PrimeDivisorLoss
+import TenthDiscriminant.ClassFiber
