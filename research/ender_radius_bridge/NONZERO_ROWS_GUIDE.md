@@ -1,8 +1,9 @@
 # Count the strips, then pair them
 
-**Lean now bounds the actual number of off-axis integer points by an
-explicit row-width integral. The integral's closed area formula remains
-a separate formal step.** No class-number cutoff changes.
+**Phase63 bounds the actual off-axis count by a width integral.**
+[Phase64](QUADRATIC_AREA_GUIDE.md) now evaluates that integral and integrates
+the closed bound into production. This guide retains the original row
+argument and its research-file scope. No class-number cutoff changes.
 
 Take a positive-definite real form Q(x,y)=ax²+bxy+cy², with a>0,
 D=4ac-b²>0 and t>=0. Let U be any finite set of integer pairs satisfying

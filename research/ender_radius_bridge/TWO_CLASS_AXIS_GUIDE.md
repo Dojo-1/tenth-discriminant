@@ -57,7 +57,7 @@ Lean targets: `PrimeAxisRepair.axis_prime_iff`, `primeAxis_card_le_two`,
 [Verification](PHASE62_VERIFICATION.md) and [registration](PHASE62_PROTOCOL.md).
 This research file is outside production CI.
 
-Update: [Phase63](NONZERO_ROWS_GUIDE.md) separately checks the actual
-nonzero-row count up to its width integral. The closed area evaluation
-and arithmetic/class inputs remain open. This does not change the
-frozen Phase62 source or its original verification scope.
+Update: [Phase63](NONZERO_ROWS_GUIDE.md) checks the row-width count and
+[Phase64](QUADRATIC_AREA_GUIDE.md) closes its area evaluation in production.
+Arithmetic/class inputs remain open. This does not change the frozen
+Phase62 source or its original verification scope.

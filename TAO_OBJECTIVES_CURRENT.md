@@ -1,9 +1,16 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 26 October 2026, through preregistered Phase 63;
+**Living update: 26 October 2026, through preregistered Phase 64;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase64 closes the actual geometric count with the exact area/perimeter
+formula and integrates it into production. A single scaling proof covers
+t=0 and shifted forms. Target/root/input/global audit pass locally;
+new-head CI still required. The arithmetic/class/prime/ramified links remain
+open, so no new B/cutoff or challenge-objective completion is inferred.
+[Human closed count](research/ender_radius_bridge/QUADRATIC_AREA_GUIDE.md).
 
 Phase63 checks the actual finite off-axis quadratic point count up to an
 explicit width integral, using row fibers and reflection. This closes
@@ -331,6 +338,7 @@ completion is separately registered and separately costed.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
+| The off-axis geometric count has its closed area formula. | **Production Lean theorem, ordinary-polynomial type check and dependency audit** | [Phase64](research/ender_radius_bridge/QUADRATIC_AREA_GUIDE.md) proves cardU<=2pi*t/sqrt(D)+4sqrt(at/D) using row fibers, central reflection and homogeneous semicircle scaling, including t=0. Class/prime/ramified inputs and a usable arithmetic B remain open; no new cutoff. |
 | Actual off-axis quadratic points become a row-width integral. | **Standalone Lean finite count and symmetry theorem** | [Phase63](research/ender_radius_bridge/NONZERO_ROWS_GUIDE.md) bounds integer pairs directly, through interval cardinality, row fibers, a monotone integral and central reflection. The area evaluation and class/prime/ramified inputs remain open; no new B, cutoff or numerical campaign. |
 | The principal axis saves the two-class counting constant. | **Standalone Lean factorization and conditional finite accounting** | [Phase62](research/ender_radius_bridge/TWO_CLASS_AXIS_GUIDE.md) proves at most2 prime-axis points per form and none for the principal form; 2(h-1)<=h for h<=2. Nonzero-row geometry and four-representation inputs are still needed; no actual count B or numerical range is delivered. |
 | Counts of excluded primes become an explicit loss on the same determinant. | **Production Lean theorem and compiled dependency audit** | [Phase61](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md) proves 2pF<=R(R-1)S and uses the decreasing log(p)/p kernel with finite Abel summation. The remaining input is an arithmetic prefix bound B; no higher-class-number range, new cutoff or sharpness claim. |

@@ -1,11 +1,24 @@
 # Current claim-to-Lean map
 
+Production `QuadraticRows.off_axis_area_bound` now proves the actual
+finite off-axis count<=2pi*t/sqrt(D)+4sqrt(at/D), D=4ac-b², under positive
+a,D and t>=0. The exact width integral and zero-height case are closed,
+using Mathlib's semicircle identity and homogeneous scaling. Two new modules
+and Root imports integrate the frozen Phase63 row proof; no old proof/pin/
+tool/gate changes. Target/root/type-input/global audit pass locally:
+4869/4114/16982,170 modules; new exact-head CI remains required.
+No ideal-class dictionary, four-representation input, ramified budget,
+arithmetic B or higher-class-number cutoff is supplied.
+[Human proof](../research/ender_radius_bridge/QUADRATIC_AREA_GUIDE.md) and
+[verification](../research/ender_radius_bridge/PHASE64_VERIFICATION.md).
+
+
 Standalone `NonzeroRows.off_axis_count` now bounds the actual finite
 integer off-axis count for positive-definite real quadratic forms by an
 explicit row-width integral. The integer interval, fiber count, height,
 monotone sum/integral and reflection steps are checked together;14 public
-types unchanged, namespace34/29/4 passes. The area integral is not yet
-evaluated in Lean here. No arithmetic count B or higher-class-number cutoff
+types unchanged, namespace34/29/4 passes. The original research file leaves
+the area integral explicit; current Phase64 production now evaluates it. No arithmetic count B or higher-class-number cutoff
 follows; this research file is outside production/root/CI.
 [Human proof](../research/ender_radius_bridge/NONZERO_ROWS_GUIDE.md).
 
