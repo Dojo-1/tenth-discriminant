@@ -1,0 +1,66 @@
+{
+  "phase": 69,
+  "status": "FAILED_INTERNAL_RESOURCE_STOP_NO_NORM_FORM_OR_ACTUAL_IDEAL_COUNT_THEOREM",
+  "base": "34f277531d8c160b05a14fac7a9482b8fbd6e141",
+  "registered_commit": "c826c68d53efea2e5b0acf04343bcbaad270eeae",
+  "builds": [
+    {
+      "phase": 69,
+      "mode": "build",
+      "scope": "Actual integral ideal norm form, exact discriminant and off-axis count; no uniform leading bound or arithmetic B",
+      "source_sha256": "dec6659224f4bb56944e86bb6567cb39252e2cea6ee40e76b44a714ad283de58",
+      "source_snapshot": "PHASE69_build_20261026235026490.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 47.0501137,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3088699392,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase69IdealNormForm.lean"
+      ],
+      "stdout": "PHASE69_build_20261026235026490.stdout.log",
+      "stderr": "PHASE69_build_20261026235026490.stderr.log"
+    }
+  ],
+  "target_seconds": "47.0501137",
+  "sha256": {
+    "PHASE69_PROTOCOL.md": "057c63d295d8c9c4890c9aa8725c5399b0e61f7c019b6753201dfa53676aa4b9",
+    "Phase69IdealNormForm.lean": "dec6659224f4bb56944e86bb6567cb39252e2cea6ee40e76b44a714ad283de58",
+    "run_phase69.ps1": "cfc7e1bbbb49a039e5604079caf15ec22714cdf094dbae8a6fac3240232f221d"
+  },
+  "raw_archive": {
+    "path": "PHASE69_RAW.zip",
+    "sha256": "3e1cc041754fb2df0684bb079e34debc9143dde3433aa65320dbb4cac6b45e95",
+    "members": 4
+  },
+  "raw_sha256": {
+    "PHASE69_build_20261026235026490.source.lean": "dec6659224f4bb56944e86bb6567cb39252e2cea6ee40e76b44a714ad283de58",
+    "PHASE69_build_20261026235026490.stdout.log": "c7f57930b2f2d012b9eae0a5fc84a8a7206872e30257daed913e07bf4c36b201",
+    "PHASE69_build_20261026235026490.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE69_build_20261026235026490.result.json": "5ce841bb76f993c8c2cd71b8a4b672a6923e2e2c90a9f990247e77037d002c00"
+  },
+  "stop_interpretation": "Lean deterministic heartbeat exhaustion at200000 is treated as a target resource stop under the preregistered any-resource-stop rule. The outer runner stop_reason is empty: it did not hit its600s/8192MB limit. No remaining invocation is permitted in this cycle.",
+  "findings": [
+    "Integer-smul instance mismatch in generic reconstruction.",
+    "Let-bound norm cast not normalized.",
+    "Coercion through ideal subtype not exposed before mapping coordinates.",
+    "Divisibility names hd0/hd1 consumed by obtain before reuse.",
+    "Determinant simplification exhausted Lean heartbeat resource; subsequent main declaration unavailable.",
+    "Full count theorem was not accepted; namespace audit rejected generated failed-elaboration declaration."
+  ],
+  "limits": [
+    "No mathematical counterexample or refutation is inferred.",
+    "No partial declaration or printed failed-elaboration type is promoted to an audited bridge theorem.",
+    "No repair, second invocation, heartbeat increase, target weakening or prior-campaign rerun.",
+    "Production root, tools, pins, certificates and all prior proof evidence unchanged.",
+    "Phase68 multiplicity remains a separate locally accepted result."
+  ]
+}

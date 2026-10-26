@@ -1,5 +1,13 @@
 # Current claim-to-Lean map
 
+Phase69 delivers **no checked ideal norm-form or actual-ideal count theorem**.
+The single standalone attempt failed and exhausted the deterministic Lean
+heartbeat resource; the registered stop rule forbids a rerun in that cycle.
+Its source/raw failure is preserved outside the production root. No printed
+failed-elaboration declaration is a trusted theorem. Phase68's accepted
+odd-chart multiplicity and Phase67 production arithmetic are separate.
+[Failure record](../research/ender_radius_bridge/PHASE69_VERIFICATION.md).
+
 Standalone `ResidueMultiplicity.finite_odd_square_representations` now
 constructs exactly4*card(P) selected class-labelled norm elements in the
 actual squarefree odd maximal-order chart. Actual residue-map kernels are

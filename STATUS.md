@@ -1,5 +1,16 @@
 # Status — 2026-10-27
 
+## Phase69: coordinate attempt failed and stopped
+
+The complete actual ideal/form/count target was not accepted. Its first
+47.0501137s run hit coercion/witness errors and deterministic200000-heartbeat
+exhaustion during determinant simplification; the namespace audit rejected
+it. The protocol's resource-stop rule ends the cycle: no repair/rerun,
+heartbeat increase or weakened endpoint. This is not a mathematical
+counterexample. The accepted Phase68 multiplicity remains separate;
+coordinates and coefficient bounds remain open.
+[Preserved failure](research/ender_radius_bridge/PHASE69_VERIFICATION.md).
+
 ## Phase68: finite four-representation multiplicity in the odd chart
 
 A standalone Lean theorem constructs a selected set of exactly4*card(P)
