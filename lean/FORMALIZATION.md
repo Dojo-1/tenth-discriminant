@@ -1,10 +1,20 @@
 # Current claim-to-Lean map
 
+`FirstCertificate.recovered_normalized_gap` proves a gain of at least3/50
+over the certified proxy for S>=100 and25*S<=R<=26*S.
+`raw_normalized_add_gain_le_recovered` transfers it to the raw expression.
+The generic positive-p saturated-row count and p=0/S=1 controls are in
+`SmallPrimeRecoveryGain.lean`. [Human proof](../research/ender_radius_bridge/NORMALIZED_RECOVERY_GUIDE.md).
+This supplies a quantitative bridge, not a new discriminant endpoint.
+Phase51 semantic review and Phase52 CI predate this module.
+Local root/signature/controls/audit checks pass, with4687 logical declarations
+and3944 theorems; [verification scope](../research/ender_radius_bridge/PHASE53_VERIFICATION.md).
+
 `FirstCertificate.recoveredPrimeMassLower_le_production` restores the
 exact3/5 contributions omitted by the uniform proxy, with no double-counting.
 `certified_lt_recoveredPrimeMassLower` proves strict proxy improvement for
 R>=4,S>=2. The production expression and determinant weights are unchanged;
-the theorem does not export a new scaled affine envelope or cutoff.
+that theorem alone does not export a new scaled affine envelope or cutoff.
 Local root/signature/axiom checks pass. [Guide](../research/ender_radius_bridge/SMALL_PRIME_RECOVERY_GUIDE.md)
 and [evidence scope](../research/ender_radius_bridge/PHASE52_VERIFICATION.md).
 The Phase51 reviewer predates this addition; new-head CI remains separate.

@@ -1087,3 +1087,5 @@ do not restart on observation timeout or push metadata just to retrigger.
 New module148lines+one root import, existing math/tools/pins/gates intact.
 Phase51 review does not cover it. All local proof/check handles terminal,
 inherited untracked lean/lake-manifest.json preserved/excluded. Goal active.
+
+Phase53 reconciled after interrupted calls: no live Lean processes, empty logs retained. Retry launch policy/PATH failures occurred before Lean. Input and audit terminal PASS; exact results and preserved failure/repair in PHASE53_VERIFICATION.md. Fixed normalized gain3/50, unchanged cutoff1e11. Published9154317 CI40290045330 passed; final comment6417227384 before next push. No new reviewer, merge, or Tao submission. Goal active.

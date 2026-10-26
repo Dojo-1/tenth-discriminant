@@ -84,3 +84,4 @@ import TenthDiscriminant.ImaginaryQuadraticRepresentation
 import TenthDiscriminant.CentralSymmetry
 import TenthDiscriminant.ParityCompatibility
 import TenthDiscriminant.SmallPrimeRecovery
+import TenthDiscriminant.SmallPrimeRecoveryGain

@@ -1,15 +1,25 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 26 October 2026, through preregistered Phase 52;
+**Living update: 26 October 2026, through preregistered Phase 53;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
 
+Phase53 proves a fixed normalized gain of at least3/50 in the checked
+aspect-ratio region S>=100,25*S<=R<=26*S. It counts saturated rows of
+the existing weights; it adds no determinant valuation. A lower endpoint
+still requires its own guards and strict comparison, so the cutoff stays
+10^11 and no challenge objective is newly marked complete.
+[Human explanation](research/ender_radius_bridge/NORMALIZED_RECOVERY_GUIDE.md).
+Phase52 published head9154317 passed pinned CI40290045330; the newer
+Phase53 source requires separate exact-head CI and is outside Phase51 review.
+
 Phase52 proves a strictly stronger certified uniform proxy by recovering
 the exact3/5 contributions omitted from its retained>=7 sum. The same
 production budget bounds it; no extra determinant valuation is claimed.
-Local Lean checks pass. A uniform normalized gain and new endpoint remain
-open, so the actual-field cutoff is still10^11. [Human explanation](research/ender_radius_bridge/SMALL_PRIME_RECOVERY_GUIDE.md).
+Local Lean checks pass. Phase53 now supplies a uniform normalized gain;
+a new endpoint remains open, so the actual-field cutoff is still10^11.
+[Human explanation](research/ender_radius_bridge/SMALL_PRIME_RECOVERY_GUIDE.md).
 Earlier review and CI scopes do not automatically cover this new proof.
 
 Phase51 supplies one user-authorized fresh-context source review of the

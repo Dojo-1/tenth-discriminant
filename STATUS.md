@@ -1,5 +1,26 @@
 # Status — 2026-10-26
 
+## Phase53: a uniform gain from the recovered small primes
+
+The new Lean module proves a normalized gain of at least3/50 for
+S>=100 and25*S<=R<=26*S, for every real tail parameter. It counts
+already saturated monomial rows; the original determinant weights and
+production expression are unchanged. The p=0 and S=1 controls show why
+guards matter. One elaboration failure and its full source are retained;
+the only repair normalizes two numerical casts. No new cutoff follows
+until endpoint and comparison guards are proved. [Human guide](research/ender_radius_bridge/NORMALIZED_RECOVERY_GUIDE.md).
+
+Local checks pass: root6816, signatures/two controls/four axiom prints,
+compiled audit4687/3944/16968,162 reachable modules/no escapes, source250
+endpoint pairs, and sealed evidence integrity. Target builds FAIL66.8015998s
+then PASS27.8463944s; no resource stop. [Exact commands and evidence](research/ender_radius_bridge/PHASE53_VERIFICATION.md).
+
+Published Phase52 head9154317 completed pinned CI40290045330 SUCCESS,
+including audit4672/3929/16968 and all inherited controls; final record
+[6417227384](https://github.com/Dojo-1/tenth-discriminant/pull/28#issuecomment-6417227384).
+That CI does not cover the newer Phase53 source. Neither addition was
+covered by the earlier bounded Phase51 reviewer. PR28 remains draft/unmerged.
+
 ## Phase52: recover exact3/5 mass in the certified uniform proxy
 
 The new proxy equals certifiedPrimeMassLower+2*(F3log3+F5log5), bounded
@@ -13,7 +34,8 @@ Audit launch was initially unexecuted because approval-service credits
 were exhausted; after user-confirmed restoration, the audit ran once and
 PASS93.8236292s,4672/3929/16968. Coverage161 modules/no escapes and source
 correspondence pass. [Verification](research/ender_radius_bridge/PHASE52_VERIFICATION.md).
-No uniform scaled-gain bound or new endpoint is proved yet: cutoff10^11.
+At this historical checkpoint no scaled gain or new endpoint was proved;
+Phase53 now supplies the fixed scaled gain, while cutoff10^11 remains.
 The earlier reviewed/published head does not cover this new module.
 
 ## Phase51: one fresh-context adversarial bridge review

@@ -22,8 +22,10 @@ it proves no new cutoff and does not rule out the underlying method.
 The [small-prime recovery theorem](research/ender_radius_bridge/SMALL_PRIME_RECOVERY_GUIDE.md)
 now restores the exact3/5 terms omitted by the certified uniform proxy.
 Local Lean checks prove a strictly stronger proxy for R>=4,S>=2 without
-double-counting or changing production. A new numerical cutoff still needs
-a uniform scaled-gain estimate and endpoint guards; it remains10^11.
+double-counting or changing production. A [fixed normalized gain](research/ender_radius_bridge/NORMALIZED_RECOVERY_GUIDE.md)
+now supplies at least3/50 when S>=100 and25*S<=R<=26*S. The existing
+cutoff remains10^11: endpoint guards and the final comparison at a lower
+endpoint still need proof. The Phase51 review predates both additions.
 
 The [central-symmetry lemma](research/ender_radius_bridge/CENTRAL_SYMMETRY_GUIDE.md)
 separates even- and odd-degree rows of the original Gram. The

@@ -228,5 +228,7 @@
     "lean/TenthDiscriminant/UniformPrimeMassCertified.lean"
   ],
   "phase25_frontier": "Closed by Phase 26: all 1229 rows, prime coverage, both total budgets and actual-field bounded exclusion compile. Global cutoff, other intervals, even cases and classification remain open. No live numerical proof attempt remains.",
-  "updated": "2026-10-25"
+  "updated": "2026-10-26",
+  "phase53_status": "LOCAL_PASS fixed3over50 normalized gain Sge100 ratio25to26; protocola1428e6; FAIL66.8015998 then PASS27.8463944 exact one-line cast normalization; root6816PASS32.5149779; inputPASS176.2659524; auditPASS173.8971529 4687logical3944theorem16968runtime; 162modules source250pairs sealed evidence PASS; interrupted empty logs reconciled no live process before retry; no new endpoint; Phase51 predates additions; goal active",
+  "phase52_publication_final": "915431702593800474eca846407fe2233f25c37b CI40290045330 SUCCESS all steps and decoded audit4672/3929/16968 final controls2026-10-26T08:27:13.9898462Z; final6417227384 posted before Phase53 push"
 }
