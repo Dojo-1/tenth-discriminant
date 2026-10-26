@@ -1,5 +1,11 @@
 # Current claim-to-Lean map
 
+A [standalone Phase59 prototype](../research/ender_radius_bridge/EXCLUDED_PRIME_PROTOTYPE_GUIDE.md)
+now checks the actual-Gram excluded-prime budget and positive-kernel count
+transfer. Its arithmetic count/weight inputs stay explicit. It is outside
+the production root and existing CI, and outside Phase58 review coverage.
+No new cutoff or higher-class-number result is supplied.
+
 The [Phase58 bounded review](../research/ender_radius_bridge/PHASE58_VERIFICATION.md)
 now covers the final50b and exact-staircase changes at frozen63be64b.
 It established no concrete FATAL/GAP/SLOPPY finding in six obligations;

@@ -1,5 +1,15 @@
 # Status — 2026-10-26
 
+## Phase59: conditional excluded-prime bridge prototype
+
+A standalone Lean prototype keeps the actual Gram and explicitly charges
+the weighted mass of excluded primes. It reuses Mathlib Abel summation
+to transfer a supplied count bound to a weighted upper bound. The third
+registered build passes; both failed attempts and unchanged target types
+are preserved. The count/kernel/weight inputs remain assumptions, not
+higher-class-number conclusions. Production sources and CI are unchanged.
+[Human guide and scope](research/ender_radius_bridge/EXCLUDED_PRIME_PROTOTYPE_GUIDE.md).
+
 ## Phase58: one bounded review of the final cutoff
 
 The first native review of frozen63be64b found no concrete FATAL/GAP/SLOPPY
