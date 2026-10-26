@@ -1,5 +1,15 @@
 # Status — 2026-10-27
 
+## Phase67: actual arithmetic bridges are production-root reachable
+
+The frozen Phase65/66 definitions, targets, proofs and controls are now in
+two production modules, with only acyclic imports changed. First target,
+root, input and full audit pass locally:4,897 logical/4,139 theorem/16,985
+runtime declarations,172 modules. Three checked closures exclude the34
+listed older h1/cutoff/classification roots. New-head pinned CI remains
+required. Controlled binary-form coordinates and multiplicity are still
+open; no B or new cutoff. [Combined verification](research/ender_radius_bridge/PHASE67_VERIFICATION.md).
+
 ## Phase66: each actual ideal class now has one fixed norm lattice
 
 A standalone Lean theorem chooses one bounded nonzero inverse-class ideal

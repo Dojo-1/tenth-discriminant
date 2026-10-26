@@ -1,6 +1,6 @@
 # The exceptional prime divisors pay for themselves
 
-**Checked locally in Lean, as a standalone research theorem.** This removes
+**Integrated into the production root; local full build/audit pass.** This removes
 one part of the missing arithmetic budget. It gives no new cutoff.
 
 The determinant argument earns a contribution from each good prime.
@@ -49,4 +49,6 @@ not turn a geometric estimate into an arithmetic B by assumption.
 
 The [verification record](PHASE65_VERIFICATION.md) preserves the first
 failed attempt, its fixed repair, all controls and the successful axiom audit.
-The source is outside the production root and its CI coverage.
+The original standalone file is preserved; its exact production transport is
+covered by the [combined local audit](PHASE67_VERIFICATION.md). New-head CI is
+still required.

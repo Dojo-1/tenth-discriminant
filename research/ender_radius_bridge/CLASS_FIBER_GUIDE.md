@@ -1,6 +1,6 @@
 # A fixed lattice for each ideal class
 
-**Checked locally in Lean for actual number fields.** This closes the
+**Integrated into the production root; checked locally for actual number fields.** This closes the
 ideal-to-element part of the representation bridge, without assuming
 class number one. It does not yet produce a binary quadratic form.
 
@@ -49,5 +49,7 @@ basis. The existing off-axis point count cannot yet be applied by assuming
 these missing facts.
 
 [Source](Phase66ClassFiber.lean) and [verification](PHASE66_VERIFICATION.md).
-This standalone proof is outside production CI. No arithmetic count B,
+The original standalone source is frozen; its exact production transport has
+a [combined local audit](PHASE67_VERIFICATION.md), with new-head CI still
+required. No arithmetic count B,
 new cutoff or classification is inferred.

@@ -1,5 +1,11 @@
 # Phase66: actual class-fiber norm lifting
 
+**Current integration:** the exact proof is now production-root reachable.
+See [Phase67](PHASE67_VERIFICATION.md) for the combined local audit and pending
+new-head CI. This original record describes the standalone execution; its
+fixed-current-root verifier applies at its frozen source ref after new imports.
+Use the Phase67 verifier for the current integrated tree.
+
 **First registered standalone invocation PASS,35.6280967s.** Protocolcca390f
 precedes source and execution; base2dd80eb. No repair, second attempt,
 separate Lean probe, resource stop or prior-campaign rerun occurred.

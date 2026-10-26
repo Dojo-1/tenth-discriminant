@@ -1,5 +1,14 @@
 # Current claim-to-Lean map
 
+Current Phase67 imports `PrimeDivisorLoss` and `ClassFiber` into production.
+The frozen Phase65/66 bodies/types/controls are unchanged; only their imports
+were replaced. Target/root/type-input/full audit pass locally:4897/4139/16985,
+172 modules. Three closures exclude the34 listed older roots and permit only
+standard3 axioms. The standalone provenance below remains historical; new-head
+production CI is still required. No controlled norm-form basis/leading bound,
+prime multiplicity, arithmetic B or new cutoff follows.
+[Combined verification](../research/ender_radius_bridge/PHASE67_VERIFICATION.md).
+
 Standalone `ClassFiber.class_fiber_lifting` chooses one bounded nonzero
 inverse-class ideal J for an entire actual class C. `NormLift` proves
 nonzero z in J, span(z)=I*J, norm magnitude=N(I)N(J) and exact ideal

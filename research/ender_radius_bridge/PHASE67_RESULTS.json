@@ -1,0 +1,170 @@
+{
+  "phase": 67,
+  "status": "ALL_REGISTERED_LOCAL_PRODUCTION_BUILD_INPUT_AUDIT_CHECKS_PASS_NEW_HEAD_CI_REQUIRED",
+  "base": "f57f310dcdc8ec6c90efb9710b04b9d7d814a826",
+  "registered_commit": "a4f9a0cfc93977ba130fccd7953fdedb38e89c08",
+  "source_commit": "7406e4d49baf7cb624264f945c2c4c04d48a32fe",
+  "target_seconds": "37.853676",
+  "records": [
+    {
+      "phase": 67,
+      "mode": "audit",
+      "scope": "Frozen actual prime-divisor loss and fixed ideal-class norm lifting in production; no arithmetic B or cutoff",
+      "source_sha256": "44a369cb4b1d68877473fe15ba6ff5e671cefb32ba2f6b17064b0d19a4665ae2",
+      "source_snapshot": "PHASE67_audit_20261026232326160.source.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 24.978388799999998,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 180,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3343056896,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "Audit.lean"
+      ],
+      "stdout": "PHASE67_audit_20261026232326160.stdout.log",
+      "stderr": "PHASE67_audit_20261026232326160.stderr.log"
+    },
+    {
+      "phase": 67,
+      "mode": "build",
+      "scope": "Frozen actual prime-divisor loss and fixed ideal-class norm lifting in production; no arithmetic B or cutoff",
+      "source_sha256": "44a369cb4b1d68877473fe15ba6ff5e671cefb32ba2f6b17064b0d19a4665ae2",
+      "source_snapshot": "PHASE67_build_20261026232139653.source.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 37.853676,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3204907008,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "build",
+        "TenthDiscriminant.PrimeDivisorLoss",
+        "TenthDiscriminant.ClassFiber"
+      ],
+      "stdout": "PHASE67_build_20261026232139653.stdout.log",
+      "stderr": "PHASE67_build_20261026232139653.stderr.log"
+    },
+    {
+      "phase": 67,
+      "mode": "input",
+      "scope": "Frozen actual prime-divisor loss and fixed ideal-class norm lifting in production; no arithmetic B or cutoff",
+      "source_sha256": "44a369cb4b1d68877473fe15ba6ff5e671cefb32ba2f6b17064b0d19a4665ae2",
+      "source_snapshot": "PHASE67_input_20261026232303589.source.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 29.283270899999998,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 180,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3150684160,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase67InputCheck.lean"
+      ],
+      "stdout": "PHASE67_input_20261026232303589.stdout.log",
+      "stderr": "PHASE67_input_20261026232303589.stderr.log"
+    },
+    {
+      "phase": 67,
+      "mode": "root",
+      "scope": "Frozen actual prime-divisor loss and fixed ideal-class norm lifting in production; no arithmetic B or cutoff",
+      "source_sha256": "44a369cb4b1d68877473fe15ba6ff5e671cefb32ba2f6b17064b0d19a4665ae2",
+      "source_snapshot": "PHASE67_root_20261026232230160.source.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 19.7922849,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 1200,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2790076416,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": "build",
+      "stdout": "PHASE67_root_20261026232230160.stdout.log",
+      "stderr": "PHASE67_root_20261026232230160.stderr.log"
+    }
+  ],
+  "global_audit": {
+    "logical": 4897,
+    "theorems": 4139,
+    "runtime_only": 16985,
+    "modules": 172
+  },
+  "closures": {
+    "PrimeDivisorLoss.prime_divisor_mass": 13764,
+    "PrimeDivisorLoss.excluded_budget_without_divisors": 48266,
+    "ClassFiber.residue_class_lifting": 53052
+  },
+  "sha256": {
+    "lean/TenthDiscriminant/PrimeDivisorLoss.lean": "44a369cb4b1d68877473fe15ba6ff5e671cefb32ba2f6b17064b0d19a4665ae2",
+    "lean/TenthDiscriminant/ClassFiber.lean": "b68b645534a20f80451c0190407e22db020239e3e648fb4ede0217786f27c05f",
+    "lean/TenthDiscriminant.lean": "6c7ef2c140328777660f5525820ac70f37921afd681455da187681dd7baceab1",
+    "research/ender_radius_bridge/PHASE67_PROTOCOL.md": "9e907acedb37fda6fa6a7864994176541dce0308129c1eb00d262bcd8f0c4035",
+    "research/ender_radius_bridge/run_phase67.ps1": "9da6399e63fd02883dde5d00727434590226057a2d2fc1a715c826fca53f3e6c",
+    "research/ender_radius_bridge/Phase67InputCheck.lean": "e43869f46332fa8012512016b1ad5376959a4c3b144b8c94daaf067012450a3d",
+    "lean/lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+    "lean/lakefile.toml": "c53aa9280e479e87530acfdc2660dda39d91e36b58700ad54634eebab1ae127b"
+  },
+  "raw_archive": {
+    "path": "PHASE67_RAW.zip",
+    "sha256": "cda8608a854e73e8a9af0568ebf27b4429615f7848b557d5f176dd94826fa7c4",
+    "members": 21
+  },
+  "raw_sha256": {
+    "PHASE67_SOURCE_CHECKS.log": "fd6ce54ea24331cc9f3b02d43971971a245010ef53f4933c6e915a9b16d5275d",
+    "PHASE67_audit_20261026232326160.source.lean": "44a369cb4b1d68877473fe15ba6ff5e671cefb32ba2f6b17064b0d19a4665ae2",
+    "PHASE67_audit_20261026232326160.core.lean": "b68b645534a20f80451c0190407e22db020239e3e648fb4ede0217786f27c05f",
+    "PHASE67_audit_20261026232326160.stdout.log": "d8359f2f7924aaef1f878e88b0e876e1a8ca102ae9845fa961a402b50758a95b",
+    "PHASE67_audit_20261026232326160.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE67_audit_20261026232326160.result.json": "36e925c7d5689786f5dce19186ff9d1bd1f368604da13ef7f65fe9acf77f4651",
+    "PHASE67_build_20261026232139653.source.lean": "44a369cb4b1d68877473fe15ba6ff5e671cefb32ba2f6b17064b0d19a4665ae2",
+    "PHASE67_build_20261026232139653.core.lean": "b68b645534a20f80451c0190407e22db020239e3e648fb4ede0217786f27c05f",
+    "PHASE67_build_20261026232139653.stdout.log": "86b3ab1116470532ad3f727d8bea5065da2a317945313d0be7a6a8120cbb29ee",
+    "PHASE67_build_20261026232139653.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE67_build_20261026232139653.result.json": "ab2c4e35d4e372bcde1cfd3153ac00a4dcdd4ee6fda2da2f0c2a0e2f5a40ab87",
+    "PHASE67_input_20261026232303589.source.lean": "44a369cb4b1d68877473fe15ba6ff5e671cefb32ba2f6b17064b0d19a4665ae2",
+    "PHASE67_input_20261026232303589.core.lean": "b68b645534a20f80451c0190407e22db020239e3e648fb4ede0217786f27c05f",
+    "PHASE67_input_20261026232303589.stdout.log": "aa7268874e0a00a70f6c5a563a1ffdf8929dea7133b6abe7c5ffc5a6a7effc11",
+    "PHASE67_input_20261026232303589.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE67_input_20261026232303589.result.json": "ab84eb5e6ac81c9b90c23c8d4b8d44189098618884d63b37e85a355866cd862d",
+    "PHASE67_root_20261026232230160.source.lean": "44a369cb4b1d68877473fe15ba6ff5e671cefb32ba2f6b17064b0d19a4665ae2",
+    "PHASE67_root_20261026232230160.core.lean": "b68b645534a20f80451c0190407e22db020239e3e648fb4ede0217786f27c05f",
+    "PHASE67_root_20261026232230160.stdout.log": "f5918bf7d560f2b94306c8a6fc79ead0edcfb0bec35cd759752a9bdafbc89cb9",
+    "PHASE67_root_20261026232230160.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE67_root_20261026232230160.result.json": "6651be6e07d48e7e0cf4ebb4f5e87ba95f4c541517cf415c0af8a87e1728d40d"
+  },
+  "prior_frozen_paths": [
+    "research/ender_radius_bridge/Phase65PrimeDivisorLoss.lean",
+    "research/ender_radius_bridge/PHASE65_PROTOCOL.md",
+    "research/ender_radius_bridge/PHASE65_RESULTS.json",
+    "research/ender_radius_bridge/PHASE65_RAW.zip",
+    "research/ender_radius_bridge/Phase66ClassFiber.lean",
+    "research/ender_radius_bridge/PHASE66_PROTOCOL.md",
+    "research/ender_radius_bridge/PHASE66_RESULTS.json",
+    "research/ender_radius_bridge/PHASE66_RAW.zip",
+    "research/ender_radius_bridge/PHASE64_RESULTS.json",
+    "research/ender_radius_bridge/PHASE64_RAW.zip"
+  ],
+  "transport": "Only registered import replacements; all65/66 definitions/types/proof bodies/controls/prints retained.",
+  "limits": [
+    "No new arithmetic B, controlled binary-form basis/coefficient/discriminant/leading-coefficient theorem, unramified pair/multiplicity, field-ramification identification or cutoff.",
+    "No old campaign rerun; original local Phase61 regression timeout remains INCOMPLETE. New-head full regression is reserved for unchanged pinned Linux CI.",
+    "All prior source/results/raw preserved. Existing exact9705cac PR32 CI is separate; no pass transfer.",
+    "No novelty/classification/human review/Mathlib acceptance inferred."
+  ]
+}

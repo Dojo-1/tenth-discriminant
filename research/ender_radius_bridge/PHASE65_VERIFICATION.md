@@ -1,5 +1,11 @@
 # Phase65: parameter-prime-divisor loss
 
+**Current integration:** the exact proof is now production-root reachable.
+See [Phase67](PHASE67_VERIFICATION.md) for the combined local audit and pending
+new-head CI. This original record describes the standalone execution; its
+fixed-current-root verifier applies at its frozen source ref after new imports.
+Use the Phase67 verifier for the current integrated tree.
+
 **Standalone local proof and fixed controls PASS.** Protocol0d7392a precedes
 all source and execution. Base9705cac; no production source, dependency pin,
 numerical certificate or CI gate changed. This file is outside the root/CI.
