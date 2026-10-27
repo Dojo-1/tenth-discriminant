@@ -1,5 +1,18 @@
 # Status — 2026-10-27
 
+## Phase72: actual ideal coordinates now reach the geometric count
+
+A separately registered basis-generic helper71 and composition72 construct
+an actual integral basis/form for every nonzero ideal in the odd chart:
+a>0,4ac-b²=D, actual Norm=N(J)*Q, and the SAME basis/form counts every finite
+off-axis norm-bounded element set. No supplied basis/form/discriminant/count
+premise. First production target/root/input/audit all PASS:4,963 logical,
+4,196 theorems,16,993 runtime declarations,175 modules. New-head CI required.
+Original stopped69 remains frozen and unimported. Quantitative leading bound,
+principal-class basis calibration, even chart and usable B remain open;
+no new cutoff. [Human proof](research/ender_radius_bridge/IDEAL_COORDINATE_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE72_VERIFICATION.md).
+
 ## Phase70: accepted multiplicity is production-root reachable
 
 The final accepted Phase68 proof is transported by import-only changes;

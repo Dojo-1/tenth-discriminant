@@ -40,13 +40,12 @@ The checked statement uses the equivalent product equality, with no division.
 Its quantifiers matter: one J serves every residue map in the class.
 This is what allows a future count of many primes in one lattice.
 
-**The remaining geometry/arithmetic overlap:** choose an integral basis of
-J, express the normalized norm as a positive binary form, prove its
-coefficients/discriminant and a suitable leading-coefficient bound, and
-show how unramified split primes give distinct representations. A small
-ideal norm by itself does not bound the leading coefficient in an arbitrary
-basis. The existing off-axis point count cannot yet be applied by assuming
-these missing facts.
+The later [actual coordinate/count bridge](IDEAL_COORDINATE_GUIDE.md) now
+constructs an integral basis of J, proves the normalized norm's integer
+coefficients and exact discriminant, and counts its off-axis element sets.
+A small ideal norm alone still does not bound the leading coefficient of
+an arbitrary basis. Quantitative basis control, principal-class calibration
+and even-chart/field-parameter transport remain before a usable uniform B.
 
 [Source](Phase66ClassFiber.lean) and [verification](PHASE66_VERIFICATION.md).
 The original standalone source is frozen; its exact production transport has
@@ -56,4 +55,5 @@ new cutoff or classification is inferred.
 
 The later standalone [odd-chart multiplicity theorem](RESIDUE_MULTIPLICITY_GUIDE.md)
 constructs actual residue pairs and4*card(P) selected labelled elements locally.
-It does not fill the basis/coefficient gap above or provide the even chart.
+The subsequent coordinate theorem fills the actual basis/form gap locally;
+quantitative leading control and the even chart remain.

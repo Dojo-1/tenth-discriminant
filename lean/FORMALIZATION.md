@@ -1,5 +1,19 @@
 # Current claim-to-Lean map
 
+Current Phase72 `IdealCoordinates.actual_ideal_form_and_count` constructs
+an actual integral basis and integer norm form for every nonzero ideal in
+the squarefree odd maximal-order chart, with a>0,4ac-b²=D and actual norm
+identity. That SAME basis/form precedes all finite U,t in the off-axis bound.
+No supplied basis/form/area/discriminant/count premise occurs in the root.
+The independently registered71 helper is transported exactly;72 composes
+Mathlib basis choice and geometric count without unfolding it in the
+determinant proof. First target/root/input/full audit pass:4963/4196/16993,
+175 modules; closures28524/44938 exclude34listed roots with standard3axioms.
+New-head CI required. Original69 remains stopped/unimported, not relabelled.
+Quantitative leading bound, principal-class calibration, even chart and
+usable B remain open. [Human proof](../research/ender_radius_bridge/IDEAL_COORDINATE_GUIDE.md)
+and [verification](../research/ender_radius_bridge/PHASE72_VERIFICATION.md).
+
 Current Phase70 production `ResidueMultiplicity` is the exact accepted
 Phase68 source with acyclic imports changed. One new root import brings
 actual odd-chart selected4N multiplicity into the full build/audit. All
