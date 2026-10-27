@@ -53,6 +53,11 @@ The controls retain zero scalar, negative scalar scaling, a nonprimitive
 Gaussian vector and primitivity of the unit element in every basis of
 the Gaussian unit ideal. [Exact attempt and checks](PHASE91_VERIFICATION.md).
 
+The accepted proof, definitions and controls are now integrated unchanged
+into the main Lean library. [Exact integration record](PHASE92_VERIFICATION.md)
+keeps its local build/input/audit checks separate from external CI and
+independent human review.
+
 ## What remains
 
 This statement supplies controlled per-class OFF-AXIS counts. Full axis

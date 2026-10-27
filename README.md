@@ -40,7 +40,7 @@ The repository also contains a separate canonical-family classification theorem 
 | [Tao's objectives](TAO_OBJECTIVES_CURRENT.md) | Achievements, limitations and side discoveries |
 | [Human proof guide](lean/HUMAN_GUIDE.md) | Why the determinant is positive |
 | [Exact staircase count](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) | A double sum understood by counting the same boxes in another order |
-| [Latest local bridge](research/ender_radius_bridge/PHASE91_VERIFICATION.md) · [Field bound](research/ender_radius_bridge/PHASE88_VERIFICATION.md) · [Bounded test](research/ender_radius_bridge/PHASE85_VERIFICATION.md) | Checked statements and numerical feasibility kept separate |
+| [Latest local bridge](research/ender_radius_bridge/PHASE92_VERIFICATION.md) · [Field bound](research/ender_radius_bridge/PHASE88_VERIFICATION.md) · [Bounded test](research/ender_radius_bridge/PHASE85_VERIFICATION.md) | Checked statements and numerical feasibility kept separate |
 | [Research history](STATUS.md) | Earlier checkpoints, failed attempts and corrections |
 
 With the pinned Lean toolchain and dependencies installed, the core checks are:

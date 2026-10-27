@@ -1,6 +1,19 @@
 # Current claim-to-Lean map
 
-Latest standalone theorem: `EvenControlledClass.controlled_class_form_and_count`
+Current production theorem: `EvenControlledClass.controlled_class_form_and_count`
+is imported by the main root. Accepted91mathematical statements/FormData/
+proof bodies/controls/reports are exact after imports. No repair or retry.
+First target/root/input/whole-audit pass:189modules,5206logical/4421theorems/
+17004runtime auxiliaries, standard3axioms. Fresh54590closure excludes38old
+roots. [Human proof](../research/ender_radius_bridge/EVEN_CONTROLLED_CLASS_GUIDE.md)
+and [exact92record](../research/ender_radius_bridge/PHASE92_VERIFICATION.md).
+No standalone91replay; all old failed attempts remain preserved. One
+inherited blank EOF line is retained for exact transport. Full even axis/
+primefamily/classsum/weighted same-Gram comparison/even cutoff, externalCI
+and independent human review remain open. Existing field bounds unchanged.
+The following entries retain their earlier checkpoint scopes.
+
+Phase91 standalone checkpoint (now integrated at92): `EvenControlledClass.controlled_class_form_and_count`
 chooses one actual bounded J/basis in EVERY class under h<=2 in the even
 maximal chart, with0<a<=N(J)<=actualM(K),4ac-b²=4d and exact normalizednorm.
 The same J lifts EVERY ideal in the class, with exact recovery; the same

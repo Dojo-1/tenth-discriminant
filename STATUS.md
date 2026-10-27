@@ -1,5 +1,21 @@
 # Status — 2026-10-27
 
+## Phase92: controlled even class lattices are integrated unchanged
+
+The accepted91controlled actual J/basis/lifts/common count theorem is now
+in the main root, with all mathematical statements, definitions, proof
+bodies, controls and reports exact after imports. [Human proof](research/ender_radius_bridge/EVEN_CONTROLLED_CLASS_GUIDE.md)
+and [exact integration](research/ender_radius_bridge/PHASE92_VERIFICATION.md).
+Target122.5756058s/root35.6583159s/input34.752018s/audit38.6996773s all
+pass first invocation.189modules;5206logical/4421theorems/17004runtime
+auxiliaries, standard3axioms. Fresh54590closure excludes same38old inputs.
+25rawfiles/1480prior files frozen; savedverifierPASS. No standalone91replay.
+One inherited blank EOF line is retained for exact accepted-body transport;
+all other new whitespace checked. Full even primeaxis/multiplicity/class
+sum/weighted same-Gram assembly and cutoff remain open. External exact-head
+CI and independent human review are separate; Argonreviewstillpending.
+Earlier entries below preserve historical scopes and the91failure.
+
 ## Phase91: the even coefficient is controlled across each actual class
 
 Under actual class number<=2 in the squarefree even maximal chart, a
