@@ -1,5 +1,24 @@
 # Status — 2026-10-27
 
+## Phase89: the actual even ideal lattice now has a checked count
+
+A standalone theorem constructs a positive integral norm form for EVERY
+actual nonzero ideal J in the even maximal chart, with4ac-b^2=4d.
+The SAME basis/form works for every finite norm-bounded off-axis set:
+cardU<=2pi*t/sqrt(4d)+4sqrt(a*t/(4d)). No h1/PID/h<=2 premise.
+[Human explanation](research/ender_radius_bridge/EVEN_IDEAL_LATTICE_GUIDE.md)
+and [exact record](research/ender_radius_bridge/PHASE89_VERIFICATION.md).
+FAIL46.283882s/PASS50.0552128s; only final cast normalization changed.
+All14public types,3definitions, main theorem and four controls are fixed.
+Namespace24logical/21theorems/5runtime auxiliaries, standard3axioms only;
+fresh44910closure excludes37old inputs, including both odd cutoff roots.
+8rawfiles and1458prior frozen files verified. Production/root/pins and
+prior failures are unchanged. No new root build or external CI claimed.
+This is the local even norm-form/count bridge, not an even cutoff:
+controlled class bases, full prime/weighted accounting and same-Gram
+comparison remain. Argonreviewpending. The odd actual-field2^50 bound
+and h1field50billion bound remain as below.
+
 ## Phase88: the odd bound is independent of coordinates
 
 For ANY imaginary quadratic number field K with odd actual absolute

@@ -1,6 +1,6 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared, through Phase 88. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
+**AI-prepared, through Phase 89. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
 
 ## Short draft for human revision
 
@@ -33,6 +33,8 @@ A [sealed scalar test](research/ender_radius_bridge/TWO_CLASS_FEASIBILITY_GUIDE.
 An [integrated all-range theorem](research/ender_radius_bridge/ODD_TWO_CLASS_BOUND_GUIDE.md) now closes that odd-chart comparison: every squarefree D=3mod4 with actual class number<=2 satisfies D<2^50. It does not use the numerical test as a premise. Exact87integration, pinned local root build/input/whole-audit checks pass:5145logical/4367theorems,186modules, same34input exclusions. External CI, the even-discriminant branch and human review remain open. The separate h1field cutoff stays50billion.
 
 The [actual-field transport](research/ender_radius_bridge/ODD_FIELD_TWO_CLASS_GUIDE.md) now proves the odd bound for ANY imaginary quadratic field with odd actual discriminant and class number<=2. Its reusable lemma gives equality of class numbers under rational field isomorphisms, with representative independence proved. Pinned local root/input/whole-audit checks pass:5165logical/4384theorems,187modules,35old-input exclusions. Two identity-control failures and the passing repair are preserved. Argon's new review is still underway; no report has been assessed.
+
+A separate [even-lattice theorem](research/ender_radius_bridge/EVEN_IDEAL_LATTICE_GUIDE.md) now constructs an actual positive ideal norm form with discriminant magnitude4d and counts every finite off-axis norm-bounded subset in that same basis. It assumes no class-number bound. Its standalone namespace/input checks pass; production integration and the full even cutoff remain open.
 
 ## Limits that must travel with the result
 

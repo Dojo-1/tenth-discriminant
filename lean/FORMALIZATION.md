@@ -1,5 +1,19 @@
 # Current claim-to-Lean map
 
+Latest standalone research: `EvenIdealCount.actual_ideal_form_and_count`
+constructs an actual ideal basis and positive integral norm form with
+4ac-b^2=4d in the squarefree even maximal chart d=1or2mod4. The same basis
+works for ALL finite norm-bounded off-axis U and thresholds t, proving
+cardU<=2pi*t/sqrt(4d)+4sqrt(a*t/(4d)). No class-number or PID hypothesis.
+It is outside the productionroot. [Human guide](../research/ender_radius_bridge/EVEN_IDEAL_LATTICE_GUIDE.md)
+and [exact record](../research/ender_radius_bridge/PHASE89_VERIFICATION.md).
+FAIL46.283882/PASS50.0552128: one cast-normalization repair, all14public
+types/3definitions/main theorem/controls fixed.24/21/5namespace audit,
+standard3axioms; closure44910excludes37listed old inputs. Production and
+its88audit remain unchanged. No even cutoff or new full-library CI follows.
+Controlled class bases, prime/weighted accounting and same-Gram comparison
+remain open; Argon's review is still pending.
+
 Current field theorem: `OddFieldTwoClass.arbitrary_odd_discriminant_bound`
 proves `(NumberField.discr K).natAbs < 2^50` for ANY number field K of
 rational degree2, totally complex, with actual class number<=2 and ODD

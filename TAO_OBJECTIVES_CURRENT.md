@@ -5,7 +5,7 @@ field-discriminant bound is 50 billion.** Class number one means unique factoriz
 integers. The geometric count is proved on the draft branch; an arbitrary-field odd-discriminant class-number<=2bound is checked locally;
 the even-chart/arbitrary-field extensions remain open. This page tracks
 Tao's [challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)
-through proof source `70f9217`, integrated Phase88, scalar test85 and preserved standalone86, with preserved75/69 failures, 27 October 2026. No full-classification
+through proof source `70f9217`, integrated Phase88 and standalone even bridge89, scalar test85 and preserved standalone86, with preserved75/69 failures, 27 October 2026. No full-classification
 announcement, novelty, optimality or independent human review is claimed.
 
 Lean checks encoded statements. A source claim, a checked theorem and a
@@ -56,6 +56,7 @@ checklist in Tao's post.
 | Sealed scalar feasibility | [A positive proof target](research/ender_radius_bridge/TWO_CLASS_FEASIBILITY_GUIDE.md) at2^50, margin>0.07; seven earlier negative samples preserved. Two precisions/control checks agree. By itself this test proves no all-D theorem or optimality; the all-D odd-chart result is now checked separately at86. |
 | All-range actual two-class exclusion | [Local/global proof](research/ender_radius_bridge/ODD_TWO_CLASS_BOUND_GUIDE.md) replaces sampled feasibility by a theorem for EVERY squarefree odd-chart D>=2^50: actual class number>2. Fresh dependency checks exclude34old inputs. Integrated locally at87; no even-chart/generic-field classification. |
 | Class-number invariance under field isomorphism | [Actual ideal-class bijection](research/ender_radius_bridge/ODD_FIELD_TWO_CLASS_GUIDE.md) is independent of chosen integral representative and preserves class number without a PID/h1 premise. It closes the odd arbitrary-field bound locally at88; no novelty or upstream acceptance claimed. |
+| Even actual ideal geometry | [Maximal-lattice norm form and count](research/ender_radius_bridge/EVEN_IDEAL_LATTICE_GUIDE.md) prove4ac-b^2=4d and one basis/count for all finite off-axis norm-bounded sets, without h1/PID/class-number premises. Standalone local audit/input checks pass; full class/prime/weighted same-Gram assembly and even cutoff remain open. |
 | Limits that prevented overclaiming | A radial O(1/R) ceiling, the per-form zero-row failure and the [stopped coordinate attempt](research/ender_radius_bridge/PHASE69_VERIFICATION.md) remain preserved. [History and controls](STATUS.md). |
 
 ## Verification and the next decisive step
@@ -75,7 +76,9 @@ at82. New external exact-head CI is pending.
 
 The odd actual-field bound is now integrated at88, with pinned local
 root/input/whole-audit checks:5165logical/4384theorems and187modules.
-The next research step is the even-discriminant branch. Independent
+The even local ideal norm-form/count bridge is now proved separately at89.
+The next research step is controlled bases and full class/prime/weighted
+assembly in that even branch. Independent
 human review and new external exact-head CI remain open. Argon's review
 is underway and has not yet been assessed.
 A remote refresh finds PR30-34 already merged on main, now at `39e9ce3`;
