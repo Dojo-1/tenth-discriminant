@@ -1,9 +1,31 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 26 October 2026, through preregistered Phase 58;
+**Living update: 26 October 2026, through preregistered Phase 61;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase61 integrates the excluded-prime assembly into production and proves
+the canonical log(p)/p count-to-loss conversion. This advances formal reuse
+(objective4) and offers a supplementary local-to-global interface (objective6).
+Local API/audit controls pass but the full negative suite is incomplete
+at its120-second multiplicity cap; exact-head CI remains separate.
+It supplies no arithmetic count bound or new higher-class-number range
+(objective8), and changes no objective to complete. The per-form negative
+result remains preserved (objective7). [Human bridge](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md).
+
+Phase60 supplies one exact fixed-case counterexample to the suggested
+per-form split-count estimate: two prime representations exceed an upper
+expression below34/25. This exposes a zero-row justification gap in the
+unreviewed higher-class-number track, not a disproof of its aggregate
+inequality or cutoff. No revised coefficient/campaign was certified.
+[Case and scope](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md).
+
+Phase59 checks a standalone conditional excluded-prime bridge on the same
+actual Gram, using existing Mathlib Abel summation and explicit count/weight
+inputs. Three builds, two preserved failures, no production source or CI
+change. This supplies a reusable interface, not a higher-class-number range.
+[Guide and limits](research/ender_radius_bridge/EXCLUDED_PRIME_PROTOTYPE_GUIDE.md).
 
 Phase58 adds one bounded review of frozen63be64b, including the final50b
 and exact-staircase changes. No concrete FATAL/GAP/SLOPPY issue was found
@@ -260,8 +282,8 @@ was posted in this cycle.
 | 4 | High-quality Lean formalization, perhaps upstreamable | **Canonical iff and abstract-field cutoff connected; external quality judgment open** | Actual class number/discriminant, normalized-generator existence, universal imaginary-quadratic cutoff, canonical finite exclusion and all nine positives are supplied. No full-classification announcement is made. Independent human semantic/API review and Mathlib acceptance remain open. See the [claim map](lean/FORMALIZATION.md). |
 | 5 | Compare strengths of different writeups | **Bounded controlled comparison supplied; broad objective partial** | [Phase40](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) compares two frozen complete same-route manuscripts with our proof head across parameter, analytic threshold, finite finish, rank, normalization, inputs and review. Original-byte source hashes and recency controls are recorded. External results are source claims, not newly audited or replayed; this is not an all-writeup optimized survey. [Prior art](PRIOR_ART.md) remains a frozen historical note. |
 | 6 | Spur new arguments or arrangements | **Reusable arrangement, no novelty claim** | BEAN-to-Ender changes the prime input. Four fixed prime-log constants and normalized affine envelopes now yield a checked universal odd cutoff without replaying 249 more interval comparisons. This is an arrangement within the credited Green/twinheterodox route, not a claim of a new mathematical method. |
-| 7 | Preserve failed attempts and negative results | **Documented internally** | The [review response](review/RESPONSE_Claude.md), [BEAN audit](review/BEAN_AUDIT.txt), fixed [radial protocol](flow/PREREG_RADIAL.txt), and [lift protocol](flow/PREREG_LIFTS.txt) retain counterexamples, failed guards and ceilings. Internal preservation does not equal external reporting. |
-| 8 | Help higher class-number problems | **Not delivered** | The `h≤2` [review brief](REVIEW_BRIEF_2.md) remains unreviewed; nothing here advances a verified higher-class-number range. |
+| 7 | Preserve failed attempts and negative results | **Documented internally, with a new scoped boundary failure** | [Phase60](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md) refutes a suggested per-form count justification; the aggregate/h<=2 conclusion is not thereby refuted. Its fixed case and raw records, earlier reviews/failed guards, both Phase59 proof failures and the Phase61 cast-proof failure are preserved. No repair campaign or external scientific review is inferred. |
+| 8 | Help higher class-number problems | **Conditional bridge only; no new verified range** | [Phase61](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md) integrates the actual-Gram budget into production and discharges the universal kernel/weight inputs; an excluded-prime prefix bound B remains an arithmetic hypothesis. No class-number-at-most-two count bound or numerical exclusion is proved; the historical [review brief](REVIEW_BRIEF_2.md) remains unreviewed. The [Phase60 diagnostic](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md) identifies a per-form justification gap that must be resolved before reusing the old input. |
 | 9 | Disclose AI involvement | **Repository practice present** | The [README](README.md) and review records identify AI assistance. This is disclosure, not validation or a submission. |
 | 10 | Contribute a repository link and human summary in Tao's comments | **No documented submission** | The repository has no submission permalink or posting record. This cycle posted nothing to Tao. The article was re-read, but a new sitewide/comment-pagination submission search was not performed. |
 | 11 | Independent due diligence before an AI-generated submission | **Strengthened, still partial** | [Phase58](research/ender_radius_bridge/PHASE58_REVIEW_REPORT.md) covers six joints of final63be64b/50b and the exact staircase. No concrete FATAL/GAP/SLOPPY finding; new local calculations re-derived, inherited machinery source-traced. Lean/CI NOT RERUN. The first native report is preserved without reroll; human and model-family independence remain unestablished. No submission recorded. |
@@ -295,6 +317,7 @@ completion is separately registered and separately costed.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
+| Counts of excluded primes become an explicit loss on the same determinant. | **Production Lean theorem and compiled dependency audit** | [Phase61](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md) proves 2pF<=R(R-1)S and uses the decreasing log(p)/p kernel with finite Abel summation. The remaining input is an arithmetic prefix bound B; no higher-class-number range, new cutoff or sharpness claim. |
 | Exact staircase weight from counting by column levels. | **Local Lean identity and guard controls** | [Phase57](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) proves6F=S(S-1)(3R-p(S+1)) for p>0 and p(S-1)<=R. It counts the original weight, including partially filled rows, and preserves the old unguarded-polynomial falsifier. No new valuation, cutoff, measured speedup or novelty claim. |
 | Recovering omitted prime mass yields a fixed normalized gain and lower endpoint. | **Local Lean count, actual-field cutoff and dependency audit** | [Phases52–54](research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md) retain the original determinant weights and restore exact3/5 terms. Saturated rows give at least3/50 after normalization; all endpoint guards compose at500^4. No new prime exponent, optimality or independent review is inferred. |
 | Conjugation and anti-invariant projection normalize an abstract imaginary quadratic field. | **Local Lean operator laws, normalized-generator existence and actual-field cutoff** | [Phase47](research/ender_radius_bridge/CONJUGATION_BRIDGE_GUIDE.md) supplies the former presentation premise without class-number input. Given an involution, projection identities are dimension-independent; degree two supplies quadratic Galoisness and identifies the whole-group fixed field with Q. This is representation infrastructure, not a new constant, higher-class-number bound or independently reviewed full classification. |

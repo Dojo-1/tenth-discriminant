@@ -89,3 +89,5 @@ import TenthDiscriminant.RecoveredAnalyticCutoff
 import TenthDiscriminant.StrongSmallPrimeRecoveryGain
 import TenthDiscriminant.FiftyBillionCutoff
 import TenthDiscriminant.StaircaseExact
+import TenthDiscriminant.ExcludedPrimeAssembly
+import TenthDiscriminant.PrimeWeightKernel

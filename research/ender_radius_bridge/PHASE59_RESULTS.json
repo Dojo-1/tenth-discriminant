@@ -1,0 +1,121 @@
+{
+  "status": "PASS_STANDALONE_CONDITIONAL_PROTOTYPE",
+  "registered_commit": "437001eebaec32998434e22ab7ba70c0d54c9283",
+  "base": "7b80ff310080ed6b8dd2ce4a7cadeaada1229b8a",
+  "builds": [
+    {
+      "phase": 59,
+      "mode": "build",
+      "scope": "Actual-Gram conditional excluded-prime bridge prototype; no higher-class-number cutoff",
+      "source_sha256": "06f3f9aa7208f89904d729ad6710f3d5e1d7dc75a8a2b9289c3908533576fedf",
+      "source_snapshot": "PHASE59_build_20261026184307391.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 66.3803296,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3200483328,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase59Prototype.lean"
+      ],
+      "stdout": "PHASE59_build_20261026184307391.stdout.log",
+      "stderr": "PHASE59_build_20261026184307391.stderr.log"
+    },
+    {
+      "phase": 59,
+      "mode": "build",
+      "scope": "Actual-Gram conditional excluded-prime bridge prototype; no higher-class-number cutoff",
+      "source_sha256": "6468d49a1e0e8686b984606e8cf707a123054af67a592b2593e1edfb733dc6b4",
+      "source_snapshot": "PHASE59_build_20261026184529119.source.lean",
+      "attempt": 2,
+      "exit_code": 1,
+      "elapsed_seconds": 34.2828343,
+      "cumulative_before_seconds": 66.3803296,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3202617344,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase59Prototype.lean"
+      ],
+      "stdout": "PHASE59_build_20261026184529119.stdout.log",
+      "stderr": "PHASE59_build_20261026184529119.stderr.log"
+    },
+    {
+      "phase": 59,
+      "mode": "build",
+      "scope": "Actual-Gram conditional excluded-prime bridge prototype; no higher-class-number cutoff",
+      "source_sha256": "307ba7da9ba96bd5b7aa4437c8411b9632847e70e273fbf01c02dc6176f829d9",
+      "source_snapshot": "PHASE59_build_20261026184732947.source.lean",
+      "attempt": 3,
+      "exit_code": 0,
+      "elapsed_seconds": 36.170234199999996,
+      "cumulative_before_seconds": 100.6631639,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3203788800,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase59Prototype.lean"
+      ],
+      "stdout": "PHASE59_build_20261026184732947.stdout.log",
+      "stderr": "PHASE59_build_20261026184732947.stderr.log"
+    }
+  ],
+  "cumulative_target_seconds": "136.833398099999996",
+  "theorem_type_prefixes_unchanged": true,
+  "public_theorem_count": 11,
+  "namespace_audit": {
+    "logical": 36,
+    "theorems": 32,
+    "runtime_only": 5
+  },
+  "closures": {
+    "good_mass_bound": 48165,
+    "count_transfer": 11176,
+    "excluded_prime_budget": 48196
+  },
+  "production_source_changes": false,
+  "production_root_integrated": false,
+  "higher_class_number_range_closed": false,
+  "sha256": {
+    "PHASE59_PROTOCOL.md": "4c177c07ec6f9f3cd7b5080c0de8fc7e037ef397b07abd4efc528b47075ada05",
+    "Phase59Prototype.lean": "307ba7da9ba96bd5b7aa4437c8411b9632847e70e273fbf01c02dc6176f829d9",
+    "run_phase59.ps1": "ce05591f8e0d219e4a49c6ea7870f3d5f703dfa60db7ddbf7fe3c28bd4654cf0",
+    "PHASE59_build_20261026184307391.source.lean": "06f3f9aa7208f89904d729ad6710f3d5e1d7dc75a8a2b9289c3908533576fedf",
+    "PHASE59_build_20261026184307391.stdout.log": "22d3021a9fe7e51f91856659ad401595b78034e97a9fce80056ea8e9fc3d95ea",
+    "PHASE59_build_20261026184307391.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE59_build_20261026184529119.source.lean": "6468d49a1e0e8686b984606e8cf707a123054af67a592b2593e1edfb733dc6b4",
+    "PHASE59_build_20261026184529119.stdout.log": "ab4dc649039d28d40a7f8381cc5adb642e4a29bb243619ba7e48128fb4a42718",
+    "PHASE59_build_20261026184529119.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE59_build_20261026184732947.source.lean": "307ba7da9ba96bd5b7aa4437c8411b9632847e70e273fbf01c02dc6176f829d9",
+    "PHASE59_build_20261026184732947.stdout.log": "ee57bde86cefae70adf1d8780e392fac7b13d3cd56ee74d0bc54a9c2ff7e7c55",
+    "PHASE59_build_20261026184732947.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE59_build_20261026184307391.result.json": "37a9eb25ffc5b944125c94e425332b6cdb09c4e4d805618f08789b54e3e53dc2",
+    "PHASE59_build_20261026184529119.result.json": "e41f1a44eb00ef10d9babe7799b9ab5c662cbc8c91cd7d0a461e6db6734bf951",
+    "PHASE59_build_20261026184732947.result.json": "a0419202c5a8f1f1443b5a0f3762d8d98390ba4b9d384d6434a3426313ffc35d"
+  },
+  "raw_archive": {
+    "path": "PHASE59_ATTEMPTS.zip",
+    "sha256": "a916fb6db941a06da0c04d22599217683f0c48e0f21cf0aea68be13045f1e8c7",
+    "entries": 12,
+    "exact_readback_verified": true
+  }
+}
