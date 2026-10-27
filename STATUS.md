@@ -1,4 +1,37 @@
-# Status — 2026-10-26
+# Status — 2026-10-27
+
+## Phase67: actual arithmetic bridges are production-root reachable
+
+The frozen Phase65/66 definitions, targets, proofs and controls are now in
+two production modules, with only acyclic imports changed. First target,
+root, input and full audit pass locally:4,897 logical/4,139 theorem/16,985
+runtime declarations,172 modules. Three checked closures exclude the34
+listed older h1/cutoff/classification roots. New-head pinned CI remains
+required. Controlled binary-form coordinates and multiplicity are still
+open; no B or new cutoff. [Combined verification](research/ender_radius_bridge/PHASE67_VERIFICATION.md).
+
+## Phase66: each actual ideal class now has one fixed norm lattice
+
+A standalone Lean theorem chooses one bounded nonzero inverse-class ideal
+J before every I in a class C, then proves (z)=I*J, z in J, the actual norm
+identity and recovery of I by cancellation. Actual residue kernels have
+norm p without a class-number-one assumption. First attempt PASS35.6280967s;
+audit15/12/3, standard3 axioms,4 fixed controls. This is outside production
+CI. A binary-form basis/coefficient bound and representation multiplicity
+remain open; no arithmetic B or new cutoff.
+[Human proof](research/ender_radius_bridge/CLASS_FIBER_GUIDE.md) and
+[verification](research/ender_radius_bridge/PHASE66_VERIFICATION.md).
+
+## Phase65: parameter-prime-divisor loss is checked locally
+
+The standalone original-Gram theorem pays at most R*S*(S-1)*log D for
+excluded primes dividing D, so its prefix-count input covers only the
+other excluded primes. This is not yet field ramification or an actual B.
+Two registered attempts FAIL33.2369437s/PASS29.0058835s preserve all9 public
+types and5 controls; audit13/13/0 allows only the standard3 axioms. No
+production source, old evidence or gate changed; this research file is
+outside production CI. [Human proof](research/ender_radius_bridge/PRIME_DIVISOR_LOSS_GUIDE.md)
+and [evidence](research/ender_radius_bridge/PHASE65_VERIFICATION.md).
 
 ## Phase64: the geometric count now has its closed area formula
 

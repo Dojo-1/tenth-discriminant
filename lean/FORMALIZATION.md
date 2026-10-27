@@ -1,5 +1,35 @@
 # Current claim-to-Lean map
 
+Current Phase67 imports `PrimeDivisorLoss` and `ClassFiber` into production.
+The frozen Phase65/66 bodies/types/controls are unchanged; only their imports
+were replaced. Target/root/type-input/full audit pass locally:4897/4139/16985,
+172 modules. Three closures exclude the34 listed older roots and permit only
+standard3 axioms. The standalone provenance below remains historical; new-head
+production CI is still required. No controlled norm-form basis/leading bound,
+prime multiplicity, arithmetic B or new cutoff follows.
+[Combined verification](../research/ender_radius_bridge/PHASE67_VERIFICATION.md).
+
+Standalone `ClassFiber.class_fiber_lifting` chooses one bounded nonzero
+inverse-class ideal J for an entire actual class C. `NormLift` proves
+nonzero z in J, span(z)=I*J, norm magnitude=N(I)N(J) and exact ideal
+recovery. `residue_class_lifting` uses actual kernel norm p with no h=1
+premise; J precedes all residue maps/moduli. First build and4 controls
+pass locally, namespace15/12/3 with standard3 axioms; outside root/CI.
+No binary-form basis, coefficient/discriminant/leading-coefficient bound,
+unramified-prime pair/multiplicity, arithmetic B or new cutoff follows.
+[Human proof](../research/ender_radius_bridge/CLASS_FIBER_GUIDE.md) and
+[verification](../research/ender_radius_bridge/PHASE66_VERIFICATION.md).
+
+Standalone `PrimeDivisorLoss.excluded_budget_without_divisors` keeps the
+original Gram and Ender-radius guards, but requires a prefix-count B only
+for excluded primes not dividing D. The actual mass of parameter divisors
+is bounded by R*S*(S-1)*log D. All9 public types and5 controls pass locally,
+with namespace audit13/13/0; the file is outside the production root/CI.
+No field-discriminant ramification transport, ideal-class/form dictionary,
+representation multiplicity, actual B or new cutoff is inferred.
+[Human proof](../research/ender_radius_bridge/PRIME_DIVISOR_LOSS_GUIDE.md) and
+[verification](../research/ender_radius_bridge/PHASE65_VERIFICATION.md).
+
 Production `QuadraticRows.off_axis_area_bound` now proves the actual
 finite off-axis count<=2pi*t/sqrt(D)+4sqrt(at/D), D=4ac-b², under positive
 a,D and t>=0. The exact width integral and zero-height case are closed,

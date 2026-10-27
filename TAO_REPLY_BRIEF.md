@@ -1,6 +1,6 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared, through Phase 64. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
+**AI-prepared, through Phase 67. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
 
 ## Short draft for human revision
 
@@ -22,7 +22,9 @@ Read the [short mathematical spine](lean/MATHEMATICAL_SPINE.md), [50-billion pro
 
 The current geometric bonus is a production Lean bound on any finite set of off-axis integer points in Q=ax²+bxy+cy²<=t: cardU<=2pi*t/sqrt(D)+4sqrt(at/D), for a>0,D=4ac-b²>0,t>=0. Row intervals, reflection and a scaling proof give the closed area formula, including t=0. [Human proof](research/ender_radius_bridge/QUADRATIC_AREA_GUIDE.md). This does not supply the ideal-class dictionary, prime multiplicity or ramified budget needed for a higher-class-number cutoff.
 
-Publication scope matters: b4cff27 passed full production CI40403267176;74d02d3 passed CI40407136985 on the unchanged production library. Phase62's research proof has separate local evidence. Phase64's new integrated geometric count at70f9217 passes the full pinned Linux build/audit/regression run40412438935, alongside its local checks. Later documentation heads have separate statuses. [Exact records](research/ender_radius_bridge/PHASE64_VERIFICATION.md). Earlier reviews are not transferred to it.
+Publication scope matters: b4cff27 passed full production CI40403267176;74d02d3 passed CI40407136985 on the unchanged production library. Phase62's research proof has separate local evidence. Phase64's new integrated geometric count at70f9217 passes the full pinned Linux build/audit/regression run40412438935, alongside its local checks. Documentation head9705cac separately passed full pinned CI40416976865. [Exact records](research/ender_radius_bridge/PHASE64_VERIFICATION.md). Earlier reviews are not transferred to it.
+
+The subsequent arithmetic additions are now production-root reachable and pass the local full audit. One fixed bounded inverse-class ideal serves every residue ideal in a class; its generator has actual norm magnitude p*N(J) and recovers the original ideal. A separate parameter-prime-divisor budget is at most R*S*(S-1)*log D. These supply neither controlled binary-form coefficients nor prime-representation multiplicity, so no arithmetic B or new cutoff follows. New-head pinned CI remains required; earlier reviews and runs are not transferred. [Human class-fiber proof](research/ender_radius_bridge/CLASS_FIBER_GUIDE.md) and [combined verification](research/ender_radius_bridge/PHASE67_VERIFICATION.md).
 
 A connected formal development of this credited determinant route, a direct effective cutoff and human explanations of its geometric/arithmetic bridges. The [exact staircase count](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) is a supplementary simplification, not an extra divisibility exponent or smaller cutoff. Credit and frozen external comparisons belong in [prior art](PRIOR_ART.md), the [same-route comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md), and the [current pinned-source comparison](METHOD_COMPARISON_CURRENT.md). External bounds are source claims, not computations replayed here.
 
