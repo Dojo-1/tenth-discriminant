@@ -1,5 +1,18 @@
 # Status — 2026-10-27
 
+## Phase74: class-group symmetry gives a controlled vector
+
+Under actual class number at most two, every class is self-inverse.
+For each class, a bounded actual ideal J now supplies a nonzero z in J
+with (z)=J*J and |Norm(z)|=N(J)^2. This is a controlled normalized vector,
+not yet a basis or leading-coefficient bound. Standalone FAIL/PASS with
+one implicit-argument repair; all eight theorem types unchanged. Audit
+9/9/0 uses only the standard three axioms. Raw failure and pass preserved.
+[Human proof](research/ender_radius_bridge/CLASS_SQUARE_GUIDE.md) and
+[verification](research/ender_radius_bridge/PHASE74_VERIFICATION.md).
+Outside production CI; primitive reduction/basis extension, aggregation,
+even chart and usable B remain open. The h=1 cutoff stays 50 billion.
+
 ## Phase73: actual principal-class a=1 and full prime-point count
 
 A standalone local theorem uses only this ideal's ClassGroup.mk0 J=1,

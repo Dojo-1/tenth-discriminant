@@ -1,0 +1,121 @@
+{
+  "phase": 74,
+  "status": "STANDALONE_LOCAL_ACTUAL_H_LE_TWO_CLASS_SQUARE_VECTOR_PASS",
+  "base": "cde93ff0decdd99498b99c145433a2da774e9fa1",
+  "registered_commit": "36ff70892ce1944b6c7ea43ceb1ea8a2eb43e4cc",
+  "target_seconds": "54.4167940",
+  "builds": [
+    {
+      "phase": 74,
+      "mode": "build",
+      "scope": "Actual h<=2 self-inverse classes and bounded ideal vectors; not a basis or new cutoff",
+      "source_sha256": "95984ceb07cfcc2e5eccdedfe01f89b4d76547d5c2c04aae2fbcd33673db836e",
+      "source_snapshot": "PHASE74_build_20261027004815187.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 26.6258372,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3214651392,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase74ClassSquare.lean"
+      ],
+      "stdout": "PHASE74_build_20261027004815187.stdout.log",
+      "stderr": "PHASE74_build_20261027004815187.stderr.log"
+    },
+    {
+      "phase": 74,
+      "mode": "build",
+      "scope": "Actual h<=2 self-inverse classes and bounded ideal vectors; not a basis or new cutoff",
+      "source_sha256": "81c09dbb7e821be57f1b040f952ba59cea602507d3d2d6399ecde14e8419061d",
+      "source_snapshot": "PHASE74_build_20261027004858252.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 27.7909568,
+      "cumulative_before_seconds": 26.6258372,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3216211968,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase74ClassSquare.lean"
+      ],
+      "stdout": "PHASE74_build_20261027004858252.stdout.log",
+      "stderr": "PHASE74_build_20261027004858252.stderr.log"
+    }
+  ],
+  "public_theorems": [
+    "self_inverse_of_card_le_two",
+    "class_self_inverse",
+    "ideal_square_vector",
+    "bounded_class_vector",
+    "identity_control",
+    "order_three_control",
+    "zero_vector_control",
+    "rational_control"
+  ],
+  "audit": {
+    "logical": 9,
+    "theorems": 9,
+    "runtime": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "sha256": {
+    "PHASE74_PROTOCOL.md": "90d9b7d961a3dda06f14fd3b4ba53a54d893d4d9440d84adca38df4467c80189",
+    "run_phase74.ps1": "02f2ede8c8c286169653b08ce58cd7d7273341105b0e3484dd75607c0d962efe",
+    "Phase74ClassSquare.lean": "81c09dbb7e821be57f1b040f952ba59cea602507d3d2d6399ecde14e8419061d",
+    "verify_phase74_results.py": "612de8456fc9b20bb7f3cbf82184bf1d952e823f81986c8094a5c3f8f3b44faa"
+  },
+  "raw_archive": {
+    "path": "PHASE74_RAW.zip",
+    "members": 8,
+    "sha256": "7b2cfd17920b4a3238307d19bdfa6d924bf793e837deb6ef12f77b6f74c67e2a"
+  },
+  "raw_sha256": {
+    "PHASE74_build_20261027004815187.source.lean": "95984ceb07cfcc2e5eccdedfe01f89b4d76547d5c2c04aae2fbcd33673db836e",
+    "PHASE74_build_20261027004815187.stdout.log": "f46bf99e3f2cd36df6bb024340221aab6f733511f1eca66ee648b9c64fccd42b",
+    "PHASE74_build_20261027004815187.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE74_build_20261027004815187.result.json": "d0e4690818e18b3c64474aef686bd8b626e4a7947dc94ba4a18191654c351f2f",
+    "PHASE74_build_20261027004858252.source.lean": "81c09dbb7e821be57f1b040f952ba59cea602507d3d2d6399ecde14e8419061d",
+    "PHASE74_build_20261027004858252.stdout.log": "8cc386abc5de66cd24d39a3f4299cde3f0e7913a952988d82376738d18c596b3",
+    "PHASE74_build_20261027004858252.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE74_build_20261027004858252.result.json": "010458fe26d8fa64d77dfeac501688307443bc6ff929557ace61d7758150423c"
+  },
+  "preserved_sha256": {
+    "lean/TenthDiscriminant.lean": "82cb68e34226f42d5fbbbd82154075b69eff0c84b7dec833e37eaaa4e9d16fca",
+    "lean/TenthDiscriminant/ClassFiber.lean": "b68b645534a20f80451c0190407e22db020239e3e648fb4ede0217786f27c05f",
+    "research/ender_radius_bridge/Phase69IdealNormForm.lean": "dec6659224f4bb56944e86bb6567cb39252e2cea6ee40e76b44a714ad283de58",
+    "research/ender_radius_bridge/PHASE69_RESULTS.json": "b3eba890761cc17655b652a59960d7e675f6d773862d48d032d7601b11d4a890",
+    "research/ender_radius_bridge/PHASE69_RAW.zip": "3e1cc041754fb2df0684bb079e34debc9143dde3433aa65320dbb4cac6b45e95",
+    "research/ender_radius_bridge/Phase73PrincipalBasis.lean": "6d4337184b48f87732f460e646881b71e35823765906d753edf9b3db8cdb13b7",
+    "research/ender_radius_bridge/PHASE73_RESULTS.json": "ba1e1982d7c91f3b5e0348db3860f1c4d2c61986ebe0ab49a9096d2980c6f553",
+    "research/ender_radius_bridge/PHASE73_RAW.zip": "22f964b56e65d0d9063b999fd9875b2690237daab97f7dc577fd1d7cd7e309f8",
+    "research/ender_radius_bridge/PHASE72_RESULTS.json": "bd1773ad4e9d7c563ea5f1a02a26def2a155c0b74015e28a28cd216da2df5ef0",
+    "research/ender_radius_bridge/PHASE72_RAW.zip": "6f900081ab980ef3e283b295e3377d4f31f1989f5f7069ae856d04aa053a2a46"
+  },
+  "attempt_history": [
+    "FAIL: pow_card_eq_one implicit argument passed explicitly; incomplete proof rejected by namespace audit.",
+    "PASS: only typed implicit argument inference repaired; all eight public types unchanged."
+  ],
+  "limits": [
+    "Standalone local source, not production CI. No further target invocation after acceptance.",
+    "Controlled vector is not yet a primitive vector or actual basis. No quantitative leading coefficient claim.",
+    "No new class-wide B, higher-class-number range, classification, novelty, human review, upstream or Tao submission."
+  ]
+}

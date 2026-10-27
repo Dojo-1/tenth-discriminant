@@ -1,5 +1,17 @@
 # Current claim-to-Lean map
 
+Standalone `ClassSquare.bounded_class_vector` assumes actual
+`NumberField.classNumber K <= 2`. For every actual class C it chooses
+an actual nonzero integral ideal J with mk0 J=C and norm bounded by the
+existing Minkowski expression, then z with `NormLift J J z` and
+`(Algebra.norm Int z).natAbs = Ideal.absNorm J ^ 2`. The finite-group
+lemma proves self-inversion; ideal squaring supplies z. No global PID
+or class-number table premise. Local FAIL/PASS retains eight theorem
+types; one implicit-argument repair, namespace audit 9/9/0, standard
+three axioms. No primitive reduction/basis extension or coefficient
+bound follows yet. Outside root/CI. [Human proof](../research/ender_radius_bridge/CLASS_SQUARE_GUIDE.md)
+and [verification](../research/ender_radius_bridge/PHASE74_VERIFICATION.md).
+
 Standalone `PrincipalBasis.principal_class_form_and_prime_count` now
 constructs a calibrated actual basis for a nonzero identity-class ideal:
 FormData has a=1,b=1,c=(D+1)/4. Actual normalized prime norm then implies

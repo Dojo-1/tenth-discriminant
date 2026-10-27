@@ -43,7 +43,9 @@ The control with coefficient3 and form3x^2+xy+1001y^2 still has prime value3
 at(1,0) and(-1,0). A generic basis/form cannot silently inherit the a=1
 axis saving; choosing the calibrated basis is part of the proof.
 
-Other classes still need controlled bases and quantitative leading bounds.
+Other classes now have [controlled vectors from class squaring](CLASS_SQUARE_GUIDE.md)
+when the actual class number is at most two. Controlled bases and
+quantitative leading bounds still require primitive reduction and basis extension.
 The even chart, class-wide usable arithmetic B and field-parameter transport
 remain open. [Exact verification](PHASE73_VERIFICATION.md). This standalone
 result is outside production CI; no new cutoff or classification is claimed.
