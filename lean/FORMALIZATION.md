@@ -1,5 +1,18 @@
 # Current claim-to-Lean map
 
+Current production integration: `EvenIdealCount.actual_ideal_form_and_count`
+is imported by the main root. Accepted89mathematics,14public statements,
+3definitions, proof bodies, controls and reports are exact after imports;
+the input-check command is relocated. First target/root/input/audit pass.
+188modules/5189logical/4405theorems/17004runtime auxiliaries, standard3
+axioms. Fresh44910closure excludes same37roots. No standalone89replay.
+[Human guide](../research/ender_radius_bridge/EVEN_IDEAL_LATTICE_GUIDE.md)
+and [exact90record](../research/ender_radius_bridge/PHASE90_VERIFICATION.md).
+Even controlled class bases, full prime/weighted/same-Gram comparison and
+cutoff remain open; external CI and human review are not transferred.
+The preceding89failure remains preserved. Earlier entries below are
+historical checkpoints;89is now integrated through90.
+
 Latest standalone research: `EvenIdealCount.actual_ideal_form_and_count`
 constructs an actual ideal basis and positive integral norm form with
 4ac-b^2=4d in the squarefree even maximal chart d=1or2mod4. The same basis

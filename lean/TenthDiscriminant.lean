@@ -110,3 +110,4 @@ import TenthDiscriminant.ClosedKernel
 import TenthDiscriminant.OddMinkowski
 import TenthDiscriminant.UniformTwoClass
 import TenthDiscriminant.OddFieldTwoClass
+import TenthDiscriminant.EvenIdealCount

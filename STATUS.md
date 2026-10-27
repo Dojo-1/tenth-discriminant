@@ -1,5 +1,21 @@
 # Status — 2026-10-27
 
+## Phase90: the even ideal count is integrated unchanged
+
+The accepted89norm form and all-finite-set lattice count are now in the
+main Lean root, with mathematical statements, definitions, proof bodies,
+controls and reports byte-exact after dependency imports. One root import;
+the standalone input checker moved out. [Human explanation](research/ender_radius_bridge/EVEN_IDEAL_LATTICE_GUIDE.md)
+and [exact integration](research/ender_radius_bridge/PHASE90_VERIFICATION.md).
+Target50.8546323s/root28.7958112s/input31.5439489s/audit38.7155894s all
+passed on their first invocation.188modules;5189logical/4405theorems/
+17004runtime auxiliaries; standard3axioms. Fresh44910closure excludes
+same37old inputs.25rawfiles/1464prior files frozen; savedverifierPASS.
+No standalone89replay. The even cutoff still needs controlled class
+bases and full prime/weighted/same-Gram assembly. External exact-head CI,
+independent human review and Argon's pending report remain distinct.
+Earlier entries preserve their historical scopes, including89failure.
+
 ## Phase89: the actual even ideal lattice now has a checked count
 
 A standalone theorem constructs a positive integral norm form for EVERY

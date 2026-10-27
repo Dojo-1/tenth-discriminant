@@ -45,6 +45,11 @@ x^2+2xy+3y^2 for d=2. Its discriminant magnitude is8, not2. The shear changes
 the formula and keeps its discriminant: it is a reversible coordinate
 operator, not a change of arithmetic object.
 
+The accepted statement, proofs and controls are now integrated unchanged
+into the main Lean library. Full local build/input/whole-audit checks pass.
+[Exact integration record](PHASE90_VERIFICATION.md). This is separate from
+external CI or human review.
+
 ## What this does and does not close
 
 This is the even-case local lattice bridge. To obtain an even-discriminant
