@@ -1,5 +1,20 @@
 # Status — 2026-10-27
 
+## Phase83: the weighted loss now has a closed estimate
+
+A standalone Lean theorem bounds the finite kernel explicitly by
+alpha*(log3+logL*(1+logL))+log3/6, where
+alpha=pi/sqrtD+2sqrt(M(K)/(3D)). It proves the exact affine identity,
+keeps the constant payment separate, and composes with the original
+Gram under every guard from82. [Human guide](research/ender_radius_bridge/CLOSED_KERNEL_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE83_VERIFICATION.md).
+First run failed at division normalization; second passed after that
+sole insertion. All11types unchanged;28/26/0standard-axiom namespace
+audit;57,618-declaration closure excludes the same34old inputs.
+Production82 unchanged; no new full-library/external CI is claimed.
+M(K)-to-D, field/even transport and a numerical cutoff remain open.
+Earlier sections below preserve their dated scopes.
+
 ## Phase82: the prime count now pays the weighted determinant loss
 
 For actual h<=2 in the squarefree odd chart, the integrated theorem

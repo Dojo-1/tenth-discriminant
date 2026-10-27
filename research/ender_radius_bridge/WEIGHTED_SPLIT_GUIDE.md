@@ -50,3 +50,8 @@ Controls retain an actual split witness D=7,p=11, removal of parameter
 divisors, exclusion of good primes from the remainder, and the empty set.
 [Exact verification](PHASE82_VERIFICATION.md) separates local proof/audit
 from external exact-head CI and human review. No classification is announced.
+
+Phase83 update: a separately registered standalone proof now supplies the
+closed kernel estimate and composes it with this same inequality. The
+paragraph above records the82 checkpoint. [Closed-bound explanation](CLOSED_KERNEL_GUIDE.md).
+Minkowski/field/even transport and a new numerical cutoff remain open.

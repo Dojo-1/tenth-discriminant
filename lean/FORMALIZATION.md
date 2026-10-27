@@ -1,5 +1,19 @@
 # Current claim-to-Lean map
 
+Standalone `ClosedKernel.closed_actual_gram_budget` now replaces82's
+finite kernel by `closedCost D (ClassFiber.normBound K) L`, explicitly
+(pi/sqrtD+2sqrt(M(K)/(3D)))*(log3+logL*(1+logL))+log3/6.
+All actual squarefree odd-chart h<=2, finite odd-prime and radius guards
+remain. The caller supplies no count or coverage assertion. The exact
+affine identity and harmonic bound preserve the constant separately.
+The sole repair normalizes division; all11public types and2definitions
+are unchanged. Audit28/26/0, standard3axioms; fresh root closure57,618
+excludes the same34forbidden inputs. Source remains outside the root;
+production82 and its full audit are unchanged. [Human proof](../research/ender_radius_bridge/CLOSED_KERNEL_GUIDE.md)
+and [verification](../research/ender_radius_bridge/PHASE83_VERIFICATION.md).
+M(K)-to-D, even-chart/field transport and numerical cutoff remain open.
+The integrated checkpoint below describes82's finite-kernel form.
+
 Current integrated result: `SplitPrimeBudget.actual_gram_budget` proves
 for squarefree D=3 mod4 and actual classNumber(QuadraticField((D+1)/4))<=2,
 all finite odd-prime sets P bounded by L, R,S>=1, L>=3, D<=D2 and the
