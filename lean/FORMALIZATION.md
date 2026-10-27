@@ -1,5 +1,20 @@
 # Current claim-to-Lean map
 
+Latest standalone theorem: `EvenControlledClass.controlled_class_form_and_count`
+chooses one actual bounded J/basis in EVERY class under h<=2 in the even
+maximal chart, with0<a<=N(J)<=actualM(K),4ac-b²=4d and exact normalizednorm.
+The same J lifts EVERY ideal in the class, with exact recovery; the same
+basis serves EVERY finite off-axis norm-bounded set/threshold with common
+M(K) count. No supplied vector/basis/form/lift/count or fieldisomorphism.
+[Human proof](../research/ender_radius_bridge/EVEN_CONTROLLED_CLASS_GUIDE.md)
+and [exact91record](../research/ender_radius_bridge/PHASE91_VERIFICATION.md).
+FAIL83.4366943/PASS106.49821: a shadowing local equality is renamed;
+all11public types/FormData/mainproof/controls unchanged. Namespace17/16/0,
+standard3axioms, fresh54590closure excludes38old roots. Productionroot
+and90whole-library audit unchanged. Integration/full prime/weighted-Gram
+assembly/even cutoff/externalCI/humanreview remain separate obligations.
+The following entries retain their earlier checkpoint scopes.
+
 Current production integration: `EvenIdealCount.actual_ideal_form_and_count`
 is imported by the main root. Accepted89mathematics,14public statements,
 3definitions, proof bodies, controls and reports are exact after imports;

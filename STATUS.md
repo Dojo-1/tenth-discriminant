@@ -1,5 +1,23 @@
 # Status — 2026-10-27
 
+## Phase91: the even coefficient is controlled across each actual class
+
+Under actual class number<=2 in the squarefree even maximal chart, a
+standalone Lean theorem now chooses one bounded ideal J and basis per
+class, with0<a<=N(J)<=M(K),4ac-b²=4d and exact normalized norm. The SAME J
+lifts every ideal in that class; the SAME basis gives the common off-axis
+count for all finite norm-bounded U and thresholds. [Human proof](research/ender_radius_bridge/EVEN_CONTROLLED_CLASS_GUIDE.md)
+and [exact record](research/ender_radius_bridge/PHASE91_VERIFICATION.md).
+FAIL83.4366943s/PASS106.49821s; only a shadowing local variable is renamed.
+All11public types,1definition, main theorem and4controls unchanged.
+17logical/16theorem/0runtime namespace; standard3axioms; fresh54590closure
+excludes38old roots.8rawfiles/1474prior files frozen; savedverifierPASS.
+Production/root/pins unchanged. Integration, full axis/prime multiplicity,
+class sum/weighted same-Gram assembly and even cutoff remain open.
+ActualM(K) has no new explicit scalar estimate. External exact-head CI,
+independent human review and Argon's pending report are separate.
+Earlier entries preserve historical scopes, including the90root audit.
+
 ## Phase90: the even ideal count is integrated unchanged
 
 The accepted89norm form and all-finite-set lattice count are now in the
