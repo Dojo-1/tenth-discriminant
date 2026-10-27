@@ -47,3 +47,7 @@ sign collapse and an actual ramified-root collapse. These explain the
 guards rather than removing them. [Exact verification](PHASE80_VERIFICATION.md).
 Local checks are distinct from external exact-head CI and human review.
 No full classification is announced.
+
+The [later standalone aggregation](PRIME_PREFIX_GUIDE.md) now supplies
+the actual class-slice cardinal sum and admissible-prime prefix count.
+Full weighted loss/excluded-prime coverage and external CI remain separate.

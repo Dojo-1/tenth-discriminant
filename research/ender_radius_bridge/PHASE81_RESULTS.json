@@ -1,0 +1,127 @@
+{
+  "phase": 81,
+  "status": "STANDALONE_LOCAL_ACTUAL_CLASS_SUM_ADMISSIBLE_PRIME_PREFIX_BOUND_PASS",
+  "base": "b71f28e742adfae77243f1abfd07d5f3f09d431b",
+  "registered_commit": "8f18cafc3922d101f0d1048f49b9acb37947263e",
+  "target_seconds": "148.9122284",
+  "builds": [
+    {
+      "phase": 81,
+      "mode": "build",
+      "scope": "Actual class-slice sum and admissible-prime prefix bound; no full weighted B or cutoff",
+      "source_sha256": "83f5157ce3090bfc8fdf0efce9e6faaeaf69bf2c43f972906a5e5c9f9c5c146d",
+      "source_snapshot": "PHASE81_build_20261027112731145.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 96.894357,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3257655296,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase81ClassAggregation.lean"
+      ],
+      "stdout": "PHASE81_build_20261027112731145.stdout.log",
+      "stderr": "PHASE81_build_20261027112731145.stderr.log"
+    },
+    {
+      "phase": 81,
+      "mode": "build",
+      "scope": "Actual class-slice sum and admissible-prime prefix bound; no full weighted B or cutoff",
+      "source_sha256": "d4b22be1b168fd8f702a605ed6a651667dec8e1fa6bd5964f2eadf16877b4705",
+      "source_snapshot": "PHASE81_build_20261027112947750.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 52.0178714,
+      "cumulative_before_seconds": 96.894357,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3262185472,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase81ClassAggregation.lean"
+      ],
+      "stdout": "PHASE81_build_20261027112947750.stdout.log",
+      "stderr": "PHASE81_build_20261027112947750.stderr.log"
+    }
+  ],
+  "public_theorems": [
+    "two_class_accounting",
+    "actual_class_slice",
+    "prime_prefix_bound",
+    "uniform_two_class_bound",
+    "empty_slice_control",
+    "absent_slice_control",
+    "label_collision_control",
+    "axis_constant_control"
+  ],
+  "audit": {
+    "logical": 8,
+    "theorems": 8,
+    "runtime": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "sha256": {
+    "PHASE81_PROTOCOL.md": "eebc33b9126296999def157b319e98e4370393df66154e1682060439788e0eaa",
+    "run_phase81.ps1": "70784fa954ba73dc30589e5cf63fc1c7115bdc739ceabee7b68fb90767f6636c",
+    "Phase81ClassAggregation.lean": "d4b22be1b168fd8f702a605ed6a651667dec8e1fa6bd5964f2eadf16877b4705",
+    "verify_phase81_results.py": "87d8afbc2d2ec5b66d60ce12e820959cc0e9f0f63408471c4b226621b2615d65"
+  },
+  "raw_archive": {
+    "path": "PHASE81_RAW.zip",
+    "members": 8,
+    "sha256": "e6f5d9e3836fcdb1229e296ec366e0ac15ff7fb1cfbee08f5d124737cf750774"
+  },
+  "raw_sha256": {
+    "PHASE81_build_20261027112731145.source.lean": "83f5157ce3090bfc8fdf0efce9e6faaeaf69bf2c43f972906a5e5c9f9c5c146d",
+    "PHASE81_build_20261027112731145.stdout.log": "48360e883739e27bfa83a843e9a34a8c41459ab0a96e093d03a52be791345d44",
+    "PHASE81_build_20261027112731145.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE81_build_20261027112731145.result.json": "4f45c7c987e93ce97f8879cd7cb31851fe9cac8727bb69a9581a088316044f6f",
+    "PHASE81_build_20261027112947750.source.lean": "d4b22be1b168fd8f702a605ed6a651667dec8e1fa6bd5964f2eadf16877b4705",
+    "PHASE81_build_20261027112947750.stdout.log": "3a8cf4008998f499b7db10cbf14dd1a7d70bf1a0b29cddceb94d063958ac55a2",
+    "PHASE81_build_20261027112947750.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE81_build_20261027112947750.result.json": "d6fade2f7bf001ac528af1c72a98cb76aa543ad319d4e97a8fe7f3d8170a34e4"
+  },
+  "preserved_sha256": {
+    "lean/TenthDiscriminant.lean": "04395131c591e24618e309cd9a1c21f134c67adfd0bb77dcd3561134c09b23c2",
+    "lean/TenthDiscriminant/ControlledPrimeFamily.lean": "9aa19cb8f71ebbf4f6056ade020cf760230ad7c0641dd82e04ad628ac051af97",
+    "research/ender_radius_bridge/Phase62PrimeAxis.lean": "fbfb12a6c23188b43b7b291fc2461dfa2e447b3c51bd4ebf558ed44eee016ee2",
+    "research/ender_radius_bridge/PHASE62_RESULTS.json": "41dc3ef6fba2750084c5815cc1eb25725d5304a7155aed3075d0369479f4db96",
+    "research/ender_radius_bridge/PHASE62_RAW.zip": "026a54c4121fa45571de87b2f6d103b1652696c3298dacc2e10af54eee6cfe8c",
+    "research/ender_radius_bridge/PHASE69_RESULTS.json": "b3eba890761cc17655b652a59960d7e675f6d773862d48d032d7601b11d4a890",
+    "research/ender_radius_bridge/PHASE69_RAW.zip": "3e1cc041754fb2df0684bb079e34debc9143dde3433aa65320dbb4cac6b45e95",
+    "research/ender_radius_bridge/verify_phase69_results.py": "e19ef1bb745985bd6dddf968086e1de53d866baba665fa15a9559718c0b03656",
+    "research/ender_radius_bridge/PHASE75_RESULTS.json": "b44aec3f302ee252efd187107cb9ea92acddbdf1d6a843891f77d184e00db731",
+    "research/ender_radius_bridge/PHASE75_RAW.zip": "3dad34be0e30eef0b5d1a9a676b51429fd2e292a6d4858b1d02aae1b12b9b24f",
+    "research/ender_radius_bridge/verify_phase75_results.py": "ed5f96b86d9d640df3e1919eddc5af4d999ce926e32e7c1b3fc59c08c4b657ed",
+    "research/ender_radius_bridge/PHASE80_RESULTS.json": "5337ea78a867c1a0ae50486b2a4a362da38d41f2525d1930d7bc93b3d96bf083",
+    "research/ender_radius_bridge/PHASE80_RAW.zip": "dff820dc27f4077d312911b9e98261473fed0a2e39953eb99fa187b0a5d69414",
+    "research/ender_radius_bridge/verify_phase80_results.py": "3e2d40f7cf04f3a44f870f123e478f1a309db91201e33af8de3ea05f226f47ff"
+  },
+  "attempt_history": [
+    "FAIL: ideal-subtype embedding congrArg domain inference, and Nat/Real finite-sum cast.",
+    "PASS: explicit ideal-subtype value map and explicit cast of fibre-card sum; all8theoremtypes/scalar62body/controls/reporting unchanged."
+  ],
+  "closed_scope": "Actual class slices preserve tagged cards; sum over actual class group, apply common-family full prime counts and4Ppoints, derive |P|<=h/4*(2pi*t/sqrtD+4sqrt(M(K)t/D)+1), uniformh<=2bound=(...)/2 for all finite Admissible P withp<=t.",
+  "limits": [
+    "No further standalone81 target invocation after acceptance.",
+    "Prefix COUNT for oddpnotdividingDwithsquare(-D), not yet full weighted loss/coverage of all excluded primes.",
+    "Standalone outside production Root/CI; no fresh34old-root exclusion audit in this cycle,80input provenance is separate.",
+    "Field/even transport/newcutoff/classification/novelty/humanreview/upstream/Tao not claimed;no publication/merge/reviewer."
+  ]
+}

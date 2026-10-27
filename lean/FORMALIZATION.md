@@ -1,5 +1,20 @@
 # Current claim-to-Lean map
 
+Standalone `ClassAggregation.prime_prefix_bound` now proves, for actual
+h<=2 in the squarefree odd chart, all finite Admissible P withp<=natural t:
+cardP<=h/4*(2*pi*t/sqrtD+4*sqrt(M(K)*t/D)+1). `uniform_two_class_bound`
+replacesh/4by1/2. It derives actual slice-cardinality preservation and
+class-fibre summation, actual prime-normalized slice counts and80's SAME
+family4Ppoints; the caller supplies no family/slice/count/multiplicity.
+Accepted62's scalar accounting is exacttype/body transport, now applied
+to the actual whole class group. FAIL/PASS repairs only subtype domain
+and Nat/Real sum cast;8types/controls/reporting unchanged. Audit8/8/0,
+standard three axioms. No fresh34root-exclusion audit in this standalone
+cycle;80's provenance remains separate. [Human proof](../research/ender_radius_bridge/PRIME_PREFIX_GUIDE.md)
+and [verification](../research/ender_radius_bridge/PHASE81_VERIFICATION.md).
+Outside Root/CI. Prefix COUNT is proved; full weighted arithmetic loss,
+excluded-prime coverage, field/even transport and new cutoff remain open.
+
 Current integrated `ControlledPrimeFamily.controlled_family` chooses ONE
 FamilyGood ideal family under actual odd-chart h<=2, before ALL finite P.
 For each C it retains class(JC)=C and transparent ClassCountData: an actual

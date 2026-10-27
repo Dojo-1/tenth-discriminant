@@ -1,5 +1,19 @@
 # Status — 2026-10-27
 
+## Phase81: actual class aggregation gives an admissible-prime prefix count
+
+A standalone checked theorem now constructs actual ideal slices with the
+same cardinalities as labelled fibres, sums their cards, and combines80's
+common-family4Ppoints with full per-class counts. For actual odd-chart
+h<=2 and finite admissible P withp<=t it proves
+cardP<=h/4*(2*pi*t/sqrtD+4*sqrt(M(K)*t/D)+1), hence the coefficient1/2
+version. No supplied counts/multiplicity/slices. FAIL/PASS repairs subtype
+domain and finite-sum cast only;8types unchanged,8/8/0standard-axiom audit,
+8rawfiles. [Human proof](research/ender_radius_bridge/PRIME_PREFIX_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE81_VERIFICATION.md).
+Production80 unchanged;81 outside Root/CI. This is a COUNT; weighted
+loss/excluded-prime coverage, field/even transport and new cutoff remain.
+
 ## Phase80: the SAME controlled ideals now supply the four prime lifts
 
 Integrated exact79 and new fixed-family lifting compose one actual ideal
