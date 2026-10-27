@@ -1,5 +1,18 @@
 # Status — 2026-10-27
 
+## Phase79: actual prime-axis accounting removes the off-axis premise
+
+A standalone theorem now counts full finite prime-normalized sets in
+one chosen actual ideal/basis per class under odd-chart h<=2. Axis cost
+is0 in the principal class and at most2 in every other class; no caller
+off-axis guard. The same J retains class lifting. Scalar62proof is exact
+transport; new actual norm cancellation and injective-coordinate count
+are checked. FAIL/PASS corrected only declaration delimiter/classical
+context;10/10/0standard-axiom audit,8rawfiles. [Human proof](research/ender_radius_bridge/ACTUAL_PRIME_AXIS_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE79_VERIFICATION.md).
+Production78 remains unchanged;79 is standalone. Four-lift aggregation
+on THESE chosen ideals, aggregate B/even-field transport/new range remain.
+
 ## Phase78: one controlled actual lattice now serves each class
 
 For actual h<=2 in the squarefree odd chart, the integrated theorem chooses

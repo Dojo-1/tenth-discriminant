@@ -5,7 +5,7 @@ field-discriminant bound is 50 billion.** Class number one means unique factoriz
 integers. The geometric count is proved on the draft branch; the
 higher-class-number numerical bound remains open. This page tracks
 Tao's [challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)
-through proof source `70f9217` and integrated Phase78 and preserved75/69 failures, 27 October 2026. No full-classification
+through proof source `70f9217` and integrated Phase78, standalone79 and preserved75/69 failures, 27 October 2026. No full-classification
 announcement, novelty, optimality or independent human review is claimed.
 
 Lean checks encoded statements. A source claim, a checked theorem and a
@@ -44,7 +44,7 @@ spells out assumptions and the exact statements.
 | Primitive vector independent of coordinates | [Least actual norm](research/ender_radius_bridge/LEAST_NORM_GUIDE.md) gives one nonzero element of norm magnitude<=N(J)^2, primitive in EVERY actual basis of each bounded class representative under h<=2. Checked locally outside production CI; basis completion and class-family composition are integrated locally; no new cutoff. |
 | Actual basis and leading-coefficient interface | [A determinant-one lattice operator](research/ender_radius_bridge/BASIS_COMPLETION_GUIDE.md) completes the supplied actual primitive vector and proves0<a<=N(J) from its norm bound. Composed with76 and integrated locally at78; external CI, aggregate B/even-field transport and a new range remain. |
 | Controlled per-class actual count | [One bounded ideal and basis per actual class](research/ender_radius_bridge/CONTROLLED_CLASS_GUIDE.md) lift all ideals of that class and give a common off-axis error bound using M(K). Local full-library/input/axiom checks pass; external exact-head CI and aggregate B/even-field/new range remain. |
-| Prime-axis accounting | Pure bounds give at most2 axis prime points. The [actual principal-class calibration](research/ender_radius_bridge/PRINCIPAL_BASIS_GUIDE.md) now constructs a=1 and proves no prime-normalized axis elements locally. Two-class aggregation and even-chart transport remain. |
+| Full actual per-class prime count | The [actual axis theorem](research/ender_radius_bridge/ACTUAL_PRIME_AXIS_GUIDE.md) proves at most2 across all primes and0 in the calibrated principal class. A chosen actual class-family full prime count now needs no caller off-axis guard. Checked standalone; four-lift aggregation on these SAME ideals/B/even-field/new range remain. |
 | Limits that prevented overclaiming | A radial O(1/R) ceiling, the per-form zero-row failure and the [stopped coordinate attempt](research/ender_radius_bridge/PHASE69_VERIFICATION.md) remain preserved. [History and controls](STATUS.md). |
 
 ## Verification and the next decisive step
@@ -60,8 +60,8 @@ establish human review. Published arithmetic at `e77a446` has its own completed 
 verified separately from the new [local Phase78 checks](research/ender_radius_bridge/PHASE78_VERIFICATION.md):
 179modules,5002logical/4233theorem declarations. New exact-head CI is pending.
 
-The next arithmetic bridge must assemble the class-wide prime/axis count
-on these controlled bases, and complete even-chart transport. The local
+The next arithmetic bridge must join the full per-class prime counts to class-wide four-lift multiplicity
+on these SAME chosen ideals, and complete even-chart transport. The local
 parameter-divisor bound still needs field-discriminant transport.
 [PR30](https://github.com/Dojo-1/tenth-discriminant/pull/30) has completed
 pinned CI/security checks; merging still requires explicit authorization.

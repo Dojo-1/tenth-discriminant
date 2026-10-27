@@ -1,5 +1,18 @@
 # Current claim-to-Lean map
 
+Standalone `ActualPrimeAxis.controlled_class_prime_count` now chooses,
+for each actual class under odd-chart h<=2, a bounded J and controlled
+actual basis/FormData, retaining lifting of every ideal of that class
+into the SAME J. It calibrates the principal class on that J to a=1.
+For all finite prime-normalized U:J of norm magnitude<=N(J)*t, it proves
+cardU<=2*pi*t/sqrtD+4*sqrt(M(K)*t/D)+(if C=1 then0else2), WITHOUT a caller
+off-axis guard. Actual axis cardinal<=2 is proved across all primes;
+the principal class contributes0. FAIL/PASS repairs delimiter/classical
+context only,10/10/0standard-axiom audit;8rawfiles preserved. [Human proof](../research/ender_radius_bridge/ACTUAL_PRIME_AXIS_GUIDE.md)
+and [verification](../research/ender_radius_bridge/PHASE79_VERIFICATION.md).
+Not imported into production Root/CI yet. The actual four-lift aggregation
+must use this chosen ideal family; aggregate B/even-field/new range remain.
+
 Current production-local roots `ControlledClassCount.controlled_class_basis`
 and `controlled_class_form_and_count` choose, for EACH actual class under
 h<=2 in the squarefree odd chart, one bounded nonzero ideal J and an actual

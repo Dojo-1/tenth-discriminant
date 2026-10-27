@@ -47,3 +47,8 @@ locally. Accepted sources are transported with import changes only; both
 stopped attempts remain unchanged. [Exact verification](PHASE78_VERIFICATION.md)
 separates local library/dependency checks from future exact-head CI and
 independent human review. Nothing here announces a full classification.
+
+The [later standalone axis theorem](ACTUAL_PRIME_AXIS_GUIDE.md) removes
+the off-axis premise for prime-normalized sets, with allowance0 in the
+principal class and2 otherwise. Actual four-lift/class aggregation on
+that chosen family remains the next bridge. Production78 is unchanged.
