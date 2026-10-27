@@ -34,9 +34,9 @@ coefficient enormous. We now have a controlled candidate vector instead.
 Why a gap remains: z might be an integer multiple of a smaller vector.
 The [later least-norm construction](LEAST_NORM_GUIDE.md) now replaces it
 by an actual minimum, with no larger norm and coprime coordinates in
-every basis. Extending that primitive element to an integral basis and
-identifying its leading coefficient remain unproved. Only after those
-steps may we claim a controlled leading coefficient. A [later bounded attempt](CONTROLLED_BASIS_ATTEMPT.md)
+every basis. The [basis-completion interface](BASIS_COMPLETION_GUIDE.md) now supplies
+an actual first-vector basis and leading bound0<a<=N(J) from those
+inputs. Their chosen class-family composition is still a separate obligation. A [later bounded attempt](CONTROLLED_BASIS_ATTEMPT.md)
 hit its resource limit and is preserved as failure; it does not close this gap.
 
 The order-three control checks 1!=-1 in ZMod3: self-inversion is special

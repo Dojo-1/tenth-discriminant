@@ -2,7 +2,8 @@
 
 **Checked locally in Lean for actual ideals in the squarefree odd
 maximal-order chart.** This closes the primitivity step left after
-[class squaring](CLASS_SQUARE_GUIDE.md). Basis completion remains open.
+[class squaring](CLASS_SQUARE_GUIDE.md). The separate [basis-completion interface](BASIS_COMPLETION_GUIDE.md) is now
+checked; their chosen class-family composition remains open.
 
 An element of an ideal is primitive when it is not a nontrivial integer
 multiple of another element of that ideal. Its coordinates then have
@@ -46,7 +47,7 @@ the actual element 1 in the D=7 unit ideal: it has coprime coordinates
 in every integral basis. Two failed control-proof assemblies and the
 passing third run are all preserved in the [verification](PHASE76_VERIFICATION.md).
 
-The next step is to complete this primitive vector to an integral basis,
-then identify its normalized norm with the leading coefficient. Neither
-conclusion is claimed yet. This standalone proof is outside production
+The separate basis-completion theorem now supplies those two steps from
+this primitive/norm interface. Composing the actual chosen class family
+and integrating the accepted sources still require a separate check. This standalone proof is outside production
 CI; class-wide counts, even-chart transport and a new cutoff remain open.

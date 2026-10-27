@@ -1,0 +1,125 @@
+{
+  "phase": 77,
+  "status": "STANDALONE_LOCAL_PRIMITIVE_BASIS_AND_ACTUAL_COEFFICIENT_INTERFACE_PASS",
+  "base": "cc6bd851969162a131f8f3ac1c2a7db9a359955a",
+  "registered_commit": "8dc321c9d842fe38ade277b4dfc39d15a5132a5e",
+  "target_seconds": "65.4360465",
+  "builds": [
+    {
+      "phase": 77,
+      "mode": "build",
+      "scope": "Actual primitive basis completion and norm-to-coefficient interface; no class-wide cutoff",
+      "source_sha256": "4b28d3b069550cfd5f496fcb264ae795c54c4a8d3382014bc390a9b01134b606",
+      "source_snapshot": "PHASE77_build_20261027063707410.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 30.4289926,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3068186624,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase77BasisCompletion.lean"
+      ],
+      "stdout": "PHASE77_build_20261027063707410.stdout.log",
+      "stderr": "PHASE77_build_20261027063707410.stderr.log"
+    },
+    {
+      "phase": 77,
+      "mode": "build",
+      "scope": "Actual primitive basis completion and norm-to-coefficient interface; no class-wide cutoff",
+      "source_sha256": "4f94887a2e1b4874d63139f9e5d609fd544840e218e63541acd11a29368df391",
+      "source_snapshot": "PHASE77_build_20261027063828894.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 35.0070539,
+      "cumulative_before_seconds": 30.4289926,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3075440640,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase77BasisCompletion.lean"
+      ],
+      "stdout": "PHASE77_build_20261027063828894.stdout.log",
+      "stderr": "PHASE77_build_20261027063828894.stderr.log"
+    }
+  ],
+  "public_theorems": [
+    "primitive_completion",
+    "actual_form_of_primitive_bound",
+    "two_three_control",
+    "zero_guard",
+    "nonprimitive_guard",
+    "first_vector_control"
+  ],
+  "audit": {
+    "logical": 6,
+    "theorems": 6,
+    "runtime": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "sha256": {
+    "PHASE77_PROTOCOL.md": "1420704c2fe72c1d932197f5f3bcd79df932bdb89569b93b85606d33a2a08c03",
+    "run_phase77.ps1": "fac6f81091fda56f8da438cfa27175ddd299abdb73fe8f26e7adf5bb0e1c5907",
+    "Phase77BasisCompletion.lean": "4f94887a2e1b4874d63139f9e5d609fd544840e218e63541acd11a29368df391",
+    "verify_phase77_results.py": "795ad690e953f0374bc151e4a924be4a5f82faa71361e6beef5a91205faa10ca"
+  },
+  "raw_archive": {
+    "path": "PHASE77_RAW.zip",
+    "members": 8,
+    "sha256": "f201eea0c9784530ede2efce5135663548199e8c25563fb99f5b3411f67bcb9e"
+  },
+  "raw_sha256": {
+    "PHASE77_build_20261027063707410.source.lean": "4b28d3b069550cfd5f496fcb264ae795c54c4a8d3382014bc390a9b01134b606",
+    "PHASE77_build_20261027063707410.stdout.log": "b805add1f28540f934fe731c5e95e456a4c0043663e75b93bb5b35f94dda3a93",
+    "PHASE77_build_20261027063707410.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE77_build_20261027063707410.result.json": "e8bb180682237bebbc3aa21889010e6465eecb0923df5ecd8de5c0c5ca89c9e3",
+    "PHASE77_build_20261027063828894.source.lean": "4f94887a2e1b4874d63139f9e5d609fd544840e218e63541acd11a29368df391",
+    "PHASE77_build_20261027063828894.stdout.log": "bd671efcdbe96ce6e0406ac59a6a5003679ad1ffdb87b94ab8081b6dd8d35697",
+    "PHASE77_build_20261027063828894.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE77_build_20261027063828894.result.json": "d490b7bbde1c033064b42889b18eac4b1c809d12c95731044235f1b72d383167"
+  },
+  "preserved_sha256": {
+    "lean/TenthDiscriminant.lean": "82cb68e34226f42d5fbbbd82154075b69eff0c84b7dec833e37eaaa4e9d16fca",
+    "lean/TenthDiscriminant/IdealCoordinates.lean": "da6e3fb9c59d27e53b7750e1ddedfba88bb51a728b79f23cd3e22be3eb48635e",
+    "research/ender_radius_bridge/Phase69IdealNormForm.lean": "dec6659224f4bb56944e86bb6567cb39252e2cea6ee40e76b44a714ad283de58",
+    "research/ender_radius_bridge/PHASE69_RESULTS.json": "b3eba890761cc17655b652a59960d7e675f6d773862d48d032d7601b11d4a890",
+    "research/ender_radius_bridge/PHASE69_RAW.zip": "3e1cc041754fb2df0684bb079e34debc9143dde3433aa65320dbb4cac6b45e95",
+    "research/ender_radius_bridge/Phase75ControlledBasis.lean": "7ac828178e9adcd4d2d062e2118f37275a682981ab68f497caeed07882dd4ba3",
+    "research/ender_radius_bridge/PHASE75_PROTOCOL.md": "fd2de911af1a969e52400f851861f7e18715f206628be167c2c8195337984e9a",
+    "research/ender_radius_bridge/run_phase75.ps1": "3204900c225435f7729919821fa06bc56842a1550d5c7bf32aeb162184de7e2b",
+    "research/ender_radius_bridge/PHASE75_RESULTS.json": "b44aec3f302ee252efd187107cb9ea92acddbdf1d6a843891f77d184e00db731",
+    "research/ender_radius_bridge/PHASE75_RAW.zip": "3dad34be0e30eef0b5d1a9a676b51429fd2e292a6d4858b1d02aae1b12b9b24f",
+    "research/ender_radius_bridge/Phase76LeastNorm.lean": "04e9da677924f7f5700f8c06e4df74aa465c7d77b26d30cb12c853bddb636e2b",
+    "research/ender_radius_bridge/PHASE76_RESULTS.json": "6dbfd33c829e0b5ceb905bbfdfcbc661fb98d84fbe6a6a471855b05f6f0d9089",
+    "research/ender_radius_bridge/PHASE76_RAW.zip": "8857cd6d3aadaf48648cec184758aef86b7e7b5e94a4af995de16633e5075775",
+    "research/ender_radius_bridge/verify_phase76_results.py": "429310a2342fd507a98c1b8481e7ef08b1de482691dde5a070d9f64801ab7d21"
+  },
+  "attempt_history": [
+    "FAIL: local coordinate abbreviations in Bezout; integer module smul versus canonical zsmul not definitionally equal.",
+    "PASS: explicitly expose gcd coordinates; normalize integer scalar actions with int_smul_eq_zsmul. All6types and complete actual norm/coefficient proof, controls/reporting unchanged."
+  ],
+  "closed_scope": "Primitive actual module element completes to actual basis via Mathlib determinant-one operator. In actual odd ideal chart, primitive element of norm magnitude<=N(J)^2 becomes first vector of actual FormData with0<a<=N(J).",
+  "limits": [
+    "No further standalone target run after acceptance.",
+    "Actual primitive/norm premises match accepted76 but that chosen class-family composition is not checked in this standalone source.",
+    "Outside production root/CI; no aggregate B/even/field/newrange/classification/review/upstream/Tao claims.",
+    "Stopped75 and accepted76 source/raw unchanged; no reruns or limit increases."
+  ]
+}

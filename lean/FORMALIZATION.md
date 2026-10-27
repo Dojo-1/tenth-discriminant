@@ -1,5 +1,18 @@
 # Current claim-to-Lean map
 
+Standalone `BasisCompletion.primitive_completion` constructs an actual
+rank-two integer-module basis with the supplied primitive element first.
+`actual_form_of_primitive_bound` assumes an actual nonzero ideal J in the
+squarefree odd chart, actual basis e, z:J with coordinate gcd1 and actual
+norm magnitude<=N(J)^2. It constructs e' with e'0=z and integer FormData
+with0<a<=N(J). No basis extension/form/coefficient bound is supplied.
+The actual class-family choice from76 has not yet been composed with this
+interface. Local FAIL/PASS changes only primitive-completion assembly;
+six public types, norm/coefficient proof and controls/reporting unchanged.
+Final audit6/6/0, standard three axioms. [Human proof](../research/ender_radius_bridge/BASIS_COMPLETION_GUIDE.md)
+and [verification](../research/ender_radius_bridge/PHASE77_VERIFICATION.md).
+Outside root/CI. Stopped75 and accepted76 are unchanged and not rerun.
+
 Standalone `LeastNorm.bounded_class_least_primitive` assumes squarefree
 D=3mod4 and actual classNumber of the odd quadratic field<=2. For each
 actual class it constructs one bounded nonzero ideal J and an actual
@@ -12,7 +25,7 @@ only the unit control; nine public types/main proof/reporting unchanged.
 Final audit12/12/0, standard three axioms. All attempt slots consumed;
 no rerun. Outside root/CI. [Human proof](../research/ender_radius_bridge/LEAST_NORM_GUIDE.md)
 and [verification](../research/ender_radius_bridge/PHASE76_VERIFICATION.md).
-Basis completion and controlled leading coefficient remain unproved;
+Phase77 separately supplies the basis/coefficient interface; class-family composition remains unproved;
 the stopped Phase75 candidate below is not repaired or accepted.
 
 Phase75's candidate `ControlledBasis.controlled_basis_of_norm_square`

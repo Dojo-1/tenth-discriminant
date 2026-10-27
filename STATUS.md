@@ -1,5 +1,18 @@
 # Status — 2026-10-27
 
+## Phase77: actual primitive basis completion and coefficient interface
+
+Mathlib's determinant-one lattice operator now constructs an actual basis
+with the supplied primitive element first. For an actual ideal in the odd
+chart, its norm magnitude<=N(J)^2 yields actual FormData with0<a<=N(J).
+The supplied primitive/norm conditions are exactly76's checked output;
+the chosen class-family composition still needs its own check. Local
+FAIL/PASS repaired only Bezout abbreviation/scalar-action normalization;
+all six types and the whole norm/coefficient proof stayed unchanged.
+Audit6/6/0, standard three axioms;8rawfiles preserved. [Human proof](research/ender_radius_bridge/BASIS_COMPLETION_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE77_VERIFICATION.md).
+Outside root/CI; no new B/even-field transport/range. Stopped75 is unchanged.
+
 ## Phase76: least actual norm gives primitivity in every basis
 
 A new well-ordering construction chooses a least-norm nonzero element
