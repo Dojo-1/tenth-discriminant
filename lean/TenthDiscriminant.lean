@@ -96,3 +96,5 @@ import TenthDiscriminant.QuadraticAreaCount
 import TenthDiscriminant.PrimeDivisorLoss
 import TenthDiscriminant.ClassFiber
 import TenthDiscriminant.ResidueMultiplicity
+import TenthDiscriminant.IdealBasisArithmetic
+import TenthDiscriminant.IdealCoordinates
