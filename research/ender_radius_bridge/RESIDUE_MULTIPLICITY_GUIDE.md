@@ -1,6 +1,6 @@
 # Why each eligible prime gives at least four representatives
 
-**Lean-checked locally for the odd maximal-order chart.** For squarefree
+**Production-root reachable; checked locally for the odd maximal-order chart.** For squarefree
 D congruent to3 modulo4, take any finite set P of odd primes not dividing
 D for which -D is a square modulo p. The theorem constructs a selected
 set of exactly4*card(P) distinct class-labelled norm representatives.
@@ -46,6 +46,8 @@ collapse of this construction, not that every ramified case has no other
 representations. D=7,p=11 supplies the positive four-element control.
 
 [Source](Phase68ResidueMultiplicity.lean) and [verification](PHASE68_VERIFICATION.md).
-This file is outside production CI. The even chart, arbitrary-field
+The original standalone source is frozen. Its exact production transport has
+a [full local audit](PHASE70_VERIFICATION.md); new-head CI remains required.
+The even chart, arbitrary-field
 parameter transport and a usable arithmetic count B remain open.
 No new cutoff or classification is claimed.

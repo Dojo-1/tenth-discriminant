@@ -5,7 +5,7 @@ field-discriminant bound is 50 billion.** Class number one means unique factoriz
 integers. The geometric count is proved on the draft branch; the
 higher-class-number arithmetic bridge remains open. This page tracks
 Tao's [challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)
-through proof source `70f9217` and Phase68/69 outcomes, 27 October 2026. No full-classification
+through proof source `70f9217` and Phase70/69 outcomes, 27 October 2026. No full-classification
 announcement, novelty, optimality or independent human review is claimed.
 
 Lean checks encoded statements. A source claim, a checked theorem and a
@@ -23,7 +23,7 @@ spells out assumptions and the exact statements.
 | 5 | Compare different writeups | **Partial:** frozen [same-route comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) and [current source comparison](METHOD_COMPARISON_CURRENT.md). External proofs were not independently replayed. |
 | 6 | Stimulate new arguments or arrangements | **Reusable arrangements:** factorial prime mass, exact staircase weights and geometric operators, within the credited route. No novelty claim. |
 | 7 | Preserve and report negative results | **Preserved:** failed attempts and a [per-form counting counterexample](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md). It does not refute the aggregate h<=2 claim. |
-| 8 | Help higher class-number problems | **No new verified range.** Geometry has pinned CI; parameter-prime-divisor accounting and fixed actual ideal-class norm lattices are integrated and checked locally; odd-chart multiplicity is checked locally; controlled coordinates/coefficient bounds, the even chart and field-discriminant transport still block an arithmetic count B. |
+| 8 | Help higher class-number problems | **No new verified range.** Geometry has pinned CI; parameter-prime-divisor accounting and fixed actual ideal-class norm lattices are integrated and checked locally; odd-chart multiplicity is integrated and checked locally; controlled coordinates/coefficient bounds, the even chart and field-discriminant transport still block an arithmetic count B. |
 | 9 | Disclose AI use | **Disclosed** in the [README](README.md) and research/review records. Disclosure is not validation. |
 | 10 | Post a repository link and human summary | **Not posted.** The [AI-prepared brief](TAO_REPLY_BRIEF.md) awaits human revision and a posting decision. No submission permalink exists in our records. |
 | 11 | Independent due diligence | **Partial:** one bounded AI [review](research/ender_radius_bridge/PHASE58_VERIFICATION.md) at `63be64b`/50 billion. That reviewer did not rerun Lean/CI; later geometry is outside its scope. |
@@ -38,7 +38,7 @@ spells out assumptions and the exact statements.
 | Excluded-prime loss | Production [count-to-loss theorem](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md) uses log(p)/p. An integrated local [prime-divisor budget](research/ender_radius_bridge/PRIME_DIVISOR_LOSS_GUIDE.md) pays for parameter divisors separately; B remains an input for the others. |
 | Off-axis quadratic point count | Production-root draft bound: cardU<=2pi*t/sqrt(D)+4sqrt(at/D), for finite U with Q<=t,y!=0,a>0,D=4ac-b²>0,t>=0. [Human proof](research/ender_radius_bridge/QUADRATIC_AREA_GUIDE.md). |
 | Fixed ideal-class norm lattice | Integrated local [class-fiber lifting](research/ender_radius_bridge/CLASS_FIBER_GUIDE.md) proves (z)=IJ, norm multiplication and exact recovery, with one bounded J per class. No binary-form basis; odd-chart multiplicity has a separate local proof. |
-| Odd-chart finite multiplicity | Standalone local [four-representation construction](research/ender_radius_bridge/RESIDUE_MULTIPLICITY_GUIDE.md) gives a selected set of4*card(P) distinct class-labelled actual norm elements. Coordinates and coefficient bounds are still missing. |
+| Odd-chart finite multiplicity | Integrated local [four-representation construction](research/ender_radius_bridge/RESIDUE_MULTIPLICITY_GUIDE.md) gives a selected set of4*card(P) distinct class-labelled actual norm elements. Coordinates and coefficient bounds are still missing. |
 | Prime-axis accounting | Standalone Lean gives at most two prime points, none when a=1; two-class aggregation remains conditional on representation inputs. [Guide](research/ender_radius_bridge/TWO_CLASS_AXIS_GUIDE.md). |
 | Limits that prevented overclaiming | A radial O(1/R) ceiling, the per-form zero-row failure and the [stopped coordinate attempt](research/ender_radius_bridge/PHASE69_VERIFICATION.md) remain preserved. [History and controls](STATUS.md). |
 
@@ -52,7 +52,7 @@ including final regression controls: 4,869 logical declarations, 4,114
 theorems, 170 reachable modules. The [exact record](research/ender_radius_bridge/PHASE64_VERIFICATION.md)
 keeps source versions, checks and review distinct. Passing code does not
 establish human review. The later arithmetic production roots pass local
-full build/audit at `7406e4d`; their [new-head CI remains separate](research/ender_radius_bridge/PHASE67_VERIFICATION.md).
+full build/audit at `82bfea6`; their [new-head CI remains separate](research/ender_radius_bridge/PHASE70_VERIFICATION.md).
 
 The next arithmetic bridge must choose controlled binary-form coordinates
 for the fixed ideal lattices and complete even-chart transport. The local

@@ -1,0 +1,179 @@
+{
+  "phase": 70,
+  "status": "ALL_REGISTERED_LOCAL_PRODUCTION_CHECKS_PASS_FAILED69_UNIMPORTED_NEW_HEAD_CI_REQUIRED",
+  "base": "d3ce62562088f9cfb46e172ff238c59fad8a8f70",
+  "registered_commit": "c7a98d288a76dba59c3fde64a8fb9632ae4a8223",
+  "source_commit": "82bfea6275cacb0c92b46a064aff0782ba8b60d7",
+  "target_seconds": "34.8322181",
+  "records": [
+    {
+      "phase": 70,
+      "mode": "audit",
+      "scope": "Accepted actual finite multiplicity in production; stopped coordinate target untouched; no arithmetic B or cutoff",
+      "source_sha256": "2a144a47548b1222106528e8d19863c3fe5dade42a55993719b49b127bffd7a1",
+      "source_snapshot": "PHASE70_audit_20261026235719315.source.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 27.8823451,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 180,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3344031744,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "Audit.lean"
+      ],
+      "stdout": "PHASE70_audit_20261026235719315.stdout.log",
+      "stderr": "PHASE70_audit_20261026235719315.stderr.log"
+    },
+    {
+      "phase": 70,
+      "mode": "build",
+      "scope": "Accepted actual finite multiplicity in production; stopped coordinate target untouched; no arithmetic B or cutoff",
+      "source_sha256": "2a144a47548b1222106528e8d19863c3fe5dade42a55993719b49b127bffd7a1",
+      "source_snapshot": "PHASE70_build_20261026235542176.source.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 34.8322181,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3247484928,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "build",
+        "TenthDiscriminant.ResidueMultiplicity"
+      ],
+      "stdout": "PHASE70_build_20261026235542176.stdout.log",
+      "stderr": "PHASE70_build_20261026235542176.stderr.log"
+    },
+    {
+      "phase": 70,
+      "mode": "input",
+      "scope": "Accepted actual finite multiplicity in production; stopped coordinate target untouched; no arithmetic B or cutoff",
+      "source_sha256": "2a144a47548b1222106528e8d19863c3fe5dade42a55993719b49b127bffd7a1",
+      "source_snapshot": "PHASE70_input_20261026235717522.source.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 32.584530199999996,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 180,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3136950272,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase70InputCheck.lean"
+      ],
+      "stdout": "PHASE70_input_20261026235717522.stdout.log",
+      "stderr": "PHASE70_input_20261026235717522.stderr.log"
+    },
+    {
+      "phase": 70,
+      "mode": "root",
+      "scope": "Accepted actual finite multiplicity in production; stopped coordinate target untouched; no arithmetic B or cutoff",
+      "source_sha256": "2a144a47548b1222106528e8d19863c3fe5dade42a55993719b49b127bffd7a1",
+      "source_snapshot": "PHASE70_root_20261026235629756.source.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 20.203315399999997,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 1200,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2795364352,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": "build",
+      "stdout": "PHASE70_root_20261026235629756.stdout.log",
+      "stderr": "PHASE70_root_20261026235629756.stderr.log"
+    }
+  ],
+  "global_audit": {
+    "logical": 4917,
+    "theorems": 4155,
+    "runtime_only": 16985,
+    "modules": 173
+  },
+  "closures": {
+    "ResidueMultiplicity.class_family_four_lifts": 53066,
+    "ResidueMultiplicity.finite_odd_square_representations": 54206
+  },
+  "sha256": {
+    "lean/TenthDiscriminant/ResidueMultiplicity.lean": "2a144a47548b1222106528e8d19863c3fe5dade42a55993719b49b127bffd7a1",
+    "lean/TenthDiscriminant.lean": "d782f482f459c71fed81e198429499be59a232d350db6aa9c61d42f4a6701da1",
+    "research/ender_radius_bridge/PHASE70_PROTOCOL.md": "996493c2e7f66e5b64331f583b8268a67a24a935f08f7c665a296a815dcf978a",
+    "research/ender_radius_bridge/run_phase70.ps1": "d13c0469682bfcef93fd92dba06f85e187f9fd6fe105ce43d55b2507f78fc963",
+    "research/ender_radius_bridge/Phase70InputCheck.lean": "c0116dc18774cea1a435d9aeb518dce7410e7d2c5441856f40ad17e0a94d8638",
+    "lean/lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+    "lean/lakefile.toml": "c53aa9280e479e87530acfdc2660dda39d91e36b58700ad54634eebab1ae127b"
+  },
+  "raw_archive": {
+    "path": "PHASE70_RAW.zip",
+    "sha256": "77442362d5b8d4b3048360be0210a204d75c81b61c4f9f57289f15040e0332e3",
+    "members": 21
+  },
+  "raw_sha256": {
+    "PHASE70_SOURCE_CHECKS.log": "3f48acb8b8bcc2b1b009b0bdb7c164e497f17df5c426330eede3bacf20bf291e",
+    "PHASE70_audit_20261026235719315.source.lean": "2a144a47548b1222106528e8d19863c3fe5dade42a55993719b49b127bffd7a1",
+    "PHASE70_audit_20261026235719315.core.lean": "b68b645534a20f80451c0190407e22db020239e3e648fb4ede0217786f27c05f",
+    "PHASE70_audit_20261026235719315.stdout.log": "339154a7fbe04d7b62867ee2fb0a3e23bb50883b1fbe4098213452ae7f50e4c3",
+    "PHASE70_audit_20261026235719315.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE70_audit_20261026235719315.result.json": "b47085830312fab1037bff7aad2d69631d62ab3d7eb8f52c3dd4c3096189c619",
+    "PHASE70_build_20261026235542176.source.lean": "2a144a47548b1222106528e8d19863c3fe5dade42a55993719b49b127bffd7a1",
+    "PHASE70_build_20261026235542176.core.lean": "b68b645534a20f80451c0190407e22db020239e3e648fb4ede0217786f27c05f",
+    "PHASE70_build_20261026235542176.stdout.log": "fb6ad2c1c39b7ac62e6f90be1fe2fa167269e5f4eff44e08aa884f36733457be",
+    "PHASE70_build_20261026235542176.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE70_build_20261026235542176.result.json": "b2d9a383205bbac31536c002d68418010c4c8d4351ee7c17e3712bcdb8112ad3",
+    "PHASE70_input_20261026235717522.source.lean": "2a144a47548b1222106528e8d19863c3fe5dade42a55993719b49b127bffd7a1",
+    "PHASE70_input_20261026235717522.core.lean": "b68b645534a20f80451c0190407e22db020239e3e648fb4ede0217786f27c05f",
+    "PHASE70_input_20261026235717522.stdout.log": "f976352dd20ccb0a5fe8fe1a91cc0a35f6e87faf2ae594fef1b86c7cc012a1ba",
+    "PHASE70_input_20261026235717522.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE70_input_20261026235717522.result.json": "481444fba85f666ba069a80e8cebc3ac706647ee473c1529525acaa85528b516",
+    "PHASE70_root_20261026235629756.source.lean": "2a144a47548b1222106528e8d19863c3fe5dade42a55993719b49b127bffd7a1",
+    "PHASE70_root_20261026235629756.core.lean": "b68b645534a20f80451c0190407e22db020239e3e648fb4ede0217786f27c05f",
+    "PHASE70_root_20261026235629756.stdout.log": "8ff57cb4f7b35eecfbc372301707a9aa108ac533961fb4ad5c0a8507d18cdfb2",
+    "PHASE70_root_20261026235629756.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE70_root_20261026235629756.result.json": "fc5ee01e02a7f6ada28644288fbe51fe250f9b15d0c6efa0f53aad80c22c9f5e"
+  },
+  "prior_frozen_paths": [
+    "research/ender_radius_bridge/Phase68ResidueMultiplicity.lean",
+    "research/ender_radius_bridge/PHASE68_PROTOCOL.md",
+    "research/ender_radius_bridge/PHASE68_RESULTS.json",
+    "research/ender_radius_bridge/PHASE68_RAW.zip",
+    "research/ender_radius_bridge/verify_phase68_results.py",
+    "research/ender_radius_bridge/Phase69IdealNormForm.lean",
+    "research/ender_radius_bridge/PHASE69_PROTOCOL.md",
+    "research/ender_radius_bridge/PHASE69_RESULTS.json",
+    "research/ender_radius_bridge/PHASE69_RAW.zip",
+    "research/ender_radius_bridge/verify_phase69_results.py",
+    "research/ender_radius_bridge/PHASE67_RESULTS.json",
+    "research/ender_radius_bridge/PHASE67_RAW.zip",
+    "lean/TenthDiscriminant/ClassFiber.lean",
+    "lean/TenthDiscriminant/PrimeDivisorLoss.lean"
+  ],
+  "transport": "Exact final68source with only registered acyclic imports replaced;12publictargets/4defs/proofs/controls/prints retained.",
+  "failed_target": "69is frozen failed evidence; no69rerun/import/productionconstant promoted.",
+  "prior_ci": {
+    "head": "564321005e8c9a34e5541dce8205e0e29b21caf7",
+    "run": 40419910108,
+    "job": 121911466303,
+    "conclusion": "success",
+    "final_comment": 6430115337
+  },
+  "limits": [
+    "No checked coordinate/coefficient/discriminant/leading-bound or even-chart bridge, usable arithmetic B or cutoff.",
+    "Selected4N class-labelled elements; not all representations or a common lattice.",
+    "No prior campaign rerun, incomplete Windows regression relabeling, novelty/classification/human review/upstream claim.",
+    "New-head full regression/CI remains required; prior success is not transferred."
+  ]
+}

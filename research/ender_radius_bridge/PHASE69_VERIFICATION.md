@@ -1,5 +1,10 @@
 # Phase69: coordinate bridge attempt stopped; no checked result
 
+**Current tree:** [Phase70](PHASE70_VERIFICATION.md) integrates only accepted
+multiplicity and preserves the stopped coordinate target outside production.
+The original fixed-current-root integrity command below is historical at
+its frozen ref; use the Phase70 verifier for the current integrated tree.
+
 **FAILED. No ideal norm-form or actual-ideal count theorem is delivered.**
 Protocolc826c68 precedes the single source/execution. The47.0501137s run
 exited1. The exact source and all4 source/log/result files are preserved.

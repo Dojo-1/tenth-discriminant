@@ -1,5 +1,14 @@
 # Current claim-to-Lean map
 
+Current Phase70 production `ResidueMultiplicity` is the exact accepted
+Phase68 source with acyclic imports changed. One new root import brings
+actual odd-chart selected4N multiplicity into the full build/audit. All
+registered local checks pass:4917/4155/16985,173 modules;2 closures exclude
+34 listed older roots and allow only standard3 axioms. New-head CI remains
+required. The failed Phase69 coordinate source below is not imported or
+promoted. No checked norm-form/leading-bound bridge or arithmetic B follows.
+[Combined verification](../research/ender_radius_bridge/PHASE70_VERIFICATION.md).
+
 Phase69 delivers **no checked ideal norm-form or actual-ideal count theorem**.
 The single standalone attempt failed and exhausted the deterministic Lean
 heartbeat resource; the registered stop rule forbids a rerun in that cycle.

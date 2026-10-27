@@ -1,6 +1,6 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared, through Phase 67. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
+**AI-prepared, through Phase 70. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
 
 ## Short draft for human revision
 
@@ -25,6 +25,8 @@ The current geometric bonus is a production Lean bound on any finite set of off-
 Publication scope matters: b4cff27 passed full production CI40403267176;74d02d3 passed CI40407136985 on the unchanged production library. Phase62's research proof has separate local evidence. Phase64's new integrated geometric count at70f9217 passes the full pinned Linux build/audit/regression run40412438935, alongside its local checks. Documentation head9705cac separately passed full pinned CI40416976865. [Exact records](research/ender_radius_bridge/PHASE64_VERIFICATION.md). Earlier reviews are not transferred to it.
 
 The subsequent arithmetic additions are now production-root reachable and pass the local full audit. One fixed bounded inverse-class ideal serves every residue ideal in a class; its generator has actual norm magnitude p*N(J) and recovers the original ideal. A separate parameter-prime-divisor budget is at most R*S*(S-1)*log D. These supply neither controlled binary-form coefficients nor prime-representation multiplicity, so no arithmetic B or new cutoff follows. New-head pinned CI remains required; earlier reviews and runs are not transferred. [Human class-fiber proof](research/ender_radius_bridge/CLASS_FIBER_GUIDE.md) and [combined verification](research/ender_radius_bridge/PHASE67_VERIFICATION.md).
+
+The odd-chart extension now constructs selected4*card(P) class-labelled actual norm representatives from genuine residue maps, using ideal recovery, signs and disjointness across primes. Its exact production transport passes the local full audit and needs new-head CI. The attempted coordinate/form bridge failed and stopped at an internal Lean resource limit; no coordinate theorem is claimed. This supplies no new arithmetic B or cutoff. [Human multiplicity proof](research/ender_radius_bridge/RESIDUE_MULTIPLICITY_GUIDE.md), [stopped attempt](research/ender_radius_bridge/PHASE69_VERIFICATION.md), and [combined verification](research/ender_radius_bridge/PHASE70_VERIFICATION.md).
 
 A connected formal development of this credited determinant route, a direct effective cutoff and human explanations of its geometric/arithmetic bridges. The [exact staircase count](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) is a supplementary simplification, not an extra divisibility exponent or smaller cutoff. Credit and frozen external comparisons belong in [prior art](PRIOR_ART.md), the [same-route comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md), and the [current pinned-source comparison](METHOD_COMPARISON_CURRENT.md). External bounds are source claims, not computations replayed here.
 

@@ -1,5 +1,16 @@
 # Status — 2026-10-27
 
+## Phase70: accepted multiplicity is production-root reachable
+
+The final accepted Phase68 proof is transported by import-only changes;
+failed Phase69 coordinates remain frozen outside the production graph.
+First target/root/input/full audit pass:4,917 logical/4,155 theorem/16,985
+runtime declarations,173 modules. Both input closures exclude the34 listed
+older roots with standard3 axioms. New exact-head pinned CI is required.
+The selected4N elements are class-labelled, not common lattice coordinates;
+no checked form/leading-bound bridge, arithmetic B or new cutoff.
+[Combined verification](research/ender_radius_bridge/PHASE70_VERIFICATION.md).
+
 ## Phase69: coordinate attempt failed and stopped
 
 The complete actual ideal/form/count target was not accepted. Its first

@@ -1,5 +1,10 @@
 # Phase68: actual residue pairs and finite multiplicity
 
+**Current tree:** [Phase70](PHASE70_VERIFICATION.md) integrates only accepted
+multiplicity and preserves the stopped coordinate target outside production.
+The original fixed-current-root integrity command below is historical at
+its frozen ref; use the Phase70 verifier for the current integrated tree.
+
 **Complete registered standalone target PASS.** Protocol4f48f96 precedes
 all source/execution, base5643210. The proof constructs actual maximal-order
 residue maps for opposite nonzero roots and proves kernel separation.
