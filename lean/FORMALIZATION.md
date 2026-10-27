@@ -1,5 +1,29 @@
 # Current claim-to-Lean map
 
+Current integrated result: `SplitPrimeBudget.actual_gram_budget` proves
+for squarefree D=3 mod4 and actual classNumber(QuadraticField((D+1)/4))<=2,
+all finite odd-prime sets P bounded by L, R,S>=1, L>=3, D<=D2 and the
+explicit Ender radius guard:
+
+    mass(P,R,S) <= log(product original Gram diagonal)
+       + R*(R-1)*S*kernelCost(L,log(n)/n,countBound(D))
+       + R*S*(S-1)*log(D).
+
+`countBound(D,n)=(2*pi*n/sqrt(D)+4*sqrt(M(K)*n/D)+1)/2` is derived,
+not assumed. `goodPrimes` selects every nonsquare prime in P;
+`mem_remainder_iff` proves exact split/nondivisor coverage, and
+`remainder_prefix_bound` applies the actual class-aggregation theorem.
+The same ordinary derivatives, original matrix and factor2 remain.
+Both count and budget roots now have fresh transitive checks excluding
+34 named old-cutoff/h1/finite-answer roots. Full local audit5058/4285/16993,
+standard3axioms;183modules. The input runner cap discrepancy is explicitly
+preserved (182nominal,43.17actual,180registered); audit used corrected180.
+[Human proof](../research/ender_radius_bridge/WEIGHTED_SPLIT_GUIDE.md) and
+[verification](../research/ender_radius_bridge/PHASE82_VERIFICATION.md).
+No closed kernel estimate, even-chart/field/Minkowski transport, new
+higher-class-number cutoff or external exact-head CI is supplied.
+The following entries preserve earlier checkpoints and their original scope.
+
 Standalone `ClassAggregation.prime_prefix_bound` now proves, for actual
 h<=2 in the squarefree odd chart, all finite Admissible P withp<=natural t:
 cardP<=h/4*(2*pi*t/sqrtD+4*sqrt(M(K)*t/D)+1). `uniform_two_class_bound`

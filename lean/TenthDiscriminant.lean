@@ -104,3 +104,5 @@ import TenthDiscriminant.BasisCompletion
 import TenthDiscriminant.ControlledClassCount
 import TenthDiscriminant.ActualPrimeAxis
 import TenthDiscriminant.ControlledPrimeFamily
+import TenthDiscriminant.ClassAggregation
+import TenthDiscriminant.SplitPrimeBudget

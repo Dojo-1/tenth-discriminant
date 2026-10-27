@@ -1,5 +1,23 @@
 # Status — 2026-10-27
 
+## Phase82: the prime count now pays the weighted determinant loss
+
+For actual h<=2 in the squarefree odd chart, the integrated theorem
+`SplitPrimeBudget.actual_gram_budget` supplies the complete finite
+weighted arithmetic budget on the original derivative trace-Gram.
+It selects ALL nonsquare primes, proves exact remainder coverage, derives
+the concrete prefix bound, and pays parameter divisors separately.
+No caller-supplied count, coverage or class-number-one premise is needed.
+[Human explanation](research/ender_radius_bridge/WEIGHTED_SPLIT_GUIDE.md)
+and [exact local verification](research/ender_radius_bridge/PHASE82_VERIFICATION.md).
+Target/root/input/audit passed on their first invocations; the input cap
+was mistakenly182s instead of registered180s (actual43.17s), preserved
+and corrected before the audit. Full audit5058logical/4285theorems;
+183modules. External exact-head CI and human review remain outstanding.
+A useful closed kernel estimate, field/Minkowski transport, even chart
+and a new higher-class-number cutoff remain open. Earlier sections are
+historical checkpoints; the class-number-one cutoff stays50billion.
+
 ## Phase81: actual class aggregation gives an admissible-prime prefix count
 
 A standalone checked theorem now constructs actual ideal slices with the

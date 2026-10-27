@@ -45,3 +45,9 @@ The failed first proof assembly and passing second run are preserved.
 [Verification](PHASE81_VERIFICATION.md). The source is standalone and
 outside production CI; the earlier integrated common-family checks remain
 unchanged. No classification, novelty or independent human review is claimed.
+
+Current update (Phase82): this exact source has now been integrated with
+only its first import changed. Complete excluded-prime coverage and the
+finite weighted budget are checked on the original Gram. The paragraph
+above records the Phase81 checkpoint. A closed kernel estimate and new
+cutoff remain open. [Current human guide](WEIGHTED_SPLIT_GUIDE.md).

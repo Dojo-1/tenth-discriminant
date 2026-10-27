@@ -1,6 +1,6 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared, through Phase 73. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
+**AI-prepared, through Phase 82. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
 
 ## Short draft for human revision
 
@@ -24,9 +24,9 @@ A connected formal development of the credited derivative-determinant route, a d
 
 The odd-chart extension now chooses one actual bounded ideal and controlled basis per class under h<=2, proves0<a<=N(J)<=M(K), lifts every ideal of the class into that same J, and counts all finite off-axis norm-bounded sets with a common coefficient bound. [Human proof](research/ender_radius_bridge/CONTROLLED_CLASS_GUIDE.md). The principal-class calibration also supplies a=1 and excludes prime-normalized axis elements. Local full-library, input and axiom checks pass; external exact-head CI for these additions remains pending.
 
-The integrated [actual-axis theorem](research/ender_radius_bridge/ACTUAL_PRIME_AXIS_GUIDE.md) now counts full prime-normalized sets with allowance0 for the principal class and2 for every other class, without an off-axis premise. The [same-family compatibility theorem](research/ender_radius_bridge/COMMON_FAMILY_GUIDE.md) now selects four distinct labelled points per admissible prime in those SAME controlled ideals. A [standalone class-aggregation theorem](research/ender_radius_bridge/PRIME_PREFIX_GUIDE.md) now proves the admissible-prime prefix COUNT from actual slices and the common-family4Ppoints. The log(p)/p weighted loss, coverage of all excluded primes, even-chart and field transport still block a new higher-class-number cutoff. The stopped controlled-basis attempt remains preserved alongside the separately registered successful interfaces. No new numerical range or classification announcement follows.
+The local [weighted split-prime bridge](research/ender_radius_bridge/WEIGHTED_SPLIT_GUIDE.md) now joins actual ideal-class counts, four labelled lifts per prime, complete remainder coverage and the log(p)/p weighted loss on the SAME original determinant under odd-chart h<=2. The caller supplies no counting function or coverage assertion. The remaining step is an effective closed kernel estimate, field/Minkowski and even-chart transport, then a strict numerical contradiction. No new numerical range or classification follows.
 
-Verification remains versioned: [local Phase80](research/ender_radius_bridge/PHASE80_VERIFICATION.md) records5031logical/4261theorem declarations and the full dependency checks. Earlier reviews and CI are not transferred. The original stopped attempts and their raw evidence remain failures.
+Verification remains versioned: [local Phase82](research/ender_radius_bridge/PHASE82_VERIFICATION.md) records5058logical/4285theorem declarations and fresh dependency checks. Its input run had a nominal182s cap rather than registered180s (actual43.17s); the discrepancy is preserved, and the audit cap was corrected before execution. Earlier reviews and external CI are not transferred. Original stopped attempts remain failures.
 
 ## Limits that must travel with the result
 
