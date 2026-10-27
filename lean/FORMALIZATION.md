@@ -1,5 +1,22 @@
 # Current claim-to-Lean map
 
+Current integrated `ControlledPrimeFamily.controlled_family` chooses ONE
+FamilyGood ideal family under actual odd-chart h<=2, before ALL finite P.
+For each C it retains class(JC)=C and transparent ClassCountData: an actual
+controlled basis/FormData,0<a<=N(JC),a=1ifprincipal, and all full finite
+prime-norm point counts with0principalelse2axis allowance. On THIS SAME J,
+for all finite admissible P it selects U with cardU=4*cardP and actual
+PointAt J p witnesses. No supplied family/form/count/multiplicity premise.
+The general fixed_family_four_lifts derives kernel lifts/sign separation
+for ANY specified FamilyGood family. Exact79import-only transport is now
+integrated. Local target/root/input/audit PASS;181modules,5031/4261/16993,
+standard axioms; closures29185/54827 exclude34listed older inputs.
+[Human proof](../research/ender_radius_bridge/COMMON_FAMILY_GUIDE.md) and
+[verification](../research/ender_radius_bridge/PHASE80_VERIFICATION.md).
+Actual class-slice sum/aggregate B/even-field/new cutoff still remain.
+External exact-head CI is pending. Earlier standalone checkpoint scopes
+below are superseded by this integration where explicitly connected.
+
 Standalone `ActualPrimeAxis.controlled_class_prime_count` now chooses,
 for each actual class under odd-chart h<=2, a bounded J and controlled
 actual basis/FormData, retaining lifting of every ideal of that class

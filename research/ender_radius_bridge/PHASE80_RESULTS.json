@@ -1,0 +1,243 @@
+{
+  "phase": 80,
+  "status": "LOCAL_INTEGRATED_SAME_CONTROLLED_FAMILY_FULL_COUNTS_AND_FOUR_LIFTS_ALL_CHECKS_PASS",
+  "base": "6926f987f126e78582e51cb1a834edb7b4fd027f",
+  "registered_commit": "2164660bb225372d4233fb9a5fc6b0ada2f9c9cf",
+  "builds": [
+    {
+      "phase": 80,
+      "mode": "build",
+      "scope": "Controlled SAME ideal family supplies full prime counts and four-lift multiplicity; no aggregate B or cutoff",
+      "source_sha256": "f5503a1001df8cb3d2b4e1c5292cefd494e9edab47b0aaea2fd352586f2d5c99",
+      "source_snapshot": "PHASE80_build_20261027070859367.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 62.1648515,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3254591488,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "build",
+        "TenthDiscriminant.ActualPrimeAxis",
+        "TenthDiscriminant.ControlledPrimeFamily"
+      ],
+      "stdout": "PHASE80_build_20261027070859367.stdout.log",
+      "stderr": "PHASE80_build_20261027070859367.stderr.log"
+    },
+    {
+      "phase": 80,
+      "mode": "build",
+      "scope": "Controlled SAME ideal family supplies full prime counts and four-lift multiplicity; no aggregate B or cutoff",
+      "source_sha256": "9aa19cb8f71ebbf4f6056ade020cf760230ad7c0641dd82e04ad628ac051af97",
+      "source_snapshot": "PHASE80_build_20261027071059003.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 33.6940323,
+      "cumulative_before_seconds": 62.1648515,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3229097984,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "build",
+        "TenthDiscriminant.ActualPrimeAxis",
+        "TenthDiscriminant.ControlledPrimeFamily"
+      ],
+      "stdout": "PHASE80_build_20261027071059003.stdout.log",
+      "stderr": "PHASE80_build_20261027071059003.stderr.log"
+    }
+  ],
+  "target_seconds": "95.8588838",
+  "checks": {
+    "root": {
+      "phase": 80,
+      "mode": "root",
+      "scope": "Controlled SAME ideal family supplies full prime counts and four-lift multiplicity; no aggregate B or cutoff",
+      "source_sha256": "9aa19cb8f71ebbf4f6056ade020cf760230ad7c0641dd82e04ad628ac051af97",
+      "source_snapshot": "PHASE80_root_20261027071149199.source.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 20.8289849,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 1200,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2796183552,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": "build",
+      "stdout": "PHASE80_root_20261027071149199.stdout.log",
+      "stderr": "PHASE80_root_20261027071149199.stderr.log"
+    },
+    "input": {
+      "phase": 80,
+      "mode": "input",
+      "scope": "Controlled SAME ideal family supplies full prime counts and four-lift multiplicity; no aggregate B or cutoff",
+      "source_sha256": "9aa19cb8f71ebbf4f6056ade020cf760230ad7c0641dd82e04ad628ac051af97",
+      "source_snapshot": "PHASE80_input_20261027071248946.source.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 31.6750411,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 180,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3146170368,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase80InputCheck.lean"
+      ],
+      "stdout": "PHASE80_input_20261027071248946.stdout.log",
+      "stderr": "PHASE80_input_20261027071248946.stderr.log"
+    },
+    "audit": {
+      "phase": 80,
+      "mode": "audit",
+      "scope": "Controlled SAME ideal family supplies full prime counts and four-lift multiplicity; no aggregate B or cutoff",
+      "source_sha256": "9aa19cb8f71ebbf4f6056ade020cf760230ad7c0641dd82e04ad628ac051af97",
+      "source_snapshot": "PHASE80_audit_20261027071401098.source.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 31.8977661,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 180,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3350417408,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "Audit.lean"
+      ],
+      "stdout": "PHASE80_audit_20261027071401098.stdout.log",
+      "stderr": "PHASE80_audit_20261027071401098.stderr.log"
+    }
+  },
+  "public_theorems": [
+    "fixed_family_four_lifts",
+    "fixed_family_odd_four",
+    "fixed_family_finite",
+    "controlled_family",
+    "empty_control",
+    "zero_modulus_control",
+    "characteristic_two_control",
+    "ramified_control"
+  ],
+  "audit": {
+    "logical": 5031,
+    "theorems": 4261,
+    "runtime": 16993,
+    "project_modules": 181,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "input_closures": {
+    "fixed_family_four_lifts": 29185,
+    "controlled_family": 54827,
+    "listed_forbidden_inputs": 34
+  },
+  "sha256": {
+    "PHASE80_PROTOCOL.md": "98a4272140af1d87cfc7df987d27156dae1cc6b84ea7274b90791e5860aa98d0",
+    "run_phase80.ps1": "63ae882a5bc62efdd8a5372ee73924c91fb6893aee1843a4326a336917dbd11c",
+    "Phase80InputCheck.lean": "727a900822b284e6e17180491aceef3ada96f4bbf4aa574b9c7edb118a37d649",
+    "verify_phase80_results.py": "3e2d40f7cf04f3a44f870f123e478f1a309db91201e33af8de3ea05f226f47ff"
+  },
+  "production_sha256": {
+    "lean/TenthDiscriminant.lean": "04395131c591e24618e309cd9a1c21f134c67adfd0bb77dcd3561134c09b23c2",
+    "lean/TenthDiscriminant/ActualPrimeAxis.lean": "5772b9d45b99d76c90389ef6231baf9a1b8adf53f2554cc04c75ff7a96637f4f",
+    "lean/TenthDiscriminant/ControlledPrimeFamily.lean": "9aa19cb8f71ebbf4f6056ade020cf760230ad7c0641dd82e04ad628ac051af97"
+  },
+  "prior_frozen_sha256": {
+    "lean/TenthDiscriminant/ResidueMultiplicity.lean": "2a144a47548b1222106528e8d19863c3fe5dade42a55993719b49b127bffd7a1",
+    "lean/TenthDiscriminant/ControlledClassCount.lean": "becb309ff5b0866247ec8046bb3cb9fd23e1a9596e72ee7036ff63f8efa2b35b",
+    "research/ender_radius_bridge/Phase69IdealNormForm.lean": "dec6659224f4bb56944e86bb6567cb39252e2cea6ee40e76b44a714ad283de58",
+    "research/ender_radius_bridge/PHASE69_PROTOCOL.md": "057c63d295d8c9c4890c9aa8725c5399b0e61f7c019b6753201dfa53676aa4b9",
+    "research/ender_radius_bridge/PHASE69_RESULTS.json": "b3eba890761cc17655b652a59960d7e675f6d773862d48d032d7601b11d4a890",
+    "research/ender_radius_bridge/PHASE69_RAW.zip": "3e1cc041754fb2df0684bb079e34debc9143dde3433aa65320dbb4cac6b45e95",
+    "research/ender_radius_bridge/run_phase69.ps1": "cfc7e1bbbb49a039e5604079caf15ec22714cdf094dbae8a6fac3240232f221d",
+    "research/ender_radius_bridge/verify_phase69_results.py": "e19ef1bb745985bd6dddf968086e1de53d866baba665fa15a9559718c0b03656",
+    "research/ender_radius_bridge/Phase75ControlledBasis.lean": "7ac828178e9adcd4d2d062e2118f37275a682981ab68f497caeed07882dd4ba3",
+    "research/ender_radius_bridge/PHASE75_PROTOCOL.md": "fd2de911af1a969e52400f851861f7e18715f206628be167c2c8195337984e9a",
+    "research/ender_radius_bridge/PHASE75_RESULTS.json": "b44aec3f302ee252efd187107cb9ea92acddbdf1d6a843891f77d184e00db731",
+    "research/ender_radius_bridge/PHASE75_RAW.zip": "3dad34be0e30eef0b5d1a9a676b51429fd2e292a6d4858b1d02aae1b12b9b24f",
+    "research/ender_radius_bridge/run_phase75.ps1": "3204900c225435f7729919821fa06bc56842a1550d5c7bf32aeb162184de7e2b",
+    "research/ender_radius_bridge/verify_phase75_results.py": "ed5f96b86d9d640df3e1919eddc5af4d999ce926e32e7c1b3fc59c08c4b657ed",
+    "research/ender_radius_bridge/Phase79ActualPrimeAxis.lean": "5f7c700d17c39d123f7f36d1285cd799f4ed29421cb89933e2f274d426c4786a",
+    "research/ender_radius_bridge/PHASE79_PROTOCOL.md": "c2dbcbd06932179a9f78343bc9a9140da024133979355752691fafbb120710b0",
+    "research/ender_radius_bridge/PHASE79_RESULTS.json": "b722b2abbec647da799051ea7515f5c8d1c187b06fde2d2231e119f2516f5a50",
+    "research/ender_radius_bridge/PHASE79_RAW.zip": "39580b70875311730d685e88b24216e6a828dfc0cee77dd8851686cf60f5014b",
+    "research/ender_radius_bridge/run_phase79.ps1": "196c9d80fd868b3169f7f3d0a77d538c0033ef5356689fd1e8ed1a836781038f",
+    "research/ender_radius_bridge/verify_phase79_results.py": "4aa352c181c5657fd76b401ed6e40c28591f9f60c2a1551f71a4d61331bba1f8",
+    "research/ender_radius_bridge/PHASE78_RESULTS.json": "3bb1f9a944e9ea3a07925b6c177c2d9df39f6f812d4ddaf1a356b8f643d8d460",
+    "research/ender_radius_bridge/PHASE78_RAW.zip": "d8acc0371cb072f0a9eddd9cb486202d9a7fba08df973020238fd9371a307921",
+    "research/ender_radius_bridge/Phase78InputCheck.lean": "e19536f79673b196b2babd4cac06be267cebf619673b2935a0f9b068a7d05e17",
+    "research/ender_radius_bridge/verify_phase78_results.py": "a14935be3418f32e74f680c9ae6772d0d554a30e1087d7004c38a69468f35781"
+  },
+  "raw_archive": {
+    "path": "PHASE80_RAW.zip",
+    "members": 36,
+    "sha256": "dff820dc27f4077d312911b9e98261473fed0a2e39953eb99fa187b0a5d69414"
+  },
+  "raw_sha256": {
+    "PHASE80_SOURCE_CHECKS.log": "392294fe1d9f25939877228ecc934e6819891712434fe13982ea41b680cda918",
+    "PHASE80_build_20261027070859367.source.lean": "f5503a1001df8cb3d2b4e1c5292cefd494e9edab47b0aaea2fd352586f2d5c99",
+    "PHASE80_build_20261027070859367.core.lean": "5772b9d45b99d76c90389ef6231baf9a1b8adf53f2554cc04c75ff7a96637f4f",
+    "PHASE80_build_20261027070859367.root.lean": "04395131c591e24618e309cd9a1c21f134c67adfd0bb77dcd3561134c09b23c2",
+    "PHASE80_build_20261027070859367.input.lean": "727a900822b284e6e17180491aceef3ada96f4bbf4aa574b9c7edb118a37d649",
+    "PHASE80_build_20261027070859367.stdout.log": "7ba8456f7222c843303a24d460670bdfa5becef8597e5f0abcefcac1ea39d1bb",
+    "PHASE80_build_20261027070859367.stderr.log": "c4a27db198c4d8632369ee6102944ef46e83c20d685f7c17a6aaff9cfcfc710f",
+    "PHASE80_build_20261027070859367.result.json": "6e06201c908f24f71cfa8c0502746fa0b828745a5b9d782b0d26f5fad461d211",
+    "PHASE80_build_20261027071059003.source.lean": "9aa19cb8f71ebbf4f6056ade020cf760230ad7c0641dd82e04ad628ac051af97",
+    "PHASE80_build_20261027071059003.core.lean": "5772b9d45b99d76c90389ef6231baf9a1b8adf53f2554cc04c75ff7a96637f4f",
+    "PHASE80_build_20261027071059003.root.lean": "04395131c591e24618e309cd9a1c21f134c67adfd0bb77dcd3561134c09b23c2",
+    "PHASE80_build_20261027071059003.input.lean": "727a900822b284e6e17180491aceef3ada96f4bbf4aa574b9c7edb118a37d649",
+    "PHASE80_build_20261027071059003.stdout.log": "3cfc6cf54991bec27ea9398487259489524481e0346473b237d6a4ede7ee74c3",
+    "PHASE80_build_20261027071059003.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE80_build_20261027071059003.result.json": "053b89f33d980c446b810affc59d28f9d897e6c7fce13a68b94a99414b943319",
+    "PHASE80_root_20261027071149199.source.lean": "9aa19cb8f71ebbf4f6056ade020cf760230ad7c0641dd82e04ad628ac051af97",
+    "PHASE80_root_20261027071149199.core.lean": "5772b9d45b99d76c90389ef6231baf9a1b8adf53f2554cc04c75ff7a96637f4f",
+    "PHASE80_root_20261027071149199.root.lean": "04395131c591e24618e309cd9a1c21f134c67adfd0bb77dcd3561134c09b23c2",
+    "PHASE80_root_20261027071149199.input.lean": "727a900822b284e6e17180491aceef3ada96f4bbf4aa574b9c7edb118a37d649",
+    "PHASE80_root_20261027071149199.stdout.log": "7185fb5220d7dc74170e0834e0f1d37449c5f303b1a969fb927269611aba8a81",
+    "PHASE80_root_20261027071149199.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE80_root_20261027071149199.result.json": "3aaeaa1e7e3308621fde0d6364d6170183ac6d4cbe8fce234024d3c0cb24b8fe",
+    "PHASE80_input_20261027071248946.source.lean": "9aa19cb8f71ebbf4f6056ade020cf760230ad7c0641dd82e04ad628ac051af97",
+    "PHASE80_input_20261027071248946.core.lean": "5772b9d45b99d76c90389ef6231baf9a1b8adf53f2554cc04c75ff7a96637f4f",
+    "PHASE80_input_20261027071248946.root.lean": "04395131c591e24618e309cd9a1c21f134c67adfd0bb77dcd3561134c09b23c2",
+    "PHASE80_input_20261027071248946.input.lean": "727a900822b284e6e17180491aceef3ada96f4bbf4aa574b9c7edb118a37d649",
+    "PHASE80_input_20261027071248946.stdout.log": "db1b1f7e5bf8b0140c8ffdfbe6a84bfa5c3b86e3601a068d594bab9301aee464",
+    "PHASE80_input_20261027071248946.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE80_input_20261027071248946.result.json": "3848be6131d6e68a138b642831e58a767a7643cd7da61c4e3ee2e904926646af",
+    "PHASE80_audit_20261027071401098.source.lean": "9aa19cb8f71ebbf4f6056ade020cf760230ad7c0641dd82e04ad628ac051af97",
+    "PHASE80_audit_20261027071401098.core.lean": "5772b9d45b99d76c90389ef6231baf9a1b8adf53f2554cc04c75ff7a96637f4f",
+    "PHASE80_audit_20261027071401098.root.lean": "04395131c591e24618e309cd9a1c21f134c67adfd0bb77dcd3561134c09b23c2",
+    "PHASE80_audit_20261027071401098.input.lean": "727a900822b284e6e17180491aceef3ada96f4bbf4aa574b9c7edb118a37d649",
+    "PHASE80_audit_20261027071401098.stdout.log": "c0e93b4c8d30226d305a6fbb77cb57e7cbc18ab725de5ed007c654ec32f34367",
+    "PHASE80_audit_20261027071401098.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE80_audit_20261027071401098.result.json": "08eefb79f8a31959c70132536816894538e11257a104f38e3c1be74535542f74"
+  },
+  "attempt_history": [
+    "FAIL: residueIdeal wrapper not unfolded in four norm identities; all8theoremtypes andClassCountData retained.",
+    "PASS: only add residueIdeal to four simp lists; all statements/definition/controls/reporting unchanged."
+  ],
+  "closed_scope": "ONE controlled actual ideal family under oddh<=2 provides full actual per-class prime counts with0principalelse2 axis allowance AND4*cardP selected distinct labelled norm representatives for every finite admissible prime set. Family fixed before allP; actual basis/count perC precedesallsets.",
+  "limits": [
+    "Local integrated checks are not external exact-head CI/security/fullregression success.",
+    "Actual class-slice cardinal sum and numerical aggregate prefix B remain unproved; weighted budget/evenfield/newrange remain open.",
+    "No publication/merge/reviewer/Tao/classification/novelty/humanreview/upstream claim. PR35publicrecordauthorizationpending.",
+    "Stopped69/75, accepted79standalone and all oldrecords preserved; historical root-fixed checkers not weakened."
+  ]
+}

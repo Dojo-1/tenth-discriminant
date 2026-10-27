@@ -46,3 +46,7 @@ passing second run are both saved. [Verification](PHASE79_VERIFICATION.md).
 
 This standalone result is outside production CI. Aggregate B, even/field
 transport and a new cutoff remain open. No classification is announced.
+
+Current integration: [Phase80](COMMON_FAMILY_GUIDE.md) now supplies the
+SAME controlled ideal family with both full per-class counts and the
+four selected prime lifts. Class-slice summation to B is still separate.

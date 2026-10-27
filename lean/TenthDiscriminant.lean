@@ -102,3 +102,5 @@ import TenthDiscriminant.PrincipalBasis
 import TenthDiscriminant.LeastNorm
 import TenthDiscriminant.BasisCompletion
 import TenthDiscriminant.ControlledClassCount
+import TenthDiscriminant.ActualPrimeAxis
+import TenthDiscriminant.ControlledPrimeFamily

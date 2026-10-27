@@ -1,5 +1,19 @@
 # Status — 2026-10-27
 
+## Phase80: the SAME controlled ideals now supply the four prime lifts
+
+Integrated exact79 and new fixed-family lifting compose one actual ideal
+family before ALL finite prime sets. It retains actual full per-class
+counts/control of bases and selects4*cardP distinct labelled points for
+any finite admissible P in THAT family. No independent ideal-family choice
+is substituted. Target FAIL/PASS changes only four residueIdeal norm
+normalizations; root/input/audit firstPASS.181modules,5031/4261/16993,
+standard axioms; closures29185/54827 exclude34older inputs;36rawfiles.
+[Human proof](research/ender_radius_bridge/COMMON_FAMILY_GUIDE.md) and
+[verification](research/ender_radius_bridge/PHASE80_VERIFICATION.md).
+Local integrated checks are distinct from external exact-head CI. Actual
+class-slice summation/aggregate B/even-field/new cutoff remain open.
+
 ## Phase79: actual prime-axis accounting removes the off-axis premise
 
 A standalone theorem now counts full finite prime-normalized sets in
