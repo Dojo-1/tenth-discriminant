@@ -4,7 +4,7 @@ $taskRepo = (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
 $taskPrevious = @(Get-ChildItem $PSScriptRoot -Filter "PHASE82_${Mode}_*.result.json" | ForEach-Object { Get-Content $_.FullName -Raw | ConvertFrom-Json })
 $taskSpent = ($taskPrevious | Measure-Object elapsed_seconds -Sum).Sum
 if ($null -eq $taskSpent) { $taskSpent = 0 }
-$taskLimit = switch ($Mode) { 'build' {[Math]::Min(600,[Math]::Floor(1200-$taskSpent))}; 'root' {1200}; default {182} }
+$taskLimit = switch ($Mode) { 'build' {[Math]::Min(600,[Math]::Floor(1200-$taskSpent))}; 'root' {1200}; default {180} }
 if ($Mode -eq 'build' -and ($taskPrevious.Count -ge 3 -or @($taskPrevious | Where-Object stop_reason).Count -or $taskLimit -le 0)) { throw 'Phase82 proof-attempt budget exhausted or resource stop' }
 if ($Mode -ne 'build' -and $taskPrevious.Count -ge 1) { throw 'Phase82 one-shot check already invoked' }
 $taskStamp = [DateTime]::UtcNow.ToString('yyyyMMddHHmmssfff')
