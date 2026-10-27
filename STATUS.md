@@ -1,5 +1,31 @@
 # Status — 2026-10-26
 
+## Phase64: the geometric count now has its closed area formula
+
+The production theorem bounds any finite off-axis integer set in
+Q=ax²+bxy+cy²<=t by2pi*t/sqrt(D)+4sqrt(at/D), D=4ac-b²>0,a>0,t>=0.
+Row intervals, reflection and a uniform semicircle scaling proof discharge
+the integral; no supplied count/area premise. The t=0, circle and sheared
+controls pass. The ideal-class/form dictionary, prime multiplicity and
+ramified budget remain open; no actual B or new cutoff is inferred.
+First target52.9580334s/root20.1056496s/input26.1582986s/audit27.9050467s
+all PASS;4869 logical/4114 theorem/16982 runtime,170 modules. Exact70f9217
+Linux CI40412438935 also passes the complete build/audit/regression suite;
+only Lean is reported, with no security pass inferred from absence. [Human proof](research/ender_radius_bridge/QUADRATIC_AREA_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE64_VERIFICATION.md).
+
+## Phase63: actual off-axis points are bounded by a width integral
+
+Lean checks card(U)<=2 integral_0^Y w+2Y for finite integer points of
+Q=ax²+bxy+cy²<=t with y!=0, a>0,4ac-b²>0,t>=0. Integer intervals,
+row fibers, a decreasing-width integral and reflection supply the bound;
+no supplied count premise. Phase63 left area evaluation open; the
+current Phase64 above closes it. Class/prime/ramified inputs remain open.
+Two builds FAIL28.4400993s/PASS29.0818965s, unchanged14 public types and
+5 definitions, audit34/29/4, no resource stop. Research-only, outside CI.
+[Human proof](research/ender_radius_bridge/NONZERO_ROWS_GUIDE.md) and
+[verification](research/ender_radius_bridge/PHASE63_VERIFICATION.md).
+
 ## Phase62: the principal row saves the two-class constant
 
 A standalone pinned Lean file proves that a*x² prime forces a=p and
