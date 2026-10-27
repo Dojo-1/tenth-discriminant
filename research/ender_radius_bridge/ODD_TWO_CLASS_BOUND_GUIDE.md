@@ -1,6 +1,6 @@
 # The odd-chart two-class exclusion is now a theorem
 
-**Checked locally in Lean, standalone:** if D is squarefree, D=3 mod4,
+**Integrated and checked locally in Lean:** if D is squarefree, D=3 mod4,
 and D>=2^50, the actual quadratic field in this chart has class number
 greater than two. Equivalently, a field in this chart with class number
 at most two must have D<1125899906842624.
@@ -60,11 +60,16 @@ is a proof premise.
 
 ## Scope that must stay visible
 
-This is a new local standalone odd-chart bound for class number<=2.
+This is a new locally integrated odd-chart bound for class number<=2.
 It does not classify all such fields or cover the even chart. The separate
 class-number-one field-discriminant cutoff remains 50 billion. We claim
-neither sharpness nor novelty. Root integration, external CI and independent
-human review of this addition remain outstanding.
+neither sharpness nor novelty. External CI and independent human review of this addition remain outstanding.
 
-[Exact verification](PHASE86_VERIFICATION.md) preserves all three proof
-attempts, unchanged statements, axiom audit and excluded dependencies.
+[Exact integration verification](PHASE87_VERIFICATION.md) records the full-root
+checks and exact source transport. The standalone record below preserves
+all three proof attempts, unchanged statements and dependency checks.
+
+Integration update (Phase87): the mathematical source, controls and reports
+were transported exactly into the main root. The full local build,
+input check and whole-library audit passed on their first invocations.
+The [standalone record](PHASE86_VERIFICATION.md) retains both failed attempts.

@@ -108,3 +108,4 @@ import TenthDiscriminant.ClassAggregation
 import TenthDiscriminant.SplitPrimeBudget
 import TenthDiscriminant.ClosedKernel
 import TenthDiscriminant.OddMinkowski
+import TenthDiscriminant.UniformTwoClass

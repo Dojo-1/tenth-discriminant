@@ -1,5 +1,21 @@
 # Current claim-to-Lean map
 
+Current production theorem: `UniformTwoClass.odd_classNumber_gt_two`
+is imported by the main root. For every natural D>=2^50, squarefree and
+D=3mod4, it proves actual classNumber(QuadraticField((D+1)/4))>2.
+This is exact86mathematical/control/report transport, with only dependency
+imports and relocation of the standalone input command changed. No proof
+body or statement was repaired during integration. Full pinned local build,
+fresh input check and whole-library audit pass:186modules,5145logical/
+4367theorems/16996runtime auxiliaries, standard3axioms; root closure59721
+excludes the same34oldh1/cutoff/classification/finite-answer declarations.
+[Human proof](../research/ender_radius_bridge/ODD_TWO_CLASS_BOUND_GUIDE.md) and
+[exact verification](../research/ender_radius_bridge/PHASE87_VERIFICATION.md).
+No standalone86replay or new numerical experiment. Even-chart/arbitrary-
+field transport, external exact-head CI and independent human review remain
+open. The class-number-one field cutoff remains50billion. Earlier entries
+preserve their checkpoint scope;86is now integrated through87.
+
 Current standalone result: `UniformTwoClass.odd_classNumber_gt_two`:
 
     D : Nat, 2^50 <= D, Fact ((D : Int)%4=3), Squarefree D

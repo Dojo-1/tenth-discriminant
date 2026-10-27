@@ -1,5 +1,21 @@
 # Status — 2026-10-27
 
+## Phase87: the all-range odd two-class bound is integrated
+
+The accepted86mathematics, controls and reports are now in the main Lean
+root, unchanged apart from dependency imports and relocation of the input
+checker. Every squarefree D=3mod4 with D>=2^50 has actual class number>2.
+[Human proof](research/ender_radius_bridge/ODD_TWO_CLASS_BOUND_GUIDE.md) and
+[exact integration checks](research/ender_radius_bridge/PHASE87_VERIFICATION.md).
+Target43.0412347s, root23.9453069s, input30.1005506s and wholeaudit32.420875s
+all passed on their first invocation.186modules;5145logical/4367theorems,
+16996runtime auxiliaries; standard3axioms. Fresh59721closure excludes the
+same34older inputs. Exactsource/evidence verifier passes; all prior failed
+attempts and numerical negatives remain unchanged. Standalone86was not
+replayed. The h1field cutoff stays50billion. Even-chart/arbitrary-field
+transport, external exact-head CI and independent human review remain open.
+Earlier sections retain their historical scopes.
+
 ## Phase86: an all-range odd-chart bound for class number at most two
 
 A standalone Lean theorem now proves actual class number>2 for every
