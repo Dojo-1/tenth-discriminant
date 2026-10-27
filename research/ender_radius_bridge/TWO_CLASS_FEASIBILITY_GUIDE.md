@@ -50,3 +50,9 @@ class-number-one cutoff is still 50 billion.
 
 [Execution and evidence](PHASE85_VERIFICATION.md) preserve the complete
 grid, controls, source, negative results and the missing memory observation.
+
+Phase86 update: the sampled target has now become a standalone all-range
+Lean theorem for the squarefree odd chart. The earlier text records this
+experiment's scope. [The checked local/global proof](ODD_TWO_CLASS_BOUND_GUIDE.md)
+uses no test output as a premise; even-chart and arbitrary-field transport
+remain open.

@@ -1,5 +1,23 @@
 # Status — 2026-10-27
 
+## Phase86: an all-range odd-chart bound for class number at most two
+
+A standalone Lean theorem now proves actual class number>2 for every
+squarefree D=3mod4 with D>=2^50=1125899906842624. The proof controls all
+larger D and composes the actual prime-mass lower bound with the same
+original Gram's diagonal upper bound. No sampled margin or old cutoff
+is assumed. [Human proof](research/ender_radius_bridge/ODD_TWO_CLASS_BOUND_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE86_VERIFICATION.md).
+Three registered invocations: FAIL79.5313154, FAIL46.5392337, PASS48.5733911.
+All21public types,2definitions,main proof and controls remain unchanged;
+repairs only normalize helper proof terms and make endpoint types explicit.
+Namespace42logical/40theorems/3runtime auxiliaries; root closure59,721
+excludes the same34old inputs, standard3axioms only. All3slots consumed;
+no target rerun. Production84unchanged; root integration and external CI
+for86remain pending. Even-chart/arbitrary-field transport and classification
+are open. The class-number-one cutoff remains50billion. Entries below
+preserve earlier checkpoint scopes, including the numerical85test.
+
 ## Phase85: a numerical proof target, not a new cutoff
 
 One preregistered scalar test found a positive conservative margin at

@@ -1,5 +1,25 @@
 # Current claim-to-Lean map
 
+Current standalone result: `UniformTwoClass.odd_classNumber_gt_two`:
+
+    D : Nat, 2^50 <= D, Fact ((D : Int)%4=3), Squarefree D
+      -> 2 < NumberField.classNumber (QuadraticField (((D : Int)+1)/4)).
+
+It proves an all-D exponential/polynomial loss estimate, actual chartCost
+majorization, normalized scale/divisor bounds and the complete same-Gram
+comparison. Generic factorial/geometry scalar helpers are used under their
+actual guards; no class-number-one/exclusion theorem or numerical85result
+is a premise. Fresh closure59,721excludes the same34listed old inputs,
+including rawPrimeMassLower_uniform. Namespace42/40/3, standard3axioms.
+All21statement texts/2definitions/main theorem proof are unchanged over
+FAIL/FAIL/PASS; only helper normalization/inference repairs. All3invocations
+consumed; no further86targetrun. Source remains outside the productionroot;
+84production sources and whole-library audit are unchanged. [Human proof](../research/ender_radius_bridge/ODD_TWO_CLASS_BOUND_GUIDE.md)
+and [verification](../research/ender_radius_bridge/PHASE86_VERIFICATION.md).
+Even-chart/arbitrary-field transport, root integration/external CI and
+independent human review remain open. The50billion h1bound is unchanged.
+Earlier entries below are historical proof and experiment checkpoints.
+
 Phase85 adds no Lean declaration. Its sealed numerical test evaluates
 m(D)=.159997*logD-4.926-H(D), where
 H(D)=(4/sqrtD+1/sqrt(sqrtD))*(2+logD*(1+logD))+1/3.
