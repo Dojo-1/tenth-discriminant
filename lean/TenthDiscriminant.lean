@@ -98,3 +98,7 @@ import TenthDiscriminant.ClassFiber
 import TenthDiscriminant.ResidueMultiplicity
 import TenthDiscriminant.IdealBasisArithmetic
 import TenthDiscriminant.IdealCoordinates
+import TenthDiscriminant.PrincipalBasis
+import TenthDiscriminant.LeastNorm
+import TenthDiscriminant.BasisCompletion
+import TenthDiscriminant.ControlledClassCount

@@ -49,3 +49,8 @@ quantitative leading bounds still require primitive reduction and basis extensio
 The even chart, class-wide usable arithmetic B and field-parameter transport
 remain open. [Exact verification](PHASE73_VERIFICATION.md). This standalone
 result is outside production CI; no new cutoff or classification is claimed.
+
+Current integration: [Phase78](PHASE78_VERIFICATION.md) composes the accepted
+principal/least-norm/basis sources into one controlled actual class-family
+count. Its local checks pass; external exact-head CI and aggregate B remain
+separate. Earlier standalone scope statements above describe their checkpoints.

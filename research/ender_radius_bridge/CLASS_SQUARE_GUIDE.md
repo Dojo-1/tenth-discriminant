@@ -50,3 +50,8 @@ check the group identity and instantiate the result over the rationals.
 This standalone result is outside production CI. Class-wide counting,
 the even chart, field transport and a usable excluded-prime bound remain
 open. The checked class-number-one cutoff stays 50 billion.
+
+Current integration: [Phase78](PHASE78_VERIFICATION.md) composes the accepted
+principal/least-norm/basis sources into one controlled actual class-family
+count. Its local checks pass; external exact-head CI and aggregate B remain
+separate. Earlier standalone scope statements above describe their checkpoints.

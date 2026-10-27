@@ -1,5 +1,21 @@
 # Current claim-to-Lean map
 
+Current production-local roots `ControlledClassCount.controlled_class_basis`
+and `controlled_class_form_and_count` choose, for EACH actual class under
+h<=2 in the squarefree odd chart, one bounded nonzero ideal J and an actual
+basis/FormData with0<a<=N(J)<=M(K). The same J lifts every ideal of that
+class; the same basis serves ALL finite off-axis norm-bounded sets, with
+cardU<=2*pi*t/sqrtD+4*sqrt(M(K)*t/D). No supplied ideal/basis/form/primitive/
+norm/coefficient bound. Exact73/76/77import-only transport is integrated.
+Full local root/input/audit PASS:179modules,5002/4233/16993, standard three
+axioms; two closures54328/54613 exclude the same34 listed older inputs.
+[Human proof](../research/ender_radius_bridge/CONTROLLED_CLASS_GUIDE.md) and
+[verification](../research/ender_radius_bridge/PHASE78_VERIFICATION.md).
+External exact-head CI is pending. This is a per-class off-axis result;
+aggregate B, even/field transport and new range remain unclosed. Stopped75
+is unchanged. Entries below record the earlier standalone checkpoints;
+their outside-root descriptions are superseded by this local integration.
+
 Standalone `BasisCompletion.primitive_completion` constructs an actual
 rank-two integer-module basis with the supplied primitive element first.
 `actual_form_of_primitive_bound` assumes an actual nonzero ideal J in the

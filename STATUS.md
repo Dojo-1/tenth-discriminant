@@ -1,5 +1,20 @@
 # Status — 2026-10-27
 
+## Phase78: one controlled actual lattice now serves each class
+
+For actual h<=2 in the squarefree odd chart, the integrated theorem chooses
+one bounded ideal J and one actual basis/FormData per class, proves
+0<a<=N(J)<=M(K), lifts every ideal of that class into the same J and counts
+all off-axis finite norm-bounded sets with common error coefficient M(K).
+No supplied basis/form/primitive/norm/coefficient bound. All target/root/
+input/audit checks pass on their first invocation;179modules,5002logical/
+4233theorem/16993runtime, standard three axioms, closures54328/54613 exclude
+34older inputs. Exact73/76/77transport; stopped69/75 untouched. [Human proof](research/ender_radius_bridge/CONTROLLED_CLASS_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE78_VERIFICATION.md).
+Local integrated checks are distinct from external exact-head CI. Axis/class
+aggregation, usable B/even-field transport and new range remain open. Older
+entries below retain the scope and limits at their dated checkpoints.
+
 ## Phase77: actual primitive basis completion and coefficient interface
 
 Mathlib's determinant-one lattice operator now constructs an actual basis

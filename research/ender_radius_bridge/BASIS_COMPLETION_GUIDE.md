@@ -45,3 +45,8 @@ The [stopped earlier attempt](CONTROLLED_BASIS_ATTEMPT.md) is unchanged.
 This new proof uses the existing Mathlib lattice operator and the
 separately checked primitivity interface. Class-wide counting, the even
 chart, field transport and a new cutoff remain open. Outside production CI.
+
+Current integration: [Phase78](PHASE78_VERIFICATION.md) composes the accepted
+principal/least-norm/basis sources into one controlled actual class-family
+count. Its local checks pass; external exact-head CI and aggregate B remain
+separate. Earlier standalone scope statements above describe their checkpoints.

@@ -51,3 +51,8 @@ The separate basis-completion theorem now supplies those two steps from
 this primitive/norm interface. Composing the actual chosen class family
 and integrating the accepted sources still require a separate check. This standalone proof is outside production
 CI; class-wide counts, even-chart transport and a new cutoff remain open.
+
+Current integration: [Phase78](PHASE78_VERIFICATION.md) composes the accepted
+principal/least-norm/basis sources into one controlled actual class-family
+count. Its local checks pass; external exact-head CI and aggregate B remain
+separate. Earlier standalone scope statements above describe their checkpoints.

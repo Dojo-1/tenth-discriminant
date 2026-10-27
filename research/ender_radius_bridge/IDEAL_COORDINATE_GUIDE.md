@@ -57,6 +57,9 @@ The generic chosen-basis theorem does not promise a=1. The subsequent
 [principal-class theorem](PRINCIPAL_BASIS_GUIDE.md) now supplies that calibrated
 basis locally, using a generator of the particular identity-class ideal.
 
-The quantitative leading bound, class-wide usable arithmetic B, even chart
-and field-parameter transport remain open. No new cutoff or classification.
+The [controlled h<=2 class choice](CONTROLLED_CLASS_GUIDE.md) now supplies
+a<=N(J)<=M(K) and a common per-class off-axis count locally. The generic
+result above still needs that extra class-number hypothesis for this bound.
+Class-wide usable arithmetic B, even chart and field-parameter transport
+remain open. No new cutoff or classification.
 [Verification and exact scope](PHASE72_VERIFICATION.md).
