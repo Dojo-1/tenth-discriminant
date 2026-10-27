@@ -1,5 +1,33 @@
 # Current claim-to-Lean map
 
+Current Phase70 production `ResidueMultiplicity` is the exact accepted
+Phase68 source with acyclic imports changed. One new root import brings
+actual odd-chart selected4N multiplicity into the full build/audit. All
+registered local checks pass:4917/4155/16985,173 modules;2 closures exclude
+34 listed older roots and allow only standard3 axioms. New-head CI remains
+required. The failed Phase69 coordinate source below is not imported or
+promoted. No checked norm-form/leading-bound bridge or arithmetic B follows.
+[Combined verification](../research/ender_radius_bridge/PHASE70_VERIFICATION.md).
+
+Phase69 delivers **no checked ideal norm-form or actual-ideal count theorem**.
+The single standalone attempt failed and exhausted the deterministic Lean
+heartbeat resource; the registered stop rule forbids a rerun in that cycle.
+Its source/raw failure is preserved outside the production root. No printed
+failed-elaboration declaration is a trusted theorem. Phase68's accepted
+odd-chart multiplicity and Phase67 production arithmetic are separate.
+[Failure record](../research/ender_radius_bridge/PHASE69_VERIFICATION.md).
+
+Standalone `ResidueMultiplicity.finite_odd_square_representations` now
+constructs exactly4*card(P) selected class-labelled norm elements in the
+actual squarefree odd maximal-order chart. Actual residue-map kernels are
+separated under odd/non-divisor guards; class recovery, signs and positive
+ideal-norm cancellation justify finite aggregation without a supplied pair
+or count premise. One bounded family precedes all primes. Final local
+audit20/16/0 allows only standard3 axioms; source remains outside root/CI.
+No controlled binary-form basis/coefficient bounds, even chart, usable B
+or new cutoff follows. [Human proof](../research/ender_radius_bridge/RESIDUE_MULTIPLICITY_GUIDE.md)
+and [verification](../research/ender_radius_bridge/PHASE68_VERIFICATION.md).
+
 Current Phase67 imports `PrimeDivisorLoss` and `ClassFiber` into production.
 The frozen Phase65/66 bodies/types/controls are unchanged; only their imports
 were replaced. Target/root/type-input/full audit pass locally:4897/4139/16985,

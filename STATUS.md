@@ -1,5 +1,40 @@
 # Status — 2026-10-27
 
+## Phase70: accepted multiplicity is production-root reachable
+
+The final accepted Phase68 proof is transported by import-only changes;
+failed Phase69 coordinates remain frozen outside the production graph.
+First target/root/input/full audit pass:4,917 logical/4,155 theorem/16,985
+runtime declarations,173 modules. Both input closures exclude the34 listed
+older roots with standard3 axioms. New exact-head pinned CI is required.
+The selected4N elements are class-labelled, not common lattice coordinates;
+no checked form/leading-bound bridge, arithmetic B or new cutoff.
+[Combined verification](research/ender_radius_bridge/PHASE70_VERIFICATION.md).
+
+## Phase69: coordinate attempt failed and stopped
+
+The complete actual ideal/form/count target was not accepted. Its first
+47.0501137s run hit coercion/witness errors and deterministic200000-heartbeat
+exhaustion during determinant simplification; the namespace audit rejected
+it. The protocol's resource-stop rule ends the cycle: no repair/rerun,
+heartbeat increase or weakened endpoint. This is not a mathematical
+counterexample. The accepted Phase68 multiplicity remains separate;
+coordinates and coefficient bounds remain open.
+[Preserved failure](research/ender_radius_bridge/PHASE69_VERIFICATION.md).
+
+## Phase68: finite four-representation multiplicity in the odd chart
+
+A standalone Lean theorem constructs a selected set of exactly4*card(P)
+class-labelled norm elements for eligible odd non-divisor square-residue
+primes. It proves actual maximal-order residue-kernel separation, sign
+separation, exact recovery and disjointness across primes. One fixed class
+ideal family serves all primes. Attempts FAIL/PASS/PASS preserve all12
+public types/4 definitions; final run changes prints only. Audit20/16/0,
+standard3 axioms. Outside production CI; no common norm-form coordinates,
+even-chart result, arithmetic B or new cutoff.
+[Human proof](research/ender_radius_bridge/RESIDUE_MULTIPLICITY_GUIDE.md) and
+[evidence](research/ender_radius_bridge/PHASE68_VERIFICATION.md).
+
 ## Phase67: actual arithmetic bridges are production-root reachable
 
 The frozen Phase65/66 definitions, targets, proofs and controls are now in

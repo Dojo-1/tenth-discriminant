@@ -79,3 +79,15 @@ final controls23:25:43.0069365Z. [Terminal public record](https://github.com/Doj
 precedes this publication. Only Lean is reported; absent security checks
 are not passes. This older tree does not contain the new arithmetic modules.
 The new exact head requires its own build/audit/full regression result.
+
+## Completed arithmetic-head CI
+
+Exact published head564321005e8c9a34e5541dce8205e0e29b21caf7 completed pinned
+Lean CI40419910108/job121911466303 SUCCESS. Decoded UTC logs on26October2026
+record250 pairs23:28:40.0874486Z, ClassFiber15/12/3 at23:32:20.0661184Z,
+PrimeDivisorLoss13/13/0 at23:33:57.5091293Z, global4897/4139/16985 at
+23:45:12.2416271Z and full final regression23:50:27.5010638Z.
+[Terminal public record](https://github.com/Dojo-1/tenth-discriminant/pull/33#issuecomment-6430115337)
+preceded later publication. Only Lean is reported; absent security checks
+are not passes. This run covers the two production arithmetic modules,
+not subsequent standalone Phase68 multiplicity or failed Phase69 coordinates.

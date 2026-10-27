@@ -1,0 +1,150 @@
+{
+  "phase": 68,
+  "status": "STANDALONE_LOCAL_COMPLETE_ODD_CHART_FINITE4N_MULTIPLICITY_PASS_NOT_PRODUCTION_CI",
+  "base": "564321005e8c9a34e5541dce8205e0e29b21caf7",
+  "registered_commit": "4f48f96d8d4ed823c295236a71096d080e6576be",
+  "target_seconds": "100.868284099999990",
+  "builds": [
+    {
+      "phase": 68,
+      "mode": "build",
+      "scope": "Actual odd-chart residue pairs and finite class-labelled4N multiplicity; no coordinates or arithmetic B",
+      "source_sha256": "55bd4d07b2066f6a4e572d82595b89d900444071e74ac68735b018627bec2755",
+      "source_snapshot": "PHASE68_build_20261026233526192.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 32.956862099999995,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3255738368,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase68ResidueMultiplicity.lean"
+      ],
+      "stdout": "PHASE68_build_20261026233526192.stdout.log",
+      "stderr": "PHASE68_build_20261026233526192.stderr.log"
+    },
+    {
+      "phase": 68,
+      "mode": "build",
+      "scope": "Actual odd-chart residue pairs and finite class-labelled4N multiplicity; no coordinates or arithmetic B",
+      "source_sha256": "ccc10f79ab713cb4a678a4c3af6a29649bde748520117153d34a79f69e7edbaa",
+      "source_snapshot": "PHASE68_build_20261026233713580.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 32.874581,
+      "cumulative_before_seconds": 32.956862099999995,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3262779392,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase68ResidueMultiplicity.lean"
+      ],
+      "stdout": "PHASE68_build_20261026233713580.stdout.log",
+      "stderr": "PHASE68_build_20261026233713580.stderr.log"
+    },
+    {
+      "phase": 68,
+      "mode": "build",
+      "scope": "Actual odd-chart residue pairs and finite class-labelled4N multiplicity; no coordinates or arithmetic B",
+      "source_sha256": "a98e273a9f28eb5bd98054b34098ce25dd2b4a5ee61c3fd90d0afb4c137cdca9",
+      "source_snapshot": "PHASE68_build_20261026233825280.source.lean",
+      "attempt": 3,
+      "exit_code": 0,
+      "elapsed_seconds": 35.036840999999995,
+      "cumulative_before_seconds": 65.8314431,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3260813312,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase68ResidueMultiplicity.lean"
+      ],
+      "stdout": "PHASE68_build_20261026233825280.stdout.log",
+      "stderr": "PHASE68_build_20261026233825280.stderr.log"
+    }
+  ],
+  "public_theorems": [
+    "tagged_lifts_ne",
+    "class_family_four_lifts",
+    "kernels_ne_of_value_ne",
+    "actualResidueMap_generator",
+    "actual_residue_pair_ne",
+    "odd_square_family",
+    "aggregate_points",
+    "finite_odd_square_representations",
+    "seven_eleven_control",
+    "empty_control",
+    "ramified_root_control",
+    "characteristic_two_control"
+  ],
+  "public_definitions": [
+    "FamilyGood",
+    "PointAt",
+    "actualResidueMap",
+    "Admissible"
+  ],
+  "namespace_audit": {
+    "logical": 20,
+    "theorems": 16,
+    "runtime_only": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "sha256": {
+    "PHASE68_PROTOCOL.md": "173061396b21b1c31d9b944a9b853e21ced2bd655d4a4a978817e2effd3bab5e",
+    "Phase68ResidueMultiplicity.lean": "a98e273a9f28eb5bd98054b34098ce25dd2b4a5ee61c3fd90d0afb4c137cdca9",
+    "run_phase68.ps1": "20c93efbce8eb4ddcd68929d54a6febb5e6af48d1fb81edf1faf09b1596ab7cb"
+  },
+  "raw_archive": {
+    "path": "PHASE68_RAW.zip",
+    "sha256": "b3981522a65132d138761e34b99aa8858294b9e97561484d012425c35e0c3870",
+    "members": 12
+  },
+  "raw_sha256": {
+    "PHASE68_build_20261026233526192.source.lean": "55bd4d07b2066f6a4e572d82595b89d900444071e74ac68735b018627bec2755",
+    "PHASE68_build_20261026233526192.stdout.log": "22bf69636ac1185433dde6eb66ea87c92acc87517eb8c2d5676dc04f92f724d1",
+    "PHASE68_build_20261026233526192.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE68_build_20261026233526192.result.json": "efe35248c6bfcb07b4bf7fff761192d57a0df921249de0468987b44633f2bcda",
+    "PHASE68_build_20261026233713580.source.lean": "ccc10f79ab713cb4a678a4c3af6a29649bde748520117153d34a79f69e7edbaa",
+    "PHASE68_build_20261026233713580.stdout.log": "58dbde0bfe378d04171adb697a3d5f61142cb2865f969d1a598e3d78481b87d4",
+    "PHASE68_build_20261026233713580.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE68_build_20261026233713580.result.json": "a0c3122a4fe8caa42f1da07b996e41c1f44ca85261be725882798d1023a893bb",
+    "PHASE68_build_20261026233825280.source.lean": "a98e273a9f28eb5bd98054b34098ce25dd2b4a5ee61c3fd90d0afb4c137cdca9",
+    "PHASE68_build_20261026233825280.stdout.log": "13d96be11dc43670ed91b240f1adfe5c51252d76ad5ba27d1ef61a5690559592",
+    "PHASE68_build_20261026233825280.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE68_build_20261026233825280.result.json": "5cb6d5e309bc1129ef0416a16c973eedb6aaeb213c4ac992f6a57a4c5afc212d"
+  },
+  "attempt_history": [
+    "FAIL: unavailable private odd-prime helper and missing concrete Field(QuadraticField2) instance; audit rejection preserved.",
+    "PASS: explicit odd-prime nonzero proof and concrete instance; empty control invokes aggregate_points; all12 public types/4 target definitions unchanged.",
+    "PASS: no mathematical change; added required generic axiom print and unfolded FamilyGood/Admissible predicates; budget fully consumed."
+  ],
+  "scope": "Actual odd maximal-order chart, squarefree D mod4=3; odd prime set P excludes divisors of D and requires IsSquare(-D modp). Exactly4*cardP distinct labelled class-lattice elements with actual norms. One family precedes all primes.",
+  "limits": [
+    "No even-chart extension or arbitrary-field discriminant transport.",
+    "No controlled binary-form basis/coefficient/discriminant/leading-coefficient bounds or usable arithmetic B.",
+    "No new cutoff/classification/novelty/independent review/upstream acceptance.",
+    "No production/root/pin/tool/certificate/gate changes or prior-campaign rerun. PR33 live CI is separate and does not cover this standalone file."
+  ]
+}
