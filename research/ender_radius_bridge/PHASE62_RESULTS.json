@@ -1,0 +1,84 @@
+{
+  "status": "PASS_STANDALONE_AXIS_AND_CONDITIONAL_ACCOUNTING",
+  "registered_commit": "10fca35",
+  "base": "b4cff273f620ead13fc60097222fac01cce4ab67",
+  "builds": [
+    {
+      "phase": 62,
+      "mode": "build",
+      "scope": "Prime-axis factorization and conditional at-most-two-form accounting; no full count or cutoff",
+      "source_sha256": "84cc9590ad812866d1f8bd5b570d5836d8e54f0435826f6e56e5356dfb10f220",
+      "source_snapshot": "PHASE62_build_20261026212512936.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 22.8003626,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 300,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2923761664,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase62PrimeAxis.lean"
+      ],
+      "stdout": "PHASE62_build_20261026212512936.stdout.log",
+      "stderr": "PHASE62_build_20261026212512936.stderr.log"
+    },
+    {
+      "phase": 62,
+      "mode": "build",
+      "scope": "Prime-axis factorization and conditional at-most-two-form accounting; no full count or cutoff",
+      "source_sha256": "fbfb12a6c23188b43b7b291fc2461dfa2e447b3c51bd4ebf558ed44eee016ee2",
+      "source_snapshot": "PHASE62_build_20261026212623064.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 22.7932198,
+      "cumulative_before_seconds": 22.8003626,
+      "time_limit_seconds": 300,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2945810432,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase62PrimeAxis.lean"
+      ],
+      "stdout": "PHASE62_build_20261026212623064.stdout.log",
+      "stderr": "PHASE62_build_20261026212623064.stderr.log"
+    }
+  ],
+  "target_seconds": "45.5935824",
+  "sha256": {
+    "PHASE62_PROTOCOL.md": "33444e96627feb5b954cbd1db2a8b64301e74450d113fd82642becd3fb25e137",
+    "Phase62PrimeAxis.lean": "fbfb12a6c23188b43b7b291fc2461dfa2e447b3c51bd4ebf558ed44eee016ee2",
+    "run_phase62.ps1": "70ad5a05eccb38d0ada9f089a4ed6ff07bbbd989ad8dfa0f473cf7282d569a9e"
+  },
+  "raw_archive": {
+    "path": "PHASE62_RAW.zip",
+    "sha256": "026a54c4121fa45571de87b2f6d103b1652696c3298dacc2e10af54eee6cfe8c"
+  },
+  "raw_sha256": {
+    "PHASE62_build_20261026212512936.result.json": "87fcbe1d79c134893d0ed6a2feae199b71afbc9746192ef8abc7ac3e38d7e5f2",
+    "PHASE62_build_20261026212512936.source.lean": "84cc9590ad812866d1f8bd5b570d5836d8e54f0435826f6e56e5356dfb10f220",
+    "PHASE62_build_20261026212512936.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE62_build_20261026212512936.stdout.log": "2d4de6e5e17b83cda1d32a268221eebf471c1874db0ea7877219dfd78e640072",
+    "PHASE62_build_20261026212623064.result.json": "6032503ae9ff7b2b2ec1e9de52549c91810ade0b0c29fd285395ea0e8da23229",
+    "PHASE62_build_20261026212623064.source.lean": "fbfb12a6c23188b43b7b291fc2461dfa2e447b3c51bd4ebf558ed44eee016ee2",
+    "PHASE62_build_20261026212623064.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE62_build_20261026212623064.stdout.log": "91058b12b95c6ce813b890eb99c99e50d874692605706889d07c0ed10ad5a665"
+  },
+  "audit": {
+    "logical": 18,
+    "theorems": 16,
+    "runtime": 2
+  },
+  "limits": "3 builds,300seconds each,600seconds cumulative,8192MB;2 used,no stop,one proof-body repair",
+  "scope": "Actual prime axis and conditional finite at-most-two-family accounting only. Nonzero-row bound, four-representation input, actual arithmetic B and higher-class-number cutoff not proved. Outside production/root/CI. No Phase61 rerun."
+}

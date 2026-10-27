@@ -1,5 +1,12 @@
 # Current claim-to-Lean map
 
+The standalone `PrimeAxisRepair` file now checks prime-axis factorization,
+the at-most-two cardinal bound, principal-axis emptiness and conditional
+two-class accounting. It is outside the production root and CI. The
+nonzero-row geometry, four-representation input and actual count B remain
+unproved by this file. [Explanation and scope](../research/ender_radius_bridge/TWO_CLASS_AXIS_GUIDE.md).
+
+
 `ExcludedPrime.excluded_prime_budget_log_div` is now production-root reachable.
 It bounds the original total prime mass by the actual Gram Hadamard ceiling
 plus an explicit loss from a supplied excluded-prime prefix bound B. The
@@ -10,7 +17,8 @@ Local target/root,34-input exclusions and4821/4071/16978 audit pass; controls
 and exact-head CI have their own status in the [record](../research/ender_radius_bridge/PHASE61_VERIFICATION.md).
 [Human proof](../research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md).
 API/audit controls pass; the local full negative suite is INCOMPLETE after
-its existing120-second multiplicity limit, with no rerun. New CI is pending.
+its existing120-second multiplicity limit, with no rerun. Independent Linux
+CI40403267176 at b4cff27 passes the complete production suite/security.
 No arithmetic B, higher-class-number cutoff or new semantic review follows.
 
 

@@ -1,15 +1,23 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Living update: 26 October 2026, through preregistered Phase 61;
+**Living update: 26 October 2026, through preregistered Phase 62;
 original accounting began after externally merged PR #20
 (`main` at `8ab2be0`).** This updates, but does not rewrite, the
 [earlier frozen audit](TAO_OBJECTIVE_AUDIT.md) at `4c034f9`.
+
+Phase62 checks the missing zero-row factorization and a conditional repair
+of the two-class constant: the principal form contributes no prime points
+on that row, so total allowance2(h-1)<=h when h<=2. The nonzero-row and
+representation-count inputs remain obligations; no count B or numerical
+range is delivered. This refines the negative result without suppressing it.
+[Human accounting](research/ender_radius_bridge/TWO_CLASS_AXIS_GUIDE.md).
 
 Phase61 integrates the excluded-prime assembly into production and proves
 the canonical log(p)/p count-to-loss conversion. This advances formal reuse
 (objective4) and offers a supplementary local-to-global interface (objective6).
 Local API/audit controls pass but the full negative suite is incomplete
-at its120-second multiplicity cap; exact-head CI remains separate.
+at its120-second multiplicity cap; the separate pinned Linux run40403267176
+at b4cff27 passes the full production suite and security checks.
 It supplies no arithmetic count bound or new higher-class-number range
 (objective8), and changes no objective to complete. The per-form negative
 result remains preserved (objective7). [Human bridge](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md).
@@ -280,7 +288,7 @@ was posted in this cycle.
 | 2 | Best efforts to optimize the constant | **Further conservative improvement; no optimality claim** | Sharper log weights lower the direct cutoff from62.5 to50 billion (20%), half the100b checkpoint; the original was700b. Same determinant/radius/valuation exponents. Still much larger than source claims in the frozen [comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md), which were not independently replayed. Earlier failures remain preserved. |
 | 3 | Threshold low enough for direct computation | **Complete finite certificate supplied for the canonical field family** | The original remaining interval is covered by quotient/remainder, eleven complete seed proofs and all785 quotient positions. With the cutoff and nine positive cases, `imaginaryQuadratic_classNumber_one_iff` has no range or certificate premise. Exact-head CI and semantic-review status must accompany this claim. |
 | 4 | High-quality Lean formalization, perhaps upstreamable | **Canonical iff and abstract-field cutoff connected; external quality judgment open** | Actual class number/discriminant, normalized-generator existence, universal imaginary-quadratic cutoff, canonical finite exclusion and all nine positives are supplied. No full-classification announcement is made. Independent human semantic/API review and Mathlib acceptance remain open. See the [claim map](lean/FORMALIZATION.md). |
-| 5 | Compare strengths of different writeups | **Bounded controlled comparison supplied; broad objective partial** | [Phase40](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) compares two frozen complete same-route manuscripts with our proof head across parameter, analytic threshold, finite finish, rank, normalization, inputs and review. Original-byte source hashes and recency controls are recorded. External results are source claims, not newly audited or replayed; this is not an all-writeup optimized survey. [Prior art](PRIOR_ART.md) remains a frozen historical note. |
+| 5 | Compare strengths of different writeups | **Bounded controlled comparison supplied; broad objective partial** | [Phase40](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) compares two frozen complete same-route manuscripts with our proof head across parameter, analytic threshold, finite finish, rank, normalization, inputs and review. Original-byte source hashes and recency controls are recorded. External results are source claims, not newly audited or replayed; this is not an all-writeup optimized survey. A [26October pinned-source refresh](METHOD_COMPARISON_CURRENT.md) adds the later QRH-based formalization and hybrid-closure reports, without replaying them. [Prior art](PRIOR_ART.md) retains its dated historical body. |
 | 6 | Spur new arguments or arrangements | **Reusable arrangement, no novelty claim** | BEAN-to-Ender changes the prime input. Four fixed prime-log constants and normalized affine envelopes now yield a checked universal odd cutoff without replaying 249 more interval comparisons. This is an arrangement within the credited Green/twinheterodox route, not a claim of a new mathematical method. |
 | 7 | Preserve failed attempts and negative results | **Documented internally, with a new scoped boundary failure** | [Phase60](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md) refutes a suggested per-form count justification; the aggregate/h<=2 conclusion is not thereby refuted. Its fixed case and raw records, earlier reviews/failed guards, both Phase59 proof failures and the Phase61 cast-proof failure are preserved. No repair campaign or external scientific review is inferred. |
 | 8 | Help higher class-number problems | **Conditional bridge only; no new verified range** | [Phase61](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md) integrates the actual-Gram budget into production and discharges the universal kernel/weight inputs; an excluded-prime prefix bound B remains an arithmetic hypothesis. No class-number-at-most-two count bound or numerical exclusion is proved; the historical [review brief](REVIEW_BRIEF_2.md) remains unreviewed. The [Phase60 diagnostic](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md) identifies a per-form justification gap that must be resolved before reusing the old input. |
@@ -317,6 +325,7 @@ completion is separately registered and separately costed.
 
 | Result | Evidence class | Exact gain—and boundary |
 |---|---|---|
+| The principal axis saves the two-class counting constant. | **Standalone Lean factorization and conditional finite accounting** | [Phase62](research/ender_radius_bridge/TWO_CLASS_AXIS_GUIDE.md) proves at most2 prime-axis points per form and none for the principal form; 2(h-1)<=h for h<=2. Nonzero-row geometry and four-representation inputs are still needed; no actual count B or numerical range is delivered. |
 | Counts of excluded primes become an explicit loss on the same determinant. | **Production Lean theorem and compiled dependency audit** | [Phase61](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md) proves 2pF<=R(R-1)S and uses the decreasing log(p)/p kernel with finite Abel summation. The remaining input is an arithmetic prefix bound B; no higher-class-number range, new cutoff or sharpness claim. |
 | Exact staircase weight from counting by column levels. | **Local Lean identity and guard controls** | [Phase57](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) proves6F=S(S-1)(3R-p(S+1)) for p>0 and p(S-1)<=R. It counts the original weight, including partially filled rows, and preserves the old unguarded-polynomial falsifier. No new valuation, cutoff, measured speedup or novelty claim. |
 | Recovering omitted prime mass yields a fixed normalized gain and lower endpoint. | **Local Lean count, actual-field cutoff and dependency audit** | [Phases52–54](research/ender_radius_bridge/RECOVERED_CUTOFF_GUIDE.md) retain the original determinant weights and restore exact3/5 terms. Saturated rows give at least3/50 after normalization; all endpoint guards compose at500^4. No new prime exponent, optimality or independent review is inferred. |
