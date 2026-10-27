@@ -1,5 +1,20 @@
 # Current claim-to-Lean map
 
+Standalone `LeastNorm.bounded_class_least_primitive` assumes squarefree
+D=3mod4 and actual classNumber of the odd quadratic field<=2. For each
+actual class it constructs one bounded nonzero ideal J and an actual
+nonzero z with |Norm(z)|<=N(J)^2, least norm among nonzero elements of J,
+and gcd(e.repr z 0,e.repr z 1)=1 for EVERY actual integral basis e of J.
+Nat well-ordering and ambient norm homogeneity prove those properties;
+the caller supplies neither minimality nor primitivity. The minimum need
+not generate J squared. Three local invocations FAIL/FAIL/PASS changed
+only the unit control; nine public types/main proof/reporting unchanged.
+Final audit12/12/0, standard three axioms. All attempt slots consumed;
+no rerun. Outside root/CI. [Human proof](../research/ender_radius_bridge/LEAST_NORM_GUIDE.md)
+and [verification](../research/ender_radius_bridge/PHASE76_VERIFICATION.md).
+Basis completion and controlled leading coefficient remain unproved;
+the stopped Phase75 candidate below is not repaired or accepted.
+
 Phase75's candidate `ControlledBasis.controlled_basis_of_norm_square`
 and `controlled_class_basis` are **not accepted theorems**. Their sole
 invocation hit the default 200000-heartbeat resource limit and ended

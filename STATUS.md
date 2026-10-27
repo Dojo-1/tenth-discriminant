@@ -1,5 +1,18 @@
 # Status — 2026-10-27
 
+## Phase76: least actual norm gives primitivity in every basis
+
+A new well-ordering construction chooses a least-norm nonzero element
+of each bounded actual class representative under h<=2. Its norm magnitude
+is at most N(J)^2, and its coordinates have gcd one in every integral
+basis of J. Ambient degree-two norm scaling supplies the contradiction
+to any larger gcd. FAIL/FAIL/PASS repaired only the unit control; all nine
+public types and main proof stayed unchanged. Audit12/12/0, standard three
+axioms; all12 raw files preserved. [Human proof](research/ender_radius_bridge/LEAST_NORM_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE76_VERIFICATION.md).
+Outside production CI. Stopped75 below is unchanged; basis completion,
+leading-coefficient identification, class-wide B/even chart/new range remain.
+
 ## Phase75: controlled-basis attempt stopped; vector theorem remains current
 
 The registered actual-basis/leading-coefficient target failed in its sole
