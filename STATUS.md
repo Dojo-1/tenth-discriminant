@@ -1,5 +1,17 @@
 # Status — 2026-10-27
 
+## Phase75: controlled-basis attempt stopped; vector theorem remains current
+
+The registered actual-basis/leading-coefficient target failed in its sole
+39.4407757-second invocation. Lean reached the default 200000-heartbeat
+limit during witness assembly; the final namespace audit rejected an
+unavailable project theorem. Other proof-assembly errors are preserved.
+The resource-stop rule forbids repair or rerun in this campaign. No
+controlled-basis main theorem or partial coefficient bound is accepted.
+[Human explanation](research/ender_radius_bridge/CONTROLLED_BASIS_ATTEMPT.md)
+and [failure verification](research/ender_radius_bridge/PHASE75_VERIFICATION.md).
+Phase74 below remains the latest accepted local bridge: a controlled vector.
+
 ## Phase74: class-group symmetry gives a controlled vector
 
 Under actual class number at most two, every class is self-inverse.

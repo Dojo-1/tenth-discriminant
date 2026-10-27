@@ -1,0 +1,90 @@
+{
+  "phase": 75,
+  "status": "STOPPED_FAILURE_INTERNAL_HEARTBEAT_NO_RETRY",
+  "base": "9996c826048d171f4b02e099b2058a2fc63592b3",
+  "registered_commit": "f589ca59151f3eb551f43ec25b2aaff5381bd7ab",
+  "builds": [
+    {
+      "phase": 75,
+      "mode": "build",
+      "scope": "Actual controlled ideal basis and coefficient bound in odd h<=2 chart; no new cutoff",
+      "source_sha256": "7ac828178e9adcd4d2d062e2118f37275a682981ab68f497caeed07882dd4ba3",
+      "source_snapshot": "PHASE75_build_20261027005617179.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 39.4407757,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2950885376,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase75ControlledBasis.lean"
+      ],
+      "stdout": "PHASE75_build_20261027005617179.stdout.log",
+      "stderr": "PHASE75_build_20261027005617179.stderr.log"
+    }
+  ],
+  "internal_heartbeat_stop": true,
+  "outer_resource_threshold_reached": false,
+  "retry_allowed": false,
+  "accepted_main_roots": [],
+  "candidate_public_types": [
+    "primitive_basis",
+    "quadratic_scaling",
+    "controlled_basis_of_norm_square",
+    "controlled_class_basis",
+    "primitive_control",
+    "division_control",
+    "unit_ideal_control",
+    "shear_control"
+  ],
+  "sha256": {
+    "PHASE75_PROTOCOL.md": "fd2de911af1a969e52400f851861f7e18715f206628be167c2c8195337984e9a",
+    "run_phase75.ps1": "3204900c225435f7729919821fa06bc56842a1550d5c7bf32aeb162184de7e2b",
+    "Phase75ControlledBasis.lean": "7ac828178e9adcd4d2d062e2118f37275a682981ab68f497caeed07882dd4ba3",
+    "verify_phase75_results.py": "ed5f96b86d9d640df3e1919eddc5af4d999ce926e32e7c1b3fc59c08c4b657ed"
+  },
+  "raw_archive": {
+    "path": "PHASE75_RAW.zip",
+    "members": 4,
+    "sha256": "3dad34be0e30eef0b5d1a9a676b51429fd2e292a6d4858b1d02aae1b12b9b24f"
+  },
+  "raw_sha256": {
+    "PHASE75_build_20261027005617179.source.lean": "7ac828178e9adcd4d2d062e2118f37275a682981ab68f497caeed07882dd4ba3",
+    "PHASE75_build_20261027005617179.stdout.log": "ff416a27ac330017d04d34a75289b063ddf5337541b1772274a003ea0badf314",
+    "PHASE75_build_20261027005617179.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE75_build_20261027005617179.result.json": "eff43a5ae36998d4e60c1294e46ed762353254119adbbb294f3dfe151e55313f"
+  },
+  "preserved_sha256": {
+    "lean/TenthDiscriminant.lean": "82cb68e34226f42d5fbbbd82154075b69eff0c84b7dec833e37eaaa4e9d16fca",
+    "lean/TenthDiscriminant/IdealCoordinates.lean": "da6e3fb9c59d27e53b7750e1ddedfba88bb51a728b79f23cd3e22be3eb48635e",
+    "research/ender_radius_bridge/Phase69IdealNormForm.lean": "dec6659224f4bb56944e86bb6567cb39252e2cea6ee40e76b44a714ad283de58",
+    "research/ender_radius_bridge/PHASE69_RESULTS.json": "b3eba890761cc17655b652a59960d7e675f6d773862d48d032d7601b11d4a890",
+    "research/ender_radius_bridge/PHASE69_RAW.zip": "3e1cc041754fb2df0684bb079e34debc9143dde3433aa65320dbb4cac6b45e95",
+    "research/ender_radius_bridge/Phase73PrincipalBasis.lean": "6d4337184b48f87732f460e646881b71e35823765906d753edf9b3db8cdb13b7",
+    "research/ender_radius_bridge/PHASE73_RESULTS.json": "ba1e1982d7c91f3b5e0348db3860f1c4d2c61986ebe0ab49a9096d2980c6f553",
+    "research/ender_radius_bridge/PHASE73_RAW.zip": "22f964b56e65d0d9063b999fd9875b2690237daab97f7dc577fd1d7cd7e309f8",
+    "research/ender_radius_bridge/Phase74ClassSquare.lean": "81c09dbb7e821be57f1b040f952ba59cea602507d3d2d6399ecde14e8419061d",
+    "research/ender_radius_bridge/PHASE74_RESULTS.json": "82f75cc1d2a785e6d122b57838e31501850dfa7fd856cb1a1192e8f20058f31b",
+    "research/ender_radius_bridge/PHASE74_RAW.zip": "7b2cfd17920b4a3238307d19bdfa6d924bf793e837deb6ef12f77b6f74c67e2a"
+  },
+  "failure_modes": [
+    "primitive basis simplification leaves a reflexive goal",
+    "incorrect Int.natCast_natAbs.symm reference syntax",
+    "actual normalized-form witness assembly reaches default200000heartbeat limit at isDefEq/whnf",
+    "unit ideal Squarefree7 control unfinished",
+    "PROJECT_AXIOM namespace audit rejection"
+  ],
+  "limits": [
+    "Resource stop: no repair/rerun/heartbeat increase allowed in this campaign.",
+    "Printed roots are not accepted proofs. No partial main theorem claimed.",
+    "Existing74 controlled vector remains accepted locally; controlled actual basis and coefficient bound remain open.",
+    "No production changes, new B/range/classification/novelty/review/upstream/Tao claims."
+  ]
+}

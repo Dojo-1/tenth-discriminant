@@ -1,5 +1,14 @@
 # Current claim-to-Lean map
 
+Phase75's candidate `ControlledBasis.controlled_basis_of_norm_square`
+and `controlled_class_basis` are **not accepted theorems**. Their sole
+invocation hit the default 200000-heartbeat resource limit and ended
+with namespace PROJECT_AXIOM rejection. The registered campaign is
+stopped: no repair/rerun/limit increase. Printed signatures do not close
+the basis/leading-coefficient gap. [Preserved failure](../research/ender_radius_bridge/PHASE75_VERIFICATION.md)
+and [human argument/gap](../research/ender_radius_bridge/CONTROLLED_BASIS_ATTEMPT.md).
+The accepted local Phase74 result below is unchanged.
+
 Standalone `ClassSquare.bounded_class_vector` assumes actual
 `NumberField.classNumber K <= 2`. For every actual class C it chooses
 an actual nonzero integral ideal J with mk0 J=C and norm bounded by the

@@ -36,7 +36,8 @@ One must divide out the gcd of its two coordinates, prove the resulting
 vector stays in the ideal and does not increase its norm, then extend it
 to an integral basis using Bezout's identity. Only after those steps may
 we claim a controlled leading coefficient. They have not been checked
-in this campaign.
+in this campaign. A [later bounded attempt](CONTROLLED_BASIS_ATTEMPT.md)
+hit its resource limit and is preserved as failure; it does not close this gap.
 
 The order-three control checks 1!=-1 in ZMod3: self-inversion is special
 to the at-most-two hypothesis. Other controls exclude the zero vector,
