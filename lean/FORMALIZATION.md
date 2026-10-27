@@ -1,5 +1,23 @@
 # Current claim-to-Lean map
 
+Current integrated `OddMinkowski.actual_minkowski` proves actual
+ClassFiber.normBound K=(2/pi)*sqrt(D) for squarefree D=3mod4. It derives
+no real embedding, exactly one complex place and uses half_actual_discr
+for the maximal integer ring. `normalized_count_kernel` and
+`normalized_actual_gram_budget` replace the actual M(K) in the accepted
+closed bound by that expression. The resulting chartCost depends only
+on D and L; all original squarefree/actualh<=2/finiteoddprime/radius guards
+remain. No supplied discriminant identity, M equality, count or coverage.
+ClosedKernel mathematics/reporting is exact83transport; only first import
+and relocation of the final input command differ. Root/input/audit pass;
+185modules,5103logical/4327theorems/16993runtime, standard3axioms.
+Fresh actualM/normalizedGram closures47300/57669 exclude the same34roots.
+[Human proof](../research/ender_radius_bridge/ODD_MINKOWSKI_GUIDE.md) and
+[verification](../research/ender_radius_bridge/PHASE84_VERIFICATION.md).
+No numerical cutoff or arbitrary-field/even-chart transport is supplied;
+external exact-head CI/human review remain open. Earlier entries below
+preserve their checkpoint scopes;83 is now integrated through84.
+
 Standalone `ClosedKernel.closed_actual_gram_budget` now replaces82's
 finite kernel by `closedCost D (ClassFiber.normBound K) L`, explicitly
 (pi/sqrtD+2sqrt(M(K)/(3D)))*(log3+logL*(1+logL))+log3/6.

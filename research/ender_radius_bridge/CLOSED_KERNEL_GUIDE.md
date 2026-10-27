@@ -54,3 +54,9 @@ it is not claimed sharp. The class-number-one cutoff remains50billion.
 
 [Exact source and verification](PHASE83_VERIFICATION.md) preserve the failed
 first normalization, passing repair, controls and dependency exclusions.
+
+Phase84 update: the accepted closed-kernel mathematics is now integrated.
+The actual odd-field Minkowski term is proved equal to2sqrt(D)/pi and
+substituted into the original-Gram budget. [Current human guide](ODD_MINKOWSKI_GUIDE.md).
+Earlier open-M(K) language records the preceding checkpoint; arbitrary-
+field/even transport and a new numerical cutoff remain open.

@@ -106,3 +106,5 @@ import TenthDiscriminant.ActualPrimeAxis
 import TenthDiscriminant.ControlledPrimeFamily
 import TenthDiscriminant.ClassAggregation
 import TenthDiscriminant.SplitPrimeBudget
+import TenthDiscriminant.ClosedKernel
+import TenthDiscriminant.OddMinkowski

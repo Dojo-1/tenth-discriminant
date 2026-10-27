@@ -55,3 +55,9 @@ Phase83 update: a separately registered standalone proof now supplies the
 closed kernel estimate and composes it with this same inequality. The
 paragraph above records the82 checkpoint. [Closed-bound explanation](CLOSED_KERNEL_GUIDE.md).
 Minkowski/field/even transport and a new numerical cutoff remain open.
+
+Phase84 update: the accepted closed-kernel mathematics is now integrated.
+The actual odd-field Minkowski term is proved equal to2sqrt(D)/pi and
+substituted into the original-Gram budget. [Current human guide](ODD_MINKOWSKI_GUIDE.md).
+Earlier open-M(K) language records the preceding checkpoint; arbitrary-
+field/even transport and a new numerical cutoff remain open.

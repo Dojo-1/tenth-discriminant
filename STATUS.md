@@ -1,5 +1,24 @@
 # Status — 2026-10-27
 
+## Phase84: the actual odd-field Minkowski term is normalized
+
+The integrated theorem proves M(K)=(2/pi)*sqrt(D) for the actual
+squarefree odd chart. Degree two, absence of real embeddings and the
+maximal-integral-basis discriminant identity all concern the SAME field.
+It substitutes this identity into the closed weighted budget on the
+original Gram. [Human explanation](research/ender_radius_bridge/ODD_MINKOWSKI_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE84_VERIFICATION.md).
+The accepted83math is integrated unchanged apart from its first import
+and relocation of the standalone input checker. Target FAIL/PASS repairs
+only polynomial evaluation and numeric-control scaffolding; the first
+D3 control did not elaborate and is checked only in the final version.
+Root/input/audit firstPASS;185modules,5103logical/4327theorem declarations,
+standard3axioms. Fresh closures47300/57669 exclude the same34older inputs.
+The field-dependent term is closed for this odd chart; numerical strict
+cutoff and arbitrary-field/even-chart transport remain open. External
+exact-head CI and independent human review are not established.
+Earlier entries below are historical checkpoints.
+
 ## Phase83: the weighted loss now has a closed estimate
 
 A standalone Lean theorem bounds the finite kernel explicitly by
