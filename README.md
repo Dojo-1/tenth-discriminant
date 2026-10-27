@@ -31,7 +31,7 @@ Lean checks the encoded theorem and its dependencies; the audit checks for incom
 
 Independent human semantic review remains open. One bounded AI review covers the final **50-billion** proof and exact staircase lemma at `63be64b`. It re-derived new local calculations and source-traced inherited machinery; **Lean/CI were not rerun by that reviewer**. [Review and limitations](research/ender_radius_bridge/PHASE58_VERIFICATION.md).
 
-The repository also contains a separate canonical-family classification theorem and finite certificates. Their scope is explained in the [classification guide](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md); this README makes no full-classification announcement. A new [local odd-chart bound](research/ender_radius_bridge/ODD_TWO_CLASS_BOUND_GUIDE.md) proves `D < 2^50` for class number at most two; external CI and the even/arbitrary-field extensions remain open. Mathlib acceptance and optimal constants remain open.
+The repository also contains a separate canonical-family classification theorem and finite certificates. Their scope is explained in the [classification guide](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md); this README makes no full-classification announcement. A new [local field bound](research/ender_radius_bridge/ODD_FIELD_TWO_CLASS_GUIDE.md) proves absolute discriminant `< 2^50` for any imaginary quadratic field with odd discriminant and class number at most two; external CI and the even-discriminant extension remain open. Mathlib acceptance and optimal constants remain open.
 
 ## Explore or check it yourself
 
@@ -40,7 +40,7 @@ The repository also contains a separate canonical-family classification theorem 
 | [Tao's objectives](TAO_OBJECTIVES_CURRENT.md) | Achievements, limitations and side discoveries |
 | [Human proof guide](lean/HUMAN_GUIDE.md) | Why the determinant is positive |
 | [Exact staircase count](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) | A double sum understood by counting the same boxes in another order |
-| [Latest local proof](research/ender_radius_bridge/PHASE87_VERIFICATION.md) · [Bounded test](research/ender_radius_bridge/PHASE85_VERIFICATION.md) | Checked statements and numerical feasibility kept separate |
+| [Latest local proof](research/ender_radius_bridge/PHASE88_VERIFICATION.md) · [Bounded test](research/ender_radius_bridge/PHASE85_VERIFICATION.md) | Checked statements and numerical feasibility kept separate |
 | [Research history](STATUS.md) | Earlier checkpoints, failed attempts and corrections |
 
 With the pinned Lean toolchain and dependencies installed, the core checks are:

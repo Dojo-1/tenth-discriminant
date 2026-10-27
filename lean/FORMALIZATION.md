@@ -1,5 +1,24 @@
 # Current claim-to-Lean map
 
+Current field theorem: `OddFieldTwoClass.arbitrary_odd_discriminant_bound`
+proves `(NumberField.discr K).natAbs < 2^50` for ANY number field K of
+rational degree2, totally complex, with actual class number<=2 and ODD
+actual absolute field discriminant. No supplied generator/equivalence,
+chart, squarefree parameter or numerical margin is a premise.
+`field_classNumber_eq` proves equality of actual class numbers under ANY
+rational field isomorphism. It constructs a bijection of ideal classes,
+with explicit representative independence and inverse; a group
+multiplication-preservation theorem is not claimed here. No PID or old
+class-number-one helper is used. [Human explanation](../research/ender_radius_bridge/ODD_FIELD_TWO_CLASS_GUIDE.md)
+and [exact evidence](../research/ender_radius_bridge/PHASE88_VERIFICATION.md).
+Pinned local target/root/input/whole audit pass:187modules,5165logical/
+4384theorems/16999runtime auxiliaries, standard3axioms only. Fresh closures
+29583/60577 exclude35listed old inputs. Both failed identity controls are
+preserved; only that control proof was repaired. All3target slots consumed.
+Even discriminants, external exact-head CI and independent human review
+remain open. Argon's review has not landed. The h1field cutoff stays50billion.
+The entries below preserve earlier checkpoint scopes.
+
 Current production theorem: `UniformTwoClass.odd_classNumber_gt_two`
 is imported by the main root. For every natural D>=2^50, squarefree and
 D=3mod4, it proves actual classNumber(QuadraticField((D+1)/4))>2.

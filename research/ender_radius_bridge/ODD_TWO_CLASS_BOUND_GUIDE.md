@@ -73,3 +73,7 @@ Integration update (Phase87): the mathematical source, controls and reports
 were transported exactly into the main root. The full local build,
 input check and whole-library audit passed on their first invocations.
 The [standalone record](PHASE86_VERIFICATION.md) retains both failed attempts.
+
+The [actual-field bridge](ODD_FIELD_TWO_CLASS_GUIDE.md) now transports this
+bound to ANY imaginary quadratic field with odd actual discriminant.
+The even-discriminant branch remains open. See [Phase88](PHASE88_VERIFICATION.md).

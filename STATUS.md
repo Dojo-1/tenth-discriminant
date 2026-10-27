@@ -1,5 +1,26 @@
 # Status — 2026-10-27
 
+## Phase88: the odd bound is independent of coordinates
+
+For ANY imaginary quadratic number field K with odd actual absolute
+field discriminant and class number at most two, Lean now proves
+abs(discriminant K)<2^50. The caller supplies no generator, isomorphism,
+chart or squarefree radicand. The new generic lemma proves equality of
+actual class numbers under rational field isomorphism, through a
+representative-independent bijection of ideal classes; no PID assumption
+or class-number-one helper is used. [Human explanation](research/ender_radius_bridge/ODD_FIELD_TWO_CLASS_GUIDE.md)
+and [exact evidence](research/ender_radius_bridge/PHASE88_VERIFICATION.md).
+Target FAIL35.8059275s/FAIL100.5685172s/PASS42.3856978s: only the identity
+control proof changed; all11 theorem types,3definitions and main field
+proofs stayed fixed. All3slots consumed, no rerun. Root25.7633655s,
+input82.378348s and whole audit33.3595419s passed once each.187modules;
+5165logical/4384theorems/16999runtime auxiliaries, standard3axioms.
+Fresh closures29583/60577 exclude35old inputs. Prior evidence is frozen.
+The even-discriminant h<=2 branch, external exact-head CI, independent
+human review and full classification remain open. Argon's review is still
+underway; no report has been assessed. The h1field cutoff stays50billion.
+Earlier sections below are historical checkpoints.
+
 ## Phase87: the all-range odd two-class bound is integrated
 
 The accepted86mathematics, controls and reports are now in the main Lean

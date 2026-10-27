@@ -109,3 +109,4 @@ import TenthDiscriminant.SplitPrimeBudget
 import TenthDiscriminant.ClosedKernel
 import TenthDiscriminant.OddMinkowski
 import TenthDiscriminant.UniformTwoClass
+import TenthDiscriminant.OddFieldTwoClass
