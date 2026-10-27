@@ -5,7 +5,7 @@ field-discriminant bound is 50 billion.** Class number one means unique factoriz
 integers. The geometric count is proved on the draft branch; the
 higher-class-number numerical bound remains open. This page tracks
 Tao's [challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)
-through proof source `70f9217` and Phase72/69 outcomes, 27 October 2026. No full-classification
+through proof source `70f9217` and Phase73/69 outcomes, 27 October 2026. No full-classification
 announcement, novelty, optimality or independent human review is claimed.
 
 Lean checks encoded statements. A source claim, a checked theorem and a
@@ -23,7 +23,7 @@ spells out assumptions and the exact statements.
 | 5 | Compare different writeups | **Partial:** frozen [same-route comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) and [current source comparison](METHOD_COMPARISON_CURRENT.md). External proofs were not independently replayed. |
 | 6 | Stimulate new arguments or arrangements | **Reusable arrangements:** factorial prime mass, exact staircase weights and geometric operators, within the credited route. No novelty claim. |
 | 7 | Preserve and report negative results | **Preserved:** failed attempts and a [per-form counting counterexample](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md). It does not refute the aggregate h<=2 claim. |
-| 8 | Help higher class-number problems | **No new verified range.** Odd-chart multiplicity and actual ideal norm-form coordinates/geometric count are integrated and checked locally. Uniform leading bounds, principal-class calibration, even-chart and field-discriminant transport still block a usable arithmetic B. |
+| 8 | Help higher class-number problems | **No new verified range.** Odd-chart multiplicity and actual ideal norm-form coordinates/geometric count are integrated and checked locally. Principal-class calibration is checked separately locally; other-class leading bounds, aggregation, even-chart and field-discriminant transport still block a usable arithmetic B. |
 | 9 | Disclose AI use | **Disclosed** in the [README](README.md) and research/review records. Disclosure is not validation. |
 | 10 | Post a repository link and human summary | **Not posted.** The [AI-prepared brief](TAO_REPLY_BRIEF.md) awaits human revision and a posting decision. No submission permalink exists in our records. |
 | 11 | Independent due diligence | **Partial:** one bounded AI [review](research/ender_radius_bridge/PHASE58_VERIFICATION.md) at `63be64b`/50 billion. That reviewer did not rerun Lean/CI; later geometry is outside its scope. |
@@ -40,7 +40,7 @@ spells out assumptions and the exact statements.
 | Fixed ideal-class norm lattice | Integrated local [class-fiber lifting](research/ender_radius_bridge/CLASS_FIBER_GUIDE.md) proves (z)=IJ, norm multiplication and exact recovery, with one bounded J per class. The actual basis/form/count bridge is now checked locally; uniform coefficient control remains. |
 | Odd-chart finite multiplicity | Integrated local [four-representation construction](research/ender_radius_bridge/RESIDUE_MULTIPLICITY_GUIDE.md) gives a selected set of4*card(P) distinct class-labelled actual norm elements. Actual coordinates/count are now checked locally; a uniform coefficient bound is still missing. |
 | Actual ideal coordinates and count | [Constructed basis/form](research/ender_radius_bridge/IDEAL_COORDINATE_GUIDE.md) has integer coefficients, a>0, exact discriminant D and actual norm identity; finite element sets satisfy the off-axis geometric bound. No uniform bound on a or new cutoff. |
-| Prime-axis accounting | Standalone Lean gives at most two prime points, none when a=1; two-class aggregation remains conditional on representation inputs. [Guide](research/ender_radius_bridge/TWO_CLASS_AXIS_GUIDE.md). |
+| Prime-axis accounting | Pure bounds give at most2 axis prime points. The [actual principal-class calibration](research/ender_radius_bridge/PRINCIPAL_BASIS_GUIDE.md) now constructs a=1 and proves no prime-normalized axis elements locally. Two-class aggregation and other-class coefficient control remain. |
 | Limits that prevented overclaiming | A radial O(1/R) ceiling, the per-form zero-row failure and the [stopped coordinate attempt](research/ender_radius_bridge/PHASE69_VERIFICATION.md) remain preserved. [History and controls](STATUS.md). |
 
 ## Verification and the next decisive step
@@ -55,8 +55,8 @@ keeps source versions, checks and review distinct. Passing code does not
 establish human review. The later arithmetic production roots pass local
 full build/audit at `2ec4507`; their [new-head CI remains separate](research/ender_radius_bridge/PHASE72_VERIFICATION.md).
 
-The next arithmetic bridge must control the leading coefficient, calibrate
-the principal class, and complete even-chart transport. The local
+The next arithmetic bridge must control other-class leading coefficients,
+assemble the class-wide count, and complete even-chart transport. The local
 parameter-divisor bound still needs field-discriminant transport.
 [PR30](https://github.com/Dojo-1/tenth-discriminant/pull/30) has completed
 pinned CI/security checks; merging still requires explicit authorization.

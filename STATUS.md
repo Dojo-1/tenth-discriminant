@@ -1,5 +1,17 @@
 # Status — 2026-10-27
 
+## Phase73: actual principal-class a=1 and full prime-point count
+
+A standalone local theorem uses only this ideal's ClassGroup.mk0 J=1,
+not global field class number one. Generator scaling constructs an actual
+basis with normalized coefficients1,1,(D+1)/4. Prime-normalized norm forces
+nonzero second coordinate, so the full finite count needs no caller axis
+guard. Attempts FAIL/PASS/PASS preserve all8 public types/2 definitions;
+last change prints FormData only. Audit15/13/0, standard3axioms. Outside
+production CI; other-class coefficient bounds, aggregation/even chart and
+usable B remain open. [Human proof](research/ender_radius_bridge/PRINCIPAL_BASIS_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE73_VERIFICATION.md).
+
 ## Phase72: actual ideal coordinates now reach the geometric count
 
 A separately registered basis-generic helper71 and composition72 construct

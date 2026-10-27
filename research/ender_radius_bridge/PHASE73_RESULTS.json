@@ -1,0 +1,144 @@
+{
+  "phase": 73,
+  "status": "STANDALONE_LOCAL_ACTUAL_IDENTITY_CLASS_A1_AND_FULL_PRIME_POINT_COUNT_PASS",
+  "base": "e77a446aaed709c04afe38b1dc846e4a8f6386cc",
+  "registered_commit": "e68e931ebe5280d54caaa3b54fbdd11897d48ac7",
+  "target_seconds": "101.892412699999996",
+  "builds": [
+    {
+      "phase": 73,
+      "mode": "build",
+      "scope": "Actual principal-class calibrated basis and prime-point count; no global class-number-one or other-class coefficient bound",
+      "source_sha256": "f4e49efe8991025685e9fe17f27d541004027325532c67f0a02694bfef0e2531",
+      "source_snapshot": "PHASE73_build_20261027003446579.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 32.2674732,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3199889408,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase73PrincipalBasis.lean"
+      ],
+      "stdout": "PHASE73_build_20261027003446579.stdout.log",
+      "stderr": "PHASE73_build_20261027003446579.stderr.log"
+    },
+    {
+      "phase": 73,
+      "mode": "build",
+      "scope": "Actual principal-class calibrated basis and prime-point count; no global class-number-one or other-class coefficient bound",
+      "source_sha256": "39b51ce940148cb01f880f2d9d1a6bb18e7f782b6fd4455b6f3c092ff55281d8",
+      "source_snapshot": "PHASE73_build_20261027003625083.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 33.174409499999996,
+      "cumulative_before_seconds": 32.2674732,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3203887104,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase73PrincipalBasis.lean"
+      ],
+      "stdout": "PHASE73_build_20261027003625083.stdout.log",
+      "stderr": "PHASE73_build_20261027003625083.stderr.log"
+    },
+    {
+      "phase": 73,
+      "mode": "build",
+      "scope": "Actual principal-class calibrated basis and prime-point count; no global class-number-one or other-class coefficient bound",
+      "source_sha256": "6d4337184b48f87732f460e646881b71e35823765906d753edf9b3db8cdb13b7",
+      "source_snapshot": "PHASE73_build_20261027003759025.source.lean",
+      "attempt": 3,
+      "exit_code": 0,
+      "elapsed_seconds": 36.45053,
+      "cumulative_before_seconds": 65.4418827,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3204874240,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase73PrincipalBasis.lean"
+      ],
+      "stdout": "PHASE73_build_20261027003759025.stdout.log",
+      "stderr": "PHASE73_build_20261027003759025.stderr.log"
+    }
+  ],
+  "public_theorems": [
+    "scaled_basis",
+    "principal_form_of_class",
+    "prime_axis_nonzero",
+    "principal_class_form_and_prime_count",
+    "zero_not_prime_normalized",
+    "unit_ideal_control",
+    "proper_ideal_control",
+    "uncalibrated_axis_control"
+  ],
+  "public_definitions": [
+    "PrimeNormalized",
+    "twoIdeal"
+  ],
+  "namespace_audit": {
+    "logical": 15,
+    "theorems": 13,
+    "runtime_only": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "sha256": {
+    "PHASE73_PROTOCOL.md": "70e6b805c51b10b7988e997b5266c3365fd6c79de460b2b6230401ab4bf59cd9",
+    "Phase73PrincipalBasis.lean": "6d4337184b48f87732f460e646881b71e35823765906d753edf9b3db8cdb13b7",
+    "run_phase73.ps1": "1b1a4bff521ec9f8ae29cebad36477d5478015a97ff62b2e76029888b84d3fcd"
+  },
+  "raw_archive": {
+    "path": "PHASE73_RAW.zip",
+    "sha256": "22f964b56e65d0d9063b999fd9875b2690237daab97f7dc577fd1d7cd7e309f8",
+    "members": 12
+  },
+  "raw_sha256": {
+    "PHASE73_build_20261027003446579.source.lean": "f4e49efe8991025685e9fe17f27d541004027325532c67f0a02694bfef0e2531",
+    "PHASE73_build_20261027003446579.stdout.log": "59c8e12ec26b2aa6531fd804ef3f143b7b4ec47df4630f34bbde91b0d45733c4",
+    "PHASE73_build_20261027003446579.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE73_build_20261027003446579.result.json": "094ec5df237baae75a999b728190859f3ca1ee631bf41eedde5ff1ebe21c10f3",
+    "PHASE73_build_20261027003625083.source.lean": "39b51ce940148cb01f880f2d9d1a6bb18e7f782b6fd4455b6f3c092ff55281d8",
+    "PHASE73_build_20261027003625083.stdout.log": "538c6436a9f7827d0434c4f83c3f2ffd51c12ddbcc8a4ad062a45720a7c4dcc3",
+    "PHASE73_build_20261027003625083.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE73_build_20261027003625083.result.json": "85236061e3887cf9f0a69ce109dd273df5bc4e098c2bc2cbff45634ac2bb9931",
+    "PHASE73_build_20261027003759025.source.lean": "6d4337184b48f87732f460e646881b71e35823765906d753edf9b3db8cdb13b7",
+    "PHASE73_build_20261027003759025.stdout.log": "62537101a04aabedf1d83002d880265e38bde811b66cf035286d623685ad96f1",
+    "PHASE73_build_20261027003759025.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE73_build_20261027003759025.result.json": "9904eabdadf188272bfb94187048dee76724012e384fd22c5794d19821621159"
+  },
+  "attempt_history": [
+    "FAIL: absolute/algebra-map normalization, nested constructor, proper-ideal principality witness.",
+    "PASS: explicit normalization and constructors; no target/definition/control-type changes or new global PID assumption.",
+    "PASS: required full FormData print only; all mathematical source before #check identical to attempt2."
+  ],
+  "closed_scope": "For a particular actual nonzero ideal with mk0J=1 in odd maximal-order chart, construct an a=1 calibrated basis and prove prime normalized norm implies nonzero second coordinate, then full finite prime-point count without caller off-axis premise. Not a field class-number-one assumption.",
+  "limits": [
+    "All3invocations consumed; no more target reruns in this cycle.",
+    "Standalone source outside production CI; livePR35run is separate.",
+    "No bound for other classes, primitive short-vector basis, even chart, class-wide B, field/ramification transport or new cutoff.",
+    "No classification/novelty/independent review/upstream claim. No old campaign replay or production/pin/gate changes."
+  ]
+}

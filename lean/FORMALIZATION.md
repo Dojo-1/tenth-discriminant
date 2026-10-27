@@ -1,5 +1,17 @@
 # Current claim-to-Lean map
 
+Standalone `PrincipalBasis.principal_class_form_and_prime_count` now
+constructs a calibrated actual basis for a nonzero identity-class ideal:
+FormData has a=1,b=1,c=(D+1)/4. Actual normalized prime norm then implies
+nonzero second coordinate, and the whole finite prime-point set satisfies
+the a=1 geometric bound without a caller off-axis premise. The assumption
+is ClassGroup.mk0 J=1, not NumberField.classNumber K=1; no global PID is
+installed. All8 public types/2 definitions persist across FAIL/PASS/PASS;
+final print-only run and namespace15/13/0 audit pass with standard3axioms.
+Outside root/CI. Other-class leading bounds and usable B remain open.
+[Human proof](../research/ender_radius_bridge/PRINCIPAL_BASIS_GUIDE.md) and
+[verification](../research/ender_radius_bridge/PHASE73_VERIFICATION.md).
+
 Current Phase72 `IdealCoordinates.actual_ideal_form_and_count` constructs
 an actual integral basis and integer norm form for every nonzero ideal in
 the squarefree odd maximal-order chart, with a>0,4ac-b²=D and actual norm

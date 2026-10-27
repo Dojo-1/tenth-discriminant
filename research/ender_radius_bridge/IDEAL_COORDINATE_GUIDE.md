@@ -53,8 +53,9 @@ The area term is controlled by D; the boundary term remembers the chosen
 basis through a. An arbitrary basis can have a very large a. For example,
 replacing1 by1+k*omega in the D=7 unit basis leaves determinant1 and gives
 leading norm1+k+2k^2. A uniform cutoff needs a proved controlled basis choice.
-The sharper principal-class axis allowance also needs a calibrated basis
-with a=1; the generic chosen-basis theorem does not promise that calibration.
+The generic chosen-basis theorem does not promise a=1. The subsequent
+[principal-class theorem](PRINCIPAL_BASIS_GUIDE.md) now supplies that calibrated
+basis locally, using a generator of the particular identity-class ideal.
 
 The quantitative leading bound, class-wide usable arithmetic B, even chart
 and field-parameter transport remain open. No new cutoff or classification.
