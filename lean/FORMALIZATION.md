@@ -1,5 +1,15 @@
 # Current claim-to-Lean map
 
+Phase85 adds no Lean declaration. Its sealed numerical test evaluates
+m(D)=.159997*logD-4.926-H(D), where
+H(D)=(4/sqrtD+1/sqrt(sqrtD))*(2+logD*(1+logD))+1/3.
+At the sampled endpoint2^50 the interval is positive (>0.07); at2^48 it
+is negative (<-0.21). This does not prove Hmajorization, all-D monotonicity
+or a new cutoff. Those are the next formal obligations. All84production
+sources and their proofs remain unchanged. [Numerical scope](../research/ender_radius_bridge/PHASE85_VERIFICATION.md)
+and [human guide](../research/ender_radius_bridge/TWO_CLASS_FEASIBILITY_GUIDE.md).
+The integrated checked claim-to-Lean map begins below.
+
 Current integrated `OddMinkowski.actual_minkowski` proves actual
 ClassFiber.normBound K=(2/pi)*sqrt(D) for squarefree D=3mod4. It derives
 no real embedding, exactly one complex place and uses half_actual_discr

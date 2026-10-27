@@ -1,6 +1,6 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared, through Phase 84. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
+**AI-prepared, through Phase 85. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
 
 ## Short draft for human revision
 
@@ -27,6 +27,8 @@ The odd-chart extension now chooses one actual bounded ideal and controlled basi
 The local [weighted split-prime bridge](research/ender_radius_bridge/WEIGHTED_SPLIT_GUIDE.md) now joins actual ideal-class counts, four labelled lifts per prime, complete remainder coverage and the log(p)/p weighted loss on the SAME original determinant under odd-chart h<=2. The caller supplies no counting function or coverage assertion. A [standalone closed-kernel theorem](research/ender_radius_bridge/CLOSED_KERNEL_GUIDE.md) now supplies an explicit bound in actual M(K) and composes it with that same inequality. The [integrated odd-field normalization](research/ender_radius_bridge/ODD_MINKOWSKI_GUIDE.md) now proves actual M(K)=2sqrt(D)/pi and removes that field-dependent input. Arbitrary-field/even-chart transport and a strict numerical contradiction remain. No new numerical range or classification follows.
 
 Verification remains versioned: [local Phase82](research/ender_radius_bridge/PHASE82_VERIFICATION.md) records5058logical/4285theorem declarations and fresh dependency checks. Its input run had a nominal182s cap rather than registered180s (actual43.17s); the discrepancy is preserved, and the audit cap was corrected before execution. At84, exact83mathematics is integrated with actualM normalization. Full local root/input/audit checks pass:5103logical/4327theorems and fresh closures excluding the same34old roots. The first normalization/control setup failure is preserved; the final control is checked. [Exact84record](research/ender_radius_bridge/PHASE84_VERIFICATION.md). Earlier reviews and external CI are not transferred. Original stopped attempts remain failures.
+
+A [sealed scalar test](research/ender_radius_bridge/TWO_CLASS_FEASIBILITY_GUIDE.md) now finds a positive conservative margin at2^50 and preserves seven earlier negative samples. Its100/200digit enclosures and controls agree. This is a proof target, not a new cutoff: all-D control and full formal composition remain open. Production84proofs are unchanged.
 
 ## Limits that must travel with the result
 

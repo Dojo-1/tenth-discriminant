@@ -1,5 +1,21 @@
 # Status — 2026-10-27
 
+## Phase85: a numerical proof target, not a new cutoff
+
+One preregistered scalar test found a positive conservative margin at
+2^50 (about 0.07191), while the sample at 2^48 was negative (about -0.21520).
+Exactly 18 fixed points were evaluated at 100 and 200 digits in one invocation.
+At each precision: 7 negative, 11 positive, none unresolved; all 8 controls pass,
+and lower-precision enclosures contain the higher-precision results.
+[Human explanation](research/ender_radius_bridge/TWO_CLASS_FEASIBILITY_GUIDE.md)
+and [exact record](research/ender_radius_bridge/PHASE85_VERIFICATION.md).
+All production proofs and prior evidence are unchanged. This supplies a
+candidate endpoint for the NEXT proof, not an all-D inequality or a new
+class-number bound. Conservative majorization, all-D control and full
+prime-mass/diagonal composition remain to be checked in Lean. The fast
+run produced no memory sample; its recorded zero means unobserved, not zero use.
+The checked class-number-one cutoff remains 50 billion. Earlier entries retain their scopes.
+
 ## Phase84: the actual odd-field Minkowski term is normalized
 
 The integrated theorem proves M(K)=(2/pi)*sqrt(D) for the actual

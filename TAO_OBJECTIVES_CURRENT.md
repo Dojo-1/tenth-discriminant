@@ -5,7 +5,7 @@ field-discriminant bound is 50 billion.** Class number one means unique factoriz
 integers. The geometric count is proved on the draft branch; the
 higher-class-number numerical bound remains open. This page tracks
 Tao's [challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)
-through proof source `70f9217` and integrated Phase84 and preserved75/69 failures, 27 October 2026. No full-classification
+through proof source `70f9217`, integrated Phase84 and scalar test85, with preserved75/69 failures, 27 October 2026. No full-classification
 announcement, novelty, optimality or independent human review is claimed.
 
 Lean checks encoded statements. A source claim, a checked theorem and a
@@ -50,6 +50,7 @@ spells out assumptions and the exact statements.
 | Finite weighted arithmetic budget | [Count pays weighted loss](research/ender_radius_bridge/WEIGHTED_SPLIT_GUIDE.md): exact complete prime coverage, finite summation by parts and parameter-divisor payment on the original Gram. Local checks pass, with an explicitly recorded input-cap discrepancy; its closed estimate and actualM normalization are integrated84; no new cutoff. |
 | Closed weighted-kernel estimate | [Positive affine operator and harmonic bound](research/ender_radius_bridge/CLOSED_KERNEL_GUIDE.md) now give an explicit formula in actual M(K), composed with the same Gram. Integrated locally at84, including actual M(K)=2sqrt(D)/pi; arbitrary-field/even transport and a new numerical range remain open. |
 | Actual odd-field Minkowski normalization | [Degree, conjugation and maximal discriminant](research/ender_radius_bridge/ODD_MINKOWSKI_GUIDE.md) now remove the field-dependent M(K) from the closed original-Gram budget. Fresh dependency checks avoid older cutoffs. No new numerical range follows. |
+| Sealed scalar feasibility | [A positive proof target](research/ender_radius_bridge/TWO_CLASS_FEASIBILITY_GUIDE.md) at2^50, margin>0.07; seven earlier negative samples preserved. Two precisions/control checks agree. No all-D theorem, new field range or optimality follows. |
 | Limits that prevented overclaiming | A radial O(1/R) ceiling, the per-form zero-row failure and the [stopped coordinate attempt](research/ender_radius_bridge/PHASE69_VERIFICATION.md) remain preserved. [History and controls](STATUS.md). |
 
 ## Verification and the next decisive step
@@ -67,9 +68,10 @@ verified separately from the new [local Phase84 checks](research/ender_radius_br
 full root/audit checks. The earlier input-cap discrepancy remains preserved
 at82. New exact-head CI is pending.
 
-The next decisive step is a strict numerical contradiction from the
-normalized odd-chart budget, with arbitrary-field/even-chart transport
-still separate. The local parameter-divisor bound also needs general
+A sealed scalar test now has a positive margin at2^50, with all negative
+samples retained. The next decisive step is an all-D proof of the conservative
+loss bound and full prime-mass/diagonal composition. Arbitrary-field/even-chart
+transport remains separate. The local parameter-divisor bound also needs general
 field-discriminant transport.
 [PR30](https://github.com/Dojo-1/tenth-discriminant/pull/30) has completed
 pinned CI/security checks; merging still requires explicit authorization.
