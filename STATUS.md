@@ -1,5 +1,29 @@
 # Status — 2026-10-28
 
+## Phase103: full all-range even-chart two-class cutoff is checked
+
+For every positive squarefree d=1 or 2 modulo 4, the standalone theorem
+proves d>=2^50 implies actual class number(EvenQuadraticField d)>2.
+Consequently actual class number<=2 gives d<2^50 and absolute actual
+field discriminant<4*2^50=2^52. The factor of four is explicit.
+[Human contradiction](research/ender_radius_bridge/EVEN_TWO_CLASS_BOUND_GUIDE.md) ·
+[Exact attempt and scope](research/ender_radius_bridge/PHASE103_VERIFICATION.md).
+
+The first full attempt checked the contradiction/radicand bound but failed
+when simplifying the discriminant absolute value. Adding Int.natAbs_mul
+to that wrapper's simp made the second full attempt pass. All seven public
+types and four controls are unchanged; no new definitions. Both sources
+and results are preserved:86.8947538s failed,83.9126192s passed. Final
+namespace20logical declarations/20theorems, standard three axioms. Fresh
+closures reach59,697 and59,701declarations, excluding the same58older
+inputs. Eight raw files and1,567prior files are frozen; saved verifier passes.
+
+Production/root are unchanged. Integration, arbitrary actual-field
+transport, new external CI and human semantic review remain open. This
+is no full-classification or optimality claim; the separate h1field bound
+stays50billion. Argon remains pending. Older entries preserve historical
+scopes and all failed/stopped attempts.
+
 ## Phase102: actual even normalization is integrated unchanged
 
 The main Lean library now contains the actual M(K)=4*sqrt(d)/pi identity,

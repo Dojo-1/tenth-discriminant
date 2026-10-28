@@ -1,5 +1,26 @@
 # Current claim-to-Lean map
 
+Latest standalone theorems: `EvenTwoClass.even_classNumber_gt_two`,
+`even_radicand_bound`, `even_discriminant_bound`. For positive squarefree
+d=1 or 2 modulo 4, d>=2^50 forces the actual even-field class number>2.
+Under actual class number<=2, d<2^50 and actual absolute discriminant<2^52.
+No supplied generator, isomorphism, count, M(K) estimate, scalar comparison
+or finite certificate is assumed. [Human proof](../research/ender_radius_bridge/EVEN_TWO_CLASS_BOUND_GUIDE.md) ·
+[Exact source and attempt record](../research/ender_radius_bridge/PHASE103_VERIFICATION.md).
+
+The full target passes after one wrapper-only proof repair: explicit
+integer absolute-value multiplication in even_discriminant_bound. The
+contradiction proof, all seven public types and four controls are unchanged.
+Namespace20logical declarations/20theorems; no new definitions, standard
+three axioms. Fresh closures59,697/59,701exclude the same58older inputs,
+including all old h1cutoffs and the whole odd-field cutoff. Reused
+all-range scalar and matrix estimates are field-independent.
+
+This is standalone for the canonical actual even chart. Production/root
+are unchanged. Integration, arbitrary-field transport, external exact-head
+CI and human review remain open; no full classification is claimed.
+The following production records retain their separate scopes.
+
 Current production theorem: `EvenMinkowski.scalar_actual_gram_budget`.
 It derives actual M(EvenQuadraticField d)=4*sqrt(d)/pi, bounds the finite
 count operator by a closed cost with actual discriminant scale4*d, and

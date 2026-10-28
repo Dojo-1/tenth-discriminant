@@ -1,6 +1,6 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared, through Phase 102. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
+**AI-prepared, through Phase 103. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
 
 ## Short draft for human revision
 
@@ -37,8 +37,11 @@ divisors and assumes no counting function or local divisibility result.
 The distinction between radicand d and actual field discriminant 4*d
 remains explicit. The [actual normalization and closed estimate](research/ender_radius_bridge/EVEN_NORMALIZATION_GUIDE.md)
 are now integrated unchanged: M(K)=4*sqrt(d)/pi, and the full original-Gram
-budget is dominated by the previously used scalar envelope. The final
-all-range even contradiction remains open; no new cutoff is claimed.
+budget is dominated by the previously used scalar envelope. The
+[all-range even-chart contradiction](research/ender_radius_bridge/EVEN_TWO_CLASS_BOUND_GUIDE.md)
+now passes standalone: actual class number<=2 implies radicand<2^50 and
+actual discriminant<2^52. Its integration and arbitrary even-field
+transport remain open; this is no full-classification announcement.
 
 [Phase102 verification](research/ender_radius_bridge/PHASE102_VERIFICATION.md)
 records the unchanged accepted proof, all four local checks passing,
@@ -49,7 +52,7 @@ review is still underway and has not been received or assessed.
 
 ## Limits that must travel with the result
 
-Independent human semantic review, verified model-family independence, Mathlib acceptance, optimality and an even-discriminant higher-class-number bound are not established. The new odd-chart range is integrated and checked locally. A passing Lean build checks the encoded statement; it does not itself establish that the intended mathematical interpretation has received independent review.
+Independent human semantic review, verified model-family independence, Mathlib acceptance, optimality and the arbitrary-field even-discriminant higher-class-number extension are not established. The new odd-chart range is integrated and checked locally. A passing Lean build checks the encoded statement; it does not itself establish that the intended mathematical interpretation has received independent review.
 
 The quoted 1933 Lehmer announcement reports a strict finite range `163 < D < 5 billion` in radicand notation. It cannot alone complete our 50-billion cutoff. Nor does deriving a later theorem from older foundations establish an earliest historical year. No such year is claimed.
 

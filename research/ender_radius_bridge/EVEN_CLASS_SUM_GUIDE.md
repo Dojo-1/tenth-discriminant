@@ -58,6 +58,7 @@ changes. [Integration and verification](PHASE98_VERIFICATION.md).
 This actual prime-prefix count now feeds the integrated
 [weighted determinant bridge](EVEN_WEIGHTED_BRIDGE_GUIDE.md). The actual
 [Minkowski normalization and closed estimate](EVEN_NORMALIZATION_GUIDE.md)
-are integrated unchanged at Phase102. The final all-range same-Gram
-contradiction remains open; no new even cutoff or full classification
-is asserted.
+are integrated unchanged at Phase102. The
+[all-range even-chart contradiction](EVEN_TWO_CLASS_BOUND_GUIDE.md) now
+passes standalone; integration and arbitrary-field transport remain open.
+No full classification is asserted.

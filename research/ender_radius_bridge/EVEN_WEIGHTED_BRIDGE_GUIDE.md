@@ -60,7 +60,8 @@ The [actual constant and closed error estimate](EVEN_NORMALIZATION_GUIDE.md)
 are now integrated unchanged into the main library: M(K)=4*sqrt(d)/pi, with a closed
 weighted cost no larger than the previously used scalar envelope.
 The original weighted bridge is integrated unchanged at Phase100. The
-normalization is integrated unchanged at Phase102. The final all-range
-comparison on the same Gram, new external CI and human review remain open.
-No numerical candidate is a premise, and no new even cutoff or full
-classification is claimed.
+normalization is integrated unchanged at Phase102. The
+[all-range even-chart contradiction](EVEN_TWO_CLASS_BOUND_GUIDE.md) now
+passes standalone. Integration of that cutoff, arbitrary-field transport,
+new external CI and human review remain open. No numerical candidate is
+a premise, and no full classification is claimed.
