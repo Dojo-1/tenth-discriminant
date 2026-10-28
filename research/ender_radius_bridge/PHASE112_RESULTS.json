@@ -1,0 +1,76 @@
+{
+  "phase": 112,
+  "status": "LOCAL_EIGHT_SYNTHETIC_TESTS_FIRST_PASS_NEW_FINAL_SOURCE_CI_SEPARATE",
+  "base": "b66b5f8a86df9cf515ccdab57dca529b006eeb01",
+  "registered_commit": "9c7071d4948c01f27fc9fb303cf77db7e161d2d6",
+  "frozen_base": "9c7071d4948c01f27fc9fb303cf77db7e161d2d6",
+  "frozen_files": 1708,
+  "allowed_base_changes": [
+    "lean/control_schedule.py",
+    "lean/control_schedule_tests.py",
+    "README.md",
+    "STATUS.md",
+    "lean/FORMALIZATION.md",
+    "TAO_OBJECTIVES_CURRENT.md",
+    "TAO_REPLY_BRIEF.md",
+    "research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md",
+    "research/ender_radius_bridge/VERIFICATION_CURRENT.md"
+  ],
+  "runs": [
+    {
+      "phase": 112,
+      "mode": "synthetic",
+      "attempt": 1,
+      "scope": "Eight synthetic scheduler tests only; no Lean or real control family invoked",
+      "command": [
+        "C:\\Users\\HAL900\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "control_schedule_tests.py"
+      ],
+      "cwd": "lean",
+      "exit_code": 0,
+      "elapsed_seconds": 4.0488772,
+      "time_limit_seconds": 120,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 27090944,
+      "memory_observation": "sampled per owned process",
+      "stop_reason": "",
+      "controller_snapshot": "PHASE112_synthetic_20261028195120226.controller.py",
+      "tests_snapshot": "PHASE112_synthetic_20261028195120226.tests.py",
+      "stdout": "PHASE112_synthetic_20261028195120226.stdout.log",
+      "stderr": "PHASE112_synthetic_20261028195120226.stderr.log"
+    }
+  ],
+  "sha256": {
+    "lean/control_schedule.py": "8223877acac24fabc612eec5ae838aef876602188f5f24fab14a65541ca38809",
+    "lean/control_schedule_tests.py": "f69f4582ab8511634d0c1b16a9bdec243c2fc88b65da208173ecd22976450252",
+    "README.md": "122f77d44fd8f1bb9cd2f6158500d6f757810bb339e8b68356b0864aca4ccad7",
+    "STATUS.md": "4beb5c901bde7711e8aa66fd5d2b863ae444f1f14b49c42c9f35d2e2f1effdac",
+    "lean/FORMALIZATION.md": "438113ab0934b420fde6aa310e3b352c6b3595c998b94008992659ffe5f65f3c",
+    "TAO_OBJECTIVES_CURRENT.md": "b800715932f80e4c8adf14d304fc0402b3f6e3e0edbc914b772561edcd23379e",
+    "TAO_REPLY_BRIEF.md": "66b49fa62afaef9cee97cbc9cca97f5ce3fcf98df717652810bcbb60a6c5ed4d",
+    "research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md": "1b9bfc79f58c3f5ac012d43f586fadf2c1c7717f37adac3d76368e7b74a84cf9",
+    "research/ender_radius_bridge/VERIFICATION_CURRENT.md": "daffe4773f75b6bb3f94b65a39ae7a8720b720da5f4e946d2ce858041925c8ac",
+    "research/ender_radius_bridge/PHASE112_PROTOCOL.md": "b19c4e9b30d726a17bb445e19b82bf31b0470f787b984e8b7fdcf1f15fdee5ab",
+    "research/ender_radius_bridge/run_phase112.ps1": "5a63bb98e01cdddd4458ca4023ac1006cdb7264f102e1e1aed3cfb6395067e28",
+    "research/ender_radius_bridge/verify_phase112_results.py": "39f636591304d267ddd2fce8e8fbe858347cea5165a1e70d528f90cfd2dca46d",
+    "research/ender_radius_bridge/PHASE112_VERIFICATION.md": "a2567060aca3963dec31626879dc42283001dd88105061491d03aec7f5d3efe8",
+    "research/ender_radius_bridge/CONTROL_PRIORITY_CURRENT.md": "5f913745f9931ab96108fd55b40a0fe78c25f476b6bdc7959dc8e8b471d2ff79",
+    "research/ender_radius_bridge/PR39_CI_LIMIT_RECEIPT.md": "b77c2c4b4739ef930cecb6762ddab8e33b91a6f91d5a30b3a096e11ae8436c54",
+    "research/ender_radius_bridge/PR39_CI_LIMIT_RECEIPT.json": "d7565caa9e9f605243b42ab8ad5bc057fa6f20cf5c070f974659ac63c01543bc",
+    "research/ender_radius_bridge/PR39_CI_LIMIT_EVIDENCE.zip": "f4bb75c6058b509136a754c10b44b048dbbad85d1a0471d09f0714f2db1faac0",
+    "research/ender_radius_bridge/PHASE112_FORMAT_NORMALIZATION.json": "1c81a42eed451ba9e416637c603ad671a4e23964860c7b2c7b9287c57daa64a9"
+  },
+  "archive": {
+    "path": "PHASE112_RAW.zip",
+    "sha256": "b6fe4b89d7f53633c31f2f93f98a372405f28fe718c31e9ceb0471478a468d5b"
+  },
+  "raw_sha256": {
+    "PHASE112_synthetic_20261028195120226.controller.py": "0c6736ba68e7cef102028614a66e46e9c1a78013961e1f3956412fe018a1c130",
+    "PHASE112_synthetic_20261028195120226.tests.py": "5407aee058294f1b50791d5647a13a11a083cef35c855becaabea8a9c010f1b3",
+    "PHASE112_synthetic_20261028195120226.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE112_synthetic_20261028195120226.stderr.log": "888ed3588b807b017bd77dbb1e4d22b586ca0b8fe7dc1bd778fd4caf7a1c56cb",
+    "PHASE112_synthetic_20261028195120226.result.json": "20acbcaea4f287a60713b8ec5885ad1c0471bff8a1fb4f1ec1fa8465210775d5"
+  },
+  "interpretation": "Static timeout-priority executor only; unchanged max2 mathematical families and limits. No Lean or real-family replay locally, measured speedup, new bound or overall CI success. PR39 cancellation preserved.",
+  "post_run_format_normalization": "CRLF to repository LF only; immutable raw Windows snapshots preserved, exact normalized bytes and Python AST equality checked; no code/test repair or rerun"
+}

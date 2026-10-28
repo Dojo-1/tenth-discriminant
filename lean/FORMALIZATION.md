@@ -1,5 +1,9 @@
 # Current claim-to-Lean map
 
+## Phase112: executor policy only; mathematical scope unchanged
+
+All Lean sources/root remain exact to b66b5f8. PR39's individual source/build/audit/all-eight-control steps succeeded, but its overall job was CANCELLED at25m and the PR stays draft/unmerged. [Exact receipt](../research/ender_radius_bridge/PR39_CI_LIMIT_RECEIPT.md). Phase112 changes static dispatch priority with the same two-worker cap and frozen mathematical controls/timeouts. Eight SYNTHETIC tests pass first invocation; this is not a new theorem, audit or complete CI result. [Local executor evidence](../research/ender_radius_bridge/PHASE112_VERIFICATION.md). Prior source-specific acceptance/failures remain distinct; independent semantic review remains open.
+
 ## Phase111: compatible transport integrated unchanged
 
 Production now includes `TenthDiscriminant.PassiveTransport`: exact accepted20public types/proofs,four definitions,three private helpers,four controls/reports after one dependency import, with one root import. It connects actual translated bivariate polynomials, ordinary jets and entrywise recovery of the original integer Gram. Namespace31logical/27theorems; whole5393logical/4593theorems/17015runtime. The saved verification explains the additional rowSection equation lemma and confirms no old declaration was removed. [Human proof](../research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md) · [Exact integration](../research/ender_radius_bridge/PHASE111_VERIFICATION.md). Fresh5880/13936/33095closures retain70exclusions and standard3axioms. External CI/review stay separate from local checks.

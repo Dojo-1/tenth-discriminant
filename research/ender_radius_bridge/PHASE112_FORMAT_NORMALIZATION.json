@@ -1,0 +1,17 @@
+{
+  "scope": "Post-run line-ending normalization only; first invocation raw Windows snapshots remain immutable. No executable statement or test was repaired; no rerun. Commit uses repository LF conventions and the six inherited methods are restored byte-for-byte to their base Git source.",
+  "files": {
+    "lean/control_schedule.py": {
+      "raw_snapshot": "PHASE112_synthetic_20261028195120226.controller.py",
+      "raw_sha256": "0c6736ba68e7cef102028614a66e46e9c1a78013961e1f3956412fe018a1c130",
+      "repository_lf_sha256": "8223877acac24fabc612eec5ae838aef876602188f5f24fab14a65541ca38809",
+      "only_delta": "CRLF to LF; identical Python AST; raw snapshot/archive untouched"
+    },
+    "lean/control_schedule_tests.py": {
+      "raw_snapshot": "PHASE112_synthetic_20261028195120226.tests.py",
+      "raw_sha256": "5407aee058294f1b50791d5647a13a11a083cef35c855becaabea8a9c010f1b3",
+      "repository_lf_sha256": "f69f4582ab8511634d0c1b16a9bdec243c2fc88b65da208173ecd22976450252",
+      "only_delta": "CRLF to LF; identical Python AST; raw snapshot/archive untouched"
+    }
+  }
+}

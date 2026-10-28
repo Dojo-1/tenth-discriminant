@@ -103,5 +103,62 @@ class SchedulingTests(unittest.TestCase):
                 child.assert_not_called()
 
 
+    def test_priority_dispatch_preserves_declared_diagnostics(self):
+        from concurrent.futures import Future
+        submitted, limits = [], []
+        root = Path.cwd()
+        families = [('short.py', 120), ('longA.py', 360),
+                    ('medium.py', 240), ('longB.py', 360)]
+        class ImmediateExecutor:
+            def __init__(self, *, max_workers):
+                limits.append(max_workers)
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+            def submit(self, function, *args):
+                future = Future()
+                future.set_result(function(*args))
+                return future
+        def child(command, *, cwd, capture_output, timeout):
+            name = Path(command[1]).name
+            submitted.append((name, timeout))
+            self.assertEqual(command, [sys.executable, str(root/name)])
+            self.assertEqual(cwd, root)
+            self.assertTrue(capture_output)
+            return subprocess.CompletedProcess(command, 0,
+                f'out:{name}\n'.encode(), f'err:{name}\n'.encode())
+        out, err = io.StringIO(), io.StringIO()
+        with patch('control_schedule.ThreadPoolExecutor', ImmediateExecutor), \
+             patch('control_schedule.subprocess.run', side_effect=child), \
+             redirect_stdout(out), redirect_stderr(err):
+            run_families(root, families)
+        self.assertEqual(limits, [2])
+        self.assertEqual(submitted, [('longA.py', 360), ('longB.py', 360),
+                                     ('medium.py', 240), ('short.py', 120)])
+        self.assertEqual([line for line in out.getvalue().splitlines()
+                          if line.startswith('out:')],
+                         [f'out:{name}' for name, _ in families])
+        self.assertEqual(err.getvalue().splitlines(),
+                         [f'err:{name}' for name, _ in families])
+        self.assertEqual(out.getvalue().count('CONTROL_FAMILY_OK'), 4)
+
+    def test_queue_model_exposes_tail_and_proxy_limitation(self):
+        def finish(order, durations):
+            loads = [0, 0]
+            for name in order:
+                worker = min(range(2), key=loads.__getitem__)
+                loads[worker] += durations[name]
+            return max(loads)
+        fifo = list(range(8))
+        late_long = {name: 9 if name == 7 else 1 for name in fifo}
+        self.assertEqual(finish(fifo, late_long), 12)
+        self.assertEqual(finish([7, *range(7)], late_long), 9)
+        # A declared timeout need not predict actual duration. No universal gain.
+        early_long = {name: 9 if name == 0 else 1 for name in fifo}
+        self.assertEqual(finish(fifo, early_long), 9)
+        self.assertEqual(finish([*range(1, 8), 0], early_long), 12)
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

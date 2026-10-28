@@ -17,8 +17,9 @@ fresh70-root exclusion checks and whole audit passed first invocation.
 [Exact local evidence](PHASE111_VERIFICATION.md). The older guide's
 standalone status refers to110; its failures and exhausted slots are frozen.
 
-External CI/source/tree/merge receipts are recorded in the
-[publication PR](https://github.com/Dojo-1/tenth-discriminant/pulls?q=head%3Acodex%2Fcompatible-transport-observables).
+PR39 passed every mathematical step, but its overall CI is CANCELLED
+at25m and it stays draft/unmerged. [Preserved receipt](PR39_CI_LIMIT_RECEIPT.md).
+The new [queue policy](CONTROL_PRIORITY_CURRENT.md) has local synthetic evidence only.
 The earlier [PR38 receipt](PR38_MERGE_RECEIPT.md) covers its own older source.
 Independent human semantic review, optimal constants and Mathlib acceptance
 remain open. No full classification is announced.
