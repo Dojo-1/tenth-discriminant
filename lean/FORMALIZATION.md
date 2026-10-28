@@ -1,5 +1,23 @@
 # Current claim-to-Lean map
 
+Latest standalone theorem: `EvenPrimeFamily.controlled_family` constructs
+ONE actual bounded class-indexed family before ALL finite admissible prime
+sets P. It carries full calibrated per-class count data and yields exactly
+4*card(P) selected distinct tagged actual norm elements in that SAME family.
+Actual even maximal-order residue maps, generator images, surjectivity,
+kernel normp and odd-unramified kernel distinction are proved. Generic
+kernel/four-lift/finite aggregation operators are reused; no odd actualmap
+or odd family wrapper is a premise. [Human proof](../research/ender_radius_bridge/EVEN_PRIME_FAMILY_GUIDE.md)
+and [exact95record](../research/ender_radius_bridge/PHASE95_VERIFICATION.md).
+FAIL/FAIL/PASS; only the first definition's root-proof cast normalization
+changes. All13public types/proof bodies/3definition types/final assembly/
+5controls fixed. Namespace28/25/0, standard3axioms; fresh54,801closure
+excludes47old inputs. All3target slots consumed; no replay. Productionroot
+and94whole audit unchanged. Integration/classsum/weighted loss/actualM/
+same-original-Gram/even cutoff/externalCI/humanreview remain open. Selected
+4*card(P) points are not asserted to be all representations. Older entries
+below are historical checkpoints.
+
 Current production theorem: `EvenPrimeAxis.controlled_class_prime_count`
 is imported by the main root. The accepted93 statements, proof bodies,
 five controls and reports are exact after imports; no mathematical repair

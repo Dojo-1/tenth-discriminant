@@ -1,5 +1,25 @@
 # Status — 2026-10-28
 
+## Phase95: prime lifts and counts now share one controlled even family
+
+A standalone theorem constructs actual even residue maps and proves the
+two kernel ideals distinct at odd primes not dividing the radicand. Under
+class number at most two, it chooses one bounded ideal family before all
+finite admissible prime sets P. That SAME family carries the calibrated
+counts and supplies 4*card(P) selected distinct labelled norm elements.
+[Human proof](research/ender_radius_bridge/EVEN_PRIME_FAMILY_GUIDE.md) and
+[exact record](research/ender_radius_bridge/PHASE95_VERIFICATION.md).
+FAIL 36.1379252 s / FAIL 36.1710641 s / PASS 37.675812 s: only the polynomial root
+proof's cast normalization changed. All 13 public types and proof bodies and
+three definition types are fixed. All three target slots consumed; no replay.
+Namespace: 28 logical declarations and 25 theorems, no runtime auxiliaries; three standard
+axioms. The 54,801-declaration closure excludes 47 older roots. Twelve raw files and
+1,506 prior files are frozen; saved verifier passes. Production/root unchanged.
+Integration, class summation, weighted loss, actual Minkowski normalization and the
+same-Gram contradiction remain open. No even cutoff or new external CI or
+independent human review is claimed. Argon review remains pending.
+Earlier sections preserve historical scopes and both rejected attempts.
+
 ## Phase94: the complete even prime-axis count is integrated
 
 The accepted93 proof is now in the main Lean root. All 11 statements,

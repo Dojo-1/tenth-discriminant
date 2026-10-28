@@ -1,6 +1,6 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared, through Phase 94. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
+**AI-prepared, through Phase 95. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
 
 ## Short draft for human revision
 
@@ -39,6 +39,8 @@ A separate [even-lattice theorem](research/ender_radius_bridge/EVEN_IDEAL_LATTIC
 The [controlled even class theorem](research/ender_radius_bridge/EVEN_CONTROLLED_CLASS_GUIDE.md) now chooses one actual bounded ideal and basis per class under h<=2, with0<a<=N(J)<=M(K), exact norm form, all ideal lifts and a common off-axis count for every finite norm-bounded set. Accepted91mathematics is integrated unchanged at92: full local build/input/audit pass,189modules/5206logical/4421theorems,54590closure excluding38old roots. Full prime/weighted same-Gram assembly remains open; there is no even cutoff yet.
 
 The [even prime-axis theorem](research/ender_radius_bridge/EVEN_PRIME_AXIS_GUIDE.md) now removes the off-axis premise from the actual per-class count: calibrated C1has no prime-axis points, other classes have at most2acrossALLprimes in their fixed lattice. The same bounded J/basis serves all finite prime-normalized sets. Accepted93 mathematics is integrated unchanged at94: full local build/input/audit pass,190 modules/5,219 logical declarations/4,434 theorems,54,650-declaration closure excluding42old roots. Complete actual even prime-family/weighted same-Gram assembly remains open; no even cutoff is claimed.
+
+The [coherent even prime-family theorem](research/ender_radius_bridge/EVEN_PRIME_FAMILY_GUIDE.md) now constructs actual even residue maps with distinct odd-unramified kernels and chooses ONE bounded class-indexed family before all finite admissible P. The SAME family carries counts and4*card(P) selected distinct labelled norm elements. Standalone namespace/input checks pass:28logical/25theorems,54,801closure excluding47old roots. Both rejected root-proof normalization attempts are preserved; no replay. Integration, class sum and weighted same-Gram comparison remain open; no even cutoff is claimed.
 
 ## Limits that must travel with the result
 
