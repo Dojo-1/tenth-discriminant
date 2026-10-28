@@ -1,5 +1,23 @@
 # Status — 2026-10-28
 
+## Phase97: actual class counts now bound eligible prime prefixes
+
+A standalone theorem partitions the selected 4*card(P) points by actual
+ideal class, preserves each slice's cardinality in J_C, and sums the
+calibrated counts. It proves card(P)<=h/4*(A+B+1)<=(A+B+1)/2 under h<=2,
+with A=2pi*t/sqrt(4d) and B=4sqrt(actual M(K)*t/(4d)). The caller supplies
+no family, point count or slice estimate. [Human proof](research/ender_radius_bridge/EVEN_CLASS_SUM_GUIDE.md)
+and [exact record](research/ender_radius_bridge/PHASE97_VERIFICATION.md).
+First invocation PASS in 90.1254956 s, no repair or retry. Six public types,
+no new definitions, four controls; namespace of six logical declarations and six theorems, standard
+three axioms. The fresh 54,805-declaration closure excludes 49 older roots. Four raw files
+and 1,522 prior files are frozen; saved verifier passes. Production/root
+unchanged. Uniformity is in class number; actual M(K) still depends on the
+field. Integration, weighted loss, actual Minkowski normalization and
+same-Gram/even cutoff remain open. No new external CI or independent
+human review is claimed; Argon review remains pending. Older entries
+below preserve historical scopes and all earlier failures.
+
 ## Phase96: the coherent actual even prime family is integrated
 
 The accepted95 theorem is now in the main Lean root. All 13 statements,

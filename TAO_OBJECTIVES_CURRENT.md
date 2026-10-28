@@ -5,7 +5,7 @@ field-discriminant bound is 50 billion.** Class number one means unique factoriz
 integers. The geometric count is proved on the draft branch; an arbitrary-field odd-discriminant class-number<=2bound is checked locally;
 the even-discriminant cutoff remains open. This page tracks
 Tao's [challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)
-through proof source `70f9217`, integrated odd-field Phase88/even-lattice Phase90 and integrated controlled-class92/integrated prime-axis94/integrated coherent prime-family96, scalar test85 and preserved standalone86, with preserved75/69 failures, 28 October 2026. No full-classification
+through proof source `70f9217`, integrated odd-field Phase88/even-lattice Phase90 and integrated controlled-class92/integrated prime-axis94/integrated coherent prime-family96/standalone class-sum97, scalar test85 and preserved standalone86, with preserved75/69 failures, 28 October 2026. No full-classification
 announcement, novelty, optimality or independent human review is claimed.
 
 Lean checks encoded statements. A source claim, a checked theorem and a
@@ -60,6 +60,7 @@ checklist in Tao's post.
 | Controlled even ideal class | [One bounded lattice per actual class](research/ender_radius_bridge/EVEN_CONTROLLED_CLASS_GUIDE.md) now gives0<a<=N(J)<=M(K), exact even norm form, all ideal lifts and a common all-finite off-axis count under h<=2. Integrated unchanged at92; full local root/input/audit checks pass. Full prime/weighted same-Gram assembly remains open. |
 | Complete even prime-axis accounting | [Calibrated principal class and full per-class count](research/ender_radius_bridge/EVEN_PRIME_AXIS_GUIDE.md) pay0axis points in C1and at most2acrossALLprimes otherwise. A fixed actual bounded J/basis serves all finite prime-normalized sets. Integrated unchanged at94; full local root/input/audit checks pass. Coherent prime-family/multiplicity/class-sum/weighted assembly remains open. |
 | Coherent actual even prime family | [Actual residue kernels and fixed-family lifts](research/ender_radius_bridge/EVEN_PRIME_FAMILY_GUIDE.md) choose one controlled family before every finite admissible P; the SAME ideals carry counts and4*card(P) selected distinct norm elements. Integrated unchanged at96; full local root/input/audit checks pass. Class summation and weighted same-Gram comparison remain open. |
+| Actual even prime-prefix bound | [Class-slice double count](research/ender_radius_bridge/EVEN_CLASS_SUM_GUIDE.md) now derives card(P)<=h/4*(A+B+1)<=(A+B+1)/2 from the SAME4*card(P) selected points under h<=2. ActualM(K) remains field-dependent. Standalone namespace/input checks pass; integration, weighted loss and final same-Gram comparison remain open. |
 | Limits that prevented overclaiming | A radial O(1/R) ceiling, the per-form zero-row failure and the [stopped coordinate attempt](research/ender_radius_bridge/PHASE69_VERIFICATION.md) remain preserved. [History and controls](STATUS.md). |
 
 ## Verification and the next decisive step
@@ -89,8 +90,9 @@ integrated unchanged at94:190 modules,5,219 logical declarations and
 4,434 theorems;42old-input exclusions. Actual even residue maps/distinct
 kernels and the coherent controlled prime-family are now proved standalone
 at95and integrated unchanged at96:191modules,5,247 logical declarations/
-4,459 theorems,47old-input exclusions. Next: class summation and weighted
-comparison. Independent
+4,459 theorems,47old-input exclusions. Actual even class summation and
+the uniform prime-prefix count are now proved standalone at97. Next:
+integration and the weighted loss/final comparison. Independent
 human review and new external exact-head CI remain open. Argon's review
 is underway and has not yet been assessed.
 A remote refresh finds PR30-34 already merged on main, now at `39e9ce3`;

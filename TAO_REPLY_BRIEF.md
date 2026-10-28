@@ -1,6 +1,6 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared, through Phase 96. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
+**AI-prepared, through Phase 97. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
 
 ## Short draft for human revision
 
@@ -41,6 +41,8 @@ The [controlled even class theorem](research/ender_radius_bridge/EVEN_CONTROLLED
 The [even prime-axis theorem](research/ender_radius_bridge/EVEN_PRIME_AXIS_GUIDE.md) now removes the off-axis premise from the actual per-class count: calibrated C1has no prime-axis points, other classes have at most2acrossALLprimes in their fixed lattice. The same bounded J/basis serves all finite prime-normalized sets. Accepted93 mathematics is integrated unchanged at94: full local build/input/audit pass,190 modules/5,219 logical declarations/4,434 theorems,54,650-declaration closure excluding42old roots. Complete actual even prime-family/weighted same-Gram assembly remains open; no even cutoff is claimed.
 
 The [coherent even prime-family theorem](research/ender_radius_bridge/EVEN_PRIME_FAMILY_GUIDE.md) now constructs actual even residue maps with distinct odd-unramified kernels and chooses ONE bounded class-indexed family before all finite admissible P. The SAME family carries counts and4*card(P) selected distinct labelled norm elements. Accepted95 mathematics is integrated unchanged at96: full local build/input/audit pass,191modules/5,247 logical declarations/4,459 theorems,54,801-declaration closure excluding47old roots. Both rejected root-proof attempts are preserved; no standalone replay. Class sum and weighted same-Gram comparison remain open; no even cutoff is claimed.
+
+The [actual even class-sum theorem](research/ender_radius_bridge/EVEN_CLASS_SUM_GUIDE.md) now converts the SAME4*card(P) selected points into an admissible-prime prefix bound h(K)/4*(A+B+1)<=(A+B+1)/2 under h<=2, retaining actualM(K). The caller supplies no count/slice/cardinality premise. First bounded standalone invocation passes; namespace6/6/0,54,805closure excluding49old roots. Integration, weighted loss, explicit actualM normalization and the same-Gram contradiction remain open; no even cutoff is claimed.
 
 ## Limits that must travel with the result
 
