@@ -72,3 +72,12 @@ class-labelled elements, not all representations or four points in a common
 lattice. Controlled coordinates/form coefficients/discriminant/leading
 bound, even chart and field-parameter transport remain open. No arithmetic B,
 new cutoff, classification, novelty, independent review or upstream claim.
+
+## Completed multiplicity-head CI
+
+Exact head3b12473 completed pinned Lean CI40423599797/job121923735462 SUCCESS,
+including source250pairs, namespace20/16/0, full4917/4155/16985 audit and full
+final regression at00:25:21.4144227Z UTC27October2026. [Terminal record](https://github.com/Dojo-1/tenth-discriminant/pull/34#issuecomment-6430605254)
+precedes subsequent coordinate publication. Only Lean is reported; no
+security pass is inferred from absence. This covers multiplicity, not the
+later independently registered71/72coordinate proof architecture.

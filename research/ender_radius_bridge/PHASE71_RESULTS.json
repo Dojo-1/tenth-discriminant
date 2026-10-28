@@ -1,0 +1,118 @@
+{
+  "phase": 71,
+  "status": "STANDALONE_LOCAL_ACTUAL_ARBITRARY_BASIS_NORM_ARITHMETIC_PASS",
+  "base": "3b12473cc02cb6bbad7cf6681979582ec3f00a5e",
+  "registered_commit": "981cbf9a944d28d5d196dbea4083339c5ea7204d",
+  "target_seconds": "77.535200499999995",
+  "builds": [
+    {
+      "phase": 71,
+      "mode": "build",
+      "scope": "Actual arbitrary-basis ideal norm arithmetic helper; no chosen basis/count composition or arithmetic B",
+      "source_sha256": "a47c18d3f9d7a58fe9dfda492c14fa690533643d267fc4a38bd53edcf5be0e0e",
+      "source_snapshot": "PHASE71_build_20261027000630083.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 36.525770099999995,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3129737216,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase71BasisArithmetic.lean"
+      ],
+      "stdout": "PHASE71_build_20261027000630083.stdout.log",
+      "stderr": "PHASE71_build_20261027000630083.stderr.log"
+    },
+    {
+      "phase": 71,
+      "mode": "build",
+      "scope": "Actual arbitrary-basis ideal norm arithmetic helper; no chosen basis/count composition or arithmetic B",
+      "source_sha256": "e5943e618f001ef3286bdb95b2485689e54a837bfe03bc8c61d0670358b3b9ea",
+      "source_snapshot": "PHASE71_build_20261027000854842.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 41.0094304,
+      "cumulative_before_seconds": 36.525770099999995,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3134816256,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase71BasisArithmetic.lean"
+      ],
+      "stdout": "PHASE71_build_20261027000854842.stdout.log",
+      "stderr": "PHASE71_build_20261027000854842.stderr.log"
+    }
+  ],
+  "public_theorems": [
+    "norm_in_integer_basis",
+    "norm_coordinates",
+    "norm_nonneg",
+    "norm_pos",
+    "ideal_basis_index",
+    "repr_combine",
+    "principal_transform",
+    "principal_discriminant",
+    "normalized_form_of_basis",
+    "seven_ambient_control",
+    "seven_shear_control",
+    "proper_ideal_control",
+    "proper_scalar_control",
+    "positivity_guard_control"
+  ],
+  "public_definitions": [
+    "integerBasis",
+    "combine",
+    "cross"
+  ],
+  "namespace_audit": {
+    "logical": 23,
+    "theorems": 20,
+    "runtime_only": 5,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "sha256": {
+    "PHASE71_PROTOCOL.md": "da0cd9534d76a9152d518b389b354aa27263be53369e38dffe1d5932c7b11672",
+    "Phase71BasisArithmetic.lean": "e5943e618f001ef3286bdb95b2485689e54a837bfe03bc8c61d0670358b3b9ea",
+    "run_phase71.ps1": "86dafe28847c820fb90226842b031d885ad7e3c27851483029b656211d8610c4"
+  },
+  "raw_archive": {
+    "path": "PHASE71_RAW.zip",
+    "sha256": "7bfe6d9b27e2955e9604217caacbb8599a0dd8549f893ff7d57e2b20b279a60f",
+    "members": 8
+  },
+  "raw_sha256": {
+    "PHASE71_build_20261027000630083.source.lean": "a47c18d3f9d7a58fe9dfda492c14fa690533643d267fc4a38bd53edcf5be0e0e",
+    "PHASE71_build_20261027000630083.stdout.log": "ec4c13fcd60646fbf25f62dd7eb11c4fd0c2e4e6e711eeb047714ac789eb9707",
+    "PHASE71_build_20261027000630083.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE71_build_20261027000630083.result.json": "4e14acbbb6adfaa7073d3f217c843b825fce2cb5875c52013a668eaf977a3201",
+    "PHASE71_build_20261027000854842.source.lean": "e5943e618f001ef3286bdb95b2485689e54a837bfe03bc8c61d0670358b3b9ea",
+    "PHASE71_build_20261027000854842.stdout.log": "5d528f62bd92b190a2c9904212f65c9a498097c69d16a3b56f1deda5f714103c",
+    "PHASE71_build_20261027000854842.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE71_build_20261027000854842.result.json": "c89caaf03c158181f1898166761cf48328f4ca49026ce7976a59f4951f97587a"
+  },
+  "repair": "Explicit integer algebra-map normalization and direct absolute-square equality only; all14publictypes/3definitions/5controls unchanged.",
+  "design": "Arbitrary actual ideal basis argument; determinant/index and symbolic polynomial calculations separate; no chosen Smith-basis unfolding, no heartbeat increase.",
+  "limits": [
+    "Helper only: actual basis construction, coordinate bijection and geometric count composition not supplied here.",
+    "No uniform leading coefficient, even chart, arithmetic B, cutoff/classification/novelty/review/upstream claim.",
+    "Phase69remains a frozen stopped failure; no69rerun/repair/limit increase or production mutation.",
+    "Separate livePR34CI does not cover this standalone file."
+  ]
+}

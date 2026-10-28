@@ -1,0 +1,21 @@
+# Phase72: compose the new arithmetic helper into actual ideal coordinates and count
+
+Registered before production source/execution. Base38359c7. Phase71 helper is accepted with frozen source/raw/results; Phase69 remains its original stopped failure, with no69rerun/repair/limit increase. This is a new composed proof architecture using the checked arbitrary-basis lemma, not a replay or relabeling of69. PR34 CI40423599797/job121923735462 is live; work locally with no push/cancel/restart/status transfer. No merge/reviewer.
+
+## Fixed transport and complete bridge
+
+Transport final accepted Phase71 to production IdealBasisArithmetic.lean with ONLY import changes: ClassFiber+ClassNumberInertBridge+AxiomAudit, plus pinned Mathlib imports only if a missing API is found. Preserve every definition, type, guard, proof, control and print. Add production IdealCoordinates.lean and two root imports.
+
+For actual squarefree odd-chart D mod4=3, and EVERY nonzero integral ideal J of O_K, construct an actual Basis(Fin2,Int,J) with Ideal.selfBasis and compose the opaque checked helper. Prove existence of e and integer a,b,c chosen before all finite sets/thresholds, with a>0,4ac-b^2=D and actual Norm(combine e x y)=N(J)*(ax^2+bxy+cy^2) for all integer x,y. No supplied basis/form/divisibility/discriminant/count premise in the final existence/count theorem. Avoid unfolding the chosen basis inside determinant simplification.
+
+Define integer-pair coordinates from e.repr, prove injectivity and actual ring-element reconstruction through the restricted-scalar subtype linear map (coherent actions, not the failed generic Int-smul shortcut). Compose the unchanged QuadraticRows.off_axis_area_bound to prove, for every finite U of actual elements of J and natural t, norm-magnitude<=N(J)*t and nonzero second coordinate imply
+ card(U)<=2*pi*t/sqrtD+4*sqrt(a*t/D).
+Keep the normalized-norm identity and count on the SAME chosen e,a,b,c. The geometry's a is this actual positive integral coefficient, not a supplied area or freely substituted scale. No uniform upper bound on a is asserted yet.
+
+Fixed controls: coordinate negation is pointwise negation; a zero norm-threshold with off-axis guard forces U empty; origin singleton violates the off-axis guard and would falsify zero budget if it were omitted; actual D=7 principal ideal(2) has norm4 using accepted arithmetic; D=7 unit-ideal empty threshold instantiates the full chosen-form/count theorem. Retain all transported71controls. Print full chosen-form/count type, form predicate and axiom list. Input checker traverses normalized_form_of_basis and the full chosen-form/count root, excludes the same34 listed older h1/cutoff/classification/answer-list roots and permits only standard3 axioms; no unrestricted semantic independence claim.
+
+## Bounds and preservation
+
+At most3 complete target builds of BOTH production modules,600seconds/8192MB each,1200seconds cumulative; at most2 repairs with unchanged target/control types/guards and exact71body transport. Stop after any resource stop, including deterministic heartbeat exhaustion. No heartbeat increase or extra standalone probe. Snapshot both sources/stdout/stderr/result every attempt. After acceptance root once1200seconds/8192MB, input once180seconds, full compiled audit once180seconds; unchanged structural coverage/escape scan and250source-pair correspondence. No old campaign rerun, especially stopped69, consumed68 or incomplete61regressions. New exact-head pinned Linux CI runs unchanged full gates after publication; no pass assumed.
+
+Only these2modules/root imports change production mathematics. Existing Gram/derivatives/radius, old proofs, tools, pins, certificates and CI gates remain unchanged. Old source/raw/manifests/verifiers remain frozen historical records after new root imports; no weakening of their fixed scope. README61lines with refreshed verification pointer; human guide distinguishes the new completed coordinate/count bridge from the still-missing quantitative leading coefficient, even chart, field transport and usable arithmetic B. No new cutoff/classification/novelty/human-review/upstream claim. Publish only after PR34's exact terminal CI is recorded, combining71and72 coherently. No automatic merge/reviewer. Broader goal remains open.

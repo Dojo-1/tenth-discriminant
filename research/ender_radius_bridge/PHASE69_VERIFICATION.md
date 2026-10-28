@@ -1,5 +1,11 @@
 # Phase69: coordinate bridge attempt stopped; no checked result
 
+**Current development:** [Phase72](PHASE72_VERIFICATION.md) now completes
+the odd-chart actual basis/form/count bridge through separately registered
+helper/composition proofs. Phase69 stays its original stopped failure;
+Phase71 stays its original accepted helper. Their source/raw/verifiers
+remain frozen; use the Phase72 verifier for the new integrated tree.
+
 **Current tree:** [Phase70](PHASE70_VERIFICATION.md) integrates only accepted
 multiplicity and preserves the stopped coordinate target outside production.
 The original fixed-current-root integrity command below is historical at

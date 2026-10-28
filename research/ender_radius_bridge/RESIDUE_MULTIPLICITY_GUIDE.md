@@ -33,11 +33,11 @@ equalities would give p*Norm(J_C)=q*Norm(J_C). The ideal is nonzero, so its
 norm is positive and cancellation gives p=q. The selected sets for distinct
 primes are disjoint; their union therefore has4*card(P) elements.
 
-**The labels matter.** These points belong to several ideal lattices. We
-have not placed all4*card(P) points in one common plane or in the original
-Gram lattice. A basis, normalized binary-form coefficients/discriminant and
-a controlled leading coefficient are still needed to apply the geometric
-point-count bound separately to each class and then add those bounds.
+**The labels matter.** These points belong to several ideal lattices.
+The later [coordinate theorem](IDEAL_COORDINATE_GUIDE.md) constructs a basis
+and actual form/count for each such lattice. A quantitative leading bound
+and calibrated principal-class basis are still needed for uniform class-wide
+bounds. The labelled points have not become one common Gram-lattice set.
 
 The boundary controls explain the guards: at the ramified example D=15,
 p=3, root0 equals its negative, so this pair of maps coincides. In
@@ -51,3 +51,7 @@ a [full local audit](PHASE70_VERIFICATION.md); new-head CI remains required.
 The even chart, arbitrary-field
 parameter transport and a usable arithmetic count B remain open.
 No new cutoff or classification is claimed.
+
+The later [actual ideal-coordinate theorem](IDEAL_COORDINATE_GUIDE.md) now
+constructs the odd-chart basis/form and composes the geometric count locally.
+A quantitative leading bound and calibrated principal-class basis remain.
