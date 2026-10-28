@@ -1,5 +1,26 @@
 # Status — 2026-10-28
 
+## Phase98: the actual even prime count is integrated
+
+The main Lean library now includes the class-sum prime-prefix bound,
+with all six accepted theorems and four controls unchanged. The proof
+counts the same selected points class by class, then divides by four.
+The caller supplies neither the points nor an assumed counting estimate.
+[Human explanation](research/ender_radius_bridge/EVEN_CLASS_SUM_GUIDE.md) ·
+[Exact verification record](research/ender_radius_bridge/PHASE98_VERIFICATION.md).
+
+Module, full build, input check and whole-library audit all passed on their
+first invocation. The 54,805-declaration dependency closure excludes 49
+older inputs. All 192 project modules are reachable; the audit covers
+5,253 logical declarations and 4,465 theorems using the three permitted
+axioms. Saved evidence preserves 25 raw files and freezes 1,528 prior files.
+
+The count still contains the actual field-dependent Minkowski constant.
+Weighted loss, explicit normalization and the contradiction for the same
+original Gram determinant remain open. There is no new even cutoff,
+external CI or independent human review. Argon's review is still pending.
+Earlier entries below retain their historical scopes and failures.
+
 ## Phase97: actual class counts now bound eligible prime prefixes
 
 A standalone theorem partitions the selected 4*card(P) points by actual

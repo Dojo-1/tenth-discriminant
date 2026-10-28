@@ -51,7 +51,9 @@ shows why the same axis simplification fails at h=3: 4>3.
 
 The caller supplies no chosen family, points, cardinality identity or
 slice estimate. Those come from the actual coherent family and the
-checked slice/count interfaces. [Exact bounded attempt](PHASE97_VERIFICATION.md).
+checked slice/count interfaces. [Original bounded attempt](PHASE97_VERIFICATION.md).
+The accepted proof is now imported by the main library without mathematical
+changes. [Integration and verification](PHASE98_VERIFICATION.md).
 
 This is an actual prime-prefix count. It is not yet the weighted loss
 bound for the original determinant. Weighted summation, explicit actual

@@ -1,18 +1,28 @@
 # Current claim-to-Lean map
 
-Latest standalone theorems: `EvenClassAggregation.prime_prefix_bound` and
-`uniform_two_class_bound` prove the actual even admissible-prime prefix
-bound h(K)/4*(A+B+1), then (A+B+1)/2 under h<=2. Here A=2pi*t/sqrt(4d),
-B=4sqrt(actualM(K)*t/(4d)); actualM(K) remains field-dependent. No supplied
-family, point cardinality, class slice or count premise. The coherent
-actual family96 supplies the data; generic cardinality-preserving ideal
-slices and two-class accounting are reused. [Human proof](../research/ender_radius_bridge/EVEN_CLASS_SUM_GUIDE.md)
-and [exact97record](../research/ender_radius_bridge/PHASE97_VERIFICATION.md).
-First90.1254956sPASS, no repairs/retries; six public types/no new definitions/
-four controls; namespace6/6/0, standard three axioms. Fresh54,805closure
-excludes49old roots, including both odd-field prefix theorems. Production
-root and96whole audit unchanged. Integration/weighted loss/actualM/
-same-original-Gram/even cutoff/externalCI/humanreview remain open.
+Current production theorems: `EvenClassAggregation.prime_prefix_bound` and
+`uniform_two_class_bound`. For positive squarefree d with d=1 or 2 modulo
+4 and actual class number h(K)<=2, they prove the eligible-prime count
+
+    card(P) <= h(K)/4*(A+B+1) <= (A+B+1)/2,
+    A = 2*pi*t/sqrt(4*d),
+    B = 4*sqrt(actual M(K)*t/(4*d)).
+
+No family, point cardinality, class slice or counting estimate is supplied
+by the caller. The coherent actual family supplies the points; slicing
+preserves cardinality within each class. The identity class pays no axis
+error. [Human proof](../research/ender_radius_bridge/EVEN_CLASS_SUM_GUIDE.md) ·
+[Exact integration record](../research/ender_radius_bridge/PHASE98_VERIFICATION.md).
+
+All six accepted theorem statements/proofs and four controls are unchanged.
+The module and full build, fresh input check and whole-library audit pass.
+The 54,805-declaration closure excludes the same 49 older inputs, including
+both odd-field prefix bounds. There are 192 reachable project modules;
+the whole audit covers 5,253 logical declarations and 4,465 theorems with
+only `propext`, `Classical.choice` and `Quot.sound`.
+
+M(K) remains field-dependent. Weighted loss, its explicit normalization,
+the same-original-Gram even cutoff, external CI and human review remain open.
 Earlier entries below are historical checkpoints.
 
 Current production theorem: `EvenPrimeFamily.controlled_family` is imported
