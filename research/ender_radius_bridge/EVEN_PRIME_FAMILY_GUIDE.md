@@ -52,6 +52,10 @@ two roots in characteristic two, collapse at a ramified zero root,
 the zero-modulus guard and the empty finite prime set.
 [Exact attempt and verification](PHASE95_VERIFICATION.md).
 
+The accepted proof, maps, count data and controls are now integrated
+unchanged into the main Lean library. [Exact integration record](PHASE96_VERIFICATION.md)
+keeps its local checks separate from external CI and human review.
+
 This is the coherent prime-family bridge. It is not yet a weighted
 inequality for the original Gram, an even cutoff or a full classification.
 Actual Minkowski normalization and the parameter/discriminant factor of

@@ -113,3 +113,4 @@ import TenthDiscriminant.OddFieldTwoClass
 import TenthDiscriminant.EvenIdealCount
 import TenthDiscriminant.EvenControlledClass
 import TenthDiscriminant.EvenPrimeAxis
+import TenthDiscriminant.EvenPrimeFamily

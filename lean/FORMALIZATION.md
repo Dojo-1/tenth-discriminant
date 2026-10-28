@@ -1,6 +1,22 @@
 # Current claim-to-Lean map
 
-Latest standalone theorem: `EvenPrimeFamily.controlled_family` constructs
+Current production theorem: `EvenPrimeFamily.controlled_family` is imported
+by the main root. Accepted95 statements/proofs/three definitions/controls/
+reports are exact after dependency imports. One actual bounded family is
+chosen before all finite admissible prime sets, carrying BOTH full
+calibrated class counts and4*card(P) selected distinct norm elements.
+[Human proof](../research/ender_radius_bridge/EVEN_PRIME_FAMILY_GUIDE.md) and
+[exact96record](../research/ender_radius_bridge/PHASE96_VERIFICATION.md).
+First target/root/input/whole-audit pass:191modules,5,247 logical declarations,
+4,459 theorems,17,004 runtime auxiliaries; three standard axioms. Fresh
+54,801-declaration closure excludes47older roots. No standalone95replay;
+both root-proof failures are preserved. One inherited blank EOF line is
+retained for exact source transfer. Actual class sum/weighted loss/Minkowski
+normalization/same-original-Gram/even cutoff/externalCI/humanreview remain
+open. Existing field bounds are unchanged. Previous sections below are
+historical checkpoints;95is now integrated through96.
+
+Phase95 standalone checkpoint (now integrated at96): `EvenPrimeFamily.controlled_family` constructs
 ONE actual bounded class-indexed family before ALL finite admissible prime
 sets P. It carries full calibrated per-class count data and yields exactly
 4*card(P) selected distinct tagged actual norm elements in that SAME family.

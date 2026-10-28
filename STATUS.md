@@ -1,5 +1,23 @@
 # Status — 2026-10-28
 
+## Phase96: the coherent actual even prime family is integrated
+
+The accepted95 theorem is now in the main Lean root. All 13 statements,
+proofs, three definitions, five controls and reports are unchanged after
+imports. The SAME actual bounded family carries the counts and 4*card(P)
+selected distinct prime lifts for every finite admissible P.
+[Human proof](research/ender_radius_bridge/EVEN_PRIME_FAMILY_GUIDE.md) and
+[exact integration](research/ender_radius_bridge/PHASE96_VERIFICATION.md).
+Module 94.4185025 s, root 31.6517561 s, input 32.4581103 s and audit 31.659262 s all pass
+first invocation. The library has 191 modules;5,247 logical declarations/4,459 theorems;
+three standard axioms. The fresh 54,801-declaration closure excludes the same 47 older roots.
+25 raw files and 1,512 prior files pass saved verification. No standalone95 replay.
+One inherited blank EOF line is kept for exact accepted-body transfer.
+Class summation, weighted loss, actual Minkowski normalization and the
+same-original-Gram/even cutoff remain open. External exact-head CI and
+independent human review are separate; Argon review is still pending.
+Older sections preserve historical scopes and both rejected95 attempts.
+
 ## Phase95: prime lifts and counts now share one controlled even family
 
 A standalone theorem constructs actual even residue maps and proves the
