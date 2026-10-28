@@ -1,5 +1,9 @@
 # Current claim-to-Lean map
 
+## Phase107: the arbitrary even-field gap closes standalone
+
+New standalone `EvenFieldTwoClass.arbitrary_even_discriminant_bound` constructs the actual even chart internally; `arbitrary_discriminant_bound` combines it with the existing odd theorem to prove actual absdiscr<2^52 for ANY degree-two totally complex number field with actual h<=2. `parity_refined_discriminant_bound` retains odd<2^50; `classNumber_gt_two_of_large_discriminant` gives the contrapositive. No caller generator/equivalence or canonical count/class-number premise. [Human proof](../research/ender_radius_bridge/ALL_FIELD_TWO_CLASS_GUIDE.md) · [Exact first-run verification](../research/ender_radius_bridge/PHASE107_VERIFICATION.md). Namespace11logical/11theorems, standard3axioms; even60excluded roots, combined37. No new production/root integration or external CI. PR37 CI is [cancelled, not green](../research/ender_radius_bridge/PR37_CI_LIMIT_RECEIPT.md). Earlier phase entries below describe historical checkpoints.
+
 ## Phase106 integration
 
 Production now includes `TenthDiscriminant.CoordinateTranslation`: all 29 accepted public statements/proofs, five definitions and four controls are unchanged after imports. All four local integration checks pass; whole audit 5,350 logical / 4,554 theorem / 17,015 runtime. [Current guide](../research/ender_radius_bridge/COORDINATE_BRIDGE_CURRENT.md) · [Receipt](../research/ender_radius_bridge/PHASE106_VERIFICATION.md). Earlier standalone status below describes Phase105, before integration.

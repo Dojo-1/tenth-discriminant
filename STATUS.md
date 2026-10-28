@@ -1,5 +1,9 @@
 # Status — 2026-10-28
 
+## Phase107: the arbitrary even-field gap closes standalone
+
+The first full standalone target now proves actual absolute discriminant<2^52 for EVERY imaginary quadratic number field with actual h<=2; odd discriminants retain<2^50. The even chart is constructed internally and class number/discriminant transported, with no supplied root or isomorphism. Five main theorems, four controls, no definitions; PASS100.7739366s,11logical/11theorems, standard3axioms. [Human guide](research/ender_radius_bridge/ALL_FIELD_TWO_CLASS_GUIDE.md) · [Evidence](research/ender_radius_bridge/PHASE107_VERIFICATION.md). Standalone only; the h1 bound stays50b. PR37 remains draft after its [25m CI stop](research/ender_radius_bridge/PR37_CI_LIMIT_RECEIPT.md); no retry/limit/workflow change/merge. Earlier phase entries below are preserved checkpoints.
+
 ## Phase106 integration
 
 Phase106 integrates the accepted coordinate/translation proof unchanged. Module build, full build, fresh dependency checks and whole audit all pass first time: 5,350 logical declarations / 4,554 theorems / 17,015 runtime auxiliaries. [Current human guide](research/ender_radius_bridge/COORDINATE_BRIDGE_CURRENT.md) · [Exact verification](research/ender_radius_bridge/PHASE106_VERIFICATION.md). No cutoff change; external CI belongs to its own final published head.

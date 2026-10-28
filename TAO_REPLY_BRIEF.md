@@ -1,14 +1,19 @@
 # Factual brief for a possible reply to Tao
 
-## Phase106 integration
+**AI-prepared through107; this brief is not posted.** Existing public
+repo-linked comments are recorded separately. Tao asks for a human-generated
+summary; the contributor should review and revise the text in their own words.
 
-Phase106 now integrates the accepted coordinate/shift bridge unchanged, with full local build and audit passing. [Current guide](research/ender_radius_bridge/COORDINATE_BRIDGE_CURRENT.md). Publication/CI must be checked on the new exact head; the 50-billion result is unchanged. Earlier Phase105 standalone notes are historical.
+## Current verification boundary
 
-## Latest verification boundary
-
-Production through Phase104 is merged in PR36 with passing pinned CI and security checks on its exact head; [receipt](research/ender_radius_bridge/PR36_MERGE_RECEIPT.md). Phase105 separately checks coordinate maps and literal shifts with explicit invariants and a determinant non-invariance counterexample. It is standalone and has no external CI yet. No cutoff improvement or full-classification announcement follows. [Accessible explanation](research/ender_radius_bridge/COORDINATE_TRANSLATION_GUIDE.md).
-
-**AI-prepared, through Phase 105. Not posted.** Existing public repo-linked comments are recorded in the source refresh below. Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
+The h1 cutoff stays50b. New standalone107 proves actual absdiscr<2^52 for
+ANY imaginary quadratic field with actual h<=2, retaining odd<2^50;
+no caller generator or isomorphism. [Human proof](research/ender_radius_bridge/ALL_FIELD_TWO_CLASS_GUIDE.md).
+PR36 is merged with passing exact-head CI. PR37's CI is cancelled at25m,
+not green, and that PR remains draft/unmerged. [Preserved receipt](research/ender_radius_bridge/PR37_CI_LIMIT_RECEIPT.md).
+No external CI or independent review is claimed for107. No cutoff gain,
+full classification announcement, new posting or review commission here.
+Older milestone descriptions below retain their separate evidence scopes.
 
 ## Short draft for human revision
 
@@ -48,19 +53,18 @@ are now integrated unchanged: M(K)=4*sqrt(d)/pi, and the full original-Gram
 budget is dominated by the previously used scalar envelope. The
 [all-range even-chart contradiction](research/ender_radius_bridge/EVEN_TWO_CLASS_BOUND_GUIDE.md)
 is integrated unchanged: actual class number<=2 implies radicand<2^50 and
-actual discriminant<2^52. Arbitrary even-field transport remains open;
+actual discriminant<2^52. Arbitrary even-field transport is now checked standalone at107;
 this is no full-classification announcement.
 
 [Phase104 verification](research/ender_radius_bridge/PHASE104_VERIFICATION.md)
 records the unchanged accepted proof, all four local checks passing,
 195 reachable modules, the whole-library axiom audit and 58 excluded older
 inputs. These checks are separate from the earlier published CI and
-review. External CI is recorded per published head; no independent review is claimed. Argon's
-review is still underway and has not been received or assessed.
+review. External CI is recorded per published head; no independent review is claimed. No new independent Argon report was received or assessed in this cycle.
 
 ## Limits that must travel with the result
 
-Independent human semantic review, verified model-family independence, Mathlib acceptance, optimality and the arbitrary-field even-discriminant higher-class-number extension are not established. The new odd-chart range is integrated and checked locally. A passing Lean build checks the encoded statement; it does not itself establish that the intended mathematical interpretation has received independent review.
+Independent human semantic review, verified model-family independence, Mathlib acceptance and optimality are not established. The arbitrary-field even-discriminant h<=2 extension is now checked standalone at107, awaiting integration and external CI. The new odd-chart range is integrated and checked locally. A passing Lean build checks the encoded statement; it does not itself establish that the intended mathematical interpretation has received independent review.
 
 The quoted 1933 Lehmer announcement reports a strict finite range `163 < D < 5 billion` in radicand notation. It cannot alone complete our 50-billion cutoff. Nor does deriving a later theorem from older foundations establish an earliest historical year. No such year is claimed.
 
