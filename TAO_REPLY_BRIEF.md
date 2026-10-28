@@ -1,6 +1,10 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared, through Phase 104. Not posted.** Existing public repo-linked comments are recorded in the source refresh below. Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
+## Latest verification boundary
+
+Production through Phase104 is merged in PR36 with passing pinned CI and security checks on its exact head; [receipt](research/ender_radius_bridge/PR36_MERGE_RECEIPT.md). Phase105 separately checks coordinate maps and literal shifts with explicit invariants and a determinant non-invariance counterexample. It is standalone and has no external CI yet. No cutoff improvement or full-classification announcement follows. [Accessible explanation](research/ender_radius_bridge/COORDINATE_TRANSLATION_GUIDE.md).
+
+**AI-prepared, through Phase 105. Not posted.** Existing public repo-linked comments are recorded in the source refresh below. Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
 
 ## Short draft for human revision
 

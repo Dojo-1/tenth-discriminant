@@ -1,9 +1,13 @@
 # Tao's challenge: current accounting and side discoveries
 
+## New accounting: compatible charts and translations
+
+Phase105 checks both requested translations, with explicit norm, metric, sample-count, original-matrix and divisibility invariants. Bonus discovery: the real trace-Gram determinant is not translation invariant, even above the strict sample-count threshold (24 becomes 60). This closes a compatibility obligation and prevents an invalid optimization shortcut; it lowers no cutoff. [Human guide](research/ender_radius_bridge/COORDINATE_TRANSLATION_GUIDE.md). Production through Phase104 is [merged and checked on its exact head](research/ender_radius_bridge/PR36_MERGE_RECEIPT.md); Phase105 remains standalone. Independent human review, arbitrary even-field transport, optimal constants and Mathlib acceptance remain open.
+
 **For imaginary quadratic fields of class number one, the checked absolute
 field-discriminant bound is 50 billion.** Class number one means unique factorization in the ring of
-integers. The geometric count is proved on the draft branch; an arbitrary-field odd-discriminant class-number<=2bound is checked locally;
-the canonical even-chart cutoff is integrated locally, with arbitrary-field
+integers. The geometric count and arbitrary-field odd-discriminant class-number-at-most-two bound are merged in PR36;
+the canonical even-chart cutoff is merged there too, with arbitrary-field
 transport still open. This page tracks
 Tao's [challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)
 through the 50-billion source `63be64b`, actual odd-field bound Phase88,
