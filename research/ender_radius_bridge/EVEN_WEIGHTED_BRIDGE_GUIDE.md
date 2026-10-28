@@ -59,6 +59,7 @@ one column, all valuation weights vanish, as they should.
 M(K) is still the actual field-dependent Minkowski constant. We must
 normalize it, bound K_L(B) explicitly, and compare the resulting loss
 against the same Gram's upper estimate over the full parameter range.
-The new proof is standalone; production integration and new external CI
-remain open. No numerical candidate is a premise, and no new even cutoff
+The accepted proof is now imported by the main library without mathematical
+changes. [Integration checks](PHASE100_VERIFICATION.md) pass locally; new
+external CI remains open. No numerical candidate is a premise, and no new even cutoff
 or full classification is claimed.

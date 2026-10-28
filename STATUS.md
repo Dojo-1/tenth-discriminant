@@ -1,5 +1,27 @@
 # Status — 2026-10-28
 
+## Phase100: the actual even weighted bridge is integrated
+
+The original-Gram weighted budget is now part of the main Lean library.
+The accepted definition, seven theorem statements and proofs, and five
+controls are unchanged. It combines actual even-field counts, local
+prime-power divisibility and a separate budget for primes dividing d.
+[Human explanation](research/ender_radius_bridge/EVEN_WEIGHTED_BRIDGE_GUIDE.md) ·
+[Exact checks](research/ender_radius_bridge/PHASE100_VERIFICATION.md).
+
+Module build, full library, input check and whole-library audit all passed
+on their first invocation. There are 193 reachable modules; the audit
+covers 5,264 logical declarations and 4,475 theorems with the three
+permitted axioms. The 57,514-declaration closure excludes the same 52 older
+inputs. Saved verification preserves 25 raw records and 1,544 prior files.
+A saved-verifier cap transcription was corrected; Lean and raw results
+were unchanged and no Lean invocation was repeated.
+
+Actual M(K) normalization, an explicit closed weighted bound and the final
+same-Gram even cutoff remain open. No new cutoff, external CI or independent
+human review is claimed. Argon remains pending; older entries preserve
+historical scopes and failed/stopped attempts.
+
 ## Phase99: the actual even count now controls weighted determinant loss
 
 A standalone Lean theorem turns the actual even-field prime count into

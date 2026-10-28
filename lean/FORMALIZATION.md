@@ -1,23 +1,25 @@
 # Current claim-to-Lean map
 
-Latest standalone theorem: `EvenSplitPrimeBudget.actual_gram_budget`.
+Current production theorem: `EvenSplitPrimeBudget.actual_gram_budget`.
 For positive squarefree d=1 or 2 modulo 4 and actual even-field class
 number at most two, it proves the full finite weighted budget on the
-original ellipse Gram, under the existing radius and odd-prime guards.
+original ellipse Gram under the existing radius and odd-prime guards.
 The prefix estimate and local divisibility are derived, not caller inputs.
-[Human proof](../research/ender_radius_bridge/EVEN_WEIGHTED_BRIDGE_GUIDE.md) ·
-[Exact source and checks](../research/ender_radius_bridge/PHASE99_VERIFICATION.md).
+Actual field discriminant 4*d appears in the count; the same original
+Gram keeps radicand d. [Human proof](../research/ender_radius_bridge/EVEN_WEIGHTED_BRIDGE_GUIDE.md) ·
+[Exact integration](../research/ender_radius_bridge/PHASE100_VERIFICATION.md).
 
-One full invocation passed without repair. Seven public theorem types,
-one definition, five controls; namespace 11 logical declarations and
-10 theorems including generated proof auxiliaries. The 57,514-declaration
-closure excludes the same 49 older inputs plus all three field-specific
-odd SplitPrimeBudget count/budget declarations. Only the three standard
-axioms are used. All production sources and the root remain unchanged.
+The accepted definition, seven public statements/proofs and five controls
+are unchanged after imports. All four registered local checks passed on
+their first invocation. The whole audit covers 5,264 logical declarations
+and 4,475 theorems across 193 reachable modules, with only `propext`,
+`Classical.choice`, `Quot.sound`. The fresh 57,514-declaration closure
+excludes 52 older inputs, including the odd-field counting and budget
+results. No standalone Phase99 replay occurred.
 
-This is a standalone result. Integration, actual M(K) normalization,
-closed weighted bound and final same-Gram even cutoff remain open.
-The following Phase98 production record remains current for the library.
+Actual M(K) normalization, a closed weighted bound, final same-Gram even
+cutoff, new external CI and human semantic review remain open. The
+following entries record earlier integrated components and checkpoints.
 
 Current production theorems: `EvenClassAggregation.prime_prefix_bound` and
 `uniform_two_class_bound`. For positive squarefree d with d=1 or 2 modulo
