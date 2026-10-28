@@ -1,5 +1,9 @@
 # Status — 2026-10-28
 
+## Published result and compatible-transport research frame
+
+PR38 is now merged at6c7e94caf8ffd556805a1b6e30a1763204368c4e after exact source14b5446 passed pinned CI40718714733, full build/audit/all8control families and same-head security. Source/tested/actual merge trees match. [Receipt and raw evidence](research/ender_radius_bridge/PR38_MERGE_RECEIPT.md). PR37 also reports merged through ancestry; its earlier cancelled CI stays cancelled. The research focus now explicitly transports observables and differential operators together with coordinates: [invariants, projections and obstructions](research/ender_radius_bridge/TRANSPORT_INVARIANTS_GUIDE.md). The active24→60counterexample remains valid; a passive jet/coframe transport is a new proof target, not yet checked.
+
 ## Phase109: preserve every gate with bounded concurrency
 
 The new publication architecture preserves the inherited mathematical control families and timeouts while allowing at most2independent families at once. All six SYNTHETIC scheduler tests pass first run; they do not run Lean. Mathematical source/root/pins/workflow remain unchanged from108. [Human explanation](research/ender_radius_bridge/CONTROL_SCHEDULING_GUIDE.md) · [Local evidence](research/ender_radius_bridge/PHASE109_VERIFICATION.md) · [Versioned publication status](research/ender_radius_bridge/VERIFICATION_CURRENT.md). One new full CI target is registered; old PR37 stays a cancelled run. Earlier entries below are checkpoints.

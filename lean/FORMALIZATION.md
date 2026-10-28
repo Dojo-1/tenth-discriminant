@@ -1,5 +1,9 @@
 # Current claim-to-Lean map
 
+## Published result and compatible-transport research frame
+
+Published source14b5446 and actual merge6c7e94c share the tested tree; pinned CI40718714733 completed full build,5361logical/4565theorem audit and all eight inherited families. [Exact receipt](../research/ender_radius_bridge/PR38_MERGE_RECEIPT.md). The new [transport interpretation](../research/ender_radius_bridge/TRANSPORT_INVARIANTS_GUIDE.md) distinguishes active point shifts with fixed monomials from passive transport of points, observables and ordinary jets. The latter full coframe interface is a proposed next Lean obligation; the guide does not claim it is already mechanized or supplies computational hardness bounds.
+
 ## Phase109: preserve every gate with bounded concurrency
 
 Phase109 changes only control orchestration: max2independent final families, same eight scripts/arguments/timeouts and all mathematical rejection rules. Six SYNTHETIC scheduler tests pass; no new mathematical proof or axiom audit is claimed from them. All Lean sources remain byte-exact to108. [Local scheduling evidence](../research/ender_radius_bridge/PHASE109_VERIFICATION.md) · [Publication receipt location](../research/ender_radius_bridge/VERIFICATION_CURRENT.md). The full new pinned CI must complete before merge; the old cancelled run is preserved.

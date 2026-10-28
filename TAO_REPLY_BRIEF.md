@@ -11,7 +11,7 @@ ANY imaginary quadratic field with actual h<=2, retaining odd<2^50;
 no caller generator or isomorphism. [Human proof](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md).
 PR36 is merged with passing exact-head CI. PR37's CI is cancelled at25m,
 not green, and its cancellation remains preserved. [Preserved receipt](research/ender_radius_bridge/PR37_CI_LIMIT_RECEIPT.md).
-[External status is versioned per publication head](research/ender_radius_bridge/VERIFICATION_CURRENT.md); no independent review is claimed for107/108. No cutoff gain,
+[PR38 passed full pinned CI and merged](research/ender_radius_bridge/PR38_MERGE_RECEIPT.md); no independent review is claimed for107/108. No cutoff gain,
 full classification announcement, new posting or review commission here.
 Older milestone descriptions below retain their separate evidence scopes.
 
