@@ -1,4 +1,574 @@
-# Status — 2026-10-27
+# Status — 2026-10-28
+
+## Phase104: actual even-chart cutoff is integrated unchanged
+
+The main library now proves actual even-field class number>2 for every
+squarefree d=1 or 2 modulo 4 with d>=2^50. Under h<=2, radicand<2^50 and
+actual absolute field discriminant<2^52. All seven accepted public theorem
+statements/proofs, four controls and reports are unchanged; no new definitions.
+[Human proof](research/ender_radius_bridge/EVEN_TWO_CLASS_BOUND_GUIDE.md) ·
+[Exact integration](research/ender_radius_bridge/PHASE104_VERIFICATION.md).
+
+Module/full build/input/whole audit all passed on their first invocation.
+The library has195reachable modules,5,307logical declarations and4,516
+proof theorems with the three permitted axioms. Fresh closures59,697 and
+59,701exclude58older inputs. Saved verification preserves25raw records and
+1,573prior files, including the failed103wrapper and its exact repair.
+No standalone103replay or mathematical repair occurred during integration.
+
+The user explicitly authorized merge. Earlier PR35 is now merged at
+b402116 after its own exact-head pinned CI was freshly checked. That does
+not validate this newer head. This local record precedes publication;
+new exact-head CI and merge receipts belong to its associated PR.
+Arbitrary-field transport, requested coordinate/literal-shift invariants
+and independent human review remain separate next targets. No full
+classification, improved h1cutoff or optimality is claimed.
+
+A [primary-source refresh](research/ender_radius_bridge/SOURCE_REFRESH_20261028.md)
+locates two existing public repo-linked Tao comments, correcting the old
+blanket absence claim. The current AI brief is unposted by this agent.
+Argon remains pending; historical entries retain their original scopes.
+
+## Phase103: full all-range even-chart two-class cutoff is checked
+
+For every positive squarefree d=1 or 2 modulo 4, the standalone theorem
+proves d>=2^50 implies actual class number(EvenQuadraticField d)>2.
+Consequently actual class number<=2 gives d<2^50 and absolute actual
+field discriminant<4*2^50=2^52. The factor of four is explicit.
+[Human contradiction](research/ender_radius_bridge/EVEN_TWO_CLASS_BOUND_GUIDE.md) ·
+[Exact attempt and scope](research/ender_radius_bridge/PHASE103_VERIFICATION.md).
+
+The first full attempt checked the contradiction/radicand bound but failed
+when simplifying the discriminant absolute value. Adding Int.natAbs_mul
+to that wrapper's simp made the second full attempt pass. All seven public
+types and four controls are unchanged; no new definitions. Both sources
+and results are preserved:86.8947538s failed,83.9126192s passed. Final
+namespace20logical declarations/20theorems, standard three axioms. Fresh
+closures reach59,697 and59,701declarations, excluding the same58older
+inputs. Eight raw files and1,567prior files are frozen; saved verifier passes.
+
+Production/root are unchanged. Integration, arbitrary actual-field
+transport, new external CI and human semantic review remain open. This
+is no full-classification or optimality claim; the separate h1field bound
+stays50billion. Argon remains pending. Older entries preserve historical
+scopes and all failed/stopped attempts.
+
+## Phase102: actual even normalization is integrated unchanged
+
+The main Lean library now contains the actual M(K)=4*sqrt(d)/pi identity,
+closed count-kernel estimate, full normalized original-Gram budget and
+its domination by the previous scalar envelope. All16accepted theorem
+statements/proofs, two definitions, four controls and reports are unchanged.
+[Human reconstruction](research/ender_radius_bridge/EVEN_NORMALIZATION_GUIDE.md) ·
+[Exact integration checks](research/ender_radius_bridge/PHASE102_VERIFICATION.md).
+
+Module, full library, input check and whole-library audit all passed on
+their first invocation. The audit covers5,287logical declarations and
+4,496theorems across194reachable modules, standard three axioms only.
+The57,646-declaration closure excludes the same58older inputs. Saved
+verification preserves25raw records and1,558prior files, including the
+failed first Phase101source and its accepted proof-completion repair.
+No standalone101replay or mathematical repair occurred during integration.
+
+The all-range even cutoff and arbitrary-field transport remain open,
+along with new external CI and independent human review. No new cutoff
+or full classification is claimed. Argon remains pending; earlier entries
+retain historical scopes and failed/stopped attempts.
+
+## Phase101: actual even normalization and closed Gram budget are checked
+
+A standalone theorem proves actual M(K)=4*sqrt(d)/pi from the checked
+rational degree, absence of real embeddings and discriminant -4*d.
+It bounds the finite count operator in closed form, composes the result
+with the original-Gram weighted budget, and proves that this cost is no
+larger than the previously used scalar envelope. No field replacement
+or caller-supplied normalization is used.
+[Human proof](research/ender_radius_bridge/EVEN_NORMALIZATION_GUIDE.md) ·
+[Exact bounded attempt](research/ender_radius_bridge/PHASE101_VERIFICATION.md).
+
+The first full invocation failed at the final propositional simplification
+in actual_minkowski; the audit rejected its incomplete dependency. Adding
+one final simp in that proof made the second full invocation pass. All
+16 public types, two definitions and four controls are unchanged. Both
+sources and results are preserved: 94.426986 s failed, 49.0224752 s passed;
+143.4494612 s cumulative. The final namespace has 23 logical declarations,
+21 theorems, standard three axioms. Its fresh 57,646-declaration closure
+excludes 58 older inputs. Eight raw files and 1,553 prior files are frozen.
+
+Production/root remain unchanged. Integration, the all-range even cutoff,
+arbitrary-field transport, new external CI and human review remain open.
+No new cutoff or full classification is claimed. Argon remains pending;
+earlier entries retain historical scopes and failed/stopped attempts.
+
+## Phase100: the actual even weighted bridge is integrated
+
+The original-Gram weighted budget is now part of the main Lean library.
+The accepted definition, seven theorem statements and proofs, and five
+controls are unchanged. It combines actual even-field counts, local
+prime-power divisibility and a separate budget for primes dividing d.
+[Human explanation](research/ender_radius_bridge/EVEN_WEIGHTED_BRIDGE_GUIDE.md) ·
+[Exact checks](research/ender_radius_bridge/PHASE100_VERIFICATION.md).
+
+Module build, full library, input check and whole-library audit all passed
+on their first invocation. There are 193 reachable modules; the audit
+covers 5,264 logical declarations and 4,475 theorems with the three
+permitted axioms. The 57,514-declaration closure excludes the same 52 older
+inputs. Saved verification preserves 25 raw records and 1,544 prior files.
+A saved-verifier cap transcription was corrected; Lean and raw results
+were unchanged and no Lean invocation was repeated.
+
+Actual M(K) normalization, an explicit closed weighted bound and the final
+same-Gram even cutoff remain open. No new cutoff, external CI or independent
+human review is claimed. Argon remains pending; older entries preserve
+historical scopes and failed/stopped attempts.
+
+## Phase99: the actual even count now controls weighted determinant loss
+
+A standalone Lean theorem turns the actual even-field prime count into
+an estimate on the original Gram matrix. It partitions odd primes into
+nonsquare primes supplying divisibility, divisors of d with a logarithmic
+budget, and the remaining square primes paid for by the checked count.
+The positive summation operator preserves that count inequality.
+[Human proof](research/ender_radius_bridge/EVEN_WEIGHTED_BRIDGE_GUIDE.md) ·
+[Exact attempt](research/ender_radius_bridge/PHASE99_VERIFICATION.md).
+
+First invocation passed in 96.1654538 seconds, with no repair or retry.
+Seven public types, one definition and five controls are checked. The
+57,514-declaration dependency closure excludes 52 older inputs, including
+the odd-field budget and count. The namespace uses only the three permitted
+axioms; four raw records and 1,538 prior files are frozen. Production/root
+are unchanged. This result is standalone, not a new whole-library CI run.
+
+Actual M(K) normalization, a closed weighted estimate and the final even
+cutoff remain open, along with integration, external CI and human review.
+Argon remains pending. Earlier entries below retain historical scopes.
+
+## Phase98: the actual even prime count is integrated
+
+The main Lean library now includes the class-sum prime-prefix bound,
+with all six accepted theorems and four controls unchanged. The proof
+counts the same selected points class by class, then divides by four.
+The caller supplies neither the points nor an assumed counting estimate.
+[Human explanation](research/ender_radius_bridge/EVEN_CLASS_SUM_GUIDE.md) ·
+[Exact verification record](research/ender_radius_bridge/PHASE98_VERIFICATION.md).
+
+Module, full build, input check and whole-library audit all passed on their
+first invocation. The 54,805-declaration dependency closure excludes 49
+older inputs. All 192 project modules are reachable; the audit covers
+5,253 logical declarations and 4,465 theorems using the three permitted
+axioms. Saved evidence preserves 25 raw files and freezes 1,528 prior files.
+
+The count still contains the actual field-dependent Minkowski constant.
+Weighted loss, explicit normalization and the contradiction for the same
+original Gram determinant remain open. There is no new even cutoff,
+external CI or independent human review. Argon's review is still pending.
+Earlier entries below retain their historical scopes and failures.
+
+## Phase97: actual class counts now bound eligible prime prefixes
+
+A standalone theorem partitions the selected 4*card(P) points by actual
+ideal class, preserves each slice's cardinality in J_C, and sums the
+calibrated counts. It proves card(P)<=h/4*(A+B+1)<=(A+B+1)/2 under h<=2,
+with A=2pi*t/sqrt(4d) and B=4sqrt(actual M(K)*t/(4d)). The caller supplies
+no family, point count or slice estimate. [Human proof](research/ender_radius_bridge/EVEN_CLASS_SUM_GUIDE.md)
+and [exact record](research/ender_radius_bridge/PHASE97_VERIFICATION.md).
+First invocation PASS in 90.1254956 s, no repair or retry. Six public types,
+no new definitions, four controls; namespace of six logical declarations and six theorems, standard
+three axioms. The fresh 54,805-declaration closure excludes 49 older roots. Four raw files
+and 1,522 prior files are frozen; saved verifier passes. Production/root
+unchanged. Uniformity is in class number; actual M(K) still depends on the
+field. Integration, weighted loss, actual Minkowski normalization and
+same-Gram/even cutoff remain open. No new external CI or independent
+human review is claimed; Argon review remains pending. Older entries
+below preserve historical scopes and all earlier failures.
+
+## Phase96: the coherent actual even prime family is integrated
+
+The accepted95 theorem is now in the main Lean root. All 13 statements,
+proofs, three definitions, five controls and reports are unchanged after
+imports. The SAME actual bounded family carries the counts and 4*card(P)
+selected distinct prime lifts for every finite admissible P.
+[Human proof](research/ender_radius_bridge/EVEN_PRIME_FAMILY_GUIDE.md) and
+[exact integration](research/ender_radius_bridge/PHASE96_VERIFICATION.md).
+Module 94.4185025 s, root 31.6517561 s, input 32.4581103 s and audit 31.659262 s all pass
+first invocation. The library has 191 modules;5,247 logical declarations/4,459 theorems;
+three standard axioms. The fresh 54,801-declaration closure excludes the same 47 older roots.
+25 raw files and 1,512 prior files pass saved verification. No standalone95 replay.
+One inherited blank EOF line is kept for exact accepted-body transfer.
+Class summation, weighted loss, actual Minkowski normalization and the
+same-original-Gram/even cutoff remain open. External exact-head CI and
+independent human review are separate; Argon review is still pending.
+Older sections preserve historical scopes and both rejected95 attempts.
+
+## Phase95: prime lifts and counts now share one controlled even family
+
+A standalone theorem constructs actual even residue maps and proves the
+two kernel ideals distinct at odd primes not dividing the radicand. Under
+class number at most two, it chooses one bounded ideal family before all
+finite admissible prime sets P. That SAME family carries the calibrated
+counts and supplies 4*card(P) selected distinct labelled norm elements.
+[Human proof](research/ender_radius_bridge/EVEN_PRIME_FAMILY_GUIDE.md) and
+[exact record](research/ender_radius_bridge/PHASE95_VERIFICATION.md).
+FAIL 36.1379252 s / FAIL 36.1710641 s / PASS 37.675812 s: only the polynomial root
+proof's cast normalization changed. All 13 public types and proof bodies and
+three definition types are fixed. All three target slots consumed; no replay.
+Namespace: 28 logical declarations and 25 theorems, no runtime auxiliaries; three standard
+axioms. The 54,801-declaration closure excludes 47 older roots. Twelve raw files and
+1,506 prior files are frozen; saved verifier passes. Production/root unchanged.
+Integration, class summation, weighted loss, actual Minkowski normalization and the
+same-Gram contradiction remain open. No even cutoff or new external CI or
+independent human review is claimed. Argon review remains pending.
+Earlier sections preserve historical scopes and both rejected attempts.
+
+## Phase94: the complete even prime-axis count is integrated
+
+The accepted93 proof is now in the main Lean root. All 11 statements,
+proof bodies, controls and reports are unchanged after imports. The same
+bounded ideal and basis serve the complete per-class count, with zero
+axis points in the calibrated principal class and at most two across all
+primes otherwise. [Human proof](research/ender_radius_bridge/EVEN_PRIME_AXIS_GUIDE.md)
+and [exact integration](research/ender_radius_bridge/PHASE94_VERIFICATION.md).
+Module 70.1855337 s, root 25.1691685 s, input 28.8799819 s and audit
+31.0698475 s all passed first invocation. The library has 190 reachable
+modules, 5,219 logical declarations and 4,434 theorems; only three standard
+axioms. Fresh target closure of 54,650 declarations excludes the same 42 older inputs. The
+25 raw files and 1,496 prior frozen files pass the saved verifier. No standalone93 replay.
+One inherited blank EOF line is preserved for exact source transfer.
+Actual even residue maps, coherent prime-family/multiplicity/class-sum/
+weighted same-Gram assembly and an even cutoff remain open. External
+exact-head CI and independent human review remain separate. Argon review
+is still pending; earlier entries preserve their historical scopes.
+
+## Phase93: the missing even prime-axis row is now counted
+
+A standalone theorem calibrates any actual identity-class ideal to
+normalized form (1,0,d) without global h1, excludes its prime-axis points,
+and bounds the axis of any positive actual ideal form by two across all
+primes. Under class number at most two, one fixed bounded ideal and basis
+give the full per-class
+prime-normalized finite count, with no off-axis premise and charge zero in
+the principal class and two otherwise. [Human proof](research/ender_radius_bridge/EVEN_PRIME_AXIS_GUIDE.md)
+and [exact record](research/ender_radius_bridge/PHASE93_VERIFICATION.md).
+FAIL 121.6047918 s / PASS 77.3449178 s; sole repair qualifies the existing even
+norm theorem. All 11 public types, the main proof and five controls are unchanged; no new definitions.
+Namespace: 13 logical declarations, 13 theorems, no runtime auxiliaries;
+three standard axioms. The 54,650-declaration closure
+excludes 42 old roots. Eight raw files and 1,490 prior files are frozen; saved-evidence verifier passes.
+Production/root unchanged. Integration, actual even residue maps, coherent
+prime-family/four-lift/class-sum/weighted same-Gram assembly and even cutoff
+remain open. No new root build or external CI or independent human review claimed.
+Argon review still pending after remote refresh; earlier entries are history.
+
+## Phase92: controlled even class lattices are integrated unchanged
+
+The accepted91controlled actual J/basis/lifts/common count theorem is now
+in the main root, with all mathematical statements, definitions, proof
+bodies, controls and reports exact after imports. [Human proof](research/ender_radius_bridge/EVEN_CONTROLLED_CLASS_GUIDE.md)
+and [exact integration](research/ender_radius_bridge/PHASE92_VERIFICATION.md).
+Target122.5756058s/root35.6583159s/input34.752018s/audit38.6996773s all
+pass first invocation.189modules;5206logical/4421theorems/17004runtime
+auxiliaries, standard3axioms. Fresh54590closure excludes same38old inputs.
+25rawfiles/1480prior files frozen; savedverifierPASS. No standalone91replay.
+One inherited blank EOF line is retained for exact accepted-body transport;
+all other new whitespace checked. Full even primeaxis/multiplicity/class
+sum/weighted same-Gram assembly and cutoff remain open. External exact-head
+CI and independent human review are separate; Argonreviewstillpending.
+Earlier entries below preserve historical scopes and the91failure.
+
+## Phase91: the even coefficient is controlled across each actual class
+
+Under actual class number<=2 in the squarefree even maximal chart, a
+standalone Lean theorem now chooses one bounded ideal J and basis per
+class, with0<a<=N(J)<=M(K),4ac-b²=4d and exact normalized norm. The SAME J
+lifts every ideal in that class; the SAME basis gives the common off-axis
+count for all finite norm-bounded U and thresholds. [Human proof](research/ender_radius_bridge/EVEN_CONTROLLED_CLASS_GUIDE.md)
+and [exact record](research/ender_radius_bridge/PHASE91_VERIFICATION.md).
+FAIL83.4366943s/PASS106.49821s; only a shadowing local variable is renamed.
+All11public types,1definition, main theorem and4controls unchanged.
+17logical/16theorem/0runtime namespace; standard3axioms; fresh54590closure
+excludes38old roots.8rawfiles/1474prior files frozen; savedverifierPASS.
+Production/root/pins unchanged. Integration, full axis/prime multiplicity,
+class sum/weighted same-Gram assembly and even cutoff remain open.
+ActualM(K) has no new explicit scalar estimate. External exact-head CI,
+independent human review and Argon's pending report are separate.
+Earlier entries preserve historical scopes, including the90root audit.
+
+## Phase90: the even ideal count is integrated unchanged
+
+The accepted89norm form and all-finite-set lattice count are now in the
+main Lean root, with mathematical statements, definitions, proof bodies,
+controls and reports byte-exact after dependency imports. One root import;
+the standalone input checker moved out. [Human explanation](research/ender_radius_bridge/EVEN_IDEAL_LATTICE_GUIDE.md)
+and [exact integration](research/ender_radius_bridge/PHASE90_VERIFICATION.md).
+Target50.8546323s/root28.7958112s/input31.5439489s/audit38.7155894s all
+passed on their first invocation.188modules;5189logical/4405theorems/
+17004runtime auxiliaries; standard3axioms. Fresh44910closure excludes
+same37old inputs.25rawfiles/1464prior files frozen; savedverifierPASS.
+No standalone89replay. The even cutoff still needs controlled class
+bases and full prime/weighted/same-Gram assembly. External exact-head CI,
+independent human review and Argon's pending report remain distinct.
+Earlier entries preserve their historical scopes, including89failure.
+
+## Phase89: the actual even ideal lattice now has a checked count
+
+A standalone theorem constructs a positive integral norm form for EVERY
+actual nonzero ideal J in the even maximal chart, with4ac-b^2=4d.
+The SAME basis/form works for every finite norm-bounded off-axis set:
+cardU<=2pi*t/sqrt(4d)+4sqrt(a*t/(4d)). No h1/PID/h<=2 premise.
+[Human explanation](research/ender_radius_bridge/EVEN_IDEAL_LATTICE_GUIDE.md)
+and [exact record](research/ender_radius_bridge/PHASE89_VERIFICATION.md).
+FAIL46.283882s/PASS50.0552128s; only final cast normalization changed.
+All14public types,3definitions, main theorem and four controls are fixed.
+Namespace24logical/21theorems/5runtime auxiliaries, standard3axioms only;
+fresh44910closure excludes37old inputs, including both odd cutoff roots.
+8rawfiles and1458prior frozen files verified. Production/root/pins and
+prior failures are unchanged. No new root build or external CI claimed.
+This is the local even norm-form/count bridge, not an even cutoff:
+controlled class bases, full prime/weighted accounting and same-Gram
+comparison remain. Argonreviewpending. The odd actual-field2^50 bound
+and h1field50billion bound remain as below.
+
+## Phase88: the odd bound is independent of coordinates
+
+For ANY imaginary quadratic number field K with odd actual absolute
+field discriminant and class number at most two, Lean now proves
+abs(discriminant K)<2^50. The caller supplies no generator, isomorphism,
+chart or squarefree radicand. The new generic lemma proves equality of
+actual class numbers under rational field isomorphism, through a
+representative-independent bijection of ideal classes; no PID assumption
+or class-number-one helper is used. [Human explanation](research/ender_radius_bridge/ODD_FIELD_TWO_CLASS_GUIDE.md)
+and [exact evidence](research/ender_radius_bridge/PHASE88_VERIFICATION.md).
+Target FAIL35.8059275s/FAIL100.5685172s/PASS42.3856978s: only the identity
+control proof changed; all11 theorem types,3definitions and main field
+proofs stayed fixed. All3slots consumed, no rerun. Root25.7633655s,
+input82.378348s and whole audit33.3595419s passed once each.187modules;
+5165logical/4384theorems/16999runtime auxiliaries, standard3axioms.
+Fresh closures29583/60577 exclude35old inputs. Prior evidence is frozen.
+The even-discriminant h<=2 branch, external exact-head CI, independent
+human review and full classification remain open. Argon's review is still
+underway; no report has been assessed. The h1field cutoff stays50billion.
+Earlier sections below are historical checkpoints.
+
+## Phase87: the all-range odd two-class bound is integrated
+
+The accepted86mathematics, controls and reports are now in the main Lean
+root, unchanged apart from dependency imports and relocation of the input
+checker. Every squarefree D=3mod4 with D>=2^50 has actual class number>2.
+[Human proof](research/ender_radius_bridge/ODD_TWO_CLASS_BOUND_GUIDE.md) and
+[exact integration checks](research/ender_radius_bridge/PHASE87_VERIFICATION.md).
+Target43.0412347s, root23.9453069s, input30.1005506s and wholeaudit32.420875s
+all passed on their first invocation.186modules;5145logical/4367theorems,
+16996runtime auxiliaries; standard3axioms. Fresh59721closure excludes the
+same34older inputs. Exactsource/evidence verifier passes; all prior failed
+attempts and numerical negatives remain unchanged. Standalone86was not
+replayed. The h1field cutoff stays50billion. Even-chart/arbitrary-field
+transport, external exact-head CI and independent human review remain open.
+Earlier sections retain their historical scopes.
+
+## Phase86: an all-range odd-chart bound for class number at most two
+
+A standalone Lean theorem now proves actual class number>2 for every
+squarefree D=3mod4 with D>=2^50=1125899906842624. The proof controls all
+larger D and composes the actual prime-mass lower bound with the same
+original Gram's diagonal upper bound. No sampled margin or old cutoff
+is assumed. [Human proof](research/ender_radius_bridge/ODD_TWO_CLASS_BOUND_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE86_VERIFICATION.md).
+Three registered invocations: FAIL79.5313154, FAIL46.5392337, PASS48.5733911.
+All21public types,2definitions,main proof and controls remain unchanged;
+repairs only normalize helper proof terms and make endpoint types explicit.
+Namespace42logical/40theorems/3runtime auxiliaries; root closure59,721
+excludes the same34old inputs, standard3axioms only. All3slots consumed;
+no target rerun. Production84unchanged; root integration and external CI
+for86remain pending. Even-chart/arbitrary-field transport and classification
+are open. The class-number-one cutoff remains50billion. Entries below
+preserve earlier checkpoint scopes, including the numerical85test.
+
+## Phase85: a numerical proof target, not a new cutoff
+
+One preregistered scalar test found a positive conservative margin at
+2^50 (about 0.07191), while the sample at 2^48 was negative (about -0.21520).
+Exactly 18 fixed points were evaluated at 100 and 200 digits in one invocation.
+At each precision: 7 negative, 11 positive, none unresolved; all 8 controls pass,
+and lower-precision enclosures contain the higher-precision results.
+[Human explanation](research/ender_radius_bridge/TWO_CLASS_FEASIBILITY_GUIDE.md)
+and [exact record](research/ender_radius_bridge/PHASE85_VERIFICATION.md).
+All production proofs and prior evidence are unchanged. This supplies a
+candidate endpoint for the NEXT proof, not an all-D inequality or a new
+class-number bound. Conservative majorization, all-D control and full
+prime-mass/diagonal composition remain to be checked in Lean. The fast
+run produced no memory sample; its recorded zero means unobserved, not zero use.
+The checked class-number-one cutoff remains 50 billion. Earlier entries retain their scopes.
+
+## Phase84: the actual odd-field Minkowski term is normalized
+
+The integrated theorem proves M(K)=(2/pi)*sqrt(D) for the actual
+squarefree odd chart. Degree two, absence of real embeddings and the
+maximal-integral-basis discriminant identity all concern the SAME field.
+It substitutes this identity into the closed weighted budget on the
+original Gram. [Human explanation](research/ender_radius_bridge/ODD_MINKOWSKI_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE84_VERIFICATION.md).
+The accepted83math is integrated unchanged apart from its first import
+and relocation of the standalone input checker. Target FAIL/PASS repairs
+only polynomial evaluation and numeric-control scaffolding; the first
+D3 control did not elaborate and is checked only in the final version.
+Root/input/audit firstPASS;185modules,5103logical/4327theorem declarations,
+standard3axioms. Fresh closures47300/57669 exclude the same34older inputs.
+The field-dependent term is closed for this odd chart; numerical strict
+cutoff and arbitrary-field/even-chart transport remain open. External
+exact-head CI and independent human review are not established.
+Earlier entries below are historical checkpoints.
+
+## Phase83: the weighted loss now has a closed estimate
+
+A standalone Lean theorem bounds the finite kernel explicitly by
+alpha*(log3+logL*(1+logL))+log3/6, where
+alpha=pi/sqrtD+2sqrt(M(K)/(3D)). It proves the exact affine identity,
+keeps the constant payment separate, and composes with the original
+Gram under every guard from82. [Human guide](research/ender_radius_bridge/CLOSED_KERNEL_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE83_VERIFICATION.md).
+First run failed at division normalization; second passed after that
+sole insertion. All11types unchanged;28/26/0standard-axiom namespace
+audit;57,618-declaration closure excludes the same34old inputs.
+Production82 unchanged; no new full-library/external CI is claimed.
+M(K)-to-D, field/even transport and a numerical cutoff remain open.
+Earlier sections below preserve their dated scopes.
+
+## Phase82: the prime count now pays the weighted determinant loss
+
+For actual h<=2 in the squarefree odd chart, the integrated theorem
+`SplitPrimeBudget.actual_gram_budget` supplies the complete finite
+weighted arithmetic budget on the original derivative trace-Gram.
+It selects ALL nonsquare primes, proves exact remainder coverage, derives
+the concrete prefix bound, and pays parameter divisors separately.
+No caller-supplied count, coverage or class-number-one premise is needed.
+[Human explanation](research/ender_radius_bridge/WEIGHTED_SPLIT_GUIDE.md)
+and [exact local verification](research/ender_radius_bridge/PHASE82_VERIFICATION.md).
+Target/root/input/audit passed on their first invocations; the input cap
+was mistakenly182s instead of registered180s (actual43.17s), preserved
+and corrected before the audit. Full audit5058logical/4285theorems;
+183modules. External exact-head CI and human review remain outstanding.
+A useful closed kernel estimate, field/Minkowski transport, even chart
+and a new higher-class-number cutoff remain open. Earlier sections are
+historical checkpoints; the class-number-one cutoff stays50billion.
+
+## Phase81: actual class aggregation gives an admissible-prime prefix count
+
+A standalone checked theorem now constructs actual ideal slices with the
+same cardinalities as labelled fibres, sums their cards, and combines80's
+common-family4Ppoints with full per-class counts. For actual odd-chart
+h<=2 and finite admissible P withp<=t it proves
+cardP<=h/4*(2*pi*t/sqrtD+4*sqrt(M(K)*t/D)+1), hence the coefficient1/2
+version. No supplied counts/multiplicity/slices. FAIL/PASS repairs subtype
+domain and finite-sum cast only;8types unchanged,8/8/0standard-axiom audit,
+8rawfiles. [Human proof](research/ender_radius_bridge/PRIME_PREFIX_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE81_VERIFICATION.md).
+Production80 unchanged;81 outside Root/CI. This is a COUNT; weighted
+loss/excluded-prime coverage, field/even transport and new cutoff remain.
+
+## Phase80: the SAME controlled ideals now supply the four prime lifts
+
+Integrated exact79 and new fixed-family lifting compose one actual ideal
+family before ALL finite prime sets. It retains actual full per-class
+counts/control of bases and selects4*cardP distinct labelled points for
+any finite admissible P in THAT family. No independent ideal-family choice
+is substituted. Target FAIL/PASS changes only four residueIdeal norm
+normalizations; root/input/audit firstPASS.181modules,5031/4261/16993,
+standard axioms; closures29185/54827 exclude34older inputs;36rawfiles.
+[Human proof](research/ender_radius_bridge/COMMON_FAMILY_GUIDE.md) and
+[verification](research/ender_radius_bridge/PHASE80_VERIFICATION.md).
+Local integrated checks are distinct from external exact-head CI. Actual
+class-slice summation/aggregate B/even-field/new cutoff remain open.
+
+## Phase79: actual prime-axis accounting removes the off-axis premise
+
+A standalone theorem now counts full finite prime-normalized sets in
+one chosen actual ideal/basis per class under odd-chart h<=2. Axis cost
+is0 in the principal class and at most2 in every other class; no caller
+off-axis guard. The same J retains class lifting. Scalar62proof is exact
+transport; new actual norm cancellation and injective-coordinate count
+are checked. FAIL/PASS corrected only declaration delimiter/classical
+context;10/10/0standard-axiom audit,8rawfiles. [Human proof](research/ender_radius_bridge/ACTUAL_PRIME_AXIS_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE79_VERIFICATION.md).
+Production78 remains unchanged;79 is standalone. Four-lift aggregation
+on THESE chosen ideals, aggregate B/even-field transport/new range remain.
+
+## Phase78: one controlled actual lattice now serves each class
+
+For actual h<=2 in the squarefree odd chart, the integrated theorem chooses
+one bounded ideal J and one actual basis/FormData per class, proves
+0<a<=N(J)<=M(K), lifts every ideal of that class into the same J and counts
+all off-axis finite norm-bounded sets with common error coefficient M(K).
+No supplied basis/form/primitive/norm/coefficient bound. All target/root/
+input/audit checks pass on their first invocation;179modules,5002logical/
+4233theorem/16993runtime, standard three axioms, closures54328/54613 exclude
+34older inputs. Exact73/76/77transport; stopped69/75 untouched. [Human proof](research/ender_radius_bridge/CONTROLLED_CLASS_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE78_VERIFICATION.md).
+Local integrated checks are distinct from external exact-head CI. Axis/class
+aggregation, usable B/even-field transport and new range remain open. Older
+entries below retain the scope and limits at their dated checkpoints.
+
+## Phase77: actual primitive basis completion and coefficient interface
+
+Mathlib's determinant-one lattice operator now constructs an actual basis
+with the supplied primitive element first. For an actual ideal in the odd
+chart, its norm magnitude<=N(J)^2 yields actual FormData with0<a<=N(J).
+The supplied primitive/norm conditions are exactly76's checked output;
+the chosen class-family composition still needs its own check. Local
+FAIL/PASS repaired only Bezout abbreviation/scalar-action normalization;
+all six types and the whole norm/coefficient proof stayed unchanged.
+Audit6/6/0, standard three axioms;8rawfiles preserved. [Human proof](research/ender_radius_bridge/BASIS_COMPLETION_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE77_VERIFICATION.md).
+Outside root/CI; no new B/even-field transport/range. Stopped75 is unchanged.
+
+## Phase76: least actual norm gives primitivity in every basis
+
+A new well-ordering construction chooses a least-norm nonzero element
+of each bounded actual class representative under h<=2. Its norm magnitude
+is at most N(J)^2, and its coordinates have gcd one in every integral
+basis of J. Ambient degree-two norm scaling supplies the contradiction
+to any larger gcd. FAIL/FAIL/PASS repaired only the unit control; all nine
+public types and main proof stayed unchanged. Audit12/12/0, standard three
+axioms; all12 raw files preserved. [Human proof](research/ender_radius_bridge/LEAST_NORM_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE76_VERIFICATION.md).
+Outside production CI. Stopped75 below is unchanged; basis completion,
+leading-coefficient identification, class-wide B/even chart/new range remain.
+
+## Phase75: controlled-basis attempt stopped; vector theorem remains current
+
+The registered actual-basis/leading-coefficient target failed in its sole
+39.4407757-second invocation. Lean reached the default 200000-heartbeat
+limit during witness assembly; the final namespace audit rejected an
+unavailable project theorem. Other proof-assembly errors are preserved.
+The resource-stop rule forbids repair or rerun in this campaign. No
+controlled-basis main theorem or partial coefficient bound is accepted.
+[Human explanation](research/ender_radius_bridge/CONTROLLED_BASIS_ATTEMPT.md)
+and [failure verification](research/ender_radius_bridge/PHASE75_VERIFICATION.md).
+Phase74 below remains the latest accepted local bridge: a controlled vector.
+
+## Phase74: class-group symmetry gives a controlled vector
+
+Under actual class number at most two, every class is self-inverse.
+For each class, a bounded actual ideal J now supplies a nonzero z in J
+with (z)=J*J and |Norm(z)|=N(J)^2. This is a controlled normalized vector,
+not yet a basis or leading-coefficient bound. Standalone FAIL/PASS with
+one implicit-argument repair; all eight theorem types unchanged. Audit
+9/9/0 uses only the standard three axioms. Raw failure and pass preserved.
+[Human proof](research/ender_radius_bridge/CLASS_SQUARE_GUIDE.md) and
+[verification](research/ender_radius_bridge/PHASE74_VERIFICATION.md).
+Outside production CI; primitive reduction/basis extension, aggregation,
+even chart and usable B remain open. The h=1 cutoff stays 50 billion.
+
+## Phase73: actual principal-class a=1 and full prime-point count
+
+A standalone local theorem uses only this ideal's ClassGroup.mk0 J=1,
+not global field class number one. Generator scaling constructs an actual
+basis with normalized coefficients1,1,(D+1)/4. Prime-normalized norm forces
+nonzero second coordinate, so the full finite count needs no caller axis
+guard. Attempts FAIL/PASS/PASS preserve all8 public types/2 definitions;
+last change prints FormData only. Audit15/13/0, standard3axioms. Outside
+production CI; other-class coefficient bounds, aggregation/even chart and
+usable B remain open. [Human proof](research/ender_radius_bridge/PRINCIPAL_BASIS_GUIDE.md)
+and [verification](research/ender_radius_bridge/PHASE73_VERIFICATION.md).
 
 ## Phase72: actual ideal coordinates now reach the geometric count
 

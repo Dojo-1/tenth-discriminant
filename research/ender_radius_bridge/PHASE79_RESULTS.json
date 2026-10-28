@@ -1,0 +1,128 @@
+{
+  "phase": 79,
+  "status": "STANDALONE_LOCAL_ACTUAL_FULL_PER_CLASS_PRIME_COUNT_PRINCIPAL_AXIS_SAVING_PASS",
+  "base": "19fb5f1cde25f56deb9b19ffe4c9068e38c38265",
+  "registered_commit": "70a06a4d4007796fdb553be242ed080d5e6c18d7",
+  "target_seconds": "59.9250091",
+  "builds": [
+    {
+      "phase": 79,
+      "mode": "build",
+      "scope": "Actual per-class prime norm count including controlled axis allowance; no aggregate B or cutoff",
+      "source_sha256": "171a55e73bb88fecc9480a7531d44ebae8359b6850c3bbea87b8415b2a77573d",
+      "source_snapshot": "PHASE79_build_20261027065904997.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 28.7491471,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3254001664,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase79ActualPrimeAxis.lean"
+      ],
+      "stdout": "PHASE79_build_20261027065904997.stdout.log",
+      "stderr": "PHASE79_build_20261027065904997.stderr.log"
+    },
+    {
+      "phase": 79,
+      "mode": "build",
+      "scope": "Actual per-class prime norm count including controlled axis allowance; no aggregate B or cutoff",
+      "source_sha256": "5f7c700d17c39d123f7f36d1285cd799f4ed29421cb89933e2f274d426c4786a",
+      "source_snapshot": "PHASE79_build_20261027070030940.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 31.175862,
+      "cumulative_before_seconds": 28.7491471,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3271507968,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase79ActualPrimeAxis.lean"
+      ],
+      "stdout": "PHASE79_build_20261027070030940.stdout.log",
+      "stderr": "PHASE79_build_20261027070030940.stderr.log"
+    }
+  ],
+  "public_theorems": [
+    "axis_prime_iff",
+    "actual_axis_prime",
+    "actual_axis_card_le_two",
+    "controlled_class_prime_count",
+    "scalar_three_control",
+    "scalar_one_control",
+    "zero_control",
+    "negation_control"
+  ],
+  "audit": {
+    "logical": 10,
+    "theorems": 10,
+    "runtime": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "sha256": {
+    "PHASE79_PROTOCOL.md": "c2dbcbd06932179a9f78343bc9a9140da024133979355752691fafbb120710b0",
+    "run_phase79.ps1": "196c9d80fd868b3169f7f3d0a77d538c0033ef5356689fd1e8ed1a836781038f",
+    "Phase79ActualPrimeAxis.lean": "5f7c700d17c39d123f7f36d1285cd799f4ed29421cb89933e2f274d426c4786a",
+    "verify_phase79_results.py": "4aa352c181c5657fd76b401ed6e40c28591f9f60c2a1551f71a4d61331bba1f8"
+  },
+  "raw_archive": {
+    "path": "PHASE79_RAW.zip",
+    "members": 8,
+    "sha256": "39580b70875311730d685e88b24216e6a828dfc0cee77dd8851686cf60f5014b"
+  },
+  "raw_sha256": {
+    "PHASE79_build_20261027065904997.source.lean": "171a55e73bb88fecc9480a7531d44ebae8359b6850c3bbea87b8415b2a77573d",
+    "PHASE79_build_20261027065904997.stdout.log": "204120003fdf4d44104fa6f7862664fa069f60e7da1e18bb8b558a9055929a29",
+    "PHASE79_build_20261027065904997.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE79_build_20261027065904997.result.json": "9cd66c02239edeb8fd4dc28a9e1c339a9d4e75d1d4778010a6961a370fbcdec7",
+    "PHASE79_build_20261027070030940.source.lean": "5f7c700d17c39d123f7f36d1285cd799f4ed29421cb89933e2f274d426c4786a",
+    "PHASE79_build_20261027070030940.stdout.log": "149ed5e3bfcf8ef9b8af1cff69ad877e7281f11177ccf62625286a7c88742b6c",
+    "PHASE79_build_20261027070030940.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE79_build_20261027070030940.result.json": "cde70a73631c1a917a67856fd31a7f8dfc9ff6125785c77b661a95a43b14f046"
+  },
+  "preserved_sha256": {
+    "lean/TenthDiscriminant.lean": "082618b11b5c32c8973116956072c4e34d569ec39fb27b506387d6bce0f9d8bc",
+    "lean/TenthDiscriminant/ControlledClassCount.lean": "becb309ff5b0866247ec8046bb3cb9fd23e1a9596e72ee7036ff63f8efa2b35b",
+    "lean/TenthDiscriminant/PrincipalBasis.lean": "8f82efee1bce883f903f030181cac81817de7fc5ff0095bcd30c357cbd33a9b4",
+    "research/ender_radius_bridge/Phase62PrimeAxis.lean": "fbfb12a6c23188b43b7b291fc2461dfa2e447b3c51bd4ebf558ed44eee016ee2",
+    "research/ender_radius_bridge/PHASE62_RESULTS.json": "41dc3ef6fba2750084c5815cc1eb25725d5304a7155aed3075d0369479f4db96",
+    "research/ender_radius_bridge/PHASE62_RAW.zip": "026a54c4121fa45571de87b2f6d103b1652696c3298dacc2e10af54eee6cfe8c",
+    "research/ender_radius_bridge/PHASE69_RESULTS.json": "b3eba890761cc17655b652a59960d7e675f6d773862d48d032d7601b11d4a890",
+    "research/ender_radius_bridge/PHASE69_RAW.zip": "3e1cc041754fb2df0684bb079e34debc9143dde3433aa65320dbb4cac6b45e95",
+    "research/ender_radius_bridge/verify_phase69_results.py": "e19ef1bb745985bd6dddf968086e1de53d866baba665fa15a9559718c0b03656",
+    "research/ender_radius_bridge/PHASE75_RESULTS.json": "b44aec3f302ee252efd187107cb9ea92acddbdf1d6a843891f77d184e00db731",
+    "research/ender_radius_bridge/PHASE75_RAW.zip": "3dad34be0e30eef0b5d1a9a676b51429fd2e292a6d4858b1d02aae1b12b9b24f",
+    "research/ender_radius_bridge/verify_phase75_results.py": "ed5f96b86d9d640df3e1919eddc5af4d999ce926e32e7c1b3fc59c08c4b657ed",
+    "research/ender_radius_bridge/PHASE78_RESULTS.json": "3bb1f9a944e9ea3a07925b6c177c2d9df39f6f812d4ddaf1a356b8f643d8d460",
+    "research/ender_radius_bridge/PHASE78_RAW.zip": "d8acc0371cb072f0a9eddd9cb486202d9a7fba08df973020238fd9371a307921",
+    "research/ender_radius_bridge/verify_phase78_results.py": "a14935be3418f32e74f680c9ae6772d0d554a30e1087d7004c38a69468f35781"
+  },
+  "attempt_history": [
+    "FAIL: extra closing delimiter in axis-card declaration and missing classical decidability in final ifC=1 statement.",
+    "PASS: only that delimiter and open scoped Classical repaired; proof bodies, intended mathematical statements, controls and reporting unchanged."
+  ],
+  "closed_scope": "Actual prime-normalized axis elements<=2 across all primes; chosen h<=2 actual class ideal/basis/lifting with full prime-point count and axis allowance0 ifprincipal else2, no caller off-axis guard.",
+  "limits": [
+    "No further standalone79 run after acceptance. Integrated78 production unchanged.",
+    "Same chosen J and class lifting retained; principal branch recalibrates basis on thatJ only.",
+    "Four-lift/class aggregation on this chosen family, aggregate arithmetic B, even/field transport and newrange remain open.",
+    "No external CI transfer/publication/merge/reviewer/classification/upstream/Tao claim."
+  ]
+}

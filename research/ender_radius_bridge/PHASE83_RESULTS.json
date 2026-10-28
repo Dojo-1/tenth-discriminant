@@ -1,0 +1,109 @@
+{
+  "phase": 83,
+  "status": "STANDALONE_LOCAL_CLOSED_WEIGHTED_KERNEL_AND_ACTUAL_GRAM_COMPOSITION_PASS",
+  "base": "a4a6fe1b32dbc8bf182e160155c0bec6e69ba0ae",
+  "registered_commit": "0c8c592385f54b3e8e4d4eb7030ee2a5bf7feef0",
+  "builds": [
+    {
+      "phase": 83,
+      "mode": "build",
+      "scope": "Explicit closed actual weighted-kernel bound and original-Gram composition; no new cutoff",
+      "source_sha256": "0264da11691f787b2694eaaf71e3cf4503cd664e2f3dbc8a568a2a8b4b5c33e7",
+      "source_snapshot": "PHASE83_build_20261027120240800.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 50.0273877,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3291021312,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase83ClosedKernel.lean"
+      ],
+      "stdout": "PHASE83_build_20261027120240800.stdout.log",
+      "stderr": "PHASE83_build_20261027120240800.stderr.log"
+    },
+    {
+      "phase": 83,
+      "mode": "build",
+      "scope": "Explicit closed actual weighted-kernel bound and original-Gram composition; no new cutoff",
+      "source_sha256": "f706a0385e504af7f2f5b094ccd7ac044e838a4818ea326c0f40c08307cd0b4c",
+      "source_snapshot": "PHASE83_build_20261027120403279.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 48.7966777,
+      "cumulative_before_seconds": 50.0273877,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3297730560,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase83ClosedKernel.lean"
+      ],
+      "stdout": "PHASE83_build_20261027120403279.stdout.log",
+      "stderr": "PHASE83_build_20261027120403279.stderr.log"
+    }
+  ],
+  "target_seconds": "98.8240654",
+  "public_theorems": [
+    "kernel_mono",
+    "affine_identity",
+    "prime_sum_bound",
+    "sqrt_majorant",
+    "actual_majorant",
+    "closed_count_kernel",
+    "closed_actual_gram_budget",
+    "endpoint_control",
+    "zero_slope_control",
+    "constant_control",
+    "closed_endpoint_nonneg"
+  ],
+  "sha256": {
+    "PHASE83_PROTOCOL.md": "0ff4b7a761515cfc9d861637c6cae54b3a7963e192294acc74f4f4b96be49f83",
+    "run_phase83.ps1": "71b2b00bea22580d7525bf975e134a0f921a6417be1fc9a369a43893517d12ff",
+    "Phase83ClosedKernel.lean": "f706a0385e504af7f2f5b094ccd7ac044e838a4818ea326c0f40c08307cd0b4c",
+    "verify_phase83_results.py": "307f7f052f032daa6b266b9def2ba0c4d974a9f4745bc3ed31a595ca258806dd"
+  },
+  "frozen_sha256": {
+    "lean/TenthDiscriminant.lean": "bc729aace6447df21daec59f780b927ba03ac1f4a137473907d9a5c455736350",
+    "lean/TenthDiscriminant/ClassAggregation.lean": "ef28688d0d97fa2b005032271a40c31ad2cef78e2138a3d4a875173f557e7795",
+    "lean/TenthDiscriminant/SplitPrimeBudget.lean": "d5ffcb9a1dc55402ccae9f6bf32ac66e786629aeb9bcee0d380f038e5b42d6d7",
+    "lean/lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+    "lean/lakefile.toml": "c53aa9280e479e87530acfdc2660dda39d91e36b58700ad54634eebab1ae127b",
+    "research/ender_radius_bridge/PHASE82_RESULTS.json": "6a01f08235eaaec56ad1ce9afbf5aa960f79470e0da52c9cfcf4346dc84194f7",
+    "research/ender_radius_bridge/PHASE82_RAW.zip": "bf27cbd2861fa42f2e7d24f10ad934ed116091cc71b68399a89100db5d4e2dd6",
+    "research/ender_radius_bridge/PHASE82_PROTOCOL.md": "44ef3849b21b3ad4feb16023bc8112a92f25c3b1c6681c222d9f23cad4b586b3",
+    "research/ender_radius_bridge/PHASE82_RUNNER_ORIGINAL.ps1": "d9e3eac93bc813e61c7980773203dd1336870d3fa07d2a189d294229244fb7a6",
+    "research/ender_radius_bridge/PHASE82_RUNNER_ADDENDUM.md": "f6ec6ea781832eb305006f8d2fd89219e385c625e74efe74796adea4fcf64975",
+    "research/ender_radius_bridge/run_phase82.ps1": "dcf6572dddcd74830d46b7101a71767945d40fe7c1195e6f743bcb4980208d5e",
+    "research/ender_radius_bridge/verify_phase82_results.py": "7b157deb4184790a665a1735726b0adadfc4319bfe712031860c01abf9636ef3",
+    "research/ender_radius_bridge/Phase82InputCheck.lean": "b942abe5bd44266ecacbaae17ec1d25d710eefc816c664f56df4019774bfd6cf"
+  },
+  "archive": {
+    "path": "PHASE83_RAW.zip",
+    "sha256": "6054a83afb67e3bfa6d4a7e1146e2f95b9114aeee446ea1b90b015a8ce7ee00d",
+    "files": 8
+  },
+  "raw_sha256": {
+    "PHASE83_build_20261027120240800.result.json": "1ed02bdba5cdddbb66152491566b8cb800812750d755d7db5bb3c645ca152cff",
+    "PHASE83_build_20261027120240800.source.lean": "0264da11691f787b2694eaaf71e3cf4503cd664e2f3dbc8a568a2a8b4b5c33e7",
+    "PHASE83_build_20261027120240800.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE83_build_20261027120240800.stdout.log": "b7e6bae52f25ff4acbd438ecc7c97e4d8df588c8b6ee457d26882bb714e703df",
+    "PHASE83_build_20261027120403279.result.json": "65695434d0a349721564851db92233ddd47dd06057f7a10d652752d9cddf1f8b",
+    "PHASE83_build_20261027120403279.source.lean": "f706a0385e504af7f2f5b094ccd7ac044e838a4818ea326c0f40c08307cd0b4c",
+    "PHASE83_build_20261027120403279.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE83_build_20261027120403279.stdout.log": "8dbf6375ab9af0cc5eb92bfef1359825431352aaf0d8b7e5c3a1f90760042015"
+  },
+  "scope": "Standalone complete closed bound and actualGram composition. Production82 unchanged. No new cutoff/field transport/externalCI/humanreview."
+}

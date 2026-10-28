@@ -2,15 +2,22 @@
 
 **For imaginary quadratic fields of class number one, the checked absolute
 field-discriminant bound is 50 billion.** Class number one means unique factorization in the ring of
-integers. The geometric count is proved on the draft branch; the
-higher-class-number numerical bound remains open. This page tracks
+integers. The geometric count is proved on the draft branch; an arbitrary-field odd-discriminant class-number<=2bound is checked locally;
+the canonical even-chart cutoff is integrated locally, with arbitrary-field
+transport still open. This page tracks
 Tao's [challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)
-through proof source `70f9217` and Phase72/69 outcomes, 27 October 2026. No full-classification
+through the 50-billion source `63be64b`, actual odd-field bound Phase88,
+integrated even weighted bridge Phase100 and integrated normalization
+Phase102 and integrated even-chart cutoff Phase104, 28 October 2026. Negative
+experiments and stopped attempts remain preserved. No full-classification
 announcement, novelty, optimality or independent human review is claimed.
 
 Lean checks encoded statements. A source claim, a checked theorem and a
 human review have different evidential force. The [claim map](lean/FORMALIZATION.md)
 spells out assumptions and the exact statements.
+
+The twelve rows below are our working accounting categories, not a numbered
+checklist in Tao's post.
 
 ## How we are faring
 
@@ -23,9 +30,9 @@ spells out assumptions and the exact statements.
 | 5 | Compare different writeups | **Partial:** frozen [same-route comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) and [current source comparison](METHOD_COMPARISON_CURRENT.md). External proofs were not independently replayed. |
 | 6 | Stimulate new arguments or arrangements | **Reusable arrangements:** factorial prime mass, exact staircase weights and geometric operators, within the credited route. No novelty claim. |
 | 7 | Preserve and report negative results | **Preserved:** failed attempts and a [per-form counting counterexample](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md). It does not refute the aggregate h<=2 claim. |
-| 8 | Help higher class-number problems | **No new verified range.** Odd-chart multiplicity and actual ideal norm-form coordinates/geometric count are integrated and checked locally. Uniform leading bounds, principal-class calibration, even-chart and field-discriminant transport still block a usable arithmetic B. |
+| 8 | Help higher class-number problems | **Checked locally:** arbitrary imaginary quadratic fields with odd discriminant and class number<=2 have absolute discriminant<2^50. The [integrated even-chart theorem](research/ender_radius_bridge/EVEN_TWO_CLASS_BOUND_GUIDE.md) gives radicand<2^50 and actual discriminant<2^52 under h<=2. Arbitrary even-field transport and human review remain open; external CI is versioned per publication. |
 | 9 | Disclose AI use | **Disclosed** in the [README](README.md) and research/review records. Disclosure is not validation. |
-| 10 | Post a repository link and human summary | **Not posted.** The [AI-prepared brief](TAO_REPLY_BRIEF.md) awaits human revision and a posting decision. No submission permalink exists in our records. |
+| 10 | Post a repository link and human summary | **Public repo-linked comments located:** 26/27 October, attributed to jesusasit; authorship process not independently verified. [Source refresh](research/ender_radius_bridge/SOURCE_REFRESH_20261028.md). The current [AI-prepared brief](TAO_REPLY_BRIEF.md) remains unposted by this agent. |
 | 11 | Independent due diligence | **Partial:** one bounded AI [review](research/ender_radius_bridge/PHASE58_VERIFICATION.md) at `63be64b`/50 billion. That reviewer did not rerun Lean/CI; later geometry is outside its scope. |
 | 12 | Quality, collaboration and attribution | **Documented practice:** credited antecedents, versioned evidence and explicit limits. No endorsement, priority or external quality verdict is inferred. |
 
@@ -37,10 +44,30 @@ spells out assumptions and the exact statements.
 | Symmetry of the original Gram | Central negation separates opposite total-degree parity rows. No new cutoff. [Guide](research/ender_radius_bridge/CENTRAL_SYMMETRY_GUIDE.md). |
 | Excluded-prime loss | Production [count-to-loss theorem](research/ender_radius_bridge/COUNT_TO_LOSS_GUIDE.md) uses log(p)/p. An integrated local [prime-divisor budget](research/ender_radius_bridge/PRIME_DIVISOR_LOSS_GUIDE.md) pays for parameter divisors separately; B remains an input for the others. |
 | Off-axis quadratic point count | Production-root draft bound: cardU<=2pi*t/sqrt(D)+4sqrt(at/D), for finite U with Q<=t,y!=0,a>0,D=4ac-b²>0,t>=0. [Human proof](research/ender_radius_bridge/QUADRATIC_AREA_GUIDE.md). |
-| Fixed ideal-class norm lattice | Integrated local [class-fiber lifting](research/ender_radius_bridge/CLASS_FIBER_GUIDE.md) proves (z)=IJ, norm multiplication and exact recovery, with one bounded J per class. The actual basis/form/count bridge is now checked locally; uniform coefficient control remains. |
-| Odd-chart finite multiplicity | Integrated local [four-representation construction](research/ender_radius_bridge/RESIDUE_MULTIPLICITY_GUIDE.md) gives a selected set of4*card(P) distinct class-labelled actual norm elements. Actual coordinates/count are now checked locally; a uniform coefficient bound is still missing. |
-| Actual ideal coordinates and count | [Constructed basis/form](research/ender_radius_bridge/IDEAL_COORDINATE_GUIDE.md) has integer coefficients, a>0, exact discriminant D and actual norm identity; finite element sets satisfy the off-axis geometric bound. No uniform bound on a or new cutoff. |
-| Prime-axis accounting | Standalone Lean gives at most two prime points, none when a=1; two-class aggregation remains conditional on representation inputs. [Guide](research/ender_radius_bridge/TWO_CLASS_AXIS_GUIDE.md). |
+| Fixed ideal-class norm lattice | Integrated local [class-fiber lifting](research/ender_radius_bridge/CLASS_FIBER_GUIDE.md) proves (z)=IJ, norm multiplication and exact recovery, with one bounded J per class. The generic basis/count bridge is checked; the controlled h<=2 choice is now integrated locally below. |
+| Odd-chart finite multiplicity | Integrated local [four-representation construction](research/ender_radius_bridge/RESIDUE_MULTIPLICITY_GUIDE.md) gives a selected set of4*card(P) distinct class-labelled actual norm elements. Actual coordinates/count and an h<=2 controlled coefficient choice are checked locally; their class-wide aggregation remains. |
+| Actual ideal coordinates and count | [Constructed basis/form](research/ender_radius_bridge/IDEAL_COORDINATE_GUIDE.md) has integer coefficients, a>0, exact discriminant D and actual norm identity; finite element sets satisfy the off-axis geometric bound. The generic theorem alone gives no upper bound on a; the h<=2 controlled choice below supplies one. No new cutoff. |
+| Controlled vector in every class | For actual class number at most two, [class squaring](research/ender_radius_bridge/CLASS_SQUARE_GUIDE.md) gives a bounded ideal J and actual z with normalized norm N(J). Checked locally, outside production CI; the chosen class-family composition is now integrated locally at78. The [attempted composition](research/ender_radius_bridge/CONTROLLED_BASIS_ATTEMPT.md) hit a registered resource stop and is preserved as failure. |
+| Primitive vector independent of coordinates | [Least actual norm](research/ender_radius_bridge/LEAST_NORM_GUIDE.md) gives one nonzero element of norm magnitude<=N(J)^2, primitive in EVERY actual basis of each bounded class representative under h<=2. Checked locally outside production CI; basis completion and class-family composition are integrated locally; no new cutoff. |
+| Actual basis and leading-coefficient interface | [A determinant-one lattice operator](research/ender_radius_bridge/BASIS_COMPLETION_GUIDE.md) completes the supplied actual primitive vector and proves0<a<=N(J) from its norm bound. Composed with76 and integrated locally at78; external CI and even-discriminant transport remain; the odd-chart range is now integrated locally at87. |
+| Controlled per-class actual count | [One bounded ideal and basis per actual class](research/ender_radius_bridge/CONTROLLED_CLASS_GUIDE.md) lift all ideals of that class and give a common off-axis error bound using M(K). Local full-library/input/axiom checks pass; external exact-head CI and even-discriminant transport remain; the odd-chart exclusion is now proved at86. |
+| Full actual per-class prime count | The [actual axis theorem](research/ender_radius_bridge/ACTUAL_PRIME_AXIS_GUIDE.md) proves at most2 across all primes and0 in the calibrated principal class. A chosen actual class-family full prime count now needs no caller off-axis guard. Integrated locally at80 with four selected lifts on the SAME ideals; class-slice sum and finite weighted budget now close at82; even-discriminant transport remains; the odd-chart exclusion is now proved at86. |
+| Same-family multiplicity compatibility | [A fixed-family lifting interface](research/ender_radius_bridge/COMMON_FAMILY_GUIDE.md) now gives one controlled family with both full per-class prime counts and selected4*cardP labelled points. Local full-library/input/audit checks pass; class-slice sum and weighted loss are integrated locally at82; kernel estimate and actualM normalization are integrated84; external CI remains. |
+| Actual admissible-prime prefix count | [Actual class-slice aggregation](research/ender_radius_bridge/PRIME_PREFIX_GUIDE.md) now proves cardP<=h/4*(2pi*t/sqrtD+4sqrt(Mt/D)+1), uniformh<=2coefficient1/2, with all actual family/count/multiplicity premises supplied. Integrated locally at82 with complete weighted coverage; even-discriminant transport remains; the odd-chart cutoff is now integrated locally at87. |
+| Finite weighted arithmetic budget | [Count pays weighted loss](research/ender_radius_bridge/WEIGHTED_SPLIT_GUIDE.md): exact complete prime coverage, finite summation by parts and parameter-divisor payment on the original Gram. Local checks pass, with an explicitly recorded input-cap discrepancy; its closed estimate and actualM normalization are integrated84; the final odd-chart cutoff is proved separately at86. |
+| Closed weighted-kernel estimate | [Positive affine operator and harmonic bound](research/ender_radius_bridge/CLOSED_KERNEL_GUIDE.md) now give an explicit formula in actual M(K), composed with the same Gram. Integrated locally at84, including actual M(K)=2sqrt(D)/pi; even-discriminant transport remains open; the all-range odd-chart comparison is now proved at86. |
+| Actual odd-field Minkowski normalization | [Degree, conjugation and maximal discriminant](research/ender_radius_bridge/ODD_MINKOWSKI_GUIDE.md) now remove the field-dependent M(K) from the closed original-Gram budget. Fresh dependency checks avoid older cutoffs. The all-range exclusion is a separate result at86. |
+| Sealed scalar feasibility | [A positive proof target](research/ender_radius_bridge/TWO_CLASS_FEASIBILITY_GUIDE.md) at2^50, margin>0.07; seven earlier negative samples preserved. Two precisions/control checks agree. By itself this test proves no all-D theorem or optimality; the all-D odd-chart result is now checked separately at86. |
+| All-range actual two-class exclusion | [Local/global proof](research/ender_radius_bridge/ODD_TWO_CLASS_BOUND_GUIDE.md) replaces sampled feasibility by a theorem for EVERY squarefree odd-chart D>=2^50: actual class number>2. Fresh dependency checks exclude34old inputs. Integrated locally at87; no even-chart/generic-field classification. |
+| Class-number invariance under field isomorphism | [Actual ideal-class bijection](research/ender_radius_bridge/ODD_FIELD_TWO_CLASS_GUIDE.md) is independent of chosen integral representative and preserves class number without a PID/h1 premise. It closes the odd arbitrary-field bound locally at88; no novelty or upstream acceptance claimed. |
+| Even actual ideal geometry | [Maximal-lattice norm form and count](research/ender_radius_bridge/EVEN_IDEAL_LATTICE_GUIDE.md) prove4ac-b^2=4d and one basis/count for all finite off-axis norm-bounded sets, without h1/PID/class-number premises. Integrated locally at90 without mathematical changes; full root/input/audit checks pass. Class/prime/weighted assembly is now integrated at100; normalization is integrated unchanged at102; the even-chart cutoff is integrated at104; arbitrary-field transport remains open. |
+| Controlled even ideal class | [One bounded lattice per actual class](research/ender_radius_bridge/EVEN_CONTROLLED_CLASS_GUIDE.md) now gives0<a<=N(J)<=M(K), exact even norm form, all ideal lifts and a common all-finite off-axis count under h<=2. Integrated unchanged at92; full local root/input/audit checks pass. The subsequent full prime/weighted bridge is integrated at100; normalization is integrated unchanged at102; the even-chart cutoff is integrated at104; arbitrary-field transport remains open. |
+| Complete even prime-axis accounting | [Calibrated principal class and full per-class count](research/ender_radius_bridge/EVEN_PRIME_AXIS_GUIDE.md) pay0axis points in C1and at most2acrossALLprimes otherwise. A fixed actual bounded J/basis serves all finite prime-normalized sets. Integrated unchanged at94; full local root/input/audit checks pass. The coherent family, class sum and weighted bridge are now integrated through100; the even-chart cutoff is integrated at104; arbitrary-field transport remains open. |
+| Coherent actual even prime family | [Actual residue kernels and fixed-family lifts](research/ender_radius_bridge/EVEN_PRIME_FAMILY_GUIDE.md) choose one controlled family before every finite admissible P; the SAME ideals carry counts and4*card(P) selected distinct norm elements. Integrated unchanged at96; full local root/input/audit checks pass. The class sum and weighted budget are integrated through100; the closed all-range comparison is integrated at104. |
+| Actual even prime-prefix bound | [Class-slice double count](research/ender_radius_bridge/EVEN_CLASS_SUM_GUIDE.md) now derives card(P)<=h/4*(A+B+1)<=(A+B+1)/2 from the SAME4*card(P) selected points under h<=2. ActualM(K) remains field-dependent. The accepted proof is now integrated unchanged; full local build, input and whole-library audit pass. The weighted bridge is integrated at100; normalization is integrated unchanged at102; the all-range even-chart comparison is integrated at104. |
+| Actual even weighted bridge | [Positive weighted summation](research/ender_radius_bridge/EVEN_WEIGHTED_BRIDGE_GUIDE.md) now feeds the actual even count into the original-Gram budget, with parameter-divisor loss included. Accepted99 mathematics is integrated unchanged at100; all four local checks pass. Actual M(K) normalization and the closed cost are integrated unchanged at102; the even-chart cutoff is integrated at104; arbitrary-field transport remains open. |
+| Actual even normalization and scalar comparison | [Degree, discriminant and positive count operator](research/ender_radius_bridge/EVEN_NORMALIZATION_GUIDE.md) prove actual M(K)=4*sqrt(d)/pi and the full closed original-Gram budget, dominated by the previously used scalar formula. Accepted101proof is integrated unchanged at102 with all four local checks passing; the original proof-completion failure is preserved. All-range even-chart cutoff is integrated unchanged at104. |
+| All-range actual even two-class cutoff | [One original-Gram contradiction](research/ender_radius_bridge/EVEN_TWO_CLASS_BOUND_GUIDE.md) proves h>2 for every squarefree even-chart d>=2^50, hence actual discriminant<2^52 under h<=2. Seven public types and factor-four/guard/margin controls pass; the first wrapper failure is preserved. Integrated unchanged at104; arbitrary-field transport remains open. |
 | Limits that prevented overclaiming | A radial O(1/R) ceiling, the per-form zero-row failure and the [stopped coordinate attempt](research/ender_radius_bridge/PHASE69_VERIFICATION.md) remain preserved. [History and controls](STATUS.md). |
 
 ## Verification and the next decisive step
@@ -52,14 +79,42 @@ Geometry source `70f9217` passes the full
 including final regression controls: 4,869 logical declarations, 4,114
 theorems, 170 reachable modules. The [exact record](research/ender_radius_bridge/PHASE64_VERIFICATION.md)
 keeps source versions, checks and review distinct. Passing code does not
-establish human review. The later arithmetic production roots pass local
-full build/audit at `2ec4507`; their [new-head CI remains separate](research/ender_radius_bridge/PHASE72_VERIFICATION.md).
+establish human review. Published arithmetic at `e77a446` has its own completed pinned CI40426517803,
+verified separately from the current [local Phase88 checks](research/ender_radius_bridge/PHASE88_VERIFICATION.md):
+187modules,5165logical/4384theorem declarations, fresh35input exclusions,
+full root/audit checks. The earlier input-cap discrepancy remains preserved
+at82. New external exact-head CI is pending.
 
-The next arithmetic bridge must control the leading coefficient, calibrate
-the principal class, and complete even-chart transport. The local
-parameter-divisor bound still needs field-discriminant transport.
-[PR30](https://github.com/Dojo-1/tenth-discriminant/pull/30) has completed
-pinned CI/security checks; merging still requires explicit authorization.
+The odd actual-field bound is now integrated at88, with pinned local
+root/input/whole-audit checks:5165logical/4384theorems and187modules.
+The even local ideal norm-form/count bridge is now integrated unchanged at90
+with full local root/input/whole-audit checks:188modules,5189logical/
+4405theorems,37old-input exclusions.
+The controlled basis/lifts/common count per actual even ideal class is
+now integrated unchanged at92:189modules,5206logical/4421theorems,
+38old-input exclusions. The full even axis/per-class prime count is now
+integrated unchanged at94:190 modules,5,219 logical declarations and
+4,434 theorems;42old-input exclusions. Actual even residue maps/distinct
+kernels and the coherent controlled prime-family are now proved standalone
+at95and integrated unchanged at96:191modules,5,247 logical declarations/
+4,459 theorems,47old-input exclusions. Actual even class summation and
+the uniform prime-prefix count are proved at97 and integrated unchanged
+at98. The full original-Gram weighted bridge is integrated unchanged
+at100: 193 modules, 5,264 logical declarations and 4,475 theorems; all
+four registered local checks pass. Actual M(K), the closed weighted cost
+and its scalar domination are integrated unchanged at102:194modules,
+5,287logical declarations and4,496theorems; all four local checks pass.
+The all-range same-Gram even-chart contradiction is integrated at104:
+195modules/5,307logical declarations/4,516theorems, all four local checks
+pass. Next: arbitrary-field transport and requested coordinate/literal-shift
+compatibility with explicit invariants. Independent
+human review and new external exact-head CI remain open. Argon's review
+is underway and has not yet been assessed.
+PR35 is now user-authorized merged at `b402116`, with its older exact-head
+CI freshly verified. This does not transfer success or review to the newer
+local cutoff. Current-head CI and merge status are recorded per PR.
+The [primary-source refresh](research/ender_radius_bridge/SOURCE_REFRESH_20261028.md)
+records the verified public comments and keeps q<480 unverified.
 
 The [detailed research history](TAO_OBJECTIVES_HISTORY.md) is the exact
 `70f9217` snapshot, including superseded status language and all earlier
