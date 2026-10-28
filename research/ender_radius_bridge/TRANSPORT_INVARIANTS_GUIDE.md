@@ -18,7 +18,8 @@ The local reduction maps must commute too. In the transported basis these
 identities preserve the actual Gram entries, hence the determinant and
 its arithmetic obstruction. For jets, the differential operator must also
 be transported: D'=U_V D U_V^{-1}. Each compatibility is a proof obligation.
-This general organising criterion is not yet a new Lean theorem here.
+The translation instance is now [checked standalone](PASSIVE_TRANSPORT_GUIDE.md);
+the full abstract interface across all regimes is not formalized here.
 
 | Structure or observable | What survives, with its condition |
 | --- | --- |
@@ -43,9 +44,10 @@ f_c(Z,W)=f(Z-c,W-conj(c)). Ordinary Z derivatives then satisfy
     (∂_Z^j f_c)(z+c,conj(z)+conj(c))=(∂_Z^j f)(z,conj(z)).
 
 Thus transporting the observables as well as the points recovers the same
-sampled jets and Gram. This is the paper proof target for a NEW Lean cycle;
-we have not checked this full jet/coframe interface in Lean yet. The old
-active-shift controls and exhausted budgets must not be changed or replayed.
+sampled jets and Gram. This full polynomial/ordinary-jet translation
+interface is now checked standalone at110, including the SAME original
+integer Gram. The old active-shift controls and exhausted budgets remain
+unchanged; all three new110slots are consumed too.
 
 ## The missing phase is visible in a small calculation
 
@@ -74,9 +76,9 @@ which multiplication, associativity and divisibility laws the proof uses.
 An embedding into a larger representation needs a faithful recovery map;
 it is not automatically an equivalence of the arithmetic problem.
 
-The next formal target is the commuting diagram for translated polynomial
-observables, ordinary jets and the SAME integer Gram. Only after that
-should a claimed improvement be separated into an intrinsic obstruction,
-a better estimate, or a change in the question being asked.
+The translation instance of the commuting diagram is now checked for
+actual polynomial observables, ordinary jets and the SAME integer Gram.
+A claimed improvement must still be separated into an intrinsic
+obstruction, a sharper estimate, or a change in the chosen observables.
 [Published verification](PR38_MERGE_RECEIPT.md). No lower cutoff or
 computational-hardness theorem is claimed by this guide.

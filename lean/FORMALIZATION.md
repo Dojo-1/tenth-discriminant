@@ -1,5 +1,9 @@
 # Current claim-to-Lean map
 
+## Phase110: compatible polynomial/ordinary-jet transport checked
+
+New standalone `PassiveTransport` defines actual polynomial pullback and ordinary sampled jets. Its20public statements include composition/inverse/naturality over CommRing, all-order derivative covariance and entrywise equality of transported polynomial Gram with the ORIGINAL integer trace-Gram cast; the final bridge retains real positivity, positive integer determinant and prime-power divisor under explicit original guards. [Human proof](../research/ender_radius_bridge/PASSIVE_TRANSPORT_GUIDE.md) · [Verification](../research/ender_radius_bridge/PHASE110_VERIFICATION.md). Namespace31logical/27theorems, standard3axioms; fresh5880/13936/33095closures exclude70roots. All three slots consumed; no standalone replay, new root import/full-library audit or external CI. Ring-map identities do not assert rank preservation under non-injective reduction or computational hardness.
+
 ## Published result and compatible-transport research frame
 
 Published source14b5446 and actual merge6c7e94c share the tested tree; pinned CI40718714733 completed full build,5361logical/4565theorem audit and all eight inherited families. [Exact receipt](../research/ender_radius_bridge/PR38_MERGE_RECEIPT.md). The new [transport interpretation](../research/ender_radius_bridge/TRANSPORT_INVARIANTS_GUIDE.md) distinguishes active point shifts with fixed monomials from passive transport of points, observables and ordinary jets. The latter full coframe interface is a proposed next Lean obligation; the guide does not claim it is already mechanized or supplies computational hardness bounds.

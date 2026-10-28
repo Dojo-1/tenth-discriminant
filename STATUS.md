@@ -1,5 +1,9 @@
 # Status — 2026-10-28
 
+## Phase110: compatible polynomial/ordinary-jet transport checked
+
+The full standalone passive transport target now passes: actual bivariate polynomial translation over any commutative ring, group/inverse laws, ring-map naturality, ordinary-derivative/jet covariance, and recovery of the SAME original integer Gram at shifted lattice points. Positivity and the existing prime-power divisor retain their explicit guards. Twenty public types/four definitions/four controls are fixed acrossFAIL138.0938151/FAIL68.3821887/PASS72.6634586; all3slots consumed, no replay. Namespace31logical/27theorems, standard3axioms,70excluded roots in three fresh closures. [Human guide](research/ender_radius_bridge/PASSIVE_TRANSPORT_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE110_VERIFICATION.md). Production integration/external CI remain; no cutoff improvement.
+
 ## Published result and compatible-transport research frame
 
 PR38 is now merged at6c7e94caf8ffd556805a1b6e30a1763204368c4e after exact source14b5446 passed pinned CI40718714733, full build/audit/all8control families and same-head security. Source/tested/actual merge trees match. [Receipt and raw evidence](research/ender_radius_bridge/PR38_MERGE_RECEIPT.md). PR37 also reports merged through ancestry; its earlier cancelled CI stays cancelled. The research focus now explicitly transports observables and differential operators together with coordinates: [invariants, projections and obstructions](research/ender_radius_bridge/TRANSPORT_INVARIANTS_GUIDE.md). The active24→60counterexample remains valid; a passive jet/coframe transport is a new proof target, not yet checked.

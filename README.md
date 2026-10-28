@@ -40,7 +40,7 @@ The repository also contains a separate canonical-family classification theorem 
 | [Tao's objectives](TAO_OBJECTIVES_CURRENT.md) | Achievements, limitations and side discoveries |
 | [Human proof guide](lean/HUMAN_GUIDE.md) | Why the determinant is positive |
 | [Exact staircase count](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) | A double sum understood by counting the same boxes in another order |
-| [Transported observables](research/ender_radius_bridge/TRANSPORT_INVARIANTS_GUIDE.md) · [All-field h<=2 bound](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) · [Bounded test](research/ender_radius_bridge/PHASE85_VERIFICATION.md) | Explicit invariants, preserved failures and numerical scope |
+| [Compatible transport](research/ender_radius_bridge/PASSIVE_TRANSPORT_GUIDE.md) · [All-field h<=2 bound](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) · [Bounded test](research/ender_radius_bridge/PHASE85_VERIFICATION.md) | Explicit invariants, preserved failures and numerical scope |
 | [Research history](STATUS.md) | Earlier checkpoints, failed attempts and corrections |
 
 With the pinned Lean toolchain and dependencies installed, the core checks are:

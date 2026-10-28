@@ -1,10 +1,12 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared through109; this brief is not posted.** Existing public
+**AI-prepared through110; this brief is not posted.** Existing public
 repo-linked comments are recorded separately. Tao asks for a human-generated
 summary; the contributor should review and revise the text in their own words.
 
 ## Current verification boundary
+
+Phase110 now checks passive polynomial/ordinary-jet transport and recovers the SAME original integer Gram, with the old active24→60counterexample preserved. [Human guide](research/ender_radius_bridge/PASSIVE_TRANSPORT_GUIDE.md). This addition is standalone; integration/CI/review are separate, and no cutoff gain follows from a passive coordinate change alone.
 
 The h1 cutoff stays50b. Phase108 integrates the accepted107 proof unchanged: actual absdiscr<2^52 for
 ANY imaginary quadratic field with actual h<=2, retaining odd<2^50;
