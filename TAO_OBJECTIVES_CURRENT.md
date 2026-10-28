@@ -1,9 +1,9 @@
 # Tao's challenge: current accounting and side discoveries
 
 **The actual class-number-one bound remains 50 billion.** The new side
-result is a standalone Lean bound for ANY imaginary quadratic field with
+result is an integrated local Lean bound for ANY imaginary quadratic field with
 at most two ideal classes: actual absolute discriminant<2^52, sharper<2^50
-when odd. [Understand the transport](research/ender_radius_bridge/ALL_FIELD_TWO_CLASS_GUIDE.md).
+when odd. [Understand the transport](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md).
 This is a bound, not a full classification or an optimality claim.
 
 These twelve rows are our working categories for
@@ -22,7 +22,7 @@ keeps theorem checking, execution evidence and independent review separate.
 | 5 | Compare different writeups | **Partial:** frozen [same-route comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) and [current source comparison](METHOD_COMPARISON_CURRENT.md). External proofs were not independently replayed. |
 | 6 | Stimulate new arguments or arrangements | **Reusable arrangements:** factorial prime mass, exact staircase weights and geometric operators, within the credited route. No novelty claim. |
 | 7 | Preserve and report negative results | **Preserved:** failed proofs, resource stops, per-form counting failure and the checked translation counterexample (determinant24 becomes60). [Coordinate guide](research/ender_radius_bridge/COORDINATE_TRANSLATION_GUIDE.md). PR37 CI timed out; it is not relabelled successful. |
-| 8 | Help higher class-number problems | **Checked standalone:** EVERY imaginary quadratic number field with actual h<=2 has actual absolute discriminant<2^52; odd discriminants retain<2^50. Phase107 closes arbitrary even-field transport. [Human proof](research/ender_radius_bridge/ALL_FIELD_TWO_CLASS_GUIDE.md). Integration, external CI and independent human review of this addition remain open. |
+| 8 | Help higher class-number problems | **Integrated locally:** EVERY imaginary quadratic number field with actual h<=2 has actual absolute discriminant<2^52; odd discriminants retain<2^50. Phase108 integrates arbitrary even-field transport unchanged. [Human proof](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md). External CI and independent human review of this addition remain open. |
 | 9 | Disclose AI use | **Disclosed** in the [README](README.md) and research/review records. Disclosure is not validation. |
 | 10 | Post a repository link and human summary | **Public repo-linked comments located:** 26/27 October, attributed to jesusasit; authorship process not independently verified. [Source refresh](research/ender_radius_bridge/SOURCE_REFRESH_20261028.md). The current [AI-prepared brief](TAO_REPLY_BRIEF.md) remains unposted by this agent. |
 | 11 | Independent due diligence | **Partial:** one bounded AI [review](research/ender_radius_bridge/PHASE58_VERIFICATION.md) at `63be64b`/50 billion. That reviewer did not rerun Lean/CI; later geometry is outside its scope. |
@@ -47,7 +47,7 @@ keeps theorem checking, execution evidence and independent review separate.
 | --- | --- |
 | Production through104 | [PR36 merged](research/ender_radius_bridge/PR36_MERGE_RECEIPT.md), exact sourcebe1c0e3; pinned CI40700006963 and security passed. Whole audit5307logical/4516theorems. Includes canonical even-chart cutoff. |
 | Coordinate/shift integration106 | Source38d799e: all four local checks pass, whole audit5350logical/4554theorems. [PR37](https://github.com/Dojo-1/tenth-discriminant/pull/37) stays draft/unmerged: CI40707296487 cancelled at25m after build/audit success. Final controls PASS log is NOT job success. [Receipt](research/ender_radius_bridge/PR37_CI_LIMIT_RECEIPT.md). |
-| Arbitrary-field transport107 | First complete standalone run PASS100.7739366s;11logical/11theorems, standard three axioms; fresh even/all-parity/contrapositive closures. [Exact evidence](research/ender_radius_bridge/PHASE107_VERIFICATION.md). No root integration or external CI for this new source. |
+| Arbitrary-field transport107/108 | First standalone run PASS100.7739366s; exact library integration at108 passes all four first checks. Whole audit5361logical/4565theorems;197reachable modules. [Integration evidence](research/ender_radius_bridge/PHASE108_VERIFICATION.md). No external CI for this new head. |
 
 The old bounded AI review at63be64b does not cover later geometry or107.
 Independent human review, Mathlib acceptance and optimality remain open.

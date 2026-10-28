@@ -1,5 +1,9 @@
 # Status — 2026-10-28
 
+## Phase108: actual-field bound integrated unchanged
+
+All nine accepted public statements/proofs, zero definitions and four controls/reports from107 now live unchanged in `EvenFieldTwoClass.lean` after three dependency imports. One root import exposes the actual all-field h<=2 discriminant bound<2^52, with odd<2^50. [Current guide](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) · [Exact evidence](research/ender_radius_bridge/PHASE108_VERIFICATION.md). Production through108 awaits external CI; PR37 remains draft after its preserved25m stop. The50b h1 bound is unchanged. Earlier entries are historical checkpoints.
+
 ## Phase107: the arbitrary even-field gap closes standalone
 
 The first full standalone target now proves actual absolute discriminant<2^52 for EVERY imaginary quadratic number field with actual h<=2; odd discriminants retain<2^50. The even chart is constructed internally and class number/discriminant transported, with no supplied root or isomorphism. Five main theorems, four controls, no definitions; PASS100.7739366s,11logical/11theorems, standard3axioms. [Human guide](research/ender_radius_bridge/ALL_FIELD_TWO_CLASS_GUIDE.md) · [Evidence](research/ender_radius_bridge/PHASE107_VERIFICATION.md). Standalone only; the h1 bound stays50b. PR37 remains draft after its [25m CI stop](research/ender_radius_bridge/PR37_CI_LIMIT_RECEIPT.md); no retry/limit/workflow change/merge. Earlier phase entries below are preserved checkpoints.

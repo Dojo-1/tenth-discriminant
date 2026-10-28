@@ -1,5 +1,9 @@
 # Current claim-to-Lean map
 
+## Phase108: actual-field bound integrated unchanged
+
+Production now includes `TenthDiscriminant.EvenFieldTwoClass`: nine accepted public types/proofs, four controls/reports and no definitions, exact after dependency imports. The actual-field transport, all-parity bound and large-discriminant contrapositive are now available through the library root. [Current human proof](../research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) · [Exact integration](../research/ender_radius_bridge/PHASE108_VERIFICATION.md). No standalone107replay or new numerical cutoff. External CI and independent semantic review remain open; earlier standalone entries below describe107.
+
 ## Phase107: the arbitrary even-field gap closes standalone
 
 New standalone `EvenFieldTwoClass.arbitrary_even_discriminant_bound` constructs the actual even chart internally; `arbitrary_discriminant_bound` combines it with the existing odd theorem to prove actual absdiscr<2^52 for ANY degree-two totally complex number field with actual h<=2. `parity_refined_discriminant_bound` retains odd<2^50; `classNumber_gt_two_of_large_discriminant` gives the contrapositive. No caller generator/equivalence or canonical count/class-number premise. [Human proof](../research/ender_radius_bridge/ALL_FIELD_TWO_CLASS_GUIDE.md) · [Exact first-run verification](../research/ender_radius_bridge/PHASE107_VERIFICATION.md). Namespace11logical/11theorems, standard3axioms; even60excluded roots, combined37. No new production/root integration or external CI. PR37 CI is [cancelled, not green](../research/ender_radius_bridge/PR37_CI_LIMIT_RECEIPT.md). Earlier phase entries below describe historical checkpoints.

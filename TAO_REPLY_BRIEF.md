@@ -1,17 +1,17 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared through107; this brief is not posted.** Existing public
+**AI-prepared through108; this brief is not posted.** Existing public
 repo-linked comments are recorded separately. Tao asks for a human-generated
 summary; the contributor should review and revise the text in their own words.
 
 ## Current verification boundary
 
-The h1 cutoff stays50b. New standalone107 proves actual absdiscr<2^52 for
+The h1 cutoff stays50b. Phase108 integrates the accepted107 proof unchanged: actual absdiscr<2^52 for
 ANY imaginary quadratic field with actual h<=2, retaining odd<2^50;
-no caller generator or isomorphism. [Human proof](research/ender_radius_bridge/ALL_FIELD_TWO_CLASS_GUIDE.md).
+no caller generator or isomorphism. [Human proof](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md).
 PR36 is merged with passing exact-head CI. PR37's CI is cancelled at25m,
 not green, and that PR remains draft/unmerged. [Preserved receipt](research/ender_radius_bridge/PR37_CI_LIMIT_RECEIPT.md).
-No external CI or independent review is claimed for107. No cutoff gain,
+No external CI or independent review is claimed for107/108. No cutoff gain,
 full classification announcement, new posting or review commission here.
 Older milestone descriptions below retain their separate evidence scopes.
 
