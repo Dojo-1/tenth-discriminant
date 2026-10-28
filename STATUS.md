@@ -1,5 +1,30 @@
 # Status — 2026-10-28
 
+## Phase101: actual even normalization and closed Gram budget are checked
+
+A standalone theorem proves actual M(K)=4*sqrt(d)/pi from the checked
+rational degree, absence of real embeddings and discriminant -4*d.
+It bounds the finite count operator in closed form, composes the result
+with the original-Gram weighted budget, and proves that this cost is no
+larger than the previously used scalar envelope. No field replacement
+or caller-supplied normalization is used.
+[Human proof](research/ender_radius_bridge/EVEN_NORMALIZATION_GUIDE.md) ·
+[Exact bounded attempt](research/ender_radius_bridge/PHASE101_VERIFICATION.md).
+
+The first full invocation failed at the final propositional simplification
+in actual_minkowski; the audit rejected its incomplete dependency. Adding
+one final simp in that proof made the second full invocation pass. All
+16 public types, two definitions and four controls are unchanged. Both
+sources and results are preserved: 94.426986 s failed, 49.0224752 s passed;
+143.4494612 s cumulative. The final namespace has 23 logical declarations,
+21 theorems, standard three axioms. Its fresh 57,646-declaration closure
+excludes 58 older inputs. Eight raw files and 1,553 prior files are frozen.
+
+Production/root remain unchanged. Integration, the all-range even cutoff,
+arbitrary-field transport, new external CI and human review remain open.
+No new cutoff or full classification is claimed. Argon remains pending;
+earlier entries retain historical scopes and failed/stopped attempts.
+
 ## Phase100: the actual even weighted bridge is integrated
 
 The original-Gram weighted budget is now part of the main Lean library.

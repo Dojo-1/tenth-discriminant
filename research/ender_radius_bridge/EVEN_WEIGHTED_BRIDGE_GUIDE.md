@@ -56,10 +56,11 @@ one column, all valuation weights vanish, as they should.
 
 ## What still prevents a cutoff
 
-M(K) is still the actual field-dependent Minkowski constant. We must
-normalize it, bound K_L(B) explicitly, and compare the resulting loss
-against the same Gram's upper estimate over the full parameter range.
-The accepted proof is now imported by the main library without mathematical
-changes. [Integration checks](PHASE100_VERIFICATION.md) pass locally; new
-external CI remains open. No numerical candidate is a premise, and no new even cutoff
-or full classification is claimed.
+The [actual constant and closed error estimate](EVEN_NORMALIZATION_GUIDE.md)
+are now checked in a standalone proof: M(K)=4*sqrt(d)/pi, with a closed
+weighted cost no larger than the previously used scalar envelope.
+The original weighted bridge is integrated unchanged at Phase100. The
+new normalization still needs integration and the final all-range
+comparison on the same Gram. New external CI and human review remain open.
+No numerical candidate is a premise, and no new even cutoff or full
+classification is claimed.

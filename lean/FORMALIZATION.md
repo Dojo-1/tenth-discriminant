@@ -1,5 +1,26 @@
 # Current claim-to-Lean map
 
+Latest standalone theorem: `EvenMinkowski.scalar_actual_gram_budget`.
+It derives actual M(EvenQuadraticField d)=4*sqrt(d)/pi, bounds the finite
+count operator by a closed cost with discriminant scale 4*d, and proves
+that cost is dominated by the explicit scalar formula at scale d.
+Both normalized and scalar-dominated full weighted inequalities use the
+original Gram, its ordinary derivatives and existing radius/prime guards.
+[Human proof](../research/ender_radius_bridge/EVEN_NORMALIZATION_GUIDE.md) ·
+[Exact statements and attempt record](../research/ender_radius_bridge/PHASE101_VERIFICATION.md).
+
+The first invocation failed at a final propositional simplification;
+adding simp inside actual_minkowski completed the second invocation.
+All 16 public theorem types, both definitions and four controls are fixed.
+Namespace:23 logical declarations and21theorems, standard three axioms.
+The final57,646-declaration closure excludes58older inputs, including
+odd-field counting, normalization and whole cutoff results. Neither the
+numerical feasibility test nor a supplied M(K) estimate is a premise.
+
+Production/root are unchanged. Integration, all-range even cutoff,
+arbitrary-field transport, new external CI and human review remain open.
+The following production records retain their separate scope.
+
 Current production theorem: `EvenSplitPrimeBudget.actual_gram_budget`.
 For positive squarefree d=1 or 2 modulo 4 and actual even-field class
 number at most two, it proves the full finite weighted budget on the
