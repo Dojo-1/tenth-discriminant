@@ -1,4 +1,24 @@
-# Status — 2026-10-27
+# Status — 2026-10-28
+
+## Phase93: the missing even prime-axis row is now counted
+
+A standalone theorem calibrates any actual identity-class ideal to
+normalized form (1,0,d) without global h1, excludes its prime-axis points,
+and bounds the axis of any positive actual ideal form by two across all
+primes. Under class number at most two, one fixed bounded ideal and basis
+give the full per-class
+prime-normalized finite count, with no off-axis premise and charge zero in
+the principal class and two otherwise. [Human proof](research/ender_radius_bridge/EVEN_PRIME_AXIS_GUIDE.md)
+and [exact record](research/ender_radius_bridge/PHASE93_VERIFICATION.md).
+FAIL 121.6047918 s / PASS 77.3449178 s; sole repair qualifies the existing even
+norm theorem. All 11 public types, the main proof and five controls are unchanged; no new definitions.
+Namespace: 13 logical declarations, 13 theorems, no runtime auxiliaries;
+three standard axioms. The 54,650-declaration closure
+excludes 42 old roots. Eight raw files and 1,490 prior files are frozen; saved-evidence verifier passes.
+Production/root unchanged. Integration, actual even residue maps, coherent
+prime-family/four-lift/class-sum/weighted same-Gram assembly and even cutoff
+remain open. No new root build or external CI or independent human review claimed.
+Argon review still pending after remote refresh; earlier entries are history.
 
 ## Phase92: controlled even class lattices are integrated unchanged
 

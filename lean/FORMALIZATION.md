@@ -1,5 +1,20 @@
 # Current claim-to-Lean map
 
+Latest standalone theorem: `EvenPrimeAxis.controlled_class_prime_count`
+chooses one actual bounded J/basis per class under h<=2 in the positive
+squarefree even chart. It calibrates a1forC1and proves the FULL finite
+prime-normalized norm-bounded count with NOoff-axis premise and charge
+(ifC=1then0else2). The2is acrossALLprimes in the same fixed lattice.
+Principal ideal calibration does not assume global classnumberone.
+[Human proof](../research/ender_radius_bridge/EVEN_PRIME_AXIS_GUIDE.md)
+and [exact93record](../research/ender_radius_bridge/PHASE93_VERIFICATION.md).
+FAIL121.6047918/PASS77.3449178: only an even norm theorem qualification;
+all11public types/mainproof/5controls fixed,no newdefs. Namespace13/13/0,
+standard3axioms;fresh54650closure excludes42old roots. Productionroot
+and92whole audit unchanged. Integration/full even prime-family/multiplicity/
+weighted same-Gram/cutoff/externalCI/humanreview remain separate obligations.
+The following entries retain their historical checkpoint scopes.
+
 Current production theorem: `EvenControlledClass.controlled_class_form_and_count`
 is imported by the main root. Accepted91mathematical statements/FormData/
 proof bodies/controls/reports are exact after imports. No repair or retry.

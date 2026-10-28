@@ -3,9 +3,9 @@
 **For imaginary quadratic fields of class number one, the checked absolute
 field-discriminant bound is 50 billion.** Class number one means unique factorization in the ring of
 integers. The geometric count is proved on the draft branch; an arbitrary-field odd-discriminant class-number<=2bound is checked locally;
-the even-chart/arbitrary-field extensions remain open. This page tracks
+the even-discriminant cutoff remains open. This page tracks
 Tao's [challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)
-through proof source `70f9217`, integrated odd-field Phase88/even-lattice Phase90 and integrated controlled-class92, scalar test85 and preserved standalone86, with preserved75/69 failures, 27 October 2026. No full-classification
+through proof source `70f9217`, integrated odd-field Phase88/even-lattice Phase90 and integrated controlled-class92/standalone prime-axis93, scalar test85 and preserved standalone86, with preserved75/69 failures, 28 October 2026. No full-classification
 announcement, novelty, optimality or independent human review is claimed.
 
 Lean checks encoded statements. A source claim, a checked theorem and a
@@ -58,6 +58,7 @@ checklist in Tao's post.
 | Class-number invariance under field isomorphism | [Actual ideal-class bijection](research/ender_radius_bridge/ODD_FIELD_TWO_CLASS_GUIDE.md) is independent of chosen integral representative and preserves class number without a PID/h1 premise. It closes the odd arbitrary-field bound locally at88; no novelty or upstream acceptance claimed. |
 | Even actual ideal geometry | [Maximal-lattice norm form and count](research/ender_radius_bridge/EVEN_IDEAL_LATTICE_GUIDE.md) prove4ac-b^2=4d and one basis/count for all finite off-axis norm-bounded sets, without h1/PID/class-number premises. Integrated locally at90 without mathematical changes; full root/input/audit checks pass. Class/prime/weighted same-Gram assembly and even cutoff remain open. |
 | Controlled even ideal class | [One bounded lattice per actual class](research/ender_radius_bridge/EVEN_CONTROLLED_CLASS_GUIDE.md) now gives0<a<=N(J)<=M(K), exact even norm form, all ideal lifts and a common all-finite off-axis count under h<=2. Integrated unchanged at92; full local root/input/audit checks pass. Full prime/weighted same-Gram assembly remains open. |
+| Complete even prime-axis accounting | [Calibrated principal class and full per-class count](research/ender_radius_bridge/EVEN_PRIME_AXIS_GUIDE.md) pay0axis points in C1and at most2acrossALLprimes otherwise. A fixed actual bounded J/basis serves all finite prime-normalized sets. Standalone namespace/input checks pass; coherent prime-family/multiplicity/class-sum/weighted assembly remains open. |
 | Limits that prevented overclaiming | A radial O(1/R) ceiling, the per-form zero-row failure and the [stopped coordinate attempt](research/ender_radius_bridge/PHASE69_VERIFICATION.md) remain preserved. [History and controls](STATUS.md). |
 
 ## Verification and the next decisive step
@@ -82,7 +83,9 @@ with full local root/input/whole-audit checks:188modules,5189logical/
 4405theorems,37old-input exclusions.
 The controlled basis/lifts/common count per actual even ideal class is
 now integrated unchanged at92:189modules,5206logical/4421theorems,
-38old-input exclusions. Next: full axis/prime/class-sum/weighted assembly. Independent
+38old-input exclusions. The full even axis/per-class prime count is now
+proved standalone at93. Next: its integration, actual even residue maps
+and coherent prime-family/multiplicity/class-sum/weighted assembly. Independent
 human review and new external exact-head CI remain open. Argon's review
 is underway and has not yet been assessed.
 A remote refresh finds PR30-34 already merged on main, now at `39e9ce3`;
