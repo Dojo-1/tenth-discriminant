@@ -55,5 +55,5 @@ three statements, with both runs preserved.
 
 Transport to arbitrary field types and independent human review remain
 open. External CI is recorded for each published head. The requested
-coordinate/lattice-shift compatibility is a separate next proof target.
+coordinate/lattice-shift compatibility is now [checked standalone](COORDINATE_TRANSLATION_GUIDE.md), with explicit invariants.
 This supplies a cutoff, not a full class-number classification.

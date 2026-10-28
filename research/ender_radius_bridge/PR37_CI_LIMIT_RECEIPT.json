@@ -1,0 +1,17 @@
+{
+  "head": "38d799e38145d6676f89d8aaa638bd8ae94c1ffc",
+  "run": 40707296487,
+  "job": 122882737948,
+  "conclusion": "cancelled",
+  "reason": "25m workflow execution limit",
+  "merge": "HELD; draft PR37 remains unmerged",
+  "local_integration": "all four first checks PASS",
+  "negative_control_log": "final PASS marker present; step cancelled, not successful completion",
+  "sha256": {
+    "run": "ef6d47c7811d0a349ebf03f3469596ea3bef4ee08458984433e575566baee8a0",
+    "job": "63394ca356a4a58145ff2190cdf0066ce1477cd99479f394329276b2c14418f7",
+    "annotations": "2df1df1d10b49944fdd820fe7d0cb5ae604b55d4ec30f60e5cdf19b685c3f58a",
+    "job.log": "492621373e6622cb711272f9e1ce4780cd8ad2bd38c20fdfa73fdaabf4320fa7"
+  },
+  "archive_sha256": "897cb39e50a9046475d941e6a36b5a83628dabbfc969cd1c3e8ca1ce58639c18"
+}

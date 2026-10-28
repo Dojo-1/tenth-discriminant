@@ -1,6 +1,19 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared, through Phase 104. Not posted.** Existing public repo-linked comments are recorded in the source refresh below. Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
+**AI-prepared through109; this brief is not posted.** Existing public
+repo-linked comments are recorded separately. Tao asks for a human-generated
+summary; the contributor should review and revise the text in their own words.
+
+## Current verification boundary
+
+The h1 cutoff stays50b. Phase108 integrates the accepted107 proof unchanged: actual absdiscr<2^52 for
+ANY imaginary quadratic field with actual h<=2, retaining odd<2^50;
+no caller generator or isomorphism. [Human proof](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md).
+PR36 is merged with passing exact-head CI. PR37's CI is cancelled at25m,
+not green, and its cancellation remains preserved. [Preserved receipt](research/ender_radius_bridge/PR37_CI_LIMIT_RECEIPT.md).
+[External status is versioned per publication head](research/ender_radius_bridge/VERIFICATION_CURRENT.md); no independent review is claimed for107/108. No cutoff gain,
+full classification announcement, new posting or review commission here.
+Older milestone descriptions below retain their separate evidence scopes.
 
 ## Short draft for human revision
 
@@ -40,19 +53,18 @@ are now integrated unchanged: M(K)=4*sqrt(d)/pi, and the full original-Gram
 budget is dominated by the previously used scalar envelope. The
 [all-range even-chart contradiction](research/ender_radius_bridge/EVEN_TWO_CLASS_BOUND_GUIDE.md)
 is integrated unchanged: actual class number<=2 implies radicand<2^50 and
-actual discriminant<2^52. Arbitrary even-field transport remains open;
+actual discriminant<2^52. Arbitrary even-field transport is now checked standalone at107;
 this is no full-classification announcement.
 
 [Phase104 verification](research/ender_radius_bridge/PHASE104_VERIFICATION.md)
 records the unchanged accepted proof, all four local checks passing,
 195 reachable modules, the whole-library axiom audit and 58 excluded older
 inputs. These checks are separate from the earlier published CI and
-review. External CI is recorded per published head; no independent review is claimed. Argon's
-review is still underway and has not been received or assessed.
+review. External CI is recorded per published head; no independent review is claimed. No new independent Argon report was received or assessed in this cycle.
 
 ## Limits that must travel with the result
 
-Independent human semantic review, verified model-family independence, Mathlib acceptance, optimality and the arbitrary-field even-discriminant higher-class-number extension are not established. The new odd-chart range is integrated and checked locally. A passing Lean build checks the encoded statement; it does not itself establish that the intended mathematical interpretation has received independent review.
+Independent human semantic review, verified model-family independence, Mathlib acceptance and optimality are not established. The arbitrary-field even-discriminant h<=2 extension is now checked standalone at107, awaiting integration and external CI. The new odd-chart range is integrated and checked locally. A passing Lean build checks the encoded statement; it does not itself establish that the intended mathematical interpretation has received independent review.
 
 The quoted 1933 Lehmer announcement reports a strict finite range `163 < D < 5 billion` in radicand notation. It cannot alone complete our 50-billion cutoff. Nor does deriving a later theorem from older foundations establish an earliest historical year. No such year is claimed.
 

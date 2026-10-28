@@ -1,5 +1,25 @@
 # Current claim-to-Lean map
 
+## Phase109: preserve every gate with bounded concurrency
+
+Phase109 changes only control orchestration: max2independent final families, same eight scripts/arguments/timeouts and all mathematical rejection rules. Six SYNTHETIC scheduler tests pass; no new mathematical proof or axiom audit is claimed from them. All Lean sources remain byte-exact to108. [Local scheduling evidence](../research/ender_radius_bridge/PHASE109_VERIFICATION.md) · [Publication receipt location](../research/ender_radius_bridge/VERIFICATION_CURRENT.md). The full new pinned CI must complete before merge; the old cancelled run is preserved.
+
+## Phase108: actual-field bound integrated unchanged
+
+Production now includes `TenthDiscriminant.EvenFieldTwoClass`: nine accepted public types/proofs, four controls/reports and no definitions, exact after dependency imports. The actual-field transport, all-parity bound and large-discriminant contrapositive are now available through the library root. [Current human proof](../research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) · [Exact integration](../research/ender_radius_bridge/PHASE108_VERIFICATION.md). No standalone107replay or new numerical cutoff. External CI and independent semantic review remain open; earlier standalone entries below describe107.
+
+## Phase107: the arbitrary even-field gap closes standalone
+
+New standalone `EvenFieldTwoClass.arbitrary_even_discriminant_bound` constructs the actual even chart internally; `arbitrary_discriminant_bound` combines it with the existing odd theorem to prove actual absdiscr<2^52 for ANY degree-two totally complex number field with actual h<=2. `parity_refined_discriminant_bound` retains odd<2^50; `classNumber_gt_two_of_large_discriminant` gives the contrapositive. No caller generator/equivalence or canonical count/class-number premise. [Human proof](../research/ender_radius_bridge/ALL_FIELD_TWO_CLASS_GUIDE.md) · [Exact first-run verification](../research/ender_radius_bridge/PHASE107_VERIFICATION.md). Namespace11logical/11theorems, standard3axioms; even60excluded roots, combined37. No new production/root integration or external CI. PR37 CI is [cancelled, not green](../research/ender_radius_bridge/PR37_CI_LIMIT_RECEIPT.md). Earlier phase entries below describe historical checkpoints.
+
+## Phase106 integration
+
+Production now includes `TenthDiscriminant.CoordinateTranslation`: all 29 accepted public statements/proofs, five definitions and four controls are unchanged after imports. All four local integration checks pass; whole audit 5,350 logical / 4,554 theorem / 17,015 runtime. [Current guide](../research/ender_radius_bridge/COORDINATE_BRIDGE_CURRENT.md) · [Receipt](../research/ender_radius_bridge/PHASE106_VERIFICATION.md). Earlier standalone status below describes Phase105, before integration.
+
+## Coordinate and translation bridge (standalone Phase105)
+
+`CoordinateTranslation.coordinate_translation_bridge` derives the even-chart coordinate bijection, norm compatibility, affine transport, exact original matrix cast, positivity and prime-power divisor under explicit ordinary guards. Separate odd-coordinate lemmas prove the index-two image and quotient-order norm identity. `shifted_gram_counterexample` proves determinants 24 and 60 before/after a vertical shift. These are standalone checked declarations, not yet root imports. [Human interpretation](../research/ender_radius_bridge/COORDINATE_TRANSLATION_GUIDE.md) · [Exact evidence](../research/ender_radius_bridge/PHASE105_VERIFICATION.md). Production through Phase104 is [merged with passing pinned CI](../research/ender_radius_bridge/PR36_MERGE_RECEIPT.md).
+
 Current production theorems: `EvenTwoClass.even_classNumber_gt_two`,
 `even_radicand_bound`, `even_discriminant_bound`. For positive squarefree
 d=1 or 2 modulo 4, d>=2^50 forces actual class number(EvenQuadraticField d)>2.

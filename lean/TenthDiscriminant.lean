@@ -118,3 +118,5 @@ import TenthDiscriminant.EvenClassAggregation
 import TenthDiscriminant.EvenSplitPrimeBudget
 import TenthDiscriminant.EvenMinkowski
 import TenthDiscriminant.EvenTwoClass
+import TenthDiscriminant.CoordinateTranslation
+import TenthDiscriminant.EvenFieldTwoClass
