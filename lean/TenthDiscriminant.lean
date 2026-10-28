@@ -116,3 +116,4 @@ import TenthDiscriminant.EvenPrimeAxis
 import TenthDiscriminant.EvenPrimeFamily
 import TenthDiscriminant.EvenClassAggregation
 import TenthDiscriminant.EvenSplitPrimeBudget
+import TenthDiscriminant.EvenMinkowski

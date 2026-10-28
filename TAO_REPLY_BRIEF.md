@@ -1,6 +1,6 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared, through Phase 101. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
+**AI-prepared, through Phase 102. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
 
 ## Short draft for human revision
 
@@ -36,14 +36,13 @@ for lost factors of the same original determinant. It includes parameter
 divisors and assumes no counting function or local divisibility result.
 The distinction between radicand d and actual field discriminant 4*d
 remains explicit. The [actual normalization and closed estimate](research/ender_radius_bridge/EVEN_NORMALIZATION_GUIDE.md)
-now pass standalone: M(K)=4*sqrt(d)/pi, and the full original-Gram budget
-is dominated by the previously used scalar envelope. This proof still
-needs integration and the final all-range even contradiction; no new
-cutoff is claimed.
+are now integrated unchanged: M(K)=4*sqrt(d)/pi, and the full original-Gram
+budget is dominated by the previously used scalar envelope. The final
+all-range even contradiction remains open; no new cutoff is claimed.
 
-[Phase100 verification](research/ender_radius_bridge/PHASE100_VERIFICATION.md)
+[Phase102 verification](research/ender_radius_bridge/PHASE102_VERIFICATION.md)
 records the unchanged accepted proof, all four local checks passing,
-193 reachable modules, the whole-library axiom audit and 52 excluded older
+194 reachable modules, the whole-library axiom audit and 58 excluded older
 inputs. These checks are separate from the earlier published CI and
 review. No new external CI or independent review is claimed. Argon's
 review is still underway and has not been received or assessed.

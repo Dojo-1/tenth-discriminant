@@ -55,7 +55,9 @@ checked slice/count interfaces. [Original bounded attempt](PHASE97_VERIFICATION.
 The accepted proof is now imported by the main library without mathematical
 changes. [Integration and verification](PHASE98_VERIFICATION.md).
 
-This is an actual prime-prefix count. It is not yet the weighted loss
-bound for the original determinant. Weighted summation, explicit actual
-Minkowski normalization and the final same-Gram contradiction remain;
-no new even cutoff or full classification is asserted.
+This actual prime-prefix count now feeds the integrated
+[weighted determinant bridge](EVEN_WEIGHTED_BRIDGE_GUIDE.md). The actual
+[Minkowski normalization and closed estimate](EVEN_NORMALIZATION_GUIDE.md)
+are integrated unchanged at Phase102. The final all-range same-Gram
+contradiction remains open; no new even cutoff or full classification
+is asserted.

@@ -54,6 +54,7 @@ replace the even field by an odd one.
 
 Consequently the full original-Gram weighted budget is now bounded by
 an explicit scalar formula already used elsewhere in the development.
-The proof and its controls pass standalone. Integration, the final
-all-range even cutoff, arbitrary-field transport, new external CI and
-independent human review remain open. No new cutoff is claimed here.
+The accepted proof and controls are now integrated unchanged into the main
+library. [Integration checks](PHASE102_VERIFICATION.md) pass locally. The
+final all-range even cutoff, arbitrary-field transport, new external CI
+and human review remain open. No new cutoff is claimed here.

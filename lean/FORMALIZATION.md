@@ -1,25 +1,26 @@
 # Current claim-to-Lean map
 
-Latest standalone theorem: `EvenMinkowski.scalar_actual_gram_budget`.
+Current production theorem: `EvenMinkowski.scalar_actual_gram_budget`.
 It derives actual M(EvenQuadraticField d)=4*sqrt(d)/pi, bounds the finite
-count operator by a closed cost with discriminant scale 4*d, and proves
-that cost is dominated by the explicit scalar formula at scale d.
+count operator by a closed cost with actual discriminant scale4*d, and
+proves that cost is dominated by an explicit scalar formula at scale d.
 Both normalized and scalar-dominated full weighted inequalities use the
-original Gram, its ordinary derivatives and existing radius/prime guards.
+original Gram, ordinary derivatives and existing radius/prime guards.
 [Human proof](../research/ender_radius_bridge/EVEN_NORMALIZATION_GUIDE.md) ·
-[Exact statements and attempt record](../research/ender_radius_bridge/PHASE101_VERIFICATION.md).
+[Exact integration record](../research/ender_radius_bridge/PHASE102_VERIFICATION.md).
 
-The first invocation failed at a final propositional simplification;
-adding simp inside actual_minkowski completed the second invocation.
-All 16 public theorem types, both definitions and four controls are fixed.
-Namespace:23 logical declarations and21theorems, standard three axioms.
-The final57,646-declaration closure excludes58older inputs, including
-odd-field counting, normalization and whole cutoff results. Neither the
-numerical feasibility test nor a supplied M(K) estimate is a premise.
+Accepted101mathematics, including the final simp repair, is unchanged:
+16public theorem types/proofs, two definitions, four controls and reports.
+One root import makes it available throughout the library. All four
+registered checks passed on their first invocation. The audit covers
+5,287logical declarations and4,496theorems in194reachable modules;
+only propext,Classical.choice,Quot.sound. The fresh57,646-declaration
+closure excludes58older inputs. No supplied M(K) estimate, numerical
+feasibility output or odd-field cutoff theorem is a premise.
 
-Production/root are unchanged. Integration, all-range even cutoff,
-arbitrary-field transport, new external CI and human review remain open.
-The following production records retain their separate scope.
+All-range even cutoff, arbitrary-field transport, new external CI and
+human review remain open. The following production records preserve
+their earlier scopes; all failed/stopped attempts remain frozen.
 
 Current production theorem: `EvenSplitPrimeBudget.actual_gram_budget`.
 For positive squarefree d=1 or 2 modulo 4 and actual even-field class

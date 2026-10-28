@@ -57,10 +57,10 @@ one column, all valuation weights vanish, as they should.
 ## What still prevents a cutoff
 
 The [actual constant and closed error estimate](EVEN_NORMALIZATION_GUIDE.md)
-are now checked in a standalone proof: M(K)=4*sqrt(d)/pi, with a closed
+are now integrated unchanged into the main library: M(K)=4*sqrt(d)/pi, with a closed
 weighted cost no larger than the previously used scalar envelope.
 The original weighted bridge is integrated unchanged at Phase100. The
-new normalization still needs integration and the final all-range
-comparison on the same Gram. New external CI and human review remain open.
+normalization is integrated unchanged at Phase102. The final all-range
+comparison on the same Gram, new external CI and human review remain open.
 No numerical candidate is a premise, and no new even cutoff or full
 classification is claimed.
