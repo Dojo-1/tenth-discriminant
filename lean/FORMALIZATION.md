@@ -1,5 +1,9 @@
 # Current claim-to-Lean map
 
+## Phase109: preserve every gate with bounded concurrency
+
+Phase109 changes only control orchestration: max2independent final families, same eight scripts/arguments/timeouts and all mathematical rejection rules. Six SYNTHETIC scheduler tests pass; no new mathematical proof or axiom audit is claimed from them. All Lean sources remain byte-exact to108. [Local scheduling evidence](../research/ender_radius_bridge/PHASE109_VERIFICATION.md) · [Publication receipt location](../research/ender_radius_bridge/VERIFICATION_CURRENT.md). The full new pinned CI must complete before merge; the old cancelled run is preserved.
+
 ## Phase108: actual-field bound integrated unchanged
 
 Production now includes `TenthDiscriminant.EvenFieldTwoClass`: nine accepted public types/proofs, four controls/reports and no definitions, exact after dependency imports. The actual-field transport, all-parity bound and large-discriminant contrapositive are now available through the library root. [Current human proof](../research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) · [Exact integration](../research/ender_radius_bridge/PHASE108_VERIFICATION.md). No standalone107replay or new numerical cutoff. External CI and independent semantic review remain open; earlier standalone entries below describe107.

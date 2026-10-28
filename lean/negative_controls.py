@@ -4,8 +4,11 @@ import pathlib
 import subprocess
 import sys
 import tempfile
+from control_schedule import run_families
 
 root = pathlib.Path(__file__).resolve().parent
+subprocess.run([sys.executable, str(root / 'control_schedule_tests.py')],
+               cwd=root, check=True, timeout=120)
 pairs = {
     'split_endpoint': (
         'example : 4*(40 : Nat) < 163+1 := by decide',
@@ -62,20 +65,14 @@ with tempfile.TemporaryDirectory() as tmp:
                 raise SystemExit(f'Audit gate did not reject the intended dependency: {label}\n{output}')
         print(f'PASS: proof-audit control {label}', flush=True)
         print(output.strip(), flush=True)
-subprocess.run([sys.executable, str(root / 'exact_gram_controls.py')],
-               cwd=root, check=True, timeout=120)
-subprocess.run([sys.executable, str(root / 'jet_uniqueness_controls.py')],
-               cwd=root, check=True, timeout=120)
-subprocess.run([sys.executable, str(root / 'jet_negative_controls.py')],
-               cwd=root, check=True, timeout=120)
-subprocess.run([sys.executable, str(root / 'multiplicity_negative_controls.py')],
-               cwd=root, check=True, timeout=120)
-subprocess.run([sys.executable, str(root / 'degree_negative_controls.py')],
-               cwd=root, check=True, timeout=240)
-subprocess.run([sys.executable, str(root / 'nonzero_negative_controls.py')],
-               cwd=root, check=True, timeout=360)
-subprocess.run([sys.executable, str(root / 'affine_negative_controls.py')],
-               cwd=root, check=True, timeout=240)
-subprocess.run([sys.executable, str(root / 'assembly_negative_controls.py')],
-               cwd=root, check=True, timeout=360)
+run_families(root, [
+    ('exact_gram_controls.py', 120),
+    ('jet_uniqueness_controls.py', 120),
+    ('jet_negative_controls.py', 120),
+    ('multiplicity_negative_controls.py', 120),
+    ('degree_negative_controls.py', 240),
+    ('nonzero_negative_controls.py', 360),
+    ('affine_negative_controls.py', 240),
+    ('assembly_negative_controls.py', 360),
+])
 print('PASS: mathematical controls, proof-audit probes, Gram, jet, multiplicity, degree, nonzero, affine and assembly controls.')

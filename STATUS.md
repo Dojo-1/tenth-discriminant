@@ -1,5 +1,9 @@
 # Status — 2026-10-28
 
+## Phase109: preserve every gate with bounded concurrency
+
+The new publication architecture preserves the inherited mathematical control families and timeouts while allowing at most2independent families at once. All six SYNTHETIC scheduler tests pass first run; they do not run Lean. Mathematical source/root/pins/workflow remain unchanged from108. [Human explanation](research/ender_radius_bridge/CONTROL_SCHEDULING_GUIDE.md) · [Local evidence](research/ender_radius_bridge/PHASE109_VERIFICATION.md) · [Versioned publication status](research/ender_radius_bridge/VERIFICATION_CURRENT.md). One new full CI target is registered; old PR37 stays a cancelled run. Earlier entries below are checkpoints.
+
 ## Phase108: actual-field bound integrated unchanged
 
 All nine accepted public statements/proofs, zero definitions and four controls/reports from107 now live unchanged in `EvenFieldTwoClass.lean` after three dependency imports. One root import exposes the actual all-field h<=2 discriminant bound<2^52, with odd<2^50. [Current guide](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) · [Exact evidence](research/ender_radius_bridge/PHASE108_VERIFICATION.md). Production through108 awaits external CI; PR37 remains draft after its preserved25m stop. The50b h1 bound is unchanged. Earlier entries are historical checkpoints.

@@ -1,6 +1,6 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared through108; this brief is not posted.** Existing public
+**AI-prepared through109; this brief is not posted.** Existing public
 repo-linked comments are recorded separately. Tao asks for a human-generated
 summary; the contributor should review and revise the text in their own words.
 
@@ -10,8 +10,8 @@ The h1 cutoff stays50b. Phase108 integrates the accepted107 proof unchanged: act
 ANY imaginary quadratic field with actual h<=2, retaining odd<2^50;
 no caller generator or isomorphism. [Human proof](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md).
 PR36 is merged with passing exact-head CI. PR37's CI is cancelled at25m,
-not green, and that PR remains draft/unmerged. [Preserved receipt](research/ender_radius_bridge/PR37_CI_LIMIT_RECEIPT.md).
-No external CI or independent review is claimed for107/108. No cutoff gain,
+not green, and its cancellation remains preserved. [Preserved receipt](research/ender_radius_bridge/PR37_CI_LIMIT_RECEIPT.md).
+[External status is versioned per publication head](research/ender_radius_bridge/VERIFICATION_CURRENT.md); no independent review is claimed for107/108. No cutoff gain,
 full classification announcement, new posting or review commission here.
 Older milestone descriptions below retain their separate evidence scopes.
 
