@@ -6,8 +6,8 @@ Lean now proves
     class number(K)<=2  =>  d<2^50,
     absolute field discriminant(K)<4*2^50=2^52.
 
-This is a checked standalone theorem about the actual even quadratic
-field. [Exact statements and evidence](PHASE103_VERIFICATION.md).
+This theorem is now integrated unchanged into the main Lean library.
+[Exact statements and integration checks](PHASE104_VERIFICATION.md).
 The discriminant is 4*d, so the two bounds must not be interchanged.
 
 ## Where the contradiction comes from
@@ -53,6 +53,7 @@ or optimality is claimed. The first full attempt checked the contradiction
 but failed in an absolute-value wrapper; the repaired full run checks all
 three statements, with both runs preserved.
 
-Integration, transport to arbitrary field types, new external CI and
-independent human review remain open. This supplies a cutoff, not a
-full class-number classification.
+Transport to arbitrary field types and independent human review remain
+open. External CI is recorded for each published head. The requested
+coordinate/lattice-shift compatibility is a separate next proof target.
+This supplies a cutoff, not a full class-number classification.

@@ -1,6 +1,6 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared, through Phase 103. Not posted.** Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
+**AI-prepared, through Phase 104. Not posted.** Existing public repo-linked comments are recorded in the source refresh below. Tao asks for a human-generated summary; the contributor should review the evidence and write or revise the actual comment in their own words. This document authorizes no posting.
 
 ## Short draft for human revision
 
@@ -39,15 +39,15 @@ remains explicit. The [actual normalization and closed estimate](research/ender_
 are now integrated unchanged: M(K)=4*sqrt(d)/pi, and the full original-Gram
 budget is dominated by the previously used scalar envelope. The
 [all-range even-chart contradiction](research/ender_radius_bridge/EVEN_TWO_CLASS_BOUND_GUIDE.md)
-now passes standalone: actual class number<=2 implies radicand<2^50 and
-actual discriminant<2^52. Its integration and arbitrary even-field
-transport remain open; this is no full-classification announcement.
+is integrated unchanged: actual class number<=2 implies radicand<2^50 and
+actual discriminant<2^52. Arbitrary even-field transport remains open;
+this is no full-classification announcement.
 
-[Phase102 verification](research/ender_radius_bridge/PHASE102_VERIFICATION.md)
+[Phase104 verification](research/ender_radius_bridge/PHASE104_VERIFICATION.md)
 records the unchanged accepted proof, all four local checks passing,
-194 reachable modules, the whole-library axiom audit and 58 excluded older
+195 reachable modules, the whole-library axiom audit and 58 excluded older
 inputs. These checks are separate from the earlier published CI and
-review. No new external CI or independent review is claimed. Argon's
+review. External CI is recorded per published head; no independent review is claimed. Argon's
 review is still underway and has not been received or assessed.
 
 ## Limits that must travel with the result
@@ -58,4 +58,4 @@ The quoted 1933 Lehmer announcement reports a strict finite range `163 < D < 5 b
 
 The question about a zero-free region Re(s)>3/4 is a separate possible analytic input. It is not assumed by this determinant proof. The quoted zero-existence estimate only starts at `d >= 655`, so replacing 7/8 by 3/4 does not automatically yield a 164 cutoff. Do not confuse zeta(3/4) in the Chowla-Selberg evaluation at 7/8 with a 3/4 zero-free theorem.
 
-No Tao comment or submission permalink is recorded. The contributor retains the decision to post, the wording of a human summary and responsibility for the linked claims. The older briefing and failed attempts remain in Git and [STATUS](STATUS.md).
+Two public repo-linked comments are now located in the [28 October source refresh](research/ender_radius_bridge/SOURCE_REFRESH_20261028.md). Their authorship process is not independently verified. This AI-prepared brief and the newest results have not been posted by this agent. The contributor retains control over further wording and posting; earlier records remain in Git and [STATUS](STATUS.md).

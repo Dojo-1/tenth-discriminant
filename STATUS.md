@@ -1,5 +1,34 @@
 # Status — 2026-10-28
 
+## Phase104: actual even-chart cutoff is integrated unchanged
+
+The main library now proves actual even-field class number>2 for every
+squarefree d=1 or 2 modulo 4 with d>=2^50. Under h<=2, radicand<2^50 and
+actual absolute field discriminant<2^52. All seven accepted public theorem
+statements/proofs, four controls and reports are unchanged; no new definitions.
+[Human proof](research/ender_radius_bridge/EVEN_TWO_CLASS_BOUND_GUIDE.md) ·
+[Exact integration](research/ender_radius_bridge/PHASE104_VERIFICATION.md).
+
+Module/full build/input/whole audit all passed on their first invocation.
+The library has195reachable modules,5,307logical declarations and4,516
+proof theorems with the three permitted axioms. Fresh closures59,697 and
+59,701exclude58older inputs. Saved verification preserves25raw records and
+1,573prior files, including the failed103wrapper and its exact repair.
+No standalone103replay or mathematical repair occurred during integration.
+
+The user explicitly authorized merge. Earlier PR35 is now merged at
+b402116 after its own exact-head pinned CI was freshly checked. That does
+not validate this newer head. This local record precedes publication;
+new exact-head CI and merge receipts belong to its associated PR.
+Arbitrary-field transport, requested coordinate/literal-shift invariants
+and independent human review remain separate next targets. No full
+classification, improved h1cutoff or optimality is claimed.
+
+A [primary-source refresh](research/ender_radius_bridge/SOURCE_REFRESH_20261028.md)
+locates two existing public repo-linked Tao comments, correcting the old
+blanket absence claim. The current AI brief is unposted by this agent.
+Argon remains pending; historical entries retain their original scopes.
+
 ## Phase103: full all-range even-chart two-class cutoff is checked
 
 For every positive squarefree d=1 or 2 modulo 4, the standalone theorem

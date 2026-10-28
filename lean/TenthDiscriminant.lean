@@ -117,3 +117,4 @@ import TenthDiscriminant.EvenPrimeFamily
 import TenthDiscriminant.EvenClassAggregation
 import TenthDiscriminant.EvenSplitPrimeBudget
 import TenthDiscriminant.EvenMinkowski
+import TenthDiscriminant.EvenTwoClass

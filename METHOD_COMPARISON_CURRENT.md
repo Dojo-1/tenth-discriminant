@@ -40,3 +40,19 @@ claims must not be read as current. The broader comparison objective stays
 partial: source inspection and author-reported checks do not constitute
 independent semantic or build verification. Tao's [challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)
 welcomes different approaches, including numerically weaker bounds.
+
+## 28 October source refresh
+
+The accessible [twinheterodox v0.7.0 release](https://github.com/twinheterodox/tenth-discriminant/releases/tag/v0.7.0)
+states q<570. The suggested q<480 remains unverified; latest-release
+metadata was unavailable. No competing proof/code is imported here.
+[Public-comment provenance and scope](research/ender_radius_bridge/SOURCE_REFRESH_20261028.md).
+
+Our higher-class-number additions are separate: arbitrary odd fields with
+h<=2 have actual discriminant<2^50; the integrated canonical even-chart
+bound is actual discriminant<2^52. Arbitrary even-field transport remains
+open. These do not improve the separate h=1 bound of50billion. The user
+requests coordinate and literal-shift compatibility proofs before drawing
+new conclusions from transformed frames; no determinant invariance or
+cutoff gain is assumed. Original frozen source comparisons above retain
+their dates and evidence scope.

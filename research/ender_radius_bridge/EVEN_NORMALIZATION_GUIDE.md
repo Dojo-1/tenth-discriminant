@@ -56,6 +56,7 @@ Consequently the full original-Gram weighted budget is now bounded by
 an explicit scalar formula already used elsewhere in the development.
 The accepted proof and controls are now integrated unchanged into the main
 library. [Integration checks](PHASE102_VERIFICATION.md) pass locally. The
-[all-range even-chart cutoff](EVEN_TWO_CLASS_BOUND_GUIDE.md) now passes
-standalone. Its integration, arbitrary-field transport, new external CI
-and human review remain open; no full classification is claimed.
+[all-range even-chart cutoff](EVEN_TWO_CLASS_BOUND_GUIDE.md) is integrated
+unchanged at Phase104. Arbitrary-field transport and human review remain
+open; external CI is versioned per publication. No full classification
+is claimed.
