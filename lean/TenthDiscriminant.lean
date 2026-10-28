@@ -120,3 +120,4 @@ import TenthDiscriminant.EvenMinkowski
 import TenthDiscriminant.EvenTwoClass
 import TenthDiscriminant.CoordinateTranslation
 import TenthDiscriminant.EvenFieldTwoClass
+import TenthDiscriminant.PassiveTransport

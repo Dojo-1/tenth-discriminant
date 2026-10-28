@@ -1,5 +1,9 @@
 # Status — 2026-10-28
 
+## Phase111: compatible transport integrated unchanged
+
+The accepted110polynomial/ordinary-jet/passive-original-Gram proof now lives in `PassiveTransport.lean` unchanged after one dependency import; one root import exposes it. All four integration checks passed first invocation. Whole audit5393logical/4593theorems/17015runtime;198reachable modules. The inventory delta is the31new namespace declarations plus the existing rowSection equation lemma; no old declaration disappeared. [Current guide](research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md) · [Exact evidence](research/ender_radius_bridge/PHASE111_VERIFICATION.md). No standalone110replay; external CI is versioned per publication head. The h1 cutoff stays50b; no complexity-hardness or classification claim.
+
 ## Phase110: compatible polynomial/ordinary-jet transport checked
 
 The full standalone passive transport target now passes: actual bivariate polynomial translation over any commutative ring, group/inverse laws, ring-map naturality, ordinary-derivative/jet covariance, and recovery of the SAME original integer Gram at shifted lattice points. Positivity and the existing prime-power divisor retain their explicit guards. Twenty public types/four definitions/four controls are fixed acrossFAIL138.0938151/FAIL68.3821887/PASS72.6634586; all3slots consumed, no replay. Namespace31logical/27theorems, standard3axioms,70excluded roots in three fresh closures. [Human guide](research/ender_radius_bridge/PASSIVE_TRANSPORT_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE110_VERIFICATION.md). Production integration/external CI remain; no cutoff improvement.

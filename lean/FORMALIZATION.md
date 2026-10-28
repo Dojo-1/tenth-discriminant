@@ -1,5 +1,9 @@
 # Current claim-to-Lean map
 
+## Phase111: compatible transport integrated unchanged
+
+Production now includes `TenthDiscriminant.PassiveTransport`: exact accepted20public types/proofs,four definitions,three private helpers,four controls/reports after one dependency import, with one root import. It connects actual translated bivariate polynomials, ordinary jets and entrywise recovery of the original integer Gram. Namespace31logical/27theorems; whole5393logical/4593theorems/17015runtime. The saved verification explains the additional rowSection equation lemma and confirms no old declaration was removed. [Human proof](../research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md) · [Exact integration](../research/ender_radius_bridge/PHASE111_VERIFICATION.md). Fresh5880/13936/33095closures retain70exclusions and standard3axioms. External CI/review stay separate from local checks.
+
 ## Phase110: compatible polynomial/ordinary-jet transport checked
 
 New standalone `PassiveTransport` defines actual polynomial pullback and ordinary sampled jets. Its20public statements include composition/inverse/naturality over CommRing, all-order derivative covariance and entrywise equality of transported polynomial Gram with the ORIGINAL integer trace-Gram cast; the final bridge retains real positivity, positive integer determinant and prime-power divisor under explicit original guards. [Human proof](../research/ender_radius_bridge/PASSIVE_TRANSPORT_GUIDE.md) · [Verification](../research/ender_radius_bridge/PHASE110_VERIFICATION.md). Namespace31logical/27theorems, standard3axioms; fresh5880/13936/33095closures exclude70roots. All three slots consumed; no standalone replay, new root import/full-library audit or external CI. Ring-map identities do not assert rank preservation under non-injective reduction or computational hardness.
