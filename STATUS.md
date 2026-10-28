@@ -1,5 +1,26 @@
 # Status — 2026-10-28
 
+## Phase99: the actual even count now controls weighted determinant loss
+
+A standalone Lean theorem turns the actual even-field prime count into
+an estimate on the original Gram matrix. It partitions odd primes into
+nonsquare primes supplying divisibility, divisors of d with a logarithmic
+budget, and the remaining square primes paid for by the checked count.
+The positive summation operator preserves that count inequality.
+[Human proof](research/ender_radius_bridge/EVEN_WEIGHTED_BRIDGE_GUIDE.md) ·
+[Exact attempt](research/ender_radius_bridge/PHASE99_VERIFICATION.md).
+
+First invocation passed in 96.1654538 seconds, with no repair or retry.
+Seven public types, one definition and five controls are checked. The
+57,514-declaration dependency closure excludes 52 older inputs, including
+the odd-field budget and count. The namespace uses only the three permitted
+axioms; four raw records and 1,538 prior files are frozen. Production/root
+are unchanged. This result is standalone, not a new whole-library CI run.
+
+Actual M(K) normalization, a closed weighted estimate and the final even
+cutoff remain open, along with integration, external CI and human review.
+Argon remains pending. Earlier entries below retain historical scopes.
+
 ## Phase98: the actual even prime count is integrated
 
 The main Lean library now includes the class-sum prime-prefix bound,

@@ -1,5 +1,24 @@
 # Current claim-to-Lean map
 
+Latest standalone theorem: `EvenSplitPrimeBudget.actual_gram_budget`.
+For positive squarefree d=1 or 2 modulo 4 and actual even-field class
+number at most two, it proves the full finite weighted budget on the
+original ellipse Gram, under the existing radius and odd-prime guards.
+The prefix estimate and local divisibility are derived, not caller inputs.
+[Human proof](../research/ender_radius_bridge/EVEN_WEIGHTED_BRIDGE_GUIDE.md) ·
+[Exact source and checks](../research/ender_radius_bridge/PHASE99_VERIFICATION.md).
+
+One full invocation passed without repair. Seven public theorem types,
+one definition, five controls; namespace 11 logical declarations and
+10 theorems including generated proof auxiliaries. The 57,514-declaration
+closure excludes the same 49 older inputs plus all three field-specific
+odd SplitPrimeBudget count/budget declarations. Only the three standard
+axioms are used. All production sources and the root remain unchanged.
+
+This is a standalone result. Integration, actual M(K) normalization,
+closed weighted bound and final same-Gram even cutoff remain open.
+The following Phase98 production record remains current for the library.
+
 Current production theorems: `EvenClassAggregation.prime_prefix_bound` and
 `uniform_two_class_bound`. For positive squarefree d with d=1 or 2 modulo
 4 and actual class number h(K)<=2, they prove the eligible-prime count
