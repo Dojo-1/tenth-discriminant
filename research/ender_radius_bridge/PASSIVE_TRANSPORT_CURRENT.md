@@ -17,9 +17,9 @@ fresh70-root exclusion checks and whole audit passed first invocation.
 [Exact local evidence](PHASE111_VERIFICATION.md). The older guide's
 standalone status refers to110; its failures and exhausted slots are frozen.
 
-PR39 passed every mathematical step, but its overall CI is CANCELLED
-at25m and it stays draft/unmerged. [Preserved receipt](PR39_CI_LIMIT_RECEIPT.md).
-The new [queue policy](CONTROL_PRIORITY_CURRENT.md) has local synthetic evidence only.
+PR40 now publishes this source with full pinned CI/security success.
+[Actual merge/source/tested-tree receipt](PR40_MERGE_RECEIPT.md). PR39 closed
+through ancestry; its earlier [cancelled run](PR39_CI_LIMIT_RECEIPT.md) stays cancelled.
 The earlier [PR38 receipt](PR38_MERGE_RECEIPT.md) covers its own older source.
 Independent human semantic review, optimal constants and Mathlib acceptance
 remain open. No full classification is announced.

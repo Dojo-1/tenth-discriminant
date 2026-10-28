@@ -1,5 +1,9 @@
 # Current claim-to-Lean map
 
+## Phase113: finite partial evidence, no new Lean theorem
+
+This isolated cycle leaves ALL Lean sources/root byte-exact to published source7913eba. The larger angular-weight block calculation is a finite experiment using paper moment/Fischer identities; its180s resource stop is not a checked uniform gain or cutoff. [Human guide](../research/ender_radius_bridge/RADIAL_BLOCK_CURRENT.md) · [Preserved evidence](../research/ender_radius_bridge/PHASE113_VERIFICATION.md). Eleven cases are complete, one missing; no trial replay or full verdict. Separately, [PR40 passed full CI and merged](../research/ender_radius_bridge/PR40_MERGE_RECEIPT.md), publishing the earlier compatible polynomial/jet/original-Gram transport. Independent human semantic review remains open.
+
 ## Phase112: executor policy only; mathematical scope unchanged
 
 All Lean sources/root remain exact to b66b5f8. PR39's individual source/build/audit/all-eight-control steps succeeded, but its overall job was CANCELLED at25m and the PR stays draft/unmerged. [Exact receipt](../research/ender_radius_bridge/PR39_CI_LIMIT_RECEIPT.md). Phase112 changes static dispatch priority with the same two-worker cap and frozen mathematical controls/timeouts. Eight SYNTHETIC tests pass first invocation; this is not a new theorem, audit or complete CI result. [Local executor evidence](../research/ender_radius_bridge/PHASE112_VERIFICATION.md). Prior source-specific acceptance/failures remain distinct; independent semantic review remains open.

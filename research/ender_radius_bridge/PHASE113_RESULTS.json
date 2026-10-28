@@ -1,0 +1,91 @@
+{
+  "phase": 113,
+  "status": "RESOURCE_STOP_INCOMPLETE_NO_GATE_ACCEPTANCE",
+  "base": "7913eba8ac3ec0bcf765036ba5cebd8f0197463f",
+  "registered_commit": "7fdd7c8f16d33659c8868dbe59cde657a81b2f28",
+  "run": {
+    "phase": 113,
+    "attempt": 1,
+    "scope": "Sealed full radial-block finite feasibility; no Lean",
+    "command": [
+      "C:\\Users\\HAL900\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "research/ender_radius_bridge/phase113_radial_blocks.py",
+      "--output",
+      "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-radial-blocks\\research\\ender_radius_bridge\\PHASE113_trial_20261028201842376.data.jsonl"
+    ],
+    "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-radial-blocks",
+    "exit_code": 99,
+    "elapsed_seconds": 181.0906644,
+    "time_limit_seconds": 180,
+    "memory_threshold_mb": 8192,
+    "observed_peak_working_set_bytes": 32751616,
+    "stop_reason": "time_limit",
+    "source_snapshot": "PHASE113_trial_20261028201842376.source.py",
+    "source_sha256": "28249ca80d1c91d8f6a2ce0d80fad0594aa68d8ffdaab4a55d0b89a15defa6f3",
+    "data": "PHASE113_trial_20261028201842376.data.jsonl",
+    "stdout": "PHASE113_trial_20261028201842376.stdout.log",
+    "stderr": "PHASE113_trial_20261028201842376.stderr.log"
+  },
+  "completed_cases": 11,
+  "guarded_completed_cases": 9,
+  "no_certificate_cases": 2,
+  "uncompleted_case": [
+    163,
+    320,
+    12
+  ],
+  "partial_focal_gains": [
+    [
+      19,
+      "0.084625719687532790640741356427193557231731573604448259827176009823585733942284570"
+    ],
+    [
+      43,
+      "0.079975249307222931885773941709354708541296172803775195078950705036119741161182227"
+    ],
+    [
+      163,
+      "0.073311751175231656969605452772760989740078392391608614052378107551405567693176302"
+    ]
+  ],
+  "frozen_files": 1718,
+  "reader_exceptions": [
+    "README.md",
+    "STATUS.md",
+    "lean/FORMALIZATION.md",
+    "TAO_OBJECTIVES_CURRENT.md",
+    "TAO_REPLY_BRIEF.md",
+    "research/ender_radius_bridge/VERIFICATION_CURRENT.md",
+    "research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md"
+  ],
+  "sha256": {
+    "README.md": "82502cbf8699236fe1d29216c8cea20cc63d457f8718e378d0a7ab3207dccdef",
+    "STATUS.md": "363672596e635e545e48ff16307fc664419ca9c7afd0e14dc3dd43bc76bd5df3",
+    "lean/FORMALIZATION.md": "a7207b267a76ba5d8f556e40227b2c74a3ea9af75d7df2de1f85e1e89f5ffd4f",
+    "TAO_OBJECTIVES_CURRENT.md": "a82c1edf3d7d16d863fff22dcef856f8f500de90b4d3aceb6109b80ed76c09ed",
+    "TAO_REPLY_BRIEF.md": "76497ed48a5497b222821b0cfb7ab2081ca9dfb1512b3b1826d314094e99be13",
+    "research/ender_radius_bridge/VERIFICATION_CURRENT.md": "b9b0fd65baa56b92876f0c40ae72853acdec70bd5d1e186ea903b62334b07202",
+    "research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md": "4a54cdad43887c2bcdd664f962bf25a36d521886bed0ed7ef69c2c3b3a8d1a15",
+    "research/ender_radius_bridge/PHASE113_PROTOCOL.md": "8b3e440a60c6df94a4ea447b9b535619126bf615390476733acf8d5518b8a31a",
+    "research/ender_radius_bridge/phase113_radial_blocks.py": "28249ca80d1c91d8f6a2ce0d80fad0594aa68d8ffdaab4a55d0b89a15defa6f3",
+    "research/ender_radius_bridge/run_phase113.ps1": "4923da4d8d3aa4b73f242bd9629ffa37854d5a7fb8268da506c21681b7b29c57",
+    "research/ender_radius_bridge/verify_phase113_results.py": "105899312b7692b84b403b4663efd67b99ba1c9f5cd3086741d429b3631349c0",
+    "research/ender_radius_bridge/PHASE113_VERIFICATION.md": "8ff1220bf4e37cc41c7ca382c32ace8400c7401225bf1b2cc2434837d2ecad9c",
+    "research/ender_radius_bridge/RADIAL_BLOCK_CURRENT.md": "97dad70135138b2fa4c79868a4e60ec9b2f280caefdf8c978954c55c4eb08526",
+    "research/ender_radius_bridge/PR40_MERGE_RECEIPT.md": "ca65445934306858bf8608ab1978e7a9c440bac34399a2ecb1ac145c9e4a2789",
+    "research/ender_radius_bridge/PR40_MERGE_RECEIPT.json": "ef86179003afcac9c2e8b832f1d28ec00f8e1fd05e23b94ff002b911a25d8b48",
+    "research/ender_radius_bridge/PR40_CI_EVIDENCE.zip": "05bd6b8d4a600d1d4de4af1a957a76e4b5695114138bda12b3a62b0373b70c0b"
+  },
+  "archive": {
+    "path": "PHASE113_RAW.zip",
+    "sha256": "3dcebded5b069d896b21e1ccfd7555ea293d59ed6fb49dc56c5138dbc45729be"
+  },
+  "raw_sha256": {
+    "PHASE113_trial_20261028201842376.source.py": "28249ca80d1c91d8f6a2ce0d80fad0594aa68d8ffdaab4a55d0b89a15defa6f3",
+    "PHASE113_trial_20261028201842376.data.jsonl": "9811e79abdaeb04da0c56c55ffe546135d8d117a84981b11efc5461c4ef22422",
+    "PHASE113_trial_20261028201842376.stdout.log": "4611309b5e870bb3e765f50d5678a525f774315caf791c33d37dfe6ddef91030",
+    "PHASE113_trial_20261028201842376.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE113_trial_20261028201842376.result.json": "93fe3c8289d77478d7c881855ea6060032dd697fdfb42f9156d0843841128900"
+  },
+  "interpretation": "All three focal gains exceed.02in recorded diagnostics, but the registered12case trial resource-stopped with no final verdict. No replay/repair/rescaling/newLean/newcutoff. PR40published tree excludes this experiment."
+}

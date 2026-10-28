@@ -1,5 +1,9 @@
 # Status — 2026-10-28
 
+## Phase113: larger-block experiment resource-stopped; PR40 published
+
+The ONE registered180s block experiment completed11of12cases, with seven small full-Gram controls, nine guarded products and two failed sufficient-rank guards. It stopped while working on D163/R320; no replay or completed feasibility verdict. Three focal gains are positive partial numerical evidence only. [Human explanation](research/ender_radius_bridge/RADIAL_BLOCK_CURRENT.md) · [Exact stop](research/ender_radius_bridge/PHASE113_VERIFICATION.md). Separately, PR40 source7913eba passed its sole full pinned CI40759337480 plus security and merged at4b2492f; fetched source/tested/actual trees match. [Publication receipt](research/ender_radius_bridge/PR40_MERGE_RECEIPT.md). PR39 closed through ancestry; its cancelled CI remains cancelled. No lower cutoff or full-classification claim.
+
 ## Phase112: local scheduling policy; PR39 limit preserved
 
 PR39 sourceb66b5f8 passed external source correspondence, full build,5393logical/4593theorem audit and all eight mathematical families. GitHub cancelled the overall job at25m; PR39 remains DRAFT/UNMERGED, not green CI. [Complete terminal receipt](research/ender_radius_bridge/PR39_CI_LIMIT_RECEIPT.md). The separately registered112policy starts larger-timeout families earlier with the same two workers, eight commands, timeouts and failure rules. All eight SYNTHETIC tests pass first invocation (suite3.002s/monitored4.0488772s); no local Lean replay, new cutoff or measured CI speedup. [Current verification](research/ender_radius_bridge/VERIFICATION_CURRENT.md). Earlier entries are historical checkpoints.
