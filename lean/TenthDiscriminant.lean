@@ -112,3 +112,4 @@ import TenthDiscriminant.UniformTwoClass
 import TenthDiscriminant.OddFieldTwoClass
 import TenthDiscriminant.EvenIdealCount
 import TenthDiscriminant.EvenControlledClass
+import TenthDiscriminant.EvenPrimeAxis

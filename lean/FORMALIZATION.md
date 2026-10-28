@@ -1,6 +1,22 @@
 # Current claim-to-Lean map
 
-Latest standalone theorem: `EvenPrimeAxis.controlled_class_prime_count`
+Current production theorem: `EvenPrimeAxis.controlled_class_prime_count`
+is imported by the main root. The accepted93 statements, proof bodies,
+five controls and reports are exact after imports; no mathematical repair
+or retry. The complete per-class count needs no off-axis premise and pays
+zero axis points for C=1, at most two across all primes otherwise.
+[Human proof](../research/ender_radius_bridge/EVEN_PRIME_AXIS_GUIDE.md) and
+[exact94 record](../research/ender_radius_bridge/PHASE94_VERIFICATION.md).
+First target/root/input/audit pass:190 modules,5,219 logical declarations,
+4,434 theorems,17,004 runtime auxiliaries; three standard axioms. Fresh
+54,650-declaration closure excludes42older roots. No standalone93 replay;
+all old failures remain preserved. One inherited blank EOF line is kept
+for exact accepted-body transfer. Full actual even residue-map/prime-family/
+class-sum/weighted same-Gram/cutoff assembly, external CI and human review
+remain open. Existing field bounds are unchanged. Earlier entries below
+are historical checkpoints;93 is now integrated through94.
+
+Phase93 standalone checkpoint (now integrated at94): `EvenPrimeAxis.controlled_class_prime_count`
 chooses one actual bounded J/basis per class under h<=2 in the positive
 squarefree even chart. It calibrates a1forC1and proves the FULL finite
 prime-normalized norm-bounded count with NOoff-axis premise and charge

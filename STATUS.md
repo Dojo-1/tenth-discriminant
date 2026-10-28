@@ -1,5 +1,24 @@
 # Status — 2026-10-28
 
+## Phase94: the complete even prime-axis count is integrated
+
+The accepted93 proof is now in the main Lean root. All 11 statements,
+proof bodies, controls and reports are unchanged after imports. The same
+bounded ideal and basis serve the complete per-class count, with zero
+axis points in the calibrated principal class and at most two across all
+primes otherwise. [Human proof](research/ender_radius_bridge/EVEN_PRIME_AXIS_GUIDE.md)
+and [exact integration](research/ender_radius_bridge/PHASE94_VERIFICATION.md).
+Module 70.1855337 s, root 25.1691685 s, input 28.8799819 s and audit
+31.0698475 s all passed first invocation. The library has 190 reachable
+modules, 5,219 logical declarations and 4,434 theorems; only three standard
+axioms. Fresh target closure of 54,650 declarations excludes the same 42 older inputs. The
+25 raw files and 1,496 prior frozen files pass the saved verifier. No standalone93 replay.
+One inherited blank EOF line is preserved for exact source transfer.
+Actual even residue maps, coherent prime-family/multiplicity/class-sum/
+weighted same-Gram assembly and an even cutoff remain open. External
+exact-head CI and independent human review remain separate. Argon review
+is still pending; earlier entries preserve their historical scopes.
+
 ## Phase93: the missing even prime-axis row is now counted
 
 A standalone theorem calibrates any actual identity-class ideal to

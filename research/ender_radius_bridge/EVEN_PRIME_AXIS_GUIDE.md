@@ -42,7 +42,7 @@ Under actual class number at most two in the positive squarefree even chart d co
 choose a bounded J and controlled basis for a class C. For C=1 use the
 calibrated basis above; for other classes retain the controlled basis.
 The SAME J lifts every ideal in C and the SAME basis serves every finite
-prime-normalized norm-bounded set U and threshold t. Splitting U into
+prime-normalized norm-bounded set U and natural-number threshold t. Splitting U into
 its off-axis and axis parts gives
 
     cardU <= 2*pi*t/sqrt(4*d)+4*sqrt(M(K)*t/(4*d))
@@ -51,6 +51,10 @@ its off-axis and axis parts gives
 The caller supplies no off-axis guard. The theorem derives the missing
 axis contribution and combines it with the checked geometric count.
 [Exact bounded attempt and controls](PHASE93_VERIFICATION.md).
+
+The accepted proof and all controls are now integrated unchanged into
+the main Lean library. [Exact integration record](PHASE94_VERIFICATION.md)
+keeps those local checks separate from external CI and human review.
 
 This is a count in each actual class, not yet the complete split-prime
 weighted estimate. Distinct even residue maps, four labelled prime lifts,
