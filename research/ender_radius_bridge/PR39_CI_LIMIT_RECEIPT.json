@@ -1,0 +1,27 @@
+{
+  "source": "b66b5f8a86df9cf515ccdab57dca529b006eeb01",
+  "tested_merge": "8a85d58f4f73dd88d8e8507949cfd07a791d9462",
+  "tree": "f24d8dcf9058438892aa97c1dd20ff43179f42fa",
+  "run": 40753057286,
+  "job": 123044568346,
+  "conclusion": "cancelled",
+  "reason": "maximum execution time 25m0s",
+  "all_math_steps": "success",
+  "families_completed": 8,
+  "final_control_pass": "2026-10-28T19:43:09.0847871Z",
+  "started_at": "2026-10-28T19:18:09Z",
+  "completed_at": "2026-10-28T19:43:12Z",
+  "security": "same-head CodeQL123044838114 and analysis123044561750/123044561397 success",
+  "sha256": {
+    "annotations": "58377f552bc00d1fe3ca74358f09d3d2099862888080323d35e119ab40011c8a",
+    "checks": "05fae366e5df7a8e51bc8bb006781ac9d6830f6047e5c6f41decd04d0ffb6a16",
+    "job": "f71d3879cf2ad6ea42c1824096c075250042ff0f353ae31f297cb65d40e4e700",
+    "job.log": "be8c818dc6716a6acb759940f70f5c4cde937013bf7d5a0d622da2437477a18b",
+    "pr": "aff87d0f7f2fd52a2db91e04ef821cf25e06b69814812e5e41fad5e5078982fe",
+    "run": "c0e1ca460c6b84d71ab4c7f9db99497323b558d82d1f4e646170fc4207542c18",
+    "security_jobs": "2bcb3dcd8f6b715d915481debb6e59a73dec118676802da9002fe003674de773",
+    "security_run": "61d5c24774b0984f901483f1c396c552ac46ad75fa053c35078295dd55eb828f"
+  },
+  "archive_sha256": "f4bb75c6058b509136a754c10b44b048dbbad85d1a0471d09f0714f2db1faac0",
+  "decision": "Keep PR39 draft/unmerged. No retry, head changes, raised timeout or merge in phase111. Preserve all passing-step evidence separately from cancelled CI conclusion."
+}
