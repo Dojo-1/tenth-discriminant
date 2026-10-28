@@ -1,5 +1,9 @@
 # Current claim-to-Lean map
 
+## Phase106 integration
+
+Production now includes `TenthDiscriminant.CoordinateTranslation`: all 29 accepted public statements/proofs, five definitions and four controls are unchanged after imports. All four local integration checks pass; whole audit 5,350 logical / 4,554 theorem / 17,015 runtime. [Current guide](../research/ender_radius_bridge/COORDINATE_BRIDGE_CURRENT.md) · [Receipt](../research/ender_radius_bridge/PHASE106_VERIFICATION.md). Earlier standalone status below describes Phase105, before integration.
+
 ## Coordinate and translation bridge (standalone Phase105)
 
 `CoordinateTranslation.coordinate_translation_bridge` derives the even-chart coordinate bijection, norm compatibility, affine transport, exact original matrix cast, positivity and prime-power divisor under explicit ordinary guards. Separate odd-coordinate lemmas prove the index-two image and quotient-order norm identity. `shifted_gram_counterexample` proves determinants 24 and 60 before/after a vertical shift. These are standalone checked declarations, not yet root imports. [Human interpretation](../research/ender_radius_bridge/COORDINATE_TRANSLATION_GUIDE.md) · [Exact evidence](../research/ender_radius_bridge/PHASE105_VERIFICATION.md). Production through Phase104 is [merged with passing pinned CI](../research/ender_radius_bridge/PR36_MERGE_RECEIPT.md).

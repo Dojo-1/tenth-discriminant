@@ -1,5 +1,9 @@
 # Tao's challenge: current accounting and side discoveries
 
+## Phase106 integration
+
+The requested coordinate and literal-shift bridge is now integrated unchanged (Phase106), with explicit invariants and a checked determinant non-invariance counterexample. All four local checks pass; optimization remains open and no cutoff changes. [Current account](research/ender_radius_bridge/COORDINATE_BRIDGE_CURRENT.md). Earlier standalone references describe the preserved Phase105 checkpoint.
+
 ## New accounting: compatible charts and translations
 
 Phase105 checks both requested translations, with explicit norm, metric, sample-count, original-matrix and divisibility invariants. Bonus discovery: the real trace-Gram determinant is not translation invariant, even above the strict sample-count threshold (24 becomes 60). This closes a compatibility obligation and prevents an invalid optimization shortcut; it lowers no cutoff. [Human guide](research/ender_radius_bridge/COORDINATE_TRANSLATION_GUIDE.md). Production through Phase104 is [merged and checked on its exact head](research/ender_radius_bridge/PR36_MERGE_RECEIPT.md); Phase105 remains standalone. Independent human review, arbitrary even-field transport, optimal constants and Mathlib acceptance remain open.

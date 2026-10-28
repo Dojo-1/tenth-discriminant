@@ -1,5 +1,9 @@
 # Factual brief for a possible reply to Tao
 
+## Phase106 integration
+
+Phase106 now integrates the accepted coordinate/shift bridge unchanged, with full local build and audit passing. [Current guide](research/ender_radius_bridge/COORDINATE_BRIDGE_CURRENT.md). Publication/CI must be checked on the new exact head; the 50-billion result is unchanged. Earlier Phase105 standalone notes are historical.
+
 ## Latest verification boundary
 
 Production through Phase104 is merged in PR36 with passing pinned CI and security checks on its exact head; [receipt](research/ender_radius_bridge/PR36_MERGE_RECEIPT.md). Phase105 separately checks coordinate maps and literal shifts with explicit invariants and a determinant non-invariance counterexample. It is standalone and has no external CI yet. No cutoff improvement or full-classification announcement follows. [Accessible explanation](research/ender_radius_bridge/COORDINATE_TRANSLATION_GUIDE.md).

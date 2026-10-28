@@ -1,5 +1,9 @@
 # Status — 2026-10-28
 
+## Phase106 integration
+
+Phase106 integrates the accepted coordinate/translation proof unchanged. Module build, full build, fresh dependency checks and whole audit all pass first time: 5,350 logical declarations / 4,554 theorems / 17,015 runtime auxiliaries. [Current human guide](research/ender_radius_bridge/COORDINATE_BRIDGE_CURRENT.md) · [Exact verification](research/ender_radius_bridge/PHASE106_VERIFICATION.md). No cutoff change; external CI belongs to its own final published head.
+
 ## Phase105: coordinate maps and literal shifts checked
 
 Both requested translations now have explicit invariants. Norms commute between charts; shifts preserve distances, counts, prime-power divisibility and guarded positivity. The original determinant can change: a checked 24-to-60 counterexample forbids blanket translation invariance. The standalone proof awaits integration and its own CI; no cutoff reduction. [Human guide](research/ender_radius_bridge/COORDINATE_TRANSLATION_GUIDE.md) · [Verification](research/ender_radius_bridge/PHASE105_VERIFICATION.md). PR36 is now merged with exact-head checks: [receipt](research/ender_radius_bridge/PR36_MERGE_RECEIPT.md).
