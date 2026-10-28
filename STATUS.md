@@ -1,5 +1,21 @@
 # Status — 2026-10-28
 
+## Phase112: local scheduling policy; PR39 limit preserved
+
+PR39 sourceb66b5f8 passed external source correspondence, full build,5393logical/4593theorem audit and all eight mathematical families. GitHub cancelled the overall job at25m; PR39 remains DRAFT/UNMERGED, not green CI. [Complete terminal receipt](research/ender_radius_bridge/PR39_CI_LIMIT_RECEIPT.md). The separately registered112policy starts larger-timeout families earlier with the same two workers, eight commands, timeouts and failure rules. All eight SYNTHETIC tests pass first invocation (suite3.002s/monitored4.0488772s); no local Lean replay, new cutoff or measured CI speedup. [Current verification](research/ender_radius_bridge/VERIFICATION_CURRENT.md). Earlier entries are historical checkpoints.
+
+## Phase111: compatible transport integrated unchanged
+
+The accepted110polynomial/ordinary-jet/passive-original-Gram proof now lives in `PassiveTransport.lean` unchanged after one dependency import; one root import exposes it. All four integration checks passed first invocation. Whole audit5393logical/4593theorems/17015runtime;198reachable modules. The inventory delta is the31new namespace declarations plus the existing rowSection equation lemma; no old declaration disappeared. [Current guide](research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md) · [Exact evidence](research/ender_radius_bridge/PHASE111_VERIFICATION.md). No standalone110replay; external CI is versioned per publication head. The h1 cutoff stays50b; no complexity-hardness or classification claim.
+
+## Phase110: compatible polynomial/ordinary-jet transport checked
+
+The full standalone passive transport target now passes: actual bivariate polynomial translation over any commutative ring, group/inverse laws, ring-map naturality, ordinary-derivative/jet covariance, and recovery of the SAME original integer Gram at shifted lattice points. Positivity and the existing prime-power divisor retain their explicit guards. Twenty public types/four definitions/four controls are fixed acrossFAIL138.0938151/FAIL68.3821887/PASS72.6634586; all3slots consumed, no replay. Namespace31logical/27theorems, standard3axioms,70excluded roots in three fresh closures. [Human guide](research/ender_radius_bridge/PASSIVE_TRANSPORT_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE110_VERIFICATION.md). Production integration/external CI remain; no cutoff improvement.
+
+## Published result and compatible-transport research frame
+
+PR38 is now merged at6c7e94caf8ffd556805a1b6e30a1763204368c4e after exact source14b5446 passed pinned CI40718714733, full build/audit/all8control families and same-head security. Source/tested/actual merge trees match. [Receipt and raw evidence](research/ender_radius_bridge/PR38_MERGE_RECEIPT.md). PR37 also reports merged through ancestry; its earlier cancelled CI stays cancelled. The research focus now explicitly transports observables and differential operators together with coordinates: [invariants, projections and obstructions](research/ender_radius_bridge/TRANSPORT_INVARIANTS_GUIDE.md). The active24→60counterexample remains valid; a passive jet/coframe transport is a new proof target, not yet checked.
+
 ## Phase109: preserve every gate with bounded concurrency
 
 The new publication architecture preserves the inherited mathematical control families and timeouts while allowing at most2independent families at once. All six SYNTHETIC scheduler tests pass first run; they do not run Lean. Mathematical source/root/pins/workflow remain unchanged from108. [Human explanation](research/ender_radius_bridge/CONTROL_SCHEDULING_GUIDE.md) · [Local evidence](research/ender_radius_bridge/PHASE109_VERIFICATION.md) · [Versioned publication status](research/ender_radius_bridge/VERIFICATION_CURRENT.md). One new full CI target is registered; old PR37 stays a cancelled run. Earlier entries below are checkpoints.

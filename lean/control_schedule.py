@@ -34,9 +34,12 @@ def run_families(root, families):
     if any(timeout <= 0 for _, timeout in families):
         raise ValueError('Every control family needs a positive timeout')
     failures = []
+    priority = sorted(families, key=lambda family: -family[1])
     with ThreadPoolExecutor(max_workers=2) as pool:
-        results = pool.map(lambda family: _run(root, family), families)
-        for (name, _), (code, stdout, stderr) in zip(families, results):
+        results = {name: pool.submit(_run, root, (name, timeout))
+                   for name, timeout in priority}
+        for name, _ in families:
+            code, stdout, stderr = results[name].result()
             _emit(stdout, sys.stdout)
             _emit(stderr, sys.stderr)
             if code:

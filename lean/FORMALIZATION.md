@@ -1,5 +1,21 @@
 # Current claim-to-Lean map
 
+## Phase112: executor policy only; mathematical scope unchanged
+
+All Lean sources/root remain exact to b66b5f8. PR39's individual source/build/audit/all-eight-control steps succeeded, but its overall job was CANCELLED at25m and the PR stays draft/unmerged. [Exact receipt](../research/ender_radius_bridge/PR39_CI_LIMIT_RECEIPT.md). Phase112 changes static dispatch priority with the same two-worker cap and frozen mathematical controls/timeouts. Eight SYNTHETIC tests pass first invocation; this is not a new theorem, audit or complete CI result. [Local executor evidence](../research/ender_radius_bridge/PHASE112_VERIFICATION.md). Prior source-specific acceptance/failures remain distinct; independent semantic review remains open.
+
+## Phase111: compatible transport integrated unchanged
+
+Production now includes `TenthDiscriminant.PassiveTransport`: exact accepted20public types/proofs,four definitions,three private helpers,four controls/reports after one dependency import, with one root import. It connects actual translated bivariate polynomials, ordinary jets and entrywise recovery of the original integer Gram. Namespace31logical/27theorems; whole5393logical/4593theorems/17015runtime. The saved verification explains the additional rowSection equation lemma and confirms no old declaration was removed. [Human proof](../research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md) · [Exact integration](../research/ender_radius_bridge/PHASE111_VERIFICATION.md). Fresh5880/13936/33095closures retain70exclusions and standard3axioms. External CI/review stay separate from local checks.
+
+## Phase110: compatible polynomial/ordinary-jet transport checked
+
+New standalone `PassiveTransport` defines actual polynomial pullback and ordinary sampled jets. Its20public statements include composition/inverse/naturality over CommRing, all-order derivative covariance and entrywise equality of transported polynomial Gram with the ORIGINAL integer trace-Gram cast; the final bridge retains real positivity, positive integer determinant and prime-power divisor under explicit original guards. [Human proof](../research/ender_radius_bridge/PASSIVE_TRANSPORT_GUIDE.md) · [Verification](../research/ender_radius_bridge/PHASE110_VERIFICATION.md). Namespace31logical/27theorems, standard3axioms; fresh5880/13936/33095closures exclude70roots. All three slots consumed; no standalone replay, new root import/full-library audit or external CI. Ring-map identities do not assert rank preservation under non-injective reduction or computational hardness.
+
+## Published result and compatible-transport research frame
+
+Published source14b5446 and actual merge6c7e94c share the tested tree; pinned CI40718714733 completed full build,5361logical/4565theorem audit and all eight inherited families. [Exact receipt](../research/ender_radius_bridge/PR38_MERGE_RECEIPT.md). The new [transport interpretation](../research/ender_radius_bridge/TRANSPORT_INVARIANTS_GUIDE.md) distinguishes active point shifts with fixed monomials from passive transport of points, observables and ordinary jets. The latter full coframe interface is a proposed next Lean obligation; the guide does not claim it is already mechanized or supplies computational hardness bounds.
+
 ## Phase109: preserve every gate with bounded concurrency
 
 Phase109 changes only control orchestration: max2independent final families, same eight scripts/arguments/timeouts and all mathematical rejection rules. Six SYNTHETIC scheduler tests pass; no new mathematical proof or axiom audit is claimed from them. All Lean sources remain byte-exact to108. [Local scheduling evidence](../research/ender_radius_bridge/PHASE109_VERIFICATION.md) · [Publication receipt location](../research/ender_radius_bridge/VERIFICATION_CURRENT.md). The full new pinned CI must complete before merge; the old cancelled run is preserved.
