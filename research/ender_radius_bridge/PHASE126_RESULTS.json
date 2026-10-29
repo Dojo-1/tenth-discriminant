@@ -1,0 +1,59 @@
+{
+  "phase": 126,
+  "status": "BOTH_ARBITRARY_FIELD_INTERFACE_TARGETS_FIRST_CALL_PASS_STANDALONE",
+  "base_commit": "9523bcd0f039d8c50d9aaf034393445844630090",
+  "protocol_commit": "5d58fd2",
+  "source_frozen_commit": "b7525cd",
+  "native_result": {
+    "phase": 126,
+    "scope": "Actual-field classification interface and fresh checks",
+    "attempt": 1,
+    "exit_code": 0,
+    "elapsed_seconds": 60.559438,
+    "cumulative_before_seconds": 0,
+    "time_limit_seconds": 300.0,
+    "memory_threshold_mb": 8192,
+    "observed_peak_working_set_bytes": 3320381440,
+    "stop_reason": "",
+    "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments": [
+      "env",
+      "lean",
+      "-j",
+      "1",
+      "../research/ender_radius_bridge/Phase126Classification.lean"
+    ],
+    "source_snapshot": "PHASE126_build_20261029202814618.source.lean",
+    "source_sha256": "11fe4e4b5574e9b29ebaa119112290fc8a7716f196b2a8990b823ce7e01228db",
+    "stdout": "PHASE126_build_20261029202814618.stdout.log",
+    "stderr": "PHASE126_build_20261029202814618.stderr.log"
+  },
+  "namespace_audit": {
+    "logical": 2,
+    "theorems": 2,
+    "runtime": 0
+  },
+  "fresh_counts": {
+    "field_classNumber_one_iff": 61627,
+    "field_classNumber_one_discriminant_mem": 61633
+  },
+  "required_roots": 4,
+  "forbidden_roots": 8,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "archive": "PHASE126_RAW.zip",
+  "archive_sha256": "43ea0e8f19ed09a93e5c0bbb4e43e5a50aeb2575cd29d94b2b51df1c3d9ba3a7",
+  "raw_sha256": {
+    "PHASE126_build_20261029202814618.source.lean": "11fe4e4b5574e9b29ebaa119112290fc8a7716f196b2a8990b823ce7e01228db",
+    "PHASE126_build_20261029202814618.stdout.log": "fc805132fbe0f1c7b66d02be301703fdc55eb11afc3972091ca9d857b354916c",
+    "PHASE126_build_20261029202814618.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE126_build_20261029202814618.result.json": "63e767660d9cd93f096cf18e5a3df6dbb190669ed6f79785682a2d211c869e4c"
+  },
+  "repairs": 0,
+  "second_call_used": false,
+  "scope": "Transport of existing canonical classification;700b finite-endgame dependency preserved;no new number-theoretic argument or independent review",
+  "integration": "not yet performed"
+}
