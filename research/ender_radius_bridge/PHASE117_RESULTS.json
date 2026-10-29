@@ -159,7 +159,7 @@
     "research/ender_radius_bridge/Phase117InputCheck.lean": "96ea004cdae365446dd8beb92e35efa2c905eb83d0fc0efe590f273e68de8694",
     "research/ender_radius_bridge/run_phase117.ps1": "ad9f40ca275b720ea42778f673bbb3e8116dd49677c6b7d218ef2725acf7cad5",
     "research/ender_radius_bridge/PHASE117_CORRESPONDENCE.json": "d9f7aa8e5b9abbd4ebab15ed574af20af725c47e7e8bf47b8575f939d3a73cba",
-    "research/ender_radius_bridge/PHASE117_VERIFICATION.md": "6e520699f10f33d6c76ca05569c26210b96df87aeed3d8547f8c7f0bbc25bf3b",
+    "research/ender_radius_bridge/PHASE117_VERIFICATION.md": "e02e617460ecdac1d713e895efd046c7ddf119fa51e01cd32aa36d970f627e7f",
     "research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md": "f1ea21e2225d46d8d2646000348bfd404691460dcb93007005f605a230bf5e93",
     "research/ender_radius_bridge/verify_phase117_results.py": "f64af8fc063b0e6cb9105e995d1ba984fa90fe206729c47c87b84f00e9e4cc62",
     "README.md": "002b4fb69d289ec519183675bdcb271f794d59c535014b1e4ae456dfb50b8fe1",
@@ -178,7 +178,8 @@
     "relative_links": 572,
     "README_lines": 61,
     "objective_ledger_lines": 61,
-    "staged_diff_check": "PASS"
+    "staged_diff_check": "FLAGGED one inherited EOF blankline at RadialOperator.lean:337; byte-exact accepted body retained",
+    "committed_check_excluding_exact_source": "PASS"
   },
   "remote_main_before_publication": "4b2492f11a1b3d2bf7831eb15487504865a8ff88"
 }

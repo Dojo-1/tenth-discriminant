@@ -83,6 +83,10 @@ No new reviewer or Tao posting. Quantitative bound/cutoff obligations remain.
 [Operator proof explanation](RADIAL_OPERATOR_GUIDE.md).
 
 Reader checks: 572 relative file links resolve across nine current reader
-documents; README and the objective ledger remain61lines. The staged
-source/documentation whitespace check passes. Remote main was refreshed
+documents; README and the objective ledger remain61lines. The full staged
+whitespace check flags one inherited EOF blank line at production module
+line337. The byte-exact accepted namespace body is deliberately retained;
+this is not an all-files-clean whitespace result. A separate committed
+check excluding only that module passes. No tested source was trimmed or
+recompiled for style. Remote main was refreshed
 pre-publication at4b2492f11a1b3d2bf7831eb15487504865a8ff88.
