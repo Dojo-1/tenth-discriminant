@@ -1,0 +1,9 @@
+{
+  "protocol_commit": "597b2e9",
+  "files": {
+    "research/ender_radius_bridge/phase124_rational_accounting.py": "12a313e2132fcb9a2cc5fefc2cf2458ff4107592b1d2ae62134f4897584038ec",
+    "research/ender_radius_bridge/PHASE124_PROTOCOL.md": "11cb406bf10ff244d86e9a61391f23e39a074989933d057dc2ae69b62ef6c250"
+  },
+  "attempts": 1,
+  "max_seconds": 30
+}
