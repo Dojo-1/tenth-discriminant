@@ -1,5 +1,9 @@
 # Status — 2026-10-29
 
+## Phase118: actual ordinary-jet radial estimate checked
+
+The actual production radial polynomials now have a Lean-checked all-order ordinary-derivative estimate, including integer rounding, the origin, r<s, and high-derivative vanishing. The eligible rows gain(13/20)^s; the rectangular scale gain is at least.010. All19public types/2definitions remain unchanged through FAIL117.154457s and PASS45.6828647s, without resource stops. Namespace49logical/47theorems/3runtime; fresh10911/14203/23312closures exclude70roots with standard3axioms. [Human explanation](research/ender_radius_bridge/RADIAL_JET_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE118_VERIFICATION.md). This is standalone, with no new production import or CI. Original-Gram logarithmic aggregation and actual-field48bcomposition remain; the published cutoff stays50billion. The stronger.013estimate remains paper.
+
 ## Phase117: radial operator integrated unchanged
 
 The accepted radial operator is now integrated unchanged in RadialOperator.lean, with one root import. Module build, full build, fresh input check and whole audit all pass on their first invocations. Whole audit: 5,450 logical declarations, 4,644 theorems and 17,026 runtime auxiliaries; 199 reachable modules. The 57 added logical declarations are exactly the new namespace; none disappeared. [Current human scope](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md) · [Exact evidence](research/ender_radius_bridge/PHASE117_VERIFICATION.md). PR41 is merged at e74028a after pinned proof CI and same-head security passed; source/tested/actual trees agree. [Publication receipt](research/ender_radius_bridge/PR41_MERGE_RECEIPT.md). The quantitative gain and 48-billion theorem remain paper; the published cutoff stays **50 billion**.

@@ -1,10 +1,12 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared through117; this brief is not posted.** Existing public
+**AI-prepared through118; this brief is not posted.** Existing public
 repo-linked comments are recorded separately. Tao asks for a human-generated
 summary; the contributor should review and revise the text in their own words.
 
 ## Current verification boundary
+
+Phase118 now checks the full actual ordinary-jet radial estimate and sufficient.010rectangular scale saving standalone, with19unchanged public types/2definitions, namespace49logical/47theorems, three fresh dependency checks, and the failed first attempt preserved. [Human explanation](research/ender_radius_bridge/RADIAL_JET_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE118_VERIFICATION.md). It does not yet prove the full original-Gram logarithmic saving or actual-field48btheorem. No new integration/CI, independent review or Tao posting; the published bound stays50billion.
 
 Phase117 integrates the accepted universal radial operator unchanged. All four first local checks pass, with whole audit5,450logical/4,644theorems and199reachable modules. [Current scope](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md). PR41 is merged at e74028a after pinned proof CI40853123367 and same-head security passed; source/tested/actual trees agree. [Receipt](research/ender_radius_bridge/PR41_MERGE_RECEIPT.md). The .013gain and48bcutoff remain paper; the published theorem remains50billion.
 

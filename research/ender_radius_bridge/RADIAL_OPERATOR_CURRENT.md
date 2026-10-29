@@ -23,8 +23,10 @@ that reduction preserves real rank or positive definiteness.
 
 Individual row norms and polynomial multiplication can change. The
 candidate improvement is a smaller UNIFORM geometric upper estimate.
-The universal quantitative 0.013 saving and actual-field 48-billion cutoff
-remain paper mathematics. The published checked cutoff is **50 billion**.
+The stronger0.013 saving remains paper. The [sufficient0.010 ordinary-jet
+estimate](RADIAL_JET_GUIDE.md) is now checked standalone; original-Gram
+aggregation and the actual-field48-billion theorem remain. The published
+checked cutoff is **50 billion**.
 
 The whole audit reports 5,450 logical declarations and 4,644 theorems.
 Its 57 new logical declarations are exactly the radial-operator namespace;
@@ -35,6 +37,6 @@ source. Runtime auxiliaries are recorded separately.
 [Understand the operator and guards](RADIAL_OPERATOR_GUIDE.md) ·
 [Exact integration evidence](PHASE117_VERIFICATION.md) ·
 [Quantitative paper candidate](RADIAL_CENTERING_DERIVATION.md).
-Published merge: e74028a; source: ab5558f. Phase118 is preregistered to
-prove a sufficient ordinary-jet estimate; registration is not proof.
+Published merge: e74028a; source: ab5558f. Phase118 now checks the sufficient
+ordinary-jet estimate standalone; it has no new production import or CI.
 No full classification, optimality or independent-review claim.
