@@ -44,7 +44,7 @@ weight sum. Include zero determinants; never infer positivity from them.
 Fixed negative controls: [p] has divisible row/column but not p^2det;
 D2,p3 violates the missing nonsquare/Frob premise; third Hasse derivative
 ofX^3 atzero is1 while ordinary derivative is6; dropping originalfactor2
-changes the constant-row Gram from2cardQ*J. No hypothetical stronger
+changes the constant-row Gram from2cardQ (fixed controlJ=1). No hypothetical stronger
 valuation or cutoff is accepted by finite cases.
 
 ONE Python invocation,60seconds total; subprocess timeout stops it.
@@ -60,3 +60,9 @@ Register any successor47.5bproof, classification interface, radial law or
 exact frozen Lean replay separately before execution. Full six-part goal
 remains active beyond this slice. No new reviewer, automatic merge or Tao
 posting is authorized. Public review findings remain exact-version scoped.
+
+Pre-implementation correction: the initially written2cardQ*J was not an
+exact constant-row identity forJ>1: positive derivatives of1 vanish.
+The corrected negative control usesJ=1 and exact2cardQ. This was caught
+during definition-level reasoning before any oracle code or execution.
+The original protocol remains preserved in commit25db00e.
