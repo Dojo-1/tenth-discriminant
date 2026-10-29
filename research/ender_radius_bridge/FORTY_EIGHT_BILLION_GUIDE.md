@@ -9,6 +9,8 @@ We want to squeeze one positive integer from two directions. It is the
 determinant of the original integer matrix of polynomial observations and
 ordinary derivatives at lattice points inside an ellipse.
 
+[Why the arithmetic factor appears twice](TWO_SIDED_ARITHMETIC_GUIDE.md) derives the integral quotient-jet factorization.
+
 **Arithmetic makes it large.** If the field has class number one, each
 eligible prime forces a power of that prime to divide this determinant.
 Different primes are coprime, so their powers multiply into one divisor.

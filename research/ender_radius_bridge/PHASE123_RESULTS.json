@@ -1,0 +1,46 @@
+{
+  "phase": 123,
+  "status": "EXACT_COORDINATE_FACTORIZATION_CHECK_PASS;HUMAN_RECONSTRUCTION_PROVIDED;NO_NEW_LEAN_OR_CUTOFF",
+  "base_commit": "182ea000b901a1bebc98992b22ffb3a80cd53c56",
+  "protocol_commit": "2793645",
+  "source_frozen_commit": "8b41a87",
+  "native_result": {
+    "phase": 123,
+    "attempt": 1,
+    "exit_code": 0,
+    "elapsed_seconds": 0.7029999999940628,
+    "max_seconds": 60,
+    "stop_reason": "",
+    "source_snapshot": "PHASE123_trial_20261029195950.source.py",
+    "source_sha256": "443edac655ee4777d3c589dd83609b34b60527750e39d570fceffc0dbcf1a252",
+    "data": "PHASE123_trial_20261029195950.data.json",
+    "stdout": "PHASE123_trial_20261029195950.stdout.log",
+    "stderr": "PHASE123_trial_20261029195950.stderr.log",
+    "memory_measurement": "not measured;no peak or memory-cap claim"
+  },
+  "archive": "PHASE123_RAW.zip",
+  "archive_sha256": "e9a0b39a5924075e17b8da58a76f10123e758b6b0a379b5188eda0cc87e42ed6",
+  "raw_sha256": {
+    "PHASE123_trial_20261029195950.source.py": "443edac655ee4777d3c589dd83609b34b60527750e39d570fceffc0dbcf1a252",
+    "PHASE123_trial_20261029195950.data.json": "6c36d6b405623051131c193b654953c5b51fa2a278a9e7fb8061a72231221674",
+    "PHASE123_trial_20261029195950.stdout.log": "f202d6fe2fda1eaaed392252991d4b6445dabe267c856d42185d72438573021c",
+    "PHASE123_trial_20261029195950.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE123_trial_20261029195950.result.json": "f9be615bbc1bcc45226770d3ac069e50ded7459567e7cd245814ce340b46935a"
+  },
+  "cases": 80,
+  "negative_controls": 4,
+  "zero_determinants": 18,
+  "positive_determinants": 62,
+  "jet_coordinates_checked": 15840,
+  "universal_argument": "TWO_SIDED_ARITHMETIC_GUIDE.md",
+  "independence_scope": "Mathematical derivation and new definition-level oracle by same assistant;not independent peer review",
+  "no_Lean_invocation": true,
+  "cutoff_unchanged": 48000000000,
+  "memory_scope": "not measured;no memory-cap claim",
+  "remaining_full_goal": [
+    "Geometric inequalities reconstructed with guards and rounding",
+    "Exact frozen replay and evidence-layer reconciliation",
+    "New bounded47.5b proof cycle;Phase122 remains frozen",
+    "Actual arbitrary-field classification interface and useful radial laws"
+  ]
+}
