@@ -1,5 +1,9 @@
 # Status — 2026-10-29
 
+## Phase117: radial operator integrated unchanged
+
+The accepted radial operator is now integrated unchanged in RadialOperator.lean, with one root import. Module build, full build, fresh input check and whole audit all pass on their first invocations. Whole audit: 5,450 logical declarations, 4,644 theorems and 17,026 runtime auxiliaries; 199 reachable modules. The 57 added logical declarations are exactly the new namespace; none disappeared. [Current human scope](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md) · [Exact evidence](research/ender_radius_bridge/PHASE117_VERIFICATION.md). External CI is versioned by the final publication head. The quantitative gain and 48-billion theorem remain paper; the published cutoff stays **50 billion**.
+
 ## Phase116: universal integral radial bridge checked standalone
 
 The full universal monic radial operator now passes standalone Lean checking. Its explicit integer matrix acts on the actual polynomials and every ordinary jet; the actual new Gram has the original determinant and prime divisor, with guarded real positivity and equal ranks modulo every prime. All 27 public statements and six definitions remained byte-exact through two proof-only repairs. Namespace audit: 57 logical declarations; three fresh dependency closures exclude 70 old result roots. [Human guide](research/ender_radius_bridge/RADIAL_OPERATOR_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE116_VERIFICATION.md). The quantitative .013 gain and 48-billion cutoff remain paper candidates. Production integration and new CI are pending; the published cutoff remains **50 billion**.

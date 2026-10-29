@@ -12,7 +12,8 @@ No third invocation or raised limit. Both stopped cycles remain stopped.
 
 A distinct [integral radial-basis route](RADIAL_CENTERING_GUIDE.md) now has
 a paper48-billion comparison and finite exact checks. Its [universal
-operator bridge](RADIAL_OPERATOR_GUIDE.md) now passes standalone Lean; the
+operator bridge](RADIAL_OPERATOR_CURRENT.md) is integrated unchanged with
+passing local checks; the
 quantitative gain remains paper. It neither retries
 these stopped cycles nor upgrades the published50-billion theorem.
 

@@ -1,10 +1,12 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared through116; this brief is not posted.** Existing public
+**AI-prepared through117; this brief is not posted.** Existing public
 repo-linked comments are recorded separately. Tao asks for a human-generated
 summary; the contributor should review and revise the text in their own words.
 
 ## Current verification boundary
+
+Phase117 integrates the accepted universal radial operator unchanged. All four first local checks pass, with whole audit5,450logical/4,644theorems and199reachable modules. [Current scope](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md). CI/security are tied to the final publication head. The .013gain and48bcutoff remain paper; the published theorem remains50billion.
 
 Phase116 now proves the universal integral radial operator/all ordinary jets/original Gram determinant and divisor bridge standalone, with namespace and three fresh dependency checks. [Exact scope](research/ender_radius_bridge/PHASE116_VERIFICATION.md). The 0.013 gain, actual-field 48-billion theorem and integration/CI remain open; the published bound is 50 billion.
 

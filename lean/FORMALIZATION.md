@@ -1,5 +1,9 @@
 # Current claim-to-Lean map
 
+## Phase117: accepted radial operator integrated unchanged
+
+Production source now contains RadialOperator.lean, with all accepted27public types/proofs,6definition bodies/private helpers/controls unchanged after one dependency-import replacement. One root import exposes it. The four first integration checks pass; fresh57logical/51theorem namespace and11194/13985/33149closures retain70exclusions. Whole audit5,450logical/4,644theorems/17,026runtime,199reachable modules; exact inventory comparison adds only the57new namespace constants, with no removal. [Human scope](../research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md) · [Exact evidence](../research/ender_radius_bridge/PHASE117_VERIFICATION.md). External CI is separate. The uniform quantitative bound and actual-field48bcutoff are not proved by this integration; the published bound remains50billion.
+
 ## Phase116: universal radial operator proved; quantitative bound remains
 
 Research source Phase116RadialOperator.lean proves the explicit monic radial matrix, integer inverse, generic polynomial/all-order ordinary-jet action, actual integer Gram congruence/determinant, exact real cast, guarded PD/positive integer determinant/original divisor, and reduced Gram rank equality for every prime. It is standalone, with no production import. All 27 public types/six definitions are unchanged across FAIL109.3232326s/PASS56.583463s; namespace57logical/51theorems, standard3axioms; fresh11194/13985/33149closures exclude70roots. [Human guide](../research/ender_radius_bridge/RADIAL_OPERATOR_GUIDE.md) · [Exact scope](../research/ender_radius_bridge/PHASE116_VERIFICATION.md). The parameter-addition law and universal quantitative gain remain unformalized. This is not a 48-billion cutoff or a production/CI result. The published bound remains 50 billion.

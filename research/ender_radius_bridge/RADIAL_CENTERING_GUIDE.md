@@ -41,8 +41,9 @@ It verifies the proposed operator and formulas on that sealed corpus,
 including empty/singular cases, origin, asymmetric points and negative
 weights. It also rejects nine stronger false claims.
 
-**Now checked standalone:** the [universal integral operator, all ordinary
-jets and original-Gram arithmetic bridge](RADIAL_OPERATOR_GUIDE.md).
+**Now integrated unchanged with passing local checks:** the [universal
+integral operator, all ordinary jets and original-Gram arithmetic
+bridge](RADIAL_OPERATOR_CURRENT.md). External CI is versioned separately.
 
 **What remains:** Lean must prove the all-parameter quantitative derivative
 bound, uniform gain and replacement of the geometric upper estimate,
