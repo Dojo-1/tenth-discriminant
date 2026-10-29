@@ -1,0 +1,24 @@
+{
+  "types": {
+    "fischer_sigma": "theorem fischer_sigma {k : Type*} [Fintype k] [DecidableEq k]\n    {n : k → Type*} [∀ b, Fintype (n b)] [∀ b, DecidableEq (n b)]\n    (A : Matrix (Sigma n) (Sigma n) Real) (hA : A.PosSemidef) :\n    A.det ≤ ∏ b, (A.submatrix (Sigma.mk b) (Sigma.mk b)).det",
+    "fischer_partition": "theorem fischer_partition {n k : Type*} [Fintype n] [Fintype k]\n    [DecidableEq n] [DecidableEq k] (A : Matrix n n Real)\n    (hA : A.PosSemidef) (f : n → k) : A.det ≤ blockProduct A f",
+    "equal_weight_entry": "theorem equal_weight_entry (P : Finset Complex) (J r s t u : Nat)\n    (hw : r+u=t+s) :\n    traceGramEntry P J r s t u =\n      2 * ∑ j ∈ Finset.range J, if j≤r ∧ j≤t then\n        (r.descFactorial j : Real)*(t.descFactorial j : Real)*\n          normMoment P (r+u-j) else 0",
+    "principal_eq_moment": "theorem principal_eq_moment (P : Finset Complex) (J R S : Nat)\n    (b : ↥(weightLabels R S)) :\n    (rectangularTraceGram P J R S).submatrix\n      (fun i : {i // weightLabel R S i=b} => i.val)\n      (fun i : {i // weightLabel R S i=b} => i.val) = momentBlock P J R S b",
+    "rectangular_det_le_moments": "theorem rectangular_det_le_moments (P : Finset Complex) (J R S : Nat) :\n    (rectangularTraceGram P J R S).det ≤ momentProduct P J R S",
+    "integer_prime_block_bridge": "theorem integer_prime_block_bridge (Q : Finset (Int × Int)) (D J R S p : Nat)\n    (hD : 0<D) [Fact p.Prime] (hp2 : p≠2) (hns : ¬ IsSquare (-(D : ZMod p)))\n    (hR : 1≤R) (hS : 1≤S) (hJ : S≤J) (hcard : 2*(R-1)+(S-1)<Q.card) :\n    let G := integerRectangularTraceGram Q D J R S\n    0<G.det ∧ (p:Int)^(2*valuationWeight R S p)∣G.det ∧\n      (p:Real)^(2*valuationWeight R S p) ≤ (G.det:Real) ∧\n      (G.det:Real) ≤ momentProduct (Q.image (pairEval D)) J R S",
+    "empty_control": "theorem empty_control : (rectangularTraceGram ∅ 0 0 0).det=1",
+    "singular_control": "theorem singular_control :\n    (fun _ _ : Fin 2 => (1:Real) : Matrix (Fin 2) (Fin 2) Real).det=0 ∧\n      (∏ _i : Fin 2, (1:Real))=1",
+    "cross_weight_control": "theorem cross_weight_control : traceGramEntry {1} 1 0 0 1 0=2",
+    "negative_nonadjacent_control": "theorem negative_nonadjacent_control :\n    traceGramEntry {1} 3 0 2 2 4=2 ∧ traceGramEntry {1} 3 2 4 2 4=18",
+    "origin_control": "theorem origin_control :\n    traceGramEntry {0} 3 0 0 2 2=0 ∧ traceGramEntry {0} 3 0 0 0 0=2",
+    "real_hermitian_control": "theorem real_hermitian_control :\n    (traceGramMatrix {Complex.I} 1 (fun i : Fin 2 => (i.val,0))).det=4 ∧\n      (fun a b : Fin 2 => derivativeRow a.val 0 0 Complex.I *\n        conj (derivativeRow b.val 0 0 Complex.I) : Matrix (Fin 2) (Fin 2) Complex).det=0"
+  },
+  "definitions": {
+    "blockProduct": "def blockProduct {n k : Type*} [Fintype n] [Fintype k] [DecidableEq n]\n    (A : Matrix n n Real) (f : n → k) : Real :=\n  ∏ b, (A.submatrix (fun i : {i // f i = b} => i.val)\n    (fun i : {i // f i = b} => i.val)).det",
+    "rowWeight": "def rowWeight (R S : Nat) (i : Fin (R*S)) : Int :=\n  (i.val/S : Nat) - (i.val%S : Int)",
+    "weightLabels": "def weightLabels (R S : Nat) : Finset Int := Finset.univ.image (rowWeight R S)",
+    "weightLabel": "def weightLabel (R S : Nat) (i : Fin (R*S)) : ↥(weightLabels R S) :=\n  ⟨rowWeight R S i,Finset.mem_image.mpr ⟨i,Finset.mem_univ _,rfl⟩⟩",
+    "momentBlock": "def momentBlock (P : Finset Complex) (J R S : Nat) (b : ↥(weightLabels R S)) :\n    Matrix {i // weightLabel R S i=b} {i // weightLabel R S i=b} Real :=\n  fun i t => 2 * ∑ j ∈ Finset.range J,\n    if j≤i.val.val/S ∧ j≤t.val.val/S then\n      ((i.val.val/S).descFactorial j : Real)*((t.val.val/S).descFactorial j : Real)*\n        normMoment P (i.val.val/S+t.val.val%S-j) else 0",
+    "momentProduct": "def momentProduct (P : Finset Complex) (J R S : Nat) : Real :=\n  ∏ b : ↥(weightLabels R S), (momentBlock P J R S b).det"
+  }
+}

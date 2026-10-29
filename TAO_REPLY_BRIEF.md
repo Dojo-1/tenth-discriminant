@@ -1,12 +1,20 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared through112; this brief is not posted.** Existing public
+**AI-prepared through117; this brief is not posted.** Existing public
 repo-linked comments are recorded separately. Tao asks for a human-generated
 summary; the contributor should review and revise the text in their own words.
 
 ## Current verification boundary
 
-Phase110 checks, and111integrates unchanged, passive polynomial/ordinary-jet transport and recovers the SAME original integer Gram, with the old active24→60counterexample preserved. [Human guide](research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md). Local integration and all PR39 mathematical steps pass, but the overall CI job is cancelled at25m and the PR remains draft/unmerged. [Preserved receipt](research/ender_radius_bridge/PR39_CI_LIMIT_RECEIPT.md). The112queue policy passes eight synthetic tests only; new final-head CI and independent review remain separate. No cutoff gain follows from passive relabelling or scheduling.
+Phase117 integrates the accepted universal radial operator unchanged. All four first local checks pass, with whole audit5,450logical/4,644theorems and199reachable modules. [Current scope](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md). CI/security are tied to the final publication head. The .013gain and48bcutoff remain paper; the published theorem remains50billion.
+
+Phase116 now proves the universal integral radial operator/all ordinary jets/original Gram determinant and divisor bridge standalone, with namespace and three fresh dependency checks. [Exact scope](research/ender_radius_bridge/PHASE116_VERIFICATION.md). The 0.013 gain, actual-field 48-billion theorem and integration/CI remain open; the published bound is 50 billion.
+
+Phase115 gives a distinct **48-billion paper candidate**, using an integral monic radial basis and the same determinant/divisors. Its fixed finite checks pass; Phase116 now checks its universal operator bridge, while the quantitative estimate and cutoff remain unformalized. The published bound remains **50 billion**. [Candidate and limits](research/ender_radius_bridge/RADIAL_CENTERING_GUIDE.md). No Tao posting.
+
+Phase114 full symbolic radial-block bridge also resource-stopped at the default Lean heartbeat limit after two failed invocations. No completed bridge/audit, production integration or lower cutoff. [Preserved failure and syntax-change disclosure](research/ender_radius_bridge/PHASE114_VERIFICATION.md).
+
+Phase110 checks, and111integrates unchanged, passive polynomial/ordinary-jet transport recovering the SAME original integer Gram. [Human guide](research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md). PR39's older cancellation is preserved; PR40's new-policy source7913eba passed full CI/security and merged at4b2492f with identical source/tested/actual trees. [Exact publication](research/ender_radius_bridge/PR40_MERGE_RECEIPT.md). The separate113larger-block experiment stopped at180s after11/12cases; positive focal samples are PARTIAL evidence, not a completed verdict, Lean theorem or cutoff gain. [Scope](research/ender_radius_bridge/RADIAL_BLOCK_CURRENT.md).
 
 The h1 cutoff stays50b. Phase108 integrates the accepted107 proof unchanged: actual absdiscr<2^52 for
 ANY imaginary quadratic field with actual h<=2, retaining odd<2^50;

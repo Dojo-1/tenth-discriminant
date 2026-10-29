@@ -121,3 +121,4 @@ import TenthDiscriminant.EvenTwoClass
 import TenthDiscriminant.CoordinateTranslation
 import TenthDiscriminant.EvenFieldTwoClass
 import TenthDiscriminant.PassiveTransport
+import TenthDiscriminant.RadialOperator

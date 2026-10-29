@@ -1,0 +1,165 @@
+{
+  "phase": 116,
+  "status": "FULL_OPERATOR_TARGET_PASS_STANDALONE",
+  "registered_commit": "715d37312be13a2d3e5c5c3ec74555d5e60fb423",
+  "previous_evidence": "456d14ecfa0abddb73c709eee9726372f650cf2e",
+  "base_source": "7913eba8ac3ec0bcf765036ba5cebd8f0197463f",
+  "runs": [
+    {
+      "phase": 116,
+      "mode": "build",
+      "scope": "Universal integral monic radial operator, all jets and same arithmetic Gram",
+      "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+      "protocol_commit": "715d373",
+      "source_sha256": "f0e3241a5ce48d4d402d0072ec8d3d1230832b6f5d9e9055bf043c571ac39782",
+      "source_snapshot": "PHASE116_build_20261029092119998.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 109.3232326,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3144491008,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../../tenth-radial-blocks/research/ender_radius_bridge/Phase116RadialOperator.lean"
+      ],
+      "stdout": "PHASE116_build_20261029092119998.stdout.log",
+      "stderr": "PHASE116_build_20261029092119998.stderr.log"
+    },
+    {
+      "phase": 116,
+      "mode": "build",
+      "scope": "Universal integral monic radial operator, all jets and same arithmetic Gram",
+      "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+      "protocol_commit": "715d373",
+      "source_sha256": "5516714ec64478dac8f0686ef7d9ae6cfdbcf4f654dc0701e7045ba56ab7cda1",
+      "source_snapshot": "PHASE116_build_20261029092356209.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 56.583463,
+      "cumulative_before_seconds": 109.3232326,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3145928704,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../../tenth-radial-blocks/research/ender_radius_bridge/Phase116RadialOperator.lean"
+      ],
+      "stdout": "PHASE116_build_20261029092356209.stdout.log",
+      "stderr": "PHASE116_build_20261029092356209.stderr.log"
+    }
+  ],
+  "cumulative_elapsed_seconds": 165.9066956,
+  "public_theorems": [
+    "term_bounds",
+    "target_in_range",
+    "targetFin_labels",
+    "lower_triangular",
+    "diagonal_one",
+    "determinant_one",
+    "integral_inverse",
+    "polynomial_expansion",
+    "row_action",
+    "polynomial_action",
+    "jet_action",
+    "complex_jet_action",
+    "integer_jet_action",
+    "gram_congruence",
+    "gram_det",
+    "gram_map",
+    "real_cast",
+    "mapped_det_one",
+    "real_posSemidef",
+    "real_posDef",
+    "reduced_rank",
+    "integer_bridge",
+    "empty_control",
+    "pilot_row_control",
+    "ordinary_controls",
+    "origin_and_ring_controls",
+    "reduction_control"
+  ],
+  "definitions": [
+    "target",
+    "matrix",
+    "targetFin",
+    "polynomial",
+    "integerJet",
+    "gram"
+  ],
+  "namespace_audit": {
+    "logical": 57,
+    "theorems": 51,
+    "runtime_auxiliaries": 11,
+    "allowed_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "fresh_closures": {
+    "polynomial_action": 11194,
+    "complex_jet_action": 13985,
+    "integer_bridge": 33149
+  },
+  "forbidden_roots": 70,
+  "archive": {
+    "path": "PHASE116_RAW.zip",
+    "sha256": "e103dde1b844031c4dbd8e294eb4cf3c58222e99c332c23e028440a51f043b1b"
+  },
+  "raw_sha256": {
+    "PHASE116_build_20261029092119998.source.lean": "f0e3241a5ce48d4d402d0072ec8d3d1230832b6f5d9e9055bf043c571ac39782",
+    "PHASE116_build_20261029092119998.stdout.log": "eb37612846c7b62bdfbf90cb0d482e7a8b267bf047510baf0ef103cb2b18b943",
+    "PHASE116_build_20261029092119998.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE116_build_20261029092119998.result.json": "52c31b6575a62ae4cda4738d0be7743ab1f929a8c248742eefe17d698d6dc56c",
+    "PHASE116_build_20261029092356209.source.lean": "5516714ec64478dac8f0686ef7d9ae6cfdbcf4f654dc0701e7045ba56ab7cda1",
+    "PHASE116_build_20261029092356209.stdout.log": "44b9d0d96ed7dba84d0b5431687609ec08f361bd05b71e9ca3f6411e5447adc1",
+    "PHASE116_build_20261029092356209.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE116_build_20261029092356209.result.json": "d44f62c344367fd10f88767b7f0fba2c352420c46daac7e6af9b83cc65613c70"
+  },
+  "frozen_files": 1748,
+  "reader_exceptions": [
+    "README.md",
+    "STATUS.md",
+    "lean/FORMALIZATION.md",
+    "TAO_OBJECTIVES_CURRENT.md",
+    "TAO_REPLY_BRIEF.md",
+    "research/ender_radius_bridge/RADIAL_BLOCK_CURRENT.md",
+    "research/ender_radius_bridge/RADIAL_CENTERING_GUIDE.md"
+  ],
+  "sha256": {
+    "research/ender_radius_bridge/PHASE116_PROTOCOL.md": "0c30f9ae05176bdfafe72dfc80340e36521cb8da1127d88ef4630df7a97bce44",
+    "research/ender_radius_bridge/Phase116RadialOperator.lean": "5516714ec64478dac8f0686ef7d9ae6cfdbcf4f654dc0701e7045ba56ab7cda1",
+    "research/ender_radius_bridge/run_phase116.ps1": "d06f9eb91240fc4b61a1f8a83d45fec15ddf6bfd8ddc144d62f3addc7cf285b1",
+    "research/ender_radius_bridge/PHASE116_FROZEN_SURFACE.json": "ec8cc7f109834c6b6995513a5742f3853abd122955cb49bf7f10df0f7d815b9d",
+    "research/ender_radius_bridge/PHASE116_REPAIR1.json": "a78634ae878b92b9c2663f2f7bf54da560a74c600e74c5da188ab378b0d84a41",
+    "research/ender_radius_bridge/PHASE116_VERIFICATION.md": "0c1b04b0ffda642fdeeb1186a77194f9f7343b6b5619daa79b8b92b107cf1524",
+    "research/ender_radius_bridge/RADIAL_OPERATOR_GUIDE.md": "f73ebb618a307c29d3c1e7fdbe38f50928c63169891743e31cc5bd77fdc62f24",
+    "research/ender_radius_bridge/verify_phase116_results.py": "9d46491c774310df41fb262059d6bfed6061ff75ec2e06d908c5d32d97fc0827",
+    "README.md": "23fca9bacd3ac9abed5a620ca601cbadf1d7848229e58e4683cf51efcda1342a",
+    "STATUS.md": "0212f4a1df85774841fbcd2b47a07834dd21b3f79b7e7f579b476e9ae67431be",
+    "lean/FORMALIZATION.md": "a0731f95ce6c17d682f236dc96d24e392cef7b6bc129731e2dac7cc9781cf97c",
+    "TAO_OBJECTIVES_CURRENT.md": "e6be999a5fa03aa798070444afea58ea0a56f0c22f080cc4151cd54763423a5c",
+    "TAO_REPLY_BRIEF.md": "7520525d7c87fca8e6a7c846cabab46bce1924e222ea0c12b126ccfe3719ae6e",
+    "research/ender_radius_bridge/RADIAL_BLOCK_CURRENT.md": "3657a297dd7c9439a328ab589287aa8b4a4654be161b0293f1faf4925c5b1a9d",
+    "research/ender_radius_bridge/RADIAL_CENTERING_GUIDE.md": "b06225492895e2a7b68d1d2f8e95829d65b16f34493a1a01b6612ff52b606fc6"
+  },
+  "scope": "Universal integral row operator/all jets/original Gram and modular ranks; standalone only. No uniform gain, new cutoff, integration or CI.",
+  "reader_verification": {
+    "relative_links": 567,
+    "README_lines": 61,
+    "objective_ledger_lines": 61,
+    "staged_diff_check": "PASS"
+  }
+}

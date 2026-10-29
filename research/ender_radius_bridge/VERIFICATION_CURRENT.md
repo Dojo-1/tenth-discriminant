@@ -1,25 +1,26 @@
-# Read verification by source version
+# Current verification in three scopes
 
-The actual-field h<=2 bound is published through PR38, whose source,
-full pinned CI, security and merge tree are [recorded](PR38_MERGE_RECEIPT.md).
-The h1 cutoff stays50billion. Independent human semantic review,
-Mathlib acceptance and optimality remain open.
+**Published:** compatible polynomial/ordinary-jet transport, recovering the
+SAME original integer Gram, is in source7913eba and actual merge4b2492f.
+[PR40 receipt](PR40_MERGE_RECEIPT.md) records full pinned CI40759337480,
+5393logical/4593theorem audit,250source pairs, eight synthetic tests,
+all eight mathematical families, security and identical tested/source/merge
+tree. This does not establish independent human semantic review.
 
-Passive polynomial/ordinary-jet transport is integrated at111. Source
-b66b5f8 has first-invocation local acceptance and external successful
-build/audit/all eight control families. The whole audit covers5393logical,
-4593theorems and17015runtime auxiliaries,198reachable modules.
-But [PR39's overall job is CANCELLED at25m](PR39_CI_LIMIT_RECEIPT.md).
-It remains draft/unmerged. Passing steps are not an overall-success receipt.
-The full raw log and metadata are preserved; no retry of that cycle.
+**Preserved failure:** PR39's phase111 run remains CANCELLED at25m.
+Its commits subsequently merged through PR40 ancestry; the old
+[terminal receipt](PR39_CI_LIMIT_RECEIPT.md) is a historical checkpoint.
+No old run was retried or relabelled. The queue-policy success is a single
+execution, not a measured general speedup.
 
-Phase112 changes ONLY dispatch priority for the same eight families.
-Two workers and all timeouts/commands/rejection rules remain fixed.
-All eight synthetic tests pass first invocation; these tests do not run
-Lean or establish a wall-clock speedup. [Local evidence](PHASE112_VERIFICATION.md).
-A misleading-timeout model can worsen the schedule as well as improve it.
+**New finite research:** phase113's larger radial-block trial stopped at
+its180s limit after11of12cases. Seven small full-Gram controls passed;
+nine guarded moment-product cases and two NO CERTIFICATE cases are saved.
+The last case and complete verdict are absent. [Human guide](RADIAL_BLOCK_CURRENT.md)
+explains the positive partial samples and their limits; [exact evidence](PHASE113_VERIFICATION.md)
+preserves the stop. No new Lean theorem, all-range gain or cutoff follows.
 
-External success for the NEW final source must be recorded in its own
-[publication PR](https://github.com/Dojo-1/tenth-discriminant/pulls?q=head%3Acodex%2Fcontrol-priority-policy).
-No later publication relabels the cancelled PR37 or PR39 runs successful.
-No full classification is announced. [Human transport guide](PASSIVE_TRANSPORT_CURRENT.md).
+The actual h1cutoff stays50billion. The all-field h<=2bound remains<2^52,
+sharper<2^50when odd. [Earlier publication](PR38_MERGE_RECEIPT.md).
+Optimal constants, human semantic review and Mathlib acceptance remain open.
+No full classification is announced. No new reviewer or Tao posting.

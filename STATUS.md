@@ -1,4 +1,26 @@
-# Status — 2026-10-28
+# Status — 2026-10-29
+
+## Phase117: radial operator integrated unchanged
+
+The accepted radial operator is now integrated unchanged in RadialOperator.lean, with one root import. Module build, full build, fresh input check and whole audit all pass on their first invocations. Whole audit: 5,450 logical declarations, 4,644 theorems and 17,026 runtime auxiliaries; 199 reachable modules. The 57 added logical declarations are exactly the new namespace; none disappeared. [Current human scope](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md) · [Exact evidence](research/ender_radius_bridge/PHASE117_VERIFICATION.md). External CI is versioned by the final publication head. The quantitative gain and 48-billion theorem remain paper; the published cutoff stays **50 billion**.
+
+## Phase116: universal integral radial bridge checked standalone
+
+The full universal monic radial operator now passes standalone Lean checking. Its explicit integer matrix acts on the actual polynomials and every ordinary jet; the actual new Gram has the original determinant and prime divisor, with guarded real positivity and equal ranks modulo every prime. All 27 public statements and six definitions remained byte-exact through two proof-only repairs. Namespace audit: 57 logical declarations; three fresh dependency closures exclude 70 old result roots. [Human guide](research/ender_radius_bridge/RADIAL_OPERATOR_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE116_VERIFICATION.md). The quantitative .013 gain and 48-billion cutoff remain paper candidates. Production integration and new CI are pending; the published cutoff remains **50 billion**.
+
+## Phase115: integral radial basis; 48-billion paper candidate
+
+The monic radial basis keeps the same integer determinant and includes every ordinary derivative term. Its paper estimate gives a uniform normalized saving of at least .013, sufficient for a **candidate 48-billion comparison**. The one registered exact trial passed all 162 matrix cases and the fixed coefficient controls. This is **not a new Lean theorem or checked cutoff**: the operator, uniform bound, actual-field composition and pinned CI remain. [Human guide](research/ender_radius_bridge/RADIAL_CENTERING_GUIDE.md) · [Paper derivation](research/ender_radius_bridge/RADIAL_CENTERING_DERIVATION.md) · [Finite evidence](research/ender_radius_bridge/PHASE115_VERIFICATION.md). The published class-number-one bound remains **50 billion**; the stopped113/114cycles remain stopped.
+
+## Phase114: symbolic bridge resource-stopped, not accepted
+
+The proposed bound keeps correlations between polynomial rows while retaining the same integer determinant. Both standalone Lean runs failed. The second reached the default 200,000-heartbeat limit while checking the dependent partitions, so the registered cycle has ended. No third run or larger limit.
+
+The full bridge and dependency audit are **not accepted**. Two control annotations also underwent disclosed syntax changes, preventing a claim of unchanged formal statements. [Readable mathematical argument](research/ender_radius_bridge/RADIAL_BLOCK_PROOF_GUIDE.md) · [Failed sources, exact commands and limits](research/ender_radius_bridge/PHASE114_VERIFICATION.md). The published class-number-one bound remains **50 billion**.
+
+## Phase113: larger-block experiment resource-stopped; PR40 published
+
+The ONE registered180s block experiment completed11of12cases, with seven small full-Gram controls, nine guarded products and two failed sufficient-rank guards. It stopped while working on D163/R320; no replay or completed feasibility verdict. Three focal gains are positive partial numerical evidence only. [Human explanation](research/ender_radius_bridge/RADIAL_BLOCK_CURRENT.md) · [Exact stop](research/ender_radius_bridge/PHASE113_VERIFICATION.md). Separately, PR40 source7913eba passed its sole full pinned CI40759337480 plus security and merged at4b2492f; fetched source/tested/actual trees match. [Publication receipt](research/ender_radius_bridge/PR40_MERGE_RECEIPT.md). PR39 closed through ancestry; its cancelled CI remains cancelled. No lower cutoff or full-classification claim.
 
 ## Phase112: local scheduling policy; PR39 limit preserved
 

@@ -1,5 +1,25 @@
 # Current claim-to-Lean map
 
+## Phase117: accepted radial operator integrated unchanged
+
+Production source now contains RadialOperator.lean, with all accepted27public types/proofs,6definition bodies/private helpers/controls unchanged after one dependency-import replacement. One root import exposes it. The four first integration checks pass; fresh57logical/51theorem namespace and11194/13985/33149closures retain70exclusions. Whole audit5,450logical/4,644theorems/17,026runtime,199reachable modules; exact inventory comparison adds only the57new namespace constants, with no removal. [Human scope](../research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md) · [Exact evidence](../research/ender_radius_bridge/PHASE117_VERIFICATION.md). External CI is separate. The uniform quantitative bound and actual-field48bcutoff are not proved by this integration; the published bound remains50billion.
+
+## Phase116: universal radial operator proved; quantitative bound remains
+
+Research source Phase116RadialOperator.lean proves the explicit monic radial matrix, integer inverse, generic polynomial/all-order ordinary-jet action, actual integer Gram congruence/determinant, exact real cast, guarded PD/positive integer determinant/original divisor, and reduced Gram rank equality for every prime. It is standalone, with no production import. All 27 public types/six definitions are unchanged across FAIL109.3232326s/PASS56.583463s; namespace57logical/51theorems, standard3axioms; fresh11194/13985/33149closures exclude70roots. [Human guide](../research/ender_radius_bridge/RADIAL_OPERATOR_GUIDE.md) · [Exact scope](../research/ender_radius_bridge/PHASE116_VERIFICATION.md). The parameter-addition law and universal quantitative gain remain unformalized. This is not a 48-billion cutoff or a production/CI result. The published bound remains 50 billion.
+
+## Phase115: finite exact checks support a paper candidate only
+
+No Lean source or production import changed in115. The new integer triangular row operator and its all-parameter derivative bound are paper mathematics, supported by a single sealed finite exact check. Neither the normalized .013 saving nor the candidate48-billion cutoff has a new Lean counterpart. The named fifty_normalized_lower wrapper cannot be invoked below its50-billion guard; a new composition from the older450^4-domain lemmas is required. [Human guide](../research/ender_radius_bridge/RADIAL_CENTERING_GUIDE.md) · [Detailed derivation and guards](../research/ender_radius_bridge/RADIAL_CENTERING_DERIVATION.md) · [Exact finite scope](../research/ender_radius_bridge/PHASE115_VERIFICATION.md).
+
+## Phase114: failed research source, outside the production library
+
+The full block/moment/arithmetic bridge failed both standalone Lean checks; the second hit the default 200,000-heartbeat limit. The namespace and final dependency audits rejected the incomplete result. Two control annotation changes are disclosed, and unchanged-statement acceptance is not claimed. The failed research source has no production import. [Paper argument](../research/ender_radius_bridge/RADIAL_BLOCK_PROOF_GUIDE.md) · [Exact failure evidence](../research/ender_radius_bridge/PHASE114_VERIFICATION.md). No new checked bridge, CI result or cutoff; the published class-number-one bound remains **50 billion**.
+
+## Phase113: finite partial evidence, no new Lean theorem
+
+This isolated cycle leaves ALL Lean sources/root byte-exact to published source7913eba. The larger angular-weight block calculation is a finite experiment using paper moment/Fischer identities; its180s resource stop is not a checked uniform gain or cutoff. [Human guide](../research/ender_radius_bridge/RADIAL_BLOCK_CURRENT.md) · [Preserved evidence](../research/ender_radius_bridge/PHASE113_VERIFICATION.md). Eleven cases are complete, one missing; no trial replay or full verdict. Separately, [PR40 passed full CI and merged](../research/ender_radius_bridge/PR40_MERGE_RECEIPT.md), publishing the earlier compatible polynomial/jet/original-Gram transport. Independent human semantic review remains open.
+
 ## Phase112: executor policy only; mathematical scope unchanged
 
 All Lean sources/root remain exact to b66b5f8. PR39's individual source/build/audit/all-eight-control steps succeeded, but its overall job was CANCELLED at25m and the PR stays draft/unmerged. [Exact receipt](../research/ender_radius_bridge/PR39_CI_LIMIT_RECEIPT.md). Phase112 changes static dispatch priority with the same two-worker cap and frozen mathematical controls/timeouts. Eight SYNTHETIC tests pass first invocation; this is not a new theorem, audit or complete CI result. [Local executor evidence](../research/ender_radius_bridge/PHASE112_VERIFICATION.md). Prior source-specific acceptance/failures remain distinct; independent semantic review remains open.
