@@ -1,9 +1,14 @@
 # Keep the correlations; keep the limit visible
 
 The larger-block experiment is RESOURCE-STOPPED and INCOMPLETE.
-Its one180second run completed11of12cases, then stopped while working on
+Phase113: its one 180-second run completed 11 of 12 cases, then stopped at
 D163/R320/S12. No rerun, repair, larger budget or complete-gate acceptance.
 [Exact verification and preserved data](PHASE113_VERIFICATION.md).
+
+The separately registered Phase114 symbolic bridge also resource-stopped after
+two failed Lean invocations. Its full target and audit are NOT accepted.
+[Human proof idea](RADIAL_BLOCK_PROOF_GUIDE.md) · [Preserved formalization failure](PHASE114_VERIFICATION.md).
+No third invocation or raised limit. Both stopped cycles remain stopped.
 
 ## The geometric idea
 
@@ -53,5 +58,6 @@ A fixed angular label belongs to an observable/operator pair: after a
 coordinate change the operator must travel with the observables. Unchanged
 determinant alone is insufficient to establish full compatibility.
 The [checked translation instance](PASSIVE_TRANSPORT_CURRENT.md) and this
-finite experiment have separate evidence scopes. A future proof attempt
-requires its own preregistration; the stopped trial remains stopped.
+finite experiment have separate evidence scopes. Phase114 is preserved
+above; neither stopped cycle establishes the complete formal block bridge
+or a cutoff improvement.

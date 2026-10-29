@@ -1,0 +1,122 @@
+{
+  "phase": 114,
+  "status": "RESOURCE_STOP_FULL_TARGET_NOT_ACCEPTED",
+  "registered_commit": "ecfe1dbf81312fce699b9da73c3571dcade893ec",
+  "previous_evidence": "b9bf8c5d07a394b969a49a562b7a2b6e7768da66",
+  "base_source": "7913eba8ac3ec0bcf765036ba5cebd8f0197463f",
+  "runs": [
+    {
+      "phase": 114,
+      "mode": "build",
+      "scope": "Full Fischer, ordinary-jet radial moments, original integer prime comparison",
+      "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+      "protocol_commit": "ecfe1db",
+      "source_sha256": "7d9ecb6cfe2e2284d1ba605d3c6a74f3577c198398ae5108abb5f92922b48aa8",
+      "source_snapshot": "PHASE114_build_20261029083953772.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 93.9184484,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2941247488,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../../tenth-radial-blocks/research/ender_radius_bridge/Phase114RadialBlocks.lean"
+      ],
+      "stdout": "PHASE114_build_20261029083953772.stdout.log",
+      "stderr": "PHASE114_build_20261029083953772.stderr.log"
+    },
+    {
+      "phase": 114,
+      "mode": "build",
+      "scope": "Full Fischer, ordinary-jet radial moments, original integer prime comparison",
+      "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+      "protocol_commit": "ecfe1db",
+      "source_sha256": "71e62ac47d54df4c5f9b4419927c65b2dcdc28b923a2cf784e5d350e3affc5ec",
+      "source_snapshot": "PHASE114_build_20261029084357829.source.lean",
+      "attempt": 2,
+      "exit_code": 1,
+      "elapsed_seconds": 84.9480633,
+      "cumulative_before_seconds": 93.9184484,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2951196672,
+      "stop_reason": "lean_internal_resource_limit",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../../tenth-radial-blocks/research/ender_radius_bridge/Phase114RadialBlocks.lean"
+      ],
+      "stdout": "PHASE114_build_20261029084357829.stdout.log",
+      "stderr": "PHASE114_build_20261029084357829.stderr.log"
+    }
+  ],
+  "attempt_slots_used": 2,
+  "unused_slots_forfeited_after_resource_stop": 1,
+  "cumulative_elapsed_seconds": 178.8665117,
+  "archive": {
+    "path": "PHASE114_RAW.zip",
+    "sha256": "adef24f52045234ee062e95236aba11c9e236c00d61648d720cc7cbb7f7a27e4"
+  },
+  "raw_sha256": {
+    "PHASE114_build_20261029083953772.source.lean": "7d9ecb6cfe2e2284d1ba605d3c6a74f3577c198398ae5108abb5f92922b48aa8",
+    "PHASE114_build_20261029083953772.stdout.log": "49dda4d7c4b66e3dfc7cbd25ac4c086fcd83d97f691c4882f605c89bd4484ed9",
+    "PHASE114_build_20261029083953772.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE114_build_20261029083953772.result.json": "a5e16d136f80ddeff463585a34c1880c2c4b4547ec8fc7ba6bf5d964cad60596",
+    "PHASE114_build_20261029084357829.source.lean": "71e62ac47d54df4c5f9b4419927c65b2dcdc28b923a2cf784e5d350e3affc5ec",
+    "PHASE114_build_20261029084357829.stdout.log": "3701327c2b9b0de991b0cfbe614541ee3cffa757c145dfa23dfc0b72e301a640",
+    "PHASE114_build_20261029084357829.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE114_build_20261029084357829.result.json": "d9300c15577122c77be55657f4395e44900cd4d0fb8204bf575d00130cf86264"
+  },
+  "reader_exceptions": [
+    "README.md",
+    "STATUS.md",
+    "lean/FORMALIZATION.md",
+    "TAO_OBJECTIVES_CURRENT.md",
+    "TAO_REPLY_BRIEF.md",
+    "research/ender_radius_bridge/RADIAL_BLOCK_CURRENT.md"
+  ],
+  "frozen_files": 1730,
+  "surface_change_disclosure": {
+    "control_signature_syntax_changes": [
+      "singular_control",
+      "real_hermitian_control"
+    ],
+    "definition_whitespace_changes": [
+      "momentBlock"
+    ],
+    "reason": "Malformed matrix annotations and comparison-token spacing; not a verified unchanged elaborated surface. No protocol acceptance claimed.",
+    "all_other_public_signature_and_definition_characters_unchanged": true
+  },
+  "sha256": {
+    "research/ender_radius_bridge/Phase114RadialBlocks.lean": "71e62ac47d54df4c5f9b4419927c65b2dcdc28b923a2cf784e5d350e3affc5ec",
+    "research/ender_radius_bridge/run_phase114.ps1": "28ac0fc63409f031ade8b78e781c2dd14ec0a26ce0dbe1daf141ec13254c5289",
+    "research/ender_radius_bridge/PHASE114_PROTOCOL.md": "de39d024552990e12812026593e8115bdba29ca21a18cdec2292ceaa8f7cce76",
+    "research/ender_radius_bridge/PHASE114_FROZEN_SURFACE.json": "4f33332f7532034de8b0046c01a5838a5f864360d2cb38eb21a5e8f7f82ce02b",
+    "research/ender_radius_bridge/PHASE114_REPAIR1.diff": "298b059a05df90106ea4f877f04a5802a0f49e0a1c36c499b2b6879d1d998e56",
+    "research/ender_radius_bridge/PHASE114_VERIFICATION.md": "6c5cf465e408aa8ef88b25f0d1cc102500661d8095d8078b87e110484f87c552",
+    "research/ender_radius_bridge/verify_phase114_results.py": "1ca685ae93e936e6b0c97b2743c68d414070a847370da202b0c61d769b6caf7b",
+    "research/ender_radius_bridge/RADIAL_BLOCK_PROOF_GUIDE.md": "b0de863c22cf05313e9daf3a3b947f9192be51eff34363d7d5e464b3b1d0c9a9",
+    "README.md": "ce2a02095bd669fd32d84e1806ef09923ebdb6934b16848a9f4d758f9d8dbd32",
+    "STATUS.md": "f56fdf73211bf2b445804028e29eb32be24aba04daf66969916dd2c6eed17b12",
+    "lean/FORMALIZATION.md": "9b210ebc063a40127dc856a88039951db54bfa07fdd5299ae2131c031a02351b",
+    "TAO_OBJECTIVES_CURRENT.md": "1f11f73fa689b750501ea869eaf9443ba773782b22a67522f138173fb2107e6f",
+    "TAO_REPLY_BRIEF.md": "bb5a837118a99b43ff6337af196e58b6cb8283005c7e0e3425729bfec548ab57",
+    "research/ender_radius_bridge/RADIAL_BLOCK_CURRENT.md": "fafafeaba14109e7e0bf26cd49c27239d89936239ae29f92d04e5fd5e22459d5"
+  },
+  "reader_verification": {
+    "relative_links": 546,
+    "README_lines": 61,
+    "objective_ledger_lines": 61,
+    "selected_git_diff_check": "PASS"
+  }
+}

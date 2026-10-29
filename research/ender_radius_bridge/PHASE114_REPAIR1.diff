@@ -1,0 +1,88 @@
+--- attempt1
++++ attempt2
+@@ -1,9 +1,9 @@
+-import TenthDiscriminant.PassiveTransport
++import TenthDiscriminant
+ 
+ /-! Full principal-block upper bound on the original ordinary-jet determinant.
+ Orthogonal bases are real proof auxiliaries, never arithmetic lattice changes. -/
+ open Matrix
+-open scoped BigOperators ComplexConjugate
++open scoped BigOperators ComplexConjugate Classical
+ namespace TenthDiscriminant.RadialBlocks
+ noncomputable section
+ 
+@@ -16,7 +16,7 @@
+   rw [Matrix.det_submatrix_equiv_self] at h
+   convert h using 1
+   exact (Fintype.prod_equiv e (fun i => A i i)
+-    (fun i => A (e.symm i) (e.symm i)) (by intro i; simp)).symm
++    (fun i => A (e.symm i) (e.symm i)) (by intro i; simp))
+ 
+ /-- General Fischer inequality, including empty and singular principal blocks. -/
+ theorem fischer_sigma {k : Type*} [Fintype k] [DecidableEq k]
+@@ -80,7 +80,7 @@
+   let e := Equiv.sigmaFiberEquiv f
+   have h := fischer_sigma (A.submatrix e e) (hA.submatrix e)
+   rw [Matrix.det_submatrix_equiv_self] at h
+-  exact h
++  simpa [blockProduct,e,Equiv.sigmaFiberEquiv,Matrix.submatrix] using h
+ 
+ private theorem equal_weight_monomials (c d : Real) (z : Complex)
+     (a b t u m : Nat) (h1 : a+u=m) (h2 : b+t=m) :
+@@ -88,7 +88,7 @@
+       ((c*d*Complex.normSq z^m : Real) : Complex) := by
+   calc
+     _ = (c : Complex)*(d : Complex)*(z^(a+u)*(conj z)^(b+t)) := by
+-      simp [map_mul, map_pow, pow_add] <;> ring
++      simp [map_mul, map_pow, pow_add]; ring
+     _ = _ := by
+       rw [h1,h2, ← mul_pow, Complex.mul_conj]
+       push_cast
+@@ -133,7 +133,7 @@
+ def momentBlock (P : Finset Complex) (J R S : Nat) (b : ↥(weightLabels R S)) :
+     Matrix {i // weightLabel R S i=b} {i // weightLabel R S i=b} Real :=
+   fun i t => 2 * ∑ j ∈ Finset.range J,
+-    if j≤i.val.val/S ∧ j≤t.val.val/S then
++    if j ≤ i.val.val/S ∧ j ≤ t.val.val/S then
+       ((i.val.val/S).descFactorial j : Real)*((t.val.val/S).descFactorial j : Real)*
+         normMoment P (i.val.val/S+t.val.val%S-j) else 0
+ 
+@@ -147,6 +147,8 @@
+       (fun i : {i // weightLabel R S i=b} => i.val)
+       (fun i : {i // weightLabel R S i=b} => i.val) = momentBlock P J R S b := by
+   ext i t
++  change traceGramEntry P J (i.val.val/S) (i.val.val%S)
++    (t.val.val/S) (t.val.val%S) = _
+   apply equal_weight_entry
+   have hi := congrArg Subtype.val i.property
+   have ht := congrArg Subtype.val t.property
+@@ -182,7 +184,7 @@
+   simp
+ 
+ theorem singular_control :
+-    (fun _ _ : Fin 2 => (1:Real) : Matrix (Fin 2) (Fin 2) Real).det=0 ∧
++    ((fun _ _ : Fin 2 => (1:Real)) : Matrix (Fin 2) (Fin 2) Real).det=0 ∧
+       (∏ _i : Fin 2, (1:Real))=1 := by
+   norm_num [Matrix.det_fin_two]
+ 
+@@ -199,8 +201,8 @@
+ 
+ theorem real_hermitian_control :
+     (traceGramMatrix {Complex.I} 1 (fun i : Fin 2 => (i.val,0))).det=4 ∧
+-      (fun a b : Fin 2 => derivativeRow a.val 0 0 Complex.I *
+-        conj (derivativeRow b.val 0 0 Complex.I) : Matrix (Fin 2) (Fin 2) Complex).det=0 := by
++      ((fun a b : Fin 2 => derivativeRow a.val 0 0 Complex.I *
++        conj (derivativeRow b.val 0 0 Complex.I)) : Matrix (Fin 2) (Fin 2) Complex).det=0 := by
+   refine ⟨PassiveTransport.real_complex_control.1,?_⟩
+   norm_num [Matrix.det_fin_two,derivativeRow,Nat.descFactorial,Complex.I_mul_I]
+ 
+@@ -213,6 +215,8 @@
+ #print TenthDiscriminant.RadialBlocks.principal_eq_moment
+ #print TenthDiscriminant.RadialBlocks.rectangular_det_le_moments
+ #print TenthDiscriminant.RadialBlocks.integer_prime_block_bridge
++
++open Lean Elab Command
+ 
+ elab "#phase114_inputs " root:ident : command => do
+   let env ← getEnv

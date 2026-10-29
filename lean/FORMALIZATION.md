@@ -1,5 +1,9 @@
 # Current claim-to-Lean map
 
+## Phase114: failed research source, outside the production library
+
+The full block/moment/arithmetic bridge failed both standalone Lean checks; the second hit the default 200,000-heartbeat limit. The namespace and final dependency audits rejected the incomplete result. Two control annotation changes are disclosed, and unchanged-statement acceptance is not claimed. The failed research source has no production import. [Paper argument](../research/ender_radius_bridge/RADIAL_BLOCK_PROOF_GUIDE.md) · [Exact failure evidence](../research/ender_radius_bridge/PHASE114_VERIFICATION.md). No new checked bridge, CI result or cutoff; the published class-number-one bound remains **50 billion**.
+
 ## Phase113: finite partial evidence, no new Lean theorem
 
 This isolated cycle leaves ALL Lean sources/root byte-exact to published source7913eba. The larger angular-weight block calculation is a finite experiment using paper moment/Fischer identities; its180s resource stop is not a checked uniform gain or cutoff. [Human guide](../research/ender_radius_bridge/RADIAL_BLOCK_CURRENT.md) · [Preserved evidence](../research/ender_radius_bridge/PHASE113_VERIFICATION.md). Eleven cases are complete, one missing; no trial replay or full verdict. Separately, [PR40 passed full CI and merged](../research/ender_radius_bridge/PR40_MERGE_RECEIPT.md), publishing the earlier compatible polynomial/jet/original-Gram transport. Independent human semantic review remains open.

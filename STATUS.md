@@ -1,4 +1,10 @@
-# Status — 2026-10-28
+# Status — 2026-10-29
+
+## Phase114: symbolic bridge resource-stopped, not accepted
+
+The proposed bound keeps correlations between polynomial rows while retaining the same integer determinant. Both standalone Lean runs failed. The second reached the default 200,000-heartbeat limit while checking the dependent partitions, so the registered cycle has ended. No third run or larger limit.
+
+The full bridge and dependency audit are **not accepted**. Two control annotations also underwent disclosed syntax changes, preventing a claim of unchanged formal statements. [Readable mathematical argument](research/ender_radius_bridge/RADIAL_BLOCK_PROOF_GUIDE.md) · [Failed sources, exact commands and limits](research/ender_radius_bridge/PHASE114_VERIFICATION.md). The published class-number-one bound remains **50 billion**.
 
 ## Phase113: larger-block experiment resource-stopped; PR40 published
 

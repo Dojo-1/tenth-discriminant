@@ -9,7 +9,7 @@ This is a bound, not a full classification or an optimality claim.
 These twelve rows are our working categories for
 [Tao's challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/),
 not an official numbered checklist. The [claim map](lean/FORMALIZATION.md)
-keeps theorem checking, execution evidence and independent review separate.
+keeps theorem checking, execution evidence and independent review separate. The Phase114 symbolic block attempt hit its resource limit and is not accepted; [failure](research/ender_radius_bridge/PHASE114_VERIFICATION.md).
 
 ## How we are faring
 
