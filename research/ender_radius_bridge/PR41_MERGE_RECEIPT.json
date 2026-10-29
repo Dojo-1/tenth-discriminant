@@ -1,0 +1,75 @@
+{
+  "PR": 41,
+  "source": "ab5558ff7b482a6bec185b37115b6faf57a82c28",
+  "tested_merge": "7736305b1eb357bcc14fb6ed7c3213807187bd5e",
+  "tree": "d41ff442dbbcf3e5259c2e49d5bca0b9b2a791c9",
+  "run": 40853123367,
+  "job": 123377295053,
+  "conclusion": "success",
+  "attempt": 1,
+  "security_run": 40853118787,
+  "security_checks": [
+    {
+      "id": 123377505356,
+      "name": "CodeQL",
+      "conclusion": "success",
+      "head": "ab5558ff7b482a6bec185b37115b6faf57a82c28"
+    },
+    {
+      "id": 123377287137,
+      "name": "Analyze (actions)",
+      "conclusion": "success",
+      "head": "ab5558ff7b482a6bec185b37115b6faf57a82c28"
+    },
+    {
+      "id": 123377286725,
+      "name": "Analyze (python)",
+      "conclusion": "success",
+      "head": "ab5558ff7b482a6bec185b37115b6faf57a82c28"
+    }
+  ],
+  "annotations": [
+    {
+      "path": ".github",
+      "blob_href": "https://github.com/Dojo-1/tenth-discriminant/blob/ab5558ff7b482a6bec185b37115b6faf57a82c28/.github",
+      "start_line": 2,
+      "start_column": null,
+      "end_line": 2,
+      "end_column": null,
+      "annotation_level": "warning",
+      "title": "",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830, actions/checkout@11d5960a326750d5838078e36cf38b85af677262. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "raw_details": ""
+    }
+  ],
+  "archive_sha256": "8425beb47c39782ce16e4921af5dbf415b1f454aeba74f4cf7f2fee75b72fc8a",
+  "sha256": {
+    "run": "c302d189bf257807091aeeee0afabaf455ab0f56ce8ddc87388f56c895698130",
+    "job": "8716ec8f94f68b1f6d4b0d556c6ede44070a1d7539b3ebf954e715c5e46180d0",
+    "annotations": "ccd9f034068bb09fba6280fd383d5a179052068b072140db91a96589e2b6b289",
+    "pr": "6d7c50d33cff7571db1854f1c005f3d0455f2c9e88d7f5b95e00606b2986ab6a",
+    "security_run": "3d01503422d33c856af9c2a5f0a7cf4d842136bf1b6d180bb4dc4905e101ce09",
+    "security_jobs": "6ed6c5970dbe2fecdc84e140b08d9eb6f95822c941a31de0910f362e3fa87e4a",
+    "checks": "c850eb482906c236ffa6ce3bbf72aa79b3a01d24f8f624739e79b3c3045a20a0",
+    "job.log": "7bce7fa6f77c9abb2d3ee0332e33481027327de3dc8f8bd43603ab0c941786d2"
+  },
+  "finished_at": "2026-10-29T10:13:01Z",
+  "scope": "Operator integration CI only; published cutoff50b;48b remains paper",
+  "actual_merge": "e74028ab8232f6e1b3dc0f41527569a8aa84eb87",
+  "actual_parents": [
+    "4b2492f11a1b3d2bf7831eb15487504865a8ff88",
+    "ab5558ff7b482a6bec185b37115b6faf57a82c28"
+  ],
+  "actual_tree_verified": true,
+  "source_correspondence_pairs": 250,
+  "synthetic_tests": 8,
+  "synthetic_suite_seconds": 2.155,
+  "control_families": 8,
+  "audit": {
+    "logical": 5450,
+    "theorems": 4644,
+    "runtime_auxiliaries": 17026
+  },
+  "final_controls_pass_at": "2026-10-29T10:12:58.8909739Z",
+  "status": "MERGED_AFTER_EXACT_HEAD_CI_SECURITY_SUCCESS"
+}

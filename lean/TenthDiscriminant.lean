@@ -122,3 +122,6 @@ import TenthDiscriminant.CoordinateTranslation
 import TenthDiscriminant.EvenFieldTwoClass
 import TenthDiscriminant.PassiveTransport
 import TenthDiscriminant.RadialOperator
+import TenthDiscriminant.RadialJetMajorant
+import TenthDiscriminant.RadialDetBound
+import TenthDiscriminant.RadialCutoff

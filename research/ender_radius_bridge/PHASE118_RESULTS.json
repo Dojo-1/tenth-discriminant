@@ -1,0 +1,147 @@
+{
+  "phase": 118,
+  "status": "FULL_QUANTITATIVE_ORDINARY_JET_TARGET_PASS_STANDALONE",
+  "registered_commit": "7378fa5557d5ab13139295cf945e4d81ab4815c2",
+  "publication_receipt_commit": "4432bed17e1c3c00768753a814c01a850d3c69bc",
+  "pinned_primary_head": "ab5558ff7b482a6bec185b37115b6faf57a82c28",
+  "runs": [
+    {
+      "phase": 118,
+      "mode": "build",
+      "scope": "Full coefficient and actual ordinary-jet radial majorant; sufficient scale gain for same48b candidate",
+      "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+      "protocol_commit": "7378fa5",
+      "source_sha256": "b6e929322f24a13d19a3b77c65e525968fb0c1c818ce4bbcd1b1f47881d02bef",
+      "source_snapshot": "PHASE118_build_20261029104907187.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 117.154457,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3099459584,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../../tenth-radial-blocks/research/ender_radius_bridge/Phase118RadialJetMajorant.lean"
+      ],
+      "stdout": "PHASE118_build_20261029104907187.stdout.log",
+      "stderr": "PHASE118_build_20261029104907187.stderr.log"
+    },
+    {
+      "phase": 118,
+      "mode": "build",
+      "scope": "Full coefficient and actual ordinary-jet radial majorant; sufficient scale gain for same48b candidate",
+      "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+      "protocol_commit": "7378fa5",
+      "source_sha256": "2974a5d2a31de646f2c1315b553e62c6711b80da6585d1c556ec83770fd0a012",
+      "source_snapshot": "PHASE118_build_20261029105224260.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 45.6828647,
+      "cumulative_before_seconds": 117.154457,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3143409664,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../../tenth-radial-blocks/research/ender_radius_bridge/Phase118RadialJetMajorant.lean"
+      ],
+      "stdout": "PHASE118_build_20261029105224260.stdout.log",
+      "stderr": "PHASE118_build_20261029105224260.stderr.log"
+    }
+  ],
+  "cumulative_elapsed_seconds": 162.8373217,
+  "public_theorems": [
+    "coefficient_bound",
+    "linear_power_derivative",
+    "leibniz_jet",
+    "opposite_jet",
+    "coefficient_one",
+    "coefficient_no_loss",
+    "centered_disc",
+    "ordinary_jet_no_loss",
+    "high_jet_zero",
+    "ordinary_jet_gain",
+    "logarithm_gain",
+    "scale_gain",
+    "endpoint_separation",
+    "coefficient_controls",
+    "zero_s_control",
+    "ordinary_controls",
+    "rounding_control",
+    "single_column_control",
+    "negative_endpoint_control"
+  ],
+  "definitions": [
+    "coefficient",
+    "jet"
+  ],
+  "namespace": {
+    "logical": 49,
+    "theorems": 47,
+    "runtime_auxiliaries": 3
+  },
+  "audit_marker": "AUDIT_OK TenthDiscriminant.RadialJetMajorant: 49 logical declarations; 47 theorems; 3 runtime-only auxiliaries excluded",
+  "fresh_closures": {
+    "coefficient_bound": 10911,
+    "ordinary_jet_gain": 14203,
+    "scale_gain": 23312
+  },
+  "forbidden_roots": 70,
+  "reader_exceptions": [
+    "README.md",
+    "STATUS.md",
+    "lean/FORMALIZATION.md",
+    "TAO_OBJECTIVES_CURRENT.md",
+    "TAO_REPLY_BRIEF.md",
+    "research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md"
+  ],
+  "frozen_files": 1769,
+  "archive": {
+    "path": "PHASE118_RAW.zip",
+    "sha256": "e5fe4d1ad248f31f6b2f6d5dc05ad28eb6b3aebd31ff0cbe9e28b927e6ca5854"
+  },
+  "raw_sha256": {
+    "PHASE118_build_20261029104907187.source.lean": "b6e929322f24a13d19a3b77c65e525968fb0c1c818ce4bbcd1b1f47881d02bef",
+    "PHASE118_build_20261029104907187.stdout.log": "1a3031fc854343d137191b8eba807d5a7ffc250300601dd3bc936c4f876da2ca",
+    "PHASE118_build_20261029104907187.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE118_build_20261029104907187.result.json": "5a97318de98945eaa2e1856e41ca507e901bdd40fb52db3f2d785c75a02c5002",
+    "PHASE118_build_20261029105224260.source.lean": "2974a5d2a31de646f2c1315b553e62c6711b80da6585d1c556ec83770fd0a012",
+    "PHASE118_build_20261029105224260.stdout.log": "e89f985e06d8cc110df2c4414ba6e8e54a22a2188247034b01bde0b26e3e787a",
+    "PHASE118_build_20261029105224260.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE118_build_20261029105224260.result.json": "6d6b1fc93fb0f7e74519725d54321345032b47e60eae331b22a92ebcdcf0176b"
+  },
+  "sha256": {
+    "research/ender_radius_bridge/PHASE118_PROTOCOL.md": "8935fadcde7d88fe9ccb1fa5c7ebbe2c0b2aff3552789559e73579e5d6afeb09",
+    "research/ender_radius_bridge/Phase118RadialJetMajorant.lean": "2974a5d2a31de646f2c1315b553e62c6711b80da6585d1c556ec83770fd0a012",
+    "research/ender_radius_bridge/run_phase118.ps1": "d55ade3127bd055c961ff81ecaf8235a06fac0f40ae87824b2167ebf0c2049e9",
+    "research/ender_radius_bridge/phase118_preflight.py": "cba491c056669e9cac584a99cca958ac66514661ddf2aac6f84d01bebfe1fa4c",
+    "research/ender_radius_bridge/PHASE118_FROZEN_SURFACE.json": "2cb22120452872b55cd929b43423d8c4d096f83744a2058e1c8343215acb6176",
+    "research/ender_radius_bridge/PHASE118_REPAIR1.json": "3e357d112f78b204446512d283a9030d2663aa795b356048727a9c165e720385",
+    "research/ender_radius_bridge/RADIAL_JET_GUIDE.md": "7045ed821f4fb8461edd25cfc794c462a5b1a94823e3b732cca065cf3875e433",
+    "research/ender_radius_bridge/PHASE118_VERIFICATION.md": "374e5076aab53d5988c646b9db98d8bf8756283c1924fe2a3d1c391cd5c981f0",
+    "research/ender_radius_bridge/verify_phase118_results.py": "53e8dfa2bf2fcd2897736903e8b4c2e6e99cb68b79cdc67cefe47370f8056595"
+  },
+  "warnings": {
+    "unnecessary_sequence": 2,
+    "unused_private_hh": 1,
+    "unused_public_hS": 1,
+    "replayed_for_style": false
+  },
+  "published_cutoff": 50000000000,
+  "candidate_cutoff": 48000000000,
+  "checked_sufficient_scale_gain": "1/100",
+  "stronger_paper_gain": "13/1000",
+  "scope": "Actual all-order polynomial jets and sufficient rectangular scale gain; no full original-Gram logarithmic aggregation, actual-field48b theorem, production integration, new CI or independent review",
+  "no_remaining_invocation_needed": true
+}

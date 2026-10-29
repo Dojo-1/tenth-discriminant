@@ -1,12 +1,20 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared through117; this brief is not posted.** Existing public
+**AI-prepared through121; this brief is not posted.** Existing public
 repo-linked comments are recorded separately. Tao asks for a human-generated
 summary; the contributor should review and revise the text in their own words.
 
 ## Current verification boundary
 
-Phase117 integrates the accepted universal radial operator unchanged. All four first local checks pass, with whole audit5,450logical/4,644theorems and199reachable modules. [Current scope](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md). CI/security are tied to the final publication head. The .013gain and48bcutoff remain paper; the published theorem remains50billion.
+Phase121 integrates the full actual-field48-billion proof unchanged in three production modules. All four first local checks pass;56written types/6data bodies exact, nine fresh closures, whole audit5,584logical/4,772theorems/17,029runtime and202reachable modules. The inventory adds134logical declarations and removes none; two generated equations explain the difference from the132source expectation. [Current human scope](research/ender_radius_bridge/RADIAL_CUTOFF_CURRENT.md) · [Exact evidence](research/ender_radius_bridge/PHASE121_VERIFICATION.md). Exact-head CI/security/merge status is versioned in the branch PR; no classification/optimality/new human-review claim or Tao posting.
+
+Phase120 now proves the FULL actual-field48-billion cutoff standalone: every totally complex degree2 number field of class number1 has actual absolute discriminant<48000000000, with no supplied generator or earlier cutoff/classification premise. First invocation PASS174.6648317s; namespace28logical/28theorems; three fresh closures exclude73registered roots. [Human explanation](research/ender_radius_bridge/FORTY_EIGHT_BILLION_GUIDE.md) · [Exact evidence and input policy](research/ender_radius_bridge/PHASE120_VERIFICATION.md). Published integrated result stays50billion until unchanged integration and pinned CI; no new independent review or Tao posting.
+
+Phase119 now checks the full SAME original integer determinant upper bound at the unchanged production radius: normalized log(detG)<=.8logD-.823 for everyD>=41006250000, with actual jet/trace equality, guarded positivity and exact penalty aggregation. [Human explanation](research/ender_radius_bridge/RADIAL_DETERMINANT_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE119_VERIFICATION.md). This is standalone: arithmetic lower/endpoint/actual-field48bcomposition, integration and CI remain. Published cutoff stays50billion; no new review or Tao posting.
+
+Phase118 now checks the full actual ordinary-jet radial estimate and sufficient.010rectangular scale saving standalone, with19unchanged public types/2definitions, namespace49logical/47theorems, three fresh dependency checks, and the failed first attempt preserved. [Human explanation](research/ender_radius_bridge/RADIAL_JET_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE118_VERIFICATION.md). It does not yet prove the full original-Gram logarithmic saving or actual-field48btheorem. No new integration/CI, independent review or Tao posting; the published bound stays50billion.
+
+Phase117 integrates the accepted universal radial operator unchanged. All four first local checks pass, with whole audit5,450logical/4,644theorems and199reachable modules. [Current scope](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md). PR41 is merged at e74028a after pinned proof CI40853123367 and same-head security passed; source/tested/actual trees agree. [Receipt](research/ender_radius_bridge/PR41_MERGE_RECEIPT.md). The .013gain and48bcutoff remain paper; the published theorem remains50billion.
 
 Phase116 now proves the universal integral radial operator/all ordinary jets/original Gram determinant and divisor bridge standalone, with namespace and three fresh dependency checks. [Exact scope](research/ender_radius_bridge/PHASE116_VERIFICATION.md). The 0.013 gain, actual-field 48-billion theorem and integration/CI remain open; the published bound is 50 billion.
 

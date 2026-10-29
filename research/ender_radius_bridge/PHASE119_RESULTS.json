@@ -1,0 +1,156 @@
+{
+  "phase": 119,
+  "status": "FULL_SAME_INTEGER_PRODUCTION_RADIUS_UPPER_BOUND_PASS_STANDALONE",
+  "registered_commit": "781aec84006fde74517da17e31b3474ab33dd831",
+  "reader_exceptions": [
+    "README.md",
+    "STATUS.md",
+    "lean/FORMALIZATION.md",
+    "TAO_OBJECTIVES_CURRENT.md",
+    "TAO_REPLY_BRIEF.md",
+    "research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md"
+  ],
+  "frozen_files": 1784,
+  "accepted_dependency_sha256": "7abfde99dba9713b8eb6f3759a42f18938f35715423ab8b5de2a13dcfdcafa71",
+  "accepted_dependency_commit": "39e8eaf2d9ccf008671ecc93abcc7477c98194a3",
+  "pinned_primary_head": "ab5558ff7b482a6bec185b37115b6faf57a82c28",
+  "runs": [
+    {
+      "phase": 119,
+      "mode": "build",
+      "scope": "Full same-integer radial determinant logarithmic upper bound at actual production radius",
+      "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+      "protocol_commit": "781aec8",
+      "source_sha256": "e9bbf24e83ccadc6800d788109042fd77552f3c084bdb6398b837d7fc841b78a",
+      "source_snapshot": "PHASE119_build_20261029111125952.source.lean",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 60.7251422,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3343523840,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../../tenth-radial-blocks/research/ender_radius_bridge/Phase119RadialDetBound.lean"
+      ],
+      "stdout": "PHASE119_build_20261029111125952.stdout.log",
+      "stderr": "PHASE119_build_20261029111125952.stderr.log"
+    },
+    {
+      "phase": 119,
+      "mode": "build",
+      "scope": "Full same-integer radial determinant logarithmic upper bound at actual production radius",
+      "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+      "protocol_commit": "781aec8",
+      "source_sha256": "cdced29575346e09a28b964ecb602172172ef0d5d235a1af20683cc60b451e3b",
+      "source_snapshot": "PHASE119_build_20261029133208374.source.lean",
+      "attempt": 2,
+      "exit_code": 0,
+      "elapsed_seconds": 160.0622916,
+      "cumulative_before_seconds": 60.7251422,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3382509568,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../../tenth-radial-blocks/research/ender_radius_bridge/Phase119RadialDetBound.lean"
+      ],
+      "stdout": "PHASE119_build_20261029133208374.stdout.log",
+      "stderr": "PHASE119_build_20261029133208374.stderr.log"
+    }
+  ],
+  "cumulative_elapsed_seconds": 220.7874338,
+  "public_theorems": [
+    "chart_pair",
+    "actual_jet_value",
+    "trace_square",
+    "actual_diagonal",
+    "rowFactor_pos",
+    "rowFactor_log",
+    "actual_jet_square",
+    "actual_diagonal_uniform",
+    "actual_log_diagonal",
+    "penalty_sum",
+    "baseline_sum",
+    "integer_log_upper",
+    "normalized_integer_upper",
+    "production_guards",
+    "production_normalized_upper",
+    "constant_trace_control",
+    "empty_rows_control",
+    "singleton_control",
+    "singular_control",
+    "origin_control",
+    "single_column_control",
+    "empty_eligible_control"
+  ],
+  "definitions": [
+    "chart",
+    "rowFactor",
+    "rowPenalty",
+    "rowLog"
+  ],
+  "namespace": {
+    "logical": 55,
+    "theorems": 51,
+    "runtime_auxiliaries": 0
+  },
+  "audit_marker": "AUDIT_OK TenthDiscriminant.RadialDetBound: 55 logical declarations; 51 theorems; 0 runtime-only auxiliaries excluded",
+  "fresh_closures": {
+    "actual_diagonal": 14248,
+    "integer_log_upper": 42099,
+    "production_normalized_upper": 47578
+  },
+  "forbidden_roots": 70,
+  "archive": {
+    "path": "PHASE119_RAW.zip",
+    "sha256": "3041bc4ec5884f76f96e0e55f2372d1d8d1bb6bb224223632d7080cb957c1fc3"
+  },
+  "raw_sha256": {
+    "PHASE119_build_20261029111125952.source.lean": "e9bbf24e83ccadc6800d788109042fd77552f3c084bdb6398b837d7fc841b78a",
+    "PHASE119_build_20261029111125952.stdout.log": "578d9ce271aa2095a22a1a66a8549b8073d11c2e37705d1417630ca062e1f477",
+    "PHASE119_build_20261029111125952.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE119_build_20261029111125952.result.json": "0fe5e7ead90f6fb7f35e62d8955663b5befac9048dd980847b3a21f6947d938c",
+    "PHASE119_build_20261029133208374.source.lean": "cdced29575346e09a28b964ecb602172172ef0d5d235a1af20683cc60b451e3b",
+    "PHASE119_build_20261029133208374.stdout.log": "8c50a91e64851af3bd83fc0a76c7936b3af40cd004e240abaa82bb7fa7fcf28f",
+    "PHASE119_build_20261029133208374.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE119_build_20261029133208374.result.json": "a9a3a5900ba119d6e0e7675f13fea2de87d050a244bed26096094a607e19d7d3"
+  },
+  "sha256": {
+    "research/ender_radius_bridge/PHASE119_PROTOCOL.md": "badae398c5c0805f208ad45148567785863a38174f46ffe79aebe0f185667c8d",
+    "research/ender_radius_bridge/Phase119RadialDetBound.lean": "cdced29575346e09a28b964ecb602172172ef0d5d235a1af20683cc60b451e3b",
+    "research/ender_radius_bridge/run_phase119.ps1": "68f7ed3ca32ddbacf54b4a6fe858dea198d8f7766c99ff9c003b6360a0addcf7",
+    "research/ender_radius_bridge/phase119_preflight.py": "7ffd466903901b04f80058c6894464be512ed890436e17b873620f454cfe77ed",
+    "research/ender_radius_bridge/PHASE119_FROZEN_SURFACE.json": "b9d60830c114d9d906949583d17b6c39e6a8ec8520b25be710cf1968db7ced6f",
+    "research/ender_radius_bridge/PHASE119_FROZEN_BASELINE.json": "6d715842301f75eaa9818307c5906220ce93c8d16bdd2b45c7b8c7db86f6032d",
+    "research/ender_radius_bridge/PHASE119_REPAIR1.json": "e32bf7422549158c93b9c645d15c443ac60cc917b5428544aefc909299e8e317",
+    "research/ender_radius_bridge/RADIAL_DETERMINANT_GUIDE.md": "3302cb5eddd798a6100993de2f250bdc9f3421ab4a48379448f75b3588bea047",
+    "research/ender_radius_bridge/PHASE119_VERIFICATION.md": "bd5d80a62e572a9676fa4d1d2660dd172036bfe4e02d40f2f4f6e7ec162cae39",
+    "research/ender_radius_bridge/verify_phase119_results.py": "96cfb6308285506ce77a9aa7a5058d008d32b5b44252b2a88e82b6868ea90b32"
+  },
+  "warnings": {
+    "total": 5,
+    "inherited_exact_dependency": 4,
+    "unused_control_rho": 1,
+    "replayed_for_style": false
+  },
+  "published_cutoff": 50000000000,
+  "candidate_cutoff": 48000000000,
+  "geometry_domain_lower": 41006250000,
+  "normalized_upper": "4/5*logD-823/1000",
+  "checked_sufficient_scale_gain": "1/100",
+  "stronger_paper_gain": "13/1000",
+  "scope": "Actual original integer determinant upper bound at unchanged production radius, all geometry-domain D; no arithmetic lower/endpoint/actual-field48b composition, production integration, new CI, publication or independent review",
+  "no_remaining_invocation_needed": true
+}

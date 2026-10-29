@@ -1,0 +1,18 @@
+{
+  "allowed_from_earlier_operator_exclusions": [
+    "TenthDiscriminant.smallPrimeNormLifting_of_classNumber_one",
+    "TenthDiscriminant.smallPrime_nonsquare_of_classNumber_one",
+    "TenthDiscriminant.rectangularTraceGram_valuation_of_classNumber_one",
+    "TenthDiscriminant.classNumber_one_of_field_equiv"
+  ],
+  "additional_exclusions": [
+    "TenthDiscriminant.imaginaryQuadratic_large_classNumber_ne_one_50b",
+    "TenthDiscriminant.imaginaryQuadratic_classNumber_one_discriminant_bound_50b",
+    "TenthDiscriminant.FirstCertificate.Tuned.fifty_normalized_lower",
+    "TenthDiscriminant.FirstCertificate.Tuned.fifty_dimensions",
+    "TenthDiscriminant.ellipse_enderPrimeMassLower_le_counted_upperB",
+    "TenthDiscriminant.ellipse_enderPrimeMassLower_le_upperB",
+    "TenthDiscriminant.ellipse_primeMass_log_le_upperB"
+  ],
+  "forbidden_roots": 73
+}

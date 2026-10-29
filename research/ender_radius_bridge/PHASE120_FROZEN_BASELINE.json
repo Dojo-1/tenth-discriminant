@@ -1,0 +1,14 @@
+{
+  "registered_commit": "ec81001b325345440a2ea83a05a33aa9ad2d6cff",
+  "reader_exceptions": [
+    "README.md",
+    "STATUS.md",
+    "lean/FORMALIZATION.md",
+    "TAO_OBJECTIVES_CURRENT.md",
+    "TAO_REPLY_BRIEF.md",
+    "research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md"
+  ],
+  "frozen_files": 1796,
+  "accepted_dependency_sha256": "9a66f2b319697ef1e6343e74ec94cf3a82ae938817ae8cc42e05afcb455f8626",
+  "accepted_dependency_commit": "57a4654d3a43f1f69ad8f892cb41983afde946e0"
+}

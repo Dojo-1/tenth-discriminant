@@ -1,0 +1,34 @@
+{
+  "attempt": 2,
+  "prior_attempt": {
+    "phase": 118,
+    "mode": "build",
+    "scope": "Full coefficient and actual ordinary-jet radial majorant; sufficient scale gain for same48b candidate",
+    "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+    "protocol_commit": "7378fa5",
+    "source_sha256": "b6e929322f24a13d19a3b77c65e525968fb0c1c818ce4bbcd1b1f47881d02bef",
+    "source_snapshot": "PHASE118_build_20261029104907187.source.lean",
+    "attempt": 1,
+    "exit_code": 1,
+    "elapsed_seconds": 117.154457,
+    "cumulative_before_seconds": 0,
+    "time_limit_seconds": 600,
+    "memory_threshold_mb": 8192,
+    "observed_peak_working_set_bytes": 3099459584,
+    "stop_reason": "",
+    "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments": [
+      "env",
+      "lean",
+      "-j",
+      "1",
+      "../../tenth-radial-blocks/research/ender_radius_bridge/Phase118RadialJetMajorant.lean"
+    ],
+    "stdout": "PHASE118_build_20261029104907187.stdout.log",
+    "stderr": "PHASE118_build_20261029104907187.stderr.log"
+  },
+  "before_sha256": "b6e929322f24a13d19a3b77c65e525968fb0c1c818ce4bbcd1b1f47881d02bef",
+  "after_sha256": "2974a5d2a31de646f2c1315b553e62c6711b80da6585d1c556ec83770fd0a012",
+  "scope": "Proof-only cast transport, explicit norm multiplication alignment, redundant tactic removal and local positivity fact; public types and definitions unchanged",
+  "diff": "--- attempt1\n+++ attempt2\n@@ -126,12 +126,14 @@\n           z^(r-s-(j-k)) * w^k * (z*w-(a : A))^(s-k) := by\n     rw [nsmul_eq_mul]\n     have hc : (j.choose k : A)*(s.descFactorial k : A)=\n-        (s.choose k : A)*(j.descFactorial k : A) := by exact_mod_cast choose_falling j s k\n+        (s.choose k : A)*(j.descFactorial k : A) := by\n+      simpa only [Nat.cast_mul] using\n+        congrArg (fun n : Nat => (n : A)) (choose_falling j s k)\n     push_cast\n     calc\n       _ = ((j.choose k : A)*(s.descFactorial k : A))*\n           ((r-s).descFactorial (j-k) : A)*z^(r-s-(j-k))*w^k*(z*w-(a : A))^(s-k) := by ring\n-      _ = _ := by rw [hc]; ring\n+      _ = _ := by rw [hc]\n   simp_rw [hf]\n   apply sum_same_support\n   · intro k hk\n@@ -194,9 +196,18 @@\n         Nat.cast_mul]\n       have hp := power_accounting r s j k hrs hj hks hkj hrem rho h\n       calc\n+        _ = ((s.choose k : Real)*(j.descFactorial k : Real)*\n+            ((r-s).descFactorial (j-k) : Real))*\n+            (‖z‖^(r-s-(j-k))*‖z‖^k*‖z*conj z-(a : Complex)‖^(s-k)) := by ring\n         _ ≤ ((s.choose k : Real)*(j.descFactorial k : Real)*\n             ((r-s).descFactorial (j-k) : Real))*\n-            (rho^(r-s-(j-k))*rho^k*(h*rho^2)^(s-k)) := by gcongr\n+            (rho^(r-s-(j-k))*rho^k*(h*rho^2)^(s-k)) := by\n+          apply mul_le_mul_of_nonneg_left _ (by positivity)\n+          have hza := pow_le_pow_left₀ (norm_nonneg z) hz (r-s-(j-k))\n+          have hzk := pow_le_pow_left₀ (norm_nonneg z) hz k\n+          have hqc := pow_le_pow_left₀ (norm_nonneg (z*conj z-(a : Complex))) hc (s-k)\n+          have hzz := mul_le_mul hza hzk (by positivity) (by positivity)\n+          exact mul_le_mul hzz hqc (by positivity) (by positivity)\n         _ = _ := by rw [hp]; ring\n     · rw [Nat.descFactorial_of_lt (by omega : r-s < j-k)]\n       simp\n@@ -329,6 +340,7 @@\n   rw [Nat.cast_sub h9, Nat.cast_sub h1]\n   push_cast\n   have hR0 : (0 : Real) ≤ (R : Real)-9*S := by nlinarith\n+  have hSm1 : (0 : Real) ≤ (S : Real)-1 := by linarith\n   have hpart : (16*(S : Real))*(S : Real)*(99/100*(S : Real)) ≤\n       ((R : Real)-9*S)*S*((S : Real)-1) := by\n     apply mul_le_mul\n"
+}
