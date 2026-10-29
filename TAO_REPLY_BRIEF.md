@@ -1,10 +1,12 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared through114; this brief is not posted.** Existing public
+**AI-prepared through115; this brief is not posted.** Existing public
 repo-linked comments are recorded separately. Tao asks for a human-generated
 summary; the contributor should review and revise the text in their own words.
 
 ## Current verification boundary
+
+Phase115 gives a distinct **48-billion paper candidate**, using an integral monic radial basis and the same determinant/divisors. Its fixed finite checks pass; the all-parameter bridge and cutoff are not newly Lean-checked. The published bound remains **50 billion**. [Candidate and limits](research/ender_radius_bridge/RADIAL_CENTERING_GUIDE.md). No Tao posting.
 
 Phase114 full symbolic radial-block bridge also resource-stopped at the default Lean heartbeat limit after two failed invocations. No completed bridge/audit, production integration or lower cutoff. [Preserved failure and syntax-change disclosure](research/ender_radius_bridge/PHASE114_VERIFICATION.md).
 

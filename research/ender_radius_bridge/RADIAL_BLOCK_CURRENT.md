@@ -10,6 +10,10 @@ two failed Lean invocations. Its full target and audit are NOT accepted.
 [Human proof idea](RADIAL_BLOCK_PROOF_GUIDE.md) · [Preserved formalization failure](PHASE114_VERIFICATION.md).
 No third invocation or raised limit. Both stopped cycles remain stopped.
 
+A distinct [integral radial-basis route](RADIAL_CENTERING_GUIDE.md) now has
+a paper48-billion comparison and finite exact checks. It neither retries
+these stopped cycles nor upgrades the published50-billion theorem.
+
 ## The geometric idea
 
 The diagonal Hadamard estimate treats each polynomial row separately.

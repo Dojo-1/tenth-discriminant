@@ -1,5 +1,9 @@
 # Status — 2026-10-29
 
+## Phase115: integral radial basis; 48-billion paper candidate
+
+The monic radial basis keeps the same integer determinant and includes every ordinary derivative term. Its paper estimate gives a uniform normalized saving of at least .013, sufficient for a **candidate 48-billion comparison**. The one registered exact trial passed all 162 matrix cases and the fixed coefficient controls. This is **not a new Lean theorem or checked cutoff**: the operator, uniform bound, actual-field composition and pinned CI remain. [Human guide](research/ender_radius_bridge/RADIAL_CENTERING_GUIDE.md) · [Paper derivation](research/ender_radius_bridge/RADIAL_CENTERING_DERIVATION.md) · [Finite evidence](research/ender_radius_bridge/PHASE115_VERIFICATION.md). The published class-number-one bound remains **50 billion**; the stopped113/114cycles remain stopped.
+
 ## Phase114: symbolic bridge resource-stopped, not accepted
 
 The proposed bound keeps correlations between polynomial rows while retaining the same integer determinant. Both standalone Lean runs failed. The second reached the default 200,000-heartbeat limit while checking the dependent partitions, so the registered cycle has ended. No third run or larger limit.

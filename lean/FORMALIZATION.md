@@ -1,5 +1,9 @@
 # Current claim-to-Lean map
 
+## Phase115: finite exact checks support a paper candidate only
+
+No Lean source or production import changed in115. The new integer triangular row operator and its all-parameter derivative bound are paper mathematics, supported by a single sealed finite exact check. Neither the normalized .013 saving nor the candidate48-billion cutoff has a new Lean counterpart. The named fifty_normalized_lower wrapper cannot be invoked below its50-billion guard; a new composition from the older450^4-domain lemmas is required. [Human guide](../research/ender_radius_bridge/RADIAL_CENTERING_GUIDE.md) · [Detailed derivation and guards](../research/ender_radius_bridge/RADIAL_CENTERING_DERIVATION.md) · [Exact finite scope](../research/ender_radius_bridge/PHASE115_VERIFICATION.md).
+
 ## Phase114: failed research source, outside the production library
 
 The full block/moment/arithmetic bridge failed both standalone Lean checks; the second hit the default 200,000-heartbeat limit. The namespace and final dependency audits rejected the incomplete result. Two control annotation changes are disclosed, and unchanged-statement acceptance is not claimed. The failed research source has no production import. [Paper argument](../research/ender_radius_bridge/RADIAL_BLOCK_PROOF_GUIDE.md) · [Exact failure evidence](../research/ender_radius_bridge/PHASE114_VERIFICATION.md). No new checked bridge, CI result or cutoff; the published class-number-one bound remains **50 billion**.
