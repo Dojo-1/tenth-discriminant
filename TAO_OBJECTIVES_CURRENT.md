@@ -9,7 +9,7 @@ This is a bound, not a full classification or an optimality claim.
 These twelve rows are our working categories for
 [Tao's challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/),
 not an official numbered checklist. The [claim map](lean/FORMALIZATION.md)
-keeps theorem checking, execution evidence and independent review separate. The [universal radial operator](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md) is now integrated unchanged with passing local checks; its quantitative gain and smaller cutoff remain paper candidates.
+keeps theorem checking, execution evidence and independent review separate. The [universal radial operator](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md) is now merged in PR41 with pinned proof CI and same-head security passing; its quantitative gain and smaller cutoff remain paper candidates.
 
 ## How we are faring
 

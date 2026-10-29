@@ -1,9 +1,10 @@
 # Radial frame: integrated operator, candidate size bound
 
 **The integral radial operator is now integrated unchanged into the Lean
-library.** Module build, full build, fresh dependency checks and whole
-library audit passed on their first invocations. External CI belongs to
-the final publication head; earlier CI does not cover this new module.
+library and published in merged PR41.** Module build, full build, fresh
+dependency checks and whole-library audit passed on their first invocations.
+Pinned proof CI and same-head security passed before merge. Source, tested
+merge and actual merge have identical trees. [Exact receipt](PR41_MERGE_RECEIPT.md).
 
 The transformation changes the polynomial observations at the same points:
 
@@ -34,6 +35,6 @@ source. Runtime auxiliaries are recorded separately.
 [Understand the operator and guards](RADIAL_OPERATOR_GUIDE.md) ·
 [Exact integration evidence](PHASE117_VERIFICATION.md) ·
 [Quantitative paper candidate](RADIAL_CENTERING_DERIVATION.md).
-Publication status is versioned in the
-[PR for this integration branch](https://github.com/Dojo-1/tenth-discriminant/pulls?q=head%3Acodex%2Fradial-operator-integration).
+Published merge: e74028a; source: ab5558f. Phase118 is preregistered to
+prove a sufficient ordinary-jet estimate; registration is not proof.
 No full classification, optimality or independent-review claim.

@@ -2,7 +2,7 @@
 
 ## Phase117: radial operator integrated unchanged
 
-The accepted radial operator is now integrated unchanged in RadialOperator.lean, with one root import. Module build, full build, fresh input check and whole audit all pass on their first invocations. Whole audit: 5,450 logical declarations, 4,644 theorems and 17,026 runtime auxiliaries; 199 reachable modules. The 57 added logical declarations are exactly the new namespace; none disappeared. [Current human scope](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md) · [Exact evidence](research/ender_radius_bridge/PHASE117_VERIFICATION.md). External CI is versioned by the final publication head. The quantitative gain and 48-billion theorem remain paper; the published cutoff stays **50 billion**.
+The accepted radial operator is now integrated unchanged in RadialOperator.lean, with one root import. Module build, full build, fresh input check and whole audit all pass on their first invocations. Whole audit: 5,450 logical declarations, 4,644 theorems and 17,026 runtime auxiliaries; 199 reachable modules. The 57 added logical declarations are exactly the new namespace; none disappeared. [Current human scope](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md) · [Exact evidence](research/ender_radius_bridge/PHASE117_VERIFICATION.md). PR41 is merged at e74028a after pinned proof CI and same-head security passed; source/tested/actual trees agree. [Publication receipt](research/ender_radius_bridge/PR41_MERGE_RECEIPT.md). The quantitative gain and 48-billion theorem remain paper; the published cutoff stays **50 billion**.
 
 ## Phase116: universal integral radial bridge checked standalone
 
