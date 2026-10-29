@@ -1,0 +1,39 @@
+{
+  "status": "EXACT_FROZEN_TREE_CI_REPLAY_CONFIRMED_FROM_TERMINAL_RAW_LOG",
+  "head": "39e9ce34d09ed9f990fab4b9ed5e3980cee64119",
+  "run": 40476544973,
+  "job": 122096467295,
+  "event": "push",
+  "attempt": 1,
+  "conclusion": "success",
+  "finished_at": "2026-10-27T09:16:36Z",
+  "audit": {
+    "logical": 4917,
+    "theorems": 4155,
+    "runtime_auxiliaries": 16985
+  },
+  "source_pairs": 250,
+  "control_families": [
+    "exact_gram_controls.py",
+    "jet_uniqueness_controls.py",
+    "jet_negative_controls.py",
+    "multiplicity_negative_controls.py",
+    "degree_negative_controls.py",
+    "nonzero_negative_controls.py",
+    "affine_negative_controls.py",
+    "assembly_negative_controls.py"
+  ],
+  "control_evidence": "Frozen driver has eight check=True subprocess calls before finalPASS;per-family CONTROL_FAMILY_OK markers did not exist in this older driver",
+  "log_characters": 3165168,
+  "archive_sha256": "60c6a8acbdc7fb649b60686195f71d86fe2d21634ffad08509cc25a82a609e1e",
+  "raw_sha256": {
+    "run.json": "0c76b1a29f5417d8c15361a8bf8e6f3a6115aeb679d8e3432322a45d614cde20",
+    "jobs.json": "3c36d5816c238052fcd6d874e79a2a4598f7f682d3d5842b0fb90d4193990eb0",
+    "job.json": "bff00b6c926c0634734da03f5d1d7283465bb2ff69e5b86c00ff09ff983f4cec",
+    "job.log": "46ea1316a309c252bbaba76c7274e458f212301cc7076a720ce69dfd827567a7",
+    "negative_controls.py": "904f614a3dd9db6fdd3b39570ff38305475f3963926d2893f1cb300cc8d371f8",
+    "audit.py": "cc87cbf7d5fcf2679bc8af5c78241344618cfd03db6c2383eb1ff5788a58d68e"
+  },
+  "collector_note": "Initial observer expected newer per-family markers;corrected after inspecting exact frozen driver;no CI restart or changed test standard",
+  "scope": "Existing projectCI at EXACT Argon source;not Argon independent replay or human derivation;no new build/retry dispatched"
+}

@@ -61,3 +61,5 @@ For exact theorem APIs and the scope of further composition, see the
 its certificate alone passed and supplies no new checked cutoff.
 
 [Reconstruct the geometric ceiling](GEOMETRIC_COMPARISON_GUIDE.md): radius rounding, two cell counts, ordinary jets and the normalized inequality.
+
+[Verification layers](VERIFICATION_LAYERS_CURRENT.md) distinguishes the exact frozen review, historical kernel replay, current CI and the new standalone successor.
