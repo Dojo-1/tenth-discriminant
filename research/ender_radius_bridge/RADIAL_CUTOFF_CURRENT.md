@@ -2,8 +2,9 @@
 
 **The 48-billion actual-field theorem is integrated unchanged into the Lean
 library.** Module build, complete build, fresh dependency checks and the
-whole-library audit passed on their first invocations. Publication checks
-are versioned at the [PR for this branch](https://github.com/Dojo-1/tenth-discriminant/pulls?q=head%3Acodex%2Fradial-cutoff-integration).
+whole-library audit passed on their first invocations. [PR42](https://github.com/Dojo-1/tenth-discriminant/pull/42) merged at
+`0bde1bf58893f1adf66bfded5eaf1a0f270c6dce` after pinned CI and security
+passed. Source, tested merge and actual merge have the same tree.
 
 For every imaginary quadratic number field of class number one, Lean proves
 that its actual absolute discriminant is below 48,000,000,000. The theorem

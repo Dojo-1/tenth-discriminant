@@ -1,5 +1,7 @@
 # Current claim-to-Lean map
 
+Current reader reconciliation (Phase122): [source map](../research/ender_radius_bridge/MEANING_PRESERVING_SOURCE_MAP.md). PR42 merged the checked 48-billion theorem; only the stronger 0.013 estimate remains paper. The sole registered 47.5-billion attempt failed elaboration and remains unrepaired; it supplies no new cutoff. Historical records below retain their original scope.
+
 ## Phase121: full actual-field48b proof in the production library
 
 All four FIRST local checks pass: leaf-module build, full build, nine fresh dependency checks and whole compiled audit. All56written public types/proofs and6data definitions from118/119/120 are unchanged in three modules with three root imports. Whole audit5,584logical/4,772theorems/17,029runtime,202reachable modules. The old inventory loses nothing;134additions include the132source expectation plus two generated equations, explicitly disclosed. The actual theorem gives absdiscr<48000000000 for ANY totally complex degree2 number field of class number1. [Current human scope](../research/ender_radius_bridge/RADIAL_CUTOFF_CURRENT.md) · [Exact evidence](../research/ender_radius_bridge/PHASE121_VERIFICATION.md). Exact-head CI/security/publication are versioned separately in the branch PR; no full-classification, optimality or new human-review claim.
