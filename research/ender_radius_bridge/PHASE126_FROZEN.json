@@ -1,0 +1,16 @@
+{
+  "protocol_commit": "5d58fd2",
+  "first_source_sha256": "11fe4e4b5574e9b29ebaa119112290fc8a7716f196b2a8990b823ce7e01228db",
+  "outside_proofs_sha256": "26671e34873b9a1a127630f5963ba1f916102578e099a77827d91d9f1d498722",
+  "immutable_files": {
+    "research/ender_radius_bridge/PHASE126_PROTOCOL.md": "91df3f3df3587c70dcc5ed77feb51a3b6a7282d708d022df64542574882cc8ea",
+    "research/ender_radius_bridge/phase126_preflight.py": "82781ca6eb0dd50c816315cd601ddae5cf92c7d4a5f0136ebeb7bb2eab2f4a2a",
+    "research/ender_radius_bridge/run_phase126.ps1": "69f1622951279ffa3e0c718753b91a2516b3db6c6b6e1e97770db2ecff0ab35b"
+  },
+  "theorems": 2,
+  "required_roots": 4,
+  "forbidden_roots": 8,
+  "max_calls": 2,
+  "cumulative_seconds": 300,
+  "memory_mb": 8192
+}
