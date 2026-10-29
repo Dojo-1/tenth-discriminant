@@ -50,3 +50,11 @@ Do not promote standalone success to integrated/current published status.
 Current accepted integrated bound remains48billion. No new reviewer,
 automatic merge or external posting. All earlier mathematical sources,
 workflows/pins, controls, protocols and stopped attempts remain unchanged.
+
+Pre-execution clarification: a compiler-recovery sorryAx appearing ONLY
+downstream of the permitted adapter elaboration error is recorded as the
+failed attempt, not an explicitly introduced axiom. It may be removed by
+the one allowed adapter repair; acceptance still requires native0 and
+standard3axioms at EVERY registered root. Any independently introduced
+axiom, unsafe proof, forbidden dependency or error outside the adapter
+(except those documented downstream recovery diagnostics) stops the cycle.
