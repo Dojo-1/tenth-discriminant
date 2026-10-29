@@ -1,10 +1,12 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared through119; this brief is not posted.** Existing public
+**AI-prepared through120; this brief is not posted.** Existing public
 repo-linked comments are recorded separately. Tao asks for a human-generated
 summary; the contributor should review and revise the text in their own words.
 
 ## Current verification boundary
+
+Phase120 now proves the FULL actual-field48-billion cutoff standalone: every totally complex degree2 number field of class number1 has actual absolute discriminant<48000000000, with no supplied generator or earlier cutoff/classification premise. First invocation PASS174.6648317s; namespace28logical/28theorems; three fresh closures exclude73registered roots. [Human explanation](research/ender_radius_bridge/FORTY_EIGHT_BILLION_GUIDE.md) · [Exact evidence and input policy](research/ender_radius_bridge/PHASE120_VERIFICATION.md). Published integrated result stays50billion until unchanged integration and pinned CI; no new independent review or Tao posting.
 
 Phase119 now checks the full SAME original integer determinant upper bound at the unchanged production radius: normalized log(detG)<=.8logD-.823 for everyD>=41006250000, with actual jet/trace equality, guarded positivity and exact penalty aggregation. [Human explanation](research/ender_radius_bridge/RADIAL_DETERMINANT_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE119_VERIFICATION.md). This is standalone: arithmetic lower/endpoint/actual-field48bcomposition, integration and CI remain. Published cutoff stays50billion; no new review or Tao posting.
 

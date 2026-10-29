@@ -1,0 +1,128 @@
+{
+  "phase": 120,
+  "status": "FULL_ACTUAL_FIELD_48B_CUTOFF_FIRST_CALL_PASS_STANDALONE",
+  "registered_commit": "ec81001b325345440a2ea83a05a33aa9ad2d6cff",
+  "reader_exceptions": [
+    "README.md",
+    "STATUS.md",
+    "lean/FORMALIZATION.md",
+    "TAO_OBJECTIVES_CURRENT.md",
+    "TAO_REPLY_BRIEF.md",
+    "research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md"
+  ],
+  "frozen_files": 1796,
+  "accepted_dependency_sha256": "9a66f2b319697ef1e6343e74ec94cf3a82ae938817ae8cc42e05afcb455f8626",
+  "accepted_dependency_commit": "57a4654d3a43f1f69ad8f892cb41983afde946e0",
+  "pinned_primary_head": "ab5558ff7b482a6bec185b37115b6faf57a82c28",
+  "runs": [
+    {
+      "phase": 120,
+      "mode": "build",
+      "scope": "Full same-integer arithmetic comparison and actual-field48b cutoff",
+      "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+      "protocol_commit": "ec81001",
+      "source_sha256": "43ca85073fb5579ae10a8429b07317de7c3e510efdcae0cd950ce6be2e438815",
+      "source_snapshot": "PHASE120_build_20261029134932804.source.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 174.6648317,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3562999808,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../../tenth-radial-blocks/research/ender_radius_bridge/Phase120RadialCutoff.lean"
+      ],
+      "stdout": "PHASE120_build_20261029134932804.stdout.log",
+      "stderr": "PHASE120_build_20261029134932804.stderr.log"
+    }
+  ],
+  "cumulative_elapsed_seconds": 174.6648317,
+  "public_theorems": [
+    "integer_det_positive",
+    "prime_mass_log_lower",
+    "recovered_normalized_lower",
+    "recovered_mass_le_actual_log",
+    "endpoint_log_controls",
+    "endpoint_log_lower",
+    "odd_large_classNumber_ne_one_48b",
+    "imaginaryQuadratic_large_classNumber_ne_one_48b",
+    "imaginaryQuadratic_classNumber_one_discriminant_bound_48b",
+    "totallyComplex_degree_two_classNumber_one_discriminant_bound_48b",
+    "endpoint_identity",
+    "negative_endpoint_control",
+    "empty_prime_product_control",
+    "duplicate_prime_control",
+    "actual_even_discriminant_control"
+  ],
+  "definitions": [],
+  "namespace": {
+    "logical": 28,
+    "theorems": 28,
+    "runtime_auxiliaries": 0
+  },
+  "audit_marker": "AUDIT_OK TenthDiscriminant.RadialCutoff: 28 logical declarations; 28 theorems; 0 runtime-only auxiliaries excluded",
+  "fresh_closures": {
+    "prime_mass_log_lower": 39170,
+    "odd_large_classNumber_ne_one_48b": 55607,
+    "totallyComplex_degree_two_classNumber_one_discriminant_bound_48b": 58736
+  },
+  "forbidden_roots": 73,
+  "dependency_policy": {
+    "allowed_from_earlier_operator_exclusions": [
+      "TenthDiscriminant.smallPrimeNormLifting_of_classNumber_one",
+      "TenthDiscriminant.smallPrime_nonsquare_of_classNumber_one",
+      "TenthDiscriminant.rectangularTraceGram_valuation_of_classNumber_one",
+      "TenthDiscriminant.classNumber_one_of_field_equiv"
+    ],
+    "additional_exclusions": [
+      "TenthDiscriminant.imaginaryQuadratic_large_classNumber_ne_one_50b",
+      "TenthDiscriminant.imaginaryQuadratic_classNumber_one_discriminant_bound_50b",
+      "TenthDiscriminant.FirstCertificate.Tuned.fifty_normalized_lower",
+      "TenthDiscriminant.FirstCertificate.Tuned.fifty_dimensions",
+      "TenthDiscriminant.ellipse_enderPrimeMassLower_le_counted_upperB",
+      "TenthDiscriminant.ellipse_enderPrimeMassLower_le_upperB",
+      "TenthDiscriminant.ellipse_primeMass_log_le_upperB"
+    ],
+    "forbidden_roots": 73
+  },
+  "archive": {
+    "path": "PHASE120_RAW.zip",
+    "sha256": "223c31c3d2e21678cc94ecfc4a81fdb0cf0a0b665c4116a61808b690abf5aae9"
+  },
+  "raw_sha256": {
+    "PHASE120_build_20261029134932804.source.lean": "43ca85073fb5579ae10a8429b07317de7c3e510efdcae0cd950ce6be2e438815",
+    "PHASE120_build_20261029134932804.stdout.log": "fcc36c874499839d41e2ac0fb0246546aa9da599fd7aa185537e9c614b4d54b1",
+    "PHASE120_build_20261029134932804.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE120_build_20261029134932804.result.json": "df410c00bebd5b832e1808eb961eaf5a743c1187aa1e90dbb53da4c08b189ca9"
+  },
+  "sha256": {
+    "research/ender_radius_bridge/PHASE120_PROTOCOL.md": "64ccfe012a820e7e7d329ef4c9ada6c5efd60c6a4183eeec2a911370f771d7bc",
+    "research/ender_radius_bridge/Phase120RadialCutoff.lean": "43ca85073fb5579ae10a8429b07317de7c3e510efdcae0cd950ce6be2e438815",
+    "research/ender_radius_bridge/run_phase120.ps1": "0837ea33b87e3fcd8feae37b59c9779c3794cbccf257152b3c8910128da3ddbb",
+    "research/ender_radius_bridge/phase120_preflight.py": "46004815251d5e9147de4b0618b3eb2b97dc251354c1c7965a56f56641c7cdfb",
+    "research/ender_radius_bridge/PHASE120_FROZEN_SURFACE.json": "be00b5d612e0a835c062e1d99a1830c4fc7dcf734942bb79c800d3c61202ad8f",
+    "research/ender_radius_bridge/PHASE120_FROZEN_BASELINE.json": "470f777b734ec9eb839136ccf43c3ef384f169aac946ecaa718ce8090ed3f7be",
+    "research/ender_radius_bridge/PHASE120_DEPENDENCY_POLICY.json": "69f060db1061f4af6c78dcaadc47cbc0b4f29e1de882c388529fc933a4675d6c",
+    "research/ender_radius_bridge/FORTY_EIGHT_BILLION_GUIDE.md": "7bf8bb93b18f278e43cc73a481923753e98eef2e474cf3c30906573099137d22",
+    "research/ender_radius_bridge/PHASE120_VERIFICATION.md": "4f451612e0cb77ac2e1d6e82c4d9ba4bc9ff10e6fa6061cc9aeaa57e693829f6",
+    "research/ender_radius_bridge/verify_phase120_results.py": "2a38f47f1d0980fb82334ee0194e6f9b97f0b821dd45d7b7426347d84864f499"
+  },
+  "warnings": {
+    "total": 5,
+    "all_inherited_exact_dependencies": true,
+    "replayed_for_style": false
+  },
+  "published_integrated_cutoff": 50000000000,
+  "checked_standalone_actual_field_cutoff": 48000000000,
+  "geometry_domain_lower": 41006250000,
+  "scope": "Full actual absolute discriminant bound for every totally complex degree2 number field of class number1; standalone only; unchanged integration/exact-head CI and human semantic review pending; no classification/optimality claim",
+  "final_declaration": "TenthDiscriminant.RadialCutoff.totallyComplex_degree_two_classNumber_one_discriminant_bound_48b",
+  "no_remaining_invocation_needed": true
+}

@@ -1,6 +1,6 @@
 # Tao's challenge: current accounting and side discoveries
 
-**The actual class-number-one bound remains 50 billion.** The new side
+**The published class-number-one bound remains 50 billion.** The new side
 result is an integrated local Lean bound for ANY imaginary quadratic field with
 at most two ideal classes: actual absolute discriminant<2^52, sharper<2^50
 when odd. [Understand the transport](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md).
@@ -9,13 +9,13 @@ This is a bound, not a full classification or an optimality claim.
 These twelve rows are our working categories for
 [Tao's challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/),
 not an official numbered checklist. The [claim map](lean/FORMALIZATION.md)
-keeps theorem checking, execution evidence and independent review separate. The [universal radial operator](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md) is now merged in PR41 with pinned proof CI and same-head security passing; the [same-integer production upper estimate](research/ender_radius_bridge/RADIAL_DETERMINANT_GUIDE.md) now passes standalone Lean, while the48bcutoff still needs the lower-bound/field composition.
+keeps theorem checking, execution evidence and independent review separate. The [universal radial operator](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md) is now merged in PR41 with pinned proof CI and same-head security passing; the [full actual-field48-billion theorem](research/ender_radius_bridge/FORTY_EIGHT_BILLION_GUIDE.md) now passes standalone Lean; unchanged integration and pinned CI remain.
 
 ## How we are faring
 
 | # | Tao's objective | Where we are, with the limit attached |
 |---:|---|---|
-| 1 | Effective bound without Heegner input | **Checked cutoff:** imaginary quadratic fields of class number one have absolute discriminant below 50 billion. [Proof and guards](research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md). |
+| 1 | Effective bound without Heegner input | **Published cutoff:50 billion; standalone48-billion theorem checked, integration/CI pending.** Both concern actual imaginary quadratic fields of class number one. [Proof and guards](research/ender_radius_bridge/FIFTY_BILLION_GUIDE.md). |
 | 2 | Best efforts to optimize the constant | **Conservative improvement:** 700 to 50 billion; the latest step from 62.5 to 50 saves 20%. Other approaches report much smaller bounds. No optimality claim. |
 | 3 | A finite computation can finish the range | **Certificates supplied** for the canonical field family. The separate [finite-endgame scope](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md) matters; no full-classification announcement here. |
 | 4 | High-quality, possibly upstreamable Lean | **Connected formal apparatus.** Independent human semantic/API review and Mathlib acceptance remain open. [Claim map](lean/FORMALIZATION.md). |

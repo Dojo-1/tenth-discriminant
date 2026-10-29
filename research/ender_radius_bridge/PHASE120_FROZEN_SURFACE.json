@@ -1,0 +1,20 @@
+{
+  "types": {
+    "integer_det_positive": "theorem integer_det_positive (Q : Finset (Int × Int)) (D R S : Nat)\n    (hD : 0 < D) (hR : 1 ≤ R) (hS : 1 ≤ S)\n    (hcard : 2*(R-1)+(S-1) < Q.card) :\n    0 < (integerRectangularTraceGram Q D S R S).det",
+    "prime_mass_log_lower": "theorem prime_mass_log_lower (Q : Finset (Int × Int)) (D R S : Nat)\n    (hD : 0 < D) (hR : 1 ≤ R) (hS : 1 ≤ S)\n    (hcard : 2*(R-1)+(S-1) < Q.card) [Fact ((D : Int)%4=3)] (hsq : Squarefree D)\n    (hclass : NumberField.classNumber (QuadraticField (((D : Int)+1)/4))=1)\n    (hRcut : (R : Int) < ((D : Int)+1)/4) :\n    exactOddPrimeMass R S ≤ Real.log ((integerRectangularTraceGram Q D S R S).det : Real)",
+    "recovered_normalized_lower": "theorem recovered_normalized_lower (D : Nat) (hD : 41006250000 ≤ D) :\n    (999997/1000000 : Real)*Real.log D-5739/1000 ≤\n      recoveredPrimeMassLower (Tuned.R D) (Tuned.S D) FirstEnderInterval.tailBudget /\n        comparisonScale (Tuned.R D) (Tuned.S D)",
+    "recovered_mass_le_actual_log": "theorem recovered_mass_le_actual_log (D : Nat) (hD : 41006250000 ≤ D)\n    [Fact ((D : Int)%4=3)] (hsq : Squarefree D)\n    (hclass : NumberField.classNumber (QuadraticField (((D : Int)+1)/4))=1) :\n    recoveredPrimeMassLower (Tuned.R D) (Tuned.S D) FirstEnderInterval.tailBudget ≤\n      Real.log ((integerRectangularTraceGram (ellipsePairs D (Tuned.rho D)) D\n        (Tuned.S D) (Tuned.R D) (Tuned.S D)).det : Real)",
+    "endpoint_log_controls": "theorem endpoint_log_controls : (6931/10000 : Real) ≤ Real.log 2 ∧\n    (1609/1000 : Real) ≤ Real.log 5",
+    "endpoint_log_lower": "theorem endpoint_log_lower (D : Nat) (hD : 48000000000 ≤ D) :\n    (245813/10000 : Real) ≤ Real.log D",
+    "odd_large_classNumber_ne_one_48b": "theorem odd_large_classNumber_ne_one_48b (D : Nat) (hD : 48000000000 ≤ D)\n    [Fact ((D : Int)%4=3)] (hsq : Squarefree D) :\n    NumberField.classNumber (QuadraticField (((D : Int)+1)/4))≠1",
+    "imaginaryQuadratic_large_classNumber_ne_one_48b": "theorem imaginaryQuadratic_large_classNumber_ne_one_48b (d : Nat)\n    [Fact (0<d)] (hsq : Squarefree d) (hd : 48000000000 ≤ d) :\n    NumberField.classNumber (ImaginaryQuadraticField d)≠1",
+    "imaginaryQuadratic_classNumber_one_discriminant_bound_48b": "theorem imaginaryQuadratic_classNumber_one_discriminant_bound_48b\n    (d : Nat) [Fact (0<d)] (hsq : Squarefree d)\n    (hc : NumberField.classNumber (ImaginaryQuadraticField d)=1) :\n    (NumberField.discr (ImaginaryQuadraticField d)).natAbs < 48000000000",
+    "totallyComplex_degree_two_classNumber_one_discriminant_bound_48b": "theorem totallyComplex_degree_two_classNumber_one_discriminant_bound_48b\n    (K : Type*) [Field K] [NumberField K] [NumberField.IsTotallyComplex K]\n    (hdegree : Module.finrank Rat K=2) (hc : NumberField.classNumber K=1) :\n    (NumberField.discr K).natAbs < 48000000000",
+    "endpoint_identity": "theorem endpoint_identity : (2 : Nat)^13*3*5^9=48000000000",
+    "negative_endpoint_control": "theorem negative_endpoint_control :\n    ¬(4/5*(2458/100 : Real)-823/1000 < 999997/1000000*(2458/100)-5739/1000)",
+    "empty_prime_product_control": "theorem empty_prime_product_control (e : Nat → Nat) :\n    (∏ p ∈ (∅ : Finset Nat),p^e p)=1",
+    "duplicate_prime_control": "theorem duplicate_prime_control : ¬ (3 : Int)^2 ∣ (3 : Int)",
+    "actual_even_discriminant_control": "theorem actual_even_discriminant_control (d : Nat) [Fact (0<d)]\n    (hsq : Squarefree d) (hd : d=1 ∨ d=2) :\n    (NumberField.discr (ImaginaryQuadraticField d)).natAbs ≤ 8"
+  },
+  "definitions": {}
+}

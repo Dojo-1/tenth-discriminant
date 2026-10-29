@@ -5,7 +5,7 @@
 That is the idea behind this AI-assisted contribution to [Terence Tao's challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).
 The question concerns imaginary quadratic number systems: extensions of the rational numbers obtained by adjoining a square root of a negative number. Which have unique factorization in their ring of integers?
 
-## The result in one sentence
+## The published result in one sentence
 
 **Our Lean development proves that any imaginary quadratic number field with class number one has absolute field discriminant below 50 billion.**
 
@@ -27,7 +27,7 @@ The hard part is making both estimates refer to exactly the same positive intege
 
 ## What is checked, and what remains
 
-Lean checks the encoded theorem and its dependencies; the audit checks for incomplete or nonstandard proof dependencies. [Exact statements and scope](lean/FORMALIZATION.md) distinguish these checks from human mathematical review.
+**Local update:** the [actual-field48-billion theorem](research/ender_radius_bridge/FORTY_EIGHT_BILLION_GUIDE.md) passes standalone Lean; integration and pinned CI remain. Lean checks the encoded theorem and its dependencies; the audit checks for incomplete or nonstandard proof dependencies. [Exact statements and scope](lean/FORMALIZATION.md) distinguish these checks from human mathematical review.
 
 Independent human semantic review remains open. One bounded AI review covers the final **50-billion** proof and exact staircase lemma at `63be64b`. It re-derived new local calculations and source-traced inherited machinery; **Lean/CI were not rerun by that reviewer**. [Review and limitations](research/ender_radius_bridge/PHASE58_VERIFICATION.md).
 
@@ -40,7 +40,7 @@ The repository also contains a separate canonical-family classification theorem 
 | [Tao's objectives](TAO_OBJECTIVES_CURRENT.md) | Achievements, limitations and side discoveries |
 | [Human proof guide](lean/HUMAN_GUIDE.md) | Why the determinant is positive |
 | [Exact staircase count](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) | A double sum understood by counting the same boxes in another order |
-| [Compatible transport](research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md) · [All-field h<=2 bound](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) · [Radial frame: same integer, smaller ceiling](research/ender_radius_bridge/RADIAL_DETERMINANT_GUIDE.md) | Explicit invariants, preserved failures and numerical scope |
+| [Compatible transport](research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md) · [All-field h<=2 bound](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) · [Radial frame and local48-billion proof](research/ender_radius_bridge/FORTY_EIGHT_BILLION_GUIDE.md) | Explicit invariants, preserved failures and numerical scope |
 | [Research history](STATUS.md) | Earlier checkpoints, failed attempts and corrections |
 
 With the pinned Lean toolchain and dependencies installed, the core checks are:
