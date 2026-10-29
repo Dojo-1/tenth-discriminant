@@ -20,6 +20,12 @@ The original N=RS by N integer matrix is
 
 It has exactly these rows, points, derivative orders, and FACTOR TWO. Over R, B_d(v,v)=2|v|^2. Its determinant is a nonnegative integer; the separate strict point-count and jet-depth theorem makes it positive. Neither this G nor its determinant equals Delta_K.
 
+### The normalization checksum at the smallest scale
+
+For the ordinary basis (1,t) of the SELECTED pair order, the usual algebraic trace matrix of multiplication has determinant -4d; the positive pairing B_d(v,w)=Tr(v*conj(w)) has matrix diag(2,2d), determinant +4d. When d=19, these are -76 and +76 respectively, while the ACTUAL field discriminant is -19 because the maximal order has index two. Thus the positive trace-Gram and the algebraic discriminant are different forms even when their magnitudes happen to match in this two-dimensional basis; the large RS-by-RS jet Gram is a third determinant.
+
+This is the simplest guard against the reported normalization mistake: before any inequality, write down which basis, conjugation, trace normalization, derivative convention, lattice index and determinant are actually being used. **Inert-prime exclusions for the global theorem require** p odd prime, d squarefree, d=3 mod 4, class number one in the actual maximal order, and the strict bound p<(d+1)/4; the source bridge then proves the nonsquare guard. The local two-sided factorization itself only requires p odd prime and -d nonsquare modulo p.
+
 ## Why one inert p supplies p^(2F(p)): four checkable equalities
 
 Take an odd prime p for which -d is a nonsquare in F_p. Thus A_d/p is the quadratic field F_(p^2), and for **each original integer pair** q, Frobenius sends q^p to qbar mod p. Equivalently both integer coordinates of q^p-qbar are divisible by p. In the global class-number-one application, the odd small-prime nonsquare property comes from the ACTUAL maximal-order ideal/norm bridge; it is not assumed from class number one without proof.
