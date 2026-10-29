@@ -9,7 +9,7 @@ This is a bound, not a full classification or an optimality claim.
 These twelve rows are our working categories for
 [Tao's challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/),
 not an official numbered checklist. The [claim map](lean/FORMALIZATION.md)
-keeps theorem checking, execution evidence and independent review separate. The new [radial-basis candidate](research/ender_radius_bridge/RADIAL_CENTERING_GUIDE.md) has finite exact checks, not a new checked cutoff; Phase114 remains stopped.
+keeps theorem checking, execution evidence and independent review separate. The [universal radial operator](research/ender_radius_bridge/RADIAL_OPERATOR_GUIDE.md) now passes standalone Lean; its quantitative gain and smaller cutoff remain paper candidates.
 
 ## How we are faring
 
@@ -39,7 +39,7 @@ keeps theorem checking, execution evidence and independent review separate. The 
 | One coherent prime family | The SAME ideals provide counts and4*card(P) selected distinct labelled norm elements; class-slice double counting and weighted loss feed the SAME Gram. [Family](research/ender_radius_bridge/COMMON_FAMILY_GUIDE.md) · [Weighted bridge](research/ender_radius_bridge/EVEN_WEIGHTED_BRIDGE_GUIDE.md). |
 | Geometric normalization | Actual Minkowski constants and closed weighted estimates connect field discriminant to the all-range contradiction. [Even normalization](research/ender_radius_bridge/EVEN_NORMALIZATION_GUIDE.md). Odd/even discriminant factors differ. |
 | Field invariants, independent of coordinates | A generic actual ideal-class bijection preserves class number under field isomorphism without h1/PID. Phase107 combines both actual-discriminant charts; the caller supplies no generator. [Global bound](research/ender_radius_bridge/ALL_FIELD_TWO_CLASS_GUIDE.md). |
-| Failure as mathematical information | Per-form zero-row counting fails although aggregate accounting works; resource-stopped attempts and negative scalar samples remain preserved. The [larger-block trial](research/ender_radius_bridge/RADIAL_BLOCK_CURRENT.md) stopped after11/12cases; partial gains supply no new cutoff. A distinct integral radial basis now has a [48-billion paper comparison](research/ender_radius_bridge/RADIAL_CENTERING_GUIDE.md), still unformalized. [Counterexample](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md) · [History](STATUS.md). |
+| Failure as mathematical information | Per-form zero-row counting fails although aggregate accounting works; resource-stopped attempts and negative scalar samples remain preserved. The [larger-block trial](research/ender_radius_bridge/RADIAL_BLOCK_CURRENT.md) stopped after11/12cases; partial gains supply no new cutoff. The distinct [integral radial operator](research/ender_radius_bridge/RADIAL_OPERATOR_GUIDE.md) now passes standalone Lean, while the 48-billion quantitative comparison remains paper. [Counterexample](research/ender_radius_bridge/SPLIT_COUNT_BOUNDARY_GUIDE.md) · [History](STATUS.md). |
 
 ## Exact verification boundaries
 

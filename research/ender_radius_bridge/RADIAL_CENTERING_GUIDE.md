@@ -41,7 +41,10 @@ It verifies the proposed operator and formulas on that sealed corpus,
 including empty/singular cases, origin, asymmetric points and negative
 weights. It also rejects nine stronger false claims.
 
-**What remains:** Lean must prove the operator, all-parameter derivative
+**Now checked standalone:** the [universal integral operator, all ordinary
+jets and original-Gram arithmetic bridge](RADIAL_OPERATOR_GUIDE.md).
+
+**What remains:** Lean must prove the all-parameter quantitative derivative
 bound, uniform gain and replacement of the geometric upper estimate,
 then compose the actual-field cutoff. The50b theorem, the stopped block
 proof and their audit histories retain their separate status.

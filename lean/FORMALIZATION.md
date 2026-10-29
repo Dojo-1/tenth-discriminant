@@ -1,5 +1,9 @@
 # Current claim-to-Lean map
 
+## Phase116: universal radial operator proved; quantitative bound remains
+
+Research source Phase116RadialOperator.lean proves the explicit monic radial matrix, integer inverse, generic polynomial/all-order ordinary-jet action, actual integer Gram congruence/determinant, exact real cast, guarded PD/positive integer determinant/original divisor, and reduced Gram rank equality for every prime. It is standalone, with no production import. All 27 public types/six definitions are unchanged across FAIL109.3232326s/PASS56.583463s; namespace57logical/51theorems, standard3axioms; fresh11194/13985/33149closures exclude70roots. [Human guide](../research/ender_radius_bridge/RADIAL_OPERATOR_GUIDE.md) · [Exact scope](../research/ender_radius_bridge/PHASE116_VERIFICATION.md). The parameter-addition law and universal quantitative gain remain unformalized. This is not a 48-billion cutoff or a production/CI result. The published bound remains 50 billion.
+
 ## Phase115: finite exact checks support a paper candidate only
 
 No Lean source or production import changed in115. The new integer triangular row operator and its all-parameter derivative bound are paper mathematics, supported by a single sealed finite exact check. Neither the normalized .013 saving nor the candidate48-billion cutoff has a new Lean counterpart. The named fifty_normalized_lower wrapper cannot be invoked below its50-billion guard; a new composition from the older450^4-domain lemmas is required. [Human guide](../research/ender_radius_bridge/RADIAL_CENTERING_GUIDE.md) · [Detailed derivation and guards](../research/ender_radius_bridge/RADIAL_CENTERING_DERIVATION.md) · [Exact finite scope](../research/ender_radius_bridge/PHASE115_VERIFICATION.md).

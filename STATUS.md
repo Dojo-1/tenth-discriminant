@@ -1,5 +1,9 @@
 # Status — 2026-10-29
 
+## Phase116: universal integral radial bridge checked standalone
+
+The full universal monic radial operator now passes standalone Lean checking. Its explicit integer matrix acts on the actual polynomials and every ordinary jet; the actual new Gram has the original determinant and prime divisor, with guarded real positivity and equal ranks modulo every prime. All 27 public statements and six definitions remained byte-exact through two proof-only repairs. Namespace audit: 57 logical declarations; three fresh dependency closures exclude 70 old result roots. [Human guide](research/ender_radius_bridge/RADIAL_OPERATOR_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE116_VERIFICATION.md). The quantitative .013 gain and 48-billion cutoff remain paper candidates. Production integration and new CI are pending; the published cutoff remains **50 billion**.
+
 ## Phase115: integral radial basis; 48-billion paper candidate
 
 The monic radial basis keeps the same integer determinant and includes every ordinary derivative term. Its paper estimate gives a uniform normalized saving of at least .013, sufficient for a **candidate 48-billion comparison**. The one registered exact trial passed all 162 matrix cases and the fixed coefficient controls. This is **not a new Lean theorem or checked cutoff**: the operator, uniform bound, actual-field composition and pinned CI remain. [Human guide](research/ender_radius_bridge/RADIAL_CENTERING_GUIDE.md) · [Paper derivation](research/ender_radius_bridge/RADIAL_CENTERING_DERIVATION.md) · [Finite evidence](research/ender_radius_bridge/PHASE115_VERIFICATION.md). The published class-number-one bound remains **50 billion**; the stopped113/114cycles remain stopped.

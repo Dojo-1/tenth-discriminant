@@ -1,0 +1,27 @@
+{
+  "scope": "Two proof-only coercion/rewriting repairs; no public type or data body change",
+  "unified_diff": [
+    "--- attempt1\n",
+    "+++ attempt2\n",
+    "@@ -194,7 +194,7 @@\n",
+    "     ring",
+    "   \u00b7 have hz : (r.descFactorial j : Complex)=0 := by",
+    "       rw [Nat.descFactorial_of_lt (by omega)]",
+    "-      rfl",
+    "+      norm_num",
+    "     simp [derivativeRow,hj,hz]",
+    " ",
+    " theorem complex_jet_action (R S : Nat) (a : Int) (i : Fin (R*S))",
+    "@@ -250,7 +250,9 @@\n",
+    " ",
+    " theorem mapped_det_one {A : Type*} [CommRing A] (phi : Int \u2192+* A)",
+    "     (R S : Nat) (a : Int) : ((matrix R S a).map phi).det=1 := by",
+    "-  rw [\u2190 phi.map_det,determinant_one,map_one]",
+    "+  calc",
+    "+    ((matrix R S a).map phi).det = phi (matrix R S a).det := (phi.map_det _).symm",
+    "+    _ = 1 := by rw [determinant_one,map_one]",
+    " ",
+    " theorem real_posSemidef (Q : Finset (Int \u00d7 Int)) (D J R S : Nat) (a : Int)",
+    "     (hD : 0 < D) : ((gram Q D J R S a).map (Int.castRingHom Real)).PosSemidef := by"
+  ]
+}

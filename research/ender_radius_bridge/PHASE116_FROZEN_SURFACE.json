@@ -1,0 +1,39 @@
+{
+  "types": {
+    "term_bounds": "theorem term_bounds (R S : Nat) (i : Fin (R*S)) (t : Nat)\n    (ht : t ≤ min (i.val/S) (i.val%S)) :\n    t ≤ i.val/S ∧ t ≤ i.val%S ∧ i.val%S-t < S",
+    "target_in_range": "theorem target_in_range (R S : Nat) (i : Fin (R*S)) (t : Nat)\n    (ht : t ≤ min (i.val/S) (i.val%S)) :\n    target S (i.val/S) (i.val%S) t < R*S",
+    "targetFin_labels": "theorem targetFin_labels (R S : Nat) (i : Fin (R*S)) (t : Nat)\n    (ht : t ≤ min (i.val/S) (i.val%S)) :\n    (targetFin R S i t).val/S=i.val/S-t ∧\n      (targetFin R S i t).val%S=i.val%S-t",
+    "lower_triangular": "theorem lower_triangular (R S : Nat) (a : Int) :\n    (matrix R S a).BlockTriangular\n      (OrderDual.toDual : Fin (R*S) → OrderDual (Fin (R*S)))",
+    "diagonal_one": "theorem diagonal_one (R S : Nat) (a : Int) (i : Fin (R*S)) :\n    matrix R S a i i=1",
+    "determinant_one": "theorem determinant_one (R S : Nat) (a : Int) : (matrix R S a).det=1",
+    "integral_inverse": "theorem integral_inverse (R S : Nat) (a : Int) :\n    matrix R S a * (matrix R S a).adjugate=1 ∧\n      (matrix R S a).adjugate * matrix R S a=1",
+    "polynomial_expansion": "theorem polynomial_expansion {A : Type*} [CommRing A] (a : Int) (w : A)\n    (r s : Nat) :\n    polynomial a w r s = ∑ t ∈ Finset.range (min r s+1),\n      ((-a)^t*((min r s).choose t : Int)) • (X^(r-t)*C w^(s-t) : A[X])",
+    "row_action": "theorem row_action {A : Type*} [AddCommGroup A] (R S : Nat) (a : Int)\n    (i : Fin (R*S)) (f : Fin (R*S) → A) :\n    ∑ h : Fin (R*S), matrix R S a i h • f h =\n      ∑ t ∈ Finset.range (min (i.val/S) (i.val%S)+1),\n        ((-a)^t*((min (i.val/S) (i.val%S)).choose t : Int)) •\n          f (targetFin R S i t)",
+    "polynomial_action": "theorem polynomial_action {A : Type*} [CommRing A] (R S : Nat) (a : Int)\n    (i : Fin (R*S)) (w : A) :\n    ∑ h : Fin (R*S), matrix R S a i h •\n      (X^(h.val/S)*C w^(h.val%S) : A[X]) =\n      polynomial a w (i.val/S) (i.val%S)",
+    "jet_action": "theorem jet_action {A : Type*} [CommRing A] (R S : Nat) (a : Int)\n    (i : Fin (R*S)) (w z : A) (j : Nat) :\n    ∑ h : Fin (R*S), matrix R S a i h •\n      ((derivative^[j]) (X^(h.val/S)*C w^(h.val%S))).eval z =\n      ((derivative^[j]) (polynomial a w (i.val/S) (i.val%S))).eval z",
+    "complex_jet_action": "theorem complex_jet_action (R S : Nat) (a : Int) (i : Fin (R*S))\n    (z : Complex) (j : Nat) :\n    ∑ h : Fin (R*S), matrix R S a i h • derivativeRow (h.val/S) (h.val%S) j z =\n      ((derivative^[j]) (polynomial a (conj z) (i.val/S) (i.val%S))).eval z",
+    "integer_jet_action": "theorem integer_jet_action (D R S : Nat) (a : Int) (i : Fin (R*S))\n    (q : Int × Int) (j : Nat) :\n    zsqrtdJetTransform (matrix R S a) (rectangularCanonicalJet D R S) i q j =\n      integerJet D R S a i q j",
+    "gram_congruence": "theorem gram_congruence (Q : Finset (Int × Int)) (D J R S : Nat) (a : Int) :\n    gram Q D J R S a = matrix R S a * integerRectangularTraceGram Q D J R S *\n      (matrix R S a).transpose",
+    "gram_det": "theorem gram_det (Q : Finset (Int × Int)) (D J R S : Nat) (a : Int) :\n    (gram Q D J R S a).det=(integerRectangularTraceGram Q D J R S).det",
+    "gram_map": "theorem gram_map {A : Type*} [CommRing A] (phi : Int →+* A)\n    (Q : Finset (Int × Int)) (D J R S : Nat) (a : Int) :\n    (gram Q D J R S a).map phi = (matrix R S a).map phi *\n      (integerRectangularTraceGram Q D J R S).map phi * ((matrix R S a).map phi).transpose",
+    "real_cast": "theorem real_cast (Q : Finset (Int × Int)) (D J R S : Nat) (a : Int) (hD : 0 < D) :\n    (gram Q D J R S a).map (Int.castRingHom Real) =\n      (matrix R S a).map (Int.castRingHom Real) *\n      rectangularTraceGram (Q.image (pairEval D)) J R S *\n      ((matrix R S a).map (Int.castRingHom Real)).transpose",
+    "mapped_det_one": "theorem mapped_det_one {A : Type*} [CommRing A] (phi : Int →+* A)\n    (R S : Nat) (a : Int) : ((matrix R S a).map phi).det=1",
+    "real_posSemidef": "theorem real_posSemidef (Q : Finset (Int × Int)) (D J R S : Nat) (a : Int)\n    (hD : 0 < D) : ((gram Q D J R S a).map (Int.castRingHom Real)).PosSemidef",
+    "real_posDef": "theorem real_posDef (Q : Finset (Int × Int)) (D J R S : Nat) (a : Int)\n    (hD : 0 < D) (hR : 1 ≤ R) (hS : 1 ≤ S) (hJ : S ≤ J)\n    (hcard : 2*(R-1)+(S-1) < Q.card) :\n    ((gram Q D J R S a).map (Int.castRingHom Real)).PosDef",
+    "reduced_rank": "theorem reduced_rank (Q : Finset (Int × Int)) (D J R S p : Nat) (a : Int)\n    [Fact p.Prime] :\n    ((gram Q D J R S a).map (Int.castRingHom (ZMod p))).rank =\n      ((integerRectangularTraceGram Q D J R S).map (Int.castRingHom (ZMod p))).rank",
+    "integer_bridge": "theorem integer_bridge (Q : Finset (Int × Int)) (D J R S p : Nat) (a : Int)\n    (hD : 0 < D) [Fact p.Prime] (hp2 : p ≠ 2) (hns : ¬ IsSquare (-(D : ZMod p)))\n    (hR : 1 ≤ R) (hS : 1 ≤ S) (hJ : S ≤ J) (hcard : 2*(R-1)+(S-1) < Q.card) :\n    let G := integerRectangularTraceGram Q D J R S\n    let H := gram Q D J R S a\n    H.det=G.det ∧ (H.map (Int.castRingHom Real)).PosDef ∧ 0 < H.det ∧\n      (p : Int)^(2*valuationWeight R S p) ∣ H.det",
+    "empty_control": "theorem empty_control (S : Nat) (a : Int) : Matrix.det (matrix 0 S a)=1",
+    "pilot_row_control": "theorem pilot_row_control (j : Fin 6) :\n    matrix 3 2 3 5 j = if j=5 then 1 else if j=2 then -3 else 0",
+    "ordinary_controls": "theorem ordinary_controls :\n    ((derivative^[1]) (polynomial 3 (1 : Int) 1 1)).eval 1=1 ∧\n    ((derivative^[2]) (polynomial 3 (1 : Int) 1 1)).eval 1=0 ∧\n    ((derivative^[2]) (polynomial 3 (1 : Int) 2 1)).eval 1=2",
+    "origin_and_ring_controls": "theorem origin_and_ring_controls :\n    (X*C (1 : Int) : Int[X]).eval 0=0 ∧\n      (polynomial 3 (1 : Int) 1 1).eval 0 = -3 ∧\n      ((polynomial 3 (1 : Int) 1 0)*(polynomial 3 (1 : Int) 0 1)).eval 0=0",
+    "reduction_control": "theorem reduction_control :\n    (matrix 2 2 3).map (Int.castRingHom (ZMod 3))=1 ∧ matrix 2 2 3 3 0 = -3"
+  },
+  "definitions": {
+    "target": "def target (S r s t : Nat) : Nat := (r-t)*S+(s-t)",
+    "matrix": "def matrix (R S : Nat) (a : Int) : Matrix (Fin (R*S)) (Fin (R*S)) Int :=\n  fun i j => ∑ t ∈ Finset.range (min (i.val/S) (i.val%S)+1),\n    if j.val=target S (i.val/S) (i.val%S) t then\n      (-a)^t*(min (i.val/S) (i.val%S)).choose t else 0",
+    "targetFin": "def targetFin (R S : Nat) (i : Fin (R*S)) (t : Nat) : Fin (R*S) :=\n  ⟨target S (i.val/S) (i.val%S) (min t (min (i.val/S) (i.val%S))),\n    target_in_range R S i _ (min_le_right _ _)⟩",
+    "polynomial": "def polynomial {A : Type*} [CommRing A] (a : Int) (w : A) (r s : Nat) : A[X] :=\n  X^(r-min r s) * C w^(s-min r s) * (X*C w-C (a : A))^(min r s)",
+    "integerJet": "def integerJet (D R S : Nat) (a : Int) (i : Fin (R*S)) (q : Int × Int)\n    (j : Nat) : Zsqrtd (-(D : Int)) :=\n  ((derivative^[j]) (polynomial a (star (pairZsqrtdEquiv D q))\n    (i.val/S) (i.val%S))).eval (pairZsqrtdEquiv D q)",
+    "gram": "def gram (Q : Finset (Int × Int)) (D J R S : Nat) (a : Int) :\n    Matrix (Fin (R*S)) (Fin (R*S)) Int :=\n  zsqrtdJetGram Q D J (integerJet D R S a)"
+  }
+}

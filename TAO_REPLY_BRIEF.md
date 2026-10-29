@@ -1,12 +1,14 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared through115; this brief is not posted.** Existing public
+**AI-prepared through116; this brief is not posted.** Existing public
 repo-linked comments are recorded separately. Tao asks for a human-generated
 summary; the contributor should review and revise the text in their own words.
 
 ## Current verification boundary
 
-Phase115 gives a distinct **48-billion paper candidate**, using an integral monic radial basis and the same determinant/divisors. Its fixed finite checks pass; the all-parameter bridge and cutoff are not newly Lean-checked. The published bound remains **50 billion**. [Candidate and limits](research/ender_radius_bridge/RADIAL_CENTERING_GUIDE.md). No Tao posting.
+Phase116 now proves the universal integral radial operator/all ordinary jets/original Gram determinant and divisor bridge standalone, with namespace and three fresh dependency checks. [Exact scope](research/ender_radius_bridge/PHASE116_VERIFICATION.md). The 0.013 gain, actual-field 48-billion theorem and integration/CI remain open; the published bound is 50 billion.
+
+Phase115 gives a distinct **48-billion paper candidate**, using an integral monic radial basis and the same determinant/divisors. Its fixed finite checks pass; Phase116 now checks its universal operator bridge, while the quantitative estimate and cutoff remain unformalized. The published bound remains **50 billion**. [Candidate and limits](research/ender_radius_bridge/RADIAL_CENTERING_GUIDE.md). No Tao posting.
 
 Phase114 full symbolic radial-block bridge also resource-stopped at the default Lean heartbeat limit after two failed invocations. No completed bridge/audit, production integration or lower cutoff. [Preserved failure and syntax-change disclosure](research/ender_radius_bridge/PHASE114_VERIFICATION.md).
 
