@@ -50,3 +50,10 @@ PR. Publication uses pinned CI/security and explicit source/tested-tree identity
 no retries/head changes after CI starts. No automatic merge authorization is inferred
 for this new cycle. No external Tao posting. Human review and full arbitrary-field
 classification remain distinct open deliverables. Record failures as outcomes.
+
+Pre-execution clarification: exclude ALL FOUR published48b conclusions (odd
+exclusion, canonical exclusion, canonical actual-discriminant bound, arbitrary-field
+bound), giving77forbidden roots rather than76. Import the library root for the
+same named audit API/exclusion constants asPhase121, plusRadialCutoff explicitly.
+This affects declaration availability, not permitted proof dependencies. The new
+source/runner and77-root command are frozen by hash before their sole invocation.
