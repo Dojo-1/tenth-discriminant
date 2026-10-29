@@ -1,4 +1,4 @@
-# Radial frame: integrated operator, candidate size bound
+# Radial frame: integrated operator and48-billion bound
 
 **The integral radial operator is now integrated unchanged into the Lean
 library and published in merged PR41.** Module build, full build, fresh
@@ -22,14 +22,15 @@ compares the two frames within each characteristic: it does not assert
 that reduction preserves real rank or positive definiteness.
 
 Individual row norms and polynomial multiplication can change. The
-candidate improvement is a smaller UNIFORM geometric upper estimate.
+improvement uses a smaller UNIFORM geometric upper estimate.
 The stronger0.013 saving remains paper. The sufficient0.010 gain now closes
 the [FULL actual-field48-billion theorem](FORTY_EIGHT_BILLION_GUIDE.md)
-standalone, including arithmetic lower bound, fixed endpoint and actual-field
-transport. Unchanged integration and pinned CI remain. The published
-integrated cutoff is **50 billion**.
+including arithmetic lower bound, fixed endpoint and actual-field transport.
+It is now [integrated unchanged](RADIAL_CUTOFF_CURRENT.md), with all local
+checks passing; exact-head publication status is versioned in its PR.
 
-The whole audit reports 5,450 logical declarations and 4,644 theorems.
+The operator-only Phase117 audit reported 5,450 logical declarations and
+4,644 theorems; current Phase121 counts are in the new cutoff guide.
 Its 57 new logical declarations are exactly the radial-operator namespace;
 no earlier logical declaration disappeared. All 27 public statements, six
 definitions and proof bodies are unchanged from the accepted standalone
@@ -38,6 +39,6 @@ source. Runtime auxiliaries are recorded separately.
 [Understand the operator and guards](RADIAL_OPERATOR_GUIDE.md) ·
 [Exact integration evidence](PHASE117_VERIFICATION.md) ·
 [Quantitative paper candidate](RADIAL_CENTERING_DERIVATION.md).
-Published merge: e74028a; source: ab5558f. Phase120 now checks the full
-actual-field48-billion theorem standalone; it has no new production import or CI.
+Published merge: e74028a; source: ab5558f. Phase121 integrates the full
+actual-field48-billion theorem; new CI/publication belongs to its final head.
 No full classification, optimality or independent-review claim.

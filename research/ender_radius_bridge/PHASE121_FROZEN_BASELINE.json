@@ -1,0 +1,15 @@
+{
+  "registered_commit": "5f4dc830e495d5e3774fee4c5a526abf7426b953",
+  "accepted_commit": "5ce23f2333c2649c841a013cb745401d65fa93cb",
+  "frozen_files": 1806,
+  "reachable_modules": 202,
+  "reader_exceptions": [
+    "README.md",
+    "STATUS.md",
+    "lean/FORMALIZATION.md",
+    "TAO_OBJECTIVES_CURRENT.md",
+    "TAO_REPLY_BRIEF.md",
+    "research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md",
+    "research/ender_radius_bridge/FORTY_EIGHT_BILLION_GUIDE.md"
+  ]
+}

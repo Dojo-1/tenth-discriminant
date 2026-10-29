@@ -1,0 +1,305 @@
+{
+  "phase": 121,
+  "status": "EXACT_48B_INTEGRATION_ALL_FOUR_FIRST_CHECKS_PASS",
+  "registered_commit": "5f4dc830e495d5e3774fee4c5a526abf7426b953",
+  "accepted_commit": "5ce23f2333c2649c841a013cb745401d65fa93cb",
+  "frozen_files": 1806,
+  "reachable_modules": 202,
+  "reader_exceptions": [
+    "README.md",
+    "STATUS.md",
+    "lean/FORMALIZATION.md",
+    "TAO_OBJECTIVES_CURRENT.md",
+    "TAO_REPLY_BRIEF.md",
+    "research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md",
+    "research/ender_radius_bridge/FORTY_EIGHT_BILLION_GUIDE.md"
+  ],
+  "runs": {
+    "build": {
+      "phase": 121,
+      "mode": "build",
+      "scope": "Exact118/119/120 mathematical integration and full actual-field48b cutoff",
+      "source_sha256": {
+        "RadialJetMajorant": "039b8b1f77aca2debcadcac059ac243ec388b89e185d47b06be9f61261c9b7f5",
+        "RadialDetBound": "310664fee9ee784b9423fa97b9c09de49ce08b82cf5583a7908fc2450cecab6b",
+        "RadialCutoff": "dc9d10bb0aa963bbe3eb787d43a08484213c6ddfac1a72b92f5a53c221ed7892"
+      },
+      "source_snapshots": {
+        "RadialJetMajorant": "PHASE121_build_20261029140836471.RadialJetMajorant.lean",
+        "RadialDetBound": "PHASE121_build_20261029140836471.RadialDetBound.lean",
+        "RadialCutoff": "PHASE121_build_20261029140836471.RadialCutoff.lean"
+      },
+      "root_snapshot": "PHASE121_build_20261029140836471.root.lean",
+      "input_snapshot": "PHASE121_build_20261029140836471.input.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 149.8582949,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2952265728,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "build",
+        "TenthDiscriminant.RadialCutoff"
+      ],
+      "stdout": "PHASE121_build_20261029140836471.stdout.log",
+      "stderr": "PHASE121_build_20261029140836471.stderr.log"
+    },
+    "root": {
+      "phase": 121,
+      "mode": "root",
+      "scope": "Exact118/119/120 mathematical integration and full actual-field48b cutoff",
+      "source_sha256": {
+        "RadialJetMajorant": "039b8b1f77aca2debcadcac059ac243ec388b89e185d47b06be9f61261c9b7f5",
+        "RadialDetBound": "310664fee9ee784b9423fa97b9c09de49ce08b82cf5583a7908fc2450cecab6b",
+        "RadialCutoff": "dc9d10bb0aa963bbe3eb787d43a08484213c6ddfac1a72b92f5a53c221ed7892"
+      },
+      "source_snapshots": {
+        "RadialJetMajorant": "PHASE121_root_20261029141211034.RadialJetMajorant.lean",
+        "RadialDetBound": "PHASE121_root_20261029141211034.RadialDetBound.lean",
+        "RadialCutoff": "PHASE121_root_20261029141211034.RadialCutoff.lean"
+      },
+      "root_snapshot": "PHASE121_root_20261029141211034.root.lean",
+      "input_snapshot": "PHASE121_root_20261029141211034.input.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 27.2237795,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 1200,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2797703168,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": "build",
+      "stdout": "PHASE121_root_20261029141211034.stdout.log",
+      "stderr": "PHASE121_root_20261029141211034.stderr.log"
+    },
+    "input": {
+      "phase": 121,
+      "mode": "input",
+      "scope": "Exact118/119/120 mathematical integration and full actual-field48b cutoff",
+      "source_sha256": {
+        "RadialJetMajorant": "039b8b1f77aca2debcadcac059ac243ec388b89e185d47b06be9f61261c9b7f5",
+        "RadialDetBound": "310664fee9ee784b9423fa97b9c09de49ce08b82cf5583a7908fc2450cecab6b",
+        "RadialCutoff": "dc9d10bb0aa963bbe3eb787d43a08484213c6ddfac1a72b92f5a53c221ed7892"
+      },
+      "source_snapshots": {
+        "RadialJetMajorant": "PHASE121_input_20261029141401651.RadialJetMajorant.lean",
+        "RadialDetBound": "PHASE121_input_20261029141401651.RadialDetBound.lean",
+        "RadialCutoff": "PHASE121_input_20261029141401651.RadialCutoff.lean"
+      },
+      "root_snapshot": "PHASE121_input_20261029141401651.root.lean",
+      "input_snapshot": "PHASE121_input_20261029141401651.input.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 75.3109079,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 180,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3292024832,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase121InputCheck.lean"
+      ],
+      "stdout": "PHASE121_input_20261029141401651.stdout.log",
+      "stderr": "PHASE121_input_20261029141401651.stderr.log"
+    },
+    "audit": {
+      "phase": 121,
+      "mode": "audit",
+      "scope": "Exact118/119/120 mathematical integration and full actual-field48b cutoff",
+      "source_sha256": {
+        "RadialJetMajorant": "039b8b1f77aca2debcadcac059ac243ec388b89e185d47b06be9f61261c9b7f5",
+        "RadialDetBound": "310664fee9ee784b9423fa97b9c09de49ce08b82cf5583a7908fc2450cecab6b",
+        "RadialCutoff": "dc9d10bb0aa963bbe3eb787d43a08484213c6ddfac1a72b92f5a53c221ed7892"
+      },
+      "source_snapshots": {
+        "RadialJetMajorant": "PHASE121_audit_20261029141713463.RadialJetMajorant.lean",
+        "RadialDetBound": "PHASE121_audit_20261029141713463.RadialDetBound.lean",
+        "RadialCutoff": "PHASE121_audit_20261029141713463.RadialCutoff.lean"
+      },
+      "root_snapshot": "PHASE121_audit_20261029141713463.root.lean",
+      "input_snapshot": "PHASE121_audit_20261029141713463.input.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 36.6948355,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 180,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3364794368,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "Audit.lean"
+      ],
+      "stdout": "PHASE121_audit_20261029141713463.stdout.log",
+      "stderr": "PHASE121_audit_20261029141713463.stderr.log"
+    }
+  },
+  "modules": {
+    "RadialJetMajorant": {
+      "accepted_path": "research/ender_radius_bridge/Phase118RadialJetMajorant.lean",
+      "accepted_sha256": "2974a5d2a31de646f2c1315b553e62c6711b80da6585d1c556ec83770fd0a012",
+      "body_range": [
+        26,
+        18322
+      ],
+      "body_sha256": "0230730b9805d55380586186b680c7498ce1115b9c34a25d9ec5e07887656bae",
+      "imports": [
+        "RadialOperator",
+        "LogEnclosure"
+      ],
+      "path": "lean/TenthDiscriminant/RadialJetMajorant.lean",
+      "source_sha256": "039b8b1f77aca2debcadcac059ac243ec388b89e185d47b06be9f61261c9b7f5"
+    },
+    "RadialDetBound": {
+      "accepted_path": "research/ender_radius_bridge/Phase119RadialDetBound.lean",
+      "accepted_sha256": "cdced29575346e09a28b964ecb602172172ef0d5d235a1af20683cc60b451e3b",
+      "body_range": [
+        18323,
+        34085
+      ],
+      "body_sha256": "f9cbffad82235466e2d1f819ac7b5c73ef25c7acec91aeae2a26d470f6034abf",
+      "imports": [
+        "RadialJetMajorant",
+        "TunedAnalyticCutoff"
+      ],
+      "path": "lean/TenthDiscriminant/RadialDetBound.lean",
+      "source_sha256": "310664fee9ee784b9423fa97b9c09de49ce08b82cf5583a7908fc2450cecab6b"
+    },
+    "RadialCutoff": {
+      "accepted_path": "research/ender_radius_bridge/Phase120RadialCutoff.lean",
+      "accepted_sha256": "43ca85073fb5579ae10a8429b07317de7c3e510efdcae0cd950ce6be2e438815",
+      "body_range": [
+        34086,
+        44461
+      ],
+      "body_sha256": "73498bcb61a786ec48986a6841ae6b8b20755356f58500487635ffd11841e5f4",
+      "imports": [
+        "RadialDetBound",
+        "PrimeTail",
+        "ImaginaryQuadraticRepresentation"
+      ],
+      "path": "lean/TenthDiscriminant/RadialCutoff.lean",
+      "source_sha256": "dc9d10bb0aa963bbe3eb787d43a08484213c6ddfac1a72b92f5a53c221ed7892"
+    }
+  },
+  "public_theorems": 56,
+  "definitions": 6,
+  "observed_namespaces": {
+    "RadialJetMajorant": {
+      "logical": 50,
+      "theorems": 48,
+      "runtime_auxiliaries": 3
+    },
+    "RadialDetBound": {
+      "logical": 55,
+      "theorems": 51,
+      "runtime_auxiliaries": 0
+    },
+    "RadialCutoff": {
+      "logical": 28,
+      "theorems": 28,
+      "runtime_auxiliaries": 0
+    }
+  },
+  "fresh_closures": {
+    "GEOM": {
+      "TenthDiscriminant.RadialJetMajorant.coefficient_bound": 10911,
+      "TenthDiscriminant.RadialJetMajorant.ordinary_jet_gain": 14203,
+      "TenthDiscriminant.RadialJetMajorant.scale_gain": 23312,
+      "TenthDiscriminant.RadialDetBound.actual_diagonal": 14248,
+      "TenthDiscriminant.RadialDetBound.integer_log_upper": 42099,
+      "TenthDiscriminant.RadialDetBound.production_normalized_upper": 47578
+    },
+    "ARITH": {
+      "TenthDiscriminant.RadialCutoff.prime_mass_log_lower": 39170,
+      "TenthDiscriminant.RadialCutoff.odd_large_classNumber_ne_one_48b": 55607,
+      "TenthDiscriminant.RadialCutoff.totallyComplex_degree_two_classNumber_one_discriminant_bound_48b": 58736
+    }
+  },
+  "whole_audit_marker": "AUDIT_OK TenthDiscriminant: 5584 logical declarations; 4772 theorems; 17029 runtime-only auxiliaries excluded",
+  "whole_audit": {
+    "logical": 5584,
+    "theorems": 4772,
+    "runtime_auxiliaries": 17029
+  },
+  "inventory": {
+    "old_logical": 5450,
+    "added": 134,
+    "removed": 0,
+    "source_prediction": 132,
+    "compiler_generated_surplus": [
+      "TenthDiscriminant.RadialJetMajorant.jet.eq_1",
+      "TenthDiscriminant.exactOddPrimeMass.eq_1"
+    ]
+  },
+  "archive": {
+    "path": "PHASE121_RAW.zip",
+    "sha256": "7aff571539d05f1ef953df101ca799c0cb5fd3ec258dc594c5f864153f86a4f8"
+  },
+  "raw_sha256": {
+    "PHASE121_build_20261029140836471.RadialJetMajorant.lean": "039b8b1f77aca2debcadcac059ac243ec388b89e185d47b06be9f61261c9b7f5",
+    "PHASE121_build_20261029140836471.RadialDetBound.lean": "310664fee9ee784b9423fa97b9c09de49ce08b82cf5583a7908fc2450cecab6b",
+    "PHASE121_build_20261029140836471.RadialCutoff.lean": "dc9d10bb0aa963bbe3eb787d43a08484213c6ddfac1a72b92f5a53c221ed7892",
+    "PHASE121_build_20261029140836471.root.lean": "25c4ae2ca6e3758b40da6fbfb2ae0f2da490078793330f4bf39ce06c768e1e8e",
+    "PHASE121_build_20261029140836471.input.lean": "a25ee4645a607ca0cc69a47fa3bb559060945dae7384ad352a40e5f2e7f31ddd",
+    "PHASE121_build_20261029140836471.stdout.log": "ce8e8c1afa326efac9e7795b3abc21cb9ee9e197ab6d034f88511eb19048cf39",
+    "PHASE121_build_20261029140836471.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE121_build_20261029140836471.result.json": "fa4792c120eed61bc6c31474c18668bf3937f9efd65071862780da14dd713b41",
+    "PHASE121_root_20261029141211034.RadialJetMajorant.lean": "039b8b1f77aca2debcadcac059ac243ec388b89e185d47b06be9f61261c9b7f5",
+    "PHASE121_root_20261029141211034.RadialDetBound.lean": "310664fee9ee784b9423fa97b9c09de49ce08b82cf5583a7908fc2450cecab6b",
+    "PHASE121_root_20261029141211034.RadialCutoff.lean": "dc9d10bb0aa963bbe3eb787d43a08484213c6ddfac1a72b92f5a53c221ed7892",
+    "PHASE121_root_20261029141211034.root.lean": "25c4ae2ca6e3758b40da6fbfb2ae0f2da490078793330f4bf39ce06c768e1e8e",
+    "PHASE121_root_20261029141211034.input.lean": "a25ee4645a607ca0cc69a47fa3bb559060945dae7384ad352a40e5f2e7f31ddd",
+    "PHASE121_root_20261029141211034.stdout.log": "d7a4e4b7215870f565f429194e10e741cc96b647404e5e698d252bb28f5fde16",
+    "PHASE121_root_20261029141211034.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE121_root_20261029141211034.result.json": "c08e60671be8d52856343837a6537ca713740e9d89d0ed373b205389b4d8628b",
+    "PHASE121_input_20261029141401651.RadialJetMajorant.lean": "039b8b1f77aca2debcadcac059ac243ec388b89e185d47b06be9f61261c9b7f5",
+    "PHASE121_input_20261029141401651.RadialDetBound.lean": "310664fee9ee784b9423fa97b9c09de49ce08b82cf5583a7908fc2450cecab6b",
+    "PHASE121_input_20261029141401651.RadialCutoff.lean": "dc9d10bb0aa963bbe3eb787d43a08484213c6ddfac1a72b92f5a53c221ed7892",
+    "PHASE121_input_20261029141401651.root.lean": "25c4ae2ca6e3758b40da6fbfb2ae0f2da490078793330f4bf39ce06c768e1e8e",
+    "PHASE121_input_20261029141401651.input.lean": "a25ee4645a607ca0cc69a47fa3bb559060945dae7384ad352a40e5f2e7f31ddd",
+    "PHASE121_input_20261029141401651.stdout.log": "7a1130ff31e96c778618930b56951a2ade0cda72e3c648d8d4e93af554b4aec8",
+    "PHASE121_input_20261029141401651.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE121_input_20261029141401651.result.json": "11266db2426ad2a4a15b3caea860163d685c9f137706db925a35c0fccc8e31c3",
+    "PHASE121_audit_20261029141713463.RadialJetMajorant.lean": "039b8b1f77aca2debcadcac059ac243ec388b89e185d47b06be9f61261c9b7f5",
+    "PHASE121_audit_20261029141713463.RadialDetBound.lean": "310664fee9ee784b9423fa97b9c09de49ce08b82cf5583a7908fc2450cecab6b",
+    "PHASE121_audit_20261029141713463.RadialCutoff.lean": "dc9d10bb0aa963bbe3eb787d43a08484213c6ddfac1a72b92f5a53c221ed7892",
+    "PHASE121_audit_20261029141713463.root.lean": "25c4ae2ca6e3758b40da6fbfb2ae0f2da490078793330f4bf39ce06c768e1e8e",
+    "PHASE121_audit_20261029141713463.input.lean": "a25ee4645a607ca0cc69a47fa3bb559060945dae7384ad352a40e5f2e7f31ddd",
+    "PHASE121_audit_20261029141713463.stdout.log": "9e93d551d8b2a1d8e5999bebfd5fce39ba453b3c53a6263576f26a40370ee0d0",
+    "PHASE121_audit_20261029141713463.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE121_audit_20261029141713463.result.json": "283c7f2f1b829dc8e8466bd6b3a51527d082c0ebedcd111b0913e1e3b00650a1",
+    "PHASE121_CORRESPONDENCE.json": "20c1507ac2a1938e5669beaad343c5b3948750c0298b811f794fa25ec3e13574"
+  },
+  "sha256": {
+    "research/ender_radius_bridge/PHASE121_PROTOCOL.md": "270bfe9b1efbabe5f8a0e472e75d6ec25a8891a460d8724400490c390e728ca7",
+    "research/ender_radius_bridge/PHASE121_CORRESPONDENCE.json": "20c1507ac2a1938e5669beaad343c5b3948750c0298b811f794fa25ec3e13574",
+    "research/ender_radius_bridge/PHASE121_FROZEN_BASELINE.json": "4d63c7a68b85d5d69aa6bdc29b5934ceb62d6d90cc70a3ae504318c295925f52",
+    "research/ender_radius_bridge/run_phase121.ps1": "20fe5418f3c984ea4b25958d1940df47ea1315ef08e215209ac003fe948fe96c",
+    "research/ender_radius_bridge/phase121_preflight.py": "237ecb368daae0042aabb279b952c134a31fdbe83f7619d62bec9e3bcaa6545a",
+    "research/ender_radius_bridge/Phase121InputCheck.lean": "a25ee4645a607ca0cc69a47fa3bb559060945dae7384ad352a40e5f2e7f31ddd",
+    "research/ender_radius_bridge/PHASE121_VERIFICATION.md": "6edf2c14bb2994e117020c8fb4703265e0ff60818e6efc272d0ed1c6561d9417",
+    "research/ender_radius_bridge/verify_phase121_results.py": "6c2c204b7ba4ec8fd3f3c3728ceb626bfad4a95c80b1e2d9b7f6025127ece527",
+    "research/ender_radius_bridge/RADIAL_CUTOFF_CURRENT.md": "5e962c909d1a02d74b2aad7dece599f8e1a4f6cbbc86f51e59b8caed7847140c",
+    "lean/TenthDiscriminant/RadialJetMajorant.lean": "039b8b1f77aca2debcadcac059ac243ec388b89e185d47b06be9f61261c9b7f5",
+    "lean/TenthDiscriminant/RadialDetBound.lean": "310664fee9ee784b9423fa97b9c09de49ce08b82cf5583a7908fc2450cecab6b",
+    "lean/TenthDiscriminant/RadialCutoff.lean": "dc9d10bb0aa963bbe3eb787d43a08484213c6ddfac1a72b92f5a53c221ed7892",
+    "lean/TenthDiscriminant.lean": "25c4ae2ca6e3758b40da6fbfb2ae0f2da490078793330f4bf39ce06c768e1e8e"
+  },
+  "integrated_actual_field_cutoff": 48000000000,
+  "publication": "FINAL_HEAD_CI_SECURITY_SEPARATE;no CI dispatched by packaging",
+  "scope": "Same-integer operator/jet/prime bridge and full actual-field48b cutoff integrated unchanged;no classification/optimality/new independent human review claim"
+}
