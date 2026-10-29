@@ -103,7 +103,7 @@
     "research/ender_radius_bridge/PHASE114_PROTOCOL.md": "de39d024552990e12812026593e8115bdba29ca21a18cdec2292ceaa8f7cce76",
     "research/ender_radius_bridge/PHASE114_FROZEN_SURFACE.json": "4f33332f7532034de8b0046c01a5838a5f864360d2cb38eb21a5e8f7f82ce02b",
     "research/ender_radius_bridge/PHASE114_REPAIR1.diff": "298b059a05df90106ea4f877f04a5802a0f49e0a1c36c499b2b6879d1d998e56",
-    "research/ender_radius_bridge/PHASE114_VERIFICATION.md": "6c5cf465e408aa8ef88b25f0d1cc102500661d8095d8078b87e110484f87c552",
+    "research/ender_radius_bridge/PHASE114_VERIFICATION.md": "97d834bfd32e3a4afe1e9e612abce3f54cc6f368ad45a72177e867b57274d7d6",
     "research/ender_radius_bridge/verify_phase114_results.py": "1ca685ae93e936e6b0c97b2743c68d414070a847370da202b0c61d769b6caf7b",
     "research/ender_radius_bridge/RADIAL_BLOCK_PROOF_GUIDE.md": "b0de863c22cf05313e9daf3a3b947f9192be51eff34363d7d5e464b3b1d0c9a9",
     "README.md": "ce2a02095bd669fd32d84e1806ef09923ebdb6934b16848a9f4d758f9d8dbd32",
@@ -117,6 +117,8 @@
     "relative_links": 546,
     "README_lines": 61,
     "objective_ledger_lines": 61,
-    "selected_git_diff_check": "PASS"
+    "selected_git_diff_check": "PASS",
+    "full_staged_diff_check": "FLAGGED10single-space blank context lines in preserved PHASE114_REPAIR1.diff; evidence retained",
+    "committed_check_excluding_raw_patch": "PASS"
   }
 }

@@ -82,3 +82,10 @@ remains separate from this failed standalone work.
 Reader checks:546relative file links resolve in the eight current reader
 documents; README and the objective ledger remain61lines. Selected changed
 reader paths pass git diff --check. No new Lean execution was used.
+
+Whitespace disclosure: the full staged diff check flagged ten blank CONTEXT
+lines in PHASE114_REPAIR1.diff. Each is the single-space prefix required
+by the preserved unified diff. That evidence is retained byte-exact; the
+full check was not clean. The selected reader check above did pass. A
+separate committed-content check excluding only this raw repair diff
+passes. No proof source or raw snapshot was changed for formatting.
