@@ -1,10 +1,12 @@
 # Factual brief for a possible reply to Tao
 
-**AI-prepared through118; this brief is not posted.** Existing public
+**AI-prepared through119; this brief is not posted.** Existing public
 repo-linked comments are recorded separately. Tao asks for a human-generated
 summary; the contributor should review and revise the text in their own words.
 
 ## Current verification boundary
+
+Phase119 now checks the full SAME original integer determinant upper bound at the unchanged production radius: normalized log(detG)<=.8logD-.823 for everyD>=41006250000, with actual jet/trace equality, guarded positivity and exact penalty aggregation. [Human explanation](research/ender_radius_bridge/RADIAL_DETERMINANT_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE119_VERIFICATION.md). This is standalone: arithmetic lower/endpoint/actual-field48bcomposition, integration and CI remain. Published cutoff stays50billion; no new review or Tao posting.
 
 Phase118 now checks the full actual ordinary-jet radial estimate and sufficient.010rectangular scale saving standalone, with19unchanged public types/2definitions, namespace49logical/47theorems, three fresh dependency checks, and the failed first attempt preserved. [Human explanation](research/ender_radius_bridge/RADIAL_JET_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE118_VERIFICATION.md). It does not yet prove the full original-Gram logarithmic saving or actual-field48btheorem. No new integration/CI, independent review or Tao posting; the published bound stays50billion.
 

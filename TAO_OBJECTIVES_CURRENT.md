@@ -9,7 +9,7 @@ This is a bound, not a full classification or an optimality claim.
 These twelve rows are our working categories for
 [Tao's challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/),
 not an official numbered checklist. The [claim map](lean/FORMALIZATION.md)
-keeps theorem checking, execution evidence and independent review separate. The [universal radial operator](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md) is now merged in PR41 with pinned proof CI and same-head security passing; the [sufficient.010 jet estimate](research/ender_radius_bridge/RADIAL_JET_GUIDE.md) now passes standalone Lean, while the smaller cutoff remains a candidate.
+keeps theorem checking, execution evidence and independent review separate. The [universal radial operator](research/ender_radius_bridge/RADIAL_OPERATOR_CURRENT.md) is now merged in PR41 with pinned proof CI and same-head security passing; the [same-integer production upper estimate](research/ender_radius_bridge/RADIAL_DETERMINANT_GUIDE.md) now passes standalone Lean, while the48bcutoff still needs the lower-bound/field composition.
 
 ## How we are faring
 

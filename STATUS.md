@@ -1,5 +1,9 @@
 # Status — 2026-10-29
 
+## Phase119: smaller upper bound on the actual integer determinant
+
+The full registered119target passes standalone Lean: actual integer-jet diagonal equality with factor2, every transformed row bound, exact logarithmic penalty sum, SAME original determinant via unimodular congruence, and the normalized production upper .8logD-.823 for everyD>=41006250000. All22public types/4definitions and the accepted118dependency remain byte-exact across FAIL60.7251422s/PASS160.0622916s; no resource stop. Namespace55logical/51theorems/0runtime; fresh14248/42099/47578closures exclude70roots with standard3axioms. [Human explanation](research/ender_radius_bridge/RADIAL_DETERMINANT_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE119_VERIFICATION.md). Arithmetic lower-bound/endpoint/actual-field48bcomposition, integration and CI remain. Published cutoff stays50billion; no classification or independent-review claim.
+
 ## Phase118: actual ordinary-jet radial estimate checked
 
 The actual production radial polynomials now have a Lean-checked all-order ordinary-derivative estimate, including integer rounding, the origin, r<s, and high-derivative vanishing. The eligible rows gain(13/20)^s; the rectangular scale gain is at least.010. All19public types/2definitions remain unchanged through FAIL117.154457s and PASS45.6828647s, without resource stops. Namespace49logical/47theorems/3runtime; fresh10911/14203/23312closures exclude70roots with standard3axioms. [Human explanation](research/ender_radius_bridge/RADIAL_JET_GUIDE.md) · [Exact evidence](research/ender_radius_bridge/PHASE118_VERIFICATION.md). This is standalone, with no new production import or CI. Original-Gram logarithmic aggregation and actual-field48bcomposition remain; the published cutoff stays50billion. The stronger.013estimate remains paper.

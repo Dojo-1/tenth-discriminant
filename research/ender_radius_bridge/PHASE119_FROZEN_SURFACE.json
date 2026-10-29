@@ -1,0 +1,32 @@
+{
+  "types": {
+    "chart_pair": "theorem chart_pair (D : Nat) (q : Int × Int) :\n    chart D (pairZsqrtdEquiv D q)=pairEval D q",
+    "actual_jet_value": "theorem actual_jet_value (D R S : Nat) (a : Int) (i : Fin (R*S))\n    (q : Int × Int) (j : Nat) :\n    chart D (RadialOperator.integerJet D R S a i q j)=\n      RadialJetMajorant.jet a (i.val/S) (i.val%S) j (pairEval D q)",
+    "trace_square": "theorem trace_square (D : Nat) (v : Zsqrtd (-(D : Int))) :\n    (zsqrtdTrace D v v : Real)=2*‖chart D v‖^2",
+    "actual_diagonal": "theorem actual_diagonal (Q : Finset (Int × Int)) (D J R S : Nat) (a : Int)\n    (i : Fin (R*S)) :\n    ((RadialOperator.gram Q D J R S a).map (Int.castRingHom Real)) i i =\n      2*∑ j ∈ Finset.range J, ∑ q ∈ Q,\n        ‖RadialJetMajorant.jet a (i.val/S) (i.val%S) j (pairEval D q)‖^2",
+    "rowFactor_pos": "theorem rowFactor_pos (S r s : Nat) : 0 < rowFactor S r s",
+    "rowFactor_log": "theorem rowFactor_log (S r s : Nat) :\n    Real.log (rowFactor S r s) = -rowPenalty S r s",
+    "actual_jet_square": "theorem actual_jet_square (rho S r s j : Nat) (hrho : 5 ≤ rho) (hS : 1 ≤ S)\n    (hs : s < S) (hj : j < S) (z : Complex) (hz : ‖z‖ ≤ rho) :\n    ‖RadialJetMajorant.jet (rho^2/2 : Nat) r s j z‖^2 ≤\n      rowFactor S r s * ((rho : Real)^(2*(r+s))*\n        (max 1 ((r : Real)/rho))^(2*(S-1)))",
+    "actual_diagonal_uniform": "theorem actual_diagonal_uniform (Q : Finset (Int × Int)) (D R S rho : Nat)\n    (hrho : 5 ≤ rho) (hS : 1 ≤ S)\n    (hbound : ∀ q ∈ Q, ‖pairEval D q‖ ≤ rho) (i : Fin (R*S)) :\n    ((RadialOperator.gram Q D S R S (rho^2/2 : Nat)).map (Int.castRingHom Real)) i i ≤\n      rowFactor S (i.val/S) (i.val%S)*\n        (2*(Q.card : Real)*S*(rho : Real)^(2*(i.val/S+i.val%S))*\n          (max 1 (((i.val/S : Nat) : Real)/rho))^(2*(S-1)))",
+    "actual_log_diagonal": "theorem actual_log_diagonal (Q : Finset (Int × Int)) (D R S rho : Nat) (n : Real)\n    (hrho : 5 ≤ rho) (hS : 1 ≤ S) (hnpos : 0 < n) (hn : (Q.card : Real) ≤ n)\n    (hbound : ∀ q ∈ Q, ‖pairEval D q‖ ≤ rho) (i : Fin (R*S))\n    (hpos : 0 < ((RadialOperator.gram Q D S R S (rho^2/2 : Nat)).map\n      (Int.castRingHom Real)) i i) :\n    Real.log (((RadialOperator.gram Q D S R S (rho^2/2 : Nat)).map\n      (Int.castRingHom Real)) i i) ≤\n      rowLog S rho n (i.val/S) (i.val%S)-rowPenalty S (i.val/S) (i.val%S)",
+    "penalty_sum": "theorem penalty_sum (R S : Nat) (hS : 1 ≤ S) :\n    (∑ r ∈ Finset.range R, ∑ s ∈ Finset.range S, rowPenalty S r s)=\n      (R-9*S : Nat)*(S : Real)*(S-1 : Nat)*Real.log (20/13 : Real)",
+    "baseline_sum": "theorem baseline_sum (R S rho : Nat) (n : Real) (hrho : 0 < rho) (hRrho : rho < R) :\n    (∑ r ∈ Finset.range R, ∑ s ∈ Finset.range S,rowLog S rho n r s) ≤\n      enderUpperB R S S rho n",
+    "integer_log_upper": "theorem integer_log_upper (Q : Finset (Int × Int)) (D R S rho : Nat) (n : Real)\n    (hD : 0 < D) (hR : 1 ≤ R) (hS : 1 ≤ S) (hrho : 5 ≤ rho) (hRrho : rho < R)\n    (hcard : 2*(R-1)+(S-1) < Q.card) (hnpos : 0 < n) (hn : (Q.card : Real) ≤ n)\n    (hbound : ∀ q ∈ Q, ‖pairEval D q‖ ≤ rho) :\n    Real.log ((integerRectangularTraceGram Q D S R S).det : Real) ≤\n      enderUpperB R S S rho n-\n        (R-9*S : Nat)*(S : Real)*(S-1 : Nat)*Real.log (20/13 : Real)",
+    "normalized_integer_upper": "theorem normalized_integer_upper (Q : Finset (Int × Int)) (D R S rho : Nat) (n : Real)\n    (hD : 0 < D) (hS : 100 ≤ S) (h25 : 25*S ≤ R) (h26 : R ≤ 26*S)\n    (hrho : 5 ≤ rho) (hRrho : rho < R) (hcard : 2*(R-1)+(S-1) < Q.card)\n    (hnpos : 0 < n) (hn : (Q.card : Real) ≤ n)\n    (hbound : ∀ q ∈ Q, ‖pairEval D q‖ ≤ rho) :\n    Real.log ((integerRectangularTraceGram Q D S R S).det : Real)/comparisonScale R S ≤\n      enderUpperB R S S rho n/comparisonScale R S-1/100",
+    "production_guards": "theorem production_guards (D : Nat) (hD : 41006250000 ≤ D) :\n    100 ≤ Tuned.S D ∧ 25*Tuned.S D ≤ Tuned.R D ∧ Tuned.R D ≤ 26*Tuned.S D ∧\n      5 ≤ Tuned.rho D",
+    "production_normalized_upper": "theorem production_normalized_upper (D : Nat) (hD : 41006250000 ≤ D) :\n    Real.log ((integerRectangularTraceGram (ellipsePairs D (Tuned.rho D)) D\n      (Tuned.S D) (Tuned.R D) (Tuned.S D)).det : Real)/\n      comparisonScale (Tuned.R D) (Tuned.S D) ≤ (4/5 : Real)*Real.log D-823/1000",
+    "constant_trace_control": "theorem constant_trace_control : integerPairTrace 3 (1,0) (1,0)=2",
+    "empty_rows_control": "theorem empty_rows_control (Q : Finset (Int × Int)) (D S rho : Nat) :\n    (integerRectangularTraceGram Q D S 0 S).det=1",
+    "singleton_control": "theorem singleton_control :\n    (integerRectangularTraceGram {(0,0)} 3 1 1 1).det=2",
+    "singular_control": "theorem singular_control :\n    (integerRectangularTraceGram ∅ 3 1 1 1).det=0",
+    "origin_control": "theorem origin_control :\n    ‖RadialJetMajorant.jet 12 1 1 0 0‖^2=(144 : Real) ∧ derivativeRow 1 1 0 0=0",
+    "single_column_control": "theorem single_column_control (R : Nat) :\n    (∑ r ∈ Finset.range R,∑ s ∈ Finset.range 1,rowPenalty 1 r s)=0",
+    "empty_eligible_control": "theorem empty_eligible_control (R S : Nat) (hS : 1 ≤ S) (hR : R ≤ 9*S) :\n    (∑ r ∈ Finset.range R,∑ s ∈ Finset.range S,rowPenalty S r s)=0"
+  },
+  "definitions": {
+    "chart": "def chart (D : Nat) : Zsqrtd (-(D : Int)) →+ Complex where\n  toFun v := pairEval D (v.re,v.im)\n  map_zero' := by simp [pairEval,latticePoint]\n  map_add' v w := by\n    apply Complex.ext <;> simp [pairEval,latticePoint,add_mul]",
+    "rowFactor": "def rowFactor (S r s : Nat) : Real :=\n  if 9*S ≤ r then (13/20 : Real)^(2*s) else 1",
+    "rowPenalty": "def rowPenalty (S r s : Nat) : Real :=\n  if 9*S ≤ r then (2*s : Nat)*Real.log (20/13 : Real) else 0",
+    "rowLog": "def rowLog (S rho : Nat) (n : Real) (r s : Nat) : Real :=\n  Real.log (2*n*S)+(2*(r+s) : Nat)*Real.log (rho : Real)+\n    (2*(S-1) : Nat)*max 0 (Real.log ((r : Real)/rho))"
+  }
+}

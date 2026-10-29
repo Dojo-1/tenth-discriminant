@@ -1,0 +1,34 @@
+{
+  "attempt": 2,
+  "prior_attempt": {
+    "phase": 119,
+    "mode": "build",
+    "scope": "Full same-integer radial determinant logarithmic upper bound at actual production radius",
+    "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+    "protocol_commit": "781aec8",
+    "source_sha256": "e9bbf24e83ccadc6800d788109042fd77552f3c084bdb6398b837d7fc841b78a",
+    "source_snapshot": "PHASE119_build_20261029111125952.source.lean",
+    "attempt": 1,
+    "exit_code": 1,
+    "elapsed_seconds": 60.7251422,
+    "cumulative_before_seconds": 0,
+    "time_limit_seconds": 600,
+    "memory_threshold_mb": 8192,
+    "observed_peak_working_set_bytes": 3343523840,
+    "stop_reason": "",
+    "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments": [
+      "env",
+      "lean",
+      "-j",
+      "1",
+      "../../tenth-radial-blocks/research/ender_radius_bridge/Phase119RadialDetBound.lean"
+    ],
+    "stdout": "PHASE119_build_20261029111125952.stdout.log",
+    "stderr": "PHASE119_build_20261029111125952.stderr.log"
+  },
+  "before_sha256": "e9bbf24e83ccadc6800d788109042fd77552f3c084bdb6398b837d7fc841b78a",
+  "after_sha256": "cdced29575346e09a28b964ecb602172172ef0d5d235a1af20683cc60b451e3b",
+  "scope": "Proof-only complex real-power cast, explicit ring-hom determinant map, one_mul normalization, and exact empty/singleton determinant controls; no type/definition/dependency change",
+  "diff": "--- attempt1\n+++ attempt2\n@@ -430,7 +430,8 @@\n     (zsqrtdTrace D v v : Real)=2*‖chart D v‖^2 := by\n   have h := integerPairTrace_cast D (v.re,v.im) (v.re,v.im)\n   change (zsqrtdTrace D v v : Real)=2*‖pairEval D (v.re,v.im)‖^2\n-  simpa only [integerPairTrace,zsqrtdTrace,Complex.mul_conj',Complex.ofReal_re] using h\n+  simpa only [integerPairTrace,zsqrtdTrace,Complex.mul_conj',← Complex.ofReal_pow,\n+    Complex.ofReal_re] using h\n \n /-- The original factor2 and original sample/derivative indexing, entrywise. -/\n theorem actual_diagonal (Q : Finset (Int × Int)) (D J R S : Nat) (a : Int)\n@@ -616,7 +617,8 @@\n   have hb := baseline_sum R S rho n (by omega) hRrho\n   have he : H.det=((integerRectangularTraceGram Q D S R S).det : Real) := by\n     dsimp only [H]\n-    rw [← Int.cast_det,RadialOperator.gram_det]\n+    simpa only [RadialOperator.gram_det] using\n+      ((Int.castRingHom Real).map_det (RadialOperator.gram Q D S R S (rho^2/2 : Nat))).symm\n   rw [he] at hl\n   linarith\n \n@@ -636,7 +638,7 @@\n   have hgn : (1/100 : Real) ≤\n       ((R-9*S : Nat)*(S : Real)*(S-1 : Nat)*Real.log (20/13 : Real))/comparisonScale R S := by\n     apply (le_div_iff₀ ht).2\n-    simpa only [div_eq_mul_inv,mul_comm] using hg\n+    simpa only [div_eq_mul_inv,mul_comm,one_mul] using hg\n   calc\n     _ ≤ (enderUpperB R S S rho n-\n         (R-9*S : Nat)*(S : Real)*(S-1 : Nat)*Real.log (20/13 : Real))/comparisonScale R S :=\n@@ -687,16 +689,21 @@\n   norm_num [integerPairTrace]\n \n theorem empty_rows_control (Q : Finset (Int × Int)) (D S rho : Nat) :\n-    (integerRectangularTraceGram Q D S 0 S).det=1 := by simp\n+    (integerRectangularTraceGram Q D S 0 S).det=1 := by\n+  haveI : IsEmpty (Fin (0*S)) := by\n+    simpa only [Nat.zero_mul] using (inferInstance : IsEmpty (Fin 0))\n+  exact Matrix.det_isEmpty\n \n theorem singleton_control :\n     (integerRectangularTraceGram {(0,0)} 3 1 1 1).det=2 := by\n+  rw [Matrix.det_fin_one]\n   norm_num [integerRectangularTraceGram,integerTraceGramMatrix,integerTraceGramEntry,\n     integerPairTrace,integerDerivativeRow,pairScale,pairMul,pairPow,Finset.sum_range_succ,\n     Nat.descFactorial,Matrix.det_fin_one]\n \n theorem singular_control :\n     (integerRectangularTraceGram ∅ 3 1 1 1).det=0 := by\n+  rw [Matrix.det_fin_one]\n   norm_num [integerRectangularTraceGram,integerTraceGramMatrix,integerTraceGramEntry,Matrix.det_fin_one]\n \n theorem origin_control :\n"
+}
