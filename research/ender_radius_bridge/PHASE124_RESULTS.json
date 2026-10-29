@@ -1,0 +1,40 @@
+{
+  "phase": 124,
+  "status": "GEOMETRIC_RECONSTRUCTION_AND_TEN_RATIONAL_CHECKS_PASS;NO_NEW_LEAN_OR_CUTOFF",
+  "base_commit": "8449d26982856cace93a1b595f71500fb457661d",
+  "protocol_commit": "597b2e9",
+  "source_frozen_commit": "35200b0",
+  "native_result": {
+    "phase": 124,
+    "attempt": 1,
+    "exit_code": 0,
+    "elapsed_seconds": 0.14100000000325963,
+    "max_seconds": 30,
+    "stop_reason": "",
+    "source_snapshot": "PHASE124_trial_20261029200949.source.py",
+    "source_sha256": "12a313e2132fcb9a2cc5fefc2cf2458ff4107592b1d2ae62134f4897584038ec",
+    "data": "PHASE124_trial_20261029200949.data.json",
+    "stdout": "PHASE124_trial_20261029200949.stdout.log",
+    "stderr": "PHASE124_trial_20261029200949.stderr.log",
+    "command": [
+      "C:\\Users\\HAL900\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "research\\ender_radius_bridge\\phase124_rational_accounting.py",
+      "research\\ender_radius_bridge\\PHASE124_trial_20261029200949.data.json"
+    ],
+    "memory": "not measured;no cap claim"
+  },
+  "archive": "PHASE124_RAW.zip",
+  "archive_sha256": "9bc243713f77dcb91e14076683dcb87d4f6815f6829b5069d738f360d6a53cf3",
+  "raw_sha256": {
+    "PHASE124_trial_20261029200949.source.py": "12a313e2132fcb9a2cc5fefc2cf2458ff4107592b1d2ae62134f4897584038ec",
+    "PHASE124_trial_20261029200949.data.json": "3964a339b1062e59e119978787087d57c2508920a8ea680aa6f79d8aa80e1f81",
+    "PHASE124_trial_20261029200949.stdout.log": "bcb096e570721da6c9f44a41780f5cd7838a19959ccc5885e6ae72a5e213a576",
+    "PHASE124_trial_20261029200949.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE124_trial_20261029200949.result.json": "bff5afaabdafa9c4e918d1a633fc1f5ed4dba30c3faeb941d0a071a73266e3b5"
+  },
+  "rational_checks": 10,
+  "guide": "GEOMETRIC_COMPARISON_GUIDE.md",
+  "scope": "Explicit geometric derivation;inherited arithmetic prime-mass/tail lower estimate clearly identified;not independent peer review",
+  "cutoff_unchanged": 48000000000,
+  "memory": "not measured;no cap claim"
+}

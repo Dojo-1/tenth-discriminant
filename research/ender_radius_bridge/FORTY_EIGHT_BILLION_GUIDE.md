@@ -59,3 +59,5 @@ semantic review remains open. [Exact verification](PHASE120_VERIFICATION.md) · 
 For exact theorem APIs and the scope of further composition, see the
 [source map](MEANING_PRESERVING_SOURCE_MAP.md). The [Phase122 endpoint attempt](PHASE122_VERIFICATION.md) failed elaboration;
 its certificate alone passed and supplies no new checked cutoff.
+
+[Reconstruct the geometric ceiling](GEOMETRIC_COMPARISON_GUIDE.md): radius rounding, two cell counts, ordinary jets and the normalized inequality.
