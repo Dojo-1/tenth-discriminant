@@ -44,7 +44,7 @@ Lean controls in the SAME source/invocation: zero-dimensional determinant1;
 singular all-one2x2 block inequality (det0 versus singleton product1);
 nonzero cross-weight entry at P={1},J=1 between (0,0),(1,0) (value2);
 negative-weight nonadjacent pair (0,2),(2,4) at P={1},J=3 (cross2,
-second diagonal14), distinguishing lost extra jets; origin cross for
+second diagonal18), distinguishing lost extra jets; origin cross for
 (0,0),(2,2),J=3 equals0 but first diagonal2; existing real/Hermitian
 control (real determinant4, Hermitian determinant0).
 Freeze all public theorem TYPES, definition BODIES and control data at
@@ -75,3 +75,8 @@ proof guide, and current README/STATUS/FORMALIZATION/objective ledger/reply
 updates. Keep README and current ledger61lines. No new cutoff claim.
 No full root build, integration, CI, reviewer, publication, merge or Tao
 posting in this cycle: successful source still requires separate integration.
+
+Pre-implementation correction: the initial registration f853434 wrote14
+for the (2,4) diagonal at1,J3. Ordinary coefficients are1,2,2, so the
+correct value is2*(1+4+4)=18. Corrected before any source or invocation;
+the earlier false prediction is preserved in Git. Control data unchanged.
