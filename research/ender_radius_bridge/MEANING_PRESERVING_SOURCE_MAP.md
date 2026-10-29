@@ -1,8 +1,9 @@
 # Meaning that survives transport
 
-Source baseline: PR42 merge `0bde1bf`. This is a source map, not a new theorem.
-The checked actual-field cutoff is 48 billion; the sole 47.5-billion endpoint attempt
-[failed elaboration](PHASE122_VERIFICATION.md) and was not repaired or retried.
+Current branch: [Phase128](PHASE128_VERIFICATION.md) integrates the accepted47.5-billion successor, arbitrary-field classification interface and radial laws. All local checks pass; publication is separate. [Short current account](STRUCTURAL_BRIDGE_CURRENT.md).
+
+The map below is the historical PR42/Phase122 baseline. Its failed attempt
+[remains unchanged](PHASE122_VERIFICATION.md); the successful successor is a separate registered cycle, not a retry of that stopped source.
 
 ## One integer and two inequalities
 

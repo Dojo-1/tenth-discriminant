@@ -1,0 +1,46 @@
+{
+  "snapshot": "3e95187dbcafc6c4a6fe77cb1964268d35a99479",
+  "scope": "Saved evidence verification in pre-integration snapshot;no Lean/oracle replay",
+  "records": [
+    {
+      "phase": 123,
+      "exit_code": 0,
+      "stdout": "PASS saved123:5raw;80fixed matrices;15840reported jet coordinates;18zero/62positive;exact Fraction determinant checks;old sources frozen;20links. No trial/Lean replay;finite data not universal proof.\n",
+      "stderr": ""
+    },
+    {
+      "phase": 124,
+      "exit_code": 0,
+      "stdout": "PASS saved124:10rational checks/5raw;explicit baseline slack3/20000;22links;old mathematical sources frozen. No trial/Lean replay;no analytic premise inferred.\n",
+      "stderr": ""
+    },
+    {
+      "phase": 125,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\.agent\\phase128_historical_snapshot\\research\\ender_radius_bridge\\verify_phase125_results.py\", line 52, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\.agent\\phase128_historical_snapshot\\research\\ender_radius_bridge\\verify_phase125_results.py\", line 20, in main\n    assert len(list(HERE.glob('PHASE125_build_*.result.json')))==1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    {
+      "phase": 125,
+      "exit_code": 0,
+      "stdout": "PASS saved125:COMPLETE47.5b standalone/firstcall/4raw/17namespace/3fresh77-root closures;Phase122unchanged;exact39e9ce3historicalCI6raw confirmed. No Lean/job replay;production48b unchanged.\n",
+      "stderr": ""
+    },
+    {
+      "phase": 126,
+      "exit_code": 0,
+      "stdout": "PASS saved126:both full targets/firstcall/2namespace/2fresh required-and-excluded closures/4raw/6links. No Lean replay;no inherited source change.\n",
+      "stderr": ""
+    },
+    {
+      "phase": 127,
+      "exit_code": 0,
+      "stdout": "PASS saved127:all actual radial laws;3complete calls/2failed sources+exact repairs/16raw;9frozen types/control;16namespace/3fresh70root closures;6links. No Lean replay;production unchanged.\n",
+      "stderr": ""
+    }
+  ],
+  "observer_incidents": [
+    "A current-tree historical verifier correctly rejects intentional production integration. Historical snapshot used instead.",
+    "Snapshot125 verifier initially lacked untracked native records; restored exact raw ZIP bytes,without trial replay. Initial failure retained below."
+  ]
+}

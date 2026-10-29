@@ -1,6 +1,12 @@
 # Status — 2026-10-29
 
-Current reader reconciliation (Phase122): [source map](research/ender_radius_bridge/MEANING_PRESERVING_SOURCE_MAP.md). PR42 merged the checked 48-billion theorem; only the stronger 0.013 estimate remains paper. The sole registered 47.5-billion attempt failed elaboration and remains unrepaired; it supplies no new cutoff. Historical records below retain their original scope.
+Current branch: the 47.5-billion actual-field theorem, arbitrary-field classification interface and actual radial composition laws are integrated unchanged; all four first local checks pass. Main retains the published 48-billion theorem. Exact-head CI/publication is a separate draft-PR gate. [Short mathematical account](research/ender_radius_bridge/STRUCTURAL_BRIDGE_CURRENT.md) · [Integration evidence](research/ender_radius_bridge/PHASE128_VERIFICATION.md). The failed Phase122 attempt remains unchanged; Phase125 is its separately registered successful successor. Historical entries below retain their original scope.
+
+## Phase128: one integrated library, three distinct consequences
+
+Nineteen public statements and two private helpers are exact relocations into `EndpointCutoff`, `FieldClassification` and `RadialAction`. The cutoff applies to the actual absolute discriminant of every totally complex degree-two number field with class number one. The classification iff transports the existing canonical proof and its 700-billion finite endgame. The radial matrices satisfy identity, addition, inverse and jet/Gram composition; their fixed nonmultiplicativity control remains. These are separate consequences, not claims of novelty or independent review.
+
+All four first checks passed: three-module build, full root build, all nineteen types/eight fresh closures, and the compiled whole audit. There are 205 reachable modules and 5,619 logical declarations / 4,807 theorems / 17,029 runtime auxiliaries; exactly 35 logical declarations were added and none removed. Old proof sources, controls, pins and workflows are unchanged. Publication and semantic review remain separately scoped.
 
 ## Phase121: actual-field48-billion proof integrated unchanged
 

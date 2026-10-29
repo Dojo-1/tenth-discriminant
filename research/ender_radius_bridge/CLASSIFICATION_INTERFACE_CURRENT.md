@@ -1,6 +1,6 @@
 # The classification no longer needs a caller-chosen field chart
 
-**Standalone Lean interface accepted; production integration is pending.**
+**Integrated unchanged in this branch; all four local checks pass.**
 This composes existing mathematics. It does not introduce a new classification
 method or constitute independent semantic review of the inherited proof.
 
@@ -32,4 +32,4 @@ Two required/frozen targets passed together on the first complete check:
 60.559438seconds, namespace2logical/2theorems, fresh closures61627/61633,
 only standard3axioms. Four required representation/classification inputs
 are present; eight newer cutoff roots are absent. No proof repair or second
-call was used. Full integration/build/audit/CI remain separate obligations.
+call was used. [Integrated API](../../lean/TenthDiscriminant/FieldClassification.lean) and [Phase128 evidence](PHASE128_VERIFICATION.md) cover the production/root checks; exact-head CI and review remain separate.

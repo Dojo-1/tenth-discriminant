@@ -11,10 +11,13 @@ separate evidence; a result is never transferred just because code is related.
 | [PR43 proofCI40902563385](https://github.com/Dojo-1/tenth-discriminant/actions/runs/40902563385) | Source182ea00/tested62d241f,identical tree;202modules,5584logical/4772theorems/17029runtime;full controls/securityPASS | Later local documentation and Phase125/structural proof work are not covered by that run. |
 | [Arithmetic reconstruction](TWO_SIDED_ARITHMETIC_GUIDE.md) and Phase123 | Actual quotient observations and two-sided integer middle matrix;one sealed80-case exact check | Same-assistant derivation, not independent peer review. Finite cases alone do not prove the universal statement. |
 | [Geometric reconstruction](GEOMETRIC_COMPARISON_GUIDE.md) and Phase124 | Radius,cell counts,ordinary jets and normalized upper inequality;ten fixed rational checks | Arithmetic prime-mass/tail lower estimate is identified as inherited. Rational checks do not prove analytic premises. |
-| [Phase125 successor](PHASE125_VERIFICATION.md) | Complete actual-field47.5btheorem,namespace and three fresh closuresPASS on first call | Standalone only;no production/root/newCI acceptance yet. Phase122failure stays preserved. |
+| [Phase125 successor](PHASE125_VERIFICATION.md) | Complete actual-field47.5btheorem,namespace and three fresh closuresPASS on first call | Integrated unchanged by Phase128 with all local checks; exact-head newCI/publication separate. Phase122failure stays preserved. |
+
+| Phase126/127 structural proofs and Phase128 integration | Arbitrary-field iff and actual radial action; 19 public types/2 private helpers integrated exactly, all four first checks PASS; 205 modules, 5619 logical/4807 theorems/17029 runtime | These are project checks and same-assistant reconstructions. Exact-head publication and independent semantic review are separate. |
 
 All173Argon-reviewed module blobs and pinned toolchain/lakefile are unchanged
-in the current202-module production base;29modules were added later. Thus its
+in the inherited202-module base;29modules were added later. Phase128 adds
+three more modules, giving205. Thus its
 source findings remain relevant to the inherited core, without reviewing the
 new modules or independently establishing the full proof.
 

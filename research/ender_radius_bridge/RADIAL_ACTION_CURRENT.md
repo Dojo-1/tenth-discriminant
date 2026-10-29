@@ -1,6 +1,6 @@
 # Radial transport is an actual parameter action
 
-**Standalone Lean laws accepted; integration is pending.** These laws concern
+**Integrated unchanged in this branch; all four local checks pass.** These laws concern
 the original RadialOperator.matrix, all ordinary jets and the same Gram.
 They do not follow merely from two matrices having the same determinant.
 
@@ -34,6 +34,6 @@ Individual lengths may change. Neither the group law nor a loop supplies
 new prime divisibility, a smaller cutoff or real-rank invariance after
 reduction. Those require their own hypotheses and inequalities.
 
-[Actual Lean laws](Phase127RadialAction.lean) · [Registered scope](PHASE127_PROTOCOL.md)
+[Integrated actual Lean laws](../../lean/TenthDiscriminant/RadialAction.lean) · [Integration evidence](PHASE128_VERIFICATION.md) · [Registered scope](PHASE127_PROTOCOL.md)
 · [Full verification](PHASE127_VERIFICATION.md). Same-assistant proof work,
 not independent semantic review. Both failed elaboration attempts remain saved.
