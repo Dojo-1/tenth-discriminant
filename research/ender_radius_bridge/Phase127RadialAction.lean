@@ -38,7 +38,7 @@ private theorem polynomial_composition {A : Type*} [CommRing A]
         ((RadialOperator.targetFin R S i t).val%S)) =
       RadialOperator.polynomial (a+b) w r s
   have hrad : (-C (a : A))+(X*C w-C (b : A)) =
-      X*C w-C ((a+b : Int) : A) := by push_cast; ring
+      X*C w-C ((a+b : Int) : A) := by simp only [Int.cast_add,map_add]; ring
   calc
     _ = ∑ t ∈ Finset.range (m+1),
         ((-a)^t*(m.choose t : Int)) •
@@ -102,11 +102,11 @@ theorem matrix_add (R S : Nat) (a b : Int) :
         (X^(h.val/S)*C (X : Polynomial Int)^(h.val%S) : Polynomial (Polynomial Int))) =
       ∑ h : Fin (R*S), RadialOperator.matrix R S (a+b) i h •
         (X^(h.val/S)*C (X : Polynomial Int)^(h.val%S) : Polynomial (Polynomial Int)) := by
-    simp only [Matrix.mul_apply,Finset.sum_smul,mul_smul]
+    simp only [Matrix.mul_apply,Finset.sum_smul,MulAction.mul_smul]
     rw [Finset.sum_comm]
     simp_rw [← Finset.smul_sum]
     simp_rw [RadialOperator.polynomial_action]
-    rw [polynomial_composition,RadialOperator.polynomial_action]
+    rw [polynomial_composition]
   have hc := congrArg (fun P : Polynomial (Polynomial Int) =>
     (P.coeff (j.val/S)).coeff (j.val%S)) hp
   simpa only [row_coeff] using hc
@@ -131,7 +131,7 @@ theorem transform_add (D R S : Nat) (a b : Int)
   funext i q j
   unfold zsqrtdJetTransform
   rw [← matrix_add]
-  simp only [Matrix.mul_apply,Finset.sum_smul,mul_smul,Finset.smul_sum]
+  simp only [Matrix.mul_apply,Finset.sum_smul,MulAction.mul_smul,Finset.smul_sum]
   rw [Finset.sum_comm]
 
 theorem gram_add (Q : Finset (Int × Int)) (D J R S : Nat) (a b : Int) :
