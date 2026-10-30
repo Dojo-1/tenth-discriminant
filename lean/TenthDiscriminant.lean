@@ -129,3 +129,5 @@ import TenthDiscriminant.EndpointCutoff
 import TenthDiscriminant.FieldClassification
 import TenthDiscriminant.RadialAction
 import TenthDiscriminant.ProofTransport
+import TenthDiscriminant.SharpRadialDetBound
+import TenthDiscriminant.SharpRadialEndpoint
