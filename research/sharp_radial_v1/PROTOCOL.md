@@ -18,7 +18,7 @@ Base and frozen state: PR #47 head \`0c7f4186d434f2b334218686060051a8d6881abf\`.
 ## Controls and stop rules
 
 - Canonical coefficient counterexample s=1,r=1,j=1 prevents attaching a centering saving to every differentiated factor.
-- Odd rho=11, z=0 rejects exact h=1/2 while respecting the new h=101/200.
+- Odd rho=11, z=11 (the outer boundary, not the origin) rejects exact h=1/2 while respecting the new h=101/200.
 - r<s and j>r cannot be omitted from the full diagonal proof.
 - Original Gram and its factor-two metric must remain exact, positive under the same point-count guard.
 - The existing 13/20 bound and original 47.5b theorem must compile unchanged; old negative controls preserved.
@@ -28,3 +28,7 @@ Base and frozen state: PR #47 head \`0c7f4186d434f2b334218686060051a8d6881abf\`.
 - No merge, no Mathlib submission, and no Tao posting in this cycle.
 
 Evidence: pre-existing declarations [P at already pinned heads]; A/B/C/D/E [H until exact-head kernel build]; finite test numbers [M only for declared bounded cases]; toroidal/polyholonomic controller [S/H]. All algebraic parameters and guards are written explicitly so another mathematician can reconstruct this without the project history.
+
+## First correction (before accepting any CI result)
+
+The initial negative-control draft incorrectly used z=0 at odd radius rho=11. It gave deviation 60, which does NOT falsify the half-radius envelope 60.5. The correct falsifier is the boundary z=11: norm difference |121-60|=61>60.5. Retain source history showing the failed draft; this change is a mathematical correction to the control, not a proof of the target.
