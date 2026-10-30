@@ -147,7 +147,7 @@ fn pilot(d:i128,rho:i128,j:usize) -> Result<ResultRow,String> {
     let c=normalized_rows(&e)?;
     let g=gram(&e,d);
     let transformed=gram(&e.iter().enumerate().map(|(i,row)|{
-        if i==6 { row.iter().zip(e[1].iter()).map(|(a,b)|a-b).collect() }
+        if i==6 { row.iter().zip(e[1].iter()).map(|(a,b)|*a-*b).collect() }
         else {row.clone()}
     }).collect::<Vec<_>>(),d);
     let k=gram(&c,d);
@@ -159,9 +159,9 @@ fn pilot(d:i128,rho:i128,j:usize) -> Result<ResultRow,String> {
             if transformed[i][h]!=di*dh*k[i][h] {matched=false}
             // This is also a direct congruence check, not just a new Gram
             // computed from normalized rows.
-            let u_gu=g[i][h] - if i==6 {g[1][h]} else {0}
-                - if h==6 {g[i][1]} else {0}
-                + if i==6 && h==6 {g[1][1]} else {0};
+            let u_gu=g[i][h] - (if i==6 {g[1][h]} else {0})
+                - (if h==6 {g[i][1]} else {0})
+                + (if i==6 && h==6 {g[1][1]} else {0});
             if u_gu!=transformed[i][h] {matched=false;}
         }
     }
