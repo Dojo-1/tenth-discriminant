@@ -83,3 +83,6 @@ new Lean and quantitative obligations. This conditional analysis
 makes **no new discriminant bound**; the 47.0-billion theorem remains
 the current accepted result.
 
+
+
+**Method-transport correction.** [PR #52](https://github.com/Dojo-1/tenth-discriminant/pull/52) checks the maximal-minor divisor of our **unnormalized** E, but the quotient `Ehat` may still have full rank modulo the same prime. The next experiment must account for row/column normalization and the exact derivative/point support used by competing methods. [Updated Tao-objectives audit](TAO_OBJECTIVES_CURRENT.md) and [source-accountable mathematical analysis](research/tao_goal_alignment/FOLDING_TO_TAO_20261030.md). No new cutoff is claimed.
