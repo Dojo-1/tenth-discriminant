@@ -91,3 +91,46 @@ requests coordinate and literal-shift compatibility proofs before drawing
 new conclusions from transformed frames; no determinant invariance or
 cutoff gain is assumed. Original frozen source comparisons above retain
 their dates and evidence scope.
+
+## 30 October: exact-rank comparison, a transport with remainder
+
+The [Chung/Dualverse 331 working draft](https://github.com/dualverse-ai/tenth_discriminant/blob/main/bound-331/latex/intro.tex)
+reports that retaining *individual degree and vanishing-order estimates* in the
+auxiliary-prime rank proof improves its earlier cutoff 498 to **331**.
+[Its exact rank criterion](https://github.com/dualverse-ai/tenth_discriminant/blob/main/bound-331/latex/rank.tex)
+tracks the layerwise coefficient degrees D_m, the degree bound B_e and
+the vanishing multiplicities mu_e; the proof reduces a polynomial
+relation modulo an **auxiliary inert prime**, then compares the total
+multiplicity of a nonzero one-variable polynomial with its degree.
+The reported parameter improvement includes triangular exponent shape
+K=17. [Its determinant comparison](https://github.com/dualverse-ai/tenth_discriminant/blob/main/bound-331/latex/comparison.tex)
+uses a chosen nonzero maximal minor, nodewise derivative column blocks,
+and Meixner/Schur-type singular-value bounds. We inspected these *source
+descriptions*, **not** the full proof, code execution, or referee record.
+
+Our method has the original **rectangular** exponent grid and a full
+positive trace Gram G=E B E^T. There is one mathematically honest shared
+interface: IF their mod-p nonzero minor were proved for our **very same E,
+same original sample points, same ordinary derivatives and same prime**,
+then full row rank mod p would imply characteristic-zero row independence,
+and positivity of our real G would follow. But their *parameters and E
+are not presently the same*, so the implication is only a conditional
+typed interface, not a usable imported proof. A nonzero selected minor
+also does not give an upper bound on the **sum of squared minors**
+in Cauchy–Binet: the full Gram determinant has extra terms. Nor does
+reducing the node count preserve the old integer G; if a future
+experiment chooses a new node set Q, it must reconstruct BOTH
+arithmetic p-adic divisibility and geometric positivity/upper estimates
+for that explicitly new integer.
+
+**Falsifiable next experiment [H]:** fix an identical observation type
+(E,Q,J,R,S) and compare the original point-count positivity certificate
+against an auxiliary-prime nonzero-minor witness. Require an exact map of
+sample/derivative indices and the full mod-p rank implication, then
+measure how much (if any) smaller a valid sample set becomes without losing
+the other proof obligations. Kill the candidate if the sample types cannot
+be matched, the necessary auxiliary prime is unavailable, or any new
+cutoff relies on bounding a sum of minors by one chosen minor.
+This is more consequential than merely ranking numerical constants, but
+currently supplies **no stronger theorem**.
+
