@@ -1,0 +1,35 @@
+name: Proof transport Rust pilot
+on:
+  pull_request:
+    paths:
+      - 'research/proof_transport_v0/**'
+      - '.github/workflows/proof-transport.yml'
+  push:
+    branches: ['research/proof-transport-atlas-v0']
+    paths:
+      - 'research/proof_transport_v0/**'
+      - '.github/workflows/proof-transport.yml'
+permissions:
+  contents: read
+concurrency:
+  group: proof-transport-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  exact-pilot:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned Rust toolchain
+        run: rustup toolchain install 1.85.1 --profile minimal
+      - name: Display exact tools
+        run: |
+          rustc +1.85.1 --version
+          cargo +1.85.1 --version
+          git rev-parse HEAD
+      - name: Run the bounded exact Rust controls
+        run: cargo +1.85.1 test --offline --manifest-path research/proof_transport_v0/Cargo.toml --verbose
+      - name: Emit exact arithmetic pilot ledger
+        run: cargo +1.85.1 run --offline --manifest-path research/proof_transport_v0/Cargo.toml --release
