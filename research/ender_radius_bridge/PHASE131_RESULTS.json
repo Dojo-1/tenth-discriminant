@@ -1,0 +1,51 @@
+{
+  "phase": 131,
+  "status": "EXACT_EXTERIOR_COMPARATOR_PASS_FIRST_AND_ONLY_CALL",
+  "base": "03cb58c25975ed638bebfa3bcc5b2a3152e9f452",
+  "protocol_commit": "481fd18e4f42c9388093b490dc0c22cb69ba3d9a",
+  "source_frozen_commit": "d49f270c9ebde16f1bef4dc90860ae1dd20854b2",
+  "native_result": {
+    "phase": 131,
+    "attempt": 1,
+    "exit_code": 0,
+    "stop_reason": "",
+    "elapsed_seconds": 0.2649999999994179,
+    "max_seconds": 60,
+    "source_frozen_commit": "d49f270c9ebde16f1bef4dc90860ae1dd20854b2",
+    "protocol_commit": "481fd18e4f42c9388093b490dc0c22cb69ba3d9a",
+    "source_snapshot": "PHASE131_trial_20261030082508.source.py",
+    "source_sha256": "404229790af58c4faa03c7c39bfeb299f5c311cc5eb45548ac41b56863d253d7",
+    "data": "PHASE131_trial_20261030082508.data.json",
+    "stdout": "PHASE131_trial_20261030082508.stdout.log",
+    "stderr": "PHASE131_trial_20261030082508.stderr.log",
+    "memory_measurement": "not measured;no memory cap or peak claim",
+    "scope": "New220minor comparator on8fixed sealedGramcases;not old80case or Lean replay"
+  },
+  "fixed_cases": 8,
+  "minor_count": 220,
+  "nonzero_minors": 24,
+  "zero_determinants": 0,
+  "controls": {
+    "omitted_square_cases_caught": 4,
+    "halved_exponent_nonzero_cases_caught": 2,
+    "shear_determinant": 1,
+    "diagonal_products": [
+      1,
+      2
+    ],
+    "rank_reduction": {
+      "real_rank": 2,
+      "mod3_rank": 1
+    }
+  },
+  "archive": "PHASE131_RAW.zip",
+  "archive_sha256": "56d15661e064d3780f5a13a4ffa4331dda6184c0753e469a66650cbc7fb602e2",
+  "raw_sha256": {
+    "PHASE131_trial_20261030082508.source.py": "404229790af58c4faa03c7c39bfeb299f5c311cc5eb45548ac41b56863d253d7",
+    "PHASE131_trial_20261030082508.data.json": "33a0a0ef503287d4dc2f8c513373d6c84e187d37e003606cb5fe6d28d53a4bb8",
+    "PHASE131_trial_20261030082508.stdout.log": "f1acb8fabb0416c11f663930fe81b1a117a0ac72edd0684bac1eccd6992ce82c",
+    "PHASE131_trial_20261030082508.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE131_trial_20261030082508.result.json": "afd04117eeddc50643a8468681a904888880404599d7519e7aabe480bbf2d0f3"
+  },
+  "scope": "Second representation and code path by same assistant;J=1 only;finite controls not universalproof;no new Lean theorem/cutoff or human review"
+}

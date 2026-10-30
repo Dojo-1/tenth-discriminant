@@ -6,7 +6,7 @@ one pair of coordinates for every original point and ordinary derivative.
 This gives a second proof of the doubled exponent and explains what a better
 geometric frame can change. It is exposition, not a new bound or theorem.
 
-Let E have n=RS rows and m=2|Q|J columns. Its rows e_1,...,e_n are the
+Let D>0 and let E have n=RS rows and m=2|Q|J columns. Its rows e_1,...,e_n are the
 actual integer observations. The metric B repeats diag(2,2D), so the original
 Gram is G=E B E^t. Keep the factor two and every observation slot.
 
@@ -78,7 +78,11 @@ not between the real and residue-field views. These are different transports.
 
 This is another derivation and representation by the same assistant, not
 independent human peer review. [Phase131](PHASE131_PROTOCOL.md) preregisters
-one exact comparator against eight sealed Gram cases and all220maximal
+one exact comparator against eight sealed Gram cases and all 220 maximal
 minors. It reconstructs zero-order observations through integer multiplication
 matrices; it does not rerun the old all-order jet campaign. Finite checks
 support the implementation, not the universal proof or a new cutoff.
+
+The [sole invocation passed](PHASE131_VERIFICATION.md): eight fixed cases,
+220 maximal minors, of which 24 are nonzero, in 0.265 seconds. These are
+implementation checks; the universal argument is the exterior identity above.
