@@ -8,6 +8,8 @@ inequality and field transport are now kernel-checked, although independent
 human semantic review remains [open](https://github.com/Dojo-1/tenth-discriminant/issues/50).
 The prior 47.1-billion theorem remains a checked predecessor.
 
+**Checked declarations (P):** upper bound `TightRadialSaving.production_normalized_upper_tight`; lower bound `RadialCutoff.recovered_mass_le_actual_log` and `RadialCutoff.recovered_normalized_lower`; endpoint `TightRadialEndpoint.endpoint_certificate` and `TightRadialEndpoint.endpoint_separation`, all composed in `TightRadialEndpoint.odd_large_classNumber_ne_one_47b`; field theorem `TightRadialEndpoint.totallyComplex_degree_two_classNumber_one_discriminant_bound_47b`.
+
 The crucial distinction is that the actual absolute discriminant D of an
 imaginary quadratic field is **not** the determinant constructed below.
 
@@ -21,7 +23,10 @@ trace metric B containing a factor 2 in each original coordinate block,
 
                      G = E B E^T.
 
-The independent strict interpolation/point-count theorem makes det(G)>0.
+The independent strict interpolation/point-count theorem makes det(G)>0
+([GEOMETRIC_COMPARISON_GUIDE, section 2](../ender_radius_bridge/GEOMETRIC_COMPARISON_GUIDE.md#2-two-counting-arguments-with-different-jobs);
+P: `RadialCutoff.integer_det_positive`, for any finite set Q of integer pairs
+with 2(R-1)+(S-1) < |Q|, D,R,S >= 1 and J=S ordinary derivative orders).
 Neither the characteristic polynomial nor the Gram itself is the field
 discriminant. At odd discriminants the chosen pair order can have index two
 in the maximal order; the full proof carries that distinction separately.
@@ -31,7 +36,8 @@ in the maximal order; the full proof carries that distinction separately.
 For each eligible odd inert p, ordinary derivatives of Z^p-W, evaluated
 at the original pairs, vanish modulo p; the *class-number-one* premise
 is transported through the genuine maximal-order norm criterion. There is
-an INTEGRAL upper-unitriangular row change U_p and a diagonal matrix
+an INTEGRAL lower-unitriangular (row order rS+s; RectangularBasisMatrix.lean,
+`rectangularBasisMatrix_lowerTriangular`) row change U_p and a diagonal matrix
 Delta_p=diag(p^k_i) such that
 
             U_p E = Delta_p Ehat      with Ehat integral,
@@ -41,15 +47,26 @@ hence (the same metric on both sides)
             U_p G U_p^T = Delta_p (Ehat B Ehat^T) Delta_p.
 
 This two-sided integer factorization is the reason the determinant contains
-p^(2F(p)), rather than merely p^F(p). Summing the guarded prime powers
-and the inherited explicit tail estimates gives
+p^(2F(p)), rather than merely p^F(p): det U_p=1 and det Delta_p=p^F(p) with
+F(p)=sum_i k_i, so det G=p^(2F(p)) det(Ehat B Ehat^T). For distinct eligible
+p these coprime powers divide the SAME positive det G, so the explicit lower
+bound M for their sum_p 2F(p)log(p) has M <= log(det G) (P: `RadialCutoff.recovered_mass_le_actual_log`,
+for squarefree D=3 mod 4 with class number one and D>=41006250000). M is a
+certified part plus a [disjoint](../ender_radius_bridge/SMALL_PRIME_RECOVERY_GUIDE.md#why-adding-the-terms-is-legitimate) p=3,5 recovery. A finite telescoping [positive potential](../ender_radius_bridge/PRIME_MASS_LOWER_GUIDE.md#a-positive-potential-pays-for-the-tail)
+pays for the prime tail without prime-density input. Divided by R^2 S, the certified part is at least
+0.999997 log(R) minus fixed losses 1.50001 (factorial envelope) + 1.7921
+(prime-log constants and tail budget) + 0.001 (error term, at most 19800/R), in total at most 3.294, and minus a [quadratic loss](../ender_radius_bridge/ASPECT_RATIO_GUIDE.md#the-checked-bridge-expose-the-price-instead-of-hiding-it) at most 0.0448 R/S.
+With R=floor(D/4), S=floor(R/25), R <= 25.1 S caps the loss at 4.419 against log(R); log(R) >= log(D)-1.4 makes it [5.820](../ender_radius_bridge/TUNED_CUTOFF_GUIDE.md) against log(D).
+For S>=100 and 25S <= R <= 26S the recovery is at least 55.4202 S^3 >= 0.081 R^2 S ([row count](../ender_radius_bridge/FIFTY_BILLION_GUIDE.md#the-row-count-with-sharper-weights)),
+so M/(R^2 S) >= 0.999997 log(D) - 5.739 (P: `RadialCutoff.recovered_normalized_lower`); with M <= log(det G) this gives
 
   (999997/1000000)*log(D) - 5739/1000
     <= log(det G)/(R^2*S).
 
 The integral middle matrix matters. Row-divisibility slogans alone would
-not establish this exponent. The full independent arithmetic discussion is
-in research/ender_radius_bridge/TWO_SIDED_ARITHMETIC_BRIDGE.md.
+not establish this exponent. The full arithmetic discussion is in
+[TWO_SIDED_ARITHMETIC_GUIDE.md](../ender_radius_bridge/TWO_SIDED_ARITHMETIC_GUIDE.md);
+its companion [bridge note](../ender_radius_bridge/TWO_SIDED_ARITHMETIC_BRIDGE.md) comes with an exact-integer oracle for small cases.
 
 ## Geometry: the upper pressure, same G
 
