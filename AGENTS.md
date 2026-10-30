@@ -19,7 +19,7 @@ Before ending **each** experiment cycle (including a failed, partial, corrected,
 
 Use the actual integer coordinate matrix of **ordinary** polynomial jets `E`, original positive trace metric `B`, and `G = E B Eᵀ`. The field discriminant is not `det(G)`. Arithmetic `U_p` and radial `T_a` are integer frame operations with explicit guards, and a change in row norms does not change `det(G)`. A finite frame commutator or geometric analogy is not a uniform analytic determinant improvement.
 
-The accepted main theorem is the **47.5-billion actual-field upper bound**, pending independent semantic reconstruction. The sharper `63/100` radial estimate / `47.1`-billion endpoint remains research until complete verified Lean statements and full actual-field composition.
+The accepted main theorem is the **47.1-billion actual-field upper bound**, with exact-head successful full Lean CI and open independent mathematical semantic reconstruction. The 47.5-billion theorem remains a checked predecessor. Phase133's proposed **47.0-billion** tightening is an experimental PR and must not be promoted before complete checked field composition and its own full-root audit.
 
 ## Entry points
 

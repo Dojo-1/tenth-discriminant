@@ -5,6 +5,12 @@ This selected comparison distinguishes our checked result from external
 source claims. It is not an exhaustive ranking or an independent replay
 of another repository.
 
+## Source freshness update — 30 October 2026
+
+The checked direct h=1 bound in this repository is now **actual |discriminant| < 47.1 billion** ([merged PR #48](https://github.com/Dojo-1/tenth-discriminant/pull/48), [exact-head full CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41087748526)); the 50-billion row below is the **26 October historical snapshot**, not the current publication. [PR #49](https://github.com/Dojo-1/tenth-discriminant/pull/49) proposes, but has **not yet proved**, 47.0 billion on the same integer Gram. The independent-reader review is [issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50).
+
+Tao's [public challenge discussion](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/comment-page-1/) now includes participant-reported cutoffs such as 570, 565 and 331, and a separately reported 7/8 zero-free-region-based Lean route. These are **participant reports**, not results independently replayed in this work. A fair comparison must align the meaning of D or q, external theorems, original determinant versus selected minors, finite completion, independent human review, and exactly which artifacts were kernel-checked. We should not treat the numerical ranking as proof-method ranking.
+
 | Route | Cutoff / scope | Load-bearing input | Evidence inspected here |
 |---|---|---|---|
 | Our determinant route | Actual field discriminant <50 billion for h=1 | Original Gram, nonsquare-prime divisibility, elementary factorial/tail estimates | Merged cutoff; integrated bridge at b4cff27 passes pinned CI40403267176, including final controls. No QRH input. |
