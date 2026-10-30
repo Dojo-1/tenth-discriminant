@@ -184,12 +184,12 @@ pub fn is_prime(p: usize) -> bool {
     p >= 2 && !(2..=p / 2).any(|q| p % q == 0)
 }
 pub fn inert_nonsquare(d: i128, p: usize) -> bool {
-    if p == 2 || !is_prime(p) { return false; }
+    if d <= 0 || p <= 2 || p > 101 || !is_prime(p) { return false; }
     let modulus = p as i128;
-    let target = (-d).rem_euclid(modulus);
+    let target = (modulus - d.rem_euclid(modulus)).rem_euclid(modulus);
     !(0..modulus).any(|x| (x * x).rem_euclid(modulus) == target)
 }
-pub fn exponent(r: usize, s: usize, s_width: usize, p: usize) -> usize {
+fn exponent(r: usize, s: usize, s_width: usize, p: usize) -> usize {
     (r / p).min(s_width - 1 - s)
 }
 pub fn arithmetic_frame(r_width: usize, s_width: usize, p: usize) -> Check<Mat> {
@@ -238,7 +238,10 @@ impl Pair {
         for _ in 0..k { x = x.times(self, d)?; }
         Ok(x)
     }
-    fn conjugate(self) -> Self { Self { re: self.re, im: -self.im } }
+    fn conjugate(self) -> Check<Self> {
+        Ok(Self { re: self.re,
+            im: self.im.checked_neg().ok_or_else(|| err("i128 conjugation overflow"))? })
+    }
 }
 fn falling(r: usize, j: usize) -> Check<i128> {
     if j > r { return Ok(0); }
@@ -249,7 +252,7 @@ fn falling(r: usize, j: usize) -> Check<i128> {
 fn derivative_jet(d: i128, r: usize, s: usize, j: usize, z: Pair) -> Check<Pair> {
     if j > r { return Ok(Pair { re: 0, im: 0 }); }
     let f = falling(r, j)?;
-    let v = z.power(r - j, d)?.times(z.conjugate().power(s, d)?, d)?;
+    let v = z.power(r - j, d)?.times(z.conjugate()?.power(s, d)?, d)?;
     Ok(Pair { re: mul(f, v.re)?, im: mul(f, v.im)? })
 }
 pub fn ellipse_points(d: i128, rho: i64) -> Check<Vec<Pair>> {
@@ -301,7 +304,8 @@ pub fn gram(e: &Mat, d: i128) -> Check<Mat> {
 }
 pub fn normalized_integer_jets(ue: &Mat, r_width: usize, s_width: usize,
                                p: usize) -> Check<(Mat, Mat, usize)> {
-    if p == 0 || ue.rows != r_width * s_width { return Err(err("quotient size")); }
+    let n = r_width.checked_mul(s_width).ok_or_else(|| err("quotient dimensions overflow"))?;
+    if p == 0 || ue.rows != n { return Err(err("quotient size")); }
     let mut delta = Mat::zero(ue.rows, ue.rows)?;
     let mut ehat = Mat::zero(ue.rows, ue.cols)?;
     let mut f = 0usize;
@@ -455,7 +459,7 @@ mod tests {
         let z = Pair { re: 0, im: 1 };
         let h = z.power(3, 2)?;
         // z^3 - conjugate(z) = -t, nonzero modulo 3.
-        assert_eq!(sub(h.im, z.conjugate().im)?.rem_euclid(3), 2);
+        assert_eq!(sub(h.im, z.conjugate()?.im)?.rem_euclid(3), 2);
         // d^3/dZ^3 Z^3 = 6 but HasseDeriv_3 Z^3 = 1.
         assert_eq!(falling(3, 3)? % 3, 0);
         assert_ne!(1 % 3, 0);
@@ -490,5 +494,10 @@ mod tests {
         assert!(radial_frame(3, 3, i128::MIN).is_err());
         assert!(arithmetic_frame(3, 3, 0).is_err());
         assert!(Mat::zero(65, 65).is_err());
+        assert!(!inert_nonsquare(i128::MIN, 3));
+        assert!(observation_matrix(1, 1, 1, 1,
+            &[Pair { re: 0, im: i128::MIN }]).is_err());
+        assert!(normalized_integer_jets(&Mat::zero(0, 0).unwrap(),
+            usize::MAX, 2, 3).is_err());
     }
 }
