@@ -44,4 +44,6 @@ python negative_controls.py
 
 For the bounded Rust controls, use `cargo test --offline --manifest-path research/proof_transport_v0/Cargo.toml`. Read each historical receipt at the recorded source SHA; new changes to `main` do not retroactively turn a previous exact-head run into a different one.
 
+**Phase134 experimental interface [H; not yet checked]:** [a generic integral selected-minor proof target](lean/TenthDiscriminant/RankDivisorCompatibility.lean), together with the [human-readable Tao-alignment and no-go analysis](research/tao_goal_alignment/FOLDING_TO_TAO_20261030.md), tests why p-adic extraction with positive rectangular weight forbids same-prime full modular row rank. This does **not** alter the original E, field cutoff, or classification. [Issue #51](https://github.com/Dojo-1/tenth-discriminant/issues/51) defines the stop gate; no new theorem is accepted before exact-head CI.
+
 **Publication rule:** small branches/PRs may be used transiently for review and CI, but *main* is the only continuing research surface. Experimental lemmas can enter `main` only with their exact proof status labelled and with the production Lean root still compiling. Do not promote speculative endpoints or merge compiler-failing proof modules.
