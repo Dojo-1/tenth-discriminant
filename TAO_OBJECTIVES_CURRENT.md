@@ -1,7 +1,7 @@
 # Tao's challenge: current accounting and side discoveries
 
-**The checked bound published in `main` is 47.5 billion** ([PR #45](https://github.com/Dojo-1/tenth-discriminant/pull/45)); [current one-page research state](RESEARCH_NOW.md) distinguishes proof, experiments and open review.
-result is an integrated local Lean bound for ANY imaginary quadratic field with
+**The checked bound published in `main` is 47.1 billion** ([PR #48](https://github.com/Dojo-1/tenth-discriminant/pull/48), [full exact-head CI PASS](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41087748526)); [current one-page research state](RESEARCH_NOW.md) distinguishes proof, experiments and open review.
+A separate integrated Lean result concerns ANY imaginary quadratic field with
 at most two ideal classes: actual absolute discriminant<2^52, sharper<2^50
 when odd. [Understand the transport](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md).
 The classification interface transports the existing canonical proof; it is not a new method or optimality claim.
@@ -15,9 +15,9 @@ keeps theorem checking, execution evidence and independent review separate. [Pha
 
 | # | Tao's objective | Where we are, with the limit attached |
 |---:|---|---|
-| 1 | Effective bound without Heegner input | **Current main cutoff: 47.5 billion**, actual fields and actual discriminants. [PR #45](https://github.com/Dojo-1/tenth-discriminant/pull/45) merged after exact-head Lean and security checks. [Proof](research/ender_radius_bridge/STRUCTURAL_BRIDGE_CURRENT.md). |
-| 2 | Best efforts to optimize the constant | **Conservative improvement:** 700 to 47.5 billion in the checked method now on main; the latest accepted step saves 0.5 billion from 48. Other approaches report much smaller bounds. No optimality claim. |
-| 3 | A finite computation can finish the range | **Existing canonical certificates and arbitrary-field interface.** The new iff transports that proof and its separate 700-billion endgame; it does not replace it with the 47.5-billion route. [Scope](research/ender_radius_bridge/CLASSIFICATION_INTERFACE_CURRENT.md). |
+| 1 | Effective bound without Heegner input | **Current main cutoff: 47.1 billion**, actual fields and actual discriminants. [PR #48](https://github.com/Dojo-1/tenth-discriminant/pull/48) merged after exact-head build, axiom audit, negatives and security checks. [Human-to-Lean proof](research/sharp_radial_v1/ENDPOINT_RECONSTRUCTION.md). |
+| 2 | Best efforts to optimize the constant | **Conservative improvement:** 700 to 47.1 billion in the checked method now on main; the latest accepted step saves 0.4 billion from 47.5. Other approaches report much smaller bounds. No optimality claim. |
+| 3 | A finite computation can finish the range | **Existing canonical certificates and arbitrary-field interface.** The new iff transports that proof and its separate 700-billion endgame; it does not replace it with the 47.1-billion route. [Scope](research/ender_radius_bridge/CLASSIFICATION_INTERFACE_CURRENT.md). |
 | 4 | High-quality, possibly upstreamable Lean | **Connected formal apparatus.** Independent human semantic/API review and Mathlib acceptance remain open. [Claim map](lean/FORMALIZATION.md). |
 | 5 | Compare different writeups | **Partial:** frozen [same-route comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) and [current source comparison](METHOD_COMPARISON_CURRENT.md). External proofs were not independently replayed. |
 | 6 | Stimulate new arguments or arrangements | **Reusable arrangements:** factorial prime mass, staircase weights, compatible ordinary-jet transport, actual radial composition/inverse laws and the bounded mixed-frame [proof-transport atlas](research/proof_transport_v0/PROOF_ATLAS.md). The latter does not improve the cutoff. [Operators and invariants](research/ender_radius_bridge/RADIAL_ACTION_CURRENT.md). No novelty claim. |
@@ -25,7 +25,7 @@ keeps theorem checking, execution evidence and independent review separate. [Pha
 | 8 | Help higher class-number problems | **Integrated and published:** EVERY imaginary quadratic number field with actual h<=2 has actual absolute discriminant<2^52; odd discriminants retain<2^50. Phase108 integrates arbitrary even-field transport unchanged. [Human proof](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md). Independent human review remains open; [PR38 passed exact-head CI and merged](research/ender_radius_bridge/PR38_MERGE_RECEIPT.md). |
 | 9 | Disclose AI use | **Disclosed** in the [README](README.md) and research/review records. Disclosure is not validation. |
 | 10 | Post a repository link and human summary | **Public repo-linked comments located:** 26/27 October, attributed to jesusasit; authorship process not independently verified. [Source refresh](research/ender_radius_bridge/SOURCE_REFRESH_20261028.md). The current [AI-prepared brief](TAO_REPLY_BRIEF.md) remains unposted by this agent. |
-| 11 | Independent due diligence | **Partial:** Argon reviewed frozen39e9ce3/173modules; no defect confirmed, verdict insufficient evidence. Exact-source project CI passed; Argon’s own replay did not finish. Later radial proofs remain outside its scope. [Layers](research/ender_radius_bridge/VERIFICATION_LAYERS_CURRENT.md). |
+| 11 | Independent due diligence | **Partial:** Argon reviewed frozen39e9ce3/173modules; no defect confirmed, verdict insufficient evidence. Exact-source project CI passed; Argon’s own replay did not finish. Later radial proofs, including the new Phase132 cutoff, remain outside its scope. [Layers](research/ender_radius_bridge/VERIFICATION_LAYERS_CURRENT.md). |
 | 12 | Quality, collaboration and attribution | **Documented practice:** credited antecedents, versioned evidence and explicit limits. No endorsement, priority or external quality verdict is inferred. |
 
 ## Supplementary results

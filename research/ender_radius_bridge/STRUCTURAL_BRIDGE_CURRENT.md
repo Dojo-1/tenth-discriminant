@@ -1,9 +1,6 @@
 # One integer, several faithful descriptions
 
-**This branch integrates the 47.5-billion bound and two structural interfaces.**
-All four local checks pass. Main retains the published 48-billion theorem;
-exact-head CI and publication are recorded in the draft PR. Independent human
-semantic review remains open. [Evidence and limits](PHASE128_VERIFICATION.md).
+**Historical Phase128 proof guide.** This reconstructs the preserved 47.5-billion theorem, not the newest published constant. [Current main](../../README.md) now contains the stronger **47.1-billion** result from [PR #48](https://github.com/Dojo-1/tenth-discriminant/pull/48), obtained by tightening the radial upper estimate on the **same integer Gram**; see the [current human derivation](../sharp_radial_v1/ENDPOINT_RECONSTRUCTION.md) and [full proof CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41087748526). This historical guide's numerical comparison below remains valid for its own original theorem. Independent semantic review is open. [Phase128 evidence and limits](PHASE128_VERIFICATION.md).
 
 ## The object before its coordinates
 

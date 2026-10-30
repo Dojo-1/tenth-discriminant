@@ -9,7 +9,7 @@ The question concerns imaginary quadratic number systems: extensions of the rati
 
 ## The result in one sentence
 
-**The theorem integrated in `main` proves that any imaginary quadratic number field with class number one has absolute field discriminant below 47.5 billion.**
+**The Lean-checked theorem on `main` proves that every totally complex quadratic number field of class number one has actual absolute field discriminant strictly below 47.1 billion.**
 
 Here, class number one means unique factorization in that ring; the discriminant measures the arithmetic size of the field. The bound applies to the actual field and its actual discriminant. It assumes neither the known list of answers nor an earlier cutoff.
 
@@ -21,15 +21,15 @@ We build a positive integer determinant from polynomial values and derivatives a
 
 - **Geometry limits its size.** The ellipse and derivative estimates give an upper bound.
 - **Arithmetic forces divisibility.** Class number one makes that same determinant divisible by many prime powers, giving a lower bound.
-- **At 47.5 billion and above, the bounds conflict.** The lower bound exceeds the upper bound, so class number one is impossible there.
+- **At 47.1 billion and above, the bounds conflict.** The lower bound exceeds the upper bound, so class number one is impossible there.
 
 The hard part is making both estimates refer to exactly the same positive integer. The formal development connects the lattice count, polynomial independence, integer matrix, prime divisibility and final inequality.
 
-**[Read the short proof and its limits](research/ender_radius_bridge/STRUCTURAL_BRIDGE_CURRENT.md)** · [Original proof spine](lean/MATHEMATICAL_SPINE.md)
+**[Read the current short proof and its limits](research/sharp_radial_v1/ENDPOINT_RECONSTRUCTION.md)** · [Original arithmetic spine](lean/MATHEMATICAL_SPINE.md) · [Lean actual-field theorem](lean/TenthDiscriminant/SharpRadialEndpoint.lean)
 
 ## What is checked, and what remains
 
-The [47.5-billion theorem and two structural interfaces](research/ender_radius_bridge/PHASE128_VERIFICATION.md) are integrated in `main` ([merged PR #45](https://github.com/Dojo-1/tenth-discriminant/pull/45)); exact-head [Lean CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41021656669) and security checks passed. These checks validate encoded statements and audited dependencies, not independent human semantic reconstruction. [Exact scope](lean/FORMALIZATION.md) keeps the obligations distinct.
+The improved **47.1-billion actual-field theorem** is now integrated in `main` ([merged PR #48](https://github.com/Dojo-1/tenth-discriminant/pull/48)); its [exact-head full Lean CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41087748526), transitive axiom audit, known-false strengthening controls and security checks all passed. The original [47.5-billion theorem](lean/TenthDiscriminant/EndpointCutoff.lean) and its [original successful CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41021656669) are preserved byte-for-byte. These checks validate the encoded theorem and allowed dependencies, **not independent human semantic reconstruction**.
 
 Independent human semantic review remains open. [Argon’s frozen review and project CI](research/ender_radius_bridge/VERIFICATION_LAYERS_CURRENT.md) concern different questions: no defect was confirmed, but its verdict remains insufficient evidence. That review does not cover the later radial improvement or new interfaces.
 
@@ -39,7 +39,7 @@ The [arbitrary-field classification interface](research/ender_radius_bridge/CLAS
 
 The public record now lives in **[main](https://github.com/Dojo-1/tenth-discriminant/tree/main)**. The independent two-sided finite oracle ([#44](https://github.com/Dojo-1/tenth-discriminant/pull/44)), the 47.5-billion actual-field theorem ([#45](https://github.com/Dojo-1/tenth-discriminant/pull/45)), the exterior-volume account ([#46](https://github.com/Dojo-1/tenth-discriminant/pull/46)), and the finite Rust/Lean mixed-frame atlas ([#47](https://github.com/Dojo-1/tenth-discriminant/pull/47)) are merged. Their original review discussions and exact CI receipts remain available; the cancelled overall CI on #47 is **not** called green.
 
-The **active experiment**, [#48](https://github.com/Dojo-1/tenth-discriminant/pull/48), sharpens the original integer Gram's radial estimate via the `63/100` ordinary-jet factor and an explicit normalized saving of `0.011`. The [focused Lean build passed](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41053237537). The full root initially failed its import-coverage audit, and the new [endpoint source and human proof map](https://github.com/Dojo-1/tenth-discriminant/blob/research/sharp-radial-same-gram-v1/research/sharp_radial_v1/ENDPOINT_RECONSTRUCTION.md) now add the missing audited import, a five-term log certificate and a complete proposed **47.1-billion actual-field theorem**. **The complete 47.1-billion actual-field endpoint now passes [focused exact-head Lean compilation](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41087748532) at `b16e835`. The full-root transitive audit and negative-control workflow are separately pending. The accepted main result remains 47.5 billion.**
+[PR #48](https://github.com/Dojo-1/tenth-discriminant/pull/48) has also merged: the same original integral Gram now admits a sharper rounded radial center `101/200`, ordinary-jet factor `63/100`, and normalized Hadamard saving `0.011`. The five-term rational logarithm certificate closes the **actual-field 47.1-billion bound**; [full Lean + audit + negative-control CI passed](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41087748526) on its published source head. This is a more effective **bound from this method**, not a claim of novelty, optimality or external referee endorsement. The [human reconstruction](research/sharp_radial_v1/ENDPOINT_RECONSTRUCTION.md) follows exactly the same object through arithmetic and geometry. A possible 47.0-billion tightening is recorded as an *unproved next-cycle hypothesis*, not a result.
 
 Mathematicians should be able to recover both the argument and the precise uncertainty without opening five competing branches. The short [current-state map](RESEARCH_NOW.md) records what has been proved, tested, proposed, corrected and left to independent review. Each experiment turn updates this README after an **@Rizz pass** for mathematical clarity and reconstructability; [the contributor contract](AGENTS.md) makes that obligation explicit.
 
