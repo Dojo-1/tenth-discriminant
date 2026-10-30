@@ -131,3 +131,5 @@ import TenthDiscriminant.RadialAction
 import TenthDiscriminant.ProofTransport
 import TenthDiscriminant.SharpRadialDetBound
 import TenthDiscriminant.SharpRadialEndpoint
+import TenthDiscriminant.TightRadialSaving
+import TenthDiscriminant.TightRadialEndpoint
