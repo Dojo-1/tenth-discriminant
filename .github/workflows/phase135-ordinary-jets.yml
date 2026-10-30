@@ -1,0 +1,31 @@
+name: Phase135 original ordinary-jet integer pilot
+on:
+  push:
+    branches: ['research/phase135-ellipse-residue-transport']
+    paths:
+      - 'research/rank_divisor_interface/phase135_ordinary_jet_pilot.rs'
+      - '.github/workflows/phase135-ordinary-jets.yml'
+  pull_request:
+    paths:
+      - 'research/rank_divisor_interface/phase135_ordinary_jet_pilot.rs'
+      - '.github/workflows/phase135-ordinary-jets.yml'
+permissions:
+  contents: read
+jobs:
+  exact-jet-pilot:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Compiler and source version
+        run: |
+          rustc --version
+          git rev-parse HEAD
+      - name: Exact original ellipse ordinary-jet controls
+        run: |
+          rustc --edition=2021 --test research/rank_divisor_interface/phase135_ordinary_jet_pilot.rs -o /tmp/phase135-tests
+          /tmp/phase135-tests
+          rustc --edition=2021 research/rank_divisor_interface/phase135_ordinary_jet_pilot.rs -o /tmp/phase135-pilot
+          /tmp/phase135-pilot
