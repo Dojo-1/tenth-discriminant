@@ -37,7 +37,7 @@ and [security41021651935](https://github.com/Dojo-1/tenth-discriminant/actions/r
 passed on that head. Its tree is identical to mathematical source58b9371.
 The full build,250certificate pairs,5619logical/4807theorems/17029runtime,
 eight synthetic tests and all eight control families passed. The actual
-runner checkout3d44376 has that same tree. PR45 remains draft/unmerged.
+runner checkout3d44376 has that same tree. **Publication update (30 October 2026):** PR45 was merged into `main` as [merge commit 3352f9d](https://github.com/Dojo-1/tenth-discriminant/commit/3352f9d38b6a2540f331b38e2faad3fa558ce234). The original verification describes the tested source/tree and is not retroactively a different CI result; independent human semantic review remains open.
 
 Independent human semantic review remains open. The new
 [exterior-volume reconstruction](EXTERIOR_VOLUME_GUIDE.md) is another
