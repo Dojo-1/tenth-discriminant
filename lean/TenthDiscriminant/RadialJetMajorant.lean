@@ -387,5 +387,96 @@ theorem negative_endpoint_control :
     ¬(4/5*(2458/100 : Real)-823/1000 < 999997/1000000*(2458/100)-5739/1000) := by
   norm_num
 
+
+/-! Phase132: additional sharper lemmas. All preceding declarations remain
+    byte-for-byte untouched; the source still acts on the same original jets. -/
+
+/-- Exact integer center, including odd rho: the maximum deviation from
+    floor(rho²/2) is at most (rho²+1)/2, hence 101/200 at rho>=10. -/
+theorem centered_disc_sharp (rho : Nat) (hrho : 10 ≤ rho)
+    (z : Complex) (hz : ‖z‖ ≤ rho) :
+    ‖z*conj z-((rho^2/2 : Nat) : Complex)‖ ≤
+      (101/200 : Real)*(rho : Real)^2 := by
+  have hmod := Nat.mod_lt (rho^2) (by decide : 0 < 2)
+  have hdiv := Nat.mod_add_div (rho^2) 2
+  have hlo : 2*(rho^2/2) ≤ rho^2 := by omega
+  have hhi : rho^2 ≤ 2*(rho^2/2)+1 := by omega
+  have hlo' : 2*((rho^2/2 : Nat) : Real) ≤ (rho : Real)^2 := by exact_mod_cast hlo
+  have hhi' : (rho : Real)^2 ≤ 2*((rho^2/2 : Nat) : Real)+1 := by exact_mod_cast hhi
+  have hrho' : (10 : Real) ≤ rho := by exact_mod_cast hrho
+  have hn0 : 0 ≤ ‖z‖^2 := sq_nonneg ‖z‖
+  have hn1 : ‖z‖^2 ≤ (rho : Real)^2 := by nlinarith [norm_nonneg z]
+  have hr2 : (100 : Real) ≤ (rho : Real)^2 := by
+    nlinarith [sq_nonneg ((rho : Real)-10)]
+  have he : z*conj z-((rho^2/2 : Nat) : Complex) =
+      ((‖z‖^2-((rho^2/2 : Nat) : Real) : Real) : Complex) := by
+    rw [Complex.mul_conj']
+    push_cast
+    rfl
+  rw [he, Complex.norm_real, Real.norm_eq_abs]
+  apply abs_le.mpr
+  constructor <;> nlinarith
+
+private theorem center_int_sharp (rho : Nat) (hrho : 10 ≤ rho)
+    (z : Complex) (hz : ‖z‖ ≤ rho) :
+    ‖z*conj z-(((rho^2/2 : Nat) : Int) : Complex)‖ ≤
+      (101/200 : Real)*(rho : Real)^2 := by
+  simpa using centered_disc_sharp rho hrho z hz
+
+/-- Sharper gain for every ordinary derivative column of the old
+    production radial frame. No new rows, points, or Gram are introduced. -/
+theorem ordinary_jet_gain_sharp (rho : Nat) (hrho : 10 ≤ rho)
+    (S r s j : Nat) (hS : 1 ≤ S) (hs : s < S) (hj : j < S)
+    (hr : 9*S ≤ r) (z : Complex) (hz : ‖z‖ ≤ rho) :
+    ‖jet (rho^2/2 : Nat) r s j z‖ ≤
+      (63/100 : Real)^s*(r.descFactorial j : Real)*(rho : Real)^(r+s-j) := by
+  have hrs : s ≤ r := by omega
+  have hjr : j ≤ r := by omega
+  have hd : (0 : Real) < (r-j+1 : Nat) := by positivity
+  have hratio : (j : Real)/(r-j+1 : Nat) ≤ 1/8 := by
+    apply (div_le_iff₀ hd).2
+    have h : 8*j ≤ r-j+1 := by omega
+    have h' : (8 : Real)*j ≤ (r-j+1 : Nat) := by exact_mod_cast h
+    nlinarith
+  have hbase : (101/200 : Real)+(j : Real)/(r-j+1 : Nat) ≤ 63/100 := by
+    linarith
+  have hp : ((101/200 : Real)+(j : Real)/(r-j+1 : Nat))^s ≤
+      (63/100 : Real)^s :=
+    pow_le_pow_left₀ (by positivity) hbase s
+  calc
+    _ ≤ coefficient r s j (101/200)*(rho : Real)^(r+s-j) :=
+      norm_le_coefficient _ r s j hrs hjr rho (101/200)
+        (by positivity) (by norm_num)
+        z hz (center_int_sharp rho hrho z hz)
+    _ ≤ ((r.descFactorial j : Real)*
+        ((101/200 : Real)+(j : Real)/(r-j+1 : Nat))^s)*(rho : Real)^(r+s-j) :=
+      mul_le_mul_of_nonneg_right
+        (coefficient_bound r s j (101/200) (by norm_num) hjr) (by positivity)
+    _ ≤ _ := by
+      have h := mul_le_mul_of_nonneg_right
+        (mul_le_mul_of_nonneg_left hp
+          (show (0 : Real) ≤ r.descFactorial j by positivity))
+        (show (0 : Real) ≤ (rho : Real)^(r+s-j) by positivity)
+      convert h using 1 <;> ring
+
+/-- The existing numerical-log verifier proves this rational lower bracket,
+    independently of any floating-point approximation. -/
+theorem logarithm_gain_sharp :
+    (9/20 : Real) ≤ Real.log (100/63 : Real) := by
+  have hc : checkPositiveLogBounds 4 (100/63) 0 (9/20) (47/100)=true := by
+    norm_num [checkPositiveLogBounds,binaryLogLowerRat,binaryLogUpperRat,
+      oddLogPrefixRat,oddLogRemainderRat,Finset.sum_range_succ]
+  have h := (checkPositiveLogBounds_sound 4 (100/63) 0 (9/20) (47/100) hc).1
+  push_cast at h
+  exact h
+
+/-- The half-radius constant cannot be asserted without integer rounding.
+    At rho=11 and the origin, floor(121/2)=60>121/2 fails. -/
+theorem sharp_rounding_negative_control :
+    ¬ (‖(0 : Complex)*conj (0 : Complex)-
+      ((11^2/2 : Nat) : Complex)‖ ≤ (1/2 : Real)*11^2) := by
+  norm_num
+
+
 end
 end TenthDiscriminant.RadialJetMajorant
