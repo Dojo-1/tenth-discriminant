@@ -46,13 +46,14 @@ theorem selectedColumns_det_exact_factor {n m : Nat}
   rw [hpow] at hdet
   exact hdet
 
-/-- If a selected minor of the integral NORMALIZED C is a nonunit
-modulo-p witness (not divisible by p), the matching minor of the
+/-- If a selected minor of integral NORMALIZED C is not divisible by p, the matching minor of the
 ORIGINAL E has exactly the extracted power, and not one more.
 
-No primality assumption is needed for this divisibility implication;
-p != 0 is needed to cancel the extracted factor over Z. -/
-theorem selectedColumns_exact_power_of_unit {n m : Nat}
+For prime |p| this is a residue-unit witness. For composite |p|,
+nondivisibility by p alone does NOT imply invertibility modulo p;
+this theorem deliberately claims only the integer divisibility fact.
+The cancellation over Z requires p != 0. -/
+theorem selectedColumns_exact_power_of_not_dvd {n m : Nat}
     (E C : Matrix (Fin n) (Fin m) Int)
     (U : Matrix (Fin n) (Fin n) Int)
     (p : Int) (k : Fin n → Nat)
@@ -60,7 +61,7 @@ theorem selectedColumns_exact_power_of_unit {n m : Nat}
     (hU : U.det = 1)
     (hfactor : U * E = Matrix.diagonal (fun i => p ^ k i) * C)
     (cols : Fin n → Fin m)
-    (hunit : ¬ p ∣ (selectedColumns C cols).det) :
+    (hnot_dvd : ¬ p ∣ (selectedColumns C cols).det) :
     p ^ (∑ i, k i) ∣ (selectedColumns E cols).det ∧
       ¬ p ^ ((∑ i, k i) + 1) ∣ (selectedColumns E cols).det := by
   have hdet := selectedColumns_det_exact_factor E C U p k hU hfactor cols
@@ -77,7 +78,7 @@ theorem selectedColumns_exact_power_of_unit {n m : Nat}
         _ = p ^ (∑ i, k i) * (p * w) := by rw [pow_succ]; ring
     have hc : (selectedColumns C cols).det = p * w :=
       mul_left_cancel₀ (pow_ne_zero _ hp) heq
-    exact hunit ⟨w, hc⟩
+    exact hnot_dvd ⟨w, hc⟩
 
 /-- Elementary integer divisibility cannot wrap around a modulus
 larger than the coordinate difference. -/
