@@ -59,7 +59,7 @@ theorem all_maximal_minors_pow_dvd {n m : Nat}
   have hpow : (∏ i, p ^ k i) = p ^ (∑ i, k i) := by
     simpa using (Finset.prod_pow_eq_pow_sum Finset.univ k p)
   rw [hpow] at hdet
-  exact ⟨(selectedColumns C cols).det, hdet.symm⟩
+  exact ⟨(selectedColumns C cols).det, hdet⟩
 
 /-- With positive extracted weight, each maximal minor is divisible
 by p itself. It cannot simultaneously be a unit modulo p. This is
@@ -101,8 +101,9 @@ theorem valuationWeight_pos_of_lt_R (R S p : Nat)
     omega
   have hr : (∑ t ∈ Finset.range S, min (p / p) t) ≤
       (∑ r ∈ Finset.range R, ∑ t ∈ Finset.range S, min (r / p) t) :=
-    Finset.single_le_sum (fun _ _ => Nat.zero_le _)
-      (Finset.mem_range.mpr hpR)
+    Finset.single_le_sum
+      (f := fun r : Nat => ∑ t ∈ Finset.range S, min (r / p) t)
+      (fun _ _ => Nat.zero_le _) (Finset.mem_range.mpr hpR)
   change 0 < (∑ r ∈ Finset.range R, ∑ t ∈ Finset.range S, min (r / p) t)
   omega
 
