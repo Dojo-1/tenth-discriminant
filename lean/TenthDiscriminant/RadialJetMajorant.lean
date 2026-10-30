@@ -473,7 +473,7 @@ theorem logarithm_gain_sharp :
 /-- The half-radius constant cannot be asserted without integer rounding.
     At rho=11 and the origin, floor(121/2)=60>121/2 fails. -/
 theorem sharp_rounding_negative_control :
-    ¬ (‖(0 : Complex)*conj (0 : Complex)-
+    ¬ (‖(11 : Complex)*conj (11 : Complex)-
       ((11^2/2 : Nat) : Complex)‖ ≤ (1/2 : Real)*11^2) := by
   norm_num
 
