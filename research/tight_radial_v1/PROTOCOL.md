@@ -1,5 +1,7 @@
 # Phase133 protocol: tighten a known inequality, not the mathematical object
 
+**Postverification note:** Phase133 is formally checked [P] and non-destructively merged ([PR #49](https://github.com/Dojo-1/tenth-discriminant/pull/49), [exact-head CI PASS](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41098122516)). This file retains the pre-registered hypothesis and two failed proof repairs as historical evidence, not current failures. See [publication verification receipt](PHASE133_VERIFICATION.md). Independent human semantic review remains open.
+
 Registration base: main commit 8ed5f874394c557bad9ab41b205f8719c4cb2231.
 The experiment lives on a disposable verification branch; main is the ONLY
 reader-facing source. Neither a failed nor a merely compiling theorem is a new

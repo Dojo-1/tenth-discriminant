@@ -1,9 +1,12 @@
 # A tenth-discriminant bound through one original integer
 
-This is a **reader-facing reconstruction of a proposed Phase133 improvement**.
-It is not a claim that the new Lean proof has passed. The established theorem
-on main prior to this cycle is a 47.1-billion actual-field bound, which has
-a successful exact-head root audit. Its mathematical premises are inherited.
+**Publication update (30 October 2026):** The Phase133 47.0-billion
+actual-field theorem is [merged on main](https://github.com/Dojo-1/tenth-discriminant/pull/49) and [checked in whole-root
+Lean CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41098122516), including permitted-axiom and falsification controls.
+The explanation below was originally written prospectively; its core
+inequality and field transport are now kernel-checked, although independent
+human semantic review remains [open](https://github.com/Dojo-1/tenth-discriminant/issues/50).
+The prior 47.1-billion theorem remains a checked predecessor.
 
 The crucial distinction is that the actual absolute discriminant D of an
 imaginary quadratic field is **not** the determinant constructed below.

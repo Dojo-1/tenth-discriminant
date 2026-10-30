@@ -7,7 +7,7 @@ of another repository.
 
 ## Source freshness update — 30 October 2026
 
-The checked direct h=1 bound in this repository is now **actual |discriminant| < 47.1 billion** ([merged PR #48](https://github.com/Dojo-1/tenth-discriminant/pull/48), [exact-head full CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41087748526)); the 50-billion row below is the **26 October historical snapshot**, not the current publication. [PR #49](https://github.com/Dojo-1/tenth-discriminant/pull/49) proposes, but has **not yet proved**, 47.0 billion on the same integer Gram. The independent-reader review is [issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50).
+The checked direct h=1 bound in this repository is now **actual |discriminant| < 47.0 billion** ([merged PR #49](https://github.com/Dojo-1/tenth-discriminant/pull/49), [whole-root exact-head CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41098122516)). The 47.1-billion theorem ([PR #48](https://github.com/Dojo-1/tenth-discriminant/pull/48)) remains a checked predecessor, and the 50-billion row below is a **26 October historical snapshot**, not the current publication. The independent-reader review is [issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50); external methods use differently structured objects.
 
 Tao's [public challenge discussion](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/comment-page-1/) now includes participant-reported cutoffs such as 570, 565 and 331, and a separately reported 7/8 zero-free-region-based Lean route. These are **participant reports**, not results independently replayed in this work. A fair comparison must align the meaning of D or q, external theorems, original determinant versus selected minors, finite completion, independent human review, and exactly which artifacts were kernel-checked. We should not treat the numerical ranking as proof-method ranking.
 
@@ -36,7 +36,7 @@ sharper theorem.
 without moving the Gram, invite the bounded [independent arithmetic/geometry
 review #50](https://github.com/Dojo-1/tenth-discriminant/issues/50),
 and only then consider an auxiliary-prime port as a newly registered method.
-Our 47.1-billion bound is kernel-checked on its own exact head, not claimed
+Our 47.0-billion bound is kernel-checked on its own exact head, not claimed
 competitive in raw constant. The other works' authors report stronger
 bounds and verification; no independent reproduction here.
 
