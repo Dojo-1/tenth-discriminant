@@ -128,3 +128,4 @@ import TenthDiscriminant.RadialCutoff
 import TenthDiscriminant.EndpointCutoff
 import TenthDiscriminant.FieldClassification
 import TenthDiscriminant.RadialAction
+import TenthDiscriminant.ProofTransport
