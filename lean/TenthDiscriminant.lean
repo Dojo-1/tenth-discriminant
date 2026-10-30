@@ -136,3 +136,5 @@ import TenthDiscriminant.TightRadialEndpoint
 import TenthDiscriminant.RankDivisorCompatibility
 
 import TenthDiscriminant.EllipseResidueTransport
+
+import TenthDiscriminant.Phase136MinorSaturation
