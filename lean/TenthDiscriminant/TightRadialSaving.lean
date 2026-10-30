@@ -33,6 +33,8 @@ theorem scale_gain_tight (R S : Nat)
   rw [Nat.cast_sub h9, Nat.cast_sub h1]
   push_cast
   have hS0 : (0 : Real) ≤ S := by positivity
+  have hR0 : (0 : Real) ≤ (R : Real)-9*S := by linarith
+  have hSm1 : (0 : Real) ≤ (S : Real)-1 := by linarith
   have hS99 : (99/100 : Real)*S ≤ (S : Real)-1 := by linarith
   /- 676*S*(R-9*S)-17*R² =
      (S-t)*(191*S+17*t) ≥ 0 with 0≤t≤S. -/
@@ -64,8 +66,10 @@ theorem scale_gain_tight (R S : Nat)
       ring
     _ ≤ ((R : Real)-9*S)*S*((S : Real)-1)*(231/500 : Real) := by
       gcongr
+      exact mul_nonneg hR0 hS0
     _ ≤ ((R : Real)-9*S)*S*((S : Real)-1)*Real.log (100/63 : Real) := by
-      exact mul_le_mul_of_nonneg_left logarithm_gain_tight (by positivity)
+      exact mul_le_mul_of_nonneg_left logarithm_gain_tight
+        (mul_nonneg (mul_nonneg hR0 hS0) hSm1)
 
 theorem constant_sanity :
     (23/2000 : Real) < 388773/33800000 ∧

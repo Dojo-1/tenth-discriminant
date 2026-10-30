@@ -68,3 +68,7 @@ Required new theorem:
 This cycle's purpose is constant optimization AND human reconstruction, not
 an additional geometric ontology. A 360x360 polyholonomic controller would
 need a separate test showing a mathematical consequence.
+
+## Correction #1: missing inferred nonnegativity (same mathematical target)
+
+Initial exact source `534f742` failed both focused CI runs [41095139730](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41095139730) and [41095181759](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41095181759). The new saving lemma left a `gcongr` side condition `0 ≤ (R-9*S)*S` unsolved, and `positivity` could not establish the nonnegative multiplier for the final log inequality. This first bounded elaboration repair derives `R-9*S ≥ 0` from the unchanged `25*S≤R` guard, and explicitly supplies `S≥0` and `S-1≥0` to the multiplication inequalities. The theorem types, field target, original Gram, constants, source pins and controls are unchanged. First failed source and CI logs remain preserved; await a fresh exact-head verdict. **Repair budget consumed: 1 of 3.**
