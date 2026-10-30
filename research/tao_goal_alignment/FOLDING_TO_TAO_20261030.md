@@ -1,8 +1,14 @@
 # Folding our investigation into Tao's challenge
 
-**30 October 2026 — Phase134, preregistered [H] until Lean succeeds.**
+**30 October 2026 — Phase134 publication update:** [PR #52](https://github.com/Dojo-1/tenth-discriminant/pull/52) merged after [exact-head full-root Lean CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41108320303), permitted-axiom audit and known-false controls **passed**. The narrative below preserves the original preregistration; the generic all-minors divisibility and positive rectangular-weight lemmas are now [P], but the cross-method interface and any improved cutoff remain [H].
 
 The [original challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/) does not ask solely for the smallest tenth-discriminant bound. It asks for effective Heegner-free bounds extracted from different methods, optimization *within* each method, finite endgames, potentially reusable high-quality formalization, comparison of arrangements, revisiting failed arguments, extensions to higher class number, and an honest human-facing account with AI assistance disclosed and prior authors credited. Even a poor bound or a killed improvement can be useful when it reveals a mathematical cost that a stronger but opaque argument hides.
+
+## Post-review mathematical correction — retain the normalization
+
+The external [rStation exact-rank route](https://github.com/dualverse-ai/tenth_discriminant/blob/main/bound-331/latex/rank.tex) already divides the triangular $(Z^p-W)^m$ rows by $p^m$ and rescales Taylor-jet columns by $p^\ell$ before asking for rank over the residue field. Our theorem about **E before normalization** therefore does not exclude rank of their transformed matrix. Nor can we freely identify their triangular support and chosen distinct-residue nodes with our full original ellipse, or their Taylor coefficient jets with our ordinary derivatives: the change introduces $j!$, possibly zero modulo $p$. For $p\le \rho$, our original lattice contains two nodes with the same reduction, $(0,0)$ and $(p,0)$, so their distinct-residue premise fails there. Such losses must be carried as typed remainder rather than waved away by a geometric metaphor.
+
+The useful problem for the next round is now **simultaneous row and column integral normalization with source-accountable prime and sampling constraints**, tested against the classical positivity proof at matched cost. Until that is built and falsified, the 47.0-billion cutoff is unchanged and no Siegel-zero theorem follows. External contributors' existing normalization ideas receive their original attribution; this is not a novel no-go theorem for them.
 
 What remains of **our** approach when we submit it to those goals?
 
