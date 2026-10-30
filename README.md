@@ -5,9 +5,11 @@
 That is the idea behind this AI-assisted contribution to [Terence Tao's challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).
 The question concerns imaginary quadratic number systems: extensions of the rational numbers obtained by adjoining a square root of a negative number. Which have unique factorization in their ring of integers?
 
+**[Current research state — start here](RESEARCH_NOW.md):** one canonical branch, checked results, finite instruments, hypotheses and open review.
+
 ## The result in one sentence
 
-**This branch proves that any imaginary quadratic number field with class number one has absolute field discriminant below 47.5 billion.**
+**The theorem integrated in `main` proves that any imaginary quadratic number field with class number one has absolute field discriminant below 47.5 billion.**
 
 Here, class number one means unique factorization in that ring; the discriminant measures the arithmetic size of the field. The bound applies to the actual field and its actual discriminant. It assumes neither the known list of answers nor an earlier cutoff.
 
@@ -27,7 +29,7 @@ The hard part is making both estimates refer to exactly the same positive intege
 
 ## What is checked, and what remains
 
-The [47.5-billion theorem and two structural interfaces](research/ender_radius_bridge/PHASE128_VERIFICATION.md) are integrated with all four local checks passing. Main retains the published 48-billion result until review and merge; exact-head CI/publication status is recorded in the draft PR. Lean checks the encoded statements and dependencies. [Exact scope](lean/FORMALIZATION.md) keeps that evidence separate from human mathematical review.
+The [47.5-billion theorem and two structural interfaces](research/ender_radius_bridge/PHASE128_VERIFICATION.md) are integrated in `main` ([merged PR #45](https://github.com/Dojo-1/tenth-discriminant/pull/45)); exact-head [Lean CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41021656669) and security checks passed. These checks validate encoded statements and audited dependencies, not independent human semantic reconstruction. [Exact scope](lean/FORMALIZATION.md) keeps the obligations distinct.
 
 Independent human semantic review remains open. [Argon’s frozen review and project CI](research/ender_radius_bridge/VERIFICATION_LAYERS_CURRENT.md) concern different questions: no defect was confirmed, but its verdict remains insufficient evidence. That review does not cover the later radial improvement or new interfaces.
 
