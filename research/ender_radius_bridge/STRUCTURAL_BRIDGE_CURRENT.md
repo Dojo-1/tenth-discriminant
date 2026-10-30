@@ -77,3 +77,7 @@ The invariant is the thread connecting these descriptions. A transport is
 useful only when its domain, preserved quantity and required guards are stated.
 Kernel checks establish the encoded statements; a mathematician must still
 judge their intended meaning. [Verification layers](VERIFICATION_LAYERS_CURRENT.md).
+
+[An exterior-volume proof](EXTERIOR_VOLUME_GUIDE.md) explains the doubled
+prime exponent as a squared lattice index, and the Hadamard gain as a better
+frame around the same volume. This is exposition, not an improved cutoff.
