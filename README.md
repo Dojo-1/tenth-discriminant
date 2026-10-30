@@ -35,6 +35,14 @@ Independent human semantic review remains open. [Argon’s frozen review and pro
 
 The [arbitrary-field classification interface](research/ender_radius_bridge/CLASSIFICATION_INTERFACE_CURRENT.md) transports the existing canonical-family proof and its separate finite certificates; it is not a new classification method. A separate [all-field bound for class number at most two](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) is published. Independent review, Mathlib acceptance and optimal constants remain open.
 
+## One main branch, visible experiments
+
+The public record now lives in **[main](https://github.com/Dojo-1/tenth-discriminant/tree/main)**. The independent two-sided finite oracle ([#44](https://github.com/Dojo-1/tenth-discriminant/pull/44)), the 47.5-billion actual-field theorem ([#45](https://github.com/Dojo-1/tenth-discriminant/pull/45)), the exterior-volume account ([#46](https://github.com/Dojo-1/tenth-discriminant/pull/46)), and the finite Rust/Lean mixed-frame atlas ([#47](https://github.com/Dojo-1/tenth-discriminant/pull/47)) are merged. Their original review discussions and exact CI receipts remain available; the cancelled overall CI on #47 is **not** called green.
+
+The **active experiment**, [#48](https://github.com/Dojo-1/tenth-discriminant/pull/48), explores a tighter ordinary-jet bound on the **same** integer Gram, using the rounded radial center rather than changing the observations. The candidate factor `63/100`, saving `0.011`, and putative **47.1-billion** endpoint are **not accepted theorems**. The first focused builds failed on proof elaboration; a second, bounded repair remains subject to Lean verification. The proven cutoff here is **47.5 billion**.
+
+Mathematicians should be able to recover both the argument and the precise uncertainty without opening five competing branches. The short [current-state map](RESEARCH_NOW.md) records what has been proved, tested, proposed, corrected and left to independent review. Each experiment turn updates this README after an **@Rizz pass** for mathematical clarity and reconstructability; [the contributor contract](AGENTS.md) makes that obligation explicit.
+
 ## Explore or check it yourself
 
 | Start here | What you get |
