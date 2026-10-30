@@ -177,12 +177,15 @@ theorem integer_log_upper (Q : Finset (Int × Int)) (D R S rho : Nat) (n : Real)
   rw [Finset.sum_sub_distrib,rectangular_row_sum R S (rowLog S rho n),
     rectangular_row_sum R S (rowPenalty S),penalty_sum R S hS] at hrows
   have hb := RadialDetBound.baseline_sum R S rho n (by omega) hRrho
+  have hb' : (∑ r ∈ Finset.range R, ∑ s ∈ Finset.range S,
+      rowLog S rho n r s) ≤ enderUpperB R S S rho n := by
+    simpa [rowLog, RadialDetBound.rowLog] using hb
   have he : H.det=((integerRectangularTraceGram Q D S R S).det : Real) := by
     dsimp only [H]
     simpa only [RadialOperator.gram_det] using
       ((Int.castRingHom Real).map_det (RadialOperator.gram Q D S R S (rho^2/2 : Nat))).symm
   rw [he] at hl
-  linarith
+  linarith [hb']
 
 theorem normalized_integer_upper (Q : Finset (Int × Int)) (D R S rho : Nat) (n : Real)
     (hD : 0 < D) (hS : 100 ≤ S) (h25 : 25*S ≤ R) (h26 : R ≤ 26*S)
