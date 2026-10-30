@@ -15,6 +15,8 @@ normalization boundary. Neither lemma changes the determinant cutoff.
 
 namespace TenthDiscriminant
 
+open Polynomial
+
 /-- For any nonzero modulus at most twice the radius, the ORIGINAL
 full ellipse contains two DISTINCT nodes congruent in both integer
 coordinates. The explicit witnesses are (-rho,0) and (p-rho,0).
