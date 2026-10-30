@@ -48,7 +48,21 @@ hence (the same metric on both sides)
 
 This two-sided integer factorization is the reason the determinant contains
 p^(2F(p)), rather than merely p^F(p): det U_p=1 and det Delta_p=p^F(p) with
-F(p)=sum_i k_i, so det G=p^(2F(p)) det(Ehat B Ehat^T). For distinct eligible
+F(p)=sum_i k_i, so det G=p^(2F(p)) det(Ehat B Ehat^T).
+
+Equivalently, the 2 is a square. In this chart B is diagonal, with entries 2
+and 2D, so Cauchy–Binet gives det G = sum_C w_C det(E_C)^2. Here C runs over
+sets of RS columns, E_C keeps those columns, and the weights w_C are positive
+integers. Selecting columns commutes with the row change U_p, and det U_p=1,
+so each maximal minor satisfies det(E_C) = p^F(p) det(Ehat_C). The generic
+divisibility is the Phase134 lemma `all_maximal_minors_pow_dvd`
+(RankDivisorCompatibility.lean; P at `10e5db6`, merged by #52). Applying it to
+the jet columns of `rectangularTransformedJet_scale`
+(RectangularGramFactor.lean) is a hand step. See also the
+[exterior-volume account](../proof_transport_v0/PROOF_ATLAS.md#a-mathematical-argument-in-ordinary-language).
+The same sum shows that det G>0 exactly when E has full row rank.
+
+For distinct eligible
 p these coprime powers divide the SAME positive det G, so the explicit lower
 bound M for their sum_p 2F(p)log(p) has M <= log(det G) (P: `RadialCutoff.recovered_mass_le_actual_log`,
 for squarefree D=3 mod 4 with class number one and D>=41006250000). M is a
