@@ -470,11 +470,12 @@ theorem logarithm_gain_sharp :
   push_cast at h
   exact h
 
-/-- The half-radius constant cannot be asserted without integer rounding.
-    At rho=11 and the origin, floor(121/2)=60>121/2 fails. -/
+/-- At the real outer boundary z=11, odd-radius integer rounding produces
+    121-floor(121/2)=61>121/2; the origin is NOT the counterexample.
+    This exact real check accompanies centered_disc_sharp's complex claim. -/
 theorem sharp_rounding_negative_control :
-    ¬ (‖(11 : Complex)*conj (11 : Complex)-
-      ((11^2/2 : Nat) : Complex)‖ ≤ (1/2 : Real)*11^2) := by
+    ¬ (((11^2 : Nat) : Real)-((11^2/2 : Nat) : Real) ≤
+      (1/2 : Real)*11^2) := by
   norm_num
 
 
@@ -511,7 +512,7 @@ theorem scale_gain_sharp (R S : Nat)
     have h := mul_le_mul_of_nonneg_right hquad hS0
     nlinarith only [h]
   calc
-    (11/1000 : Real)*(R : Real)^2*S ≤
+    (11/1000 : Real)*((R : Real)^2*S) ≤
         ((R : Real)^2*S)*(891/80000 : Real) := by
           have h : (11/1000 : Real) ≤ 891/80000 := by norm_num
           nlinarith [mul_nonneg (show (0 : Real) ≤ (R : Real)^2*S by positivity)
