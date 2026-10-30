@@ -1,0 +1,38 @@
+name: independent-two-sided-gram-audit
+
+on:
+  push:
+    branches: ["audit/independent-two-sided-gram-20261029"]
+  pull_request:
+    paths:
+      - "research/ender_radius_bridge/independent_two_sided_oracle.py"
+      - "research/ender_radius_bridge/TWO_SIDED_ARITHMETIC_BRIDGE.md"
+      - "research/ender_radius_bridge/TWO_SIDED_RECONSTRUCTION_CYCLE_20261029.md"
+      - ".github/workflows/independent-two-sided-gram-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-integer-reconstruction:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Independent integer Gram, inert-prime and transport controls
+        run: |
+          python research/ender_radius_bridge/independent_two_sided_oracle.py > /tmp/two_sided_oracle.json
+          python - <<'PY'
+          import json
+          with open("/tmp/two_sided_oracle.json", encoding="utf-8") as fp:
+              r = json.load(fp)
+          assert [x["F"] for x in r["cases"]] == [1,1,9]
+          assert [x["factor"] for x in r["cases"]] == [9,25,387420489]
+          assert all(x["positive_det"] for x in r["cases"])
+          assert r["passive_translation"] == {"original":24,"active":60,"passive":24}
+          assert not any(r["negative_controls"].values())
+          print("Exact-integer reconstruction OK; no universal theorem or Lean claim.")
+          PY
