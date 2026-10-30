@@ -69,3 +69,15 @@ The [pinned CI workflow](.github/workflows/lean.yml) supplies the full setup. [E
 Ben Green supplies the derivative determinant method. [Prior art](PRIOR_ART.md) records contributions including twinheterodox, Kyle Pratt and van Dijk; [BEAN](BEAN.md) records route attribution and Jesús Vilela's norm-ellipse experiment. AI assistance is extensive and disclosed in the research records. Workflow names such as Ender are labels, not independent authorities.
 
 The aim is an argument people can reconstruct, question and improve. Corrections are welcome: point to the statement, the disputed step and a way to check it.
+
+**Next experiment, with a mathematical stop condition.** A [Phase134
+same-observation rank/divisor analysis](research/rank_divisor_interface/ONE_MATRIX_TWO_PRIMES.md)
+explains why a prime already extracting a positive p-adic row valuation
+from E cannot simultaneously certify full rank of that SAME E modulo p;
+any auxiliary rank-witness prime must avoid this obstruction. The
+selected-minor-to-whole-Gram upper bound is a second explicit failure.
+[Issue #51](https://github.com/Dojo-1/tenth-discriminant/issues/51) preregisters the
+new Lean and quantitative obligations. This conditional analysis
+makes **no new discriminant bound**; the 47.0-billion theorem remains
+the current accepted result.
+

@@ -134,3 +134,8 @@ cutoff relies on bounding a sum of minors by one chosen minor.
 This is more consequential than merely ranking numerical constants, but
 currently supplies **no stronger theorem**.
 
+
+
+## 30 October: a rank-witness prime is not a divisor prime for the same E
+
+The new [same-matrix two-prime note](research/rank_divisor_interface/ONE_MATRIX_TWO_PRIMES.md) gives a precise conditional obstruction: if an integral unimodular extraction `U_p E=diag(p^{k_i})Ehat` has `F=Σ k_i>0`, *every* maximal minor of that original E is divisible by `p^F`. Hence E cannot have full row rank modulo the **same** p, whatever an external modular rank theorem might say about a different observation matrix. A separately admissible auxiliary q can still work. Likewise, bounding a selected maximal minor from above does not bound the sum of weighted squared minors defining our positive Gram. [Issue #51](https://github.com/Dojo-1/tenth-discriminant/issues/51) spells out the exact matched-matrix, independent-q and Lean obligations, with small positive/negative controls. This is standard conditional linear algebra and an **open method comparison**, not an independent review or an improved tenth-discriminant bound.
