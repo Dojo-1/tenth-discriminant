@@ -1,5 +1,7 @@
 # Status — 2026-10-29
 
+> **Current publication note (30 October 2026):** This is a chronological record; older phrases such as “main retains 48 billion” describe the source state **at the time of that experiment**, not the live repository. The canonical [current-state page](RESEARCH_NOW.md) and [README](README.md) now record the 47.5-billion actual-field bound merged through [PR #45](https://github.com/Dojo-1/tenth-discriminant/pull/45), the finite arithmetic/exterior/transport material merged in #44/#46/#47, and the still-unverified sharper radial candidate in [PR #48](https://github.com/Dojo-1/tenth-discriminant/pull/48). All older failed attempts and their original receipts remain preserved below.
+
 Current branch: the 47.5-billion actual-field theorem, arbitrary-field classification interface and actual radial composition laws are integrated unchanged; all four first local checks pass. Main retains the published 48-billion theorem. Exact-head CI/publication is a separate draft-PR gate. [Short mathematical account](research/ender_radius_bridge/STRUCTURAL_BRIDGE_CURRENT.md) · [Integration evidence](research/ender_radius_bridge/PHASE128_VERIFICATION.md). The failed Phase122 attempt remains unchanged; Phase125 is its separately registered successful successor. Historical entries below retain their original scope.
 
 ## Phase128: one integrated library, three distinct consequences
