@@ -12,7 +12,6 @@ separate evidence; a result is never transferred just because code is related.
 | [Arithmetic reconstruction](TWO_SIDED_ARITHMETIC_GUIDE.md) and Phase123 | Actual quotient observations and two-sided integer middle matrix;one sealed80-case exact check | Same-assistant derivation, not independent peer review. Finite cases alone do not prove the universal statement. |
 | [Geometric reconstruction](GEOMETRIC_COMPARISON_GUIDE.md) and Phase124 | Radius,cell counts,ordinary jets and normalized upper inequality;ten fixed rational checks | Arithmetic prime-mass/tail lower estimate is identified as inherited. Rational checks do not prove analytic premises. |
 | [Phase125 successor](PHASE125_VERIFICATION.md) | Complete actual-field47.5btheorem,namespace and three fresh closuresPASS on first call | Integrated unchanged by Phase128 with all local checks; exact-head newCI/publication separate. Phase122failure stays preserved. |
-
 | Phase126/127 structural proofs and Phase128 integration | Arbitrary-field iff and actual radial action; 19 public types/2 private helpers integrated exactly, all four first checks PASS; 205 modules, 5619 logical/4807 theorems/17029 runtime | These are project checks and same-assistant reconstructions. Exact-head publication and independent semantic review are separate. |
 
 All173Argon-reviewed module blobs and pinned toolchain/lakefile are unchanged
@@ -31,8 +30,16 @@ newer per-family markers;inspection of the older driver confirmed eight
 `check=True` calls followed by its finalPASS. The corrected observation is
 recorded;the test standard and historical result were not changed.
 
-What closes the next obligations: integrate accepted new proof bodies under
-a separately registered exact-correspondence protocol;build/audit the actual
-new root;inspect pinned exact-head CI and source/tested tree;seek independent
-semantic review with its version and limits explicit. Do not relabel Argon's
-review, currentCI or the failed47.5b source to imply stronger evidence.
+The integration, full-root audit and publication gates described above are
+now closed at [03cb58c](https://github.com/Dojo-1/tenth-discriminant/commit/03cb58c25975ed638bebfa3bcc5b2a3152e9f452):
+[proof CI41021656669](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41021656669)
+and [security41021651935](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41021651935)
+passed on that head. Its tree is identical to mathematical source58b9371.
+The full build,250certificate pairs,5619logical/4807theorems/17029runtime,
+eight synthetic tests and all eight control families passed. The actual
+runner checkout3d44376 has that same tree. PR45 remains draft/unmerged.
+
+Independent human semantic review remains open. The new
+[exterior-volume reconstruction](EXTERIOR_VOLUME_GUIDE.md) is another
+mathematical representation by the same assistant; its finite comparator
+does not turn project verification into independent peer review.
