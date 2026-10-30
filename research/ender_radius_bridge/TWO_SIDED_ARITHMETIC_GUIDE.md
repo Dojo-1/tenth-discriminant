@@ -157,7 +157,7 @@ automorphism from determinant equality.
 | Weight sum and determinant exponent | [RectangularValuation](../../lean/TenthDiscriminant/RectangularValuation.lean): sum_rectangularBasisExponent; [GramDivisibility](../../lean/TenthDiscriminant/GramDivisibility.lean): pow_dvd_det_of_unimodular_gram_factor |
 | Actual maximal-order class-number premise | [ClassNumberInertBridge](../../lean/TenthDiscriminant/ClassNumberInertBridge.lean): rectangularTraceGram_valuation_of_classNumber_one |
 
-These inherited modules are byte-identical to Argon's frozen39e9ce3 source.
+These inherited modules are byte-identical to Argon's frozen 39e9ce3 source.
 Argon did not complete kernel replay or independently close this factorization.
 This reconstruction supplies a checkable derivation, not an endorsement from
 Argon. Current project CI and independent semantic review remain separate.
