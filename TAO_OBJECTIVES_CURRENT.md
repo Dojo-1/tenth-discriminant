@@ -1,6 +1,6 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Main’s published bound is 48 billion; this branch integrates 47.5 billion.**
+**The checked bound published in `main` is 47.5 billion** ([PR #45](https://github.com/Dojo-1/tenth-discriminant/pull/45)); [current one-page research state](RESEARCH_NOW.md) distinguishes proof, experiments and open review.
 result is an integrated local Lean bound for ANY imaginary quadratic field with
 at most two ideal classes: actual absolute discriminant<2^52, sharper<2^50
 when odd. [Understand the transport](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md).
@@ -9,18 +9,18 @@ The classification interface transports the existing canonical proof; it is not 
 These twelve rows are our working categories for
 [Tao's challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/),
 not an official numbered checklist. The [claim map](lean/FORMALIZATION.md)
-keeps theorem checking, execution evidence and independent review separate. [Phase128](research/ender_radius_bridge/PHASE128_VERIFICATION.md) integrates 19 public types unchanged; full local checks pass, with exact-head CI/publication separately recorded in the draft PR.
+keeps theorem checking, execution evidence and independent review separate. [Phase128](research/ender_radius_bridge/PHASE128_VERIFICATION.md) integrates 19 public types unchanged. The original publication head passed [exact-head Lean CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41021656669) and merged into main; independent semantic review remains open.
 
 ## How we are faring
 
 | # | Tao's objective | Where we are, with the limit attached |
 |---:|---|---|
-| 1 | Effective bound without Heegner input | **Branch cutoff: 47.5 billion**, actual fields and actual discriminants; all local integration checks pass. Main remains 48 billion; exact-head CI is separate. [Proof](research/ender_radius_bridge/STRUCTURAL_BRIDGE_CURRENT.md). |
-| 2 | Best efforts to optimize the constant | **Conservative improvement:** 700 to 47.5 billion on this branch; the latest step saves 0.5 billion from 48. Other approaches report much smaller bounds. No optimality claim. |
+| 1 | Effective bound without Heegner input | **Current main cutoff: 47.5 billion**, actual fields and actual discriminants. [PR #45](https://github.com/Dojo-1/tenth-discriminant/pull/45) merged after exact-head Lean and security checks. [Proof](research/ender_radius_bridge/STRUCTURAL_BRIDGE_CURRENT.md). |
+| 2 | Best efforts to optimize the constant | **Conservative improvement:** 700 to 47.5 billion in the checked method now on main; the latest accepted step saves 0.5 billion from 48. Other approaches report much smaller bounds. No optimality claim. |
 | 3 | A finite computation can finish the range | **Existing canonical certificates and arbitrary-field interface.** The new iff transports that proof and its separate 700-billion endgame; it does not replace it with the 47.5-billion route. [Scope](research/ender_radius_bridge/CLASSIFICATION_INTERFACE_CURRENT.md). |
 | 4 | High-quality, possibly upstreamable Lean | **Connected formal apparatus.** Independent human semantic/API review and Mathlib acceptance remain open. [Claim map](lean/FORMALIZATION.md). |
 | 5 | Compare different writeups | **Partial:** frozen [same-route comparison](research/ender_radius_bridge/SAME_ROUTE_COMPARISON.md) and [current source comparison](METHOD_COMPARISON_CURRENT.md). External proofs were not independently replayed. |
-| 6 | Stimulate new arguments or arrangements | **Reusable arrangements:** factorial prime mass, staircase weights, compatible ordinary-jet transport and actual radial composition/inverse laws. [Operators and invariants](research/ender_radius_bridge/RADIAL_ACTION_CURRENT.md). No novelty claim. |
+| 6 | Stimulate new arguments or arrangements | **Reusable arrangements:** factorial prime mass, staircase weights, compatible ordinary-jet transport, actual radial composition/inverse laws and the bounded mixed-frame [proof-transport atlas](research/proof_transport_v0/PROOF_ATLAS.md). The latter does not improve the cutoff. [Operators and invariants](research/ender_radius_bridge/RADIAL_ACTION_CURRENT.md). No novelty claim. |
 | 7 | Preserve and report negative results | **Preserved:** failed proofs, resource stops, per-form counting failure and the checked translation counterexample (determinant24 becomes60). [Coordinate guide](research/ender_radius_bridge/COORDINATE_TRANSLATION_GUIDE.md). PR37 and [PR39 CI](research/ender_radius_bridge/PR39_CI_LIMIT_RECEIPT.md) timed out; neither is relabelled successful. |
 | 8 | Help higher class-number problems | **Integrated and published:** EVERY imaginary quadratic number field with actual h<=2 has actual absolute discriminant<2^52; odd discriminants retain<2^50. Phase108 integrates arbitrary even-field transport unchanged. [Human proof](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md). Independent human review remains open; [PR38 passed exact-head CI and merged](research/ender_radius_bridge/PR38_MERGE_RECEIPT.md). |
 | 9 | Disclose AI use | **Disclosed** in the [README](README.md) and research/review records. Disclosure is not validation. |
