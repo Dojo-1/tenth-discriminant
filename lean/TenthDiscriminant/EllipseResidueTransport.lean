@@ -66,9 +66,9 @@ whereas the Hasse/Taylor coefficient jet is NOT. Thus the factorial
 column map is not invertible modulo three at j=3. -/
 theorem cubic_ordinary_hasse_mod_three_control :
     (3 : Int) ∣
-      ((Polynomial.derivative^[3] (Polynomial.X ^ 3 : Int[X])).eval 0) ∧
+      ((Polynomial.derivative^[3] (Polynomial.X ^ 3 : Polynomial Int)).eval 0) ∧
     ¬ (3 : Int) ∣
-      ((Polynomial.hasseDeriv 3 (Polynomial.X ^ 3 : Int[X])).eval 0) := by
+      ((Polynomial.hasseDeriv 3 (Polynomial.X ^ 3 : Polynomial Int)).eval 0) := by
   constructor
   · exact dvd_iterate_derivative_pow Polynomial.X 3 0 (by decide)
   · exact hasse_derivative_negative_control
