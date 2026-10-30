@@ -478,5 +478,53 @@ theorem sharp_rounding_negative_control :
   norm_num
 
 
+/-- Conservative new normalized saving. The factor 1/40 comes from
+    the complete interval 25S<=R<=26S, not one chosen aspect ratio. -/
+theorem scale_gain_sharp (R S : Nat)
+    (hS : 100 ≤ S) (hlo : 25*S ≤ R) (hhi : R ≤ 26*S) :
+    (11/1000 : Real)*(R^2*S : Nat) ≤
+      (R-9*S : Nat)*(S : Real)*(S-1 : Nat)*
+        Real.log (100/63 : Real) := by
+  have hS' : (100 : Real) ≤ S := by exact_mod_cast hS
+  have hlo' : (25 : Real)*S ≤ R := by exact_mod_cast hlo
+  have hhi' : (R : Real) ≤ 26*S := by exact_mod_cast hhi
+  have h9 : 9*S ≤ R := by omega
+  have h1 : 1 ≤ S := by omega
+  rw [Nat.cast_sub h9, Nat.cast_sub h1]
+  push_cast
+  have htr : (0 : Real) ≤ (R : Real)-9*S := by linarith
+  have hSm1 : (0 : Real) ≤ (S : Real)-1 := by linarith
+  have hS0 : (0 : Real) ≤ S := by positivity
+  have hS99 : (99/100 : Real)*S ≤ (S : Real)-1 := by linarith
+  have hquad : (R : Real)^2 ≤ 40*((R : Real)-9*S)*S := by
+    let t : Real := (R : Real)-25*S
+    have ht0 : (0 : Real) ≤ t := by dsimp [t]; linarith
+    have ht1 : t ≤ S := by dsimp [t]; linarith
+    have hts : (S : Real)*t ≤ (S : Real)^2 := by
+      nlinarith [mul_nonneg hS0 (show (0 : Real) ≤ S-t by linarith)]
+    have ht2 : t^2 ≤ (S : Real)^2 := by
+      nlinarith [mul_nonneg (show (0 : Real) ≤ S-t by linarith)
+        (show (0 : Real) ≤ S+t by linarith)]
+    dsimp [t] at hts ht2
+    nlinarith only [hts, ht2]
+  have hsc : (R : Real)^2*S ≤ 40*((R : Real)-9*S)*S^2 := by
+    have h := mul_le_mul_of_nonneg_right hquad hS0
+    nlinarith only [h]
+  calc
+    (11/1000 : Real)*(R : Real)^2*S ≤
+        ((R : Real)^2*S)*(891/80000 : Real) := by
+          have h : (11/1000 : Real) ≤ 891/80000 := by norm_num
+          nlinarith [mul_nonneg (show (0 : Real) ≤ (R : Real)^2*S by positivity)
+            (show (0 : Real) ≤ (891/80000 : Real)-(11/1000) by norm_num)]
+    _ ≤ (40*((R : Real)-9*S)*S^2)*(891/80000 : Real) := by
+      exact mul_le_mul_of_nonneg_right hsc (by norm_num)
+    _ = ((R : Real)-9*S)*S*((99/100 : Real)*S)*(9/20 : Real) := by ring
+    _ ≤ ((R : Real)-9*S)*S*((S : Real)-1)*(9/20 : Real) := by
+      gcongr
+    _ ≤ ((R : Real)-9*S)*S*((S : Real)-1)*Real.log (100/63 : Real) := by
+      exact mul_le_mul_of_nonneg_left logarithm_gain_sharp
+        (by positivity)
+
+
 end
 end TenthDiscriminant.RadialJetMajorant
