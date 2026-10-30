@@ -1,0 +1,240 @@
+{
+  "phase": 128,
+  "status": "EXACT_INTEGRATION_ALL_FOUR_FIRST_CHECKS_PASS",
+  "registered_commit": "3e95187dbcafc6c4a6fe77cb1964268d35a99479",
+  "runs": {
+    "build": {
+      "phase": 128,
+      "mode": "build",
+      "scope": "Exact125/126/127 integration:actual-field47.5b,field classification interface,radial action",
+      "source_sha256": {
+        "EndpointCutoff": "4e2a1098faf13e4d88ee8cfd56bbcb48ddceab29e47a2bb4a243124dc31ee666",
+        "FieldClassification": "9c244804a2e8692d5baede6c83255e81d898c8622812bdd4218262165e4089b5",
+        "RadialAction": "3d9c7c3fe91674162c5fb26316b716da78a5a4154d9ad67cae55c0988b3dcd58"
+      },
+      "source_snapshots": {
+        "EndpointCutoff": "PHASE128_build_20261029205616105.EndpointCutoff.lean",
+        "FieldClassification": "PHASE128_build_20261029205616105.FieldClassification.lean",
+        "RadialAction": "PHASE128_build_20261029205616105.RadialAction.lean"
+      },
+      "root_snapshot": "PHASE128_build_20261029205616105.root.lean",
+      "input_snapshot": "PHASE128_build_20261029205616105.input.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 42.3759818,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2889150464,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "build",
+        "TenthDiscriminant.EndpointCutoff",
+        "TenthDiscriminant.FieldClassification",
+        "TenthDiscriminant.RadialAction"
+      ],
+      "stdout": "PHASE128_build_20261029205616105.stdout.log",
+      "stderr": "PHASE128_build_20261029205616105.stderr.log"
+    },
+    "root": {
+      "phase": 128,
+      "mode": "root",
+      "scope": "Exact125/126/127 integration:actual-field47.5b,field classification interface,radial action",
+      "source_sha256": {
+        "EndpointCutoff": "4e2a1098faf13e4d88ee8cfd56bbcb48ddceab29e47a2bb4a243124dc31ee666",
+        "FieldClassification": "9c244804a2e8692d5baede6c83255e81d898c8622812bdd4218262165e4089b5",
+        "RadialAction": "3d9c7c3fe91674162c5fb26316b716da78a5a4154d9ad67cae55c0988b3dcd58"
+      },
+      "source_snapshots": {
+        "EndpointCutoff": "PHASE128_root_20261029205705634.EndpointCutoff.lean",
+        "FieldClassification": "PHASE128_root_20261029205705634.FieldClassification.lean",
+        "RadialAction": "PHASE128_root_20261029205705634.RadialAction.lean"
+      },
+      "root_snapshot": "PHASE128_root_20261029205705634.root.lean",
+      "input_snapshot": "PHASE128_root_20261029205705634.input.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 34.3232739,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 1200,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2800640000,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": "build",
+      "stdout": "PHASE128_root_20261029205705634.stdout.log",
+      "stderr": "PHASE128_root_20261029205705634.stderr.log"
+    },
+    "input": {
+      "phase": 128,
+      "mode": "input",
+      "scope": "Exact125/126/127 integration:actual-field47.5b,field classification interface,radial action",
+      "source_sha256": {
+        "EndpointCutoff": "4e2a1098faf13e4d88ee8cfd56bbcb48ddceab29e47a2bb4a243124dc31ee666",
+        "FieldClassification": "9c244804a2e8692d5baede6c83255e81d898c8622812bdd4218262165e4089b5",
+        "RadialAction": "3d9c7c3fe91674162c5fb26316b716da78a5a4154d9ad67cae55c0988b3dcd58"
+      },
+      "source_snapshots": {
+        "EndpointCutoff": "PHASE128_input_20261029205758150.EndpointCutoff.lean",
+        "FieldClassification": "PHASE128_input_20261029205758150.FieldClassification.lean",
+        "RadialAction": "PHASE128_input_20261029205758150.RadialAction.lean"
+      },
+      "root_snapshot": "PHASE128_input_20261029205758150.root.lean",
+      "input_snapshot": "PHASE128_input_20261029205758150.input.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 93.52162489999999,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 240,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3348779008,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase128InputCheck.lean"
+      ],
+      "stdout": "PHASE128_input_20261029205758150.stdout.log",
+      "stderr": "PHASE128_input_20261029205758150.stderr.log"
+    },
+    "audit": {
+      "phase": 128,
+      "mode": "audit",
+      "scope": "Exact125/126/127 integration:actual-field47.5b,field classification interface,radial action",
+      "source_sha256": {
+        "EndpointCutoff": "4e2a1098faf13e4d88ee8cfd56bbcb48ddceab29e47a2bb4a243124dc31ee666",
+        "FieldClassification": "9c244804a2e8692d5baede6c83255e81d898c8622812bdd4218262165e4089b5",
+        "RadialAction": "3d9c7c3fe91674162c5fb26316b716da78a5a4154d9ad67cae55c0988b3dcd58"
+      },
+      "source_snapshots": {
+        "EndpointCutoff": "PHASE128_audit_20261029205945777.EndpointCutoff.lean",
+        "FieldClassification": "PHASE128_audit_20261029205945777.FieldClassification.lean",
+        "RadialAction": "PHASE128_audit_20261029205945777.RadialAction.lean"
+      },
+      "root_snapshot": "PHASE128_audit_20261029205945777.root.lean",
+      "input_snapshot": "PHASE128_audit_20261029205945777.input.lean",
+      "attempt": 1,
+      "exit_code": 0,
+      "elapsed_seconds": 44.1793535,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 180,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 3368939520,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "Audit.lean"
+      ],
+      "stdout": "PHASE128_audit_20261029205945777.stdout.log",
+      "stderr": "PHASE128_audit_20261029205945777.stderr.log"
+    }
+  },
+  "namespace_audits": {
+    "EndpointCutoff": {
+      "logical": 17,
+      "theorems": 17,
+      "runtime": 0
+    },
+    "FieldClassification": {
+      "logical": 2,
+      "theorems": 2,
+      "runtime": 0
+    },
+    "RadialAction": {
+      "logical": 16,
+      "theorems": 16,
+      "runtime": 0
+    }
+  },
+  "whole_audit_marker": "AUDIT_OK TenthDiscriminant: 5619 logical declarations; 4807 theorems; 17029 runtime-only auxiliaries excluded",
+  "whole_audit": {
+    "logical": 5619,
+    "theorems": 4807,
+    "runtime": 17029
+  },
+  "added_declarations": [
+    "TenthDiscriminant.EndpointCutoff.coarse_endpoint_control",
+    "TenthDiscriminant.EndpointCutoff.endpoint_certificate",
+    "TenthDiscriminant.EndpointCutoff.endpoint_controls",
+    "TenthDiscriminant.EndpointCutoff.endpoint_log_lower",
+    "TenthDiscriminant.EndpointCutoff.endpoint_separation",
+    "TenthDiscriminant.EndpointCutoff.imaginaryQuadratic_classNumber_one_discriminant_bound_47_5b",
+    "TenthDiscriminant.EndpointCutoff.imaginaryQuadratic_classNumber_one_discriminant_bound_47_5b._proof_1",
+    "TenthDiscriminant.EndpointCutoff.imaginaryQuadratic_classNumber_one_discriminant_bound_47_5b._proof_2",
+    "TenthDiscriminant.EndpointCutoff.imaginaryQuadratic_classNumber_one_discriminant_bound_47_5b._proof_3",
+    "TenthDiscriminant.EndpointCutoff.imaginaryQuadratic_large_classNumber_ne_one_47_5b",
+    "TenthDiscriminant.EndpointCutoff.imaginaryQuadratic_large_classNumber_ne_one_47_5b._proof_1",
+    "TenthDiscriminant.EndpointCutoff.nonpositive_certificate_controls",
+    "TenthDiscriminant.EndpointCutoff.odd_large_classNumber_ne_one_47_5b",
+    "TenthDiscriminant.EndpointCutoff.odd_large_classNumber_ne_one_47_5b._proof_1",
+    "TenthDiscriminant.EndpointCutoff.odd_large_classNumber_ne_one_47_5b._proof_2",
+    "TenthDiscriminant.EndpointCutoff.odd_large_classNumber_ne_one_47_5b._proof_3",
+    "TenthDiscriminant.EndpointCutoff.totallyComplex_degree_two_classNumber_one_discriminant_bound_47_5b",
+    "TenthDiscriminant.FieldClassification.field_classNumber_one_discriminant_mem",
+    "TenthDiscriminant.FieldClassification.field_classNumber_one_iff",
+    "TenthDiscriminant.RadialAction.gram_add",
+    "TenthDiscriminant.RadialAction.matrix_add",
+    "TenthDiscriminant.RadialAction.matrix_add._proof_1",
+    "TenthDiscriminant.RadialAction.matrix_commute",
+    "TenthDiscriminant.RadialAction.matrix_neg",
+    "TenthDiscriminant.RadialAction.matrix_zero",
+    "TenthDiscriminant.RadialAction.matrix_zero._proof_1",
+    "TenthDiscriminant.RadialAction.matrix_zero._proof_2",
+    "TenthDiscriminant.RadialAction.nonmultiplicative_control",
+    "TenthDiscriminant.RadialAction.transform_add",
+    "_private.TenthDiscriminant.RadialAction.0.TenthDiscriminant.RadialAction.polynomial_composition",
+    "_private.TenthDiscriminant.RadialAction.0.TenthDiscriminant.RadialAction.polynomial_composition._proof_1",
+    "_private.TenthDiscriminant.RadialAction.0.TenthDiscriminant.RadialAction.polynomial_composition._proof_2",
+    "_private.TenthDiscriminant.RadialAction.0.TenthDiscriminant.RadialAction.polynomial_composition._proof_3",
+    "_private.TenthDiscriminant.RadialAction.0.TenthDiscriminant.RadialAction.polynomial_composition._proof_4",
+    "_private.TenthDiscriminant.RadialAction.0.TenthDiscriminant.RadialAction.row_coeff"
+  ],
+  "removed_declarations": [],
+  "reachable_modules": 205,
+  "archive_sha256": "c17b2cdffc9af4038c1a70682946a4e284dcfdbb20733dbc63b55b16e3c0587f",
+  "raw_sha256": {
+    "PHASE128_CORRESPONDENCE.json": "f72c3352bbdf144aa7b97de06ddc9d06a1881b658891ca7bd5d7e8c9a46c2894",
+    "PHASE128_build_20261029205616105.EndpointCutoff.lean": "4e2a1098faf13e4d88ee8cfd56bbcb48ddceab29e47a2bb4a243124dc31ee666",
+    "PHASE128_build_20261029205616105.FieldClassification.lean": "9c244804a2e8692d5baede6c83255e81d898c8622812bdd4218262165e4089b5",
+    "PHASE128_build_20261029205616105.input.lean": "1852820c71e661ed3c0bd26a64024c14fa8e554da7b5c772ee1715f864bce07c",
+    "PHASE128_build_20261029205616105.RadialAction.lean": "3d9c7c3fe91674162c5fb26316b716da78a5a4154d9ad67cae55c0988b3dcd58",
+    "PHASE128_build_20261029205616105.result.json": "7ac764eb2bdbac537675241243afc7b2f7e66dc70810f74e31661b360b31ab3a",
+    "PHASE128_build_20261029205616105.root.lean": "914e1dbfa947db3fb57864933e16bff7ca84de257be3d26e73d8c1616eec5ea3",
+    "PHASE128_build_20261029205616105.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE128_build_20261029205616105.stdout.log": "ba01cb51cd6aabf1c4924d573fdf1080366cb5a52c9b43c8ed576265ed06f1c9",
+    "PHASE128_root_20261029205705634.EndpointCutoff.lean": "4e2a1098faf13e4d88ee8cfd56bbcb48ddceab29e47a2bb4a243124dc31ee666",
+    "PHASE128_root_20261029205705634.FieldClassification.lean": "9c244804a2e8692d5baede6c83255e81d898c8622812bdd4218262165e4089b5",
+    "PHASE128_root_20261029205705634.input.lean": "1852820c71e661ed3c0bd26a64024c14fa8e554da7b5c772ee1715f864bce07c",
+    "PHASE128_root_20261029205705634.RadialAction.lean": "3d9c7c3fe91674162c5fb26316b716da78a5a4154d9ad67cae55c0988b3dcd58",
+    "PHASE128_root_20261029205705634.result.json": "9f1819c7f9b01f16966e853c7459bf3696868a829e56b776bccabd0635472f32",
+    "PHASE128_root_20261029205705634.root.lean": "914e1dbfa947db3fb57864933e16bff7ca84de257be3d26e73d8c1616eec5ea3",
+    "PHASE128_root_20261029205705634.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE128_root_20261029205705634.stdout.log": "351399ca0e6a0736cf90862ada7c19f257bcf35c970345a6ef874b91603ab69f",
+    "PHASE128_input_20261029205758150.EndpointCutoff.lean": "4e2a1098faf13e4d88ee8cfd56bbcb48ddceab29e47a2bb4a243124dc31ee666",
+    "PHASE128_input_20261029205758150.FieldClassification.lean": "9c244804a2e8692d5baede6c83255e81d898c8622812bdd4218262165e4089b5",
+    "PHASE128_input_20261029205758150.input.lean": "1852820c71e661ed3c0bd26a64024c14fa8e554da7b5c772ee1715f864bce07c",
+    "PHASE128_input_20261029205758150.RadialAction.lean": "3d9c7c3fe91674162c5fb26316b716da78a5a4154d9ad67cae55c0988b3dcd58",
+    "PHASE128_input_20261029205758150.result.json": "0ed1f7f82b108904529c8099cdc8a6a07f2b4b14ab509c49c42f844af24e3eed",
+    "PHASE128_input_20261029205758150.root.lean": "914e1dbfa947db3fb57864933e16bff7ca84de257be3d26e73d8c1616eec5ea3",
+    "PHASE128_input_20261029205758150.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE128_input_20261029205758150.stdout.log": "5d93ea5c58dc2d0a39c552b0854b01562cbf30936ab216a7930f4b7e7c8383df",
+    "PHASE128_audit_20261029205945777.EndpointCutoff.lean": "4e2a1098faf13e4d88ee8cfd56bbcb48ddceab29e47a2bb4a243124dc31ee666",
+    "PHASE128_audit_20261029205945777.FieldClassification.lean": "9c244804a2e8692d5baede6c83255e81d898c8622812bdd4218262165e4089b5",
+    "PHASE128_audit_20261029205945777.input.lean": "1852820c71e661ed3c0bd26a64024c14fa8e554da7b5c772ee1715f864bce07c",
+    "PHASE128_audit_20261029205945777.RadialAction.lean": "3d9c7c3fe91674162c5fb26316b716da78a5a4154d9ad67cae55c0988b3dcd58",
+    "PHASE128_audit_20261029205945777.result.json": "dc3a00d3e7eb90d18f5ae8d7e016b379faeec26fe92454a623e0816209cc4d05",
+    "PHASE128_audit_20261029205945777.root.lean": "914e1dbfa947db3fb57864933e16bff7ca84de257be3d26e73d8c1616eec5ea3",
+    "PHASE128_audit_20261029205945777.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE128_audit_20261029205945777.stdout.log": "6de143c63598bda3e033b4043ae66853878168fbeecabd0de274ed326c5f3a31"
+  },
+  "observer_incident": "Initial static preflight used character offsets as byte offsets; corrected before any Lean invocation. No proof changed and no trial restarted.",
+  "publication": "Pending;local evidence does not imply pinned CI,merge or independent semantic review."
+}

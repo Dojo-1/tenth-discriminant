@@ -1,0 +1,13 @@
+{
+  "source_base": "0bde1bf58893f1adf66bfded5eaf1a0f270c6dce",
+  "protocol_commit": "5caa715",
+  "files": {
+    "research/ender_radius_bridge/Phase122Endpoint.lean": "b337601121f05cf37e1967b90e4e15bc2d6de6a0c36f4c6f4bcbe731c34fd312",
+    "research/ender_radius_bridge/run_phase122.ps1": "d52bcff168087abff7e978e059a94d53e3dae0044833a4c3a7cebac0a2fc0636",
+    "research/ender_radius_bridge/PHASE122_PROTOCOL.md": "dcf7a5c1e48ede0b3aad586319603d84eb0d0bbd068cf3d07bb84718f49e0434"
+  },
+  "standalone_invocations": 1,
+  "limit_seconds": 300,
+  "memory_mb_per_owned_process": 8192,
+  "forbidden_roots": 77
+}

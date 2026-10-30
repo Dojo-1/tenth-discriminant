@@ -125,3 +125,6 @@ import TenthDiscriminant.RadialOperator
 import TenthDiscriminant.RadialJetMajorant
 import TenthDiscriminant.RadialDetBound
 import TenthDiscriminant.RadialCutoff
+import TenthDiscriminant.EndpointCutoff
+import TenthDiscriminant.FieldClassification
+import TenthDiscriminant.RadialAction

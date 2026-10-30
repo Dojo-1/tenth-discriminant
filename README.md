@@ -7,7 +7,7 @@ The question concerns imaginary quadratic number systems: extensions of the rati
 
 ## The result in one sentence
 
-**Our Lean development proves that any imaginary quadratic number field with class number one has absolute field discriminant below 48 billion.**
+**This branch proves that any imaginary quadratic number field with class number one has absolute field discriminant below 47.5 billion.**
 
 Here, class number one means unique factorization in that ring; the discriminant measures the arithmetic size of the field. The bound applies to the actual field and its actual discriminant. It assumes neither the known list of answers nor an earlier cutoff.
 
@@ -19,19 +19,19 @@ We build a positive integer determinant from polynomial values and derivatives a
 
 - **Geometry limits its size.** The ellipse and derivative estimates give an upper bound.
 - **Arithmetic forces divisibility.** Class number one makes that same determinant divisible by many prime powers, giving a lower bound.
-- **At 48 billion and above, the bounds conflict.** The lower bound exceeds the upper bound, so class number one is impossible there.
+- **At 47.5 billion and above, the bounds conflict.** The lower bound exceeds the upper bound, so class number one is impossible there.
 
 The hard part is making both estimates refer to exactly the same positive integer. The formal development connects the lattice count, polynomial independence, integer matrix, prime divisibility and final inequality.
 
-**[Read the 48-billion proof](research/ender_radius_bridge/FORTY_EIGHT_BILLION_GUIDE.md)** · [Original proof spine](lean/MATHEMATICAL_SPINE.md)
+**[Read the short proof and its limits](research/ender_radius_bridge/STRUCTURAL_BRIDGE_CURRENT.md)** · [Original proof spine](lean/MATHEMATICAL_SPINE.md)
 
 ## What is checked, and what remains
 
-The [48-billion proof is integrated unchanged](research/ender_radius_bridge/RADIAL_CUTOFF_CURRENT.md), with the complete local build and audits passing; exact-head CI/publication status is versioned in its PR. Lean checks the encoded theorem and its dependencies; the audit checks for incomplete or nonstandard proof dependencies. [Exact statements and scope](lean/FORMALIZATION.md) distinguish these checks from human mathematical review.
+The [47.5-billion theorem and two structural interfaces](research/ender_radius_bridge/PHASE128_VERIFICATION.md) are integrated with all four local checks passing. Main retains the published 48-billion result until review and merge; exact-head CI/publication status is recorded in the draft PR. Lean checks the encoded statements and dependencies. [Exact scope](lean/FORMALIZATION.md) keeps that evidence separate from human mathematical review.
 
-Independent human semantic review remains open. One bounded AI review covers the earlier **50-billion** proof and exact staircase lemma at `63be64b`. It re-derived new local calculations and source-traced inherited machinery; **Lean/CI were not rerun by that reviewer**. [Review and limitations](research/ender_radius_bridge/PHASE58_VERIFICATION.md).
+Independent human semantic review remains open. [Argon’s frozen review and project CI](research/ender_radius_bridge/VERIFICATION_LAYERS_CURRENT.md) concern different questions: no defect was confirmed, but its verdict remains insufficient evidence. That review does not cover the later radial improvement or new interfaces.
 
-The repository also contains a separate canonical-family classification theorem and finite certificates, whose [scope is explicit](research/ender_radius_bridge/CLASSIFICATION_GUIDE.md). A separate [integrated Lean theorem](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) bounds the actual absolute discriminant of ANY imaginary quadratic field with class number at most two below 2^52, sharper below 2^50 when odd. [PR38 passed pinned CI and merged](research/ender_radius_bridge/PR38_MERGE_RECEIPT.md). [PR36 is merged with passing CI](research/ender_radius_bridge/PR36_MERGE_RECEIPT.md); [PR37](research/ender_radius_bridge/PR37_CI_LIMIT_RECEIPT.md) and [PR39](research/ender_radius_bridge/PR39_CI_LIMIT_RECEIPT.md) have preserved CI timeouts; PR39's cancellation stays preserved; compatible jet transport is now [published through PR40 with passing CI](research/ender_radius_bridge/PR40_MERGE_RECEIPT.md). Full classification, Mathlib acceptance and optimal constants are not claimed.
+The [arbitrary-field classification interface](research/ender_radius_bridge/CLASSIFICATION_INTERFACE_CURRENT.md) transports the existing canonical-family proof and its separate finite certificates; it is not a new classification method. A separate [all-field bound for class number at most two](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) is published. Independent review, Mathlib acceptance and optimal constants remain open.
 
 ## Explore or check it yourself
 
@@ -40,7 +40,7 @@ The repository also contains a separate canonical-family classification theorem 
 | [Tao's objectives](TAO_OBJECTIVES_CURRENT.md) | Achievements, limitations and side discoveries |
 | [Human proof guide](lean/HUMAN_GUIDE.md) | Why the determinant is positive |
 | [Exact staircase count](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) | A double sum understood by counting the same boxes in another order |
-| [Compatible transport](research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md) · [All-field h<=2 bound](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) · [Same integer, integrated 48-billion proof](research/ender_radius_bridge/RADIAL_CUTOFF_CURRENT.md) | Explicit invariants, preserved failures and numerical scope |
+| [Compatible transport](research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md) · [All-field h<=2 bound](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) · [Same integer and radial composition](research/ender_radius_bridge/STRUCTURAL_BRIDGE_CURRENT.md) | Explicit invariants, preserved failures and numerical scope |
 | [Research history](STATUS.md) | Earlier checkpoints, failed attempts and corrections |
 
 With the pinned Lean toolchain and dependencies installed, the core checks are:

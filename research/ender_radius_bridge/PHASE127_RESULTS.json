@@ -1,0 +1,126 @@
+{
+  "phase": 127,
+  "status": "FULL_ACTUAL_RADIAL_PARAMETER_LAWS_PASS_AFTER_TWO_ELABORATION_REPAIRS_STANDALONE",
+  "base_commit": "4b22be0",
+  "protocol_commit": "f292fc6",
+  "source_frozen_commit": "e578976",
+  "native_results": [
+    {
+      "phase": 127,
+      "scope": "Actual radial parameter group law and observation transport",
+      "attempt": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 50.7754182,
+      "cumulative_before_seconds": 0,
+      "time_limit_seconds": 600.0,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2978791424,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase127RadialAction.lean"
+      ],
+      "source_snapshot": "PHASE127_build_20261029203759898.source.lean",
+      "source_sha256": "4f7c6a3d775b9e8cb7546a8b7d95637d8d7bf8263508ccc0f90c30fea867cacc",
+      "stdout": "PHASE127_build_20261029203759898.stdout.log",
+      "stderr": "PHASE127_build_20261029203759898.stderr.log"
+    },
+    {
+      "phase": 127,
+      "scope": "Actual radial parameter group law and observation transport",
+      "attempt": 2,
+      "exit_code": 1,
+      "elapsed_seconds": 47.0484248,
+      "cumulative_before_seconds": 50.7754182,
+      "time_limit_seconds": 549.0,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2980122624,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase127RadialAction.lean"
+      ],
+      "source_snapshot": "PHASE127_build_20261029203947974.source.lean",
+      "source_sha256": "194e8bbaa00e69f3864f4cc2f4e09ef6590e3fc95e62e77d81f41136de496616",
+      "stdout": "PHASE127_build_20261029203947974.stdout.log",
+      "stderr": "PHASE127_build_20261029203947974.stderr.log"
+    },
+    {
+      "phase": 127,
+      "scope": "Actual radial parameter group law and observation transport",
+      "attempt": 3,
+      "exit_code": 0,
+      "elapsed_seconds": 51.2535176,
+      "cumulative_before_seconds": 97.823843,
+      "time_limit_seconds": 502.0,
+      "memory_threshold_mb": 8192,
+      "observed_peak_working_set_bytes": 2999373824,
+      "stop_reason": "",
+      "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "../research/ender_radius_bridge/Phase127RadialAction.lean"
+      ],
+      "source_snapshot": "PHASE127_build_20261029204216533.source.lean",
+      "source_sha256": "a74df916e02bc2a9fa595c4d010d30a119c7dc5abf337f52081f0c72fca1c0f3",
+      "stdout": "PHASE127_build_20261029204216533.stdout.log",
+      "stderr": "PHASE127_build_20261029204216533.stderr.log"
+    }
+  ],
+  "cumulative_seconds": 149.0773606,
+  "namespace_audit": {
+    "logical": 16,
+    "theorems": 16,
+    "runtime": 0
+  },
+  "public_theorems": 7,
+  "private_helpers": 2,
+  "fresh_counts": {
+    "matrix_add": 11237,
+    "transform_add": 11296,
+    "gram_add": 11783
+  },
+  "forbidden_roots": 70,
+  "required_actual_matrix": true,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "archive": "PHASE127_RAW.zip",
+  "archive_sha256": "830e5cfe8a94e11b718ff977991fc87abe1718ec601eac9f5ec0b8b5bb9fee1e",
+  "raw_sha256": {
+    "PHASE127_build_20261029203759898.source.lean": "4f7c6a3d775b9e8cb7546a8b7d95637d8d7bf8263508ccc0f90c30fea867cacc",
+    "PHASE127_build_20261029203759898.stdout.log": "4c989a80485a950ac36f9fce5541a4769483fd02d93949bb867d360f96067869",
+    "PHASE127_build_20261029203759898.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE127_build_20261029203759898.result.json": "08a46139aa0d33d64bb5b4007e3af6a87dce64f80d069b9d76bd072131fc927b",
+    "PHASE127_build_20261029203947974.source.lean": "194e8bbaa00e69f3864f4cc2f4e09ef6590e3fc95e62e77d81f41136de496616",
+    "PHASE127_build_20261029203947974.stdout.log": "db97cc5862f0422b8a70a07cbf02541fb3ac7e23fa263b3d84015ee866f3e93d",
+    "PHASE127_build_20261029203947974.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE127_build_20261029203947974.result.json": "e1ceee728b507330454698915d15983956d5aa49e9710676aa7f58ce904dfdbb",
+    "PHASE127_build_20261029204216533.source.lean": "a74df916e02bc2a9fa595c4d010d30a119c7dc5abf337f52081f0c72fca1c0f3",
+    "PHASE127_build_20261029204216533.stdout.log": "60af9e79d6ffdfcae84e235c136a27ceb34c0aa2430369a5a16b4382d2f63f11",
+    "PHASE127_build_20261029204216533.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE127_build_20261029204216533.result.json": "0639985b9f11079cc21cff2761233fae0ce2c6818e8730d200f38fcf947f616a",
+    "PHASE127_REPAIR_2.diff": "ef89795a8ee50da83a61420798d9d6f059fbbe8214e1b9e5856b0cdb2c158ed0",
+    "PHASE127_REPAIR_3.diff": "db1a8ade32a278f66fbd8dd5189717012ec469d374ee0f31a940ae748aad40ad",
+    "PHASE127_PROOF_REPAIR_2.json": "9229131ab2068dafd54a975f9a01366f041c3f15d3cae74c0fed05a3963faa1b",
+    "PHASE127_PROOF_REPAIR_3.json": "caf56d3b89c51095ee8cdcaf012111aa25bc50008e87c304ef18f9d0710a46d1"
+  },
+  "raw_files": 16,
+  "repairs": 2,
+  "scope": "Actual integer radial matrices and all-jet/original-sample Gram laws;standalone only;not a ring automorphism/new valuation/new bound",
+  "integration": "pending",
+  "observer_note": "First repair diff stdout printing failed with Windows cp1252 after files were saved;preflight and second Lean invocation ran normally;all evidence preserved"
+}

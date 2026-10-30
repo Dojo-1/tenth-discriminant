@@ -1,5 +1,5 @@
 {
-  "task": "Connect the checked local determinant bound to Ender's geometric and analytic cutoff",
+  "task": "Six-part structural arithmetic reconstruction and closure goal",
   "phase52_publication": "head915431702593800474eca846407fe2233f25c37b_tree2873575a3e430bd6989b25866d5a2395f539baf4_PR28_OPEN_DRAFT_UNMERGED_exact3and5_recovery_published_after_baseline10b_CI_SUCCESS_final6411099568_POSTED_BEFORE_PUSH_same_tree_merge1ac05f79_parents392b6dbb_and9154317_NEW_CI40290045330_job121462694310_confirmed_live_Build_exact_statements_security40290041111_both_analysis_jobsPASS_checkpoint6411227335_no_cutoff_change_no_extra_review_or_merge_Tao_post_goal_active",
   "phase52_status": "protocolce1456f00baa2c3aad2a4ba6a50bdfd5c7241e62_before_source_exact3and5_disjoint_recovery_strict_proxy_gain_Rge4_Sge2_production_bound_Rge2_Sge1_ALL_LOCAL_PASS_build_FAIL44.0822725_FAIL25.5240032_PASS24.5180664_total94.1243421_two_full_failed_sources_preserved_root6815PASS21.3149985_saved_inputPASS24.5030993_reconciled_not_rerun_audit_initial_launch_UNEXECUTED_approval_service_out_of_credits_user_restored_audit_attempt1PASS93.8236292_4672logical3929theorem16968runtime_161modules_noescapes_source250pairsPASS_manifest_rawZIP_exactrepair_and_prior49_50_51_integrityPASS_all_handles_terminal_no_new_scaled_envelope_or_endpoint_cutoff1e11_goal_active",
   "phase51_publication_final": "published10b684cf26efe4fb672dd2259fdaa83e33746cd1_CI40229150685_SUCCESS_all_gates_connector_steps_and_decoded_logs_verified_4650logical3910theorem16968runtime_250endpointpairs_all_controls_marker2026-10-25T20:25:16Z_security40229148012_analysis_jobsPASS_prior_separate_CodeQL_PASS_PR28stillopen_draft_unmerged_head10b684c_merge07014f2c_final_comment6411099568_POSTED_BEFORE_next_push_no_status_transfer_to_new52",
@@ -20,13 +20,13 @@
   "phase42_status": "protocol_d356519_fixed100b_attempt1_FAIL66.9683539s_ceil_control_repaired_attempt2_TIME_STOP600.8587502s_NO_RETRY_geometry_only_accepted_candidate_parked_body_preserved_partial_root6809_155modules_PASS_fresh_geometry_closures13721_23486_exclude16roots_NO_100B_LEAK_audit4573logical3839theorem16955runtime_PASS_raw_lossless_archive_local_handles_terminal_no_new_pilot_prior3b0c018_CI40168480662_security40168478985_CodeQL_SUCCESS_same_tree_merge1d750065_record6394531507_before_new_push_new_head_CI_pending_cutoff200b_goal_active",
   "phase41_status": "protocol35dbd4c_generic_aspect_lower_first_attempt72.5397946s_PASS_one_fixed_Arb256_pilot17checks_PASS_no_rerun_no_universal100b_claim_root6808_154modules_input13525_excludes13roots_audit4543logical3812theorem16951runtime_PASS_raw_lossless_archive_326links_PASS_checked_analytic_cutoff200b_unchanged_prior_f7bbfaa_CI40154838691_security40154836580_CodeQL_SUCCESS_same_tree_merge9dca199_record6394261827_before_new_push_new_head_CI_pending_goal_active",
   "phase40_status": "f7bbfaa_CI40154838691_security40154836580_CodeQL_SUCCESS_same_tree_merge9dca199_record6394261827_source_comparison_not_external_audit",
-  "status": "phase42_cutoff_attempt_INCOMPLETE_resource_stop_verified_geometry_partial_only_checked_cutoff200b_unchanged_new_head_CI_pending_prior3b0c018_success_record6394531507_no_optimality_novelty_independent_human_review_merge_or_Tao_post_goal_active",
+  "status": "ACTIVE:Phase128 exact production integration accepted;4first checks/8fresh closures/205modules;reader guides updated;frozen publication CI remains",
   "phase39_protocol_commit": "35a6b4b392c294da259dbb84b155bb1ac2a8976c",
   "phase38_proof_snapshot_commit": "ebf14c2564102ef54139024ce9f9c46228307692",
   "publication_baseline_commit": "580c0b95fdb788857e29f61a7bdc2d13b559fd3d",
   "phase38_protocol_commit": "b514c46a1f53ac74bb92664daf4aa04ea4116267",
   "base_commit": "a4da8963fa0d94ca4858e09ab10f3195d0fe588f",
-  "branch": "codex/rectangular-row-action",
+  "branch": "codex/gram-bridge-reconstruction",
   "decisions": [
     "Honor flow/PREREG_ENDER.txt and register research/ender_radius_bridge/PROTOCOL.md before new proof edits.",
     "Prove the chosen-radius count by a cell-covering area argument and retain its paper-versus-Lean boundary.",
@@ -243,5 +243,1306 @@
   "phase56_status": "LOCAL_PASS protocola42ab4fdbc7da06e1fb528703b4c6904e09db567 before source; actual field cutoff50000000000 sameGramweightsradius; strong81over1000 gain log3ge1.09 log5ge1.6 geometry450^4; firsttargetPASS121.4529248 nofailure/repair/stop; root6819PASS40.6872364 inputPASS40.0445155 closure55475/55810/58604 exclude25namedincluding62.5b auditPASS31.8192312 4755logical4012theorem16968runtime;165modules source250pairs sealedintegrityPASS; prior54source/raw and55nativefirstreport preserved frozen86; newproof notcoveredreview55; allproofhandles25052/81832/39072/5919terminal; exactheadCI separate; CI55live no push; goalactive",
   "phase56_delivery": "PUBLISHED head21a1b8801dac8bf9d41d7268d28fdc6878062aec tree275cf352f1fb375215621fed5741117ebc04cb99 PR28OPEN_DRAFT_UNMERGED title50b; newCI40363061933 job121713343159 confirmedlive cacheRestore; sameTreeMerge66b3f8642ce62e09d8f479c71846ccf542092c54 parents392b6dbb_and21a1b88; prior801CI_SUCCESS finalized6421897425 BEFORE_PUSH; checkpoint6421935205; all local56checksPASS; review55 coversonly86/62.5b; no new reviewer/merge/Taopost; goalactive",
   "phase55_publication_final": "head80107ffaacd94053818078fd737bfe68ee97892d tree8a6ea0f5 CI40358914884 job121698742619 SUCCESS allrequiredsteps; decoded250pairs audit4710/3967/16968 at2026-10-26T16:44:15.0741768Z finalcontrols2026-10-26T16:49:45.4224008Z; security40358911623 bothanalysis andCodeQL121699059101 SUCCESS; final6421897425 POSTED_BEFORE nextpush",
-  "phase57_status": "LOCAL_PASS protocola0765da675694d37f03bb8c789f9a7f797d1c189 before source; exact6F=S(S-1)(3R-p(S+1)) overReal hp>0 andNat p(S-1)<=R; clippedColumn recurrence andclosedform; firsttargetPASS22.5869066 nofail/repair/stop; root6820PASS21.7516481 inputPASS20.3948414 auditPASS27.9744318 4772logical4028theorem16971runtime;166modules/noescapes source250pairs sealedhashes/Gitblob prior56/native55reportPASS; allproofhandles7193/20287/36600/56016terminal; onenewmodule/rootonly inherited50bproof unchanged; nonewcutoff/valuation/review; published21CI40363061933 live no push; goalactive"
+  "phase57_status": "LOCAL_PASS protocola0765da675694d37f03bb8c789f9a7f797d1c189 before source; exact6F=S(S-1)(3R-p(S+1)) overReal hp>0 andNat p(S-1)<=R; clippedColumn recurrence andclosedform; firsttargetPASS22.5869066 nofail/repair/stop; root6820PASS21.7516481 inputPASS20.3948414 auditPASS27.9744318 4772logical4028theorem16971runtime;166modules/noescapes source250pairs sealedhashes/Gitblob prior56/native55reportPASS; allproofhandles7193/20287/36600/56016terminal; onenewmodule/rootonly inherited50bproof unchanged; nonewcutoff/valuation/review; published21CI40363061933 live no push; goalactive",
+  "phase57_delivery": "PUBLISHED head63be64b4ba3ff9795f552dd34bc415f6ea3acb25; merged PR28 at08a3af6bbb5be3767e96bb8851c1753b7f56b52f verified via GitHub and origin/main; exact source CI40367229446 job121728099696 still live Build exact statements; no final CI success claimed",
+  "readme_refresh": {
+    "scope": "README only; rizz mathematical/writing guidance; preserve theorem scope and evidence links",
+    "base": "08a3af6bbb5be3767e96bb8851c1753b7f56b52f",
+    "prior_pr": "28 merged verified via GitHub and origin/main",
+    "status": "MERGED PR29; explicit user authorization; same verified tree;61lines onorigin/main",
+    "old_lines": 454,
+    "new_lines": 61,
+    "commit": "7b80ff310080ed6b8dd2ce4a7cadeaada1229b8a",
+    "pr": "https://github.com/Dojo-1/tenth-discriminant/pull/29",
+    "ci_run": 40378083482,
+    "ci_job": 121766540204,
+    "ci_observed": "SUCCESS",
+    "review_comment": "https://github.com/Dojo-1/tenth-discriminant/pull/29#issuecomment-6423000107",
+    "evidence_integrity": "verify_phase57_results.py PASS; integrity only, no Lean rerun",
+    "audit": "4772/4028/16971 at2026-10-26T17:47:51.8018237Z",
+    "final_controls": "2026-10-26T17:53:55.3465881Z",
+    "security": "CodeQL121735647496/python121735352658/actions121735352064 SUCCESS",
+    "merge_commit": "21c7b78cae7da1fbaec14d1c96c751677f3f0082",
+    "tree": "08dab678e27c03abc0d76eec17b59be89dcd5f97"
+  },
+  "historical_source_check": "Primary local PDF printed360/PDF20 visually checked; strict163<D<5b radicand range; number sieve100000/s; mechanical implementation not specified; no historical-year claim; saved .agent/HISTORICAL_BRIEFING.md",
+  "phase57_publication_final": {
+    "head": "63be64b4ba3ff9795f552dd34bc415f6ea3acb25",
+    "merged_at_commit": "08a3af6bbb5be3767e96bb8851c1753b7f56b52f",
+    "ci_run": 40367229446,
+    "ci_job": 121728099696,
+    "conclusion": "SUCCESS",
+    "audit": "4772/4028/16971 at2026-10-26T17:34:36.2069398Z",
+    "final_controls": "2026-10-26T17:39:43.5457999Z",
+    "security": "CodeQL121728422555/python121728082747/actions121728082192 SUCCESS",
+    "timing_limit": "merge observed before CI completion; no premerge success claimed"
+  },
+  "phase58_review": {
+    "protocol_commit": "610f750d36eb05f81c92d0421c997a6189bd2d35",
+    "target": "63be64b4ba3ff9795f552dd34bc415f6ea3acb25",
+    "agent": "/root/final_cutoff_review",
+    "status": "FIRST_NATIVE_REPORT_PRESERVED_AND_PUBLISHED",
+    "dispatch_not_before": "2026-10-26T17:50:40.685250Z",
+    "cap_seconds": 1800,
+    "authorization": "Human: Run one bounded review",
+    "first_report": "research/ender_radius_bridge/PHASE58_REVIEW_REPORT.md",
+    "no_reroll": true,
+    "first_report_sha256": "d1f013bc9bb75f466d46263553b393983411321bcc38f61f2d854da2e9b5fd22",
+    "conservative_elapsed_seconds": 506.30682,
+    "verdict": "No concrete FATAL/GAP/SLOPPY in six obligations; local rederivation and inherited source tracing; Lean/CI NOT RERUN",
+    "review_commit": "5c36ad2",
+    "publication_head": "179e693c7015765270a5c1c618ec3c373a510c0a",
+    "pr": 29,
+    "integrity": "Both58and57verifiersPASS; all184source/check/pins unchanged; nativeGitblob hash matches; no reroll",
+    "new_ci_run": 40374252117
+  },
+  "final_reader_audit": {
+    "status": "MERGED_AND_VERIFIED",
+    "files": [
+      "TAO_REPLY_BRIEF.md",
+      "lean/MATHEMATICAL_SPINE.md",
+      "research/ender_radius_bridge/PHASE58_VERIFICATION.md"
+    ],
+    "change": "Remove stale100b current claims; short58brief; finalreviewpointer and prose spacing; no math/report/manifest/gate changes",
+    "validation": "Four reader-doc link sets PASS;58verifierPASS;whitespacePASS",
+    "publication_rule": "Wait40374252117 terminal; inspectdecodedlogs/finalrecord before nextpush; then freeze finalhead forCI",
+    "no_posting_authorized": true,
+    "head": "7b80ff310080ed6b8dd2ce4a7cadeaada1229b8a",
+    "tree": "08dab678e27c03abc0d76eec17b59be89dcd5f97",
+    "same_tree_merge": "537e6545e0396e5d96feadcae8ea53d2b59120d1",
+    "base": "08a3af6bbb5be3767e96bb8851c1753b7f56b52f",
+    "ci_run": 40378083482,
+    "ci_job": 121766540204,
+    "ci_status": "SUCCESS",
+    "scope_frozen": "No further delivery edits unless failure/user steering requires correction",
+    "audit": "4772/4028/16971 at2026-10-26T18:45:32.6852364Z",
+    "final_controls": "2026-10-26T18:51:03.4128738Z",
+    "security": "CodeQL121766809519/actions121766520206/python121766519486 SUCCESS",
+    "merge_commit": "21c7b78cae7da1fbaec14d1c96c751677f3f0082",
+    "authorization": "Human: Merge PR #29"
+  },
+  "phase58_179_ci_final": {
+    "head": "179e693c7015765270a5c1c618ec3c373a510c0a",
+    "run": 40374252117,
+    "job": 121752865008,
+    "result": "SUCCESS",
+    "audit": "4772/4028/16971 at2026-10-26T18:21:08.7737626Z",
+    "final_controls": "2026-10-26T18:26:50.9871100Z",
+    "security": "CodeQL121753172309/python121752859124/actions121752858880 SUCCESS",
+    "final_comment": "6424132001 posted BEFORE final7bpush"
+  },
+  "phase59_status": {
+    "protocol": "437001eebaec32998434e22ab7ba70c0d54c9283",
+    "status": "PUBLISHED_STANDALONE_CONDITIONAL_PROTOTYPE",
+    "attempt_exit_codes": [
+      1,
+      1,
+      0
+    ],
+    "cumulative_seconds": "136.833398099999996",
+    "remaining_target_builds": 0,
+    "source_sha256": "307ba7da9ba96bd5b7aa4437c8411b9632847e70e273fbf01c02dc6176f829d9",
+    "unchanged_theorem_type_prefixes": 11,
+    "audit": "36logical/32theorem/5runtime; standard3axioms",
+    "closures": [
+      48165,
+      11176,
+      48196
+    ],
+    "scope": "sameactualGram+Abel+positivekernel+conditionalexcludedbudget; B/f/C hypotheses explicit; no higherh cutoff; productionroot unchanged",
+    "next": "Observe publicationCI/security; no additional proof build/repair; no reviewer/merge authorized",
+    "head": "03474ef603f4ebd8b78531e959977d938a5cc6a9",
+    "tree": "84b75fa6c8f63e65a45d641cc6482ab6a0135eb3",
+    "pr": "https://github.com/Dojo-1/tenth-discriminant/pull/30",
+    "branch": "codex/excluded-prime-prototype",
+    "raw_archive": "PHASE59_ATTEMPTS.zip;12exactrawfiles",
+    "checks": "all3integrityverifiersPASS;committedsourcehashmatch;readerlinks/whitespacePASS",
+    "ci_coverage": "unchangedproductionlibraryonly; prototypecheckedlocally inregistered3builds, notCIrootintegrated"
+  },
+  "phase59_034_ci_final": {
+    "head": "03474ef603f4ebd8b78531e959977d938a5cc6a9",
+    "run": 40383605144,
+    "job": 121785976966,
+    "result": "SUCCESS",
+    "audit": "4772/4028/16971 at2026-10-26T19:23:41.9237803Z",
+    "final_controls": "2026-10-26T19:29:12.0819044Z",
+    "security": "CodeQL121786282683/actions121785966449/python121785965862 SUCCESS",
+    "coverage": "productionlibraryonly,notstandaloneproto/probe",
+    "final_comment": "6425421421 posted BEFORE nextpush"
+  },
+  "phase60_status": {
+    "protocol": "856ba40283c7111994c6e3f41a583276886316f9",
+    "execution": "one invocation,exit0,0.1843335s,noresource-stop,Python3.13.15",
+    "case": "Q(3,1,1001),D12011,t3,p3;allguardsPASS",
+    "outcome": "PER_FORM_ESTIMATE_VIOLATED:2prime reps vsU<34/25;principalcontrol0",
+    "limits": "no actualclassnumber,aggregatetest/refutation,h2cutoffrefutation,newcutoff or independentreview",
+    "source_sha256": "df37f60bbce73dd23edfec7d30625b94ca70335d9e31dd4ff2618e355f9449b9",
+    "raw": "4filesZIPexactreadback,context/protocol/sourcehashsealed",
+    "remaining_invocations": 0,
+    "published_head": "c6cbb1f81a061265c94c1ff65f4e997519024e9b",
+    "tree": "1f179993a55dbde4e531a781f3bb40bedee84afb",
+    "same_tree_merge": "6664bb9462ccdaccdb0223a0a79e5e151d71b852",
+    "pr": 30,
+    "ci_run": 40387541208,
+    "ci_scope": "productiononly;proto/probecheckedlocally",
+    "checks": "all4saved-evidenceverifiers,doclinks,whitespacePASS",
+    "status": "PUBLISHED_DRAFT_UNMERGED;waitnewexactheadCI;noautomerge/reviewer/postingauthorization"
+  },
+  "phase61_status": "PUBLISHED b4cff273f620ead13fc60097222fac01cce4ab67 tree6ca7eacb80fb46dd3c9ef5e1a1ae29b79d272ff7 PR30draftOPEN_UNMERGED; protocolfad0eac source79755ef finalEOFcleanup b4cff27; targetFAIL98.8740729 PASS39.3685823 PASS44.6006691 total182.8433243 ALL3BUILD_BUDGET_CONSUMED; root/input/auditPASS4821/4071/16978 closure48263 excludes34; coverage168 source250pairsPASS; apparatusPASS; negative suiteINCOMPLETE exit1 at existing120s multiplicity timeout NO_RERUN; thirdbuilddispatchedbeforetimeoutobserved;34rawZIP archived exactreadback; evidenceverifierPASSafterUTF8readerfix rawunchanged; originalPhase59/60frozen oldcurrenttreeverifiershistorical; README61unchanged; no newB/cutoff/classification/reviewer/merge",
+  "phase61_ci": "FINAL_SUCCESS b4cff273f620ead13fc60097222fac01cce4ab67 CI40403267176/job121854391609 allstepsPASS decodedsource250pairs21:19:24.7819216Z audit4821/4071/16978at21:35:06.0529577Z finalcontrols21:40:28.3892260Z; securityCodeQL121854700666/actions121854377421/python121854377037PASS; finalcomment6428022437 POSTED_BEFORE_phase62publication; localWindows120sMultiplicitytimeout remainsINCOMPLETE no rerun; userasyncPR30mergeapprovalrequested andstillpending no merge",
+  "phase62_status": "PUBLISHED74d02d305cabc4bde1a46ed066bff3ad12f3e9da treea7f65d791b29c5d099750b3a9a1aa7349803f695 PR31DRAFTOPEN_UNMERGED basecodex/excluded-prime-prototype b4cff27 smallstack; sourcefa9423e protocol10fca35; local2builds FAIL/PASS45.5935824 namespace18/16/2;8rawZIP verifierPASS; researchsourceOUTSIDEproductionCI; nonzero-row/fourreps/classdict/ramifiedB remainopen no newcount/cutoff; originalproofs/root/README61unchanged",
+  "phase62_ci": "FINAL_LEAN_SUCCESS exact74d02d305cabc4bde1a46ed066bff3ad12f3e9da treea7f65d7 CI40407136985/job121867685012 allgatesPASS logs250pairs21:47:30.8904391Z audit4821/4071/16978 at22:03:44.6815368Z finalcontrols22:09:14.3446004Z; finalcomment6428628179 BEFORElaterpublication. OnlyLeanreported, no31securitychecks counted; retargeteligibilitylater. CIcoversoldproductionnot62standalone. PR31draftopenunmerged base30b4. PR30approvalstillpending noautomaticmerge.",
+  "comparison_refresh": "26Oct DESCRIPTIVEprimarysourceinspection externalDrMurphyIsIn/tenth-discriminant f0995bf604056a98f0af0d182ed152c6bd996419; hcnREADME/formalREADME/Main/ClassPartition andcomparisonREPRODUCE inspected; recorded5GitblobSHAs. ExternalreportsQRHLeanh1<=652/h<=2<=4777 andhybrid565ArbbandsplusQRHabove652 NOTreplayed, NOTimported. Pins4.34.1/d13/openai_mathadc7 vsours4.19/c44. Hermitea<=2/3sqrtD doesnotimplyourproposedreduceda<=sqrt(D/3); preserveerrorguard. PRIOR_ARTdatedbodyretained currentabsencenotclaimed, METHOD_COMPARISON_CURRENT.md added; broadobjective5stillpartial; externalpositivey0termrelatednotoursamenovelproof.",
+  "phase63_status": "Acceptedfrozenlocal sourcee92d05b nowPUBLISHEDASPART_PR32. Originalsource/data/raw unchanged at64integration, currenttreeverifierhistoricalafternewRootimports. Offaxisintegralboundraw2attempt57.5219958 and firstfailurepreserved; newnamespaceQuadraticRows productiontransport exactverified. No new63rerun.",
+  "phase63_commit": "e92d05b7f0f7dbade8a5a89f834550d1ebb78ccc frozen Phase63 source/firstfailure, nowpublished withinPR32; Phase64 subsequently closes/integrates area underseparateregistration20d1db3. Do notreadolder unregisteredplanascurrentstatus.",
+  "phase64_status": "PUBLISHED70f92177c9bd46fa8447fa0a19ab4be4f86fd3c3 treef65f41b2bbcd96a59fb0bb3163ec070cb4bb3ed1 PR32DRAFTOPEN_UNMERGED stackedbasePR31branch74; attached. Protocol20d1db3 BEFOREsourcecommitaba2031; firsttargetPASS52.9580334 rootPASS20.1056496 inputPASS26.1582986 auditPASS27.9050467. Newglobal4869logical4114theorem16982runtime170modules, namespace48/43/4; closures35203/35399 exclude34listedroots standard3. Actualoffaxis areaformula closed inclt0, circle/shear/origincontrols.21rawZIP exactreadback verifierPASS; priorsource/report/raw bytespreserved. No oldproductionproof/tool/pin/gate/README61changes except2newmodules/Rootimports. No closedarithmeticB/classdict/4reps/ramified/cutoff/h2classification/novelty/review. TAO_REPLY_BRIEF remainsAIpreparednotposted. No Phase61negative rerun.",
+  "phase64_ci": "40412438935/job121886253061 confirmedLIVE finalknownfalse/regressioncontrols AFTERbuildandauditPASS at70f9217; pollsamehandle, no cancel/restart/pushbeforeterminalrecord; docse368a61 remainlocal. No securityabsencePASS; PR30approvalpending.",
+  "objective_ledger_distillation": {
+    "status": "LOCAL_COMMITTED_NOT_PUSHED",
+    "commit": "e368a61220afeca808a55406fc25463007a0067e",
+    "branch": "codex/objective-ledger-distillation",
+    "base": "70f92177c9bd46fa8447fa0a19ab4be4f86fd3c3",
+    "old_lines": 379,
+    "new_lines": 62,
+    "objectives": 12,
+    "history_path": "TAO_OBJECTIVES_HISTORY.md",
+    "history_sha256": "5408f79b1d29bc3730b8f81b6e3af93e002c4297b19350d19db04dfe238172c5",
+    "verification": "exactoriginalGitbytes preserved; all12rows/scope/links checked; math/tools/pins/gates/README unchanged; docs-only no new proof run",
+    "delivery": "Keep70CI40412438935/job121886253061 unchanged/live; recordterminalbeforeanypush. Prefer incorporate this doccommit into existingPR32 afterterminal ratherthanopening anotherhalf-result PR. No automaticmerge."
+  },
+  "current_delivery": {
+    "branch": "codex/ideal-basis-arithmetic",
+    "head": "e77a446aaed709c04afe38b1dc846e4a8f6386cc",
+    "tree": "c8bd992a88952fcc9943728ed764234185bf51e1",
+    "pr": 35,
+    "state": "draft open unmerged",
+    "base": "3b12473cc02cb6bbad7cf6681979582ec3f00a5e",
+    "synthetic_merge": "4ba893f3754b76521192873c55541a9eca2a0141",
+    "ci": {
+      "run": 40426517803,
+      "status": "in_progress",
+      "conclusion": null,
+      "job": 121933520286
+    },
+    "local_verification": "Phase72firsttarget/root/input/full audit PASS;4963logical/4196theorem/16993runtime;175modules;actual chosen basis/form/count samebasis; exact71helper transport",
+    "prior_ci": {
+      "pr": 34,
+      "head": "3b12473cc02cb6bbad7cf6681979582ec3f00a5e",
+      "run": 40423599797,
+      "job": 121923735462,
+      "conclusion": "success",
+      "final_comment": 6430605254
+    },
+    "limits": "No quantitative leading bound, calibrated principal-class basis, even-chart/field transport or usable class-wide B/new cutoff. No merge/reviewer/posting."
+  },
+  "current_research": {
+    "phase": 97,
+    "status": "standalone actual even class-sum prime-prefix and uniformh<=2 bounds proved",
+    "registered_commit": "18fde895efc0a8dc50d46e34d2322c64c45383ce",
+    "source_sha256": "f8be4ea6bc9f517580b1f54c55a6160576b66a7933d9178ca7ab45ddc666752c",
+    "theorem": "EvenClassAggregation.uniform_two_class_bound",
+    "scope": "positive squarefreed=1or2mod4,actualh<=2,ALLfiniteAdmissibleP p<=Nat t;actualcounts/slices/4cardPderived;area2pit/sqrt4d,boundary4sqrt(actualM*t/4d);uniformonlyinhnotM",
+    "next": "Separate exact integration of accepted97math/relocated49checker,then completeactualevenweightedloss budget onSAMEoriginalGram. NormalizeactualM(K) fromdegree2/totcomplex/actualdiscr4d;prove explicit comparison,do not assume scalar-envelopecandidate. No even cutoff inferred.",
+    "review": "Argonreportpending;no reportassessed/no newreviewer",
+    "goal": "active;weightedbridge/actualM/even cutoff/classification/independenthumanreview/currentexternalCI/upstream/publication/Taoobjectives incomplete",
+    "commit": "507c6d8f91c78c682b6869550003d95c5c24cc6d"
+  },
+  "phase65_checkpoint": {
+    "phase": 65,
+    "registered_commit": "0d7392a",
+    "head": "2dd80eb233833e33f01fb87dca2e10fc06ca77d0",
+    "branch": "codex/prime-divisor-loss",
+    "publication": "local only; preserve live PR32 CI",
+    "status": "standalone local proof and fixed controls PASS",
+    "attempts": [
+      {
+        "exit": 1,
+        "seconds": "33.2369437"
+      },
+      {
+        "exit": 0,
+        "seconds": "29.0058835"
+      }
+    ],
+    "total_seconds": "62.2428272",
+    "public_types_unchanged": 9,
+    "namespace_audit": "13 logical/13 theorems/0 runtime-only; standard3 axioms",
+    "remaining": "Actual class/form representation and multiplicity; parameter-to-field-discriminant transport; arithmetic B; no new cutoff",
+    "next": "Wait for exact PR32 CI40416976865 terminal; preserve result before publication. Production integration needs separate preregistration."
+  },
+  "phase69_stop": {
+    "registered_commit": "c826c68",
+    "source_commit": "d3ce625",
+    "status": "FAILED_INTERNAL_RESOURCE_STOP_NO_THEOREM",
+    "attempts": 1,
+    "seconds": "47.0501137",
+    "outer_stop_reason": "",
+    "internal_stop": "Lean deterministic200000heartbeat exhaustion; audit rejection",
+    "rule": "Stop after any target resource stop; no69repair/rerun/heartbeatincrease allowed.",
+    "target_budget": "2nominal remaining attempts are unavailable after stop",
+    "artifact": "research/ender_radius_bridge/PHASE69_RESULTS.json"
+  },
+  "phase74_status": "36ff708 preregistered; standalone controlled class-square vector PASS second run after one implicit argument repair; 8types unchanged; FAIL26.6258372/PASS27.7909568;9/9/0std3;8rawZIP;integrityPASS;no target rerun;primitive basis/B/even/field/newrange open;PR35CI40426517803 live controls;no publication/merge/reviewer",
+  "phase35_publication_final": "e77a446 exactCI40426517803/job121933520286 SUCCESS; source250pairs/newnamespaces/full4963/4196/16993/fullcontrols00:50:44.1424884Z decoded and checksAPIverifiedLeanOnly;PR35stilldraftopenunmerged;PUBLIC_TERMINAL_COMMENT_REJECTED_auto_review_publicmetadataegress;explicitasyncquestionpending;no workaround/newpublication;localsafeprogresscontinues",
+  "phase75_status": "f589ca5 preregistered before source; sole39.4407757s invocationFAILdefault200000heartbeat at isDefEq/whnf witnessassembly;outerstop_reasonempty600s/8192MBnotreached;resource-stopruleincludesinternal=>STOPPEDNO_REPAIR_RERUN_LIMITINCREASE;PROJECT_AXIOMauditreject;noacceptedmainroots;4rawZIP/integrityPASS;sourceunchanged;74lastacceptedvectornotbasis;35commentauthpendingnoegress",
+  "phase76_status": "82ff23d registered new Nat.find/ambient homogeneity architecture;PASSfinalthird51.8930719s after FAIL55.1707368/99.0056703 only unitcontrolrepairs;9pubtypes/mainbody/reportingunchanged;12/12/0std3;12rawZIP/verifierPASS;total206.0694790;ALL3SLOTS consumed;no76rerun;75stoppedfrozenunchanged;actualminimalboundedvectorprimitiveeverybasisNOTcompletedbasis/coeff/B/range;outsideRootCI;PR35commentauthpendingnoegress",
+  "phase77_status": "8dc321c preregistered new Matrix.toLinearEquiv/Basis.map actual primitive completion+FormDataa<=NJ;FAIL30.4289926/PASS35.0070539(total65.4360465);6types unchanged;onlyprimitiveproofhg/existingint_smul_eq_zsmul normalization repaired;actualnorm/coeffproofcontrolsreportingunchanged;6/6/0std3;8rawZIP/verifierPASS;no further77run;75frozen76unchanged;needsactual76classfamilycomposition/rootintegration/B/evenfield/newrange;PR35postingauthpendingnoegress",
+  "phase78_status": "22ee09b before exact73/76/77import-onlytransport+ControlledClassCount;ALL_FIRST_PASS target93.9790186/root24.8548143/input32.7270587/audit32.1214912;179modules/250pairs/5002logical4233theorem16993runtime/std3;closures54328/54613exclude34;37rawZIP;samechosenJ/e actual0<a<=NJ<=M liftswholeclass andalloffaxisfinitecount;75/69frozen;oldrootfixedverifiershistoricaldoNOTweaken/rerun;needsaggregateB/evenfield/newrange/externalCI;PR35publicrecordapprovalpending,noegressmerge",
+  "phase79_status": "70a06a4 before actualaxis<=2/fullchosenclassprimecount nohy;FAIL28.7491471syntaxextraUparen+ClassicalDecidable/PASS31.175862 onlydelimiter/scopepatch;total59.9250091;8intendedtypes/proofbodies unchanged aftergrammar;exact62scalartransport;10/10/0std3;8rawZIP/verifierPASS;no further79targetrun;production78unchanged/verifierPASS;axis0principalelse2 chosenSAMEJlifting;nextactualfourlift/sumclassB/evenfield/newrange;outsideRootCI;PR35postingauthpendingnoegress",
+  "phase80_status": "2164660 registered exact79importtransport +ControlledPrimeFamily;targetFAIL62.1648515/PASS33.6940323only4residueIdealunwrapsimps,total95.8588838;root20.8289849/input31.6750411/audit31.8977661 firstPASS;181modules/250pairs/5031logical4261theorem16993runtime/std3;closures29185/54827exclude34;36rawZIP/verifierPASS;SAMEfixedJfullcounts+4PselectedbeforeallP;actualclassslice sum/B/evenfield/newrange/externalCIremain;noegressPR35authpending",
+  "phase81_status": "8f18caf first successful registration after creditblockedUNEXECUTEDcommand;actualclassslice+wholeclasssum+admissibleprimeprefixPASS;FAIL96.894357/PASS52.0178714onlysubtypedomain/sumcast,total148.9122284;8types/scalar62bodycontrolsreportunchanged;8/8/0std3;8rawZIP/verifierPASS;actualcountP<=h/4*(A+B+1),uniform1/2;no81rerun;production80unchanged;fullweightedloss/excludedcoverage/evenfield/newcutoff/externalCIremain;noegress",
+  "phase82_status": "ACCEPTED_LOCAL a4a6fe1b32dbc8bf182e160155c0bec6e69ba0ae. Four first-invocation proof checks PASS; actual finite weighted originalGram budget, no suppliedB/G. Audit5058/4285/16993 std3,183modules,34exclusions. Input nominal182vsregistered180(actual43.1749583), original/addendum preserved a36bde9 beforecorrected180audit.31rawZIP/1360frozenbaselinefiles/savedverifierPASS.392local links/README61; inherited exact81transport EOFblankline retained and documented; otherwhitespacePASS. No newcutoff/externalCI/reviewer/publication/merge. Next mathematical candidate in NEXT_KERNEL_ESTIMATE.md NOTREGISTERED/NOTCHECKED.",
+  "phase83_status": "ACCEPTED standalone local closed kernel + actualGram composition. Registered0c8c592. FAIL50.0273877/PASS48.7966777 total98.8240654,sole simp only div_eq_mul_inv insertion beforeexistingnlinarith;11publictypes/2defs/4controls/reportunchanged.28logical26theorem0runtime std3;fresh57618closure excludes34.8rawZIP/verifierPASS includesfrozen82verifier. No83rerun; production82unchanged/no newrootCI. M(K)-to-D/field/even/numericcutoffopen. README61currentdocs/guide updated. Committed2ee03a6f63998b5eb4e97387c62053da448e4cd1;398localreaderlinksPASS;stagedwhitespacePASS. No publication/merge/reviewer/Tao.",
+  "phase84_status": "ACCEPTEDLOCAL targetFAIL86.666025/PASS48.909904 total135.575929; intended10types1defunchanged;explicitpolyeval/controlFact/primalityrepairs;firstD3notelaboratednocheckedfirstsignature. Exact83math/reporttransport exceptfirstimport+moveinputcommand. Root27.0026287/input38.1729728/audit35.6841639firstPASS.185modules/250endpointidentities/5103logical4327theorem16993runtime/std3;closures47300/57669exclude34. ActualM=2/pi sqrtD provedfrommaximaldiscr=-D,degree2,onecomplexplace; normalizedsameactualGram closedDcost.36rawZIP/1379priorfrozen/verifierPASS. CurrentdocsREADME61/readerguideupdated;COMMITTED1cf5f5ed564a7aad2e472dc00fac54812ffde55f;408readerlinks/README61/whitespacePASS. No newnumericcutoff/genericfield/even/externalCI/humanreview/egress/merge.",
+  "phase85_status": "Registered2d14a92 beforecode;ONErunPASS0.7618379s/internal0.029030699995928444;18sealedN36..64step2+80/96/128at100+200digits;8controls/precision;7negative11positive0unresolved;allnestingPASS. firstpositive2^50margin>0.07,2^48margin<-0.21. Memorysample0=UNOBSERVED notzerouse,nominal8192notobservedproof.4rawZIP/1392priorpaths frozen/verifierPASS exactFractionHmargin/rootarithmetic;no ln/sqrt rerun. NoLeanchange;84ischeckedmath,85scalarfeasibilityONLY. Hmajorization/allDcontrol/fullprimeMass-uppercompositionopen. DocsREADME61updated;COMMITTED60c2eef43e1c1428f14819e5a26a6f4a4956c058;411readerlinks/README61/whitespacePASS. NextunregisteredproofoutlineNEXT_ALL_D_MARGIN.md withpinnedquadraticexpAPI. Noegress/review/merge/newcutoff.",
+  "phase86_status": "ACCEPTED standalone full actualoddh>2 allD>=2^50. Registered32ca2e1. FAIL79.5313154/FAIL46.5392337/PASS48.5733911 total174.6439402,all3slotsconsumed,norerun.21types2defs/mainproof/controlsunchanged,onlyhelpernormalization+explicittypes.42logical40theorem3runtime,std3;fresh59721closureexcludesSAME34incloldrawUniform.12rawZIP/1399priorfrozen/verifierPASS;85savedverifierPASS;newguide/currentdocsREADME61updated;COMMITTEDbcdeb97cdb6b09bfebf5438e21b60de77afcc7f5;420readerlinksREADME61whitespacePASS. Production84unchanged;integrate87 separatelynext;even/genericfield/CI/humanreviewopen. Newoddh2cutoff notfullclassification;h1field50bunchanged. Noegress/review/merge.",
+  "phase87_status": "ACCEPTED integrated actualodd classNumber>2 forallsquarefreeD=3mod4>=2^50. Registered05b89a3;exact86math/control/reportunmodified exceptdependencyimports/moveinputcommand,one rootimport. Target43.0412347/root23.9453069/input30.1005506/audit32.420875 ALLfirstPASS.186modules/250endpointidentities/5145logical4367theorem16996runtime/std3;fresh59721closure excludesSAME34.25rawZIP/1439priorfrozeninclreviewledgeroriginalaudit/history/verifierPASS. No86replay,nohistoricalverifierweakening. README61/currentdocs+guideupdated,12ledgerrowsexplicitouraccountingnotTaoenumeration. COMMITTED571b62eca4b4652b9c69eb06ecc78d341ec9e1bb;423readerlinksREADME61whitespacePASS. ExternalCI/humanreview/even/genericfield/classificationopen;h1field50bunchanged. No publication/merge/newreview.",
+  "current_research_previous": {
+    "phase": 73,
+    "registered_commit": "e68e931",
+    "head": "cde93ff0decdd99498b99c145433a2da774e9fa1",
+    "branch": "codex/principal-basis-calibration",
+    "publication": "local only; preserve PR35liveCI40426517803/job121933520286",
+    "status": "actual identity-class a=1 basis, prime-axis exclusion and full finite prime-point count PASS standalone locally",
+    "attempts": [
+      {
+        "exit": 1,
+        "seconds": "32.2674732"
+      },
+      {
+        "exit": 0,
+        "seconds": "33.174409499999996"
+      },
+      {
+        "exit": 0,
+        "seconds": "36.45053",
+        "change": "required FormData print only"
+      }
+    ],
+    "total_seconds": "101.892412699999996",
+    "budget": "all3 invocations consumed; no target rerun",
+    "public_types_unchanged": 8,
+    "definitions_unchanged": 2,
+    "audit": "15logical/13theorem/0runtime standard3axioms",
+    "assumption_scope": "ClassGroup.mk0J=1 for this ideal; no global field class-number-one or PID hypothesis",
+    "remaining": "Other-class coefficient control/primitive basis, class aggregation, even chart/field transport, usable B/new cutoff",
+    "next": "Separate exact production transport or actual h<=2 self-inverse small-vector proof; publish only after35terminal exact record. No next proof registered."
+  },
+  "phase88_status": "IntegratedLOCALPASS;11types3defs/mainproofsfixed;FAIL35.8059275/FAIL100.5685172/PASS42.3856978;all3slotsconsumed,no replay. Root25.7633655/input82.378348/audit33.3595419firstPASS;187modules5165/4384/16999std3;closures29583/60577exclude35;37raw1447frozen savedverifierPASS. Even branch/externalCI/humanreviewopen. Argonpending,noreport.",
+  "current_digression": {
+    "topic": "Payor lemma/probabilistic variant; new Argon review",
+    "sources_read": [
+      "https://www.lesswrong.com/posts/ZWhJcHPmRaXAPAK5k/probabilistic-payor-lemma",
+      "https://www.lesswrong.com/posts/2WpPRrqrFQa6n2x3W/modal-fixpoint-cooperation-without-loeb-s-theorem"
+    ],
+    "review_status": "Notlocated: localreviewfolder unchanged, publicmainreviewfolder sameoldfiles, PR35onlyoriginalcomment; GitHubArgonsearchnohits. Relevantchat Draft mathematical update inspectedboundedpreview, noreview. Async questionforlink/path/chattitlepending. No report assessed/reviewer spawned/messages sent.",
+    "constraint": "No newLeanrun whileuserdigressionheld. Payor formalmodalpremises not established for our bounded review/check workflow; no transfer from confidence/agreement to arithmetic proof.",
+    "status": "Answered; user sayscontinue. Argonreviewstillunderway externally; no report yet."
+  },
+  "previous_goal_turn": "PROGRESS:full actual-field48b theorem accepted at5ce23f2;new integration branch and preregistered unchanged module/root extraction",
+  "phase89_status": "Accepted standalone full even actual ideal form/count:FAIL46.283882/PASS50.0552128,total96.3390948;oneNatRealcastrepair;14types3defs/maincontrolsunchanged;24logical21theorem5runtime std3;44910closure37exclusions;8raw1458priorfrozen savedverifierPASS. No targetreplay/rootchange/externalCI/reviewer/merge. Even cutoff stillopen.",
+  "phase90_status": "Accepted exact89integration;allmath14types3defs/proofs/controls/reportsunchanged afterimports;ONErootimport. FirstPASS target50.8546323/root28.7958112/input31.5439489/audit38.7155894;188modules5189logical4405theorems17004runtime,std3;44910closure37exclusions.25raw1464frozen verifierPASS. No89replay/externalCI/newreview/publication/merge. Even cutoff open.",
+  "phase90_whitespace": "Exactly one inherited blank EOFline259 retained for byte-exact89body transport; explicit saved verifier and staged whitelist checkPASS; all other whitespace checked.",
+  "phase91_status": "Accepted full standalone controlled even actual class form/lift/common count;FAIL83.4366943/PASS106.49821,total189.9349043;localcoordinateequalityhm->hmulonly;11typesFormData/mainproof/4controlsunchanged.17logical16theorem0runtime std3;54590closure38exclusions;8raw1474priorfrozen verifierPASS. Productionrootunchanged;no even cutoff/currentexternalCI/humanreview/publication/merge/newreviewer.",
+  "phase92_status": "Accepted exact91production integration;11types/FormData/proofs/controls/reportsexactafterimports;ONErootimport. FirstPASS target122.5756058/root35.6583159/input34.752018/audit38.6996773;189modules5206logical4421theorems17004runtime,std3;54590closure38exclusions.25raw1480frozen verifierPASS;documentedoneinheritedEOFline259exactexception/allotherwhitespacechecked. No91replay/externalCI/reviewer/publication/merge;even cutoff open.",
+  "phase93_status": "Accepted FULL standalone actual even principalcalibration/primeaxis/per-classcount;FAIL121.6047918/PASS77.3449178,total198.9497096;solehelperqualificationEvenIdealCount.norm_in_integer_basis;11types/mainproof/5controlsunchanged;no newdefs.13logical13theorem0runtime,std3;54650closure42exclusions.8raw1490frozen verifierPASS;productionrootunchanged. No even cutoff/externalcurrentCI/humanreview/publication/merge/reviewer. ArgonpendingafterOct28remote refreshmain39e9ce3/reviewunchanged.",
+  "phase94_status": "Accepted exact93production integration;11types/proofs/5controls/reportsexactafterimports;ONErootimport. FirstPASS target70.1855337/root25.1691685/input28.8799819/audit31.0698475;190modules5219logical4434theorems17004runtime,std3;54650closure42exclusions.25raw1496frozen verifierPASS;singleinheritedblankEOFline256whitelisted/allotherwhitespacechecked. No93replay/externalCI/reviewer/publication/merge;even cutoff open.",
+  "phase95_status": "Accepted FULL standalone actualevenresiduemaps/distinctkernels/coherentcontrolledfamilybeforeALLfiniteP,withsamecountdataand4cardPselecteddistincttaggednormpoints. FAIL36.1379252/FAIL36.1710641/PASS37.675812,total109.9848013;onlyfirstdefroot-evaluationproofnormalization;all13pubtypes/proofbodies/3deftypes/mainassembly/5controlsfixed.28logical25theorem0runtime,std3;54801closure47exclusions;12raw1506priorfrozen verifierPASS;ALL3slotsconsumed,noreplay. Nativecumulative72.30898930000001preserved,tolerance1e-10sverification. Productionrootunchanged;no even cutoff/externalCI/humanreview/publication/merge/reviewer.",
+  "phase96_status": "Accepted exact95production integration;13types/proofs3defs/5controls/reportsexactafterimports;ONErootimport. FirstPASS target94.4185025/root31.6517561/input32.4581103/audit31.659262;191modules5247logical4459theorems17004runtime,std3;54801closure47exclusions.25raw1512priorfrozen verifierPASS;one inherited blankEOFline185explicitexception/allotherwhitespacechecked. No standalone95replay/externalCI/reviewer/publication/merge;classsum/weighted/even cutoffopen. LiveMathlibcheckoutpinreconfirmed.",
+  "phase97_status": "Accepted FULL standalone actualevenclasssum primeprefix boundh/4*(A+B+1) anduniform(A+B+1)/2 underh<=2;no callerfamily/pointcard/slice/countpremise. First90.1254956sPASS,no repair/retry;6types/no newdefs/4controls;6logical6theorem0runtime,std3;54805closure49exclusions.4raw1522priorfrozen verifierPASS. Productionrootunchanged. ActualM remains fielddependent;no weighted/even cutoff/externalCI/humanreview/publication/merge/reviewer. Argonpending.",
+  "current_research_commit": "be1c0e36b9eea47a846277383253318063e717e0",
+  "phase98_status": "ACCEPTED_LOCAL: exact97 mathematical/control/report transfer; six theorems, no new definitions; one root import; first module91.3810459/root29.1131802/input35.1269046/audit33.234779 PASS;5253logical/4465theorems/17004runtime;192modules;54805closure49exclusions;25raw1528frozen;savedverifierPASS;478linksREADME61;single exact inherited EOF114 whitespace exception;no rerun/no push/no new CI/review/merge;Argonpending;next weighted-loss actualM same-Gram even cutoff.",
+  "phase99_status": "ACCEPTED_LOCAL_STANDALONE: full actual even original-Gram weighted budget from actual count; first96.1654538sPASS peak3252969472; no repair/retry;7publictypes1definition5controls;11logical10theorems0runtime standard3axioms;57514closure52exclusions;4raw1538frozen;savedverifierPASS;483linksREADME61;production/root unchanged;no new CI/review/push/merge;next exact integration, actualM normalization and closed same-Gram comparison.",
+  "phase100_status": "ACCEPTED_LOCAL_EXACT_INTEGRATION: all99definition/7publictheorems/5controls/reports exact afterimports; ONErootimport; firstmodule47.9793447/root26.663038/input66.3630844/audit69.5947086 PASS;5264logical4475theorems17004runtime;193modules57514closure52exclusions;25raw1544frozen;474linksREADME61;EOF81exactwhitespaceexception;savedverifierPASS aftermistyped8193expectedcapcorrected8192(no run/source/rawchanged);livepinsLean4.19.0Mathlibc44e0c8;remote reviewunchangedArgonpending;no new cutoff/push/CI/review/merge;nextactualMnormalizationclosedweightedbudget.",
+  "phase101_status": "ACCEPTED_LOCAL_STANDALONE: full actualM=(4/pi)*sqrt(d), closed_count_kernel at4d, full normalized originalGram budget, chartCost<=scalarCost, full scalar budget;16types2defs4controls fixed. FAIL94.426986 then PASS49.0224752, total143.4494612, sole final simp in actual_minkowski proof;sourcehashca862eda8e0a8fb0f1c924d71b93ff4168c2c62e90a8fbb3e9370b1c0b43c9ba.23logical21theorem0runtime standard3;57646closure58exclusions;8raw1553frozen;481linksREADME61;whitespacePASS;production/rootunchanged;remote39e9ce3reviewunchangedArgonpending;no cutoff/push/CI/reviewer/merge;next exact102integration then separately preregister allrangeevencontradiction.",
+  "phase102_status": "ACCEPTED_LOCAL_EXACT_INTEGRATION: full accepted101body/16typesproofs2defs4controlsreports unchanged after3imports;ONErootimport;firstmodule84.6782799/root28.3455345/input32.735253/audit28.823217 PASS;5287logical4496theorems17004runtime194modules;57646closure58exclusions;25raw1558frozen;488linksREADME61;exactEOF211whitespaceexception;sourceSHAc2d2c46e880856733fb3db23779c055eca756b015f4da0f4dd7508538732410c;no standalone101replay/mathrepair;livepins4.19.0/c44e0c8;remote39e9ce3reviewunchangedArgonpending;no newcutoff/externalCI/review/push/merge;next separately preregister full even allrange contradiction and actualfieldtransport.",
+  "phase103_status": "ACCEPTED_LOCAL_STANDALONE: full all-range actualeven>2 forall squarefree d>=2^50,hm1or2;radicand<2^50,actualdiscr<2^52 underh<=2;7types0defs4controls unchanged;FAIL86.8947538/PASS83.9126192;sole Int.natAbs_mul wrapper repair;main contradiction unchanged;20logical20theorem std3;59697/59701closures58exclusions;8raw1567frozen;savedverifierPASS;production/rootunchanged;next exact104integration and separately authorized publication/CI/merge.",
+  "merge_authorization": "User explicitly said you are clear to merge; maximum effort. Authorized current work publication/PR/CI/merge after exact-head checks. No Tao posting or new reviewer authorization.",
+  "pr35_merge": "USER_AUTHORIZED;mergedb402116ba0fca3a10a162c5f1bb76d34ce887853 at expectede77a446aaed709c04afe38b1dc846e4a8f6386cc;freshCI40426517803/job121933520286allgatesPASS;4963logical4196theorems16993runtime finalcontrolsPASS;currentmainmergetreec8bd992matchesCI/head/tree;securitychecksabsent(notpass).",
+  "new_user_scope": "BOTH 2D coordinate compatibility maps and literal lattice shifts, with explicit invariants; maximum effort; seek lowercutoff without copying external methods. Next after104integration: bounded actual coordinate/translation proof; do not assume real traceGram determinant invariant under complex shifts.",
+  "primary_source_refresh": "Tao page read2026-10-28: existingjesusasit comments698807and698839 linkrepo, so currentledger noTaoPost stale. AIbrief itself unposted. v7release explicitlyq570; q480notverified; separateStephenChungcomment698855reportsD498, not replayed. No postingperformed.",
+  "phase104_status": "ACCEPTED_LOCAL_EXACT_INTEGRATION:7typesproofs4controls/reports exact103body after2imports,0newdefs/ONErootimport;firstmodule84.820204/root20.2078022/input33.6182774/audit24.6340176PASS;5307logical4516theorems17004runtime195modules;59697/59701closures58exclusions;25raw1573frozen;511linksREADME61;EOF107exactwhitespaceexception;savedverifierPASS;originalaudithistoryPRIOR_ART/tools/pins/CI frozen;PR35mergedb402116 separately;newpublication/pinnedCI/merge authorized and pending.",
+  "publication_head": "7913eba8ac3ec0bcf765036ba5cebd8f0197463f",
+  "phase104_publication": "MERGED PR36 e47813e78712e82b69a99dd2c076bd973de4106d expectedheadbe1c0e36b9eea47a846277383253318063e717e0;CI40700006963job122856935607ALLSUCCESS+CodeQL122857217223+security40700000736AnalyzePythonActionsALLSUCCESS;decodedlogs5307logical4516theorems17004runtime195modules250pairs+finalcontrolsPASS;merge/head/testedsynthetic457ecdf sharetreeab1205de9b8b3b0af19611c14e6a683f26fb1a4e;metadatareceiptupdatedbeforemerge;userauthorized, no extraquestion.",
+  "phase105_status": "ACCEPTED_STANDALONE_FULL_PASS: all3slots consumed, no replay; saved verifier PASS12raw1586frozen/29fulltypes5defs4control expectations/two proof-only repairs;43logical38theorems11runtime;closures37660/17619/12095 standard3/68exclusions. Both coordinate maps and literal shifts with guarded invariants; counterexample determinant24->60; no lowered cutoff. PR36 merged with exact-head CI separately. Documentation packaged; commit pending.",
+  "phase106_status": "EXACT_INTEGRATION_ALL_FIRST_PASS: module32.2865581/root18.7997817/input19.433218/audit28.7409321;29typesproofs5defs4controls/reports unchanged;ONErootimport;5350logical4554theorems17015runtime;closures37660/17619/12095 exclude68;25raw1595frozen;savedverifierPASS;EOFblankline exact accepted body. No105replay/cutoffgain; publication next.",
+  "phase106_publication": "PR37 DRAFT UNMERGED exacthead38d799e38145d6676f89d8aaa638bd8ae94c1ffc. Run40707296487job122882737948 CANCELLED explicit25mexecutionlimit;source/fullbuild/auditSUCCESS;controls finalPASSlog14:59:46.377 then cancellation14:59:46.407, stepCANCELLED NOTgreenCI. Same-head CodeQL/securitysuccess. FullrawlogSHA492621373e6622cb711272f9e1ce4780cd8ad2bd38c20fdfa73fdaabf4320fa7 and rawmetadata archived.agent/PR37_CI_EVIDENCE.zip withreceiptJSON/MD. PublicPRbodyupdatedterminalreceipt. NoCIrerun/limits/workflowchanges/merge;do not retry exhausted/stopped cycle. Localphase106all4firstchecksPASS remains. Mergeauthorizationpersistsbutgateunresolved.",
+  "phase107_status": "ACCEPTED_FIRST_FULL_STANDALONE_PASS: arbitraryactualeven-fieldabsdiscr<2^52 underactualh<=2; allparity<2^52,odd<2^50,largecontrapositiveclass>2;caller suppliesnochart/root/equiv.9types5main4controls0defs;100.7739366s/peak3339501568/no resource stop/no repair/replay.11logical11theorem0runtime std3;fresh60578even60exclusions/60689all37/60694contra37.4raw1605frozen;verifierPASS inclPR37rawcancelarchive. Readerdocs/README61/currentledger61 compacted, links checked; source2dfeb75dd90696dc0790bc508075b4b5f5351b840eeb91e85aabdc7397126116. Production/root/pins/CIunchanged, no integration/publication/reviewer/newcutoff. Commitpending;nextexactintegrationnewprotocol. PR37stoppedCIremainsdraft no retries.",
+  "phase107_commit": "62a92e4790e89cc45ae5338eff8976b66eb33a45",
+  "next_step": "Separately preregister exact111production integration of accepted110 polynomial/ordinaryjet/passive-originalGram body;20typesproofs4defs4controls fixed;ONErootimport/threefresh70exclusionchecks/fullrootaudit. ALL110slotsconsumed NOREPLAY;69/75/105stops/exhaustion preserved. Broader research: equivalence-invariant observables and nonfaithful ring-basechange kernels, cost/witness constraints for anyhardnessclaim; scalarcutoffunchanged. PR38 alreadymerged6c7e94c source14bCI40718714733allSUCCESS;new110f7c30dfstandaloneNOTcoveredbyoldCI. Goalactive;nofullclassification/optimality/reviewclaim.",
+  "phase108_status": "EXACT_INTEGRATION_ALL_FOUR_FIRST_CHECKS_PASS: module89.0258049/root28.642620899999997/input41.8073276/audit28.890939099999997, all native values retained. Accepted1079typesproofs0defs4controlsreports exactafter3imports/ONErootimport;11logical11theorem0runtime namespace;whole5361logical4565theorems17015runtime197reachablemodules;60578even60exclude/60689all37/60694contra37 std3.25raw1615frozen savedverifierPASS;EOFblankline90 exactpreserved;README61/currentledger61readerlinkschecked. ProductionactualANYfieldh<=2absdiscr<2^52odd<2^50 nowintegrated. No107replay/CIretry/push/newreview/post/newh1cutoff. Commitpending;nextoperationalpublicationgateindependentarchitecture requiresfreshprereg.",
+  "phase108_commit": "0b004e0eff68806ce485e3d3ee8598af6c873bc7",
+  "phase109_status": "LOCAL_FIRST_SYNTHETIC_SUITE_PASS6tests in2.7810000000172295s outer120 cap, memoryUNOBSERVED;noactualLeanlocalreplay. Newmax2helper keeps8childfiles+nestedexactbytes,allarg/timeouts/order,initialpairs/probes;selftestadded;controllerfinalPASSonlyafterall families. AST/savedverifierPASS6raw1624frozen,allmath/root/pins/workflow25munchanged. Officialrunnerpublic4CPU16GBdocsverified,notmeasuredspeedup. NewdraftPR/ONEnewCIonnewactualfield108sourceauthorizedandregistered;sourcecommitpending. OldPR37 remainscancelled no rerun.",
+  "phase109_publication": "MERGED PR38 actual6c7e94caf8ffd556805a1b6e30a1763204368c4e expectedsource14b54460bea8313287aecad13f21ab886000c909;singleCI40718714733job122923407523SUCCESS full logsread source250/fullbuild/5361logical4565theorems17015runtime/6synthetic/all8family+finalcontrolsPASS/noActionserror;CodeQL122923711056security40718709657analyses122923397628/122923397398SUCCESS;source/testedsynthetic8b6ef849/actualmerge sharetree3edf113c5425eca47d5d93b63c8ee75dd59a7d0e fetchedverified. PR37 nowreportsmergedancestry butoldCIcancelpreserved. FullnewrawCIzip+receiptJSON/MD createdresearch localnextdocsbranch. Usernewsteering: compatibility-invariant structures/observables/obstructions, distinguish active pointshift fixedfeatures from passive points+features+jet transport; no computationalhardnessfromnoncomputableisomorphisms. No newproofattempt.",
+  "transport_frame_docs_commit": "08bcddc (local documentation/evidence branch; no new mathematical source)",
+  "phase110_status": "ACCEPTED_FULL_STANDALONE_PASS third/final slot: actualpolynomialtranslationCommRing,group/inverse/ringmapnaturality/ordinaryderivativeandjetcovariance/entrywiseSAMEoriginalintegerGramcast,guardedPD/positiveintdet/primepowerdivisor.20fullpublictypes4completedefs4controlsproofs fixed. FAIL138.0938151/FAIL68.3821887/PASS72.6634586 total279.1394624. Five proofnormalizations thenadditioncommutationonly;noresource/no replay.All3slotsconsumed.31logical27theorems0runtime standard3;5880/13936/33095 freshclosures70excludedroots.12raw1638frozen savedverifierPASS;currentREADME61ledger61 linkschecked. Source573429e9bc80dfc3031890c5a0206488ab57735fbeb51120a08d6137c644eb71. Production/root/tools/pins/CIunchanged;no newcutoff/computationalhardness/fullclassification. Commitpending;separate111exactintegration next.",
+  "phase110_commit": "f7c30dfb50b03b68a2e36697e3a68fc9e046ab58",
+  "phase111_status": "EXACT_INTEGRATION_ALL_FOUR_FIRST_CHECKS_PASS: module62.4798341/root42.626777499999996/input36.2416537/audit60.6010078, no repair/resource/probe. Accepted11020typesproofs4defs3privatehelpers4controls/reports exact afterSOLECoordinateTranslationimport;ONErootimport. Namespace31logical27theorem0runtime;whole5393logical4593theorems17015runtime198modules std3. DeltafromPR38 exactly31newnamespace+existingrowSection.eq_1, no removednames; savedverifiercomparesinventories. Fresh5880/13936/33095 same70exclusions.25raw1646frozen/verifierPASS,readerlinksREADME61ledger61. EOFblank289preserved. No110replay/math/controller/workflowchanges;ONEnewfinalheadCI/pub/authorizedmerge pending.",
+  "phase111_publication": "PR39 DRAFT OPEN UNMERGED sourceb66b5f8;singleCI40753057286/job123044568346 overallCANCELLED maximum25m. AllindividualmathstepsSUCCESS fullsource250/build/audit5393logical4593theorems17015runtime/6synthetic/all8families+finalPASS19:43:09.0847871Z;fullrawarchiveSHAf4bb75c6058b509136a754c10b44b048dbbad85d1a0471d09f0714f2db1faac0. Sameheadsecurity/CodeQLsuccess,treeidentityf24d8dcf. PublicPRbodyupdatedterminalreceipt;NOretry/headchange/limitincrease/merge in111.",
+  "transport_research_checkpoint": "User invariant-regime steering: re-read exact R2 protocol/implementation/results, recorded geometry gate failed all4variants; exact reuse not complexityhardness theorem. Passive actualpolynomial jets nowproved; basechange identities survive but rankneednot. Integralindices/discriminant/primevaluation structural; diagonal estimates basisdependent. Older registered radial block guarantee atmostO(1/R) normalized, not impossibility for largerblocks or actualmoments. No new parameterexperiment or proofinvocation.",
+  "phase112_status": "New policy prereg9c7071d4948c01f27fc9fb303cf77db7e161d2d6: unchangedmax2/same8families/timeouts/driver/Lean/root/pins/workflow25m;onlystaticdescendingtimeoutdispatch,originaldiagnosticorder. All8synthetictestsFIRSTPASS suite3.002s monitored4.0488772s cap120s peak27090944sampledperprocess. Sixoldtestbodiesexact;2newtests inclproxycanworsen12vs9reverse.5raw/1708baseGitblobsfrozen/savedverifierPASS. PostrunCRLFtoLFONLY explicitlyreceipted,rawsnapshotsimmutable/exactnormalizedbytes+ASTequivalent,noexecutablecoderepair/rerun.542readerlinks/README61ledger61. Newsourcecommit/pub/ONEfreshpolicyCI pending,no measuredspeedup/newmath/newcutoff. Goalactive.",
+  "phase112_publication": "MERGED PR40 actual4b2492f11a1b3d2bf7831eb15487504865a8ff88 source7913eba8ac3ec0bcf765036ba5cebd8f0197463f tested8484cf24b700749ef95887aef90c403b8714f4b2 sharetreeecb1a21aead1546d08b4028ee94b0dcd6738395f fetchedverified. SingleCI40759337480/job123066701563OVERALLSUCCESS full250/build/audit5393logical4593theorems17015runtime/8synthetic/all8families/finalPASS20:25:07.5404042Z/noActionserror. Security40759330698actions123066687243/python123066686645/CodeQL123067033698ALLSUCCESS. PublicPRreceiptedBEFOREexpectedheadguardedmergeandAFTERactualtreefetch. FullrawzipSHA05bd6b8d4a600d1d4de4af1a957a76e4b5695114138bda12b3a62b0373b70c0b. PR39nowmergedancestrybutoldCI40753057286staysCANCELLED;bothpublicbodiesupdated. NoTao/newreview.",
+  "loop_transport_checkpoint": "User asks determinant-around-loop. Paper distinction: actualmatrixclosedloop detsame; induced determinant-line holonomydetM, realGramcongruencefactor(detM)^2. NontrivialSLcommutator canbedetinvisible; metriccompatiblepositiveholonomy mustpreservefullG, shearonlydet-invariancefalsifier. Integraljet/lattice/localreduction/cokerneldata needtracking/proof; no newexponentorholonomyLeanclaim. Currenttranslationactionzero-totalshift=identity. .agent/LOOP_TRANSPORT_NOTE.md saved; no newworktree/protocol/experiment started; PR40sameheadCIjoblive build.",
+  "phase113_status": "RESOURCE_STOP_INCOMPLETE_NO_GATE_ACCEPTANCE. Separateworktree../tenth-radial-blocks branchcodex/radial-weight-blocks prereg7fdd7c8f16d33659c8868dbe59cde657a81b2f28. ONE180s/8192MB trial native99time_limit elapsed181.0906644 sampledRSS32751616; sourceSHA28249ca80d1c91d8f6a2ce0d80fad0594aa68d8ffdaab4a55d0b89a15defa6f3. SevenfullGramcontrols passed;11/12casescompleted9guarded2NO-CERT rankguard, missingD163R320S12; no summary/verdict. FocalR160S6gainD19=.0846257197/D43=.0799752493/D163=.0733117512 both80/160diagnostics,PARTIAL ONLY. No rerun/repair/rescale.5rawZIPsha3dcebded5b069d896b21e1ccfd7555ea293d59ed6fb49dc56c5138dbc45729be. SavedverifierPASS exactprefix/guards/products/focaldata1718baseGitblobs frozen/PR40receiptseparate. NoLean/newcutoff. CurrentreaderREADME61ledger61; localproofpacketcommitpending. Nextdifferentregisteredtarget symbolicuniformmoment/blockbridge,NOT stopped-experiment replay. GoalACTIVE.",
+  "phase113_evidence_commit": "b9bf8c5d07a394b969a49a562b7a2b6e7768da66 LOCAL_ONLY codex/radial-weight-blocks, stopped evidencepacket verified aftercommit;551localreaderlinks/README61ledger61. No publication/newCI under113; nextcycle ownregistration. Primary PR40sourcepublished atactual4b2492f. No active trial/session;4213terminalnative99time_limit.",
+  "next_candidate": "Preregister exact unchanged integration of accepted118/119/120 namespace bodies into three production modules, with necessary imports/root imports only, then module/root/input/audit checks, exact-head pinned CI and authorized publication/merge. Preserve all failed/stopped history. No new math proof or style replay.",
+  "phase117": {
+    "branch": "codex/radial-operator-integration",
+    "protocol": "2fd5881",
+    "accepted_source": "d750f824eac701252ce479973bf72fb9a8863e19",
+    "correspondence": {
+      "accepted_commit": "d750f824eac701252ce479973bf72fb9a8863e19",
+      "accepted_source_sha256": "5516714ec64478dac8f0686ef7d9ae6cfdbcf4f654dc0701e7045ba56ab7cda1",
+      "source_sha256": "4c7cc3449fa73c665e27cd9f54647d4cac7f095294182232bd91a55ec6f85df0",
+      "root_before_sha256": "6b620e535312a9aa2242a45acf08432b51a5a57cab9645971e28999ec074c2d7",
+      "root_after_sha256": "d56a92616205661206a41c773e2e761ea851fa6f2bbde95020306bab223b018b",
+      "harness_sha256": "96ea004cdae365446dd8beb92e35efa2c905eb83d0fc0efe590f273e68de8694",
+      "accepted_namespace_body_exact": true,
+      "only_import_change": "TenthDiscriminant -> TenthDiscriminant.PassiveTransport",
+      "only_root_change": "append import TenthDiscriminant.RadialOperator",
+      "only_harness_change": "relocate reports; rename diagnostic116to117",
+      "public_theorems": 27,
+      "definitions": 6,
+      "reachable_project_modules": 199
+    },
+    "published_cutoff": 50000000000,
+    "paper_candidate": 48000000000,
+    "local_status": "ALL_FOUR_FIRST_CHECKS_PASS",
+    "local_runs": {
+      "build": {
+        "phase": 117,
+        "mode": "build",
+        "scope": "Exact monic radial operator and same-integer-Gram integration",
+        "source_sha256": "4c7cc3449fa73c665e27cd9f54647d4cac7f095294182232bd91a55ec6f85df0",
+        "source_snapshot": "PHASE117_build_20261029094052495.source.lean",
+        "attempt": 1,
+        "exit_code": 0,
+        "elapsed_seconds": 48.8540297,
+        "cumulative_before_seconds": 0,
+        "time_limit_seconds": 600,
+        "memory_threshold_mb": 8192,
+        "observed_peak_working_set_bytes": 2877403136,
+        "stop_reason": "",
+        "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+        "arguments": [
+          "build",
+          "TenthDiscriminant.RadialOperator"
+        ],
+        "stdout": "PHASE117_build_20261029094052495.stdout.log",
+        "stderr": "PHASE117_build_20261029094052495.stderr.log"
+      },
+      "root": {
+        "phase": 117,
+        "mode": "root",
+        "scope": "Exact monic radial operator and same-integer-Gram integration",
+        "source_sha256": "4c7cc3449fa73c665e27cd9f54647d4cac7f095294182232bd91a55ec6f85df0",
+        "source_snapshot": "PHASE117_root_20261029094207178.source.lean",
+        "attempt": 1,
+        "exit_code": 0,
+        "elapsed_seconds": 38.9614954,
+        "cumulative_before_seconds": 0,
+        "time_limit_seconds": 1200,
+        "memory_threshold_mb": 8192,
+        "observed_peak_working_set_bytes": 2797584384,
+        "stop_reason": "",
+        "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+        "arguments": "build",
+        "stdout": "PHASE117_root_20261029094207178.stdout.log",
+        "stderr": "PHASE117_root_20261029094207178.stderr.log"
+      },
+      "input": {
+        "phase": 117,
+        "mode": "input",
+        "scope": "Exact monic radial operator and same-integer-Gram integration",
+        "source_sha256": "4c7cc3449fa73c665e27cd9f54647d4cac7f095294182232bd91a55ec6f85df0",
+        "source_snapshot": "PHASE117_input_20261029094307368.source.lean",
+        "attempt": 1,
+        "exit_code": 0,
+        "elapsed_seconds": 48.4490393,
+        "cumulative_before_seconds": 0,
+        "time_limit_seconds": 180,
+        "memory_threshold_mb": 8192,
+        "observed_peak_working_set_bytes": 3060015104,
+        "stop_reason": "",
+        "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+        "arguments": [
+          "env",
+          "lean",
+          "-j",
+          "1",
+          "../research/ender_radius_bridge/Phase117InputCheck.lean"
+        ],
+        "stdout": "PHASE117_input_20261029094307368.stdout.log",
+        "stderr": "PHASE117_input_20261029094307368.stderr.log"
+      },
+      "audit": {
+        "phase": 117,
+        "mode": "audit",
+        "scope": "Exact monic radial operator and same-integer-Gram integration",
+        "source_sha256": "4c7cc3449fa73c665e27cd9f54647d4cac7f095294182232bd91a55ec6f85df0",
+        "source_snapshot": "PHASE117_audit_20261029094515463.source.lean",
+        "attempt": 1,
+        "exit_code": 0,
+        "elapsed_seconds": 55.3237184,
+        "cumulative_before_seconds": 0,
+        "time_limit_seconds": 180,
+        "memory_threshold_mb": 8192,
+        "observed_peak_working_set_bytes": 3363024896,
+        "stop_reason": "",
+        "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+        "arguments": [
+          "env",
+          "lean",
+          "-j",
+          "1",
+          "Audit.lean"
+        ],
+        "stdout": "PHASE117_audit_20261029094515463.stdout.log",
+        "stderr": "PHASE117_audit_20261029094515463.stderr.log"
+      }
+    },
+    "audit": {
+      "logical": 5450,
+      "theorems": 4644,
+      "runtime": 17026,
+      "reachable_modules": 199,
+      "added_namespace": 57,
+      "removed": 0
+    },
+    "saved_verifier": "PASS after final commit;25raw/1757frozen/572readerlinks/README61ledger61; EOFexactsourceexceptionrecorded",
+    "publication": {
+      "repo": "Dojo-1/tenth-discriminant",
+      "branch": "codex/radial-operator-integration",
+      "head": "ab5558ff7b482a6bec185b37115b6faf57a82c28",
+      "run": 40853123367,
+      "job": 123377295053,
+      "status": "confirmed in_progress",
+      "PR": 41,
+      "URL": "https://github.com/Dojo-1/tenth-discriminant/pull/41",
+      "tree": "d41ff442dbbcf3e5259c2e49d5bca0b9b2a791c9",
+      "tested_merge": "7736305b1eb357bcc14fb6ed7c3213807187bd5e",
+      "tested_tree_matches": true,
+      "security_run": 40853118787,
+      "security_jobs": [
+        123377287137,
+        123377286725
+      ]
+    }
+  },
+  "base": "d750f824eac701252ce479973bf72fb9a8863e19",
+  "prior_published_ci": null,
+  "primary_ci": {
+    "head": "24d932c0845115e3970b67439df44588074440bd",
+    "run": 40891564843,
+    "job": 123509456091,
+    "status": "TERMINAL_SUCCESS;full3.65Mlog/250pairs/audit/8synthetic/8families/finalPASS archived;no retry"
+  },
+  "phase117_publication": {
+    "PR": 41,
+    "source": "ab5558ff7b482a6bec185b37115b6faf57a82c28",
+    "tested_merge": "7736305b1eb357bcc14fb6ed7c3213807187bd5e",
+    "tree": "d41ff442dbbcf3e5259c2e49d5bca0b9b2a791c9",
+    "run": 40853123367,
+    "job": 123377295053,
+    "conclusion": "success",
+    "attempt": 1,
+    "security_run": 40853118787,
+    "security_checks": [
+      {
+        "id": 123377505356,
+        "name": "CodeQL",
+        "conclusion": "success",
+        "head": "ab5558ff7b482a6bec185b37115b6faf57a82c28"
+      },
+      {
+        "id": 123377287137,
+        "name": "Analyze (actions)",
+        "conclusion": "success",
+        "head": "ab5558ff7b482a6bec185b37115b6faf57a82c28"
+      },
+      {
+        "id": 123377286725,
+        "name": "Analyze (python)",
+        "conclusion": "success",
+        "head": "ab5558ff7b482a6bec185b37115b6faf57a82c28"
+      }
+    ],
+    "annotations": [
+      {
+        "path": ".github",
+        "blob_href": "https://github.com/Dojo-1/tenth-discriminant/blob/ab5558ff7b482a6bec185b37115b6faf57a82c28/.github",
+        "start_line": 2,
+        "start_column": null,
+        "end_line": 2,
+        "end_column": null,
+        "annotation_level": "warning",
+        "title": "",
+        "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830, actions/checkout@11d5960a326750d5838078e36cf38b85af677262. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+        "raw_details": ""
+      }
+    ],
+    "archive_sha256": "8425beb47c39782ce16e4921af5dbf415b1f454aeba74f4cf7f2fee75b72fc8a",
+    "sha256": {
+      "run": "c302d189bf257807091aeeee0afabaf455ab0f56ce8ddc87388f56c895698130",
+      "job": "8716ec8f94f68b1f6d4b0d556c6ede44070a1d7539b3ebf954e715c5e46180d0",
+      "annotations": "ccd9f034068bb09fba6280fd383d5a179052068b072140db91a96589e2b6b289",
+      "pr": "6d7c50d33cff7571db1854f1c005f3d0455f2c9e88d7f5b95e00606b2986ab6a",
+      "security_run": "3d01503422d33c856af9c2a5f0a7cf4d842136bf1b6d180bb4dc4905e101ce09",
+      "security_jobs": "6ed6c5970dbe2fecdc84e140b08d9eb6f95822c941a31de0910f362e3fa87e4a",
+      "checks": "c850eb482906c236ffa6ce3bbf72aa79b3a01d24f8f624739e79b3c3045a20a0",
+      "job.log": "7bce7fa6f77c9abb2d3ee0332e33481027327de3dc8f8bd43603ab0c941786d2"
+    },
+    "finished_at": "2026-10-29T10:13:01Z",
+    "scope": "Operator integration CI only; published cutoff50b;48b remains paper",
+    "actual_merge": "e74028ab8232f6e1b3dc0f41527569a8aa84eb87",
+    "actual_parents": [
+      "4b2492f11a1b3d2bf7831eb15487504865a8ff88",
+      "ab5558ff7b482a6bec185b37115b6faf57a82c28"
+    ],
+    "actual_tree_verified": true,
+    "source_correspondence_pairs": 250,
+    "synthetic_tests": 8,
+    "synthetic_suite_seconds": 2.155,
+    "control_families": 8,
+    "audit": {
+      "logical": 5450,
+      "theorems": 4644,
+      "runtime_auxiliaries": 17026
+    },
+    "final_controls_pass_at": "2026-10-29T10:12:58.8909739Z",
+    "status": "MERGED_AFTER_EXACT_HEAD_CI_SECURITY_SUCCESS"
+  },
+  "phase118": {
+    "protocol_commit": "7378fa5557d5ab13139295cf945e4d81ab4815c2",
+    "status": "FULL_QUANTITATIVE_ORDINARY_JET_TARGET_PASS_STANDALONE",
+    "attempts_started": 2,
+    "session_id": null,
+    "runs": [
+      {
+        "phase": 118,
+        "mode": "build",
+        "scope": "Full coefficient and actual ordinary-jet radial majorant; sufficient scale gain for same48b candidate",
+        "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+        "protocol_commit": "7378fa5",
+        "source_sha256": "b6e929322f24a13d19a3b77c65e525968fb0c1c818ce4bbcd1b1f47881d02bef",
+        "source_snapshot": "PHASE118_build_20261029104907187.source.lean",
+        "attempt": 1,
+        "exit_code": 1,
+        "elapsed_seconds": 117.154457,
+        "cumulative_before_seconds": 0,
+        "time_limit_seconds": 600,
+        "memory_threshold_mb": 8192,
+        "observed_peak_working_set_bytes": 3099459584,
+        "stop_reason": "",
+        "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+        "arguments": [
+          "env",
+          "lean",
+          "-j",
+          "1",
+          "../../tenth-radial-blocks/research/ender_radius_bridge/Phase118RadialJetMajorant.lean"
+        ],
+        "stdout": "PHASE118_build_20261029104907187.stdout.log",
+        "stderr": "PHASE118_build_20261029104907187.stderr.log"
+      },
+      {
+        "phase": 118,
+        "mode": "build",
+        "scope": "Full coefficient and actual ordinary-jet radial majorant; sufficient scale gain for same48b candidate",
+        "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+        "protocol_commit": "7378fa5",
+        "source_sha256": "2974a5d2a31de646f2c1315b553e62c6711b80da6585d1c556ec83770fd0a012",
+        "source_snapshot": "PHASE118_build_20261029105224260.source.lean",
+        "attempt": 2,
+        "exit_code": 0,
+        "elapsed_seconds": 45.6828647,
+        "cumulative_before_seconds": 117.154457,
+        "time_limit_seconds": 600,
+        "memory_threshold_mb": 8192,
+        "observed_peak_working_set_bytes": 3143409664,
+        "stop_reason": "",
+        "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+        "arguments": [
+          "env",
+          "lean",
+          "-j",
+          "1",
+          "../../tenth-radial-blocks/research/ender_radius_bridge/Phase118RadialJetMajorant.lean"
+        ],
+        "stdout": "PHASE118_build_20261029105224260.stdout.log",
+        "stderr": "PHASE118_build_20261029105224260.stderr.log"
+      }
+    ],
+    "namespace": {
+      "logical": 49,
+      "theorems": 47,
+      "runtime_auxiliaries": 3
+    },
+    "fresh_closures": {
+      "coefficient_bound": 10911,
+      "ordinary_jet_gain": 14203,
+      "scale_gain": 23312
+    },
+    "published_cutoff": 50000000000,
+    "candidate_cutoff": 48000000000,
+    "source": "research/ender_radius_bridge/Phase118RadialJetMajorant.lean",
+    "frozen_public_types": 19,
+    "frozen_definitions": 2,
+    "archive_sha256": "e5fe4d1ad248f31f6b2f6d5dc05ad28eb6b3aebd31ff0cbe9e28b927e6ca5854",
+    "production_integration": false,
+    "new_ci": false,
+    "independent_review": false,
+    "evidence_commit": "39e8eaf2d9ccf008671ecc93abcc7477c98194a3",
+    "saved_verifier": "PASS after commit;19types/2defs;8raw;1769frozen prior blobs;581reader links"
+  },
+  "phase117_postmerge_ci": {
+    "status": "AUTOMATIC_POSTMERGE_FULL_PROOF_CI_SUCCESS",
+    "run": 40858553760,
+    "job": 123395626052,
+    "attempt": 1,
+    "head": "e74028ab8232f6e1b3dc0f41527569a8aa84eb87",
+    "completed_at": "2026-10-29T10:54:20Z",
+    "scope": "Same operator-integration tree as published PR41; does not cover standalone Phase118 research",
+    "archive_sha256": "7e30268ea6753984b08c827dab1c6795ad274d6856af366844d39c308f29fc5f",
+    "raw_sha256": {
+      "job.json": "d950b691e3fdffa60477185c401e3415f59b320aaa51cfaf7a2ce43f89db7a90",
+      "job.log": "d8d93899096b27ead74e334a215f0f84ebb71624491581f6fbd4faa825a6e516",
+      "run.json": "8eee9cf533921598689493485dbc36ba3c0cf8412f55f9d1e40c95a68000ecc6"
+    },
+    "pairs": 250,
+    "synthetic_tests": 8,
+    "control_families": 8,
+    "audit": {
+      "logical": 5450,
+      "theorems": 4644,
+      "runtime_auxiliaries": 17026
+    },
+    "dispatched_by_agent": false
+  },
+  "phase119": {
+    "protocol_commit": "781aec84006fde74517da17e31b3474ab33dd831",
+    "status": "FULL_SAME_INTEGER_PRODUCTION_RADIUS_UPPER_BOUND_PASS_STANDALONE",
+    "attempts_started": 2,
+    "session_id": null,
+    "runs": [
+      {
+        "phase": 119,
+        "mode": "build",
+        "scope": "Full same-integer radial determinant logarithmic upper bound at actual production radius",
+        "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+        "protocol_commit": "781aec8",
+        "source_sha256": "e9bbf24e83ccadc6800d788109042fd77552f3c084bdb6398b837d7fc841b78a",
+        "source_snapshot": "PHASE119_build_20261029111125952.source.lean",
+        "attempt": 1,
+        "exit_code": 1,
+        "elapsed_seconds": 60.7251422,
+        "cumulative_before_seconds": 0,
+        "time_limit_seconds": 600,
+        "memory_threshold_mb": 8192,
+        "observed_peak_working_set_bytes": 3343523840,
+        "stop_reason": "",
+        "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+        "arguments": [
+          "env",
+          "lean",
+          "-j",
+          "1",
+          "../../tenth-radial-blocks/research/ender_radius_bridge/Phase119RadialDetBound.lean"
+        ],
+        "stdout": "PHASE119_build_20261029111125952.stdout.log",
+        "stderr": "PHASE119_build_20261029111125952.stderr.log"
+      },
+      {
+        "phase": 119,
+        "mode": "build",
+        "scope": "Full same-integer radial determinant logarithmic upper bound at actual production radius",
+        "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+        "protocol_commit": "781aec8",
+        "source_sha256": "cdced29575346e09a28b964ecb602172172ef0d5d235a1af20683cc60b451e3b",
+        "source_snapshot": "PHASE119_build_20261029133208374.source.lean",
+        "attempt": 2,
+        "exit_code": 0,
+        "elapsed_seconds": 160.0622916,
+        "cumulative_before_seconds": 60.7251422,
+        "time_limit_seconds": 600,
+        "memory_threshold_mb": 8192,
+        "observed_peak_working_set_bytes": 3382509568,
+        "stop_reason": "",
+        "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+        "arguments": [
+          "env",
+          "lean",
+          "-j",
+          "1",
+          "../../tenth-radial-blocks/research/ender_radius_bridge/Phase119RadialDetBound.lean"
+        ],
+        "stdout": "PHASE119_build_20261029133208374.stdout.log",
+        "stderr": "PHASE119_build_20261029133208374.stderr.log"
+      }
+    ],
+    "namespace": {
+      "logical": 55,
+      "theorems": 51,
+      "runtime_auxiliaries": 0
+    },
+    "fresh_closures": {
+      "actual_diagonal": 14248,
+      "integer_log_upper": 42099,
+      "production_normalized_upper": 47578
+    },
+    "published_cutoff": 50000000000,
+    "candidate_cutoff": 48000000000,
+    "source": "research/ender_radius_bridge/Phase119RadialDetBound.lean",
+    "frozen_public_types": 22,
+    "frozen_definitions": 4,
+    "accepted_dependency_commit": "39e8eaf2d9ccf008671ecc93abcc7477c98194a3",
+    "archive_sha256": "3041bc4ec5884f76f96e0e55f2372d1d8d1bb6bb224223632d7080cb957c1fc3",
+    "production_integration": false,
+    "new_ci": false,
+    "independent_review": false,
+    "evidence_commit": "57a4654d3a43f1f69ad8f892cb41983afde946e0",
+    "saved_verifier": "PASS after commit;22types/4defs;accepted118 exact;8raw;1784frozen Git blobs;585reader links;README61/objectives61"
+  },
+  "phase120": {
+    "protocol_commit": "ec81001b325345440a2ea83a05a33aa9ad2d6cff",
+    "status": "FULL_ACTUAL_FIELD_48B_CUTOFF_FIRST_CALL_PASS_STANDALONE",
+    "attempts_started": 1,
+    "session_id": null,
+    "runs": [
+      {
+        "phase": 120,
+        "mode": "build",
+        "scope": "Full same-integer arithmetic comparison and actual-field48b cutoff",
+        "cwd": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\lean",
+        "protocol_commit": "ec81001",
+        "source_sha256": "43ca85073fb5579ae10a8429b07317de7c3e510efdcae0cd950ce6be2e438815",
+        "source_snapshot": "PHASE120_build_20261029134932804.source.lean",
+        "attempt": 1,
+        "exit_code": 0,
+        "elapsed_seconds": 174.6648317,
+        "cumulative_before_seconds": 0,
+        "time_limit_seconds": 600,
+        "memory_threshold_mb": 8192,
+        "observed_peak_working_set_bytes": 3562999808,
+        "stop_reason": "",
+        "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+        "arguments": [
+          "env",
+          "lean",
+          "-j",
+          "1",
+          "../../tenth-radial-blocks/research/ender_radius_bridge/Phase120RadialCutoff.lean"
+        ],
+        "stdout": "PHASE120_build_20261029134932804.stdout.log",
+        "stderr": "PHASE120_build_20261029134932804.stderr.log"
+      }
+    ],
+    "namespace": {
+      "logical": 28,
+      "theorems": 28,
+      "runtime_auxiliaries": 0
+    },
+    "fresh_closures": {
+      "prime_mass_log_lower": 39170,
+      "odd_large_classNumber_ne_one_48b": 55607,
+      "totallyComplex_degree_two_classNumber_one_discriminant_bound_48b": 58736
+    },
+    "published_cutoff": 50000000000,
+    "checked_standalone_cutoff": 48000000000,
+    "source": "research/ender_radius_bridge/Phase120RadialCutoff.lean",
+    "frozen_public_types": 15,
+    "frozen_definitions": 0,
+    "accepted_dependency_commit": "57a4654d3a43f1f69ad8f892cb41983afde946e0",
+    "archive_sha256": "223c31c3d2e21678cc94ecfc4a81fdb0cf0a0b665c4116a61808b690abf5aae9",
+    "forbidden_roots": 73,
+    "explicit_arithmetic_transport_allowances": 4,
+    "production_integration": false,
+    "new_ci": false,
+    "independent_review": false,
+    "evidence_commit": "5ce23f2333c2649c841a013cb745401d65fa93cb",
+    "saved_verifier": "PASS after commit;first full call;15types/0data;exact accepted118+119 dependencies;4raw;1796frozen Git blobs;592reader links;README61/objectives61"
+  },
+  "phase121": {
+    "protocol_commit": "5f4dc830e495d5e3774fee4c5a526abf7426b953",
+    "branch": "codex/radial-cutoff-integration",
+    "primary": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant",
+    "accepted_commit": "5ce23f2333c2649c841a013cb745401d65fa93cb",
+    "status": "MERGED_EXACT_TREE_VERIFIED",
+    "session_id": null,
+    "live": {
+      "pid": 29152,
+      "started": "2026-10-29T14:08:36.5058922Z",
+      "prefix": "C:\\Users\\HAL900\\Documents\\Codex\\2026-10-23\\referenced-chatgpt-conversation-this-is-an-2\\work\\tenth-discriminant\\research\\ender_radius_bridge\\PHASE121_build_20261029140836471",
+      "mode": "build",
+      "status": "running"
+    },
+    "checks_started": [
+      "build",
+      "root",
+      "input",
+      "audit"
+    ],
+    "frozen_public_types": 56,
+    "frozen_definitions": 6,
+    "frozen_prior_git_blobs": 1806,
+    "reachable_modules": 202,
+    "published_integrated_cutoff": 50000000000,
+    "checked_standalone_cutoff": 48000000000,
+    "ci_dispatched": false,
+    "runs": {
+      "build": {
+        "phase": 121,
+        "mode": "build",
+        "scope": "Exact118/119/120 mathematical integration and full actual-field48b cutoff",
+        "source_sha256": {
+          "RadialJetMajorant": "039b8b1f77aca2debcadcac059ac243ec388b89e185d47b06be9f61261c9b7f5",
+          "RadialDetBound": "310664fee9ee784b9423fa97b9c09de49ce08b82cf5583a7908fc2450cecab6b",
+          "RadialCutoff": "dc9d10bb0aa963bbe3eb787d43a08484213c6ddfac1a72b92f5a53c221ed7892"
+        },
+        "source_snapshots": {
+          "RadialJetMajorant": "PHASE121_build_20261029140836471.RadialJetMajorant.lean",
+          "RadialDetBound": "PHASE121_build_20261029140836471.RadialDetBound.lean",
+          "RadialCutoff": "PHASE121_build_20261029140836471.RadialCutoff.lean"
+        },
+        "root_snapshot": "PHASE121_build_20261029140836471.root.lean",
+        "input_snapshot": "PHASE121_build_20261029140836471.input.lean",
+        "attempt": 1,
+        "exit_code": 0,
+        "elapsed_seconds": 149.8582949,
+        "cumulative_before_seconds": 0,
+        "time_limit_seconds": 600,
+        "memory_threshold_mb": 8192,
+        "observed_peak_working_set_bytes": 2952265728,
+        "stop_reason": "",
+        "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+        "arguments": [
+          "build",
+          "TenthDiscriminant.RadialCutoff"
+        ],
+        "stdout": "PHASE121_build_20261029140836471.stdout.log",
+        "stderr": "PHASE121_build_20261029140836471.stderr.log"
+      },
+      "root": {
+        "phase": 121,
+        "mode": "root",
+        "scope": "Exact118/119/120 mathematical integration and full actual-field48b cutoff",
+        "source_sha256": {
+          "RadialJetMajorant": "039b8b1f77aca2debcadcac059ac243ec388b89e185d47b06be9f61261c9b7f5",
+          "RadialDetBound": "310664fee9ee784b9423fa97b9c09de49ce08b82cf5583a7908fc2450cecab6b",
+          "RadialCutoff": "dc9d10bb0aa963bbe3eb787d43a08484213c6ddfac1a72b92f5a53c221ed7892"
+        },
+        "source_snapshots": {
+          "RadialJetMajorant": "PHASE121_root_20261029141211034.RadialJetMajorant.lean",
+          "RadialDetBound": "PHASE121_root_20261029141211034.RadialDetBound.lean",
+          "RadialCutoff": "PHASE121_root_20261029141211034.RadialCutoff.lean"
+        },
+        "root_snapshot": "PHASE121_root_20261029141211034.root.lean",
+        "input_snapshot": "PHASE121_root_20261029141211034.input.lean",
+        "attempt": 1,
+        "exit_code": 0,
+        "elapsed_seconds": 27.2237795,
+        "cumulative_before_seconds": 0,
+        "time_limit_seconds": 1200,
+        "memory_threshold_mb": 8192,
+        "observed_peak_working_set_bytes": 2797703168,
+        "stop_reason": "",
+        "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+        "arguments": "build",
+        "stdout": "PHASE121_root_20261029141211034.stdout.log",
+        "stderr": "PHASE121_root_20261029141211034.stderr.log"
+      },
+      "input": {
+        "phase": 121,
+        "mode": "input",
+        "scope": "Exact118/119/120 mathematical integration and full actual-field48b cutoff",
+        "source_sha256": {
+          "RadialJetMajorant": "039b8b1f77aca2debcadcac059ac243ec388b89e185d47b06be9f61261c9b7f5",
+          "RadialDetBound": "310664fee9ee784b9423fa97b9c09de49ce08b82cf5583a7908fc2450cecab6b",
+          "RadialCutoff": "dc9d10bb0aa963bbe3eb787d43a08484213c6ddfac1a72b92f5a53c221ed7892"
+        },
+        "source_snapshots": {
+          "RadialJetMajorant": "PHASE121_input_20261029141401651.RadialJetMajorant.lean",
+          "RadialDetBound": "PHASE121_input_20261029141401651.RadialDetBound.lean",
+          "RadialCutoff": "PHASE121_input_20261029141401651.RadialCutoff.lean"
+        },
+        "root_snapshot": "PHASE121_input_20261029141401651.root.lean",
+        "input_snapshot": "PHASE121_input_20261029141401651.input.lean",
+        "attempt": 1,
+        "exit_code": 0,
+        "elapsed_seconds": 75.3109079,
+        "cumulative_before_seconds": 0,
+        "time_limit_seconds": 180,
+        "memory_threshold_mb": 8192,
+        "observed_peak_working_set_bytes": 3292024832,
+        "stop_reason": "",
+        "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+        "arguments": [
+          "env",
+          "lean",
+          "-j",
+          "1",
+          "../research/ender_radius_bridge/Phase121InputCheck.lean"
+        ],
+        "stdout": "PHASE121_input_20261029141401651.stdout.log",
+        "stderr": "PHASE121_input_20261029141401651.stderr.log"
+      },
+      "audit": {
+        "phase": 121,
+        "mode": "audit",
+        "scope": "Exact118/119/120 mathematical integration and full actual-field48b cutoff",
+        "source_sha256": {
+          "RadialJetMajorant": "039b8b1f77aca2debcadcac059ac243ec388b89e185d47b06be9f61261c9b7f5",
+          "RadialDetBound": "310664fee9ee784b9423fa97b9c09de49ce08b82cf5583a7908fc2450cecab6b",
+          "RadialCutoff": "dc9d10bb0aa963bbe3eb787d43a08484213c6ddfac1a72b92f5a53c221ed7892"
+        },
+        "source_snapshots": {
+          "RadialJetMajorant": "PHASE121_audit_20261029141713463.RadialJetMajorant.lean",
+          "RadialDetBound": "PHASE121_audit_20261029141713463.RadialDetBound.lean",
+          "RadialCutoff": "PHASE121_audit_20261029141713463.RadialCutoff.lean"
+        },
+        "root_snapshot": "PHASE121_audit_20261029141713463.root.lean",
+        "input_snapshot": "PHASE121_audit_20261029141713463.input.lean",
+        "attempt": 1,
+        "exit_code": 0,
+        "elapsed_seconds": 36.6948355,
+        "cumulative_before_seconds": 0,
+        "time_limit_seconds": 180,
+        "memory_threshold_mb": 8192,
+        "observed_peak_working_set_bytes": 3364794368,
+        "stop_reason": "",
+        "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+        "arguments": [
+          "env",
+          "lean",
+          "-j",
+          "1",
+          "Audit.lean"
+        ],
+        "stdout": "PHASE121_audit_20261029141713463.stdout.log",
+        "stderr": "PHASE121_audit_20261029141713463.stderr.log"
+      }
+    },
+    "whole_audit": {
+      "logical": 5584,
+      "theorems": 4772,
+      "runtime_auxiliaries": 17029
+    },
+    "observed_logical_delta": 134,
+    "expected_source_delta": 132,
+    "generated_equation_surplus": [
+      "TenthDiscriminant.RadialJetMajorant.jet.eq_1",
+      "TenthDiscriminant.exactOddPrimeMass.eq_1"
+    ],
+    "archive_sha256": "7aff571539d05f1ef953df101ca799c0cb5fd3ec258dc594c5f864153f86a4f8",
+    "evidence_commit": "24d932c0845115e3970b67439df44588074440bd",
+    "saved_verifier": "PASS after commit;33raw;1806frozen old blobs;202modules",
+    "publication": {
+      "status": "MERGED_AFTER_FULL_EXACT_HEAD_CI_SECURITY_SUCCESS",
+      "PR": 42,
+      "source": "24d932c0845115e3970b67439df44588074440bd",
+      "tested_merge": "24ff4d801ee5304f2fbe6d944b38d50fb36468ee",
+      "tree": "c705b619a38755885d67850cdc030b107e04dd80",
+      "run": 40891564843,
+      "job": 123509456091,
+      "conclusion": "success",
+      "attempt": 1,
+      "security_run": 40891557953,
+      "security_checks": [
+        {
+          "id": 123509786268,
+          "name": "CodeQL",
+          "conclusion": "success",
+          "head": "24d932c0845115e3970b67439df44588074440bd"
+        },
+        {
+          "id": 123509442838,
+          "name": "Analyze (python)",
+          "conclusion": "success",
+          "head": "24d932c0845115e3970b67439df44588074440bd"
+        },
+        {
+          "id": 123509441867,
+          "name": "Analyze (actions)",
+          "conclusion": "success",
+          "head": "24d932c0845115e3970b67439df44588074440bd"
+        }
+      ],
+      "archive_sha256": "08495ae05f79b2f8d0346efd39c39efd8129ab15b7e48817412072422ff5e844",
+      "sha256": {
+        "run.json": "12da557d8282b97fa60df3754edd84a94863fd8c450ea2898e86ac3d93bdc4d7",
+        "job.json": "e22928c67ebd4205dbfca04a1edd7acd4bf1335ebff0ddb84daf565f81cead3a",
+        "pr.json": "21e919aaf5a7cabf433ccba60f88a89e6175ee501b4eeb66d8d7720e6fd8c4c7",
+        "security_run.json": "456cfa650510f01183d80955a19112cb00bcee6c61a82013b3dbb1e69952db11",
+        "security_jobs.json": "4419708a818433392b9918879cf550771e9d16906ac8ce9d174c664352e54a80",
+        "checks.json": "fc7845b3a78bf66f1da6c6625799acceb919b387e245dfa9509ce2b51c635af3",
+        "job.log": "e7ca09a90d739c5cb58c7e6b0798070364bbccc3d914dcbe68afe4eaa69163f2",
+        "annotations.json": "527fbb4a6777e68bbb5adf25a58086676a4cfa30118bd1f3f98fef77e0768751"
+      },
+      "source_correspondence_pairs": 250,
+      "synthetic_tests": 8,
+      "synthetic_suite_seconds": 2.164,
+      "control_families": 8,
+      "audit": {
+        "logical": 5584,
+        "theorems": 4772,
+        "runtime_auxiliaries": 17029
+      },
+      "final_controls_pass_line": "2026-10-29T14:48:40.6860529Z PASS: mathematical controls, proof-audit probes, Gram, jet, multiplicity, degree, nonzero, affine and assembly controls.",
+      "finished_at": "2026-10-29T14:48:43Z",
+      "annotations": {
+        "123509786268": [],
+        "123509456091": [
+          {
+            "path": ".github",
+            "blob_href": "https://github.com/Dojo-1/tenth-discriminant/blob/24d932c0845115e3970b67439df44588074440bd/.github",
+            "start_line": 2,
+            "start_column": null,
+            "end_line": 2,
+            "end_column": null,
+            "annotation_level": "warning",
+            "title": "",
+            "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830, actions/checkout@11d5960a326750d5838078e36cf38b85af677262. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+            "raw_details": ""
+          }
+        ],
+        "123509442838": [
+          {
+            "path": ".github",
+            "blob_href": "https://github.com/Dojo-1/tenth-discriminant/blob/24d932c0845115e3970b67439df44588074440bd/.github",
+            "start_line": 1,
+            "start_column": null,
+            "end_line": 1,
+            "end_column": null,
+            "annotation_level": "notice",
+            "title": "",
+            "message": "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\"",
+            "raw_details": ""
+          }
+        ],
+        "123509441867": [
+          {
+            "path": ".github",
+            "blob_href": "https://github.com/Dojo-1/tenth-discriminant/blob/24d932c0845115e3970b67439df44588074440bd/.github",
+            "start_line": 1,
+            "start_column": null,
+            "end_line": 1,
+            "end_column": null,
+            "annotation_level": "notice",
+            "title": "",
+            "message": "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\"",
+            "raw_details": ""
+          }
+        ]
+      },
+      "scope": "Full integrated48b actual-field proof and inherited controls;no classification/optimality/independent human-review claim",
+      "actual_merge": "0bde1bf58893f1adf66bfded5eaf1a0f270c6dce",
+      "actual_parents": [
+        "e74028ab8232f6e1b3dc0f41527569a8aa84eb87",
+        "24d932c0845115e3970b67439df44588074440bd"
+      ],
+      "actual_tree_verified": true,
+      "merged_at": "2026-10-29T14:51:59Z",
+      "integrated_actual_field_cutoff": 48000000000
+    },
+    "ci_automatic_pr_event": true
+  },
+  "goal_completion_audit": ".agent/GOAL_COMPLETION_AUDIT.json",
+  "reflection_20261029": {
+    "status": "grounded reflection and proposed next cycle saved",
+    "source": "24d932c0845115e3970b67439df44588074440bd",
+    "artifact": ".agent/HYPERDIM_REFLECTION_NEXT.md",
+    "finding": "TAO_OBJECTIVES_CURRENT.md line42 stale paper-only 48b claim; production left unchanged",
+    "next": "small current-document reconciliation, then exact classification-scope map; preregister any new mathematical attempt"
+  },
+  "next_cycle": {
+    "objective": "Preserve meaning; reconcile readers, map classification and transport, one registered stronger same-integer endpoint attempt, exact-version review/publication",
+    "branch": "codex/meaning-preserving-next",
+    "base": "0bde1bf58893f1adf66bfded5eaf1a0f270c6dce",
+    "protocol_commit": "5caa715",
+    "source_frozen_commit": "2b95548",
+    "steps": {
+      "1": "Current stale paper-only48b sentence corrected; reader checks pass",
+      "2": "Existing short proof guide updated with exact merged receipt and source map",
+      "3": "Canonical iff and arbitrary-field API composition mapped; no new classification theorem",
+      "4": "Passive laws already proved; radial general parameter-addition law absent from exposed module",
+      "5": "STOPPED after sole71.3259214s elaboration failure;certificate-only PASS9884/77roots;no repair/retry;published48b unchanged",
+      "6": "PASS exact-version brief and draftPR43;full pinned CI40902563385/job123548515452 and security40902558622;8raw/archive/public receipt;source/tested tree match;no merge"
+    },
+    "reader_check": ".agent/PHASE122_READER_CHECKS.json",
+    "reflection": ".agent/HYPERDIM_REFLECTION_NEXT.md",
+    "goal_status": "complete",
+    "evidence": "research/ender_radius_bridge/PHASE122_VERIFICATION.md",
+    "publication": {
+      "number": 43,
+      "url": "https://github.com/Dojo-1/tenth-discriminant/pull/43",
+      "head": "182ea000b901a1bebc98992b22ffb3a80cd53c56",
+      "draft": true,
+      "merged": false,
+      "receipt_updated_at": "2026-10-29T15:57:32Z",
+      "snapshot": ".agent/PR43_FINAL_PUBLICATION.json"
+    },
+    "completion_audit": ".agent/PHASE122_GOAL_COMPLETION_AUDIT.json",
+    "saved_verifier": ".agent/PHASE122_FINAL_SAVED_VERIFIER.log",
+    "CI_receipt": ".agent/PR43_CI_RECEIPT.json"
+  },
+  "prior_goal_checkpoint_before_phase122": {
+    "task": "Phase121 exact production integration of actual-field48b proof",
+    "branch": "codex/radial-operator-integration",
+    "status": "GOAL_COMPLETION_AUDIT_PASS; exact merged actual-field48b proof; goal accounting completion pending"
+  },
+  "active_goal_scope": "Reconcile claims, short human proof, classification map, missing transport laws, one registered stronger attempt, exact-version review/publication gates",
+  "reflection_after_phase122": {
+    "status": "reflection only; user WAIT respected; no new proof execution",
+    "source": "182ea000b901a1bebc98992b22ffb3a80cd53c56",
+    "immediate_failure": "normalized rational expression not reconciled at exact proof boundary",
+    "workflow_failure": "one-shot stop conflated proof elaboration repairs with mathematical target changes",
+    "communication_correction": "state failed mathematical deliverable before completed research checklist",
+    "accepted_bound": 48000000000,
+    "proposed_next_cycle": "same fixed47.5b target with explicit normalization and preregistered bounded proof-only repair allowance",
+    "artifact": ".agent/HYPERDIM_REFLECTION_NEXT.md"
+  },
+  "context_frame": {
+    "same_observable": "original integer jet Gram determinant",
+    "published_checked_bound": "48billion/PR42;unchanged",
+    "new_standalone_checked_bound": "47.5billion/Phase125 first full call;not integrated or CI-published",
+    "old_failed_target": "Phase12247.5b source immutable/rejected;not retrospectively repaired",
+    "independent_review": "Argon06d3986 at39e9ce3/173modules;not newer radial additions or Phase125",
+    "exact_frozen_CI": "Historical40476544973 source39e9ce3/full proofauditPASS;not Argon own environment replay",
+    "next": "Implement registered Phase128exact relocation/root imports;4local checks;currentdocs then one pinnedhead draftPRCI/security/tree;goal incomplete until reconciled",
+    "structural_interface": "Phase126arbitrary-field iff and signeddiscriminant membership accepted standalone",
+    "radial_transport": "Phase127actualTaTb=T(a+b),inverse,commutingfamily,alljets/Gram accepted;3calls fully preserved"
+  },
+  "argon_review_status": {
+    "status": "PUBLISHED_ARTIFACTS_READ_AND_THREE_PYTHON_CHECKS_REPRODUCED",
+    "audit_commit": "06d3986e3e12830dca3ecda0a73bc0573a6b6405",
+    "reviewed_commit": "39e9ce34d09ed9f990fab4b9ed5e3980cee64119",
+    "current_commit": "182ea000b901a1bebc98992b22ffb3a80cd53c56",
+    "verdict": "Insufficient evidence to judge;no confirmed defect",
+    "review_scope": "173modules/old50b theorem;all173unchanged,29later additions not covered",
+    "local_reproduction": "supplied3scripts PASS200masks/92964affine cases/Gramdet12/oldmargin1909over312500000",
+    "compiled_replay": "NOT completed by reviewer;not rerun here",
+    "novelty": "not established;external artifact comparison attributed to reviewer,not independently replayed here",
+    "evidence": ".agent/argon_frozen_39e9ce3/RECONCILIATION.md",
+    "production_claim_changes": "none;48b remains checked;no new independent human review claim"
+  },
+  "prior_checkpoint_before_phase123": {
+    "task": "Phase122 meaning-preserving documentation, source map and preserved endpoint failure",
+    "branch": "codex/meaning-preserving-next",
+    "status": "GOAL COMPLETE: all six requirements audited;PR43 at182ea00 full pinned CI/securityPASS;draft unmerged;checked48b unchanged"
+  },
+  "structural_goal": {
+    "base": "182ea000b901a1bebc98992b22ffb3a80cd53c56",
+    "protocol": "2793645",
+    "source_frozen": "8b41a87",
+    "steps": {
+      "1_object_identity": "Field discriminant, selected integer lattice, original jets and actual Gram identified in human derivation",
+      "2_arithmetic_reconstruction": "Universal derivation supplied with explicit integral K;80finite cases and saved-matrix verifierPASS;not independent peer review",
+      "3_geometry": "Geometric derivation through explicit0.8logD-0.81315 baseline and0.010gain supplied;ten sealed rational checksPASS;inherited arithmetic mass/tail lower estimate labelled",
+      "4_evidence_layers": "Exact39e9ce3projectCI40476544973/job122096467295 raw log confirms full4917/4155/16985 audit and controls;Argon own replay remains incomplete;later202moduleCI and independent semantic review kept separate",
+      "5_successor_proof": "Complete47.5b successor accepted and integrated unchanged;oldPhase122source preserved;exact-head publication remains",
+      "6_structural_closure": "Actual-field iff and radial parameter/jet/Gram laws accepted and integrated unchanged;4first checksPASS;exact-head CI/publication remains"
+    },
+    "phase123": {
+      "status": "EXACT_COORDINATE_FACTORIZATION_CHECK_PASS;HUMAN_RECONSTRUCTION_PROVIDED;NO_NEW_LEAN_OR_CUTOFF",
+      "cases": 80,
+      "coordinates": 15840,
+      "raw_archive_sha256": "e9a0b39a5924075e17b8da58a76f10123e758b6b0a379b5188eda0cc87e42ed6",
+      "guide": "research\\ender_radius_bridge\\TWO_SIDED_ARITHMETIC_GUIDE.md",
+      "verification": "research\\ender_radius_bridge\\PHASE123_VERIFICATION.md"
+    },
+    "goal_status": "active",
+    "phase124": {
+      "protocol": "597b2e9",
+      "source_frozen": "35200b0",
+      "result": "10rationalchecksPASS0.141s/no Lean",
+      "guide": "research/ender_radius_bridge/GEOMETRIC_COMPARISON_GUIDE.md"
+    },
+    "phase125": {
+      "protocol": "6c05583",
+      "source_frozen": "aaa782c",
+      "accepted_record": "9523bcd",
+      "namespace": "TenthDiscriminant.Phase125Endpoint",
+      "actual_field_theorem": "totallyComplex_degree_two_classNumber_one_discriminant_bound_47_5b",
+      "elapsed_seconds": 114.6616276,
+      "repairs": 0,
+      "fresh_counts": [
+        9884,
+        55607,
+        58736
+      ],
+      "published_bound": 48000000000,
+      "standalone_bound": 47500000000,
+      "verification": "research/ender_radius_bridge/PHASE125_VERIFICATION.md"
+    },
+    "phase126": {
+      "protocol": "5d58fd2",
+      "source_frozen": "b7525cd",
+      "accepted_record": "4b22be0",
+      "namespace": "TenthDiscriminant.Phase126Classification",
+      "written_theorems": 2,
+      "namespace_count": 2,
+      "elapsed_seconds": 60.559438,
+      "repairs": 0,
+      "fresh_counts": [
+        61627,
+        61633
+      ],
+      "required_roots": 4,
+      "forbidden_roots": 8,
+      "guide": "research/ender_radius_bridge/CLASSIFICATION_INTERFACE_CURRENT.md",
+      "scope": "Existing canonical700b classification transported to arbitraryfield;no new method/independent review"
+    },
+    "phase127": {
+      "protocol": "f292fc6",
+      "source_frozen": "e578976",
+      "accepted_record": "b00ca8e",
+      "namespace": "TenthDiscriminant.Phase127RadialAction",
+      "public_theorems": 7,
+      "private_helpers": 2,
+      "namespace_count": 16,
+      "elapsed_seconds": [
+        50.7754182,
+        47.0484248,
+        51.2535176
+      ],
+      "cumulative_seconds": 149.0773606,
+      "repairs": 2,
+      "fresh_counts": [
+        11237,
+        11296,
+        11783
+      ],
+      "forbidden_roots": 70,
+      "guide": "research/ender_radius_bridge/RADIAL_ACTION_CURRENT.md",
+      "scope": "ACTUAL T0/parameter-addition/inverse/commutation/alljets/originalGram;not merely determinant equality;not ringautomorphism"
+    },
+    "phase128": {
+      "protocol": "3e95187",
+      "status": "ALL_FOUR_FIRST_CHECKS_PASS;publication pending",
+      "planned_modules": [
+        "EndpointCutoff",
+        "FieldClassification",
+        "RadialAction"
+      ],
+      "public_types": 19,
+      "private_helpers": 2,
+      "expected_added_logical": 35,
+      "expected_modules": 205,
+      "expected_whole_audit": [
+        5619,
+        4807,
+        17029
+      ],
+      "scope": "Exact accepted bodies after namespace relocation and minimal imports;3root imports;all4integration checks then one frozenhead draftCI;no automatic merge",
+      "whole_audit": [
+        5619,
+        4807,
+        17029
+      ],
+      "added_logical": 35,
+      "removed_logical": 0,
+      "raw_files": 33,
+      "reader_links": 587
+    }
+  }
 }

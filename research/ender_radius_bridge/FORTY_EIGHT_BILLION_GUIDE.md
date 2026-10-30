@@ -1,12 +1,15 @@
 # The 48-billion contradiction
 
 **Status: the full actual-field 48-billion theorem is integrated unchanged.**
-The complete local build and audits pass. Exact-head CI/publication status
-is versioned in the [current scope](RADIAL_CUTOFF_CURRENT.md). [Checked geometric estimate](RADIAL_DETERMINANT_GUIDE.md).
+The complete local build and audits pass. Pinned CI and security passed before
+[PR42 merged](https://github.com/Dojo-1/tenth-discriminant/pull/42); source,
+tested and actual merged trees match. [Current scope](RADIAL_CUTOFF_CURRENT.md). [Checked geometric estimate](RADIAL_DETERMINANT_GUIDE.md).
 
 We want to squeeze one positive integer from two directions. It is the
 determinant of the original integer matrix of polynomial observations and
 ordinary derivatives at lattice points inside an ellipse.
+
+[Why the arithmetic factor appears twice](TWO_SIDED_ARITHMETIC_GUIDE.md) derives the integral quotient-jet factorization.
 
 **Arithmetic makes it large.** If the field has class number one, each
 eligible prime forces a power of that prime to divide this determinant.
@@ -31,7 +34,7 @@ comparison is
 
 The lower expression grows faster. At the fixed endpoint 48,000,000,000,
 exact rational logarithm certificates give log D>=24.5813. The
-lower expression then exceeds the upper by at least0.0001862561. This
+lower expression then exceeds the upper by at least 0.0001862561. This
 small positive margin is why none of the rounding or radius guards can
 be discarded. The coarser input 24.58 is insufficient and remains a
 negative control; there is no retrospective endpoint tuning.
@@ -52,3 +55,11 @@ explicit dependencies; old cutoff/classification conclusions are excluded.
 Unchanged library integration and its complete local checks now pass.
 Pinned CI/publication is versioned at the exact source head. Independent human
 semantic review remains open. [Exact verification](PHASE120_VERIFICATION.md) · [Registered scope](PHASE120_PROTOCOL.md).
+
+For exact theorem APIs and the scope of further composition, see the
+[source map](MEANING_PRESERVING_SOURCE_MAP.md). The [Phase122 endpoint attempt](PHASE122_VERIFICATION.md) failed elaboration;
+its certificate alone passed and supplies no new checked cutoff.
+
+[Reconstruct the geometric ceiling](GEOMETRIC_COMPARISON_GUIDE.md): radius rounding, two cell counts, ordinary jets and the normalized inequality.
+
+[Verification layers](VERIFICATION_LAYERS_CURRENT.md) distinguishes the exact frozen review, historical kernel replay, current CI and the new standalone successor.

@@ -1,0 +1,75 @@
+{
+  "status": "STOPPED_UNREPAIRED_ELABORATION_FAILURE_NO_NEW_CUTOFF",
+  "phase": 122,
+  "protocol_commit": "5caa715",
+  "frozen_source_commit": "2b95548",
+  "base_commit": "0bde1bf58893f1adf66bfded5eaf1a0f270c6dce",
+  "source": "Phase122Endpoint.lean",
+  "source_sha256": "b337601121f05cf37e1967b90e4e15bc2d6de6a0c36f4c6f4bcbe731c34fd312",
+  "attempts": 1,
+  "native_result": {
+    "phase": 122,
+    "scope": "Fixed47.5b actual-field endpoint attempt;standalone only",
+    "attempt": 1,
+    "exit_code": 1,
+    "elapsed_seconds": 71.3259214,
+    "time_limit_seconds": 300,
+    "memory_threshold_mb": 8192,
+    "observed_peak_working_set_bytes": 3330060288,
+    "stop_reason": "",
+    "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments": [
+      "env",
+      "lean",
+      "-j",
+      "1",
+      "../research/ender_radius_bridge/Phase122Endpoint.lean"
+    ],
+    "source_snapshot": "PHASE122_build_20261029152600842.source.lean",
+    "source_sha256": "b337601121f05cf37e1967b90e4e15bc2d6de6a0c36f4c6f4bcbe731c34fd312",
+    "stdout": "PHASE122_build_20261029152600842.stdout.log",
+    "stderr": "PHASE122_build_20261029152600842.stderr.log"
+  },
+  "raw_sha256": {
+    "PHASE122_build_20261029152600842.source.lean": "b337601121f05cf37e1967b90e4e15bc2d6de6a0c36f4c6f4bcbe731c34fd312",
+    "PHASE122_build_20261029152600842.stdout.log": "1276a0755532ceedba3db7222813a84ac15411e1856ee8e455bbba348e91b334",
+    "PHASE122_build_20261029152600842.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE122_build_20261029152600842.result.json": "f3a87c53eacb83108274f2103ff683591009bf82e88707efb03a9afec7013385"
+  },
+  "archive": "PHASE122_RAW.zip",
+  "archive_sha256": "8e2c4141fa57a05e4b500552e4ff9300ce57ee273aa03829fb5191b7fa769d71",
+  "certificate_only": {
+    "status": "PASS",
+    "closure": 9884,
+    "forbidden_roots": 77,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "whole_target": "REJECTED; downstream sorryAx exposed after line21 type mismatch",
+  "failure_kind": "elaboration gap, not a mathematical counterexample",
+  "repair_or_retry": false,
+  "accepted_production_cutoff": 48000000000,
+  "current_reader_checks": {
+    "status": "PASS_CURRENT_READER_RECONCILIATION",
+    "relative_file_links": 571,
+    "readers": [
+      "README.md",
+      "TAO_OBJECTIVES_CURRENT.md",
+      "STATUS.md",
+      "lean/FORMALIZATION.md",
+      "research/ender_radius_bridge/FORTY_EIGHT_BILLION_GUIDE.md",
+      "research/ender_radius_bridge/RADIAL_CUTOFF_CURRENT.md",
+      "research/ender_radius_bridge/MEANING_PRESERVING_SOURCE_MAP.md"
+    ],
+    "README_lines": 61,
+    "ledger_lines": 61,
+    "production_lean_changes": 0,
+    "workflow_changes": 0,
+    "method": "UTF8 source reads; local relative target existence; source diff against merged PR42; no Lean replay"
+  },
+  "final_reader_links": 572,
+  "frozen_prior_blobs_verified": 1823
+}

@@ -1,0 +1,61 @@
+{
+  "phase": 125,
+  "status": "COMPLETE_ACTUAL_FIELD_47_5B_FIRST_CALL_PASS_STANDALONE",
+  "protocol_commit": "6c05583",
+  "source_frozen_commit": "aaa782c",
+  "base_commit": "592d773",
+  "native_result": {
+    "phase": 125,
+    "scope": "Complete actual-field47.5b successor and all fresh checks",
+    "attempt": 1,
+    "exit_code": 0,
+    "elapsed_seconds": 114.6616276,
+    "cumulative_before_seconds": 0,
+    "time_limit_seconds": 300.0,
+    "memory_threshold_mb": 8192,
+    "observed_peak_working_set_bytes": 3339128832,
+    "stop_reason": "",
+    "executable": "C:\\Users\\HAL900\\.elan\\bin\\lake.exe",
+    "arguments": [
+      "env",
+      "lean",
+      "-j",
+      "1",
+      "../research/ender_radius_bridge/Phase125Endpoint.lean"
+    ],
+    "source_snapshot": "PHASE125_build_20261029201606928.source.lean",
+    "source_sha256": "a3ae7db573ba8bc5486bb9879ddb5b07c82140b2636adb05d22faf2a838ba600",
+    "stdout": "PHASE125_build_20261029201606928.stdout.log",
+    "stderr": "PHASE125_build_20261029201606928.stderr.log"
+  },
+  "archive": "PHASE125_RAW.zip",
+  "archive_sha256": "a14acc8d6f9adb12141995b5e020f98f8e61205ffba3bbadf3f788edb026cc6d",
+  "raw_sha256": {
+    "PHASE125_build_20261029201606928.source.lean": "a3ae7db573ba8bc5486bb9879ddb5b07c82140b2636adb05d22faf2a838ba600",
+    "PHASE125_build_20261029201606928.stdout.log": "83124001982557b433fd72d16a4e227668ce46f4cb92e139a246204179811d0b",
+    "PHASE125_build_20261029201606928.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PHASE125_build_20261029201606928.result.json": "5799189175d669b16394d163b1cf8d0b76910a90fd0005b27b5d52dafa705526"
+  },
+  "namespace_audit": {
+    "logical": 17,
+    "theorems": 17,
+    "runtime": 0
+  },
+  "written_theorems": 10,
+  "fresh_root_counts": {
+    "endpoint_certificate": 9884,
+    "odd_large_classNumber_ne_one_47_5b": 55607,
+    "totallyComplex_degree_two_classNumber_one_discriminant_bound_47_5b": 58736
+  },
+  "forbidden_roots": 77,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "old_phase122_sha256": "b337601121f05cf37e1967b90e4e15bc2d6de6a0c36f4c6f4bcbe731c34fd312",
+  "repairs": 0,
+  "second_call_used": false,
+  "scope": "Actual-field47.5b theorem and all standalone audits;production integration and new exact-head CI not performed",
+  "published_integrated_bound": 48000000000
+}

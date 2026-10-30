@@ -1,0 +1,9 @@
+{
+  "protocol_commit": "2793645",
+  "files": {
+    "research/ender_radius_bridge/phase123_two_sided_oracle.py": "443edac655ee4777d3c589dd83609b34b60527750e39d570fceffc0dbcf1a252",
+    "research/ender_radius_bridge/PHASE123_PROTOCOL.md": "c18fd5827695e43cf2b8b4ef4101e2198f73903c12c1e1dc8cf2848370023966"
+  },
+  "max_seconds": 60,
+  "attempts": 1
+}

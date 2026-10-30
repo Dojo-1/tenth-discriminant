@@ -1,0 +1,82 @@
+{
+  "registered_commit": "3e95187dbcafc6c4a6fe77cb1964268d35a99479",
+  "modules": {
+    "EndpointCutoff": {
+      "old_namespace": "Phase125Endpoint",
+      "accepted_commit": "9523bcd0f039d8c50d9aaf034393445844630090",
+      "accepted_path": "research/ender_radius_bridge/Phase125Endpoint.lean",
+      "accepted_sha256": "a3ae7db573ba8bc5486bb9879ddb5b07c82140b2636adb05d22faf2a838ba600",
+      "body_range": [
+        64,
+        4333
+      ],
+      "body_sha256": "302a6fb2aba5cbbe00d44f127afcbe457eb7e2ba1446c887dd8f28a4d032147a",
+      "imports": [
+        "RadialCutoff"
+      ],
+      "path": "lean/TenthDiscriminant/EndpointCutoff.lean",
+      "source_sha256": "4e2a1098faf13e4d88ee8cfd56bbcb48ddceab29e47a2bb4a243124dc31ee666",
+      "public_names": [
+        "endpoint_certificate",
+        "endpoint_log_lower",
+        "endpoint_separation",
+        "odd_large_classNumber_ne_one_47_5b",
+        "imaginaryQuadratic_large_classNumber_ne_one_47_5b",
+        "imaginaryQuadratic_classNumber_one_discriminant_bound_47_5b",
+        "totallyComplex_degree_two_classNumber_one_discriminant_bound_47_5b",
+        "endpoint_controls",
+        "coarse_endpoint_control",
+        "nonpositive_certificate_controls"
+      ]
+    },
+    "FieldClassification": {
+      "old_namespace": "Phase126Classification",
+      "accepted_commit": "4b22be037ebd00385234b6fdae2a83f5bc1f949f",
+      "accepted_path": "research/ender_radius_bridge/Phase126Classification.lean",
+      "accepted_sha256": "11fe4e4b5574e9b29ebaa119112290fc8a7716f196b2a8990b823ce7e01228db",
+      "body_range": [
+        26,
+        1998
+      ],
+      "body_sha256": "29eccba0dab94dc6fd97ef64c4ca65d6bf1210de83a2e33e69d378bc65f37193",
+      "imports": [
+        "ClassNumberClassification",
+        "ImaginaryQuadraticRepresentation"
+      ],
+      "path": "lean/TenthDiscriminant/FieldClassification.lean",
+      "source_sha256": "9c244804a2e8692d5baede6c83255e81d898c8622812bdd4218262165e4089b5",
+      "public_names": [
+        "field_classNumber_one_iff",
+        "field_classNumber_one_discriminant_mem"
+      ]
+    },
+    "RadialAction": {
+      "old_namespace": "Phase127RadialAction",
+      "accepted_commit": "b00ca8ef8e6ef6bbd963d175fd9dd246f6179445",
+      "accepted_path": "research/ender_radius_bridge/Phase127RadialAction.lean",
+      "accepted_sha256": "a74df916e02bc2a9fa595c4d010d30a119c7dc5abf337f52081f0c72fca1c0f3",
+      "body_range": [
+        26,
+        6303
+      ],
+      "body_sha256": "135c376fe0e0936e5e1c956e40775ca4af6a0d954b19c4f87876a91ed325e0de",
+      "imports": [
+        "RadialOperator"
+      ],
+      "path": "lean/TenthDiscriminant/RadialAction.lean",
+      "source_sha256": "3d9c7c3fe91674162c5fb26316b716da78a5a4154d9ad67cae55c0988b3dcd58",
+      "public_names": [
+        "matrix_zero",
+        "matrix_add",
+        "matrix_neg",
+        "matrix_commute",
+        "transform_add",
+        "gram_add",
+        "nonmultiplicative_control"
+      ]
+    }
+  },
+  "root_before_sha256": "25c4ae2ca6e3758b40da6fbfb2ae0f2da490078793330f4bf39ce06c768e1e8e",
+  "root_after_sha256": "914e1dbfa947db3fb57864933e16bff7ca84de257be3d26e73d8c1616eec5ea3",
+  "harness_sha256": "1852820c71e661ed3c0bd26a64024c14fa8e554da7b5c772ee1715f864bce07c"
+}

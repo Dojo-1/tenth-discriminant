@@ -1,5 +1,13 @@
 # Current claim-to-Lean map
 
+Current branch: the 47.5-billion actual-field theorem, arbitrary-field classification interface and actual radial composition laws are integrated unchanged; all four first local checks pass. Main retains the published 48-billion theorem. Exact-head CI/publication is a separate draft-PR gate. [Short mathematical account](../research/ender_radius_bridge/STRUCTURAL_BRIDGE_CURRENT.md) · [Integration evidence](../research/ender_radius_bridge/PHASE128_VERIFICATION.md). The failed Phase122 attempt remains unchanged; Phase125 is its separately registered successful successor. Historical entries below retain their original scope.
+
+## Phase128: one integrated library, three distinct consequences
+
+Nineteen public statements and two private helpers are exact relocations into `EndpointCutoff`, `FieldClassification` and `RadialAction`. The cutoff applies to the actual absolute discriminant of every totally complex degree-two number field with class number one. The classification iff transports the existing canonical proof and its 700-billion finite endgame. The radial matrices satisfy identity, addition, inverse and jet/Gram composition; their fixed nonmultiplicativity control remains. These are separate consequences, not claims of novelty or independent review.
+
+All four first checks passed: three-module build, full root build, all nineteen types/eight fresh closures, and the compiled whole audit. There are 205 reachable modules and 5,619 logical declarations / 4,807 theorems / 17,029 runtime auxiliaries; exactly 35 logical declarations were added and none removed. Old proof sources, controls, pins and workflows are unchanged. Publication and semantic review remain separately scoped.
+
 ## Phase121: full actual-field48b proof in the production library
 
 All four FIRST local checks pass: leaf-module build, full build, nine fresh dependency checks and whole compiled audit. All56written public types/proofs and6data definitions from118/119/120 are unchanged in three modules with three root imports. Whole audit5,584logical/4,772theorems/17,029runtime,202reachable modules. The old inventory loses nothing;134additions include the132source expectation plus two generated equations, explicitly disclosed. The actual theorem gives absdiscr<48000000000 for ANY totally complex degree2 number field of class number1. [Current human scope](../research/ender_radius_bridge/RADIAL_CUTOFF_CURRENT.md) · [Exact evidence](../research/ender_radius_bridge/PHASE121_VERIFICATION.md). Exact-head CI/security/publication are versioned separately in the branch PR; no full-classification, optimality or new human-review claim.
