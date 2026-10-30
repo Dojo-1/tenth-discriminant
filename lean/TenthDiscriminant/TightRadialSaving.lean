@@ -66,7 +66,6 @@ theorem scale_gain_tight (R S : Nat)
       ring
     _ ≤ ((R : Real)-9*S)*S*((S : Real)-1)*(231/500 : Real) := by
       gcongr
-      exact mul_nonneg hR0 hS0
     _ ≤ ((R : Real)-9*S)*S*((S : Real)-1)*Real.log (100/63 : Real) := by
       exact mul_le_mul_of_nonneg_left logarithm_gain_tight
         (mul_nonneg (mul_nonneg hR0 hS0) hSm1)
