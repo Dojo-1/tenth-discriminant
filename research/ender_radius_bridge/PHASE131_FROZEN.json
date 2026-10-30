@@ -1,0 +1,12 @@
+{
+  "protocol_commit": "481fd18e4f42c9388093b490dc0c22cb69ba3d9a",
+  "source_frozen_commit": "d49f270c9ebde16f1bef4dc90860ae1dd20854b2",
+  "source_sha256": "404229790af58c4faa03c7c39bfeb299f5c311cc5eb45548ac41b56863d253d7",
+  "protocol_sha256": "82fabef21b3dae225fd70096118b1cc9df1f3e01f23caa375750056c399af2fa",
+  "sealed_archive_sha256": "e9a0b39a5924075e17b8da58a76f10123e758b6b0a379b5188eda0cc87e42ed6",
+  "attempts": 1,
+  "max_seconds": 60,
+  "fixed_cases": 8,
+  "maximal_minors": 220,
+  "old_Lean_and_workflows": "unchanged"
+}
