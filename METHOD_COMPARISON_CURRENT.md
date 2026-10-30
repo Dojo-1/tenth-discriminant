@@ -11,6 +11,35 @@ The checked direct h=1 bound in this repository is now **actual |discriminant| <
 
 Tao's [public challenge discussion](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/comment-page-1/) now includes participant-reported cutoffs such as 570, 565 and 331, and a separately reported 7/8 zero-free-region-based Lean route. These are **participant reports**, not results independently replayed in this work. A fair comparison must align the meaning of D or q, external theorems, original determinant versus selected minors, finite completion, independent human review, and exactly which artifacts were kernel-checked. We should not treat the numerical ranking as proof-method ranking.
 
+### 30 October primary-source comparison: why the determinant definition matters
+
+Two additional **source-reported** developments change the mathematical
+comparison, without independently verifying any external proof here.
+
+- [DrMurphyIsIn's determinant route](https://github.com/DrMurphyIsIn/tenth-discriminant/blob/main/determinant/README.md) reports a **kernel-checked class-number-one classification** and a direct cutoff q<2^15, using the auxiliary inert-prime nonvanishing argument and the norm of a selected maximal derivative minor. It reports two-kernel (Lean/nanoda) checking and matched tampered controls; this review has NOT replayed them. Its closure reportedly excludes L-functions, though Mathlib measure/integral machinery remains. That is a genuinely relevant comparator to our **positive trace Gram of all original observations**, but they are different integer objects. A separate 7/8 zero-free-region route in that repository reports q<=652.
+- [DualverseAI/rStation's 331 draft](https://github.com/dualverse-ai/tenth_discriminant/blob/main/README.md) reports **D<=331** by tightening the exact degree and vanishing-order information in a determinant rank proof, with supporting code and a polished working draft; this is a source report, not a replay or Lean certificate established here. Its separate small-prime completion returns the familiar D<=163. Keep the analytic cutoff distinct from the finite endgame.
+
+A precise possible interface, rather than a numerical transplant: their selected
+maximal-minor nonvanishing modulo an auxiliary inert prime implies full row
+rank over that residue field; on the **same actual observation matrix** this
+would imply characteristic-zero row independence and positivity of our
+positive trace Gram. But it does **not** by itself preserve the original
+lattice-point set or make the rank guard cheaper. Conversely the original
+Gram has a weighted Cauchy–Binet decomposition as a sum of squares of
+maximal minors; importing a bound for one chosen minor is NOT automatically
+an upper bound for their sum. The former is a potential typed bridge, the
+latter a necessary obstruction. A source-checked, same-parameters comparison
+of ranks, radii and row counts is a future experiment [H], not an achieved
+sharper theorem.
+
+**Present task order:** finish [Phase133 PR #49](https://github.com/Dojo-1/tenth-discriminant/pull/49)
+without moving the Gram, invite the bounded [independent arithmetic/geometry
+review #50](https://github.com/Dojo-1/tenth-discriminant/issues/50),
+and only then consider an auxiliary-prime port as a newly registered method.
+Our 47.1-billion bound is kernel-checked on its own exact head, not claimed
+competitive in raw constant. The other works' authors report stronger
+bounds and verification; no independent reproduction here.
+
 | Route | Cutoff / scope | Load-bearing input | Evidence inspected here |
 |---|---|---|---|
 | Our determinant route | Actual field discriminant <50 billion for h=1 | Original Gram, nonsquare-prime divisibility, elementary factorial/tail estimates | Merged cutoff; integrated bridge at b4cff27 passes pinned CI40403267176, including final controls. No QRH input. |

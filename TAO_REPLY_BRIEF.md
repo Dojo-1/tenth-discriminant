@@ -1,5 +1,38 @@
 # Factual brief for a possible reply to Tao
 
+## Current short human-review brief (30 October 2026; AI-prepared, NOT posted)
+
+The strongest accepted result now on [main](README.md) is the **Lean-checked
+strict bound |discr K|<47,100,000,000 for every totally complex quadratic
+number field K with class number one**. The [precise theorem](lean/TenthDiscriminant/SharpRadialEndpoint.lean),
+[human reconstruction](research/sharp_radial_v1/ENDPOINT_RECONSTRUCTION.md),
+and [full exact-head proof CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41087748526)
+are available. This improves the earlier 47.5-billion bound without
+changing the original positive integer trace Gram, ordinary derivatives,
+arithmetic prime-power lower bound, or class-number-one field premise.
+
+The central arithmetic identity is an actual two-sided INTEGRAL factorization
+U_p G U_p^T = Delta_p K_p Delta_p with K_p integral; this is why p^(2F(p))
+divides det G. An integral radial change of basis preserves that SAME
+determinant while tightening its Hadamard ceiling. At 47.1 billion the
+explicit rational logarithm estimates give a positive contradiction.
+The argument is not competitive with source-reported much smaller bounds
+from other methods, and is not independently human-refereed.
+
+I would ask an interested mathematician to try four reconstruction questions,
+not to endorse the entire generated library:
+[review issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50).
+The [Phase133 PR #49](https://github.com/Dojo-1/tenth-discriminant/pull/49)
+tests 47.0 billion, but that statement is a proposal until full Lean acceptance.
+
+No comment or email to Tao was posted by this agent. The contributor should
+decide whether and how this brief would help the discussion, preserving their
+own wording and disclosing the extensive AI assistance.
+
+---
+
+### Historical brief, retained as a dated record
+
 **AI-prepared through121; this brief is not posted.** Existing public
 repo-linked comments are recorded separately. Tao asks for a human-generated
 summary; the contributor should review and revise the text in their own words.

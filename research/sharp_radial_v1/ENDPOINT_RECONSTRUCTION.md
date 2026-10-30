@@ -1,8 +1,7 @@
 # Phase132: return from a sharper radius to the actual field
 
-**State on creation:** proposed endpoint [H]. This is an independent *declaration*
-with inherited lemmas, **not** an independent human verification. Read the
-exact-head Lean workflow verdict before promoting it.
+**Current verified state (30 October 2026): [P] for the precise Lean theorem.**
+[PR #48](https://github.com/Dojo-1/tenth-discriminant/pull/48) merged the actual-field 47.1-billion theorem; the [exact-head full Lean CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41087748526) passed root compilation, all-three-standard-axiom auditing and falsification controls. The original text below was written *before* that verification and is preserved for reconstruction. **Independent human semantic review remains open** ([bounded review request](https://github.com/Dojo-1/tenth-discriminant/issues/50)).
 
 The field is an imaginary quadratic field of class number one, whose actual
 discriminant (absolute value) is the target. The geometric source is still the
