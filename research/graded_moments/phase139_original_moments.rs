@@ -64,6 +64,34 @@ fn angular_entry(q:&[Z],r:i32,s:i32,t:i32,u:i32)->i128{
  assert_eq!(a*c-b*b,637440);
  assert_ne!(c,2*radial(&q,2)); // Dropped derivatives are wrong.
 }
+// Independently reduce the two-coordinate ellipse sum to a ONE-dimensional
+// sum of integer power sums on horizontal slices; no complex arithmetic.
+fn binom(n:i32,k:i32)->i128{if k<0||k>n{return 0}
+ let mut c=1;for i in 0..k{c=c*(n-i) as i128/(i+1) as i128;}c}
+fn slice_harmonic(ell:i32,k:i32)->i128{
+ let mut total=0;for y in -5i128..=5{
+  if D*y*y>25{continue}
+  let mut xlim=0i128;
+  while (xlim+1)*(xlim+1)+D*y*y<=25{xlim+=1}
+  for h in 0..=(ell/2){for t in 0..=k{
+   let power=ell-2*h+2*t;
+   let xs:i128=(-xlim..=xlim).map(|x|x.pow(power as u32)).sum();
+   let coeff=(-D).pow(h as u32)*binom(ell,2*h)*binom(k,t);
+   total+=coeff*y.pow((2*h) as u32)*(D*y*y).pow((k-t) as u32)*xs;
+  }}
+ }total
+}
+#[test] fn integer_slice_power_sums_equal_signed_angular_moments(){
+ let q=pts();
+ for ell in 0..=6{for k in 0..=3{
+    assert_eq!(slice_harmonic(ell,k),angular_harmonic(&q,ell,k));
+ }}
+ // Opposite conclusions are both real: odd harmonics vanish, even ones
+ // need not have a fixed sign or small absolute value.
+ assert_eq!(slice_harmonic(3,2),0);
+ assert_eq!(slice_harmonic(2,0),-60);
+ assert_eq!(slice_harmonic(4,0),3356);
+}
 #[test] fn angular_orders_and_signed_cross_grade_controls(){
  let q=pts();
  for r in 0..R{for s in 0..S{for t in 0..R{for u in 0..S{
