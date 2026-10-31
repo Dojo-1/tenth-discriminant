@@ -1,95 +1,106 @@
 # The Tenth Discriminant
 
-**Can geometry and arithmetic squeeze the same integer until it cannot exist?**
+An AI-assisted mathematical investigation of **effective discriminant bounds for imaginary quadratic fields of class number one**, in the spirit of [Terence Tao's experimental tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).
 
-That is the idea behind this AI-assisted contribution to [Terence Tao's challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).
-The question concerns imaginary quadratic number systems: extensions of the rational numbers obtained by adjoining a square root of a negative number. Which have unique factorization in their ring of integers?
+The guiding question is simple to state: *can arithmetic force an integer determinant to be so divisible that geometry cannot allow it to be that small?* The difficult part is proving that both estimates act on **the same integer**, with the actual field discriminant recovered at the end.
 
-**[Current research state — start here](RESEARCH_NOW.md):** one canonical branch, checked results, finite instruments, hypotheses and open review.
+**Verified endpoint.** The [Lean theorem](lean/TenthDiscriminant/TightRadialEndpoint.lean) states that, for every totally complex number field `K` of degree two and class number one,
 
-## The result in one sentence
+$$
+\bigl|\operatorname{disc}(K)\bigr| < 47\,000\,000\,000.
+$$
 
-**The Lean-checked theorem on `main` proves that every totally complex quadratic number field of class number one has actual absolute field discriminant strictly below 47.0 billion.**
+This is a strict bound on the **actual field discriminant**. It is not the Gram determinant below, a nine-field classification proof, an optimal bound, or a proof about Siegel zeroes. Stronger numerical estimates have been reported by other challenge participants. [Independent semantic review remains open](https://github.com/Dojo-1/tenth-discriminant/issues/50), despite the formal verification.
 
-Here, class number one means unique factorization in that ring; the discriminant measures the arithmetic size of the field. The bound applies to the actual field and its actual discriminant. It assumes neither the known list of answers nor an earlier cutoff.
+[Read the human reconstruction](research/tight_radial_v1/HUMAN_RECONSTRUCTION.md) · [Current evidence ledger](RESEARCH_NOW.md) · [Tao objectives and limitations](TAO_OBJECTIVES_CURRENT.md)
 
-This is a bound from one approach. It is far larger than the strongest bounds discussed in the challenge, and we claim neither novelty nor optimality. Tao explicitly welcomes understanding what each approach can achieve, including weaker numerical bounds.
+## One integer, seen from several directions
 
-## One determinant, two pressures
+Let `Q` be the **original complete integer ellipse**, and form `E` from the integer coordinates of ordinary polynomial jets of `Z^r W^s` at each original sample (`W` is held fixed while differentiating). With the original positive trace metric `B`, set
 
-We build a positive integer determinant from polynomial values and derivatives at lattice points inside an ellipse.
+$$
+G=E B E^{\mathsf T},\qquad \det G>0
+$$
 
-- **Geometry limits its size.** The ellipse and derivative estimates give an upper bound.
-- **Arithmetic forces divisibility.** Class number one makes that same determinant divisible by many prime powers, giving a lower bound.
-- **At 47.0 billion and above, the bounds conflict.** The lower bound exceeds the upper bound, so class number one is impossible there.
+under the checked interpolation/point-count guard. **Neither `E` nor its sample set is silently replaced in the comparison.**
 
-The hard part is making both estimates refer to exactly the same positive integer. The formal development connects the lattice count, polynomial independence, integer matrix, prime divisibility and final inequality.
+```mermaid
+flowchart TD
+    E["Original ellipse Q · ordinary integer jets E"]
+    G["One positive integer: det(G), G = E B Eᵀ"]
+    P["At inert primes: integer row extraction"]
+    A["At infinity: radial frame and Hadamard"]
+    L["Lower pressure: p^(2F(p)) divides det(G)"]
+    U["Upper pressure: controlled size of det(G)"]
+    X["Contradiction for sufficiently large field discriminant"]
+    K["Strict actual-field bound"]
+    E --> G
+    G --> P --> L --> X
+    G --> A --> U --> X
+    X --> K
+```
 
-**[Read the 47.0-billion argument and its verification boundary](research/tight_radial_v1/HUMAN_RECONSTRUCTION.md)** · [Original arithmetic spine](lean/MATHEMATICAL_SPINE.md) · [Precise Lean theorem](lean/TenthDiscriminant/TightRadialEndpoint.lean)
+For each eligible inert prime `p`, the exact integral identity is
 
-## What is checked, and what remains
+$$
+U_p E=\Delta_p C_p,\qquad
+\det U_p=1,\qquad
+\Delta_p=\operatorname{diag}(p^{k_i}).
+$$
 
-The **47.0-billion actual-field theorem** is now integrated in `main` ([merged PR #49](https://github.com/Dojo-1/tenth-discriminant/pull/49)). Its [exact-head full Lean CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41098122516) passed the complete root build, the source digest and 250 interval comparisons, permitted-axiom audit (5,729 logical declarations; 4,914 theorems), known-false negative controls, and security checks; [focused Lean modules](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41098122564) passed too. The [Phase133 verification receipt](research/tight_radial_v1/PHASE133_VERIFICATION.md) records the two failed elaboration runs and their proof-only corrections. The older **47.1-billion theorem** ([PR #48](https://github.com/Dojo-1/tenth-discriminant/pull/48)) and **47.5-billion theorem** remain checked predecessors. Such checks establish the encoded statements, not independent human mathematical review.
+The same metric produces the **two-sided** Gram identity
 
-Independent human semantic review remains open: [a bounded independent-reader review request](https://github.com/Dojo-1/tenth-discriminant/issues/50) names the four exact obligations, so reviewers need not read the entire research history. [Argon’s frozen review and project CI](research/ender_radius_bridge/VERIFICATION_LAYERS_CURRENT.md) concern different questions: no defect was confirmed, but its verdict remains insufficient evidence. That review does not cover the later radial improvement or new interfaces.
+$$
+U_p G U_p^{\mathsf T}
+=\Delta_p(C_p B C_p^{\mathsf T})\Delta_p,
+\quad
+p^{2F(p)}\mid\det G,\quad F(p)=\sum_i k_i.
+$$
 
-The [source-aware method comparison](METHOD_COMPARISON_CURRENT.md) now separates our rectangular full-trace Gram from external auxiliary-prime maximal-minor and exact-rank methods (including a working-draft 331 claim). A possible full-rank transport must first align the *same* original observations and their prime conditions; no competitor's constant is imported. The [arbitrary-field classification interface](research/ender_radius_bridge/CLASSIFICATION_INTERFACE_CURRENT.md) transports the existing canonical-family proof and its separate finite certificates; it is not a new classification method. A separate [all-field bound for class number at most two](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) is published. Independent review, Mathlib acceptance and optimal constants remain open.
+Over the real numbers, an integral radial change of row frame preserves `\det G` while sharpening its Hadamard upper bound. In the production regime, a checked rational logarithm certificate makes the arithmetic lower bound exceed that upper bound for discriminants at or above 47 billion. The number-field chart and equivalence arguments then return to the actual discriminant, including the index-two maximal-order case.
 
-## One main branch, visible experiments
+The human proof, not this diagram, carries the hypotheses: [arithmetic bridge](research/ender_radius_bridge/TWO_SIDED_ARITHMETIC_BRIDGE.md), [geometric saving](lean/TenthDiscriminant/TightRadialSaving.lean), [finite logarithm certificate](lean/TenthDiscriminant/TightRadialEndpoint.lean), and [four obligations for an external reader](research/tight_radial_v1/INDEPENDENT_REVIEW_ENTRY.md).
 
-The public record now lives in **[main](https://github.com/Dojo-1/tenth-discriminant/tree/main)**. The independent two-sided finite oracle ([#44](https://github.com/Dojo-1/tenth-discriminant/pull/44)), the 47.5-billion actual-field theorem ([#45](https://github.com/Dojo-1/tenth-discriminant/pull/45)), the exterior-volume account ([#46](https://github.com/Dojo-1/tenth-discriminant/pull/46)), and the finite Rust/Lean mixed-frame atlas ([#47](https://github.com/Dojo-1/tenth-discriminant/pull/47)) are merged. Their original review discussions and exact CI receipts remain available; the cancelled overall CI on #47 is **not** called green.
+## What was established, and what wasn't
 
-[PR #48](https://github.com/Dojo-1/tenth-discriminant/pull/48) has also merged: the same original integral Gram now admits a sharper rounded radial center `101/200`, ordinary-jet factor `63/100`, and normalized Hadamard saving `0.011`. The five-term rational logarithm certificate closes the **actual-field 47.1-billion bound**; [full Lean + audit + negative-control CI passed](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41087748526) on its published source head. This is a more effective **bound from this method**, not a claim of novelty, optimality or external referee endorsement. The [human reconstruction](research/sharp_radial_v1/ENDPOINT_RECONSTRUCTION.md) follows exactly the same object through arithmetic and geometry. [Phase133 PR #49](https://github.com/Dojo-1/tenth-discriminant/pull/49) is **merged** after exact-head root audit. Its only mathematical improvement is a tighter uniform rectangle estimate on the SAME original integer ordinary-jet Gram: for `t=R-25S`, `S≥100`, `25S≤R≤26S`, the identity `676S(R-9S)-17R²=(S-t)(191S+17t)≥0` gives normalized saving `0.0115` with a checked rational log certificate. The actual-field cutoff is strictly **47,000,000,000**. [Human reconstruction](research/tight_radial_v1/HUMAN_RECONSTRUCTION.md) · [registered protocol](research/tight_radial_v1/PROTOCOL.md) · [CI receipt and preserved failures](research/tight_radial_v1/PHASE133_VERIFICATION.md). This is a checked improvement *within our method*, not priority, optimality, an independent referee, or a proof about Siegel zeroes.
-
-Mathematicians should be able to recover both the argument and the precise uncertainty without opening five competing branches. The short [current-state map](RESEARCH_NOW.md) records what has been proved, tested, proposed, corrected and left to independent review. Each experiment turn updates this README after an **@Rizz pass** for mathematical clarity and reconstructability; [the contributor contract](AGENTS.md) makes that obligation explicit.
-
-## Explore or check it yourself
-
-| Start here | What you get |
+| Result | Evidence and boundary |
 | --- | --- |
-| [Tao's objectives](TAO_OBJECTIVES_CURRENT.md) | Achievements, limitations and side discoveries |
-| [Human proof guide](lean/HUMAN_GUIDE.md) | Why the determinant is positive |
-| [Exact staircase count](research/ender_radius_bridge/STAIRCASE_EXACT_GUIDE.md) | A double sum understood by counting the same boxes in another order |
-| [Compatible transport](research/ender_radius_bridge/PASSIVE_TRANSPORT_CURRENT.md) · [All-field h<=2 bound](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) · [Same integer and radial composition](research/ender_radius_bridge/STRUCTURAL_BRIDGE_CURRENT.md) | Explicit invariants, preserved failures and numerical scope |
-| [Research history](STATUS.md) | Earlier checkpoints, failed attempts and corrections |
+| **Strict 47-billion actual-field bound** | [Phase133 Lean proof and receipts](research/tight_radial_v1/PHASE133_VERIFICATION.md), [PR #49](https://github.com/Dojo-1/tenth-discriminant/pull/49). The encoded theorem and its checked dependencies, **not** external human endorsement. |
+| **All original maximal minors inherit a prime factor** | [Phase134 Lean](lean/TenthDiscriminant/RankDivisorCompatibility.lean), [PR #52](https://github.com/Dojo-1/tenth-discriminant/pull/52). Positive extraction weight makes the *unnormalized* `E` rank-deficient mod `p`; the normalized quotient can regain rank. |
+| **Full-ellipse collision and ordinary/Hasse distinction** | [Phase135 Lean](lean/TenthDiscriminant/EllipseResidueTransport.lean), [PR #53](https://github.com/Dojo-1/tenth-discriminant/pull/53). For `0<p≤2ρ`, original ellipse nodes collide modulo `p`. This does not refute a method with a different node set. |
+| **Matched original-jet pilot** | [Exact integer Rust instrument](research/rank_divisor_interface/phase135_ordinary_jet_pilot.rs), [passed CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41138437024). For `D=19, ρ=5, R=4, S=J=2, p=3`: rank of `E` mod 3 is 7, rank of the integral quotient is 8, and the residual Gram determinant is 2 mod 3. **Finite measurement only.** |
+| **Sharp residue threshold and exact selected-minor exponent** | [Phase136 Lean](lean/TenthDiscriminant/Phase136MinorSaturation.lean), [PR #54](https://github.com/Dojo-1/tenth-discriminant/pull/54), [whole-root CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41143112832). The *full* ellipse has pairwise distinct coordinate residues iff `p>2ρ`. Under a specified integral normalization and a selected normalized minor not divisible by nonzero `p`, the original minor has exactly the extracted `p`-power, not another. |
 
-With the pinned Lean toolchain and dependencies installed, the core checks are:
+A related [local Smith/covolume observation](research/tao_goal_alignment/WORDPRESS_LOCAL_SMITH_COVOLUME_20261030.md) has a short **paper-level argument**, not a separately checked Lean isomorphism: if the normalized quotient has full row rank modulo a prime, its extraction weights determine the `p`-local cokernel invariants of the original observation map. This does **not** force its residual trace Gram to be invertible modulo `p`. Ordinary derivatives versus Hasse/Taylor coefficients, and row normalization versus column rescaling, remain genuine transport obligations.
+
+This distinction matters when comparing our trace-Gram method with the [external exact-rank arguments](METHOD_COMPARISON_CURRENT.md): a selected maximal minor cannot simply replace the upper bound on the **whole** Gram, and a changed observation matrix requires both sides of the determinant argument to be rebuilt. The [WordPress reading notes](research/tao_goal_alignment/WORDPRESS_LOCAL_SMITH_COVOLUME_20261030.md) attribute the motivating ideas to Tao and other contributors instead of claiming that older Smith and exterior-power mathematics was invented here.
+
+## Two open mathematical obligations
+
+**[#50 · Independent reconstruction](https://github.com/Dojo-1/tenth-discriminant/issues/50).** A mathematician outside this AI-assisted authoring loop should check the original field and order, inert-prime/ordinary-jet quotient, same-matrix radial bounds, rational contradiction, and final actual-discriminant transport. [Here is a small reviewer entry point](research/tight_radial_v1/INDEPENDENT_REVIEW_ENTRY.md). Another model's agreement, or a clean CI run, does not close this issue.
+
+**[#51 · Same-observation transport](https://github.com/Dojo-1/tenth-discriminant/issues/51).** The local rank and valuation lemmas are checked; a *global* match to competing normalized-row/column methods, including prime existence, factorial guards, original support and metric nondegeneracy, remains open. [One-matrix two-prime guide](research/rank_divisor_interface/ONE_MATRIX_TWO_PRIMES.md) · [Finite falsification instrument](research/rank_divisor_interface/PHASE135_MATCHED_JETS.md).
+
+## Reproduce the record
+
+Pinned toolchain: **Lean 4.19.0**, [Mathlib commit `c44e0c8`](lean/lake-manifest.json). From the repository root:
 
 ```sh
 cd lean
+lake update
+lake exe cache get
+python3 verify_sources.py
 lake build
-python audit.py
-python negative_controls.py
+python3 audit.py
+python3 negative_controls.py
 ```
 
-The [pinned CI workflow](.github/workflows/lean.yml) supplies the full setup. [Environment notes](ENVIRONMENT.md) and the [preserved campaign README](https://github.com/Dojo-1/tenth-discriminant/blob/63be64b4ba3ff9795f552dd34bc415f6ea3acb25/README.md#reproduce-the-record) document the separate numerical experiments. A passing run supports only the statement and version it checks.
+The [exact-head workflow](.github/workflows/lean.yml) runs source correspondence, the whole library, permitted-axiom checks and known-false strengthening controls. For Phase136, [Lean](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41143112832) and [CodeQL](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41143107842) passed on the PR head before merge. These are versioned checks: a green result should never be attributed to a different source revision. Run the [finite Phase135 Rust pilot](research/rank_divisor_interface/phase135_ordinary_jet_pilot.rs) independently if examining its matched small-prime claim.
 
-## Credit and collaboration
+The original observations, intermediate failures, historical bounds, source digests, finite controls and decisions are preserved in [RESEARCH_NOW.md](RESEARCH_NOW.md), [STATUS.md](STATUS.md) and the merged PRs—not compressed into a fictional uninterrupted success story. The separate [nine-field classification](research/ender_radius_bridge/CLASSIFICATION_INTERFACE_CURRENT.md) and [all-field class-number-at-most-two bound](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md) have their own proof routes and must not be inferred from the new local matrix lemmas.
 
-Ben Green supplies the derivative determinant method. [Prior art](PRIOR_ART.md) records contributions including twinheterodox, Kyle Pratt and van Dijk; [BEAN](BEAN.md) records route attribution and Jesús Vilela's norm-ellipse experiment. AI assistance is extensive and disclosed in the research records. Workflow names such as Ender are labels, not independent authorities.
+## Source, credit, correction
 
-**Phase134, a verified narrow compatibility theorem [P]:** [the new generic all-maximal-minors lemma](lean/TenthDiscriminant/RankDivisorCompatibility.lean) tests a specific incompatibility between our prime-divisibility mechanism and modular nonvanishing at that SAME prime. If `U_p E=diag(p^{k_i}) Ehat` with positive total weight, no maximal minor of the unchanged E can be nonzero modulo p. The [human-readable argument and Tao-goal reflection](research/tao_goal_alignment/FOLDING_TO_TAO_20261030.md) keeps the 47.0-billion bound untouched. The [exact-head full-root Lean build](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41108320303), [focused checks](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41108320128), axiom audit, negative controls and security checks **passed**, and [PR #52](https://github.com/Dojo-1/tenth-discriminant/pull/52) merged normally. The earlier [failed focused attempt](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41107733908) remains in history. **This obstruction concerns only the unnormalized E**; competing normalized-row/Taylor-coefficient constructions are not refuted, and no new cutoff follows. [Registered scope and falsifiers](https://github.com/Dojo-1/tenth-discriminant/issues/51).
+The determinant/derivative method is rooted in work of **Ben Green**; the [prior-art ledger](PRIOR_ART.md) and [BEAN](BEAN.md) trace other contributors and the norm-ellipse experiment. See [Tao's geometric/adelic exposition](https://terrytao.wordpress.com/2026/10/19/a-sketch-of-the-proof-of-non-existence-of-siegel-zeroes/) and [challenge statement](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/) for the broader context. AI involvement is extensive and disclosed; passing formalization is not a claim of novelty, optimality, independent review or outside endorsement.
 
-The aim is an argument people can reconstruct, question and improve. Corrections are welcome: point to the statement, the disputed step and a way to check it.
-
-**Next experiment, with a mathematical stop condition.** A [Phase134
-same-observation rank/divisor analysis](research/rank_divisor_interface/ONE_MATRIX_TWO_PRIMES.md)
-explains why a prime already extracting a positive p-adic row valuation
-from E cannot simultaneously certify full rank of that SAME E modulo p;
-any auxiliary rank-witness prime must avoid this obstruction. The
-selected-minor-to-whole-Gram upper bound is a second explicit failure.
-[Issue #51](https://github.com/Dojo-1/tenth-discriminant/issues/51) preregisters the
-new Lean and quantitative obligations. This conditional analysis
-makes **no new discriminant bound**; the 47.0-billion theorem remains
-the current accepted result.
-
-
-
-**Method-transport correction.** [PR #52](https://github.com/Dojo-1/tenth-discriminant/pull/52) checks the maximal-minor divisor of our **unnormalized** E, but the quotient `Ehat` may still have full rank modulo the same prime. The next experiment must account for row/column normalization and the exact derivative/point support used by competing methods. [Updated Tao-objectives audit](TAO_OBJECTIVES_CURRENT.md) and [source-accountable mathematical analysis](research/tao_goal_alignment/FOLDING_TO_TAO_20261030.md). No new cutoff is claimed.
-
-
-**Phase135 — checked geometric residue guard [P, Lean]:** the [original full symmetric ellipse](lean/TenthDiscriminant/EllipseResidueTransport.lean) contains distinct coordinate-congruent nodes modulo every `0<p<=2*rho`, via `(-rho,0)` and `(p-rho,0)`. This strengthens the previous `p<=rho` collision and precisely blocks direct import of an all-nodes-distinct-residue hypothesis for that unchanged `Q`. The accompanying ordinary-vs-Hasse cubic control checks that the factorial column map cannot be inverted modulo `p` at derivative order `j=p=3`. This is a narrow experiment, not a defect in the competing normalized, separated-node argument and not a new bound. [Issue #51](https://github.com/Dojo-1/tenth-discriminant/issues/51) retains the transport obligations; [issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) requires independent semantic reconstruction.
-
-**Finite all-jet pilot [M, exact-source Rust]:** [Phase135 matched original-jet controls](research/rank_divisor_interface/PHASE135_MATCHED_JETS.md) and a dependency-free [Rust reproduction](research/rank_divisor_interface/phase135_ordinary_jet_pilot.rs) examine `D=19, rho=5, R=4, S=J=2, p=3` with all 21 original samples. The reproducible finite calculation reports that the unnormalized E has rank 7 mod 3 while the integral quotient has full rank 8 and residual trace-Gram determinant 2 mod 3, despite colliding sample residues. These are finite claims checked in the [Rust exact-head run](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41138437024) and the [whole-root Lean run](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41138437037), with [CodeQL checks](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41138429953), then [merged as PR #53](https://github.com/Dojo-1/tenth-discriminant/pull/53), not a general import of the external rank theorem. The first Phase135 Lean run [failed on polynomial type notation](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41131649131); the proof statement was not weakened. [Issue #51](https://github.com/Dojo-1/tenth-discriminant/issues/51) continues; [independent review #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) remains open.
-
-**Phase136 candidate [H until checked]:** [exact normalized-minor exponent and full-ellipse residue criterion](lean/TenthDiscriminant/Phase136MinorSaturation.lean) now test whether a normalized selected minor that is not divisible by p forces the corresponding original minor to have *exactly* the predicted p-power (and no additional factor); the elementary reverse residue implication is separately formalized. This remains a small conditional same-E interface, not a local Smith isomorphism, a new cutoff, or a substitute for [independent actual-field review #50](https://github.com/Dojo-1/tenth-discriminant/issues/50). [Rank transport #51](https://github.com/Dojo-1/tenth-discriminant/issues/51) remains open.
+The most useful correction points to **the exact definition, hypothesis or proof edge that fails**, together with a counterexample or reconstruction. [Open an issue](https://github.com/Dojo-1/tenth-discriminant/issues) or join [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50) and [#51](https://github.com/Dojo-1/tenth-discriminant/issues/51).
