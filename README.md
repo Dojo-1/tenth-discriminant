@@ -123,6 +123,16 @@ On the full 21-node `D=19` pilot, an explicitly nested ellipse `6x²+95y²<=125`
 
 A new [Lean count theorem candidate](lean/TenthDiscriminant/ThinEllipseCount.lean) targets a production radius `ceil((11/25)*D^(3/4))`, smaller than the existing leading `13/25` coefficient, by applying the already proved cell-count lemma at `2R+S`. Its compile result and a revised **uniform analytic upper bound** must be certified separately: no smaller field-discriminant cutoff is yet claimed. The apparent irregularity of lattice-point thresholds is also tested as geometry, **not** labeled complexity-theoretic hardness.
 
+## The remaining proof bridge
+
+The observation ellipse is not itself the field discriminant. It supplies an integral **ordinary-jet Gram determinant** whose real size can be bounded and whose prime factors, under the explicit class-number-one hypotheses, can be certified. The decisive requirement is to make both arguments refer to **the same integer**, even when we choose a different observation set.
+
+The [Phase140 thinner-ellipse theorem](lean/TenthDiscriminant/ThinEllipseCount.lean) formally certifies enough observations at radius `ceil((11/25)*D^(3/4))`, rather than the older `13/25` radius. [Phase141's Lean theorem](lean/TenthDiscriminant/ThinRadiusAnalyticGain.lean) then proves an additional **1/10 normalized saving** in the existing real analytic *upper expression*, with a valid shared count majorant. Neither theorem alone is a stronger field bound.
+
+[Draft Phase143, PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62) assembles the same thin-Gram prime lower, full ordinary-derivative upper, exact logarithm bracket, and actual-field discriminant chart. Its [reader reconstruction](research/thin_integrated/PHASE143_SAME_GRAM_GLUE.md) makes the correspondence and failure conditions explicit. The proposed bound `|disc K|<41006250000` is **NOT established while Phase143 exact-head Lean, source, axiom and security gates remain incomplete**. The checked field theorem in `main` still says strictly below 47 billion.
+
+The separate [higher-order sampling experiments in draft PR #61](https://github.com/Dojo-1/tenth-discriminant/pull/61) show that very small point sets can retain full rank, but can have worse Gram volume. Rank efficiency is not, on its own, discriminant-bound efficiency. Both [independent mathematical reconstruction #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) and [modular-rank compatibility #51](https://github.com/Dojo-1/tenth-discriminant/issues/51) remain open.
+
 ## Source, credit, correction
 
 The determinant/derivative method is rooted in work of **Ben Green**; the [prior-art ledger](PRIOR_ART.md) and [BEAN](BEAN.md) trace other contributors and the norm-ellipse experiment. See [Tao's geometric/adelic exposition](https://terrytao.wordpress.com/2026/10/19/a-sketch-of-the-proof-of-non-existence-of-siegel-zeroes/) and [challenge statement](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/) for the broader context. AI involvement is extensive and disclosed; passing formalization is not a claim of novelty, optimality, independent review or outside endorsement.
