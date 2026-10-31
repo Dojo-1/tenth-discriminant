@@ -8,8 +8,8 @@ Run: python3 research/reverse_determinant/phase146_translation_newton.py
 """
 from __future__ import annotations
 from math import comb, log
-from sympy import Matrix, Rational, eye
-from sympy.matrices.normalforms import hermite_normal_form
+from sympy import Matrix, Rational, eye, ZZ
+from sympy.matrices.normalforms import hermite_normal_form, smith_normal_form
 from phase144_verifier import D, R, S, J, FULL, FOUR, evaluation, lattice
 from phase144_minimum_support import SIX
 from phase145_ortho_anti_ambig import P, gram, natural_log
@@ -200,6 +200,7 @@ def phase146_cross_d():
     xr=Er[:,[8*t+2*j for t in range(8) for j in range(J)]]
     real_witness=det_int(xr)
     T1=transport(1)
+    assert P*T1*P==transport(-1)
     ratio={}
     stability={}
     for d in range(1,27):
@@ -219,6 +220,25 @@ def phase146_cross_d():
                           invh*evaluate_parameters(boundary,d))
         assert global_test==boundary_test
         stability[d]=global_test
+        if d in (17,18,19,22,23,24,25,26):
+            # Typed arithmetic transport remainder (M + T1*M)/M.
+            # HNF of [H,T1*H] is computed using det(H) as a valid modulus.
+            enlarged=hermite_normal_form(hf.row_join(T1*hf),D=index_full)
+            idx=index_full//det_int(enlarged)
+            rel=enlarged.inv()*hf
+            assert all(v.q==1 for v in rel)
+            smith=smith_normal_form(rel,domain=ZZ)
+            factors=[abs(int(smith[i,i])) for i in range(N)
+                     if abs(int(smith[i,i]))!=1]
+            expected={
+                17:(1,[]),18:(9,[3,3]),19:(1,[]),22:(1,[]),
+                23:(16,[2,2,2,2]),24:(256,[4,4,4,4]),
+                25:(1474560000,[4,4,4,4,20,20,120,120]),
+                26:(1,[])
+            }
+            assert (idx,factors)==expected[d],(d,idx,factors)
+            assert (idx==1)==global_test
+            print('transport remainder D=',d,'order',idx,'Smith factors',factors)
         if d<=21:
             assert set(SIX).issubset(set(full))
             W4=det_int(evaluate_parameters(FOUR,d))
