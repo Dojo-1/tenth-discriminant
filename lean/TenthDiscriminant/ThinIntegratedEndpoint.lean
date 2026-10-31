@@ -90,6 +90,8 @@ theorem recovered_mass_le_eligible_gram_log
         (Tuned.S D) (Tuned.R D) (Tuned.S D)).det : Real) := by
   have hd := Tuned.dimensions D hD
   have hs : 1 ≤ Tuned.S D := by omega
+  have htail := certifiedPrimeMassLower_antitone_tail
+    (Tuned.R D) (Tuned.S D) hs FirstEnderInterval.tail_le_budget
   have hrec : recoveredPrimeMassLower (Tuned.R D) (Tuned.S D)
       FirstEnderInterval.tailBudget ≤
       recoveredPrimeMassLower (Tuned.R D) (Tuned.S D)
