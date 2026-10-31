@@ -14,7 +14,7 @@ This is a strict bound on the **actual field discriminant**. It is not the Gram 
 
 [Read the human reconstruction](research/tight_radial_v1/HUMAN_RECONSTRUCTION.md) · [Current evidence ledger](RESEARCH_NOW.md) · [Tao objectives and limitations](TAO_OBJECTIVES_CURRENT.md)
 
-**Exploratory finite research, now on the same `main` reading route:** [Reverse determinant · Phases144–149](research/reverse_determinant/README.md) separates integral-image supports, Smith/prime-local obstructions, moving frames and metric upper bounds. Its exact finite certificates do **not** upgrade the theorem above. [PR #61](https://github.com/Dojo-1/tenth-discriminant/pull/61) and [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62) remain draft proof work, not silently merged or independently endorsed.
+**Exploratory finite research, now on the same `main` reading route:** [Reverse determinant · Phases144–151](research/reverse_determinant/README.md) separates integral-image supports, Smith/prime-local obstructions, moving frames and metric upper bounds. Its exact finite certificates do **not** upgrade the theorem above. [PR #61](https://github.com/Dojo-1/tenth-discriminant/pull/61) and [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62) remain draft proof work, not silently merged or independently endorsed.
 
 
 ## One integer, seen from several directions

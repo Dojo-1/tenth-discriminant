@@ -1,8 +1,8 @@
-# Reverse determinant · one reading route (Phases 144–149)
+# Reverse determinant · one reading route (Phases 144–151)
 
 This is the consolidated, **finite and exploratory** thread of the [Tenth Discriminant](../../README.md) project. Read it from the repository's **`main` branch**, not as five competing research branches. The original problem remains a same-integer arithmetic lower bound versus geometric upper bound on an ordinary-jet Gram, ultimately transported to an *actual* imaginary quadratic field discriminant.
 
-**Evidence boundary.** The original mainline [strict 47-billion field-discriminant theorem](../../lean/TenthDiscriminant/TightRadialEndpoint.lean) is Lean-checked, still awaiting independent mathematical reconstruction ([#50](https://github.com/Dojo-1/tenth-discriminant/issues/50)). A stronger thin-ellipse field endpoint is discussed in *draft* [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62): its exact-head Lean checks are separate from mathematical endorsement, and it must not be silently promoted by this branch merge. Phases144–149 do **not** assert a new number-field cutoff.
+**Evidence boundary.** The original mainline [strict 47-billion field-discriminant theorem](../../lean/TenthDiscriminant/TightRadialEndpoint.lean) is Lean-checked, still awaiting independent mathematical reconstruction ([#50](https://github.com/Dojo-1/tenth-discriminant/issues/50)). A stronger thin-ellipse field endpoint is discussed in *draft* [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62): its exact-head Lean checks are separate from mathematical endorsement, and it must not be silently promoted by this branch merge. Phases144–151 do **not** assert a new number-field cutoff.
 
 ## What survives the round trip?
 
@@ -16,6 +16,9 @@ All experiments retain the **same original ordinary `∂_Z^j` derivatives with `
 | **147** · Prime-local adequacy | Eight exhaustive finite minimal support sizes, with a **7-primary** counterexample to checking just primes \(2,3,5\). Same sampling geometry can have different arithmetic minima | [Dossier](PHASE147_PRIME_ADEQUACY.md) · [#66](https://github.com/Dojo-1/tenth-discriminant/issues/66) | [Verifier](phase147_prime_adequacy.py) |
 | **148** · Parameter chamber | For fixed same 21 nodes, \(D=17,\ldots,21\), **9** common points are sufficient and globally minimal. A 9-point support minimizes the **raw diagonal Hadamard** upper among all adequate 9-point supports. The fixed-coordinate matrix family has a separately typed universal column-congruence period **529,200** modulo a D-independent real-axis lattice | [Dossier](PHASE148_ARITHMETIC_CHAMBER.md) · [#67](https://github.com/Dojo-1/tenth-discriminant/issues/67) | [Chamber certificate](phase148_arithmetic_chamber.py) · [period certificate](phase148_fixed_lattice_period.py) |
 | **149** · Positivity-first Lean interface | Factor the existing arbitrary-\(Q\) prime-mass logarithmic inequality through a direct positive-determinant hypothesis. Keep the original point-count theorem as a wrapper; new production positivity and analytic upper remain open | [Dossier](PHASE149_POSITIVITY_BRIDGE.md) | [Lean source](../../lean/TenthDiscriminant/RadialCutoff.lean) · [whole-root CI](../../.github/workflows/lean.yml) |
+
+| **150** · Fourier minimal nodes | Unrestricted `ceil(R/2)` integer support exists for original `J=S≤R` ordinary jets, but the quantitative grid radius is too large for the discriminant argument | [Paper-level record #69](https://github.com/Dojo-1/tenth-discriminant/issues/69) | Independent Lean review remains open |
+| **151** · Conjugation Worldlets | Exact `C₂` equivariant jet descent preserves the integral image; weighted orbit sum reconstructs the original Gram. Unweighted orbit descent gives a smaller positive Gram and a certified `O(RS)` gain bound; naive integral Fourier loses `2`-primary information | [Dossier](PHASE151_CONJUGATION_WORLDLET.md) | [Exact verifier](phase151_conjugation_descent.py) |
 
 **One finite two-way obstruction.** For the 21 fixed points at \(D=17,18\), an exhaustive search of all \({21\choose8}=203,490\) supports shows no common 8-point support can preserve the integral image: every joint binary-rank candidate loses ternary rank at \(D=18\). A concrete 9-point support passes exact Hermite equality for all \(D=17,\ldots,21\). **The proof is finite/exhaustive and code-checked, not a uniform statement over fields.**
 
@@ -34,6 +37,7 @@ python3 research/reverse_determinant/phase146_translation_newton.py
 python3 research/reverse_determinant/phase147_prime_adequacy.py
 python3 research/reverse_determinant/phase148_arithmetic_chamber.py
 python3 research/reverse_determinant/phase148_fixed_lattice_period.py
+python3 research/reverse_determinant/phase151_conjugation_descent.py
 ```
 
 The single [reverse-determinant CI workflow](../../.github/workflows/reverse-determinant-finite.yml) runs these bounded verifiers on `main` when relevant files change. For the pre-consolidation exact Phase148 receipt, [Actions #41237057425](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41237057425) passed at commit `df9a1e789efa40d709ab2ceb83f10514bc6ec56e`. Re-run at the final merged commit before claiming merged-head verification.
