@@ -25,6 +25,21 @@ fn radial_block(q:&[Z],r:i32,s:i32,t:i32,u:i32)->i128{
  assert_eq!(r-s,t-u);let d=(r-s).abs();let m=r.min(s);let n=t.min(u);
  let mut v=0;for j in 0..J{if j>r||j>t{continue}
  v+=2*fall(r,j)*fall(t,j)*radial(q,d+m+n-j)}v}
+// A single angular order ell=|(r-s)-(t-u)| suffices for each
+// cross-grade pair, independent of the ordinary derivative order.
+fn angular_harmonic(q:&[Z],ell:i32,k:i32)->i128{
+ q.iter().map(|z|{
+   let t=z.0*z.0+D*z.1*z.1;
+   pow(*z,ell).0*t.pow(k as u32)
+ }).sum()
+}
+fn angular_entry(q:&[Z],r:i32,s:i32,t:i32,u:i32)->i128{
+ let ell=(r-s-t+u).abs();let mut total=0;
+ for j in 0..J{if j>r||j>t{continue}
+ let a=r-j+u;let b=s+t-j;
+ total+=2*fall(r,j)*fall(t,j)*angular_harmonic(q,ell,a.min(b));
+ }total
+}
 #[test] fn whole_original_gram_equals_moment_reconstruction(){
  let q=pts();assert_eq!(q.len(),21);
  let mut nonzero_even=0;let mut odd_pairs=0;
@@ -48,6 +63,22 @@ fn radial_block(q:&[Z],r:i32,s:i32,t:i32,u:i32)->i128{
  assert_eq!((a,b,c),(42,-120,15520));
  assert_eq!(a*c-b*b,637440);
  assert_ne!(c,2*radial(&q,2)); // Dropped derivatives are wrong.
+}
+#[test] fn angular_orders_and_signed_cross_grade_controls(){
+ let q=pts();
+ for r in 0..R{for s in 0..S{for t in 0..R{for u in 0..S{
+   assert_eq!(angular_entry(&q,r,s,t,u),direct(&q,r,s,t,u));
+ }}}}
+ assert_eq!(angular_harmonic(&q,0,2),radial(&q,2));
+ assert_eq!(angular_harmonic(&q,1,0),0);
+ assert_eq!(angular_harmonic(&q,2,0),-60);
+ assert_eq!(angular_harmonic(&q,2,1),-1584);
+ assert_eq!(angular_harmonic(&q,4,0),3356);
+ assert_ne!(angular_harmonic(&q,4,0),0);
+ // Triangle bound for even angular order: |Re(z^ell)|<=norm(z)^(ell/2).
+ for ell in [2,4,6]{for k in 0..4{
+   assert!(angular_harmonic(&q,ell,k).abs()<=radial(&q,k+ell/2));
+ }}
 }
 #[test] fn rational_real_shear_preserves_exact_integer_determinant(){
  let q=pts();let a=direct(&q,0,0,0,0);
