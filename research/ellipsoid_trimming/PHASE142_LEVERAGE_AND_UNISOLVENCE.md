@@ -58,6 +58,44 @@ The verifier also tested a second set of eight distinct real nodes. In both case
 
 This finite constancy suggests a **confluent diagonal Vandermonde theorem target**, not an established all-\(R,S\) formula. A counterworld is \(S>R\): derivative columns with \(j\ge R\) vanish identically, giving a singular square evaluation matrix.
 
+## A direct relation to the discriminant of the node polynomial
+
+There is an elementary, higher-order identity behind the finite observations. Let \(x_1,\ldots,x_R\) be *variables*, and define the square \(RS\times RS\) matrix
+
+\[
+M_{(r,s),(i,j)}=(r)_{\underline j}\,x_i^{r+s-j},
+\qquad 0\le r<R,\quad 0\le s,j<S,
+\]
+
+with entries zero when \(j>r\). This is exactly the **ordinary** \(Z\)-jet matrix at real nodes \(Z=W=x_i\); it is not the one-variable Hermite derivative *along* the diagonal.
+
+**Paper-level factorization [P, short algebraic argument, not a Lean statement]:**
+
+\[
+\boxed{\det M=C_{R,S}\prod_{1\le i<k\le R}(x_k-x_i)^S}
+\tag{3}
+\]
+
+for a constant \(C_{R,S}\in\mathbb Z\) depending on \(R,S\), *possibly zero*. To see this, assign each nonzero entry the homogeneous degree \(r+s-j\). Every determinant term has total degree
+
+\[
+\sum_{r,s}(r+s)-\sum_{i,j}j=S\binom R2.
+\]
+
+When \(x_i=x_k\), subtract the \(S\) corresponding derivative columns for nodes \(i\) and \(k\); each difference has the factor \(x_i-x_k\), so the determinant is divisible by \((x_i-x_k)^S\). Every distinct node-pair factor is irreducible in \(\mathbb Z[x_1,\ldots,x_R]\); their product has precisely the computed degree. The remaining polynomial must be an integer constant. This **does not prove that the constant is nonzero**.
+
+The adversarial finite source now tests \(R=2,\ldots,6\), all \(1\le S\le\min(5,R+1)\), and two unequal node configurations per case. It finds \(C_{R,S}\neq0\) for the tested \(S\le R\), and \(C_{R,S}=0\) when \(S>R\). The latter has a general easy explanation: if \(S>R\), the \(j=R\) derivative columns vanish for every row. The stronger exponent \(S^2\), tempting from *one-variable confluent Vandermonde* determinants, is **false** here: at \(R=3,S=2\), \(\det M=8\), Vandermonde \(=2\), and \(16\nmid8\).
+
+For any fixed \(R,S\) for which the constant is nonzero, a set of distinct real nodes has
+
+\[
+\det G=2^{RS}C_{R,S}^2
+\left[\operatorname{Disc}\left(\prod_{i=1}^R(X-x_i)\right)\right]^S.
+\tag{4}
+\]
+
+This is a precise bridge from an *ordinary-jet Gram determinant* to a **power of the discriminant of the sampling polynomial**. It is emphatically *not* the discriminant of the quadratic number field \(\mathbb Q(\sqrt{-D})\); the two arithmetic quantities govern different degenerations. A general proof that \(C_{R,S}\neq0\) when \(1\le S\le R\) is the smallest worthwhile next algebraic theorem target, with classical confluent interpolation and determinant identities as prior art.
+
 ## Why this matters, and what remains open
 
 The practical next question is not to discard the established interpolation criterion. It is to find a **new, stronger, simple-to-verify sufficient condition** in terms of selected node configurations and ordinary jets that can be proved uniformly on the compact integer ellipse.
