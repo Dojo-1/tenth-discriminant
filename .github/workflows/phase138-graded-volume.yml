@@ -1,0 +1,45 @@
+name: Phase138 graded Gram fibers and exact integral transport
+on:
+  push:
+    branches: ['research/phase138-graded-covolume-fibers']
+    paths:
+      - 'research/graded_covolume/phase138_exact_fibers.py'
+      - 'research/graded_covolume/phase138_transport.rs'
+      - '.github/workflows/phase138-graded-volume.yml'
+  pull_request:
+    paths:
+      - 'research/graded_covolume/phase138_exact_fibers.py'
+      - 'research/graded_covolume/phase138_transport.rs'
+      - '.github/workflows/phase138-graded-volume.yml'
+permissions:
+  contents: read
+jobs:
+  exact-fiber-volume:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Source versions
+        run: |
+          git rev-parse HEAD
+          python3 --version
+      - name: Arbitrary-precision original ordinary-jet block volumes
+        run: |
+          python3 research/graded_covolume/phase138_exact_fibers.py
+  integer-transport:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Source and compiler
+        run: |
+          git rev-parse HEAD
+          rustc --version
+      - name: Four-dimensional noncommuting frame and p-local transport
+        run: |
+          rustc --edition=2021 --test research/graded_covolume/phase138_transport.rs -o /tmp/phase138-transport
+          /tmp/phase138-transport
