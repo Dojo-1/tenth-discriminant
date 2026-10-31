@@ -56,7 +56,7 @@ The verifier also tested a second set of eight distinct real nodes. In both case
 =55\,306\,395\,648\,000 \quad(R=8,\ S=J=4).
 \]
 
-This finite constancy suggests a **confluent diagonal Vandermonde theorem target**, not an established all-\(R,S\) formula. A counterworld is \(S>R\): derivative columns with \(j\ge R\) vanish identically, giving a singular square evaluation matrix.
+This constancy is explained by the general polynomial factorization below; a short **Fourier-root witness** also shows its constant is nonzero for every \(1\le S\le R\). The old claim that this nonvanishing was only a finite conjecture is therefore superseded by a paper proof, not yet by Lean. For \(S>R\), derivative columns with \(j\ge R\) vanish identically, giving a singular square evaluation matrix.
 
 ## A direct relation to the discriminant of the node polynomial
 
@@ -76,13 +76,32 @@ with entries zero when \(j>r\). This is exactly the **ordinary** \(Z\)-jet matri
 \tag{3}
 \]
 
-for a constant \(C_{R,S}\in\mathbb Z\) depending on \(R,S\), *possibly zero*. To see this, assign each nonzero entry the homogeneous degree \(r+s-j\). Every determinant term has total degree
+for a constant \(C_{R,S}\in\mathbb Z\) depending on \(R,S\). To see this, assign each nonzero entry the homogeneous degree \(r+s-j\). Every determinant term has total degree
 
 \[
 \sum_{r,s}(r+s)-\sum_{i,j}j=S\binom R2.
 \]
 
-When \(x_i=x_k\), subtract the \(S\) corresponding derivative columns for nodes \(i\) and \(k\); each difference has the factor \(x_i-x_k\), so the determinant is divisible by \((x_i-x_k)^S\). Every distinct node-pair factor is irreducible in \(\mathbb Z[x_1,\ldots,x_R]\); their product has precisely the computed degree. The remaining polynomial must be an integer constant. This **does not prove that the constant is nonzero**.
+When \(x_i=x_k\), subtract the \(S\) corresponding derivative columns for nodes \(i\) and \(k\); each difference has the factor \(x_i-x_k\), so the determinant is divisible by \((x_i-x_k)^S\). Every distinct node-pair factor is irreducible in \(\mathbb Z[x_1,\ldots,x_R]\); their product has precisely the computed degree. The remaining polynomial must be an integer constant. The degree and divisibility argument alone does **not** establish nonvanishing; the next lemma supplies it.
+
+**Nonvanishing lemma [P: elementary Fourier evaluation, paper proof, not Lean compiled].** For every pair of positive integers \(R,S\), \(C_{R,S}\ne0\) if and only if \(S\le R\).
+
+To prove the nontrivial direction, evaluate the polynomial determinant at the complex \(R\)-th roots of unity, \(x_i=\zeta^i\), \(0\le i<R\), with \(\zeta=e^{2\pi i/R}\). This is only a witness that a polynomial is not identically zero: these complex test nodes are **not** substituted into the quadratic-field Gram, prime factors or sampling ellipse. Multiply each \((i,j)\) column by the nonzero scalar \(x_i^j\). The resulting \((r,s),(i,j)\) entry is \((r)_{\underline j}\zeta^{i(r+s)}\).
+
+For each derivative slot \(j\), apply an invertible length-\(R\) discrete Fourier transform to its \(R\) node columns. The transformed \((r,s),(k,j)\) entry vanishes unless \(r+s\equiv k\pmod R\), in which case it is \(R(r)_{\underline j}\). Regroup rows and columns by their residue \(k\). If \(S\le R\), each \(k\) labels exactly \(S\) rows \((r_s,s)\) with
+
+\[
+r_s\equiv k-s\pmod R,\qquad 0\le r_s<R,\qquad 0\le s<S.
+\]
+
+The \(S\) values \(r_s\) are pairwise distinct. The resulting block is the **falling-factorial evaluation matrix**
+\(\bigl[(r_s)_{\underline j}\bigr]_{s,j=0}^{S-1}\).
+Because \((X)_{\underline j}\) is a monic polynomial of degree \(j\), its determinant is
+\(\prod_{a<b}(r_b-r_a)\ne0\). Every transformed Fourier block is invertible; all column scalings and Fourier changes were invertible. Therefore \(\det M\ne0\) at this complex test configuration, so its universal polynomial constant \(C_{R,S}\) cannot vanish.
+
+Conversely, if \(S>R\), every column with derivative order \(j=R\) is zero since \(r<R\), and \(\det M=0\) identically. This proves the full iff at **paper level**. It is a classical Fourier/Vandermonde mechanism, not a novelty claim.
+
+**Corollary [P, paper]:** When \(1\le S\le R\), every set of **\(R\) distinct real nodes** has full row rank for the original \(J=S\) ordinary \(Z\)-jets, and its original real-axis trace Gram is positive. Distinctness is necessary for the square \(R\)-node matrix (identical nodes give repeated derivative columns). Thus, in this restricted real-axis setting, the exact criterion is \(S\le R\) plus distinctness—not the much larger generic sufficient count \(2(R-1)+(S-1)<|Q|\). This does **not** extend by assertion to arbitrary complex or two-dimensional node configurations.
 
 The adversarial finite source now tests \(R=2,\ldots,6\), all \(1\le S\le\min(5,R+1)\), and two unequal node configurations per case. It finds \(C_{R,S}\neq0\) for the tested \(S\le R\), and \(C_{R,S}=0\) when \(S>R\). The latter has a general easy explanation: if \(S>R\), the \(j=R\) derivative columns vanish for every row. The stronger exponent \(S^2\), tempting from *one-variable confluent Vandermonde* determinants, is **false** here: at \(R=3,S=2\), \(\det M=8\), Vandermonde \(=2\), and \(16\nmid8\).
 
@@ -94,7 +113,7 @@ For any fixed \(R,S\) for which the constant is nonzero, a set of distinct real 
 \tag{4}
 \]
 
-This is a precise bridge from an *ordinary-jet Gram determinant* to a **power of the discriminant of the sampling polynomial**. It is emphatically *not* the discriminant of the quadratic number field \(\mathbb Q(\sqrt{-D})\); the two arithmetic quantities govern different degenerations. A general proof that \(C_{R,S}\neq0\) when \(1\le S\le R\) is the smallest worthwhile next algebraic theorem target, with classical confluent interpolation and determinant identities as prior art.
+This is a precise bridge from an *ordinary-jet Gram determinant* to a **power of the discriminant of the sampling polynomial**. It is emphatically *not* the discriminant of the quadratic number field \(\mathbb Q(\sqrt{-D})\); the two arithmetic quantities govern different degenerations. The general nonvanishing argument is now given above at paper level. The next formalization target is a Lean proof of the Fourier-block unisolvence statement, or an equivalent elementary polynomial proof, with explicit ordinary-derivative conventions; classical confluent interpolation and determinant identities are prior art.
 
 ## Why this matters, and what remains open
 
