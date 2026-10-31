@@ -1,0 +1,31 @@
+name: Phase137 integral Chebyshev ordinary-jet frame
+on:
+  push:
+    branches: ['research/phase137-integral-chebyshev-moving-frame']
+    paths:
+      - 'research/radial_chebyshev/phase137_chebyshev_frame.rs'
+      - '.github/workflows/phase137-chebyshev-frame.yml'
+  pull_request:
+    paths:
+      - 'research/radial_chebyshev/phase137_chebyshev_frame.rs'
+      - '.github/workflows/phase137-chebyshev-frame.yml'
+permissions:
+  contents: read
+jobs:
+  finite-chebyshev-frame:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Record exact source and compiler
+        run: |
+          git rev-parse HEAD
+          rustc --version
+      - name: Two independent ordinary-jet formulas, integer-row and whole-Gram identities
+        run: |
+          rustc --edition=2021 --test research/radial_chebyshev/phase137_chebyshev_frame.rs -o /tmp/phase137-chebyshev-tests
+          /tmp/phase137-chebyshev-tests
+          rustc --edition=2021 research/radial_chebyshev/phase137_chebyshev_frame.rs -o /tmp/phase137-chebyshev-pilot
+          /tmp/phase137-chebyshev-pilot
