@@ -209,6 +209,9 @@ def main():
   assert rank3(F3_blocks(Cs),range(kmin))==N
   full_det,full_had=gram_det(E,d)
   sub_det,sub_had=gram_det(Es,d)
+  image_index=dabs(H)
+  assert image_index>0
+  assert full_det%(image_index**2)==0 and sub_det%(image_index**2)==0
   assert full_det>=sub_det>0 and full_had>=lnint(full_det)
   assert sub_had>=lnint(sub_det)
   print('D=',d,'full_points=',len(Q),'minimum=',kmin,'lower_exhausted=',got,
