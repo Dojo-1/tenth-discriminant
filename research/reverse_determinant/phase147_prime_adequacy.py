@@ -183,6 +183,12 @@ def main():
   C=(H.inv()*E).applyfunc(int)
   assert all(v.q==1 for v in H.inv()*E)
   B2=F2_blocks(C); B3=F3_blocks(C)
+  # Independent bitset and generic modular eliminators must agree.
+  checksets=[tuple(range(min(k,len(Q)))) for k in (3,5,8)]
+  checksets += [tuple(Q.index(q) for q in qs),tuple(range(len(Q)))]
+  for subset in checksets:
+   assert rank2(B2,subset)==rankprime(C,subset,2)
+   assert rank3(B3,subset)==rankprime(C,subset,3)
   kmin=len(qs); lower_k=kmin-1
   n2=n23=n235=0
   for inds in combinations(range(len(Q)),lower_k):
