@@ -81,3 +81,7 @@ The geometric language is operational here: radial fibers indexed by r-s, intege
     /tmp/phase137-pilot
 
 [Exact-head CI workflow](../../.github/workflows/phase137-chebyshev-frame.yml). Neither a merge nor a communication to Professor Tao is authorized by passing these finite tests alone; both issues remain open.
+
+## First exact-source CI receipt (post-registration, finite only)
+
+[GitHub Actions run 41179952647](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41179952647) on source SHA `91f1a4cfd4ef07b0d5673998e4ce32302198a881` completed with **4 Rust tests passed** using rustc 1.99.1. It executed the original-jet expansion, separate Leibniz formula, full 32×168 row relation, every entry of the 32×32 Gram congruence, signed trace-factor weights, the 12/20/0 diagonal criterion, and the *worse pointwise jet* negative control. Logged: `log_product_gain=-5.80382413464387`, `new_diag_product_over_old=0.0030159990776848942`. This verifies only the frozen finite instrument; the research note was committed later and no production inequality has been checked. The PR head must still be audited separately before a merge.
