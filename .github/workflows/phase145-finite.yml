@@ -1,0 +1,26 @@
+name: Phase145 finite geometry controls
+on:
+  push:
+    branches:
+      - research/phase145-ortho-anti-ambig-moving-frame
+    paths:
+      - research/reverse_determinant/**
+      - research/ellipsoid_trimming/phase140_exact_trim.py
+      - .github/workflows/phase145-finite.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-finite:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install exact arithmetic dependency
+        run: python3 -m pip install --disable-pip-version-check sympy==1.14.0
+      - name: Phase144 minimum support control
+        run: python3 research/reverse_determinant/phase144_minimum_support.py
+      - name: Phase145 parity, image, and curvature controls
+        run: python3 research/reverse_determinant/phase145_ortho_anti_ambig.py
