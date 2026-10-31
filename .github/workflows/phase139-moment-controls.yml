@@ -1,0 +1,29 @@
+name: Phase139 original graded ordinary-jet moments
+on:
+  push:
+    branches: ['research/phase139-graded-jet-moment-bridge']
+    paths:
+      - 'research/graded_moments/phase139_original_moments.rs'
+      - '.github/workflows/phase139-moment-controls.yml'
+  pull_request:
+    paths:
+      - 'research/graded_moments/phase139_original_moments.rs'
+      - '.github/workflows/phase139-moment-controls.yml'
+permissions:
+  contents: read
+jobs:
+  exact-moment-bridge:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Compiler and exact source
+        run: |
+          git rev-parse HEAD
+          rustc --version
+      - name: Independent direct jets versus graded moments
+        run: |
+          rustc --edition=2021 --test research/graded_moments/phase139_original_moments.rs -o /tmp/phase139-moments
+          /tmp/phase139-moments --nocapture
