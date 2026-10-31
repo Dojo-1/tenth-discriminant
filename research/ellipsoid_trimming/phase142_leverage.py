@@ -15,7 +15,7 @@ from __future__ import annotations
 from fractions import Fraction as F
 from math import log
 from phase140_exact_trim import (D,R,S,J,DIM,ORIGINAL,jets,one_node_gram,
-    determinant,ln,add_matrix)
+    determinant,ln,add_matrix,falling)
 
 def det_general(matrix):
     """Fraction-free Bareiss of an arbitrary square integer matrix."""
@@ -128,6 +128,51 @@ def leverage_ratio(Ginv, qs):
     L=[[(F(int(a==b))-K[a][b]) for b in range(d)] for a in range(d)]
     return det_fraction(L)
 
+def _vand(xs):
+    v=1
+    for i in range(len(xs)):
+        for j in range(i+1,len(xs)):
+            v*=xs[j]-xs[i]
+    return v
+
+def verify_diagonal_vandermonde_family():
+    """Finite falsification sweep of a general polynomial factorization target.
+
+    The factor Vandermonde(xs)^S is forced by column collisions and
+    total homogeneity; its constant being NONZERO when S<=R remains
+    a separate general proof obligation, not inferred from the sweep.
+    """
+    def eval_matrix(rr,ss,xs):
+        return [[0 if j>r else falling(r,j)*x**(r+s-j)
+                 for x in xs for j in range(ss)]
+                for r in range(rr) for s in range(ss)]
+    def vand(xs):
+        return _vand(xs)
+    tested=0
+    for rr in range(2,7):
+        for ss in range(1,min(5,rr+1)+1):
+            a=list(range(rr))
+            b=[i*i+2*i-3 for i in range(rr)]
+            da=det_general(eval_matrix(rr,ss,a))
+            db=det_general(eval_matrix(rr,ss,b))
+            va,vb=vand(a),vand(b)
+            assert va and vb
+            assert da%(va**ss)==0 and db%(vb**ss)==0
+            ca,cb=da//(va**ss),db//(vb**ss)
+            assert ca==cb
+            assert (ca!=0)==(ss<=rr)
+            tested+=1
+    # The stronger guess Vandermonde^(S^2), as in 1-variable
+    # confluent derivatives ALONG node position, is FALSE here:
+    # ordinary derivatives are in Z with W held fixed.
+    x=[0,1,2]
+    d=det_general(eval_matrix(3,2,x))
+    v=vand(x)
+    assert d==8 and v==2 and d%(v**4)!=0
+    assert tested>=20
+    print(f"Finite diagonal-Vandermonde sweep: {tested} (R,S) regimes, "
+          "two independent node placements each; no failures.")
+
 def main():
     G=sum_gram(ORIGINAL)
     full=determinant(G)
@@ -175,6 +220,7 @@ def main():
     assert determinant(sum_gram([(x,0) for x in xs7]))==0
     print(f"7 real nodes: only 28 nonzero real jet columns < 32 rows; det=0.")
     print("The original 2R+S point-count guard is sufficient, not necessary.")
+    verify_diagonal_vandermonde_family()
     print("No uniform smaller-radius or complexity-theoretic claim established.")
 
 if __name__=="__main__":
