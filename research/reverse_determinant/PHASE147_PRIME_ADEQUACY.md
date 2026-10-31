@@ -60,6 +60,8 @@ Why this proves *finite minimum* rather than merely a lower-bound guess:
 
 These tests do **not** assume D is squarefree or that the corresponding imaginary quadratic field has class number one. D=18,24,25 and other control values are valid matrix parameters, not additional number-field inputs to the original arithmetic lower theorem.
 
+**Matched-geometry control (particularly discriminating).** The integer ellipse point sets are **identical** for D=17,18,19,21 (21 points in every case), although their exact minimum support sizes are 8,7,6,7 respectively. They are also identical for D=23 and D=24 (17 points), although the minima are 9 and 6. The verifier now asserts both set equalities explicitly. Thus these differences cannot be attributed merely to a change in observation cardinality or support geometry; the integer ordinary-jet entries depend on D, with different arithmetic image/cokernel constraints. This does not yet identify a complete formula for the exceptional primes or a uniform D-family.
+
 ## A deliberately surviving counterexample [M/R]
 
 At D=21 the seven-point support
