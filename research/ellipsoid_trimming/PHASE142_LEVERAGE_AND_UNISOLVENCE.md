@@ -115,6 +115,46 @@ For any fixed \(R,S\) for which the constant is nonzero, a set of distinct real 
 
 This is a precise bridge from an *ordinary-jet Gram determinant* to a **power of the discriminant of the sampling polynomial**. It is emphatically *not* the discriminant of the quadratic number field \(\mathbb Q(\sqrt{-D})\); the two arithmetic quantities govern different degenerations. The general nonvanishing argument is now given above at paper level. The next formalization target is a Lean proof of the Fourier-block unisolvence statement, or an equivalent elementary polynomial proof, with explicit ordinary-derivative conventions; classical confluent interpolation and determinant identities are prior art.
 
+## A four-node full-rank nonreal witness: a sharper rank test
+
+The original \(D=19,\rho=5,R=8,S=J=4\) Gram uses **two** integer coordinates for each complex jet value. A point with nonzero \(y\) can make both coordinates useful. Thus \(|Q|\ge\lceil RS/(2J)\rceil=4\) is the *elementary column-count necessity*; it does **not** imply that four arbitrary points are unisolvent. Our [independent exact-jet and modular-rank control](phase142_complex_minimal.py) finds a witness achieving that minimum:
+
+\[
+Q_4=\{(-2,-1),(-1,-1),(0,-1),(1,-1)\}
+\subset Q_{19,5}.
+\]
+
+The original integer \(32\times32\) observation matrix \(E_{Q_4}\) has a nonzero **exact** determinant
+
+\[
+\det E_{Q_4}=
+-284915001533218571118326076036675471980881556242275833109785780158464.
+\]
+
+The original integral metric is diagonal with \(J|Q_4|=16\) copies of \(\operatorname{diag}(2,38)\). Consequently, with no field representation change,
+
+\[
+\boxed{\det G_{Q_4}=(4D)^{J|Q_4|}(\det E_{Q_4})^2
+=76^{16}(\det E_{Q_4})^2>0.}
+\tag{5}
+\]
+
+The exact experiment checks \(3^{38}\mid\det G_{Q_4}\) for the unchanged original inert-prime weight. This **reapplies** the same arithmetic statement to a different observation integer; it is not transport of the old determinant by equality.
+
+There are precisely ten nonreal nodes in the original 21-point ellipse. The [CI-verified exhaustive test](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41194727422) checks all \(\binom{10}{4}=210\) four-node subsets using a *certified-prime modular rank test* at \(p=1,000,003\), and independently computes the exact integer determinant for the displayed witness. The observed ranks are
+
+| Rank over \(\mathbb F_{1000003}\) | Number of four-node subsets | Distinct real abscissae |
+|:--|--:|--:|
+| 16 | 10 | 2 (two conjugate pairs) |
+| 24 | 120 | 3 (one conjugate pair) |
+| 32 | 80 | 4 (one representative per abscissa) |
+
+These are [M] statements about this finite geometry. A nonzero modular determinant rigorously implies a nonzero integer determinant, and the explicit witness is also checked over the integers. An arbitrary four-point pattern, or a new production D, **does not** inherit this rank automatically. Three points have only \(3(2J)=24<32\) columns and cannot produce a full-rank 32-row Gram.
+
+**Crucial matched counterworld:** the four-node configuration has \(\log\det G_{Q_4}\approx384.537347511\), versus \(\approx323.895409425\) for the eight-node real-axis witness. The latter has maximum norm \(4\), whereas \(Q_4\) has maximum squared norm \(23\). Thus the support cardinality optimum can have **worse** real determinant and a larger norm radius. An optimized compact two-dimensional support must balance *rank, norm, sample count, determinant upper,* and the separately retained \(p\)-divisibility simultaneously.
+
+The general conjecture [H] is a **uniform two-dimensional Hermite sampling criterion** that detects full rank with substantially fewer than the old \(2(R-1)+(S-1)\) sufficient nodes and that offers bounded observation norms. Its difficulty is not explained by the finite rank transition alone; no NP-hardness or chaotic-dynamics claim is implied.
+
 ## Why this matters, and what remains open
 
 The practical next question is not to discard the established interpolation criterion. It is to find a **new, stronger, simple-to-verify sufficient condition** in terms of selected node configurations and ordinary jets that can be proved uniformly on the compact integer ellipse.
