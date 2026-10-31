@@ -1,12 +1,12 @@
 # Reverse determinant · one reading route (Phases 144–148)
 
-This is the consolidated, **finite and exploratory** thread of the [Tenth Discriminant](../../README.md) project. Read it from the repository's **\`main\` branch**, not as five competing research branches. The original problem remains a same-integer arithmetic lower bound versus geometric upper bound on an ordinary-jet Gram, ultimately transported to an *actual* imaginary quadratic field discriminant.
+This is the consolidated, **finite and exploratory** thread of the [Tenth Discriminant](../../README.md) project. Read it from the repository's **`main` branch**, not as five competing research branches. The original problem remains a same-integer arithmetic lower bound versus geometric upper bound on an ordinary-jet Gram, ultimately transported to an *actual* imaginary quadratic field discriminant.
 
 **Evidence boundary.** The original mainline [strict 47-billion field-discriminant theorem](../../lean/TenthDiscriminant/TightRadialEndpoint.lean) is Lean-checked, still awaiting independent mathematical reconstruction ([#50](https://github.com/Dojo-1/tenth-discriminant/issues/50)). A stronger thin-ellipse field endpoint is discussed in *draft* [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62): its exact-head Lean checks are separate from mathematical endorsement, and it must not be silently promoted by this branch merge. Phases144–148 do **not** assert a new number-field cutoff.
 
 ## What survives the round trip?
 
-All experiments retain the **same original ordinary \`∂_Z^j\` derivatives with \`W\` fixed**, two integer coordinate channels and original positive trace weights. Let \(E_Q(D)\) denote the integer evaluation matrix of an observation support \(Q\), \(M_Q=\mathrm{im}_{\mathbb Z}E_Q\), and \(G_Q=E_Q B_Q E_Q^\mathsf T\). The finite metric and arithmetic outputs must not be confused: equality of integral column image does not imply equality of Gram determinants, an interpolation theorem for a new support, or the original prime-mass lower bound on that new Gram.
+All experiments retain the **same original ordinary `∂_Z^j` derivatives with `W` fixed**, two integer coordinate channels and original positive trace weights. Let \(E_Q(D)\) denote the integer evaluation matrix of an observation support \(Q\), \(M_Q=\mathrm{im}_{\mathbb Z}E_Q\), and \(G_Q=E_Q B_Q E_Q^\mathsf T\). The finite metric and arithmetic outputs must not be confused: equality of integral column image does not imply equality of Gram determinants, an interpolation theorem for a new support, or the original prime-mass lower bound on that new Gram.
 
 | Round | Exact finite result / paper identity | Read | Reproduce |
 | --- | --- | --- | --- |
@@ -24,7 +24,7 @@ All experiments retain the **same original ordinary \`∂_Z^j\` derivatives with
 
 Python 3, SymPy **1.14.0**; exact integer and rational arithmetic is used for certificates. Log determinants in prose are approximations of exact integer values.
 
-\`\`\`sh
+```sh
 python3 -m pip install sympy==1.14.0
 python3 research/reverse_determinant/phase144_verifier.py
 python3 research/reverse_determinant/phase144_minimum_support.py
@@ -33,9 +33,9 @@ python3 research/reverse_determinant/phase146_translation_newton.py
 python3 research/reverse_determinant/phase147_prime_adequacy.py
 python3 research/reverse_determinant/phase148_arithmetic_chamber.py
 python3 research/reverse_determinant/phase148_fixed_lattice_period.py
-\`\`\`
+```
 
-The single [reverse-determinant CI workflow](../../.github/workflows/reverse-determinant-finite.yml) runs these bounded verifiers on \`main\` when relevant files change. For the pre-consolidation exact Phase148 receipt, [Actions #41237057425](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41237057425) passed at commit \`df9a1e789efa40d709ab2ceb83f10514bc6ec56e\`. Re-run at the final merged commit before claiming merged-head verification.
+The single [reverse-determinant CI workflow](../../.github/workflows/reverse-determinant-finite.yml) runs these bounded verifiers on `main` when relevant files change. For the pre-consolidation exact Phase148 receipt, [Actions #41237057425](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41237057425) passed at commit `df9a1e789efa40d709ab2ceb83f10514bc6ec56e`. Re-run at the final merged commit before claiming merged-head verification.
 
 ## The missing bridge
 
