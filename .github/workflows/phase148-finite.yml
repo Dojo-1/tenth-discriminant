@@ -1,0 +1,26 @@
+name: Phase148 arithmetic chamber and support minimax
+on:
+  push:
+    branches:
+      - research/phase148-arithmetic-chamber-minimax
+    paths:
+      - research/reverse_determinant/**
+      - research/ellipsoid_trimming/phase140_exact_trim.py
+      - .github/workflows/phase148-finite.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-arithmetic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned exact-math dependency
+        run: python3 -m pip install --disable-pip-version-check sympy==1.14.0
+      - name: Phase147 original-jet source and prior minimum certificates
+        run: python3 research/reverse_determinant/phase147_prime_adequacy.py
+      - name: Phase148 p-local chamber and exact minimax controls
+        run: python3 research/reverse_determinant/phase148_arithmetic_chamber.py
