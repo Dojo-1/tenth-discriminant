@@ -128,6 +128,26 @@ fn slice_harmonic(ell:i32,k:i32)->i128{
  // For odd ell, opposite axial points cancel exactly.
  for k in 0..=20 {assert_eq!(angular_harmonic(&q,1,k),0);}
 }
+// A squarefree D congruent to 3 mod 4 need NOT give a gap of
+// order rho between the two highest attained ellipse norms.
+// D=95=5*19, rho=10: (10,0) has norm 100 but (2,1) has 99.
+// This kills extrapolating a fixed-ellipse concentration rate
+// uniformly through changing (D,rho) without a Diophantine gap bound.
+#[test] fn narrow_radius_gap_counterworld(){
+ const D2:i128=95;const RR:i128=10;
+ assert_eq!(D2%4,3);assert_eq!(RR*RR-(2*2+D2),1);
+ let mut top=0i128;let mut next=0i128;
+ let mut boundary=vec![];
+ for x in -RR..=RR{for y in -RR..=RR{
+   let t=x*x+D2*y*y;
+   if t>RR*RR{continue;}
+   if t==RR*RR{boundary.push((x,y));}
+   if t>top {next=top;top=t;}
+   else if t<top && t>next {next=t;}
+ }}
+ assert_eq!(boundary,[(-10,0),(10,0)]);
+ assert_eq!(top,100);assert_eq!(next,99);
+}
 #[test] fn rational_real_shear_preserves_exact_integer_determinant(){
  let q=pts();let a=direct(&q,0,0,0,0);
  let b=direct(&q,0,0,2,0);let c=direct(&q,2,0,2,0);
