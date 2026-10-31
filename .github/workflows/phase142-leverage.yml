@@ -4,10 +4,12 @@ on:
     branches: ['research/phase142-leverage-subdeterminants']
     paths:
       - 'research/ellipsoid_trimming/phase142_leverage.py'
+      - 'research/ellipsoid_trimming/phase142_complex_minimal.py'
       - '.github/workflows/phase142-leverage.yml'
   pull_request:
     paths:
       - 'research/ellipsoid_trimming/phase142_leverage.py'
+      - 'research/ellipsoid_trimming/phase142_complex_minimal.py'
       - '.github/workflows/phase142-leverage.yml'
 permissions:
   contents: read
@@ -25,3 +27,5 @@ jobs:
           python3 --version
       - name: Exact 16-dimensional determinant updates and eight-node witness
         run: python3 research/ellipsoid_trimming/phase142_leverage.py
+      - name: Four-node exact nonreal sample and exhaustive rank controls
+        run: python3 research/ellipsoid_trimming/phase142_complex_minimal.py
