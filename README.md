@@ -123,6 +123,12 @@ On the full 21-node `D=19` pilot, an explicitly nested ellipse `6x²+95y²<=125`
 
 A new [Lean count theorem candidate](lean/TenthDiscriminant/ThinEllipseCount.lean) targets a production radius `ceil((11/25)*D^(3/4))`, smaller than the existing leading `13/25` coefficient, by applying the already proved cell-count lemma at `2R+S`. Its compile result and a revised **uniform analytic upper bound** must be certified separately: no smaller field-discriminant cutoff is yet claimed. The apparent irregularity of lattice-point thresholds is also tested as geometry, **not** labeled complexity-theoretic hardness.
 
+## Observation leverage and the limits of a point-count guard
+
+A smaller ellipse is useful only if its original ordinary-jet Gram stays positive and retains the separately proved prime factors. The [Phase142 exact-leverage study](research/ellipsoid_trimming/PHASE142_LEVERAGE_AND_UNISOLVENCE.md) evaluates the effect of dropping an antipodal pair through a **16-dimensional** determinant rather than repeating a 32-dimensional full determinant; [the exact Fraction arithmetic](research/ellipsoid_trimming/phase142_leverage.py) checks both descriptions.
+
+It also finds a revealing limit of our previous *sufficient* interpolation count. For the finite `D=19, R=8, S=J=4` experiment, eight distinct real-axis nodes already yield a positive full-rank original Gram; seven real nodes cannot, because they supply only 28 real jet columns to 32 rows. The established general guard asks for more than 17 nodes, so it is not necessary in this configuration. No claim of a uniform production improvement follows: spreading R real-axis nodes requires a radius of order R, unlike the efficient compact ellipses. The next question is whether a genuinely compact two-dimensional node set can be certified unisolvent under all original ordinary derivatives.
+
 ## Source, credit, correction
 
 The determinant/derivative method is rooted in work of **Ben Green**; the [prior-art ledger](PRIOR_ART.md) and [BEAN](BEAN.md) trace other contributors and the norm-ellipse experiment. See [Tao's geometric/adelic exposition](https://terrytao.wordpress.com/2026/10/19/a-sketch-of-the-proof-of-non-existence-of-siegel-zeroes/) and [challenge statement](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/) for the broader context. AI involvement is extensive and disclosed; passing formalization is not a claim of novelty, optimality, independent review or outside endorsement.
