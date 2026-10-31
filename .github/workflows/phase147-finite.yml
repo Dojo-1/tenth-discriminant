@@ -1,0 +1,30 @@
+name: Phase147 p-local support certificates
+on:
+  push:
+    branches:
+      - research/phase147-local-prime-adequacy
+    paths:
+      - research/reverse_determinant/**
+      - research/ellipsoid_trimming/phase140_exact_trim.py
+      - .github/workflows/phase147-finite.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-prime-support:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned SymPy
+        run: python3 -m pip install --disable-pip-version-check sympy==1.14.0
+      - name: Preserve Phase144 finite minimum
+        run: python3 research/reverse_determinant/phase144_minimum_support.py
+      - name: Preserve Phase145 parity and gluing
+        run: python3 research/reverse_determinant/phase145_ortho_anti_ambig.py
+      - name: Preserve Phase146 integer moving-frame controls
+        run: python3 research/reverse_determinant/phase146_translation_newton.py
+      - name: Test Phase147 local prime support minima and counterworld
+        run: python3 research/reverse_determinant/phase147_prime_adequacy.py
