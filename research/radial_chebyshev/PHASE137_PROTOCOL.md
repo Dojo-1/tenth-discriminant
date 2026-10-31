@@ -22,6 +22,13 @@ Its expansion has leading term Z^r W^s with coefficient exactly one, with all lo
     E_new = H E;  G_old = E B E^T;
     G_new = H G_old H^T;  det G_new = det G_old.
 
+The **exact moving-frame transport across local and real views** is also explicit. If the original inert-prime extraction is U_p E=Delta_p C_p with integral U_p, then E'=H E and integer H^{-1} give
+
+    (U_p H^{-1}) E' = Delta_p C_p,
+    (U_p H^{-1}) G' (U_p H^{-1})^T = Delta_p (C_p B C_p^T) Delta_p.
+
+Thus the new row frame cannot lose the original p-integral quotient or alter its maximal-minor Smith valuations; the integer frame changes only which Archimedean diagonal estimates are convenient. U_p and H need not commute. This is a precise transport identity (paper linear algebra), not a sheaf or holonomy theorem and not an extra divisor.
+
 The old Frobenius prime powers therefore divide the **same positive integer**. We have NOT inferred any new arithmetic divisor, altered the quadratic order, reduced Q, or substituted Hasse jets.
 
 For m>=1, the Chebyshev identity gives
