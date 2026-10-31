@@ -79,6 +79,7 @@ import TenthDiscriminant.OptimizedAnalyticCutoff
 import TenthDiscriminant.AspectRatioLowerEnvelope
 import TenthDiscriminant.TunedRadiusFamily
 import TenthDiscriminant.ThinEllipseCount
+import TenthDiscriminant.ThinRadiusAnalyticGain
 import TenthDiscriminant.TunedAnalyticCutoff
 import TenthDiscriminant.QuadraticGeneratorBridge
 import TenthDiscriminant.ImaginaryQuadraticRepresentation
