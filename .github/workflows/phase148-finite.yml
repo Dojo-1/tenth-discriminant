@@ -24,3 +24,5 @@ jobs:
         run: python3 research/reverse_determinant/phase147_prime_adequacy.py
       - name: Phase148 p-local chamber and exact minimax controls
         run: python3 research/reverse_determinant/phase148_arithmetic_chamber.py
+      - name: Phase148 exact fixed-lattice universal parameter-period certificate
+        run: python3 research/reverse_determinant/phase148_fixed_lattice_period.py
