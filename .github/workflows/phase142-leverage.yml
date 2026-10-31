@@ -1,0 +1,31 @@
+name: Phase142 exact leverage and minimal node rank controls
+on:
+  push:
+    branches: ['research/phase142-leverage-subdeterminants']
+    paths:
+      - 'research/ellipsoid_trimming/phase142_leverage.py'
+      - 'research/ellipsoid_trimming/phase142_complex_minimal.py'
+      - '.github/workflows/phase142-leverage.yml'
+  pull_request:
+    paths:
+      - 'research/ellipsoid_trimming/phase142_leverage.py'
+      - 'research/ellipsoid_trimming/phase142_complex_minimal.py'
+      - '.github/workflows/phase142-leverage.yml'
+permissions:
+  contents: read
+jobs:
+  exact-jet-block-leverage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Verify source revision
+        run: |
+          git rev-parse HEAD
+          python3 --version
+      - name: Exact 16-dimensional determinant updates and eight-node witness
+        run: python3 research/ellipsoid_trimming/phase142_leverage.py
+      - name: Four-node exact nonreal sample and exhaustive rank controls
+        run: python3 research/ellipsoid_trimming/phase142_complex_minimal.py
