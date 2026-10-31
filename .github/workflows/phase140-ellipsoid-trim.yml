@@ -1,0 +1,27 @@
+name: Phase140 nested ellipsoid exact original-jet test
+on:
+  push:
+    branches: ['research/phase140-nested-ellipsoid-trimming']
+    paths:
+      - 'research/ellipsoid_trimming/phase140_exact_trim.py'
+      - '.github/workflows/phase140-ellipsoid-trim.yml'
+  pull_request:
+    paths:
+      - 'research/ellipsoid_trimming/phase140_exact_trim.py'
+      - '.github/workflows/phase140-ellipsoid-trim.yml'
+permissions:
+  contents: read
+jobs:
+  nested-ellipse:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Confirm code and runtime
+        run: |
+          git rev-parse HEAD
+          python3 --version
+      - name: Exact positive Gram and matched sample controls
+        run: python3 research/ellipsoid_trimming/phase140_exact_trim.py

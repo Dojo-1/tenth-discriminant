@@ -115,6 +115,14 @@ The [standalone Rust controls](research/graded_moments/phase139_original_moments
 
 This is a human-reconstructible route toward a **determinant-independent analytic majorant**, not a new cutoff. The verified strict 47-billion theorem and the unresolved [semantic review #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) and [global transport #51](https://github.com/Dojo-1/tenth-discriminant/issues/51) remain unchanged.
 
+## A narrower ellipse without changing the arithmetic method
+
+The original ordinary-jet Gram and its inert-prime divisors are defined for **any finite integer observation set**, not just the original ellipse. The interpolation theorem asks only for more than `2(R-1)+(S-1)` nodes, while the old tuned radius was sized to guarantee the stronger `3R+S` count. The [Phase140 geometry study](research/ellipsoid_trimming/PHASE140_PROTOCOL.md) tests whether that excess can be removed **without altering** the field, ordinary derivatives, prime powers, or the integer determinant sandwich.
+
+On the full 21-node `D=19` pilot, an explicitly nested ellipse `6x²+95y²<=125` retains 19 nodes and the positivity guard. The [exact finite pilot](research/ellipsoid_trimming/phase140_exact_trim.py) passes [GitHub Actions](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41190304576): its full integer Gram determinant drops by approximately 17.62 in natural logarithm, and the same `3^38` inert-prime divisor still applies. Ten equal-cardinality antipodal-removal controls distinguish shape choice from merely deleting observations.
+
+A new [Lean count theorem candidate](lean/TenthDiscriminant/ThinEllipseCount.lean) targets a production radius `ceil((11/25)*D^(3/4))`, smaller than the existing leading `13/25` coefficient, by applying the already proved cell-count lemma at `2R+S`. Its compile result and a revised **uniform analytic upper bound** must be certified separately: no smaller field-discriminant cutoff is yet claimed. The apparent irregularity of lattice-point thresholds is also tested as geometry, **not** labeled complexity-theoretic hardness.
+
 ## Source, credit, correction
 
 The determinant/derivative method is rooted in work of **Ben Green**; the [prior-art ledger](PRIOR_ART.md) and [BEAN](BEAN.md) trace other contributors and the norm-ellipse experiment. See [Tao's geometric/adelic exposition](https://terrytao.wordpress.com/2026/10/19/a-sketch-of-the-proof-of-non-existence-of-siegel-zeroes/) and [challenge statement](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/) for the broader context. AI involvement is extensive and disclosed; passing formalization is not a claim of novelty, optimality, independent review or outside endorsement.
