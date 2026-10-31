@@ -83,7 +83,7 @@ This distinction matters when comparing our trace-Gram method with the [external
 
 ## Reproduce the record
 
-Pinned toolchain: **Lean 4.19.0**, [Mathlib commit `c44e0c8`](lean/lake-manifest.json). From the repository root:
+Pinned toolchain: **Lean 4.19.0**, **Mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b`**. From the repository root:
 
 ```sh
 cd lean
