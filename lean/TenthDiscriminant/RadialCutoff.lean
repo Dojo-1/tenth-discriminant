@@ -24,16 +24,19 @@ theorem integer_det_positive (Q : Finset (Int × Int)) (D R S : Nat)
       hR hS le_rfl hcount).det_pos
   exact_mod_cast hp
 
-/-- Each distinct prime contributes to the SAME positive original integer. -/
-theorem prime_mass_log_lower (Q : Finset (Int × Int)) (D R S : Nat)
+/-- Prime mass acts on the SAME original integer Gram, with positivity supplied
+directly rather than inferred from a sufficient interpolation cardinality guard.
+No claim about how positivity for a new observation support is established. -/
+theorem prime_mass_log_lower_of_det_pos (Q : Finset (Int × Int)) (D R S : Nat)
     (hD : 0 < D) (hR : 1 ≤ R) (hS : 1 ≤ S)
-    (hcard : 2*(R-1)+(S-1) < Q.card) [Fact ((D : Int)%4=3)] (hsq : Squarefree D)
+    (hdet : 0 < (integerRectangularTraceGram Q D S R S).det)
+    [Fact ((D : Int)%4=3)] (hsq : Squarefree D)
     (hclass : NumberField.classNumber (QuadraticField (((D : Int)+1)/4))=1)
     (hRcut : (R : Int) < ((D : Int)+1)/4) :
     exactOddPrimeMass R S ≤ Real.log ((integerRectangularTraceGram Q D S R S).det : Real) := by
   let P := oddPrimesBelow R
   let z := (integerRectangularTraceGram Q D S R S).det
-  have hz : 0 < z := integer_det_positive Q D R S hD hR hS hcard
+  have hz : 0 < z := hdet
   have hprime (p : Nat) (hp : p ∈ P) : p.Prime := (Finset.mem_filter.mp hp).2.1
   have hlocal (p : Nat) (hp : p ∈ P) : (p : Int)^(2*valuationWeight R S p) ∣ z := by
     letI : Fact p.Prime := ⟨hprime p hp⟩
@@ -62,6 +65,19 @@ theorem prime_mass_log_lower (Q : Finset (Int × Int)) (D R S : Nat)
       exact (pow_pos (hppos p hp) _).ne'
   rw [he] at hlog
   exact hlog
+
+
+/-- The existing point-count lemma is a conservative sufficient positivity
+certificate; retain the public interface so all established callers and
+field-level theorems continue to use their original assumptions. -/
+theorem prime_mass_log_lower (Q : Finset (Int × Int)) (D R S : Nat)
+    (hD : 0 < D) (hR : 1 ≤ R) (hS : 1 ≤ S)
+    (hcard : 2*(R-1)+(S-1) < Q.card) [Fact ((D : Int)%4=3)] (hsq : Squarefree D)
+    (hclass : NumberField.classNumber (QuadraticField (((D : Int)+1)/4))=1)
+    (hRcut : (R : Int) < ((D : Int)+1)/4) :
+    exactOddPrimeMass R S ≤ Real.log ((integerRectangularTraceGram Q D S R S).det : Real) := by
+  exact prime_mass_log_lower_of_det_pos Q D R S hD hR hS
+    (integer_det_positive Q D R S hD hR hS hcard) hsq hclass hRcut
 
 theorem recovered_normalized_lower (D : Nat) (hD : 41006250000 ≤ D) :
     (999997/1000000 : Real)*Real.log D-5739/1000 ≤
