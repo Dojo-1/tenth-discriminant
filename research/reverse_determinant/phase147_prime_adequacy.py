@@ -170,6 +170,9 @@ def local_failure_control(d,H,Q):
  print('CONTROL D21: mod2/3/5 all full, but index=7^4; mod7 rank=28',flush=True)
 
 def main():
+ # Matched geometry: same lattice points, only arithmetic parameter D changes.
+ assert qellipse(17)==qellipse(18)==qellipse(19)==qellipse(21)
+ assert qellipse(23)==qellipse(24)
  assert qellipse(19)==REPO_D19
  assert original_eval(REPO_D19,19)==REPO_E19(REPO_D19)
  axis=original_eval([(x,0) for x in range(-4,4)],19)
