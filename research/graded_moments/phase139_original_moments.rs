@@ -108,6 +108,26 @@ fn slice_harmonic(ell:i32,k:i32)->i128{
    assert!(angular_harmonic(&q,ell,k).abs()<=radial(&q,k+ell/2));
  }}
 }
+// Boundary concentration: at norm 25 the ONLY points are (+/-5,0).
+// All remaining 19 nodes have norm <= 23. For any fixed EVEN ell,
+// 0 <= mu_(k+ell/2)-H_(ell,k) <= 38*23^(k+ell/2).
+// Its denominator is >=2*25^(k+ell/2), so H/mu -> 1.
+#[test] fn finite_boundary_localization_and_angular_sign_change(){
+ let q=pts();
+ assert_eq!(q.iter().filter(|z|z.0*z.0+D*z.1*z.1==25).count(),2);
+ assert!(angular_harmonic(&q,2,7)<0);
+ assert!(angular_harmonic(&q,2,8)>0);
+ for ell in [2i32,4i32]{for k in 0i32..=20 {
+   let m=k+ell/2;
+   let denominator=radial(&q,m);
+   let defect=denominator-angular_harmonic(&q,ell,k);
+   assert!(defect>=0);
+   assert!(defect<=38*23i128.pow(m as u32));
+   assert!(denominator>=2*25i128.pow(m as u32));
+ }}
+ // For odd ell, opposite axial points cancel exactly.
+ for k in 0..=20 {assert_eq!(angular_harmonic(&q,1,k),0);}
+}
 #[test] fn rational_real_shear_preserves_exact_integer_determinant(){
  let q=pts();let a=direct(&q,0,0,0,0);
  let b=direct(&q,0,0,2,0);let c=direct(&q,2,0,2,0);
