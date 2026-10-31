@@ -284,6 +284,44 @@ mod tests{
             }}
         }
     }
+    // The Chebyshev sup-norm frame is not the integer Sobolev optimum
+    // even for one original row. Here r=s=2, only j=0 depends on the
+    // constant c in (ZW-12)^2+c; all other ordinary jets are identical.
+    // Exact formula on ALL 21 original ellipse points and j=0..3:
+    // G_22(c)=666616+6960*c+42*c*c.
+    // The unique integer minimizer is c=-83, not Chebyshev c=-86.
+    // For t=c+83, G_22(c)-G_22(-83)=6*t*(7*t-2)>=0 on all Z.
+    #[test]fn integer_sobolev_optimum_for_square_row(){
+        let q=points();
+        let (centered,cheb,_,_)=polynomial_frames();
+        let mut sum=0i128;
+        for z in &q {
+            let u=z.normsq();sum+=(u-12)*(u-12);
+        }
+        assert_eq!((q.len(),sum),(21,1740));
+        let row_diag=|c:i128| -> i128 {
+            let mut poly=centered[2].clone();
+            poly[0]+=c;
+            let mut total=0i128;
+            for z in &q { for j in 0..J {
+                let v=expansion_jet(2,2,j,*z,&poly);
+                total+=2*v.normsq();
+            }}
+            total
+        };
+        assert_eq!((row_diag(0),row_diag(-86),row_diag(-83)),
+                   (666616,378688,378274));
+        assert_eq!(cheb[2][0],centered[2][0]-86);
+        for c in -300i128..=300 {
+            assert_eq!(row_diag(c),666616+6960*c+42*c*c);
+            let t=c+83;
+            assert_eq!(row_diag(c)-row_diag(-83),6*t*(7*t-2));
+            assert!(row_diag(c)>=row_diag(-83));
+        }
+        // Positive and negative perturbations immediately worsen cost.
+        assert_eq!(row_diag(-82)-row_diag(-83),30);
+        assert_eq!(row_diag(-84)-row_diag(-83),54);
+    }
     #[test]fn false_pointwise_improvement_is_rejected(){
         let(c,t,_,_)=polynomial_frames();let z=Q{a:-4,b:0};
         assert!(expansion_jet(2,2,0,z,&t[2]).normsq() >
