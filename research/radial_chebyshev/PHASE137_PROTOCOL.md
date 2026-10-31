@@ -51,6 +51,34 @@ The preliminary exact-integer calculations predict (NOT yet CI certified): G_cen
 
 **Necessary negative control:** no pointwise claim is licensed. At original node z=-4 and row (r,s)=(2,2), derivative j=0, the squared jet norm changes from 256 to 4900: the new polynomial is WORSE at that individual node. Only the sum over the original nodes and derivative slots happens to improve in this example. At large J, derivative amplification is a likely obstruction.
 
+## An additional exact finite extremal question: Chebyshev is not the Sobolev optimum
+
+This is a direct exercise in the practice of **refuting the strongest attractive statement**. The initial minimax intuition suggests that a Chebyshev basis should be optimal. But the actual objective is a finite positive *jet* Gram, not the uniform norm of an undifferentiated polynomial. On the original D=19, rho=5 complete ellipse, freeze r=s=2, a=12 and the monic one-parameter family
+
+    f_c(Z,W)=(ZW-12)^2+c,   c in Z.
+
+Because ordinary differentiation is with respect to Z holding W fixed, all j>=1 jets are independent of c for this particular row. Write u(q)=x^2+19y^2 for the actual 21 ellipse nodes. Exact integer sums give
+
+    sum_Q (u-12)^2 = 1740,
+    sum_Q 1 = 21.
+
+With the original factor-two trace weights, the complete J=4 diagonal cost is therefore
+
+    C(c)=666616 + 6960*c + 42*c^2.
+
+The Chebyshev recurrence has c=-86 and C(-86)=378688. The **unique integer optimum** is c=-83 and C(-83)=378274 (further improvement of 414). For integer t=c+83,
+
+    C(c)-C(-83)=6*t*(7*t-2) >= 0.
+
+This inequality is elementary for all integers t; the [Rust source](phase137_chebyshev_frame.rs) exercises the formula on a broad interval and re-derives each cost from all original nodes and ordinary derivatives. Unlike the production conjecture, the *mathematical claim* has a short paper proof. It is a finite counterexample to the conjecture that a sup-norm Chebyshev choice minimizes the full discrete jet-Sobolev diagonal. The coefficient change is a unitriangular integral row shear and preserves the very same determinant and inert-prime divisor.
+
+The deeper follow-up is to characterize, rather than merely optimize numerically, the **integer Sobolev projection defect**. Let G be the positive definite integer Gram on the same E, choose row i and earlier rows J, let A=G_(J,J), v=G_(J,i), c=G_(i,i). For k∈Z^|J|, the exact transformed diagonal is
+
+    c(k)=c-2*k^T*v + k^T*A*k
+        =c-v^T A^(-1)v + (k-A^(-1)v)^T A (k-A^(-1)v).
+
+A is positive definite and invertible over Q, so this is a closest-vector problem in the ellipsoid norm A with **integer** k, not continuous Gram-Schmidt. The elementary complete-square identity gives an exact target and a falsification protocol. A uniform improvement still requires proof that the projection term beats the integral rounding defect, for enough production rows, with the original high-order jets in A and v. This is related to classical lattice/Gauss/LLL reduction and discrete Sobolev orthogonality; no claim of new general theory is made.
+
 ## Three genuinely falsifiable research questions
 
 **Q1, highest priority [H]: Can a derivative-aware Chebyshev integer frame uniformly improve our PRODUCTION Hadamard bound by 43/10000?** For every admissible D≥46,000,000,000 and the unchanged Tuned.R D, Tuned.S D, Tuned.rho D, J=S and original full ellipse, seek:
