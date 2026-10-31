@@ -1,0 +1,48 @@
+# Reverse determinant · one reading route (Phases 144–148)
+
+This is the consolidated, **finite and exploratory** thread of the [Tenth Discriminant](../../README.md) project. Read it from the repository's **`main` branch**, not as five competing research branches. The original problem remains a same-integer arithmetic lower bound versus geometric upper bound on an ordinary-jet Gram, ultimately transported to an *actual* imaginary quadratic field discriminant.
+
+**Evidence boundary.** The original mainline [strict 47-billion field-discriminant theorem](../../lean/TenthDiscriminant/TightRadialEndpoint.lean) is Lean-checked, still awaiting independent mathematical reconstruction ([#50](https://github.com/Dojo-1/tenth-discriminant/issues/50)). A stronger thin-ellipse field endpoint is discussed in *draft* [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62): its exact-head Lean checks are separate from mathematical endorsement, and it must not be silently promoted by this branch merge. Phases144–148 do **not** assert a new number-field cutoff.
+
+## What survives the round trip?
+
+All experiments retain the **same original ordinary `∂_Z^j` derivatives with `W` fixed**, two integer coordinate channels and original positive trace weights. Let \(E_Q(D)\) denote the integer evaluation matrix of an observation support \(Q\), \(M_Q=\mathrm{im}_{\mathbb Z}E_Q\), and \(G_Q=E_Q B_Q E_Q^\mathsf T\). The finite metric and arithmetic outputs must not be confused: equality of integral column image does not imply equality of Gram determinants, an interpolation theorem for a new support, or the original prime-mass lower bound on that new Gram.
+
+| Round | Exact finite result / paper identity | Read | Reproduce |
+| --- | --- | --- | --- |
+| **144** · Reverse determinant | A 6-point minimal integral-image witness for the fixed \(D=19,R=8,S=J=4,\rho=5\) ellipse; full/thin Smith factors and an exceptional \(2^{10}\) quotient for another support | [Dossier](PHASE144_REVERSE_DETERMINANT.md) · [#63](https://github.com/Dojo-1/tenth-discriminant/issues/63) | [Lattice scan](phase144_verifier.py) · [minimum-support certificate](phase144_minimum_support.py) |
+| **145** · Ortho/anti/ambig | Real parity cross-coupling and nontrivial \(\mathbb Z/2\) integral gluing are distinct. The observed \(2^{10}\) jump arises from pure parity sublattices, **not** changed gluing; a nonzero SPD tangent commutator is **not** a measured loop holonomy | [Dossier](PHASE145_ORTHO_ANTI_AMBIG.md) · [#64](https://github.com/Dojo-1/tenth-discriminant/issues/64) | [Verifier](phase145_ortho_anti_ambig.py) |
+| **146** · Moving integer frame | Exact unitriangular translation \(E_{Q+a}=T_a E_Q\), moving-grading invariance, typed translation-lattice quotients. A valid horizontal Newton support cap fails to trim at the proposed production floor | [Dossier](PHASE146_TRANSLATION_NEWTON.md) · [#65](https://github.com/Dojo-1/tenth-discriminant/issues/65) | [Verifier](phase146_translation_newton.py) |
+| **147** · Prime-local adequacy | Eight exhaustive finite minimal support sizes, with a **7-primary** counterexample to checking just primes \(2,3,5\). Same sampling geometry can have different arithmetic minima | [Dossier](PHASE147_PRIME_ADEQUACY.md) · [#66](https://github.com/Dojo-1/tenth-discriminant/issues/66) | [Verifier](phase147_prime_adequacy.py) |
+| **148** · Parameter chamber | For fixed same 21 nodes, \(D=17,\ldots,21\), **9** common points are sufficient and globally minimal. A 9-point support minimizes the **raw diagonal Hadamard** upper among all adequate 9-point supports. The fixed-coordinate matrix family has a separately typed universal column-congruence period **529,200** modulo a D-independent real-axis lattice | [Dossier](PHASE148_ARITHMETIC_CHAMBER.md) · [#67](https://github.com/Dojo-1/tenth-discriminant/issues/67) | [Chamber certificate](phase148_arithmetic_chamber.py) · [period certificate](phase148_fixed_lattice_period.py) |
+
+**One finite two-way obstruction.** For the 21 fixed points at \(D=17,18\), an exhaustive search of all \({21\choose8}=203,490\) supports shows no common 8-point support can preserve the integral image: every joint binary-rank candidate loses ternary rank at \(D=18\). A concrete 9-point support passes exact Hermite equality for all \(D=17,\ldots,21\). **The proof is finite/exhaustive and code-checked, not a uniform statement over fields.**
+
+**One all-integer-parameter statement, with a different scope.** The D-independent eight-real-axis-column lattice contains the changes \(E_\Omega(D+529200)-E_\Omega(D)\) for **all integer D**, with \(\Omega\) frozen to the same 21 coordinate pairs. This follows from integer-valued polynomial finite differences after six exact evaluations, plus a nontrivial Smith exponent. It does **not** assert periodicity of the *varying ellipse* \(\Omega_D\), of the D-dependent trace metric, or of the arithmetic class-number assumptions.
+
+## Reproduce on the one canonical branch
+
+Python 3, SymPy **1.14.0**; exact integer and rational arithmetic is used for certificates. Log determinants in prose are approximations of exact integer values.
+
+```sh
+python3 -m pip install sympy==1.14.0
+python3 research/reverse_determinant/phase144_verifier.py
+python3 research/reverse_determinant/phase144_minimum_support.py
+python3 research/reverse_determinant/phase145_ortho_anti_ambig.py
+python3 research/reverse_determinant/phase146_translation_newton.py
+python3 research/reverse_determinant/phase147_prime_adequacy.py
+python3 research/reverse_determinant/phase148_arithmetic_chamber.py
+python3 research/reverse_determinant/phase148_fixed_lattice_period.py
+```
+
+The single [reverse-determinant CI workflow](../../.github/workflows/reverse-determinant-finite.yml) runs these bounded verifiers on `main` when relevant files change. For the pre-consolidation exact Phase148 receipt, [Actions #41237057425](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41237057425) passed at commit `df9a1e789efa40d709ab2ceb83f10514bc6ec56e`. Re-run at the final merged commit before claiming merged-head verification.
+
+## The missing bridge
+
+The candidate next theorem is **not** merely “find fewer points.” It is to construct original-ordinary-jet supports \(Q(D)\) on a legitimate parameter family with:
+
+1. exact prime-local/Smith control of the same integral observation image and honest treatment of changed support,
+2. an independent interpolation/prime-mass lower theorem applying to \(G_{Q(D)}\), **not inherited from \(G_\Omega\) by image equality**, and
+3. a uniform inverse-Gram-free analytic upper for **that same integer \(\det G_{Q(D)}\)**.
+
+A finite support minimum, moving frame, or p-adic periodicity does not discharge these obligations. Independent mathematical reconstruction and draft proof review remain separate [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50), [#51](https://github.com/Dojo-1/tenth-discriminant/issues/51), [PR #61](https://github.com/Dojo-1/tenth-discriminant/pull/61), [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62).
