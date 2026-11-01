@@ -59,6 +59,10 @@ For the illustrative `D=163,p=31,R=30,S=5` case, a characteristic selection uses
 
 [Phase158 — readable mathematical dossier](research/reverse_determinant/PHASE158_CHARACTERISTIC_JETS.md) · [Exact verifier](research/reverse_determinant/phase158_characteristic_jets.py) · [Full Phases144–158 research index](research/reverse_determinant/README.md)
 
+## A stronger field endpoint — proof candidate only
+
+The original Gram's new binary divisor points to an [actual-field 41,006,250,000 cutoff](research/reverse_determinant/PHASE163_BINARY_41B_ENDPOINT.md): the already-certified geometric threshold is (450^4), and adding only a conservative (1/8) normalized binary gain closes the old lower/upper gap with rational margin (0.010428). [Three short Lean modules](lean/TenthDiscriminant/BinaryFortyOneBillion.lean) encode the proposed field bridge on a temporary branch. **This remains an unmerged, unverified Lean theorem candidate; the currently accepted 47-billion field bound is unchanged.**
+
 ## CI correction and the next lower-bound experiment
 
 The November 1 whole-root Lean check [failed](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41333838041): a Phase157 π-window experiment imported a module missing from pinned Mathlib. Its exact source has been [quarantined](research/graveyard/PHASE157_PI_WINDOW_UNCOMPILED.lean), with **no change to the original accepted 47-billion theorem**. Restoring a green whole-root build is a separate verification gate. [Phase162's binary-null construction](research/reverse_determinant/PHASE162_BINARY_NULL_LOWER.md) derives progressively stronger paper-level binary divisors of that **same** Gram using unimodular differential-null row bases (finite D163 floor now 1358); the new [univariate source-to-Gram Lean theorem](lean/TenthDiscriminant/BinaryNullTraceGram.lean) is now included in the production import tree for an exact-head whole-project CI check. The four-generator 1358 exponent remains paper-level until its own row factorization is formalized. No stronger field cutoff is claimed.
