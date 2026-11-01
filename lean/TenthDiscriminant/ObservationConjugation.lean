@@ -32,10 +32,8 @@ theorem pairConj_mul (D : Nat) (a b : Int × Int) :
     pairConj (pairMul D a b) =
       pairMul D (pairConj a) (pairConj b) := by
   apply Prod.ext
-  · simp [pairConj, pairMul]
-    ring
-  · simp [pairConj, pairMul]
-    ring
+  · simp [pairConj, pairMul] <;> ring
+  · simp [pairConj, pairMul] <;> ring
 
 theorem pairConj_scale (c : Int) (a : Int × Int) :
     pairConj (pairScale c a) = pairScale c (pairConj a) := by
