@@ -68,3 +68,5 @@ jobs:
         run: python3 research/reverse_determinant/phase161_symmetry_controls.py
       - name: Phase162 source-matched binary-null lower and negative controls
         run: python3 research/reverse_determinant/phase162_binary_null_lower.py
+      - name: Phase162 differential-null syzygy original-jet control
+        run: python3 research/reverse_determinant/phase162_null_syzygy.py

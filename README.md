@@ -61,7 +61,7 @@ For the illustrative `D=163,p=31,R=30,S=5` case, a characteristic selection uses
 
 ## CI correction and the next lower-bound experiment
 
-The November 1 whole-root Lean check [failed](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41333838041): a Phase157 π-window experiment imported a module missing from pinned Mathlib. Its exact source has been [quarantined](research/graveyard/PHASE157_PI_WINDOW_UNCOMPILED.lean), with **no change to the original accepted 47-billion theorem**. Restoring a green whole-root build is a separate verification gate. [Phase162's binary-null construction](research/reverse_determinant/PHASE162_BINARY_NULL_LOWER.md) derives a stronger paper-level (2)-adic divisor of that **same** Gram using a unimodular row basis; its source tests and partial Lean gates remain separate from a completed formal determinant proof. No stronger field cutoff is claimed.
+The November 1 whole-root Lean check [failed](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41333838041): a Phase157 π-window experiment imported a module missing from pinned Mathlib. Its exact source has been [quarantined](research/graveyard/PHASE157_PI_WINDOW_UNCOMPILED.lean), with **no change to the original accepted 47-billion theorem**. Restoring a green whole-root build is a separate verification gate. [Phase162's binary-null construction](research/reverse_determinant/PHASE162_BINARY_NULL_LOWER.md) derives progressively stronger paper-level binary divisors of that **same** Gram using unimodular differential-null row bases (finite D163 floor now 1358); its source tests and partial Lean gates remain separate from a completed formal determinant proof. No stronger field cutoff is claimed.
 
 ## Observation symmetries and their limits
 
