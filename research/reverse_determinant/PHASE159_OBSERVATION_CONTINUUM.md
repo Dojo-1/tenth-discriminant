@@ -1,12 +1,12 @@
 # Phase159 — Observation continua, lattice transport, and deletion obstructions
 
-*1 November 2026; exact source basis: main commit \`d1af5bac2ca51e4066eebd01831ccc82fbfe5c4a\` (Phase158). The exact tests below are independently executable finite experiments, **not** a stronger field theorem.*
+*1 November 2026; exact source basis: main commit `d1af5bac2ca51e4066eebd01831ccc82fbfe5c4a` (Phase158). The exact tests below are independently executable finite experiments, **not** a stronger field theorem.*
 
 Rather than treating every observation set as an unrelated Gram, we can regard the source ordinary-jet matrices as configurations of one observation system. This is useful only if real continuity and finite-prime arithmetic remain separately legible.
 
 ## The source object, no substitution
 
-The original integer pair is \`x+y sqrt(-D)\`. For rows \`(r,s)\`, ordinary partial \`Z\` jets of \`Z^r W^s\` hold \`W\` fixed. The effective integer channel columns of \`E_Q\` have positive diagonal metric \`B_Q=diag(2,2D)\` for nonreal points and a single nonzero real channel with weight 2 at a real-axis point. Deleting the identically zero imaginary columns on the real axis changes neither the trace Gram nor its determinant.
+The original integer pair is `x+y sqrt(-D)`. For rows `(r,s)`, ordinary partial `Z` jets of `Z^r W^s` hold `W` fixed. The effective integer channel columns of `E_Q` have positive diagonal metric `B_Q=diag(2,2D)` for nonreal points and a single nonzero real channel with weight 2 at a real-axis point. Deleting the identically zero imaginary columns on the real axis changes neither the trace Gram nor its determinant.
 
 \[
 G_Q=E_QB_QE_Q^{\mathsf T}.
@@ -72,7 +72,7 @@ The factorial lower bound, lattice index and actual Gram valuation are different
 
 ## Proof obligations, no premature cutoff
 
-The existing [\`prime_mass_log_lower_of_det_pos\`](../../lean/TenthDiscriminant/RadialCutoff.lean) already accepts arbitrary Q **conditional on positivity** and the class-number-one, squarefree, congruence and prime-range hypotheses. The Phase159 proof path is therefore to formalize the Frobenius \(p\)-root rank-to-positivity bridge on the **same original Gram**, the factorial Cauchy–Binet divisor, its coprime conjunction with *existing* odd-prime mass, and a uniform same-support analytic upper. A \(p-1\)-root optimization is conditional and needs a **uniform obstruction nonvanishing certificate** for a competitive-radius support family; finite successes are not enough.
+The existing [`prime_mass_log_lower_of_det_pos`](../../lean/TenthDiscriminant/RadialCutoff.lean) already accepts arbitrary Q **conditional on positivity** and the class-number-one, squarefree, congruence and prime-range hypotheses. The Phase159 proof path is therefore to formalize the Frobenius \(p\)-root rank-to-positivity bridge on the **same original Gram**, the factorial Cauchy–Binet divisor, its coprime conjunction with *existing* odd-prime mass, and a uniform same-support analytic upper. A \(p-1\)-root optimization is conditional and needs a **uniform obstruction nonvanishing certificate** for a competitive-radius support family; finite successes are not enough.
 
 The formally recorded actual-field bound remains **47 billion**, with independent semantic reconstruction open. The **5-billion** endpoint is a candidate only. Phase159 itself adds no Lean theorem, does not verify a new field cutoff, and must not treat a cancelled Lean workflow as successful.
 
@@ -81,7 +81,7 @@ The formally recorded actual-field bound remains **47 billion**, with independen
 The tenth-discriminant investigation responds to [Terence Tao's challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/), including antecedents by Ben Green, Roelof van Dijk and Kyle Pratt, with other challenge contributors recorded in [prior art](../../PRIOR_ART.md). [Miguel N. Walsh's ICM 2018 lecture](https://www.mathunion.org/fileadmin/ICM/Proceedings/uploads/ICM-2018-vol2-ver1-eb.pdf) motivates characteristic subsets, but does not assert this specific jet or obstruction theorem. Cauchy–Binet, confluent Vandermonde, the matrix-determinant lemma and Hermite interpolation are classical. The finite combinatorial organization relates to **arithmetic matroids** (Michele D'Adderio and Luca Moci), **valuated matroids** (Andreas Dress and Walter Wenzel), and determinantal-stability literature (Julius Borcea, Petter Brändén and Thomas Liggett); no direct application of their theorems to our field cutoff is asserted. These experiments were developed in Jesús Vilela Jato's Dojo-1 AI-assisted research programme; model-generated self-tests are not independent mathematical refereeing.
 
 Reproduce the bounded Python checks with SymPy 1.14.0:
-\`\`\`sh
+```sh
 python3 research/reverse_determinant/phase159_observation_continuum.py
 python3 research/reverse_determinant/phase159_padic_gram.py
-\`\`\`
+```
