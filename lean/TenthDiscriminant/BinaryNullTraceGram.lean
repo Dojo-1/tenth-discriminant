@@ -72,6 +72,13 @@ theorem binaryNullBasisExponent_sum (R S : Nat) :
   rw [hrewrite]
   simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin,
     nsmul_eq_mul, ← Finset.mul_sum, Finset.sum_fin_eq_sum_range]
+  have hguard :
+      (∑ x ∈ Finset.range R, if h : x < R then x / 4 else 0) =
+        ∑ x ∈ Finset.range R, x / 4 := by
+    apply Finset.sum_congr rfl
+    intro x hx
+    simp [Finset.mem_range.mp hx]
+  rw [hguard]
 
 /-- An unconditional divisor for the original integer trace Gram.
 Positivity is NOT required for divisibility; it is needed only to take
