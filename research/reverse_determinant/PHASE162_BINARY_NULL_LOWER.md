@@ -31,6 +31,67 @@ and higher derivatives vanish. Thus *every* ordinary derivative of \(F\), includ
 
 This derivative-level statement is the decisive improvement over an ordinary pointwise Frobenius congruence. A tempting smaller \(Z^2-Z\) **fails**: at \(z=\sqrt{-3}\), its imaginary coordinate is odd. In fact \(F\) has **minimal degree among monic integer polynomials whose reduction mod 2 has zero formal derivative and which vanish on all selected integer-pair points**: derivative zero forces a polynomial \(h(Z^2)\) mod 2; evaluation at \(Z=0,1\) forces \(h(0)=h(1)=0\), hence \(\deg h\ge2\) and \(\deg F\ge4\). This is optimality within that precisely stated class, *not* global optimality of all lower-bound constructions.
 
+## One binary differential-null ideal, rather than a growing collection of tricks
+
+There is a concise algebraic reason the later generators fit together.
+Define \(\mathcal N_{D,2}\subseteq\mathbb Z[Z,W]\) by requiring
+\(\partial_Z^j P(z,\bar z)\in2\mathcal O_D\) for **every** \(j\ge0\) and
+integer-pair \(z\in\mathcal O_D=\mathbb Z[\sqrt{-D}]\), always holding
+\(W\) fixed during the differentiation. An elementary calculation gives
+
+$
+\boxed{\mathcal N_{D,2}
+=(\,2,\ Z^2-W^2,\ W^4-W^2\,).}
+$
+
+Here is a reconstruction without relying on a Gröbner implementation.
+For either parity of \(D\), the four-element ring
+\(\mathcal O_D/2\cong\mathbb F_2[\varepsilon]/(\varepsilon^2)\):
+if \(D\) is even take \(\varepsilon=\sqrt{-D}\), and if \(D\) is odd
+take \(\varepsilon=1+\sqrt{-D}\).
+Also \(\bar z=z\pmod2\). Every ordinary derivative of order at least
+two is an even integer polynomial, so only the value and first
+partial-\(Z\) derivative matter modulo two.
+
+For \(f(T)\in\mathbb F_2[T]\), the formula
+\(f(a+b\varepsilon)=f(a)+b\varepsilon f'(a)\) shows that
+\(f\) vanishes on *all four* dual-number elements iff
+\(f(0)=f(1)=f'(0)=f'(1)=0\), i.e.
+\((T^2-T)^2=T^4-T^2\) divides \(f\).
+Now write \(P(W+\Delta,W)=\sum_{j\ge0}a_j(W)\Delta^j\) over
+\(\mathbb F_2\), with \(\Delta=Z-W\). The diagonal value and first
+partial-\(Z\) derivative are exactly \(a_0(W)\) and \(a_1(W)\).
+Both vanish on all residue samples iff they are multiples of
+\(W^4-W^2\). Therefore the reduced ideal is
+\(((Z-W)^2,W^4-W^2)\), whose integral inverse image is the boxed
+ideal above because \((Z-W)^2\equiv Z^2-W^2\pmod2\).
+
+In particular,
+\[
+F(Z)=(Z^2-W^2)(Z^2+W^2-1)+(W^4-W^2),
+\]
+and
+\[
+K(Z,W)=(Z^2-W^2)(W^2-1)+(W^4-W^2).
+\]
+The four source polynomials are not four independent assumptions:
+two are derived leading-term combinations. This classification is
+**paper-level, not Lean-checked**. It explains why systematic
+leading-term completion inside the original finite rectangle, rather
+than an unbounded list of new generators, is the right optimization
+problem. The modulo-two quotient has the eight monomial classes
+\(W^j,ZW^j\) for \(0\le j<4\). Thus any original source
+evaluation system covering all four residue classes, with
+\(R\ge2,S\ge4\), has characteristic-two rank exactly eight.
+That is the rank of the *integer evaluation matrix*, not of the
+weighted Gram reduced modulo two.
+
+Null polynomials on finite dual-number rings have prior literature,
+notably Al-Ezeh, Al-Maktry and Frisch, *Mathematica Slovaca* (2021),
+[DOI:10.1515/ms-2021-0039](https://doi.org/10.1515/ms-2021-0039).
+The specialized conjugate-jet ideal computation is not presented as
+a claim of globally novel dual-number theory.
+
 ## A unimodular row basis; no new Gram
 
 Let \(R,S\ge1\), \(M=RS\), and \(J=S\) as in production. Index the original rows by \(0\le r<R,\ 0\le s<S\). Define \(k_r=\lfloor r/4\rfloor\) and replace the row monomial by

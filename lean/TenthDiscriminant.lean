@@ -35,6 +35,9 @@ import TenthDiscriminant.ObservationConjugation
 import TenthDiscriminant.BinaryNullPolynomial
 import TenthDiscriminant.BinaryNullOrdinaryJets
 import TenthDiscriminant.BinaryNullBasisMatrix
+import TenthDiscriminant.BinaryNullRowAction
+import TenthDiscriminant.BinaryGramGeneric
+import TenthDiscriminant.BinaryNullTraceGram
 import TenthDiscriminant.BinaryPrimeMassBridge
 import TenthDiscriminant.QuadraticCoordinates
 import TenthDiscriminant.ResidueTraceGram
