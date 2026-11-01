@@ -79,6 +79,7 @@ theorem binaryNullBasisExponent_sum (R S : Nat) :
     intro x hx
     simp [Finset.mem_range.mp hx]
   rw [hguard]
+  simp
 
 /-- An unconditional divisor for the original integer trace Gram.
 Positivity is NOT required for divisibility; it is needed only to take
