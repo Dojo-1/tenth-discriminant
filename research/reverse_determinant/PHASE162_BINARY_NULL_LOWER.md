@@ -147,6 +147,41 @@ The choice of \(b\) is maximal within this two-factor row family: when \(b\) inc
 
 At \(R=30,S=5\), the floors are \(1130\to1242\), a further **112** guaranteed binary exponents in the very same \(150\)-row Gram. At \(R=8,S=4\), \(64\to80\). The [source-matched verifier](phase162_binary_null_lower.py) expands the row polynomials exactly, preserving ordinary derivatives and trace channels, and tests these claims for \(D=2,3,19,163\). The full mixed-row factorization is **not yet formalized in Lean** and no uniform numerical field bound follows.
 
+## A third generator, from the conjugate coordinate [P-paper / M]
+
+We can do slightly better without introducing a new observation or a new derivative. Because the original derivative holds \(W\) fixed, the polynomial \(F(W)=W^4-W^2\) has **zero positive-order partial-\(Z\)** derivatives, while \(F(\bar z)\in2\mathcal O_D\) at every integer-pair point.
+
+Put \(c_s=\lfloor s/4\rfloor\). Keep the \(a_{r,s},b_{r,s}\) above and change the row to
+
+$
+P^\star_{r,s}=
+Z^{r-4a-2b}\,
+W^{s-4c_s}\,
+F(Z)^a\,
+\bigl(Z^2-W^2\bigr)^b\,
+F(W)^{c_s}.
+$
+
+The leading monomial is exactly \(Z^rW^s\), with coefficient one. Its other terms have lower \(Z\)-degree or, at equal \(Z\)-degree, lower \(W\)-degree. All exponents are inside the original rectangle because \(4a+2b\le r\), \(4c_s\le s\), and \(s+2b<S\). The integral change of rows is again unitriangular. The ordinary jets contain \(2^{a+b+c_s}\), so
+
+$
+\boxed{
+2^{\Lambda_3(R,S)}\mid\det G_Q,\qquad
+\Lambda_3=RS+
+2\sum_{r=0}^{R-1}\sum_{s=0}^{S-1}
+\bigl(a_{r,s}+b_{r,s}+\lfloor s/4\rfloor\bigr).
+}
+$
+
+There is an exact incremental relation
+\(\Lambda_3=\Lambda_{\mathrm{mix}}+
+2R\sum_{s<S}\lfloor s/4\rfloor\). For \(R=30,S=5\):
+\(\Lambda_3=1302\), compared with the two-variable \(1242\) and
+univariate \(1130\). For \(R=2500,S=100\) the three exponents are
+\(156250000\), \(162294200\), \(168294200\), respectively. This is a
+source-compatible *paper* derivation with independent finite row tests, not
+a Lean-checked all-\(R,S,Q\) theorem. No new field cutoff is inferred.
+
 ## Finite evidence against the original source [M]
 
 The [executable controls](phase162_binary_null_lower.py) import the Phase159 evaluator, already cross-checked against Phase147, retaining **ordinary derivatives**, the exact \(2,2D\) metric and unchanged integer-pair order. They explicitly build every transformed row and check integer divisibility, including the root-selection support and multiple small examples.

@@ -166,6 +166,56 @@ def mixed_controls():
     print("PHASE162_TWO_VARIABLE_BINARY_WEAVE_PASS",flush=True)
 
 
+def triple_floor(R,S):
+    """Use F(Z), H(Z,W), F(W): three derivative-null factor families."""
+    return R*S + 2*sum(
+        (r-2*min(r//2,(S-1-s)//2))//4
+        + min(r//2,(S-1-s)//2)
+        + s//4
+        for r in range(R) for s in range(S))
+
+
+def triple_row_certificate(Q,D,R,S):
+    """Same original source rows; F(W) is constant under partial Z-jets."""
+    E,weights,_=ordinary_effective(Q,D,R,S)
+    assert len(E)==R*S
+    assert len(E[0])==len(weights)
+    for r in range(R):
+        for s in range(S):
+            b=min(r//2,(S-1-s)//2)
+            a=(r-2*b)//4
+            c=s//4
+            k=a+b+c
+            assert 4*a+2*b<=r and 4*c<=s and s+2*b<S
+            for col in range(len(weights)):
+                val=sum(
+                    (-1)**(t+u+v)*comb(a,t)*comb(b,u)*comb(c,v)
+                    *E[(r-2*t-2*u)*S+s-2*v+2*u][col]
+                    for t in range(a+1)
+                    for u in range(b+1)
+                    for v in range(c+1))
+                assert val % (2**k)==0,(D,r,s,col,a,b,c,k,val)
+    return triple_floor(R,S)
+
+
+def triple_controls():
+    samples=[
+        (3,8,4,[(0,2),(-2,1),(0,0),(2,-1)],80),
+        (19,8,4,[(0,2),(-2,1),(0,0),(2,-1)],80),
+        (163,30,5,[(x,0) for x in range(-10,11)]
+              +[(x,1) for x in range(-2,3)],1302),
+        (2,10,5,[(x,y) for x in range(-2,3) for y in range(-2,3)],182),
+        (4,12,9,[(0,0),(1,1),(2,-1)],620),
+    ]
+    for D,R,S,Q,want in samples:
+        assert triple_row_certificate(Q,D,R,S)==want
+        assert want==mixed_floor(R,S)+2*R*sum(s//4 for s in range(S))
+    for R in range(1,101):
+        for S in range(1,14):
+            assert triple_floor(R,S)>=mixed_floor(R,S)>=binary_floor(R,S)
+    print("PHASE162_THREE_GENERATOR_BINARY_WEAVE_PASS",flush=True)
+
+
 def coprime_control():
     # The odd prime mass is a separate existing theorem; the only legal
     # conjunction is coprimality, not a second count of odd factors.
@@ -183,5 +233,6 @@ if __name__ == "__main__":
     normalized_exact_identity_control()
     finite_support_controls()
     mixed_controls()
+    triple_controls()
     coprime_control()
     print("PHASE162_BINARY_NULL_LOWER_PASS: finite source checks only",flush=True)
