@@ -204,16 +204,21 @@ theorem baseline_sum (R S rho : Nat) (n : Real) (hrho : 0 < rho) (hRrho : rho < 
   unfold enderUpperB
   exact add_le_add_left hscaled _
 
-/-- The logarithm is of the SAME original integer determinant. -/
-theorem integer_log_upper (Q : Finset (Int × Int)) (D R S rho : Nat) (n : Real)
+/-- Analytic upper on the SAME original integer Gram with positivity
+provided by a separate rank or geometric argument. No cardinality or
+class-number hypothesis is smuggled into this interface. -/
+theorem integer_log_upper_of_posDef
+    (Q : Finset (Int × Int)) (D R S rho : Nat) (n : Real)
     (hD : 0 < D) (hR : 1 ≤ R) (hS : 1 ≤ S) (hrho : 5 ≤ rho) (hRrho : rho < R)
-    (hcard : 2*(R-1)+(S-1) < Q.card) (hnpos : 0 < n) (hn : (Q.card : Real) ≤ n)
+    (hpos : ((RadialOperator.gram Q D S R S (rho^2/2 : Nat)).map
+      (Int.castRingHom Real)).PosDef)
+    (hnpos : 0 < n) (hn : (Q.card : Real) ≤ n)
     (hbound : ∀ q ∈ Q, ‖pairEval D q‖ ≤ rho) :
     Real.log ((integerRectangularTraceGram Q D S R S).det : Real) ≤
       enderUpperB R S S rho n-
         (R-9*S : Nat)*(S : Real)*(S-1 : Nat)*Real.log (20/13 : Real) := by
   let H := (RadialOperator.gram Q D S R S (rho^2/2 : Nat)).map (Int.castRingHom Real)
-  have hp : H.PosDef := RadialOperator.real_posDef Q D S R S _ hD hR hS le_rfl hcard
+  have hp : H.PosDef := hpos
   have hd (i : Fin (R*S)) : 0 < H i i := real_posDef_diagonal_pos _ H hp i
   have hh := real_psd_det_le_diag (R*S) H hp.posSemidef
   have hl := Real.log_le_log hp.det_pos hh
@@ -233,6 +238,20 @@ theorem integer_log_upper (Q : Finset (Int × Int)) (D R S rho : Nat) (n : Real)
       ((Int.castRingHom Real).map_det (RadialOperator.gram Q D S R S (rho^2/2 : Nat))).symm
   rw [he] at hl
   linarith
+
+
+/-- Backwards-compatible point-count upper. Its cardinality hypothesis is a
+sufficient positivity certificate, not necessary for the analytic estimate. -/
+theorem integer_log_upper (Q : Finset (Int × Int)) (D R S rho : Nat) (n : Real)
+    (hD : 0 < D) (hR : 1 ≤ R) (hS : 1 ≤ S) (hrho : 5 ≤ rho) (hRrho : rho < R)
+    (hcard : 2*(R-1)+(S-1) < Q.card) (hnpos : 0 < n) (hn : (Q.card : Real) ≤ n)
+    (hbound : ∀ q ∈ Q, ‖pairEval D q‖ ≤ rho) :
+    Real.log ((integerRectangularTraceGram Q D S R S).det : Real) ≤
+      enderUpperB R S S rho n-
+        (R-9*S : Nat)*(S : Real)*(S-1 : Nat)*Real.log (20/13 : Real) := by
+  exact integer_log_upper_of_posDef Q D R S rho n hD hR hS hrho hRrho
+    (RadialOperator.real_posDef Q D S R S _ hD hR hS le_rfl hcard)
+    hnpos hn hbound
 
 theorem normalized_integer_upper (Q : Finset (Int × Int)) (D R S rho : Nat) (n : Real)
     (hD : 0 < D) (hS : 100 ≤ S) (h25 : 25*S ≤ R) (h26 : R ≤ 26*S)
