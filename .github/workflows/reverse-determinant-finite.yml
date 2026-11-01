@@ -1,4 +1,4 @@
-name: Reverse determinant finite evidence (Phases 144-155)
+name: Reverse determinant finite evidence (Phases 144-156)
 on:
   push:
     branches:
@@ -51,3 +51,5 @@ jobs:
         run: python3 research/reverse_determinant/phase154_prime_window_budget.py
       - name: Phase155 original ordinary jets, Frobenius fat-point and mass-prime factorial controls
         run: python3 research/reverse_determinant/phase155_jet_precision.py
+      - name: Phase156 transport-relative Archimedean 2-adic jet source and uniform gates
+        run: python3 research/reverse_determinant/phase156_transport_archim_jets.py

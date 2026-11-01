@@ -78,7 +78,7 @@ This formula relies on an **exactly square effective-channel matrix**; for a rec
 
 Direct independent finite-rank tests for the same 15-node D163 support: modulo 2, original/Hasse ranks 8/20; modulo 3, 18/30; modulo 5, 50/50; modulo 31, 150/150. The p=2 claim here concerns the *integer observation matrices*, not a nondegenerate Fp² inert field. A rank witness at 31 therefore cannot authorize an integral substitution at the primes supplying the determinant mass.
 
-The moving integral radial frame \(\mathrm{RadialOperator.polynomial}(a,W,r,s)=Z^{r-\min(r,s)}W^{s-\min(r,s)}(ZW-a)^{\min(r,s)}\) was checked in **5,040** source-parameterized derivative cases by direct univariate differentiation with W held constant versus the integral monomial-frame expansion. Both agree; the radial basis remains unitriangular and does not rescale away \(j!\).
+The moving integral radial frame \(\mathrm{RadialOperator.polynomial}(a,W,r,s)=Z^{r-\min(r,s)}W^{s-\min(r,s)}(ZW-a)^{\min(r,s)}\) was checked in **3,360** source-parameterized derivative cases by direct univariate differentiation with W held constant versus the integral monomial-frame expansion. Both agree; the radial basis remains unitriangular and does not rescale away \(j!\).
 
 ## Relevance, controls and next proof gate
 

@@ -33,4 +33,14 @@ theorem ordinary_hasse_integer_control :
     integerHasseCoefficientRow 1 3 0 3 (1, 0) = (1, 0) := by
   constructor <;> decide
 
+/-- An integral unimodular frame is an admissible determinant-preserving
+transport of the exact original ordinary-jet Gram. -/
+theorem unimodular_ordinary_jet_gram_det
+    (Q : Finset (Int × Int)) (D J R S : Nat)
+    (U : Matrix (Fin (R*S)) (Fin (R*S)) Int) (hU : U.det = 1) :
+    (U * integerRectangularTraceGram Q D J R S * U.transpose).det =
+      (integerRectangularTraceGram Q D J R S).det := by
+  rw [Matrix.det_mul, Matrix.det_mul, Matrix.det_transpose, hU]
+  ring
+
 end TenthDiscriminant
