@@ -49,6 +49,8 @@ theorem odd_large_classNumber_ne_one_41006250000
       (by omega) (by omega) (by omega) (by simpa only [Q,R,S] using hcard)
   have hprime := binaryOddMass_log_le_of_det_pos Q D R S hz
     hsq hc (Tuned.strict_inertness D)
+  have htail := certifiedPrimeMassLower_antitone_tail R S hs
+    FirstEnderInterval.tail_le_budget
   have hrec :
       recoveredPrimeMassLower R S FirstEnderInterval.tailBudget ≤
       recoveredPrimeMassLower R S (enderTailIntegral 10000) := by
