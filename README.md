@@ -32,10 +32,10 @@ $$
 For a finite set `Q` of integer-pair observations, these form an integer matrix `E_Q`. Its positive trace metric `B_Q` has diagonal weights `2,2D`, and we compare the same positive integer
 
 $$
-G_Q=E_QB_QE_Q^{\mathsf T},\qquad d_Q=\det G_Q>0
+G_Q=E_QB_QE_Q^{\mathsf T},\qquad \Delta_Q=\det G_Q>0
 $$
 
-from two directions. **Inert primes** force divisibility of `d_Q`; **the real geometry** of the observation ellipse constrains its size. A jet-normalization or change of sampling set is not free: any arithmetic, rank or metric remainder must be transported explicitly.
+from two directions. **Inert primes** force divisibility of `\Delta_Q`; **the real geometry** of the observation ellipse constrains its size. A jet-normalization or change of sampling set is not free: any arithmetic, rank or metric remainder must be transported explicitly.
 
 ```mermaid
 flowchart LR
@@ -59,9 +59,11 @@ For the illustrative `D=163,p=31,R=30,S=5` case, a characteristic selection uses
 
 [Phase158 — readable mathematical dossier](research/reverse_determinant/PHASE158_CHARACTERISTIC_JETS.md) · [Exact verifier](research/reverse_determinant/phase158_characteristic_jets.py) · [Full Phases144–158 research index](research/reverse_determinant/README.md)
 
-## Observation continua: a correction from Phase159
+## Observations as connected arithmetic worlds — Phases159–160
 
 [Phase159](research/reverse_determinant/PHASE159_OBSERVATION_CONTINUUM.md) connects the original ordinary-jet Grams over different observation supports through continuous real weights while keeping the lattice and prime-adic data exact. In the D=163, p=31, S=5 finite control, all 21 real-root deletions from the 31-root support retain full rank, with certified 2-adic factorial capacity 450 instead of 430. But small p=7 and p=11 counterexamples show deletion is **not** universally safe. Exact 2-adic Smith computations further show that the *actual* valuation can rise or fall under deletion, even as the real determinant decreases. Both [obstruction tests](research/reverse_determinant/phase159_observation_continuum.py) and [2-adic tests](research/reverse_determinant/phase159_padic_gram.py) are finite; neither proves the proposed 5-billion field cutoff or adds a Lean theorem. See the [evidence ledger](RESEARCH_NOW.md).
+
+[Phase160 — arithmetic neurites and gluing](research/reverse_determinant/PHASE160_ARITHMETIC_NEURITES.md) now connects *two* supports through a canonical exact sequence of observation cokernels, with a measurable prime-primary overlap remainder. The resulting lattice-index curvature and real log-determinant curvature combine exactly in the lattice-normalized Gram. An original ordinary-jet D=3 control finds nontrivial gluing in 36 of 91 finite support diamonds; its Plücker minors also show an exact 2-adic parity/cancellation distinction. This is derived elementary mathematics with [bounded tests](research/reverse_determinant/phase160_arithmetic_neurites.py), not Spin holonomy, a new Lean theorem or a stronger field cutoff. The existing trace weights and root theorem remain untouched.
 
 ## Reconstruct the evidence
 
