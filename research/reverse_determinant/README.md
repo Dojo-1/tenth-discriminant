@@ -1,8 +1,8 @@
-# Reverse determinant · one reading route (Phases 144–152)
+# Reverse determinant · one reading route (Phases 144–153)
 
 This is the consolidated, **finite and exploratory** thread of the [Tenth Discriminant](../../README.md) project. Read it from the repository's **`main` branch**, not as five competing research branches. The original problem remains a same-integer arithmetic lower bound versus geometric upper bound on an ordinary-jet Gram, ultimately transported to an *actual* imaginary quadratic field discriminant.
 
-**Evidence boundary.** The original mainline [strict 47-billion field-discriminant theorem](../../lean/TenthDiscriminant/TightRadialEndpoint.lean) is Lean-checked, still awaiting independent mathematical reconstruction ([#50](https://github.com/Dojo-1/tenth-discriminant/issues/50)). A stronger thin-ellipse field endpoint is discussed in *draft* [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62): its exact-head Lean checks are separate from mathematical endorsement, and it must not be silently promoted by this branch merge. Phases144–152 do **not** assert a new number-field cutoff.
+**Evidence boundary.** The original mainline [strict 47-billion field-discriminant theorem](../../lean/TenthDiscriminant/TightRadialEndpoint.lean) is Lean-checked, still awaiting independent mathematical reconstruction ([#50](https://github.com/Dojo-1/tenth-discriminant/issues/50)). A stronger thin-ellipse field endpoint is discussed in *draft* [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62): its exact-head Lean checks are separate from mathematical endorsement, and it must not be silently promoted by this branch merge. Phases144–153 do **not** assert a new number-field cutoff.
 
 ## What survives the round trip?
 
@@ -20,6 +20,7 @@ All experiments retain the **same original ordinary `∂_Z^j` derivatives with `
 | **150** · Fourier minimal nodes | Unrestricted `ceil(R/2)` integer support exists for original `J=S≤R` ordinary jets, but the quantitative grid radius is too large for the discriminant argument | [Paper-level record #69](https://github.com/Dojo-1/tenth-discriminant/issues/69) | Independent Lean review remains open |
 | **151** · Conjugation Worldlets | Exact `C₂` equivariant jet descent preserves the integral image; weighted orbit sum reconstructs the original Gram. Unweighted orbit descent gives a smaller positive Gram and a certified `O(RS)` gain bound; naive integral Fourier loses `2`-primary information | [Dossier](PHASE151_CONJUGATION_WORLDLET.md) | [Exact verifier](phase151_conjugation_descent.py) |
 | **152** · Frobenius graph and Pareto geometry | Low-inert-prime no-collision theorem on the **unchanged ordinary-jet** rectangle, with an explicit conditional radius family and an exact D163 radius/support and analytic-upper Pareto frontier; the actual field cutoff remains open | [Dossier](PHASE152_FROBENIUS_GRAPH.md) | [Exact finite verifier](phase152_frobenius_graph.py) |
+| **153** · Bertrand same-Gram budget | A conditional 25-billion **paper theorem target**: source-matched prime-mass and Hadamard envelopes close with positive rational-margin controls. The positivity-to-upper Lean bridge and independent review are still open | [Audit dossier](PHASE153_BERTRAND_CANDIDATE.md) | [Exact constants and edge tests](phase153_bertrand_budget.py) |
 
 **One finite two-way obstruction.** For the 21 fixed points at \(D=17,18\), an exhaustive search of all \({21\choose8}=203,490\) supports shows no common 8-point support can preserve the integral image: every joint binary-rank candidate loses ternary rank at \(D=18\). A concrete 9-point support passes exact Hermite equality for all \(D=17,\ldots,21\). **The proof is finite/exhaustive and code-checked, not a uniform statement over fields.**
 
@@ -40,9 +41,10 @@ python3 research/reverse_determinant/phase148_arithmetic_chamber.py
 python3 research/reverse_determinant/phase148_fixed_lattice_period.py
 python3 research/reverse_determinant/phase151_conjugation_descent.py
 python3 research/reverse_determinant/phase152_frobenius_graph.py
+python3 research/reverse_determinant/phase153_bertrand_budget.py
 ```
 
-The single [reverse-determinant CI workflow](../../.github/workflows/reverse-determinant-finite.yml) runs these bounded verifiers on `main` when relevant files change. For the pre-consolidation exact Phase148 receipt, [Actions #41237057425](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41237057425) passed at commit `df9a1e789efa40d709ab2ceb83f10514bc6ec56e`. The latest Phase151 exact-head CI passed on main; see [finite run #41246552820](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41246552820) and [Lean run #41246553130](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41246553130). Phase152 must pass its own exact-head run before promotion.
+The single [reverse-determinant CI workflow](../../.github/workflows/reverse-determinant-finite.yml) runs these bounded verifiers on `main` when relevant files change. For the pre-consolidation exact Phase148 receipt, [Actions #41237057425](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41237057425) passed at commit `df9a1e789efa40d709ab2ceb83f10514bc6ec56e`. The latest Phase151 exact-head CI passed on main; see [finite run #41246552820](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41246552820) and [Lean run #41246553130](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41246553130). Phase152 source-matched finite exact-head run [#41287933302](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41287933302) passed; Phase153's paper-level field implication requires its own Lean and human gates.
 
 ## The missing bridge
 

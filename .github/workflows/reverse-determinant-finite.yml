@@ -1,4 +1,4 @@
-name: Reverse determinant finite evidence (Phases 144-152)
+name: Reverse determinant finite evidence (Phases 144-153)
 on:
   push:
     branches:
@@ -45,3 +45,5 @@ jobs:
         run: python3 research/reverse_determinant/phase151_conjugation_descent.py
       - name: Phase152 Frobenius graph original ordinary-jet finite certificates
         run: python3 research/reverse_determinant/phase152_frobenius_graph.py
+      - name: Phase153 Bertrand same-Gram source and rational budget audit
+        run: python3 research/reverse_determinant/phase153_bertrand_budget.py

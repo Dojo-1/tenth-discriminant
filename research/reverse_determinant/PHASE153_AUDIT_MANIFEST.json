@@ -1,0 +1,237 @@
+{
+  "task_id": "phase153-bertrand-same-gram-budget",
+  "claim": {
+    "text": "Conditional D>=25b same-original-Gram arithmetic lower exceeds analytic upper under h(-D)=1",
+    "scope": "odd squarefree D=3 mod4, full p>m/2 Bertrand interval, original ordinary-Z/W-fixed Q+ Gram",
+    "status_before": "H",
+    "assumptions": [
+      "class-number-one reductio",
+      "inert p<m",
+      "rank positivity from Phase152 paper",
+      "upper refactor to H.PosDef pending"
+    ],
+    "forbidden_promotions": [
+      "No new Lean theorem",
+      "No inference from sampled margins",
+      "No equivalence to 331"
+    ]
+  },
+  "specification": {
+    "intended_object": "integerRectangularTraceGram Q D S R S, R=p-1, S=floor R/25, rho=ceil(sqrt(D+1)/2+sqrt(p sqrtD/3))",
+    "invariants": [
+      "same Gram on both sides",
+      "p-adic lower unaltered",
+      "original ordinary jets"
+    ],
+    "known_answer_cases": [
+      "D163 source rank controls",
+      "D25b worst Bertrand stress",
+      "D15b negative control"
+    ]
+  },
+  "implementation": {
+    "artifact": "research/reverse_determinant/phase153_bertrand_budget.py",
+    "commit": "to be captured by GitHub",
+    "environment": "Python 3 + SymPy 1.14 / mpmath, exact rational constants",
+    "live_entrypoint": "main() source match then rational gates then stress",
+    "representation": "direct and normalized Lean expressions"
+  },
+  "metric": {
+    "name": "L_raw/(R^2 S)-U_ender/(R^2 S)",
+    "type": "typed_tuple",
+    "units": "dimensionless normalized, also retain D,p,R,S,rho",
+    "direction": "higher_is_better",
+    "raw_before_clipping": true,
+    "semantic_invariance_claimed": true,
+    "equivalence_attacks": [
+      "same R,S old vs new radius",
+      "direct vs normalized formulas",
+      "p/m=0.5 and 1"
+    ]
+  },
+  "tests": {
+    "black_box": [
+      "mpmath pilot"
+    ],
+    "structural": [
+      "exact rational constants"
+    ],
+    "property_based": [
+      "D grid p ratio"
+    ],
+    "metamorphic": [
+      "direct/normalized equality",
+      "old/new radius same R,S"
+    ],
+    "fuzzing": [
+      "Bertrand endpoints"
+    ],
+    "historical": [
+      "Phase152 D163",
+      "Phase149 Lean source"
+    ]
+  },
+  "controls": {
+    "matched_baselines": [
+      "old rho same R S"
+    ],
+    "negative_controls": [
+      "D15b gap negative",
+      "old hcard not transferable"
+    ],
+    "compute_parity": "same precision",
+    "parameter_parity": "same R,S on radius comparison",
+    "sampling_parity": "same n=4D upper",
+    "data_access_parity": "current Lean source"
+  },
+  "preregistration": {
+    "prediction": "uniform paper envelope gap >0.049 at D>=25b",
+    "primary_metric": "uniform normalized margin",
+    "uncertainty_method": "rational coefficient gates plus separately required symbolic proof",
+    "kill_condition": "any source mismatch or invalid H.PosDef bridge",
+    "stop_condition": "no further architectural lifts before proof",
+    "promotion_rule": "P-paper after complete analytic proof, P-formal only exact-head Lean and review"
+  },
+  "evidence": {
+    "primary_sources": [
+      "NormalizedComparison.lean",
+      "RadialDetBound.lean",
+      "RadialCutoff.lean",
+      "Phase152 dossier"
+    ],
+    "execution_records": [
+      "Phase153 scalar audit, earlier exploratory pilot separately disclosed"
+    ],
+    "independent_witnesses": [
+      {
+        "name": "old Lean source",
+        "origin": "earlier formal development, not independent review of new result",
+        "artifact": "prior Phase151 green Lean run"
+      }
+    ],
+    "claim_to_artifact_map": [
+      "lower -> rawPrimeMassLower and certified mass",
+      "upper -> enderUpperB",
+      "geometry -> Phase152",
+      "25b -> new conditional target"
+    ]
+  },
+  "round_trip": {
+    "edges": [
+      {
+        "from": "requirement",
+        "to": "formal specification",
+        "preserved": [
+          "same integer"
+        ],
+        "transformed": [
+          "new R,Q,rho"
+        ],
+        "lost": [],
+        "remainder": [
+          "uniform field proof"
+        ]
+      },
+      {
+        "from": "formal specification",
+        "to": "data representation",
+        "preserved": [
+          "ordinary jets"
+        ],
+        "transformed": [
+          "normalized bounds"
+        ],
+        "lost": [],
+        "remainder": [
+          "source correspondence"
+        ]
+      },
+      {
+        "from": "data representation",
+        "to": "implementation",
+        "preserved": [
+          "coefficients"
+        ],
+        "transformed": [
+          "mpmath"
+        ],
+        "lost": [],
+        "remainder": [
+          "not a proof"
+        ]
+      },
+      {
+        "from": "implementation",
+        "to": "tests and instrumentation",
+        "preserved": [
+          "source definitions"
+        ],
+        "transformed": [
+          "sampled D,p"
+        ],
+        "lost": [],
+        "remainder": [
+          "sensitivity"
+        ]
+      },
+      {
+        "from": "tests and instrumentation",
+        "to": "measurement",
+        "preserved": [
+          "raw L and U"
+        ],
+        "transformed": [
+          "gap"
+        ],
+        "lost": [],
+        "remainder": [
+          "proof interval"
+        ]
+      },
+      {
+        "from": "measurement",
+        "to": "interpretation",
+        "preserved": [
+          "typed gap"
+        ],
+        "transformed": [
+          "uniform target"
+        ],
+        "lost": [
+          "sample is not universal"
+        ],
+        "remainder": [
+          "Lean"
+        ]
+      },
+      {
+        "from": "interpretation",
+        "to": "requirement",
+        "preserved": [
+          "Tao proof challenge"
+        ],
+        "transformed": [
+          "25b target"
+        ],
+        "lost": [],
+        "remainder": [
+          "human review"
+        ]
+      }
+    ]
+  },
+  "result": {
+    "observed": "rational coefficient gates PASS, samples positive for D>=25b",
+    "effect_size": "worst sampled normalized margin >0.0646 near threshold",
+    "uncertainty": "global bridge not Lean checked or externally reviewed",
+    "status_after": "H",
+    "retired_claims": [
+      "reuse old hcard upper without proof"
+    ],
+    "active_remainder": [
+      "uniform geometry/rank formalization",
+      "upper H.PosDef refactor",
+      "external human review"
+    ]
+  }
+}
