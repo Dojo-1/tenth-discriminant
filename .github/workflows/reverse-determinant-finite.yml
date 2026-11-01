@@ -1,4 +1,4 @@
-name: Reverse determinant finite evidence (Phases 144-159)
+name: Reverse determinant finite evidence (Phases 144-160)
 on:
   push:
     branches:
@@ -62,3 +62,5 @@ jobs:
         run: python3 research/reverse_determinant/phase159_observation_continuum.py
       - name: Phase159 exact 2-adic Smith filtration of original trace Gram
         run: python3 research/reverse_determinant/phase159_padic_gram.py
+      - name: Phase160 exact arithmetic neurites, gluing and 2-adic Plucker controls
+        run: python3 research/reverse_determinant/phase160_arithmetic_neurites.py
