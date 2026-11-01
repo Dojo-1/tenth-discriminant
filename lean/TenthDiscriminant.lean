@@ -30,6 +30,7 @@ import TenthDiscriminant.Interpolation
 import TenthDiscriminant.LatticeEllipse
 import TenthDiscriminant.EllipseCellArea
 import TenthDiscriminant.IntegerTraceGram
+import TenthDiscriminant.JetPrecisionBridge
 import TenthDiscriminant.QuadraticCoordinates
 import TenthDiscriminant.ResidueTraceGram
 import TenthDiscriminant.GramDivisibility

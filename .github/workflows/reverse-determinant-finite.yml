@@ -1,4 +1,4 @@
-name: Reverse determinant finite evidence (Phases 144-154)
+name: Reverse determinant finite evidence (Phases 144-155)
 on:
   push:
     branches:
@@ -49,3 +49,5 @@ jobs:
         run: python3 research/reverse_determinant/phase153_bertrand_budget.py
       - name: Phase154 Nagura/Costa prime-window source and rational geometry budget
         run: python3 research/reverse_determinant/phase154_prime_window_budget.py
+      - name: Phase155 original ordinary jets, Frobenius fat-point and mass-prime factorial controls
+        run: python3 research/reverse_determinant/phase155_jet_precision.py
