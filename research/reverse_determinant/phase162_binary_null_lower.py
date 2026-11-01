@@ -23,6 +23,16 @@ def binary_floor(R, S):
     return R * S + 2 * S * ksum
 
 
+def normalized_exact_identity_control():
+    for R in range(1, 101):
+        for S in (1, 2, 3, 5, 13):
+            t = R % 4
+            lam = binary_floor(R, S)
+            assert 4 * lam == S * (R*R + t*(4-t))
+            assert 4 * lam >= R*R*S
+    print("PHASE162_QUARTER_NORMALIZED_LOWER_PASS", flush=True)
+
+
 def original_null_value(q, D):
     """z^4 - z^2 in Z[sqrt(-D)] without changing the original order."""
     zz = powers(q, 4, D)
@@ -114,6 +124,7 @@ def coprime_control():
 if __name__ == "__main__":
     source_correspondence()
     null_point_controls()
+    normalized_exact_identity_control()
     finite_support_controls()
     coprime_control()
     print("PHASE162_BINARY_NULL_LOWER_PASS: finite source checks only",flush=True)
