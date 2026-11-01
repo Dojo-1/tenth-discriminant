@@ -97,6 +97,56 @@ $
 
 Equality holds whenever \(4\mid R\). This is an exact discrete consequence of the unitriangular binary row certificate, not an asymptotic extrapolation. The new binary exponent and the previous Phase156 factorial exponent **must not be added**: both are valuations at two. Use their maximum until an independent joint strengthening is proved.
 
+## A two-variable refinement, using the real sampling relation [P-paper / M]
+
+The polynomial \(H(Z,W)=Z^2-W^2\) has a second useful property. At our actual observations \(W=\bar z\),
+
+$
+H(z,\bar z)=4xy\sqrt{-D}\in2\mathcal O_D,
+$
+
+and all positive **ordinary partial-\(Z\)** derivatives are even:
+\(\partial_ZH=2Z\), \(\partial_Z^2H=2\), and higher derivatives vanish.
+No conjugate differentiation is introduced.
+
+For each row \(0\le r<R,\ 0\le s<S\), choose
+
+$
+b_{r,s}=\min(\lfloor r/2\rfloor,\lfloor(S-1-s)/2\rfloor),
+\qquad
+a_{r,s}=\lfloor(r-2b_{r,s})/4\rfloor .
+$
+
+Use the row polynomial
+
+$
+\boxed{\ P_{r,s}=Z^{r-4a_{r,s}-2b_{r,s}}\,
+ F(Z)^{a_{r,s}}H(Z,W)^{b_{r,s}}W^s .\ }
+$
+
+Its exact expansion is
+
+$
+P_{r,s}=\sum_{t=0}^{a_{r,s}}\sum_{u=0}^{b_{r,s}}
+(-1)^{t+u}\binom{a_{r,s}}t\binom{b_{r,s}}u
+Z^{r-2t-2u}W^{s+2u}.
+$
+
+The leading coefficient is one, and all other terms have smaller \(Z\)-degree and remain inside the original \(R\times S\) rectangle, so the change-of-basis matrix is integral unitriangular. Every ordinary jet of this row is divisible by \(2^{a_{r,s}+b_{r,s}}\), by the same integral Leibniz argument. This yields the **stronger** paper-level divisor
+
+$
+\boxed{
+2^{\Lambda_{\mathrm{mix}}(R,S)}\mid\det G_Q,\quad
+\Lambda_{\mathrm{mix}}=RS+
+2\sum_{\substack{0\le r<R\\0\le s<S}}
+(a_{r,s}+b_{r,s})\ge\Lambda(R,S).
+}
+$
+
+The choice of \(b\) is maximal within this two-factor row family: when \(b\) increases by one, \(b+\lfloor(r-2b)/4\rfloor\) never decreases. This does **not** establish global optimality among all integer polynomial bases. The new mixed factor is an alternative **stronger 2-primary certificate**, not an independent divisor to multiply with the univariate \(2^\Lambda\).
+
+At \(R=30,S=5\), the floors are \(1130\to1242\), a further **112** guaranteed binary exponents in the very same \(150\)-row Gram. At \(R=8,S=4\), \(64\to80\). The [source-matched verifier](phase162_binary_null_lower.py) expands the row polynomials exactly, preserving ordinary derivatives and trace channels, and tests these claims for \(D=2,3,19,163\). The full mixed-row factorization is **not yet formalized in Lean** and no uniform numerical field bound follows.
+
 ## Finite evidence against the original source [M]
 
 The [executable controls](phase162_binary_null_lower.py) import the Phase159 evaluator, already cross-checked against Phase147, retaining **ordinary derivatives**, the exact \(2,2D\) metric and unchanged integer-pair order. They explicitly build every transformed row and check integer divisibility, including the root-selection support and multiple small examples.
@@ -107,7 +157,7 @@ The [executable controls](phase162_binary_null_lower.py) import the Phase159 eva
 | \(D=163,R=30,S=5\), 31 effective characteristic roots | **430** | **1,130** |
 | \(D=163,R=30,S=5\), 30 roots, central deletion | **450** | **1,130** |
 
-For the 30-root square support, Phase159 independently measured \(v_2(\det G)=3,200\), so 1,130 is a nontrivial but **not sharp** lower certificate. Adding or deleting roots changes the determinant; these certificates apply to **each named original Gram separately**.
+The stronger two-variable certificate is **1,242** for both D163 supports (the respective factorial capacities remain 430/450). For the 30-root square support, Phase159 independently measured \(v_2(\det G)=3,200\), so 1,130 is a nontrivial but **not sharp** lower certificate. Adding or deleting roots changes the determinant; these certificates apply to **each named original Gram separately**.
 
 The control suite also checks that \(F(z)\) is coordinatewise even across multiple \(D,x,y\), that *all positive ordinary derivative coefficients* of \(F\) are even, that \(Z^2-Z\) fails, and that undersampling still requires a separate rank witness. A large finite test does not prove the universal divisibility; the derivation above is the proposed proof, awaiting complete Lean formalization.
 
