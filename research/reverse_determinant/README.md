@@ -1,8 +1,8 @@
-# Reverse determinant · one reading route (Phases 144–158)
+# Reverse determinant · one reading route (Phases 144–161)
 
 This is the consolidated, **finite and exploratory** thread of the [Tenth Discriminant](../../README.md) project. Read it from the repository's **`main` branch**, not as five competing research branches. The original problem remains a same-integer arithmetic lower bound versus geometric upper bound on an ordinary-jet Gram, ultimately transported to an *actual* imaginary quadratic field discriminant.
 
-**Evidence boundary.** The original mainline [strict 47-billion field-discriminant theorem](../../lean/TenthDiscriminant/TightRadialEndpoint.lean) is Lean-checked, still awaiting independent mathematical reconstruction ([#50](https://github.com/Dojo-1/tenth-discriminant/issues/50)). A stronger thin-ellipse field endpoint is discussed in *draft* [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62): its exact-head Lean checks are separate from mathematical endorsement, and it must not be silently promoted by this branch merge. Phases144–158 do **not** assert a new number-field cutoff.
+**Evidence boundary.** The original mainline [strict 47-billion field-discriminant theorem](../../lean/TenthDiscriminant/TightRadialEndpoint.lean) is Lean-checked, still awaiting independent mathematical reconstruction ([#50](https://github.com/Dojo-1/tenth-discriminant/issues/50)). A stronger thin-ellipse field endpoint is discussed in *draft* [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62): its exact-head Lean checks are separate from mathematical endorsement, and it must not be silently promoted by this branch merge. Phases144–161 do **not** assert a new number-field cutoff.
 
 ## What survives the round trip?
 
@@ -30,6 +30,8 @@ All experiments retain the **same original ordinary `∂_Z^j` derivatives with `
 | **159** · Observation Gram continuum | Exact real Gram transport with integral lattice and prime-adic distinctions; source-matched D163 deletion controls, explicit p7/p11 counterworlds and full 2-adic valuation nonmonotonicity; **no new field cutoff** | [Mathematical dossier](PHASE159_OBSERVATION_CONTINUUM.md) | [Original-jet verifier](phase159_observation_continuum.py) · [2-adic Smith verifier](phase159_padic_gram.py) |
 
 | **160** · Arithmetic neurites and gluing | Exact cokernel transport and two-support arithmetic remainder, coupled real/lattice curvature, original-jet q2 Plücker parity, and a rational no-free-Spin-port control; 91 small source diamonds, 36 nontrivial; **no new field cutoff** | [Dossier with attribution](PHASE160_ARITHMETIC_NEURITES.md) | [Source-matched finite verifier](phase160_arithmetic_neurites.py) |
+
+| **161** · Source symmetries, not more metaphors | Conjugation preserves the original weighted integer Gram; known parity/translation actions are reused. Symmetric p-root selection splits the p−1 obstruction, but central deletion can fail (D3,p11); speculative Spin lifts retired | [Short reader guide](PHASE161_SYMMETRY_GUIDE.md) · [Graveyard](../graveyard/PHASE161_DEFERRED_LIFTS.md) · [Lean source](../../lean/TenthDiscriminant/ObservationConjugation.lean) | [Finite regression](phase161_symmetry_controls.py) |
 
 **One finite two-way obstruction.** For the 21 fixed points at \(D=17,18\), an exhaustive search of all \({21\choose8}=203,490\) supports shows no common 8-point support can preserve the integral image: every joint binary-rank candidate loses ternary rank at \(D=18\). A concrete 9-point support passes exact Hermite equality for all \(D=17,\ldots,21\). **The proof is finite/exhaustive and code-checked, not a uniform statement over fields.**
 
