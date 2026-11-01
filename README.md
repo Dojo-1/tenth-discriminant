@@ -59,6 +59,10 @@ For the illustrative `D=163,p=31,R=30,S=5` case, a characteristic selection uses
 
 [Phase158 — readable mathematical dossier](research/reverse_determinant/PHASE158_CHARACTERISTIC_JETS.md) · [Exact verifier](research/reverse_determinant/phase158_characteristic_jets.py) · [Full Phases144–158 research index](research/reverse_determinant/README.md)
 
+## Observation continua: a correction from Phase159
+
+[Phase159](research/reverse_determinant/PHASE159_OBSERVATION_CONTINUUM.md) connects the original ordinary-jet Grams over different observation supports through continuous real weights while keeping the lattice and prime-adic data exact. In the D=163, p=31, S=5 finite control, all 21 real-root deletions from the 31-root support retain full rank, with certified 2-adic factorial capacity 450 instead of 430. But small p=7 and p=11 counterexamples show deletion is **not** universally safe. Exact 2-adic Smith computations further show that the *actual* valuation can rise or fall under deletion, even as the real determinant decreases. Both [obstruction tests](research/reverse_determinant/phase159_observation_continuum.py) and [2-adic tests](research/reverse_determinant/phase159_padic_gram.py) are finite; neither proves the proposed 5-billion field cutoff or adds a Lean theorem. See the [evidence ledger](RESEARCH_NOW.md).
+
 ## Reconstruct the evidence
 
 The project pins **Lean 4.19.0** and **Mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b`**. For the finite characteristic-set experiment, from repository root:
