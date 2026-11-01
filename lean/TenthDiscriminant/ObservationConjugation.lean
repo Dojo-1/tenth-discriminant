@@ -27,7 +27,6 @@ theorem pairConj_injective : Function.Injective pairConj := by
   have hh := congrArg pairConj h
   simpa only [pairConj_twice] using hh
 
-/-- Conjugation respects multiplication in the selected quadratic order. -/
 /-- The multiplicative conjugation lemma is reused from LocalOperators.lean;
 we do not redeclare the same global theorem. -/
 theorem pairConj_scale (c : Int) (a : Int × Int) :
