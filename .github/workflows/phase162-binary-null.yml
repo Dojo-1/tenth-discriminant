@@ -7,6 +7,7 @@ on:
       - lean/TenthDiscriminant/BinaryNullOrdinaryJets.lean
       - lean/TenthDiscriminant/BinaryNullBasisMatrix.lean
       - lean/TenthDiscriminant/BinaryNullRowAction.lean
+      - lean/TenthDiscriminant/BinaryGramGeneric.lean
       - lean/TenthDiscriminant/BinaryPrimeMassBridge.lean
       - lean/TenthDiscriminant/IntegerTraceGram.lean
       - lean/TenthDiscriminant.lean
@@ -17,6 +18,7 @@ on:
       - lean/TenthDiscriminant/BinaryNullOrdinaryJets.lean
       - lean/TenthDiscriminant/BinaryNullBasisMatrix.lean
       - lean/TenthDiscriminant/BinaryNullRowAction.lean
+      - lean/TenthDiscriminant/BinaryGramGeneric.lean
       - lean/TenthDiscriminant/BinaryPrimeMassBridge.lean
       - lean/TenthDiscriminant/IntegerTraceGram.lean
       - lean/TenthDiscriminant.lean
@@ -55,4 +57,4 @@ jobs:
         run: |
           lake update
           lake exe cache get
-          lake build TenthDiscriminant.BinaryNullPolynomial TenthDiscriminant.BinaryNullOrdinaryJets TenthDiscriminant.BinaryNullBasisMatrix TenthDiscriminant.BinaryNullRowAction TenthDiscriminant.BinaryPrimeMassBridge
+          lake build TenthDiscriminant.BinaryNullPolynomial TenthDiscriminant.BinaryNullOrdinaryJets TenthDiscriminant.BinaryNullBasisMatrix TenthDiscriminant.BinaryNullRowAction TenthDiscriminant.BinaryGramGeneric TenthDiscriminant.BinaryPrimeMassBridge
