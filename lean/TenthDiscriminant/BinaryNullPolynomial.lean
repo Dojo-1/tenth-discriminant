@@ -18,12 +18,14 @@ private theorem two_dvd_consecutive (a : Int) :
   rcases h with hzero | hone
   · refine ⟨(a / 2) * (a - 1), ?_⟩
     have ha : a = 2 * (a / 2) := by omega
-    rw [ha]
-    ring
+    calc
+      a * (a - 1) = (2 * (a / 2)) * (a - 1) := by rw [← ha]
+      _ = 2 * ((a / 2) * (a - 1)) := by ring
   · refine ⟨a * ((a - 1) / 2), ?_⟩
     have ha : a - 1 = 2 * ((a - 1) / 2) := by omega
-    rw [ha]
-    ring
+    calc
+      a * (a - 1) = a * (2 * ((a - 1) / 2)) := by rw [← ha]
+      _ = 2 * (a * ((a - 1) / 2)) := by ring
 
 /-- Every integer quadratic-order point makes z^4-z^2 even in BOTH
 coordinates. No inertness, positivity or field-class assumption is used. -/
