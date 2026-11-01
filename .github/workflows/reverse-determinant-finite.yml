@@ -1,4 +1,4 @@
-name: Reverse determinant finite evidence (Phases 144-156)
+name: Reverse determinant finite evidence (Phases 144-157)
 on:
   push:
     branches:
@@ -53,3 +53,5 @@ jobs:
         run: python3 research/reverse_determinant/phase155_jet_precision.py
       - name: Phase156 transport-relative Archimedean 2-adic jet source and uniform gates
         run: python3 research/reverse_determinant/phase156_transport_archim_jets.py
+      - name: Phase157 pi-tight Frobenius original-jet geometry and rational 5b budget
+        run: python3 research/reverse_determinant/phase157_pi_tight_radius.py
