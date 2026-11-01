@@ -174,6 +174,8 @@ now supplies that local guard at strict small odd primes.
 The [guide's coordinate explanation](HUMAN_GUIDE.md#10-the-same-gram-matrix-in-integer-and-complex-coordinates)
 includes an asymmetric control that a determinant-only comparison misses.
 
+[`BinaryNullPolynomial.lean`](TenthDiscriminant/BinaryNullPolynomial.lean) states the universal integer-coordinate evenness of (z^4-z^2) and records the proposed binary Gram exponent. [`BinaryPrimeMassBridge.lean`](TenthDiscriminant/BinaryPrimeMassBridge.lean) combines a **separately supplied** binary determinant divisor with the already checked class-number-one odd-prime product; it does *not* assume or prove the missing row factor. See the [human proof and its explicit remaining Lean task](../research/reverse_determinant/PHASE162_BINARY_NULL_LOWER.md).
+
 [`ObservationConjugation.lean`](TenthDiscriminant/ObservationConjugation.lean) is intentionally small: it proves on the **original** integer ordinary-jet matrix that conjugating all sampled pairs leaves the weighted trace Gram exactly unchanged. Its negative control shows that individual imaginary channels still change sign. [Phase161's short guide](../research/reverse_determinant/PHASE161_SYMMETRY_GUIDE.md) distinguishes this lemma from the unformalized parity-split rank argument and the deferred Spin analogy. The new module [compiled on the exact PR source head](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41333553256) against pinned Lean/Mathlib. Its initial [tactic-only failure](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41333523613) was corrected without changing the theorem; whole-root compilation and semantic review remain separate.
 
 [`QuadraticCoordinates.lean`](TenthDiscriminant/QuadraticCoordinates.lean)
