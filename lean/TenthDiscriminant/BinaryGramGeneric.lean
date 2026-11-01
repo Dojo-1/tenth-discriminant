@@ -83,7 +83,7 @@ theorem binaryGramFactor_dvd_generic {n : Nat}
           ((2 : Int)^n * K.det) *
           (2 : Int)^(∑ i : Fin n, k i) := hd
     _ = (2 : Int)^(n + 2*(∑ i : Fin n, k i)) * K.det := by
-      rw [pow_add, mul_pow, ←pow_add]
+      rw [pow_add, two_mul, pow_add]
       ring
 
 end TenthDiscriminant
