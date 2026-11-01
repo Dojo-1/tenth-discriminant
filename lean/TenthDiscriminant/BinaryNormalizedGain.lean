@@ -52,8 +52,10 @@ theorem binaryNull_normalized_gain_eighth
   have hfive := binaryNullExponent_fifth_scale R S hR
   have hreal : comparisonScale R S ≤
       5*(binaryNullGramExponent R S : Real) := by
-    unfold comparisonScale
-    exact_mod_cast hfive
+    have hcast : (R : Real)*R*S ≤
+        5*(binaryNullGramExponent R S : Real) := by
+      exact_mod_cast hfive
+    simpa only [comparisonScale, pow_two] using hcast
   have hlog := log_two_rational_control.1
   have hnonneg : (0 : Real) ≤ binaryNullGramExponent R S := by positivity
   have hmul := mul_nonneg hnonneg (sub_nonneg.mpr hlog)
