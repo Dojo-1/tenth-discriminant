@@ -110,6 +110,62 @@ def finite_support_controls():
     assert len(E[0]) < 8 and rankmod(E,3)<8
 
 
+def mixed_floor(R, S):
+    """Unimodular two-variable null factors: F=Z^4-Z^2, H=Z^2-W^2."""
+    m = 0
+    for r in range(R):
+        for ss in range(S):
+            b = min(r//2, (S-1-ss)//2)
+            a = (r-2*b)//4
+            m += a+b
+    return R*S+2*m
+
+
+def mixed_row_certificate(Q, D, R, S):
+    """Exact original (r,s,j,point,re/im) row transform; no new sampler."""
+    E, weights, _ = ordinary_effective(Q, D, R, S)
+    assert len(E) == R*S and len(E[0]) == len(weights)
+    for r in range(R):
+        for ss in range(S):
+            b = min(r//2, (S-1-ss)//2)
+            a = (r-2*b)//4
+            assert 4*a+2*b <= r and ss+2*b < S
+            for col in range(len(weights)):
+                val = sum(
+                    (-1)**(t+u) * comb(a,t) * comb(b,u)
+                    * E[(r-2*t-2*u)*S+ss+2*u][col]
+                    for t in range(a+1) for u in range(b+1))
+                assert val % (2**(a+b)) == 0, (D,r,ss,col,a,b,val)
+    return mixed_floor(R,S)
+
+
+def mixed_controls():
+    samples = [
+        (3,8,4,[(0,2),(-2,1),(0,0),(2,-1)],80),
+        (19,8,4,[(0,2),(-2,1),(0,0),(2,-1)],80),
+        (163,30,5,[(x,0) for x in range(-10,11)]
+            + [(x,1) for x in range(-2,3)],1242),
+        (2,10,5,[(x,y) for x in range(-2,3)
+                    for y in range(-2,3)],162),
+    ]
+    for D,R,S,Q,want in samples:
+        assert mixed_row_certificate(Q,D,R,S) == want
+        assert want >= binary_floor(R,S)
+    for R in range(1,101):
+        for S in range(1,14):
+            assert mixed_floor(R,S) >= binary_floor(R,S)
+    # H=Z^2-W^2 vanishes at order zero with a factor four, and
+    # all positive ordinary Z derivatives are even as well.
+    for D in (1,2,3,19,163):
+        for x in range(-3,4):
+            for y in range(-3,4):
+                z2=powers((x,y),2,D)[2]
+                w2=powers((x,-y),2,D)[2]
+                h=(z2[0]-w2[0],z2[1]-w2[1])
+                assert h==(0,4*x*y) and all(v%2==0 for v in h)
+    print("PHASE162_TWO_VARIABLE_BINARY_WEAVE_PASS",flush=True)
+
+
 def coprime_control():
     # The odd prime mass is a separate existing theorem; the only legal
     # conjunction is coprimality, not a second count of odd factors.
@@ -126,5 +182,6 @@ if __name__ == "__main__":
     null_point_controls()
     normalized_exact_identity_control()
     finite_support_controls()
+    mixed_controls()
     coprime_control()
     print("PHASE162_BINARY_NULL_LOWER_PASS: finite source checks only",flush=True)
