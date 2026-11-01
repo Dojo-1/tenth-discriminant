@@ -1,4 +1,4 @@
-# Reverse determinant · one reading route (Phases 144–161)
+# Reverse determinant · one reading route (Phases 144–162)
 
 This is the consolidated, **finite and exploratory** thread of the [Tenth Discriminant](../../README.md) project. Read it from the repository's **`main` branch**, not as five competing research branches. The original problem remains a same-integer arithmetic lower bound versus geometric upper bound on an ordinary-jet Gram, ultimately transported to an *actual* imaginary quadratic field discriminant.
 

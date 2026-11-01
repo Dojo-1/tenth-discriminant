@@ -1,3 +1,14 @@
+/-!
+UNCOMPILED Phase157 pi-window attempt, quarantined on 2026-11-01.
+This file imports Mathlib.Analysis.Real.Pi.Bounds, a module absent from the
+repository's pinned Mathlib revision c44e0c8 (Lean 4.19.0). The whole-root
+Lean CI run 41333838041 failed at this import on main a97cef6a.
+Do not advertise the following as compiled Lean. The mathematical 3.14 < pi
+< 3.15 estimate is standard, but its port to PINNED Mathlib remains open.
+The Phase157 candidate 5-billion field endpoint remains unproved.
+Historical source retained exactly below this header.
+-/
+
 import Mathlib.Analysis.Real.Pi.Bounds
 
 /-!

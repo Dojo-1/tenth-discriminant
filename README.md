@@ -59,6 +59,10 @@ For the illustrative `D=163,p=31,R=30,S=5` case, a characteristic selection uses
 
 [Phase158 — readable mathematical dossier](research/reverse_determinant/PHASE158_CHARACTERISTIC_JETS.md) · [Exact verifier](research/reverse_determinant/phase158_characteristic_jets.py) · [Full Phases144–158 research index](research/reverse_determinant/README.md)
 
+## CI correction and the next lower-bound experiment
+
+The November 1 whole-root Lean check [failed](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41333838041): a Phase157 π-window experiment imported a module missing from pinned Mathlib. Its exact source has been [quarantined](research/graveyard/PHASE157_PI_WINDOW_UNCOMPILED.lean), with **no change to the original accepted 47-billion theorem**. Restoring a green whole-root build is a separate verification gate. Phase162 explores an additional binary lower-bound certificate on the same original Gram; it makes no stronger field-cutoff claim.
+
 ## Observation symmetries and their limits
 
 [Phase159](research/reverse_determinant/PHASE159_OBSERVATION_CONTINUUM.md) treats different ordinary-jet observation supports as related real Grams, while retaining distinct integer lattices and prime-adic invariants. [Phase160](research/reverse_determinant/PHASE160_ARITHMETIC_NEURITES.md) identifies the exact cokernel gluing remainder of overlapping supports. Both are finite research programmes, **not** replacements for the accepted 47-billion field theorem.

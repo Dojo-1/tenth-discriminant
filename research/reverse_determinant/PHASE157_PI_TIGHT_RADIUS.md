@@ -19,7 +19,7 @@ c=\frac{157}{50}=3.14,\quad
 A=\sqrt{\frac{p\sqrt D}{c}},\quad
 \boxed{\rho_\pi=\lceil\delta+A\rceil}.
 \]
-Mathlib's \`Real.pi_gt_d2\` and \`Real.pi_lt_d2\` give **\(c<\pi<63/20=3.15\)**. The [new Lean pi-window artifact](../../lean/TenthDiscriminant/ArchimedeanPiWindow.lean) imports these genuine pre-existing proofs. This is a meaningfully stronger geometric constant than the earlier elementary \(\pi>3\), not an approximate substitution.
+Mathlib's \`Real.pi_gt_d2\` and \`Real.pi_lt_d2\` give **\(c<\pi<63/20=3.15\)**. The [archived Phase157 pi-window Lean attempt](../graveyard/PHASE157_PI_WINDOW_UNCOMPILED.lean) targeted these bounds, but its Mathlib import was not present in the pinned Mathlib revision. Whole-root CI failed on 1 November 2026; the candidate was removed from the active Lean build and is **not a checked theorem**. This is a meaningfully stronger geometric constant than the earlier elementary \(\pi>3\), not an approximate substitution.
 
 ## Exactly why Frobenius rank survives
 

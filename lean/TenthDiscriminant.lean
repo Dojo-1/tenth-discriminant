@@ -32,7 +32,6 @@ import TenthDiscriminant.EllipseCellArea
 import TenthDiscriminant.IntegerTraceGram
 import TenthDiscriminant.JetPrecisionBridge
 import TenthDiscriminant.ObservationConjugation
-import TenthDiscriminant.ArchimedeanPiWindow
 import TenthDiscriminant.QuadraticCoordinates
 import TenthDiscriminant.ResidueTraceGram
 import TenthDiscriminant.GramDivisibility
