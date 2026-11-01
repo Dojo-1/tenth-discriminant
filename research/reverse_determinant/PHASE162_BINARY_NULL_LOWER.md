@@ -82,12 +82,20 @@ $$
 \Lambda(R,S)=RS+2S\bigl(2q(q-1)+tq\bigr).
 $$
 
-It also obeys the useful conservative bound
+In fact there is an **exact normalized identity**. With \(t=R\bmod4\),
 
-$$
-\frac{\Lambda(R,S)}{R^2S}
-\ge \frac14-\frac{3}{4R}\qquad(R\ge1).
-$$
+$
+\boxed{4\Lambda(R,S)=S\bigl(R^2+t(4-t)\bigr).}
+$
+
+Consequently for all \(R,S\ge1\),
+
+$
+\boxed{\Lambda(R,S)\log2/(R^2S)\ge(\log2)/4
+  \approx0.1732868.}
+$
+
+Equality holds whenever \(4\mid R\). This is an exact discrete consequence of the unitriangular binary row certificate, not an asymptotic extrapolation. The new binary exponent and the previous Phase156 factorial exponent **must not be added**: both are valuations at two. Use their maximum until an independent joint strengthening is proved.
 
 ## Finite evidence against the original source [M]
 
