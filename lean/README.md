@@ -174,6 +174,8 @@ now supplies that local guard at strict small odd primes.
 The [guide's coordinate explanation](HUMAN_GUIDE.md#10-the-same-gram-matrix-in-integer-and-complex-coordinates)
 includes an asymmetric control that a determinant-only comparison misses.
 
+[`ObservationConjugation.lean`](TenthDiscriminant/ObservationConjugation.lean) is intentionally small: it proves on the **original** integer ordinary-jet matrix that conjugating all sampled pairs leaves the weighted trace Gram exactly unchanged. Its negative control shows that individual imaginary channels still change sign. [Phase161's short guide](../research/reverse_determinant/PHASE161_SYMMETRY_GUIDE.md) distinguishes this lemma from the unformalized parity-split rank argument and the deferred Spin analogy. An exact-head Lean build is required before calling the new file checked.
+
 [`QuadraticCoordinates.lean`](TenthDiscriminant/QuadraticCoordinates.lean)
 identifies those pairs for `D>0` with the selected order `ℤ[√(-D)]`, not
 necessarily the full ring of integers.
