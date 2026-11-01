@@ -41,6 +41,28 @@ flowchart LR
 
 **Mandatory failure:** if `p<R` and `S≥2`, the nonzero section `Z^p−W` lies in the rectangle but maps to zero on `Γ_p`, and all its ordinary jets below order p vanish modulo p. The Phase152 verifier checks this **actual row relation** at D=43,p=7,R=8,S=2. Thus the clean no-collision proof cannot be silently used in the production R≈D/4 regime with only inert primes p<R.
 
+## Coherent-sheaf factorization [P-paper] — where geometry enters the theorem
+
+Over \`k≈F_(p²)\`, compactify to the **algebraic surface** \`X=P¹_Z×P¹_W\`, with section bundle \`L=O_X(R−1,S−1)\`. The Frobenius-graph embedding is \`i_p:P¹_T→X, T↦(T,T^p)\`. There is an exact, type-preserving bundle identity
+\[
+\boxed{i_p^*L=O_{P^1}((R-1)+p(S-1)).}
+\]
+This degree is *precisely* the maximum exponent in the polynomial proof. The composed jet-restriction map on global sections factors as
+\[
+H^0(X,L)\xrightarrow{i_p^*}H^0(P^1,O(d_p))
+\xrightarrow{\mathrm{jet\,eval}}\bigoplus_{\xi\in\Xi}
+   O(d_p)\otimes \mathcal O_{P^1,\xi}/\mathfrak m_\xi^{J},
+\quad d_p=(R-1)+p(S-1).
+\]
+The first arrow is injective for \`R≤p\` by the distinct \`r+ps\` exponents. The kernel of the second arrow is
+\[
+H^0(P^1,O(d_p-J\sum_{\xi\in\Xi}[\xi]))=0
+\quad\text{if }JN_p>d_p.
+\]
+Hence the full-rank criterion is an **actual sheaf-kernel vanishing theorem**, not an analogy with higher-dimensional geometry. In characteristic p, \`(T+t)^p=T^p+t^p\`; for \`J≤p\` the length-J directional jets pull back correctly because the normal (W) coordinate does not change to orders less than J. The factorization remains tied to original ordinary jets rather than silently changing to Hasse jets.
+
+The failure at \`p<R\` is located in the **first** map: \`H⁰(X,I_(Γp)⊗L)\` contains the nonzero globalized section \`Z^p−W\` (when S≥2). This is the candidate entrypoint for a conormal/Rees filtration \`I^m/I^(m+1)\` and the larger divided-Frobenius geometry in the published 331 argument. Such a filtration needs a separate integral p-adic transport, so do not infer automatic equivalence of the rectangular and triangular determinants.
+
 ## Localized support existence under the class-number-one *hypothesis*
 
 For `D≡3 mod4`, squarefree, `D≥10^6`, and the **hypothetical premise** `h(-D)=1`, every prime `p<(D+1)/4` is inert, by the standard norm-minimum obstruction. Put `m=(D+1)/4`. Bertrand gives an odd prime `m/2<p<m` (m≥6), hence an inert witness supplied by the same arithmetic assumption; no split-prime count above that inertness threshold is needed. Take `R=p−1`, `J=S`, `1≤S≤R`, and
@@ -73,6 +95,8 @@ Take `p=31` (inert because `−163` is a nonsquare modulo 31), `R=30`, `S=J=5`, 
 Counting gives the **global lower** `2k+l≥R=30` for `k` nonreal-orbit reps and `l` real nodes, hence `k+l≥30−k_max`, and always `k+l≥ceil(R/2)=15`. Every row above reaches its lower bound with a **nonzero square original-channel minor** mod31; the three minima are therefore exact for that integer radius. At radius 15 this achieves the global channel-count minimum **15 observations**. The simple degree-vs-multiplicity theorem itself needs 16 nodes here (`160>153`); the 15-node optimum has `150≤153` and is independently certified by determinant 22 mod31. **Do not credit the weaker universal theorem for the sharper finite instance.**
 
 This provides a concrete *Pareto geometry*, rather than collapsing all structure into one scalar: minimal radius is 13, cardinality-minimal support is achieved at radius15, and `(rho,n)=(13,25),(14,19),(15,15)` are the exact frontier in the frozen integer-pair system.
+
+**Same-object analytic tradeoff [M, exactly ordered].** For the three positive original Grams above, the exact integer raw Hadamard products \`U_Q=∏_(r,s)(G_Q)_(r,s),(r,s)\` satisfy **U_13<U_14<U_15**, although their numbers of observation nodes decrease 25→19→15. Displayed \`log U/(R²S)\`, with \`R²S=4500\`, is **2.965521603**, **3.024801260**, **3.079626430** respectively. The comparison uses integer products, with floats only for printing logs. Thus *support cardinality optimization and raw metric optimization point in opposite directions* in a matched original-jet example. This does not decide the best determinant itself or another integer-unimodular frame's upper.
 
 ## Arithmetic–analytic interface to Tao's actual goals
 

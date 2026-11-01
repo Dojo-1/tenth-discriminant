@@ -5,7 +5,7 @@ Exact p-rank and determinant controls; mathematical theorem in the dossier.
 No Hasse-jet substitution, new field cutoff, or assumed actual h(-D)=1.
 """
 from __future__ import annotations
-from math import ceil, sqrt, isqrt
+from math import ceil, sqrt, isqrt, log, prod
 from pathlib import Path
 from sympy import isprime, prevprime
 
@@ -88,6 +88,20 @@ def test_case(d,p,R,S,J,Q,rho):
                 old_guard=(2*(R-1)+(S-1)<len(Q)),
                 p_below_class_one_inert_cut=(p<(d+1)/4))
 
+def raw_hadamard_product(Q,d,R,S,J):
+    """Exact original trace-Gram diagonal product, WITHOUT inverse Gram."""
+    diag=[]
+    for r in range(R):
+        for s in range(S):
+            acc=0
+            for x,y in Q:
+                norm2=x*x+d*y*y
+                for j in range(min(r,J-1)+1):
+                    acc+=2*falling(r,j)**2*norm2**(r+s-j)
+            assert acc>0
+            diag.append(acc)
+    return prod(diag)
+
 def source_check():
     from phase147_prime_adequacy import original_eval
     p=31;d=19;Q=[(-1,1),(0,0),(2,-1)]
@@ -115,6 +129,7 @@ def main():
     print('ONE-NODE-SLACK COUNTERWORLD D163',opt,flush=True)
 
     # Each integer radius has its own exactly certified minimum-node support.
+    hadamards=[]
     cases=((13,range(-2,3),range(-10,10),25,29,5),
            (14,range(-5,6),range(-4,4),19,22,11),
            (15,range(-7,8),range(0,0),15,22,15))
@@ -133,8 +148,12 @@ def main():
         rank,det=rank_det_mod([[row[j] for j in positions] for row in E],31)
         assert (rank,det)==(150,residue)
         assert nmin==max(15,30-kmax)
+        bound=raw_hadamard_product(Q,163,30,5,5)
+        hadamards.append(bound)
         print('PARETO D163',dict(radius=rho,min_nodes=nmin,
-              maximum_nonreal_orbits=kmax,det_mod31=det),flush=True)
+              maximum_nonreal_orbits=kmax,det_mod31=det,
+              raw_Hadamard_log_normalized=log(bound)/(30*30*5)),flush=True)
+    assert hadamards[0]<hadamards[1]<hadamards[2]  # exact integer comparison
     assert 12*12<163 and (2*12+1)*5<150
 
     b=test_case(43,7,6,2,2,[(x,0) for x in range(-3,4)],5)
