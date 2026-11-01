@@ -1,4 +1,4 @@
-name: Reverse determinant finite evidence (Phases 144-148)
+name: Reverse determinant finite evidence (Phases 144-152)
 on:
   push:
     branches:
@@ -43,3 +43,5 @@ jobs:
         run: python3 research/reverse_determinant/phase148_fixed_lattice_period.py
       - name: Phase151 C2 orbit sheaf and integer Fourier counterworld
         run: python3 research/reverse_determinant/phase151_conjugation_descent.py
+      - name: Phase152 Frobenius graph original ordinary-jet finite certificates
+        run: python3 research/reverse_determinant/phase152_frobenius_graph.py
