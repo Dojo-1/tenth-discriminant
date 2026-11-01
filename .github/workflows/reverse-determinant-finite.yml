@@ -1,4 +1,4 @@
-name: Reverse determinant finite evidence (Phases 144-157)
+name: Reverse determinant finite evidence (Phases 144-158)
 on:
   push:
     branches:
@@ -55,3 +55,5 @@ jobs:
         run: python3 research/reverse_determinant/phase156_transport_archim_jets.py
       - name: Phase157 pi-tight Frobenius original-jet geometry and rational 5b budget
         run: python3 research/reverse_determinant/phase157_pi_tight_radius.py
+      - name: Phase158 Walsh-inspired characteristic roots and original ordinary-jet obstruction
+        run: python3 research/reverse_determinant/phase158_characteristic_jets.py

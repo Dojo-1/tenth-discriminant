@@ -1,8 +1,8 @@
-# Reverse determinant · one reading route (Phases 144–157)
+# Reverse determinant · one reading route (Phases 144–158)
 
 This is the consolidated, **finite and exploratory** thread of the [Tenth Discriminant](../../README.md) project. Read it from the repository's **`main` branch**, not as five competing research branches. The original problem remains a same-integer arithmetic lower bound versus geometric upper bound on an ordinary-jet Gram, ultimately transported to an *actual* imaginary quadratic field discriminant.
 
-**Evidence boundary.** The original mainline [strict 47-billion field-discriminant theorem](../../lean/TenthDiscriminant/TightRadialEndpoint.lean) is Lean-checked, still awaiting independent mathematical reconstruction ([#50](https://github.com/Dojo-1/tenth-discriminant/issues/50)). A stronger thin-ellipse field endpoint is discussed in *draft* [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62): its exact-head Lean checks are separate from mathematical endorsement, and it must not be silently promoted by this branch merge. Phases144–157 do **not** assert a new number-field cutoff.
+**Evidence boundary.** The original mainline [strict 47-billion field-discriminant theorem](../../lean/TenthDiscriminant/TightRadialEndpoint.lean) is Lean-checked, still awaiting independent mathematical reconstruction ([#50](https://github.com/Dojo-1/tenth-discriminant/issues/50)). A stronger thin-ellipse field endpoint is discussed in *draft* [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62): its exact-head Lean checks are separate from mathematical endorsement, and it must not be silently promoted by this branch merge. Phases144–158 do **not** assert a new number-field cutoff.
 
 ## What survives the round trip?
 
@@ -25,6 +25,7 @@ All experiments retain the **same original ordinary `∂_Z^j` derivatives with `
 | **155** · Jet precision bridge | Directional Frobenius fat-point isomorphism for J≤p, full square quotient certificates at D163, ordinary-vs-Hasse factorial/prime-local counterworld, and sharp Fourier jet interpolation at p−1 real roots | [Dossier](PHASE155_JET_PRECISION.md) · [Lean factorial bridge](../../lean/TenthDiscriminant/JetPrecisionBridge.lean) | [Source-matched finite verifier](phase155_jet_precision.py) |
 | **156** · Transport-relative Archimedean jets | Exact integral/PSD/prime-local determinant transports, 2-adic orbit-fold capacity, a fixed-frame counterworld, and a conservative **unproved** Nagura-only 6b field target | [Dossier](PHASE156_TRANSPORT_ARCHIM_JETS.md) | [Finite verifier](phase156_transport_archim_jets.py) |
 | **157** · Archimedean π-tight jet radius | Using Mathlib's **3.14 < π < 3.15** to shrink the same original Frobenius-rank ellipse, tighten factorial 2-primary capacity, and pose a conservative Nagura-only **unproved 5b** boundary | [Dossier](PHASE157_PI_TIGHT_RADIUS.md) · [formal π bounds](../../lean/TenthDiscriminant/ArchimedeanPiWindow.lean) | [Same-source verifier](phase157_pi_tight_radius.py) |
+| **158** · Walsh-inspired characteristic jets | **p** conjugate-closed roots suffice for the exact original ordinary-jet rank; with **p−1** roots rank is equivalent to an explicit `(S−1)×(S−1)` forbidden-coefficient obstruction, which can fail. D163 source/quotient tests; no new field cutoff | [Dossier and attributed sources](PHASE158_CHARACTERISTIC_JETS.md) | [Exact finite verifier](phase158_characteristic_jets.py) |
 
 **One finite two-way obstruction.** For the 21 fixed points at \(D=17,18\), an exhaustive search of all \({21\choose8}=203,490\) supports shows no common 8-point support can preserve the integral image: every joint binary-rank candidate loses ternary rank at \(D=18\). A concrete 9-point support passes exact Hermite equality for all \(D=17,\ldots,21\). **The proof is finite/exhaustive and code-checked, not a uniform statement over fields.**
 
@@ -50,9 +51,12 @@ python3 research/reverse_determinant/phase154_prime_window_budget.py
 python3 research/reverse_determinant/phase155_jet_precision.py
 python3 research/reverse_determinant/phase156_transport_archim_jets.py
 python3 research/reverse_determinant/phase157_pi_tight_radius.py
+python3 research/reverse_determinant/phase158_characteristic_jets.py
 ```
 
-The single [reverse-determinant CI workflow](../../.github/workflows/reverse-determinant-finite.yml) runs these bounded verifiers on `main` when relevant files change. For the pre-consolidation exact Phase148 receipt, [Actions #41237057425](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41237057425) passed at commit `df9a1e789efa40d709ab2ceb83f10514bc6ec56e`. The latest Phase151 exact-head CI passed on main; see [finite run #41246552820](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41246552820) and [Lean run #41246553130](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41246553130). Phase152 source-matched finite exact-head run [#41287933302](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41287933302) passed; Phase153's paper-level field implication requires its own Lean and human gates.
+The single [reverse-determinant CI workflow](../../.github/workflows/reverse-determinant-finite.yml) runs these bounded verifiers on `main` when relevant files change. For the pre-consolidation exact Phase148 receipt, [Actions #41237057425](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41237057425) passed at commit `df9a1e789efa40d709ab2ceb83f10514bc6ec56e`. The [Phase157 finite workflow](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41319645008) passed on its exact source revision; the newly committed Phase158 tests require their **own** exact-head CI receipt. No finite pass promotes the proposed 5-billion field cutoff. Historical older receipts remain linked in the individual phase dossiers.
+
+**Intellectual attribution.** The choice to seek a characteristic subset was inspired by [Miguel N. Walsh, *Characteristic subsets and the polynomial method*, ICM 2018](https://www.mathunion.org/fileadmin/ICM/Proceedings/uploads/ICM-2018-vol2-ver1-eb.pdf). The **p-root criterion and the p−1 coefficient matrix are elementary specializations proved/tested here, not results attributed to Walsh**; Ben Green's derivative determinant, Roelof van Dijk's finite-field method, Tao's challenge and the other participants are credited in [the root README](../../README.md) and [prior-art ledger](../../PRIOR_ART.md).
 
 ## The missing bridge
 
