@@ -33,6 +33,7 @@ import TenthDiscriminant.IntegerTraceGram
 import TenthDiscriminant.JetPrecisionBridge
 import TenthDiscriminant.ObservationConjugation
 import TenthDiscriminant.BinaryNullPolynomial
+import TenthDiscriminant.BinaryNullOrdinaryJets
 import TenthDiscriminant.BinaryPrimeMassBridge
 import TenthDiscriminant.QuadraticCoordinates
 import TenthDiscriminant.ResidueTraceGram
