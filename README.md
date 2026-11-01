@@ -10,11 +10,11 @@ It began in response to [Terence Tao's experimental tenth-discriminant challenge
 
 The mainline [Lean theorem](lean/TenthDiscriminant/TightRadialEndpoint.lean) establishes the strict implication
 
-$
+$$
 h(K)=1,\quad [K:\mathbf Q]=2,\quad K\text{ imaginary quadratic}
 \quad\Longrightarrow\quad
 |\operatorname{disc}(K)|<47{,}000{,}000{,}000.
-$
+$$
 
 This is the **actual field discriminant**, not the determinant of our polynomial Gram. The checked statement is not a classification of the nine fields and is not competitive with the strongest bounds reported by other challenge participants. Its mathematical interpretation and the surrounding arguments still invite [independent human reconstruction](https://github.com/Dojo-1/tenth-discriminant/issues/50).
 
@@ -24,16 +24,16 @@ Our newer **5-billion** computations are **research candidates**, not a stronger
 
 The original observable is the ordinary directional jet
 
-$
+$$
 \partial_Z^j(Z^rW^s)=(r)_{\underline j}Z^{r-j}W^s,
 \qquad W\text{ held fixed}.
-$
+$$
 
 For a finite set `Q` of integer-pair observations, these form an integer matrix `E_Q`. Its positive trace metric `B_Q` has diagonal weights `2,2D`, and we compare the same positive integer
 
-$
+$$
 G_Q=E_QB_QE_Q^{\mathsf T},\qquad d_Q=\det G_Q>0
-$
+$$
 
 from two directions. **Inert primes** force divisibility of `d_Q`; **the real geometry** of the observation ellipse constrains its size. A jet-normalization or change of sampling set is not free: any arithmetic, rank or metric remainder must be transported explicitly.
 

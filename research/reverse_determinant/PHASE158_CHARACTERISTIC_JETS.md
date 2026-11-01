@@ -9,10 +9,10 @@ The original integer Gram stays unchanged **in its definition**: for each newly 
 ## Frobenius and the correct rank problem
 
 Let \`p\` be an odd prime with \`-D\` nonsquare modulo \`p\`, \`R=p-1\`, and \`1≤S=J≤R\`. The coefficient space of the original rectangular observables embeds along the characteristic-\`p\` Frobenius graph:
-\[
+$$
 V_{R,S}=\operatorname{span}_{\mathbb F_{p^2}}
   \{T^{r+ps}:0\le r<p-1,\ 0\le s<S\}.
-\]
+$$
 It consists of exactly those polynomials of degree at most \`pS-2\` whose coefficients in degrees \`kp-1\` (\`1≤k≤S-1\`) vanish. This is a **codimension \`S-1\`** subspace of all polynomials up to that degree, not an entire polynomial ring.
 
 For \`j<S<p\`, the original partial-\`Z\` jet agrees with \`j!\` times the Taylor coefficient on the graph at a root \`a\`, because \`(a+h)^p=a^p+h^p\`, and \`h^p\` vanishes in the length-\`S\` quotient. The factorials are units at **this witness prime**. They are *not* units at all smaller primes that contribute to the integer Gram's divisibility.
@@ -26,29 +26,29 @@ A real-axis integer node contributes one residue root; a nonreal node plus its c
 ## One fewer root produces a small, exact obstruction
 
 Assume \`S≥2\` and precisely \`p-1\` distinct conjugate-closed residue roots \`A\`. Set their **monic annihilator**
-\[
+$$
 g_A(T)=\prod_{a\in A}(T-a)\in\mathbb F_p[T],
 \qquad \deg g_A=p-1.
-\]
+$$
 A polynomial \`F\in V_{p-1,S}\` vanishes to order \`S\` at all roots of \`A\` iff \`F=g_A^S H\` with \`deg H≤S-2\` and the \`S-1\` forbidden coefficients vanish. Writing \`H(T)=\sum_{j=0}^{S-2}h_jT^j\`, this condition is exactly
-\[
+$$
 \boxed{
 \mathcal O_{kj}=[T^{kp-1-j}]\,g_A(T)^S,\quad
 1\le k\le S-1,\ 0\le j\le S-2.
 }
-\]
+$$
 Therefore
-\[
+$$
 \boxed{\operatorname{rank}_{\mathbb F_p}E_A=RS
 \iff \det\mathcal O\ne0.}
-\]
+$$
 This is an **exact equivalence** for these stated original-jet hypotheses, not a numerical approximation, but the general proof is still paper-level and should be checked independently. It shrinks an \`RS\`-row rank question to an \`(S-1)\times(S-1)\` obstruction. At the proposed multi-billion parameters, \`S-1\` remains enormous; no claim of a cheap production-time algorithm follows.
 
 **Counterworld [M, exact].** At \`p=5,D=2,S=2\`, take two real nodes \`0,2\` and a nonreal conjugate pair with \`(x,y)=(0,1)\`. Then
-\[
+$$
 g(T)=T(T-2)(T^2+2)\in\mathbb F_5[T],
 \quad [T^4]g(T)^2=0.
-\]
+$$
 The \`1\times1\` obstruction vanishes and the actual original ordinary-jet matrix has rank **7, not 8**. Thus \`p-1\` roots are **not a universal interpolation guarantee**. Real-axis multiplicative-group examples may succeed but need radius comparable to \`p\`, far larger than our intended \`O(D^{3/4})\` support.
 
 ## Exact D=163 observations [M]
@@ -63,24 +63,24 @@ The earlier **30-root** radius/cardinality frontier is also recovered via the ob
 | 15 | 15 | 30 | 150/150 | 8 |
 
 For the radius-13 support, the exact obstruction is
-\[
+$$
 \mathcal O=\begin{pmatrix}
 0&4&26&23\\29&19&21&5\\2&14&9&14\\16&12&0&14
 \end{pmatrix}\pmod{31},\quad\det\mathcal O=29.
-\]
+$$
 Its nonvanishing is separately matched to both original source rank and polynomial-quotient rank. Neither the finite \`p-1\` success nor the quotient oracle establishes an all-discriminant assertion.
 
 ## Where this meets our 2-primary arithmetic
 
 For an **unweighted** characteristic support with exactly \`p\` effective scalar channels at each derivative order, \`m=(p-1)S\` rows, and **odd D**, each original nonzero trace weight has \`v_2=1\`. Cauchy–Binet's cheapest-column divisor is now an exact **capacity floor**, not an observed full determinant valuation:
-\[
+$$
 \boxed{
 \beta_2^{\rm cap}
 =(p-1)S+
 2\left[p\sum_{j=0}^{S-2}v_2(j!)
       +(p-S)v_2((S-1)!)\right].
 }
-\]
+$$
 Here \`p\` channels are taken at each order \`j<S-1\`, and \`p-S\` at the final order; this calculation uses no probabilistic model and no factorial rescaling of the integer determinant. The existing odd-prime lower product and this independent prime-2 divisor may be combined because they are coprime **only when both apply to this same new \`G_Q\`**.
 
 At the sampled \`D=5,000,000,003\` with a genuine prime **parameter** \`p=1,041,666,709\` (not an assertion of class number one), the current Phase157 normalized \`L,U\` formulas give an improved pilot margin when replacing the earlier conservative upper capacity by this exact \`p\`-root capacity. A positive sample is not a universal 5-billion field bound. Indeed, the Phase157 field implication still awaits the uniform Frobenius-to-PosDef Lean bridge, the integral Cauchy–Binet/odd-mass combination, all-\`D\` scalar inequalities and independent review.
