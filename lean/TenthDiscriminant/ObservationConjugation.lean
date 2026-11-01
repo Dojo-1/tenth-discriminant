@@ -1,4 +1,4 @@
-import TenthDiscriminant.IntegerTraceGram
+import TenthDiscriminant.LocalOperators
 
 /-!
 # Conjugation of the original integer observations
@@ -27,14 +27,8 @@ theorem pairConj_injective : Function.Injective pairConj := by
   have hh := congrArg pairConj h
   simpa only [pairConj_twice] using hh
 
-/-- Conjugation respects multiplication in the selected quadratic order. -/
-theorem pairConj_mul (D : Nat) (a b : Int × Int) :
-    pairConj (pairMul D a b) =
-      pairMul D (pairConj a) (pairConj b) := by
-  apply Prod.ext
-  · simp [pairConj, pairMul] <;> ring
-  · simp [pairConj, pairMul] <;> ring
-
+/-- The multiplicative conjugation lemma is reused from LocalOperators.lean;
+we do not redeclare the same global theorem. -/
 theorem pairConj_scale (c : Int) (a : Int × Int) :
     pairConj (pairScale c a) = pairScale c (pairConj a) := by
   rcases a with ⟨x, y⟩

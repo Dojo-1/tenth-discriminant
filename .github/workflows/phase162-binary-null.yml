@@ -1,0 +1,62 @@
+name: Phase162 binary-null source lemma
+on:
+  push:
+    branches: [main, 'formalization/**']
+    paths:
+      - lean/TenthDiscriminant/BinaryNullPolynomial.lean
+      - lean/TenthDiscriminant/BinaryNullOrdinaryJets.lean
+      - lean/TenthDiscriminant/BinaryNullBasisMatrix.lean
+      - lean/TenthDiscriminant/BinaryNullRowAction.lean
+      - lean/TenthDiscriminant/BinaryGramGeneric.lean
+      - lean/TenthDiscriminant/BinaryNullTraceGram.lean
+      - lean/TenthDiscriminant/BinaryPrimeMassBridge.lean
+      - lean/TenthDiscriminant/IntegerTraceGram.lean
+      - lean/TenthDiscriminant.lean
+      - .github/workflows/phase162-binary-null.yml
+  pull_request:
+    paths:
+      - lean/TenthDiscriminant/BinaryNullPolynomial.lean
+      - lean/TenthDiscriminant/BinaryNullOrdinaryJets.lean
+      - lean/TenthDiscriminant/BinaryNullBasisMatrix.lean
+      - lean/TenthDiscriminant/BinaryNullRowAction.lean
+      - lean/TenthDiscriminant/BinaryGramGeneric.lean
+      - lean/TenthDiscriminant/BinaryNullTraceGram.lean
+      - lean/TenthDiscriminant/BinaryPrimeMassBridge.lean
+      - lean/TenthDiscriminant/IntegerTraceGram.lean
+      - lean/TenthDiscriminant.lean
+      - .github/workflows/phase162-binary-null.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  binary-null-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile source-level binary-null statement
+        run: |
+          lake update
+          lake exe cache get
+          lake build TenthDiscriminant.BinaryNullPolynomial TenthDiscriminant.BinaryNullOrdinaryJets TenthDiscriminant.BinaryNullBasisMatrix TenthDiscriminant.BinaryNullRowAction TenthDiscriminant.BinaryGramGeneric TenthDiscriminant.BinaryPrimeMassBridge TenthDiscriminant.BinaryNullTraceGram
