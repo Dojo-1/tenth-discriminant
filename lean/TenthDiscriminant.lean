@@ -158,6 +158,7 @@ import TenthDiscriminant.RadiusRatio377
 import TenthDiscriminant.Lower377
 import TenthDiscriminant.BinaryGap377
 import TenthDiscriminant.SourcePositivity377
+import TenthDiscriminant.UpperScalars377
 import TenthDiscriminant.RankDivisorCompatibility
 
 import TenthDiscriminant.EllipseResidueTransport
