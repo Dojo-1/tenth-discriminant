@@ -10,9 +10,9 @@ It began in response to [Terence Tao's experimental tenth-discriminant challenge
 
 **Lean-checked mainline statement (2 November 2026).** For any totally complex degree-two number field of class number one, the repository now proves, relative to its encoded definitions and permitted axioms, that the **actual absolute field discriminant** is strictly less than
 
-\[
+$
 377^4 = 20,200,652,641.
-\]
+$
 
 Read the [Phase178 actual-field theorem](lean/TenthDiscriminant/ActualField377.lean), [merged PR #97](https://github.com/Dojo-1/tenth-discriminant/pull/97), and its [exact-head whole-library source/axiom/negative audit](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41508959650). Its focused theorem check and security checks passed too. This is **not** a statement about the auxiliary trace-Gram determinant, and it is not a new classification of the nine imaginary quadratic class-number-one fields.
 

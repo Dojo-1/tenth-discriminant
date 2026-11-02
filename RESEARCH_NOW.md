@@ -5,10 +5,10 @@
 ## What a reader can currently rely on
 
 **Current strongest actual-field statement — Lean-checked, independent semantic review open (2 November 2026).**
-[Phase178 PR #97](https://github.com/Dojo-1/tenth-discriminant/pull/97), merged as [\`ae8feb7\`](https://github.com/Dojo-1/tenth-discriminant/commit/ae8feb703c799e315bf96a18bfd830279d6d2b1d), contains the Lean declaration \`Threshold377.totallyComplex_degree_two_classNumber_one_discriminant_bound_377\` for totally complex quadratic fields of class number one:
-\[
+[Phase178 PR #97](https://github.com/Dojo-1/tenth-discriminant/pull/97), merged as [`ae8feb7`](https://github.com/Dojo-1/tenth-discriminant/commit/ae8feb703c799e315bf96a18bfd830279d6d2b1d), contains the Lean declaration `Threshold377.totallyComplex_degree_two_classNumber_one_discriminant_bound_377` for totally complex quadratic fields of class number one:
+$
 |\mathrm{disc}(K)|<377^4=20,200,652,641.
-\]
+$
 [Focused actual-field Lean](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41508959566), [whole-library source/axiom/known-false controls](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41508959650), and security checks passed on the exact PR head; a superseded duplicate whole-library run was cancelled. The [human proof map](research/thin_integrated/PHASE178_HUMAN_GUIDE.md) keeps the SAME original thin-Q integer Gram throughout, including its single binary factor and unchanged ordinary jets/trace pairing.
 
 **Formal predecessor.** [Phase143 PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62) proved the strict actual absolute field discriminant bound **41,006,250,000**, and the old 47-billion theorem remains checked history. Those results are not independent external confirmations. Neither the new 377^4 result nor its predecessors have received [the separate mathematician's semantic reconstruction requested in Issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50). [Issue #82](https://github.com/Dojo-1/tenth-discriminant/issues/82) was closed only for completing the formal arithmetic–analytic integration; alternative 5-billion and exotic-support proposals remain hypotheses. Historical "pending" and "draft" notes below record their original dates, not today's CI state.
