@@ -1,5 +1,6 @@
 import TenthDiscriminant.Lower377
 import TenthDiscriminant.RadiusRatio377
+import TenthDiscriminant.ThinEllipseCount377
 import TenthDiscriminant.TunedAnalyticCutoff
 
 /-!
