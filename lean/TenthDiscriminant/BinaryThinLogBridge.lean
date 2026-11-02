@@ -71,9 +71,16 @@ private theorem log_binary_odd_le_of_int_le
   have hlogProduct :
       Real.log ((2 ^ L * oddFactor R S : Nat) : Real) =
         (L : Real) * Real.log 2 + exactOddPrimeMass R S := by
-    rw [Nat.cast_mul, Nat.cast_pow,
-      Real.log_mul (pow_ne_zero _ (by norm_num : (2 : Real) ≠ 0)) hoddNe,
-      Real.log_pow, log_oddFactor_eq]
+    calc
+      Real.log ((2 ^ L * oddFactor R S : Nat) : Real) =
+          Real.log ((2 : Real) ^ L * ((oddFactor R S : Nat) : Real)) := by
+            norm_num
+      _ = Real.log ((2 : Real) ^ L) +
+            Real.log ((oddFactor R S : Nat) : Real) := by
+            rw [Real.log_mul
+              (pow_ne_zero _ (by norm_num : (2 : Real) ≠ 0)) hoddNe]
+      _ = (L : Real) * Real.log 2 + exactOddPrimeMass R S := by
+            rw [Real.log_pow, log_oddFactor_eq]
   rw [hlogProduct] at hlog
   exact hlog
 
@@ -161,4 +168,5 @@ theorem thin_binary_and_recovered_mass_log (D : Nat)
   have he := thin_binary_and_exact_odd_mass_log D hD hsq hclass
   linarith
 
+end
 end TenthDiscriminant.BinaryThinLogBridge
