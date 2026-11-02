@@ -84,6 +84,35 @@ private theorem log_binary_odd_le_of_int_le
   rw [hlogProduct] at hlog
   exact hlog
 
+/-- A reusable source-level inequality that does NOT need an ellipse
+or a large-D hypothesis.  The support Q may be any original integer-pair
+observation set for which the ORIGINAL ordinary-jet trace Gram has
+strictly positive determinant.  That positivity is a necessary explicit
+premise before logarithms; it is NOT imported from the field cutoff. -/
+theorem original_binary_and_exact_odd_mass_log_of_pos
+    (Q : Finset (Int × Int)) (D R S : Nat)
+    [Fact ((D : Int)%4=3)] (hsq : Squarefree D)
+    (hclass : NumberField.classNumber
+      (QuadraticField (((D : Int)+1)/4)) = 1)
+    (hRcut : (R : Int) < ((D : Int)+1)/4)
+    (hdet : 0 < (integerRectangularTraceGram Q D S R S).det) :
+    (binaryNullGramExponent R S : Real) * Real.log 2 +
+      exactOddPrimeMass R S ≤
+      Real.log ((integerRectangularTraceGram Q D S R S).det : Real) := by
+  have hdvd :
+      ((2 ^ binaryNullGramExponent R S * oddFactor R S : Nat) : Int) ∣
+        (integerRectangularTraceGram Q D S R S).det := by
+    simpa only [oddFactor] using
+      (originalGram_binary_oddMass_unconditional Q D R S
+        hsq hclass hRcut)
+  have hle :
+      ((2 ^ binaryNullGramExponent R S * oddFactor R S : Nat) : Int) ≤
+        (integerRectangularTraceGram Q D S R S).det :=
+    Int.le_of_dvd hdet hdvd
+  exact log_binary_odd_le_of_int_le R S
+    (binaryNullGramExponent R S)
+    (integerRectangularTraceGram Q D S R S).det hdet hle
+
 /-- This is the actual SAME-thin-Q theorem under the old original
 class-number-one field assumptions and the already-checked geometry
 threshold D >= 450^4. It is not a smaller field cutoff. -/
