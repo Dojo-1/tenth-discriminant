@@ -22,7 +22,7 @@ open FirstCertificate RadialCutoff
 set_option autoImplicit false
 
 /-- Identical observation set for the p-adic and real estimates. -/
-private def thinQ (D : Nat) : Finset (Int × Int) :=
+private noncomputable def thinQ (D : Nat) : Finset (Int × Int) :=
   ellipsePairs D (Tuned.thinRadius D)
 
 /-- The existing thin interpolation count certifies positivity of the
