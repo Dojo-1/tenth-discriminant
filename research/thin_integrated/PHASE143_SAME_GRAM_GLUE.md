@@ -1,6 +1,6 @@
 # Phase143 — close the *same thin-Gram* discriminant diagram
 
-**31 October 2026. Integration attempt, not an accepted new field bound until exact-head Lean/axiom/source/negative-control checks pass.** This phase deliberately adds no new sample geometry or prime. It composes the checked Phase140 and Phase141 statements with the pre-existing arbitrary-\(Q\) arithmetic lower bound. The original strict 47-billion actual-field theorem is left unchanged.
+**Current status, 2 November 2026: integrated in [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62) after the reconciled [whole-root Lean/source/axiom/negative-control run](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41410529603), finite and CodeQL checks passed. Independent mathematical semantic review [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50) remains open.** The 31 October proof-plan wording below is preserved where relevant; old 'pending' status labels have been updated. This phase deliberately adds no new sample geometry or prime. It composes the checked Phase140 and Phase141 statements with the pre-existing arbitrary-\(Q\) arithmetic lower bound. The original strict 47-billion actual-field theorem is left unchanged.
 
 The central requirement is that **both inequalities compare the determinant of the same new integer**:
 
@@ -37,14 +37,14 @@ with the **same valid** \(N\) and production guards. The existing [tight ordinar
 \tag{U}
 \]
 
-3. **Arithmetic [P pre-existing generic theorem; new application being compiled].** [RadialCutoff.prime_mass_log_lower](../../lean/TenthDiscriminant/RadialCutoff.lean) is quantified over *arbitrary finite* integer \(Q\) satisfying the original interpolation count, under the exact squarefree, mod-4, inert-prime and class-number-one assumptions. The previously certified recovered prime mass therefore bounds \(\log\det G_\mathrm{thin}\) **directly**, with no deduction from divisibility of \(\det G_\mathrm{old}\). The normalized recovered lower is
+3. **Arithmetic [P generic theorem and its thin-Q application both Lean-checked].** [RadialCutoff.prime_mass_log_lower](../../lean/TenthDiscriminant/RadialCutoff.lean) is quantified over *arbitrary finite* integer \(Q\) satisfying the original interpolation count, under the exact squarefree, mod-4, inert-prime and class-number-one assumptions. The previously certified recovered prime mass therefore bounds \(\log\det G_\mathrm{thin}\) **directly**, with no deduction from divisibility of \(\det G_\mathrm{old}\). The normalized recovered lower is
 \[
 \frac{\log\det G_\mathrm{thin}}{R^2S}
 \ge\frac{999997}{1000000}\log D-\frac{5739}{1000}.
 \tag{L}
 \]
 
-4. **Actual field / strict numerical endpoint [H until compiled].** The existing maximal-order and totally complex degree-two representation theorems carry contradictions from (U) and (L) to the true field discriminant \(\operatorname{disc}(K)\), rather than the sample Gram. At the geometric floor \(\log D\ge 241/10\), the lower-minus-upper margin exceeds \(1/500\). The new [ThinIntegratedEndpoint.lean](../../lean/TenthDiscriminant/ThinIntegratedEndpoint.lean) attempts to formally prove
+4. **Actual field / strict numerical endpoint [P encoded, independent human semantic review open].** The existing maximal-order and totally complex degree-two representation theorems carry contradictions from (U) and (L) to the true field discriminant \(\operatorname{disc}(K)\), rather than the sample Gram. At the geometric floor \(\log D\ge 241/10\), the lower-minus-upper margin exceeds \(1/500\). The merged [ThinIntegratedEndpoint.lean](../../lean/TenthDiscriminant/ThinIntegratedEndpoint.lean) proves the encoded field statement
 \[
 \boxed{\left|\operatorname{disc}(K)\right|<41\,006\,250\,000}
 \quad
@@ -52,7 +52,7 @@ with the **same valid** \(N\) and production guards. The existing [tight ordinar
 [K:\mathbf Q]=2,\;K\text{ totally complex},\; h_K=1
 \right).
 \]
-This remains a **proposed Lean result** until exact-head compilation, axioms and source-level semantic correspondence have been inspected. It is not presented as a record in algebraic number theory: imaginary quadratic class-number-one fields are already classically classified much more strongly, and Tao's challenge is about exploring proof methods and transparent computational certification.
+This result passed exact-head Lean compilation, permitted-axiom, source and negative-control checks. The remaining obligation is **independent human semantic reconstruction**, not mere compilation. It is not presented as a record in algebraic number theory: imaginary quadratic class-number-one fields are already classically classified much more strongly, and Tao's challenge is about exploring proof methods and transparent computational certification.
 
 The proof strategy contains no new auxiliary inert or split primes and no hidden replacement of ordinary derivatives with Hasse jets. The normalization scale \(R^2S\) and comparison are kept identical across (U) and (L).
 
@@ -73,4 +73,4 @@ Accept only after: exact-head whole-root Lean, explicit theorem source, axiom/de
 
 ## 2 November 2026 source reconciliation
 
-The exact PR #62 source head `cae74f4` passed its own full Lean/source/axiom/negative-control run [41219219053](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41219219053). Its old README, research ledger and root import diverged from subsequently merged Phase162. The integration merge takes the current Phase162 **main** as the file baseline and imports the same original Phase143 Lean endpoint without editing its theorem statements or proof, then explicitly adds the original PR head as a merge parent. The reassembled whole-root build and independent mathematical semantic review remain distinct pending gates. No binary bonus is inserted into the Phase143 bound.
+The exact PR #62 source head `cae74f4` passed its own full Lean/source/axiom/negative-control run [41219219053](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41219219053). Its old README, research ledger and root import diverged from subsequently merged Phase162. The integration merge takes the current Phase162 **main** as the file baseline and imports the same original Phase143 Lean endpoint without editing its theorem statements or proof, then explicitly adds the original PR head as a merge parent. The reassembled whole-root build [passed](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41410529603). Independent human mathematical semantic review remains a separate open gate. No binary bonus is inserted into the Phase143 bound.

@@ -34,6 +34,8 @@ import TenthDiscriminant.JetPrecisionBridge
 import TenthDiscriminant.ObservationConjugation
 import TenthDiscriminant.BinaryNullPolynomial
 import TenthDiscriminant.BinaryNullOrdinaryJets
+import TenthDiscriminant.BinaryNullMixedJets
+import TenthDiscriminant.BinaryNullFourSourceJets
 import TenthDiscriminant.BinaryNullBasisMatrix
 import TenthDiscriminant.BinaryNullRowAction
 import TenthDiscriminant.BinaryGramGeneric
