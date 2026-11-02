@@ -153,6 +153,7 @@ import TenthDiscriminant.BinaryThinLogBridge
 import TenthDiscriminant.OneNodeTraceControls
 import TenthDiscriminant.SevenActualFieldWitness
 import TenthDiscriminant.Log377Certificate
+import TenthDiscriminant.BinaryGap377
 import TenthDiscriminant.RankDivisorCompatibility
 
 import TenthDiscriminant.EllipseResidueTransport
