@@ -59,6 +59,10 @@ For the illustrative `D=163,p=31,R=30,S=5` case, a characteristic selection uses
 
 [Phase158 — readable mathematical dossier](research/reverse_determinant/PHASE158_CHARACTERISTIC_JETS.md) · [Exact verifier](research/reverse_determinant/phase158_characteristic_jets.py) · [Full Phases144–158 research index](research/reverse_determinant/README.md)
 
+## CI correction and the next lower-bound experiment
+
+The November 1 whole-root Lean check [failed](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41333838041): a Phase157 π-window experiment imported a module missing from pinned Mathlib. Its exact source has been [quarantined](research/graveyard/PHASE157_PI_WINDOW_UNCOMPILED.lean), with **no change to the original accepted 47-billion theorem**. Restoring a green whole-root build is a separate verification gate. [Phase162's binary-null construction](research/reverse_determinant/PHASE162_BINARY_NULL_LOWER.md) derives progressively stronger paper-level binary divisors of that **same** Gram using unimodular differential-null row bases (finite D163 floor now 1358); the new [univariate source-to-Gram Lean theorem](lean/TenthDiscriminant/BinaryNullTraceGram.lean) is now included in the production import tree for an exact-head whole-project CI check. The four-generator 1358 exponent remains paper-level until its own row factorization is formalized. No stronger field cutoff is claimed.
+
 ## Observation symmetries and their limits
 
 [Phase159](research/reverse_determinant/PHASE159_OBSERVATION_CONTINUUM.md) treats different ordinary-jet observation supports as related real Grams, while retaining distinct integer lattices and prime-adic invariants. [Phase160](research/reverse_determinant/PHASE160_ARITHMETIC_NEURITES.md) identifies the exact cokernel gluing remainder of overlapping supports. Both are finite research programmes, **not** replacements for the accepted 47-billion field theorem.

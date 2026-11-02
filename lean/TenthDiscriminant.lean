@@ -32,7 +32,13 @@ import TenthDiscriminant.EllipseCellArea
 import TenthDiscriminant.IntegerTraceGram
 import TenthDiscriminant.JetPrecisionBridge
 import TenthDiscriminant.ObservationConjugation
-import TenthDiscriminant.ArchimedeanPiWindow
+import TenthDiscriminant.BinaryNullPolynomial
+import TenthDiscriminant.BinaryNullOrdinaryJets
+import TenthDiscriminant.BinaryNullBasisMatrix
+import TenthDiscriminant.BinaryNullRowAction
+import TenthDiscriminant.BinaryGramGeneric
+import TenthDiscriminant.BinaryNullTraceGram
+import TenthDiscriminant.BinaryPrimeMassBridge
 import TenthDiscriminant.QuadraticCoordinates
 import TenthDiscriminant.ResidueTraceGram
 import TenthDiscriminant.GramDivisibility

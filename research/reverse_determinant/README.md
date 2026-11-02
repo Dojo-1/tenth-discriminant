@@ -1,4 +1,4 @@
-# Reverse determinant · one reading route (Phases 144–161)
+# Reverse determinant · one reading route (Phases 144–162)
 
 This is the consolidated, **finite and exploratory** thread of the [Tenth Discriminant](../../README.md) project. Read it from the repository's **`main` branch**, not as five competing research branches. The original problem remains a same-integer arithmetic lower bound versus geometric upper bound on an ordinary-jet Gram, ultimately transported to an *actual* imaginary quadratic field discriminant.
 
@@ -32,6 +32,8 @@ All experiments retain the **same original ordinary `∂_Z^j` derivatives with `
 | **160** · Arithmetic neurites and gluing | Exact cokernel transport and two-support arithmetic remainder, coupled real/lattice curvature, original-jet q2 Plücker parity, and a rational no-free-Spin-port control; 91 small source diamonds, 36 nontrivial; **no new field cutoff** | [Dossier with attribution](PHASE160_ARITHMETIC_NEURITES.md) | [Source-matched finite verifier](phase160_arithmetic_neurites.py) |
 
 | **161** · Source symmetries, not more metaphors | Conjugation preserves the original weighted integer Gram; known parity/translation actions are reused. Symmetric p-root selection splits the p−1 obstruction, but central deletion can fail (D3,p11); speculative Spin lifts retired | [Short reader guide](PHASE161_SYMMETRY_GUIDE.md) · [Graveyard](../graveyard/PHASE161_DEFERRED_LIFTS.md) · [Lean source](../../lean/TenthDiscriminant/ObservationConjugation.lean) | [Finite regression](phase161_symmetry_controls.py) |
+
+| **162** · Binary-null lower bound | The polynomial (Z^4-Z^2) and all its positive ordinary derivatives are even at integer-pair observations. A source-matched unimodular row basis targets the unconditional Lean divisor (2^{RS+2S\sum_{r<R}\lfloor r/4\rfloor}) of the **same** integer Gram; D163 30-root floors 450→1130→1358 (the last paper-level), no new cutoff | [Short proof and limits](PHASE162_BINARY_NULL_LOWER.md) · [Lean gates](../../lean/TenthDiscriminant/BinaryNullPolynomial.lean) | [Exact-source control](phase162_binary_null_lower.py) |
 
 **One finite two-way obstruction.** For the 21 fixed points at \(D=17,18\), an exhaustive search of all \({21\choose8}=203,490\) supports shows no common 8-point support can preserve the integral image: every joint binary-rank candidate loses ternary rank at \(D=18\). A concrete 9-point support passes exact Hermite equality for all \(D=17,\ldots,21\). **The proof is finite/exhaustive and code-checked, not a uniform statement over fields.**
 

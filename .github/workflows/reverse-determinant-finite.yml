@@ -1,4 +1,4 @@
-name: Reverse determinant finite evidence (Phases 144-161)
+name: Reverse determinant finite evidence (Phases 144-162)
 on:
   push:
     branches:
@@ -66,3 +66,7 @@ jobs:
         run: python3 research/reverse_determinant/phase160_arithmetic_neurites.py
       - name: Phase161 conjugation, stabilizer action and symmetric-root negative control
         run: python3 research/reverse_determinant/phase161_symmetry_controls.py
+      - name: Phase162 source-matched binary-null lower and negative controls
+        run: python3 research/reverse_determinant/phase162_binary_null_lower.py
+      - name: Phase162 differential-null syzygy original-jet control
+        run: python3 research/reverse_determinant/phase162_null_syzygy.py
