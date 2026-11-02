@@ -144,6 +144,7 @@ import TenthDiscriminant.SharpRadialDetBound
 import TenthDiscriminant.SharpRadialEndpoint
 import TenthDiscriminant.TightRadialSaving
 import TenthDiscriminant.TightRadialEndpoint
+import TenthDiscriminant.ThinIntegratedEndpoint
 import TenthDiscriminant.RankDivisorCompatibility
 
 import TenthDiscriminant.EllipseResidueTransport

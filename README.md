@@ -20,6 +20,8 @@ This is the **actual field discriminant**, not the determinant of our polynomial
 
 Our newer **5-billion** computations are **research candidates**, not a stronger Lean theorem or an independently established field bound. The full arithmetic–analytic bridge is unfinished. [Read the proof in human order](research/tight_radial_v1/HUMAN_RECONSTRUCTION.md) or inspect the [evidence ledger](RESEARCH_NOW.md).
 
+**Phase 143 integration (2 Nov 2026).** A [41,006,250,000 strict field-discriminant theorem candidate](lean/TenthDiscriminant/ThinIntegratedEndpoint.lean) previously passed whole-root Lean checks [on PR #62's historical head](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41219219053). Its reconciliation with the Phase162 mainline is being checked independently: the thinner sample is used on **both** sides of the determinant comparison. Until the combined exact-head checks pass, the published reference remains the 47-billion theorem. The binary 2-primary improvement is *not* added to that numerical certificate. [Proof diagram](research/thin_integrated/PHASE143_SAME_GRAM_GLUE.md) · [Phase143 PR](https://github.com/Dojo-1/tenth-discriminant/pull/62).
+
 ## What the determinant remembers
 
 The original observable is the ordinary directional jet
