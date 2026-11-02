@@ -144,3 +144,7 @@ remains a historical explanation, not the current endpoint. The repository
 is an AI-assisted investigation under Jesús Vilela Jato's research direction,
 motivated by [Tao's challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/).
 No independent endorsement is implied.
+
+## A newer arithmetic fact — not a newer field bound
+
+[Phase164's merged Lean bridge](../../lean/TenthDiscriminant/BinaryThinGramBridge.lean) strengthens what we can say about the **same** thin-Q determinant: its existing univariate binary divisor `2^Λ₁` multiplies the already justified odd-prime product by coprimality, and their product is at most the positive integer `det G_thin`. [This short mathematical guide](PHASE164_BINARY_ODD_SAME_GRAM.md) gives the source object, three theorem declarations, and their dependencies. The source and proof checks [passed](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41417184165). This is not yet incorporated into a **uniform improved logarithmic comparison** or the field endpoint above; neither the proposed `2^1358` four-generator Gram factor nor a 20.2-billion discriminant bound has been proved in Lean.

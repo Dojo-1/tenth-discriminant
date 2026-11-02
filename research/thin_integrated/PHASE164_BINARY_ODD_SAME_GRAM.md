@@ -49,9 +49,7 @@ that prime 2 can be counted twice, or that the field bound improved.
 
 ## Status and the next falsifiable gate
 
-This new Phase164 module is **CI pending** on its exact source head; do not
-promote it to P until focused, whole-root, source/axiom/negative-control,
-and finite checks complete.
+**Formalization status — merged 2 November 2026.** [PR #83](https://github.com/Dojo-1/tenth-discriminant/pull/83) merged at [`26bd83a6`](https://github.com/Dojo-1/tenth-discriminant/commit/26bd83a6f5fa62539fa8a87eda234026cfaf0d53) after the exact combined-head [whole-library Lean, source, permitted-axiom and known-false negative-control run 41417184165](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41417184165) and both focused same-Gram [Lean runs](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41417192952) passed. The three declarations in `BinaryThinGramBridge.lean` are **P: checked as encoded**, not a new numerical discriminant theorem. Independent semantic reconstruction of the surrounding number-field argument remains open.
 
 The next target is the *logarithmic* inequality
 \(\Lambda_1\log2+\operatorname{mass}_{\rm odd}\le\log\det G_{\rm thin}\)
