@@ -101,13 +101,15 @@ theorem recovered_mass_le_exact_odd_377 (D : Nat)
       exactOddPrimeMass (R D) (S D) := by
   have hd := dimensions_377 D hD
   have hs : 1 ≤ S D := by omega
+  have htail := certifiedPrimeMassLower_antitone_tail
+    (R D) (S D) hs FirstEnderInterval.tail_le_budget
   have hrec :
       recoveredPrimeMassLower (R D) (S D)
         FirstEnderInterval.tailBudget ≤
       recoveredPrimeMassLower (R D) (S D)
         (enderTailIntegral 10000) := by
     unfold recoveredPrimeMassLower
-    linarith [FirstEnderInterval.tail_le_budget]
+    linarith [htail]
   have hprod := recoveredPrimeMassLower_le_production
     (R D) (S D) (enderTailIntegral 10000) (by omega) hs
   have hmass := enderPrimeMassLower_le_exact_production
