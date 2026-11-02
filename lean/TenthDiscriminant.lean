@@ -148,6 +148,7 @@ import TenthDiscriminant.TightRadialSaving
 import TenthDiscriminant.TightRadialEndpoint
 import TenthDiscriminant.ThinIntegratedEndpoint
 import TenthDiscriminant.BinaryThinGramBridge
+import TenthDiscriminant.BinaryExponentNormalization
 import TenthDiscriminant.RankDivisorCompatibility
 
 import TenthDiscriminant.EllipseResidueTransport

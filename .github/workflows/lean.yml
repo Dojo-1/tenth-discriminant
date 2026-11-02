@@ -7,12 +7,14 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: lean-${{ github.ref }}
+  group: lean-${{ github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
   cancel-in-progress: true
 jobs:
   lean:
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+# Resource guard: exact-head whole-root audit plus all negative controls routinely exceeds
+# the earlier 25-minute runner budget; preserve all tests rather than skip them.
+    timeout-minutes: 55
     defaults:
       run:
         working-directory: lean
