@@ -32,6 +32,7 @@ the already checked class-number-one fact. -/
 theorem seven_maximal_odd_chart_class_number_one :
     NumberField.classNumber
       (QuadraticField (((7 : Int) + 1) / 4)) = 1 := by
+  letI : Fact ((((7 : Nat) : Int) % 4) = 3) := ⟨by norm_num⟩
   exact classNumber_one_of_field_equiv
     (ImaginaryQuadraticField 7)
     (QuadraticField (((7 : Int) + 1) / 4))
@@ -63,6 +64,7 @@ theorem seven_actual_class_one_original_log_bound :
     (by norm_num : Nat.Prime 7).squarefree
   have hRcut : (1 : Int) < ((7 : Int) + 1) / 4 := by
     norm_num
+  letI : Fact ((((7 : Nat) : Int) % 4) = 3) := ⟨by norm_num⟩
   exact BinaryThinLogBridge.original_binary_and_exact_odd_mass_log_of_pos
     ({(0, 0)} : Finset (Int × Int)) 7 1 1
     hsq seven_maximal_odd_chart_class_number_one
@@ -81,6 +83,9 @@ theorem seven_actual_source_log_equality :
     decide
   have hb : binaryNullGramExponent 1 1 = 1 := by decide
   have hp : oddPrimesBelow 1 = ∅ := by decide
-  simp [hd, hb, exactOddPrimeMass, hp]
+  have hodd : exactOddPrimeMass 1 1 = 0 := by
+    simp [exactOddPrimeMass, hp]
+  rw [hb, hodd, hd]
+  norm_num
 
 end TenthDiscriminant.SevenActualFieldWitness
