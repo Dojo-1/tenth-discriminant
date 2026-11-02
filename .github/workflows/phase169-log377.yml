@@ -1,0 +1,48 @@
+name: Phase169 exact 377 fourth-power logarithm certificate
+on:
+  push:
+    branches: ['formalization/phase169-377-log-certificate']
+    paths:
+      - lean/TenthDiscriminant/Log377Certificate.lean
+      - lean/TenthDiscriminant.lean
+      - .github/workflows/phase169-log377.yml
+  pull_request:
+    paths:
+      - lean/TenthDiscriminant/Log377Certificate.lean
+      - lean/TenthDiscriminant.lean
+      - .github/workflows/phase169-log377.yml
+permissions:
+  contents: read
+jobs:
+  log377:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Verify finite rational log checker and false-24 negative control
+        run: |
+          git rev-parse HEAD
+          lake update
+          lake exe cache get
+          lake build TenthDiscriminant.Log377Certificate

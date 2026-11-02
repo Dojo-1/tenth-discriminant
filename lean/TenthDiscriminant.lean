@@ -152,6 +152,8 @@ import TenthDiscriminant.BinaryExponentNormalization
 import TenthDiscriminant.BinaryThinLogBridge
 import TenthDiscriminant.OneNodeTraceControls
 import TenthDiscriminant.SevenActualFieldWitness
+import TenthDiscriminant.Log377Certificate
+import TenthDiscriminant.ThinEllipseCount377
 import TenthDiscriminant.RadiusRatio377
 import TenthDiscriminant.RankDivisorCompatibility
 
