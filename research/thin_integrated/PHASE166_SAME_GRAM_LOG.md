@@ -45,11 +45,26 @@ Start at [BinaryThinGramBridge](../../lean/TenthDiscriminant/BinaryThinGramBridg
 1. oddFactor_pos — even the empty product is strictly positive
 2. log_oddFactor_eq — exact odd-product logarithm, without a new prime source
 3. log_binary_odd_le_of_int_le — monotonicity of log for one positive integer
-4. thin_binary_and_exact_odd_mass_log — source-typed thin-Q theorem
-5. recovered_mass_le_exact_odd — existing recovered-to-exact odd inequality, exposed independently
-6. thin_binary_and_recovered_mass_log — both contributions on the same determinant
+4. original_binary_and_exact_odd_mass_log_of_pos — **arbitrary original Q** given positive Gram and source arithmetic
+5. thin_binary_and_exact_odd_mass_log — source-typed thin-Q theorem
+6. recovered_mass_le_exact_odd — existing recovered-to-exact odd inequality, exposed independently
+7. thin_binary_and_recovered_mass_log — both contributions on the same determinant
 
 Every premise is visible in the declaration. The abstract elementary product-log argument is kept separate from field-specific arithmetic.
+
+## Why the arbitrary-support theorem matters
+
+The strongest new interface deliberately avoids the production ellipse's large-D assumption. For **any** finite original observation support Q, let z = det G_Q > 0 be the exact integer trace-Gram determinant. Under the original odd-chart, squarefree, class-number-one and inert-prime cutoff hypotheses, the existing source proof establishes
+
+\[
+2^{\Lambda_1(R,S)}P_{\rm odd}(R,S)\mid z
+\quad\Longrightarrow\quad
+\Lambda_1(R,S)\log 2+\operatorname{exactOddPrimeMass}(R,S)\le\log z.
+\]
+
+The new Lean declaration **original_binary_and_exact_odd_mass_log_of_pos** takes **the positive determinant as a hypothesis**, instead of pretending a large-D ellipse count is necessary. It is the nonvacuous reusable arithmetic module. A later geometric theorem may supply positivity for a new Q and a new D-range; neither construction nor a lower field cutoff is claimed here.
+
+For the current thin ellipse, **thin_binary_and_exact_odd_mass_log** specializes that arithmetic with the *existing* positivity certificate, but its full field assumptions at D >= 450^4 are already excluded by the current field-discriminant theorem. We preserve this logical distinction: a correct conditional theorem is not a new field result.
 
 **Status:** all the new declarations are **H until exact-head Lean compilation and the complete source/axiom/negative controls pass**. This branch depends on [Phase165](https://github.com/Dojo-1/tenth-discriminant/pull/84), whose exact exponent normalization has passed focused Lean but whose whole-root CI is still running.
 
