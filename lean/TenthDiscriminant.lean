@@ -155,6 +155,9 @@ import TenthDiscriminant.SevenActualFieldWitness
 import TenthDiscriminant.Log377Certificate
 import TenthDiscriminant.ThinEllipseCount377
 import TenthDiscriminant.RadiusRatio377
+import TenthDiscriminant.Lower377
+import TenthDiscriminant.BinaryGap377
+import TenthDiscriminant.SourcePositivity377
 import TenthDiscriminant.RankDivisorCompatibility
 
 import TenthDiscriminant.EllipseResidueTransport
