@@ -23,9 +23,13 @@ and analytic paths can be reconstructed *on one well-specified integer*.
 Take a squarefree positive parameter \(D\) describing an imaginary quadratic
 field. In the odd chart \(D\equiv3\pmod4\), work with the original integer
 pairs \((x,y)\) representing \(x+y\sqrt{-D}\). Choose a finite set of pairs
-\(Q\). For each rectangular monomial \(Z^rW^s\), record its
-**ordinary** \(Z\)-derivatives, with \(W\) fixed, at each sample and its
-quadratic conjugate. The resulting integer observation matrix is \(E_Q\).
+\(Q\). For each rectangular monomial \(Z^rW^s\), evaluate its
+**ordinary** \(Z\)-derivatives at each chosen pair, with \(W\) held
+constant during differentiation and set to the conjugate value only at
+evaluation. Record **both integer coordinate channels** of each result.
+The trace pairing encodes the two quadratic embeddings; it does **not**
+silently add another observation point to \(Q\). Those original rows form
+\(E_Q\).
 With the unchanged positive trace weights \(2\) and \(2D\), form
 
 \[
