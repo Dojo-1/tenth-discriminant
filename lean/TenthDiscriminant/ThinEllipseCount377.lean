@@ -33,7 +33,7 @@ private theorem twoRplusS_le_51percent (D : Nat) :
   have hn : 100*(2*R D+S D) <= 51*D := by omega
   have hc : ((100*(2*R D+S D) : Nat) : Real) <= ((51*D : Nat) : Real) := by
     exact_mod_cast hn
-  push_cast at hc
+  push_cast at hc ⊢
   linarith
 
 /-- The existing cell-area sufficient criterion at the smaller floor.
