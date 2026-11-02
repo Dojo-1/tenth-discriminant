@@ -29,8 +29,7 @@ theorem binaryH_sourceValue_dvd (D : Nat) (sample : Int × Int) :
   constructor
   · simp [pairZsqrtdEquiv, pairPow, pairMul, pairConj]
   · refine ⟨2*x*y, ?_⟩
-    simp [pairZsqrtdEquiv, pairPow, pairMul, pairConj]
-    ring
+    simp [pairZsqrtdEquiv, pairPow, pairMul, pairConj] <;> ring
 
 /-- The positive ordinary Z derivatives of H are 2Z, 2, then zero. -/
 theorem binaryH_allSourceJets_dvd (D : Nat) (sample : Int × Int)
