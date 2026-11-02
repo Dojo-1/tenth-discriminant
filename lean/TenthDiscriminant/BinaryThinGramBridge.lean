@@ -18,7 +18,7 @@ the count/radius theorem still needs D >= 41006250000. See issue #82.
 -/
 
 namespace TenthDiscriminant.BinaryThinGramBridge
-open RadialCutoff
+open FirstCertificate RadialCutoff
 set_option autoImplicit false
 
 /-- Identical observation set for the p-adic and real estimates. -/
