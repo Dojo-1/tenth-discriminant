@@ -57,11 +57,12 @@ theorem binaryFW_allSourceJets_dvd (D : Nat) (sample : Int × Int)
   dsimp
   by_cases hj : j = 0
   · subst j
-    change (2 : Zsqrtd (-(D : Int))) ∣
-      (star (pairZsqrtdEquiv D sample))^4 -
-      (star (pairZsqrtdEquiv D sample))^2
-    rw [← pairZsqrtd_conj D sample]
-    exact binaryNull_value_dvd_zsqrtd D (pairConj sample)
+    have hconst : (2 : Zsqrtd (-(D : Int))) ∣
+        (star (pairZsqrtdEquiv D sample))^4 -
+        (star (pairZsqrtdEquiv D sample))^2 := by
+      rw [← pairZsqrtd_conj D sample]
+      exact binaryNull_value_dvd_zsqrtd D (pairConj sample)
+    simpa using hconst
   · rw [iterate_derivative_C (Nat.pos_of_ne_zero hj)]
     simp
 
@@ -105,9 +106,9 @@ theorem binaryFourSourceGenerators_jets_dvd
     let z := pairZsqrtdEquiv D sample
     let w := star z
     (2 : Zsqrtd (-(D : Int)))^(a+b+c+d) ∣
-      (derivative^[j]
-        (B * (X^4-X^2)^a * (X^2-C(w^2))^b *
-          (C (w^4-w^2))^c * (X^2*C(w^2-1))^d)).eval z := by
+      (derivative^[j] (B * (X^4-X^2)^a *
+        (X^2 - C (w^2))^b * (C (w^4-w^2))^c *
+        (X^2 * C (w^2-1))^d)).eval z := by
   dsimp
   exact mixedJets_fourPowers_dvd B
     (X^4-X^2)

@@ -8,17 +8,11 @@ It began in response to [Terence Tao's experimental tenth-discriminant challenge
 
 ## The verified result and its boundary
 
-The mainline [Lean theorem](lean/TenthDiscriminant/TightRadialEndpoint.lean) establishes the strict implication
-
-$$
-h(K)=1,\quad [K:\mathbf Q]=2,\quad K\text{ imaginary quadratic}
-\quad\Longrightarrow\quad
-|\operatorname{disc}(K)|<47{,}000{,}000{,}000.
-$$
-
-This is the **actual field discriminant**, not the determinant of our polynomial Gram. The checked statement is not a classification of the nine fields and is not competitive with the strongest bounds reported by other challenge participants. Its mathematical interpretation and the surrounding arguments still invite [independent human reconstruction](https://github.com/Dojo-1/tenth-discriminant/issues/50).
+The mainline [Lean theorem](lean/TenthDiscriminant/ThinIntegratedEndpoint.lean) establishes that every totally complex degree-two number field of class number one has **actual absolute field discriminant strictly below 41,006,250,000**. This is not a Gram-determinant assertion or a new classification of the nine imaginary quadratic fields. The previous [47-billion theorem](lean/TenthDiscriminant/TightRadialEndpoint.lean) remains a checked predecessor. The reconciled [PR #62](https://github.com/Dojo-1/tenth-discriminant/pull/62) passed its [whole-root Lean/source/axiom/negative-control check](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41410529603), finite and security checks before merging on 2 November 2026. Independent human semantic review remains open in [issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50).
 
 Our newer **5-billion** computations are **research candidates**, not a stronger Lean theorem or an independently established field bound. The full arithmetic–analytic bridge is unfinished. [Read the proof in human order](research/tight_radial_v1/HUMAN_RECONSTRUCTION.md) or inspect the [evidence ledger](RESEARCH_NOW.md).
+
+**Phase 143 now integrated.** The old and thin observation Grams are not identified: both the arithmetic lower and analytic upper are applied to the **same new thin-Q integer ordinary-jet Gram**, then transported by the actual-field charts. [Readable proof diagram](research/thin_integrated/PHASE143_SAME_GRAM_GLUE.md). The separate binary 2-primary divisor of Phase162 is not double-counted or added as an extra numerical saving.
 
 ## What the determinant remembers
 
@@ -61,11 +55,11 @@ For the illustrative `D=163,p=31,R=30,S=5` case, a characteristic selection uses
 
 ## CI correction and the next lower-bound experiment
 
-The November 1 whole-root Lean check [failed](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41333838041): a Phase157 π-window experiment imported a module missing from pinned Mathlib. Its exact source has been [quarantined](research/graveyard/PHASE157_PI_WINDOW_UNCOMPILED.lean), with **no change to the original accepted 47-billion theorem**. Restoring a green whole-root build is a separate verification gate. [Phase162's binary-null construction](research/reverse_determinant/PHASE162_BINARY_NULL_LOWER.md) derives progressively stronger paper-level binary divisors of that **same** Gram using unimodular differential-null row bases (finite D163 floor now 1358); the new [univariate source-to-Gram Lean theorem](lean/TenthDiscriminant/BinaryNullTraceGram.lean) is now included in the production import tree for an exact-head whole-project CI check. The four-generator 1358 exponent remains paper-level until its own row factorization is formalized. No stronger field cutoff is claimed.
+The November 1 whole-root Lean check [failed](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41333838041): a Phase157 π-window experiment imported a module missing from pinned Mathlib. Its exact source has been [quarantined](research/graveyard/PHASE157_PI_WINDOW_UNCOMPILED.lean), without changing the earlier checked 47-billion theorem. The reconciled whole-root build has since passed. [Phase162's binary-null construction](research/reverse_determinant/PHASE162_BINARY_NULL_LOWER.md) derives progressively stronger paper-level binary divisors of that **same** Gram using unimodular differential-null row bases (finite D163 floor now 1358); the new [univariate source-to-Gram Lean theorem](lean/TenthDiscriminant/BinaryNullTraceGram.lean) is now included in the production import tree for an exact-head whole-project CI check. The four-generator 1358 exponent remains paper-level until its own row factorization is formalized. No stronger field cutoff is claimed.
 
 ## Observation symmetries and their limits
 
-[Phase159](research/reverse_determinant/PHASE159_OBSERVATION_CONTINUUM.md) treats different ordinary-jet observation supports as related real Grams, while retaining distinct integer lattices and prime-adic invariants. [Phase160](research/reverse_determinant/PHASE160_ARITHMETIC_NEURITES.md) identifies the exact cokernel gluing remainder of overlapping supports. Both are finite research programmes, **not** replacements for the accepted 47-billion field theorem.
+[Phase159](research/reverse_determinant/PHASE159_OBSERVATION_CONTINUUM.md) treats different ordinary-jet observation supports as related real Grams, while retaining distinct integer lattices and prime-adic invariants. [Phase160](research/reverse_determinant/PHASE160_ARITHMETIC_NEURITES.md) identifies the exact cokernel gluing remainder of overlapping supports. Both are finite research programmes, **not** replacements for either checked actual-field theorem.
 
 [Phase161](research/reverse_determinant/PHASE161_SYMMETRY_GUIDE.md) keeps only source-preserving symmetries: conjugation of the original integer observations, the already known parity/inversion action, and the existing integral translation action. It derives a parity split of the characteristic-root rank obstruction, with explicit successful and failing finite controls. Symmetry alone does **not** make deleting the central root safe; the D=3, p=11 control fails by one rank. The [small Lean conjugation module](lean/TenthDiscriminant/ObservationConjugation.lean) passed its [focused exact-source Lean check](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41333553256) against pinned Mathlib; the [finite regression](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41333553063) also passed. The whole-root audit of the merge remains a separate check. The speculative Spin/Pin and free intermanifold lifts are [not promoted](research/graveyard/PHASE161_DEFERRED_LIFTS.md). No new cutoff follows.
 
