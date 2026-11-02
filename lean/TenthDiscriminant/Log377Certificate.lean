@@ -26,7 +26,11 @@ theorem log_377_rational_enclosure :
       oddLogPrefixRat, oddLogRemainderRat, Finset.sum_range_succ]
   have h := checkPositiveLogBounds_sound 5 377 8 (593 / 100) (594 / 100) hc
   norm_num at h
-  exact h
+  constructor
+  · exact h.1
+  · calc
+      Real.log 377 ≤ (297 / 50 : Real) := h.2
+      _ = (594 / 100 : Real) := by norm_num
 
 private theorem log_377_power_four :
     Real.log (((377 : Nat) ^ 4 : Nat) : Real) =
