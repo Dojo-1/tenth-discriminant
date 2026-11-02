@@ -1,0 +1,72 @@
+name: Reverse determinant finite evidence (Phases 144-162)
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - research/reverse_determinant/**
+      - research/ellipsoid_trimming/phase140_exact_trim.py
+      - .github/workflows/reverse-determinant-finite.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - research/reverse_determinant/**
+      - research/ellipsoid_trimming/phase140_exact_trim.py
+      - .github/workflows/reverse-determinant-finite.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-source-matched:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned exact-math dependency
+        run: python3 -m pip install --disable-pip-version-check sympy==1.14.0
+      - name: Phase144 original image and Smith/Hermite strata
+        run: python3 research/reverse_determinant/phase144_verifier.py
+      - name: Phase144 exhaustive six-point minimum
+        run: python3 research/reverse_determinant/phase144_minimum_support.py
+      - name: Phase145 parity/gluing and moving-metric controls
+        run: python3 research/reverse_determinant/phase145_ortho_anti_ambig.py
+      - name: Phase146 integer translations and Newton-fiber barrier
+        run: python3 research/reverse_determinant/phase146_translation_newton.py
+      - name: Phase147 prime-local finite minima
+        run: python3 research/reverse_determinant/phase147_prime_adequacy.py
+      - name: Phase148 common-support minimax
+        run: python3 research/reverse_determinant/phase148_arithmetic_chamber.py
+      - name: Phase148 fixed-real-lattice D-period
+        run: python3 research/reverse_determinant/phase148_fixed_lattice_period.py
+      - name: Phase151 C2 orbit sheaf and integer Fourier counterworld
+        run: python3 research/reverse_determinant/phase151_conjugation_descent.py
+      - name: Phase152 Frobenius graph original ordinary-jet finite certificates
+        run: python3 research/reverse_determinant/phase152_frobenius_graph.py
+      - name: Phase153 Bertrand same-Gram source and rational budget audit
+        run: python3 research/reverse_determinant/phase153_bertrand_budget.py
+      - name: Phase154 Nagura/Costa prime-window source and rational geometry budget
+        run: python3 research/reverse_determinant/phase154_prime_window_budget.py
+      - name: Phase155 original ordinary jets, Frobenius fat-point and mass-prime factorial controls
+        run: python3 research/reverse_determinant/phase155_jet_precision.py
+      - name: Phase156 transport-relative Archimedean 2-adic jet source and uniform gates
+        run: python3 research/reverse_determinant/phase156_transport_archim_jets.py
+      - name: Phase157 pi-tight Frobenius original-jet geometry and rational 5b budget
+        run: python3 research/reverse_determinant/phase157_pi_tight_radius.py
+      - name: Phase158 Walsh-inspired characteristic roots and original ordinary-jet obstruction
+        run: python3 research/reverse_determinant/phase158_characteristic_jets.py
+
+      - name: Phase159 source-matched observation continuum and deletion controls
+        run: python3 research/reverse_determinant/phase159_observation_continuum.py
+      - name: Phase159 exact 2-adic Smith filtration of original trace Gram
+        run: python3 research/reverse_determinant/phase159_padic_gram.py
+      - name: Phase160 exact arithmetic neurites, gluing and 2-adic Plucker controls
+        run: python3 research/reverse_determinant/phase160_arithmetic_neurites.py
+      - name: Phase161 conjugation, stabilizer action and symmetric-root negative control
+        run: python3 research/reverse_determinant/phase161_symmetry_controls.py
+      - name: Phase162 source-matched binary-null lower and negative controls
+        run: python3 research/reverse_determinant/phase162_binary_null_lower.py
+      - name: Phase162 differential-null syzygy original-jet control
+        run: python3 research/reverse_determinant/phase162_null_syzygy.py

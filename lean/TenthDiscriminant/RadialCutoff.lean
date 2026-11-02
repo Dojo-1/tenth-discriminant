@@ -24,16 +24,19 @@ theorem integer_det_positive (Q : Finset (Int × Int)) (D R S : Nat)
       hR hS le_rfl hcount).det_pos
   exact_mod_cast hp
 
-/-- Each distinct prime contributes to the SAME positive original integer. -/
-theorem prime_mass_log_lower (Q : Finset (Int × Int)) (D R S : Nat)
+/-- Prime mass acts on the SAME original integer Gram, with positivity supplied
+directly rather than inferred from a sufficient interpolation cardinality guard.
+No claim about how positivity for a new observation support is established. -/
+theorem prime_mass_log_lower_of_det_pos (Q : Finset (Int × Int)) (D R S : Nat)
     (hD : 0 < D) (hR : 1 ≤ R) (hS : 1 ≤ S)
-    (hcard : 2*(R-1)+(S-1) < Q.card) [Fact ((D : Int)%4=3)] (hsq : Squarefree D)
+    (hdet : 0 < (integerRectangularTraceGram Q D S R S).det)
+    [Fact ((D : Int)%4=3)] (hsq : Squarefree D)
     (hclass : NumberField.classNumber (QuadraticField (((D : Int)+1)/4))=1)
     (hRcut : (R : Int) < ((D : Int)+1)/4) :
     exactOddPrimeMass R S ≤ Real.log ((integerRectangularTraceGram Q D S R S).det : Real) := by
   let P := oddPrimesBelow R
   let z := (integerRectangularTraceGram Q D S R S).det
-  have hz : 0 < z := integer_det_positive Q D R S hD hR hS hcard
+  have hz : 0 < z := hdet
   have hprime (p : Nat) (hp : p ∈ P) : p.Prime := (Finset.mem_filter.mp hp).2.1
   have hlocal (p : Nat) (hp : p ∈ P) : (p : Int)^(2*valuationWeight R S p) ∣ z := by
     letI : Fact p.Prime := ⟨hprime p hp⟩
@@ -62,6 +65,77 @@ theorem prime_mass_log_lower (Q : Finset (Int × Int)) (D R S : Nat)
       exact (pow_pos (hppos p hp) _).ne'
   rw [he] at hlog
   exact hlog
+
+
+/-- The existing point-count lemma is a conservative sufficient positivity
+certificate; retain the public interface so all established callers and
+field-level theorems continue to use their original assumptions. -/
+theorem prime_mass_log_lower (Q : Finset (Int × Int)) (D R S : Nat)
+    (hD : 0 < D) (hR : 1 ≤ R) (hS : 1 ≤ S)
+    (hcard : 2*(R-1)+(S-1) < Q.card) [Fact ((D : Int)%4=3)] (hsq : Squarefree D)
+    (hclass : NumberField.classNumber (QuadraticField (((D : Int)+1)/4))=1)
+    (hRcut : (R : Int) < ((D : Int)+1)/4) :
+    exactOddPrimeMass R S ≤ Real.log ((integerRectangularTraceGram Q D S R S).det : Real) := by
+  exact prime_mass_log_lower_of_det_pos Q D R S hD hR hS
+    (integer_det_positive Q D R S hD hR hS hcard) hsq hclass hRcut
+
+
+/-- A genuine arithmetic/geometry meeting point: the original positive
+integer Gram is simultaneously bounded below by the class-number-one
+prime-mass theorem and above by the unchanged ordinary-jet radial estimate.
+Any strict separation excludes that class number. The geometric positivity
+witness can be Frobenius rank, not the old sufficient point-count guard. -/
+theorem classNumber_ne_one_of_posDef_budget_gap
+    (Q : Finset (Int × Int)) (D R S rho : Nat) (n : Real)
+    (hD : 0 < D) (hR : 2 ≤ R) (hS : 1 ≤ S)
+    (hRS : R ≤ 10000 * S)
+    (hrho : 5 ≤ rho) (hRrho : rho < R)
+    (hpos : ((RadialOperator.gram Q D S R S (rho^2/2 : Nat)).map
+      (Int.castRingHom Real)).PosDef)
+    (hnpos : 0 < n) (hn : (Q.card : Real) ≤ n)
+    (hbound : ∀ q ∈ Q, ‖pairEval D q‖ ≤ rho)
+    [Fact ((D : Int)%4=3)] (hsq : Squarefree D)
+    (hRcut : (R : Int) < ((D : Int)+1)/4)
+    (hgap : enderUpperB R S S rho n <
+      rawPrimeMassLower R S FirstEnderInterval.tailBudget) :
+    NumberField.classNumber (QuadraticField (((D : Int)+1)/4)) ≠ 1 := by
+  intro hclass
+  have he :
+      ((RadialOperator.gram Q D S R S (rho^2/2 : Nat)).map
+        (Int.castRingHom Real)).det =
+      ((integerRectangularTraceGram Q D S R S).det : Real) := by
+    simpa only [RadialOperator.gram_det] using
+      ((Int.castRingHom Real).map_det
+        (RadialOperator.gram Q D S R S (rho^2/2 : Nat))).symm
+  have hpositiveReal := hpos.det_pos
+  rw [he] at hpositiveReal
+  have hdet : 0 < (integerRectangularTraceGram Q D S R S).det := by
+    exact_mod_cast hpositiveReal
+  have hmass := prime_mass_log_lower_of_det_pos Q D R S hD
+    (by omega) hS hdet hsq hclass hRcut
+  have hraw := rawPrimeMassLower_le_certified R S FirstEnderInterval.tailBudget
+  have htail := certifiedPrimeMassLower_antitone_tail R S hS
+    FirstEnderInterval.tail_le_budget
+  have hcert := certifiedPrimeMassLower_le_production R S
+    (enderTailIntegral 10000) hR hS
+  have hprod := enderPrimeMassLower_le_exact_production R S 10000
+    hR hS (by decide) hRS
+  have hlower :
+      rawPrimeMassLower R S FirstEnderInterval.tailBudget ≤
+      Real.log ((integerRectangularTraceGram Q D S R S).det : Real) :=
+    hraw.trans (htail.trans (hcert.trans (hprod.trans hmass)))
+  have hu := RadialDetBound.integer_log_upper_of_posDef
+    Q D R S rho n hD (by omega) hS hrho hRrho hpos hnpos hn hbound
+  have hp : 0 ≤
+      (R-9*S : Nat)*(S : Real)*(S-1 : Nat)*Real.log (20/13 : Real) := by
+    have hlog : 0 ≤ Real.log (20/13 : Real) :=
+      Real.log_nonneg (by norm_num)
+    positivity
+  have hupper :
+      Real.log ((integerRectangularTraceGram Q D S R S).det : Real) ≤
+      enderUpperB R S S rho n := by
+    linarith
+  exact (not_lt_of_ge hlower) (lt_of_le_of_lt hupper hgap)
 
 theorem recovered_normalized_lower (D : Nat) (hD : 41006250000 ≤ D) :
     (999997/1000000 : Real)*Real.log D-5739/1000 ≤
