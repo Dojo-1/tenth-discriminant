@@ -109,14 +109,17 @@ theorem binaryFourSourceGenerators_jets_dvd
       (derivative^[j] (B * (X^4-X^2)^a *
         (X^2 - C (w^2))^b * (C (w^4-w^2))^c *
         (X^2 * C (w^2-1))^d)).eval z := by
+  -- Use the same source coordinates for all four generator jets.
+  -- Naming z and w here also makes the ordinary-Z derivative convention explicit.
   dsimp
+  let z : Zsqrtd (-(D : Int)) := pairZsqrtdEquiv D sample
+  let w : Zsqrtd (-(D : Int)) := star z
   exact mixedJets_fourPowers_dvd B
-    (X^4-X^2)
-    (X^2-C((star (pairZsqrtdEquiv D sample))^2))
-    (C((star (pairZsqrtdEquiv D sample))^4 -
-       (star (pairZsqrtdEquiv D sample))^2))
-    (X^2*C((star (pairZsqrtdEquiv D sample))^2-1))
-    (pairZsqrtdEquiv D sample) (2 : Zsqrtd (-(D : Int)))
+    (X ^ 4 - X ^ 2)
+    (X ^ 2 - C (w ^ 2))
+    (C (w ^ 4 - w ^ 2))
+    (X ^ 2 * C (w ^ 2 - 1))
+    z (2 : Zsqrtd (-(D : Int)))
     a b c d j
     (binaryNull_allOrdinaryJets_dvd D sample)
     (binaryH_allSourceJets_dvd D sample)
