@@ -1,0 +1,7 @@
+# Phase163 — four-generator ordinary-jet formalization bridge
+
+2 November 2026. This branch begins with one deliberately narrow reusable theorem: if four source polynomials have ALL ordinary Z-derivatives divisible by q at the SAME sampled point, then any product of their powers inherits q^(a+b+c+d). The proof uses integer-coefficient higher Leibniz, with no Hasse substitution or factorial inversions. It also has a source-typed control reusing the already proved F(Z)=Z^4-Z^2 all-jet lemma.
+
+**Evidence gate:** P only after exact-head Lean compilation, audit and negative controls. The general lemma by itself does not establish any extra binary factor on the original Gram. To reach the 1358 finite exponent at R=30,S=5 we must separately prove (1) that H(Z,W)=Z^2-W^2, F(W) and K(Z,W)=Z^2(W^2-1) are null for every true source sample with W=conj(Z); (2) that the chosen 4-generator monic row polynomials expand inside the unchanged R x S rectangle as one explicit unimodular integer matrix; (3) that this matrix acts on the original ordinary derivative rows; (4) apply the existing generic gram factor theorem and calculate the optimizer sum. A black-box exact finite verifier remains a control rather than a substitute for any of these obligations.
+
+The open Phase143 thin-Q field endpoint is a separate comparison: do not transfer a divisor across different observation sets, and do not add this q=2 gain to an existing q=2 term.
