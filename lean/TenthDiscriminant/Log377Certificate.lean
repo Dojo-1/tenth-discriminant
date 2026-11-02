@@ -24,13 +24,14 @@ theorem log_377_rational_enclosure :
       checkPositiveLogBounds 5 377 8 (593 / 100) (594 / 100) = true := by
     norm_num [checkPositiveLogBounds, binaryLogLowerRat, binaryLogUpperRat,
       oddLogPrefixRat, oddLogRemainderRat, Finset.sum_range_succ]
-  exact checkPositiveLogBounds_sound 5 377 8 (593 / 100) (594 / 100) hc
+  have h := checkPositiveLogBounds_sound 5 377 8 (593 / 100) (594 / 100) hc
+  norm_num at h
+  exact h
 
 private theorem log_377_power_four :
     Real.log (((377 : Nat) ^ 4 : Nat) : Real) =
       4 * Real.log (377 : Real) := by
-  norm_num only [Nat.cast_pow, Nat.cast_ofNat]
-  rw [Real.log_pow]
+  rw [Nat.cast_pow, Real.log_pow]
   ring
 
 /-- Replacement for the false 24 <= log D premise at the NEW anchor.
