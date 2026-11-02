@@ -30,6 +30,15 @@ import TenthDiscriminant.Interpolation
 import TenthDiscriminant.LatticeEllipse
 import TenthDiscriminant.EllipseCellArea
 import TenthDiscriminant.IntegerTraceGram
+import TenthDiscriminant.JetPrecisionBridge
+import TenthDiscriminant.ObservationConjugation
+import TenthDiscriminant.BinaryNullPolynomial
+import TenthDiscriminant.BinaryNullOrdinaryJets
+import TenthDiscriminant.BinaryNullBasisMatrix
+import TenthDiscriminant.BinaryNullRowAction
+import TenthDiscriminant.BinaryGramGeneric
+import TenthDiscriminant.BinaryNullTraceGram
+import TenthDiscriminant.BinaryPrimeMassBridge
 import TenthDiscriminant.QuadraticCoordinates
 import TenthDiscriminant.ResidueTraceGram
 import TenthDiscriminant.GramDivisibility
@@ -80,7 +89,6 @@ import TenthDiscriminant.AspectRatioLowerEnvelope
 import TenthDiscriminant.TunedRadiusFamily
 import TenthDiscriminant.ThinEllipseCount
 import TenthDiscriminant.ThinRadiusAnalyticGain
-import TenthDiscriminant.ThinIntegratedEndpoint
 import TenthDiscriminant.TunedAnalyticCutoff
 import TenthDiscriminant.QuadraticGeneratorBridge
 import TenthDiscriminant.ImaginaryQuadraticRepresentation
@@ -136,6 +144,7 @@ import TenthDiscriminant.SharpRadialDetBound
 import TenthDiscriminant.SharpRadialEndpoint
 import TenthDiscriminant.TightRadialSaving
 import TenthDiscriminant.TightRadialEndpoint
+import TenthDiscriminant.ThinIntegratedEndpoint
 import TenthDiscriminant.RankDivisorCompatibility
 
 import TenthDiscriminant.EllipseResidueTransport

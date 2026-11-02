@@ -70,3 +70,7 @@ The geometrical language is deliberately austere: the nontrivial structure is th
 - **R_emp:** the four-nonreal-point finite rank witness cannot prove a production \(D\to\infty\) improvement, nor establish computational hardness.
 
 Accept only after: exact-head whole-root Lean, explicit theorem source, axiom/dependency controls, known-false negative controls, security checks, and an independently readable theorem statement. Issues [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50) (human external reconstruction) and [#51](https://github.com/Dojo-1/tenth-discriminant/issues/51) (original same-E modular rank research) remain open even if the new field endpoint compiles. The classical absolute field bound is not claimed novel.
+
+## 2 November 2026 source reconciliation
+
+The exact PR #62 source head `cae74f4` passed its own full Lean/source/axiom/negative-control run [41219219053](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41219219053). Its old README, research ledger and root import diverged from subsequently merged Phase162. The integration merge takes the current Phase162 **main** as the file baseline and imports the same original Phase143 Lean endpoint without editing its theorem statements or proof, then explicitly adds the original PR head as a merge parent. The reassembled whole-root build and independent mathematical semantic review remain distinct pending gates. No binary bonus is inserted into the Phase143 bound.
