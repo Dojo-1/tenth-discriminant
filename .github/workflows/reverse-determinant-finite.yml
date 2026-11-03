@@ -1,4 +1,4 @@
-name: Reverse determinant finite evidence (Phases 144-180)
+name: Reverse determinant finite evidence (Phases 144-181)
 on:
   push:
     branches:
@@ -72,3 +72,7 @@ jobs:
         run: python3 research/reverse_determinant/phase162_null_syzygy.py
       - name: Phase180 original-jet binary hull and exact 2-adic radical controls
         run: python3 research/reverse_determinant/phase180_binary_hull.py
+      - name: Phase181 normalized same-Gram binary Smith barcode and source controls
+        run: python3 research/reverse_determinant/phase181_normalized_binary_filtration.py
+      - name: Phase181 small-D exact thin-ellipse and precision falsifiers
+        run: python3 research/reverse_determinant/phase181_thin_support_pilot.py

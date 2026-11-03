@@ -92,6 +92,7 @@ The smallest useful reading path is [Phase178 human guide](research/thin_integra
 | **Characteristic observations (Phase158)** | Exact finite rank, coefficient-obstruction and $2$-adic capacity experiments; no uniform new field cutoff. | [Dossier](research/reverse_determinant/PHASE158_CHARACTERISTIC_JETS.md) · [verifier](research/reverse_determinant/phase158_characteristic_jets.py) |
 | **Support and arithmetic gluing (Phases142, 159–160)** | Exact finite examples separating full rank, integral image, Smith data and Gram volume. A smaller support need not yield a smaller determinant bound. | [Phase142](research/ellipsoid_trimming/PHASE142_LEVERAGE_AND_UNISOLVENCE.md) · [Phase159](research/reverse_determinant/PHASE159_OBSERVATION_CONTINUUM.md) · [Phase160](research/reverse_determinant/PHASE160_ARITHMETIC_NEURITES.md) |
 | **Symmetry (Phase161)** | Source-preserving conjugation and related finite controls; removing a symmetric observation is not automatically safe. | [Human guide](research/reverse_determinant/PHASE161_SYMMETRY_GUIDE.md) · [Lean](lean/TenthDiscriminant/ObservationConjugation.lean) |
+| **Normalized 2-adic filtration (Phase181; bounded pilot)** | After the existing Phase162 row factors are removed, exact Smith barcodes distinguish two D=163 supports having the same first mod-2 nullity. No production-uniform gain or new field cutoff is proved. | [Finite pilot and explanation](research/reverse_determinant/PHASE181_NORMALIZED_BINARY_FILTRATION.md) · [open target #99](https://github.com/Dojo-1/tenth-discriminant/issues/99) |
 | **Transport coherence (Phase179)** | A rational determinant-one shear can preserve volume while failing to preserve an *anchored* integral lattice. The new Lean non-congruence statement is under draft-PR CI review, **not promoted to main**. | [Draft PR #98](https://github.com/Dojo-1/tenth-discriminant/pull/98) |
 
 One exact arithmetic example behind the current transport study is worth keeping in sight:
@@ -127,6 +128,8 @@ For one bounded exact finite experiment, from the repository root:
 ```sh
 python3 -m pip install sympy==1.14.0 mpmath
 python3 research/reverse_determinant/phase158_characteristic_jets.py
+python3 research/reverse_determinant/phase181_normalized_binary_filtration.py
+python3 research/reverse_determinant/phase181_thin_support_pilot.py
 ```
 
 For the documentation's math/Markdown sanity check:
