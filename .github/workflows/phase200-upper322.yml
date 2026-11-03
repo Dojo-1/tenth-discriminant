@@ -1,0 +1,87 @@
+name: Phase200 source-exact 322 original thin Gram analytic upper
+on:
+  push:
+    branches: ['research/phase200-same-gram-field322']
+    paths:
+      - lean/TenthDiscriminant/Phase200Scalar322.lean
+      - lean/TenthDiscriminant/Lower322.lean
+      - lean/TenthDiscriminant/SourceGeometry322.lean
+      - lean/TenthDiscriminant/SourcePositivity322.lean
+      - lean/TenthDiscriminant/UpperScalars322.lean
+      - lean/TenthDiscriminant/ThinUpper322.lean
+      - .github/workflows/phase200-upper322.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-upper:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Freeze original source and forbid padded-Gram substitution
+        working-directory: .
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          root=Path('lean/TenthDiscriminant')
+          g=(root/'SourceGeometry322.lean').read_text()
+          a=(root/'UpperScalars322.lean').read_text()
+          t=(root/'ThinUpper322.lean').read_text()
+          s=(root/'Phase200Scalar322.lean').read_text()
+          assert 'theorem normalized_upper_322' in a
+          assert 'theorem log_radius_upper_322' in a
+          assert 'log_521_over_1000_upper_652' in s
+          assert 'Real.log (521/1000 : Real) <= -652/1000' in a
+          assert '(4/5 : Real)*Real.log D-815/1000' in a
+          assert 'thin_production_normalized_upper_322' in t
+          assert 'ellipsePairs D (Tuned.thinRadius D)' in t
+          assert 'Tuned.thin_radius_interpolation_count_322' in t
+          assert 'TightRadialSaving.normalized_integer_upper_tight' in t
+          assert 'Tuned.upperB_tenth_saving' in t
+          assert '(4/5 : Real)*Real.log D-1853/2000' in t
+          assert 'integerRectangularTraceGram' in t
+          assert 'theorem rho_upper_322' in g
+          for name,blob in [('UpperScalars322',a),('ThinUpper322',t)]:
+            for bad in ['sorry','admit','axiom ','theorem totallyComplex_degree_two_classNumber_one_discriminant_bound_322']:
+              assert bad not in blob,(name,bad)
+          from fractions import Fraction as F
+          assert F(815,1000)+F(23,2000)+F(1,10)==F(1853,2000)
+          print('PHASE200_ORIGINAL_THIN_GRAM_ANALYTIC_UPPER_SOURCE_PASS')
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile original unchanged source upper
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.ThinUpper322
+      - name: Print source-exact theorem and axioms
+        run: |
+          printf '%s\n' 'import TenthDiscriminant.ThinUpper322' \
+            '#check TenthDiscriminant.FirstCertificate.Tuned.normalized_upper_322' \
+            '#check TenthDiscriminant.ThinUpper322.thin_production_normalized_upper_322' \
+            '#print axioms TenthDiscriminant.FirstCertificate.Tuned.normalized_upper_322' \
+            '#print axioms TenthDiscriminant.ThinUpper322.thin_production_normalized_upper_322' \
+            > /tmp/phase200_upper322_axioms.lean
+          lake env lean /tmp/phase200_upper322_axioms.lean
