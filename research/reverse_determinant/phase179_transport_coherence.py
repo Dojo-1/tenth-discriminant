@@ -8,13 +8,13 @@ Do NOT treat a det-one rational frame as an integer unimodular gauge.
 """
 from __future__ import annotations
 
-from fractions import Fraction
 from sympy import Matrix, Rational, ZZ, eye
 from sympy.matrices.normalforms import smith_normal_form
 from phase144_verifier import D, R, S, J, FULL, evaluation
 from phase144_minimum_support import SIX
 from phase145_ortho_anti_ambig import P, gram
 from phase146_translation_newton import transport
+from phase147_prime_adequacy import original_eval
 
 assert (D, R, S, J) == (19, 8, 4, 4)
 
@@ -77,14 +77,15 @@ def toy_oracle():
     # reconstructs exactly over Q; the Z-lattice still changes.
     transported_metric = F.inv() * B * F.inv().T
     assert F * transported_metric * F.T == B
-    assert any(z.q != 1 for z in transported_metric)
+    assert transported_metric == Matrix([[10, -9], [-9, 10]])
+    # Integrality of the compensated metric still does NOT make F a Z-unit.
     print("TOY PASS: integral gauge chi 4/3 vs fixed grading chi 4; "
           "SL2(Q) half shear det=1 but two 2-torsion relative quotients; "
           "Fourier index=2 and fixed-metric det factor=4", flush=True)
 
 
 def original_jet_control():
-    assert evaluation(FULL) == evaluation(FULL)
+    assert original_eval(SIX, D) == evaluation(SIX)
     E = evaluation(SIX)
     assert E.shape == (R*S, 2*J*len(SIX))
     T = transport(2)
