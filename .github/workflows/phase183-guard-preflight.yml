@@ -1,0 +1,20 @@
+name: Phase183 exact rational guard preflight
+on:
+  push:
+    branches: ['research/phase183-331-guard-preflight']
+    paths:
+      - research/thin_integrated/phase183_331_preflight.py
+      - .github/workflows/phase183-guard-preflight.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-guards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Evaluate exact rational guards and negative controls
+        run: python3 research/thin_integrated/phase183_331_preflight.py
