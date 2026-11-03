@@ -6,9 +6,9 @@
 
 **Mainline formal field theorem [P relative to encoded definitions and standard axioms] — 3 November 2026.** [Phase195 PR #116](https://github.com/Dojo-1/tenth-discriminant/pull/116) merged at [1d74a750](https://github.com/Dojo-1/tenth-discriminant/commit/1d74a7506506feb350ac771329f372e2f4b089bd) with the declaration [Threshold328.totallyComplex_degree_two_classNumber_one_discriminant_bound_328](lean/TenthDiscriminant/ActualField328.lean):
 
-~~~math
+```math
 |\mathrm{disc}(K)|<328^4=11{,}574{,}317{,}056
-~~~
+```
 
 for totally complex quadratic number fields of class number one. This concerns the **actual absolute field discriminant**, not the auxiliary source Gram. All **33** exact-head PR checks passed, including the entire project-root Lean build, source correspondence, transitive permitted-axiom audit, known-false strengthening controls, and CodeQL. [Phase188's earlier $331^4$ theorem](https://github.com/Dojo-1/tenth-discriminant/pull/112) remains a fully checked historical predecessor, alongside $375^4$, $377^4$, 41.00625 billion and ~47 billion. CI does **not** replace independent mathematical semantic reconstruction.
 
