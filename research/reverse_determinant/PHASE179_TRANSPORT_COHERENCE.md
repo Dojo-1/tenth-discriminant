@@ -4,7 +4,7 @@
 
 The source of this experiment is the Tenth Discriminant ordinary-\(Z\)-jet integer trace-Gram certificate: integer observation matrix \(E_Q(D,J,R,S)\) on **the original lattice-pair support**, paired with the original trace weights \((2,2D)\). The field discriminant and class number are distinct invariants from its auxiliary \(\det G_Q\).
 
-The earlier project had already proved source-specific passive translation, radial/arithmetic integer-frame determinant preservation and noncommutation in [ProofTransport.lean](../../lean/TenthDiscriminant/ProofTransport.lean) and [PassiveTransport.lean](../../lean/TenthDiscriminant/PassiveTransport.lean). This phase must **not claim those familiar facts as novel**, nor invent a higher-dimensional new object before testing the exact information that escapes a scalar.
+[Phase156](PHASE156_TRANSPORT_ARCHIM_JETS.md) already distinguishes a moved PSD cone/order unit from a fixed-reference coordinate artifact. The earlier project had already proved source-specific passive translation, radial/arithmetic integer-frame determinant preservation and noncommutation in [ProofTransport.lean](../../lean/TenthDiscriminant/ProofTransport.lean) and [PassiveTransport.lean](../../lean/TenthDiscriminant/PassiveTransport.lean). This phase must **not claim those familiar facts as novel**, nor invent a higher-dimensional new object before testing the exact information that escapes a scalar.
 
 ## A typed transport contract
 
@@ -35,7 +35,22 @@ L\cap L'=\mathbb Z(1,0)\oplus\mathbb Z(0,2),\quad
 L/(L\cap L')\cong\mathbb Z/2,\quad
 L'/(L\cap L')\cong\mathbb Z/2.
 \]
-Both covolumes agree, **both relative quotient groups are nontrivial**, and neither is determined by \(\det H\). This is the smallest decisive obstruction to taking "same determinant" as "same integral certificate." A determinant-one rational matrix can have an invisible *balanced denominator debt*.
+Both covolumes agree, **both relative quotient groups are nontrivial**, and neither is determined by \(\det H\).
+
+For ANY \(T\in\mathrm{GL}_n(\mathbb Q)\), the correct oriented relationship is
+\[
+|\det T|=\frac{[L:L\cap TL]}{[TL:L\cap TL]}.
+\]
+The determinant collapses two index profiles to their quotient. In particular, the pair \((2,2)\) for the half-shear cancels to a determinant-one result.
+
+**Reference correction:** \(H:L\to L'\) is nevertheless an abstract isomorphism of \(\mathbb Z\)-modules. If one *also* transports the ambient reference lattice, then there is no intrinsic information loss. The two-sided index pair is a genuine defect only **relative to the anchored original integer coordinate lattice** required by the arithmetic certificate. A passive reparametrization and a proposed new matrix on a fixed source lattice are different tasks.
+
+An even stronger false positive has BOTH integral positive-definite Grams:
+\[
+G_0=\begin{pmatrix}4&0\\0&4\end{pmatrix},\quad
+G_1=HG_0H^{\mathsf T}=\begin{pmatrix}5&2\\2&4\end{pmatrix}.
+\]
+Both determinants are \(16\), hence all determinant valuations agree, yet their Smith invariant factors are respectively \((4,4)\) and \((1,16)\). Modulo 2 their ranks are \(0\) and \(1\), so no integral unimodular congruence between them exists. Equal integral Gram determinants do **not** imply identical prime-local module structure. This negative control is a classical, exact arithmetic fact, not a new difficulty theorem. This is the smallest decisive obstruction to taking "same determinant" as "same integral certificate." A determinant-one rational matrix can have an invisible *balanced denominator debt*.
 
 The [Lean module](../../lean/TenthDiscriminant/TransportCoherence.lean) targets the universal rational determinant rule, source-exact integer-unimodular determinant/divisor transport, and a proof that this half-shear is **not** the rational cast of any integral matrix. The independent standalone \(2\times2\) arithmetic oracle checks the intersection and both indices, but does **not** by itself establish a universal lattice theorem in Lean.
 
@@ -52,6 +67,8 @@ the fixed-metric congruence multiplies a Gram determinant by four, not one:
 \det(FGF^{\mathsf T})=4\det G.
 \]
 Modulo \(2\), \(F\) has rank one.
+
+**Type distinction:** \(\det(FGF^{\mathsf T})=4\det G\) describes a *row-frame congruence*. Phase151's genuine source counterworld acts instead on the observation/jet **columns** \(E'=EF\), yielding \(G'=EFBF^{\mathsf T}E^{\mathsf T}\) if the metric B is fixed. These expressions have different carriers and may not be identified. Only the *channel metric* compensation \(B'=F^{-1}BF^{-{\mathsf T}}\) makes \(E'B'E'^{\mathsf T}=EBE^{\mathsf T}\). The toy 2×2 formula is a diagnostic, not a silently substituted source Gram.
 
 But using the *contravariantly transported* metric \(B'=F^{-1}BF^{-{\mathsf T}}\) gives \(FB'F^{\mathsf T}=B\) over \(\mathbb Q\). In the explicit toy with the original channel weights \(B=\operatorname{diag}(2,38)\), even \(B'=\begin{psmallmatrix}10&-9\\-9&10\end{psmallmatrix}\) remains integral. **This does not promote \(F\) into \(\mathrm{GL}_2(\mathbb Z)\).** Integrality of a compensated metric is not integrality of its witness transport.
 
@@ -82,6 +99,8 @@ The broader use of integral module/cokernel data is established mathematics. [Fi
 - **R**: "det(T)=1 guarantees integral witness equivalence"; "a Fourier compensation automatically preserves integral lattices"; "fixed-grading parity after a gauge move diagnoses intrinsic geometry."
 - **H**: a typed, resource-aware hardness invariant across multiple regimes; any uniform support selection with improved analytic upper; any strengthened field cutoff from this experiment.
 - **S**: "Worldlets", "holoportation" and "polycosmic" as names for the typed architecture. No claim of sheaf cohomology, quantum hardware, actual closed-loop holonomy or a physical mechanism.
+
+**Complexity/hardness gate:** even an integral isomorphism need not preserve an operational resource budget if constructing or applying the forward/inverse map expands bit lengths, oracle access or witness complexity. Any proposed complexity-theoretic hardness transport must state efficient forward, return and certificate maps, task correspondence and matched resource costs. Algebraic frame invariance alone is not a hardness equivalence. A change in D creates a new family member, not automatically a coordinate change of one underlying field.
 
 **Kill condition:** any code or theorem purporting to infer integral equivalence from rational det-one, any misidentified source Gram, or any failure to reproduce the exact 2-primary counterworld. **Stop condition:** do not design a richer general geometry until this first square and its negative controls pass and a nontrivial further obstruction can be identified without changing definitions.
 
