@@ -3,6 +3,9 @@ on:
   push:
     branches: ['research/phase196-sharp-log327']
     paths:
+      - lean/TenthDiscriminant/Phase196Scalar327.lean
+      - lean/TenthDiscriminant/SourceGeometry327.lean
+      - lean/TenthDiscriminant/SourcePositivity327.lean
       - lean/TenthDiscriminant/RecoveryGainFloorRatio.lean
       - lean/TenthDiscriminant/Lower327.lean
       - lean/TenthDiscriminant/SourceOddBinary327.lean
@@ -56,6 +59,9 @@ jobs:
           assert 'NumberField.discr_eq_discr_of_algEquiv K e.symm' in actual
           assert 'even_classNumber_ne_one' in actual
           assert 'checkPositiveLogBounds 5 327 8' in scalars
+          gsource=(src/'SourceGeometry327.lean').read_text()
+          assert 'theorem rho_upper_327' not in gsource
+          assert scalars.count('theorem rho_upper_327')==1
           assert 'theorem smaller_327_log_floor_rejected' in scalars
           for source in (lower,upper,actual,raw):
               for forbidden in ('331', '328', 'sorry', 'admit', 'axiom '):
