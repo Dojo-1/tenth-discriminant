@@ -6,13 +6,13 @@ Status: Lean candidate, not an improved field-discriminant cutoff.
 
 The original integer-pair support is
 
-\[
-Q_{\rm thin}(D)=\operatorname{ellipsePairs}(D,\lceil(11/25)D^{3/4}\rceil),\quad
+```math
+Q_{\rm thin}(D)=\mathrm{ellipsePairs}(D,\lceil(11/25)D^{3/4}\rceil),\quad
 R(D)=\lfloor D/4\rfloor,\quad S(D)=\lfloor R(D)/25\rfloor.
-\]
+```
 
 The target is the same sufficient interpolation criterion
-\(2(R-1)+(S-1)<|Q_{\rm thin}(D)|\), not a necessary count
+$2(R-1)+(S-1)<|Q_{\rm thin}(D)|$, not a necessary count
 or a new source lattice. The original ordinary-Z derivative, both
 2,2D trace weights and field charts remain untouched.
 
@@ -20,22 +20,22 @@ or a new source lattice. The original ordinary-Z derivative, both
 
 The previously used cell-area lemma requires
 
-\[
+```math
 \rho\ge (1001/1000)\sqrt{(2R+S)\sqrt D/\pi}+10\sqrt D.
-\]
+```
 
-From the exact integer R,S definitions, \(2R+S\le(51/100)D\);
+From the exact integer R,S definitions, $2R+S\le(51/100)D$;
 the existing rational pi bound gives the sufficient square-root
-majorant \((413/1000)D^{3/4}\). Since
-\(\rho_{\rm thin}\ge(11/25)D^{3/4}\), sufficiency reduces to
+majorant $(413/1000)D^{3/4}$. Since
+$\rho_{\rm thin}\ge(11/25)D^{3/4}$, sufficiency reduces to
 
-\[
+```math
 (11/25-(1001/1000)(413/1000))D^{1/4}\ge10.
-\]
+```
 
-The coefficient equals \(26587/1000000\). At root 377
-the excess is \(23299/1000000>0\); at root 376 it is
-\(-3288/1000000<0\). Thus 377 is the first integer root floor
+The coefficient equals $26587/1000000$. At root 377
+the excess is $23299/1000000>0$; at root 376 it is
+$-3288/1000000<0$. Thus 377 is the first integer root floor
 **for this particular sufficient certificate**; it does not rule
 out a stronger certificate at a smaller floor.
 

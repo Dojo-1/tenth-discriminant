@@ -18,27 +18,27 @@ is **exactly** $\det G$, and the uniform rectangular estimate
 $25S\le R\le26S$, $S\ge100$ yields the explicit normalized saving $0.011$.
 
 This gives the **proposed** upper bound
-\[
+```math
 \frac{\log\det G}{R^2 S}\le\frac45\log D-\frac{824}{1000}
-\]
+```
 against the **inherited** and independently still reviewable arithmetic lower
-\[
+```math
 \frac{999997}{1000000}\log D-\frac{5739}{1000}
  \le\frac{\log\det G}{R^2 S}
-\]
+```
 under class-number-one and all prime guards.
 
 The five-term rational logarithm certificate is chosen at
 $D_0=47{,}100{,}000{,}000$:
-\[
+```math
 \frac{122877}{5000}=24.5754\le\log D_0.
-\]
+```
 At $u=122877/5000$ the subtraction of the upper from the lower is
-\[
+```math
 \bigl(\tfrac{999997}{1000000}-\tfrac45\bigr)u
 -\bigl(\tfrac{5739}{1000}-\tfrac{824}{1000}\bigr)
 =\frac{31369}{5000000000}>0.
-\]
+```
 The certificate must be checked symbolically in Lean, not inferred from
 rounded decimal logs.
 

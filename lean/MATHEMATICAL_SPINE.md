@@ -181,8 +181,8 @@ change of basis has determinant `1`, so it preserves `det G`. Because the
 whole new jet row is `3` times an *integral* row, the Gram structure gives
 
 $$
-TGT^{\mathsf T}=\operatorname{diag}(1,\ldots,3,\ldots,1)
-\,K\,\operatorname{diag}(1,\ldots,3,\ldots,1),
+TGT^{\mathsf T}=\mathrm{diag}(1,\ldots,3,\ldots,1)
+\,K\,\mathrm{diag}(1,\ldots,3,\ldots,1),
 \quad K\in M_8(\mathbb Z),
 \quad \det G=9\det K.
 \tag{4}

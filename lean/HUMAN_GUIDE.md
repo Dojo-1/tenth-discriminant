@@ -373,7 +373,7 @@ integer trace pairing is
 
 $$
 B_D((a,b),(c,d))=2(ac+Dbd)
-=2\operatorname{Re}\bigl(\iota_D(a,b)\overline{\iota_D(c,d)}\bigr).
+=2\mathrm{Re}\bigl(\iota_D(a,b)\overline{\iota_D(c,d)}\bigr).
 $$
 
 That equality is the key geometric invariant: the weighted Euclidean pairing
@@ -752,8 +752,8 @@ For the reverse inclusion, write any `z∈𝓞_K` as `a+bT` with rational
 `a,b`. Its actual field trace and norm—computed from multiplication
 by `z` in the `(1,T)` basis—are
 
-$$\operatorname{Tr}(z)=2a+b,\qquad
-\operatorname{N}(z)=a^2+ab+cb^2.$$
+$$\mathrm{Tr}(z)=2a+b,\qquad
+\mathrm{N}(z)=a^2+ab+cb^2.$$
 
 Because `z` is integral, both are rational algebraic integers, hence
 ordinary integers. Rewrite `z` as

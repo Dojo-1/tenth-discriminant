@@ -11,12 +11,12 @@ The load-bearing specification/API drift is this: [`RadialDetBound.integer_log_u
 ## Proposed conditional parameter family
 
 Assume `D≥25,000,000,000`, `D≡3 (mod 4)`, `D` squarefree, and hypothetically `h(−D)=1`. Set `m=(D+1)/4`. Bertrand's postulate provides an **odd** prime `m/2<p<m`; the existing [`ClassNumberInertBridge.smallPrime_nonsquare_of_classNumber_one`](../../lean/TenthDiscriminant/ClassNumberInertBridge.lean) gives its inertness under that class-number hypothesis. Let
-\[
+```math
 R=p-1,\quad S=J=\lfloor R/25\rfloor,\quad
 \delta=\tfrac12\sqrt{D+1},\quad
 \rho=\Big\lceil\delta+\sqrt{p\sqrt D/3}\Big\rceil,
 \quad Q=\{(x,y)\in\mathbb Z^2:x^2+Dy^2\le\rho^2,\ y\ge0\}.
-\]
+```
 The full rectangular lattice has covering radius `δ` and covolume `√D`. A disk-cell covering argument gives `|\Omega_D(\rho)|≥π(\rho−δ)^2/\sqrt D>p`. The same elementary estimates at `D≥25b` show `ρ/R<0.006`, hence `2ρ<p` and all conjugate residues are distinct modulo `p`. The Frobenius graph `W=Z^p` gives the original ordinary jets, with `R<p`, `J<p`, and injective exponents `r+ps`; since `J|\Omega|>pS−2`, the *actual* integer evaluation matrix has full row rank modulo `p`, so its original positive-trace Gram `G_Q` is positive definite over `ℝ`. This [P-paper] geometry is not yet Lean formalized.
 
 The same class-number-one Frobenius/prime-mass theorem, with unchanged arithmetic assumptions `R<m`, gives `L_{\rm arith}(R,S)≤\log\det G_Q`. On the upper side, `Q` lies in the same radius-`ρ` ellipse and the elementary rectangle count is `|Q|≤4D`; after the *pending positivity-first upper refactor*, the original `enderUpperB(R,S,S,ρ,4D)` bounds **the identical** `\log\det G_Q`. No new row basis, Hasse jet, `μ_R` ring, fractional divided-power lattice, or factorial denominator is introduced.
@@ -26,46 +26,46 @@ The same class-number-one Frobenius/prime-mass theorem, with unchanged arithmeti
 Let `L` be precisely [`NormalizedComparison.rawPrimeMassLower`](../../lean/TenthDiscriminant/NormalizedComparison.lean), with `I=FirstEnderInterval.tailBudget`, and `U=enderUpperB(R,S,S,ρ,4D)`. The existing certified chain proves `L≤exactOddPrimeMass(R,S)`. The formulas are *not* clipped or independently renormalized.
 
 For `D≥25b`, Bertrand gives `R>D/8−1>3×10^9`, `S≥10^8`, `1/25−1/R≤S/R≤1/25` and `R/S≤25+25/S`. Writing the exact normalized raw lower from Lean and using `log x≤√x`, `log(R−1)≥log R−1/(R−1)`, and the source constants
-\[
+```math
 C=\mathrm{FAC}+I-\mathrm{LIN}<1.791,\quad
 C_s=\mathrm{SQ}+I<0.134281,\quad \mathrm{ERR}<9893,
-\]
+```
 yields the explicitly bounded loss
-\[
+```math
 \frac{L}{R^2S}\ge\log R -
 \left[
 \tfrac32+\tfrac1{3\times10^9-1}+\tfrac{15}{50000}
 +1.791+\tfrac{2(9893)}{3\times10^9}
 +\tfrac{25+25/10^8}{3}\,0.134281
 \right]\ge\boxed{\log R-4.411}.
-\]
+```
 
 For the original upper, the ceiling and `p>D/8` imply
-\[
+```math
 \rho\le A(1+\tfrac1{160}),\qquad
 A=\sqrt{p\sqrt D/3},\quad
 \log\rho\le\tfrac14\log D+\tfrac12\log R-\tfrac12\log3+\tfrac1{160}+\tfrac1{2R}.
-\]
+```
 Indeed `D^(1/4)>395` and the exact rational ceiling correction
-\[
+```math
 \frac{49}{20\cdot395}\left(1+\frac1{2D}\right)
 +\frac{49}{10\cdot395^3}<\frac1{160}
-\]
+```
 holds throughout the range. Independently `ρ/D^{3/4}<0.293`, `ρ/R<0.006`; `|Q|≤4D`. The normalized [`upperB_normalized`](../../lean/TenthDiscriminant/NormalizedComparison.lean) expression and `S/R≤1/25` bound its small count/radius endpoint terms by `<0.001`. With `log3>1.09`, this gives
-\[
+```math
 \boxed{\frac{U}{R^2S}\le 0.24\log D+0.56\log R-0.596}.
-\]
+```
 **Audit rule:** the numerical Python program verifies the exact rational constants and stresses both formulas, but it is NOT a universal proof engine; a competent human/Lean reconstruction of each displayed inequality remains mandatory.
 
 Subtracting the same-source envelopes:
-\[
+```math
 \frac{L-U}{R^2S}
 \ge 0.44\log R-0.24\log D-3.815.
-\]
+```
 As `R>D/8−1`, `log8<2.08`, `log D>23.9` at `D≥25b`, the right side is greater than
-\[
+```math
 0.2(23.9)-0.44(2.08)-3.815-10^{-6}> \boxed{0.049}.
-\]
+```
 **If** all positivity, arithmetic and geometric transports are reconstructed, this uniform positive gap would exclude every hypothetical odd squarefree class-number-one `D≥25b` without relying on the Heegner list. It could then be combined with the existing even-chart result to improve the canonical 47-billion actual-field endpoint. **This implication is still [H] and is not merged as an asserted new Lean theorem.**
 
 ## Matched controls, failure, and non-equivalence
