@@ -178,6 +178,7 @@ import TenthDiscriminant.SameGramLower331
 import TenthDiscriminant.UpperScalars331
 import TenthDiscriminant.ThinUpper331
 import TenthDiscriminant.ActualField331
+import TenthDiscriminant.RecoveryGainSharpRatio
 import TenthDiscriminant.RankDivisorCompatibility
 import TenthDiscriminant.TransportCoherence
 
