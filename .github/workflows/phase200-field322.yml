@@ -1,0 +1,97 @@
+name: Phase200 same-original-Gram 322 actual-field focused audit
+on:
+  push:
+    branches: ['research/phase200-same-gram-field322']
+    paths:
+      - lean/TenthDiscriminant/ActualField322.lean
+      - lean/TenthDiscriminant/ThinUpper322.lean
+      - lean/TenthDiscriminant/SameGramLower322.lean
+      - lean/TenthDiscriminant/SourceOddBinary322.lean
+      - lean/TenthDiscriminant/Lower322.lean
+      - lean/TenthDiscriminant/Phase200Scalar322.lean
+      - lean/TenthDiscriminant/ScalarOverlap322.lean
+      - lean/TenthDiscriminant/UpperScalars322.lean
+      - lean/TenthDiscriminant/SourcePositivity322.lean
+      - lean/TenthDiscriminant/SourceGeometry322.lean
+      - .github/workflows/phase200-field322.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-field-322:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Freeze field target, same-Gram operands, finite budgets and negative control
+        working-directory: .
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from fractions import Fraction as F
+          root=Path('lean/TenthDiscriminant')
+          lower=(root/'SameGramLower322.lean').read_text()
+          upper=(root/'ThinUpper322.lean').read_text()
+          actual=(root/'ActualField322.lean').read_text()
+          scalar=(root/'Phase200Scalar322.lean').read_text()
+          bridge=(root/'SourceOddBinary322.lean').read_text()
+          assert 322**4==10750371856
+          gap=(F(999997,1000000)-F(4,5))*F(230980,10000)-F(57193,10000)+F(1853,2000)+F(6931,40000)
+          assert gap==F(2853,500000000)>0
+          assert 'theorem thin_original_odd_plus_binary_normalized_lower_322' in lower
+          assert 'theorem thin_production_normalized_upper_322' in upper
+          assert 'theorem odd_large_classNumber_ne_one_322' in actual
+          assert 'theorem totallyComplex_degree_two_classNumber_one_discriminant_bound_322' in actual
+          assert 'TenthDiscriminant.no_abstract_scalar_overlap_322' in actual
+          assert 'Real.log 2/4' in lower
+          assert 'integerRectangularTraceGram' in lower and 'integerRectangularTraceGram' in upper
+          assert 'ellipsePairs D (FirstCertificate.Tuned.thinRadius D)' in lower
+          assert 'ellipsePairs D (Tuned.thinRadius D)' in upper
+          assert 'comparisonScale' in lower and 'comparisonScale' in upper
+          assert 'original_binary_and_exact_odd_mass_log_of_pos' in bridge
+          assert 'NumberField.discr_eq_discr_of_algEquiv K e.symm' in actual
+          assert 'fixed_affine_separator_fails_at_321' in scalar
+          for name,blob in [('same-lower',lower),('same-upper',upper),('field',actual)]:
+            for forbidden in ('sorry', 'admit', 'axiom '):
+              assert forbidden not in blob,(name,forbidden)
+          print('PHASE200_322_SAME_SOURCE_FIELD_PREFLIGHT_PASS')
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile the exact original-field 322 endpoint
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.ActualField322
+      - name: Check exported field type, lower and upper types, and transitive axioms
+        run: |
+          printf '%s\n' 'import TenthDiscriminant.ActualField322' \
+            '#check TenthDiscriminant.ThinUpper322.thin_production_normalized_upper_322' \
+            '#check TenthDiscriminant.thin_original_odd_plus_binary_normalized_lower_322' \
+            '#check TenthDiscriminant.Threshold322.totallyComplex_degree_two_classNumber_one_discriminant_bound_322' \
+            '#check TenthDiscriminant.fixed_affine_separator_fails_at_321' \
+            '#print axioms TenthDiscriminant.ThinUpper322.thin_production_normalized_upper_322' \
+            '#print axioms TenthDiscriminant.thin_original_odd_plus_binary_normalized_lower_322' \
+            '#print axioms TenthDiscriminant.Threshold322.totallyComplex_degree_two_classNumber_one_discriminant_bound_322' \
+            > /tmp/phase200_field322_axioms.lean
+          lake env lean /tmp/phase200_field322_axioms.lean
