@@ -10,10 +10,10 @@ Here we test whether a small improvement in the *existing real-analytic inequali
 
 Keep exactly the original pair-observation set \(Q_D=\mathrm{ellipsePairs}(D,\mathrm{thinRadius}(D))\), original ordinary derivatives of the rectangular monomials with \(W\) held fixed, and the original trace weights \(2,2D\). Call the resulting integer evaluation matrix \(E_D\), and its positive trace Gram
 
-~~~math
+```math
 G_D=E_D B_D E_D^{\mathsf T},\qquad
 \Delta_D=\det G_D>0.
-~~~
+```
 
 The divisor and the upper bound must constrain **this same \(\Delta_D\)**. The larger padded ellipse provides only a bound on the number of nodes; its Gram determinant is not a substitute.
 
@@ -23,35 +23,35 @@ The original dimensions remain \(R=\lfloor D/4\rfloor\) and \(S=\lfloor R/25\rfl
 
 **Sharper analytic constant.** The previous proof threw away useful precision by using only \(\log(521/1000)\le-0.650\). In fact the same radius admits
 
-~~~math
+```math
 \log(521/1000)
 =\log(521/500)-\log 2
 \le 21/500-6931/10000
 =-6511/10000
 \le-651/1000.
-~~~
+```
 
 The same original upper-\(B\) normalized identity then has the following proposed bound, subject to 327-specific guard proofs:
 
-~~~math
+```math
 \frac{B(R,S,\rho,n)}{R^2S}
 \le\frac45\log D-\frac{814}{1000}.
-~~~
+```
 
 The generic \(-23/2000\) radial saving and \(-1/10\) contraction saving would turn it into the same-thin-Gram upper
 
-~~~math
+```math
 \frac{\log\Delta_D}{R^2S}
 \le\frac45\log D-\frac{1851}{2000}.
-~~~
+```
 
 **Stronger original-prime lower.** The already focused-Lean-checked [Phase192 certificate](../../lean/TenthDiscriminant/RecoveryGainFloorRatio.lean) uses only the existing odd primes 3 and 5 and the exact floor identity \(25S\le R\le25S+24\), recovering \(0.0895\) of normalized arithmetic mass. If its hypotheses are established at the 327 floor and the same original Gram has positive determinant, the proposed odd-plus-once-binary lower reads
 
-~~~math
+```math
 \frac{999997}{1000000}\log D-\frac{57305}{10000}
 +\frac14\log2
 \le\frac{\log\Delta_D}{R^2S}.
-~~~
+```
 
 No new or second binary factor is allowed.
 
@@ -59,19 +59,19 @@ No new or second binary factor is allowed.
 
 The N=5 finite logarithm checker targets
 
-~~~math
+```math
 \frac{57899}{10000}\le\log327\le\frac{579}{100},
 \qquad D\ge327^4\implies\log D\ge\frac{231596}{10000}.
-~~~
+```
 
 Using the already certified \(\log2\ge6931/10000\), the prospective scalar gap is exactly
 
-~~~math
+```math
 \left(\frac{999997}{1000000}-\frac45\right)\frac{231596}{10000}
 -\frac{57305}{10000}+\frac{1851}{2000}
 +\frac{6931}{40000}
 =\frac{313803}{2500000000}>0.
-~~~
+```
 
 This is approximately \(0.0001255212\). The artificial test at \(\log D=23.15\) **must not** falsely yield the strict separation.
 
