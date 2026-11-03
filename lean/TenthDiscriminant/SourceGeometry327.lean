@@ -3,7 +3,7 @@ import TenthDiscriminant.ThinRadiusAnalyticGain
 import TenthDiscriminant.Phase196Scalar327
 
 /-!
-# Phase193: source-exact original thin-ellipse geometry at fourth-root 327
+# Phase196: source-exact original thin-ellipse geometry at fourth-root 327
 
 Only the finite-support count, integer rounding and radius/R budget are
 asserted here. Same R=floor(D/4), S=floor(R/25), original ellipsePairs,
@@ -50,17 +50,8 @@ theorem R_ge_eighty_cubes_327 (D : Nat) (hD : (327 : Nat)^4 ≤ D) :
   rw [← hi.2.2] at hf
   nlinarith only [hf,hproduct,h3]
 
-/-- The same 521/1000 rounding envelope remains valid at root 327. -/
-theorem rho_upper_327 (D : Nat) (hD : (327 : Nat)^4 ≤ D) :
-    (rho D : Real) ≤ (521/1000 : Real)*fourthRoot D^3 := by
-  have ht := fourthRoot_ge_327 D hD
-  have hcube : (327 : Real)^3 ≤ fourthRoot D^3 :=
-    pow_le_pow_left₀ (by norm_num) ht 3
-  have hceil : (rho D : Real) <
-      (13/25 : Real)*fourthRoot D^3+1 := by
-    unfold rho
-    exact Nat.ceil_lt_add_one (by positivity)
-  nlinarith only [hcube,hceil]
+/-! The unchanged padded radius envelope `rho_upper_327` is already
+    proved in `Phase196Scalar327` and imported above. Do not redeclare it. -/
 
 /-- Recover exactly the former analytic constant, without old root>=450. -/
 theorem radius_over_R_327 (D : Nat) (hD : (327 : Nat)^4 ≤ D) :
