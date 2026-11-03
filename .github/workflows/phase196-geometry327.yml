@@ -3,6 +3,7 @@ on:
   push:
     branches: ['research/phase196-sharp-log327']
     paths:
+      - lean/TenthDiscriminant/Phase196Scalar327.lean
       - lean/TenthDiscriminant/SourceGeometry327.lean
       - lean/TenthDiscriminant/SourcePositivity327.lean
       - .github/workflows/phase196-geometry327.yml
@@ -32,6 +33,8 @@ jobs:
           assert 'import TenthDiscriminant.Phase196Scalar327' in g
           assert 'import TenthDiscriminant.SourceGeometry327' in p
           assert 'theorem fourthRoot_ge_327' in scalar
+          assert scalar.count('theorem rho_upper_327') == 1
+          assert 'theorem rho_upper_327' not in g
           for marker in ('R_ge_eighty_cubes_327','rho_upper_327','thin_chosen_radius_327',
                          'thin_radius_interpolation_count_327','thin_radius_fraction_327'):
               assert marker in g or marker in scalar,marker
