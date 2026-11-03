@@ -63,7 +63,8 @@ theorem log_R_bounds_331 (D : Nat) (hD : (331 : Nat)^4 ≤ D) :
     linarith [Real.log_two_gt_d9]
 
 /-- Source-exact normalized raw odd budget at D>=331^4.
-The only logarithmic floor used is the Phase169 23.7 theorem. -/
+The source log-floor premise is the sound Phase183 23.208 result;
+the 23.7 convenience margin is not used in this proof. -/
 theorem normalized_lower_331 (D : Nat) (hD : (331 : Nat)^4 ≤ D) :
     (999997/1000000 : Real)*Real.log D-5820/1000 ≤
       rawPrimeMassLower (R D) (S D)
