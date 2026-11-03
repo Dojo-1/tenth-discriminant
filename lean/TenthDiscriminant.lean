@@ -161,6 +161,15 @@ import TenthDiscriminant.SourcePositivity377
 import TenthDiscriminant.UpperScalars377
 import TenthDiscriminant.ThinUpper377
 import TenthDiscriminant.ActualField377
+import TenthDiscriminant.Log375Certificate
+import TenthDiscriminant.ThinEllipseCount375
+import TenthDiscriminant.RadiusRatio375
+import TenthDiscriminant.Lower375
+import TenthDiscriminant.BinaryGap375
+import TenthDiscriminant.SourcePositivity375
+import TenthDiscriminant.UpperScalars375
+import TenthDiscriminant.ThinUpper375
+import TenthDiscriminant.ActualField375
 import TenthDiscriminant.RankDivisorCompatibility
 import TenthDiscriminant.TransportCoherence
 
