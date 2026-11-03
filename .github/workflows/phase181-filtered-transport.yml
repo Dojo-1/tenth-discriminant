@@ -1,0 +1,29 @@
+name: Phase181 fixed-versus-passive binary filtration transport
+on:
+  push:
+    branches: ['research/phase182-filtered-gauge']
+    paths:
+      - research/reverse_determinant/phase181_filtered_gauge.py
+      - research/reverse_determinant/PHASE181_FILTERED_TRANSPORT.md
+      - .github/workflows/phase181-filtered-transport.yml
+  pull_request:
+    paths:
+      - research/reverse_determinant/phase181_filtered_gauge.py
+      - research/reverse_determinant/PHASE181_FILTERED_TRANSPORT.md
+      - .github/workflows/phase181-filtered-transport.yml
+permissions:
+  contents: read
+jobs:
+  fixed-passive:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned finite-math dependency
+        run: python3 -m pip install --disable-pip-version-check sympy==1.14.0
+      - name: Check exact toy, compatibility criterion and unchanged D19 source
+        run: python3 research/reverse_determinant/phase181_filtered_gauge.py
+      - name: Check human-readable math markup
+        run: python3 scripts/check_human_math.py research/reverse_determinant/PHASE181_FILTERED_TRANSPORT.md
