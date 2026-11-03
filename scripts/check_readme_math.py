@@ -12,6 +12,9 @@ from pathlib import Path
 
 
 FENCE = re.compile(r"^\s*```([\w-]*)\s*$")
+FORBIDDEN_TEX_MACROS = re.compile(r"\\operatorname\b")
+
+
 MATH_IN_CODE = re.compile(
     r"`[^`\n]*(?:\\(?:partial|Delta|Lambda|det|log|sum|mathbb|operatorname)"
     r"|[ΔΛ∑∏∣≤≥])[^\n`]*`"
@@ -35,6 +38,10 @@ def check(content: str) -> list[str]:
             else:
                 if fence == "math":
                     expression = "\n".join(math_lines)
+                    for bad in FORBIDDEN_TEX_MACROS.finditer(expression):
+                        errors.append(
+                            f"line {number}: disallowed TeX macro {bad.group(0)}"
+                        )
                     if not expression.strip():
                         errors.append(f"line {number}: empty math fence")
                     if expression.count(r"\left") != expression.count(r"\right"):
@@ -75,6 +82,8 @@ def check(content: str) -> list[str]:
 
         # Remove ordinary inline code, then count unescaped inline math delimiters.
         without_code = re.sub(r"`[^`]*`", "", line)
+        for bad in FORBIDDEN_TEX_MACROS.finditer(without_code):
+            errors.append(f"line {number}: disallowed TeX macro {bad.group(0)}")
         unescaped_dollars = len(re.findall(r"(?<!\\)\$", without_code))
         if unescaped_dollars % 2:
             errors.append(f"line {number}: unmatched inline math dollar")
@@ -86,7 +95,19 @@ def check(content: str) -> list[str]:
     return errors
 
 
+def regression_test_forbidden_macro() -> None:
+    bad_inline = r"Example $\operatorname{disc}(K)$"
+    bad_fenced = "### Example\n\n```math\n" + r"\operatorname{disc}(K)" + "\n```"
+    good_inline = r"Example $\mathrm{disc}(K)$"
+    for sample in (bad_inline, bad_fenced):
+        if not any("disallowed TeX macro" in err for err in check(sample)):
+            raise AssertionError("disallowed-macro negative control was not rejected")
+    if any("disallowed TeX macro" in err for err in check(good_inline)):
+        raise AssertionError("valid math unexpectedly rejected")
+
+
 def main() -> int:
+    regression_test_forbidden_macro()
     path = Path(sys.argv[1] if len(sys.argv) > 1 else "README.md")
     if not path.is_file():
         print(f"Math Markdown check: missing file {path}", file=sys.stderr)

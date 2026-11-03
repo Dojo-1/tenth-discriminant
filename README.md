@@ -13,7 +13,7 @@ The repository combines number theory, exact computation, integral linear algebr
 **Current mainline Lean theorem — 2 November 2026.** For every totally complex quadratic number field $K$ of class number one, the encoded and checked theorem concludes that the *actual absolute field discriminant* satisfies
 
 ```math
-\left|\operatorname{disc}(K)\right|
+\left|\mathrm{disc}(K)\right|
 < 377^4
 = 20{,}200{,}652{,}641.
 ```
