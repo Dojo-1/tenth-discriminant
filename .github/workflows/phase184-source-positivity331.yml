@@ -1,0 +1,82 @@
+name: Phase184 same-source Gram positivity at 331
+on:
+  push:
+    branches: ['research/phase184-source-positivity-331']
+    paths:
+      - lean/TenthDiscriminant/SourceGeometry331.lean
+      - lean/TenthDiscriminant/SourcePositivity331.lean
+      - research/thin_integrated/PHASE184_SOURCE_POSITIVITY331.md
+      - .github/workflows/phase184-source-positivity331.yml
+  pull_request:
+    paths:
+      - lean/TenthDiscriminant/SourceGeometry331.lean
+      - lean/TenthDiscriminant/SourcePositivity331.lean
+      - research/thin_integrated/PHASE184_SOURCE_POSITIVITY331.md
+      - .github/workflows/phase184-source-positivity331.yml
+permissions:
+  contents: read
+jobs:
+  positivity-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check exact source identity and negative controls
+        working-directory: .
+        run: |
+          cmp lean/TenthDiscriminant/SourceGeometry331.lean research/thin_integrated/Phase183SourceGeometry331.lean
+          python3 - <<'PY'
+          from pathlib import Path
+          g = Path('lean/TenthDiscriminant/SourceGeometry331.lean').read_text()
+          p = Path('lean/TenthDiscriminant/SourcePositivity331.lean').read_text()
+          for name in ('fourthRoot_ge_331', 'R_ge_eighty_cubes_331', 'thin_radius_interpolation_count_331'):
+              assert f'theorem {name}' in g
+          for name in ('thin_radius_le_old_radius_331', 'thin_original_gram_pos_331',
+                       'old_original_gram_pos_331', 'padded_interpolation_count_331',
+                       'old_padded_majorant_pos_331'):
+              assert f'theorem {name}' in p
+          assert 'integerRectangularTraceGram' in p
+          assert 'ellipsePairs D (thinRadius D)' in p and 'ellipsePairs D (rho D)' in p
+          assert 'D (S D) (R D) (S D)' in p
+          for src in (g,p):
+              for token in ('sorry', 'admit', 'axiom', '_375'):
+                  assert token not in src, token
+          assert 'import TenthDiscriminant.SourceGeometry331' in p
+          print('PHASE184_SOURCE_IDENTITY_PASS')
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve and build exact Phase184 source modules
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.SourceGeometry331 TenthDiscriminant.SourcePositivity331
+  human-markup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check readable mathematics
+        run: python3 scripts/check_human_math.py research/thin_integrated/PHASE184_SOURCE_POSITIVITY331.md
