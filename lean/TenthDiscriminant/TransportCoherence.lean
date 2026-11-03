@@ -136,7 +136,9 @@ theorem integerToyGram_no_integral_congruence
     (U : Matrix (Fin 2) (Fin 2) Int) :
     U * integerToyGram * U.transpose ≠ rationallyTransportedIntegerToyGram := by
   intro h
-  have h00 := congrArg (fun A : Matrix (Fin 2) (Fin 2) Int => A 0 0) h
+  have h00 : (U * integerToyGram * U.transpose) 0 0 =
+      rationallyTransportedIntegerToyGram 0 0 := by
+    exact congrArg (fun A : Matrix (Fin 2) (Fin 2) Int => A 0 0) h
   have hleft :
       (U * integerToyGram * U.transpose) 0 0 =
         4 * ((U 0 0)^2 + (U 0 1)^2) := by
