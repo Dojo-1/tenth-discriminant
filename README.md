@@ -129,6 +129,7 @@ For one bounded exact finite experiment, from the repository root:
 python3 -m pip install sympy==1.14.0 mpmath
 python3 research/reverse_determinant/phase158_characteristic_jets.py
 python3 research/reverse_determinant/phase181_normalized_binary_filtration.py
+python3 research/reverse_determinant/phase181_thin_support_pilot.py
 ```
 
 For the documentation's math/Markdown sanity check:
