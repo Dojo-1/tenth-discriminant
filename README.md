@@ -10,19 +10,19 @@ The repository combines number theory, exact computation, integral linear algebr
 
 ## Where the formal work stands
 
-**Current mainline Lean theorem — 3 November 2026.** For every totally complex quadratic number field $K$ of class number one, the encoded and checked theorem concludes that the *actual absolute field discriminant* satisfies
+**Current mainline Lean theorem — 3 November 2026.** For every totally complex quadratic number field $K$ of class number one, the encoded and checked theorem concludes that the **actual absolute field discriminant**, not an auxiliary Gram determinant, satisfies
 
 ```math
-\left|\mathrm{disc}(K)\right|<375^4=19{,}775{,}390{,}625.
+|\mathrm{disc}(K)|<331^4=12{,}003{,}612{,}721.
 ```
 
-The exact declaration is [`Threshold375.totallyComplex_degree_two_classNumber_one_discriminant_bound_375`](lean/TenthDiscriminant/ActualField375.lean), merged in [PR #102](https://github.com/Dojo-1/tenth-discriminant/pull/102) at [`13574d9`](https://github.com/Dojo-1/tenth-discriminant/commit/13574d969107ea886db5cfa4101f113870196b81). Its [exact-head whole-library Lean/source/axiom/negative-control run](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41619298271) passed. This improves the earlier [377^4 theorem](lean/TenthDiscriminant/ActualField377.lean) by 425,262,016 without changing the ordinary jets, original source support, or trace pairing.
+The exact declaration is [`Threshold331.totallyComplex_degree_two_classNumber_one_discriminant_bound_331`](lean/TenthDiscriminant/ActualField331.lean), integrated through [PRs #110–#112](https://github.com/Dojo-1/tenth-discriminant/pull/112), with the field-theorem merge at [`49d1f77`](https://github.com/Dojo-1/tenth-discriminant/commit/49d1f77bdde36b52e78a70c440487b5bc4b89620). Focused Lean checked its exported type and printed only `propext`, `Classical.choice`, and `Quot.sound`; exact-head whole-library builds, source checks and known-false controls passed before merge. The older [$375^4$ theorem](lean/TenthDiscriminant/ActualField375.lean) is a proven historical predecessor, not the current cutoff.
 
-**Next frontier, not yet a field theorem.** [Phase183 PR #105](https://github.com/Dojo-1/tenth-discriminant/pull/105) merged a standalone Lean and exact-rational preflight for fourth root 331; [Phase183 source geometry PR #106](https://github.com/Dojo-1/tenth-discriminant/pull/106) targets the original ellipse count and radius estimates. Neither alone establishes both determinant inequalities on the same Gram, nor a $331^4$ field theorem.
+**What is next, but not a new field theorem.** [PR #114](https://github.com/Dojo-1/tenth-discriminant/pull/114) integrated a sharper $0.0879$ recovered mass from the **existing** odd primes 3 and 5. Standalone Phase191 Lean checks then established the $328^4$ scalar comparison and an odd-plus-once-binary lower *conditional on positivity of the original source Gram*. Phase192 separately checked a $0.0895$ improvement using the exact floor relation $25S\le R\le25S+24$. These are arithmetic certificates, **not** a $328^4$ field cutoff. Source-exact $328^4$ thin-ellipse geometry and analytic bounds remain separate integration obligations. See the [holistic evidence map](research/thin_integrated/HOLISTIC_SOURCE_TO_FIELD_AUDIT_20261103.md).
 
-**The boundary matters.** Lean checks the formal statement relative to its definitions, imports and permitted axioms. Source correspondence and negative controls were tested, but an independent mathematician has **not** yet reconstructed all objects and implications in the argument. That essential task remains [Issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50). This is neither a new classification of the nine imaginary quadratic class-number-one fields nor a peer-reviewed novelty claim.
+**What a successful build cannot establish.** Lean verifies the encoded statement against its imported definitions and permitted axioms. It does not by itself provide independent mathematical reconstruction of the integral-jet divisibility, the original thin-Q Hadamard estimate or the field interpretation. [Issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) remains open. No new nine-field classification, independent referee endorsement, or claimed priority follows.
 
-Earlier checked endpoints—$377^4$, [41,006,250,000](research/thin_integrated/HUMAN_GUIDE_CURRENT.md), and [approximately 47 billion](research/tight_radial_v1/HUMAN_RECONSTRUCTION.md)—remain historical. Proposed five-billion and alternative-support arguments are **not** established field bounds.
+Earlier checked endpoints—$375^4$, $377^4$, [41,006,250,000](research/thin_integrated/HUMAN_GUIDE_CURRENT.md), and [approximately 47 billion](research/tight_radial_v1/HUMAN_RECONSTRUCTION.md)—remain historical. Proposed five-billion and alternative-support arguments are **not** established field bounds.
 
 ## The one integer that matters
 
@@ -63,11 +63,11 @@ flowchart LR
     X --> F["Return to the actual field discriminant"]
 ```
 
-## How the current 375⁴ argument closes
+## How the current 331⁴ argument closes
 
-The [Phase182 human derivation](research/thin_integrated/PHASE182_375_CANDIDATE.md) and [Phase178 predecessor guide](research/thin_integrated/PHASE178_HUMAN_GUIDE.md) preserve the original thin-ellipse support $Q_D$, ordinary $Z$-jets with $W$ held fixed, trace weights, and $J=S$. For $D\ge375^4$, the checked result compares the *same* positive integer Gram $G_D$, normalized by $R^2S$.
+Under the odd, squarefree class-number-one chart, Phase184 proves positivity of **the same original thin-Q ordinary-$Z$-jet trace Gram** $G_D$. Phase185 recovers the original odd-prime mass, Phase186 adds the existing binary factor **once**, and Phase187 supplies the matching normalized analytic bound, without replacing the thin determinant by the padded determinant. The Phase188 [actual-field Lean theorem](lean/TenthDiscriminant/ActualField331.lean) then transports the contradiction through the original maximal-order and field-equivalence interfaces.
 
-Under a hypothetical class-number-one premise, the arithmetic lower and geometric upper give
+For $D\ge331^4$, with $R=\lfloor D/4\rfloor$ and $S=\lfloor R/25\rfloor$, those two bounds on one integer give
 
 ```math
 \frac{999997}{1000000}\log D-\frac{5739}{1000}+\frac14\log 2
@@ -75,16 +75,17 @@ Under a hypothetical class-number-one premise, the arithmetic lower and geometri
 \;\le\;\frac45\log D-\frac{1849}{2000}.
 ```
 
-The odd-prime contribution and previously proved binary factor are counted **once**. The padded ellipse bounds the observation count; its determinant is never substituted for the thin Gram. The sound $\log375$ enclosure gives $\log D\ge23.7$, forcing the lower side strictly above the upper. Existing maximal-order and field-equivalence bridges return this contradiction to the actual discriminant.
+The certified $\log D\ge23.208$ and $\log2\ge0.6931$ yield the exact strictly positive separator $9543/31250000=0.000305376$. The padded ellipse enters only as a **count** majorant; its determinant is not treated as the thin Gram. These distinctions are algebraic obligations, not styling preferences.
 
-For review: [the exact Lean declaration](lean/TenthDiscriminant/ActualField375.lean), [human derivation](research/thin_integrated/PHASE182_375_CANDIDATE.md), [whole-library CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41619298271), and [independent reconstruction obligations](https://github.com/Dojo-1/tenth-discriminant/issues/50).
+For the exact proof chain: [source positivity](lean/TenthDiscriminant/SourcePositivity331.lean) · [same-Gram lower](lean/TenthDiscriminant/SameGramLower331.lean) · [same-Gram upper](lean/TenthDiscriminant/ThinUpper331.lean) · [actual field return](lean/TenthDiscriminant/ActualField331.lean) · [review obligations](research/thin_integrated/HOLISTIC_SOURCE_TO_FIELD_AUDIT_20261103.md).
 
 ## What the different investigations establish
 
 | Thread | What survives scrutiny | Where to inspect |
 | --- | --- | --- |
 | **Arithmetic (Phases162–166)** | Lean-checked divisibility and logarithmic lemmas for the original ordinary-jet Gram, with one binary factor and an odd-only prime product. | [Binary divisor](lean/TenthDiscriminant/BinaryNullTraceGram.lean) · [binary normalization](research/thin_integrated/PHASE165_EXACT_BINARY_NORMALIZATION.md) · [same-Gram log guide](research/thin_integrated/PHASE166_SAME_GRAM_LOG.md) |
-| **Actual field bound (Phases169–182)** | Encoded strict $375^4$ actual-field endpoint, with exact-head Lean/source/axiom/negative checks; external semantic review still open. | [375 source](lean/TenthDiscriminant/ActualField375.lean) · [PR #102](https://github.com/Dojo-1/tenth-discriminant/pull/102) |
+| **Actual field bound (Phases183–188)** | Encoded strict $331^4$ actual-field endpoint, fully compiled and integrated; external semantic review still open. $375^4$ remains historical. | [331 source](lean/TenthDiscriminant/ActualField331.lean) · [PR #112](https://github.com/Dojo-1/tenth-discriminant/pull/112) |
+| **New arithmetic recovery (Phases190–192)** | Same original odd primes 3,5: $0.0879$ gain is mainline; $0.0895$ and conditional $328^4$ arithmetic are separately Lean-checked, not field bounds. | [Phase190 source](lean/TenthDiscriminant/RecoveryGainSharpRatio.lean) · [Phase191 branch](https://github.com/Dojo-1/tenth-discriminant/tree/research/phase191-328-arithmetic-preflight) · [Phase192 branch](https://github.com/Dojo-1/tenth-discriminant/tree/research/phase192-tight-floor-recovery) |
 | **Characteristic observations (Phase158)** | Exact finite rank, coefficient-obstruction and $2$-adic capacity experiments; no uniform new field cutoff. | [Dossier](research/reverse_determinant/PHASE158_CHARACTERISTIC_JETS.md) · [verifier](research/reverse_determinant/phase158_characteristic_jets.py) |
 | **Support and arithmetic gluing (Phases142, 159–160)** | Exact finite examples separating full rank, integral image, Smith data and Gram volume. A smaller support need not yield a smaller determinant bound. | [Phase142](research/ellipsoid_trimming/PHASE142_LEVERAGE_AND_UNISOLVENCE.md) · [Phase159](research/reverse_determinant/PHASE159_OBSERVATION_CONTINUUM.md) · [Phase160](research/reverse_determinant/PHASE160_ARITHMETIC_NEURITES.md) |
 | **Symmetry (Phase161)** | Source-preserving conjugation and related finite controls; removing a symmetric observation is not automatically safe. | [Human guide](research/reverse_determinant/PHASE161_SYMMETRY_GUIDE.md) · [Lean](lean/TenthDiscriminant/ObservationConjugation.lean) |
