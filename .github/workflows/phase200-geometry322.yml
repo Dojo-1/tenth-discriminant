@@ -1,0 +1,88 @@
+name: Phase200 source-exact thin geometry at fourth root 322
+on:
+  push:
+    branches: ['research/phase200-source-geometry322']
+    paths:
+      - lean/TenthDiscriminant/Phase200Scalar322.lean
+      - lean/TenthDiscriminant/SourceGeometry322.lean
+      - lean/TenthDiscriminant/SourcePositivity322.lean
+      - .github/workflows/phase200-geometry322.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  geometry-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Verify original source identity, 322 guard, and negative threshold
+        working-directory: .
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from fractions import Fraction as F
+          g=Path('lean/TenthDiscriminant/SourceGeometry322.lean').read_text()
+          p=Path('lean/TenthDiscriminant/SourcePositivity322.lean').read_text()
+          assert 'import TenthDiscriminant.Phase200Scalar322' in g
+          assert 'import TenthDiscriminant.SourceGeometry322' in p
+          assert 'theorem fourthRoot_ge_322' in g
+          assert g.count('theorem rho_upper_322') == 1
+          for marker in ('R_ge_eighty_cubes_322','rho_upper_322','thin_chosen_radius_322',
+                         'thin_radius_interpolation_count_322','thin_radius_fraction_322'):
+              assert marker in g,marker
+          for marker in ('theorem thin_original_gram_pos_322',
+                         'theorem old_original_gram_pos_322',
+                         'theorem thin_card_le_old_padded_majorant_322',
+                         'TenthDiscriminant.RadialCutoff.integer_det_positive'):
+              assert marker in p, marker
+          assert '(2 : Real) ≤ fourthRoot D-320' in g
+          assert '(11 : Real) ≤ fourthRoot D-320' in Path('lean/TenthDiscriminant/SourceGeometry331.lean').read_text()
+          assert '(3 : Real) ≤ 2*fourthRoot D^3' in g
+          assert 'ellipsePairs D (thinRadius D)' in p
+          assert 'integerRectangularTraceGram' in p
+          coeff=F(11,25)-F(1001,1000)*F(407,1000)
+          assert coeff==F(32593,1000000)
+          assert coeff*322-10==F(247473,500000)>0
+          assert coeff*306-10<0
+          for src in (g,p):
+              for forbidden in ('sorry','admit','axiom '):
+                  assert forbidden not in src, forbidden
+          print('PHASE200_ORIGINAL_322_GEOMETRY_SOURCE_PASS')
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile original 322 geometry and Gram positivity
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.SourceGeometry322 TenthDiscriminant.SourcePositivity322
+      - name: Print Lean source count and Gram positivity axioms
+        run: |
+          printf '%s\n' 'import TenthDiscriminant.SourcePositivity322' \
+            '#check TenthDiscriminant.FirstCertificate.Tuned.thin_radius_interpolation_count_322' \
+            '#print axioms TenthDiscriminant.FirstCertificate.Tuned.thin_radius_interpolation_count_322' \
+            '#check TenthDiscriminant.FirstCertificate.Tuned.thin_original_gram_pos_322' \
+            '#print axioms TenthDiscriminant.FirstCertificate.Tuned.thin_original_gram_pos_322' \
+            > /tmp/phase196_geometry_axioms.lean
+          lake env lean /tmp/phase196_geometry_axioms.lean
