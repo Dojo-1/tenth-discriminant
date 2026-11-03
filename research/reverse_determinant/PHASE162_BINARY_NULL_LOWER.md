@@ -235,8 +235,7 @@ The leading monomial is exactly $Z^rW^s$, with coefficient one. Its other terms 
 ```
 
 There is an exact incremental relation
-$\Lambda_3=\Lambda_{\mathrm{mix}}+
-2R\sum_{s<S}\lfloor s/4\rfloor$. For $R=30,S=5$:
+$\Lambda_3=\Lambda_{\mathrm{mix}}+2R\sum_{s<S}\lfloor s/4\rfloor$. For $R=30,S=5$:
 $\Lambda_3=1302$, compared with the two-variable $1242$ and
 univariate $1130$. For $R=2500,S=100$ the three exponents are
 $156250000$, $162294200$, $168294200$, respectively. This is a
