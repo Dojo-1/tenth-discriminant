@@ -1,4 +1,4 @@
-name: Reverse determinant finite evidence (Phases 144-162)
+name: Reverse determinant finite evidence (Phases 144-180)
 on:
   push:
     branches:
@@ -70,3 +70,5 @@ jobs:
         run: python3 research/reverse_determinant/phase162_binary_null_lower.py
       - name: Phase162 differential-null syzygy original-jet control
         run: python3 research/reverse_determinant/phase162_null_syzygy.py
+      - name: Phase180 original-jet binary hull and exact 2-adic radical controls
+        run: python3 research/reverse_determinant/phase180_binary_hull.py
