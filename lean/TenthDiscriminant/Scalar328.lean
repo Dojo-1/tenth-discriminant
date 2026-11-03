@@ -26,7 +26,7 @@ theorem log_328_rational_enclosure :
   norm_num at h
   constructor
   · linarith [h.1]
-  · exact h.2
+  · linarith [h.2]
 
 private theorem log_328_power_four :
     Real.log (((328 : Nat) ^ 4 : Nat) : Real) =
