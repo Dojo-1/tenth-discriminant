@@ -99,6 +99,34 @@ theorem halfShear_not_integral :
     exact_mod_cast hr
   omega
 
+/-- Two different positive integer Gram matrices whose rational
+half-shear relationship does NOT imply integral equivalence. -/
+def integerToyGram : Matrix (Fin 2) (Fin 2) Int :=
+  !![4, 0; 0, 4]
+
+def rationallyTransportedIntegerToyGram : Matrix (Fin 2) (Fin 2) Int :=
+  !![5, 2; 2, 4]
+
+theorem integerToyGram_determinant_control :
+    integerToyGram.det = 16 ∧
+      rationallyTransportedIntegerToyGram.det = 16 := by
+  constructor <;>
+    norm_num [integerToyGram, rationallyTransportedIntegerToyGram,
+      Matrix.det_fin_two]
+
+/-- The Gram coordinates are BOTH integral with the same determinant;
+the rational moving frame is still not an integer gauge. Their Smith
+factors differ, as certified separately by the exact finite oracle. -/
+theorem integerToyGram_rational_shear :
+    halfShear *
+      (integerToyGram.map (Int.castRingHom Rat)) *
+      halfShear.transpose =
+      rationallyTransportedIntegerToyGram.map (Int.castRingHom Rat) := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    norm_num [halfShear, integerToyGram, rationallyTransportedIntegerToyGram,
+      Matrix.mul_apply, Fin.sum_univ_two]
+
 /-- The elementary Fourier change is invertible over Q but not
 unimodular over Z: its determinant introduces a factor four in the
 congruent Gram determinant if one keeps the original metric fixed. -/
