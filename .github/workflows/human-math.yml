@@ -1,0 +1,26 @@
+name: Human-facing mathematical Markdown
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.md'
+      - scripts/check_human_math.py
+      - .github/workflows/human-math.yml
+  pull_request:
+    paths:
+      - '**/*.md'
+      - scripts/check_human_math.py
+      - .github/workflows/human-math.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  human-math-markup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check current human mathematical explanations
+        run: python3 scripts/check_human_math.py

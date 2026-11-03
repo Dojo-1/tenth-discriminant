@@ -11,18 +11,18 @@ assistant, not a new independent review or a new kernel theorem.
 Throughout this page D>=450^4=41,006,250,000. Set t=D^(1/4), so t>=450,
 and use the actual production choices
 
-\[
+```math
 R=\lfloor D/4\rfloor,\quad S=J=\lfloor R/25\rfloor,\quad
 \rho=\lceil(13/25)t^3\rceil,\quad a=\lfloor\rho^2/2\rfloor.
-\]
+```
 
 The samples Q are ALL integer pairs with x^2+D y^2<=rho^2, embedded as
 z=x+i sqrt(D)y. The radius is an integer, not the half-integer campaign
 radius. We have R>=D/5, S>=100, 25S<=R<=26S and
 
-\[
+```math
 (13/25)t^3\le\rho<(13/25)t^3+1\le(521/1000)t^3<R.
-\]
+```
 
 The final inequalities use t>=450. For D=1 the claimed upper rounding
 bound fails; it must not be silently extended outside the stated domain.
@@ -34,9 +34,9 @@ point of a cell is within delta=(1+sqrt(D))/2 of its center. Rounding a
 point in the disc of radius rho-delta therefore gives a center in Q.
 When rho>=delta, covering that smaller disc gives
 
-\[
+```math
 \pi(\rho-\delta)^2\le |Q|\sqrt D.
-\]
+```
 
 For q=3R+S, the bounds R<=D/4 and S<=R/25 give q<=0.76D. Since pi>=3.14,
 sqrt(q sqrt(D)/pi)<=0.495t^3. The exact rational inequality
@@ -51,9 +51,9 @@ For the UPPER count, each OFF-AXIS lattice point owns an inward cell inside
 the original disc. These cells are disjoint up to boundaries and have area
 sqrt(D). The axes are counted separately, giving the explicit bound
 
-\[
+```math
 |Q|\le n:=\pi\rho^2/\sqrt D+2\rho+2\lfloor\rho/\sqrt D\rfloor+1\le4D.
-\]
+```
 
 The horizontal nonzero points contribute 2rho; the vertical axis includes
 the origin. The last estimate follows from pi<4 and, with b=0.521,
@@ -65,28 +65,28 @@ is negative would also invalidate the lower count.
 
 Use the integer row family
 
-\[
+```math
 Q_{r,s}=Z^{r-m}W^{s-m}(ZW-a)^m,\qquad m=\min(r,s).
-\]
+```
 
 Its binomial coefficient matrix T_a is lower unitriangular: the leading
 term is Z^rW^s and all remaining labels decrease both exponents. Therefore
 H=T_a G T_a^T has detH=detG. After W=conjugate(z), ZW=|z|^2 lies in
 [0,rho^2], and integer centering gives
 
-\[
+```math
 \bigl||z|^2-a\bigr|\le\rho^2/2+1/2\le(13/25)\rho^2\quad(\rho\ge5).
-\]
+```
 
 At the origin a centered observation can INCREASE. The proof uses this
 uniform ceiling, never a claim that all observed values decrease.
 
 For r>=s and j<=r, the complete ordinary Leibniz estimate is
 
-\[
+```math
 |\partial_Z^jQ_{r,s}(z,\bar z)|\le\rho^{r+s-j}B_j(h),\quad h=13/25,
 \quad B_j(h)=\sum_{k=0}^s\binom{s}{k}(j)_k(r-s)_{j-k}h^{s-k}.
-\]
+```
 
 Terms outside derivative support vanish through falling factorials. The
 identity B_j(1)=(r)_j follows by differentiating Z^(r-s)Z^s. Hence h<=1
@@ -104,19 +104,19 @@ vanish because the Z-degree remains r. These cases include the origin.
 Let eta_(r,s)=(13/20)^(2s) for r>=9S and 1 otherwise. The actual diagonal,
 including the original factor 2, satisfies
 
-\[
+```math
 H_{(r,s),(r,s)}=2\sum_{z\in Q}\sum_{j<S}|\partial_Z^j Q_{r,s}(z,\bar z)|^2
 \le\eta_{r,s}\,2nS\rho^{2(r+s)}\max(1,r/\rho)^{2(S-1)}.
-\]
+```
 
 Here (r)_j<=r^j and max(1,r/rho)^j<=max(1,r/rho)^(S-1). The factor S is
 an upper bound on the derivative sum, not an exact constant-row identity.
 H is positive definite by invertible real congruence. Its determinant and
 diagonal entries are positive, so Hadamard and log monotonicity give
 
-\[
+```math
 \log\det G\le U_B-(R-9S)S(S-1)\log(20/13).
-\]
+```
 
 The penalty counts R-9S eligible rows and sums 2s over s=0,...,S-1.
 For C=R^2S, S>=100 and 25S<=R<=26S, its normalized size is at least
@@ -129,11 +129,11 @@ For f(x)=log(max(1,x/rho)), monotonicity and integration give
 sum_(r<R)f(r)<=Rlog(R/rho)-R+rho+log(R/rho). The final logarithm is kept.
 Summing the preceding row bounds WITHOUT the radial penalty gives exactly
 
-\[
+```math
 \frac{U_B}{C}=\frac{\log(2nS)}R+(1-S/R)\log\rho
  +\frac{2(S-1)}R(\log R-1)
  +\underbrace{\frac{2(S-1)}{R^2}(\rho+\log(R/\rho))}_{\epsilon}.
-\]
+```
 
 The guarded production estimates are explicit. Write ell=logD and x=S/R:
 logrho<=0.75ell-0.65, logR<=ell-1.38, ell>=24, x<=1/25,
@@ -148,10 +148,10 @@ Since 0<=log(R/rho)<=ell, epsilon<=(2/25)(521/90000+1/9000)<1/1000.
 All multipliers used to replace S-1 by S and x by 1/25 are nonnegative.
 Therefore
 
-\[
+```math
 U_B/C\le0.75\ell-0.65+x(1.25\ell-4.11)+0.00125
 \le0.8\ell-0.81315\le0.8\ell-0.813.
-\]
+```
 
 Subtracting the checked radial saving gives the actual same-integer bound
 log(detG)/C<=0.8logD-0.823 throughout D>=41,006,250,000.

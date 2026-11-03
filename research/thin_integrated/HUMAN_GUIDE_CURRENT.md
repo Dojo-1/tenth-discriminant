@@ -6,9 +6,9 @@
 [`ThinIntegratedEndpoint.totallyComplex_degree_two_classNumber_one_discriminant_bound_41floor`](../../lean/TenthDiscriminant/ThinIntegratedEndpoint.lean)
 states:
 
-> If a number field \(K\) has degree two over \(\mathbb Q\), is totally
+> If a number field $K$ has degree two over $\mathbb Q$, is totally
 > complex, and has class number one, then
-> \( |\operatorname{disc}(K)| < 41{,}006{,}250{,}000.\)
+> $ |\mathrm{disc}(K)| < 41{,}006{,}250{,}000.$
 
 This is a claim about the **actual field discriminant**, not a determinant
 invented for a calculation. It is not a new classification of the nine
@@ -20,49 +20,49 @@ and analytic paths can be reconstructed *on one well-specified integer*.
 
 ## The object in the middle
 
-Take a squarefree positive parameter \(D\) describing an imaginary quadratic
-field. In the odd chart \(D\equiv3\pmod4\), work with the original integer
-pairs \((x,y)\) representing \(x+y\sqrt{-D}\). Choose a finite set of pairs
-\(Q\). For each rectangular monomial \(Z^rW^s\), evaluate its
-**ordinary** \(Z\)-derivatives at each chosen pair, with \(W\) held
+Take a squarefree positive parameter $D$ describing an imaginary quadratic
+field. In the odd chart $D\equiv3\pmod4$, work with the original integer
+pairs $(x,y)$ representing $x+y\sqrt{-D}$. Choose a finite set of pairs
+$Q$. For each rectangular monomial $Z^rW^s$, evaluate its
+**ordinary** $Z$-derivatives at each chosen pair, with $W$ held
 constant during differentiation and set to the conjugate value only at
 evaluation. Record **both integer coordinate channels** of each result.
 The trace pairing encodes the two quadratic embeddings; it does **not**
-silently add another observation point to \(Q\). Those original rows form
-\(E_Q\).
-With the unchanged positive trace weights \(2\) and \(2D\), form
+silently add another observation point to $Q$. Those original rows form
+$E_Q$.
+With the unchanged positive trace weights $2$ and $2D$, form
 
-\[
+```math
 G_Q=E_Q B_Q E_Q^{\mathsf T},\qquad \Delta_Q=\det G_Q.
-\]
+```
 
-Every letter matters. \(\Delta_Q\) is a positive **integer** when the
-interpolation count holds; it is **not** \(|\operatorname{disc}(K)|\).
+Every letter matters. $\Delta_Q$ is a positive **integer** when the
+interpolation count holds; it is **not** $|\mathrm{disc}(K)|$.
 It is the common witness by which we eventually constrain the field.
 
 For the current endpoint, choose
-\(Q_{\rm thin}=\operatorname{ellipsePairs}(D,\rho_{\rm thin})\), where
-\(\rho_{\rm thin}\) is the tuned \(\lceil (11/25)D^{3/4}\rceil\) radius.
-For \(D\ge450^4=41{,}006{,}250{,}000\), the Lean count theorem proves the
+$Q_{\rm thin}=\mathrm{ellipsePairs}(D,\rho_{\rm thin})$, where
+$\rho_{\rm thin}$ is the tuned $\lceil (11/25)D^{3/4}\rceil$ radius.
+For $D\ge450^4=41{,}006{,}250{,}000$, the Lean count theorem proves the
 **sufficient**, not necessary, positivity guard
-\(2(R-1)+(S-1)<|Q_{\rm thin}|\).
+$2(R-1)+(S-1)<|Q_{\rm thin}|$.
 
 ## Why the same integer cannot satisfy both bounds
 
 **Arithmetic pulls up.** Under the explicit squarefree,
 class-number-one and inert-prime conditions, an integral upper-unitriangular
 row operation exposes powers of *eligible odd primes* dividing
-\(\Delta_{Q_{\rm thin}}\). The original ordinary jets and both sides of
+$\Delta_{Q_{\rm thin}}$. The original ordinary jets and both sides of
 the trace metric are retained; the lower bound is established **directly
 for the thin sample**, not transported from an old ellipse's determinant.
 The certified lower pressure is
 
-\[
+```math
 \frac{\log\Delta_{Q_{\rm thin}}}{R^2S}
 \ge
 \frac{999997}{1000000}\log D-\frac{5739}{1000}.
 \tag{L}
-\]
+```
 
 **Geometry pushes down.** The smaller thin ellipse has enough nodes but
 a tighter real norm envelope. The already certified old padded count
@@ -70,28 +70,28 @@ is used as a **common upper majorant**, never as a claim that the two
 sample sets yield equal determinants. The preserved radial/Hadamard
 argument gives
 
-\[
+```math
 \frac{\log\Delta_{Q_{\rm thin}}}{R^2S}
 \le
 \frac45\log D-\frac{1849}{2000}.
 \tag{U}
-\]
+```
 
 The Lean rational logarithm certificate verifies
-\(\log D\ge 241/10\) whenever \(D\ge450^4\). At that threshold,
+$\log D\ge 241/10$ whenever $D\ge450^4$. At that threshold,
 subtracting (U) from (L) gives **at least**
 
-\[
+```math
 \left(\frac{999997}{1000000}-\frac45\right)\frac{241}{10}
 -\left(\frac{5739}{1000}-\frac{1849}{2000}\right)
 =\frac{54277}{10000000}>\frac1{500}>0.
-\]
+```
 
 Thus the two inequalities would contradict one another if a class-number-one
 odd-chart field existed at or above the threshold. Separate existing
 even-chart facts and explicit number-field equivalences return to
-\(\operatorname{disc}(K)\) rather than replacing that discriminant with
-\(\Delta_Q\).
+$\mathrm{disc}(K)$ rather than replacing that discriminant with
+$\Delta_Q$.
 
 ## Read the Lean in the order a human would prove it
 
@@ -107,16 +107,16 @@ even-chart facts and explicit number-field equivalences return to
 Do **not** conflate three useful but distinct directions:
 
 - **Finite minimal-node geometry:** [Phase142](../ellipsoid_trimming/PHASE142_LEVERAGE_AND_UNISOLVENCE.md)
-  exhibits a four-nonreal-node rank witness at \(D=19\); it does not give a
+  exhibits a four-nonreal-node rank witness at $D=19$; it does not give a
   uniform smaller-radius theorem, and fewer nodes can make the determinant
   *larger*.
 - **Extra arithmetic factors:** the checked [Phase162 source-Gram theorem](../../lean/TenthDiscriminant/BinaryNullTraceGram.lean)
-  proves a separate \(2\)-adic divisor on the original Gram. The proposed
+  proves a separate $2$-adic divisor on the original Gram. The proposed
   four-generator exponent 1358 remains a finite/paper certificate until its
   exact unimodular row action is formalized; no binary factor is counted twice.
 - **A new lower field cutoff:** the [Phase164 integration programme](https://github.com/Dojo-1/tenth-discriminant/issues/82)
   must compare the extra arithmetic on this **same** thin Gram and separately
-  prove new count/radius guards if it wishes to work below \(450^4\).
+  prove new count/radius guards if it wishes to work below $450^4$.
 
 ## What independent review should try to break
 

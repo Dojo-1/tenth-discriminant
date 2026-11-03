@@ -9,84 +9,84 @@ The question is whether lattice indices, characteristic-rank failures, and prime
 Fix positive D, R, S=J, and a finite ground set U of integer-pair observations. Let `E_Q: Z^{N_Q} -> Z^M`, M=RS, contain precisely the original ordinary partial-Z jet columns (W held fixed), with identically zero imaginary channels of real-axis points omitted. Real channels have global weight 2 and nonreal imaginary channels global weight 2D. Each original observation has the SAME channels and weights in every support; their order can be permuted without effect.
 
 Define `L_Q=im(E_Q)`, `C_Q=Z^M/L_Q`, and `G_Q=E_Q B_Q E_Q^T`. For real full-rank supports `G_Q` is positive definite and `d_Q=[Z^M:L_Q]` is finite. The quotient `H_Q=det(G_Q)/d_Q^2` is a positive integer. The Smith module retains more information than the index: at every prime q,
-\[
+```math
 \dim_{\mathbf F_q}(C_Q\otimes\mathbf F_q)=M-\mathrm{rank}_{\mathbf F_q}E_Q.
-\]
+```
 In particular the Phase158 p-1-root obstruction nullity agrees with this characteristic-p dimension under the same original-jet/Frobenius rank equivalence. A bad witness-prime rank does **not** imply real Gram singularity.
 
 ## The exact observation neurite [P-paper, elementary]
 
 For Q subset Q', the natural quotient map is surjective with an exact kernel:
-\[
+```math
 0\to L_{Q'}/L_Q\to C_Q\to C_{Q'}\to0.
-\]
+```
 This is a composable, directed transport of arithmetic modules. It is not an isometry of real Grams. It survives base change to localizations; tensoring a full short exact sequence with a residue field may lose left exactness, so modular rank data must be recalculated.
 
 Two supports A,B admit a stronger raw bridge. Because `L_{A union B}=L_A+L_B`, set
-\[
+```math
 \mathcal R(A,B)=(L_A\cap L_B)/L_{A\cap B}.
-\]
+```
 The maps `x -> (x mod L_A, x mod L_B)` and `(u,v) -> u-v mod (L_A+L_B)` give the exact sequence
-\[
+```math
 \boxed{0\to\mathcal R(A,B)\to C_{A\cap B}
  \to C_A\oplus C_B\to C_{A\cup B}\to0.}
-\]
+```
 Proof: the first kernel is `(L_A cap L_B)/L_{A cap B}`; the difference map is onto; if `x-y=a+b` for `a in L_A, b in L_B`, the common representative `x-a=y+b` gives exactness at the direct sum.
 
 If `A cap B` is already full rank, all terms have finite order and
-\[
+```math
 |\mathcal R(A,B)|={d_{A\cap B}d_{A\cup B}\over d_A d_B}\in\mathbb Z_{\ge1}.
-\]
+```
 In particular, for every prime q, the *gluing defect*
-\[
+```math
 \eta_q(A,B)=v_q(d_{A\cap B})+v_q(d_{A\cup B})-v_q(d_A)-v_q(d_B)
 =v_q(|\mathcal R(A,B)|)\ge0.
-\]
+```
 This is supermodularity of the index valuation on the domain of full-rank intersections. If the intersection has deficient rank, the exact sequence remains valid, but these finite-order ratios are **not** licensed.
 
 ## The opposing real curvature and normalized remainder [P-paper]
 
 The original positive diagonal metric gives the inclusion-exclusion identity
-\[
+```math
 G_A+G_B=G_{A\cap B}+G_{A\cup B}.
-\]
+```
 It does **not** give the same identity for determinants. For full-rank `A cap B`, log-determinant submodularity of sums of positive semidefinite observation contributions gives
-\[
+```math
 \kappa_\infty(A,B):=\log {\det G_A\,\det G_B\over
 \det G_{A\cap B}\,\det G_{A\cup B}}\ge0.
-\]
+```
 The proof uses `G_A=H+X`, `G_B=H+Y`, `G_union=H+X+Y`, where H>0 and X,Y>=0, and the decreasing marginal gain `logdet(H+X)-logdet(H)` as the baseline grows from H to H+Y.
 
 Combining arithmetic and real transport produces the exact identity
-\[
+```math
 \boxed{\log {H_AH_B\over H_{A\cap B}H_{A\cup B}}
 =\kappa_\infty(A,B)+2\log|\mathcal R(A,B)|\ge0.}
-\]
+```
 Thus `log H_Q` is submodular on this full-rank domain. This is a derived combination of classical integral-lattice and determinant facts, **not a claimed original general theorem**. The two curvatures are discrete inclusion-exclusion defects, not evidence of nontrivial holonomy around an intrinsically flat support-poset connection.
 
 ## Plucker weaving: a more discriminating 2-adic observable [P-paper]
 
 For each effective scalar channel i, let `a_i` be the original integral column and `b_i>0` its exact trace weight. Cauchy-Binet gives
-\[
+```math
 \det G_Q=\sum_{I,\ |I|=M}(\det E_I)^2\prod_{i\in I}b_i.
-\]
+```
 The vector of signed maximal minors is the oriented exterior/Plucker weave. For prime q define
-\[
+```math
 \mu_q(Q)=\min_{\det E_I\ne0}\left[
   2v_q(\det E_I)+\sum_{i\in I}v_q(b_i)\right].
-\]
+```
 Let `beta_q(Q)` be the original ordinary-jet factorial/weight **capacity floor** obtained by ignoring whether a maximal minor vanishes and minimizing the forced column valuations. Then the nonnegative integers
-\[
+```math
 \sigma_q=\mu_q-\beta_q,\qquad
 \epsilon_q=v_q(\det G_Q)-\mu_q
-\]
+```
 give the exact decomposition
-\[
+```math
 \boxed{v_q(\det G_Q)=\beta_q+\sigma_q+\epsilon_q.}
-\]
+```
 Here `sigma` detects constraints and extra divisibility of actual Plucker coordinates beyond the naive factorial minimum. `epsilon` measures prime-adic cancellation among minimal-weight nonzero minor terms. Neither can be inferred from the jet channel count alone.
 
-At q=2, every minimal-weight term divided by \(2^{\mu_2}\) is odd. Therefore **the bound \(\mu_2\) is sharp if and only if the number of minimizing nonzero minors is odd**. With an even number, \(\epsilon_2\ge1\). For odd q one needs the actual q-unit residues, not just parity. This is a precise algebraic "phase weave," and it does not require invoking physical spin.
+At q=2, every minimal-weight term divided by $2^{\mu_2}$ is odd. Therefore **the bound $\mu_2$ is sharp if and only if the number of minimizing nonzero minors is odd**. With an even number, $\epsilon_2\ge1$. For odd q one needs the actual q-unit residues, not just parity. This is a precise algebraic "phase weave," and it does not require invoking physical spin.
 
 ## Tests on the canonical original-jet convention [M]
 
