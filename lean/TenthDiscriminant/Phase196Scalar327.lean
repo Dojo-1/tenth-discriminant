@@ -45,8 +45,8 @@ theorem log_521_over_1000_le_neg_651 :
   have h := Real.log_le_sub_one_of_pos
     (by norm_num : (0 : Real) < 521/500)
   rw [he, Real.log_mul
-    (by norm_num : (2 : Real) != 0)
-    (by norm_num : (521/1000 : Real) != 0)] at h
+    (by norm_num : (2 : Real) ≠ 0)
+    (by norm_num : (521/1000 : Real) ≠ 0)] at h
   have h2 := TenthDiscriminant.log_two_rational_control.1
   linarith
 
@@ -64,7 +64,7 @@ theorem log_radius_upper_327_sharp (D : Nat)
       exact Nat.le_ceil _
     nlinarith only [hlow, pow_pos htpos 3]
   have hlog := Real.log_le_log hrpos (rho_upper_327 D hD)
-  rw [Real.log_mul (by norm_num : (521/1000 : Real) != 0)
+  rw [Real.log_mul (by norm_num : (521/1000 : Real) ≠ 0)
       (pow_ne_zero _ htpos.ne'),Real.log_pow] at hlog
   have hroot : 4*Real.log (fourthRoot D) = Real.log D := by
     have h := congrArg Real.log hi.2.2
@@ -83,7 +83,7 @@ noncomputable section
 /-- N=5, x=327=2^8(327/256), z=(327-256)/(327+256)=71/583.
 The remainder is bounded by the existing sound finite-series checker. -/
 theorem log_327_rational_enclosure :
-    (57899/10000 : Real) <= Real.log 327 /\
+    (57899/10000 : Real) <= Real.log 327 ∧
     Real.log 327 <= (579/100 : Real) := by
   have hc :
       checkPositiveLogBounds 5 327 8 (57899/10000) (579/100) = true := by
@@ -125,20 +125,20 @@ theorem strict_affine_separator_327 (u : Real)
 theorem exact_327_scalar_margin :
     (999997/1000000-4/5 : Real)*(231596/10000)
       -57305/10000+1851/2000+6931/40000 =
-        (313803/2500000000 : Real) /\
+        (313803/2500000000 : Real) ∧
       (0 : Real) < 313803/2500000000 := by
   norm_num
 
 /-- Falsifier: the same affine envelopes do not separate at log D=23.15. -/
 theorem smaller_327_log_floor_rejected :
-    ~ ((4/5 : Real)*(463/20)-1851/2000 <
+    ¬ ((4/5 : Real)*(463/20)-1851/2000 <
       (999997/1000000 : Real)*(463/20)-57305/10000+Real.log 2/4) := by
   intro h
   have h2 := log_two_rational_control.2
   linarith
 
 theorem fourth_power_327_control :
-    (327 : Nat)^4 = 11433811041 /\
+    (327 : Nat)^4 = 11433811041 ∧
     (327 : Nat)^4 < (328 : Nat)^4 := by
   norm_num
 
