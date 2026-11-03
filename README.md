@@ -10,19 +10,19 @@ The repository combines number theory, exact computation, integral linear algebr
 
 ## Where the formal work stands
 
-**Current mainline Lean theorem — 3 November 2026.** For every totally complex quadratic number field \(K\) of class number one, the encoded and checked theorem concludes that the **actual absolute field discriminant**, not an auxiliary Gram determinant, satisfies
+**Current mainline Lean theorem — 3 November 2026.** For every totally complex quadratic number field $K$ of class number one, the encoded and checked theorem concludes that the **actual absolute field discriminant**, not an auxiliary Gram determinant, satisfies
 
-~~~math
+```math
 |\mathrm{disc}(K)|<331^4=12{,}003{,}612{,}721.
-~~~
+```
 
-The exact declaration is [\`Threshold331.totallyComplex_degree_two_classNumber_one_discriminant_bound_331\`](lean/TenthDiscriminant/ActualField331.lean), integrated through [PRs #110–#112](https://github.com/Dojo-1/tenth-discriminant/pull/112), with the field-theorem merge at [\`49d1f77\`](https://github.com/Dojo-1/tenth-discriminant/commit/49d1f77bdde36b52e78a70c440487b5bc4b89620). Focused Lean checked its exported type and printed only \`propext\`, \`Classical.choice\`, and \`Quot.sound\`; exact-head whole-library builds, source checks and known-false controls passed before merge. The older [\(375^4\) theorem](lean/TenthDiscriminant/ActualField375.lean) is a proven historical predecessor, not the current cutoff.
+The exact declaration is [`Threshold331.totallyComplex_degree_two_classNumber_one_discriminant_bound_331`](lean/TenthDiscriminant/ActualField331.lean), integrated through [PRs #110–#112](https://github.com/Dojo-1/tenth-discriminant/pull/112), with the field-theorem merge at [`49d1f77`](https://github.com/Dojo-1/tenth-discriminant/commit/49d1f77bdde36b52e78a70c440487b5bc4b89620). Focused Lean checked its exported type and printed only `propext`, `Classical.choice`, and `Quot.sound`; exact-head whole-library builds, source checks and known-false controls passed before merge. The older [$375^4$ theorem](lean/TenthDiscriminant/ActualField375.lean) is a proven historical predecessor, not the current cutoff.
 
-**What is next, but not a new field theorem.** [PR #114](https://github.com/Dojo-1/tenth-discriminant/pull/114) integrated a sharper \(0.0879\) recovered mass from the **existing** odd primes 3 and 5. Standalone Phase191 Lean checks then established the \(328^4\) scalar comparison and an odd-plus-once-binary lower *conditional on positivity of the original source Gram*. Phase192 separately checked a \(0.0895\) improvement using the exact floor relation \(25S\le R\le25S+24\). These are arithmetic certificates, **not** a \(328^4\) field cutoff. Source-exact \(328^4\) thin-ellipse geometry and analytic bounds remain separate integration obligations. See the [holistic evidence map](research/thin_integrated/HOLISTIC_SOURCE_TO_FIELD_AUDIT_20261103.md).
+**What is next, but not a new field theorem.** [PR #114](https://github.com/Dojo-1/tenth-discriminant/pull/114) integrated a sharper $0.0879$ recovered mass from the **existing** odd primes 3 and 5. Standalone Phase191 Lean checks then established the $328^4$ scalar comparison and an odd-plus-once-binary lower *conditional on positivity of the original source Gram*. Phase192 separately checked a $0.0895$ improvement using the exact floor relation $25S\le R\le25S+24$. These are arithmetic certificates, **not** a $328^4$ field cutoff. Source-exact $328^4$ thin-ellipse geometry and analytic bounds remain separate integration obligations. See the [holistic evidence map](research/thin_integrated/HOLISTIC_SOURCE_TO_FIELD_AUDIT_20261103.md).
 
 **What a successful build cannot establish.** Lean verifies the encoded statement against its imported definitions and permitted axioms. It does not by itself provide independent mathematical reconstruction of the integral-jet divisibility, the original thin-Q Hadamard estimate or the field interpretation. [Issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) remains open. No new nine-field classification, independent referee endorsement, or claimed priority follows.
 
-Earlier checked endpoints—\(375^4\), \(377^4\), [41,006,250,000](research/thin_integrated/HUMAN_GUIDE_CURRENT.md), and [approximately 47 billion](research/tight_radial_v1/HUMAN_RECONSTRUCTION.md)—remain historical. Proposed five-billion and alternative-support arguments are **not** established field bounds.
+Earlier checked endpoints—$375^4$, $377^4$, [41,006,250,000](research/thin_integrated/HUMAN_GUIDE_CURRENT.md), and [approximately 47 billion](research/tight_radial_v1/HUMAN_RECONSTRUCTION.md)—remain historical. Proposed five-billion and alternative-support arguments are **not** established field bounds.
 
 ## The one integer that matters
 
@@ -65,17 +65,17 @@ flowchart LR
 
 ## How the current 331⁴ argument closes
 
-Under the odd, squarefree class-number-one chart, Phase184 proves positivity of **the same original thin-Q ordinary-\(Z\)-jet trace Gram** \(G_D\). Phase185 recovers the original odd-prime mass, Phase186 adds the existing binary factor **once**, and Phase187 supplies the matching normalized analytic bound, without replacing the thin determinant by the padded determinant. The Phase188 [actual-field Lean theorem](lean/TenthDiscriminant/ActualField331.lean) then transports the contradiction through the original maximal-order and field-equivalence interfaces.
+Under the odd, squarefree class-number-one chart, Phase184 proves positivity of **the same original thin-Q ordinary-$Z$-jet trace Gram** $G_D$. Phase185 recovers the original odd-prime mass, Phase186 adds the existing binary factor **once**, and Phase187 supplies the matching normalized analytic bound, without replacing the thin determinant by the padded determinant. The Phase188 [actual-field Lean theorem](lean/TenthDiscriminant/ActualField331.lean) then transports the contradiction through the original maximal-order and field-equivalence interfaces.
 
-For \(D\ge331^4\), with \(R=\lfloor D/4\rfloor\) and \(S=\lfloor R/25\rfloor\), those two bounds on one integer give
+For $D\ge331^4$, with $R=\lfloor D/4\rfloor$ and $S=\lfloor R/25\rfloor$, those two bounds on one integer give
 
-~~~math
+```math
 \frac{999997}{1000000}\log D-\frac{5739}{1000}+\frac14\log 2
 \;\le\;\frac{\log\det G_D}{R^2S}
 \;\le\;\frac45\log D-\frac{1849}{2000}.
-~~~
+```
 
-The certified \(\log D\ge23.208\) and \(\log2\ge0.6931\) yield the exact strictly positive separator \(9543/31250000=0.000305376\). The padded ellipse enters only as a **count** majorant; its determinant is not treated as the thin Gram. These distinctions are algebraic obligations, not styling preferences.
+The certified $\log D\ge23.208$ and $\log2\ge0.6931$ yield the exact strictly positive separator $9543/31250000=0.000305376$. The padded ellipse enters only as a **count** majorant; its determinant is not treated as the thin Gram. These distinctions are algebraic obligations, not styling preferences.
 
 For the exact proof chain: [source positivity](lean/TenthDiscriminant/SourcePositivity331.lean) · [same-Gram lower](lean/TenthDiscriminant/SameGramLower331.lean) · [same-Gram upper](lean/TenthDiscriminant/ThinUpper331.lean) · [actual field return](lean/TenthDiscriminant/ActualField331.lean) · [review obligations](research/thin_integrated/HOLISTIC_SOURCE_TO_FIELD_AUDIT_20261103.md).
 
