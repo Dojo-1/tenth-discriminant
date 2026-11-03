@@ -1,0 +1,242 @@
+{
+  "task_id": "tenth-discriminant-prereg-geometry-20261103",
+  "claim": {
+    "text": "A fixed partition of the SAME original positive integer thin trace Gram into consecutive 2- or 5-row blocks might provide a uniform, source-preserving improvement over the existing analytic Hadamard upper. Pentagon coherence is an audit target, not an assumed bound gain.",
+    "scope": "Prospective bounded pilot and, only if activated, a universally quantified theorem on admissible D >= 322^4; all prior scalar/geometry/prime runs are preexisting evidence, not outcomes of this preregistration.",
+    "status_before": "H",
+    "assumptions": [
+      "Exact original ellipsePairs D (thinRadius D), integerRectangularTraceGram Q D S R S",
+      "ordinary Z jets with W fixed and weights (2,2D)",
+      "R=floor(D/4), S=floor(R/25), original class-one number-field hypotheses",
+      "G_D positive definite (must be established, never assumed for new Q)",
+      "row ordering and block partitions frozen before outcome observation"
+    ],
+    "forbidden_promotions": [
+      "No field-bound reduction from a toy 2x2 determinant",
+      "No identification of five blocks with the categorical pentagon",
+      "No changing observation sets, weights, determinant, auxiliary primes or binary exponent",
+      "No inference of uniform gain from Hadamard-Fischer nonnegativity",
+      "No claim of external independent verification from model-authored CI"
+    ]
+  },
+  "specification": {
+    "intended_object": "Original positive integer trace Gram G_D, with rowwise H_row=sum log G_ii and fixed consecutive block upper H_block=sum_B log det G_BB, both on G_D itself.",
+    "invariants": [
+      "integer Gram source and positive determinant unchanged",
+      "same normalized scale R^2 S",
+      "Hadamard-Fischer direction logdet G <= H_block <= H_row",
+      "block sizes 1,2,5 fixed; canonical row order and deterministic control permutation",
+      "source odd-prime/binary lower and field equivalence unaffected"
+    ],
+    "known_answer_cases": [
+      "positive diagonal synthetic matrix yields exactly zero block advantage",
+      "positive definite 2x2 [[2,1],[1,2]] gives strict finite advantage, independently calculable",
+      "original small historical source-Gram fixtures only after exact D,R,S,Q frozen"
+    ]
+  },
+  "implementation": {
+    "artifact": "https://github.com/Dojo-1/tenth-discriminant/issues/124",
+    "commit": "dc7e19ebefe2aecb0f2644b2ccd2b42203200a55 (baseline main)",
+    "environment": "Prospective Lean project at main after PR #123; no new block solver or pentagon proof has been executed",
+    "live_entrypoint": "Not activated: present source upper ThinUpper323/UpperScalars323; optional future pilot independently frozen",
+    "representation": "Exact source integer Gram; real log of positive principal minor determinants; no replacement mesh"
+  },
+  "metric": {
+    "name": "typed effect tuple (I_pi(D), wall-time, peak-memory, integer-bit-length, source-fidelity)",
+    "type": "typed_tuple",
+    "units": "primary I=(H_row-H_block)/(R^2 S) dimensionless; costs seconds, bytes and bits",
+    "direction": "partial_order",
+    "raw_before_clipping": true,
+    "semantic_invariance_claimed": true,
+    "equivalence_attacks": [
+      "simultaneous row/column permutation with blocks reindexed consistently",
+      "singleton partition exactly equals rowwise sum",
+      "positive diagonal G has zero improvement",
+      "certified determinant preserved by integral unimodular changes only; arbitrary basis changes not assumed integral"
+    ]
+  },
+  "tests": {
+    "black_box": [
+      "independently evaluate exact 2x2 minor and full det on a frozen tiny source Gram; audit sign/direction"
+    ],
+    "structural": [
+      "trace source G_D, row indices, Q_D, derivative type and weights; ensure padded ellipse enters count only"
+    ],
+    "property_based": [
+      "on random symmetric positive definite small integer matrices verify H_block<=H_row and det G<=product block det"
+    ],
+    "metamorphic": [
+      "permutation equivariance with consistent block relabeling",
+      "diagonal matrix zero advantage"
+    ],
+    "fuzzing": [
+      "degenerate and nearly singular SPD small fixtures with checked positivity and no log of nonpositive minors"
+    ],
+    "historical": [
+      "repeat previously integrated 323 thin-Gram source and PR #123 negative controls without changing their definitions"
+    ]
+  },
+  "controls": {
+    "matched_baselines": [
+      "same original analytic rowwise upper from ThinUpper323",
+      "singleton blocks (tautologically zero improvement)",
+      "fixed 2-row and 5-row consecutive blocks in canonical order",
+      "deterministically permuted input with consistently transformed partition"
+    ],
+    "negative_controls": [
+      "diagonal SPD matrix must have I=0",
+      "positive 2x2 known answer tests strict gain but is not an asymptotic source proof",
+      "arbitrary mesh/padded Gram swap is rejected before interpreting results"
+    ],
+    "compute_parity": "same exact Gram, arithmetic precision, input samples and published wall-clock/peak-memory budget; no hidden oracle compute",
+    "parameter_parity": "not applicable: no trained model parameters; block sizes and selection fixed before outcomes",
+    "sampling_parity": "predeclare exact original historical toy inputs before any block results; same inputs for every partition",
+    "data_access_parity": "all variants read identical canonical Q_D and G_D; no additional number-field metadata"
+  },
+  "preregistration": {
+    "prediction": "Small correlated positive-definite source-Gram cases may show I>0; a uniform >=1e-4 gain is uncertain and not asserted. Count-only mesh and categorical pentagon are unlikely to affect the current 322 bottleneck.",
+    "primary_metric": "Uniform source-certified I_pi(D)>=1/10000 for all admissible D>=322^4, AND a same-Gram analytic upper at least that much stronger; with resource parity and no changed arithmetic lower.",
+    "uncertainty_method": "exact arithmetic on frozen finite fixtures, then Lean universal proof and standard-axiom audit for promoted claim; finite sample variance reported but never extrapolated to universal D",
+    "kill_condition": "Retire the geometry-performance claim for substituted Gram/Q, tautological I>=0 only, normalized gain that vanishes or fails 1e-4 uniform bound, unjustified correlation floor, or cheaper existing-radius/count estimate with equivalent improvement.",
+    "stop_condition": "Stay protocol-only until 322 source-to-field assembly passes or an identified analytic source obstruction appears; if activated permit one frozen toy pilot and one universal lemma attempt, then stop or explicitly open a new registration.",
+    "promotion_rule": "H to M only for disclosed exact finite experiments with independent oracle; P only for universal source-exact Lean theorem and full-root controls; field theorem requires original field map and independent semantic review, not this manifest."
+  },
+  "evidence": {
+    "primary_sources": [
+      "https://github.com/Dojo-1/tenth-discriminant/blob/main/lean/TenthDiscriminant/ThinUpper323.lean",
+      "https://github.com/Dojo-1/tenth-discriminant/blob/main/lean/TenthDiscriminant/RadialCutoff.lean",
+      "https://github.com/Dojo-1/tenth-discriminant/blob/main/lean/TenthDiscriminant/EllipseCellArea.lean"
+    ],
+    "execution_records": [
+      "https://github.com/Dojo-1/tenth-discriminant/actions/runs/41702654392",
+      "https://github.com/Dojo-1/tenth-discriminant/actions/runs/41702260451",
+      "https://github.com/Dojo-1/tenth-discriminant/pull/123"
+    ],
+    "independent_witnesses": [],
+    "claim_to_artifact_map": [
+      "source identity and positivity -> SourceGeometry322 and SourcePositivity322 focused CI",
+      "original valuations -> Phase200PrimeRecovery322 focused CI",
+      "rowwise upper -> ThinUpper323 and UpperScalars323",
+      "hypothesized block advantage -> no artifact until conditional pilot",
+      "independent mathematical review -> issue #50, not yet resolved"
+    ]
+  },
+  "round_trip": {
+    "edges": [
+      {
+        "from": "requirement",
+        "to": "formal specification",
+        "preserved": [
+          "single integer Gram"
+        ],
+        "transformed": [
+          "geometric intuition into block inequality"
+        ],
+        "lost": [],
+        "remainder": [
+          "proposed uniform improvement unproved"
+        ]
+      },
+      {
+        "from": "formal specification",
+        "to": "representation",
+        "preserved": [
+          "same Q and Gram",
+          "R^2 S scale"
+        ],
+        "transformed": [
+          "fixed row partition"
+        ],
+        "lost": [],
+        "remainder": [
+          "row ordering effects require metamorphic audit"
+        ]
+      },
+      {
+        "from": "representation",
+        "to": "implementation",
+        "preserved": [
+          "exact integer entries"
+        ],
+        "transformed": [
+          "finite principal minors"
+        ],
+        "lost": [],
+        "remainder": [
+          "implementation not yet activated"
+        ]
+      },
+      {
+        "from": "implementation",
+        "to": "tests",
+        "preserved": [
+          "input and block identity"
+        ],
+        "transformed": [
+          "exact finite determinants"
+        ],
+        "lost": [],
+        "remainder": [
+          "toy samples are not asymptotic"
+        ]
+      },
+      {
+        "from": "tests",
+        "to": "measurement",
+        "preserved": [
+          "raw logdet upper and normalizer"
+        ],
+        "transformed": [
+          "normalized gain and costs"
+        ],
+        "lost": [],
+        "remainder": [
+          "no measurement yet"
+        ]
+      },
+      {
+        "from": "measurement",
+        "to": "interpretation",
+        "preserved": [
+          "finite evidence boundary"
+        ],
+        "transformed": [
+          "candidate analytic uniform theorem"
+        ],
+        "lost": [],
+        "remainder": [
+          "no uniform field consequence"
+        ]
+      },
+      {
+        "from": "interpretation",
+        "to": "requirement",
+        "preserved": [
+          "source fidelity and accepted proof boundary"
+        ],
+        "transformed": [
+          "gate outcome if activated"
+        ],
+        "lost": [],
+        "remainder": [
+          "independent semantic review outstanding"
+        ]
+      }
+    ]
+  },
+  "result": {
+    "observed": "Not yet run: prospective preregistration only; prior source proof runs are background controls",
+    "effect_size": "not applicable: new block/pentagon/mesh experiment not activated",
+    "uncertainty": "uniform analytic improvement unproved; no independent-witness measurements",
+    "status_after": "H",
+    "retired_claims": [
+      "Pentagon-shaped sketch as automatic arithmetic improvement",
+      "Simple support tessellation as automatic replacement for the original Gram"
+    ],
+    "active_remainder": [
+      "Construct and verify exact original-gram 322 field theorem first",
+      "Decide whether a load-bearing analytic obstruction activates this experiment",
+      "Independent separately authored mathematical witness not yet obtained"
+    ]
+  }
+}
