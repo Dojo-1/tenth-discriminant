@@ -7,7 +7,7 @@ import TenthDiscriminant.BinaryThinLogBridge
 
 The source dimensions R=floor(D/4), S=floor(R/25), exact odd-prime
 product, binary exponent, and ordinary-jet trace Gram are unchanged.
-The stronger +0.0901 recovery is imported from the exact Phase192 original p=3,5 floor-ratio certificate. This is a re-proof of the LOWER budget at
+The +0.0901 recovery is proved in Phase200PrimeRecovery322 from the original p=3,5 valuationWeight rows and exact floor guards. This is a re-proof of the LOWER budget at
 a smaller domain; it is not a normalized UPPER bound or a field cutoff.
 
 No old 450^4 theorem is invoked with a weakened hypothesis.
@@ -40,7 +40,7 @@ theorem dimensions_322 (D : Nat) (hD : (322 : Nat)^4 ≤ D) :
 /-- Original logarithmic R bounds. The left side uses the already
 guarded floor ratio for D>=1000, not any large-root hypothesis. -/
 theorem log_R_bounds_322 (D : Nat) (hD : (322 : Nat)^4 ≤ D) :
-    Real.log D-1391/1000 ≤ Real.log (R D) ∧
+    Real.log D-13904/10000 ≤ Real.log (R D) ∧
     Real.log (R D) ≤ Real.log D-138/100 := by
   have hd := dimensions_322 D hD
   have hp : (0 : Real)<D := by exact_mod_cast (show 0<D by omega)
