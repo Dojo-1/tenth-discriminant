@@ -1,0 +1,73 @@
+name: Phase196 source-preserving sharp-log327 scalar preflight
+on:
+  push:
+    branches: ['research/phase196-sharp-log327']
+    paths:
+      - lean/TenthDiscriminant/Phase196Scalar327.lean
+      - .github/workflows/phase196-scalar327.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  scalar-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Keep 327 preflight separate from field conclusion
+        working-directory: .
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('lean/TenthDiscriminant/Phase196Scalar327.lean')
+          s=p.read_text(encoding='utf-8')
+          for token in ('theorem fourthRoot_ge_327','theorem rho_upper_327',
+                        'theorem log_521_over_1000_le_neg_651',
+                        'theorem log_radius_upper_327_sharp',
+                        'theorem log_327_rational_enclosure',
+                        'theorem log_floor_from_327_fourth_power',
+                        'theorem strict_affine_separator_327',
+                        'theorem smaller_327_log_floor_rejected'):
+              assert token in s, token
+          for token in ('sorry', 'admit', 'axiom ', 'totallyComplex_degree_two_classNumber_one_discriminant_bound_327'):
+              assert token not in s, token
+          assert '327' in s and 'checkPositiveLogBounds 5 327 8' in s
+          print('PHASE196_SCALAR_327_SOURCE_AND_SCOPE_PASS')
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile exact 327 scalar and sharper old radius inequality
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.Phase196Scalar327
+      - name: Inspect 327 source lemmas, scalar separator, and standard axioms
+        run: |
+          printf '%s\n' 'import TenthDiscriminant.Phase196Scalar327' \
+            '#check TenthDiscriminant.FirstCertificate.Tuned.log_radius_upper_327_sharp' \
+            '#check TenthDiscriminant.log_floor_from_327_fourth_power' \
+            '#check TenthDiscriminant.strict_affine_separator_327' \
+            '#print axioms TenthDiscriminant.FirstCertificate.Tuned.log_radius_upper_327_sharp' \
+            '#print axioms TenthDiscriminant.strict_affine_separator_327' \
+            > /tmp/phase196_axioms.lean
+          lake env lean /tmp/phase196_axioms.lean
