@@ -31,7 +31,7 @@ jobs:
                         'theorem log_324_rational_enclosure',
                         'theorem strict_affine_separator_324',
                         'theorem fixed_affine_separator_fails_at_323',
-                        'checkPositiveLogBounds 8 (1000/249) 2',
+                        'checkPositiveLogBounds_sound 8 (1000/249) 2',
                         'checkPositiveLogBounds 5 324 8'):
               assert token in s, token
           for bad in ('sorry', 'admit', 'axiom ', 'classNumber_one_discriminant_bound_324'):
