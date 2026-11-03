@@ -127,6 +127,28 @@ theorem integerToyGram_rational_shear :
     norm_num [halfShear, integerToyGram, rationallyTransportedIntegerToyGram,
       Matrix.mul_apply, Matrix.vecMul, dotProduct, Fin.sum_univ_two]
 
+/-- Equal positive integer Gram determinants, even with identical prime valuations,
+do not imply integral congruence. Every diagonal coefficient of
+U * (4 I) * Uᵀ is divisible by four, whereas the target has (0,0)=5.
+This is a fixed-reference obstruction, not a claim against passive
+transport of the lattice itself. -/
+theorem integerToyGram_no_integral_congruence
+    (U : Matrix (Fin 2) (Fin 2) Int) :
+    U * integerToyGram * U.transpose ≠ rationallyTransportedIntegerToyGram := by
+  intro h
+  have h00 := congrArg (fun A : Matrix (Fin 2) (Fin 2) Int => A 0 0) h
+  have hleft :
+      (U * integerToyGram * U.transpose) 0 0 =
+        4 * ((U 0 0)^2 + (U 0 1)^2) := by
+    simp [integerToyGram, Matrix.mul_apply, Matrix.vecMul,
+      dotProduct, Fin.sum_univ_two, pow_two] <;> ring
+  have hright : rationallyTransportedIntegerToyGram 0 0 = 5 := by
+    norm_num [rationallyTransportedIntegerToyGram]
+  rw [hleft, hright] at h00
+  have hdvd : (4 : Int) ∣ 5 :=
+    ⟨(U 0 0)^2 + (U 0 1)^2, h00.symm⟩
+  norm_num at hdvd
+
 /-- The elementary Fourier change is invertible over Q but not
 unimodular over Z: its determinant introduces a factor four in the
 congruent Gram determinant if one keeps the original metric fixed. -/
