@@ -150,7 +150,7 @@ theorem Fourier2_not_integral_gauge :
 not a failure of rational invertibility. -/
 theorem Fourier2_mod_two_singular :
     (Fourier2.map (Int.castRingHom (ZMod 2))).det = 0 := by
-  norm_num [Fourier2, Matrix.det_fin_two]
+  decide
 
 end
 end TenthDiscriminant.TransportCoherence
