@@ -1,0 +1,103 @@
+name: Phase199 original-source 323 field theorem candidate
+on:
+  push:
+    branches: ['research/phase199-field323']
+    paths:
+      - lean/TenthDiscriminant/Phase199Scalar323.lean
+      - lean/TenthDiscriminant/SourceGeometry323.lean
+      - lean/TenthDiscriminant/SourcePositivity323.lean
+      - lean/TenthDiscriminant/RecoveryGainFloorRatio.lean
+      - lean/TenthDiscriminant/Lower323.lean
+      - lean/TenthDiscriminant/SourceOddBinary323.lean
+      - lean/TenthDiscriminant/SameGramLower323.lean
+      - lean/TenthDiscriminant/UpperScalars323.lean
+      - lean/TenthDiscriminant/ThinUpper323.lean
+      - lean/TenthDiscriminant/ScalarOverlap323.lean
+      - lean/TenthDiscriminant/ActualField323.lean
+      - .github/workflows/phase199-field323.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  actual-field-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Adversarial original-source and arithmetic-budget gate
+        working-directory: .
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from fractions import Fraction as F
+          src=Path('lean/TenthDiscriminant')
+          lower=(src/'SameGramLower323.lean').read_text()
+          upper=(src/'ThinUpper323.lean').read_text()
+          actual=(src/'ActualField323.lean').read_text()
+          scalars=(src/'Phase199Scalar323.lean').read_text()
+          raw=(src/'Lower323.lean').read_text()
+          geometry=(src/'SourcePositivity323.lean').read_text()
+          upper_scalars=(src/'UpperScalars323.lean').read_text()
+          assert 323**4==10884540241
+          assert (F(999997,1000000)-F(4,5))*F(231104,10000)-F(57205,10000)+F(1851,2000)+F(6931,40000)==F(178543,625000000)>0
+          assert 'strong_raw_normalized_add_gain_floor_ratio_le_recovered' in raw
+          assert 'theorem thin_original_gram_pos_323' in geometry
+          assert 'integerRectangularTraceGram' in lower and 'integerRectangularTraceGram' in upper
+          assert 'ellipsePairs D (FirstCertificate.Tuned.thinRadius D)' in lower
+          assert 'ellipsePairs D (Tuned.thinRadius D)' in upper
+          assert 'Tuned.thin_card_le_old_padded_majorant_323' in upper
+          assert 'Tuned.normalized_upper_323' in upper
+          assert 'log_radius_upper_323_sharp' in upper_scalars
+          assert '(4/5 : Real)*Real.log D-814/1000' in upper_scalars
+          assert 'theorem totallyComplex_degree_two_classNumber_one_discriminant_bound_323' in actual
+          assert 'TenthDiscriminant.no_abstract_scalar_overlap_323' in actual
+          assert 'NumberField.discr_eq_discr_of_algEquiv K e.symm' in actual
+          assert 'even_classNumber_ne_one' in actual
+          parent_scalar=(src/'Phase197Scalar324.lean').read_text()
+          assert 'checkPositiveLogBounds 5 323 8' in parent_scalar
+          assert 'log_323_rational_enclosure.1' in scalars
+          gsource=(src/'SourceGeometry323.lean').read_text()
+          assert gsource.count('theorem rho_upper_323')==1
+          assert 'theorem rho_upper_323' not in scalars
+          assert 'theorem fixed_affine_separator_fails_at_322' in scalars
+          assert 'theorem log_R_lower_323' in scalars
+          assert 'log_521_over_1000_le_neg_651_323' in upper_scalars
+          for source in (lower,upper,actual,raw):
+              for forbidden in ('331', '328', '327', '324', 'sorry', 'admit', 'axiom '):
+                  assert forbidden not in source, forbidden
+          print('PHASE199_323_ORIGINAL_GRAM_AND_RATIONAL_SOURCE_PASS')
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile original matched 323 field theorem on this head
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.ActualField323
+      - name: Check exported field theorem and transitive axioms
+        run: |
+          printf '%s\n' 'import TenthDiscriminant.ActualField323' \
+            '#check TenthDiscriminant.Threshold323.totallyComplex_degree_two_classNumber_one_discriminant_bound_323' \
+            '#print axioms TenthDiscriminant.Threshold323.totallyComplex_degree_two_classNumber_one_discriminant_bound_323' \
+            > /tmp/phase196_field_axioms.lean
+          lake env lean /tmp/phase196_field_axioms.lean
