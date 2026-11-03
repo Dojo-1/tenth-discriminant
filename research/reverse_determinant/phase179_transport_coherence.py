@@ -55,6 +55,21 @@ def toy_oracle():
     assert det(H * G * H.T) == det(G)
     assert H != Matrix([[1, 0], [0, 1]])
     assert H[0, 1].q == 2
+    # A STRONGER false positive: two INTEGRAL positive Grams, the same
+    # determinant and every determinant valuation, but DIFFERENT Smith
+    # factors. A rational det-one gauge is not an integral isometry.
+    G_integral = Matrix.diag(4, 4)
+    G_integral_new = H * G_integral * H.T
+    assert G_integral_new == Matrix([[5, 2], [2, 4]])
+    assert det(G_integral) == det(G_integral_new) == 16
+    assert all(z.q == 1 for z in G_integral_new)
+    smith_old = smith_normal_form(G_integral, domain=ZZ)
+    smith_new = smith_normal_form(G_integral_new, domain=ZZ)
+    assert [abs(int(smith_old[i, i])) for i in range(2)] == [4, 4]
+    assert [abs(int(smith_new[i, i])) for i in range(2)] == [1, 16]
+    # Mod-2 ranks are 0 versus 1, so even GL_2(Z)-congruence is impossible.
+    assert (G_integral.applyfunc(lambda z: z % 2)).rank() == 0
+    assert (G_integral_new.applyfunc(lambda z: z % 2)).rank() == 1
     # For an integer lattice point (x,y), H^-1(x,y) is integral iff y even.
     for x in range(-7, 8):
         for y in range(-7, 8):
@@ -81,7 +96,8 @@ def toy_oracle():
     # Integrality of the compensated metric still does NOT make F a Z-unit.
     print("TOY PASS: integral gauge chi 4/3 vs fixed grading chi 4; "
           "SL2(Q) half shear det=1 but two 2-torsion relative quotients; "
-          "Fourier index=2 and fixed-metric det factor=4", flush=True)
+          "Fourier index=2 and fixed-metric det factor=4; "
+          "equal integral Gram det=16 but Smith profiles (4,4) vs (1,16)", flush=True)
 
 
 def original_jet_control():
