@@ -21,7 +21,7 @@ theorem log_375_rational_enclosure :
     (5926 / 1000) (5927 / 1000) hc
   norm_num at h
   constructor
-  · exact h.1
+  · linarith [h.1]
   · exact h.2
 
 private theorem log_375_power_four :
