@@ -122,10 +122,7 @@ theorem integerToyGram_rational_shear :
       (integerToyGram.map (Int.castRingHom Rat)) *
       halfShear.transpose =
       rationallyTransportedIntegerToyGram.map (Int.castRingHom Rat) := by
-  ext i j
-  fin_cases i <;> fin_cases j <;>
-    norm_num [halfShear, integerToyGram, rationallyTransportedIntegerToyGram,
-      Matrix.mul_apply, Fin.sum_univ_two]
+  decide
 
 /-- The elementary Fourier change is invertible over Q but not
 unimodular over Z: its determinant introduces a factor four in the
