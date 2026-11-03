@@ -2,7 +2,7 @@
 
 31 October 2026. **[P-paper]** classical binomial, Newton finite-difference and integral-index statements, derived for the *original ordinary* Z-jet convention. **[M]** finite exact integer experiments, bounded D range and matched controls. **[H]** uniform production compression and any improvement of the actual discriminant bound remain open. **[R]** the strong fixed-six-point all-D speculation is false. No Lean claim, no holonomy measurement, and no PR or merge.
 
-Source lineage: [Phase140 original ordinary jets](../ellipsoid_trimming/phase140_exact_trim.py), [Phase144 image/cokernel](phase144_verifier.py), [six-point minimum certificate](phase144_minimum_support.py), [Phase145 ortho/anti/ambig](phase145_ortho_anti_ambig.py). The [Phase146 exact verifier](phase146_translation_newton.py) imports the prior sources unchanged and checks an independently parameterized implementation against the *exact original source* at D=19. Traces retain $B_Q=\operatorname{diag}(2,2D,\dots)$ and both real/imaginary integer observation coordinates.
+Source lineage: [Phase140 original ordinary jets](../ellipsoid_trimming/phase140_exact_trim.py), [Phase144 image/cokernel](phase144_verifier.py), [six-point minimum certificate](phase144_minimum_support.py), [Phase145 ortho/anti/ambig](phase145_ortho_anti_ambig.py). The [Phase146 exact verifier](phase146_translation_newton.py) imports the prior sources unchanged and checks an independently parameterized implementation against the *exact original source* at D=19. Traces retain $B_Q=\mathrm{diag}(2,2D,\dots)$ and both real/imaginary integer observation coordinates.
 
 ## The integer moving frame is an exact automorphism, not a renamed point cloud
 
@@ -64,7 +64,7 @@ Frozen $Q_6$, $D=19$ [M]: moving $c=0\to-\tfrac12$ lowers $\rho_c^2$ from $23$ t
 
 ## A typed arithmetic boundary remainder [P-paper + M]
 
-For $M=\operatorname{im}_\mathbb Z E_Q\subseteq\mathbb Z^{RS}$ of full rank, define
+For $M=\mathrm{im}_\mathbb Z E_Q\subseteq\mathbb Z^{RS}$ of full rank, define
 
 $$ \Delta_{+}(M)=(M+T_1M)/M.$$
 
@@ -85,7 +85,7 @@ Exact [M] scan for $\rho=5$, $R=8$, $S=J=4$:
 | 25 | 13 | 1,474,560,000 | 4, 4, 4, 4, 20, 20, 120, 120 |
 | 26 | 11 | 1 | — |
 
-All $D=1,\dots,26$ were tested, and translation instability occurred precisely at $D=18,23,24,25$. The verifier checks the boundary-membership test against the full HNF conjugation test and independently computes the relative Smith factors of the enlarged lattice $\operatorname{im}[H\ \ T_1H]$. It does *not* prove that these are the only exceptional parameters for other $\rho,R,S,J$.
+All $D=1,\dots,26$ were tested, and translation instability occurred precisely at $D=18,23,24,25$. The verifier checks the boundary-membership test against the full HNF conjugation test and independently computes the relative Smith factors of the enlarged lattice $\mathrm{im}[H\ \ T_1H]$. It does *not* prove that these are the only exceptional parameters for other $\rho,R,S,J$.
 
 ## Counterworld: fixed six-point image preservation is not uniform
 

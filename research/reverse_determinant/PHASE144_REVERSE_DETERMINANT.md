@@ -4,9 +4,9 @@
 
 ## Frozen objects and the mathematical interface
 
-Use the **original ordinary jets** from Phase140: $D=19,\rho=5,R=8,S=J=4$, rectangular monomial rows $(r,s)$, $Z$-derivatives $j=0,1,2,3$ with $W$ fixed, both integer coordinates of $x+y\sqrt{-19}$, and the positive trace weights $B=\operatorname{diag}(2,38,\ldots)$. For each finite set $Q$, $E_Q$ has $32$ rows and $8|Q|$ columns and $G_Q=E_Q B_Q E_Q^\mathsf T$.
+Use the **original ordinary jets** from Phase140: $D=19,\rho=5,R=8,S=J=4$, rectangular monomial rows $(r,s)$, $Z$-derivatives $j=0,1,2,3$ with $W$ fixed, both integer coordinates of $x+y\sqrt{-19}$, and the positive trace weights $B=\mathrm{diag}(2,38,\ldots)$. For each finite set $Q$, $E_Q$ has $32$ rows and $8|Q|$ columns and $G_Q=E_Q B_Q E_Q^\mathsf T$.
 
-Define $C_Q=\mathbb Z^{32}/\operatorname{im}E_Q$ and $d_Q=|C_Q|$ when full row rank holds. Cauchy–Binet and the maximal-minor content imply $\det G_Q=d_Q^2 H_Q$ with $H_Q$ a positive integer primitive weighted Plücker norm. For $Q'\subseteq Q$ there is a **canonical surjection** $C_{Q'}\to C_Q$ with kernel $\operatorname{im}(E_Q)/\operatorname{im}(E_{Q'})$. Unlike the row lattices embedded in distinct ambient $\mathbb Z^{8|Q|}$ spaces, these **column images** lie in one fixed $\mathbb Z^{32}$ and can be compared exactly.
+Define $C_Q=\mathbb Z^{32}/\mathrm{im}E_Q$ and $d_Q=|C_Q|$ when full row rank holds. Cauchy–Binet and the maximal-minor content imply $\det G_Q=d_Q^2 H_Q$ with $H_Q$ a positive integer primitive weighted Plücker norm. For $Q'\subseteq Q$ there is a **canonical surjection** $C_{Q'}\to C_Q$ with kernel $\mathrm{im}(E_Q)/\mathrm{im}(E_{Q'})$. Unlike the row lattices embedded in distinct ambient $\mathbb Z^{8|Q|}$ spaces, these **column images** lie in one fixed $\mathbb Z^{32}$ and can be compared exactly.
 
 ## First discriminating result
 
@@ -19,7 +19,7 @@ The two exact modular Hermite normal forms **are identical**, and their complete
 - The canonical kernel of $C_\mathrm{thin}\to C_\mathrm{full}$ is **zero**.
 - $\log\det G_\mathrm{full}\approx530.285191202$; $\log\det G_\mathrm{thin}\approx512.666684184$; decrease $\approx17.618507018297$, consistent with the earlier independently implemented Phase140 exact-Gram pilot.
 - $v_3(\det G_\mathrm{full})=39$, $v_3(\det G_\mathrm{thin})=38$. Since $v_3(d)=19$ in both, the guaranteed $3^{38}$ divisor is wholly accounted for by $d^2$, and the extra factor of 3 in the full ellipse is **primitive metric residue**: $v_3(H)$ changes from 1 to 0.
-- $\operatorname{rank}_{\mathbb F_2}(E)=8$ and $\operatorname{rank}_{\mathbb F_3}(E)=17$ for both.
+- $\mathrm{rank}_{\mathbb F_2}(E)=8$ and $\mathrm{rank}_{\mathbb F_3}(E)=17$ for both.
 
 **Correction:** this specific thinning does not produce a new arithmetic quotient. It improves the real determinant within one and the same integral column-image stratum.
 

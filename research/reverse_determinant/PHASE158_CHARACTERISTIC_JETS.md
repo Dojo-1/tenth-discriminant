@@ -10,7 +10,7 @@ The original integer Gram stays unchanged **in its definition**: for each newly 
 
 Let \`p\` be an odd prime with \`-D\` nonsquare modulo \`p\`, \`R=p-1\`, and \`1≤S=J≤R\`. The coefficient space of the original rectangular observables embeds along the characteristic-\`p\` Frobenius graph:
 $$
-V_{R,S}=\operatorname{span}_{\mathbb F_{p^2}}
+V_{R,S}=\mathrm{span}_{\mathbb F_{p^2}}
   \{T^{r+ps}:0\le r<p-1,\ 0\le s<S\}.
 $$
 It consists of exactly those polynomials of degree at most \`pS-2\` whose coefficients in degrees \`kp-1\` (\`1≤k≤S-1\`) vanish. This is a **codimension \`S-1\`** subspace of all polynomials up to that degree, not an entire polynomial ring.
@@ -39,7 +39,7 @@ $$
 $$
 Therefore
 $$
-\boxed{\operatorname{rank}_{\mathbb F_p}E_A=RS
+\boxed{\mathrm{rank}_{\mathbb F_p}E_A=RS
 \iff \det\mathcal O\ne0.}
 $$
 This is an **exact equivalence** for these stated original-jet hypotheses, not a numerical approximation, but the general proof is still paper-level and should be checked independently. It shrinks an \`RS\`-row rank question to an \`(S-1)\times(S-1)\` obstruction. At the proposed multi-billion parameters, \`S-1\` remains enormous; no claim of a cheap production-time algorithm follows.

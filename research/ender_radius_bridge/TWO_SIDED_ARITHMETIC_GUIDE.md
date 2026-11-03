@@ -21,17 +21,17 @@ argument itself needs no squarefreeness assumption.
 At each z from Q take j=0,...,J-1 ORDINARY Z-derivatives of Z^r W^s,
 with W held fixed, then substitute (Z,W)=(z,bar(z)):
 
-\[
+```math
 v_{r,s}(z,j)=(r)_j z^{r-j}\bar z^s\quad(j\le r),\qquad v_{r,s}=0\quad(j>r).
-\]
+```
 
 Here (r)_j is a falling factorial. Put BOTH integer coordinates of these
 values into E, one row per (r,s). Let B repeat the diagonal pair (2,2D)
 for every original sample and derivative. The integer Gram is exactly
 
-\[
+```math
 G=E B E^T,\qquad G_{i\ell}=\sum_{z,j}2(x_i x_\ell+D y_i y_\ell).
-\]
+```
 
 Under t -> i sqrt(D), this pairing is 2 Re(v_i conjugate(v_l)). This is
 precisely integerRectangularTraceGram, including its factor 2 and row order.
@@ -44,9 +44,9 @@ integer coordinates modulo p. In this ring tau^2=-D. Euler's criterion gives
 (-D)^((p-1)/2)=-1, hence tau^p=-tau. The characteristic-p binomial identity
 and x^p=x for scalars give (x+y tau)^p=x-y tau for every pair. Thus
 
-\[
+```math
 z^p-\bar z\in pA.
-\]
+```
 
 For completeness, Euler's criterion here needs only elementary finite-field
 counting: the (p-1)/2 nonzero squares satisfy X^((p-1)/2)=1 by Fermat;
@@ -59,9 +59,9 @@ j>p. Consequently EVERY derivative of H at z belongs to pA. In every term
 of the higher product rule for C(Z)H(Z)^k, each of the k copies of H supplies
 one such factor, irrespective of how derivatives are distributed:
 
-\[
+```math
 \partial_Z^j(C H^k)(z)\in p^k A\quad\text{for every }j.
-\]
+```
 
 No factorial is inverted. This fails for divided/Hasse derivatives: the third
 Hasse derivative of Z^3 is 1, whereas the ordinary derivative is 6.
@@ -70,10 +70,10 @@ Hasse derivative of Z^3 is 1, whereas the ordinary derivative is 6.
 
 Assign row (r,s) the weight k=min(floor(r/p),S-1-s). Replace its monomial by
 
-\[
+```math
 P_{r,s}=Z^{r-pk}W^s(Z^p-W)^k
  =\sum_{a=0}^k(-1)^a\binom{k}{a}Z^{r-pa}W^{s+a}.
-\]
+```
 
 All exponents stay inside the original rectangle: pk<=r and s+k<S.
 The leading monomial is Z^r W^s with coefficient 1. Other terms precede it
@@ -89,10 +89,10 @@ by p^k at EVERY original slot.
 Let Delta_p=diag(p^k). Divide each coordinate of transformed row i by p^k_i.
 Section 3 proves these quotients are integers. Call their matrix Ehat. Then
 
-\[
+```math
 U_p E=\Delta_p\widehat E,\qquad
 U_p G U_p^T=\Delta_p K_p\Delta_p,\qquad K_p=\widehat E B\widehat E^T\in M_n(\mathbb Z).
-\]
+```
 
 The shared pivot is not an exception: entry (i,i) is p^(2k_i) times the
 integer (K_p)_(i,i). Merely knowing that row i and column i are divisible
@@ -101,11 +101,11 @@ shortcut. The integral quotient observations are the missing witness.
 
 Taking determinants now gives an exact integer equality:
 
-\[
+```math
 \det G=p^{2\sum k_i}\det K_p,\qquad
 \sum k_i=\sum_{r<R}\sum_{s<S}\min(\lfloor r/p\rfloor,S-1-s)
        =\sum_{r<R}\sum_{a<S}\min(\lfloor r/p\rfloor,a)=F(p).
-\]
+```
 
 The second equality just reverses the s index. Therefore p^(2F(p)) divides
 THE ORIGINAL det(G). Positivity, class number and ellipse geometry have not
@@ -120,9 +120,9 @@ surjection O_K -> F_p, with kernel an ideal of norm p. Class number one
 makes it principal. Its generator has absolute norm p; imaginary-quadratic
 norm positivity makes its norm p. In the maximal-order coordinates,
 
-\[
+```math
 4p=(2x+y)^2+D y^2.
-\]
+```
 
 If y=0, p=x^2 is impossible. Otherwise 4p>=D. But p<(D+1)/4 implies
 4p<=D; equality is impossible since D is 3 mod 4. This contradiction
