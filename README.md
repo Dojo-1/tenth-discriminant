@@ -12,9 +12,9 @@ The repository combines number theory, exact computation, integral linear algebr
 
 **Current mainline Lean theorem — 3 November 2026.** For every totally complex quadratic number field $K$ of class number one, the encoded and checked theorem concludes that the **actual absolute field discriminant**, not an auxiliary Gram determinant, satisfies
 
-~~~math
+```math
 |\mathrm{disc}(K)|<328^4=11{,}574{,}317{,}056.
-~~~
+```
 
 The declaration is [Threshold328.totallyComplex_degree_two_classNumber_one_discriminant_bound_328](lean/TenthDiscriminant/ActualField328.lean), integrated in [PR #116](https://github.com/Dojo-1/tenth-discriminant/pull/116) at [commit 1d74a750](https://github.com/Dojo-1/tenth-discriminant/commit/1d74a7506506feb350ac771329f372e2f4b089bd). All **33** exact-head PR checks passed, including whole-root Lean compilation, source correspondence, permitted-axiom and known-false controls, and CodeQL. The preceding $331^4$ theorem remains a fully checked historical predecessor.
 
@@ -69,11 +69,11 @@ The original thin-ellipse ordinary-$Z$-jet trace Gram $G_D$ is positive by the P
 
 For $D\ge328^4$, with $R=\lfloor D/4\rfloor$ and $S=\lfloor R/25\rfloor$, the two inequalities constrain the **same positive integer**:
 
-~~~math
+```math
 \frac{999997}{1000000}\log D-\frac{57321}{10000}+\frac14\log 2
 \;\le\;\frac{\log\det G_D}{R^2S}
 \;\le\;\frac45\log D-\frac{1849}{2000}.
-~~~
+```
 
 The certified $\log D\ge23.172$ and $\log2\ge0.6931$ give the exact rational separator $1371/250000000=0.000005484>0$. Its small size is a reason for precise source and normalization audits, not a claim that the encoded inequality failed.
 
