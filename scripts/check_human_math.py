@@ -55,7 +55,7 @@ def check(content: str) -> list[str]:
                 errors.append(f"line {n}: unsupported operatorname macro in math fence")
             continue
 
-        visible = INLINE_CODE.sub("", line)
+        visible = INLINE_CODE.sub(" ", line)  # Do not concatenate across code spans.
         stripped = visible.strip()
         if stripped == "$":
             errors.append(f"line {n}: isolated single-dollar display delimiter")
