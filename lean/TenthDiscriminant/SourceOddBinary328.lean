@@ -19,9 +19,10 @@ open scoped BigOperators Classical
 set_option autoImplicit false
 noncomputable section
 
-/-- Under the original odd squarefree class-number-one hypothesis, the
-same positive thin-Q trace Gram has both the old odd and the single old
-binary logarithmic lower, already normalized by the original R² S. -/
+/-- Under the original odd squarefree class-number-one hypothesis, any
+chosen support Q with a positive ORIGINAL trace Gram carries both the
+sharpened odd-prime mass and exactly one existing binary exponent.
+This is conditional on Gram positivity; no thin-ellipse geometry is inferred. -/
 theorem original_source_odd_plus_binary_normalized_lower_of_pos_328
     (Q : Finset (Int × Int))
     (D : Nat) (hD : (328 : Nat)^4 ≤ D)
