@@ -273,7 +273,9 @@ theorem normalized_upper_322 (D : Nat) (hD : (322 : Nat)^4 ≤ D) :
     convert hm using 1
     ring
   have hmain := mul_le_mul_of_nonneg_right hx
-    (show 0 ≤ (5/4 : Real)*Real.log D-4109/1000 by linarith)
+      /- The radius-log refinement -0.652 changes the x=S/R coefficient
+     from (5/4)*log D-4.109 to (5/4)*log D-4.108. -/
+    (show 0 ≤ (5/4 : Real)*Real.log D-4108/1000 by linarith)
   nlinarith only [hfirst,hend,hrad,hRlog,hdrop,hmain]
 
 /-- Source-exact positivity and dimensional guards for the next Qthin
