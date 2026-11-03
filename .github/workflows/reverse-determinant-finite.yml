@@ -70,3 +70,5 @@ jobs:
         run: python3 research/reverse_determinant/phase162_binary_null_lower.py
       - name: Phase162 differential-null syzygy original-jet control
         run: python3 research/reverse_determinant/phase162_null_syzygy.py
+      - name: Phase179 transport coherence, rational half-shear and original D19 source
+        run: python3 research/reverse_determinant/phase179_transport_coherence.py
