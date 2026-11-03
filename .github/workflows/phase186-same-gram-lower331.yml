@@ -1,0 +1,85 @@
+name: Phase186 same-Gram original odd plus binary lower at 331
+on:
+  push:
+    branches: ['research/phase186-same-gram-lower-331']
+    paths:
+      - lean/TenthDiscriminant/SameGramLower331.lean
+      - research/thin_integrated/PHASE186_SAME_GRAM_LOWER331.md
+      - .github/workflows/phase186-same-gram-lower331.yml
+  pull_request:
+    paths:
+      - lean/TenthDiscriminant/SameGramLower331.lean
+      - research/thin_integrated/PHASE186_SAME_GRAM_LOWER331.md
+      - .github/workflows/phase186-same-gram-lower331.yml
+permissions:
+  contents: read
+jobs:
+  same-gram-lower:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Source identity and no new binary or field assumption
+        working-directory: .
+        run: |
+          cmp lean/TenthDiscriminant/Scalar331.lean research/thin_integrated/Phase183Scalar331.lean
+          python3 - <<'PY'
+          from pathlib import Path
+          s = Path('lean/TenthDiscriminant/SameGramLower331.lean').read_text()
+          lower = Path('lean/TenthDiscriminant/Lower331.lean').read_text()
+          binary = Path('lean/TenthDiscriminant/BinaryGap375.lean').read_text()
+          assert 'theorem normalized_binary_quarter (R S : Nat)' in binary
+          assert 'hR : 0 < R' in binary and 'hS : 0 < S' in binary
+          assert 'import TenthDiscriminant.SourcePositivity331' in s
+          assert 'import TenthDiscriminant.Lower331' in s
+          assert 'import TenthDiscriminant.BinaryGap375' in s
+          required = ('thin_original_gram_pos_331', 'recovered_mass_le_exact_odd_331',
+                      'original_binary_and_exact_odd_mass_log_of_pos',
+                      'normalized_binary_quarter', 'binaryNullGramExponent',
+                      'ellipsePairs D (FirstCertificate.Tuned.thinRadius D)',
+                      'integerRectangularTraceGram',
+                      'theorem thin_original_odd_plus_binary_normalized_lower_331')
+          for item in required:
+              assert item in s, item
+          assert 'normalized_lower_331' in lower
+          assert '375 : Nat' not in s and 'ThinUpper375' not in s
+          for snippet in ('sorry', 'admit', 'axiom', 'thin_production_normalized_upper_375'):
+              assert snippet not in s, snippet
+          print('PHASE186_SOURCE_UNIQUENESS_AND_SINGLE_BINARY_PASS', flush=True)
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build pinned original source lower including binary on same Gram
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.SameGramLower331
+  human-markup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Validate reader math source
+        run: python3 scripts/check_human_math.py research/thin_integrated/PHASE186_SAME_GRAM_LOWER331.md
