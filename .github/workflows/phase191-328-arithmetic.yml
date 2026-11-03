@@ -5,12 +5,14 @@ on:
     paths:
       - lean/TenthDiscriminant/Scalar328.lean
       - lean/TenthDiscriminant/Lower328.lean
+      - lean/TenthDiscriminant/SourceOddBinary328.lean
       - research/thin_integrated/PHASE191_ARITHMETIC328.md
       - .github/workflows/phase191-328-arithmetic.yml
   pull_request:
     paths:
       - lean/TenthDiscriminant/Scalar328.lean
       - lean/TenthDiscriminant/Lower328.lean
+      - lean/TenthDiscriminant/SourceOddBinary328.lean
       - research/thin_integrated/PHASE191_ARITHMETIC328.md
       - .github/workflows/phase191-328-arithmetic.yml
 permissions:
@@ -41,6 +43,7 @@ jobs:
           r=Path('lean/TenthDiscriminant/RecoveryGainSharpRatio.lean').read_text()
           s=Path('lean/TenthDiscriminant/Scalar328.lean').read_text()
           l=Path('lean/TenthDiscriminant/Lower328.lean').read_text()
+          q=Path('lean/TenthDiscriminant/SourceOddBinary328.lean').read_text()
           assert 'strong_raw_normalized_add_gain_sharp_ratio_le_recovered' in r
           assert 'saturated_rows_lower_weight R S 3' in r and 'saturated_rows_lower_weight R S 5' in r
           assert 'checkPositiveLogBounds 5 328 8' in s
@@ -51,7 +54,13 @@ jobs:
           assert 'recovered_mass_le_exact_odd_328' in l and 'normalized_source_gram_lower_328' in l
           assert 'integerRectangularTraceGram Q D (S D) (R D) (S D)' in l
           assert 'original_binary_and_exact_odd_mass_log_of_pos' in l
-          for src in (r,s,l):
+          assert 'original_source_odd_plus_binary_normalized_lower_of_pos_328' in q
+          assert 'original_binary_and_exact_odd_mass_log_of_pos' in q
+          assert 'normalized_binary_quarter' in q
+          assert 'hpositive : 0 <' in q and '(Q : Finset (Int × Int))' in q
+          assert '57321/10000' in q
+          assert 'thin_original_gram_pos_328' not in q
+          for src in (r,s,l,q):
               for bad in ('sorry','admit','axiom '):
                   assert bad not in src,bad
           for bad in ('331', 'SourcePositivity331', 'UpperScalars331', 'ActualField331'):
@@ -79,10 +88,10 @@ jobs:
           lake update
           lake exe cache get
           git rev-parse HEAD
-          lake build TenthDiscriminant.Scalar328 TenthDiscriminant.Lower328
+          lake build TenthDiscriminant.Scalar328 TenthDiscriminant.Lower328 TenthDiscriminant.SourceOddBinary328
       - name: Print transitive axiom dependencies
         run: |
-          printf '%s\n' 'import TenthDiscriminant.Lower328' '#check TenthDiscriminant.FirstCertificate.Tuned.normalized_source_gram_lower_328' '#print axioms TenthDiscriminant.FirstCertificate.Tuned.normalized_source_gram_lower_328' '#check TenthDiscriminant.no_abstract_scalar_overlap_328' '#print axioms TenthDiscriminant.no_abstract_scalar_overlap_328' > /tmp/phase191_axioms.lean
+          printf '%s\n' 'import TenthDiscriminant.SourceOddBinary328' '#check TenthDiscriminant.FirstCertificate.Tuned.normalized_source_gram_lower_328' '#print axioms TenthDiscriminant.FirstCertificate.Tuned.normalized_source_gram_lower_328' '#check TenthDiscriminant.no_abstract_scalar_overlap_328' '#print axioms TenthDiscriminant.no_abstract_scalar_overlap_328' '#check TenthDiscriminant.original_source_odd_plus_binary_normalized_lower_of_pos_328' '#print axioms TenthDiscriminant.original_source_odd_plus_binary_normalized_lower_of_pos_328' > /tmp/phase191_axioms.lean
           lake env lean /tmp/phase191_axioms.lean
   human-markup:
     runs-on: ubuntu-24.04
