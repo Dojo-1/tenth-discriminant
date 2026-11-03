@@ -70,7 +70,7 @@ theorem log_three_lower_1098 :
       binaryLogUpperRat, oddLogPrefixRat, oddLogRemainderRat,
       Finset.sum_range_succ])
   norm_num at h
-  exact h.1
+  linarith [h.1]
 
 theorem log_five_lower_1609 :
     (1609/1000 : Real) ≤ Real.log 5 := by
