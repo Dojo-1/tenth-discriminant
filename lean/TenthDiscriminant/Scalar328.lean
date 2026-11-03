@@ -65,13 +65,13 @@ theorem no_abstract_scalar_overlap_328
 
 /-- Falsifier: the former extra 0.098 gap is absent at the 328 floor. -/
 theorem extra_098_gap_false_at_328 :
-    ¬ ((4/5 : Real)*(23208/1000)-1849/2000+98/1000 <
-      (999997/1000000 : Real)*(23208/1000)-57321/10000+Real.log 2/4) := by
+    ¬ ((4/5 : Real)*(23172/1000)-1849/2000+98/1000 <
+      (999997/1000000 : Real)*(23172/1000)-57321/10000+Real.log 2/4) := by
   intro h
   have h2 := log_two_rational_control.2
   linarith
 
-/-- Falsifier: the same scalar envelopes do not separate at log D = 23.2. -/
+/-- Falsifier: the same scalar envelopes do not separate at log D = 23.16. -/
 theorem scalar_strict_gap_false_at_23_point_16 :
     ¬ ((4/5 : Real)*(579/25)-1849/2000 <
       (999997/1000000 : Real)*(579/25)-57321/10000+Real.log 2/4) := by
