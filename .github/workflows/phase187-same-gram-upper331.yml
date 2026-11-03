@@ -27,7 +27,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Confirm original source and no old large-floor escape
-        working-directory: .
+        working-directory: ${{ github.workspace }}
         run: |
           python3 - <<'PY'
           from pathlib import Path
