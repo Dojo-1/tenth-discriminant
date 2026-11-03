@@ -1,0 +1,100 @@
+name: Phase194 original thin-Gram analytic upper at 328
+on:
+  push:
+    branches: ['research/phase194-same-gram-upper328']
+    paths:
+      - lean/TenthDiscriminant/UpperScalars328.lean
+      - lean/TenthDiscriminant/ThinUpper328.lean
+      - research/thin_integrated/PHASE194_SAME_GRAM_UPPER328.md
+      - .github/workflows/phase194-same-gram-upper328.yml
+  pull_request:
+    paths:
+      - lean/TenthDiscriminant/UpperScalars328.lean
+      - lean/TenthDiscriminant/ThinUpper328.lean
+      - research/thin_integrated/PHASE194_SAME_GRAM_UPPER328.md
+      - .github/workflows/phase194-same-gram-upper328.yml
+permissions:
+  contents: read
+jobs:
+  upper-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Verify original thin source and no stale 331-domain proof
+        working-directory: ${{ github.workspace }}
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from fractions import Fraction as F
+          scalar=Path('lean/TenthDiscriminant/UpperScalars328.lean').read_text()
+          upper=Path('lean/TenthDiscriminant/ThinUpper328.lean').read_text()
+          geom=Path('lean/TenthDiscriminant/SourceGeometry328.lean').read_text()
+          positive=Path('lean/TenthDiscriminant/SourcePositivity328.lean').read_text()
+          oddbin=Path('lean/TenthDiscriminant/SourceOddBinary328.lean').read_text()
+          for tok in ('import TenthDiscriminant.Lower328',
+                      'import TenthDiscriminant.SourceGeometry328',
+                      'theorem normalized_upper_328',
+                      'log_floor_from_328_fourth_power',
+                      'theorem endpoint_error_328'):
+              assert tok in scalar, tok
+          for tok in ('import TenthDiscriminant.UpperScalars328',
+                      'import TenthDiscriminant.SourcePositivity328',
+                      'theorem thin_production_normalized_upper_328',
+                      'Tuned.thin_card_le_old_padded_majorant_328',
+                      'TightRadialSaving.normalized_integer_upper_tight',
+                      'integerRectangularTraceGram',
+                      'ellipsePairs D (Tuned.thinRadius D)'):
+              assert tok in upper, tok
+          assert 'theorem thin_original_gram_pos_328' in positive
+          assert 'theorem thin_radius_interpolation_count_328' in geom
+          assert 'original_source_odd_plus_binary_normalized_lower_of_pos_328' in oddbin
+          assert '(Q : Finset (Int × Int))' in oddbin
+          assert 'hpositive : 0 <' in oddbin
+          for code in (scalar,upper):
+              for bad in ('331', 'sorry', 'admit', 'axiom ', 'thin_production_normalized_upper_331'):
+                  assert bad not in code,bad
+          gap=(F(999997,1000000)-F(4,5))*F(23172,1000)-F(57321,10000)+F(1849,2000)+F(6931,40000)
+          assert gap==F(1371,250000000),gap
+          print('PHASE194_ORIGINAL_SOURCE_ANALYTIC_UPPER_GUARD_PASS',flush=True)
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile exact original thin-Gram upper at 328
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.UpperScalars328 TenthDiscriminant.ThinUpper328
+      - name: Check theorem and transitive axioms
+        run: |
+          printf '%s\n' 'import TenthDiscriminant.ThinUpper328' '#check TenthDiscriminant.ThinUpper328.thin_production_normalized_upper_328' '#print axioms TenthDiscriminant.ThinUpper328.thin_production_normalized_upper_328' > /tmp/phase194_axioms.lean
+          lake env lean /tmp/phase194_axioms.lean
+  human-markup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check reader math
+        run: python3 scripts/check_human_math.py research/thin_integrated/PHASE194_SAME_GRAM_UPPER328.md

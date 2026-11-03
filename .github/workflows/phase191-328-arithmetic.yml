@@ -1,0 +1,104 @@
+name: Phase191 original p3 p5 arithmetic and log328 preflight
+on:
+  push:
+    branches: ['research/phase191-328-arithmetic-preflight']
+    paths:
+      - lean/TenthDiscriminant/Scalar328.lean
+      - lean/TenthDiscriminant/Lower328.lean
+      - lean/TenthDiscriminant/SourceOddBinary328.lean
+      - research/thin_integrated/PHASE191_ARITHMETIC328.md
+      - .github/workflows/phase191-328-arithmetic.yml
+  pull_request:
+    paths:
+      - lean/TenthDiscriminant/Scalar328.lean
+      - lean/TenthDiscriminant/Lower328.lean
+      - lean/TenthDiscriminant/SourceOddBinary328.lean
+      - research/thin_integrated/PHASE191_ARITHMETIC328.md
+      - .github/workflows/phase191-328-arithmetic.yml
+permissions:
+  contents: read
+jobs:
+  source-arithmetic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Audit original two-prime source and rational negative controls
+        working-directory: ${{ github.workspace }}
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from fractions import Fraction as F
+          gain=F(277101,5000)-F(879,10000)*F(63001,100)
+          assert gain==F(42321,1000000), gain
+          margin=(F(999997,1000000)-F(4,5))*F(23172,1000)-F(57321,10000)+F(1849,2000)+F(6931,40000)
+          assert margin==F(1371,250000000), margin
+          false_u=(F(999997,1000000)-F(4,5))*F(579,25)-F(57321,10000)+F(1849,2000)+F(6932,40000)
+          assert false_u < 0
+          r=Path('lean/TenthDiscriminant/RecoveryGainSharpRatio.lean').read_text()
+          s=Path('lean/TenthDiscriminant/Scalar328.lean').read_text()
+          l=Path('lean/TenthDiscriminant/Lower328.lean').read_text()
+          q=Path('lean/TenthDiscriminant/SourceOddBinary328.lean').read_text()
+          assert 'strong_raw_normalized_add_gain_sharp_ratio_le_recovered' in r
+          assert 'saturated_rows_lower_weight R S 3' in r and 'saturated_rows_lower_weight R S 5' in r
+          assert 'checkPositiveLogBounds 5 328 8' in s
+          assert 'log_floor_from_328_fourth_power' in s and 'scalar_strict_gap_false_at_23_point_16' in s
+          assert 'no_abstract_scalar_overlap_328' in s
+          assert 'import TenthDiscriminant.RecoveryGainSharpRatio' in l
+          assert 'have h251 : 10*R D ≤ 251*S D := hd.2.2.1' in l
+          assert 'recovered_mass_le_exact_odd_328' in l and 'normalized_source_gram_lower_328' in l
+          assert 'integerRectangularTraceGram Q D (S D) (R D) (S D)' in l
+          assert 'original_binary_and_exact_odd_mass_log_of_pos' in l
+          assert 'original_source_odd_plus_binary_normalized_lower_of_pos_328' in q
+          assert 'original_binary_and_exact_odd_mass_log_of_pos' in q
+          assert 'normalized_binary_quarter' in q
+          assert 'hpositive : 0 <' in q and '(Q : Finset (Int × Int))' in q
+          assert '57321/10000' in q
+          assert 'thin_original_gram_pos_328' not in q
+          for src in (r,s,l,q):
+              for bad in ('sorry','admit','axiom '):
+                  assert bad not in src,bad
+          for bad in ('331', 'SourcePositivity331', 'UpperScalars331', 'ActualField331'):
+              assert bad not in l,bad
+          print('PHASE191_SAME_SOURCE_328_ODD_PRIME_AND_SCALAR_GATES_PASS',flush=True)
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile 328 exact logarithm and original prime-mass proofs
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.Scalar328 TenthDiscriminant.Lower328 TenthDiscriminant.SourceOddBinary328
+      - name: Print transitive axiom dependencies
+        run: |
+          printf '%s\n' 'import TenthDiscriminant.SourceOddBinary328' '#check TenthDiscriminant.FirstCertificate.Tuned.normalized_source_gram_lower_328' '#print axioms TenthDiscriminant.FirstCertificate.Tuned.normalized_source_gram_lower_328' '#check TenthDiscriminant.no_abstract_scalar_overlap_328' '#print axioms TenthDiscriminant.no_abstract_scalar_overlap_328' '#check TenthDiscriminant.original_source_odd_plus_binary_normalized_lower_of_pos_328' '#print axioms TenthDiscriminant.original_source_odd_plus_binary_normalized_lower_of_pos_328' > /tmp/phase191_axioms.lean
+          lake env lean /tmp/phase191_axioms.lean
+  human-markup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Verify mathematical Markdown
+        run: python3 scripts/check_human_math.py research/thin_integrated/PHASE191_ARITHMETIC328.md
