@@ -1,0 +1,85 @@
+name: Phase200B original p3p5 valuation gain at 322
+on:
+  push:
+    branches: ['research/phase200-original-prime-gain322']
+    paths:
+      - lean/TenthDiscriminant/Phase200PrimeRecovery322.lean
+      - lean/TenthDiscriminant/Phase200Scalar322.lean
+      - .github/workflows/phase200-prime-recovery322.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-primes-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Freeze original p3p5 source and missing-S negative control
+        working-directory: .
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from fractions import Fraction as F
+          p=Path('lean/TenthDiscriminant/Phase200PrimeRecovery322.lean')
+          s=p.read_text(encoding='utf-8')
+          for name in ('phase200_original_prime_log_controls',
+                       'phase200_original_prime_gain_scale_322',
+                       'phase200_original_prime_normalized_gain_322',
+                       'phase200_raw_normalized_add_gain_322',
+                       'phase200_missing_S_guard_rejected',
+                       'valuationWeight R S 3', 'valuationWeight R S 5',
+                       'saturated_rows_lower_weight R S 3',
+                       'saturated_rows_lower_weight R S 5',
+                       '25*S ≤ R', 'R ≤ 25*S+24',
+                       '500000 ≤ S'):
+              assert name in s,name
+          for forbidden in ('sorry', 'admit', 'axiom ', 'classNumber_one_discriminant_bound_322'):
+              assert forbidden not in s,forbidden
+          K=F(62500500001,100000000)
+          C=F(56336,1000)*F(499999,500000)
+          assert F(901,10000)*K < C
+          assert F(1098,1000)+F(1609,1000)==F(2707,1000)
+          assert 3*F(1098,1000)+5*F(1609,1000)==F(11339,1000)
+          assert 25*F(2707,1000)-F(11339,1000)==F(56336,1000)
+          print('PHASE200B_ORIGINAL_PRIMES_SOURCE_AND_RATIONAL_PASS')
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile original valuation-weight gain and missing-size falsifier
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.Phase200PrimeRecovery322
+      - name: Print exact valuation theorem and permissible transitive axioms
+        run: |
+          printf '%s\n' 'import TenthDiscriminant.Phase200PrimeRecovery322' \
+            '#check TenthDiscriminant.FirstCertificate.phase200_original_prime_gain_scale_322' \
+            '#check TenthDiscriminant.FirstCertificate.phase200_original_prime_normalized_gain_322' \
+            '#check TenthDiscriminant.FirstCertificate.phase200_raw_normalized_add_gain_322' \
+            '#check TenthDiscriminant.FirstCertificate.phase200_missing_S_guard_rejected' \
+            '#print axioms TenthDiscriminant.FirstCertificate.phase200_original_prime_gain_scale_322' \
+            '#print axioms TenthDiscriminant.FirstCertificate.phase200_raw_normalized_add_gain_322' \
+            '#print axioms TenthDiscriminant.FirstCertificate.phase200_missing_S_guard_rejected' \
+            > /tmp/phase200_primes_axioms.lean
+          lake env lean /tmp/phase200_primes_axioms.lean
