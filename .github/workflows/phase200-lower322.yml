@@ -1,0 +1,82 @@
+name: Phase200 source-exact 322 original Gram arithmetic lower
+on:
+  push:
+    branches: ['research/phase200-same-gram-field322']
+    paths:
+      - lean/TenthDiscriminant/Phase200Scalar322.lean
+      - lean/TenthDiscriminant/Phase200PrimeRecovery322.lean
+      - lean/TenthDiscriminant/SourceGeometry322.lean
+      - lean/TenthDiscriminant/SourcePositivity322.lean
+      - lean/TenthDiscriminant/Lower322.lean
+      - lean/TenthDiscriminant/SourceOddBinary322.lean
+      - lean/TenthDiscriminant/SameGramLower322.lean
+      - lean/TenthDiscriminant/ScalarOverlap322.lean
+      - .github/workflows/phase200-lower322.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-lower:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Freeze original Gram and rational dependencies
+        working-directory: .
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          q=Path('lean/TenthDiscriminant')
+          files=['Lower322','SourceOddBinary322','SameGramLower322','ScalarOverlap322']
+          src={k:(q/(k+'.lean')).read_text() for k in files}
+          assert 'Real.log D-13904/10000' in src['Lower322']
+          assert 'phase200_raw_normalized_add_gain_322' in src['Lower322']
+          assert 'exactOddPrimeMass' in src['Lower322']
+          assert 'original_binary_and_exact_odd_mass_log_of_pos' in src['SourceOddBinary322']
+          assert 'normalized_binary_quarter' in src['SourceOddBinary322']
+          for k in ['SourceOddBinary322','SameGramLower322']:
+            assert 'integerRectangularTraceGram' in src[k]
+          assert 'ellipsePairs D (FirstCertificate.Tuned.thinRadius D)' in src['SameGramLower322']
+          assert 'strict_affine_separator_322' in src['ScalarOverlap322']
+          for k,t in src.items():
+            for bad in ['sorry','admit','axiom ','theorem totallyComplex_degree_two_classNumber_one_discriminant_bound_322']:
+              assert bad not in t,(k,bad)
+          print('PHASE200_ORIGINAL_SAME_GRAM_LOWER_SOURCE_PASS')
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile same-gram arithmetic lower and conditional scalar collision
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.SameGramLower322 TenthDiscriminant.ScalarOverlap322
+      - name: Exact theorem type and axioms
+        run: |
+          printf '%s\n' 'import TenthDiscriminant.SameGramLower322' \
+            'import TenthDiscriminant.ScalarOverlap322' \
+            '#check TenthDiscriminant.thin_original_odd_plus_binary_normalized_lower_322' \
+            '#check TenthDiscriminant.no_abstract_scalar_overlap_322' \
+            '#print axioms TenthDiscriminant.thin_original_odd_plus_binary_normalized_lower_322' \
+            '#print axioms TenthDiscriminant.no_abstract_scalar_overlap_322' \
+            > /tmp/phase200_lower_axioms.lean
+          lake env lean /tmp/phase200_lower_axioms.lean
