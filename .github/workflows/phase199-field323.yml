@@ -58,7 +58,9 @@ jobs:
           assert 'TenthDiscriminant.no_abstract_scalar_overlap_323' in actual
           assert 'NumberField.discr_eq_discr_of_algEquiv K e.symm' in actual
           assert 'even_classNumber_ne_one' in actual
-          assert 'checkPositiveLogBounds 5 323 8' in scalars
+          parent_scalar=(src/'Phase197Scalar324.lean').read_text()
+          assert 'checkPositiveLogBounds 5 323 8' in parent_scalar
+          assert 'log_323_rational_enclosure.1' in scalars
           gsource=(src/'SourceGeometry323.lean').read_text()
           assert gsource.count('theorem rho_upper_323')==1
           assert 'theorem rho_upper_323' not in scalars
