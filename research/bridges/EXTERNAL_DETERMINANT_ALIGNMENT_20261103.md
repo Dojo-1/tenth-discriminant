@@ -23,6 +23,21 @@ All programs discuss imaginary quadratic class-number-one fields. For a number f
 | Evidence | Lean exact theorem relative to encoded definitions, standard axioms, source fidelity still open | Paper + exact numerical programs + reported AI-model checks; elementary Lean adaptation independent and scope-limited | **Neither** proof certificate automatically validates the other's interpretation |
 | Outcome | Current integrated `q<323^4`; 322 is unmerged research | v7 `q<570` and nine-field finite finish | No statement that our bound is state-of-the-art, competitive, or new classification |
 
+## A candidate algebraic common layer: weighted Cauchy–Binet [H for source instantiation]
+
+The source definitions in [`IntegerTraceGram.lean`](https://github.com/Dojo-1/tenth-discriminant/blob/main/lean/TenthDiscriminant/IntegerTraceGram.lean) explicitly evaluate ordinary `Z` derivative jets and sum their integer trace pairing `2(x x' + D y y')` over the ORIGINAL pair support and derivative orders. Accordingly, an integer evaluation matrix `E` with separate real/imaginary columns and diagonal weights `W = diag(2,2D, ...)` is a natural exact **candidate representation** of the same integer Gram. The formula below is an abstract algebraic identity once the representation and dimensions are checked; its specialization to `integerRectangularTraceGram` still needs a source-identity Lean lemma.
+
+$
+G=EWE^{\\mathsf T},\\qquad
+\\det G=\\sum_{I:\,|I|=n}\\det(E_I)^2\\prod_{i\\in I}w_i.
+$
+
+By contrast, [v7, §3](https://github.com/twinheterodox/tenth-discriminant/blob/v0.7.0/versions/v7/proof.tex) constructs an ordinary-derivative matrix with `R=p_0` an **auxiliary inert prime**, proves full row rank by reduction to `F_{p_0^2}` and `nJ >= RS`, then **fixes one nonzero square minor** `M` and sets `Delta=|det(M)|^2`. That is a different determinant *even where the derivative algebra looks alike*. They use `S=floor(3R/64)`, `J=ceil(R/9)`; ours uses `R=floor(D/4)` and `S=floor(R/25)`. These parameter names have distinct types and scales.
+
+**What a legitimate transport would demand:** write down both evaluation arrays with typed indices, points, derivative conventions and number-field embeddings; prove whether any change of rows/columns preserves integrality, rank and determinants; then prove a concrete map (if any) from their selected complex minor to our weighted real-coordinate Gram-minor sum. Weighted Cauchy–Binet alone does **not** identify their chosen minor with a term in our sum, and certainly does not transport their auxiliary-prime valuation bounds. Absent that map, preserve `R_formal` and `R_transport` as unresolved.
+
+**Minimal discriminating test, deferred:** a small explicit matrix built from one identical polynomial/jet/point family in both coordinate conventions, computing both the weighted Gram determinant and all maximal minors with exact integer arithmetic. This is a semantic mapping test, not a new geometric optimization or a proof for all `D`. Do not run it as a substitute for the active 322 source-to-field audit.
+
 ## Proposed semantic bridge — an experiment, not a theorem
 
 1. **Reference and hypothesis.** Compare exactly the class-number-one hypothesis, fundamental discriminant sign convention, and permitted inputs (including additional auxiliary-prime existence). Demand a source link for each.
