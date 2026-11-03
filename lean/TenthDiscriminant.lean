@@ -187,6 +187,17 @@ import TenthDiscriminant.SameGramLower328
 import TenthDiscriminant.UpperScalars328
 import TenthDiscriminant.ThinUpper328
 import TenthDiscriminant.ActualField328
+import TenthDiscriminant.Phase196Scalar327
+import TenthDiscriminant.RecoveryGainFloorRatio
+import TenthDiscriminant.SourceGeometry327
+import TenthDiscriminant.SourcePositivity327
+import TenthDiscriminant.Lower327
+import TenthDiscriminant.SourceOddBinary327
+import TenthDiscriminant.SameGramLower327
+import TenthDiscriminant.UpperScalars327
+import TenthDiscriminant.ThinUpper327
+import TenthDiscriminant.ScalarOverlap327
+import TenthDiscriminant.ActualField327
 import TenthDiscriminant.RecoveryGainSharpRatio
 import TenthDiscriminant.RankDivisorCompatibility
 import TenthDiscriminant.TransportCoherence
