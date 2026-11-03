@@ -1,0 +1,98 @@
+name: Phase193 original thin-ellipse geometry and Gram positivity at 328
+on:
+  push:
+    branches: ['research/phase193-original-geometry328']
+    paths:
+      - lean/TenthDiscriminant/SourceGeometry328.lean
+      - lean/TenthDiscriminant/SourcePositivity328.lean
+      - research/thin_integrated/PHASE193_ORIGINAL_GEOMETRY328.md
+      - .github/workflows/phase193-original-geometry328.yml
+  pull_request:
+    paths:
+      - lean/TenthDiscriminant/SourceGeometry328.lean
+      - lean/TenthDiscriminant/SourcePositivity328.lean
+      - research/thin_integrated/PHASE193_ORIGINAL_GEOMETRY328.md
+      - .github/workflows/phase193-original-geometry328.yml
+permissions:
+  contents: read
+jobs:
+  geometry-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Freeze source and test cell-covering guard including negative control
+        working-directory: ${{ github.workspace }}
+        run: |
+          python3 - <<'PY'
+          from fractions import Fraction as F
+          from pathlib import Path
+          g=Path('lean/TenthDiscriminant/SourceGeometry328.lean').read_text()
+          p=Path('lean/TenthDiscriminant/SourcePositivity328.lean').read_text()
+          old=Path('lean/TenthDiscriminant/SourceGeometry331.lean').read_text()
+          assert 'import TenthDiscriminant.SourceGeometry328' in p
+          for marker in ('theorem fourthRoot_ge_328','theorem R_ge_eighty_cubes_328',
+                         'theorem rho_upper_328','theorem radius_over_R_328',
+                         'theorem thin_chosen_radius_328',
+                         'theorem thin_radius_interpolation_count_328'):
+              assert marker in g, marker
+          for marker in ('theorem thin_original_gram_pos_328',
+                         'theorem old_original_gram_pos_328',
+                         'theorem thin_card_le_old_padded_majorant_328',
+                         'TenthDiscriminant.RadialCutoff.integer_det_positive'):
+              assert marker in p, marker
+          assert 'ellipsePairs D (thinRadius D)' in p
+          assert 'integerRectangularTraceGram' in p
+          assert '(8 : Real) ≤ fourthRoot D-320' in g
+          assert '(11 : Real) ≤ fourthRoot D-320' in old
+          coeff=F(11,25)-F(1001,1000)*F(407,1000)
+          assert coeff==F(32593,1000000)
+          assert coeff*328-10 == F(86313,125000)
+          assert coeff*307-10 == F(6051,1000000)
+          assert coeff*306-10 == -F(13271,500000)
+          for s in (g,p):
+              assert '331' not in s
+              for forbidden in ('sorry','admit','axiom '):
+                  assert forbidden not in s, forbidden
+          print('PHASE193_EXACT_ORIGINAL_GEOMETRY_GUARD_PASS',flush=True)
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build source-exact 328 geometry and Gram positivity
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.SourceGeometry328 TenthDiscriminant.SourcePositivity328
+      - name: Inspect transitive axiom dependencies of both critical lemmas
+        run: |
+          printf '%s\n' 'import TenthDiscriminant.SourcePositivity328' '#check TenthDiscriminant.FirstCertificate.Tuned.thin_radius_interpolation_count_328' '#print axioms TenthDiscriminant.FirstCertificate.Tuned.thin_radius_interpolation_count_328' '#check TenthDiscriminant.FirstCertificate.Tuned.thin_original_gram_pos_328' '#print axioms TenthDiscriminant.FirstCertificate.Tuned.thin_original_gram_pos_328' > /tmp/phase193_axioms.lean
+          lake env lean /tmp/phase193_axioms.lean
+  human-markup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Validate mathematical Markdown
+        run: python3 scripts/check_human_math.py research/thin_integrated/PHASE193_ORIGINAL_GEOMETRY328.md
