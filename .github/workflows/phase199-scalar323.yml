@@ -1,0 +1,76 @@
+name: Phase199 unchanged-R-floor scalar preflight at fourth root 323
+on:
+  push:
+    branches: ['research/phase199-scalar323']
+    paths:
+      - lean/TenthDiscriminant/Phase199Scalar323.lean
+      - .github/workflows/phase199-scalar323.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  scalar-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact rational and no-new-field-claim gate
+        working-directory: .
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from fractions import Fraction as F
+          s=Path('lean/TenthDiscriminant/Phase199Scalar323.lean').read_text(encoding='utf-8')
+          for name in ('theorem log_R_lower_323',
+                       'theorem raw_constant_5810_is_supported',
+                       'theorem strict_affine_separator_323',
+                       'theorem log_322_rational_enclosure',
+                       'theorem fixed_affine_separator_fails_at_322',
+                       'theorem original_cell_covering_buffer_323'):
+              assert name in s, name
+          for bad in ('sorry', 'admit', 'axiom ', 'classNumber_one_discriminant_bound_323'):
+              assert bad not in s, bad
+          a=F(999997,1000000)
+          assert F(5810,1000)-(F(4419,1000)+a*F(1391,1000))==F(4173,1000000000)>0
+          assert (a-F(4,5))*F(231104,10000)-F(57205,10000)+F(1851,2000)+F(6931,40000)==F(178543,625000000)>0
+          assert 323**4==10884540241
+          print('PHASE199_323_RATIONAL_AND_SCOPE_PASS')
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile source-preserving 323 scalar and log-floor certificates
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.Phase199Scalar323
+      - name: Inspect exact 323 theorem types and permitted axioms
+        run: |
+          printf '%s\n' 'import TenthDiscriminant.Phase199Scalar323' \
+            '#check TenthDiscriminant.log_R_lower_323' \
+            '#check TenthDiscriminant.strict_affine_separator_323' \
+            '#check TenthDiscriminant.fixed_affine_separator_fails_at_322' \
+            '#print axioms TenthDiscriminant.log_R_lower_323' \
+            '#print axioms TenthDiscriminant.strict_affine_separator_323' \
+            '#print axioms TenthDiscriminant.fixed_affine_separator_fails_at_322' \
+            > /tmp/phase199_axioms.lean
+          lake env lean /tmp/phase199_axioms.lean
