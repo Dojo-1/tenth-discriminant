@@ -11,7 +11,7 @@ Freeze rho=5, R=8, S=J=4. For each integer D>0, let Omega_D={(x,y) in Z^2 : x^2+
 Let M_D=im_Z(E_Omega), assumed rationally full rank, and choose an integral HNF basis H_D of M_D. For each subset Q, define
 
 $$ C_Q=H_D^{-1}E_Q\in Z^{32\times8|Q|}, \qquad
-F_Q=Z^{32}/\operatorname{im}_Z C_Q\cong M_D/\operatorname{im}_Z E_Q. $$
+F_Q=Z^{32}/\mathrm{im}_Z C_Q\cong M_D/\mathrm{im}_Z E_Q. $$
 
 The right-hand quotient is finite for rationally full-row-rank Q. Equality of integer column images is exactly F_Q=0; equality of **rational rank** or a small real Gram determinant is not enough.
 
@@ -21,7 +21,7 @@ For every prime p, the number of nontrivial p-primary Smith factors of F_Q is
 
 $$
 \delta_p(Q)=\dim_{\mathbf F_p}(F_Q/pF_Q)
-=32-\operatorname{rank}_{\mathbf F_p}(C_Q\bmod p).
+=32-\mathrm{rank}_{\mathbf F_p}(C_Q\bmod p).
 $$
 
 Proof: tensor the defining presentation Z^{8|Q|} -> Z^{32} -> F_Q -> 0 with F_p; right exactness identifies F_Q/pF_Q with the indicated cokernel. Thus a nonzero delta_p is a **typed arithmetic obstruction**, not merely a heuristic low-rank score.

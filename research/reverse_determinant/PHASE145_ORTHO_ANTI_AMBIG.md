@@ -34,7 +34,7 @@ The cross-parity block flips sign under reflection and vanishes for antipodally 
 
 For a full-rank P-stable free integer column image $M\subseteq\mathbb Z^{32}$, let $M^\pm=\{x\in M:Px=\pm x\}$ and $\Gamma_M=M/(M^+\oplus M^-)$. Map $x\in M$ to $(I+P)x\bmod 2M$. The kernel is exactly $M^+\oplus M^-$: if $(I+P)x=2y$ for $y\in M$, applying $P$ yields $Py=y$ and $x-y\in M^-$. Thus
 
-$$\boxed{\Gamma_M\simeq\operatorname{im}_{\mathbb F_2}(I+\overline P\mid M/2M),\qquad |\Gamma_M|=2^{\operatorname{rank}_{\mathbb F_2}(I+\overline P)}.}$$
+$$\boxed{\Gamma_M\simeq\mathrm{im}_{\mathbb F_2}(I+\overline P\mid M/2M),\qquad |\Gamma_M|=2^{\mathrm{rank}_{\mathbb F_2}(I+\overline P)}.}$$
 
 Let $H$ be a column-Hermite basis of $M$. In these integral coordinates $T=H^{-1}PH$ is the correct parity action, not the ambient diagonal matrix reduced modulo two. Independently let $a_\pm$ be the indices of the coordinate projections $\pi_\pm(M)\subseteq\mathbb Z^{16}$. Exact lattice algebra yields $[\mathbb Z^{32}:M]=a_+a_-|\Gamma_M|$. Both are tested.
 

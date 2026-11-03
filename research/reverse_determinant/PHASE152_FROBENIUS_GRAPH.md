@@ -7,13 +7,13 @@
 Start on the **two-dimensional algebraic surface** `Spec k[Z,W]` and polynomial section space `V=span{Z^r W^s:0≤r<R,0≤s<S}` of dimension `RS`. Every observation is the original **ordinary partial-Z** directional jet `∂_Z^j`, **holding W fixed**, with `j<J`. The integer matrix `E_Q(D)` retains its usual paired real and imaginary channels and positive metric `B=diag(2,2D,...)`.
 
 For an odd inert prime `p` in the imaginary quadratic order, reduction sends `z^p=\bar z` in the residue field `k≈F_(p²)`. The **Frobenius graph**
-\[
+```math
 \Gamma_p=\{(Z,W):W=Z^p\}
-\]
+```
 gives the restriction homomorphism
-\[
+```math
 \phi_p: V\longrightarrow k[T],\quad Z^rW^s\mapsto T^{r+ps}.
-\]
+```
 
 If `p≥R`, the exponents `r+ps` are all **different**. Hence `φ_p` is injective and every nonzero section maps to a nonzero polynomial of degree at most `(R−1)+p(S−1)`. If `J≤p`, its ordinary `j`-derivatives for `0≤j<J` agree with the pulled-back original ordinary `∂_Z^j` jets: `∂(T^p)=0` for `j<p`, and the falling factorials are unchanged modulo p.
 
@@ -21,11 +21,11 @@ Let `N_p(Q)` count all distinct residue roots represented by `z_q` **and** `\bar
 
 **Theorem target [P-paper, elementary proof].**
 For `p` odd inert, `1≤J≤p`, `1≤S≤R≤p`, and all conjugate residues distinct,
-\[
+```math
 \boxed{J N_p(Q)>(R-1)+p(S-1)
 \quad\Longrightarrow\quad
-\operatorname{rank}_{\mathbf F_p}E_Q(D)=RS.}
-\]
+\mathrm{rank}_{\mathbf F_p}E_Q(D)=RS.}
+```
 Proof by contradiction: a nonzero row relation maps under `φ_p` to a nonzero `F(T)` of the displayed degree. Vanishing of all original paired ordinary jets forces every one of the `N_p` distinct roots to have multiplicity at least `J`. This contradicts the degree bound. Consequently `E_Q` has full characteristic-zero row rank and `G_Q=E_Q B E_Q^T` is positive definite for every `D>0`. This is **the same original integer Gram** whose inert-prime mass is studied in [Phase149](PHASE149_POSITIVITY_BRIDGE.md).
 
 ```mermaid
@@ -44,21 +44,21 @@ flowchart LR
 ## Coherent-sheaf factorization [P-paper] — where geometry enters the theorem
 
 Over \`k≈F_(p²)\`, compactify to the **algebraic surface** \`X=P¹_Z×P¹_W\`, with section bundle \`L=O_X(R−1,S−1)\`. The Frobenius-graph embedding is \`i_p:P¹_T→X, T↦(T,T^p)\`. There is an exact, type-preserving bundle identity
-\[
+```math
 \boxed{i_p^*L=O_{P^1}((R-1)+p(S-1)).}
-\]
+```
 This degree is *precisely* the maximum exponent in the polynomial proof. The composed jet-restriction map on global sections factors as
-\[
+```math
 H^0(X,L)\xrightarrow{i_p^*}H^0(P^1,O(d_p))
 \xrightarrow{\mathrm{jet\,eval}}\bigoplus_{\xi\in\Xi}
    O(d_p)\otimes \mathcal O_{P^1,\xi}/\mathfrak m_\xi^{J},
 \quad d_p=(R-1)+p(S-1).
-\]
+```
 The first arrow is injective for \`R≤p\` by the distinct \`r+ps\` exponents. The kernel of the second arrow is
-\[
+```math
 H^0(P^1,O(d_p-J\sum_{\xi\in\Xi}[\xi]))=0
 \quad\text{if }JN_p>d_p.
-\]
+```
 Hence the full-rank criterion is an **actual sheaf-kernel vanishing theorem**, not an analogy with higher-dimensional geometry. In characteristic p, \`(T+t)^p=T^p+t^p\`; for \`J≤p\` the length-J directional jets pull back correctly because the normal (W) coordinate does not change to orders less than J. The factorization remains tied to original ordinary jets rather than silently changing to Hasse jets.
 
 The failure at \`p<R\` is located in the **first** map: \`H⁰(X,I_(Γp)⊗L)\` contains the nonzero globalized section \`Z^p−W\` (when S≥2). This is the candidate entrypoint for a conormal/Rees filtration \`I^m/I^(m+1)\` and the larger divided-Frobenius geometry in the published 331 argument. Such a filtration needs a separate integral p-adic transport, so do not infer automatic equivalence of the rectangular and triangular determinants.
@@ -66,15 +66,15 @@ The failure at \`p<R\` is located in the **first** map: \`H⁰(X,I_(Γp)⊗L)\` 
 ## Localized support existence under the class-number-one *hypothesis*
 
 For `D≡3 mod4`, squarefree, `D≥10^6`, and the **hypothetical premise** `h(-D)=1`, every prime `p<(D+1)/4` is inert, by the standard norm-minimum obstruction. Put `m=(D+1)/4`. Bertrand gives an odd prime `m/2<p<m` (m≥6), hence an inert witness supplied by the same arithmetic assumption; no split-prime count above that inertness threshold is needed. Take `R=p−1`, `J=S`, `1≤S≤R`, and
-\[
+```math
 \delta=\frac12\sqrt{D+1},\qquad
 \rho=\left\lceil\delta+\sqrt{\frac{p\sqrt D}{3}}\right\rceil.
-\]
+```
 The rectangular integer lattice `Z+Z√(-D)` has covolume `√D` and covering radius `δ`. Voronoi-cell area comparison yields
-\[
+```math
 |\Omega_D(\rho)|\ge\frac{\pi(\rho-\delta)^2}{\sqrt D}>\!p,
 \quad\Omega_D(\rho)=\{(x,y)\in\mathbb Z^2:x^2+Dy^2\le\rho^2\}.
-\]
+```
 For `D≥10^6` the elementary inequalities `p>(D+1)/8` and `p<(D+1)/4` ensure `2ρ<p` and `ρ<0.31 D^{3/4}`. Thus the residues of *all* lattice nodes in the disk are distinct modulo `pO_D`: if `a-b∈pO_D` and `a≠b`, then `|a-b|≥p`.
 
 Take one representative from each conjugate orbit, `Q^+=\{(x,y)\in\Omega:y≥0\}`. Its conjugate residue set has size `N_p(Q^+)=|\Omega|>p`. For `R=p−1`, the degree bound becomes `pS−2`, and `J N_p=S|\Omega|>pS−2`. Hence its original **unweighted** integer Gram is positive and the original inert-prime arithmetic lower theorem is in principle applicable **with its other assumptions intact**. This is a parameter-family **paper-level theorem**, not a new exclusion of large D; the hypothetical class-number premise is contradictory to the known classification, as is normal in a reductio proof of the challenge.
@@ -103,11 +103,11 @@ This provides a concrete *Pareto geometry*, rather than collapsing all structure
 The proof of `prime_mass_log_lower_of_det_pos` in [RadialCutoff.lean](../../lean/TenthDiscriminant/RadialCutoff.lean) is preserved on current `main`; [whole-root Lean CI at commit 32850f81](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41246553130) completed successfully, superseding the **cancelled** older Phase149 commit run. It retains the original squarefree, odd-discriminant, class-number, and `R<(D+1)/4` guards. The present rank theorem supplies precisely its positive-Gram input conditionally, without introducing Hasse jets or cyclic coefficient-field extensions.
 
 An inverse-Gram-free upper for the same positive Gram is immediately available from Hadamard:
-\[
+```math
 \log\det G_Q\le \sum_{r=0}^{R-1}\sum_{s=0}^{S-1}
 \log\!\left[2|Q|\sum_{j=0}^{\min(r,S-1)}
 (r)_{\underline j}^{2}\rho^{2(r+s-j)}\right].
-\]
+```
 It is valid but likely too loose. A future sharp majorant should exploit the **Frobenius-adapted filtration** with an integer-unimodular monic row basis, rather than misleading factorial rescaling. It must preserve the same integer `det G_Q` and be compared to the same-`R,S,Q` prime mass.
 
 The rival [D≤331 write-up](https://github.com/dualverse-ai/tenth_discriminant/tree/main/bound-331/latex) uses a different *triangular* polynomial space, larger auxiliary inert primes and **Hasse** derivatives in its rank/size comparison; those changes cannot be transplanted into this original rectangular ordinary-jet Gram without proving the bridge. Our low-prime no-collision witness uses only a prime already **guaranteed inert** by the hypothesis, but pays by choosing `R=p−1`. The professor explicitly welcomes different methods and transparently bounded negative results; this is compatible in research objective, **not yet an equivalent numerical field bound**.
