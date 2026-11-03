@@ -1,0 +1,83 @@
+name: Phase200 three unchanged-source precision releases and scalar 322
+on:
+  push:
+    branches: ['research/phase200-scalar322']
+    paths:
+      - lean/TenthDiscriminant/Phase200Scalar322.lean
+      - .github/workflows/phase200-scalar322.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  scalar-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact rational and no-field-promotion source gate
+        working-directory: .
+        run: |
+          python3 - <<'PY'
+          from fractions import Fraction as F
+          from pathlib import Path
+          s=Path('lean/TenthDiscriminant/Phase200Scalar322.lean').read_text()
+          for name in ('theorem log_floor_ratio_upper_13904',
+                       'theorem log_R_lower_322',
+                       'theorem log_521_over_1000_upper_652',
+                       'theorem log_three_lower_1098',
+                       'theorem log_five_lower_1609',
+                       'theorem p3p5_candidate_gain_budget_322',
+                       'theorem strict_affine_separator_322',
+                       'theorem fixed_affine_separator_fails_at_321'):
+              assert name in s,name
+          for bad in ('sorry','admit','axiom ', 'classNumber_one_discriminant_bound_322'):
+              assert bad not in s,bad
+          a=F(999997,1000000)
+          assert F(58094,10000)-(F(4419,1000)+a*F(13904,10000))==F(2607,625000000)>0
+          assert F(56336,1000)*F(499999,500000)-F(901,10000)*F(250001,10000)**2==F(22936827099,1000000000000)>0
+          assert (a-F(4,5))*F(230980,10000)-F(57193,10000)+F(1853,2000)+F(6931,40000)==F(2853,500000000)>0
+          assert 322**4==10750371856
+          print('PHASE200_322_EXACT_RATIONAL_AND_SCOPE_PASS')
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile standalone sound 322 logarithms and rational scalar check
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.Phase200Scalar322
+      - name: Print new 322 lemma types, 321 negative control and transitive axioms
+        run: |
+          printf '%s\n' 'import TenthDiscriminant.Phase200Scalar322' \
+            '#check TenthDiscriminant.log_R_lower_322' \
+            '#check TenthDiscriminant.log_521_over_1000_upper_652' \
+            '#check TenthDiscriminant.log_three_lower_1098' \
+            '#check TenthDiscriminant.log_five_lower_1609' \
+            '#check TenthDiscriminant.strict_affine_separator_322' \
+            '#check TenthDiscriminant.fixed_affine_separator_fails_at_321' \
+            '#print axioms TenthDiscriminant.log_R_lower_322' \
+            '#print axioms TenthDiscriminant.p3p5_candidate_gain_budget_322' \
+            '#print axioms TenthDiscriminant.strict_affine_separator_322' \
+            '#print axioms TenthDiscriminant.fixed_affine_separator_fails_at_321' \
+            > /tmp/phase200_axioms.lean
+          lake env lean /tmp/phase200_axioms.lean
