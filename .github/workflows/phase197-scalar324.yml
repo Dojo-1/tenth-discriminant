@@ -1,0 +1,76 @@
+name: Phase197 original-R floor logarithm and 324 scalar preflight
+on:
+  push:
+    branches: ['research/phase197-rfloor324-scalar']
+    paths:
+      - lean/TenthDiscriminant/Phase197Scalar324.lean
+      - .github/workflows/phase197-scalar324.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  scalar-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Freeze original dimension source and forbid early field theorem promotion
+        working-directory: .
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('lean/TenthDiscriminant/Phase197Scalar324.lean')
+          s=p.read_text()
+          for token in ('theorem log_floor_ratio_upper_1391',
+                        'theorem log_R_lower_324',
+                        'theorem log_324_rational_enclosure',
+                        'theorem strict_affine_separator_324',
+                        'theorem fixed_affine_separator_fails_at_323',
+                        'checkPositiveLogBounds 8 (1000/249) 2',
+                        'checkPositiveLogBounds 5 324 8'):
+              assert token in s, token
+          for bad in ('sorry', 'admit', 'axiom ', 'classNumber_one_discriminant_bound_324'):
+              assert bad not in s, bad
+          from fractions import Fraction as F
+          assert (F(999997,1000000)-F(4,5))*F(231228,10000)-F(57215,10000)+F(1851,2000)+F(6931,40000)==F(4414079,2500000000)>0
+          assert 324**4 == 11019960576
+          print('PHASE197_SOURCE_AND_RATIONAL_NEGATIVE_CONTROL_PASS')
+          PY
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile source-preserving 324 scalar and log-floor certificates
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.Phase197Scalar324
+      - name: Print exact statement and transitive axioms for new lemmas
+        run: |
+          printf '%s\n' 'import TenthDiscriminant.Phase197Scalar324' \
+            '#check TenthDiscriminant.log_R_lower_324' \
+            '#check TenthDiscriminant.strict_affine_separator_324' \
+            '#check TenthDiscriminant.fixed_affine_separator_fails_at_323' \
+            '#print axioms TenthDiscriminant.log_R_lower_324' \
+            '#print axioms TenthDiscriminant.strict_affine_separator_324' \
+            '#print axioms TenthDiscriminant.fixed_affine_separator_fails_at_323' \
+            > /tmp/phase197_axioms.lean
+          lake env lean /tmp/phase197_axioms.lean
