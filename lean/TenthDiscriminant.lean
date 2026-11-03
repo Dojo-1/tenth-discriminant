@@ -175,6 +175,8 @@ import TenthDiscriminant.SourcePositivity331
 import TenthDiscriminant.Scalar331
 import TenthDiscriminant.Lower331
 import TenthDiscriminant.SameGramLower331
+import TenthDiscriminant.UpperScalars331
+import TenthDiscriminant.ThinUpper331
 import TenthDiscriminant.RankDivisorCompatibility
 import TenthDiscriminant.TransportCoherence
 
