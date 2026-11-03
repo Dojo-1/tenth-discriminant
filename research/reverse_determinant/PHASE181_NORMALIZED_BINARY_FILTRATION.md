@@ -66,6 +66,22 @@ The D=163 source and deletions are exactly the selected historical Phase159 obse
 
 For D=19 the actual first eight residual Smith layers are 24,24,24,20,4,2,2,2. Their sum is 102, whereas the first layer alone sees only 24. All original-Gram valuations are rechecked against the exact original support and weights, not inferred from the normalized computation alone.
 
+## Stress the actual thin-ellipse formula at small D
+
+The selected characteristic supports above are deliberately sparse. As a separate control, use the **exact same formulas** as the production Lean source: R=floor(D/4), S=floor(R/25), and the full set of integer points x^2+D y^2 at most rho^2, with rho=ceil((11/25)D^(3/4)). The pilot computes this radius by an exact integer fourth-power comparison, not a floating-point ceiling. Every D below is strictly **below the proven field-theorem range**; the data do not instantiate that theorem or its class-number assumptions.
+
+| D | R,S | Thin rho | Points | First n1 | Residual v2(det H) | Residual / (R^2 S) |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 103 | 25,1 | 15 | 77 | 24 | 362 | 0.5792 |
+| 127 | 31,1 | 17 | 85 | 30 | 575 | 0.5983 |
+| 163 | 40,1 | 21 | 109 | 39 | 641 | 0.4006 |
+| 199 | 49,1 | 24 | 127 | 48 | 1546 | 0.6439 |
+| 251 | 62,2 | 28 | 151 | 122 | 3098 | 0.4030 |
+
+The normalized ratio oscillates on this deliberately small sequence. Neither convergence nor a positive limiting lower bound follows. Moreover, in the D=163 full thin support, deleting just (0,0), (21,0), or (16,1) yields first-layer nullities 40, 38, or 37 and residual valuations 642, 642, or 639 respectively. Adding or removing observations does **not** transport a Smith barcode as an invariant without further structure.
+
+**Precision negative control.** At D=199, modulo 2^64 censors at least one residual Smith invariant factor; using only that precision is invalid. Modulo 2^128 reveals all factors (the largest residual exponent is 67, largest original-Gram exponent 92), and the exact valuation factorization is checked again. The [separate thin-support pilot](phase181_thin_support_pilot.py) asserts this censoring rather than silently treating the reduced-rank computation as exact.
+
 ## Where this cannot yet go
 
 **One-layer asymptotic obstruction.** Since n1 cannot exceed m=RS, the first binary layer adds at most (log 2)/R after dividing by the field proof's R^2S scale. It cannot create a nonzero limiting leading-order improvement as R grows. Deeper layers could matter *only if* one proves a production-uniform lower bound after removing factors already known.
