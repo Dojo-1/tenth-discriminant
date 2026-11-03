@@ -1,4 +1,22 @@
-# A source-aware comparison, 26 October 2026
+# Source-aware comparison — current checkpoint (3 November 2026)
+
+**The shared mathematical observable is $q=|\mathrm{disc}(K)|$, not a shared determinant.** The source-checked *integrated* theorem here is $q<323^4=10{,}884{,}540{,}241$ ([PR #123](https://github.com/Dojo-1/tenth-discriminant/pull/123), all 25 checks passed). The original source-local 322 scalar, geometry, p3/p5 valuation and same-Gram lower are also focused-Lean-checked; its stronger unchanged-radius analytic upper and field return are still unmerged research ([Issue #121](https://github.com/Dojo-1/tenth-discriminant/issues/121)). The older 30 October statements below about a 47-billion **current** bound and PR #49 are historical checkpoints, not current rankings.
+
+For an exact contemporary comparator, [twinheterodox v0.7.0](https://github.com/twinheterodox/tenth-discriminant/tree/v0.7.0/versions/v7) reports the much stronger $q<570$ and a finite classification. Its [source](https://github.com/twinheterodox/tenth-discriminant/blob/v0.7.0/versions/v7/proof.tex) fixes $R=p_0$ to be an auxiliary inert prime, $S=\lfloor3R/64\rfloor$, $J=\lceil R/9\rceil$, selects a nonzero derivative-matrix square minor $M$ by a finite-field rank argument, and controls $|\det M|^2$. Our source \`integerRectangularTraceGram\` instead uses $R=\lfloor D/4\rfloor$, $S=\lfloor R/25\rfloor$, original integer-pair thin-ellipse points, ordinary $Z$ jets with $W$ fixed, trace weights $(2,2D)$ and the **full** determinant of the resulting integer Gram. **Numerical gaps have different normalizers; determinants, parameter labels and auxiliary primes must not be identified.**
+
+The existing material below had already identified the useful and dangerous algebra:
+
+- The ordinary weighted Cauchy–Binet identity may express our Gram determinant as a sum of *weighted squared maximal minors* of a correctly typed integer-coordinate evaluation matrix. This is **not** equality to the one selected complex minor in v7, nor a legitimate transfer of its Archimedean upper.
+- The [same-matrix two-prime obstruction](research/rank_divisor_interface/ONE_MATRIX_TWO_PRIMES.md) matters: a prime that divides every maximal minor cannot simultaneously certify full row rank modulo that same prime for that same evaluation matrix. An additional auxiliary prime may avoid this, but must be proved available with the same source objects.
+- Reported verification scopes differ. Our full-root Lean checks certify *encoded* statements; twinheterodox v7 reports rational certificates and a separate **AI-model** check, not human peer review or formal Lean v7. [Murphy's Lean adaptation](https://github.com/DrMurphyIsIn/tenth-discriminant/tree/f0995bf604056a98f0af0d182ed152c6bd996419/determinant) concerns twinheterodox's **elementary companion**, not v7. See [prior-art ledger](PRIOR_ART.md).
+- A versioned [source-to-source alignment contract](https://github.com/Dojo-1/tenth-discriminant/blob/research/phase200-same-gram-field322/research/bridges/EXTERNAL_DETERMINANT_ALIGNMENT_20261103.md) freezes what maps would have to preserve. No outside code or theorem has been imported. No claim of collaboration, attribution by the other parties, novelty, or independent human verification is made.
+
+**Decision:** finish the same-original-Gram 322 proof gates before implementing any new mesh, block determinant or auxiliary-prime port; any future cross-project theorem needs typed source maps, direction-preserving inequalities, witnessed examples and independent reconstruction. The [geometric preregistration](https://github.com/Dojo-1/tenth-discriminant/issues/124) explicitly defers the mesh experiment.
+
+---
+
+## Historical source comparison (26–30 October 2026; retain dated evidence below)
+
 
 **A smaller cutoff and a lighter hypothesis are different achievements.**
 This selected comparison distinguishes our checked result from external
