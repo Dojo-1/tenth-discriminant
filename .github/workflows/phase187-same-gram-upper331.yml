@@ -29,6 +29,11 @@ jobs:
       - name: Confirm original source and no old large-floor escape
         working-directory: ${{ github.workspace }}
         run: |
+          pwd
+          git rev-parse HEAD
+          test -f lean/TenthDiscriminant/SourceGeometry331.lean
+          test -f lean/TenthDiscriminant/SourcePositivity331.lean
+          test -f lean/TenthDiscriminant/Lower331.lean
           python3 - <<'PY'
           from pathlib import Path
           a = Path('lean/TenthDiscriminant/UpperScalars331.lean').read_text()
