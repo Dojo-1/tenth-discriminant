@@ -52,4 +52,5 @@ jobs:
       - name: Compile scalar bridge and countercontrols (not field theorem)
         run: |
           git rev-parse HEAD
+          lake build TenthDiscriminant.LogEnclosure
           lake env lean ../research/thin_integrated/Phase183Scalar331.lean
