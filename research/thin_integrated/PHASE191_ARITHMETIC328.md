@@ -24,7 +24,16 @@ With the original class-number-one, odd-squarefree assumptions and any $Q$ whose
 \frac{999997}{1000000}\log D-\frac{57321}{10000}.
 ~~~
 
-This is the **odd-only** contribution. The single existing binary divisor has not yet been combined on a source-specific positive thin Gram at fourth root 328.
+The additional [SourceOddBinary328.lean](../../lean/TenthDiscriminant/SourceOddBinary328.lean) reuses the dimension-generic original binary exponent **once**. For any original support $Q$ whose original Gram determinant is *already known positive*, and the same odd squarefree class-number-one assumptions, it establishes the sharper conditional bound:
+
+~~~math
+\frac{\log\det G_Q}{R^2S}
+\;\ge\;
+\frac{999997}{1000000}\log D-\frac{57321}{10000}
++\frac14\log 2.
+~~~
+
+This combines odd and binary arithmetic for **one and the same original positive Gram**. It deliberately does **not** prove the actual thin-ellipse Gram positive throughout the $328^4$ domain; that source-geometric premise remains open.
 
 The independent [Scalar328.lean](../../lean/TenthDiscriminant/Scalar328.lean) certifies the exact five-term odd-log enclosure:
 
@@ -50,9 +59,9 @@ The two negative controls reject the old gratuitous $0.098$ separator and dispro
 
 ## Evidence and stop condition
 
-- **P once exact-head focused Lean CI passes:** the sound \`log328\` enclosure and abstract scalar separator; stronger recovered original odd-prime lower with its precise assumptions.
+- **P once exact-head focused Lean CI passes:** the sound \`log328\` enclosure and abstract scalar separator; stronger recovered original odd-prime lower and conditional once-counted binary lower on the same positive source Gram.
 - **P already compiled:** the original $p=3,5$ recovery sharpening, Phase190.
-- **H:** positive definiteness of the original *thin* trace Gram throughout $D\ge328^4$; the binary-quarter addition on that very same Gram; the original Hadamard/radial normalized upper at this new domain; the actual-field theorem.
+- **H:** positive definiteness of the original *thin* trace Gram throughout $D\ge328^4$; specialization of the *conditional* same-Gram binary-and-odd lower to that source, the original Hadamard/radial normalized upper at this domain, and the actual-field theorem.
 - **R:** treating the scalar separator as a field theorem, altering $Q$ or the trace metric, smuggling an old $331^4$ premise into a $328^4$ lemma, or counting an auxiliary inert prime.
 
 **Kill:** any failed Lean compilation, unpermitted axiom, changed source, false logarithm certificate, or inability to close the same-Gram upper/field return. A tiny scalar margin is not enough to justify weakening the original analytic estimate.
