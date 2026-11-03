@@ -5,12 +5,12 @@ on:
     paths:
       - lean/TenthDiscriminant/TransportCoherence.lean
       - lean/TenthDiscriminant.lean
-      - .github/workflows/phase172-transport-coherence.yml
+      - .github/workflows/phase179-transport-coherence.yml
   pull_request:
     paths:
       - lean/TenthDiscriminant/TransportCoherence.lean
       - lean/TenthDiscriminant.lean
-      - .github/workflows/phase172-transport-coherence.yml
+      - .github/workflows/phase179-transport-coherence.yml
 permissions:
   contents: read
 jobs:
