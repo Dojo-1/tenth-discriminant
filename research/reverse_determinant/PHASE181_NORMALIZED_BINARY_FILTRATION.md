@@ -47,7 +47,7 @@ n_t=\dim_{\mathbb F_2}(2^{t-1}A/2^t A),\qquad
 v_2(\det H)=\sum_{t\ge1}n_t\quad(\det H\ne0).
 ```
 
-These dimensions are preserved by integral unimodular row/column changes, including UHU-transpose shears. They are **not** automatically preserved by changing Q, moving a fixed lattice reference, or replacing the original metric.
+These dimensions are preserved by integral unimodular transformations **of the already-normalized residual matrix H**, including H-to-VHV-transpose shears. An arbitrary row gauge applied upstream to E need not commute with the nonuniform diagonal extraction by Delta; such transport requires its own compatibility proof. Changing Q, the lattice reference, or the trace metric likewise has no automatic barcode invariance.
 
 ## Exact, bounded source controls
 
@@ -68,7 +68,7 @@ For D=19 the actual first eight residual Smith layers are 24,24,24,20,4,2,2,2. T
 
 ## Stress the actual thin-ellipse formula at small D
 
-The selected characteristic supports above are deliberately sparse. As a separate control, use the **exact same formulas** as the production Lean source: R=floor(D/4), S=floor(R/25), and the full set of integer points x^2+D y^2 at most rho^2, with rho=ceil((11/25)D^(3/4)). The pilot computes this radius by an exact integer fourth-power comparison, not a floating-point ceiling. Every D below is strictly **below the proven field-theorem range**; the data do not instantiate that theorem or its class-number assumptions.
+The selected characteristic supports above are deliberately sparse. As a separate control, use the **exact same formulas** as the production Lean source: $R=\lfloor D/4\rfloor$, $S=\lfloor R/25\rfloor$, and the full set of integer pairs satisfying $x^2+Dy^2\le\rho^2$, with $\rho=\lceil (11/25)D^{3/4}\rceil$. The pilot computes this radius by an exact integer fourth-power comparison, not a floating-point ceiling. Every D below is strictly **below the proven field-theorem range**; the data do not instantiate that theorem or its class-number assumptions.
 
 | D | R,S | Thin rho | Points | First n1 | Residual v2(det H) | Residual / (R^2 S) |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -80,7 +80,7 @@ The selected characteristic supports above are deliberately sparse. As a separat
 
 The normalized ratio oscillates on this deliberately small sequence. Neither convergence nor a positive limiting lower bound follows. Moreover, in the D=163 full thin support, deleting just (0,0), (21,0), or (16,1) yields first-layer nullities 40, 38, or 37 and residual valuations 642, 642, or 639 respectively. Adding or removing observations does **not** transport a Smith barcode as an invariant without further structure.
 
-**Precision negative control.** At D=199, modulo 2^64 censors at least one residual Smith invariant factor; using only that precision is invalid. Modulo 2^128 reveals all factors (the largest residual exponent is 67, largest original-Gram exponent 92), and the exact valuation factorization is checked again. The [separate thin-support pilot](phase181_thin_support_pilot.py) asserts this censoring rather than silently treating the reduced-rank computation as exact.
+**Precision negative control.** At $D=199$, modulo $2^{64}$ censors at least one residual Smith invariant factor; using only that precision is invalid. Modulo $2^{128}$ reveals all factors (the largest residual exponent is 67, largest original-Gram exponent 92), and the exact valuation factorization is checked again. The [separate thin-support pilot](phase181_thin_support_pilot.py) asserts this censoring rather than silently treating the reduced-rank computation as exact.
 
 ## Where this cannot yet go
 
