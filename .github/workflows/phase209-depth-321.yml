@@ -27,6 +27,8 @@ jobs:
         run: python3 research/phase209/divided_derivation_probe.py
       - name: Exact weighted-column capacity and rational 321 margin
         run: python3 research/phase209/weighted_capacity_321.py
+      - name: Exact integral Taylor flow and sharp original-jet depth
+        run: python3 research/phase209/taylor_flow_precision.py
   lean-scalar:
     runs-on: ubuntu-24.04
     timeout-minutes: 55
