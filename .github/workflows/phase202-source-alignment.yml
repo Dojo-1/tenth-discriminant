@@ -23,6 +23,7 @@ jobs:
           python3 research/phase202/certify_mod7_rank_drop.py
           python3 research/phase202/residue_count_transport.py
           python3 research/phase202/form_pencil_f7.py
+          python3 research/phase202/pencil_factorization_f49.py
 
   lean-source-interface:
     runs-on: ubuntu-24.04
