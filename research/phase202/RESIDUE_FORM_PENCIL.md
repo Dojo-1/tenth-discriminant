@@ -61,7 +61,33 @@ The exact **crossing form** \((\beta_{25}-\beta_{16})|_{\operatorname{Rad}(\beta
 
 **Controls:** full 106D Gram and reduced 28D quotient ranks agree for every t. Two explicit radical vectors at t=1 are given in [Issue #131](https://github.com/Dojo-1/tenth-discriminant/issues/131) and the earlier [certificate](certify_mod7_rank_drop.py). No lifting of the formal parameter t to a compatible family of actual number fields has been asserted.
 
-## 4. Formalization targets and stop rules
+## 4. Exact degree-28 discriminant polynomial and source inversion symmetry
+
+**[M exact certificate, P for the elementary degree/interpolation argument; no new field theorem].** A separately preregistered [F49 oracle](pencil_factorization_f49.py) evaluates the same 28x28 pencil determinant at 29 distinct elements of \(\mathbb F_{49}=\mathbb F_7[u]/(u^2+1)\), recovers coefficients by exact Newton interpolation, checks the result at the 20 unused elements, verifies every coefficient descends to \(\mathbb F_7\), and tests an explicit polynomial multiplication identity:
+\[
+P(t)=2(t-1)^4(t-3)^{12}(t^3+3t-2)^2(t^3-2t+2)^2
+\quad\text{in }\mathbb F_7[t].
+\]
+A 28x28 pencil has determinant degree at most28, so 29 exact distinct values uniquely determine it; the unused nodes are an independent strong negative control. Root multiplicity at t=1 is **4** and at t=3 is **12**, stronger than the preregistered respective lower bounds 4 and 10. The factorization is a square over \(\mathbb F_7\) because 2=3² and all exponents are even.
+
+**The part explained by an actual SOURCE symmetry [P paper-level].** Each original ordinary jet satisfies
+\[
+e_{r,s;j}(-z)=(-1)^{r+s-j}e_{r,s;j}(z)
+\]
+(with the usual zero convention when j>r). Both original integer-pair ellipses are invariant under central inversion \((x,y)\mapsto(-x,-y)\). Hence paired source observations make Gram entries between row parity \(r+s\) even and odd vanish **over the integers themselves**, not merely modulo7. On the first 28 source rows the common quotient therefore splits into 14 even and 14 odd basis vectors, and the entire symmetric-form pencil decomposes into two 14x14 blocks. An unpaired-point deletion breaks this orthogonality in the explicit negative control (172 nonzero cross-parity entries for one removed radius16 point).
+
+**The additional, so far unexplained, finite structural equality [M/H].** The two parity-block matrices are **not entrywise identical**, but their exact determinant polynomials coincide:
+\[
+\det\beta_{t,\mathrm{even}}=\det\beta_{t,\mathrm{odd}}
+=3(t-1)^2(t-3)^6(t^3+3t-2)(t^3-2t+2).
+\]
+The product is exactly \(P(t)\). This provides a source-aware explanation of the *square* at the level of two invariant parity summands, but **does not yet prove why the two summands have identical determinant polynomials**. That equality remains a concrete isometry/intertwiner question, not evidence for a universal sheaf, holonomy or hidden isometric transport. Exploratory controls over radii 16..25 and 29 reflected-pair deletions retained equality, but such finite tests do not establish the universal statement.
+
+The parity decomposition is integral and stable under any base change. In characteristic2, however, *splitting an arbitrary module into plus/minus eigenspaces by averaging* requires dividing by2 and is not justified; keep these statements separate.
+
+The original Phase200 field theorem, the common integer determinant sandwich, and [human semantic review #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) remain unchanged.
+
+## 5. Formalization targets and stop rules
 
 A separate [Lean source file](../../lean/TenthDiscriminant/PlacewiseTransport.lean) attempts, without axioms/sorries, four restrained steps: original trace 2/2D decomposition, source Gram-entry decomposition, base-change under any ring hom, and typed kernel-to-radical preimage. Its compilation and axiom status require an exact-head GitHub Actions receipt; do not elevate the source merely because it was committed.
 
