@@ -1,5 +1,7 @@
 # The Tenth Discriminant
 
+> **Current checked public endpoint — 4 November 2026.** The merged [Phase200 PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) contains the actual-field, class-number-one theorem `|disc(K)| < 322^4 = 10,750,371,856`, relative to its encoded Lean definitions and standard axioms; independent human semantic review remains open in [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50). [Phase209 draft #157](https://github.com/Dojo-1/tenth-discriminant/pull/157) explores an optimal ordinary-jet p-adic depth mechanism and a **conditional** `321^4` target; it is **not** a new field theorem. In Tao's Math 2.0 framing, we also compare zero-exclusion methods and what humans can reconstruct: [scope #158](https://github.com/Dojo-1/tenth-discriminant/issues/158). The 328^4 and 327^4 status prose retained below is a **dated historical snapshot**, not the current endpoint.
+
 *Arithmetic against geometry, with one integer determinant in the middle.*
 
 Can arithmetic force an integer to be **larger** than geometry allows it to be?
