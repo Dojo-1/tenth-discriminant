@@ -40,7 +40,8 @@ for pair in part:
 assert trace_coupling(fib[-2],fib[-1])==0  # existing parity separation
 assert abs(float(total)-1.1779427590761873)<1e-10
 assert abs(observed-1.2877720967917412)<1e-10
-assert 0.0043<float(total)/(R*R*S)<observed/(R*R*S)
+assert total > F(43,10000)*(R*R*S)
+assert float(total)<observed
 print('TRACE_SANDWICH',{'lower':float(total),'actual':observed,
       'normalized_lower':float(total)/(R*R*S),
       'normalized_actual':observed/(R*R*S),
