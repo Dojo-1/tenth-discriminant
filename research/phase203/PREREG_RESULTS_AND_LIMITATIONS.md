@@ -116,6 +116,35 @@ Hence the Gram's \(\mathbb F_7\)-rank is **even** for every source Q. For nondeg
 
 **What this buys:** a pointwise isometric *graded/Hermitian operator* preserving more information than an isolated determinant, with a clear carrier, source action, finite characteristic and two distinct symmetry levels. The claim is stronger than parity separation, but remains **specific to p=7, D mod7=5, R=14, S=J=2**. It does not transfer the prime-divisibility or Archimedean upper of the full production Gram.
 
+### Canonical source derivation of the finite-place operator and guarded prime controls
+
+**Before constructing the source explanation, [Issue #134](https://github.com/Dojo-1/tenth-discriminant/issues/134) preregistered an entrywise comparison** between the previously discovered 49-entry U and the ordinary Hermite-jet rotation at seven nodes. Let \(V_{7,2}=\mathbb F_7[Z]_{<14}\), with confluent evaluation
+\[
+H_{7,2}:V_{7,2}\xrightarrow{\cong}\bigoplus_{a\in\mathbb F_7}\mathbb F_7^{2},
+\quad f\longmapsto (f(a),f'(a))_a.
+\]
+The map is an isomorphism by ordinary Hermite interpolation (equivalently CRT modulo \(\prod_a(Z-a)^2=(Z^7-Z)^2\)). Let \(R\) act on every two-jet fibre by
+\[
+R(v,d)=(d,-v),\quad R^2=-I,\quad R^TR=I.
+\]
+Then the explicit certificate found before this explanation is *exactly*
+\[
+\boxed{U=H_{7,2}^{-1}\bigl(\bigoplus_a R\bigr)H_{7,2}}
+\]
+entry by entry, not just up to conjugacy or scalar. In other words, the 49 nonzero coefficients are the monomial-basis image of a **local rotation of ordinary value/derivative jets**. This is the structural reason for the pointwise isometry at every split residue sample and hence for the F49 row-space structure. It is a standard Hermite/CRT construction in this concrete source, not a novelty claim.
+
+**Prospectively registered guarded extension in [Issue #133](https://github.com/Dojo-1/tenth-discriminant/issues/133):** For an odd prime \(p\) and \(1\le J\le p\), ordinary Hermite evaluation
+\[
+H_{p,J}:\mathbb F_p[Z]_{<pJ}\xrightarrow{\cong}
+\bigoplus_{a\in\mathbb F_p}\mathbb F_p^J,\qquad
+f\mapsto(f^{(j)}(a))_{a,j<J}
+\]
+is invertible because the ideals \((Z-a)^J\) are pairwise comaximal and \(j!\ne0\) for \(j<J\). Any orthogonal \(O\in O_J(\mathbb F_p)\), applied identically at every node, induces \(U_{p,J}=H_{p,J}^{-1}(\bigoplus_aO)H_{p,J}\), which preserves the original split-embedding pointwise sum of ordinary-jet pairings when W is held fixed. For polynomial width \(R>pJ\), reduce modulo \((Z^p-Z)^J\) **only at split nodes** and only for the first J jets. This is a routine paper CRT argument; **there is no universal Lean theorem for it yet**.
+
+The committed [exact guarded regression](verify_canonical_hermite_rotation.py) checks \(J=2\), \(R=2p\), \(S=2\), and **every** split residue pair for \((p,\sqrt{-D})=(5,2),(7,3),(11,4)\), including \(\det U=1\), \(U^2=-I\), both split embeddings and the fixed W convention; the p7 matrix matches the previous 49-entry U. This finite evidence is [M], while the CRT argument is standard mathematics [P, paper level]. At p5, \(-1\) is a square, so U is **not** an F25 field action; at p7 and p11, \(-1\) is nonsquare, so the row-space action does define an \(\mathbb F_{p^2}\) structure. These distinct finite-characteristic algebras are not inter-prime transports. The inert-node guard and the vanishing factorial when \(J>p\) block automatic generalization.
+
+**Computational/semantic stop:** The CRT construction gives an operator on the *split-residue jet quotient* and a congruence of reduced Gram forms. It supplies **no** new integral determinant divisor, no Archimedean size bound for the original production determinant, no uniform supply of auxiliary inert primes, no equality with twinheterodox's complex minor, and therefore no stricter field discriminant cutoff. A mathematical transport across those boundaries remains a separately typed hypothesis.
+
 **Boundaries and controls:** The same *centered integer lift* of U fails to preserve orbit forms modulo11 (a DIFFERENT residue characteristic), so do not identify those fibres or claim an integral universal isometry. This failure does **not** exclude the possibility of a different U for p11. Removing one point without its negation gives a nonzero cross-parity Gram entry, so the symmetry hypothesis is load-bearing. No same-object analytic gain, arithmetic local-valuation lift, or stronger tenth-discriminant bound is derived. The source R14 result is not the R53 full Gram and cannot be silently substituted in the Phase200 proof.
 
 **Novelty boundary:** no global novelty claim or independent external validation. Previous integrated [CentralSymmetry.lean](../../lean/TenthDiscriminant/CentralSymmetry.lean) and [ParityCompatibility.lean](../../lean/TenthDiscriminant/ParityCompatibility.lean) already prove parity separation and compatible odd-prime Frobenius row actions; Phase203's specific new contribution is the fixed finite-characteristic congruence for the 14+14 source rows, requiring independent mathematical review.
