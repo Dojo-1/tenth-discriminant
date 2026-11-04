@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 """Phase204-A prereg #136: full truncated local Smith profile, not det scalar."""
-from ordinary_jet_filtration import gram
+from ordinary_jet_filtration import gramstep
+
+def gram(Q,D,R,S,J):
+    n=R*S
+    G=[[0]*n for _ in range(n)]
+    for j in range(J):
+        H=gramstep(Q,D,R,S,j)
+        G=[[a+b for a,b in zip(u,v)] for u,v in zip(G,H)]
+    return G
 
 def profile(M,p,e=2):
     a=[[x%(p**e) for x in row] for row in M]
