@@ -1,4 +1,4 @@
-import TenthDiscriminant.IntegerTraceGram
+import TenthDiscriminant.ObservationConjugation
 
 /-!
 Phase209 — exact algebraic local identity behind conjugate folding.
@@ -37,6 +37,29 @@ theorem original_trace_real_sample (D : Nat) (x y : Int) :
   simp only [integerPairTrace, mul_zero, zero_mul, add_zero]
   ring
 
+
+/-- The two-source-observation folding identity at EVERY original ordinary
+derivative order j, with W held fixed in each evaluated derivative.
+This uses the ALREADY PROVED original derivative conjugation lemma, and
+does not replace a single ordinary jet with a Hasse jet. -/
+theorem original_ordinary_jet_pair_fold
+    (D r s t u j : Nat) (q : Int × Int) :
+    integerPairTrace D
+       (integerDerivativeRow D r s j q)
+       (integerDerivativeRow D t u j q) +
+    integerPairTrace D
+       (integerDerivativeRow D r s j (pairConj q))
+       (integerDerivativeRow D t u j (pairConj q)) =
+      4 * (integerDerivativeRow D r s j q).1 *
+          (integerDerivativeRow D t u j q).1 +
+      (4*(D : Int)) * (integerDerivativeRow D r s j q).2 *
+          (integerDerivativeRow D t u j q).2 := by
+  rw [integerDerivativeRow_conj, integerDerivativeRow_conj]
+  exact original_trace_pair_fold D
+    (integerDerivativeRow D r s j q)
+    (integerDerivativeRow D t u j q)
+
 end TenthDiscriminant.Phase209ConjugateFold
 
 #print axioms TenthDiscriminant.Phase209ConjugateFold.original_trace_pair_fold
+#print axioms TenthDiscriminant.Phase209ConjugateFold.original_ordinary_jet_pair_fold
