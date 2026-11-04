@@ -11,6 +11,7 @@ This module does not establish Frobenius divisibility or Cauchy-Binet.
 namespace TenthDiscriminant.Phase209WholeGramFold
 
 open TenthDiscriminant
+open TenthDiscriminant.Phase209OrbitSum
 
 theorem original_real_point_jet_im_zero (D r s j : Nat)
     (q : Int × Int) (hq : q.2 = 0) :
