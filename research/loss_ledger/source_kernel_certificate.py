@@ -59,7 +59,7 @@ def source_test():
     sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"plural_moving_frames"))
     from original_source_small_pilot import gram, ellipse, determinant, D, R, S, J
     assert (D,R,S,J)==(19,4,3,3)
-    g5=gram(ellipse(5));g6=gram(ellipse(6))
+    g5=gram(ellipse(5));g6=gram(ellipse(6));g7=gram(ellipse(7))
     assert determinant(g5)>0 and determinant(g6)>0
     piv5,free5,k5=nullspace(g5,3)
     piv6,free6,k6=nullspace(g6,3)
@@ -72,6 +72,19 @@ def source_test():
     assert all(x==0 for x in outside_kernel(g6,extra,3))
     y5=outside_kernel(g5,extra,3)
     assert any(y5)
+    # T6 was preregistered separately; the full integer identity was
+    # withdrawn *before testing*: only the residue congruence is valid.
+    v=[0,2,0,0,0,0,0,0,0,0,0,1]
+    assert extra==v
+    n_nonreal=[sum(y*y for x,y in ellipse(rho)) for rho in (5,6,7)]
+    assert n_nonreal==[10,18,22]
+    exact_values=[sum(G[1][j]*v[j] for j in range(len(v)))
+                  for G in (g5,g6,g7)]
+    assert all((value+4*D*count)%3==0
+               for value,count in zip(exact_values,n_nonreal))
+    assert [value%3 for value in exact_values]==[2,0,2]
+    assert outside_kernel(g6,v,3)==[0]*len(v)
+    assert outside_kernel(g7,v,3)[1]==2
     # Verify the kernel dimension via an independent check from nonzero minors
     # only in dimension 2? Here rely on the deterministic RREF rank certificate:
     # exact modular row operations, explicit pivot columns and null vectors.
@@ -83,7 +96,11 @@ def source_test():
         "nullspace_basis":{"radius5":k5,"radius6":k6},
         "witness_kernel_radius6_not_radius5":extra,
         "witness_G5_product_mod3":y5,
-        "witness_G6_product_mod3":outside_kernel(g6,extra,3)
+        "witness_G6_product_mod3":outside_kernel(g6,extra,3),
+        "T6": {"radius7_witness_not_kernel":outside_kernel(g7,v,3)[1]==2,
+               "nonreal_y_square_sums":n_nonreal,
+               "G_times_v_row_0_1_integer_values":exact_values,
+               "predicted_residues_mod3":[2,0,2]}
     }
 
 
