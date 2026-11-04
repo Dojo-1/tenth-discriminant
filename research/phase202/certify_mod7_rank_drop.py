@@ -85,7 +85,7 @@ def check(rho,expected_count,expected_G_rank,minor_indices,expected_det):
     assert len(basis)==R*S-rank_G
     assert rank_p(basis,p)==len(basis)
     assert all(all(sum(x*y for x,y in zip(row,v))%p==0 for row in G)
-               for v in basis for row in G)
+               for v in basis)
     images=[image(E,v,p) for v in basis]
     assert rank_p(images,p)==rank_E-rank_G
     print('CERT',{'D':D,'p':p,'rho':rho,'points':len(Q),'N':R*S,
