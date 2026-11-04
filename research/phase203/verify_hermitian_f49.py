@@ -3,7 +3,7 @@
 
 Preregistered in Issue #134. The same operator C works on all 49 INDIVIDUAL
 F7^2 residue points (not just 25 symmetric orbits). Its F49-module action is
-on the row space, not the split quadratic field K_D tensor F7 = F7 x F7.
+on the row space, not the split INTEGRAL ORDER Z[sqrt(-D)] mod 7 = F7 x F7.
 No integer square determinant or improved field-discriminant bound is claimed.
 """
 from collections import Counter
