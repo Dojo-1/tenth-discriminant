@@ -1,0 +1,20 @@
+name: Plural moving-frame exact finite pilots (research only)
+on:
+  push:
+    branches: ['research/plural-moving-frame-prereg-20261104']
+    paths:
+      - research/plural_moving_frames/**
+      - .github/workflows/plural-moving-frame-pilot.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-finite-pilots:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Run four preregistered exact tests
+        run: python3 research/plural_moving_frames/finite_pilot.py
