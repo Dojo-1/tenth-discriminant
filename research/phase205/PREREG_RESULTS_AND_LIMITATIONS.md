@@ -36,7 +36,7 @@ The subsequently preregistered local lift of \(C_p\) through p^8 and an independ
 - p5: 0 repeated29, 1 repeated2, 2 repeated1;
 - p7: 0 repeated32.
 
-The p5 one-level-2 residual factor is a genuine deeper p-adic layer of THIS frozen matrix, not just a modp radical count. This finer H-lift currently has a local exact-check receipt, not yet a dedicated GitHub CI script. In the **different Phase135 8-row source**, p3 has one E-level1 factor and a mod3 **unit** residual Gram, a predeclared negative control against the false rule “normalized full rank always gives additional prime mass.”
+The p5 one-level-2 residual factor is a genuine deeper p-adic layer of THIS frozen matrix, not just a modp radical count. The independently written modular residual [certificate script](residual_gram_layers.py) is now committed and included in Phase205's scoped CI. It reproduces the p3/p5/p7 full residual Smith multisets with a separately normalized (C_p) modulo (p^8), subject to an exact-head GitHub Actions receipt. In the **different Phase135 8-row source**, p3 has one E-level1 factor and a mod3 **unit** residual Gram, a predeclared negative control against the false rule “normalized full rank always gives additional prime mass.”
 
 **Do not add these numbers blindly to an inherited Frobenius divisor**: overlap must be checked in the exact unchanged production object. This finite example has no established uniform improvement of the integrated \(322^4\) result.
 
@@ -82,6 +82,37 @@ With \(\mu(j,z)=2|e_{r,s;j}(z)|^2/G_{(r,s),(r,s)}\), the **entire** same-fibre s
 =\frac{\operatorname{Var}_{\mu}(a_1)}{\mathbb E_\mu[a_1^2]}.
 \]
 The original rows \((3,1),(4,2)\) have \((G_{ii},G_{ik},G_{kk})=(8812968,222537328,6022596856)\), so the **exact** ratio is \(55532672116391/829327396387947\approx0.06696110\). A truly moment-only bound needs no unknown whole determinant: if \(0\le a_1\le A_{\max}=100\), then \(\mathbb E[a_1^2]\le100\,\mathbb E[a_1]\), giving the legitimate but **much weaker** ceiling \(41172467/55081050\approx0.7475\). Report that looseness; within-fibre pair covariance was already accounted for by Phase138's block product and is **not** the new six-block inter-fibre gain.
+
+## A determinant-independent trace-coupling lower bound
+
+**Registered before its execution** as a separate comment in [#140](https://github.com/Dojo-1/tenth-discriminant/issues/140). For each of the FIVE frozen disjoint same-parity fibre pairs \((d,e)\) listed above, split its original Gram into \(\begin{psmallmatrix}A&C\\C^T&B\end{psmallmatrix}\), with \(A,B\succ0\), and define the source-moment invariant
+\[
+\boxed{\tau_{d,e}:=\operatorname{tr}(A^{-1}CB^{-1}C^T)\in\mathbb Q_{\ge0}.}
+\]
+It is a non-scalar canonical-correlation quantity, well-defined on a *specified two-fibre partition* and invariant under independent invertible row gauges inside each fibre. The classical Schur identity and \(-\log(1-x)\ge x\) for \(0\le x<1\) imply
+\[
+\log\frac{\det A\det B}{\det G_{I_d\cup I_e}}\ge\tau_{d,e}\ge0.
+\]
+This is a **rigorous lower certificate for the ANALYTIC saving**; importantly, \(\tau\) only uses the already separately accessible **small** within/cross-fibre moment matrices and their inverses, not the determinant of the entire unknown 32-row Gram. It can therefore be a candidate for independently estimated production-scale gain, provided a uniform moment lower is proved.
+
+The separate [exact rational trace oracle](correlation_trace_certificate.py) uses Fraction Gaussian elimination for A/B and never uses full det G to construct \(\tau\). It checks each trace against the matching exact Fischer gain and demands a zero cross-parity control:
+
+| Frozen pair of radial fibres | \(\tau_{d,e}\), exact rational evaluated numerically | Actual log Fischer gain |
+|---|---:|---:|
+| \(-2,0\) | 0.148195593825 | 0.154763153555 |
+| \(2,4\) | 0.470565677284 | 0.530005986853 |
+| \(-3,-1\) | 0.093191578722 | 0.097824073583 |
+| \(1,3\) | 0.364519820862 | 0.398183600101 |
+| \(5,7\) | 0.101470088384 | 0.106995282700 |
+| **Sum** | **1.177942759076** | **1.287772096792** |
+
+The strict finite rational inequality
+\[
+\boxed{\sum \tau_{d,e} > \frac{43}{10000}\,R^2S=\frac{43}{10000}\cdot256}
+\]
+is tested **without float rounding**. Its normalized value is \(1.177942759076/256=0.004601338903\), exceeding the *conditional* Phase137 normalized target \(0.0043\), and capturing approximately 91.5% of the actual six-block improvement. This is a **single-small-D measurement**, not a production theorem, even though the generic trace inequality is P-paper. Opposite-parity fibre pair \((-2,-1)\) has \(C=0\), \(\tau=0\), as required by pre-existing parity.
+
+**Critical next quantitative target [H]:** for the ACTUAL admissible production D,R,S,J,Q and the SAME source moments, find an explicit subset of disjoint same-parity fibre pairs and uniform, **determinant-independent** estimates of \(\tau\) whose total normalized lower exceeds the *actual certified upper-bound deficit* with all derivative orders present. It is not enough to prove the bound for fixed D19; the point-count support, conditional class-number chart, and high-j factorial weights can erase it. No new cutoff is claimed.
 
 ## Promotion boundary and next falsification
 
