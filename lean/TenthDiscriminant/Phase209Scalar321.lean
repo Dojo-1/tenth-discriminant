@@ -65,8 +65,52 @@ theorem no_scalar_overlap_321_conditional
     norm_num
   linarith
 
+
+/-- Stronger but still CONDITIONAL two-grade rational budget: the sharp
+Taylor-flow valuation contains the p² and p³ derivative-column grades.
+No source determinant divisor is proved by this arithmetic inequality. -/
+theorem rational_budget_321_two_grades :
+    (1/1000 : ℚ) <
+      (999997/1000000-4/5)*(4*(57714/10000))
+       - 57193/10000 + 1853/2000 + 6931/40000
+       + (50/(31*101)) *
+           ((1098/1000)*(1/9+1/27)+(1609/1000)*(1/25+1/125))
+       - (5/(321^4)) *
+           ((11/10)*(4+1/9+1/27)+(161/100)*(4+1/25+1/125)) := by
+  norm_num
+
+/-- No scalar overlap if the SAME original integer Gram has received
+the two post-Frobenius depth grades, with all previous source/field
+hypotheses separately discharged at root 321. -/
+theorem no_scalar_overlap_321_two_grades_conditional
+    (u g beta : ℝ)
+    (hlog : (4 * (57714/10000) : ℝ) ≤ u)
+    (hupper : g ≤ (4/5 : ℝ)*u - 1853/2000)
+    (hlower : (999997/1000000 : ℝ)*u - 57193/10000
+      + 6931/40000 + beta ≤ g)
+    (hbonus :
+      (50/(31*101) : ℝ) *
+          ((1098/1000)*(1/9+1/27)+(1609/1000)*(1/25+1/125))
+       - (5/(321^4)) *
+          ((11/10)*(4+1/9+1/27)+(161/100)*(4+1/25+1/125))
+      ≤ beta) : False := by
+  have hfixed :
+      (0 : ℝ) <
+      (999997/1000000-4/5)*(4*(57714/10000))
+       - 57193/10000 + 1853/2000 + 6931/40000
+       + (50/(31*101)) *
+           ((1098/1000)*(1/9+1/27)+(1609/1000)*(1/25+1/125))
+       - (5/(321^4)) *
+           ((11/10)*(4+1/9+1/27)+(161/100)*(4+1/25+1/125)) := by
+    norm_num
+  linarith
+
+
 end
 end TenthDiscriminant.Phase209Scalar321
 
 #print axioms TenthDiscriminant.Phase209Scalar321.no_scalar_overlap_321_conditional
 #print axioms TenthDiscriminant.Phase209Scalar321.rational_budget_321
+
+#print axioms TenthDiscriminant.Phase209Scalar321.rational_budget_321_two_grades
+#print axioms TenthDiscriminant.Phase209Scalar321.no_scalar_overlap_321_two_grades_conditional
