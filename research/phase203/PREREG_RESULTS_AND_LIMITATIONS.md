@@ -74,7 +74,7 @@ Because \(-1\) is NOT square in \(\mathbb F_7\), the operator \(C^2=-I\) makes V
 \[
 \mathbb F_{49}=\mathbb F_7[i]/(i^2+1),\qquad i\cdot v=Cv.
 \]
-This new **row-space algebra** must not be identified with the source quadratic *field* reduction \(\mathbb Q(\sqrt{-D})\otimes\mathbb F_7\), whose selected order reduces here to the *split* algebra \(\mathbb F_7\times\mathbb F_7\).
+This new **row-space algebra** must not be identified with the reduction of the selected **integral order** \(\mathbb Z[\sqrt{-D}]\otimes_{\mathbb Z}\mathbb F_7\cong\mathbb F_7\times\mathbb F_7\). It is essential to reduce an integral order: the characteristic-zero field itself tensored over \(\mathbb Z\) with \(\mathbb F_7\) gives the zero ring, not this residue algebra.
 
 For any source Gram B over \(\mathbb F_7\), define the **typed Hermitian refinement**
 \[
