@@ -52,6 +52,45 @@ H_o(Q)=U^{T}H_e(Q)U.
 \]
 **Why it follows:** each residue class belongs to exactly one of 25 inversion orbits; symmetry implies equal multiplicities for the two points of every orbit. The Gram is linear in residue multiplicities, and the 25 explicit orbit congruences sum to the displayed identity. The off-parity zeros are the **pre-existing Lean-proved central-negation symmetry**, not a new symmetry theorem. Therefore \(\det H_o(Q)=\det H_e(Q)\) and \(\det G(Q)=(\det H_e(Q))^2\) in F7. At the original two supports, Q16 and Q25, det H_e are respectively 2 and 0 mod7. The earlier degree-28 square determinant-polynomial factorization is now *explained* by a fixed congruence, not merely interpolation coincidence.
 
+### A deeper operator, tested outside central symmetry
+
+**Prospectively registered extension, after the U construction:** [Issue #134](https://github.com/Dojo-1/tenth-discriminant/issues/134) separately froze tests of a graded source symmetry and its Hermitian refinement; the asymmetry negative-control correction is preserved there.
+
+Let \(V=V_e\oplus V_o\simeq\mathbb F_7^{28}\), using the existing 14+14 parity row permutation. Define two explicit endomorphisms from the *same* certified matrix \(U\):
+\[
+P=\begin{pmatrix}I&0\\0&-I\end{pmatrix},\quad
+J=\begin{pmatrix}0&U\\ U^{-1}&0\end{pmatrix},\quad
+C=PJ.
+\]
+The identities \(P^2=J^2=I\), \(PJ=-JP\), and \(C^2=-I\) are purely matrix algebra. The two involutions \(P,J\) are isometries for **centrally symmetric** Q, because central symmetry removes off-parity Gram terms and U is a congruence of its blocks.
+
+The proposed negative control, an **asymmetric** single observation, did break the *P and J* isometries but **not** the \(C\) isometry. This was an informative falsification of the narrower prediction, not a reason to change or discard the source. The follow-up test was registered BEFORE broadening Q: for **each of all 49 individual residues** \(z\in\mathbb F_7^2\), direct exact arithmetic confirms
+\[
+\boxed{C^{T}\overline{G}_{z}C=\overline{G}_{z}}.
+\]
+By source linearity in residue multiplicities, \(C^T\overline G(Q)C=\overline G(Q)\) for **every** finite integer-pair Q at the frozen source dimensions and characteristic, **whether or not Q is centrally symmetric**. At the 49 singleton residues the \(\mathbb F_7\)-Gram ranks are 2 for seven \(y=0\) points and 4 for forty-two non-real-coordinate points.
+
+Because \(-1\) is NOT square in \(\mathbb F_7\), the operator \(C^2=-I\) makes V a rank-14 module over
+\[
+\mathbb F_{49}=\mathbb F_7[i]/(i^2+1),\qquad i\cdot v=Cv.
+\]
+This new **row-space algebra** must not be identified with the source quadratic *field* reduction \(\mathbb Q(\sqrt{-D})\otimes\mathbb F_7\), whose selected order reduces here to the *split* algebra \(\mathbb F_7\times\mathbb F_7\).
+
+For any source Gram B over \(\mathbb F_7\), define the **typed Hermitian refinement**
+\[
+h_B(x,y)=B(x,y)+iB(x,Cy)\in\mathbb F_{49}.
+\]
+The tested \(C^TBC=B\), symmetry of B and \(C^{-1}=-C\) yield \(B(Cx,y)=-B(x,Cy)\). Therefore h is \(\mathbb F_{49}\)-linear in its first argument, conjugate-linear in its second, and Hermitian. It need not be nondegenerate. Its radical is the same underlying kernel as B; in particular,
+\[
+\boxed{\operatorname{rank}_{\mathbb F_7}B
+=2\operatorname{rank}_{\mathbb F_{49}}h_B.}
+\]
+Hence the Gram's \(\mathbb F_7\)-rank is **even** for every source Q. For nondegenerate B its determinant in \(\mathbb F_7\) is a **square**: diagonalize the Hermitian form over \(\mathbb F_{49}\), choose a basis \((e_j,ie_j)\) over \(\mathbb F_7\), and observe paired real diagonal entries \(a_j,a_j\) with \(a_j\in\mathbb F_7\); a change of \(\mathbb F_7\)-basis only multiplies the determinant by a square.
+
+**Exact evidence [M / algebraic P, source-specific Lean open]:** [verify_hermitian_f49.py](verify_hermitian_f49.py) independently checks all 49 original source singleton matrices, the C-adjoint identities, F49-Hermitian matrix and its rank, plus 30 preregistered asymmetric-weight controls (seed 1). Twenty-six controls are nonsingular, with mod-7 determinants 2 nine times, 4 thirteen times, 1 four times, and 0 four times; full \(\mathbb F_7\) ranks are 28 in 26 cases and 26 in four cases. The symmetric pencil's ranks 28,26,28,18,28,28,28 refine to **F49 ranks 14,13,14,9,14,14,14**. The new script is subject to a fresh exact-head scoped CI receipt. No F49 structure is claimed at \(p=11\) or over \(\mathbb Z,\mathbb R\).
+
+**What this buys:** a pointwise isometric *graded/Hermitian operator* preserving more information than an isolated determinant, with a clear carrier, source action, finite characteristic and two distinct symmetry levels. The claim is stronger than parity separation, but remains **specific to p=7, D mod7=5, R=14, S=J=2**. It does not transfer the prime-divisibility or Archimedean upper of the full production Gram.
+
 **Boundaries and controls:** The same *centered integer lift* of U fails to preserve orbit forms modulo11 (a DIFFERENT residue characteristic), so do not identify those fibres or claim an integral universal isometry. This failure does **not** exclude the possibility of a different U for p11. Removing one point without its negation gives a nonzero cross-parity Gram entry, so the symmetry hypothesis is load-bearing. No same-object analytic gain, arithmetic local-valuation lift, or stronger tenth-discriminant bound is derived. The source R14 result is not the R53 full Gram and cannot be silently substituted in the Phase200 proof.
 
 **Novelty boundary:** no global novelty claim or independent external validation. Previous integrated [CentralSymmetry.lean](../../lean/TenthDiscriminant/CentralSymmetry.lean) and [ParityCompatibility.lean](../../lean/TenthDiscriminant/ParityCompatibility.lean) already prove parity separation and compatible odd-prime Frobenius row actions; Phase203's specific new contribution is the fixed finite-characteristic congruence for the 14+14 source rows, requiring independent mathematical review.
