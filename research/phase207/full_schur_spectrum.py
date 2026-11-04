@@ -5,6 +5,10 @@ Exact Fraction inertia; every original Q and ordinary j<J. NO float eigensolver.
 Finite D283 and D403 examples, no class-number-one assumption.
 """
 from fractions import Fraction as Q
+from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "phase206"))
+
 from source_probe import params, fibers, gram, det, inv, mm, tr
 from rational_schur_modes import det_fraction
 
