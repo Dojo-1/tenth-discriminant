@@ -127,6 +127,14 @@ def run(p):
     MH=[row for row,(_,_,k) in zip(M,selected) if k>=3]
     r2=rank_mod(M,p);r3=rank_mod(MH,p)
     assert r3==rank_cols(MH,p) # separate elimination order
+    # Post-result preregistered (Issue #147) rank reproduction of the
+    # larger k>=2 row family: distinct elimination and point permutation.
+    assert r2==rank_cols(M,p)
+    col_order=[2*(j*len(Q)+qi)+component
+               for j in range(J) for qi in range(len(Q)-1,-1,-1)
+               for component in (0,1)]
+    MP=[[row[t] for t in col_order] for row in M]
+    assert r2==rank_mod(MP,p)
     n2=len(selected);n3=len(high)
     d2=n2-r2;d3=n3-r3
     assert 0<=d3<=d2
@@ -155,7 +163,8 @@ def run(p):
        "new_E_index_at_least":d2,
        "additional_Gram_exponent_at_least":2*d2,
        "total_p_Gram_valuation_at_least":2*F+2*d2,
-       "dualjet_oracle_samples":len(samples),"all_j_kept":True,
+       "dualjet_oracle_samples":len(samples),"independent_k2_rank_replay":True,
+       "point_column_permutation_invariance":True,"all_j_kept":True,
        "strata_are_nested_no_double_count":True},flush=True)
 
 if __name__=="__main__":
