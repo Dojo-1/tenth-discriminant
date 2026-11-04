@@ -1,0 +1,23 @@
+name: Phase204 factorial filtration and p-adic tube controls
+on:
+  pull_request:
+    paths:
+      - "research/phase204/**"
+      - "lean/TenthDiscriminant/JetFactorialFiltration.lean"
+      - "lean/TenthDiscriminant.lean"
+      - ".github/workflows/phase204-two-track.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-padic-controls:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Run independently preregistered exact integer controls
+        run: |
+          python3 research/phase204/ordinary_jet_filtration.py
+          python3 research/phase204/anchor_vs_tube_p49.py
