@@ -70,6 +70,8 @@ P(t)=2(t-1)^4(t-3)^{12}(t^3+3t-2)^2(t^3-2t+2)^2
 \]
 A 28x28 pencil has determinant degree at most28, so 29 exact distinct values uniquely determine it; the unused nodes are an independent strong negative control. Root multiplicity at t=1 is **4** and at t=3 is **12**, stronger than the preregistered respective lower bounds 4 and 10. The factorization is a square over \(\mathbb F_7\) because 2=3² and all exponents are even.
 
+**Existing repository prior art (important correction, not a novel parity theorem):** [CentralSymmetry.lean](../../lean/TenthDiscriminant/CentralSymmetry.lean) and [ParityCompatibility.lean](../../lean/TenthDiscriminant/ParityCompatibility.lean) already Lean-prove the exact integral cross-parity zero statement and the commutation of the original odd-prime Frobenius basis matrices with the same sign operator. [Phase50 guide](../ender_radius_bridge/PARITY_COMPATIBILITY_GUIDE.md) and [Phase138 graded-fibre study](../graded_covolume/PHASE138_FIBER_VOLUME.md) already explain why parity by itself cannot yield an automatic Hadamard saving. This Phase202 investigation adds a **place-specific, finite polynomial-factor and radical stratification**, not the original parity split. The split prime p=7 has no positive class-number-one local valuation claim here.
+
 **The part explained by an actual SOURCE symmetry [P paper-level].** Each original ordinary jet satisfies
 \[
 e_{r,s;j}(-z)=(-1)^{r+s-j}e_{r,s;j}(z)
