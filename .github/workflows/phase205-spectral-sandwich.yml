@@ -16,4 +16,6 @@ jobs:
         with:
           persist-credentials: false
       - name: Exact 32x168 source, selected-minor Smith and six-block control
-        run: python3 research/phase205/source_spectral_pilot.py
+        run: |
+          python3 research/phase205/source_spectral_pilot.py
+          python3 research/phase205/correlation_trace_certificate.py
