@@ -19,7 +19,7 @@ def iterateLinear (D : M →ₗ[ℤ] M) : ℕ → M → M
 theorem iterateLinear_add (D : M →ₗ[ℤ] M) (a b : ℕ) (x : M) :
     iterateLinear D (a+b) x = iterateLinear D a (iterateLinear D b x) := by
   induction a with
-  | zero => rfl
+  | zero => simp [iterateLinear]
   | succ a ih =>
     simp only [Nat.succ_add, iterateLinear, ih]
 
@@ -28,7 +28,7 @@ theorem iterateLinear_smul (D : M →ₗ[ℤ] M) (n : ℕ) (c : ℤ) (x : M) :
   induction n with
   | zero => rfl
   | succ n ih =>
-    simp only [iterateLinear, ih, map_smul]
+    simpa only [iterateLinear, ih] using D.map_smul c (iterateLinear D n x)
 
 /-- Formal depth amplification without a source-specific nilpotence axiom.
 One must prove the input h for the concrete integral derivation first. -/
@@ -48,11 +48,11 @@ theorem iterateLinear_divisible (D : M →ₗ[ℤ] M)
       calc
         iterateLinear D ((m+1)*k) x
             = iterateLinear D k (iterateLinear D (m*k) x) := by
-                rw [show (m+1)*k=k+m*k by omega, iterateLinear_add]
+                rw [show (m+1)*k=k+m*k by simp [Nat.succ_mul, Nat.add_comm], iterateLinear_add]
         _ = iterateLinear D k (((p : ℤ)^m) • y) := by rw [hy]
         _ = ((p : ℤ)^m) • iterateLinear D k y := iterateLinear_smul D k _ y
         _ = ((p : ℤ)^m) • ((p : ℤ) • z) := by rw [hz]
-        _ = ((p : ℤ)^(m+1)) • z := by simp [pow_succ, smul_smul]
+        _ = ((p : ℤ)^(m+1)) • z := by rw [pow_succ, mul_smul]
 
 end TenthDiscriminant.Phase209Iteration
 
