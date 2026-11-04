@@ -57,6 +57,17 @@ def test_T7():
     assert len(Q6)==31 and len(Q7)==37
     G6=gram_parameterized(Q6)
     G7=gram_parameterized(Q7)
+    # T8: compare, for diagnosis only, to the original Gram restricted to
+    # y=0 observations. This is not an alternate production determinant.
+    Axis6=gram_parameterized([point for point in Q6 if point[1]==0])
+    Axis7=gram_parameterized([point for point in Q7 if point[1]==0])
+    assert all((G6[i][j]-Axis6[i][j])%p==0
+               for i in range(n) for j in range(n))
+    assert G6[0][0]-Axis6[0][0]==36
+    assert G7[0][0]-Axis7[0][0]==44
+    assert (G7[0][0]-Axis7[0][0])%p==2
+    _,axis6piv=rref(Axis6,p)
+    assert len(axis6piv)==9
     assert determinant(G6)>0 and determinant(G7)>0
     for name,G in (("rho6",G6),("rho7",G7)):
         for s,w in enumerate(u):
@@ -76,7 +87,11 @@ def test_T7():
         "independent_kernel_vectors_rho6":4,
         "rank_mod3":{"rho6":len(piv6),"rho7":len(piv7)},
         "rho7_extra_vector_component_0_1":g7v[1],
-        "real_determinants_positive":True
+        "real_determinants_positive":True,
+        "T8": {"mod3_full_equals_axis_at_radius6":True,
+               "rank_mod3_axis_radius6":len(axis6piv),
+               "entry_0_0_nonreal_delta": {"radius6":36,"radius7":44},
+               "mod3_full_differs_from_axis_at_radius7":True}
     }
 
 
