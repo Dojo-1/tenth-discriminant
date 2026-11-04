@@ -57,6 +57,33 @@ The secondary p3 truncation was **deliberately not raised** after viewing result
 
 **Why this still does not solve the actual-field problem:** in the production chart \(R\sim D/4\), \(S\sim R/25\), the normalization is \(R^2S\), while the current finite \(S=2\) Smith depth is not uniform across these changing dimensions. To obtain a *constant* new \(p\)-mass one needs \(\sum u_i+\tfrac12\sum b_i=\Omega(R^2S)\), meaning extensive p-local depths, not just a large rank deficiency at one small D.
 
+## Additional prospective checks — modal depth and independent primitive-unit witness
+
+**Both tests were separately preregistered in #142/#143/#144 before being run** on the frozen two source worlds. They are **additional measurements**, not after-the-fact changes of radial pairs or arithmetic hypotheses.
+
+### Exact rational generalized-eigenvalue counts
+
+For each original three selected fibre pairs per D, form the actual Schur residual \(S_{d,e}=B-C^TA^{-1}C\) **over \(\mathbb Q\)**. For the preselected thresholds \(\theta\in\{1/2,1/4,1/8\}\), count the generalized eigenvalues of \((S_{d,e},B)\) below \(\theta\) via the **negative inertia of \(S_{d,e}-\theta B\)**, computed from exact rational leading principal minors and LDL-sign changes. Every residual matrix is SPD; its exact determinant ratio agrees with the joint Gram / product of within-fibre determinants. No floating eigenvalue fitting or numerical threshold changes.
+
+| D | Three fixed pairs | Total modes | \(\delta<1/2\) | \(\delta<1/4\) | \(\delta<1/8\) |
+|---:|---|---:|---:|---:|---:|
+| 283 | (16,18),(34,36),(61,63) | 6 | **0** | **0** | **0** |
+| 403 | (24,26),(49,51),(89,91) | 12 | **5** | **3** | **2** |
+
+The individual D403 \(\delta<1/8\) counts are 0,1,1 across those pairs. This distinguishes a large block-log saving from a sufficiently **extensive family** of very small residual directions. A fixed numerical threshold \(\theta\) is NOT the production-uniform \(\theta_R=e^{-\alpha R}\); nothing here proves a common \(\alpha,\kappa>0\).
+
+The [exact rational inference script](rational_schur_modes.py) is committed and added to scoped CI. Its status is bounded [M] until an exact-head GitHub Actions receipt is obtained.
+
+### A second determinant algorithm confirms the finite p5 equality
+
+The p5 secondary normalization yields a primitive \(C_1\) with original trace metric \(B\). An independently coded modular row-elimination determinant test computes
+
+\[
+\det_{\mathbb F_5}(C_1 B C_1^T)=3\ne0,
+\]
+
+and a simultaneous first/last row-column swap leaves the determinant unchanged. Together with the tracked source Frobenius row map, the complete secondary p-index \(\sum u_i=195\), and the old \(F_5=65\), this confirms the **finite source** \(v_5(\det G)=2(65+195)=520\) without a full 140×140 integer determinant calculation. It is a second algorithmic witness but **not independent human mathematical validation**. [Executable check](primitive_p5_det.py) is committed and in CI; p3's 41 unresolved \(\ge6\) factors remain open.
+
 ## C — evidence ledger, transport restrictions, and next kill test
 
 **P-paper, classical:** Schur/Fischer, canonical-correlation rank cap, p-local Smith row normalization and determinant valuation, Frobenius rectangular polynomial expansion (already in repository). **M exact finite CPU:** complete original D283/D403 tests reported above, including the in-person standard-library computations; CI promotion is separate. **H:** uniform D-dependent near-unit canonical correlations; uniform uncounted evaluation index or residual depth at the actual class-number-one hypotheses. **R:** disjoint first-trace uniform constant; transplanting D19 split p5 residual to production inert p5; treating a truncated p3 Smith level6 as exact; treating a globally modified support as the same Gram.
