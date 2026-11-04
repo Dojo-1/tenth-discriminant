@@ -1,0 +1,23 @@
+name: Phase208 sparse Schur and p-adic depth
+on:
+  pull_request:
+    paths:
+      - "research/phase208/**"
+      - ".github/workflows/phase208-three-lines.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-original-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Source-computable predecessor-row map versus optimal Schur modes
+        run: python3 research/phase208/sparse_schur_map.py
+      - name: Middle Frobenius p²-truncated Smith with source dual jets
+        run: python3 research/phase208/truncated_middle_smith.py
+      - name: Arithmetic and analytic source-type adversarial controls
+        run: python3 research/phase208/audit_three_lines.py
