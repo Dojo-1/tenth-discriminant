@@ -1,0 +1,22 @@
+name: Round201 typed loss ledger exact finite controls
+on:
+  push:
+    branches:
+      - research/round201-blueprint-loss-ledger
+    paths:
+      - research/loss_ledger/**
+      - research/plural_moving_frames/original_source_small_pilot.py
+      - .github/workflows/round201-loss-ledger.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-finite-controls:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Run preregistered loss-fiber, kernel-tower and original-source tests
+        run: python3 research/loss_ledger/finite_tests.py
