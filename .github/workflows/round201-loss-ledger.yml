@@ -19,4 +19,6 @@ jobs:
         with:
           persist-credentials: false
       - name: Run preregistered loss-fiber, kernel-tower and original-source tests
-        run: python3 research/loss_ledger/finite_tests.py
+        run: |
+          python3 research/loss_ledger/finite_tests.py
+          python3 research/loss_ledger/source_kernel_certificate.py
