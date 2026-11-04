@@ -21,3 +21,7 @@ jobs:
         run: python3 research/phase206/secondary_smith.py
       - name: Full predeclared parity-separated radial matching
         run: python3 research/phase206/full_radial_matching.py
+      - name: Exact rational Schur mode inertia at frozen thresholds
+        run: python3 research/phase206/rational_schur_modes.py
+      - name: Independently verify primitive p5 residual determinant unit
+        run: python3 research/phase206/primitive_p5_det.py
