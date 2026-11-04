@@ -7,6 +7,10 @@ Only p^(k+1) precision; source row subset ranks give LOWER bounds on
 uncounted evaluation index, not the full Smith invariant vector.
 """
 from math import comb, factorial
+from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "phase206"))
+
 from source_probe import params, mul, fall, rank_mod
 
 D=403
