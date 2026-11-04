@@ -23,6 +23,7 @@ jobs:
           python3 research/phase203/verify_hermitian_f49.py
           python3 research/phase203/verify_hermite_transport.py
           python3 research/phase203/verify_canonical_hermite_rotation.py
+          python3 research/phase203/verify_inert_hermite_frobenius.py
   formal-kernel-radical:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
