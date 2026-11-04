@@ -4,6 +4,7 @@ on:
     paths:
       - "research/phase209/**"
       - "lean/TenthDiscriminant/Phase209Scalar321.lean"
+      - "lean/TenthDiscriminant/Phase209Iteration.lean"
       - ".github/workflows/phase209-depth-321.yml"
   workflow_dispatch:
 permissions:
@@ -52,3 +53,4 @@ jobs:
           lake exe cache get
           lean --version
           lake env lean TenthDiscriminant/Phase209Scalar321.lean
+          lake env lean TenthDiscriminant/Phase209Iteration.lean
