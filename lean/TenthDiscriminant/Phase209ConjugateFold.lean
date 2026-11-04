@@ -34,7 +34,8 @@ theorem original_trace_pair_fold (D : Nat) (a b : Int × Int) :
 the unchanged original metric weight 2 (not 4). -/
 theorem original_trace_real_sample (D : Nat) (x y : Int) :
     integerPairTrace D (x, 0) (y, 0) = 2*x*y := by
-  simp [integerPairTrace]
+  simp only [integerPairTrace, mul_zero, zero_mul, add_zero]
+  ring
 
 end TenthDiscriminant.Phase209ConjugateFold
 
