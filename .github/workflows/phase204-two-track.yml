@@ -1,0 +1,64 @@
+name: Phase204 factorial filtration and p-adic tube controls
+on:
+  pull_request:
+    paths:
+      - "research/phase204/**"
+      - "lean/TenthDiscriminant/JetFactorialFiltration.lean"
+      - "lean/TenthDiscriminant.lean"
+      - ".github/workflows/phase204-two-track.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-padic-controls:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Run independently preregistered exact integer controls
+        run: |
+          python3 research/phase204/ordinary_jet_filtration.py
+          python3 research/phase204/anchor_vs_tube_p49.py
+          python3 research/phase204/truncated_smith_profiles.py
+          python3 research/phase204/two_sided_tube_transport.py
+          python3 research/phase204/source_translation_junction.py
+          python3 research/phase204/graded_padic_layers.py
+  source-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Pinned elan and Mathlib
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile exact source module
+        run: |
+          lake update
+          lake exe cache get
+          lake build TenthDiscriminant.JetFactorialFiltration
+      - name: Inspect axioms of source claims
+        run: |
+          lake env lean TenthDiscriminant/JetFactorialFiltration.lean 2>&1 | tee /tmp/phase204-axioms.log
+          if grep -q 'sorryAx' /tmp/phase204-axioms.log; then
+            exit 1
+          fi
