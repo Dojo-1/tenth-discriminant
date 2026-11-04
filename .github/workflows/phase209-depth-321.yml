@@ -54,5 +54,5 @@ jobs:
           lake exe cache get
           lean --version
           lake env lean TenthDiscriminant/Phase209Scalar321.lean
-          lake env lean TenthDiscriminant/Phase209Iteration.lean
           lake env lean TenthDiscriminant/SourceGeometry321.lean
+          lake env lean TenthDiscriminant/Phase209Iteration.lean
