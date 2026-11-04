@@ -73,10 +73,10 @@ theorem original_trace_gram_entry_fold (D rho J r s t u : Nat)
   have hpos :
       2 * (∑ q ∈ (ellipsePairs D rho).filter (fun q => 0 < q.2), f q) =
       (∑ q ∈ (ellipsePairs D rho).filter (fun q => 0 < q.2),
-        4 * (integerDerivativeRow D r s j q).1 *
+        (4 * (integerDerivativeRow D r s j q).1 *
             (integerDerivativeRow D t u j q).1 +
         (4*(D : Int)) * (integerDerivativeRow D r s j q).2 *
-            (integerDerivativeRow D t u j q).2) := by
+            (integerDerivativeRow D t u j q).2)) := by
     rw [Finset.mul_sum]
     apply Finset.sum_congr rfl
     intro q hq
