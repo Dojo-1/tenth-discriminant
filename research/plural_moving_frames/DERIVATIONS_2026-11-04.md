@@ -84,3 +84,20 @@ If Q_thin subset Q_old, then G_old-G_thin is PSD, hence every generalized eigenv
 Try to prove in Lean the general k-minor divisibility of the exact integer Gram from the existing integral row diagonalization. Do not claim novelty: determinantal ideals and Smith invariants are classical, and the repository already has determinant-only integer transport in TransportCoherence.lean. Then seek a same-Q analytic k-principal-minor upper for the *actual* thin-ellipse row norms.
 
 Stop/retire a claimed gain if it requires a continuously varying integer frame, claims spectral invariance under arbitrary SL_n(R) without a co-moving reference, changes the ordinary-Z derivative convention, or yields no improved exclusion beyond the current whole-determinant sandwich.
+
+
+## M: integral frame optimization can sharpen the geometric side (toy, not field)
+
+The already-verified 3x3 integral toy has G=[[122,-123,135],[-123,126,-135],[135,-135,162]] and a unimodular U satisfying U G U^T=H=[[2,3,0],[3,18,27],[0,27,162]]. The invariant delta_2 is 27 in both frames. For the valid but crude upper min_{|I|=k} product_{i in I} (frame Gram)_{ii}:
+
+| k | Original G diagonal upper | Integer-transformed H diagonal upper | Invariant delta_k |
+|---|---:|---:|---:|
+| 1 | 122 | 2 | 1 |
+| 2 | 15,372 | 36 | 27 |
+| 3 | 2,490,264 | 5,832 | 2,916 |
+
+The k=2 upper becomes **427 times tighter** while the arithmetic invariant does not move. For an arbitrary SPD integer G, define the integral moving-frame envelope
+
+    B_k(G)=inf_{U in GL_n(Z)} min_{|I|=k} product_{i in I} (UGU^T)_{ii}.
+
+The quantity B_k(G) is by construction invariant under integral unimodular congruence, and delta_k(G) <= B_k(G), since each positive integral principal minor is a multiple of delta_k(G) and Hadamard bounds it by its diagonal product. Whether this lattice optimization yields a *uniformly better* tenth-discriminant cutoff at original Q_thin remains H. Do not confuse this exact small proof-of-concept with an achieved number-theoretic gain.
