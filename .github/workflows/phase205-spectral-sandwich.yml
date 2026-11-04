@@ -20,3 +20,4 @@ jobs:
           python3 research/phase205/source_spectral_pilot.py
           python3 research/phase205/residual_gram_layers.py
           python3 research/phase205/correlation_trace_certificate.py
+          python3 research/phase205/frame_variance_controls.py
