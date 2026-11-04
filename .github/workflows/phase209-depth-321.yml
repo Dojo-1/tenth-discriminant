@@ -5,6 +5,7 @@ on:
       - "research/phase209/**"
       - "lean/TenthDiscriminant/Phase209Scalar321.lean"
       - "lean/TenthDiscriminant/Phase209Iteration.lean"
+      - "lean/TenthDiscriminant/SourceGeometry321.lean"
       - ".github/workflows/phase209-depth-321.yml"
   workflow_dispatch:
 permissions:
@@ -54,3 +55,4 @@ jobs:
           lean --version
           lake env lean TenthDiscriminant/Phase209Scalar321.lean
           lake env lean TenthDiscriminant/Phase209Iteration.lean
+          lake env lean TenthDiscriminant/SourceGeometry321.lean
