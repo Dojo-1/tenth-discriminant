@@ -135,6 +135,7 @@ def run(p):
        "total_Gram_vp_lower":2*(F+lower),
        "oracle_rows_all_points":oracles,
        "levels_ge2_are_NOT_exact":True},flush=True)
+    return {"p":p,"old_Fp":F,"truncated_levels":levels,"selected_index_lower":lower}
 
 if __name__=="__main__":
     run(3);run(5)
