@@ -85,6 +85,28 @@ theorem sum_conjugate_orbits
   rw [hs1, hs2, hnegpos]
   ring
 
+
+/-- The ORIGINAL source support (the complete thin ellipse) is invariant
+under conjugating the integer-pair observation; no residue substitution. -/
+theorem original_ellipse_conjugation (D rho : Nat) (hD : 0 < D)
+    (q : Int × Int) :
+    q ∈ ellipsePairs D rho ↔ pairConj q ∈ ellipsePairs D rho := by
+  rcases q with ⟨x, y⟩
+  simpa [pairConj, mem_ellipsePairs_iff D rho hD]
+
+/-- Specialize the general orbit formula to the ORIGINAL complete ellipse.
+This identifies exactly N=|Q| effective per-jet observation channels when
+paired with Phase209ConjugateFold; determinant transport remains separate. -/
+theorem sum_original_ellipse_orbits (D rho : Nat) (hD : 0 < D)
+    (f : Int × Int → Int)
+    (hf : ∀ q, f (pairConj q) = f q) :
+    (∑ q ∈ ellipsePairs D rho, f q) =
+      (∑ q ∈ (ellipsePairs D rho).filter (fun q => q.2 = 0), f q) +
+        2 * (∑ q ∈ (ellipsePairs D rho).filter (fun q => 0 < q.2), f q) :=
+  sum_conjugate_orbits (ellipsePairs D rho)
+    (original_ellipse_conjugation D rho hD) f hf
+
 end TenthDiscriminant.Phase209OrbitSum
 
 #print axioms TenthDiscriminant.Phase209OrbitSum.sum_conjugate_orbits
+#print axioms TenthDiscriminant.Phase209OrbitSum.sum_original_ellipse_orbits
