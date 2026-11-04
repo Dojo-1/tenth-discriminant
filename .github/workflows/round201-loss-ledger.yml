@@ -23,3 +23,4 @@ jobs:
           python3 research/loss_ledger/finite_tests.py
           python3 research/loss_ledger/source_kernel_certificate.py
           python3 research/loss_ledger/transition_tower_test.py
+          python3 research/loss_ledger/T7_extended_rectangle.py
