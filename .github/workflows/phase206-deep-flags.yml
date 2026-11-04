@@ -1,0 +1,23 @@
+name: Phase206 source-typed deep flags
+on:
+  pull_request:
+    paths:
+      - "research/phase206/**"
+      - ".github/workflows/phase206-deep-flags.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-matched-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Frozen small-source first-stage arith and three analytic pairs
+        run: python3 research/phase206/source_probe.py
+      - name: Second-stage p3 and p5 Smith normalizations (K=6)
+        run: python3 research/phase206/secondary_smith.py
+      - name: Full predeclared parity-separated radial matching
+        run: python3 research/phase206/full_radial_matching.py
