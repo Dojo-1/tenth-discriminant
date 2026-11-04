@@ -4,6 +4,10 @@
 Reuses classical minor/index logic and a small analytic counterworld;
 no number-field theorem is asserted.
 """
+from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "phase206"))
+
 from source_probe import params, det, rank_mod, fall
 from middle_frobenius import old_k
 
