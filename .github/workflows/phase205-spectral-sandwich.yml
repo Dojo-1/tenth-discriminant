@@ -1,0 +1,19 @@
+name: Phase205 source-matched Smith and radial covariance
+on:
+  pull_request:
+    paths:
+      - "research/phase205/**"
+      - ".github/workflows/phase205-spectral-sandwich.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-original-gram:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact 32x168 source, selected-minor Smith and six-block control
+        run: python3 research/phase205/source_spectral_pilot.py
