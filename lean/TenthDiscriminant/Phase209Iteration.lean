@@ -28,7 +28,7 @@ theorem iterateLinear_smul (D : M →+ M) (n : ℕ) (c : ℤ) (x : M) :
   induction n with
   | zero => rfl
   | succ n ih =>
-    simpa only [iterateLinear, ih] using D.map_zsmul c (iterateLinear D n x)
+    simpa only [iterateLinear, ih] using D.map_zsmul (iterateLinear D n x) c
 
 /-- Formal depth amplification without a source-specific nilpotence axiom.
 One must prove the input h for the concrete integral derivation first. -/
