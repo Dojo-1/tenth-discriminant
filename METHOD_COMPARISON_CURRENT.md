@@ -1,5 +1,7 @@
 # A source-aware comparison, 26 October 2026
 
+> **Current framing — 4 November 2026.** This page is an archived 26–30 October comparison snapshot, not an up-to-date ranking. Our current merged class-one field theorem is `|disc(K)|<322^4` ([PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126)), and the `321^4` Phase209 work is a **draft candidate** ([PR #157](https://github.com/Dojo-1/tenth-discriminant/pull/157)). The live methodological objective is Tao's Math 2.0 comparison of *class-one classification*, *general-character Siegel-zero exclusions*, and *human proof understanding* ([Phase210 #158](https://github.com/Dojo-1/tenth-discriminant/issues/158)). In particular, matching only numeric cutoffs or importing a selected minor into the entire trace Gram is not a valid method comparison.
+
 **A smaller cutoff and a lighter hypothesis are different achievements.**
 This selected comparison distinguishes our checked result from external
 source claims. It is not an exhaustive ranking or an independent replay
