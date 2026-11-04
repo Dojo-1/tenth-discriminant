@@ -24,6 +24,7 @@ jobs:
           python3 research/phase204/truncated_smith_profiles.py
           python3 research/phase204/two_sided_tube_transport.py
           python3 research/phase204/source_translation_junction.py
+          python3 research/phase204/graded_padic_layers.py
   source-lean:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
