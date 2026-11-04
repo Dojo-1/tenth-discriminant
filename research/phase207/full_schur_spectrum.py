@@ -6,7 +6,7 @@ Finite D283 and D403 examples, no class-number-one assumption.
 """
 from fractions import Fraction as Q
 from source_probe import params, fibers, gram, det, inv, mm, tr
-from rational_schur_modes import negative_inertia as prev_inertia
+from rational_schur_modes import det_fraction
 
 def inertia(M):
     """Exact symmetric-congruence inertia; handles zero diagonal pivots."""
@@ -70,8 +70,8 @@ def run(D):
         S0,T=pencil(A,B,C,Q(1,2))
         assert all(S0[i][j]==S0[j][i] for i in range(b) for j in range(b))
         # Positive definiteness; lower Schur determinant equals exact ratio.
-        assert det(S0)!=0
-        assert Q(det(S0),db)==Q(dj,da*db)
+        assert det_fraction(S0)>0
+        assert det_fraction(S0)/db==Q(dj,da*db)
         assert inertia(S0)==(0,0,b)
         this={}
         for label,t in thresholds:
@@ -111,7 +111,7 @@ def run(D):
     I=fibers(R,S,ds[0]);K=fibers(R,S,ds[0]+1)
     X=gram(D,points,J,I+K)
     assert all(X[i][len(I)+j]==0 for i in range(len(I)) for j in range(len(K)))
-    assert gram(D,points,J,old and fibers(R,S,old[0])+fibers(R,S,old[0]+2))!=gram(D,points,J-1,fibers(R,S,old[0])+fibers(R,S,old[0]+2))
+    assert gram(D,points,J,fibers(R,S,old[0])+fibers(R,S,old[0]+2))!=gram(D,points,J-1,fibers(R,S,old[0])+fibers(R,S,old[0]+2))
     print("PHASE207_DEEP_SCHUR",{"D":D,"R":R,"S":S,"rho":rho,"Q":len(points),
          "pairs":len(matching),"modes":modes,"pairs_with_coupling":positive_pairs,
          "counts":counts,"fractions_of_rows":{k:float(Q(v,R*S)) for k,v in counts.items()},
