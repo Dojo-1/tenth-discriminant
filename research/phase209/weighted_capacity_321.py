@@ -19,6 +19,29 @@ def min_cost(N,J,n,p):
     assert F(val)>=F(n*(n-N),2*N*p*p)-n
     return val
 
+def sharp_weight(p,j):
+    """Exact optimal universal post-Frobenius ordinary derivative exponent."""
+    result=0
+    power=p*p
+    while power<=j:
+        result+=j//power
+        power*=p
+    return result
+
+def sharp_min_cost(N,J,n,p):
+    """First n of N columns per ordinary derivative order."""
+    q,r=divmod(n,N)
+    exact=N*sum(sharp_weight(p,j) for j in range(q))+r*sharp_weight(p,q)
+    direct=sum(sorted([sharp_weight(p,j) for j in range(J)
+                       for _ in range(N)])[:n])
+    assert exact==direct
+    # The p² and p³ grades are nested depths, NOT independent row
+    # Frobenius divisors. Their contributions are summed ONCE.
+    two_grades=N*sum(j//(p*p)+j//(p**3) for j in range(q))+\
+        r*(q//(p*p)+q//(p**3))
+    assert exact>=two_grades
+    return exact,two_grades
+
 def capacity_oracle():
     count=0
     for p in (3,5):
@@ -27,6 +50,22 @@ def capacity_oracle():
                 for n in range(1,J*N+1):
                     min_cost(N,J,n,p)
                     count+=1
+    sharp_cases=0
+    for p in (3,5):
+        assert sharp_weight(p,p)==0
+        assert sharp_weight(p,p**3)==p+1
+        for N in (1,2,3):
+            for J in (p**3-1,p**3,p**3+1,2*p**3+1):
+                for n in sorted(set([1,N,min(N*(p*p),N*J),
+                                     min(N*(p**3),N*J),N*J])):
+                    sharp_min_cost(N,J,n,p)
+                    sharp_cases+=1
+    print("PHASE209_SHARP_COLUMN_CAPACITY",{
+        "exact_cases":sharp_cases,"p3_w27":sharp_weight(3,27),
+        "p5_w125":sharp_weight(5,125),
+        "new_grade_p3":sharp_weight(3,27)-27//9,
+        "new_grade_p5":sharp_weight(5,125)-125//25,
+        "two_grades_not_double_counted":True},flush=True)
     print("PHASE209_WEIGHTED_CAPACITY",{"bounded_cases":count,
         "first_n_minimum_exact":True,
         "layer_cake_formula_exact":True,
@@ -50,6 +89,19 @@ def endpoint_321():
     old=(F(999997,1000000)-F(4,5))*u-F(57193,10000)+F(1853,2000)+F(6931,40000)
     margin=bonus+old
     assert old<0<bonus and margin>F(1,2000)
+    bonus23=S_over_N*(F(1098,1000)*(F(1,9)+F(1,27))+
+        F(1609,1000)*(F(1,25)+F(1,125)))-F(5,D)*(
+        F(11,10)*(4+F(1,9)+F(1,27))+
+        F(161,100)*(4+F(1,25)+F(1,125)))
+    margin23=bonus23+old
+    assert bonus23>bonus and margin23>F(1,1000)
+    print("PHASE209_TWO_GRADE_RATIONAL_321",{
+        "p_squared_p_cubed_bonus":str(bonus23),
+        "new_bonus_decimal":float(bonus23),
+        "conditional_margin":str(margin23),
+        "conditional_margin_decimal":float(margin23),
+        "strictly_above_1_over_1000":True,
+        "source_gram_field_bridges_still_open":True},flush=True)
     print("PHASE209_EXACT_321_ENVELOPE",{
        "root":321,"D":D,
        "old_L_minus_U_rational":str(old),"old_gap":float(old),
