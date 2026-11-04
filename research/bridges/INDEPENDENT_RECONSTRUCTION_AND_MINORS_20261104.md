@@ -52,7 +52,7 @@ M=\begin{pmatrix}
 0&0&1&1
 \end{pmatrix},\qquad\det M=-1\not\equiv0\pmod5.
 \]
-So **complex full row rank modulo 5 does not imply real trace-Gram determinant nonzero modulo 5**. This disproves that proposed general inference only. Here D=3 is outside the 322^4 analytic domain and R=2 does not give a positive p=5 source valuation; do NOT describe this test as a counterexample to the inert-prime valuation theorem or to twinheterodox. The calculation was independently evaluated from the exact derivative and trace formulas; it is a finite computational witness, not yet committed as Lean.
+So **complex full row rank modulo 5 does not imply real trace-Gram determinant nonzero modulo 5**. This disproves that proposed general inference only. Here D=3 is outside the 322^4 analytic domain and R=2 does not give a positive p=5 source valuation; do NOT describe this test as a counterexample to the inert-prime valuation theorem or to twinheterodox. The calculation was independently evaluated from the exact derivative and trace formulas; the standalone [exact-integer Python regression](phase201_minor_gram_control.py) now reproduces the same 11-point source, 22 observation columns, two matrices, determinants and mod-5 assertions (its GitHub CI execution is not yet separately attested). It is a finite computational witness, not yet committed as Lean.
 
 ## 4. What actually can be transported
 
