@@ -115,8 +115,7 @@ def main():
     for y in range(P):
         for x in range(P):
             B=reorder(gram_split([(x,y)],P,3))
-            per_point[(x,y)]=B
-            per_point[(x,y)],r=per_point[(x,y)],hermitian_rank(B,C)
+            hermitian_rank(B,C)
             per_point[(x,y)]=B
     pairs=Counter(hermitian_rank(B,C) for B in per_point.values())
     assert pairs==Counter({(2,1):7,(4,2):42})
