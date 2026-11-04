@@ -21,6 +21,8 @@ jobs:
         run: |
           python3 research/phase204/ordinary_jet_filtration.py
           python3 research/phase204/anchor_vs_tube_p49.py
+          python3 research/phase204/truncated_smith_profiles.py
+          python3 research/phase204/two_sided_tube_transport.py
   source-lean:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
