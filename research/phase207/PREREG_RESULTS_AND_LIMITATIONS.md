@@ -51,3 +51,48 @@ Analytic gauge invariance is an **internal exact same-source** change of basis i
 - **Human review:** [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50), external comparator [#51](https://github.com/Dojo-1/tenth-discriminant/issues/51) remain open.
 
 **Stop/promotion:** exact-head scoped GitHub CI must pass; whole-root Lean/build and semantic/source review remain separate; keep draft PR, no merge, no new field cutoff, no outside communication without authorization.
+
+## Exact-source execution receipt and bounded results (recorded AFTER the preregistration)
+
+The original Phase207 source checks passed at [run 41835855791](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41835855791), after a purely operational Python import-path fix. A later separately preregistered **independent rank replay** and **post-result layer-cake mathematical deduction** passed at [run 41836160864](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41836160864) on source head bb350d8ca257364c066f088e066415ee258b52b6. These receipts precede this dossier update, so the latest-head CI still needs to be checked separately. Original test/source failure, if any, would remain a distinct issue from the earlier import defect.
+
+**A, moving multi-mode flags.** The full original parity-matched Schur residual spectra contain:
+
+| Original source | Pair count | Residual modes | Number <1/2 | <1/8 | <1/64 | <1/1024 | <2^-ceil(R/4) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| D283,R70,SJ2,Q169 | 35 | 69 | 0 | 0 | 0 | 0 | 0 |
+| D403,R100,SJ4,Q219 | 51 | 200 | **65** | **33** | **24** | **12** | **0** |
+
+At D403, θ_R=2^-ceil(R/10)=2^-10 coincides with 1/1024; **12** of the 200 canonical-correlation residuals are below θ_R. None is below 2^-ceil(R/4)=2^-25. These tests distinguish existence of a few deep modes from a proven extensive family of exponentially small residuals. The values are exact integer inertia counts from rational Schur forms, not fitted floating eigenvalues. The zero D283 counts and gauge/derivative/parity controls are preserved.
+
+**A, POST-RESULT deduction, NOT another preregistered outcome.** The previously frozen four thresholds give the D403 cumulative eigenvalue counts (65,33,24,12). Since
+\[
+L=\sum_i-\log\delta_i=\int_0^\infty \#\{\delta_i<e^{-t}\}\,dt,
+\]
+the monotone counting function yields the **rigorous source-matched layer-cake lower**
+\[
+L\ge(65+2\cdot33+3\cdot24+4\cdot12)\log2
+=251\log2>\frac{14056}{81}.
+\]
+The last inequality uses only \(\log2=2\sum_{m\ge0}[3^{-(2m+1)}/(2m+1)]>2(1/3+1/81)=56/81\). Thus at this ONE fixed D403, \(R^2S=40000\),
+\[
+\boxed{\frac{L}{R^2S}>\frac{1757}{405000}\approx0.00433827>\frac{43}{10000}.}
+\]
+The comparison with 0.0043 is to a **historical, conditional research target**, not the current threshold for improving the mainline 322⁴ theorem. The calculation is based only on exact small original moment/Schur blocks; the determinant of the full 400×400 Gram is NOT required to construct the lower certificate. [Executable post-result check](layer_cake_certificate.py) re-runs the frozen original-source inertia and performs the rational inequality without approximating \(\log2\) numerically.
+
+**B, original middle/high Frobenius row strata.** At the SAME D403,R100,S=J4,Q219 source, the old row basis and its already-counted indices are \(F_3=570,\ F_5=550\). Independent original-source dual-jet and GFp rank controls passed:
+
+| p | k≥2: rows/rank/defect | k≥3: rows/rank/defect | Uncounted first-level exponent ≥ | Combined valuation lower for this G |
+|---:|---|---|---:|---:|
+| 3 | 188 / 54 / **134** | 91 / 27 / 64 | 268 | \(v_3(\det G)\ge1408\) |
+| 5 | 180 / 120 / **60** | 85 / 60 / 25 | 120 | \(v_5(\det G)\ge1220\) |
+
+The inner k≥3 deficit is already contained within the k≥2 deficit; **never add it again**. Original full-row positive definiteness is supported by the repository's interpolation criterion \(|Q|>2(R-1)+(S-1)\), here \(219>201\); this semantic link still warrants independent human review. Therefore the same finite original determinant has the **mixed integer divisor**
+\[
+\boxed{3^{1408}5^{1220}\mid\det G_{D403,R100,S=J4,\rho40}}.
+\]
+This is a conservative lower-bound divisor; exact full p-adic Smith exponents at D403 have NOT been determined. It depends on original *inert* p3,p5 and the already-known old polynomial row map, and is separate from D283's exact \(v_5=520\). The independent column-pivot rank algorithm and deterministic reversal of paired point columns both reproduce k≥2 ranks; the different h-truncated polynomial oracle verifies selected rows at every original point and all j. These are correlated AI-authored code paths, not human mathematical certification.
+
+**C, asymptotic stop rules (P, simple linear algebra):** A single first-stage local rank nullity \(d_p\le RS\) yields normalized additional prime mass at most \(2d_p\log p/(R^2S)\le 2\log p/R\). With only p3,p5 this is bounded by \(2\log15/R\to0\). Therefore the *observed* nonzero middle/high **FIRST-LAYER** defects cannot alone certify a uniform fixed positive new mass in the actual production limit; need deeper p-adic valuation layers, possibly extensive as \(R,S\) grow, with pre-existing \(F_p\) counted once. On the analytic side the exact D403 post-result certificate is finite, and D283 supplies a clear hostile case (zero below every chosen deep threshold); uniform \(\Theta(RS)\) modes of defect \(e^{-\alpha R}\) remain H, not P.
+
+**Final claim ledger:** (P) classical Schur/inertia, source Frobenius determinant factorization conditional on the unchanged integer row map and original full rank, and layer-cake inequality; (M) two finite spectral distributions and two conservative extra local divisors; (H) uniform middle/high depth *beyond first layer* and production-scale deep subspace construction; (R) constant normalized gain from disjoint first trace, additive counting of nested defects, automatic promotion from historical 0.0043. Do not merge or modify the integrated \(322^4\) field theorem. External human mathematical review #50 and comparator interface #51 remain open.
