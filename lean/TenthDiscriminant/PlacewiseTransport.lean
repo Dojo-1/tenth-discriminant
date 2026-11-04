@@ -81,9 +81,9 @@ theorem gram_kernel_iff_restricted_radical
   constructor
   · intro h
     refine ⟨⟨x, rfl⟩, ?_⟩
-    simpa only [Matrix.mulVec_mulVec] using h
+    simpa only [Matrix.mulVec_mulVec, Matrix.mul_assoc] using h
   · rintro ⟨_, h⟩
-    simpa only [Matrix.mulVec_mulVec] using h
+    simpa only [Matrix.mulVec_mulVec, Matrix.mul_assoc] using h
 
 /-- Surjectivity half of the kernel-radical exact sequence. -/
 theorem radical_has_kernel_preimage
@@ -98,7 +98,7 @@ theorem radical_has_kernel_preimage
   rcases hw with ⟨⟨x, hx⟩, hzero⟩
   refine ⟨x, ?_, hx⟩
   rw [← hx] at hzero
-  simpa only [Matrix.mulVec_mulVec] using hzero
+  simpa only [Matrix.mulVec_mulVec, Matrix.mul_assoc] using hzero
 
 end
 end TenthDiscriminant.Phase202
