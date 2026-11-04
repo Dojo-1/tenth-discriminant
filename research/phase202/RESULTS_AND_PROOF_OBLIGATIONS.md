@@ -104,6 +104,8 @@ v_2&=5e_5+4e_6+2e_9+4e_{10}+6e_{14}+2e_{17}+3e_{18}+5e_{21}+3e_{22}+e_{26}.
 \]
 Indices use the source **zero-based** row order \(i=rS+s\); all coefficients are in \(\mathbb F_7\). Their images are nonzero and independent. A matched \(p=11\) control has \(\operatorname{rank}E=\operatorname{rank}G=44\) for both supports. This establishes a genuine local rank/radical change, **not** mere ambient metric degeneracy or loss of evaluation rank.
 
+**A genuine typed moving-frame construction (local, not a universal manifold) [P conditional algebra + M inputs]:** Write \(\iota_{\rho}=E_\rho^{\mathsf T}:\mathbb F_7^{106}\to\mathbb F_7^{2J|Q_\rho|}\). Since \(Q_{16}\subset Q_{25}\), \(\ker\iota_{25}\subseteq\ker\iota_{16}\). Both maps have rank 28, so both kernels have dimension 78 and are **equal**, \(K\). This gives a **canonical** common quotient \(V=\mathbb F_7^{106}/K\), dimension 28, rather than arbitrarily identifying two different output spaces. Each \(G_\rho\) descends to a symmetric bilinear form \(\beta_\rho\) on \(V\). The same quotient thus carries \(\beta_{16}\) with zero radical and \(\beta_{25}\) with a two-dimensional radical. There is a structure-preserving map of the underlying quotient vector spaces, but **no isometry** of these two pairings via this canonical identification. The resulting form difference \(\beta_{25}-\beta_{16}\) is a well-defined typed transport remainder, not a cohomology class or a proof of novel holonomy. An exploratory exact computation also gives \(\operatorname{rank}_{\mathbb F_7}(G_{25}-G_{16})=28\); that number is secondary to the changed restricted-pairing type.
+
 **Opposite Archimedean behaviour [P, simple quadratic-form identity]:** for the real embeddings, the difference
 \[
 G_{25}-G_{16}
