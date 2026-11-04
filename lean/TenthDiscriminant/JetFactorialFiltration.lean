@@ -18,9 +18,9 @@ theorem pair_trace_biscaled
 theorem ordinary_jet_factorial
     (D r s j : Nat) (z : Int × Int) (hj : j ≤ r) :
     integerDerivativeRow D r s j z =
-      pairScale (j.factorial : Int) <|
-        pairScale (r.choose j : Int) <|
-          pairMul D (pairPow D z (r-j)) (pairPow D (pairConj z) s) := by
+      pairScale (j.factorial : Int)
+        (pairScale (r.choose j : Int)
+          (pairMul D (pairPow D z (r-j)) (pairPow D (pairConj z) s))) := by
   simp [integerDerivativeRow, hj, pairScale,
     Nat.descFactorial_eq_factorial_mul_choose, mul_assoc]
 
