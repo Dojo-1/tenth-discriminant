@@ -19,3 +19,6 @@ jobs:
         run: python3 research/phase207/full_schur_spectrum.py
       - name: Exact middle and high old Frobenius strata with independent dual jets
         run: python3 research/phase207/middle_frobenius.py
+
+      - name: Source-type, factorial, and non-overlap adversarial controls
+        run: python3 research/phase207/audit_source_guards.py
