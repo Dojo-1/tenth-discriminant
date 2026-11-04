@@ -120,6 +120,7 @@ def run(D):
          "pairs":len(matching),"modes":modes,"pairs_with_coupling":positive_pairs,
          "counts":counts,"fractions_of_rows":{k:float(Q(v,R*S)) for k,v in counts.items()},
          "source_shear_invariant":shear_checked,"legacy_3pair_regression":regression},flush=True)
+    return {"counts":counts,"R":R,"S":S,"modes":modes,"matching":len(matching)}
 
 if __name__=="__main__":
     run(283)
