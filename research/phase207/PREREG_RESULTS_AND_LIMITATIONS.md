@@ -96,3 +96,20 @@ This is a conservative lower-bound divisor; exact full p-adic Smith exponents at
 **C, asymptotic stop rules (P, simple linear algebra):** A single first-stage local rank nullity \(d_p\le RS\) yields normalized additional prime mass at most \(2d_p\log p/(R^2S)\le 2\log p/R\). With only p3,p5 this is bounded by \(2\log15/R\to0\). Therefore the *observed* nonzero middle/high **FIRST-LAYER** defects cannot alone certify a uniform fixed positive new mass in the actual production limit; need deeper p-adic valuation layers, possibly extensive as \(R,S\) grow, with pre-existing \(F_p\) counted once. On the analytic side the exact D403 post-result certificate is finite, and D283 supplies a clear hostile case (zero below every chosen deep threshold); uniform \(\Theta(RS)\) modes of defect \(e^{-\alpha R}\) remain H, not P.
 
 **Final claim ledger:** (P) classical Schur/inertia, source Frobenius determinant factorization conditional on the unchanged integer row map and original full rank, and layer-cake inequality; (M) two finite spectral distributions and two conservative extra local divisors; (H) uniform middle/high depth *beyond first layer* and production-scale deep subspace construction; (R) constant normalized gain from disjoint first trace, additive counting of nested defects, automatic promotion from historical 0.0043. Do not merge or modify the integrated \(322^4\) field theorem. External human mathematical review #50 and comparator interface #51 remain open.
+
+### One finite, genuinely source-matched arithmetic–analytic sandwich
+
+For the **same** \(D=403,\rho=40,R=100,S=J=4,Q219\) original integer trace Gram \(G\), no identification of arithmetic/Archimedean fibres is needed to combine their constraints on the same positive integer determinant. Let \(V_{\rm rad}=\prod_d\det G[I_d,I_d]\), a product of original principal radial blocks. Then, from the two valid inert-prime divisors and classical Hadamard–Fischer plus the exact threshold layer-cake:
+
+\[
+\boxed{
+1408\log3+1220\log5
+\ \le\ \log\det G
+\ \le\ \log V_{\rm rad}-L
+\ <\ \log V_{\rm rad}-\frac{14056}{81}.
+}
+\]
+
+This is a **finite-source inequality** whose proof components have different evidential status: the general linear-algebra inequalities are classical [P paper], the prime ranks and Schur inertia are exact but AI-authored computational instances [M], and translation to class-number-one fields or a uniform cutoff remains [H]. The finite inequality does not claim a contradiction, does not use the selected complex minor of another investigator, does not multiply the nested Smith defects, and does not promote the historical 0.0043 normalized target into the present 322⁴ theorem.
+
+**Smallest surviving new research target:** construct a uniform *source-computable* lower on the number of Schur defects \(\delta\le e^{-\alpha R}\) across \(\Omega(RS)\) matched modes **or** an uncounted deep p-adic Smith filtration of total mass \(\Omega(R^2S)\) after old \(\sum k_{r,s}\) extraction, with all derivative depths. The finite cross-world experimental contrast D283 vs D403 supplies a counterworld to naive monotonicity, not a proof of such a theorem.
