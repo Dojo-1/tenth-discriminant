@@ -237,3 +237,4 @@ import TenthDiscriminant.Phase209ConjugateFold
 import TenthDiscriminant.Phase209DeltaCarrier
 import TenthDiscriminant.Phase209OrbitSum
 import TenthDiscriminant.Phase209WholeGramFold
+import TenthDiscriminant.Phase210FoldedInertFactor
