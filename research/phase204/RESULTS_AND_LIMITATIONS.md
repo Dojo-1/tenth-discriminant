@@ -21,7 +21,7 @@ Thus for \(a\le J\):
 \boxed{G_J\equiv G_a\pmod{2(a!)^2}}\quad
 \text{entrywise}.
 \]
-This is **P (straight source algebra)**: the chosen order is closed under multiplication, every ordinary j-jet contains j!, and the trace is bilinear. Mathlib already has \`Nat.descFactorial_eq_factorial_mul_choose\` (known prior algebra); the new [Lean source module](../../lean/TenthDiscriminant/JetFactorialFiltration.lean) is a proof **candidate** until scoped compilation and the unmodified root audit pass.
+This is **P (straight source algebra)**: the chosen order is closed under multiplication, every ordinary j-jet contains j!, and the trace is bilinear. More strongly, the repository's already-integrated [JetPrecisionBridge.lean](../../lean/TenthDiscriminant/JetPrecisionBridge.lean) **Lean-proves** `integerDerivativeRow_eq_factorial_hasse` for this exact integer source. Phase204 must reuse that lemma, not claim the factorial separation as newly formalized mathematics. The new [Lean source module](../../lean/TenthDiscriminant/JetFactorialFiltration.lean) now imports it and targets only the additional trace-pairing factor and Gram-depth increment; both remain **candidates** until a successful exact-head scoped build and unchanged root audit.
 
 For odd primes p and J≥p, \(G_J\equiv G_p\pmod{p^2}\). In characteristic 2, the extra trace-2 factor gives \(G_J\equiv G_2\pmod 8\). These relations retain matrix entries, not just one determinant; however \(\det G_J\equiv \det G_p\pmod{p^2}\) is only congruence, **not** a new lower bound on \(v_p(\det G_J)\) when its reduction vanishes. In particular this does not improve the original prime-power certificate of the integrated 322⁴ theorem.
 
