@@ -21,3 +21,7 @@ jobs:
         run: python3 research/phase208/truncated_middle_smith.py
       - name: Arithmetic and analytic source-type adversarial controls
         run: python3 research/phase208/audit_three_lines.py
+      - name: Source p² residue signatures and nonoverlapping coker Smith layers
+        run: python3 research/phase208/frobenius_signature.py
+      - name: Safe post-result sparse-source Schur layer-cake lower
+        run: python3 research/phase208/sparse_layer_cake.py
