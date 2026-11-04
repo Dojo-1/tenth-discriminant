@@ -22,3 +22,5 @@ jobs:
 
       - name: Source-type, factorial, and non-overlap adversarial controls
         run: python3 research/phase207/audit_source_guards.py
+      - name: Post-result rational layer-cake inequality from frozen thresholds
+        run: python3 research/phase207/layer_cake_certificate.py
