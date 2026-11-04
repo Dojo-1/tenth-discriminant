@@ -24,7 +24,7 @@ jobs:
         run: python3 research/phase209/weighted_capacity_321.py
   lean-scalar:
     runs-on: ubuntu-24.04
-    timeout-minutes: 35
+    timeout-minutes: 55
     defaults:
       run:
         working-directory: lean
@@ -54,5 +54,5 @@ jobs:
           lake exe cache get
           lean --version
           lake env lean TenthDiscriminant/Phase209Scalar321.lean
-          lake env lean TenthDiscriminant/SourceGeometry321.lean
           lake env lean TenthDiscriminant/Phase209Iteration.lean
+          lake build TenthDiscriminant.SourceGeometry321
