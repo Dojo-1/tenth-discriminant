@@ -55,4 +55,24 @@ theorem entry_three_mask_not_faithful :
   rw [gramA_det, gramB_det] at h
   norm_num at h
 
+
+/-- For scalar multiplication by three, any residue class in the kernel
+modulo nine must reduce to the zero class modulo three. -/
+theorem three_kernel_mod_nine_reduces_to_zero
+    (y : Nat) (hy : 9 ∣ 3 * y) : y % 3 = 0 := by
+  omega
+
+/-- The nonzero class 1 modulo three is in the kernel of
+multiplication by three modulo three, but has no kernel lift modulo nine.
+This is why finite-level kernels cannot be naively treated as nested
+persistent p-adic solution spaces. -/
+theorem three_kernel_mod_three_has_nonliftable_class :
+    (3 ∣ 3 * (1 : Nat)) ∧
+      ¬ ∃ y : Nat, 9 ∣ 3 * y ∧ y % 3 = 1 := by
+  constructor
+  · norm_num
+  · rintro ⟨y, hy, hres⟩
+    have hzero := three_kernel_mod_nine_reduces_to_zero y hy
+    omega
+
 end TenthDiscriminant.LossLedger201
