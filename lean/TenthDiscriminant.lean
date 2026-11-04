@@ -239,3 +239,5 @@ import TenthDiscriminant.Phase209OrbitSum
 import TenthDiscriminant.Phase209WholeGramFold
 import TenthDiscriminant.Phase210FoldedInertFactor
 import TenthDiscriminant.Phase210SharpOrdinaryJet
+import TenthDiscriminant.Phase210ActualNormalizedDepth
+import TenthDiscriminant.Phase210FiniteInertBudget
