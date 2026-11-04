@@ -95,7 +95,21 @@ def test_T2():
     tau = [sum(sorted(exponents)[:k]) for k in range(1, 4)]
     assert tau == [0, 1, 3]
     assert all(values[k-1] % p**(2*tau[k-1]) == 0 for k in range(1, 4))
-    return {"G": g, "divisors": values, "tau": tau, "v3": [vp(d, 3) for d in values]}
+    # Geometric diagonal Hadamard upper can sharpen under integral frames,
+    # while each determinantal divisor stays unchanged.
+    def best_diagonal_product(a, size):
+        from math import prod
+        return min(prod(a[i][i] for i in ids)
+                   for ids in combinations(range(len(a)), size))
+    old_bounds = [best_diagonal_product(g, size) for size in range(1, 4)]
+    new_bounds = [best_diagonal_product(h, size) for size in range(1, 4)]
+    assert old_bounds == [122, 15372, 2490264]
+    assert new_bounds == [2, 36, 5832]
+    assert all(values[size-1] <= new_bounds[size-1] for size in range(1, 4))
+    return {"G": g, "divisors": values, "tau": tau,
+            "v3": [vp(d, 3) for d in values],
+            "diagonal_bounds_before": old_bounds,
+            "diagonal_bounds_after": new_bounds}
 
 
 def test_T3():
