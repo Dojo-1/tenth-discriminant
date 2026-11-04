@@ -21,6 +21,7 @@ jobs:
         run: |
           python3 research/phase203/check_intertwiner_f7.py
           python3 research/phase203/verify_hermitian_f49.py
+          python3 research/phase203/verify_hermite_transport.py
   formal-kernel-radical:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
