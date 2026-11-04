@@ -1,5 +1,7 @@
 # Start here — current Tenth Discriminant research state
 
+**Status correction — 4 November 2026:** [PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) is merged and includes `Threshold322.totallyComplex_degree_two_classNumber_one_discriminant_bound_322`, the encoded totally complex quadratic class-number-one theorem `|disc(K)| < 322^4 = 10,750,371,856`. The 328^4/327^4 narrative below is retained as a **3 November historical snapshot**, not a replacement for this newer checked theorem. [Phase209 PR #157](https://github.com/Dojo-1/tenth-discriminant/pull/157) targets a **conditional** 321^4 improvement and remains draft, with concrete source-to-jet/weighted-minor bridges unproved. [Math 2.0 methods-and-understanding charter #158](https://github.com/Dojo-1/tenth-discriminant/issues/158) restores the zero-exclusion comparison and human-reconstruction objectives. [Review #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) and [cross-method source check #51](https://github.com/Dojo-1/tenth-discriminant/issues/51) remain open.
+
 **Canonical branch: [main](https://github.com/Dojo-1/tenth-discriminant/tree/main).** This is the sole publication and reader entry point. Old PRs and commits are evidence provenance, not competing versions readers must follow. The register below separates *integrated mathematics*, *bounded experiments*, *proposed improvements*, and *independent review*.
 
 ## What a reader can currently rely on
