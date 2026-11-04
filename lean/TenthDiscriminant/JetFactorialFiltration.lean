@@ -1,13 +1,15 @@
-import TenthDiscriminant.IntegerTraceGram
+import TenthDiscriminant.JetPrecisionBridge
 
 /-!
-Phase204-A, preregistered in Issue #136. Original integer-pair ordinary-Z
-jets, original trace factor 2, and exact J-depth source. No Hasse jets.
-No field classification, new p-adic determinant valuation, or cutoff.
+Phase204-A — trace pairing of the ORIGINAL ordinary-Z jet source.
+The factorial jet identity was already Lean-proved in JetPrecisionBridge.
+This file uses that existing proof rather than independently re-proving it.
+No Hasse replacement, cross-prime equivalence, or new number-field bound.
 -/
 namespace TenthDiscriminant.Phase204
 set_option autoImplicit false
 
+/-- The original integral trace is bilinear in both source channels. -/
 theorem pair_trace_biscaled
     (D : Nat) (a b : Int) (x y : Int × Int) :
     integerPairTrace D (pairScale a x) (pairScale b y) =
@@ -15,16 +17,16 @@ theorem pair_trace_biscaled
   simp only [integerPairTrace, pairScale]
   ring
 
-theorem ordinary_jet_factorial
-    (D r s j : Nat) (z : Int × Int) (hj : j ≤ r) :
+/-- The *existing*, already checked source theorem is the whole
+ordinary-jet-versus-Taylor-factorial seam. No new proof is needed. -/
+theorem ordinary_jet_factorial_from_existing_source
+    (D r s j : Nat) (z : Int × Int) :
     integerDerivativeRow D r s j z =
       pairScale (j.factorial : Int)
-        (pairScale (r.choose j : Int)
-          (pairMul D (pairPow D z (r-j)) (pairPow D (pairConj z) s))) := by
-  simp [integerDerivativeRow, hj, pairScale,
-    Nat.descFactorial_eq_factorial_mul_choose, mul_assoc]
+        (integerHasseCoefficientRow D r s j z) :=
+  integerDerivativeRow_eq_factorial_hasse D r s j z
 
-/-- Exact same-source increment, with NO change of Q or derivatives. -/
+/-- Exact same-source Gram depth increment; no support or jet substitution. -/
 theorem original_gram_depth_step
     (Q : Finset (Int × Int)) (D J r s t u : Nat) :
     integerTraceGramEntry Q D (J+1) r s t u =
@@ -34,8 +36,9 @@ theorem original_gram_depth_step
           (integerDerivativeRow D t u J z)) := by
   simp only [integerTraceGramEntry, Finset.sum_range_succ]
 
-/-- Every source J-th trace summand includes both ordinary J! factors
-and the source trace 2; zero derivatives are handled explicitly. -/
+/-- Every original j-th trace contribution contains two ordinary j!
+factors PLUS the source trace factor 2. The Taylor coefficients appear
+only as an explicit integral quotient of the ORIGINAL jets. -/
 theorem trace_jet_factorial_factor
     (D r s t u j : Nat) (z : Int × Int) :
     ∃ c : Int,
@@ -43,26 +46,17 @@ theorem trace_jet_factorial_factor
         (integerDerivativeRow D r s j z)
         (integerDerivativeRow D t u j z) =
           2 * (j.factorial : Int)^2 * c := by
-  by_cases hr : j ≤ r
-  · by_cases ht : j ≤ t
-    · let a : Int × Int :=
-        pairScale (r.choose j : Int)
-          (pairMul D (pairPow D z (r-j)) (pairPow D (pairConj z) s))
-      let b : Int × Int :=
-        pairScale (t.choose j : Int)
-          (pairMul D (pairPow D z (t-j)) (pairPow D (pairConj z) u))
-      refine ⟨a.1*b.1+(D:Int)*a.2*b.2, ?_⟩
-      rw [ordinary_jet_factorial D r s j z hr,
-          ordinary_jet_factorial D t u j z ht]
-      simp only [integerPairTrace, pairScale]
-      ring
-    · refine ⟨0, ?_⟩
-      simp [integerDerivativeRow, ht, integerPairTrace]
-  · refine ⟨0, ?_⟩
-    simp [integerDerivativeRow, hr, integerPairTrace]
+  let a := integerHasseCoefficientRow D r s j z
+  let b := integerHasseCoefficientRow D t u j z
+  refine ⟨a.1*b.1 + (D:Int)*a.2*b.2, ?_⟩
+  rw [integerDerivativeRow_eq_factorial_hasse D r s j z,
+      integerDerivativeRow_eq_factorial_hasse D t u j z,
+      pair_trace_biscaled]
+  simp only [integerPairTrace]
+  ring
 
 end TenthDiscriminant.Phase204
 
-#print axioms TenthDiscriminant.Phase204.ordinary_jet_factorial
+#print axioms TenthDiscriminant.Phase204.pair_trace_biscaled
 #print axioms TenthDiscriminant.Phase204.original_gram_depth_step
 #print axioms TenthDiscriminant.Phase204.trace_jet_factorial_factor
