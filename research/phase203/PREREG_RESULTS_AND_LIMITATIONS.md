@@ -1,0 +1,177 @@
+# Phase203 — two registered research lines, one common integral source
+
+**4 November 2026.** Registered **before** the additional experiments and proof edits as [A: Issue #133](https://github.com/Dojo-1/tenth-discriminant/issues/133) and [B: Issue #134](https://github.com/Dojo-1/tenth-discriminant/issues/134). Baseline is the existing Phase202 branch (root-import fix \`e9ca6ba\`) and the integrated [322⁴ actual-field theorem PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126), not a new number-field assertion.
+
+All stated jets use the *original* integer-pair source of [IntegerTraceGram.lean](../../lean/TenthDiscriminant/IntegerTraceGram.lean): ordinary Z-derivatives with W held fixed, rectangular monomial row order, selected order Z[sqrt(-D)], paired trace weights 2 and 2D. The field discriminant is NOT the Gram determinant.
+
+## A. Integral source and one-characteristic kernel/radical transport
+
+**Formal target:** for each field k, E in Mat_(n×m)(k) and B in Mat_m(k), let G=EBEᵀ and let Rad_B(im Eᵀ) be the subset of image vectors killed by E B. The elementwise kernel sequence is
+\[
+0 \longrightarrow \ker E^{T}
+\longrightarrow \ker G
+\xrightarrow{E^{T}}
+\operatorname{Rad}_B(\operatorname{im}E^{T})
+\longrightarrow0.
+\]
+Its fieldwise dimension consequence is
+\[
+\operatorname{rank}_k G=\operatorname{rank}_k E-
+\dim_k\operatorname{Rad}_B(\operatorname{im}E^{T}).
+\]
+These are classical linear algebra, not new mathematics. No assumption that B is nondegenerate is needed. **Do not** identify different places or infer modular positivity from real positivity.
+
+**Baseline correction:** Phase202's scoped \`PlacewiseTransport.lean\` compiled and exposed only standard axioms, but the previous full-root audit complained \`UNAUDITED_PROJECT_MODULES: TenthDiscriminant.PlacewiseTransport\`. The repair added this module to \`lean/TenthDiscriminant.lean\`, preserving the audit itself, in the parent Phase202 branch \`e9ca6ba\`. This is a repository integration correction, not a new mathematical theorem.
+
+**New Phase203 artifact:** [PlacewiseExactSequence.lean](../../lean/TenthDiscriminant/PlacewiseExactSequence.lean) imports the previous module and adds explicit kernel inclusion, exact radical image, the three elementwise exactness conditions and an equivalence between no additional Gram-kernel vectors and radical triviality. It is included in the Phase203 root import list. **At writing, this new module is a Lean candidate pending scoped and whole-root receipt.** We DO NOT claim a dimension formula is yet formalized in Lean, nor that a sorry-free file has been verified merely by committing it.
+
+Controls retained: the previous p=5 full-evaluation/modular-Gram rank split (4 vs 3); the p=2 trace-factor degeneration; the D215 p=7 radical0/2 on separate Q16/Q25 supports. Changed observation supports imply different integer Gram determinants; no transfer of previous field-lower valuation is claimed.
+
+## B. One fixed finite-place intertwiner beyond determinant coincidences
+
+**Experiment freeze:** p=7, D=215 (only D mod7=5 matters to source reduction), rows 0<=r<14, 0<=s<2, jets j=0,1, and original integer-pair observations. Equivalently these are the FIRST 28 original row-major rows of the D215,R53,S2 source used in Phase202. These are *not* arbitrary R53 rows and are *not* the whole 106-row original field Gram. Parity is r+s mod2, with 14 even and 14 odd rows. For p7, -D=2 and \(\sqrt{-D}\mapsto\pm3\), so the selected quadratic order splits into two F7 components. The result is typed entirely in **one** residue characteristic.
+
+**Preregistered falsification and its negative findings.** Central negation alone never forces equal parity determinants: already over Z with R=2,S=J=1 and Q={-2,+2} the two blocks have entries 4 and 16. Nevertheless, all 50 F7 symmetric residue-multiset controls (29 nonsingular), then all 30 F49 scalar-extension controls (28 nonsingular), preserved equality of the two 14x14 determinants. These trials were evidence **M**, not proof. A generator bug in the first draft (different weight per orbit member) triggered the parity check; it was corrected *before* accepting any results. The 11 orbit contribution ranks and pairwise kernel-intersection dimensions matched, but those were only necessary for an intertwiner.
+
+**Decisive finite exact certificate.** Solving the 2,156 homogeneous equations for a simultaneous intertwiner among the 11 original source orbits left a **3-dimensional** linear solution space over F7. Of 343 coefficient combinations, four matrices satisfied the full congruence and were invertible. A 49-nonzero-entry \(14\times14\) representative U with \(\det U=1\) was then checked independently using TWO arithmetic paths:
+- integer-pair multiplication \( (a+ub)(c+ud)\) with \(u^2=-D\) and direct trace \(2(ac+Dbd)\), with the precise source ordinary derivatives;
+- independently, split finite-field embeddings \(z=x+3y,\;w=x-3y\) and the trace \(e_+f_-+e_-f_+\), with ordinary derivative order and W held fixed.
+
+The independent oracles agree **entrywise** on ALL 25 central-inversion orbits of the entire \(\mathbb F_7^2\) residue-pair space (one singleton and 24 pairs). For **every** one of these orbits \(\omega\), the same explicit \(U\) satisfies
+\[
+\boxed{U^{T}H_{\mathrm{even}}(\omega)U=H_{\mathrm{odd}}(\omega),\qquad
+\det_{\mathbb F_7}U=1.}
+\]
+See [check_intertwiner_f7.py](check_intertwiner_f7.py), containing all 49 nonzero matrix coefficients and independent exact checks.
+
+**Consequent finite theorem [P relative to finite explicit certificate; not Lean P].** Let Q be ANY finite centrally symmetric set (or centrally symmetric integer multiset) of integer pairs, for the original \((R,S,J)=(14,2,2)\) source and ANY \(D\equiv5\bmod7\). Reducing its integer-coordinate Gram modulo7 and separating the 14 even/14 odd source rows gives
+\[
+G(Q)\bmod7=\begin{pmatrix}H_e(Q)&0\\0&H_o(Q)\end{pmatrix}
+\quad\text{after the fixed parity permutation},\qquad
+H_o(Q)=U^{T}H_e(Q)U.
+\]
+**Why it follows:** each residue class belongs to exactly one of 25 inversion orbits; symmetry implies equal multiplicities for the two points of every orbit. The Gram is linear in residue multiplicities, and the 25 explicit orbit congruences sum to the displayed identity. The off-parity zeros are the **pre-existing Lean-proved central-negation symmetry**, not a new symmetry theorem. Therefore \(\det H_o(Q)=\det H_e(Q)\) and \(\det G(Q)=(\det H_e(Q))^2\) in F7. At the original two supports, Q16 and Q25, det H_e are respectively 2 and 0 mod7. The earlier degree-28 square determinant-polynomial factorization is now *explained* by a fixed congruence, not merely interpolation coincidence.
+
+### A source-exact Hermite quotient for the original 106 rows
+
+**Pre-registration:** [Issue #133](https://github.com/Dojo-1/tenth-discriminant/issues/133) froze the original D215,R53,S=J2,p7 source before the pivot-based-versus-algebraic map test. The exact test found one and the same \(106\times28\) matrix \(T\) for both Q16 and Q25, and unexpectedly also for an extra point \(z=2\sqrt{-D}\) outside the supports. Rather than invent an obstruction, it led to the following classical Hermite explanation.
+
+At this *split* residue place, the selected order reduces as \(\mathbb F_7[u]/(u^2+215)\cong\mathbb F_7\times\mathbb F_7\), with \(u\mapsto\pm3\). Thus every reduced source evaluation point \(z=x+uy\) satisfies \(z^7=z\). With ordinary derivative depth \(J=2\), the univariate polynomial
+\[
+g(Z)=(Z^7-Z)^2=Z^{14}-2Z^8+Z^2\in\mathbb F_7[Z]
+\]
+has both \(g(z)=0\) and \(g'(z)=0\) at every such z. Since the original **W is held fixed** under \(\partial_Z\), reducing \(Z^rW^s\) modulo the ideal generated by \(g(Z)\) preserves **both** original evaluations \(j=0,1\) at every sampled \((z,\bar z)\). The recursion
+\[
+Z^r\equiv2Z^{r-6}-Z^{r-12}\pmod{g}\qquad(r\ge14)
+\]
+defines a fixed mod-7 coefficient matrix \(T\in\mathrm{Mat}_{106\times28}(\mathbb F_7)\), with source rows \((r,s)\) and columns \((t,s')\), \(r<53,t<14,s,s'<2\), coefficients zero unless \(s=s'\). Its first 28 rows are the identity and it has **166 nonzero coefficients**.
+
+**[P on paper + exact finite oracle, not Lean yet]:** For **any** finite support Q in the split selected order at p7, the original integer-channel evaluation source and Gram satisfy
+\[
+\boxed{E_{106}(Q)=T E_{28}(Q),\qquad
+G_{106}(Q)=T\,G_{28}(Q)\,T^{\mathsf T}\quad\text{over }\mathbb F_7.}
+\]
+The second equality is an ordinary pullback under the **same trace metric**, not equality of G106 and G28 determinants. These expressions are compatible with extending Q only because the first equality is a universal polynomial-jet identity, not because finite geometric supports are interchangeable. The [exact script](verify_hermite_transport.py) reconstructs \(T\) twice (algebraic recurrence and independent pivot inversion from Q16), proves entrywise equality between them, checks BOTH full 106-row evaluation arrays and complete Grams at Q16/Q25, then checks all 49 split residue points.
+
+**Typed joint quotient:** For Q16 and Q25 the full 106-row evaluation source and its first28 rows each have rank28. Since \(T\) has an identity first28 block, the linear map \(T^{\mathsf T}:\mathbb F_7^{106}\twoheadrightarrow\mathbb F_7^{28}\) induces the **same** quotient \(V=\mathbb F_7^{106}/\ker E_{106}(Q)^{\mathsf T}\cong\mathbb F_7^{28}\) for these two supports. Their bilinear forms descend to two **different** forms on V, with mod-7 ranks28 and26. Track B's C then gives V an F49-module structure (14-dimensional over F49), so the two pairings have Hermitian ranks **14 and 13**, and the extra restricted-pairing radical at Q25 is **one-dimensional over F49** (two-dimensional over F7). This is a legitimate non-scalar comparison on an explicit common quotient.
+
+**Stop controls:** For \(J=3\), \(g''(0)\ne0\), so the \(14\)-degree source reduction fails; it cannot be inserted into higher-derivative certificates. At an inert p7 place, for example \(D=1\), \(u^2=-1\) and \(u^7=-u\), hence \((u^7-u)^2=-4=3\ne0\). Therefore the same Hermite source map is **not** valid at that fibre. This is a typed, tested obstruction, not a formal equivalence across primes. A production large-D field theorem requires its original dimensions, local prime factors and Archimedean determinant bound; none have been changed.
+
+### A deeper operator, tested outside central symmetry
+
+**Prospectively registered extension, after the U construction:** [Issue #134](https://github.com/Dojo-1/tenth-discriminant/issues/134) separately froze tests of a graded source symmetry and its Hermitian refinement; the asymmetry negative-control correction is preserved there.
+
+Let \(V=V_e\oplus V_o\simeq\mathbb F_7^{28}\), using the existing 14+14 parity row permutation. Define two explicit endomorphisms from the *same* certified matrix \(U\):
+\[
+P=\begin{pmatrix}I&0\\0&-I\end{pmatrix},\quad
+J=\begin{pmatrix}0&U\\ U^{-1}&0\end{pmatrix},\quad
+C=PJ.
+\]
+The identities \(P^2=J^2=I\), \(PJ=-JP\), and \(C^2=-I\) are purely matrix algebra. The two involutions \(P,J\) are isometries for **centrally symmetric** Q, because central symmetry removes off-parity Gram terms and U is a congruence of its blocks.
+
+The proposed negative control, an **asymmetric** single observation, did break the *P and J* isometries but **not** the \(C\) isometry. This was an informative falsification of the narrower prediction, not a reason to change or discard the source. The follow-up test was registered BEFORE broadening Q: for **each of all 49 individual residues** \(z\in\mathbb F_7^2\), direct exact arithmetic confirms
+\[
+\boxed{C^{T}\overline{G}_{z}C=\overline{G}_{z}}.
+\]
+By source linearity in residue multiplicities, \(C^T\overline G(Q)C=\overline G(Q)\) for **every** finite integer-pair Q at the frozen source dimensions and characteristic, **whether or not Q is centrally symmetric**. At the 49 singleton residues the \(\mathbb F_7\)-Gram ranks are 2 for seven \(y=0\) points and 4 for forty-two non-real-coordinate points.
+
+Because \(-1\) is NOT square in \(\mathbb F_7\), the operator \(C^2=-I\) makes V a rank-14 module over
+\[
+\mathbb F_{49}=\mathbb F_7[i]/(i^2+1),\qquad i\cdot v=Cv.
+\]
+This new **row-space algebra** must not be identified with the reduction of the selected **integral order** \(\mathbb Z[\sqrt{-D}]\otimes_{\mathbb Z}\mathbb F_7\cong\mathbb F_7\times\mathbb F_7\). It is essential to reduce an integral order: the characteristic-zero field itself tensored over \(\mathbb Z\) with \(\mathbb F_7\) gives the zero ring, not this residue algebra.
+
+For any source Gram B over \(\mathbb F_7\), define the **typed Hermitian refinement**
+\[
+h_B(x,y)=B(x,y)+iB(x,Cy)\in\mathbb F_{49}.
+\]
+The tested \(C^TBC=B\), symmetry of B and \(C^{-1}=-C\) yield \(B(Cx,y)=-B(x,Cy)\). Therefore h is \(\mathbb F_{49}\)-linear in its first argument, conjugate-linear in its second, and Hermitian. It need not be nondegenerate. Its radical is the same underlying kernel as B; in particular,
+\[
+\boxed{\operatorname{rank}_{\mathbb F_7}B
+=2\operatorname{rank}_{\mathbb F_{49}}h_B.}
+\]
+Hence the Gram's \(\mathbb F_7\)-rank is **even** for every source Q. For nondegenerate B its determinant in \(\mathbb F_7\) is a **square**: diagonalize the Hermitian form over \(\mathbb F_{49}\), choose a basis \((e_j,ie_j)\) over \(\mathbb F_7\), and observe paired real diagonal entries \(a_j,a_j\) with \(a_j\in\mathbb F_7\); a change of \(\mathbb F_7\)-basis only multiplies the determinant by a square.
+
+**Exact evidence [M / algebraic P, source-specific Lean open]:** [verify_hermitian_f49.py](verify_hermitian_f49.py) independently checks all 49 original source singleton matrices, the C-adjoint identities, F49-Hermitian matrix and its rank, plus 30 preregistered asymmetric-weight controls (seed 1). Twenty-six controls are nonsingular, with mod-7 determinants 2 nine times, 4 thirteen times, 1 four times, and 0 four times; full \(\mathbb F_7\) ranks are 28 in 26 cases and 26 in four cases. The symmetric pencil's ranks 28,26,28,18,28,28,28 refine to **F49 ranks 14,13,14,9,14,14,14**. The new script is subject to a fresh exact-head scoped CI receipt. No F49 structure is claimed at \(p=11\) or over \(\mathbb Z,\mathbb R\).
+
+**What this buys:** a pointwise isometric *graded/Hermitian operator* preserving more information than an isolated determinant, with a clear carrier, source action, finite characteristic and two distinct symmetry levels. The claim is stronger than parity separation, but remains **specific to p=7, D mod7=5, R=14, S=J=2**. It does not transfer the prime-divisibility or Archimedean upper of the full production Gram.
+
+### Canonical source derivation of the finite-place operator and guarded prime controls
+
+**Before constructing the source explanation, [Issue #134](https://github.com/Dojo-1/tenth-discriminant/issues/134) preregistered an entrywise comparison** between the previously discovered 49-entry U and the ordinary Hermite-jet rotation at seven nodes. Let \(V_{7,2}=\mathbb F_7[Z]_{<14}\), with confluent evaluation
+\[
+H_{7,2}:V_{7,2}\xrightarrow{\cong}\bigoplus_{a\in\mathbb F_7}\mathbb F_7^{2},
+\quad f\longmapsto (f(a),f'(a))_a.
+\]
+The map is an isomorphism by ordinary Hermite interpolation (equivalently CRT modulo \(\prod_a(Z-a)^2=(Z^7-Z)^2\)). Let \(R\) act on every two-jet fibre by
+\[
+R(v,d)=(d,-v),\quad R^2=-I,\quad R^TR=I.
+\]
+Then the explicit certificate found before this explanation is *exactly*
+\[
+\boxed{U=H_{7,2}^{-1}\bigl(\bigoplus_a R\bigr)H_{7,2}}
+\]
+entry by entry, not just up to conjugacy or scalar. In other words, the 49 nonzero coefficients are the monomial-basis image of a **local rotation of ordinary value/derivative jets**. This is the structural reason for the pointwise isometry at every split residue sample and hence for the F49 row-space structure. It is a standard Hermite/CRT construction in this concrete source, not a novelty claim.
+
+**Prospectively registered guarded extension in [Issue #133](https://github.com/Dojo-1/tenth-discriminant/issues/133):** For an odd prime \(p\) and \(1\le J\le p\), ordinary Hermite evaluation
+\[
+H_{p,J}:\mathbb F_p[Z]_{<pJ}\xrightarrow{\cong}
+\bigoplus_{a\in\mathbb F_p}\mathbb F_p^J,\qquad
+f\mapsto(f^{(j)}(a))_{a,j<J}
+\]
+is invertible because the ideals \((Z-a)^J\) are pairwise comaximal and \(j!\ne0\) for \(j<J\). Any orthogonal \(O\in O_J(\mathbb F_p)\), applied identically at every node, induces \(U_{p,J}=H_{p,J}^{-1}(\bigoplus_aO)H_{p,J}\), which preserves the original split-embedding pointwise sum of ordinary-jet pairings when W is held fixed. For polynomial width \(R>pJ\), reduce modulo \((Z^p-Z)^J\) **only at split nodes** and only for the first J jets. This is a routine paper CRT argument; **there is no universal Lean theorem for it yet**.
+
+The committed [exact guarded regression](verify_canonical_hermite_rotation.py) checks \(J=2\), \(R=2p\), \(S=2\), and **every** split residue pair for \((p,\sqrt{-D})=(5,2),(7,3),(11,4)\), including \(\det U=1\), \(U^2=-I\), both split embeddings and the fixed W convention; the p7 matrix matches the previous 49-entry U. This finite evidence is [M], while the CRT argument is standard mathematics [P, paper level]. At p5, \(-1\) is a square, so U is **not** an F25 field action; at p7 and p11, \(-1\) is nonsquare, so the row-space action does define an \(\mathbb F_{p^2}\) structure. These distinct finite-characteristic algebras are not inter-prime transports. The inert-node guard and the vanishing factorial when \(J>p\) block automatic generalization.
+
+**Computational/semantic stop:** The CRT construction gives an operator on the *split-residue jet quotient* and a congruence of reduced Gram forms. It supplies **no** new integral determinant divisor, no Archimedean size bound for the original production determinant, no uniform supply of auxiliary inert primes, no equality with twinheterodox's complex minor, and therefore no stricter field discriminant cutoff. A mathematical transport across those boundaries remains a separately typed hypothesis.
+
+### Arithmetic-admissibility check and the inert analogue
+
+The integrated [ClassNumberInertBridge.lean](../../lean/TenthDiscriminant/ClassNumberInertBridge.lean) proves an important constraint: for squarefree \(D\equiv3\pmod4\), class number one, and any odd prime \(p<(D+1)/4\), the residue \(-D\) is **not** a square modulo p. Therefore the successful *split-prime* p7 construction must not be applied without modification to the small inert primes p3 and p5 used in the conditional arithmetic lower bound for the hypothetical large-D class-number-one case. This is a critical mismatch between two otherwise attractive sources, not a deficiency that can be solved by changing coordinates.
+
+**A separate inert pilot was preregistered in [Issue #133](https://github.com/Dojo-1/tenth-discriminant/issues/133) before execution.** The selected integer order now reduces to the field \(\mathbb F_{p^2}\), rather than the split algebra \(\mathbb F_p\times\mathbb F_p\). Its points satisfy \(z^{p^2}=z\). For \(J=2\) the appropriate degree-\(2p^2\) Hermite modulus is
+\[
+g_{\rm inert}(Z)=(Z^{p^2}-Z)^2,
+\]
+not the split \((Z^p-Z)^2\). Ordinary value/first-derivative Hermite evaluation is an isomorphism over the residue field. Acting by the same \((v,d)\mapsto(d,-v)\) on every residue-field node commutes with Frobenius because its coefficients lie in \(\mathbb F_p\), so the induced polynomial operator **descends to an \(\mathbb F_p\)-coefficient matrix**.
+
+**[M, exact finite tests, source-specified]:** [verify_inert_hermite_frobenius.py](verify_inert_hermite_frobenius.py) checks this for squarefree odd-chart \(D=7,p=3\) and \(D=3,p=5\), with \(-D\) nonsquare in each case. The Hermite dimensions are respectively 18 over \(\mathbb F_9\) and 50 over \(\mathbb F_{25}\). For every one of the 9 or 25 residue points, and both monomial \(W\)-columns \(s=0,1\), the exact source two-jet vectors rotate as required with W fixed; the descended matrices over \(\mathbb F_p\) square to \(-I\) and have determinant one. Frobenius conjugation is checked pointwise. This finite pilot is consistent with a general CRT/Galois-descent argument **[P on paper, universal Lean target open]**. It does NOT assert a new local valuation theorem.
+
+A useful place-indexed framework emerges: with residue degree \(f\in\{1,2\}\), the appropriate \(J\)-jet modulus is \((Z^{p^f}-Z)^J\), and the action lives on the corresponding local Hermite-jet quotient. This is **a family of typed constructions**, not a direct isomorphism between fibres. The admissible \(J\le p\) ordinary-derivative guard is load bearing; for production \(J=S(D)\) often \(J>p\), factorials in characteristic p vanish. Nothing currently connects these two-jet operators to a stronger source determinant valuation or a uniform Archimedean bound. In particular, the p3/p5 inert controls do not modify the verified \(322^4\) cutoff.
+
+**Boundaries and controls:** The same *centered integer lift* of U fails to preserve orbit forms modulo11 (a DIFFERENT residue characteristic), so do not identify those fibres or claim an integral universal isometry. This failure does **not** exclude the possibility of a different U for p11. Removing one point without its negation gives a nonzero cross-parity Gram entry, so the symmetry hypothesis is load-bearing. No same-object analytic gain, arithmetic local-valuation lift, or stronger tenth-discriminant bound is derived. The source R14 result is not the R53 full Gram and cannot be silently substituted in the Phase200 proof.
+
+**Novelty boundary:** no global novelty claim or independent external validation. Previous integrated [CentralSymmetry.lean](../../lean/TenthDiscriminant/CentralSymmetry.lean) and [ParityCompatibility.lean](../../lean/TenthDiscriminant/ParityCompatibility.lean) already prove parity separation and compatible odd-prime Frobenius row actions; Phase203's specific new contribution is the fixed finite-characteristic congruence for the 14+14 source rows, requiring independent mathematical review.
+
+## Reproduce / do not promote prematurely
+
+\`\`\`sh
+python3 research/phase203/check_intertwiner_f7.py
+cd lean
+lake build TenthDiscriminant.PlacewiseExactSequence
+lake env lean TenthDiscriminant/PlacewiseExactSequence.lean
+\`\`\`
+
+Scoped exact arithmetic, Lean compilation, standard-axiom inspection and complete-root audit are separate receipts. Do not merge while any of these fails. Preserve issues [#133](https://github.com/Dojo-1/tenth-discriminant/issues/133), [#134](https://github.com/Dojo-1/tenth-discriminant/issues/134), external-bridge [#51](https://github.com/Dojo-1/tenth-discriminant/issues/51) and independent human semantic-review [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50) as distinct obligations.
+
+**Next testable mathematical opportunity [H]:** can the explicit mod7 U be given a simple functorial description on the Hermite-jet quotient, and is any analogous place-typed isometry useful for bounding source-minor valuations/Archimedean volumes for the actual large-D full Gram? The first is structural explanation; the second demands new matched original-object bounds and may fail entirely. Stop at the exact finite theorem if it does.
