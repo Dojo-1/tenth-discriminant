@@ -96,6 +96,7 @@ def run(D):
         "exact_threshold_counts":counts,
         "all_original_jets":True,
         "sparse_map_is_row_frame_dependent":True},flush=True)
+    return {"D":D,"R":R,"S":S,"J":J,"counts":counts}
 
 def toy():
     A=[[F(1)]];B=[[F(1)]];C=[[F(3,4)]]
