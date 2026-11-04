@@ -67,3 +67,6 @@ theorem no_scalar_overlap_321_conditional
 
 end
 end TenthDiscriminant.Phase209Scalar321
+
+#print axioms TenthDiscriminant.Phase209Scalar321.no_scalar_overlap_321_conditional
+#print axioms TenthDiscriminant.Phase209Scalar321.rational_budget_321
