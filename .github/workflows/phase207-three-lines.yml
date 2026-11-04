@@ -1,0 +1,21 @@
+name: Phase207 full Schur flags and middle Frobenius strata
+on:
+  pull_request:
+    paths:
+      - "research/phase207/**"
+      - ".github/workflows/phase207-three-lines.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-original-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact full matching Schur flags at preregistered thresholds
+        run: python3 research/phase207/full_schur_spectrum.py
+      - name: Exact middle and high old Frobenius strata with independent dual jets
+        run: python3 research/phase207/middle_frobenius.py
