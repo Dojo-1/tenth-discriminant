@@ -9,6 +9,7 @@ on:
       - "lean/TenthDiscriminant/SourcePositivity321.lean"
       - "lean/TenthDiscriminant/Phase209ConjugateFold.lean"
       - "lean/TenthDiscriminant/Phase209DeltaCarrier.lean"
+      - "lean/TenthDiscriminant/Phase209OrbitSum.lean"
       - ".github/workflows/phase209-depth-321.yml"
   workflow_dispatch:
 permissions:
@@ -58,7 +59,8 @@ jobs:
           lean --version
           lake env lean TenthDiscriminant/Phase209Scalar321.lean
           lake env lean TenthDiscriminant/Phase209Iteration.lean
-          lake build TenthDiscriminant.SourceGeometry321 TenthDiscriminant.SourcePositivity321 TenthDiscriminant.Phase209ConjugateFold TenthDiscriminant.Phase209DeltaCarrier
+          lake build TenthDiscriminant.SourceGeometry321 TenthDiscriminant.SourcePositivity321 TenthDiscriminant.Phase209ConjugateFold TenthDiscriminant.Phase209DeltaCarrier TenthDiscriminant.Phase209OrbitSum
           lake env lean TenthDiscriminant/SourcePositivity321.lean
           lake env lean TenthDiscriminant/Phase209ConjugateFold.lean
           lake env lean TenthDiscriminant/Phase209DeltaCarrier.lean
+          lake env lean TenthDiscriminant/Phase209OrbitSum.lean
