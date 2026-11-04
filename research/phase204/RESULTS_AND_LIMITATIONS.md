@@ -79,6 +79,58 @@ The [exact source test](two_sided_tube_transport.py) freezes \((p,D)=(3,7),(5,3)
 
 The two directions meet in a **filtered higher-jet module with a typed, unipotent transport**. This is actual algebra, not a claim that finite and Archimedean fibres are isomorphic. In particular the transport does not imply that a split-prime isometry extends to the inert small-prime divisor or that the original integer Gram determinant improves its certified lower exponent. That remains a separate, falsifiable research target [H].
 
+## An explicit junction with already-existing Phase146 translation (source audit correction)
+
+**Prior art within this repository is decisive.** [Phase146 translation/Newton](../reverse_determinant/PHASE146_TRANSLATION_NEWTON.md), written 31 October 2026, already derives the *exact* source-matched unitriangular integer row action \(T_a\), with
+\[
+E_{Q+(a,0)}=T_aE_Q,\quad G_{Q+(a,0)}=T_aG_QT_a^T,\quad
+T_aT_b=T_{a+b},\quad\det T_a=1.
+\]
+It also tracks the potential **non-invariance of the integral column image** and a typed boundary defect, and a rational centering method for analytic upper bounds. None of those original results is attributed to Phase204. [CoordinateTranslation.lean](../../lean/TenthDiscriminant/CoordinateTranslation.lean) already addresses typed translations and a distinct imaginary-axis counterexample. The new conjunction below is a specialized, lower-precision synthesis of Phase146 and the factorial filtration, not a novel exact translation theorem.
+
+Let \(N=\Gamma_1\) be the integer row operator, indexed by the original \((r,s)\) rows, with \(N_{(r,s),(r-1,s)}=r\), \(N_{(r,s),(r,s-1)}=s\). For \(\delta=p\lambda\) the Phase146 matrix reduces to \(T_\delta=I+\delta N\bmod p^2\). Since the original depth tail \(G_J-G_p\) is divisible by \(p^2\) when \(J\ge p\), the unchanged source obeys
+\[
+\boxed{G_{J,Q+(\delta,0)}\equiv
+G_{p,Q}+\delta(NG_{p,Q}+G_{p,Q}N^T)\pmod{p^2}.}
+\]
+**Proof [P paper]:** multiply the exact Phase146 Gram congruence, discard the \(p^2\)-divisible factorial tail, and expand \(T_\delta\) mod \(p^2\). Translation of ONE point instead of ALL of Q is NOT covered; the real point shift changes both Z and its conjugate W, whereas W is held fixed only during differentiation.
+
+[Exact regression](source_translation_junction.py) reconstructs both channels of the original source and tests the exact integral row action and Gram pullback, \(T_\delta T_{-\delta}=I\), the \(p^2\) first-variation identity and preservation of the complete truncated Smith profile for \((p,D,R,S,J)=(3,7,5,2,5),(5,3,7,2,7),(7,215,9,3,9)\), at \(\delta=p,2p\). A partial-support shift and an incorrect W-fixed *point motion* are the matched negative controls. The first run was also checked by a separate local implementation before committing this script. **Evidence is finite M pending a current-head GitHub CI receipt.**
+
+### The first nonzero associated-graded layer, rather than a false valuation gain
+
+For odd p, let
+\[
+H_{p,J}(Q):=\frac{G_{J,Q}-G_{p,Q}}{p^2}\pmod p.
+\]
+The quotient is an **integral matrix before reduction**. Write \(e^{[j]}_{r,s}(z)=\binom rj z^{r-j}\bar z^s\) for a divided/Hasse **coordinate used only to describe the quotient**; \(G^{[j]}\) is the original trace pairing applied to this one-depth coordinate matrix. Because the actual ordinary source jet equals \(j!e^{[j]}\), it follows for every \(J\ge p\) that
+\[
+\boxed{H_{p,J}(Q)=\sum_{j=p}^{J-1}
+\left(\frac{j!}{p}\right)^2 G^{[j]}_Q \pmod p.}
+\]
+This is an associated-graded **identity**, not replacement of the jets used in the original \(G\) or a license to drop factorial valuations. Moreover Phase146 gives \(H_{p,J}(Q+(p\lambda,0))=H_{p,J}(Q)\) over \(\mathbb F_p\) for every integer \(\lambda\): the tail changes by congruence under \(T_{p\lambda}\equiv I\pmod p\). Its entries can be nonzero, so \(G_J-G_p\) need not vanish modulo \(p^3\).
+
+The [registered regression](graded_padic_layers.py) tests \(p=3,5,7\) with the original integer-pair source. At the frozen \(Q\) and \((R,S,J)=(p+2,2,p+2)\), the numbers of nonzero entries of \(H\) are 9, 11, 11 respectively. The sharp single-node \(r=j=p\) diagonal has graded residue \(2\bmod p\). These are finite M; source algebra is paper P.
+
+### Integral divided powers, not illicit modular factorial inversion
+
+Write the **already-known** Phase146 translation matrix by its integral binomial coefficients:
+\[
+T_a=\sum_{k\ge0}a^k\Gamma_k,\quad
+(\Gamma_k)_{(r,s),(u,v)}=
+\mathbf1_{\substack{u\le r,v\le s\\r+s-u-v=k}}
+\binom ru\binom sv.
+\]
+Then \(\Gamma_0=I\), \(\Gamma_1=N\), \(\Gamma_1^2=2\Gamma_2\) exactly **over the integers**. For \(a=p\lambda\):
+\[
+\boxed{T_a\equiv I+a\Gamma_1+a^2\Gamma_2\pmod{p^3}.}
+\]
+Unlike a casual "\(N^2/2\)" formula, \(\Gamma_2\) is an integral matrix even at \(p=2\), where division by 2 is not an operation on \(\mathbb Z/8\mathbb Z\). In the row \(Z^2\), the \(a=2\) second-order coefficient is exactly \(4\pmod8\), so the first-order approximation fails.
+
+The [second registered exact test](graded_padic_layers.py) verifies the entire row-matrix expansion, \(\Gamma_1^2=2\Gamma_2\), direct original ordinary-jet evaluation for translated supports, and exact full integral Gram congruence at \(p=2,3,5\). This is **not** a new translation theorem and **not** a p-adic isometry between unrelated arithmetic fibres.
+
+**Remaining hard obstruction:** neither the preserved Smith profiles nor the nonzero graded tail supplies a stronger *production* Gram determinant divisor. The shifted support is a distinct ellipse; its exact determinant equality under integer real-axis translation is a gauge identity, already known in Phase146. Any arithmetic gain must instead obtain a stronger local exponent for the SAME fixed original determinant, paired with a matched Archimedean bound. Human semantic review [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50) remains open.
+
 ## Where the lines intersect, and where they do not
 
 Track A explains the **p-adic filtration of ordinary derivative contributions** to the full integer trace Gram. Track B explains why its residue-field Hermite rotation cannot act uniformly across all \(\bmod p^2\) evaluation points even though an anchored lift exists. These statements are mutually consistent: the \(j\ge p\) columns vanish modulo \(p^2\) as Gram *contributions*, but individual high-jet values may survive modulo \(p^2\) and matter at higher precision.
