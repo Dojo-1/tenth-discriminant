@@ -84,6 +84,42 @@ The old sufficient interpolation condition \(n>2(R-1)+(S-1)=105\) is **false** a
 - At infinity the real trace form becomes positive because of the complex embedding and ordinary positive Hermitian sum. **This positivity is not a statement about modular positive definiteness**; no such order is available in finite fields.
 - A mathematically legitimate common junction is a **fixed nonzero integral minor at a fixed exterior degree**: its finite-prime divisibilities and Archimedean absolute size refer to *the same integer*, providing a possible higher-exterior-degree determinant sandwich. Whether arithmetic provides strong divisibility for all needed source minors, and geometry gives an upper for an actually nonzero one, is a new **H**. A scalar equality or a change of chart cannot discharge either condition.
 
+## Post-registered extension — a finite-field rank reversal when support grows
+
+**Evidence classification:** the p=7 effect was found in a *post hoc exploratory sweep* after preregistering [#130](https://github.com/Dojo-1/tenth-discriminant/issues/130). A targeted certificate check was preregistered separately in [#131](https://github.com/Dojo-1/tenth-discriminant/issues/131). Do not retrospectively describe the first observation as predicted. It is a finite counterexample and a test of transport semantics, not an improvement to the tenth-discriminant cutoff.
+
+Keep \(D=215,R=53,S=J=2\) and the original derivative rows/trace metric, but compare \(Q_{16}\subset Q_{25}\). At the split prime \(p=7\), the trace weights are \(2,2D\equiv2,3\bmod7\), hence the ambient pairing is **nondegenerate**. Exact field elimination (cross-checked using a second SymPy DomainMatrix \(GF(7)\) implementation) gives
+
+| Source support | \(|Q|\) | \(\operatorname{rank}E\bmod7\) | \(\operatorname{rank}G\bmod7\) | \(\dim\mathrm{Rad}_B(\mathrm{im}E^T)\) |
+|---|---:|---:|---:|---:|
+| Trimmed \(\rho=16\) | 59 | 28 | 28 | 0 |
+| Canonical \(\rho=25\) | 133 | 28 | 26 | 2 |
+
+**Exact rank lower witnesses:** the leading principal \(28\times28\) minor of \(G_{16}\) is \(4\bmod7\). The \(26\times26\) principal minor of \(G_{25}\) indexed by \(0,\ldots,23,25,27\) is \(2\bmod7\). The reproducible [certificate script](certify_mod7_rank_drop.py) constructs full independent nullspace bases of dimensions 78 and 80, verifies all basis vectors by direct modular matrix multiplication, and checks two explicit sparse vectors \(v_1,v_2\in\ker G_{25}\) whose images under \(E_{25}^T\) are independent, spanning the two-dimensional radical:
+\[
+\begin{aligned}
+v_1&=3e_4+3e_7+2e_8+5e_{12}+5e_{15}+e_{16}+6e_{19}+2e_{20}+e_{24},\\
+v_2&=5e_5+4e_6+2e_9+4e_{10}+6e_{14}+2e_{17}+3e_{18}+5e_{21}+3e_{22}+e_{26}.
+\end{aligned}
+\]
+Indices use the source **zero-based** row order \(i=rS+s\); all coefficients are in \(\mathbb F_7\). Their images are nonzero and independent. A matched \(p=11\) control has \(\operatorname{rank}E=\operatorname{rank}G=44\) for both supports. This establishes a genuine local rank/radical change, **not** mere ambient metric degeneracy or loss of evaluation rank.
+
+**Opposite Archimedean behaviour [P, simple quadratic-form identity]:** for the real embeddings, the difference
+\[
+G_{25}-G_{16}
+=2\sum_{\substack{z\in Q_{25}\setminus Q_{16}\\0\le j<J}}
+\operatorname{Re}\bigl(a_{z,j}a_{z,j}^{*}\bigr)
+\succeq0,
+\]
+where \(a_{z,j}\) is the column of complex jet values over source rows. For every real vector \(x\), its quadratic form equals \(2\sum_{z,j}|\sum_r x_r a_{z,j,r}|^2\ge0\). Thus extending support is Loewner-monotone **at infinity**, while the Gram rank can *decrease* modulo 7, because no finite-field positivity order transports that inequality. No contradiction arises.
+
+This is the cleanest current example of why **place-wise transport must retain the full pairing and its radical**, not just a common determinant or a slogan about moving manifolds. It also warns against calling a larger Q a universally better Gram for *arithmetic* purposes. The example varies Q and does **not** transfer to a bound on the fixed original Phase200 determinant.
+
+Reproduce the targeted post-discovery check:
+\`\`\`sh
+python3 research/phase202/certify_mod7_rank_drop.py
+\`\`\`
+
 ## Consequences, controls, and stop gates
 
 | Claim | Status | Exact boundary |
