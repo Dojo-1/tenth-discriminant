@@ -246,3 +246,4 @@ import TenthDiscriminant.Phase211RankObstruction
 import TenthDiscriminant.Phase223Support
 import TenthDiscriminant.Phase223Horizontal
 import TenthDiscriminant.Phase225Band
+import TenthDiscriminant.Phase226HorizontalIntegral
