@@ -43,7 +43,8 @@ theorem combinedBasisTarget_lt (R S p : Nat) (hp : 2 ≤ p)
   have hS : 0 < S := by
     by_contra hh
     have hzero : S = 0 := by omega
-    simp [hzero] at i.isLt
+    have hlt := i.isLt
+    simp [hzero] at hlt
   have hdecomp : (i.val / S)*S + i.val % S = i.val :=
     Nat.div_add_mod' i.val S
   have hsmall : i.val % S + t - (p*p-1)*u < S :=
@@ -61,7 +62,9 @@ theorem combinedBasisTarget_lt (R S p : Nat) (hp : 2 ≤ p)
     have hpp : 1 < p*p := by nlinarith
     have hdpos : 0 < (p*p-1)*u :=
       Nat.mul_pos (by omega) hupos
-    have hspos : 0 < i.val % S := by omega
+    have hle : (p*p-1)*u ≤ i.val % S :=
+      (Nat.mul_le_mul_right u (Nat.sub_le (p*p) 1)).trans hdiv
+    have hspos : 0 < i.val % S := lt_of_lt_of_le hdpos hle
     have hsub : i.val % S - (p*p-1)*u < i.val % S :=
       Nat.sub_lt hspos hdpos
     simpa only [combinedBasisTarget, Nat.mul_zero, Nat.sub_zero,
