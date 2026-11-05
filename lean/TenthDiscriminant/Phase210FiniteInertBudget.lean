@@ -71,10 +71,12 @@ theorem finite_inert_mass_le_original_log
   have hp_pos : ∀ p ∈ P, (0 : Real) < p := by
     intro p hp
     exact_mod_cast (hprime p hp).pos
+  have hprod_pos_nat :
+      0 < (∏ p ∈ P, p ^ e p : Nat) := by
+    exact Finset.prod_pos (fun p hp => pow_pos (hprime p hp).pos _)
   have hprod_pos :
       (0 : Real) < ((∏ p ∈ P, p ^ e p : Nat) : Real) := by
-    exact_mod_cast Finset.prod_pos (fun p hp =>
-      pow_pos (by exact_mod_cast hp_pos p hp : 0 < (p : Real)) _)
+    exact_mod_cast hprod_pos_nat
   have hlog := Real.log_le_log hprod_pos hleReal
   have hmass :
       Real.log ((∏ p ∈ P, p ^ e p : Nat) : Real) =
@@ -150,3 +152,7 @@ end TenthDiscriminant.Phase210FiniteInertBudget
 #print axioms TenthDiscriminant.Phase210FiniteInertBudget.thin_inert_mass_budget_of_analytic_upper_322
 #print axioms TenthDiscriminant.Phase210FiniteInertBudget.thin_inert_mass_budget_322
 #print axioms TenthDiscriminant.Phase210FiniteInertBudget.thin_inert_empty_sum_control
+
+-- Explicitly print the complete theorem signature in CI for Phase211's
+-- external hypothesis inventory; the theorem's proof remains unchanged.
+#check TenthDiscriminant.Phase210FiniteInertBudget.finite_inert_mass_le_original_log
