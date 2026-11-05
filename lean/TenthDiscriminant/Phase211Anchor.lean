@@ -39,6 +39,8 @@ theorem transformed_ninth_source_exact (D : Nat) (a : Int × Int) :
   norm_num [rectangularBasisTargetFin, rectangularBasisTarget, hk] <;>
     simp [integerDerivativeRow, pairScale, pairMul, pairPow,
       pairConj, pairZsqrtdEquiv, Nat.descFactorial]
+  all_goals
+    apply Zsqrtd.ext <;> norm_num
 
 /-- The *actual* choice of integral normalized original jet is the
 integer 13440, not merely a hypothetical quotient polynomial.
