@@ -17,6 +17,9 @@ on:
       - "lean/TenthDiscriminant/Phase210FiniteInertBudget.lean"
       - "lean/TenthDiscriminant/Phase211Anchor.lean"
       - "lean/TenthDiscriminant/Phase211RankObstruction.lean"
+      - "lean/TenthDiscriminant/Phase223Support.lean"
+      - "lean/TenthDiscriminant/Phase223Horizontal.lean"
+      - "lean/TenthDiscriminant/Phase225Band.lean"
       - ".github/workflows/phase209-depth-321.yml"
   workflow_dispatch:
 permissions:
@@ -68,7 +71,7 @@ jobs:
           lean --version
           lake env lean TenthDiscriminant/Phase209Scalar321.lean
           lake env lean TenthDiscriminant/Phase209Iteration.lean
-          lake build TenthDiscriminant.SourceGeometry321 TenthDiscriminant.SourcePositivity321 TenthDiscriminant.Phase209ConjugateFold TenthDiscriminant.Phase209DeltaCarrier TenthDiscriminant.Phase209OrbitSum TenthDiscriminant.Phase209WholeGramFold TenthDiscriminant.Phase210FoldedInertFactor TenthDiscriminant.Phase210SharpOrdinaryJet TenthDiscriminant.Phase210ActualNormalizedDepth TenthDiscriminant.Phase210FiniteInertBudget TenthDiscriminant.Phase211Anchor TenthDiscriminant.Phase211RankObstruction
+          lake build TenthDiscriminant.SourceGeometry321 TenthDiscriminant.SourcePositivity321 TenthDiscriminant.Phase209ConjugateFold TenthDiscriminant.Phase209DeltaCarrier TenthDiscriminant.Phase209OrbitSum TenthDiscriminant.Phase209WholeGramFold TenthDiscriminant.Phase210FoldedInertFactor TenthDiscriminant.Phase210SharpOrdinaryJet TenthDiscriminant.Phase210ActualNormalizedDepth TenthDiscriminant.Phase210FiniteInertBudget TenthDiscriminant.Phase211Anchor TenthDiscriminant.Phase211RankObstruction TenthDiscriminant.Phase223Support TenthDiscriminant.Phase223Horizontal TenthDiscriminant.Phase225Band
           lake env lean TenthDiscriminant/SourcePositivity321.lean
           lake env lean TenthDiscriminant/Phase209ConjugateFold.lean
           lake env lean TenthDiscriminant/Phase209DeltaCarrier.lean
@@ -80,3 +83,6 @@ jobs:
           lake env lean TenthDiscriminant/Phase210FiniteInertBudget.lean
           lake env lean TenthDiscriminant/Phase211Anchor.lean
           lake env lean TenthDiscriminant/Phase211RankObstruction.lean
+          lake env lean TenthDiscriminant/Phase223Support.lean
+          lake env lean TenthDiscriminant/Phase223Horizontal.lean
+          lake env lean TenthDiscriminant/Phase225Band.lean
