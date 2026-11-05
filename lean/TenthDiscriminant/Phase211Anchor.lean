@@ -21,7 +21,7 @@ namespace TenthDiscriminant.Phase211Anchor
 
 open TenthDiscriminant
 
-private theorem transformed_ninth_source_exact (D : Nat) (a : Int × Int) :
+theorem transformed_ninth_source_exact (D : Nat) (a : Int × Int) :
     zsqrtdJetTransform (rectangularBasisMatrix 10 10 3)
       (rectangularCanonicalJet D 10 10)
       (⟨90, by decide⟩ : Fin (10 * 10)) a 9 =
