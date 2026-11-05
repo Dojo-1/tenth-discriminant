@@ -22,6 +22,8 @@ on:
       - "lean/TenthDiscriminant/Phase225Band.lean"
       - "lean/TenthDiscriminant/Phase226HorizontalIntegral.lean"
       - "lean/TenthDiscriminant/Phase227JointJets.lean"
+      - "lean/TenthDiscriminant/Phase228CombinedBasis.lean"
+      - "research/phase228/**"
       - ".github/workflows/phase209-depth-321.yml"
   workflow_dispatch:
 permissions:
@@ -73,7 +75,7 @@ jobs:
           lean --version
           lake env lean TenthDiscriminant/Phase209Scalar321.lean
           lake env lean TenthDiscriminant/Phase209Iteration.lean
-          lake build TenthDiscriminant.SourceGeometry321 TenthDiscriminant.SourcePositivity321 TenthDiscriminant.Phase209ConjugateFold TenthDiscriminant.Phase209DeltaCarrier TenthDiscriminant.Phase209OrbitSum TenthDiscriminant.Phase209WholeGramFold TenthDiscriminant.Phase210FoldedInertFactor TenthDiscriminant.Phase210SharpOrdinaryJet TenthDiscriminant.Phase210ActualNormalizedDepth TenthDiscriminant.Phase210FiniteInertBudget TenthDiscriminant.Phase211Anchor TenthDiscriminant.Phase211RankObstruction TenthDiscriminant.Phase223Support TenthDiscriminant.Phase223Horizontal TenthDiscriminant.Phase225Band TenthDiscriminant.Phase226HorizontalIntegral TenthDiscriminant.Phase227JointJets
+          lake build TenthDiscriminant.SourceGeometry321 TenthDiscriminant.SourcePositivity321 TenthDiscriminant.Phase209ConjugateFold TenthDiscriminant.Phase209DeltaCarrier TenthDiscriminant.Phase209OrbitSum TenthDiscriminant.Phase209WholeGramFold TenthDiscriminant.Phase210FoldedInertFactor TenthDiscriminant.Phase210SharpOrdinaryJet TenthDiscriminant.Phase210ActualNormalizedDepth TenthDiscriminant.Phase210FiniteInertBudget TenthDiscriminant.Phase211Anchor TenthDiscriminant.Phase211RankObstruction TenthDiscriminant.Phase223Support TenthDiscriminant.Phase223Horizontal TenthDiscriminant.Phase225Band TenthDiscriminant.Phase226HorizontalIntegral TenthDiscriminant.Phase227JointJets TenthDiscriminant.Phase228CombinedBasis
           lake env lean TenthDiscriminant/SourcePositivity321.lean
           lake env lean TenthDiscriminant/Phase209ConjugateFold.lean
           lake env lean TenthDiscriminant/Phase209DeltaCarrier.lean
@@ -90,3 +92,4 @@ jobs:
           lake env lean TenthDiscriminant/Phase225Band.lean
           lake env lean TenthDiscriminant/Phase226HorizontalIntegral.lean
           lake env lean TenthDiscriminant/Phase227JointJets.lean
+          lake env lean TenthDiscriminant/Phase228CombinedBasis.lean

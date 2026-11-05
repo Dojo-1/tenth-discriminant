@@ -248,3 +248,4 @@ import TenthDiscriminant.Phase223Horizontal
 import TenthDiscriminant.Phase225Band
 import TenthDiscriminant.Phase226HorizontalIntegral
 import TenthDiscriminant.Phase227JointJets
+import TenthDiscriminant.Phase228CombinedBasis
