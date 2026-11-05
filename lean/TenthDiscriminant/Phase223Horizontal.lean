@@ -43,7 +43,6 @@ theorem residue_horizontal_quadratic_factor
   · simp [QuadraticResidue.scalar, sub_eq_add_neg, pow_two]
     ring
   · simp [QuadraticResidue.scalar, sub_eq_add_neg, pow_two]
-    ring
 
 end TenthDiscriminant.Phase223
 
