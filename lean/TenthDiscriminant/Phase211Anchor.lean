@@ -36,7 +36,7 @@ theorem transformed_ninth_source_exact (D : Nat) (a : Int × Int) :
       (⟨90, by decide⟩ : Fin (10 * 10)) = 3 :=
     Phase210SharpOrdinaryJet.originalP3Nine_basis_weight
   simp only [hk, Finset.sum_range_succ, Finset.sum_range_zero]
-  norm_num [rectangularBasisTargetFin, rectangularBasisTarget] <;>
+  norm_num [rectangularBasisTargetFin, rectangularBasisTarget, hk] <;>
     simp [integerDerivativeRow, pairScale, pairMul, pairPow,
       pairConj, pairZsqrtdEquiv, Nat.descFactorial]
 
