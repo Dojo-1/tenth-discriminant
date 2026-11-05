@@ -32,10 +32,13 @@ theorem transformed_ninth_source_exact (D : Nat) (a : Int × Int) :
     (fun h : Fin (10 * 10) =>
       pairZsqrtdEquiv D
         (integerDerivativeRow D (h.val / 10) (h.val % 10) 9 a))]
-  norm_num [rectangularBasisExponent, rectangularBasisTargetFin,
-    rectangularBasisTarget, integerDerivativeRow,
-    pairScale, pairMul, pairPow, pairConj, pairZsqrtdEquiv,
-    Finset.sum_range_succ, Nat.descFactorial]
+  have hk : rectangularBasisExponent 10 10 3
+      (⟨90, by decide⟩ : Fin (10 * 10)) = 3 :=
+    Phase210SharpOrdinaryJet.originalP3Nine_basis_weight
+  simp only [hk, Finset.sum_range_succ, Finset.sum_range_zero]
+  norm_num [rectangularBasisTargetFin, rectangularBasisTarget] <;>
+    simp [integerDerivativeRow, pairScale, pairMul, pairPow,
+      pairConj, pairZsqrtdEquiv, Nat.descFactorial]
 
 /-- The *actual* choice of integral normalized original jet is the
 integer 13440, not merely a hypothetical quotient polynomial.
