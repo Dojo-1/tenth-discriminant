@@ -15,6 +15,7 @@ on:
       - "lean/TenthDiscriminant/Phase210SharpOrdinaryJet.lean"
       - "lean/TenthDiscriminant/Phase210ActualNormalizedDepth.lean"
       - "lean/TenthDiscriminant/Phase210FiniteInertBudget.lean"
+      - "lean/TenthDiscriminant/Phase211Anchor.lean"
       - ".github/workflows/phase209-depth-321.yml"
   workflow_dispatch:
 permissions:
@@ -66,7 +67,7 @@ jobs:
           lean --version
           lake env lean TenthDiscriminant/Phase209Scalar321.lean
           lake env lean TenthDiscriminant/Phase209Iteration.lean
-          lake build TenthDiscriminant.SourceGeometry321 TenthDiscriminant.SourcePositivity321 TenthDiscriminant.Phase209ConjugateFold TenthDiscriminant.Phase209DeltaCarrier TenthDiscriminant.Phase209OrbitSum TenthDiscriminant.Phase209WholeGramFold TenthDiscriminant.Phase210FoldedInertFactor TenthDiscriminant.Phase210SharpOrdinaryJet TenthDiscriminant.Phase210ActualNormalizedDepth TenthDiscriminant.Phase210FiniteInertBudget
+          lake build TenthDiscriminant.SourceGeometry321 TenthDiscriminant.SourcePositivity321 TenthDiscriminant.Phase209ConjugateFold TenthDiscriminant.Phase209DeltaCarrier TenthDiscriminant.Phase209OrbitSum TenthDiscriminant.Phase209WholeGramFold TenthDiscriminant.Phase210FoldedInertFactor TenthDiscriminant.Phase210SharpOrdinaryJet TenthDiscriminant.Phase210ActualNormalizedDepth TenthDiscriminant.Phase210FiniteInertBudget TenthDiscriminant.Phase211Anchor
           lake env lean TenthDiscriminant/SourcePositivity321.lean
           lake env lean TenthDiscriminant/Phase209ConjugateFold.lean
           lake env lean TenthDiscriminant/Phase209DeltaCarrier.lean
@@ -76,3 +77,4 @@ jobs:
           lake env lean TenthDiscriminant/Phase210SharpOrdinaryJet.lean
           lake env lean TenthDiscriminant/Phase210ActualNormalizedDepth.lean
           lake env lean TenthDiscriminant/Phase210FiniteInertBudget.lean
+          lake env lean TenthDiscriminant/Phase211Anchor.lean
