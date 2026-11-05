@@ -64,7 +64,9 @@ theorem residueBandValue_zero_of_im_sq
               (4 * (D : ZMod p) * (c : ZMod p) ^ 2)) = 0 := by
       apply Finset.prod_eq_zero (Finset.mem_Icc.mpr ⟨hbpos, hb⟩)
       exact hfactor
-    simp [residueBandValue, hprod]
+    unfold residueBandValue
+    rw [hprod]
+    simp
 
 /-- Interpret the sample as the actual conjugate coordinate (x,-y).
 The sign choice is explicit; no absolute-value division or Hasse jet. -/
@@ -109,6 +111,7 @@ theorem original_19_13_9_band_control
     residueBandValue 19 13 (ellipseVerticalBound 19 9)
       (QuadraticResidue.ofPair 19 13
         ((q.1 : ZMod 13), -(q.2 : ZMod 13))) = 0 := by
+  letI : Fact (Nat.Prime 13) := ⟨by decide⟩
   have hns : ¬ IsSquare (-(19 : ZMod 13)) := by decide
   exact residueBandValue_zero_original_ellipse 19 13 9
     (by decide) (by decide) hns q hq
