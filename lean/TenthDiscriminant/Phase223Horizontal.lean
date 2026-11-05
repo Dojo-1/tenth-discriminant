@@ -40,9 +40,9 @@ theorem residue_horizontal_quadratic_factor
       QuadraticResidue.scalar D p (4 * (D : ZMod p) * a.im ^ 2) = 0 := by
   rw [residue_frobenius_conj D p hp2 hnonsquare a]
   apply QuadraticResidue.ext
-  · simp [QuadraticResidue.scalar, sub_eq_add_neg]
+  · simp [QuadraticResidue.scalar, sub_eq_add_neg, pow_two]
     ring
-  · simp [QuadraticResidue.scalar, sub_eq_add_neg]
+  · simp [QuadraticResidue.scalar, sub_eq_add_neg, pow_two]
     ring
 
 end TenthDiscriminant.Phase223
