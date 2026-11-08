@@ -173,9 +173,27 @@ theorem combinedBasisMatrix_pilot :
     combinedBasisMatrix 4 11 3 42 2 = 1 := by
   decide
 
+/-- The p=3 combined Frobenius source term preserves total-degree parity
+of its ORIGINAL (Z,W) monomial labels.  The inequalities guarantee
+Nat.sub does not saturate; no Gram or field claim is made here. -/
+theorem combinedBasisTarget_exponents_parity_three
+    (r s t u : Nat) (hr : 3*t ≤ r) (hs : 9*u ≤ s) :
+    ((r - 3*t) + (s+t-8*u)) % 2 = (r+s) % 2 := by
+  omega
+
+/-- The same exact source-label parity invariant at the other
+production inert prime p=5. -/
+theorem combinedBasisTarget_exponents_parity_five
+    (r s t u : Nat) (hr : 5*t ≤ r) (hs : 25*u ≤ s) :
+    ((r - 5*t) + (s+t-24*u)) % 2 = (r+s) % 2 := by
+  omega
+
 end TenthDiscriminant.Phase228
 
 #print axioms TenthDiscriminant.Phase228.combinedBasisTarget_lt
 #print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_lowerTriangular
 #print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_det
 #print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_pilot
+
+#print axioms TenthDiscriminant.Phase228.combinedBasisTarget_exponents_parity_three
+#print axioms TenthDiscriminant.Phase228.combinedBasisTarget_exponents_parity_five
