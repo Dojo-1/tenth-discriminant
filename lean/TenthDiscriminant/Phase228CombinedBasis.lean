@@ -250,6 +250,47 @@ theorem combinedBasisMatrix_original_integer_jet_expanded
   rw [hr, hs]
   exact hjet
 
+/-- Phase247 preregistered horizontal Frobenius binomial coefficient
+identity. This is an algebraic identity in an arbitrary commutative ring,
+proved by evaluating the existing vertical rectangular polynomial lemma
+at its own coefficient w. It does not differentiate W or change source
+labels. The inequality is required to avoid Nat subtraction saturation. -/
+theorem horizontal_frobenius_binomial_coeff
+    {A : Type*} [CommRing A] (w : A)
+    (s q ell : Nat) (hq : 1 ≤ q) (hqe : q * ell ≤ s) :
+    w ^ (s - q * ell) * (w ^ q - w) ^ ell =
+      ∑ u ∈ Finset.range (ell + 1),
+        ((-1 : Int) ^ u * (ell.choose u : Int)) •
+          w ^ (s - (q - 1) * u) := by
+  have hpoly :=
+    TenthDiscriminant.rectangular_binomial_polynomial
+      (A := A) w s 0 q ell hqe
+  have heval := congrArg (fun P : A[X] => P.eval w) hpoly
+  have hsum :
+      w ^ (s - q * ell) * (w ^ q - w) ^ ell =
+        ∑ u ∈ Finset.range (ell + 1),
+          ((-1 : Int) ^ u * (ell.choose u : Int)) •
+            (w ^ (s - q * u) * w ^ u) := by
+    simpa only [eval_mul, eval_pow, eval_X, eval_C, eval_sub,
+      eval_finset_sum, eval_smul, pow_zero, mul_one, zero_add]
+      using heval
+  rw [hsum]
+  apply Finset.sum_congr rfl
+  intro u hu
+  have hu : u ≤ ell := by
+    have := Finset.mem_range.mp hu
+    omega
+  have hqu : q * u ≤ s :=
+    (Nat.mul_le_mul_left q hu).trans hqe
+  have hq_one : q - 1 + 1 = q := by omega
+  have hqu_minus : (q - 1) * u + u = q * u := by
+    calc
+      (q - 1) * u + u = (q - 1 + 1) * u := by
+        simp only [Nat.add_mul, one_mul]
+      _ = q * u := by rw [hq_one]
+  have hexp : s - q * u + u = s - (q - 1) * u := by omega
+  rw [← pow_add, hexp]
+
 /-- Lower triangular in the original source order. -/
 theorem combinedBasisMatrix_lowerTriangular (R S p : Nat) (hp : 2 ≤ p) :
     (combinedBasisMatrix R S p).BlockTriangular
@@ -374,3 +415,5 @@ end TenthDiscriminant.Phase228
 #print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_row_action
 
 #print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_original_integer_jet_expanded
+
+#print axioms TenthDiscriminant.Phase228.horizontal_frobenius_binomial_coeff
