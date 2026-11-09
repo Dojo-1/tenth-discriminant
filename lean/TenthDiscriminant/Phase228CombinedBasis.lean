@@ -188,6 +188,29 @@ theorem combinedBasisTarget_exponents_parity_five
     ((r - 5*t) + (s+t-24*u)) % 2 = (r+s) % 2 := by
   omega
 
+/-- Entire original row 42, not just four sampled coefficients:
+the combined (p=3, r=3, s=9) source action has exactly the
+four binomial terms in the ORIGINAL 4-by-11 rectangle. -/
+theorem combinedBasisMatrix_pilot_full_row :
+    ∀ j : Fin 44,
+      combinedBasisMatrix 4 11 3 42 j =
+        (if j = 42 then (1 : Int)
+         else if j = 34 then -1
+         else if j = 10 then -1
+         else if j = 2 then 1
+         else 0) := by
+  decide
+
+/-- At p=5 the two factors (Z^5-W)(W^25-W) likewise remain
+inside one original 6-by-27 source rectangle, including all
+signs and both non-leading target positions. -/
+theorem combinedBasisMatrix_pilot_five :
+    combinedBasisMatrix 6 27 5 160 160 = 1 ∧
+    combinedBasisMatrix 6 27 5 160 136 = -1 ∧
+    combinedBasisMatrix 6 27 5 160 26 = -1 ∧
+    combinedBasisMatrix 6 27 5 160 2 = 1 := by
+  decide
+
 end TenthDiscriminant.Phase228
 
 #print axioms TenthDiscriminant.Phase228.combinedBasisTarget_lt
@@ -197,3 +220,6 @@ end TenthDiscriminant.Phase228
 
 #print axioms TenthDiscriminant.Phase228.combinedBasisTarget_exponents_parity_three
 #print axioms TenthDiscriminant.Phase228.combinedBasisTarget_exponents_parity_five
+
+#print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_pilot_full_row
+#print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_pilot_five
