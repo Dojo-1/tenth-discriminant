@@ -87,7 +87,7 @@ At exact head `c1d3d2c915e175618e731cd176d196e1198123db`:
 - Repair commit `c1d3d2c9` moves `combinedTraceGram_valuation_of_inert` below `combinedBasisMatrix_det`, without changing its statement or proof.
 - Focused [Phase209 workflow 42657830775](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42657830775) passed both `lean-scalar` and `exact-source`.
 - The inspected axiom reports for `combinedBasisMatrix_original_integer_jet_compact`, `combinedBasisMatrix_original_integer_jet_dvd`, `combinedTransformedJet_scale`, `combinedTraceGram_basis_factor_of_inert`, and `combinedTraceGram_valuation_of_inert` contain only `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx`.
-- Whole-root [workflow 42657830691](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42657830691) had passed statement compilation and source correspondence and was still executing known-false strengthening rejection controls at the time of this note.
+- Whole-root [workflow 42657830691](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42657830691) completed successfully, including the known-false strengthening rejection controls. All 24 associated workflows at this exact head passed.
 
 If whole-root CI completes successfully, the focused result proves the local same-original-Gram factorization
 [
