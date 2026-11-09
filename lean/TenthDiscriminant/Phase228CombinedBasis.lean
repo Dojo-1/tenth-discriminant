@@ -25,6 +25,22 @@ open scoped BigOperators
 def horizontalBasisExponent (R S p : Nat) (i : Fin (R*S)) : Nat :=
   (i.val % S) / (p*p)
 
+/-- Exact multiplicity of the horizontal exponent in the ORIGINAL
+row-major rectangle: each second coordinate s occurs once for every
+first coordinate r. This is the bridge from the matrix's row weights
+to the scalar horizontal floor sum; no observation or jet is changed. -/
+theorem sum_horizontalBasisExponent (R S p : Nat) :
+    (∑ i : Fin (R*S), horizontalBasisExponent R S p i) =
+      R * (∑ s ∈ Finset.range S, s / (p*p)) := by
+  have he := Fintype.sum_equiv
+    (finProdFinEquiv : Fin R × Fin S ≃ Fin (R*S))
+    (fun rs => horizontalBasisExponent R S p (finProdFinEquiv rs))
+    (horizontalBasisExponent R S p) (fun _ => rfl)
+  rw [← he]
+  simp only [horizontalBasisExponent, Equiv.symm_apply_apply,
+    Fintype.sum_prod_type, Finset.sum_fin_eq_sum_range]
+  simp
+
 /-- The old row-major label of the (t,u) binomial term. -/
 def combinedBasisTarget (S p r s t u : Nat) : Nat :=
   (r-p*t)*S + (s+t-(p*p-1)*u)
@@ -750,3 +766,5 @@ end TenthDiscriminant.Phase228
 #print axioms TenthDiscriminant.Phase228.combinedTransformedJet_scale
 #print axioms TenthDiscriminant.Phase228.combinedTraceGram_basis_factor_of_inert
 #print axioms TenthDiscriminant.Phase228.combinedTraceGram_valuation_of_inert
+
+#print axioms TenthDiscriminant.Phase228.sum_horizontalBasisExponent
