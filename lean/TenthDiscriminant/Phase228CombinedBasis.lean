@@ -130,6 +130,75 @@ def combinedBasisMatrix (R S p : Nat) :
       then (-1 : Int)^(t+u) * (k.choose t : Int) * (ell.choose u : Int)
       else 0
 
+/-- A total Fin target for the two-index expansion. Clamping is only
+to make this function defined OUTSIDE the active binomial ranges; on
+every active term, the original target is used without modification. -/
+def combinedBasisTargetFin (R S p : Nat) (hp : 2 ≤ p)
+    (i : Fin (R*S)) (t u : Nat) : Fin (R*S) :=
+  ⟨combinedBasisTarget S p (i.val / S) (i.val % S)
+      (min t (rectangularBasisExponent R S p i))
+      (min u (horizontalBasisExponent R S p i)),
+   combinedBasisTarget_in_range R S p hp i _ _
+     (min_le_right _ _) (min_le_right _ _)⟩
+
+/-- On active terms, the total target recovers BOTH original monomial
+labels, before evaluation and with no assumption on the sample. -/
+theorem combinedBasisTargetFin_labels
+    (R S p : Nat) (hp : 2 ≤ p) (i : Fin (R*S))
+    (t u : Nat)
+    (ht : t ≤ rectangularBasisExponent R S p i)
+    (hu : u ≤ horizontalBasisExponent R S p i) :
+    (combinedBasisTargetFin R S p hp i t u).val / S =
+      i.val / S - p*t ∧
+    (combinedBasisTargetFin R S p hp i t u).val % S =
+      i.val % S + t - (p*p-1)*u := by
+  simpa only [combinedBasisTargetFin, min_eq_left ht, min_eq_left hu] using
+    combinedBasisTarget_active_labels R S p hp i t u ht hu
+
+/-- The COMBINED integral source matrix acts through the exact
+two-index binomial sum on ANY additive observation family. No change
+of field, derivative convention, support, or trace pairing occurs here.
+In particular, this action is not the product of truncated source maps. -/
+theorem combinedBasisMatrix_row_action {A : Type*} [AddCommGroup A]
+    (R S p : Nat) (hp : 2 ≤ p) (i : Fin (R*S))
+    (f : Fin (R*S) → A) :
+    ∑ h : Fin (R*S), (combinedBasisMatrix R S p i h) • f h =
+      ∑ t ∈ Finset.range (rectangularBasisExponent R S p i + 1),
+        ∑ u ∈ Finset.range (horizontalBasisExponent R S p i + 1),
+          ((-1 : Int)^(t+u) *
+            ((rectangularBasisExponent R S p i).choose t : Int) *
+            ((horizontalBasisExponent R S p i).choose u : Int)) •
+            f (combinedBasisTargetFin R S p hp i t u) := by
+  classical
+  unfold combinedBasisMatrix
+  simp_rw [Finset.sum_smul]
+  rw [Finset.sum_comm]
+  apply Finset.sum_congr rfl
+  intro t ht
+  rw [Finset.sum_comm]
+  apply Finset.sum_congr rfl
+  intro u hu
+  have htk : t ≤ rectangularBasisExponent R S p i := by
+    have := Finset.mem_range.mp ht
+    omega
+  have hul : u ≤ horizontalBasisExponent R S p i := by
+    have := Finset.mem_range.mp hu
+    omega
+  let target : Fin (R*S) :=
+    ⟨combinedBasisTarget S p (i.val / S) (i.val % S) t u,
+      combinedBasisTarget_in_range R S p hp i t u htk hul⟩
+  have htest (h : Fin (R*S)) :
+      (h.val = combinedBasisTarget S p (i.val / S)
+        (i.val % S) t u) ↔ h = target := by
+    constructor
+    · intro heq; exact Fin.ext heq
+    · intro heq; exact congrArg Fin.val heq
+  simp_rw [htest]
+  have hfin : combinedBasisTargetFin R S p hp i t u = target := by
+    apply Fin.ext
+    simp [combinedBasisTargetFin, target, min_eq_left htk, min_eq_left hul]
+  simp [hfin, target]
+
 /-- Lower triangular in the original source order. -/
 theorem combinedBasisMatrix_lowerTriangular (R S p : Nat) (hp : 2 ≤ p) :
     (combinedBasisMatrix R S p).BlockTriangular
@@ -249,3 +318,6 @@ end TenthDiscriminant.Phase228
 #print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_pilot_five
 
 #print axioms TenthDiscriminant.Phase228.combinedBasisTarget_active_labels
+
+#print axioms TenthDiscriminant.Phase228.combinedBasisTargetFin_labels
+#print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_row_action
