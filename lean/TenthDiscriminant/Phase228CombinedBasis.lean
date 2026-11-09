@@ -291,6 +291,50 @@ theorem horizontal_frobenius_binomial_coeff
   have hexp : s - q * u + u = s - (q - 1) * u := by omega
   rw [← pow_add, hexp]
 
+/-- The EXACT compact two-factor Frobenius polynomial is the product
+of the independently expanded vertical polynomial and horizontal
+coefficient sums. This is the first (product-level) step in Issue #160;
+the full two-index coefficient/monomial equality is a separate target.
+All variables, ordinary source exponents and coefficient-ring maps are
+unchanged. -/
+theorem combined_frobenius_polynomial_product_of_sums
+    {A : Type*} [CommRing A] (w : A)
+    (r s p k ell : Nat) (hp : 2 ≤ p)
+    (hpk : p*k ≤ r) (hpe : (p*p)*ell ≤ s) :
+    (X^(r-p*k) * C w^(s-(p*p)*ell) *
+      (X^p-C w)^k * C (w^(p*p)-w)^ell : A[X]) =
+    (∑ t ∈ Finset.range (k+1),
+      ((-1 : Int)^t * (k.choose t : Int)) •
+        (X^(r-p*t) * C w^t : A[X])) *
+    (∑ u ∈ Finset.range (ell+1),
+      ((-1 : Int)^u * (ell.choose u : Int)) •
+        (C (w^(s-(p*p-1)*u)) : A[X])) := by
+  have hq : 1 ≤ p*p := by nlinarith
+  have hV :
+      (X^(r-p*k) * (X^p-C w)^k : A[X]) =
+        ∑ t ∈ Finset.range (k+1),
+          ((-1 : Int)^t * (k.choose t : Int)) •
+            (X^(r-p*t) * C w^t : A[X]) := by
+    simpa only [pow_zero, mul_one, zero_add] using
+      (TenthDiscriminant.rectangular_binomial_polynomial
+        (A := A) w r 0 p k hpk)
+  have hH :
+      (C (w^(s-(p*p)*ell) * (w^(p*p)-w)^ell) : A[X]) =
+        ∑ u ∈ Finset.range (ell+1),
+          ((-1 : Int)^u * (ell.choose u : Int)) •
+            (C (w^(s-(p*p-1)*u)) : A[X]) := by
+    have hh := congrArg (fun x : A => (C x : A[X]))
+      (horizontal_frobenius_binomial_coeff w s (p*p) ell hq hpe)
+    simpa only [map_sum, map_zsmul] using hh
+  calc
+    (X^(r-p*k) * C w^(s-(p*p)*ell) *
+      (X^p-C w)^k * C (w^(p*p)-w)^ell : A[X]) =
+        (X^(r-p*k) * (X^p-C w)^k) *
+          C (w^(s-(p*p)*ell) * (w^(p*p)-w)^ell) := by
+            simp only [map_mul, map_pow]
+            ac_rfl
+    _ = _ := by rw [hV,hH]
+
 /-- Lower triangular in the original source order. -/
 theorem combinedBasisMatrix_lowerTriangular (R S p : Nat) (hp : 2 ≤ p) :
     (combinedBasisMatrix R S p).BlockTriangular
@@ -417,3 +461,5 @@ end TenthDiscriminant.Phase228
 #print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_original_integer_jet_expanded
 
 #print axioms TenthDiscriminant.Phase228.horizontal_frobenius_binomial_coeff
+
+#print axioms TenthDiscriminant.Phase228.combined_frobenius_polynomial_product_of_sums
