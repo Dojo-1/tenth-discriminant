@@ -10,17 +10,17 @@ The repository combines number theory, exact computation, integral linear algebr
 
 ## Where the formal work stands
 
-**Current mainline Lean theorem — 4 November 2026.** For every totally complex degree-two number field \(K\) of class number one, the integrated theorem bounds the **actual absolute field discriminant**:
+**Current mainline Lean theorem — 4 November 2026.** For every totally complex degree-two number field $K$ of class number one, the integrated theorem bounds the **actual absolute field discriminant**:
 
-\[
+```math
 |\mathrm{disc}(K)|<322^4=10{,}750{,}371{,}856.
-\]
+```
 
 [PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) integrated [Threshold322.totallyComplex_degree_two_classNumber_one_discriminant_bound_322](lean/TenthDiscriminant/ActualField322.lean) at [merge f41ce45b](https://github.com/Dojo-1/tenth-discriminant/commit/f41ce45b9dd7d722faa682d3f1dc1c204fb571da); all 21 associated workflows passed on its reviewed head, including full-root Lean build, source-coverage check, standard-axiom audit and negative controls. Historical integrated 323⁴, 324⁴, 327⁴, 328⁴ and 331⁴ results remain auditable.
 
 **Independent semantics remains an open question, not a CI gate.** [Issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) requests human reconstruction and challenge of the source definitions, maximal-order/inert-prime reduction, arithmetic divisor, original ellipse interpolation, Hadamard majorant and field transport. [Phase201 source-based reconstruction and exact finite cross-construction counterexample](research/bridges/INDEPENDENT_RECONSTRUCTION_AND_MINORS_20261104.md) explicitly distinguish AI reconstruction from independent human peer review. No claim of priority, numerical competitiveness or a new nine-field classification follows from the 322⁴ theorem.
 
-**Other constructions are not substitutes for ours.** [twinheterodox v0.7.0](https://github.com/twinheterodox/tenth-discriminant/tree/v0.7.0/versions/v7) reports the much stronger cutoff \(q<570\), selecting a nonzero derivative-matrix complex minor with an auxiliary inert-prime rank argument. Our proof bounds the entire original real integer trace Gram. The finite Phase201 test shows that a nonzero complex derivative minor modulo a prime need not make the corresponding real trace-Gram determinant nonzero modulo that prime. See the typed [cross-program alignment](research/bridges/EXTERNAL_DETERMINANT_ALIGNMENT_20261103.md) and [Issue #51](https://github.com/Dojo-1/tenth-discriminant/issues/51). No other investigator was contacted and no external theorem was imported.
+**Other constructions are not substitutes for ours.** [twinheterodox v0.7.0](https://github.com/twinheterodox/tenth-discriminant/tree/v0.7.0/versions/v7) reports the much stronger cutoff $q<570$, selecting a nonzero derivative-matrix complex minor with an auxiliary inert-prime rank argument. Our proof bounds the entire original real integer trace Gram. The finite Phase201 test shows that a nonzero complex derivative minor modulo a prime need not make the corresponding real trace-Gram determinant nonzero modulo that prime. See the typed [cross-program alignment](research/bridges/EXTERNAL_DETERMINANT_ALIGNMENT_20261103.md) and [Issue #51](https://github.com/Dojo-1/tenth-discriminant/issues/51). No other investigator was contacted and no external theorem was imported.
 
 ## The one integer that matters
 
@@ -63,17 +63,17 @@ flowchart LR
 
 ## How the integrated 322⁴ argument closes
 
-Under the class-number-one, squarefree odd-chart hypotheses, set \(R=\lfloor D/4\rfloor\), \(S=\lfloor R/25\rfloor\), and use the original thin integer lattice ellipse of radius \(\lceil 11D^{3/4}/25\rceil\). The original ordinary-\(Z\)-derivative trace Gram \(G_D\) is positive by the [322 source geometry](lean/TenthDiscriminant/SourceGeometry322.lean) and [positivity proof](lean/TenthDiscriminant/SourcePositivity322.lean). Its [same-Gram arithmetic lower](lean/TenthDiscriminant/SameGramLower322.lean) includes original odd primes 3 and 5 and the binary divisor exactly once. The [same-Gram analytic upper](lean/TenthDiscriminant/ThinUpper322.lean) uses the padded ellipse **only as a count majorant**.
+Under the class-number-one, squarefree odd-chart hypotheses, set $R=\lfloor D/4\rfloor$, $S=\lfloor R/25\rfloor$, and use the original thin integer lattice ellipse of radius $\lceil 11D^{3/4}/25\rceil$. The original ordinary-$Z$-derivative trace Gram $G_D$ is positive by the [322 source geometry](lean/TenthDiscriminant/SourceGeometry322.lean) and [positivity proof](lean/TenthDiscriminant/SourcePositivity322.lean). Its [same-Gram arithmetic lower](lean/TenthDiscriminant/SameGramLower322.lean) includes original odd primes 3 and 5 and the binary divisor exactly once. The [same-Gram analytic upper](lean/TenthDiscriminant/ThinUpper322.lean) uses the padded ellipse **only as a count majorant**.
 
-For \(D\ge322^4\), the compiled inequalities constrain precisely the **same positive integer determinant**:
+For $D\ge322^4$, the compiled inequalities constrain precisely the **same positive integer determinant**:
 
-\[
+```math
 \frac{999997}{1000000}\log D-\frac{57193}{10000}+\frac14\log2
 \;\le\;\frac{\log\det G_D}{R^2S}
 \;\le\;\frac45\log D-\frac{1853}{2000}.
-\]
+```
 
-The sound rational logarithm floor gives a certified positive margin of \(2853/500000000\). The [field-return module](lean/TenthDiscriminant/ActualField322.lean) carries the contradiction through both quadratic charts and arbitrary totally complex degree-two fields to the **actual discriminant**, not to \(\det G_D\). The exact calculation and unresolved semantic obligations are recorded in [Phase201](research/bridges/INDEPENDENT_RECONSTRUCTION_AND_MINORS_20261104.md).
+The sound rational logarithm floor gives a certified positive margin of $2853/500000000$. The [field-return module](lean/TenthDiscriminant/ActualField322.lean) carries the contradiction through both quadratic charts and arbitrary totally complex degree-two fields to the **actual discriminant**, not to $\det G_D$. The exact calculation and unresolved semantic obligations are recorded in [Phase201](research/bridges/INDEPENDENT_RECONSTRUCTION_AND_MINORS_20261104.md).
 
 ## What the different investigations establish
 
