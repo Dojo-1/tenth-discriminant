@@ -43,10 +43,13 @@ theorem sum_horizontalBasisExponent (R S p : Nat) :
     _ = ∑ _r ∈ Finset.range R, ∑ s ∈ Finset.range S, s / (p*p) := by
       apply Finset.sum_congr rfl
       intro r hr
-      rw [if_pos (Finset.mem_range.mp hr)]
+      simp only [dif_pos (Finset.mem_range.mp hr)]
       apply Finset.sum_congr rfl
       intro s hs
-      simp [Finset.mem_range.mp hs]
+      simp only [dif_pos (Finset.mem_range.mp hs)]
+      have hsS : s < S := Finset.mem_range.mp hs
+      change (s + S * r) % S / (p*p) = s / (p*p)
+      rw [Nat.add_mul_mod_self_left, Nat.mod_eq_of_lt hsS]
     _ = R * (∑ s ∈ Finset.range S, s / (p*p)) := by simp
 
 /-- The old row-major label of the (t,u) binomial term. -/
