@@ -1,6 +1,6 @@
 # Phase204 — two typed directions beyond the residue field
 
-**4 November 2026 · preregistered before code:** [Track A #136](https://github.com/Dojo-1/tenth-discriminant/issues/136), [Track B #137](https://github.com/Dojo-1/tenth-discriminant/issues/137). Frozen source: [IntegerTraceGram.lean](../../lean/TenthDiscriminant/IntegerTraceGram.lean) on the integrated [322⁴ theorem](https://github.com/Dojo-1/tenth-discriminant/pull/126), with stacked Phase202–203 source modules unchanged. This is an AI-authored research record requiring independent mathematical review, **not** an external validation or a stronger field cutoff.
+**4 November 2026 · preregistered before code:** [Track A #136](https://github.com/Dojo-1/tenth-discriminant/issues/136), [Track B #137](https://github.com/Dojo-1/tenth-discriminant/issues/137). Frozen source: [IntegerTraceGram.lean](../../lean/TenthDiscriminant/IntegerTraceGram.lean) on the integrated [322⁴ theorem](https://github.com/Dojo-1/tenth-discriminant/pull/126), with the Phase202 and Phase203 source modules now merged on `main` ([#132](https://github.com/Dojo-1/tenth-discriminant/pull/132), [#135](https://github.com/Dojo-1/tenth-discriminant/pull/135)). The original integer trace-Gram and ordinary-jet definitions are unchanged. This is an AI-authored research record requiring independent mathematical review, **not** an external validation or a stronger field cutoff.
 
 ## A — a filtration of the *same* integer Gram by ordinary jet depth
 
@@ -145,3 +145,9 @@ Track A explains the **p-adic filtration of ordinary derivative contributions** 
 | External selected minor equals our Gram | **R (invalid identification)** | Need a separate source-preserving typed comparison; none produced |
 
 **Stop:** No merge, field-cutoff announcement, p-adic sheaf/connection upgrade, or genuine novelty claim from finite controls alone. The original local inertness hypotheses and full-root sources stay unchanged. The independent human-semantic-review [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50) stays open.
+
+## Phase204 integration provenance, 9 November 2026
+
+The parent [Phase203 #135](https://github.com/Dojo-1/tenth-discriminant/pull/135) passed scoped and whole-root Lean CI and merged. This independent child PR #138 was retargeted to `main` **without changing its proof semantics**. The exact-head Phase204 scoped workflow, root Lean build, axiom audit and known-false negative controls must be rerun and checked before integration. No historical pre-retarget receipt can certify the present PR head; retain draft and unmerged while CI is unresolved.
+
+The new scope remains the entrywise factorial jet filtration and `p^2`-truncated Smith presentations, plus the distinct p-adic Hermite anchoring-vs-full-tube counterexample. These are *typed*, do not assert isometric transport across primes, and do not add an actual-field bound. Independently validate source semantics at Issue #50.
