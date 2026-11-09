@@ -39,7 +39,15 @@ theorem sum_horizontalBasisExponent (R S p : Nat) :
   rw [← he]
   simp only [horizontalBasisExponent, Equiv.symm_apply_apply,
     Fintype.sum_prod_type, Finset.sum_fin_eq_sum_range]
-  simp
+  calc
+    _ = ∑ _r ∈ Finset.range R, ∑ s ∈ Finset.range S, s / (p*p) := by
+      apply Finset.sum_congr rfl
+      intro r hr
+      rw [if_pos (Finset.mem_range.mp hr)]
+      apply Finset.sum_congr rfl
+      intro s hs
+      simp [Finset.mem_range.mp hs]
+    _ = R * (∑ s ∈ Finset.range S, s / (p*p)) := by simp
 
 /-- The old row-major label of the (t,u) binomial term. -/
 def combinedBasisTarget (S p r s t u : Nat) : Nat :=
