@@ -1,0 +1,21 @@
+name: Phase201 original ordinary-jet minor and trace-Gram control
+on:
+  pull_request:
+    paths:
+      - "README.md"
+      - "research/bridges/phase201_minor_gram_control.py"
+      - "research/bridges/INDEPENDENT_RECONSTRUCTION_AND_MINORS_20261104.md"
+      - ".github/workflows/phase201-original-minor-control.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-finite-counterexample:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Verify the original 11-point and 22-jet trace Gram against a complex minor
+        run: python3 research/bridges/phase201_minor_gram_control.py
