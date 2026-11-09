@@ -15,7 +15,7 @@ It is not an audit of the 9 November 2026 mainline or of Phase209 PR #157.
 
 ## 2. Current repository state (checked separately)
 
-The live mainline at this refresh is `98d5b684`, following the Phase203 merge. The current [README](../../README.md) and [RESEARCH_NOW](../../RESEARCH_NOW.md) identify the integrated actual-field theorem:
+The live mainline head at this refresh is `6d56648f` (the source tree used for inspection is identical to `98d5b684`; the two intervening add/delete commits left the tree unchanged), following the Phase203 merge. The current [README](../../README.md) and [RESEARCH_NOW](../../RESEARCH_NOW.md) identify the integrated actual-field theorem:
 ```math
 |\operatorname{disc}(K)| < 322^4 = 10,750,371,856.
 ```
