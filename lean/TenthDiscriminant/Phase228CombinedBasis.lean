@@ -335,6 +335,66 @@ theorem combined_frobenius_polynomial_product_of_sums
             ac_rfl
     _ = _ := by rw [hV,hH]
 
+/-- Phase250 / Issue #160: the full COMBINED source polynomial expands
+into the two-index binomial sum in the original Z,W monomial coordinates.
+No substitution of the horizontal defect into the vertical derivative
+occurs. The nonnegative exponent hypotheses prevent Nat subtraction
+from silently saturating. -/
+theorem combined_frobenius_polynomial_double_sum
+    {A : Type*} [CommRing A] (w : A)
+    (r s p k ell : Nat) (hp : 2 ≤ p)
+    (hpk : p*k ≤ r) (hpe : (p*p)*ell ≤ s) :
+    (X^(r-p*k) * C w^(s-(p*p)*ell) *
+      (X^p-C w)^k * C (w^(p*p)-w)^ell : A[X]) =
+      ∑ t ∈ Finset.range (k+1),
+        ∑ u ∈ Finset.range (ell+1),
+          ((-1 : Int)^(t+u) * (k.choose t : Int) *
+            (ell.choose u : Int)) •
+            (X^(r-p*t) * C w^(s+t-(p*p-1)*u) : A[X]) := by
+  rw [combined_frobenius_polynomial_product_of_sums w r s p k ell
+    hp hpk hpe, Finset.sum_mul]
+  apply Finset.sum_congr rfl
+  intro t ht
+  rw [Finset.mul_sum]
+  apply Finset.sum_congr rfl
+  intro u hu
+  have hule : u ≤ ell := by
+    have h := Finset.mem_range.mp hu
+    omega
+  have hpu : (p*p)*u ≤ s :=
+    (Nat.mul_le_mul_left (p*p) hule).trans hpe
+  have hsmall : (p*p-1)*u ≤ s :=
+    (Nat.mul_le_mul_right u (Nat.sub_le (p*p) 1)).trans hpu
+  have hexp : t + (s - (p*p-1)*u) = s+t-(p*p-1)*u := by omega
+  have hmon :
+      ((X^(r-p*t) * C w^t) * C (w^(s-(p*p-1)*u)) : A[X]) =
+        X^(r-p*t) * C w^(s+t-(p*p-1)*u) := by
+    calc
+      ((X^(r-p*t) * C w^t) * C (w^(s-(p*p-1)*u)) : A[X]) =
+        X^(r-p*t) * (C w^t * C (w^(s-(p*p-1)*u))) := by ring
+      _ = X^(r-p*t) * C (w^(t+(s-(p*p-1)*u))) := by
+        simp only [← map_pow, ← map_mul, ← pow_add]
+      _ = X^(r-p*t) * C w^(s+t-(p*p-1)*u) := by
+        rw [hexp, map_pow]
+  have hcoef :
+      ((-1 : Int)^t * (k.choose t : Int)) *
+        ((-1 : Int)^u * (ell.choose u : Int)) =
+      ((-1 : Int)^(t+u) * (k.choose t : Int) *
+        (ell.choose u : Int)) := by
+    rw [pow_add]
+    ring
+  calc
+    (((-1 : Int)^t * (k.choose t : Int)) •
+      (X^(r-p*t) * C w^t : A[X])) *
+      (((-1 : Int)^u * (ell.choose u : Int)) •
+        (C (w^(s-(p*p-1)*u)) : A[X])) =
+      (((-1 : Int)^t * (k.choose t : Int)) *
+        ((-1 : Int)^u * (ell.choose u : Int))) •
+      ((X^(r-p*t) * C w^t) * C (w^(s-(p*p-1)*u)) : A[X]) := by
+        simp only [zsmul_eq_mul, Int.cast_mul]
+        ring
+    _ = _ := by rw [hcoef, hmon]
+
 /-- Lower triangular in the original source order. -/
 theorem combinedBasisMatrix_lowerTriangular (R S p : Nat) (hp : 2 ≤ p) :
     (combinedBasisMatrix R S p).BlockTriangular
@@ -463,3 +523,5 @@ end TenthDiscriminant.Phase228
 #print axioms TenthDiscriminant.Phase228.horizontal_frobenius_binomial_coeff
 
 #print axioms TenthDiscriminant.Phase228.combined_frobenius_polynomial_product_of_sums
+
+#print axioms TenthDiscriminant.Phase228.combined_frobenius_polynomial_double_sum
