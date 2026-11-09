@@ -126,7 +126,126 @@ def check_gram():
        "original_rows_tested":n,"matched_entries":n*n,
        "negative_missing_conjugate_changes_Gram":True},flush=True)
 
+def _pair_sub(a,b):
+    return a[0]-b[0],a[1]-b[1]
+
+def _pair_scale(c,a):
+    return c*a[0],c*a[1]
+
+def _old_monomial_ordinary_jet(D,r,s,j,z):
+    """The original integerDerivativeRow on the exact conjugate coordinate."""
+    if j>r:return (0,0)
+    w=(z[0],-z[1])
+    return _pair_scale(falling(r,j),
+        mul(power(z,r-j,D),power(w,s,D),D))
+
+def _combined_matrix_row_jet(D,p,R,S,r,s,j,z):
+    """Independent two-index old-monomial matrix expansion; no new source."""
+    assert 0<=r<R and 0<=s<S and p>=2
+    k=min(r//p,S-1-s)
+    ell=s//(p*p)
+    a=b=0
+    active=0
+    for t in range(k+1):
+        for u in range(ell+1):
+            rr=r-p*t
+            ss=s+t-(p*p-1)*u
+            assert 0<=rr<R and 0<=ss<S,(D,p,r,s,t,u,rr,ss)
+            assert rr*S+ss<R*S
+            coeff=(-1)**(t+u)*comb(k,t)*comb(ell,u)
+            v=_old_monomial_ordinary_jet(D,rr,ss,j,z)
+            a+=coeff*v[0];b+=coeff*v[1]
+            active+=1
+    return (a,b),active,k,ell
+
+def _poly_mul(left,right,D):
+    """Exact independent polynomial multiplication over Z[sqrt(-D)]."""
+    out=defaultdict(lambda:(0,0))
+    for a,ca in left.items():
+        for b,cb in right.items():
+            c=mul(ca,cb,D)
+            old=out[a+b]
+            out[a+b]=(old[0]+c[0],old[1]+c[1])
+    return {j:v for j,v in out.items() if v!=(0,0)}
+
+def _combined_direct_polynomial(D,p,R,S,r,s,z):
+    """No binomial-row coefficients: multiply literal factors in Z."""
+    k=min(r//p,S-1-s)
+    ell=s//(p*p)
+    w=(z[0],-z[1])
+    horizontal=_pair_sub(power(w,p*p,D),w)
+    constant=mul(power(w,s-p*p*ell,D),power(horizontal,ell,D),D)
+    poly={r-p*k:constant}
+    factor={p:(1,0),0:(-w[0],-w[1])}
+    for _ in range(k):
+        poly=_poly_mul(poly,factor,D)
+    return poly
+
+def _direct_polynomial_jet(D,poly,j,z):
+    """Different oracle: ordinary differentiate polynomial coefficients."""
+    a=b=0
+    for degree,coefficient in poly.items():
+        if j>degree:continue
+        value=mul(coefficient,power(z,degree-j,D),D)
+        factor=falling(degree,j)
+        a+=factor*value[0];b+=factor*value[1]
+    return (a,b)
+
+def check_combined_original_jets():
+    """Phase244 prospective issue #159: two different exact source oracles."""
+    cases=[
+       (19,3,9,4,11,3,9,11,1,1,59),
+       (19,3,9,7,21,6,18,21,2,2,59),
+       (23,5,12,6,27,5,25,27,1,1,101),
+       (23,5,12,11,53,10,50,53,2,2,101)]
+    observations=0
+    for D,p,rho,R,S,r,s,J,k_expected,ell_expected,N in cases:
+        assert all((-D)%p!=v*v%p for v in range(p))
+        Q=ellipse(D,rho)
+        assert len(Q)==N,(D,rho,len(Q),N)
+        for z in Q:
+            poly=_combined_direct_polynomial(D,p,R,S,r,s,z)
+            for j in range(J):
+                from_matrix,active,k,ell=_combined_matrix_row_jet(
+                    D,p,R,S,r,s,j,z)
+                from_direct=_direct_polynomial_jet(D,poly,j,z)
+                assert k==k_expected and ell==ell_expected
+                assert active==(k+1)*(ell+1)
+                assert from_matrix==from_direct,(
+                    "combined old-jet/source mismatch",D,p,r,s,z,j,
+                    from_matrix,from_direct)
+                den=p**(k+ell)
+                assert all(v%den==0 for v in from_matrix),(
+                    "inert combined p-adic divisor fails",D,p,r,s,z,j,
+                    from_matrix,den)
+                observations+=1
+        print("PHASE244_COMBINED_CASE",
+            {"D":D,"p":p,"rho":rho,"original_Q":N,
+             "R":R,"S":S,"J":J,"k":k_expected,
+             "ell":ell_expected},flush=True)
+
+    # Hostile differential control: H=(W^9-W)/3 and T=(Z^3-W)/3
+    # have the same VALUE mod3 on inert observations; substituting
+    # H=T before differentiating is false for ordinary Z-jets.
+    z=(1,1);D=19;p=3
+    actual,_,_,_=_combined_matrix_row_jet(D,p,4,11,3,9,1,z)
+    w=(z[0],-z[1])
+    T=_pair_sub(power(z,3,D),w)
+    wrong=_pair_scale(6,mul(power(z,2,D),T,D))
+    assert all(t%9==0 for t in actual+wrong)
+    assert any((actual[i]//9-wrong[i]//9)%3!=0 for i in range(2))
+    # Ramified/split contexts violate the stated inert-residue assumption.
+    assert any((-3)%3==v*v%3 for v in range(3))
+    assert any((-19)%5==v*v%5 for v in range(5))
+    print("PASS_PHASE244_COMBINED_SOURCE",
+        {"exact_original_ordinary_jet_checks":observations,
+         "independent_polynomial_multiplication":True,
+         "noncommuting_source_matrix_not_substituted":True,
+         "differentiated_h_equals_t_negative_control":True,
+         "ramified_split_hypotheses_rejected":True},flush=True)
+
 if __name__=="__main__":
     check_operator()
     check_gram()
+    check_combined_original_jets()
     print("PASS PHASE209-A/B source oracles",flush=True)
