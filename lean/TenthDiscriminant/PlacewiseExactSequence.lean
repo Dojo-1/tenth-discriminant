@@ -137,11 +137,11 @@ theorem restricted_radical_unimodular_source_frame
       calc
         (U * E).transpose.mulVec (V.transpose.mulVec x) =
             E.transpose.mulVec ((U.transpose * V.transpose).mulVec x) := by
-              simp only [Matrix.transpose_mul, Matrix.mulVec_mulVec]
+              simp only [Matrix.transpose_mul, Matrix.mulVec_mulVec, Matrix.mul_assoc]
         _ = E.transpose.mulVec x := by simp [ht]
         _ = w := hx
     · have hh := congrArg (fun z : Fin n → k => U.mulVec z) hz
-      simpa only [Matrix.mulVec_mulVec, Matrix.mulVec_zero] using hh
+      simpa only [Matrix.mulVec_mulVec, Matrix.mul_assoc, Matrix.mulVec_zero] using hh
 
 end
 end TenthDiscriminant.Phase203
