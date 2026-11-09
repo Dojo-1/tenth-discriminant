@@ -247,6 +247,7 @@ theorem combinedBasisMatrix_original_integer_jet_expanded
     ((combinedBasisTargetFin R S p hp i t u).val % S) j a
   dsimp at hjet
   rw [hr, hs] at hjet
+  rw [hr, hs]
   exact hjet
 
 /-- Lower triangular in the original source order. -/
