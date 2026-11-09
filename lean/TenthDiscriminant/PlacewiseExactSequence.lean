@@ -101,6 +101,48 @@ theorem gram_kernel_no_extra_vectors_iff_radical_trivial
     exact h (E.transpose.mulVec x)
       ((gram_kernel_iff_restricted_radical E B x).1 hg)
 
+/-- A reversible change of SOURCE frame leaves the restricted
+observation-pairing radical exactly unchanged.  The observation module
+and the channel pairing B are fixed; no p-adic or Archimedean fibres
+are silently identified.  The left inverse suffices for this square
+finite-dimensional frame. -/
+theorem restricted_radical_unimodular_source_frame
+    {k : Type*} [Field k] {n m : Nat}
+    (E : Matrix (Fin n) (Fin m) k)
+    (B : Matrix (Fin m) (Fin m) k)
+    (U V : Matrix (Fin n) (Fin n) k)
+    (hVU : V * U = 1) :
+    restrictedPairingRadical (U * E) B =
+      restrictedPairingRadical E B := by
+  ext w
+  change ((∃ x : Fin n → k,
+      (U * E).transpose.mulVec x = w) ∧
+      (U * E).mulVec (B.mulVec w) = 0) ↔
+    ((∃ x : Fin n → k, E.transpose.mulVec x = w) ∧
+      E.mulVec (B.mulVec w) = 0)
+  have ht : U.transpose * V.transpose = 1 := by
+    simpa only [Matrix.transpose_mul, Matrix.transpose_one] using
+      congrArg (fun M => M.transpose) hVU
+  constructor
+  · rintro ⟨⟨x, hx⟩, hz⟩
+    constructor
+    · refine ⟨U.transpose.mulVec x, ?_⟩
+      simpa only [Matrix.transpose_mul, Matrix.mulVec_mulVec] using hx
+    · have hh := congrArg (fun z : Fin n → k => V.mulVec z) hz
+      simpa only [Matrix.mulVec_mulVec, ← Matrix.mul_assoc, hVU,
+        Matrix.one_mul, Matrix.mulVec_zero] using hh
+  · rintro ⟨⟨x, hx⟩, hz⟩
+    constructor
+    · refine ⟨V.transpose.mulVec x, ?_⟩
+      calc
+        (U * E).transpose.mulVec (V.transpose.mulVec x) =
+            E.transpose.mulVec ((U.transpose * V.transpose).mulVec x) := by
+              simp only [Matrix.transpose_mul, Matrix.mulVec_mulVec]
+        _ = E.transpose.mulVec x := by simp [ht]
+        _ = w := hx
+    · have hh := congrArg (fun z : Fin n → k => U.mulVec z) hz
+      simpa only [Matrix.mulVec_mulVec, Matrix.mulVec_zero] using hh
+
 end
 end TenthDiscriminant.Phase203
 
@@ -108,3 +150,5 @@ end TenthDiscriminant.Phase203
 #print axioms TenthDiscriminant.Phase203.radical_iff_transpose_of_gram_kernel
 #print axioms TenthDiscriminant.Phase203.kernel_radical_elementwise_exact
 #print axioms TenthDiscriminant.Phase203.gram_kernel_no_extra_vectors_iff_radical_trivial
+
+#print axioms TenthDiscriminant.Phase203.restricted_radical_unimodular_source_frame
