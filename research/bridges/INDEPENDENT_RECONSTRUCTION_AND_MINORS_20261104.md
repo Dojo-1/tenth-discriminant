@@ -52,6 +52,8 @@ M=\begin{pmatrix}
 0&0&1&1
 \end{pmatrix},\qquad\det M=-1\not\equiv0\pmod5.
 \]
+The rank defect is **quadratic**, not observational. The selected minor is an invertible *real-coordinate* submatrix, so the original integer-channel evaluation matrix has row rank 4 over F_5. Yet the odd-parity source vector x=(0,1,-2,0) satisfies Gx=0 (mod 5), while its original evaluation at the (j=0,z=1) channel is -1 (mod 5), hence E^T x is nonzero. The principal 3x3 Gram minor on rows (0,3,1) equals 2416*64, a unit modulo 5, proving rank(G mod 5)=3. Thus the restricted quadratic-pairing radical is exactly one-dimensional. These are bounded exact assertions in the dedicated regression, not a new global claim.
+
 So **complex full row rank modulo 5 does not imply real trace-Gram determinant nonzero modulo 5**. This disproves that proposed general inference only. Here D=3 is outside the 322^4 analytic domain and R=2 does not give a positive p=5 source valuation; do NOT describe this test as a counterexample to the inert-prime valuation theorem or to twinheterodox. The calculation was independently evaluated from the exact derivative and trace formulas; the standalone [exact-integer Python regression](phase201_minor_gram_control.py) now reproduces the same 11-point source, 22 observation columns, two matrices, determinants and mod-5 assertions (its dedicated [Phase201 exact-source CI workflow](../../.github/workflows/phase201-original-minor-control.yml) checks this bounded witness; consult the exact-head workflow result before calling it verified). It is a finite computational witness, not yet committed as Lean.
 
 ## 4. What actually can be transported
