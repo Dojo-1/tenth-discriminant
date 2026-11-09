@@ -1,5 +1,6 @@
 import TenthDiscriminant.Phase227JointJets
 import TenthDiscriminant.RectangularBasisMatrix
+import TenthDiscriminant.RectangularRowAction
 
 /-!
 # Phase228: one source frame for the two noncommuting Frobenius factors
@@ -16,6 +17,7 @@ polynomial row action and both-sided Gram factor remain separate gates.
 
 namespace TenthDiscriminant.Phase228
 
+open Polynomial
 open scoped BigOperators
 
 /-- Number of full horizontal Frobenius blocks in the original row. -/
@@ -199,6 +201,54 @@ theorem combinedBasisMatrix_row_action {A : Type*} [AddCommGroup A]
     simp [combinedBasisTargetFin, target, min_eq_left htk, min_eq_left hul]
   simp [hfin, target]
 
+/-- Exact commuting square from the explicit combined source matrix
+to the ORIGINAL ordinary Z-jet, with the conjugate W held fixed.
+The polynomial on the right is the complete two-index expansion in
+the unchanged original monomial rectangle.  Equality with the compact
+two-Frobenius-factor PRODUCT remains a separate proof obligation. -/
+theorem combinedBasisMatrix_original_integer_jet_expanded
+    (D R S p : Nat) (hp : 2 ≤ p) (i : Fin (R*S))
+    (a : Int × Int) (j : Nat) :
+    let z := pairZsqrtdEquiv D a
+    let k := rectangularBasisExponent R S p i
+    let ell := horizontalBasisExponent R S p i
+    ∑ h : Fin (R*S),
+      (combinedBasisMatrix R S p i h) •
+        pairZsqrtdEquiv D
+          (integerDerivativeRow D (h.val / S) (h.val % S) j a) =
+    (derivative^[j] (
+      ∑ t ∈ Finset.range (k + 1),
+        ∑ u ∈ Finset.range (ell + 1),
+          ((-1 : Int)^(t+u) *
+              (k.choose t : Int) * (ell.choose u : Int)) •
+            (X^(i.val / S - p*t) *
+                C (star z)^(i.val % S + t - (p*p-1)*u)
+              : (Zsqrtd (-(D : Int)))[X]))).eval z := by
+  dsimp
+  rw [combinedBasisMatrix_row_action R S p hp i]
+  rw [iterate_derivative_sum, eval_finset_sum]
+  apply Finset.sum_congr rfl
+  intro t ht
+  rw [iterate_derivative_sum, eval_finset_sum]
+  apply Finset.sum_congr rfl
+  intro u hu
+  rw [iterate_derivative_smul, eval_smul]
+  congr 1
+  have htk : t ≤ rectangularBasisExponent R S p i := by
+    have h := Finset.mem_range.mp ht
+    omega
+  have hul : u ≤ horizontalBasisExponent R S p i := by
+    have h := Finset.mem_range.mp hu
+    omega
+  obtain ⟨hr, hs⟩ :=
+    combinedBasisTargetFin_labels R S p hp i t u htk hul
+  have hjet := integerDerivativeRow_zsqrtd_jet D
+    ((combinedBasisTargetFin R S p hp i t u).val / S)
+    ((combinedBasisTargetFin R S p hp i t u).val % S) j a
+  dsimp at hjet
+  rw [hr, hs] at hjet
+  exact hjet
+
 /-- Lower triangular in the original source order. -/
 theorem combinedBasisMatrix_lowerTriangular (R S p : Nat) (hp : 2 ≤ p) :
     (combinedBasisMatrix R S p).BlockTriangular
@@ -321,3 +371,5 @@ end TenthDiscriminant.Phase228
 
 #print axioms TenthDiscriminant.Phase228.combinedBasisTargetFin_labels
 #print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_row_action
+
+#print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_original_integer_jet_expanded
