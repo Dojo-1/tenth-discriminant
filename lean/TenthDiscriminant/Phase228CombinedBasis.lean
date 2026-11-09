@@ -453,6 +453,58 @@ theorem combinedBasisMatrix_polynomial_action
     _ = _ := (combined_frobenius_polynomial_double_sum
       w (i.val / S) (i.val % S) p k ell hp hpk hpe).symm
 
+/-- The actual combined integer source matrix acts on EVERY original
+ordinary Z-derivative row as the j-th derivative of the *compact*
+two-Frobenius polynomial, with W held fixed. This is the source/jet
+commuting square and makes no new observation, trace, or Gram. -/
+theorem combinedBasisMatrix_original_integer_jet_compact
+    (D R S p : Nat) (hp : 2 ≤ p) (i : Fin (R*S))
+    (a : Int × Int) (j : Nat) :
+    let z := pairZsqrtdEquiv D a
+    let k := rectangularBasisExponent R S p i
+    let ell := horizontalBasisExponent R S p i
+    ∑ h : Fin (R*S),
+      (combinedBasisMatrix R S p i h) •
+        pairZsqrtdEquiv D
+          (integerDerivativeRow D (h.val / S) (h.val % S) j a) =
+      (derivative^[j]
+        (X^(i.val/S-p*k) * C (star z)^(i.val%S-(p*p)*ell) *
+           (X^p-C (star z))^k *
+           C ((star z)^(p*p)-star z)^ell)).eval z := by
+  dsimp
+  have hpoly := combinedBasisMatrix_polynomial_action R S p hp i
+    (star (pairZsqrtdEquiv D a))
+  rw [← hpoly, iterate_derivative_sum, eval_finset_sum]
+  apply Finset.sum_congr rfl
+  intro h hh
+  rw [iterate_derivative_smul, eval_smul]
+  congr 1
+  exact integerDerivativeRow_zsqrtd_jet D (h.val / S) (h.val % S) j a
+
+/-- The original combined transformed row (NOT a surrogate polynomial
+or unrelated matrix) is divisible by p^(k+ell) in the selected integral
+quadratic order, in each ordinary jet, for odd inert p. The result
+composes the exact polynomial action with the separate Phase227
+two-factor divisibility theorem; it is not a determinant assertion. -/
+theorem combinedBasisMatrix_original_integer_jet_dvd
+    (D R S p : Nat) [Fact p.Prime]
+    (hp2 : p ≠ 2) (hnonsquare : ¬ IsSquare (-(D : ZMod p)))
+    (i : Fin (R*S)) (a : Int × Int) (j : Nat) :
+    (p : Zsqrtd (-(D : Int))) ^
+      (rectangularBasisExponent R S p i +
+        horizontalBasisExponent R S p i) ∣
+    ∑ h : Fin (R*S),
+      (combinedBasisMatrix R S p i h) •
+        pairZsqrtdEquiv D
+          (integerDerivativeRow D (h.val / S) (h.val % S) j a) := by
+  have hp : 2 ≤ p := (Fact.out : p.Prime).two_le
+  rw [combinedBasisMatrix_original_integer_jet_compact D R S p hp i a j]
+  exact Phase227.combined_rectangular_row_ordinary_jet_dvd
+    D p (i.val / S) (i.val % S)
+      (rectangularBasisExponent R S p i)
+      (horizontalBasisExponent R S p i)
+      j hp2 hnonsquare a
+
 /-- Lower triangular in the original source order. -/
 theorem combinedBasisMatrix_lowerTriangular (R S p : Nat) (hp : 2 ≤ p) :
     (combinedBasisMatrix R S p).BlockTriangular
@@ -585,3 +637,6 @@ end TenthDiscriminant.Phase228
 #print axioms TenthDiscriminant.Phase228.combined_frobenius_polynomial_double_sum
 
 #print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_polynomial_action
+
+#print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_original_integer_jet_compact
+#print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_original_integer_jet_dvd
