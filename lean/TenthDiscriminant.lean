@@ -227,3 +227,4 @@ import TenthDiscriminant.EllipseResidueTransport
 
 import TenthDiscriminant.Phase136MinorSaturation
 import TenthDiscriminant.PlacewiseTransport
+import TenthDiscriminant.PlacewiseExactSequence
