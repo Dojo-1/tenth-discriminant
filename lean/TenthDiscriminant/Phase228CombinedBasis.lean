@@ -1,6 +1,7 @@
 import TenthDiscriminant.Phase227JointJets
 import TenthDiscriminant.RectangularBasisMatrix
 import TenthDiscriminant.RectangularRowAction
+import TenthDiscriminant.RectangularGramFactor
 
 /-!
 # Phase228: one source frame for the two noncommuting Frobenius factors
@@ -505,6 +506,110 @@ theorem combinedBasisMatrix_original_integer_jet_dvd
       (horizontalBasisExponent R S p i)
       j hp2 hnonsquare a
 
+/-- The integral *quotient of the actual combined transformed jets*.
+This is a witness supplied by the formally checked original-jet row
+divisibility, never a substituted polynomial or a Hasse jet. -/
+noncomputable def combinedNormalizedJet
+    (D R S p : Nat) [Fact p.Prime]
+    (hp2 : p ≠ 2) (hnonsquare : ¬ IsSquare (-(D : ZMod p))) :
+    Fin (R*S) → Int × Int → Nat → Zsqrtd (-(D : Int)) :=
+  fun i a j => Classical.choose
+    (combinedBasisMatrix_original_integer_jet_dvd
+      D R S p hp2 hnonsquare i a j)
+
+/-- Extract both vertical and horizontal row factors over Z, in the
+unchanged original integer-coordinate observation family. -/
+theorem combinedTransformedJet_scale
+    (D R S p : Nat) [Fact p.Prime]
+    (hp2 : p ≠ 2) (hnonsquare : ¬ IsSquare (-(D : ZMod p)))
+    (i : Fin (R*S)) (a : Int × Int) (j : Nat) :
+    zsqrtdJetTransform (combinedBasisMatrix R S p)
+        (rectangularCanonicalJet D R S) i a j =
+      ((p : Int) ^ (rectangularBasisExponent R S p i +
+         horizontalBasisExponent R S p i)) •
+        combinedNormalizedJet D R S p hp2 hnonsquare i a j := by
+  have h := Classical.choose_spec
+    (combinedBasisMatrix_original_integer_jet_dvd
+      D R S p hp2 hnonsquare i a j)
+  simpa only [zsqrtdJetTransform, rectangularCanonicalJet,
+    combinedNormalizedJet, zsmul_eq_mul, Int.cast_pow,
+    Int.cast_natCast] using h
+
+/-- Exact SAME-ORIGINAL-GRAM integral factorization for one odd inert
+prime. All points a in Q and all ORDINARY derivative indices j<J
+are retained. U is the ONE combined Z,W source matrix, K is the trace
+Gram of the actual integrally normalized jets. No extra prime depth,
+field bound, or analytic upper is inferred here. -/
+theorem combinedTraceGram_basis_factor_of_inert
+    (Q : Finset (Int × Int)) (D J R S p : Nat)
+    [Fact p.Prime]
+    (hp2 : p ≠ 2) (hnonsquare : ¬ IsSquare (-(D : ZMod p))) :
+    ∃ K : Matrix (Fin (R*S)) (Fin (R*S)) Int,
+      combinedBasisMatrix R S p *
+          integerRectangularTraceGram Q D J R S *
+          (combinedBasisMatrix R S p).transpose =
+        Matrix.diagonal (fun i => (p : Int) ^
+          (rectangularBasisExponent R S p i +
+            horizontalBasisExponent R S p i)) *
+        K * Matrix.diagonal (fun i => (p : Int) ^
+          (rectangularBasisExponent R S p i +
+            horizontalBasisExponent R S p i)) := by
+  classical
+  refine ⟨zsqrtdJetGram Q D J
+    (combinedNormalizedJet D R S p hp2 hnonsquare), ?_⟩
+  calc
+    combinedBasisMatrix R S p *
+        integerRectangularTraceGram Q D J R S *
+        (combinedBasisMatrix R S p).transpose =
+      zsqrtdJetGram Q D J
+        (zsqrtdJetTransform (combinedBasisMatrix R S p)
+          (rectangularCanonicalJet D R S)) := by
+        rw [zsqrtdJetGram_transform]
+        change combinedBasisMatrix R S p *
+            integerRectangularTraceGram Q D J R S *
+            (combinedBasisMatrix R S p).transpose =
+          combinedBasisMatrix R S p *
+            zsqrtdJetGram Q D J (fun i a j =>
+              pairZsqrtdEquiv D
+                (integerDerivativeRow D (i.val / S) (i.val % S) j a)) *
+            (combinedBasisMatrix R S p).transpose
+        rw [zsqrtdJetGram_canonical]
+    _ = Matrix.diagonal (fun i => (p : Int) ^
+          (rectangularBasisExponent R S p i +
+            horizontalBasisExponent R S p i)) *
+        zsqrtdJetGram Q D J
+          (combinedNormalizedJet D R S p hp2 hnonsquare) *
+        Matrix.diagonal (fun i => (p : Int) ^
+          (rectangularBasisExponent R S p i +
+            horizontalBasisExponent R S p i)) := by
+        apply zsqrtdJetGram_scale
+        intro i a j ha hj
+        exact combinedTransformedJet_scale
+          D R S p hp2 hnonsquare i a j
+
+/-- The proven double-factor *row weights* extract exactly the
+corresponding determinant divisor from the unchanged original integral
+trace Gram at every odd inert prime, once and only once. -/
+theorem combinedTraceGram_valuation_of_inert
+    (Q : Finset (Int × Int)) (D J R S p : Nat)
+    [Fact p.Prime]
+    (hp2 : p ≠ 2) (hnonsquare : ¬ IsSquare (-(D : ZMod p))) :
+    (p : Int) ^ (2 * ∑ i : Fin (R*S),
+        (rectangularBasisExponent R S p i +
+          horizontalBasisExponent R S p i)) ∣
+      (integerRectangularTraceGram Q D J R S).det := by
+  have hp : 2 ≤ p := (Fact.out : p.Prime).two_le
+  obtain ⟨K, hfactor⟩ :=
+    combinedTraceGram_basis_factor_of_inert
+      Q D J R S p hp2 hnonsquare
+  exact pow_dvd_det_of_unimodular_gram_factor
+    (integerRectangularTraceGram Q D J R S)
+    (combinedBasisMatrix R S p) K (p : Int)
+    (fun i : Fin (R*S) =>
+      rectangularBasisExponent R S p i +
+        horizontalBasisExponent R S p i)
+    (combinedBasisMatrix_det R S p hp) hfactor
+
 /-- Lower triangular in the original source order. -/
 theorem combinedBasisMatrix_lowerTriangular (R S p : Nat) (hp : 2 ≤ p) :
     (combinedBasisMatrix R S p).BlockTriangular
@@ -640,3 +745,7 @@ end TenthDiscriminant.Phase228
 
 #print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_original_integer_jet_compact
 #print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_original_integer_jet_dvd
+
+#print axioms TenthDiscriminant.Phase228.combinedTransformedJet_scale
+#print axioms TenthDiscriminant.Phase228.combinedTraceGram_basis_factor_of_inert
+#print axioms TenthDiscriminant.Phase228.combinedTraceGram_valuation_of_inert
