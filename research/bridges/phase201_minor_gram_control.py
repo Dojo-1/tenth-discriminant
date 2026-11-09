@@ -95,6 +95,35 @@ def main():
     assert det_m == -1 and det_m % 5 != 0
     assert 2 ** len(rows) * det_m ** 2 <= det_g
 
+    # Original finite-field pairing obstruction, not an evaluation-rank
+    # deficiency. The selected complex minor is real, integral and a unit
+    # modulo five, so the full original integer-coordinate evaluation E
+    # has row rank four modulo five.
+    radical_witness = (0, 1, -2, 0)  # odd source parity only
+    assert all(
+        sum(gram[i][j] * radical_witness[j] for j in range(len(rows))) % 5 == 0
+        for i in range(len(rows))
+    )
+    # The vector is NOT killed by the original evaluation transpose:
+    # at j=0 and z=1, its value is 1-2=-1 (mod 5).
+    observation = cols.index((0, 1, 0))
+    witness_image = sum(radical_witness[i] * evals[i][observation][0]
+                        for i in range(len(rows)))
+    assert witness_image == -1 and witness_image % 5 != 0
+
+    # A 3x3 principal minor is a unit mod 5 (rows 0,3,1);
+    # det(G) is zero mod 5, hence rank(G mod 5) = 3 exactly.
+    even_block_det = gram[0][0] * gram[3][3] - gram[0][3] * gram[3][0]
+    principal_minor3 = even_block_det * gram[1][1]
+    assert even_block_det == 2416
+    assert principal_minor3 % 5 == 4
+    # Thus the restricted trace-pairing radical has dimension exactly 1
+    # over F_5, while E transpose has zero kernel.
+    print("Finite-field exact obstruction: rank(E mod 5)=4, "
+          "rank(G mod 5)=3, restricted pairing radical dimension=1")
+    print("Odd-parity radical witness: (0,1,-2,0); "
+          "E^T witness at (j=0,z=1)=-1 mod 5")
+
     print("PASS: original ordinary-Z-jet finite trace Gram is exactly:")
     for row in gram:
         print(" ", row)
