@@ -95,6 +95,30 @@ theorem combinedBasisTarget_in_range (R S p : Nat) (hp : 2 ≤ p)
     exact i.isLt
   · exact (combinedBasisTarget_lt R S p hp i t u ht hu (by omega)).trans i.isLt
 
+/-- An active two-index term recovers the ORIGINAL row-major labels.
+The residual W exponent is kept as a Nat subtraction: neither the
+source nor the ordinary-jet evaluation has been replaced.  This is
+the necessary label bridge before the universal polynomial action. -/
+theorem combinedBasisTarget_active_labels
+    (R S p : Nat) (hp : 2 ≤ p) (i : Fin (R*S))
+    (t u : Nat)
+    (ht : t ≤ rectangularBasisExponent R S p i)
+    (hu : u ≤ horizontalBasisExponent R S p i) :
+    (combinedBasisTarget S p (i.val / S) (i.val % S) t u) / S =
+      i.val / S - p*t ∧
+    (combinedBasisTarget S p (i.val / S) (i.val % S) t u) % S =
+      i.val % S + t - (p*p-1)*u := by
+  have hst := (rectangularBasis_term_bounds R S p (by omega) i t ht).2
+  have hres : i.val % S + t - (p*p-1)*u < S :=
+    lt_of_le_of_lt (Nat.sub_le _ _) hst
+  have hS : 0 < S := by omega
+  constructor
+  · unfold combinedBasisTarget
+    rw [Nat.mul_comm (i.val / S - p*t) S, Nat.mul_add_div hS]
+    simp [Nat.div_eq_of_lt hres]
+  · unfold combinedBasisTarget
+    exact Nat.mul_add_mod_of_lt hres
+
 /-- One explicit integer matrix with BOTH binomial coefficients. -/
 def combinedBasisMatrix (R S p : Nat) :
     Matrix (Fin (R*S)) (Fin (R*S)) Int :=
@@ -223,3 +247,5 @@ end TenthDiscriminant.Phase228
 
 #print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_pilot_full_row
 #print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_pilot_five
+
+#print axioms TenthDiscriminant.Phase228.combinedBasisTarget_active_labels
