@@ -143,6 +143,54 @@ theorem restricted_radical_unimodular_source_frame
     · have hh := congrArg (fun z : Fin n → k => U.mulVec z) hz
       simpa only [Matrix.mulVec_mulVec, Matrix.mul_assoc, Matrix.mulVec_zero] using hh
 
+/-- Exact observation-value transport under a reversible source
+frame: the observation image is unchanged, not merely its rank. -/
+theorem source_frame_evaluation_natural
+    {k : Type*} [Field k] {n m : Nat}
+    (E : Matrix (Fin n) (Fin m) k)
+    (U V : Matrix (Fin n) (Fin n) k)
+    (hVU : V * U = 1) (x : Fin n → k) :
+    (U * E).transpose.mulVec (V.transpose.mulVec x) =
+      E.transpose.mulVec x := by
+  have ht : U.transpose * V.transpose = 1 := by
+    simpa only [Matrix.transpose_mul, Matrix.transpose_one] using
+      congrArg (fun M => M.transpose) hVU
+  calc
+    (U * E).transpose.mulVec (V.transpose.mulVec x) =
+        E.transpose.mulVec ((U.transpose * V.transpose).mulVec x) := by
+          simp only [Matrix.transpose_mul, Matrix.mulVec_mulVec, Matrix.mul_assoc]
+    _ = E.transpose.mulVec x := by simp [ht]
+
+/-- The leftmost map of the source-frame kernel/radical square. -/
+theorem source_frame_evaluation_kernel_natural
+    {k : Type*} [Field k] {n m : Nat}
+    (E : Matrix (Fin n) (Fin m) k)
+    (U V : Matrix (Fin n) (Fin n) k)
+    (hVU : V * U = 1) (x : Fin n → k)
+    (hx : E.transpose.mulVec x = 0) :
+    (U * E).transpose.mulVec (V.transpose.mulVec x) = 0 := by
+  rw [source_frame_evaluation_natural E U V hVU x]
+  exact hx
+
+/-- The middle map of the source-frame kernel/radical square:
+a Gram-kernel vector transports through inverse-transpose while its
+observation image remains literally the same.  B need not be
+nondegenerate, and k may have characteristic two. -/
+theorem source_frame_gram_kernel_natural
+    {k : Type*} [Field k] {n m : Nat}
+    (E : Matrix (Fin n) (Fin m) k)
+    (B : Matrix (Fin m) (Fin m) k)
+    (U V : Matrix (Fin n) (Fin n) k)
+    (hVU : V * U = 1) (x : Fin n → k)
+    (hx : (E * B * E.transpose).mulVec x = 0) :
+    ((U * E) * B * (U * E).transpose).mulVec
+      (V.transpose.mulVec x) = 0 := by
+  apply (gram_kernel_iff_restricted_radical (U * E) B
+    (V.transpose.mulVec x)).2
+  rw [source_frame_evaluation_natural E U V hVU x]
+  rw [restricted_radical_unimodular_source_frame E B U V hVU]
+  exact (gram_kernel_iff_restricted_radical E B x).1 hx
+
 end
 end TenthDiscriminant.Phase203
 
@@ -152,3 +200,7 @@ end TenthDiscriminant.Phase203
 #print axioms TenthDiscriminant.Phase203.gram_kernel_no_extra_vectors_iff_radical_trivial
 
 #print axioms TenthDiscriminant.Phase203.restricted_radical_unimodular_source_frame
+
+#print axioms TenthDiscriminant.Phase203.source_frame_evaluation_natural
+#print axioms TenthDiscriminant.Phase203.source_frame_evaluation_kernel_natural
+#print axioms TenthDiscriminant.Phase203.source_frame_gram_kernel_natural
