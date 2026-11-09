@@ -395,6 +395,64 @@ theorem combined_frobenius_polynomial_double_sum
         ring
     _ = _ := by rw [hcoef, hmon]
 
+/-- Phase251 / Issue #160. The single combined integral source frame
+takes the entire ORIGINAL row-major monomial family to the exact compact
+two-Frobenius-factor source polynomial, over any coefficient commutative
+ring. No sample, prime inertness, derivative, alternate source, or Gram
+is introduced; those are separately typed downstream maps. -/
+theorem combinedBasisMatrix_polynomial_action
+    {A : Type*} [CommRing A]
+    (R S p : Nat) (hp : 2 ≤ p) (i : Fin (R*S)) (w : A) :
+    (∑ h : Fin (R*S), (combinedBasisMatrix R S p i h) •
+      (X ^ (h.val / S) * C w ^ (h.val % S) : A[X])) =
+    (X^(i.val/S-p*(rectangularBasisExponent R S p i)) *
+       C w ^ (i.val%S-(p*p)*(horizontalBasisExponent R S p i)) *
+       (X^p-C w)^(rectangularBasisExponent R S p i) *
+       C (w^(p*p)-w)^(horizontalBasisExponent R S p i) : A[X]) := by
+  let k := rectangularBasisExponent R S p i
+  let ell := horizontalBasisExponent R S p i
+  have hpk : p*k ≤ i.val / S :=
+    (rectangularBasis_term_bounds R S p (by omega) i k (le_refl k)).1
+  have hpe : (p*p)*ell ≤ i.val % S := by
+    dsimp [ell, horizontalBasisExponent]
+    simpa only [Nat.mul_comm] using
+      (Nat.div_mul_le_self (i.val % S) (p*p))
+  calc
+    (∑ h : Fin (R*S), (combinedBasisMatrix R S p i h) •
+        (X ^ (h.val / S) * C w ^ (h.val % S) : A[X])) =
+      ∑ t ∈ Finset.range (k+1),
+        ∑ u ∈ Finset.range (ell+1),
+          ((-1 : Int)^(t+u) * (k.choose t : Int) *
+              (ell.choose u : Int)) •
+            (X^((combinedBasisTargetFin R S p hp i t u).val / S) *
+             C w^((combinedBasisTargetFin R S p hp i t u).val % S)
+                : A[X]) := by
+      simpa only [k, ell] using
+        (combinedBasisMatrix_row_action R S p hp i
+          (fun h : Fin (R*S) =>
+            (X^(h.val / S) * C w^(h.val % S) : A[X])))
+    _ = ∑ t ∈ Finset.range (k+1),
+          ∑ u ∈ Finset.range (ell+1),
+            ((-1 : Int)^(t+u) * (k.choose t : Int) *
+              (ell.choose u : Int)) •
+              (X^(i.val / S-p*t) *
+                C w^(i.val%S+t-(p*p-1)*u) : A[X]) := by
+      apply Finset.sum_congr rfl
+      intro t ht
+      apply Finset.sum_congr rfl
+      intro u hu
+      have htk : t ≤ k := by
+        have := Finset.mem_range.mp ht
+        omega
+      have hul : u ≤ ell := by
+        have := Finset.mem_range.mp hu
+        omega
+      obtain ⟨hr, hs⟩ :=
+        combinedBasisTargetFin_labels R S p hp i t u htk hul
+      rw [hr, hs]
+    _ = _ := (combined_frobenius_polynomial_double_sum
+      w (i.val / S) (i.val % S) p k ell hp hpk hpe).symm
+
 /-- Lower triangular in the original source order. -/
 theorem combinedBasisMatrix_lowerTriangular (R S p : Nat) (hp : 2 ≤ p) :
     (combinedBasisMatrix R S p).BlockTriangular
@@ -525,3 +583,5 @@ end TenthDiscriminant.Phase228
 #print axioms TenthDiscriminant.Phase228.combined_frobenius_polynomial_product_of_sums
 
 #print axioms TenthDiscriminant.Phase228.combined_frobenius_polynomial_double_sum
+
+#print axioms TenthDiscriminant.Phase228.combinedBasisMatrix_polynomial_action
