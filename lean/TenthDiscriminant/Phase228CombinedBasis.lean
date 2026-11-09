@@ -587,29 +587,6 @@ theorem combinedTraceGram_basis_factor_of_inert
         exact combinedTransformedJet_scale
           D R S p hp2 hnonsquare i a j
 
-/-- The proven double-factor *row weights* extract exactly the
-corresponding determinant divisor from the unchanged original integral
-trace Gram at every odd inert prime, once and only once. -/
-theorem combinedTraceGram_valuation_of_inert
-    (Q : Finset (Int × Int)) (D J R S p : Nat)
-    [Fact p.Prime]
-    (hp2 : p ≠ 2) (hnonsquare : ¬ IsSquare (-(D : ZMod p))) :
-    (p : Int) ^ (2 * ∑ i : Fin (R*S),
-        (rectangularBasisExponent R S p i +
-          horizontalBasisExponent R S p i)) ∣
-      (integerRectangularTraceGram Q D J R S).det := by
-  have hp : 2 ≤ p := (Fact.out : p.Prime).two_le
-  obtain ⟨K, hfactor⟩ :=
-    combinedTraceGram_basis_factor_of_inert
-      Q D J R S p hp2 hnonsquare
-  exact pow_dvd_det_of_unimodular_gram_factor
-    (integerRectangularTraceGram Q D J R S)
-    (combinedBasisMatrix R S p) K (p : Int)
-    (fun i : Fin (R*S) =>
-      rectangularBasisExponent R S p i +
-        horizontalBasisExponent R S p i)
-    (combinedBasisMatrix_det R S p hp) hfactor
-
 /-- Lower triangular in the original source order. -/
 theorem combinedBasisMatrix_lowerTriangular (R S p : Nat) (hp : 2 ≤ p) :
     (combinedBasisMatrix R S p).BlockTriangular
@@ -667,6 +644,30 @@ theorem combinedBasisMatrix_det (R S p : Nat) (hp : 2 ≤ p) :
   rw [Matrix.det_of_lowerTriangular _
     (combinedBasisMatrix_lowerTriangular R S p hp)]
   simp [combinedBasisMatrix_diag R S p hp]
+
+/-- The proven double-factor *row weights* extract exactly the
+corresponding determinant divisor from the unchanged original integral
+trace Gram at every odd inert prime, once and only once. -/
+theorem combinedTraceGram_valuation_of_inert
+    (Q : Finset (Int × Int)) (D J R S p : Nat)
+    [Fact p.Prime]
+    (hp2 : p ≠ 2) (hnonsquare : ¬ IsSquare (-(D : ZMod p))) :
+    (p : Int) ^ (2 * ∑ i : Fin (R*S),
+        (rectangularBasisExponent R S p i +
+          horizontalBasisExponent R S p i)) ∣
+      (integerRectangularTraceGram Q D J R S).det := by
+  have hp : 2 ≤ p := (Fact.out : p.Prime).two_le
+  obtain ⟨K, hfactor⟩ :=
+    combinedTraceGram_basis_factor_of_inert
+      Q D J R S p hp2 hnonsquare
+  exact pow_dvd_det_of_unimodular_gram_factor
+    (integerRectangularTraceGram Q D J R S)
+    (combinedBasisMatrix R S p) K (p : Int)
+    (fun i : Fin (R*S) =>
+      rectangularBasisExponent R S p i +
+        horizontalBasisExponent R S p i)
+    (combinedBasisMatrix_det R S p hp) hfactor
+
 
 /-- At (r,s)=(3,9), p=3, R=4, S=11, the four old
 monomial coefficients are 1,-1,-1,+1 at columns 42,34,10,2. -/
