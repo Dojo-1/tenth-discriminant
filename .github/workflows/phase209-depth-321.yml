@@ -23,6 +23,7 @@ on:
       - "lean/TenthDiscriminant/Phase226HorizontalIntegral.lean"
       - "lean/TenthDiscriminant/Phase227JointJets.lean"
       - "lean/TenthDiscriminant/Phase228CombinedBasis.lean"
+      - "lean/TenthDiscriminant/Phase259Horizontal321.lean"
       - "research/phase228/**"
       - ".github/workflows/phase209-depth-321.yml"
   workflow_dispatch:
@@ -93,3 +94,5 @@ jobs:
           lake env lean TenthDiscriminant/Phase226HorizontalIntegral.lean
           lake env lean TenthDiscriminant/Phase227JointJets.lean
           lake env lean TenthDiscriminant/Phase228CombinedBasis.lean
+          lake build TenthDiscriminant.Phase259Horizontal321
+          lake env lean TenthDiscriminant/Phase259Horizontal321.lean
