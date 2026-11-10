@@ -54,11 +54,13 @@ theorem enhancedOddMass_eq_old_plus (R S : Nat) (hR : 6 ≤ R) :
       simp [enhancedValuationWeight, a, b, Nat.mul_add,
         Nat.cast_add, Nat.cast_mul, add_mul]
       <;> ring
+      all_goals simp
     by_cases hp5 : p = 5
     · subst p
       simp [enhancedValuationWeight, a, b, Nat.mul_add,
         Nat.cast_add, Nat.cast_mul, add_mul]
       <;> ring
+      all_goals simp
     · simp [enhancedValuationWeight, hp3, hp5]
   have hsum3 :
       (∑ p ∈ oddPrimesBelow R, if p = 3 then a else 0) = a := by
@@ -105,9 +107,21 @@ theorem enhancedOddMass_ge_old_plus_horizontal
     (show (0 : Real) ≤ (2*R*floorMass 9 S : Nat) by positivity)
   have h5mul := mul_le_mul_of_nonneg_left h5
     (show (0 : Real) ≤ (2*R*floorMass 25 S : Nat) by positivity)
-  rw [enhancedOddMass_eq_old_plus R S hR, horizontalPrimeMass_eq]
-  push_cast
-  nlinarith only [h3mul, h5mul]
+  have hmass :
+      (horizontalPrimeMass R S : Real)/500 ≤
+        (2*R*floorMass 9 S : Nat)*Real.log 3 +
+        (2*R*floorMass 25 S : Nat)*Real.log 5 := by
+    rw [horizontalPrimeMass_eq]
+    calc
+      ((R*(1098*floorMass 9 S+1609*floorMass 25 S) : Nat) : Real)/500 =
+          (2*R*floorMass 9 S : Nat)*(1098/1000 : Real) +
+          (2*R*floorMass 25 S : Nat)*(1609/1000 : Real) := by
+        push_cast
+        ring
+      _ ≤ _ := add_le_add h3mul h5mul
+  rw [enhancedOddMass_eq_old_plus R S hR]
+  simpa only [add_assoc] using
+    (add_le_add_left hmass (exactOddPrimeMass R S))
 
 /-- Original source determinant: the old exact odd mass and the new
 horizontal mass are both paid by ONE integer determinant, with the
