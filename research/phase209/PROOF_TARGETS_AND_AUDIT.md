@@ -41,7 +41,7 @@ For the original complete ellipse Q, conjugation preserves Q and the real intege
 Writing the old transformed and normalized evaluation C, the SAME integer Gram satisfies
 $$
 UG_DU^\top=\Delta_p\,C W C^\top\Delta_p,\quad
-\det U=1,\quad \Delta_p=\operatorname{diag}(p^{k_{r,s}}),
+\det U=1,\quad \Delta_p=\mathrm{diag}(p^{k_{r,s}}),
 $$
 where W is the integral diagonal folded trace metric. Every C column at derivative depth j is divisible by p^floor(j/p²). Weighted Cauchy–Binet has no denominators: each term is the square of an n×n integral minor multiplied by integer weights. Thus the NEW additional valuation is **twice** the minimum total selected column depth, beyond the old 2F_p, F_p=Σk.
 
