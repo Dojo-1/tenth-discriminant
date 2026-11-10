@@ -40,7 +40,7 @@ theorem floorMass_lower (q S : Nat) (hq : 0 < q) :
     simp only [Finset.sum_add_distrib, Finset.sum_const,
       Finset.card_range, nsmul_eq_mul, ← Finset.mul_sum]
     unfold floorMass
-    ring
+    ring_nf
   rw [hrewrite] at hsum
   have hsumid : 2*(∑ s ∈ Finset.range S, s)+S = S*S := by
     have h := Finset.sum_range_id_mul_two S
@@ -95,7 +95,8 @@ theorem horizontal_mass_core (D R S : Nat)
     4659*D*R*S =
         116475*D*S*S+4659*D*(R%25)*S := by
       calc
-        4659*D*R*S = 4659*D*(25*S+R%25)*S := by rw [← hdiv]
+        4659*D*R*S = 4659*D*(25*S+R%25)*S :=
+          congrArg (fun n : Nat => 4659*D*n*S) hdiv
         _ = _ := by ring
     _ ≤ 1250*D*(1098*floorMass 9 S+1609*floorMass 25 S)
           +3267275*D*S+4659*D*(R%25)*S := by
