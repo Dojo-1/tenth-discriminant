@@ -1,26 +1,30 @@
 # Start here — current Tenth Discriminant research state
 
+**Status correction — 4 November 2026:** [PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) is merged and includes `Threshold322.totallyComplex_degree_two_classNumber_one_discriminant_bound_322`, the encoded totally complex quadratic class-number-one theorem `|disc(K)| < 322^4 = 10,750,371,856`. The 328^4/327^4 narrative below is retained as a **3 November historical snapshot**, not a replacement for this newer checked theorem. [Phase209 PR #157](https://github.com/Dojo-1/tenth-discriminant/pull/157) targets a **conditional** 321^4 improvement and remains draft, with concrete source-to-jet/weighted-minor bridges unproved. [Math 2.0 methods-and-understanding charter #158](https://github.com/Dojo-1/tenth-discriminant/issues/158) restores the zero-exclusion comparison and human-reconstruction objectives. [Review #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) and [cross-method source check #51](https://github.com/Dojo-1/tenth-discriminant/issues/51) remain open.
+
+> **10 November 2026 correction (supersedes the 4 November Phase209 status above).** [PR #157](https://github.com/Dojo-1/tenth-discriminant/pull/157) now contains a Lean-checked **actual-field** $321^4$ theorem in [Phase267](lean/TenthDiscriminant/Phase267ActualField321.lean), with [focused](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42820526500) and [full-root](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42820526708) proof checks successful at `4c3dc08`. This is a different combined-integral-frame route, not a formalization of the earlier divided-Taylor-flow conjecture. It remains a **draft, unmerged PR**; the merged public endpoint is $322^4$. Human semantic review [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50) and cross-method review [#51](https://github.com/Dojo-1/tenth-discriminant/issues/51) are open.
+
 **Canonical branch: [main](https://github.com/Dojo-1/tenth-discriminant/tree/main).** This is the sole publication and reader entry point. Old PRs and commits are evidence provenance, not competing versions readers must follow. The register below separates *integrated mathematics*, *bounded experiments*, *proposed improvements*, and *independent review*.
 
 ## What a reader can currently rely on
 
-**Merged formal field theorem — 10 November 2026 [P, relative to encoded definitions].** [Phase200 PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) integrated [ActualField322.lean](lean/TenthDiscriminant/ActualField322.lean). For any totally complex degree-two number field $K$ with class number one,
+**Current merged field theorem [P, relative to formal encoding]:** [PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) proves for every totally complex quadratic class-number-one field $K$ that
 
 $$
-|\operatorname{disc}(K)| < 322^4 = 10\,750\,371\,856.
+|\operatorname{disc}(K)|<322^4=10\,750\,371\,856.
 $$
 
-**Stronger branch theorem — checked, not merged.** [Phase209–267 PR #157](https://github.com/Dojo-1/tenth-discriminant/pull/157) proves the actual-field bound
+**Branch-checked stronger field theorem [P, relative to formal encoding; not merged]:** [PR #157](https://github.com/Dojo-1/tenth-discriminant/pull/157) proves
 
 $$
-|\operatorname{disc}(K)| < 321^4 = 10\,617\,447\,681
+|\operatorname{disc}(K)|<321^4=10\,617\,447\,681.
 $$
 
-in [Phase267ActualField321.lean](lean/TenthDiscriminant/Phase267ActualField321.lean), using the **same original trace Gram** and a combined integral Frobenius frame. [Focused Lean](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42820526500) and [whole-root Lean/axiom audit](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42820526708) succeeded at proof-changing head `4c3dc08`; later documentation changes must pass their own CI. This is a checked statement **within the formal encoding**, not an independent human review, a general zero-free region, or a priority claim. [Human proof map](research/phase228/PROOF_SCOPE.md) · [Independent semantic review #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) · [Source-type comparison #51](https://github.com/Dojo-1/tenth-discriminant/issues/51).
+Both are **actual-field** statements, not bounds on the auxiliary determinant alone. Neither is an independently reviewed mathematical argument nor a uniform Dirichlet-$L$ zero-free region. [Five-step source-to-field map](research/phase228/PROOF_SCOPE.md). The following 3 November $328^4$ and $327^4$ notes are historical checkpoints, not today's endpoint.
 
-### Historical checkpoints (retained as dated evidence)
+### Historical 3 November snapshot
 
-**Historical mainline field theorem [P, at 3 November 2026].** [Phase195 PR #116](https://github.com/Dojo-1/tenth-discriminant/pull/116) merged at [1d74a750](https://github.com/Dojo-1/tenth-discriminant/commit/1d74a7506506feb350ac771329f372e2f4b089bd) with the declaration [Threshold328.totallyComplex_degree_two_classNumber_one_discriminant_bound_328](lean/TenthDiscriminant/ActualField328.lean):
+**Mainline formal field theorem [P relative to encoded definitions and standard axioms] — 3 November 2026.** [Phase195 PR #116](https://github.com/Dojo-1/tenth-discriminant/pull/116) merged at [1d74a750](https://github.com/Dojo-1/tenth-discriminant/commit/1d74a7506506feb350ac771329f372e2f4b089bd) with the declaration [Threshold328.totallyComplex_degree_two_classNumber_one_discriminant_bound_328](lean/TenthDiscriminant/ActualField328.lean):
 
 ```math
 |\mathrm{disc}(K)|<328^4=11{,}574{,}317{,}056
@@ -28,9 +32,9 @@ in [Phase267ActualField321.lean](lean/TenthDiscriminant/Phase267ActualField321.l
 
 for totally complex quadratic number fields of class number one. This concerns the **actual absolute field discriminant**, not the auxiliary source Gram. All **33** exact-head PR checks passed, including the entire project-root Lean build, source correspondence, transitive permitted-axiom audit, known-false strengthening controls, and CodeQL. [Phase188's earlier $331^4$ theorem](https://github.com/Dojo-1/tenth-discriminant/pull/112) remains a fully checked historical predecessor, alongside $375^4$, $377^4$, 41.00625 billion and ~47 billion. CI does **not** replace independent mathematical semantic reconstruction.
 
-**Historical strengthened original-prime arithmetic [P, at that checkpoint].** [PR #114](https://github.com/Dojo-1/tenth-discriminant/pull/114) merged the $0.0879$ normalized recovery from the original primes 3 and 5 with $10R\le251S$. That gain is used in the integrated 328 source lower. The separately focused-Lean-checked [Phase192](https://github.com/Dojo-1/tenth-discriminant/tree/research/phase192-tight-floor-recovery) proved a stronger $0.0895$ under the exact floor ratio $25S\le R\le25S+24$, but its 327 field application is not yet proved.
+**Mainline strengthened original-prime arithmetic [P].** [PR #114](https://github.com/Dojo-1/tenth-discriminant/pull/114) merged the $0.0879$ normalized recovery from the original primes 3 and 5 with $10R\le251S$. That gain is used in the integrated 328 source lower. The separately focused-Lean-checked [Phase192](https://github.com/Dojo-1/tenth-discriminant/tree/research/phase192-tight-floor-recovery) proved a stronger $0.0895$ under the exact floor ratio $25S\le R\le25S+24$, but its 327 field application is not yet proved.
 
-**Historical $327^4$ research target [H at that checkpoint].** [Issue #117](https://github.com/Dojo-1/tenth-discriminant/issues/117) proposes tightening the old log-radius constant and combining the unchanged Gram upper with Phase192's original p=3,5 arithmetic. The independent finite-rational scalar calculation yields gap $313803/2500000000>0$ *conditional on both same-Gram bounds*. The [Phase196 research branch](https://github.com/Dojo-1/tenth-discriminant/tree/research/phase196-sharp-log327) contains source-specific Lean proof targets, focused workflows and a [human explanation](https://github.com/Dojo-1/tenth-discriminant/blob/research/phase196-sharp-log327/research/thin_integrated/PHASE196_327_CANDIDATE.md), but focused compilation, full-root verification and external semantic review remain separate gates. No $327^4$ cutoff had been integrated at that historical checkpoint; later merged results are stronger.
+**$327^4$ research frontier [H as a field theorem].** [Issue #117](https://github.com/Dojo-1/tenth-discriminant/issues/117) proposes tightening the old log-radius constant and combining the unchanged Gram upper with Phase192's original p=3,5 arithmetic. The independent finite-rational scalar calculation yields gap $313803/2500000000>0$ *conditional on both same-Gram bounds*. The [Phase196 research branch](https://github.com/Dojo-1/tenth-discriminant/tree/research/phase196-sharp-log327) contains source-specific Lean proof targets, focused workflows and a [human explanation](https://github.com/Dojo-1/tenth-discriminant/blob/research/phase196-sharp-log327/research/thin_integrated/PHASE196_327_CANDIDATE.md), but focused compilation, full-root verification and external semantic review remain separate gates. No $327^4$ cutoff is presently integrated.
 
 **Independent review is open.** [Issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) requests an external mathematician's reconstruction of the arithmetic prime-mass and original thin-Gram geometric estimates and of the maximal-order field transport. Lean compilation checks the formal encoding, not the intended external argument's originality or meaning. There is no new nine-field classification or peer-reviewed priority claim here. Read the [holistic dependency-and-obstruction atlas](research/thin_integrated/HOLISTIC_SOURCE_TO_FIELD_AUDIT_20261103.md) before transplanting any result from one source or domain to another.
 
