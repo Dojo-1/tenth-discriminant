@@ -74,6 +74,27 @@ theorem log_R_lower_321 (D : Nat) (hD : (321 : Nat)^4 ≤ D) :
   rw [Real.log_div hp.ne' (by norm_num : (1000/249 : Real) ≠ 0)] at hl
   linarith [TenthDiscriminant.log_floor_ratio_upper_13904]
 
+/-- Both logarithmic bounds for the unchanged floor R=floor(D/4),
+needed by the original Hadamard analytic upper at 321⁴. -/
+theorem log_R_bounds_321 (D : Nat) (hD : (321 : Nat)^4 ≤ D) :
+    Real.log D-13904/10000 ≤ Real.log (R D) ∧
+    Real.log (R D) ≤ Real.log D-138/100 := by
+  have hd := dimensions_321 D hD
+  have hp : (0 : Real) < D := by
+    exact_mod_cast (show 0 < D by omega)
+  have hRpos : (0 : Real) < R D := by
+    exact_mod_cast (show 0 < R D by omega)
+  constructor
+  · exact log_R_lower_321 D hD
+  · have hl := Real.log_le_log hRpos hd.2.2.2.2.2.1
+    rw [Real.log_div hp.ne' (by norm_num : (4 : Real) ≠ 0)] at hl
+    have h4 : Real.log (4 : Real) = 2*Real.log 2 := by
+      have he : (4 : Real) = 2^2 := by norm_num
+      rw [he, Real.log_pow]
+      norm_num
+    rw [h4] at hl
+    linarith [Real.log_two_gt_d9]
+
 /-- Re-run the original aspect-ratio estimate at 321⁴, using the
 same raw prime mass and the sound 321 log floor. -/
 theorem normalized_lower_321 (D : Nat) (hD : (321 : Nat)^4 ≤ D) :
