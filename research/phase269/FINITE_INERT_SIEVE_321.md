@@ -2,7 +2,7 @@
 
 **Date:** 2026-11-10. **Status:** exact two-implementation computation (M); arithmetic-to-Lean certificate not discharged (H).
 
-This is NOT a new unconditional imaginary-quadratic class-number-one classification. In fact, mainline already provides the stronger \`FieldClassification.field_classNumber_one_iff\` by an earlier, different large-cutoff and exact bitset route. It is also NOT independent verification of the original Gram/analytic derivation in PR #157.
+This is NOT a new unconditional imaginary-quadratic class-number-one classification. In fact, mainline already provides the stronger `FieldClassification.field_classNumber_one_iff` by an earlier, different large-cutoff and exact bitset route. It is also NOT independent verification of the original Gram/analytic derivation in PR #157.
 
 ## Mathematical input (class-number-one conditional)
 
@@ -11,7 +11,7 @@ If \(-d\) is a negative fundamental discriminant, \(d>163\), and its quadratic f
 - \(d\equiv3\pmod8\) (the prime 2 must be inert; d cannot be even);
 - each rational prime \(p<d/4\) is inert; equivalently \(-d\bmod p\) is a **nonzero quadratic nonsquare**.
 
-The strict inequality is essential. If p is split or ramified, class number one supplies an algebraic integer of norm p, contrary to the imaginary quadratic norm-form bound \(N(\alpha)\ge d/4\) for non-rational integers (rational norms are squares). Mainline's \`ClassNumberInertBridge\` and \`FiniteSieveBridge\` already formalize the relevant field-to-local implication.
+The strict inequality is essential. If p is split or ramified, class number one supplies an algebraic integer of norm p, contrary to the imaginary quadratic norm-form bound \(N(\alpha)\ge d/4\) for non-rational integers (rational norms are squares). Mainline's `ClassNumberInertBridge` and `FiniteSieveBridge` already formalize the relevant field-to-local implication.
 
 ## Exact computation and coverage
 
@@ -28,13 +28,13 @@ Exactly 3,546,560 integers remain before the additional tests. Apply the
 strict guarded nonresidue test to \(p=23,29,\ldots,109\) (all intervening primes).
 The two independent enumerations agree on the survivor counts:
 
-\`\`\`text
+```text
 p:         23       29      31      37     41     43     47     53     59     61
 remaining: 1696178  818872  396251  192895  94091  45960  22255  10671   5062   2437
 
 p:         67    71   73   79   83   89   97  101  103  107  109
 remaining: 1178  578  281  132   74   29   16    9    6    2    0
-\`\`\`
+```
 
 At p=107 only d=585811843 and d=1764959683 remain; p=109 eliminates
 both, witnessed respectively by \(41^2+d\equiv0\pmod{109}\) and
@@ -43,12 +43,12 @@ root, but is intentionally NOT a required prime (\(4\cdot41>163\)).
 
 ### Reproduction
 
-\`\`\`sh
+```sh
 g++ -O3 -std=c++17 -Wall -Wextra tools/finite321_inert_sieve.cpp -o /tmp/finite321
 /tmp/finite321
 python -m pip install numpy
 python tools/finite321_inert_sieve_numpy.py
-\`\`\`
+```
 
 Both terminate with PASS and assert all stage counts. The C++ implementation
 needs only the C++17 standard library; the NumPy program enumerates by
@@ -57,13 +57,13 @@ not independent human mathematical review or formal proof.
 
 ## Lean boundary
 
-\`lean/TenthDiscriminant/Phase269Finite321Bridge.lean\` provides the
+`lean/TenthDiscriminant/Phase269Finite321Bridge.lean` provides the
 sound **conditional** transport:
 
-\`\`\`lean
+```lean
 hfinite : ∀ d, 163 < d → d < 321^4 → d % 8 = 3 →
    guardedPrimeTests d finite321Primes = false
-\`\`\`
+```
 
 plus the implication that such a certificate excludes class number one.
 It does **not** furnish hfinite, call the C++/NumPy programs from Lean, or
@@ -71,8 +71,8 @@ silently import the existing classification.
 
 The smallest remaining proof task is a bounded, Lean-checkable CRT
 bitset/quotient certificate for hfinite, with a full wheel-coverage and
-interval-endpoint proof, using the existing \`ResidueMaskBridge\` and
-\`QuotientFiberBridge\` machinery. If a source/primality/endpoint
+interval-endpoint proof, using the existing `ResidueMaskBridge` and
+`QuotientFiberBridge` machinery. If a source/primality/endpoint
 translation fails, demote this proposal instead of closing the gate.
 
 **Merge gate:** do not claim formally closed finite proof, independent
