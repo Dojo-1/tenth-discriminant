@@ -1,31 +1,37 @@
 # Factual brief for a possible reply to Tao
 
-## Current short human-review brief (30 October 2026; AI-prepared, NOT posted)
+## Current short human-review brief (9 November 2026; AI-prepared, NOT posted)
 
-The integrated Lean theorem now establishes **actual absolute discriminant
-below 47,000,000,000** for every totally complex quadratic number field
-of class number one. It refers to the field's actual discriminant, *not*
-the determinant of the original auxiliary observation Gram.
-[The precise Lean theorem](lean/TenthDiscriminant/TightRadialEndpoint.lean),
-[reconstruction](research/tight_radial_v1/HUMAN_RECONSTRUCTION.md)
-and [exact-head full proof and audit](https://github.com/Dojo-1/tenth-discriminant/actions/runs/41098122516) accompany
-[merged PR #49](https://github.com/Dojo-1/tenth-discriminant/pull/49).
+The current integrated Lean endpoint is the actual-field theorem
 
-The arithmetic argument uses the two-sided integral factorization
-`U_p G U_p^T = Delta_p K_p Delta_p`, which establishes the full
-prime-power exponent, and the geometric argument tightens Hadamard on
-the SAME determinant through an integer unimodular radial frame.
-The sharper uniform rectangle comparison yields normalized saving
-`0.0115` and a positive exact rational logarithmic separation at
-47 billion. We did not change the underlying lattice, ordinary
-derivatives, trace metric, prime-mass estimate or maximal-order charts.
+```math
+|\mathrm{disc}(K)| < 322^4 = 10,750,371,856
+```
 
-This is a formally checked, numerically weak result relative to
-source-reported competing bounds. Their auxiliary-prime rank
-certificates and selected maximal minors are not our full positive
-trace Gram and cannot be transplanted merely by comparing cutoffs.
-Independent mathematical reconstruction remains [open](https://github.com/Dojo-1/tenth-discriminant/issues/50);
-build success is not an external referee's report.
+for every totally complex degree-two number field $K/\mathbb Q$ with class number one. It is the theorem `Threshold322.totallyComplex_degree_two_classNumber_one_discriminant_bound_322` in [`ActualField322.lean`](lean/TenthDiscriminant/ActualField322.lean), integrated by [PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) at [merge f41ce45b](https://github.com/Dojo-1/tenth-discriminant/commit/f41ce45b9dd7d722faa682d3f1dc1c204fb571da). All 21 associated exact-head workflows passed. This bounds the field's actual absolute discriminant, not the auxiliary Gram determinant. Independent human semantic reconstruction remains [open](https://github.com/Dojo-1/tenth-discriminant/issues/50).
+
+The proof's central discipline is to keep arithmetic and geometry on **one identical positive integer**:
+$G=EBE^{\mathsf T}$, where E contains the original ordinary $\partial_Z^j$ derivatives of the original monomials, with W held fixed, on the original integer-pair thin ellipse; B is the original trace-channel metric with weights 2 and 2D. The arithmetic prime divisors and the Archimedean Hadamard upper constrain this same `det G`. The final field theorem transports through the odd/even maximal-order charts to Mathlib's actual field discriminant. No new nine-field classification, novelty or optimality claim follows.
+
+### What this says about Tao's challenge
+
+The 322⁴ theorem is a class-number-one discriminant bound. It is **not** a general zero-free region for real Dirichlet L-functions. The class-number-one hypothesis forces sufficiently small unramified split primes to be impossible by the norm-form argument; an arbitrary real quadratic character does not share that inertness property. The direct Phase210 conductor-scale transfer to a general exceptional-zero exclusion was quantitatively insufficient and is retired in its stated form.
+
+The method's contribution is therefore methodological: an alternative, formally integrated arrangement of integral polynomial jets, inert-prime divisibility, a positive trace-Gram and an Archimedean upper on the same integer. It is numerically weaker than some source-reported competing bounds, whose proofs have not been independently replayed here. Tao's broader invitation also concerns what different methods teach us about polynomial constructions, zero-exclusion and human mathematical understanding; the numerical cutoff is not the whole objective.
+
+### Current draft research, not part of the integrated theorem
+
+[Phase209 PR #157](https://github.com/Dojo-1/tenth-discriminant/pull/157) combines vertical and horizontal Frobenius factors in one original row-major integral source frame. At exact head `c1d3d2c9`, the focused [Phase209 workflow 42657830775](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42657830775) passed both its Lean and exact-source jobs. The inspected source theorems include the compact ordinary-jet action, per-row $p^{k_i+\ell_i}$ divisibility, and the same-original-Gram factorization $U_p G U_p^{\mathsf T}=\Delta_p K_p\Delta_p$ with integral $K_p$; their axiom reports contain only `propext`, `Classical.choice`, and `Quot.sound`. The whole-root [workflow 42657830691](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42657830691) also passed. All 24 associated workflows at this exact head succeeded. The inspected axiom reports for the combined same-Gram declarations contain only `propext`, `Classical.choice`, and `Quot.sound`, with no `sorryAx`. PR #157 remains draft and this work is not yet integrated.
+
+**10 November 2026 update:** The newer [Phase209 head `4c3dc08`](https://github.com/Dojo-1/tenth-discriminant/commit/4c3dc08e791d9835355f012a3e88b67cedf57884) now contains the Lean theorem `Threshold321.totallyComplex_degree_two_classNumber_one_discriminant_bound_321` in [Phase267ActualField321.lean](lean/TenthDiscriminant/Phase267ActualField321.lean). It proves, under the same actual-field hypotheses,
+
+$$
+|\mathrm{disc}(K)| < 321^4 = 10\,617\,447\,681.
+$$
+
+The [focused workflow](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42820526500) and [whole-root Lean audit](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42820526708) succeeded on that head, including the original-Gram arithmetic lower, 321-domain analytic upper, scalar contradiction and field transport. The earlier `c1d3d2c9` paragraph above is retained as a dated checkpoint, not the latest proof status. This theorem remains **unmerged** at the time of this brief and still needs independent human semantic reconstruction (Issue #50); successful CI does not supply that review.
+
+The 9 November Gemini Argon peer review was an AI review of a frozen earlier repository snapshot, not an audit of the current 322⁴ mainline or Phase209. It usefully re-derived several historical identities and correctly emphasized audit boundaries, but its inventory was stale, its matrix orientation was reversed, and its two-term logarithm truncation was arithmetically incorrect. The exact corrections are documented in [the review assessment](research/reviews/ARGON_PEER_REVIEW_ASSESSMENT_20261109.md). No AI review substitutes for the human reconstruction in Issue #50.
 
 No reply, email, or comment has been posted to Tao by this agent.
 Any eventual human-authored contribution should be revised and
