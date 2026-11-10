@@ -33,6 +33,7 @@ on:
       - "lean/TenthDiscriminant/Phase265ThinUpper321.lean"
       - "lean/TenthDiscriminant/Phase266ScalarOverlap321.lean"
       - "lean/TenthDiscriminant/Phase267ActualField321.lean"
+      - "lean/TenthDiscriminant/Phase268FiniteInertBudget321.lean"
       - "research/phase228/**"
       - ".github/workflows/phase209-depth-321.yml"
   workflow_dispatch:
@@ -122,3 +123,5 @@ jobs:
           lake env lean TenthDiscriminant/Phase266ScalarOverlap321.lean
           lake build TenthDiscriminant.Phase267ActualField321
           lake env lean TenthDiscriminant/Phase267ActualField321.lean
+          lake build TenthDiscriminant.Phase268FiniteInertBudget321
+          lake env lean TenthDiscriminant/Phase268FiniteInertBudget321.lean
