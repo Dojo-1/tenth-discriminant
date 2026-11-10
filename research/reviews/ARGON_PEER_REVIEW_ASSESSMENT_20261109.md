@@ -51,7 +51,7 @@ $$
 $$
 The coefficient is divisible by p for every $1\le m\le p$, including $m=p$, where it is $p!$. Argon's prose only mentioned $1\le m\le p-1$, leaving the endpoint unstated.
 
-The clean factorwise Leibniz argument is: in each term of a derivative of (f^k), each of the k factors either receives zero derivatives and evaluates to $z^p-W\equiv0\pmod p$ at an inert-prime observation, or receives at least one derivative and contributes a coefficient divisible by p. Hence every term retains $p^k$ divisibility. The horizontal factor $W^{p^2}-W$ is constant under the ordinary Z derivative and contributes its own $p^\ell$ value divisibility. This is the mathematical content now formalized in the combined ordinary-jet source branch; it must not be confused with replacing the two defects before differentiation.
+The clean factorwise Leibniz argument is: in each term of a derivative of $f^k$, each of the k factors either receives zero derivatives and evaluates to $z^p-W\equiv0\pmod p$ at an inert-prime observation, or receives at least one derivative and contributes a coefficient divisible by p. Hence every term retains $p^k$ divisibility. The horizontal factor $W^{p^2}-W$ is constant under the ordinary Z derivative and contributes its own $p^\ell$ value divisibility. This is the mathematical content now formalized in the combined ordinary-jet source branch; it must not be confused with replacing the two defects before differentiation.
 
 ### 3.3 Logarithm lower bound in Argon §2B: the displayed two-term fraction is wrong
 
