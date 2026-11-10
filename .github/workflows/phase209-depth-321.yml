@@ -27,6 +27,7 @@ on:
       - "lean/TenthDiscriminant/Phase260EnhancedOriginalGram321.lean"
       - "lean/TenthDiscriminant/Phase261EnhancedLog321.lean"
       - "lean/TenthDiscriminant/Phase262HorizontalLogBridge321.lean"
+      - "lean/TenthDiscriminant/Phase263EnhancedLower321.lean"
       - "research/phase228/**"
       - ".github/workflows/phase209-depth-321.yml"
   workflow_dispatch:
@@ -105,3 +106,5 @@ jobs:
           lake env lean TenthDiscriminant/Phase261EnhancedLog321.lean
           lake build TenthDiscriminant.Phase262HorizontalLogBridge321
           lake env lean TenthDiscriminant/Phase262HorizontalLogBridge321.lean
+          lake build TenthDiscriminant.Phase263EnhancedLower321
+          lake env lean TenthDiscriminant/Phase263EnhancedLower321.lean
