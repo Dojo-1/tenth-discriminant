@@ -1,7 +1,7 @@
 import TenthDiscriminant.Phase269Finite321Data
 
 /-!
-# Phase269: exhaustive local-to-global transport at a fixed CRT period
+# Phase269: exhaustive local-to-global transport at a fixed CRT period through the merged 322^4 endpoint
 
 The only data-specific global premise is that ALL nine seed checks hold.
 The result does not import the existing nine-field classification.
@@ -89,7 +89,7 @@ theorem suffix269_no_root (d : Nat) (hbig : 437 ≤ d)
 index at k=0 or k=273. -/
 theorem initial269_bit (r k : Nat) (hr : r < wheel269) :
     (initial269 r).testBit k = true ↔
-      437 ≤ r + wheel269 * k ∧ r + wheel269 * k < (321 : Nat)^4 := by
+      437 ≤ r + wheel269 * k ∧ r + wheel269 * k < (322 : Nat)^4 := by
   unfold initial269
   rw [quotientBand_testBit _ _ _ (by split_ifs <;> omega)]
   unfold wheel269 at *
@@ -125,7 +125,7 @@ theorem partition269 :
 kernel checks. No class-number theorem or classification conclusion is used. -/
 theorem finite269_of_all_seeds
     (hblocks : seeds269.all seed269 = true) :
-    ∀ d : Nat, 163 < d → d < (321 : Nat)^4 → d % 8 = 3 →
+    ∀ d : Nat, 163 < d → d < (322 : Nat)^4 → d % 8 = 3 →
       guardedPrimeTests d finite321Primes = false := by
   intro d hlo hhi hmod
   by_cases hsmall : d < 437
@@ -146,7 +146,7 @@ theorem finite269_of_all_seeds
         Nat.mod_lt d (by decide)
       have hstart : (initial269 (d % wheel269)).testBit (d / wheel269) = true := by
         apply (initial269_bit _ _ hr).mpr
-        simpa only [hdqr] using (show 437 ≤ d ∧ d < (321 : Nat)^4 from ⟨hbig,hhi⟩)
+        simpa only [hdqr] using (show 437 ≤ d ∧ d < (322 : Nat)^4 from ⟨hbig,hhi⟩)
       have hk : d / wheel269 < 785 := by
         apply (Nat.div_lt_iff_lt_mul (by decide : 0 < wheel269)).mpr
         unfold wheel269
