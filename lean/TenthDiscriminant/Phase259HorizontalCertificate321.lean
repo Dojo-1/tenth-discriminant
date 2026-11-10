@@ -88,18 +88,30 @@ theorem weightedHorizontal_closed (R S : ℕ) :
          (2707 / 1000 : ℚ) * (S : ℚ) + correction S) := by
   have h9 := horizontal_three R S
   have h25 := horizontal_five R S
+  have h9q' :
+      (18 : ℚ) * (↑(R * floorSum S 9) : ℚ) +
+          9 * (R : ℚ) * (S : ℚ) =
+        (R : ℚ) * (S : ℚ) * (S : ℚ) +
+          (R : ℚ) * (↑(S % 9) : ℚ) * (↑(9 - S % 9) : ℚ) := by
+    exact_mod_cast h9
   have h9q :
       (18 : ℚ) * (↑(R * floorSum S 9) : ℚ) +
           9 * (R : ℚ) * (S : ℚ) =
         (R : ℚ) * (S : ℚ) * (S : ℚ) +
           (R : ℚ) * (↑((S % 9) * (9 - S % 9)) : ℚ) := by
-    exact_mod_cast h9
+    simpa only [mul_assoc] using h9q'
+  have h25q' :
+      (50 : ℚ) * (↑(R * floorSum S 25) : ℚ) +
+          25 * (R : ℚ) * (S : ℚ) =
+        (R : ℚ) * (S : ℚ) * (S : ℚ) +
+          (R : ℚ) * (↑(S % 25) : ℚ) * (↑(25 - S % 25) : ℚ) := by
+    exact_mod_cast h25
   have h25q :
       (50 : ℚ) * (↑(R * floorSum S 25) : ℚ) +
           25 * (R : ℚ) * (S : ℚ) =
         (R : ℚ) * (S : ℚ) * (S : ℚ) +
           (R : ℚ) * (↑((S % 25) * (25 - S % 25)) : ℚ) := by
-    exact_mod_cast h25
+    simpa only [mul_assoc] using h25q'
   unfold weightedHorizontal correction
   linear_combination (61 / 500 : ℚ) * h9q +
     (1609 / 25000 : ℚ) * h25q
