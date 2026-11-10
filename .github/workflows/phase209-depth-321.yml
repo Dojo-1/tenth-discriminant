@@ -28,6 +28,10 @@ on:
       - "lean/TenthDiscriminant/Phase261EnhancedLog321.lean"
       - "lean/TenthDiscriminant/Phase262HorizontalLogBridge321.lean"
       - "lean/TenthDiscriminant/Phase263EnhancedLower321.lean"
+      - "lean/TenthDiscriminant/Phase264UpperScalars321.lean"
+      - "lean/TenthDiscriminant/Phase265ThinUpper321.lean"
+      - "lean/TenthDiscriminant/Phase266ScalarOverlap321.lean"
+      - "lean/TenthDiscriminant/Phase267ActualField321.lean"
       - "research/phase228/**"
       - ".github/workflows/phase209-depth-321.yml"
   workflow_dispatch:
@@ -108,3 +112,11 @@ jobs:
           lake env lean TenthDiscriminant/Phase262HorizontalLogBridge321.lean
           lake build TenthDiscriminant.Phase263EnhancedLower321
           lake env lean TenthDiscriminant/Phase263EnhancedLower321.lean
+          lake build TenthDiscriminant.Phase264UpperScalars321
+          lake env lean TenthDiscriminant/Phase264UpperScalars321.lean
+          lake build TenthDiscriminant.Phase265ThinUpper321
+          lake env lean TenthDiscriminant/Phase265ThinUpper321.lean
+          lake build TenthDiscriminant.Phase266ScalarOverlap321
+          lake env lean TenthDiscriminant/Phase266ScalarOverlap321.lean
+          lake build TenthDiscriminant.Phase267ActualField321
+          lake env lean TenthDiscriminant/Phase267ActualField321.lean
