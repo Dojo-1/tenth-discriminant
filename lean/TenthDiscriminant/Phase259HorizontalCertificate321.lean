@@ -99,7 +99,7 @@ theorem weightedHorizontal_closed (R S : ℕ) :
           9 * (R : ℚ) * (S : ℚ) =
         (R : ℚ) * (S : ℚ) * (S : ℚ) +
           (R : ℚ) * (↑((S % 9) * (9 - S % 9)) : ℚ) := by
-    exact_mod_cast h9
+    convert h9q' using 1 <;> push_cast <;> ring
   have h25q' :
       (50 : ℚ) * (↑(R * floorSum S 25) : ℚ) +
           25 * (R : ℚ) * (S : ℚ) =
@@ -111,7 +111,7 @@ theorem weightedHorizontal_closed (R S : ℕ) :
           25 * (R : ℚ) * (S : ℚ) =
         (R : ℚ) * (S : ℚ) * (S : ℚ) +
           (R : ℚ) * (↑((S % 25) * (25 - S % 25)) : ℚ) := by
-    exact_mod_cast h25
+    convert h25q' using 1 <;> push_cast <;> ring
   unfold weightedHorizontal correction
   linear_combination (61 / 500 : ℚ) * h9q +
     (1609 / 25000 : ℚ) * h25q
