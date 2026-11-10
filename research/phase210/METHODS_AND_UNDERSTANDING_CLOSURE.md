@@ -16,9 +16,9 @@ Let $H_D$ mean that the imaginary quadratic field with **fundamental** discrimin
 
 There are three fundamentally different proof interfaces:
 
-1. **Direct determinant classification:** $H_D\Rightarrow\text{small primes inert}\Rightarrow\text{a lower bound on }v_p(\det G_D)$, while geometry gives an Archimedean upper on that **same** determinant. Strict contradiction above a threshold excludes `H_D`. This does **not** quantify over general primitive real characters and is **not** a uniform zero-free region.
+1. **Direct determinant classification:** $H_D\Rightarrow\text{small primes inert}\Rightarrow\text{a lower bound on }v_p(\det G_D)$, while geometry gives an Archimedean upper on that **same** determinant. Strict contradiction above a threshold excludes $H_D$. This does **not** quantify over general primitive real characters and is **not** a uniform zero-free region.
 2. **Analytic exceptional-zero comparison:** $H_D\land(D\text{ sufficiently large})\Rightarrow Z_D(\sigma_D)$ under a separate effective zero-forcing argument; an independently proved zero-free region $\neg Z_D(\sigma_D)$ gives a contradiction. The zero-dependent and zero-free inputs must be named and verified; they are not contained in the source Gram proof.
-3. **Method-transfer research question:** could a class-one determinant technique produce *family-uniform* analytic information (not merely exclude H_D) under assumptions available for arbitrary primitive real characters? **Open here.** A constant p inferred inert only from `H_D` cannot by itself establish such a theorem.
+3. **Method-transfer research question:** could a class-one determinant technique produce *family-uniform* analytic information (not merely exclude H_D) under assumptions available for arbitrary primitive real characters? **Open here.** A constant prime $p$ inferred inert only from $H_D$ cannot by itself establish such a theorem.
 
 A smaller classification cutoff compares numerical efficiency **within stated assumptions**. It does not establish a stronger zero-free region or make two different determinants the same object.
 
@@ -27,39 +27,39 @@ A smaller classification cutoff compares numerical efficiency **within stated as
 Take squarefree $D\equiv3\pmod4$, so $-D$ is an odd fundamental discriminant and
 $\mathcal O_K=\mathbb Z[\omega]$, where $\omega=(1+\sqrt{-D})/2$. Its norm satisfies
 
-$
+$$
 N(a+b\omega)=\left(a+\frac b2\right)^2+\frac D4b^2.
-$
+$$
 
-Suppose `H_D` and an unramified prime $p<D/4$ splits. A prime ideal of norm `p` must be principal, so there is an element $a+b\omega$ of norm `p`. If $b=0$, its norm is an integer square and cannot equal the prime `p`. If $b\ne0$, its norm is at least $D/4>p$. Contradiction. Hence such primes cannot split; because p is unramified, they are **inert**.
+Suppose $H_D$ and an unramified prime $p<D/4$ splits. A prime ideal of norm $p$ must be principal, so there is an element $a+b\omega$ of norm `p`. If $b=0$, its norm is an integer square and cannot equal the prime $p$. If $b\ne0$, its norm is at least $D/4>p$. Contradiction. Hence such primes cannot split; because $p$ is unramified, they are **inert**.
 
-This establishes exactly why small p=3 and p=5 can be legal in the class-one source theorem at sufficiently large D. It also reveals the non-transfer: without `H_D`, an odd fundamental discriminant such as `-287` has $\chi_{-287}(3)=+1$; prime 3 splits. The latter is a **negative control**, not a counterexample to the conditional inertness lemma.
+This establishes exactly why small $p=3$ and $p=5$ can be legal in the class-one source theorem at sufficiently large D. It also reveals the non-transfer: without $H_D$, an odd fundamental discriminant such as $-287$ has $\chi_{-287}(3)=+1$; the prime $3$ splits. The latter is a **negative control**, not a counterexample to the conditional inertness lemma.
 
 There is no valid arrow from $H_D\Rightarrow\text{small-prime inertness}$ to $\text{all }\chi_D\Rightarrow\text{small-prime inertness}$. Any purported zero-exclusion claim crossing this boundary must identify and prove a replacement hypothesis.
 
 ## Two distinct arithmetic gains, neither counted twice
 
-**Phase208 finite Smith/residue mechanism.** In the frozen `D=403, rho=40, R=100, S=J=4` experiment, rank/cokernel information after the *old* Frobenius normalization gave finite p=3/5 index gains. Their valuations are bounded measurements [M], not a uniform production theorem.
+**Phase208 finite Smith/residue mechanism.** In the frozen $D=403$, $\rho=40$, $R=100$, $S=J=4$ experiment, rank/cokernel information after the *old* Frobenius normalization gave finite $p=3,5$ index gains. Their valuations are bounded measurements [M], not a uniform production theorem.
 
-**Phase209 high ordinary-derivative-depth mechanism.** For the integer derivation `delta=partial_Z+Z^(p-1)partial_T` on `Z[Z,W,T]`, the Taylor-flow argument yields the paper theorem
+**Phase209 high ordinary-derivative-depth mechanism.** For the integer derivation $\delta=\partial_Z+Z^{p-1}\partial_T$ on $\mathbb Z[Z,W,T]$, the Taylor-flow argument yields the paper theorem
 
-$
+$$
 \delta^j\bigl(\mathbb Z[Z,W,T]\bigr)\subseteq p^{E_p(j)}\mathbb Z[Z,W,T],
 \qquad
 E_p(j)=\sum_{m\ge 2}\left\lfloor\frac{j}{p^m}\right\rfloor.
-$
+$$
 
-It has a sharp witness from the original monic transformed row at `r=j,s=0`. This Taylor-flow argument is a distinct paper-level route; its proposed weighted-column-depth divisor is **not** what the now-checked Phase267 proof uses. The combined integral Frobenius frame and same-original-Gram divisor are Lean-checked separately in [Phase228](../../lean/TenthDiscriminant/Phase228CombinedBasis.lean) and [Phase260](../../lean/TenthDiscriminant/Phase260EnhancedOriginalGram321.lean).
+It has a sharp witness from the original monic transformed row at $r=j,s=0$. This Taylor-flow argument is a distinct paper-level route; its proposed weighted-column-depth divisor is **not** what the now-checked Phase267 proof uses. The combined integral Frobenius frame and same-original-Gram divisor are Lean-checked separately in [Phase228](../../lean/TenthDiscriminant/Phase228CombinedBasis.lean) and [Phase260](../../lean/TenthDiscriminant/Phase260EnhancedOriginalGram321.lean).
 
-**New exact separation:** `E_p(j)=0` when `j<p^2`. The Phase208 pilot has `j=0,1,2,3`, so `E_3(j)=E_5(j)=0` throughout. Its finite rank/Smith gains therefore **cannot be credited to** Phase209's universal ordinary-jet depth. They measure distinct algebraic information. A future theorem combining them must show disjoint grades in the same normalized matrix; adding them informally would double-count.
+**New exact separation:** $E_p(j)=0$ when $j<p^2$. The Phase208 pilot has $j=0,1,2,3$, so $E_3(j)=E_5(j)=0$ throughout. Its finite rank/Smith gains therefore **cannot be credited to** Phase209's universal ordinary-jet depth. They measure distinct algebraic information. A future theorem combining them must show disjoint grades in the same normalized matrix; adding them informally would double-count.
 
-There is also a prime-scale obstruction: if an auxiliary rank-witness prime `q` has `q^2>J-1`, Phase209 yields no extra column depth at that prime. An auxiliary *large* prime used for modular nonvanishing is not automatically useful as a *small* divisibility prime. See the two-prime/source-type audit [#51](https://github.com/Dojo-1/tenth-discriminant/issues/51).
+There is also a prime-scale obstruction: if an auxiliary rank-witness prime $q$ has $q^2>J-1$, Phase209 yields no extra column depth at that prime. An auxiliary *large* prime used for modular nonvanishing is not automatically useful as a *small* divisibility prime. See the two-prime/source-type audit [#51](https://github.com/Dojo-1/tenth-discriminant/issues/51).
 
 ## Comparing approaches without laundering their evidence
 
 | Route | Input that makes it work | Output and meaning | Non-transfer or caution |
 | --- | --- | --- | --- |
-| Our full positive trace Gram | Class-one small-prime inertness, original ellipse $Q$, same integer jets and metric; lower and upper on $\det G_D$ | Actual-field cutoff $|\operatorname{disc}(K)|<321^4$ on [PR #157](https://github.com/Dojo-1/tenth-discriminant/pull/157), Lean-checked on its branch; prior $322^4$ theorem merged in [PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126). Independent semantic review open | This is not a zero-free theorem for general `L(s,chi)`; full Gram is a weighted *sum* of squared maximal minors |
+| Our full positive trace Gram | Class-one small-prime inertness, original ellipse $Q$, same integer jets and metric; lower and upper on $\det G_D$ | Actual-field cutoff $|\operatorname{disc}(K)|<321^4$ on [PR #157](https://github.com/Dojo-1/tenth-discriminant/pull/157), Lean-checked on its branch; prior $322^4$ theorem merged in [PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126). Independent semantic review open | This is not a zero-free theorem for general $L(s,\chi)$; full Gram is a weighted *sum* of squared maximal minors |
 | Green/van Dijk-style selected derivative minor (public participant routes) | Auxiliary prime proving full rank for the **specific** source, then arithmetic divisibility by permitted inert primes | Participant-reported smaller classification cutoffs and useful rank arguments | Different row/column types, Q and auxiliary prime; one chosen minor does not upper-bound our whole Gram; source match #51 open |
 | Chowla–Selberg + zero-free input | An effective large-class-one => real-zero-forcing step; a *separate* effective zero-free region | Conditional (on checked analytic input) discrimination of class-number-one fields; stronger relationship with exceptional zeros | The analytic zero-free theorem is a load-bearing external dependency; cannot be inferred from our determinant cutoff |
 | Banks/prime-bias variants in the public challenge | Explicit estimates connecting zeros and prime splitting/bias; theorem statements and constants from original authors | Tests the zero-exclusion mechanism more directly than a fixed-small-prime classification argument | Do not import constants or claims of independent verification without source review |
