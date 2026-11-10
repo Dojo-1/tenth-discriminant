@@ -5,7 +5,7 @@
 The current integrated Lean endpoint is the actual-field theorem
 
 ```math
-|\operatorname{disc}(K)| < 322^4 = 10,750,371,856
+|\mathrm{disc}(K)| < 322^4 = 10,750,371,856
 ```
 
 for every totally complex degree-two number field $K/\mathbb Q$ with class number one. It is the theorem `Threshold322.totallyComplex_degree_two_classNumber_one_discriminant_bound_322` in [`ActualField322.lean`](lean/TenthDiscriminant/ActualField322.lean), integrated by [PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) at [merge f41ce45b](https://github.com/Dojo-1/tenth-discriminant/commit/f41ce45b9dd7d722faa682d3f1dc1c204fb571da). All 21 associated exact-head workflows passed. This bounds the field's actual absolute discriminant, not the auxiliary Gram determinant. Independent human semantic reconstruction remains [open](https://github.com/Dojo-1/tenth-discriminant/issues/50).
@@ -26,7 +26,7 @@ The method's contribution is therefore methodological: an alternative, formally 
 **10 November 2026 update:** The newer [Phase209 head `4c3dc08`](https://github.com/Dojo-1/tenth-discriminant/commit/4c3dc08e791d9835355f012a3e88b67cedf57884) now contains the Lean theorem `Threshold321.totallyComplex_degree_two_classNumber_one_discriminant_bound_321` in [Phase267ActualField321.lean](lean/TenthDiscriminant/Phase267ActualField321.lean). It proves, under the same actual-field hypotheses,
 
 $$
-|\operatorname{disc}(K)| < 321^4 = 10\,617\,447\,681.
+|\mathrm{disc}(K)| < 321^4 = 10\,617\,447\,681.
 $$
 
 The [focused workflow](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42820526500) and [whole-root Lean audit](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42820526708) succeeded on that head, including the original-Gram arithmetic lower, 321-domain analytic upper, scalar contradiction and field transport. The earlier `c1d3d2c9` paragraph above is retained as a dated checkpoint, not the latest proof status. This theorem remains **unmerged** at the time of this brief and still needs independent human semantic reconstruction (Issue #50); successful CI does not supply that review.
