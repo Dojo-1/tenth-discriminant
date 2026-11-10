@@ -55,7 +55,13 @@ theorem log_floor_from_321_fourth_power (D : Nat)
   have hm := Real.log_le_log hsmall hDreal
   rw [Nat.cast_pow, Real.log_pow] at hm
   have h321 := TenthDiscriminant.log_321_rational_enclosure.1
-  linarith
+  have hfour :
+      (230856/10000 : Real) ≤ 4*Real.log (321 : Real) := by
+    linarith only [h321]
+  have hDlog :
+      (4 : Real)*Real.log (321 : Real) ≤ Real.log (D : Real) := by
+    simpa only [Nat.cast_ofNat] using hm
+  exact hfour.trans hDlog
 
 /-- The original R floor ratio, with its actual 321-domain guard. -/
 theorem log_R_lower_321 (D : Nat) (hD : (321 : Nat)^4 ≤ D) :
