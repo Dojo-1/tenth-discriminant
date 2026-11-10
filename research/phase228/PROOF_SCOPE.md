@@ -56,14 +56,14 @@ This is a **lower divisibility statement**, not an exact Smith valuation. The ol
 [Phase259Horizontal321.lean](../../lean/TenthDiscriminant/Phase259Horizontal321.lean) proves the conservative production floor-mass estimate for $R=\lfloor D/4\rfloor$, $S=\lfloor R/25\rfloor$:
 
 $$
-\frac{\operatorname{horizontalPrimeMass}(R,S)}{500R^2S}
+\frac{\mathrm{horizontalPrimeMass}(R,S)}{500R^2S}
 \ge \frac{4659}{625000}-\frac{16895455}{625000D}.
 $$
 
 The bound is **not** added to a separate Gram's prime mass. [Phase263](../../lean/TenthDiscriminant/Phase263EnhancedLower321.lean) proves the enhanced lower on the original thin Gram, [Phase265](../../lean/TenthDiscriminant/Phase265ThinUpper321.lean) proves its analytic upper, [Phase266](../../lean/TenthDiscriminant/Phase266ScalarOverlap321.lean) proves strict separation, and [Phase267](../../lean/TenthDiscriminant/Phase267ActualField321.lean) transports the result to the actual field discriminant:
 
 $$
-|\operatorname{disc}(K)|<321^4=10\,617\,447\,681
+|\mathrm{disc}(K)|<321^4=10\,617\,447\,681
 $$
 
 for totally complex degree-two number fields of class number one, under the theorem's formalized assumptions.
