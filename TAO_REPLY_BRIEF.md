@@ -25,9 +25,9 @@ The method's contribution is therefore methodological: an alternative, formally 
 
 **10 November 2026 update:** The newer [Phase209 head `4c3dc08`](https://github.com/Dojo-1/tenth-discriminant/commit/4c3dc08e791d9835355f012a3e88b67cedf57884) now contains the Lean theorem `Threshold321.totallyComplex_degree_two_classNumber_one_discriminant_bound_321` in [Phase267ActualField321.lean](lean/TenthDiscriminant/Phase267ActualField321.lean). It proves, under the same actual-field hypotheses,
 
-$
+$$
 |\\operatorname{disc}(K)| < 321^4 = 10\,617\,447\,681.
-$
+$$
 
 The [focused workflow](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42820526500) and [whole-root Lean audit](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42820526708) succeeded on that head, including the original-Gram arithmetic lower, 321-domain analytic upper, scalar contradiction and field transport. The earlier `c1d3d2c9` paragraph above is retained as a dated checkpoint, not the latest proof status. This theorem remains **unmerged** at the time of this brief and still needs independent human semantic reconstruction (Issue #50); successful CI does not supply that review.
 
