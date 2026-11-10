@@ -27,56 +27,61 @@ Thus Argon's statements that the current README headlines below 50 billion and t
 
 ### 3.1 Binomial source basis: identity right, triangular orientation reversed
 
-The binomial identity is correct, for a commutative coefficient ring and (pk\le r):
-[
+The binomial identity is correct, for a commutative coefficient ring and $pk\le r$:
+
+$
 X^{r-pk}w^s(X^p-w)^k
 =\sum_{t=0}^{k}(-1)^t\binom{k}{t}X^{r-pt}w^{s+t}.
-]
+$
 
-The orientation stated in Argon §2A is reversed. In the repository's row-major convention, row (i) has non-leading target columns (j<i). The matrix is therefore **lower triangular**, not upper triangular. This is explicitly formalized by [`rectangularBasisMatrix_lowerTriangular`](../../lean/TenthDiscriminant/RectangularBasisMatrix.lean) and [`rectangularBasisMatrix_det`](../../lean/TenthDiscriminant/RectangularBasisMatrix.lean). The determinant-one conclusion is unaffected.
+The orientation stated in Argon §2A is reversed. In the repository's row-major convention, row $i$ has non-leading target columns $j<i$. The matrix is therefore **lower triangular**, not upper triangular. This is explicitly formalized by [`rectangularBasisMatrix_lowerTriangular`](../../lean/TenthDiscriminant/RectangularBasisMatrix.lean) and [`rectangularBasisMatrix_det`](../../lean/TenthDiscriminant/RectangularBasisMatrix.lean). The determinant-one conclusion is unaffected.
 
 The same lower-triangular orientation is formalized for the later combined two-factor matrix in `Phase228CombinedBasis.lean`.
 
 ### 3.2 Ordinary derivative divisibility: include the endpoint m=p
 
-For (f(X)=X^p-W), with W held fixed,
-[
+For $f(X)=X^p-W$, with W held fixed,
+
+$
 \partial_X^m f(X)=
 \begin{cases}
 \dfrac{p!}{(p-m)!}X^{p-m},&1\le m\le p,\\
 0,&m>p.
 \end{cases}
-]
-The coefficient is divisible by p for every (1\le m\le p), including (m=p), where it is (p!). Argon's prose only mentioned (1\le m\le p-1), leaving the endpoint unstated.
+$
+The coefficient is divisible by p for every $1\le m\le p$, including $m=p$, where it is $p!$. Argon's prose only mentioned $1\le m\le p-1$, leaving the endpoint unstated.
 
-The clean factorwise Leibniz argument is: in each term of a derivative of (f^k), each of the k factors either receives zero derivatives and evaluates to (z^p-W\equiv0\pmod p) at an inert-prime observation, or receives at least one derivative and contributes a coefficient divisible by p. Hence every term retains p^k divisibility. The horizontal factor (W^{p^2}-W) is constant under the ordinary Z derivative and contributes its own p^ell value divisibility. This is the mathematical content now formalized in the combined ordinary-jet source branch; it must not be confused with replacing the two defects before differentiation.
+The clean factorwise Leibniz argument is: in each term of a derivative of (f^k), each of the k factors either receives zero derivatives and evaluates to $z^p-W\equiv0\pmod p$ at an inert-prime observation, or receives at least one derivative and contributes a coefficient divisible by p. Hence every term retains $p^k$ divisibility. The horizontal factor $W^{p^2}-W$ is constant under the ordinary Z derivative and contributes its own $p^\ell$ value divisibility. This is the mathematical content now formalized in the combined ordinary-jet source branch; it must not be confused with replacing the two defects before differentiation.
 
 ### 3.3 Logarithm lower bound in Argon §2B: the displayed two-term fraction is wrong
 
-For (x=37/163),
-[
+For $x=37/163$,
+
+$
 2\left(x+\frac{x^3}{3}\right)
 =\frac{5,999,624}{12,992,241}
 \approx0.4617851531541
 <0.462=\frac{231}{500}.
-]
-So the displayed Argon fraction (3,221,372/6,972,243\approx0.46202808) is not the stated two-term series value and does not follow from that calculation.
+$
+So the displayed Argon fraction $3,221,372/6,972,243\approx0.46202808$ is not the stated two-term series value and does not follow from that calculation.
 
-The first adequate positive truncation adds (x^5/5):
-[
+The first adequate positive truncation adds $x^5/5$:
+
+$
 2\left(x+\frac{x^3}{3}+\frac{x^5}{5}\right)
 =\frac{797,436,114,022}{1,725,954,255,645}
 \approx0.4620262161722.
-]
-Its exact excess over (231/500) is
-[
+$
+Its exact excess over $231/500$ is
+
+$
 \frac{4,524,791,401}{172,595,425,564,500}>0.
-]
-All remaining terms in the atanh series are positive. Therefore the desired (log(100/63)>231/500) bound is true, but Argon's written two-term derivation does not prove it. The repository's own rational logarithm checker supplies the required certificate.
+$
+All remaining terms in the atanh series are positive. Therefore the desired $\log(100/63)>231/500$ bound is true, but Argon's written two-term derivation does not prove it. The repository's own rational logarithm checker supplies the required certificate.
 
 ### 3.4 Other calculations
 
-The displayed 47-billion affine separation arithmetic is correct as written. The thin-radius coefficient calculation at (450^4) is correct under its stated source geometry hypotheses. The ideal norm-form discriminant cancellation is correct under the stated integral ideal-basis and index assumptions. These local checks do not re-audit their transitive Lean dependencies or replace the repository's exact-head CI.
+The displayed 47-billion affine separation arithmetic is correct as written. The thin-radius coefficient calculation at $450^4$ is correct under its stated source geometry hypotheses. The ideal norm-form discriminant cancellation is correct under the stated integral ideal-basis and index assumptions. These local checks do not re-audit their transitive Lean dependencies or replace the repository's exact-head CI.
 
 ## 4. Phase209 current state — outside Argon's inspected scope
 
@@ -90,18 +95,29 @@ At exact head `c1d3d2c915e175618e731cd176d196e1198123db`:
 - Whole-root [workflow 42657830691](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42657830691) completed successfully, including the known-false strengthening rejection controls. All 24 associated workflows at this exact head passed.
 
 If whole-root CI completes successfully, the focused result proves the local same-original-Gram factorization
-[
+
+$
 U_pG U_p^{\mathsf T}=\Delta_pK_p\Delta_p,
 \qquad K_p\in M_{RS}(\mathbb Z),
 \quad (\Delta_p)_{ii}=p^{k_i+\ell_i},
-]
-and therefore (p^{2\sum_i(k_i+\ell_i)}\mid\det G) for each odd inert p under the theorem's hypotheses. This is a per-prime source theorem, not a 321^4 actual-field theorem. The 321-domain analytic lower/upper comparison, class-number-one inertness bridge at the new floor, field return, and independent semantic reconstruction remain separate.
+$
+and therefore $p^{2\sum_i(k_i+\ell_i)}\mid\det G$ for each odd inert p under the theorem's hypotheses. This is a per-prime source theorem, not a 321^4 actual-field theorem. The 321-domain analytic lower/upper comparison, class-number-one inertness bridge at the new floor, field return, and independent semantic reconstruction remain separate.
+
+### 10 November 2026: later proof-status correction (supersedes the earlier open-bridge inventory)
+
+At [Phase209 PR #157](https://github.com/Dojo-1/tenth-discriminant/pull/157) head `4c3dc08e791d9835355f012a3e88b67cedf57884`, the [focused Phase209 workflow](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42820526500) and [whole-root Lean workflow](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42820526708) both succeeded. The latter includes the full-library audit and negative controls. The Lean theorem `TenthDiscriminant.Threshold321.totallyComplex_degree_two_classNumber_one_discriminant_bound_321` in [Phase267ActualField321.lean](../../lean/TenthDiscriminant/Phase267ActualField321.lean) now proves, **within the formalized assumptions**, the actual-field statement
+
+$
+|\operatorname{disc}(K)| < 321^4 = 10\,617\,447\,681.
+$
+
+The earlier paragraphs about the missing 321-domain field bridge describe the 9 November checkpoint, **not** this later head. The theorem remains on a research PR until merged; successful Lean verification is not an independent human semantic review (Issue #50 remains open).
 
 ## 5. What to retain from Argon's review
 
 Retain:
 - the insistence on separating observed source facts, independent derivations, and uninspected closure;
-- the same-positive-integer principle (G=EBE^{\mathsf T});
+- the same-positive-integer principle $G=EBE^{\mathsf T}$;
 - the need to audit Mathlib's actual field invariants and maximal-order charts;
 - the caution that CI proves the encoded proposition, not independent human understanding;
 - the recommendation for one canonical current theorem table and explicit historical labels.
@@ -109,7 +125,7 @@ Retain:
 Correct:
 - its current endpoint inventory;
 - the triangular orientation;
-- the omitted (m=p) derivative case;
+- the omitted $m=p$ derivative case;
 - the two-term logarithm arithmetic;
 - the scope label: this is an AI review of an older snapshot, not an independent human referee report or current-head audit.
 
