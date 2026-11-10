@@ -4,12 +4,15 @@ import TenthDiscriminant.Phase266ScalarOverlap321
 import TenthDiscriminant.ThinIntegratedEndpoint
 
 /-!
-# Phase267 — original-trace-Gram actual-field 321^4 theorem target
+# Phase267 — original-trace-Gram actual-field 321^4 theorem
 
-This remains a theorem TARGET until the Phase200 original-geometry,
-original p3/p5+binary lower, sharpened same-Gram analytic upper,
-field return and whole-root source/axiom/negative controls compile
-at an identical head. Focused source modules alone do not promote it. Independent semantic review remains a separate obligation.
+The original geometry, enhanced same-Gram odd/binary lower,
+321-domain analytic upper, scalar separator and actual-field return
+compile together at commit 4c3dc08 (10 November 2026).
+The focused Phase209 and full-library Lean/axiom/negative-control CI
+both succeeded at that exact head. Independent human semantic
+reconstruction remains a separate obligation; this is not a claim
+of external review, novelty or optimality.
 
 The odd chart uses the same original integer ordinary-Z-jet trace Gram,
 same Qthin, trace pairing, dimensions and maximal-order transport.
