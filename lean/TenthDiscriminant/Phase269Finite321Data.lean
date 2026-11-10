@@ -8,7 +8,7 @@ import TenthDiscriminant.ResidueMaskPilotData
 
 All numeric quotient patterns are UNTRUSTED LITERALS. Their exact meaning
 is checked in Lean by quotientPatternsCheck. The initial band is specifically
-for 437 <= d < 321^4; 164 <= d < 437 is checked separately.
+for 437 <= d < 322^4; 164 <= d < 437 is checked separately.
 No nine-field classification is imported.
 -/
 namespace TenthDiscriminant.Phase269
@@ -21,11 +21,11 @@ def seeds269 : List Nat := maskWheelResidues (base269.drop 6)
 def basePrimes269 : List Nat := base269.map Prod.fst
 def extraPrimes269 : List Nat := [23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109]
 
--- d = r + 38,798,760*k. The final quotient is 273; the last band
--- exists only for r<25,386,201. The first excludes all d<437.
+-- d = r + 38,798,760*k. The final quotient is 277; the last band
+-- exists only for r<3,115,336. The first excludes all d<437.
 def initial269 (r : Nat) : Nat :=
   quotientBand (if r < 437 then 1 else 0)
-    (if r < 25386201 then 274 else 273)
+    (if r < 3115336 then 278 else 277)
 
 def entries269Chunk0 : List QuotientPattern :=
   [⟨23,5,204706927939131165345329934564529481243975614266861633113354449843039299547550745479512259622800395646096563128179838354807288300890127297384126019940723118792117939522997238620427952590392125985836441875788915834630672735925953534812948712608⟩,
