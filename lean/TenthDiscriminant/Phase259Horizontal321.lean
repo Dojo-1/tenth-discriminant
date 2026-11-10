@@ -93,7 +93,10 @@ theorem horizontal_mass_core (D R S : Nat)
   have hrS := Nat.mul_le_mul_right S hr
   calc
     4659*D*R*S =
-        116475*D*S*S+4659*D*(R%25)*S := by rw [hdiv]; ring
+        116475*D*S*S+4659*D*(R%25)*S := by
+      calc
+        4659*D*R*S = 4659*D*(25*S+R%25)*S := by rw [← hdiv]
+        _ = _ := by ring
     _ ≤ 1250*D*(1098*floorMass 9 S+1609*floorMass 25 S)
           +3267275*D*S+4659*D*(R%25)*S := by
       nlinarith only [hwD]
