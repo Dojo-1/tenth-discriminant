@@ -229,3 +229,4 @@ import TenthDiscriminant.Phase136MinorSaturation
 import TenthDiscriminant.PlacewiseTransport
 import TenthDiscriminant.PlacewiseExactSequence
 import TenthDiscriminant.JetFactorialFiltration
+import TenthDiscriminant.Phase269Finite321Certified
