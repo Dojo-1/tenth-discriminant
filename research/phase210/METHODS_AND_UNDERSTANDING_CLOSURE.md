@@ -16,7 +16,7 @@ Let $H_D$ mean that the imaginary quadratic field with **fundamental** discrimin
 
 There are three fundamentally different proof interfaces:
 
-1. **Direct determinant classification:** $H_D\Rightarrow\text{small primes inert}\Rightarrow\text{$p$-adic lower bound on }\det G_D$, while geometry gives an Archimedean upper on that **same** determinant. Strict contradiction above a threshold excludes `H_D`. This does **not** quantify over general primitive real characters and is **not** a uniform zero-free region.
+1. **Direct determinant classification:** $H_D\Rightarrow\text{small primes inert}\Rightarrow\text{a lower bound on }v_p(\det G_D)$, while geometry gives an Archimedean upper on that **same** determinant. Strict contradiction above a threshold excludes `H_D`. This does **not** quantify over general primitive real characters and is **not** a uniform zero-free region.
 2. **Analytic exceptional-zero comparison:** $H_D\land(D\text{ sufficiently large})\Rightarrow Z_D(\sigma_D)$ under a separate effective zero-forcing argument; an independently proved zero-free region $\neg Z_D(\sigma_D)$ gives a contradiction. The zero-dependent and zero-free inputs must be named and verified; they are not contained in the source Gram proof.
 3. **Method-transfer research question:** could a class-one determinant technique produce *family-uniform* analytic information (not merely exclude H_D) under assumptions available for arbitrary primitive real characters? **Open here.** A constant p inferred inert only from `H_D` cannot by itself establish such a theorem.
 
