@@ -40,7 +40,7 @@ theorem floorMass_lower (q S : Nat) (hq : 0 < q) :
     simp only [Finset.sum_add_distrib, Finset.sum_const,
       Finset.card_range, nsmul_eq_mul, ← Finset.mul_sum]
     unfold floorMass
-    ring_nf
+    simp only [Nat.cast_id, mul_comm]
   rw [hrewrite] at hsum
   have hsumid : 2*(∑ s ∈ Finset.range S, s)+S = S*S := by
     have h := Finset.sum_range_id_mul_two S
