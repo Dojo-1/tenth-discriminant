@@ -17,7 +17,7 @@ It is not an audit of the 9 November 2026 mainline or of Phase209 PR #157.
 
 The live mainline head at this refresh is `6d56648f` (the source tree used for inspection is identical to `98d5b684`; the two intervening add/delete commits left the tree unchanged), following the Phase203 merge. The current [README](../../README.md) and [RESEARCH_NOW](../../RESEARCH_NOW.md) identify the integrated actual-field theorem:
 ```math
-|\operatorname{disc}(K)| < 322^4 = 10,750,371,856.
+|\mathrm{disc}(K)| < 322^4 = 10,750,371,856.
 ```
 The theorem is `Threshold322.totallyComplex_degree_two_classNumber_one_discriminant_bound_322` in [ActualField322.lean](../../lean/TenthDiscriminant/ActualField322.lean), integrated by [PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) at [f41ce45b](https://github.com/Dojo-1/tenth-discriminant/commit/f41ce45b9dd7d722faa682d3f1dc1c204fb571da). Its 21 associated exact-head workflows passed. The independent human semantic reconstruction remains open in [Issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50).
 
@@ -108,7 +108,7 @@ and therefore $p^{2\sum_i(k_i+\ell_i)}\mid\det G$ for each odd inert p under the
 At [Phase209 PR #157](https://github.com/Dojo-1/tenth-discriminant/pull/157) head `4c3dc08e791d9835355f012a3e88b67cedf57884`, the [focused Phase209 workflow](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42820526500) and [whole-root Lean workflow](https://github.com/Dojo-1/tenth-discriminant/actions/runs/42820526708) both succeeded. The latter includes the full-library audit and negative controls. The Lean theorem `TenthDiscriminant.Threshold321.totallyComplex_degree_two_classNumber_one_discriminant_bound_321` in [Phase267ActualField321.lean](../../lean/TenthDiscriminant/Phase267ActualField321.lean) now proves, **within the formalized assumptions**, the actual-field statement
 
 $$
-|\operatorname{disc}(K)| < 321^4 = 10\,617\,447\,681.
+|\mathrm{disc}(K)| < 321^4 = 10\,617\,447\,681.
 $$
 
 The earlier paragraphs about the missing 321-domain field bridge describe the 9 November checkpoint, **not** this later head. The theorem remains on a research PR until merged; successful Lean verification is not an independent human semantic review (Issue #50 remains open).
