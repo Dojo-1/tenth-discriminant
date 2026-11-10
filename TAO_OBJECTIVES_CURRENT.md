@@ -1,6 +1,6 @@
 # Tao's challenge: current accounting and side discoveries
 
-**Current integrated actual-field endpoint (9 November 2026):** `|disc(K)| < 322^4 = 10,750,371,856` for every totally complex degree-two number field of class number one. [PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) merged at `f41ce45b`; all 21 associated exact-head workflows passed. The 47b, 41.00625b and 377^4 results are historical predecessors. The [current one-page research state](RESEARCH_NOW.md) distinguishes integrated proof, draft experiments and independent review.
+**Current integrated actual-field endpoint (9 November 2026):** $|\operatorname{disc}(K)|<322^4=10\,750\,371\,856$ for every totally complex degree-two number field of class number one. [PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) merged at `f41ce45b`; all 21 associated exact-head workflows passed. The 47b, 41.00625b and 377^4 results are historical predecessors. The [current one-page research state](RESEARCH_NOW.md) distinguishes integrated proof, draft experiments and independent review.
 A separate integrated Lean result concerns ANY imaginary quadratic field with
 at most two ideal classes: actual absolute discriminant<2^52, sharper<2^50
 when odd. [Understand the transport](research/ender_radius_bridge/ALL_FIELD_BOUND_CURRENT.md).
