@@ -77,7 +77,7 @@ unless it accounts for the original factorial. Reuse the existing,
 original-source bridge, rather than silently changing derivative type. -/
 theorem cubic_source_factorial_control :
     integerDerivativeRow 19 3 0 3 (0, 0) =
-      pairScale (3.factorial : Int)
+      pairScale (Nat.factorial 3 : Int)
         (integerHasseCoefficientRow 19 3 0 3 (0, 0)) :=
   integerDerivativeRow_eq_factorial_hasse 19 3 0 3 (0, 0)
 
