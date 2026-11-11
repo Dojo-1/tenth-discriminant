@@ -1,0 +1,27 @@
+name: Phase277 matched local pairing regression
+on:
+  push:
+    branches:
+      - 'research/phase277-*'
+  pull_request:
+    paths:
+      - 'research/phase277/**'
+      - '.github/workflows/phase277-matched-pairing.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-source-panel:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Isolated finite-field arithmetic
+        run: |
+          python3 -m venv /tmp/phase277
+          /tmp/phase277/bin/pip install --disable-pip-version-check numpy==2.2.6
+      - name: Same-source inert/split controls, two rank oracles
+        run: |
+          /tmp/phase277/bin/python research/phase277/matched_local_pairing.py
