@@ -1,0 +1,24 @@
+name: Phase274 sharp jet precision controls
+on:
+  pull_request:
+    paths:
+      - 'research/phase273/**'
+      - 'research/phase274/**'
+      - 'lean/TenthDiscriminant/Phase272JetDescent.lean'
+      - 'lean/TenthDiscriminant/Phase273TubularJet.lean'
+      - '.github/workflows/phase274-jet-precision.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  finite-precision:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Sharp p-adic jet-depth controls
+        run: python3 research/phase273/sharp_tubular_jet_transport.py
+      - name: Sharp p-adic precision-horizon controls
+        run: python3 research/phase274/sharp_precision_horizon.py
