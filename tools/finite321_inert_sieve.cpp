@@ -9,7 +9,7 @@
 using u64 = unsigned long long;
 
 int main() {
-  const u64 LIMIT = 10617447681ULL; // 321^4, exclusive
+  const u64 LIMIT = 10750371856ULL; // 322^4, exclusive (includes 321^4)
   const int first[] = {3,5,7,11,13,17,19};
   const int rest[] = {
     23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109
@@ -70,10 +70,10 @@ int main() {
   std::printf("wheel candidates 164 <= d < LIMIT: %llu\n", total);
   u64 left=total;
   const u64 expected[21] = {
-    1696178,818872,396251,192895,94091,45960,22255,10671,5062,2437,
-    1178,578,281,132,74,29,16,9,6,2,0
+    1717429,829089,401173,195269,95237,46513,22527,10809,5138,2469,
+    1199,589,284,133,74,29,16,9,6,2,0
   };
-  bool counts_ok=(wheel.size()==12960 && total==3546560 && survivors==0);
+  bool counts_ok=(wheel.size()==12960 && total==3590972 && survivors==0);
   for (int i=0; i<21; ++i) {
     left-=eliminated[i];
     std::printf("prime=%d remaining=%llu\n",rest[i],left);
