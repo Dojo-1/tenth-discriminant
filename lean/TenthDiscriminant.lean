@@ -230,3 +230,4 @@ import TenthDiscriminant.PlacewiseTransport
 import TenthDiscriminant.PlacewiseExactSequence
 import TenthDiscriminant.JetFactorialFiltration
 import TenthDiscriminant.Phase272JetDescent
+import TenthDiscriminant.Phase273TubularJet
