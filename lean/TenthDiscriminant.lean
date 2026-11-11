@@ -229,3 +229,7 @@ import TenthDiscriminant.Phase136MinorSaturation
 import TenthDiscriminant.PlacewiseTransport
 import TenthDiscriminant.PlacewiseExactSequence
 import TenthDiscriminant.JetFactorialFiltration
+import TenthDiscriminant.Phase272JetDescent
+import TenthDiscriminant.Phase273TubularJet
+import TenthDiscriminant.Phase275TwoSidedTube
+import TenthDiscriminant.Phase276BreathingValuation
