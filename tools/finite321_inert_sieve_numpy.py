@@ -5,11 +5,11 @@ Every acceptance test is a necessary condition for h(-d)=1 at d>163.
 """
 import numpy as np
 
-LIMIT=321**4
+LIMIT=322**4
 first=[3,5,7,11,13,17,19]
 rest=[23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109]
-expected=[1696178,818872,396251,192895,94091,45960,22255,10671,5062,
-          2437,1178,578,281,132,74,29,16,9,6,2,0]
+expected=[1717429,829089,401173,195269,95237,46513,22527,10809,5138,
+          2469,1199,589,284,133,74,29,16,9,6,2,0]
 W=8
 for p in first:
     W*=p
@@ -24,7 +24,7 @@ assert W==38798760 and wheel.size==12960
 base=np.arange(LIMIT//W+1,dtype=np.int64)*W
 nums=(wheel[:,None]+base[None,:]).ravel()
 nums=nums[(nums>163)&(nums<LIMIT)]
-assert nums.size==3546560
+assert nums.size==3590972
 print("initial", nums.size)
 for i,p in enumerate(rest):
     sq={(x*x)%p for x in range(p)}
