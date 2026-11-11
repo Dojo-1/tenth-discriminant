@@ -1,4 +1,4 @@
-name: Phase278 primitive p3 fixed-precision source audit
+name: Phase278-279 primitive p3 fixed-precision source and residual audit
 on:
   push:
     branches:
@@ -6,6 +6,7 @@ on:
   pull_request:
     paths:
       - 'research/phase278/**'
+      - 'research/phase279/**'
       - '.github/workflows/phase278-primitive-p3.yml'
   workflow_dispatch:
 permissions:
@@ -25,3 +26,6 @@ jobs:
       - name: Compute fixed-K18 p3 Smith and replay p5 primitive unit
         run: |
           /tmp/phase278/bin/python research/phase278/primitive_p3_high_precision.py
+      - name: Recover primitive p3 rows and compute residual Smith at fixed L6
+        run: |
+          /tmp/phase278/bin/python research/phase279/primitive_residual_depth.py
