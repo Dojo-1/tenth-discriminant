@@ -103,6 +103,35 @@ def rank_scalar(M,p):
         if k==n:break
     return k
 
+def inert_radical_doublecount_kill():
+    """Two-row *abstract* trace-shaped lattice, NOT production E.
+
+    At p=3, D=7 is inert, and B=diag(2,14,2,14) is the genuine
+    positive trace metric for two observations. An unsaturated C0 has
+    a radical, but saturation makes its primitive Gram a p-unit.
+    This kills any additive rule based on rank(C0)-rank(C0BC0.T).
+    """
+    p=3
+    assert (-7)%p==2
+    B=np.array([2,14,2,14],dtype=np.int64)
+    C=np.array([[1,0,1,1],[3,0,0,0]],dtype=np.int64)
+    primitive=np.array([[1,0,1,1],[1,0,0,0]],dtype=np.int64)
+    G=(C*B)@C.T
+    H=(primitive*B)@primitive.T
+    assert G.tolist()==[[18,6],[6,18]]
+    assert H.tolist()==[[18,2],[2,2]]
+    assert rank_numpy(C,p)==1
+    assert rank_numpy(G%p,p)==0
+    assert rank_numpy(primitive,p)==2
+    assert rank_numpy(H%p,p)==2
+    detG=int(G[0,0]*G[1,1]-G[0,1]*G[1,0])
+    detH=int(H[0,0]*H[1,1]-H[0,1]*H[1,0])
+    assert detG==288 and detH==32 and detG==p*p*detH
+    assert detG%p**2==0 and detG%p**3!=0 and detH%p!=0
+    print("NO_DOUBLE_COUNT inert p3 D7 image_radical=1 ",
+          "evaluation_index=1 v3_detG=2 primitive_residual=0",flush=True)
+
+
 def check_alternate_source(C,p,inert):
     """Compare selected rows/columns to independently imported integer jets."""
     for r,s in ((0,0),(p,0),(p+1,0),(69,0),(69,1)):
@@ -121,6 +150,7 @@ def check_alternate_source(C,p,inert):
                 assert tuple(map(int,C[i,start:start+2])) == (v[0]%p,v[1]%p)
 
 def main():
+    inert_radical_doublecount_kill()
     assert N==140 and len(Q)*J*2==676
     results=[]
     # Split case is a genuine negative: its local source is the same D,
