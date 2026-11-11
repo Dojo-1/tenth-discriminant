@@ -94,6 +94,39 @@ that generalization.
 All constraints use p-units in the original metric. The split comparator
 is not a surrogate "null" with a changed D, Q, radius or jet order.
 
+
+## Inert-prime no-double-counting theorem killer (exact 2-row control)
+
+This is an **abstract lattice counterexample with the same positive
+trace-metric shape**, NOT an original ordinary-jet evaluation E. It
+refutes a proposed universal *algebraic* inference from UNSATURATED
+image-pairing radicals to additional p-valuation, even at inert p.
+
+Take D=7, p=3 (inert), B=diag(2,14,2,14), and
+
+    C0 = [[1,0,1,1],[3,0,0,0]],
+    Cprim = [[1,0,1,1],[1,0,0,0]],
+    Delta = diag(1,3),  C0=Delta*Cprim.
+
+Then the original-shaped positive trace pairing gives
+
+    G0=C0 B C0^T=[[18,6],[6,18]],   detG0=288=3^2*32.
+    H =Cprim B Cprim^T=[[18,2],[2,2]], detH=32 (3-adic unit).
+
+Mod 3: rank C0=1, rank G0=0, and the *unsaturated image* pairing
+radical has dimension 1. Yet rank Cprim=2, rank H=2, and **primitive
+residual valuation is exactly 0**. Its full v3(detG0)=2 is exhausted
+by twice the single p-adic evaluation-index exponent. The tempting
+but invalid formula v3(detG0)>=2(n-rank C0)+(rank C0-rank G0)
+would predict 3 and is **false**.
+
+This small example is an adversarial control, not evidence about a
+production determinant. Precisely because even an inert trace-metric
+model kills the universal addition rule, **the Phase277 (26,28)
+unsaturated radicals must not be promoted to uncounted valuation
+factors** without constructing the primitive Smith-normalized Cprim
+for the SAME production source and checking non-overlap.
+
 ## Non-double-counting and open theorem
 
 No number in delta_p can be appended to the existing Frobenius or
