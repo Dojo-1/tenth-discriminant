@@ -1,0 +1,27 @@
+name: Phase278 primitive p3 fixed-precision source audit
+on:
+  push:
+    branches:
+      - 'research/phase278-*'
+  pull_request:
+    paths:
+      - 'research/phase278/**'
+      - '.github/workflows/phase278-primitive-p3.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-gram-primitive:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned exact finite arithmetic
+        run: |
+          python3 -m venv /tmp/phase278
+          /tmp/phase278/bin/pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compute fixed-K18 p3 Smith and replay p5 primitive unit
+        run: |
+          /tmp/phase278/bin/python research/phase278/primitive_p3_high_precision.py
