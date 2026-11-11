@@ -1,0 +1,28 @@
+name: Phase280 full D403 matched local p2 Smith panel
+on:
+  push:
+    branches: ['research/phase280-*']
+  pull_request:
+    paths:
+      - 'research/phase280/**'
+      - '.github/workflows/phase280-d403-local-p2.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  full-original-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Prepare pinned arithmetic dependencies
+        run: |
+          python3 -m venv /tmp/phase280
+          /tmp/phase280/bin/pip install --disable-pip-version-check numpy==2.2.6
+      - name: Python syntax check
+        run: /tmp/phase280/bin/python -m py_compile research/phase280/full_d403_second_layer.py
+      - name: Full D403 original signed source - matched inert/split second Smith layers
+        run: |
+          /tmp/phase280/bin/python -u research/phase280/full_d403_second_layer.py
