@@ -1,13 +1,15 @@
-name: Phase274-275 jet precision and two-sided controls
+name: Phase274-276 jet precision and breathing controls
 on:
   pull_request:
     paths:
       - 'research/phase273/**'
       - 'research/phase274/**'
       - 'research/phase275/**'
+      - 'research/phase276/**'
       - 'lean/TenthDiscriminant/Phase272JetDescent.lean'
       - 'lean/TenthDiscriminant/Phase273TubularJet.lean'
       - 'lean/TenthDiscriminant/Phase275TwoSidedTube.lean'
+      - 'lean/TenthDiscriminant/Phase276BreathingValuation.lean'
       - '.github/workflows/phase274-jet-precision.yml'
   workflow_dispatch:
 permissions:
@@ -26,3 +28,5 @@ jobs:
         run: python3 research/phase274/sharp_precision_horizon.py
       - name: Original bivariate source motion and split-prime control
         run: python3 research/phase275/two_sided_original_source.py
+      - name: Nested complete-ellipse inert-valuation counterexample
+        run: python3 research/phase276/breathing_local_valuation.py
