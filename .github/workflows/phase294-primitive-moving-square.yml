@@ -1,0 +1,27 @@
+name: Phase294-C full primitive moving-observation p5 source square
+on:
+  push:
+    branches: ['research/phase294-*']
+  pull_request:
+    paths:
+      - 'research/phase294/**'
+      - '.github/workflows/phase294-primitive-moving-square.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  parity-primitive-formal-moved-support:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned NumPy integer array runtime
+        run: |
+          python3 -m venv /tmp/phase294c
+          /tmp/phase294c/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Exact Python source syntax
+        run: /tmp/phase294c/bin/python -m py_compile research/phase294/primitive_moving_source_square.py
+      - name: All original matched 725 rows, 3830 channels and p5 primitive parities at mod125
+        run: /tmp/phase294c/bin/python -u research/phase294/primitive_moving_source_square.py
