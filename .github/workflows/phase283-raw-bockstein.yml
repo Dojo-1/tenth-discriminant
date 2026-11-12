@@ -1,0 +1,23 @@
+name: Phase283 original raw D403 first-Bockstein witness
+on:
+  push:
+    branches: ['research/phase283-*']
+  pull_request:
+    paths:
+      - 'research/phase283/**'
+      - '.github/workflows/phase283-raw-bockstein.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-original-bockstein:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Python syntax
+        run: python3 -m py_compile research/phase283/raw_bockstein_witness.py
+      - name: Preregistered exact integer original-source and negative controls
+        run: python3 -u research/phase283/raw_bockstein_witness.py
