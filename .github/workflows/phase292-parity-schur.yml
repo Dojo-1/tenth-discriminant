@@ -1,0 +1,27 @@
+name: Phase292-C parity-resolved five-row D587 Schur
+on:
+  push:
+    branches: ['research/phase292-*']
+  pull_request:
+    paths:
+      - 'research/phase292/**'
+      - '.github/workflows/phase292-parity-schur.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-p5-parity-Schur:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install fixed NumPy
+        run: |
+          python3 -m venv /tmp/phase292c
+          /tmp/phase292c/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile exact parity source
+        run: /tmp/phase292c/bin/python -m py_compile research/phase292/parity_five_row_schur.py
+      - name: Original D587 725-to-730 same-Gram five-row p5 sector Schur audit
+        run: /tmp/phase292c/bin/python -u research/phase292/parity_five_row_schur.py
