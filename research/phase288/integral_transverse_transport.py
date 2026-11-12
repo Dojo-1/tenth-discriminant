@@ -226,7 +226,8 @@ def congruence_and_gauge(G,X,labels):
             [[-q for q in row] for row in trans(X)],eye(K))
     assert matmul(matmul(U,D),trans(U))==Gext
     assert matmul(matmul(trans(L),Gext),L)==D
-    assert matmul(U,L)==eye(n+K)
+    assert matmul(trans(U),L)==eye(n+K)
+    assert matmul(L,trans(U))==eye(n+K)
     assert parity_test(G,X,Gext,labels)
     d=bareiss(G)
     assert d>0
