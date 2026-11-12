@@ -84,6 +84,32 @@ Both original points are in Q383. Thus **raw polynomial/ordinary-jet matching mo
 
 For our already-known D583/D587-first725 source K9 normalization, `max old k=4` and `max secondary e=6`. Therefore matching FULL original point coordinates to the conservative depth `p^(4+6+3)=p^13` would be sufficient to transport all primitive rows modulo125 under source-compatible maps, *if there were such a complete matching*. The source has **d13=276** point-fiber debt; there is not. This does NOT prove a different, more general observation-side orthogonal Y cannot exist, nor prove point matching to p13 necessary for every individual row.
 
+## C. Minimal synthetic gluing is constructive and sharp in the fixed category [P-paper + M]
+
+Registered **AFTER** Phase294-A/B success at `51ac09e`, before new code. [Phase294-C completed CI #43305195414](https://github.com/Dojo-1/tenth-discriminant/actions/runs/43305195414) constructed the smallest *formally augmented* supports at k1,2,3 and checked all original six-row ordinary jets and trace metrics.
+
+Let `M` be a maximum point-residue matching of ORIGINAL Q_A against formally moved `phi(Q_B)` modulo `m=5^k`, and let `U_A,U_B` denote its unmatched ORIGINAL indices (both of size `d_k`). In A's common p-adic coordinate chart, append `phi(U_B)` to the ORIGINAL `Q_A`; in B's field chart append the inverse-image `phi^{-1}(U_A)` to the ORIGINAL `Q_B`. Thus
+
+```
+  Q'_A = Q_A ⊔ phi(U_B),
+  Q'_B = Q_B ⊔ phi^{-1}(U_A),
+  |Q'_A| = |Q'_B| = 383+d_k.
+```
+
+The completed multisets `Q'_A` and `phi(Q'_B)` have EXACTLY matching **residue multiplicities modulo m**, with an explicit bijection of ALL point labels. Each of the 383 original points is RETAINED on its own side, and exactly `d_k` NEW points are appended there. By the earlier matching theorem, no fewer additions on either side can restore equal residue multisets in this point-permutation/field-chart category. The added coordinates are generally OUTSIDE the original integer ellipse and the completion is **not** the actual original number-field sampler.
+
+For the same SIX original monomial rows and all five ordinary Z jets, every explicitly matched sample pair `q'_A ≡ phi(q'_B) mod m` yields raw evaluation congruence, including both real/imag components transformed by `(a,b)_B→(a,alpha b)_A`. The original trace metric identity `2D_B ≡ 2D_A alpha² (mod m)` then gives full six-row raw Gram equality on the **completed synthetic** supports modulo m.
+
+| k | synthetic appended points EACH side | completed point count EACH side | matched raw row/jet tests | completed 6x6 Gram congruence |
+|---|---:|---:|---:|---|
+| 1 (mod5) | 104 | 487 | 14,610 | all 36 entries |
+| 2 (mod25) | 276 | 659 | 19,770 | all 36 entries |
+| 3 (mod125) | 276 | 659 | 19,770 | all 36 entries |
+
+The original difference `G_B(Q)-G_A(Q)` equals the difference of the synthetically ADDED point-Gram contributions, modulo `m`, as predicted by Phase294-B signed localization; this explicitly demonstrates that *changing a sampler* can cancel its raw moment remainder. It is NOT a positivity, source filtration, or valuation theorem for the unmodified original Gram, and the full original D583 n725 vs D587 n730 field source dimensions remain different. In particular, the divided Frobenius row counterexample continues to prohibit transport of already-saturated primitive sources at insufficient precision.
+
+**Evidence:** [P-paper] sharp multiset envelope construction in its restricted category and raw polynomial/trace functoriality. [M] fully checked finite original-source six-row diagnostic at three moduli with deterministic point-bijection hashes, source frozen. [H] lift to a larger point/jet category without synthetically replacing original field source, including primitive p-adic lattice and h1 field theorem.
+
 ## Epistemic and architectural boundary
 
 [P-paper] elementary matching/minimum-completion and monotonicity, 25-adic transverse obstruction, raw polynomial-jet congruence, signed matrix remainder localization, division precision lemma.
@@ -94,6 +120,6 @@ For our already-known D583/D587-first725 source K9 normalization, `max old k=4` 
 
 [R] interpreting `d_k` as a 5-adic determinant valuation, claiming fixed mod5 sample matches transport Frobenius-divided jets, calling formal phiQ a new valid original field source, or extrapolating the finite D583/587 matched-source diagnostics to uniform h1 arithmetic.
 
-**Next smallest theorem/experiment:** Specify a *restricted* observation transport group whose morphisms preserve (1) the original point/jet indexing category, (2) the quadratic-order value form, (3) the old and secondary source lattice quotients. Prove a correction bound for the raw trace-Gram remainder in terms of unmatched local moment tensors **without** a monotonic determinant claim, and test whether any genuine production h1 source satisfies the hypotheses. A freely chosen dense B-orthogonal observation isometry is not a substitute for an original-sampler morphism.
+**Next smallest theorem/experiment:** The finite point-residue category is now characterized in BOTH directions: exact debt and sharp synthetic completion. The remaining question is whether a strictly richer but **original-sampler-preserving** observation/jet morphism can lift to the old and secondary p-adic lattice quotients without synthetic points, or whether a typed complement/integral-discriminant obstruction rules it out. Any such theorem must be tested on actual h1-admissible sources before changing a tenth-discriminant bound. Arbitrary dense B-orthogonal observation maps and enlarged synthetic sources do not by themselves qualify.
 
 No Work mode, no PR157 edits, no merge into main.
