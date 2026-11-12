@@ -1,0 +1,23 @@
+name: Phase284 source-exact Bockstein/Frobenius overlap
+on:
+  push:
+    branches: ['research/phase284-*']
+  pull_request:
+    paths:
+      - 'research/phase284/**'
+      - '.github/workflows/phase284-frobenius-overlap.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-transport:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Syntax
+        run: python3 -m py_compile research/phase284/frobenius_overlap.py
+      - name: Preregistered original D403 integer jet transport and no-double-counting controls
+        run: python3 -u research/phase284/frobenius_overlap.py
