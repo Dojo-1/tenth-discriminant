@@ -1,0 +1,27 @@
+name: Phase291-D odd-prime integral parity primitive split
+on:
+  push:
+    branches: ['research/phase291-*']
+  pull_request:
+    paths:
+      - 'research/phase291/**'
+      - '.github/workflows/phase291-parity-primitive.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-even-odd-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Fixed NumPy dependency
+        run: |
+          python3 -m venv /tmp/phase291-d
+          /tmp/phase291-d/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile source
+        run: /tmp/phase291-d/bin/python -m py_compile research/phase291/parity_primitive_source.py
+      - name: Full original D563 350+350 source-parity primitive reconstruction
+        run: /tmp/phase291-d/bin/python -u research/phase291/parity_primitive_source.py
