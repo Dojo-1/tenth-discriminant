@@ -148,7 +148,7 @@ def gram_mod_np(C,p,D,QJ):
         assert val==int(H[i,j])
     return H
 
-def smith_cap(C,p,K):
+def smith_cap(C,p,K,include_row_map=False):
     """Vectorized exact truncated Smith with row map (never transform metric columns).
 
     Every scalar multiplication in numpy has ABS bound <(p^K)^2;
@@ -211,7 +211,7 @@ def smith_cap(C,p,K):
             assert np.all(V[i]%d==0)
             primitive[i]=(V[i]//d)%p
         assert rank_fast(primitive,p)==n
-    return levels,hist,primitive
+    return (levels,hist,primitive,U) if include_row_map else (levels,hist,primitive)
 
 def historical_d283_p5():
     """Phase206/278 exact previously published *internal* regression."""
