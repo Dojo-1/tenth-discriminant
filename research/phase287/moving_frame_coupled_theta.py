@@ -268,9 +268,62 @@ def symmetry_and_integral_controls(D,points):
     return True
 
 
+def discrete_holonomy():
+    """Exact four-quarter-cycle overlap transport and periodic second gauges.
+
+    Added AFTER preregistration 52be699. This checks an exact discrete
+    parallel replay; the continuous analytic Berry connection is in the paper.
+    """
+    I=identity(2)
+    J=rotation_matrix(1)
+    C_exact=matrix_scale(F(1,2),matrix_add(I,J))
+    transitions=[]
+    for i in range(4):
+        Ri=rotation_matrix(i)
+        Rnext=rotation_matrix(i+1)
+        C=matrix_scale(F(1,2),
+            matrix_add(I,matrix_mul(Rnext,transpose(Ri))))
+        assert C==C_exact
+        assert matrix_mul(transpose(C),C)==matrix_scale(F(1,2),I)
+        transitions.append(C)
+    transported=I
+    for C in transitions:
+        transported=matrix_mul(C,transported)
+    assert transported==matrix_scale(F(-1,4),I)
+    assert matrix_scale(F(4),transported)==matrix_scale(F(-1),I)
+
+    # Each periodic, moving secondary frame has a different local connection,
+    # but exactly the same end-to-end closed-loop transport.
+    for winding in (0,1,2,3):
+        transformed=I
+        for i,C in enumerate(transitions):
+            Vi=rotation_matrix(winding*i)
+            Vnext=rotation_matrix(winding*(i+1))
+            Cprime=matrix_mul(
+                matrix_mul(transpose(Vnext),C),Vi)
+            transformed=matrix_mul(Cprime,transformed)
+        assert transformed==transported
+    assert transitions[0]!=I  # An open path is not a closed holonomy.
+    assert rotation_matrix(2)==matrix_scale(F(-1),I)
+    assert rotation_matrix(2)!=I  # Half-winding is not a periodic gauge.
+
+    print("PHASE287_DISCRETE_HOLONOMY",{
+        "four_steps":"quarter rotations",
+        "each_overlap":"(I+J)/2",
+        "overlap_gram":"I/2",
+        "ordered_overlap_product":"-I/4",
+        "polar_normalized_closed_loop":"-I",
+        "periodic_moving_secondary_gauges_checked":[0,1,2,3],
+        "half_winding_endpoint_not_periodic":True,
+        "no_nonabelian_or_quantum_evolution_claim":True,
+    },flush=True)
+    return True
+
+
 def main():
     source=frozen_source()
     assert projector_spectrum()==4
+    assert discrete_holonomy()
     for D in (19,403):
         rho=CASES[D]["rho"]
         original,half,full=full_order_disk(D,rho,source)
