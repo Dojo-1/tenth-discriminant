@@ -1,0 +1,23 @@
+name: Phase294-D p-adic support measure filtration 5 25 125
+on:
+  push:
+    branches: ['research/phase294-*']
+  pull_request:
+    paths:
+      - 'research/phase294/**'
+      - '.github/workflows/phase294-support-filtration.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  signed-support-multiscale:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact syntax
+        run: python3 -m py_compile research/phase294/multiscale_support_filtration.py
+      - name: Four exact p5-adic signed support levels and matched rectangle
+        run: python3 -u research/phase294/multiscale_support_filtration.py
