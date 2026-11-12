@@ -1,0 +1,27 @@
+name: Phase291-C full-original primitive 5-adic depth3 at K9
+on:
+  push:
+    branches: ['research/phase291-*']
+  pull_request:
+    paths:
+      - 'research/phase291/**'
+      - '.github/workflows/phase291-primitive-depth3.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  full700-H125:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Fixed NumPy dependency
+        run: |
+          python3 -m venv /tmp/phase291-c
+          /tmp/phase291-c/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Exact source syntax
+        run: /tmp/phase291-c/bin/python -m py_compile research/phase291/primitive_full700_depth3.py
+      - name: Reproduce original 700-row p5 primitive H modulo 125 and depth3 certificate
+        run: /tmp/phase291-c/bin/python -u research/phase291/primitive_full700_depth3.py
