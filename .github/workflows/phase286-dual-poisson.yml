@@ -1,0 +1,23 @@
+name: Phase286-B exact dual Poisson dyadic theta certificate
+on:
+  push:
+    branches: ['research/phase286-*']
+  pull_request:
+    paths:
+      - 'research/phase286/**'
+      - '.github/workflows/phase286-dual-poisson.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-dual:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact dual source syntax
+        run: python3 -m py_compile research/phase286/dual_poisson_dyadic.py
+      - name: Two-oracle normalized dual theta sum and rigorous dyadic tail
+        run: python3 -u research/phase286/dual_poisson_dyadic.py
