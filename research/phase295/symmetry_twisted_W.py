@@ -61,7 +61,7 @@ def jet_symmetry(Q):
                 for j in range(J):
                     original=jet(D,r,s,j,point)
                     inverted_value=jet(D,r,s,j,inverted)
-                    sign=(-1)**(r+s-j)
+                    sign=-1 if (r+s-j)%2 else 1
                     assert inverted_value==tuple(sign*a for a in original)
                     conj_value=jet(D,r,s,j,conjugated)
                     assert conj_value==(original[0],-original[1])
