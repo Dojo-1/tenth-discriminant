@@ -1,0 +1,27 @@
+name: Phase282 raw D403 modular Hermite collision ranks
+on:
+  push:
+    branches: ['research/phase282-*']
+  pull_request:
+    paths:
+      - 'research/phase282/**'
+      - '.github/workflows/phase282-raw-hermite-collision.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  frozen-raw-jet-witnesses:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned numeric environment
+        run: |
+          python3 -m venv /tmp/phase282
+          /tmp/phase282/bin/pip install --disable-pip-version-check numpy==2.2.6
+      - name: Phase282 Python syntax
+        run: /tmp/phase282/bin/python -m py_compile research/phase282/raw_hermite_collision.py
+      - name: Frozen exact original-source Hermite and Lagrange rank regression
+        run: /tmp/phase282/bin/python -u research/phase282/raw_hermite_collision.py
