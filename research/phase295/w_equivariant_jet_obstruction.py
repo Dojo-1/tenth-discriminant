@@ -64,7 +64,7 @@ def jet_w_fixed_guard(Q,k,m,alpha):
         for x,y in (Q[0],Q[len(Q)//3],Q[len(Q)//2],Q[-1]):
             z=(x%m,y%m)
             w=(x%m,(-y)%m)
-            for r,s in ((0,0),(1,0),(5,1),(20,3),(145,4)):
+            for r,s in ((0,0),(1,0),(5,1),(20,3),(144,4)):
                 for j in range(J):
                     if j>r:
                         original=(0,0)
