@@ -262,6 +262,30 @@ def audit_case(D,rho,labels,J,expected):
     },flush=True)
 
 
+
+def maximal_order_half_coset(D,rho):
+    """Exact enumeration of the missing (1+u)/2 + Z[u] within |z|<=rho."""
+    assert D%4==3
+    bound=4*rho*rho
+    ax=2*rho
+    by=isqrt(bound//D)
+    count=0
+    least=None
+    for b in range(-by,by+1):
+        if b%2==0:
+            continue
+        for a in range(-ax,ax+1):
+            if a%2==0:
+                continue
+            norm_numerator=a*a+D*b*b
+            if norm_numerator<=bound:
+                assert norm_numerator%4==0
+                norm=norm_numerator//4
+                count+=1
+                least=norm if least is None else min(least,norm)
+    return count,least
+
+
 def main():
     freeze_original_helpers()
     rho,R,S,J,Q=params(403)
@@ -270,8 +294,15 @@ def main():
     assert old_frame_parity_full_400()>=1200
     for D in (19,403):
         assert D%4==3 and (D+1)%4==0
-        # Missing maximal-order coset: norm((1+sqrt(-D))/2)=(D+1)/4.
-        # It must NOT be silently included in original integer-coordinate Q.
+        # Missing maximal-order coset cannot be treated as a far-away tail.
+    assert maximal_order_half_coset(19,5)==(20,5)
+    assert maximal_order_half_coset(403,40)==(260,101)
+    print("PHASE285_HALF_COSET",{
+        "D19_rho5": [20,5],
+        "D403_rho40": [260,101],
+        "not_in_original_source": True,
+        "not_an_infinite_theta_tail": True,
+    },flush=True)
     audit_case(19,5,[(0,0),(1,0)],1,{
         "points":(21,15,18),
         "full":(8,1,1,1,0),"lens":(3,1,1,0,0),"asym":(2,3,0,0,0),
