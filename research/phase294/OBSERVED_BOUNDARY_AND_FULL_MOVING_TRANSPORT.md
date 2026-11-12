@@ -77,7 +77,24 @@ C_prim,A(phi Q) = C_prim,B(Q) * Y   (mod125).
 
 This proves a FINITE **positive** existence result for source-compatible p5-primitive transport over `Z/125` whenever Q itself is allowed to move to phiQ. It uses the same already-counted p5 factors: old F5=1350, secondary560, primitive H residual35, consistent with v5(det n725 original/diagnostic)=`2*(1350+560)+35=3855`. That 3855 is NOT a new factor. The transported A sample points are NOT the original field D583 ellipse, and no conclusion about h(K)=1 or the full D587 730-row source is drawn.
 
-## IV. The surviving noncommuting square and its honest debt
+## IV. The signed boundary GROWS with p-adic precision [P-paper + M]
+
+**Preregistered at `10d6b86` AFTER the successful A/B/C experiments and BEFORE Phase294-D executable.** The first Phase294-D CI run [#43315319753](https://github.com/Dojo-1/tenth-discriminant/actions/runs/43315319753) failed **before running mathematics** because its imported Hensel helper required NumPy. We retained that failed run and pinned the exact same NumPy 2.2.6 runtime as the prior successful source computations, without changing the preregistered predictions or algorithm. The corrected [Phase294-D CI #43315414340](https://github.com/Dojo-1/tenth-discriminant/actions/runs/43315414340) then PASSED.
+
+For k=1,2,3,13, let `m_k` be the INTEGER multiplicity measure of original Q383 on coordinate residues modulo 5^k, and `m_k^phi` the corresponding pushed field-isometry support measure. The signed measures `δ_k=m_k^phi−m_k` are compatible under residue reduction: `δ_k=pushforward(δ_(k+1))`. Their half-L1 mass `M_k=||δ_k||_1/2` is nondecreasing under refinement by the elementary triangle inequality. **This is a theorem for signed residue measures, not for determinant valuations.**
+
+| Original Q source precision | M_k minimum residue-multiset replacements | signed nonzero integer residue coords | coords with coefficient a unit mod5 | nonzero Galois conjugate pairs | inversion-FIXED Galois pairs |
+|---|---:|---:|---:|---:|---:|
+| k1, mod5 | **104** | 20 | 8 | **4** | 0 |
+| k2, mod25 | **276** | 200 | 200 | **100** | 4 |
+| k3, mod125 | **276** | 552 | 552 | **276** | 4 |
+| k13, mod5^13 | **276** | 552 | 552 | **276** | 4 |
+
+The 104→276 jump is visible already modulo25: `alpha≡17 mod25` sends all nonzero original transverse y∈{±1,±2} into four new y residue classes {±17,±9}, **disjoint** from the original classes. Only the y=0 central layer of 107/383 observations continues to coincide, leaving 276 moved units. By modulus125 all individual nonzero-y x coordinates in this finite original ellipse are distinct, yielding 552 active residue coordinates in the two signed measures. The new inversion-fixed Galois orbits appear at x≡0, whereas the mod5 signed-unit support had only x≡2,3. Hence the original mod5 parity20+20 *does not automatically lift to equal-sized higher-level boundary modules*.
+
+**Hostile matched controls:** replacing the ellipse with the five-layer equal-width rectangle `Qrect={−21<=x<=21,−2<=y<=2}` makes the mod5 support mismatch ZERO (the y residue classes permute), but the mismatch is **172** by mod25 and remains172 thereafter. Alpha→−alpha gives identical signed measures in all four levels; alpha1 gives zero at every level. This explicitly refutes any inference that zero first-residue remainder certifies an actual higher-precision source match. Nor do the 100 or276 higher-level conjugate-orbit counts give a mod25 or mod125 Gram rank: the coefficient ring is no longer a field, the source row degree is finite, and p-adic valuations/Smith filtration remain essential.
+
+## V. The surviving noncommuting square and its honest debt
 
 The two natural operations must not be conflated:
 
