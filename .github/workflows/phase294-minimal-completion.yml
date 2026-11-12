@@ -1,0 +1,23 @@
+name: Phase294-C minimal synthetic point completion, original jets
+on:
+  push:
+    branches: ['research/phase294-*']
+  pull_request:
+    paths:
+      - 'research/phase294/**'
+      - '.github/workflows/phase294-minimal-completion.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  formal-raw-sample-square:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact source syntax
+        run: python3 -m py_compile research/phase294/minimal_formal_completion.py
+      - name: Construct minimal augmented observation field charts and raw original Gram square
+        run: python3 -u research/phase294/minimal_formal_completion.py
