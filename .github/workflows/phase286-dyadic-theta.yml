@@ -1,0 +1,23 @@
+name: Phase286 exact dyadic maximal-order theta certificate
+on:
+  push:
+    branches: ['research/phase286-*']
+  pull_request:
+    paths:
+      - 'research/phase286/**'
+      - '.github/workflows/phase286-dyadic-theta.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-dyadic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Compile stdlib-only exact rational source
+        run: python3 -m py_compile research/phase286/dyadic_theta_certificate.py
+      - name: Exact Q[u] dyadic theta, half-coset and rational error certificates
+        run: python3 -u research/phase286/dyadic_theta_certificate.py
