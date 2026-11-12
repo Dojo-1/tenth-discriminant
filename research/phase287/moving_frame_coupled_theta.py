@@ -164,10 +164,7 @@ def projector_spectrum():
         assert matrix_mul(R,transpose(R))==identity(2)
         H=block_matrix(R,KAPPA)
         S=block_matrix(R,F(1))
-        Pp=matrix_scale(F(1,2),matrix_add(I,matrix_add(S,matrix_scale(F(-1),I))))
-        # Above equals S/2, so replace with the exact projectors below.
-        Pp=matrix_scale(F(1,2),matrix_add(I,matrix_add(S,matrix_scale(F(-1),I))))
-        # This expression is S/2; form true P+ from off-diagonal X=S-I:
+        # S=I+X with X^2=I; this is the exact pair of spectral projectors.
         X=matrix_add(S,matrix_scale(F(-1),I))
         Pp=matrix_scale(F(1,2),matrix_add(I,X))
         Pm=matrix_scale(F(1,2),matrix_add(I,matrix_scale(F(-1),X)))
