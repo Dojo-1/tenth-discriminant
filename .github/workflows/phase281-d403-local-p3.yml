@@ -1,0 +1,27 @@
+name: Phase281 fixed K3 D403 full original Smith panel
+on:
+  push:
+    branches: ['research/phase281-*']
+  pull_request:
+    paths:
+      - 'research/phase281/**'
+      - '.github/workflows/phase281-d403-local-p3.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  full-original-k3:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Prepare pinned arithmetic dependencies
+        run: |
+          python3 -m venv /tmp/phase281
+          /tmp/phase281/bin/pip install --disable-pip-version-check numpy==2.2.6
+      - name: Python syntax check
+        run: /tmp/phase281/bin/python -m py_compile research/phase281/full_d403_third_layer.py
+      - name: Full original signed D403 source and fixed K3 Smith controls
+        run: /tmp/phase281/bin/python -u research/phase281/full_d403_third_layer.py
