@@ -1,0 +1,23 @@
+name: Phase287-D rotating-frame adiabatic leakage exact control
+on:
+  push:
+    branches: ['research/phase287-*']
+  pull_request:
+    paths:
+      - 'research/phase287/**'
+      - '.github/workflows/phase287-adiabatic-leakage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-specified-dynamics:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Syntax
+        run: python3 -m py_compile research/phase287/adiabatic_leakage_control.py
+      - name: Independent 4D gauge conjugacy and solvable adiabatic band leakage bound
+        run: python3 -u research/phase287/adiabatic_leakage_control.py
