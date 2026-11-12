@@ -1,0 +1,23 @@
+name: Phase285 Noetherian lens and finite-theta original-source audit
+on:
+  push:
+    branches: ['research/phase285-*']
+  pull_request:
+    paths:
+      - 'research/phase285/**'
+      - '.github/workflows/phase285-lens-theta.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-noether-lens:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Syntax
+        run: python3 -m py_compile research/phase285/noether_lens_theta.py
+      - name: Original D19 and D403 lens, integer parity, trace Gram and moment equalities
+        run: python3 -u research/phase285/noether_lens_theta.py
