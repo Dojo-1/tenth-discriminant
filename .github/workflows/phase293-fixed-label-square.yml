@@ -1,0 +1,27 @@
+name: Phase293-D fixed-label original evaluation square
+on:
+  push:
+    branches: ['research/phase293-*']
+  pull_request:
+    paths:
+      - 'research/phase293/**'
+      - '.github/workflows/phase293-fixed-label-square.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  all-original-observation-columns:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pin integer modular array runtime
+        run: |
+          python3 -m venv /tmp/phase293d
+          /tmp/phase293d/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile source
+        run: /tmp/phase293d/bin/python -m py_compile research/phase293/fixed_label_evaluation_square.py
+      - name: Test any parity row map under fixed original Q and canonical field value map
+        run: /tmp/phase293d/bin/python -u research/phase293/fixed_label_evaluation_square.py
