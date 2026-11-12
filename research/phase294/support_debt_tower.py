@@ -19,13 +19,19 @@ P=5
 D_A=583
 D_B=587
 MAX_K=13
-FROZEN_SOURCE="3f954b59d9f86b06ad53667c869b5b24f2e6c7f6"
+FROZEN_BLOBS={
+    "research/phase206/source_probe.py":
+        "3f954b59d9f86b06ad53667c869b5b24f2e6c7f6",
+    "research/phase204/ordinary_jet_filtration.py":
+        "dd8b00547ec09a5d9baec15ad34c9ee3e6e4f6b8",
+}
 
 def source_guard():
-    actual=subprocess.check_output(
-        ["git","rev-parse","HEAD:research/phase206/source_probe.py"],
-        cwd=ROOT,text=True).strip()
-    assert actual==FROZEN_SOURCE,("original source changed",actual)
+    for path,expected in FROZEN_BLOBS.items():
+        actual=subprocess.check_output(
+            ["git","rev-parse","HEAD:"+path],cwd=ROOT,text=True
+        ).strip()
+        assert actual==expected,("original source helper changed",path,actual)
 
 def hensel_lifts(max_k=MAX_K, initial=2):
     """Compute the chosen exact 5-adic root 583*alpha^2=587."""
