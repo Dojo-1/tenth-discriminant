@@ -52,6 +52,26 @@ The second preregistration `PRE_REGISTERED_CONSTRUCTIVE_PAIRING.md` at commit `e
 
 This is an **actual constructed, parity-preserving isometry of the PRIMITIVE pairings modulo125**, a nontrivial new FINITE operator. It is NOT an integer `GL_725(Z)` gauge, a pairing congruence of the unsaturated original 725-row Grams, an isomorphism of D583 and D587 number fields over Q, nor a transform of each original observation point/jet source into the other.
 
+## Result D — the canonical fixed-observation evaluation square is obstructed [P exact rowspace logic + M]
+
+**Preregistered at commit `2474a57` AFTER the constructive isometry and BEFORE code.** [Phase293-D focused CI #43291441401](https://github.com/Dojo-1/tenth-discriminant/actions/runs/43291441401) PASSED the *negative* result with both positive and negative pivot-rowspace toys.
+
+Use the EXACT previously saturated original observation matrices `C_A,prim125` for D583 full and `C_B,prim125` for D587 first725-row diagnostic, each 3,830 columns. In the D583-to-D587 **value-coordinate orientation**, the only canonical field-value map on fixed observation labels is `Y=diag(1,alpha^{-1})` on each original (j,q) coordinate pair, where `alpha^{-1}≡28 mod125`. Its metric orientation is checked:
+`Y B_587 Y^T = B_583 (mod125)`. This is a legitimate pointwise coordinate map but **NOT** the actual geometric map q→phi(q), whose support leaves the original ellipse.
+
+In each odd-p parity sector, `A=C_A,prim125 Y` has FULL row rank n mod5. Choose n original observation columns P with invertible `A_P` over F5. If ANY row matrix X over F5 satisfied `B=X A`, it would be uniquely forced by `X=B_P A_P^{-1}`; hence a SINGLE disagreement in any other column is a mathematical proof of nonexistence for this fixed Y. The exact code constructs the unique candidate modulo125 from the *same* invertible pivot columns and replays all original observation channels modulo5 and125.
+
+**Measured (pivot-dependent residual counts, but invariant existence verdict):**
+
+| parity | n | candidate rank mod5 | nonzero candidate residual entries mod5 | first explicit nonmembership |
+|---|---:|---:|---:|---|
+| even | 363 | 362 | 41,164 | primitive row314, jet3, original q=(-37,-1), real: predicted3, target4 mod5 |
+| odd | 362 | 362 | 37,786 | primitive row312, jet4, original q=(-12,-2), real: predicted1, target2 mod5 |
+
+Both sectors' candidate X reproduce their pivot columns exactly modulo125. Both fail at a nonpivot original channel modulo5. So **NO row X, invertible or otherwise, can complete this specific fixed-Q-index canonical value-map evaluation square over F5**, and therefore none modulo125 or Z5. This is strictly stronger than saying the previously constructed pairing X happened to fail the source map. It is NOT a no-go theorem for ALL possible original-observation-side maps Y: allowing point moves, signed jet permutations, broader B-orthogonal mixing or different field/source conditions is a DIFFERENT question.
+
+The result is structurally consistent with Result A's rank5 six-row moment defect and the 104-point support escape. It also coexists with Result C's genuine parity-preserving **primitive pairing** isometries: the two mathematical propositions have different objects and requirements. Neither provides new p-adic determinant mass for the same source.
+
 ## Unclosed source-to-pairing square (precise next theorem target)
 
 The present computed square closes only on the primitive-form level:
@@ -65,7 +85,7 @@ The present computed square closes only on the primitive-form level:
 
 Here `C` is an original-observation embedding of the p-saturated rows and B is the actual original trace metric. An observation-side map Y compatible with original channel/point/jet structure is still MISSING. In row convention `C_B = X C_A Y` and `Y B_B Y^T=B_A` would be a SUFFICIENT exact source-and-metric covariance condition (with correct typed fields), implying the Gram congruence. Our explicitly constructed X was selected using only primitive pairings and has **not** been shown to satisfy this square for any source-compatible Y. Merely knowing an abstract ambient orthogonal extension exists would also be weaker than a channel-permutation/field-value map and would not give a uniform field-theorem factor.
 
-**Smallest next test:** fix the constructed X and measure the mod5 and mod125 evaluation intertwining defect under the *specified* local field-coordinate map on value channels `(a,b)→(a,αb)` with the **original Q indices held fixed**; if nonzero, record this exact failure without asserting nonexistence of all possible X or Y. Then characterize the permissible observation-side group and any orthogonal-complement discriminant obstruction, rather than another scalar cutoff fit.
+**Next legitimate theorem target:** Phase293-D has ruled out every row map for the **fixed-index canonical field-value Y**, not just the constructed pairing X. Specify the permissible larger observation-side group (point moves, jet-compatible signed permutations, and/or full B-orthogonal maps), then test whether the original primitive embeddings have compatible orthogonal complements or a source-support obstruction in that larger category. A freely chosen ambient isometry, even if it exists, is weaker than a permutation of original samples. No uniform h1 consequence follows from the finite matched sources.
 
 ## Evidence boundary
 
