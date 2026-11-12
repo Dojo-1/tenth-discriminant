@@ -338,7 +338,7 @@ def main():
     A=np.diag([2,3])
     X=np.array([[0,1],[0,0]],dtype=np.int64)
     assert np.array_equal(3*(A@X),2*(X@A))
-    assert int(round(np.linalg.det(X)))==0
+    assert int(X[0,0]*X[1,1]-X[0,1]*X[1,0])==0
     print("PHASE291_OPERATOR_SEMANTIC_GUARD",{
       "finite_SPD_extended_eigenvalues_positive_spectral_ratios":True,
       "higher_powers_same_commutant_classical":True,
