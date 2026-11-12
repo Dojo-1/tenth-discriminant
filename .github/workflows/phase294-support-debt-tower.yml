@@ -1,0 +1,23 @@
+name: Phase294-A original Q p-adic support-debt tower
+on:
+  push:
+    branches: ['research/phase294-*']
+  pull_request:
+    paths:
+      - 'research/phase294/**'
+      - '.github/workflows/phase294-support-debt-tower.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  p5-point-fiber-tower:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Compile exact source
+        run: python3 -m py_compile research/phase294/support_debt_tower.py
+      - name: Verify Hensel 13-depth source fibers and bipartite maximum matching
+        run: python3 -u research/phase294/support_debt_tower.py
