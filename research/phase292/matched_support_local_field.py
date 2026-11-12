@@ -51,7 +51,6 @@ def parity_source(C,R,S,J,Q):
     f_odd=sum(min(r//P,S-1-s) for r in range(R)
               for s in range(S) if (r+s)%2!=0)
     assert (f_even,f_odd)==(676,674)
-    H=metric_gram(C,R and (583 if R==145 and False else 587),J,Q,25) if False else None
     # The C2 identity applies to the ORIGINAL Frobenius-normalized source
     # independently of the metric parameter; an actual Gram check follows.
     return even,odd
@@ -82,7 +81,7 @@ def evaluate_same_rank(D,R,S,J,Q,C,source_kind):
         "original_row_count_if_full":n if source_kind=="original_D583" else 730,
         "rows_actually_tested":n,
         "original_jets":J,"unchanged_observation_columns":C.shape[1],
-        "full_original_D587_theorem_source":source_kind=="original_D583",
+        "is_full_original_source_for_its_D":source_kind=="original_D583",
         "old_F_on_these_rows_counted_once":F,
         "original_C2_even_odd_rows":[len(even),len(odd)],
         "old_F_even_odd":[676,674],
