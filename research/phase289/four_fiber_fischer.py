@@ -173,7 +173,7 @@ def moving_shear_control(G,a,b):
         assert fraction_det(moved)==det(G)
         if t==1:
             assert all(moved[i][j]==0 for i in range(a) for j in range(a,total))
-            assert submatrix(moved,list(range(a,total))[a:])==S
+            assert submatrix(moved,list(range(a,total)))==S
     # Explicit wrong-sign control: adding the cross term never gives Schur.
     wrong=[[F(B[i][j])+CTC[i][j] for j in range(b)] for i in range(b)]
     assert wrong!=S if any(v!=0 for row in C for v in row) else wrong==S
