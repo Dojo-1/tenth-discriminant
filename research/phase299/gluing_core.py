@@ -187,7 +187,10 @@ def small_scalar_glue_enumeration(a,c,b):
     unitM=m//om
     H={(i*(oa//P)%oa,i*(om//P)%om) for i in range(P)}
     assert len(H)==P
-    assert all((unitA*x//(oa//P) if False else 0)==0 for x,y in H)
+    # Explicit self-orthogonality of EACH gluing subgroup element.
+    # For h=(x,y), pairing to the H generator is
+    # (unitA*x+unitM*y)/5 mod Z_5: it must vanish.
+    assert all((unitA*x+unitM*y)%P==0 for x,y in H)
     # Actual bilinear pairing with generator a/5 and k/5:
     # b((u,v),(a/5,k/5)) ≡ (unitA*u+unitM*v)/5 (mod Z5).
     Hp={(x,y) for x in range(oa) for y in range(om)
