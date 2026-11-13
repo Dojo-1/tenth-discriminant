@@ -1,0 +1,46 @@
+name: Phase307 all-line original-source and higher-coherence controls
+on:
+  push:
+    branches: ['research/phase307-*']
+    paths:
+      - 'research/phase307/**'
+      - '.github/workflows/phase307-all-lines.yml'
+  pull_request:
+    paths:
+      - 'research/phase307/**'
+      - '.github/workflows/phase307-all-lines.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-padic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pin source math environment
+        run: |
+          python3 -m venv /tmp/phase307
+          /tmp/phase307/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Check script syntax
+        run: |
+          /tmp/phase307/bin/python -m py_compile research/phase307/source_saturation.py research/phase307/actual_sheaf_cohomology.py research/phase307/precision_towers.py research/phase307/octonion_fiber.py
+      - name: Independent all-100-row actual original D203 source and p5 Smith-depth
+        run: /tmp/phase307/bin/python -u research/phase307/source_saturation.py
+  topology-ordinal-hypercomplex-and-previous-controls:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Actual-observation coefficient-sensitive Cech H2 controls
+        run: python3 -u research/phase307/actual_sheaf_cohomology.py
+      - name: Finite p-adic precision tower and ZFC boundary
+        run: python3 -u research/phase307/precision_towers.py
+      - name: Octonion associator and alternative norm controls
+        run: python3 -u research/phase307/octonion_fiber.py
+      - name: Preserve all earlier Phase306 mathematical controls
+        run: python3 -m unittest discover -s research/phase306 -p 'test_*.py' -v
