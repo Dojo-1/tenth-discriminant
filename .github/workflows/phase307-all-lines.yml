@@ -26,7 +26,7 @@ jobs:
           /tmp/phase307/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
       - name: Check script syntax
         run: |
-          /tmp/phase307/bin/python -m py_compile research/phase307/source_saturation.py research/phase307/actual_sheaf_cohomology.py research/phase307/precision_towers.py research/phase307/octonion_fiber.py research/phase307/quality_gates.py research/phase307/no_wrap_kernel.py
+          /tmp/phase307/bin/python -m py_compile research/phase307/source_saturation.py research/phase307/actual_sheaf_cohomology.py research/phase307/precision_towers.py research/phase307/octonion_fiber.py research/phase307/quality_gates.py research/phase307/no_wrap_kernel.py research/phase307/j_ge_p_rank.py
       - name: Independent all-100-row actual original D203 source and p5 Smith-depth
         run: /tmp/phase307/bin/python -u research/phase307/source_saturation.py
   topology-ordinal-hypercomplex-and-previous-controls:
@@ -44,6 +44,8 @@ jobs:
         run: python3 -u research/phase307/octonion_fiber.py
       - name: Sharp Frobenius no-wrap source threshold vs existing valuationWeight
         run: python3 -u research/phase307/no_wrap_kernel.py
+      - name: Exact J at-least p canonical exponent and bounded native policy
+        run: python3 -u research/phase307/j_ge_p_rank.py
       - name: Sixteen proposed cognitive roles as bounded mathematical quality gates
         run: python3 -u research/phase307/quality_gates.py
       - name: Preserve all earlier Phase306 mathematical controls
