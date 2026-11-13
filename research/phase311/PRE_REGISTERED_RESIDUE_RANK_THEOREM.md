@@ -21,6 +21,6 @@ Surjectivity C is ESSENTIAL. If rank C<25J, only the <= inequality is warranted.
 - D203/J2: rank(C)=50, weighted classes19, rank(G)=38.
 - D427/J4: rank(C)=100, weighted classes17, rank(G)=68.
 - A synthetic *non-surjective* 1-row, 2-residue F25 matrix C=[1,1] with weights [1,4] has rank(C)=1<2, yet pulled-back Gram entry equals 2*(1+4)=0 mod5. This MUST NOT be asserted to have rank2. The strict inequality is a hostile control.
-- D427 R=106,S=4,p=5 has existing valuationWeight=sum_r sum_t min(floor(r/5),t)=586, hence the existing 2w=1172 dwarf the new first-level Gram-nullity floor n-rank(G)=424-68=356. This is a direct countercontrol to promoting the residue-multiplicity phenomenon as an independent improvement of the old bound.
+- D427 R=106,S=4,p=5 has existing valuationWeight=sum_r sum_t min(floor(r/5),t)=586, hence the existing weight FORMULA evaluates to 2w=1172, exceeding the new first-level Gram-nullity floor n-rank(G)=424-68=356. This is a comparison of formal weight magnitudes, NOT a new proof that the old field-divisibility theorem applies verbatim to the full maximal-order observation lift used for D427. It prevents claiming that the new first-level count automatically improves the prior bound.
 
 Stop if any rank formula fails or the h1/non-h1 distinction is incorrectly promoted. No new analytic cutoff, no main merge, no performance claim.
