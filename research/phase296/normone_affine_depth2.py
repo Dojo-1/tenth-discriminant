@@ -181,11 +181,46 @@ def full_normone_search(Q):
         sorted(hist.items()))
     return reports
 
+def retrospective_mod5_real_translation_regression(Q):
+    """Post-result correction: do not confuse an all-translation floor
+    64 with the exact 60-map BASE-translation subgroup minimum 72.
+    This was checked separately after the preregistered p25 run.
+    """
+    mod=5
+    src=Counter((x%mod,y%mod) for x,y in Q)
+    normone=[a for a in all_elements(mod)
+             if qnorm(a,mod)==1]
+    assert len(normone)==6
+    best=384
+    ties=0
+    checked=0
+    for eps in (1,-1):
+        for a in normone:
+            for b0 in range(mod):
+                b=(b0,0)
+                moved=Counter(
+                    transformed((x%mod,(2*y)%mod),a,b,eps,mod)
+                    for x,y in Q)
+                debt=383-scalar_weighted_match(src,moved)
+                checked+=1
+                if debt<best:
+                    best=debt
+                    ties=1
+                elif debt==best:
+                    ties+=1
+    assert checked==60
+    assert best==72 and ties==16
+    return {"complete_60_maps":checked,
+            "exact_minimum_missing_mod5":best,
+            "number_of_best_ties":ties,
+            "retrospective_independent_correction_not_preregistered":True}
+
 def main():
     guard()
     Q,rows=original_source()
     assert rows==(725,730)
     control=positive_and_hostile_controls(Q)
+    mod5_control=retrospective_mod5_real_translation_regression(Q)
     report=full_normone_search(Q)
     print("PHASE296B_NORMONE_MOD25_COMPLETE",{
        "full_original_D583_R145_rows":rows[0],
@@ -197,6 +232,7 @@ def main():
        "norm_one_slope_count":30,
        "affine_norm_one_semilinear_candidates":37500,
        "source_and_counterworld_controls":control,
+       "post_result_mod5_real_translation_correction":mod5_control,
        "exact_search_results":report,
        "minimum_mod25_debt_never_below_mod5_64":True,
        "translation_is_not_necessarily_trace_form_linear":True,
