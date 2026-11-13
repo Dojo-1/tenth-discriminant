@@ -177,8 +177,9 @@ def ghost_observation_control(Q):
     assert all((z[0]%P,(-z[1])%P) in field for z in field)
     # Ghost automorphism sigma(Z)=Z+h(W), sigma(W)=W with
     # h(W)=W^25-W; inverse is Z->Z-h(W), W fixed.
-    ghost_W_support={(25,0):1,(1,0):P-1}
-    assert ghost_W_support=={(25,0):1,(1,0):4}
+    ghost_W_support={(0,25):1,(0,1):P-1}
+    assert ghost_W_support=={(0,25):1,(0,1):4}
+    assert all(r==0 for r,s in ghost_W_support)
     # Composition sigma and inverse cancels the SAME h(W)
     # coefficient-by-coefficient, proving two-sided inverse.
     ghost_image=add_poly(monomial(1,0),ghost_W_support)
