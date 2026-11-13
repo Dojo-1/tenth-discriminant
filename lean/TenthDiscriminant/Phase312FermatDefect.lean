@@ -39,6 +39,7 @@ a distinct obligation. -/
 theorem hermite_restriction_square (z : R) (a : ℕ) :
     z^(45+a)*z^5 - 2*z^(26+a) + z^(2+a)
       = z^a*(z^25-z)^2 := by
+  rw [pow_add, pow_add, pow_add]
   ring
 
 end TenthDiscriminant.Phase312
