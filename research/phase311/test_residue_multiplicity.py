@@ -47,10 +47,11 @@ class ResidueMultiplicityTests(unittest.TestCase):
 
     def test_larger_native_existing_weight_beats_unnormalized_rank_floor(self):
         d=m.larger_native_D427()
-        self.assertEqual(d["existing_valuationWeight"],586)
-        self.assertEqual(d["existing_double_weight_lower_bound"],1172)
+        self.assertEqual(d["existing_valuationWeight_formula_at_same_R_S"],586)
+        self.assertEqual(d["double_existing_weight_formula"],1172)
         self.assertEqual(d["original_mod5_Gram_nullity_floor"],356)
-        self.assertTrue(d["new_first_level_floor_does_not_beat_existing_weight"])
+        self.assertTrue(d["new_first_level_floor_does_not_exceed_weight_formula"])
+        self.assertTrue(d["old_weight_theorem_not_reproven_for_full_maximal_source"])
 
     def test_source_rank_and_trace_rank_bounds_are_distinct(self):
         self.assertEqual(self.meta163["source_rank_F25"],25)
