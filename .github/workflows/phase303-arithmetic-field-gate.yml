@@ -1,0 +1,23 @@
+name: Phase303-C actual field norm, local order and h1 high-jet feasibility
+on:
+  push:
+    branches: ['research/phase303-*']
+  pull_request:
+    paths:
+      - 'research/phase303/**'
+      - '.github/workflows/phase303-arithmetic-field-gate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  arithmetic-field-scope-gates:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Compile independent exact integer field tests
+        run: python3 -m py_compile research/phase303/arithmetic_field_gate.py
+      - name: Conductor2 at p5, split-prime hostile test and h1 J ceiling
+        run: python3 -u research/phase303/arithmetic_field_gate.py
