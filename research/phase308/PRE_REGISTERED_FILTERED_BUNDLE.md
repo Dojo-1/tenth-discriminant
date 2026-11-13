@@ -20,3 +20,9 @@ The associated-graded functor records the ordered family ([I],...,[I]) in Pic(O)
 - Compare the typed functor against the determinant-only baseline on this FIXED family, with in-sample origin explicitly stated. No benchmark/general-intelligence claims.
 
 No original polynomial-source modification, no new field bound, no Work mode and no merge.
+
+## Pre-code amendment: a smaller two-tendril cancellation witness
+
+For any nonprincipal invertible ideal I, its inverse class I^(-1) exists. Steinitz already implies **I ⊕ I^(-1) ≅ O²** without requiring a special torsion order. Yet the natural filtered structure 0⊂I⊂I⊕I^(-1) is NOT filtered-isomorphic to the standard flag 0⊂O⊂O², because the first graded quotient is I, not O.
+
+Test exact class residues [1,m-1] for m=2,4,11. They cancel in aggregate but must remain nontrivial as named filtered lines. A rank2 case has a stronger economy than the initial rank100 proposal. Do not infer a canonical free basis from the Steinitz isomorphism, or a trace-Gram-preserving gauge. This amendment is made before code implementation, after the mathematical observation.
