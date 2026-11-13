@@ -32,7 +32,8 @@ theorem inert_frobenius_value
 theorem inert_frobenius_ordinary_jet_one_base
     (z : ZMod 5) :
     (5 : ZMod 5) * z ^ 4 = 0 := by
-  norm_num
+  have h5 : (5 : ZMod 5) = 0 := ZMod.natCast_self 5
+  rw [h5, zero_mul]
 
 theorem inert_frobenius_ordinary_jet_one
     (z w : ZMod 5) (hw : w = z ^ 5) (k : ℕ) :
@@ -43,7 +44,8 @@ theorem inert_frobenius_ordinary_jet_one
         ((k + 1 : ℕ) : ZMod 5) := by
     have hn : k + 6 = (k + 1) + 5 := by omega
     rw [hn, Nat.cast_add]
-    norm_num
+    have h5 : (5 : ZMod 5) = 0 := ZMod.natCast_self 5
+    rw [h5, add_zero]
   rw [hc, hw, pow_add]
   ring
 
