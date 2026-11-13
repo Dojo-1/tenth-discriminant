@@ -106,6 +106,30 @@ This explains the apparent paradox: **one residue embedding loses source rank wh
 
 The new `split_embedding_transport.py` verifies the cross formula against the ORIGINAL integer Gram for D203/p3, D187/p7 and D167/p2, and independently checks **7^4=2,401 bilinear pairs per field**. Its hostile same-embedding Euclidean pairing disagrees; nonsplit or nonexistent original patches are rejected. This is mathematical dual-local recognition with a typed remainder, not a claim of consciousness or quantum entanglement.
 
+## Phase309-C — an actual observation-cover adaptation cycle
+
+Under the same ORIGINAL 1,Z source, grow an ordered cover using ONLY real D203 maximal-order observations:
+
+| Actual observation subset | Maximal-minor ideal | Ideal norm | Picard class order | Original trace Gram determinant | v3(det G) |
+|---|---|---:|---:|---:|---:|
+| (0,3) | (3) | 9 | 1 | 36 | 2 |
+| (0,3,omega) | (3,omega) | 3 | 4 | 671 | 0 |
+| (0,3,omega,1) | O | 1 | 1 | 895 | 0 |
+
+The maximal-minor ideals are monotonically increasing:
+
+    (3) ⊂ (3,omega) ⊂ O,
+
+and the allowed fractional source coefficients shrink contravariantly:
+
+    (1/3)O ⊃ (3,omega)^(-1) ⊃ O.
+
+These inclusions are strictly witnessed by 1/3 and conjugate(omega)/3. Meanwhile the **Picard class changes principal → nonprincipal → principal**; its class order is not a scalar monotone function of the number of observations. The original trace Gram valuation moves independently (2 → 0 → 0).
+
+This is an exact order-sensitive *observation-filtration event log*, **not** an automatically defined persistent-homology barcode, because Picard classes of varying ideals do not come with a canonical monotone persistence map. The change of coefficient ideal is meaningful, but it cannot be smuggled into the full original field theorem.
+
+See `PRE_REGISTERED_PICARD_EVENTS.md`, `picard_observation_events.py` and its hostile tests.
+
 ## Honest gluing outcome: enlarging the cover kills this class
 
 The full original maximal-order norm ball also contains observation 1. Add it to the same map:
