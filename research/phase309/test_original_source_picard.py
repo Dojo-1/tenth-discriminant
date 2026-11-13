@@ -16,7 +16,7 @@ class Phase309OriginalSourcePicardTests(unittest.TestCase):
         p=a.patch_certificate(203,3,0,4,((6,7),(7,120)),671)
         self.assertEqual(p["parent_source_faithfulness"]["entire_parent_original_matrix_shape"],
                          [100,1052])
-        self.assertEqual(p["parent_source_faithfulness"]["exact_original_coordinates_compared"],16)
+        self.assertEqual(p["parent_source_faithfulness"]["exact_original_coordinates_compared"],32)
         self.assertEqual(p["minor_ideal_norm"],3)
         self.assertEqual(p["ideal_class_order"],4)
         self.assertEqual(p["three_original_maximal_minors"],
