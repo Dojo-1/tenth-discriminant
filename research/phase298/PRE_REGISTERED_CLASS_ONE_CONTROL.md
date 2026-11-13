@@ -1,0 +1,29 @@
+# Phase298-B — preregister complete original D163 class-number-one nested-row control
+
+**2026-11-13. AFTER Phase298-A CI #43378797260 SUCCESS and BEFORE Phase298-B code/results.** This is a distinct source/control, not a post hoc D587 fit. Keep the entire D587 Phase298-A original-source composition result unchanged. No Work mode or merge.
+
+## Choice of a genuine class-number-one field, and source limitations
+
+Take `D=163`: the imaginary quadratic maximal order `O_K=Z[(1+sqrt(-163))/2]` has class number one by a classical Minkowski bound + inert-small-prime argument, independent of our AI code. For discriminant -163, Minkowski says each ideal class has an integral ideal of norm ≤ (2/pi)*sqrt(163)<9; primes 2,3,5,7 are inert (check Δ≡5 mod8 for 2 and Kronecker (-163/p)=-1 for 3,5,7), so the only possible norm ≤8 for a nonzero integral ideal is 1 or4, and the ideal norm4 is the principal ideal (2). Thus class number1. The mathematical use of the classical Minkowski theorem is an explicit named dependency, not a newly proved result.
+
+The ORIGINAL repo `source_probe.params(163)` defines `R=floor(163/4)=40`, `S=J=floor(R/25)=1`, `Q` the repository's original integer ellipse using its exact rho rule. **Important:** this sampler is the original `Z[sqrt(-D)]` real/imag embedding, NOT the full maximal-order two-coset lattice; class-number one is a FIELD property, not an assertion that this source sees all ideal classes, all high-dimensional jets, or a discriminant cutoff.
+
+This field has J1, not D587's J5. It is an honest lower-complexity actual-h1 test of the compositional algebra, NOT evidence for uniform high-S/high-D behavior.
+
+## Fixed prospective complete finite-source experiment
+
+1. Freeze original `research/phase206/source_probe.py` blob `3f954b59d9f86b06ad53667c869b5b24f2e6c7f6`, original `research/phase204/ordinary_jet_filtration.py` blob `dd8b00547ec09a5d9baec15ad34c9ee3e6e4f6b8`, and `research/phase297/original_schur_integrality_k16.py` blob `aa3678001c69a7235dca638638d2dab4c55b05b3`, `research/phase297/minimal_transverse_repair.py` blob `22b0077a2424553021a4c9859f92f0fe3efc2fe7`, Phase298-A blob to pin after reading current GitHub content. Never change the source field, prime, modulus, Q, row labels or metric following computed outcomes.
+2. Use original `params(163)` unchanged and derive original all 40 row labels `(r,0),0<=r<40`; J1 evaluation of each monomial `Z^r` at every ORIGINAL Q point, both real/imag integer coordinates, weighted ORIGINAL trace metric diag(2,326). At p5, because -163≡2 mod5, the local algebra is an unramified quadratic order. Evaluate exact source with TWO oracles: source_probe.gram's direct-versus-mixed-moment identity, and a separately built direct raw-E jet Gram mod5^16. Require all 40² original Gram entries agree, including positive symmetric matrix; no Frobenius or primitive source division is permitted/needed for S1.
+3. Systematically check **EVERY contiguous original row triple** `L_n=span(Z^0,...,Z^(n-1)) ` for n=1..38, `L_n ⊂ L_(n+1) ⊂ L_(n+2)`, with one genuinely new ORIGINAL row at each stage. No adaptive selection of first integrable n. For each n compute the finite p16 image-index of `A_n` after adding cross `C1`, of original `A_n` after adding cross of later row `C2`, and of original intermediate `G_(n+1)` after adding its true next-row cross. Compute whether old Gram max Smith grade <16, otherwise mark censored and refrain from infinite-p5 integrality claims.
+4. For each case where the first-stage cross class is zero mod5^16, construct an actual integral-modular T1 solving `A_n T1=C1` and independently verify the scalar first Schur `S1=B1−C1^T T1` and residual `E−T1^T C2` against original row/trace pairings. Then compute residual Schur index. The concrete composition prediction is the K16 finite group identity
+   `debt(L_(n+1)→L_(n+2)) = max(debt_old_last_n, debt_residual_S1)`
+   for one last row. If the first-stage debt >0, DO NOT apply this formula; record actual image index only.
+5. Record the FULL frequency table of first-stage integral vs nonintegral (finite p16), how often a new Schur obstruction appears after an integral first stage, how often old and Schur components are BOTH nontrivial, and the distribution of actual second-stage coker image-index. No prediction of exact counts or field Gram determinants. If at least one n has both old and Schur components positive, the combined class must still be max, not sum; if no such n exists, report no such witness instead of inventing one.
+6. Guard h1 claim with an explicit finite quadratic-residue inertness check at 2,3,5,7 and the classical Minkowski upper bound less than9; this is an independent mathematical background calculation, NOT a formal class-number-one certificate inside Lean.
+7. Negative hostile controls from Phase298-A remain the separate positive-definite examples where a stage creates a Schur-only obstruction and where two order5 components combine into order5 rather than25. They do NOT count as D163 evidence.
+8. STOP on field/S/J/geometry mismatch, source oracle disagreements, any modular Smith delta<0, any scalar Schur not symmetric (trivial), a purported first-stage integral solution that fails A_nT=C1, or any failure of the direct-sum/max law under its exact hypothesis. No class-one cutoff extrapolation and no double-counting of image debt in Gram determinants.
+
+[P-paper] classical Minkowski class-number-one proof with inert-prime check; conditional integral-split/direct-sum/lcm composition theorem from Phase298-A.
+[M after focused CI] complete 38-step exact nested original D163 source-control results and paper/implementation sanity checks.
+[H] higher-jet class-one transports and any uniform field discriminant improvement.
+[R] interpreting this J1 original source as high-S5 evidence, or treating cokernel indices as new independent determinant factors.
