@@ -88,6 +88,20 @@ When J=S>=p, the Freshman's-dream identity (Z^(p²)-Z)^p=Z^(p³)-Z^p permits a c
 
 Under the ORIGINAL parameter ratio S=floor(R/25), a bounded scan of all odd primes p<=S in R={100,200,400,800,1600} found **no positive** h_p-valuationWeight for 1,3,5,10,17 primes respectively. This is an observed finite negative result, not a universal theorem and not an assertion of inertness at every scanned prime. It directs attention to **multilevel** valuation and the original analytic upper rather than unlimited first-level scans. See j_ge_p_rank.py and PRE_REGISTERED_J_GE_P_FOLLOWUP.md.
 
+## Phase307-I: the authentic arithmetic sheaf is Pic, not the abstract H2 nerve
+
+For the actual maximal quadratic integer ring O_K, the ideal class group is the Picard group of its spectrum:
+
+    Pic(Spec O_K) = H^1(Spec O_K, G_m) = Cl(O_K).
+
+Unlike the auxiliary constant-coefficient tetrahedral H2 class, this degree-one invariant directly expresses the **global h=1 hypothesis**.
+
+For omega^2=omega-m, f(X)=X^2-X+m, every Fp root r gives a surjective evaluation homomorphism O_K -> Fp (omega -> r) and ideal I=(p,omega-r) of norm p. If p<m and p is not a square, any principal generator of I would have norm p, contradicting the exact positive form N(a+b omega)=a²+ab+m b²: nonzero b gives N>=m and b=0 gives a square.
+
+The bounded field controls are D203/p3, D187/p7 and D167/p2 (provably nonprincipal ideal classes); D163/p3 (inert, no false split ideal) and the **critical D163/p41 equality boundary** (norm omega=41, both ideals above41 are principal). The code checks the defining polynomial, roots and residue homomorphism multiplication independently, but DOES NOT compute a complete class group or a Cech representative. See picard_class_gate.py and PRE_REGISTERED_PICARD_BRIDGE.md.
+
+This is a mathematically genuine local-to-global *field* carrier. The outstanding question is whether its ideal-norm constraints yield a stronger **uniform original-source trace-Gram** inequality under hypothetical large class-number-one D. No such bridge has been established here.
+
 ### Hard obstruction still unbridged
 
 The local kernel is often present in NON-h1 fields. A better bound requires an inequality under hypothetical large class-number-one D, accumulated across justified inert primes and compared against the SAME original Gram's analytic upper. A source profile, gerbe class on an auxiliary nerve, or quantum toy observable is not that inequality.
