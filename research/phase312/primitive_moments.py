@@ -159,8 +159,13 @@ def primitive_moment_certificate():
     for z,(Ma,Mb) in class_moments.items():
         zz=conjugate(z,5)
         Ca,Cb=class_moments[zz]
-        assert np.array_equal(Ca,(Ma+Mb)[np.ix_(swap,swap)]%5)
-        assert np.array_equal(Cb,(-Mb)[np.ix_(swap,swap)]%5)
+        # u(conjugate(q))=conjugate(u(q))=P*u(q).
+        # Therefore M_conjugate(z)=conjugate(M_z)=P*M_z*P^T,
+        # NOT conjugate(P*M_z*P^T) (which would recover M_z).
+        assert np.array_equal(Ca,(Ma+Mb)%5)
+        assert np.array_equal(Cb,(-Mb)%5)
+        assert np.array_equal(Ca,Ma[np.ix_(swap,swap)])
+        assert np.array_equal(Cb,Mb[np.ix_(swap,swap)])
         conjugate_pairs+=1
 
     # A genuine original observation pair with equal mod5 residue but
