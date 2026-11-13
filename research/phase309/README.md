@@ -77,6 +77,35 @@ Exact original-source controls:
 
 D203 also matches selected coordinates of BOTH original ordinary jets against the actual frozen 100×1052 Phase304 evaluation source at all preregistered patch points; D187/D167 use the native original source parameter policy and actual maximal-order norm ball. **These are restricted j0 patches, not whole-field Gram calculations.**
 
+## Phase309-B — two incompatible residue views, one exact Hermitian cross-pairing
+
+A simple split prime p does not give **one** scalar world. The residue ring decomposes as
+
+    O_K/p O_K ≅ F_p × F_p,
+
+with two distinct evaluation maps sigma_r(omega)=r and sigma_r'(omega)=r'=1-r. They are conjugate arithmetic observers, not physical quantum subsystems.
+
+For x,y in O_K, the ORIGINAL source's Hermitian trace pairing satisfies
+
+    Tr(x conjugate(y)) ≡ sigma_r(x)*sigma_r'(y)
+                         + sigma_r'(x)*sigma_r(y) (mod p).
+
+For the original three observation entries 0,p,z=omega-r, let X and Y be the two 3x2 residue evaluation matrices. Writing delta=1-2r (nonzero modulo p):
+
+    X=[[1,0],[1,0],[1,0]]        has rank 1 over F_p,
+    Y=[[1,0],[1,0],[1,delta]]    has rank 2 over F_p.
+
+The Gram is **not** X-transpose*X + Y-transpose*Y. Its genuine cross formula is
+
+    G mod p = X-transpose*Y + Y-transpose*X
+            = [[6,delta],[delta,0]] mod p,
+
+and det(G)=-delta² !=0 modulo p.
+
+This explains the apparent paradox: **one residue embedding loses source rank while the other does not, and the conjugate trace pairs across both.** No addition of their separate rank defects is permitted. The determinant is a p-unit even though the two-by-two O-minors generate a genuine nonprincipal prime ideal.
+
+The new `split_embedding_transport.py` verifies the cross formula against the ORIGINAL integer Gram for D203/p3, D187/p7 and D167/p2, and independently checks **7^4=2,401 bilinear pairs per field**. Its hostile same-embedding Euclidean pairing disagrees; nonsplit or nonexistent original patches are rejected. This is mathematical dual-local recognition with a typed remainder, not a claim of consciousness or quantum entanglement.
+
 ## Honest gluing outcome: enlarging the cover kills this class
 
 The full original maximal-order norm ball also contains observation 1. Add it to the same map:
