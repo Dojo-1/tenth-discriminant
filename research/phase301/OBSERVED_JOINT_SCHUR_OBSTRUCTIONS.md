@@ -115,3 +115,53 @@ This is an exact **mod5 observation-level periodicity**, not an implication that
 **[R]** promoting 43 individually integral rows to collective/simultaneous integrality; using modulo5 finite-field periodicity as proof of p16 image membership; adding a source Gram cokernel image index as an independent determinant valuation; interpreting a noncontiguous monomial submodule as a complete field-order realization.
 
 **Next small step:** extract the parity-resolved residual-Schur 2×2 Gram tensors for all pairs of individually projectable later rows over a fixed original L1, classify their mod5/p-adic valuation patterns *before* attaching either generator, and test whether a deterministic blockwise two-direction criterion accounts for all 28 classes without relying on pair ordering. This is likely to be more informative than adding another arbitrary field or expanding the original cutoff without mathematical source-to-field review. Keep PR #193 stacked DRAFT and unmerged; no Work.
+
+
+## 7. Phase301-C — the same final lattice, two distinct intermediate flags [P-paper + M]
+
+**Separately preregistered AFTER A+B results, BEFORE C code:** [PRE_REGISTERED_ORDER_REVERSAL.md](PRE_REGISTERED_ORDER_REVERSAL.md) at commit `857effa566dc0326a42005a009dc1c2aee587774`. [Bidirectional original-source GitHub Actions #43388747207](https://github.com/Dojo-1/tenth-discriminant/actions/runs/43388747207) **PASS** on the corrected script, before the post-result Markdown update; final exact-head CI rerun required after committing this ledger.
+
+If two original directions `y_s,y_t` both project integrally to the SAME old Gram `A`, the remaining integral two-dimensional transverse Gram is
+
+```
+ S = [[a,c],[c,b]],
+ a=<y_s',y_s'>, b=<y_t',y_t'>, c=<y_s',y_t'>,
+```
+
+where the corrected source rows are `y_r'=y_r−T_r^T old` in their ORIGINAL row span. The **final lattice** is independent of the order of `s,t`, but the intermediate coker-image *depends on the selected primitive flag*:
+
+```
+ stage(s then t) = 5^max(0,v5(a)−v5(c)),
+ stage(t then s) = 5^max(0,v5(b)−v5(c)).
+```
+
+These two valuations need not agree; neither stagewise class is an extra factor in the original full Gram determinant. Both Schur factorizations of `det S=ab−c²` lead to the SAME final determinant. This is an elementary [P-paper] fact, not a new theorem of lattices, and flags are attached to genuine original row inclusions—not free geometric displays.
+
+Phase301-C reuses exactly the **same 176 fixed same-parity cases** as A/B (seven first nonintegral stages, two later rows, source original `D163/R40/J=S1/Q109/B=(2,326)`). For every case it constructs BOTH actual original-basis integral projections into the old `L1`; checks all original evaluation/jet trace pairings of both corrected rows; calculates all three entries of the residual 2×2 Gram in both algebraic and source-native ways; computes BOTH predicted coker image orders; independently measures each against the actual expanded original Gram Smith factors; and verifies the final original row Gram is the SAME up to an integral row permutation, with identical Smith invariant factors. All 176 source-equation and image-index gates pass, with no censored Smith directions and no modification to observations.
+
+**Measured source transition table:**
+
+| Forward s then t / reverse t then s | Reverse integral | Reverse order5 | Total |
+|---|---:|---:|---:|
+| Forward integral | **117** | **31** | 148 |
+| Forward order5 | **21** | **7** | 28 |
+| TOTAL | 138 | 38 | **176** |
+
+Hence **52** of176 actual original source pairs have *different intermediate projection-integrality statuses* when the two original rows are attached in opposite orders. No source case in this fixed scan requires >1 additional p5 denominator power in either order. The original final lattices and their full p5 Smith profiles remain invariant across the swapping; **no extra field determinant factor** is inferred.
+
+Per initial original obstructed row `n`, measured transition counts:
+- n13: 54 (0→0), 17 (0→1), 4 (1→0), 3 (1→1).
+- n18: 22 (0→0), 4 (0→1), 17 (1→0), 2 (1→1).
+- n22: 28 (0→0).
+- n25: 11 (0→0), 10 (0→1).
+- n33: 2 (0→0), 1 (1→1).
+- n34: 1 (1→1).
+- n38: no later same-parity pairs within original R40.
+
+**First original source order-asymmetric case:** `L1=span(1,Z,...,Z^13)`, original additional rows `Z^15,Z^31`. The actual corrected original trace Gram has `v5(a_15)=2`, `v5(b_31)=3`, `v5(c_{15,31})=2`. Thus `15→31` is integral (debt0), but `31→15` has exact order5 (debt1). The final ORIGINAL Gram is identical up to switching the last two row generators; its p5 determinant valuation is **4** in either order (for this 16-row sublattice). This example is logically distinct from B's first forward obstruction `27→31`, whose explicit 15-row dual witness remains valid.
+
+**Hostile positive-definite toy counterworld:** Reusing the independently checked 4×4 integer Gram from A, the residual 2×2 Gram over the old+first row module is `[[5,1],[1,75]]`. In this original toy, the two later rows EACH project integrally into the old+first module, but `u→v` creates an order5 defect and `v→u` creates an **order25** defect, because `v5(5)=1, v5(75)=2, v5(1)=0`. Two separate exact original Gram Smith tests confirm both. The final positive-definite integer Gram and determinant remain unchanged under the row permutation. Hence order-specific coker debt is NOT universally bounded by one power of5, and a source-only one-power observation cannot be promoted to a theorem on all quadratic spaces.
+
+**Mathematical interpretation and boundary:** The natural transport record at this stage is a *flagged integral residual quadratic lattice* `(S, line R y_s⊂R y_s⊕R y_t)`, not one scalar "gluing mass." Forgetting the flag preserves the final lattice but loses information about stagewise projection integrality. This is a standard consequence of block Schur algebra plus an actual source-dependent flag; a higher Worldlet/sheaf moving-frame interpretation remains [H/S] until it specifies carriers, morphisms and preservation laws. The finite 2×2 residual-form calculation is the next theorem-friendly interface. Phase301-C neither proves a uniform field discriminator nor modifies a class-number-one theorem.
+
+**Updated next discriminating target:** classify the flag choices on a fixed rank-two original residual lattice up to `GL_2(Z5)` and record their scalar Schur valuations together with the full bilinear discriminant form, testing whether the observed asymmetries are explained by primitive-line orbits rather than by row-degree labels. Preserve original maximal-order source distinctions and all independent review requirements.
