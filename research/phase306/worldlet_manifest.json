@@ -488,6 +488,28 @@
       "remainder_types": [
         "nontransportable-single-embedding-defect"
       ]
+    },
+    {
+      "id": "arith.original.observation.PICARD-event-filtration",
+      "carrier": "directed actual original D203 observation subsets (0,3)⊂(0,3,omega)⊂(0,3,omega,1)",
+      "geometry": "site refinement with contravariant fractional inverse-ideal coefficient modules",
+      "algebra": "Dedekind ideal inclusion, Picard classes, integer trace-Gram determinants",
+      "state": "minor ideal norms9→3→1, Picard orders1→4→1, Gram v3 2→0→0",
+      "clocks": [
+        "source",
+        "review"
+      ],
+      "observers": [
+        "determinantal-ideal-chain",
+        "fractional-coefficient-inclusion",
+        "original-Gram-counterworld"
+      ],
+      "boundary": "nonmonotone class event, NOT a persistence barcode, NOT full 100-row source",
+      "remainder_types": [
+        "nonfunctorial-Picard-class-label",
+        "omitted-observation-invariant",
+        "Gram-valuation-nonimplication"
+      ]
     }
   ],
   "tendrils": [
@@ -848,6 +870,38 @@
       ],
       "remainder": "original-Picard-prime-ideal-not-in-Gram",
       "cost": "exact Fp bilinear multiplication"
+    },
+    {
+      "source": "arith.original.evaluation.patch",
+      "target": "arith.original.observation.PICARD-event-filtration",
+      "relation": "add real original observations in a fixed order and preserve source labels",
+      "forward_transport": "restrict to two, three, four observation maps; compute growing maximal-minor ideals and shrinking inverse coefficient lattices",
+      "return_transport": "forget added observations with typed lost minor generator data; cannot recover global Picard class without observation labels",
+      "preserved": [
+        "actual (1,Z) original source rows",
+        "original quadratic order",
+        "exact trace pairing"
+      ],
+      "transformed": [
+        "(3)→(3,omega)→O, Picard class trivial→order4→trivial"
+      ],
+      "remainder": "class-nonmonotonicity-due-to-observation-refinement",
+      "cost": "three small exact Dedekind ideal and Gram computations"
+    },
+    {
+      "source": "arith.original.observation.PICARD-event-filtration",
+      "target": "arith.original.patch.trace-gram",
+      "relation": "compare Picard event history with unchanged trace-Gram source per observation stage",
+      "forward_transport": "record G determinant v3 2→0→0 under observed patch expansion",
+      "return_transport": "trace determinant history does not reconstruct Picard class history",
+      "preserved": [
+        "original Hermitian trace metric"
+      ],
+      "transformed": [
+        "different observation sets give different Grams"
+      ],
+      "remainder": "Gram-Picard-non-equivalence",
+      "cost": "two-by-two exact determinants"
     }
   ],
   "identity": {
@@ -1068,6 +1122,19 @@
         "restricted original source patch, not full 100-row theorem",
         "no physical entanglement"
       ]
+    },
+    {
+      "status": "M",
+      "claim_id": "phase309-actual-observation-Picard-event",
+      "source": "research/phase309/picard_observation_events.py; PR201 focused CI",
+      "controls": [
+        "only actual original D203 points",
+        "strict fractional inverse-ideal inclusion witnesses",
+        "different Gram p-valuations"
+      ],
+      "limitations": [
+        "small two-row selected source; no uniform h1 or full source theorem"
+      ]
     }
   ],
   "observables": [
@@ -1098,7 +1165,10 @@
     "simple split root determinant nonzero in ZMod p",
     "rank1/2 asymmetry of distinct conjugate split residue embeddings",
     "original trace Gram as conjugate cross pairing X^T Y + Y^T X",
-    "nonzero determinant of cross paired Gram despite local rank loss"
+    "nonzero determinant of cross paired Gram despite local rank loss",
+    "actual observation Picard ideal class event history 1→4→1",
+    "strictly shrinking inverse-ideal coefficient modules",
+    "trace-Gram valuation history 2→0→0"
   ],
   "falsifiers": [
     "any changed original trace Gram under invertible frame",
@@ -1123,6 +1193,8 @@
     "observation refinement falsely treated as invertible transport",
     "two split embeddings collapsed to one residue-field rank",
     "same-side Euclidean dot pairing silently substituted for original trace-Hermitian cross pairing",
-    "p-adic Gram determinant declared divisible based only on one embedding rank"
+    "p-adic Gram determinant declared divisible based only on one embedding rank",
+    "Picard class incorrectly assumed monotone under larger observation subsets",
+    "observation event log falsely called persistent homology without coefficient maps"
   ]
 }
