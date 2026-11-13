@@ -272,6 +272,80 @@
       "remainder_types": [
         "transfinite-family-undefined"
       ]
+    },
+    {
+      "id": "arith.picard.named_ideal",
+      "carrier": "invertible ideal I=(p,omega-r) as line bundle on Spec(O_K)",
+      "geometry": "Zariski-local rank-one projective module",
+      "algebra": "Dedekind ideal multiplication and Picard H1 group law",
+      "state": "D203/p3 ideal class has exact order4; family D163/187/203/167 orders1/2/4/11",
+      "clocks": [
+        "source",
+        "review"
+      ],
+      "observers": [
+        "Hensel-congruence-checker",
+        "class-group-obstruction-checker"
+      ],
+      "boundary": "a local unit is not a global O unit",
+      "remainder_types": [
+        "nonprincipal-local-to-global-obstruction"
+      ]
+    },
+    {
+      "id": "arith.picard.open_cover",
+      "carrier": "two principal Zariski opens U=D(omega), V=D(omega-1)",
+      "geometry": "scheme-local affine cover and intersection",
+      "algebra": "localized O-unit groups, Cech Gm 1-cocycles",
+      "state": "transition p; p^4 coboundary at D203",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "true-Cech-cocycle-checker",
+        "principal-negative-control"
+      ],
+      "boundary": "not the finite observation-point cover",
+      "remainder_types": [
+        "transition-not-global-unit"
+      ]
+    },
+    {
+      "id": "arith.picard.hensel_tendril",
+      "carrier": "coherent roots f(r_k)=0 mod p^k",
+      "geometry": "p-adic inverse system of finite rings",
+      "algebra": "O_K to Z/p^k ring homomorphisms",
+      "state": "D203 roots 0,6,6,6,87 and D167 root878 at depth11",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "Hensel-unique-lift",
+        "norm-shell-enumerator"
+      ],
+      "boundary": "residue coherence does not imply principal ideal",
+      "remainder_types": [
+        "unreconstructed-global-generator"
+      ]
+    },
+    {
+      "id": "arith.picard.twisted_source_optional",
+      "carrier": "projective O_K module I direct-sum N times (N=100 test)",
+      "geometry": "Steinitz determinant line of an O_K-coefficient module",
+      "algebra": "projective-module direct sums, class power",
+      "state": "det class erased for order2/4 at rank100, labels persist",
+      "clocks": [
+        "source",
+        "review"
+      ],
+      "observers": [
+        "flattened-scalar-control",
+        "typed-Picard-control"
+      ],
+      "boundary": "NOT original integer 100-row polynomial source; no same-Gram comparison",
+      "remainder_types": [
+        "forgotten-summand-Picard-labels"
+      ]
     }
   ],
   "tendrils": [
@@ -412,13 +486,94 @@
       ],
       "remainder": "unconstructed-transfinite-system",
       "cost": "exact finite counts"
+    },
+    {
+      "source": "arith.maximal_order",
+      "target": "arith.picard.named_ideal",
+      "relation": "prime ideal class formation in O_K",
+      "forward_transport": "ideal I=(p,omega-r), norm-p residue map",
+      "return_transport": "forget named ideal and only retain ring source with lost class label",
+      "preserved": [
+        "original quadratic order",
+        "maximal-order norm"
+      ],
+      "transformed": [
+        "principal ring data to projective line"
+      ],
+      "remainder": "ideal-class-label",
+      "cost": "exact finite ideal arithmetic"
+    },
+    {
+      "source": "arith.picard.named_ideal",
+      "target": "arith.picard.open_cover",
+      "relation": "line-bundle local trivializations and Cech Gm transition",
+      "forward_transport": "I_U=O_U, I_V=p O_V, transition t=p",
+      "return_transport": "glue only as invertible sheaf, not as a global generator when class nontrivial",
+      "preserved": [
+        "Picard class",
+        "localization unit law"
+      ],
+      "transformed": [
+        "global ideal to local generator data"
+      ],
+      "remainder": "nontrivial-Cech-H1",
+      "cost": "two-localization ring identities"
+    },
+    {
+      "source": "arith.picard.hensel_tendril",
+      "target": "arith.picard.named_ideal",
+      "relation": "coherent residue kernel identifies I^k",
+      "forward_transport": "ker(omega->r_k mod p^k)",
+      "return_transport": "lift only a residue-class representative; principalization requires global norm solution",
+      "preserved": [
+        "ideal norm p^k",
+        "prime direction"
+      ],
+      "transformed": [
+        "finite p-adic coordinate to global ideal power"
+      ],
+      "remainder": "global-principalization-obstruction",
+      "cost": "exact complete norm shells"
+    },
+    {
+      "source": "arith.picard.named_ideal",
+      "target": "arith.picard.twisted_source_optional",
+      "relation": "direct-sum assembly with typed summand labels and determinant forgetful functor",
+      "forward_transport": "M_N=I direct-sum N, det class [I]^N",
+      "return_transport": "not invertible; aggregate module/det cannot recover named I from residue alone",
+      "preserved": [
+        "rank N",
+        "Steinitz class"
+      ],
+      "transformed": [
+        "sum components to aggregate projective module"
+      ],
+      "remainder": "summand-identity-loss",
+      "cost": "exact class group torsion"
+    },
+    {
+      "source": "arith.picard.twisted_source_optional",
+      "target": "evidence.proof",
+      "relation": "arithmetic non-equivalence and evidence governance",
+      "forward_transport": "record 2/4 in-sample scalar false positives and 4/4 typed certificates",
+      "return_transport": "cannot claim original Gram or out-of-sample intelligence",
+      "preserved": [
+        "source-tag",
+        "review-control"
+      ],
+      "transformed": [
+        "scoped test to evidence record"
+      ],
+      "remainder": "no-matched-performance-evidence",
+      "cost": "four held-in-design fields"
     }
   ],
   "identity": {
     "local_holonomies": [
       "integral GL3 frame loops",
       "symplectic Sp6 cotangent loops",
-      "central Heisenberg phase loops"
+      "central Heisenberg phase loops",
+      "Picard H1 line-bundle torsion at D203"
     ],
     "couplings": [
       "source-to-phase gauge-covariance",
@@ -426,7 +581,8 @@
     ],
     "higher_coherence": [
       "composition of gauge transport",
-      "Heisenberg central 2-cocycle"
+      "Heisenberg central 2-cocycle",
+      "fourfold Cech 1-cocycle coboundary vs nontrivial first power"
     ],
     "viability_constraints": [
       "exact determinant invariance",
@@ -553,6 +709,42 @@
       "limitations": [
         "finite-cover site, no scheme gerbe"
       ]
+    },
+    {
+      "status": "P",
+      "claim_id": "picard-Steinitz-classification-imported",
+      "source": "known Steinitz theorem for Dedekind domains; openmaths.org reference in Phase308 README",
+      "controls": [
+        "rank1 nonprincipal vs rank4/100 abstract free"
+      ],
+      "limitations": [
+        "external mathematical result, no Lean proof of source's class order from scratch"
+      ]
+    },
+    {
+      "status": "M",
+      "claim_id": "phase308-actual-ideal-Cech-order4",
+      "source": "research/phase308/picard_tendrils.py; PR200 focused CI",
+      "controls": [
+        "all five integer quotient identities",
+        "ideal minor indices",
+        "D163 principal boundary"
+      ],
+      "limitations": [
+        "AI-authored tests and no independent human referee"
+      ]
+    },
+    {
+      "status": "H",
+      "claim_id": "phase308-uniform-field-bridge",
+      "source": "future research",
+      "controls": [
+        "unchanged original integer Gram",
+        "original class-number assumption"
+      ],
+      "limitations": [
+        "optional ideal source is not original source"
+      ]
     }
   ],
   "observables": [
@@ -571,7 +763,12 @@
     "source saturation length and trace radical",
     "coefficient sensitive Cech H2 contrast",
     "finite-depth Smith limit with explicit remainder",
-    "octonion associator nonassociativity"
+    "octonion associator nonassociativity",
+    "Picard H1 nontrivial Cech cocycle on arithmetic Zariski cover",
+    "ideal class order1/2/4/11 with complete global norm shells",
+    "rank100 determinant-class false positive when line summands nonprincipal",
+    "Hensel root coherence versus global principalization",
+    "explicit fourth tensor-power Cech coboundary"
   ],
   "falsifiers": [
     "any changed original trace Gram under invertible frame",
@@ -585,6 +782,10 @@
     "transport loss counted twice as a new determinant factor",
     "constant coefficient nerve H2 silently promoted to arithmetic gerbe",
     "aleph_alpha indexing treated as source proof",
-    "16 gates called cognitive benchmark evidence"
+    "16 gates called cognitive benchmark evidence",
+    "unjustified original integer Gram reinterpretation as twisted O-line source",
+    "localized overlap unit promoted to global unimodular source gauge",
+    "class order inferred from truncated norm search",
+    "in-sample 4/4 classification promoted to a general intelligence benchmark"
   ]
 }
