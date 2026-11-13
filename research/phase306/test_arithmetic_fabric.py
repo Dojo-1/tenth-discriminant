@@ -62,8 +62,8 @@ class Phase306ArithmeticFabricTests(unittest.TestCase):
     def test_high_dimensional_symplectic_lift_and_hamiltonian_pairing(self):
         lift = f.cotangent_lift(U)
         self.assertEqual(len(lift), 6)
-        self.assertEqual(f.symplectic_defect(lift, 25), f.mod_matrix(f.eye(6), 25)
-                         if False else f.matrix([[0] * 6 for _ in range(6)]))
+        self.assertEqual(f.symplectic_defect(lift, 25),
+                         f.matrix([[0] * 6 for _ in range(6)]))
         q, pi = (2, 3, 1), (1, 0, 4)
         transported = f.matvec(lift, q + pi)
         self.assertEqual(f.dual_pair(q, pi, 25),
