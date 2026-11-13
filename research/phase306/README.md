@@ -8,7 +8,7 @@ This is a stacked draft research prototype. It models a mathematical *research p
 
 We start from the ACTUAL D203 maximal order and the ORIGINAL ordinary-jet trace pairing. Six sampled points and three original row monomials form a small exact test fixture—not a replacement of the full 100-row Phase304 theorem.
 
-\`\`\`mermaid
+```mermaid
 flowchart TD
   A["Arithmetic Worldlet<br/>O_K, D=203, original jets"] -->|reduce, retain residue loss| B["Local p-adic fiber<br/>Z/5^k modules"]
   A -->|integer GL3 moving frame| C["Gauge groupoid<br/>noncommuting frame paths"]
@@ -18,7 +18,7 @@ flowchart TD
   F -->|source-backed witnesses| G["Evidence and formalization Worldlet"]
   E -. "no class-number theorem" .-> G
   G -->|"independent gate required"| H["Global field claim<br/>not upgraded by this prototype"]
-\`\`\`
+```
 
 The diagram is a navigation projection only. Its nodes do **not** lie in a common Euclidean plane. Every Worldlet has its own mathematical carrier, and every arrow must preserve specified invariants or report a typed remainder.
 
