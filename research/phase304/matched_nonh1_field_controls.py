@@ -129,9 +129,7 @@ def source_spectrum(Q,D,R,cut,arm,require_frobenius=True):
     omega=independent_omega_oracle(grid,H,D,R)
     levels,profile=independent_dvr_smith(H)
     assert len(levels)==R and max(levels)<K
-    residue={(int(z[0])%P,int(z[1])%P) for z in
-             ((p-q)//2 for p,q in [])} if False else {
-                (((p-q)//2)%P,q%P) for p,q in Q}
+    residue={(((p-q)//2)%P,q%P) for p,q in Q}
     Eval=[]
     for r in range(R):
         row=[]
