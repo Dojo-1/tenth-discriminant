@@ -83,6 +83,44 @@ So the earlier reported original `v5(det G)=138` is now explained **without** a 
 
 This is not a cohomological Bockstein, quantum tunnelling or a new global field bound; it is a genuine higher **DVR bilinear-form radical filtration**. Its proof obligations and stop rules were frozen in `PRE_REGISTERED_SECONDARY_RADICAL.md` after Phase311-A passed and *before* Phase311-B code.
 
+## Phase311-C/D — 25 residue classes are enough for the original Gram mod 5
+
+The **unnormalized original** polynomial/ordinary-jet source factors through the residue-class observation map. Count the number of genuine maximal-order observations in each of the 25 classes \(z\in\mathbb F_{25}\), call it \(m_z\), and reduce these multiplicities modulo 5. Let \(C\) evaluate the original polynomial rows once per residue \(z\) and once per original ordinary-jet order. Its **original** Gram modulo 5 is exactly
+
+\[
+G=\operatorname{Tr}_{\mathbb F_{25}/\mathbb F_5}
+      (C\,\operatorname{diag}(m_z)\,\overline{C}^{\,T}).
+\]
+
+```mermaid
+flowchart LR
+  Q["Actual original maximal-order Q<br/>263 D203 or 537 D427 observations"] -->|"reduce each q mod 5"| W["25 multiplicities m_z<br/>in F5"]
+  E["ORIGINAL monomial ordinary-jet rows<br/>R*S; NO /5 primitive normalization"] -->|"evaluate once per residue and jet"| C["Residue-jet matrix C<br/>25*J columns over F25"]
+  W --> G["Weighted Hermitian trace Gram<br/>mod 5"]
+  C --> G
+  G --> R["Rank = J * nonzero residue weights<br/>IF C spans all 25*J columns"]
+  R -. "not an integral primitive lift" .-> X["Cannot infer high 5-adic Smith<br/>or uniform class-one field bound"]
+```
+
+A precise *surjective-pullback theorem* explains the observed equality. Assume \(J\le5\), the genuine original norm-ball observations are conjugation-stable, every residue class occurs, and \(C\) has **full column rank \(25J\) over \(\mathbb F_{25}\)**. Then the weighted Hermitian form on the residue-jet space has rank \(J\,t\), where \(t=\#\{z:m_z\not\equiv0\bmod5\}\). Pullback through a surjective \(C^T\) preserves its rank. The conjugation-stable original source makes the matrix Frobenius-fixed, hence its trace Gram is twice this form with the same rank over \(\mathbb F_5\).
+
+**These hypotheses matter.** The code includes a non-surjective two-channel counterexample where both weights are nonzero but the pulled-back form has rank zero; it correctly REFUSES the equality without full column rank. For ordinary jets of order \(\ge5\), ordinary derivatives vanish modulo 5, and the active quotient uses \(J_{\rm eff}=\min(J,5)\), not an invented higher-jet rank.
+
+The fully original-source results (including the new larger *non-h1* control) are:
+
+| D | Original R,S,J | Q | Nonzero-weight classes | Rank(C) / 25J | Original rank(G) | Restricted trace radical |
+|---:|---|---:|---:|---:|---:|---:|
+| 163 (h1) | 40,1,1 | 225 | 25 | 25/25 | 25 | 0 |
+| 187 (non-h1) | 40,1,1 | 205 | 25 | 25/25 | 25 | 0 |
+| 203 (non-h1) | 50,2,2 | 263 | 19 | 50/50 | 38 | 12 |
+| 427 (non-h1) | 106,4,4 | 537 | 17 | 100/100 | 68 | 32 |
+
+D427 uses \(\rho=42\) and **all maximal-order observations** under the original numerical \(R,S,J,\rho\) parameter formula, rather than the original *even-order* source. A ramified ideal of norm 7 and the impossibility of principal norm7 when \(m=107\) prove it is non-h1. The direct original evaluator was checked on a declared 10×10 Gram submatrix; D163/D187/D203 were checked on every original Gram cell. All four actual residue-jet maps have full column rank.
+
+For D427, the original-parameter **valuationWeight formula** is \(w_5(106,4)=586\), so its doubled *formula value* is 1172, while the first-level unnormalized Gram nullity floor is \(424-68=356\). This numerical comparison **does not itself prove that the old divisibility theorem applies to this particular maximal-order lift**, and certainly does not yield a stronger field cutoff. It is a negative design-space control, not a positive theorem.
+
+The code also adds five copies of a *synthetic duplicate* actual observation: the Gram modulo 5 remains unchanged, while the integral observation source is different. Hence the residue-count compression is **not permitted** on the /5-divided primitive source, which depends on genuine higher \(5\)-adic digits. See `PRE_REGISTERED_RESIDUE_MULTIPLICITY.md`, honest post-result `PRE_REGISTERED_RESIDUE_RANK_THEOREM.md`, and `residue_multiplicity.py`.
+
 ## Types and provenance
 
 - **Original D203 source:** unchanged Phase304 100×1052 coordinate evaluator, cross-checked against the independent Phase307 source evaluator; all 263 actual maximal-order observations, both original ordinary \(Z\)-jets.
