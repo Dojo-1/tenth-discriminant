@@ -21,9 +21,11 @@ jobs:
         with:
           persist-credentials: false
       - name: Source and independent test syntax
-        run: python3 -m py_compile research/phase308/picard_tendrils.py research/phase308/test_picard_tendrils.py
+        run: python3 -m py_compile research/phase308/picard_tendrils.py research/phase308/test_picard_tendrils.py research/phase308/adaptive_torsion_family.py research/phase308/test_adaptive_torsion_family.py
       - name: Exact ideal-power and actual Cech 1-cocycle certificate
         run: python3 -u research/phase308/picard_tendrils.py
+      - name: Independent full-shell Hensel-Picard class orders 1 2 4 11
+        run: python3 -u research/phase308/adaptive_torsion_family.py
       - name: Hostile localization, class order, boundary and source-preservation tests
         run: python3 -m unittest discover -s research/phase308 -p 'test_*.py' -v
       - name: Replay earlier independent Picard norm controls
