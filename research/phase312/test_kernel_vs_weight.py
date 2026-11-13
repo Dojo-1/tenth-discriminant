@@ -57,6 +57,19 @@ class KernelWeightTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             k.original_residue_jet_oracle(8,1,1)
 
+    def test_native_original_integer_order_D163_index_square(self):
+        data=k.native_D163_integer_order_bridge()
+        self.assertTrue(data["original_integer_lattice_not_omega_maximal"])
+        self.assertEqual(data["actual_original_native_policy"],[21,40,1,1])
+        self.assertEqual(data["original_integer_Q"],109)
+        self.assertEqual(data["original_raw_evaluation_shape"],[40,218])
+        self.assertEqual(data["exact_5_divided_source_rows"],15)
+        self.assertEqual(data["original_1600_Gram_factorization_mod125_checked"],1600)
+        self.assertEqual(data["same_original_Gram_v5_lower_bound"],30)
+        self.assertEqual(data["existing_valuationWeight_at_R40_S1"],0)
+        self.assertTrue(data["original_integer_Gram_nonzero_by_Vandermonde"])
+        self.assertTrue(data["no_addition_or_large_discriminant_cutoff"])
+
     def test_full_crossover_certificate_has_no_uniform_field_bound(self):
         result=k.controls()
         self.assertEqual(len(result["independent_real_F25_original_ordinary_jet_oracles"]),3)
