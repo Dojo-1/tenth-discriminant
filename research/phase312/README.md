@@ -164,3 +164,49 @@ v_5(\det G)=2\sum_i e_i+v_5(\det H),
 with a field-uniform h1-implied lower bound on the remaining \(v_5(\det H)\), while proving it is NOT already included in the inherited `valuationWeight`. No such theorem currently follows from the residue moments or ray classes alone.
 
 **Evidence contract:** [P-paper] exact algebraic identities and standard field/moment linear algebra, [M once CI passes] fixed-source reconstructions and controls, [H] class-one ray moment congruences forcing independent Gram mass, [R] naive local ring coordinate comparison and residue-only recovery of primitive Gram. The narrow Lean identities prove fifth-power polynomial equalities, not F25 source theorems.
+
+
+## Phase312-B/C/D | what survives after local transport, global shells and the kernel crossover
+
+**Local 5-adic no-go (B).** The three quadratic fields D43 (h1), D163 (h1), D183 (h8) have compatible unramified quadratic local rings at p5. Coherent corrected root maps were checked for k=1..6, preserving multiplication, conjugation, inverse maps and epsilon covariance. The naked omega coordinate map mod25 fails; the corrected Hensel transport succeeds. Any supposed class-number-one detector built ONLY from the unramified local ring, its Frobenius and conjugation would assign the same data to h1 D163 and h8 D183. Global norm balls and ray classes do not transport across this equivalence.
+
+**The genuine global h1 identity (C).** For a negative fundamental discriminant -D, the coefficient of the Dedekind zeta function is the total number a_K(n) of integral ideals of norm n:
+
+\[
+a_K(n)=\sum_{d\mid n}\chi_{-D}(d).
+\]
+
+With units ±1, every principal ideal has exactly two integral generators. Class number one therefore implies **r_K(n)=2a_K(n) for every positive integer n**. The fixed matched rho21 check compared 441 complete norm shells, using independent ideal-character divisors and the original element norm form: D43 and D163 satisfy every equality, while D183 (h8) first fails at n2, where there are two split ideals but no element of norm2.
+
+A seductive zero statistic is **retired**: the TOTAL first Fermat moment vanishes under any sign-symmetric observation ball because epsilon(-z)=-epsilon(z), regardless of class number. Quadratic moments survive this symmetry. Ray-class weighted counts, unlike the raw ordinary ideal count, require the explicit 12 residue-unit orbits and additional ideal-class information; no congruence forcing an extra Gram valuation has been derived.
+
+**Universal inert residue-jet quotient (D).** With original rows Z^r W^s over F5, W=Z^5 in the F25 residue algebra and ordinary derivative orders >=5 vanish. The surviving universal jet kernel is controlled by
+
+\[
+\mathbb F_5[Z]/\bigl((Z^{25}-Z)^{J_{\mathrm{eff}}}\bigr),
+\qquad J_{\mathrm{eff}}=\min(J,5).
+\]
+
+When R>=25 J_eff, original s=0 rows span this quotient. Its rank is 25 J_eff and source-kernel dimension is
+
+\[
+h_5(R,S,J)=RS-25J_{\mathrm{eff}}.
+\]
+
+Direct ORIGINAL field ordinary-jet evaluations verify rank25/50/75 and every coefficient-remainder relation for (40,1,1), (50,2,2), (75,3,3). Under native S=J=floor(R/25), the existing weight formula for R>=25S is
+
+\[
+w_5(R,S)=\frac{S(S-1)(3R-5(S+1))}{6}.
+\]
+
+| R | S=J | First-level kernel h5 | Existing weight w5 | Larger formula |
+|---:|---:|---:|---:|---|
+| 40 | 1 | 15 | 0 | h5 |
+| 50 | 2 | 50 | 45 | h5 |
+| 75 | 3 | 150 | 205 | w5 |
+| 125 | 5 | 500 | 1150 | w5 |
+| 500 | 20 | 9875 | 88350 | w5 |
+
+**This is the mathematical crossover:** first-level source-kernel counts may improve the inherited source index at low S, but they cannot improve the *large-target* valuationWeight just by being counted again. Any new field theorem requires an additional, disjoint higher-lift or global ray-class constraint on the SAME original integer-order Gram.
+
+**Reproducibility and status:** focused CI passes 28 tests on exact head 44eb351; targeted Lean polynomial CI passes, while the whole-root Lean audit is separately tracked. Precode protocols and all source/test files are under Phase312; no branch merge or new 322^4 cutoff is asserted.
