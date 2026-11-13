@@ -23,6 +23,6 @@ jobs:
       - name: Manifest syntax
         run: python3 -m json.tool research/phase306/worldlet_manifest.json >/dev/null
       - name: Syntax-check Python
-        run: python3 -m py_compile research/phase306/arithmetic_fabric.py research/phase306/test_arithmetic_fabric.py
+        run: python3 -m py_compile research/phase306/arithmetic_fabric.py research/phase306/test_arithmetic_fabric.py research/phase306/higher_categorical.py research/phase306/test_higher_categorical.py
       - name: Exact arithmetic and hostile controls
-        run: python3 -m unittest discover -s research/phase306 -p 'test_arithmetic_fabric.py' -v
+        run: python3 -m unittest discover -s research/phase306 -p 'test_*.py' -v
