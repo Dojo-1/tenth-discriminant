@@ -41,6 +41,17 @@ The diagram is a navigation projection only. Its nodes do **not** lie in a commo
 
 The eight core and eight conjugate qualities are named as typed *research roles* in worldlet_manifest.json. No claim is made that implementing these roles creates actual mental qualities.
 
+## Separate exact Hilbert-space sandbox (Phase306-C)
+
+This is a mathematical quantum **test fixture**, not a quantum device or a transport of class-number evidence.
+
+- For an unnormalized bipartite state with coefficient matrix A over Q subset C, Schmidt rank is rank(A). The Bell-like coefficient matrix I5 has Schmidt rank 5 and normalized reduced purity 1/5; the product-state control has rank 1 and purity 1.
+- A three-site tight-binding Hamiltonian with hopping g has second-order transition amplitude coefficient -g^2/2 between outer sites. The g=0 negative control has coefficient zero. This does NOT calculate a tunnelling probability or prove a continuum barrier experiment.
+- The avoided-crossing two-level Hamiltonian H(s)=[[s,epsilon],[epsilon,-s]] has gap squared 4(s^2+epsilon^2). epsilon=0 destroys the gap. A slow-sweep proxy is explicitly not an adiabatic theorem.
+- All quantum-sandbox observables are tested without changing the original D203 Gram. The module is optional, and no advantage over the arithmetic baseline is claimed.
+
+See PRE_REGISTERED_PHASE_C.md, quantum_sandbox.py and test_quantum_sandbox.py.
+
 ## No unearned quantum or arithmetic bridge
 
 There is **no physical entanglement, quantum tunneling, teleportation, or adiabatic theorem** in the arithmetic pipeline. Those phrases require independently defined Hilbert spaces, operations and observables. The symplectic/Heisenberg constructions here are genuine algebra but do not prove quantum hardware behavior.
