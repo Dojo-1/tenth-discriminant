@@ -142,7 +142,7 @@ def hensel_tower(d,p,r0,kmax):
     for _ in range(1,kmax):
         x=x.lift_one()
         out.append(x)
-    assert all(out[k].reduce(k+1)==out[k-1] for k in range(1,len(out)))
+    assert all(out[k].reduce(k)==out[k-1] for k in range(1,len(out)))
     return out
 
 
