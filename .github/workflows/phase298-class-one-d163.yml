@@ -1,0 +1,27 @@
+name: Phase298-B full D163 class-one original row composition
+on:
+  push:
+    branches: ['research/phase298-*']
+  pull_request:
+    paths:
+      - 'research/phase298/**'
+      - '.github/workflows/phase298-class-one-d163.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-class-one-row-tower:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned exact modular source runtime
+        run: |
+          python3 -m venv /tmp/phase298b
+          /tmp/phase298b/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile source
+        run: /tmp/phase298b/bin/python -m py_compile research/phase298/class_one_d163_composition.py
+      - name: Exact class-one original D163 J1 Gram and all 38 two-stage composition controls
+        run: /tmp/phase298b/bin/python -u research/phase298/class_one_d163_composition.py
