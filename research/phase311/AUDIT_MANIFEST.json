@@ -1,8 +1,8 @@
 {
   "task_id": "phase311-inert-trace-and-secondary-radical",
   "claim": {
-    "text": "On the unchanged original D203 maximal-order 100-row evaluation at inert p5, the primitive trace radical is 37-dimensional and its secondary Schur quotient has unit ranks 36 and 1, yielding exact original v5(det G)=138 after 50 exact row divisions.",
-    "scope": "Fixed D203 native rho24/R50/S=J2/Q263; D163 class1 and D187 class2 matched rho21/R40/S=J1 hostile controls.",
+    "text": "On the unchanged original D203 maximal-order 100-row evaluation at inert p5, the primitive trace radical is 37-dimensional and its secondary Schur quotient has unit ranks 36 and 1, yielding exact original v5(det G)=138 after 50 exact row divisions. The original unnormalized Gram modulo5 also factors through 25 weighted residue classes; if all residue-jet channels are spanned, its rank equals J times the count of classes with nonzero multiplicity mod5.",
+    "scope": "Fixed D203 native rho24/R50/S=J2/Q263; D163 class1 and D187 class2 matched rho21/R40/S=J1 hostile controls. Larger D427 full-maximal-order lift has native numerical rho42/R106/S=J4 policy but is NOT assumed to satisfy every prior even-order field divisibility theorem.",
     "status_before": "H",
     "assumptions": [
       "maximal quadratic order for D in {163,187,203}",
@@ -27,7 +27,10 @@
       "original/primitive Gram with same original row/observation policy",
       "symmetric Schur unit ranks 63 36 1 at precisions 125 25 5",
       "original matrix factorization under 50 integer shears and 50 exact divisions",
-      "matched D163/D187 local profiles do not imply class number one"
+      "matched D163/D187 local profiles do not imply class number one",
+      "for original unnormalized E only, G depends exactly on 25 residue multiplicities mod5",
+      "surjective original residue-jet map yields exact rank J times nonzero residue weights",
+      "p5 divided primitive source NOT reconstructible from residue counts"
     ],
     "known_answer_cases": [
       "D203 original E50 G38 primitive E100 G63",
@@ -55,13 +58,16 @@
       "two source unimodular congruence shears",
       "offdiagonal-only symmetric unit block",
       "censored all-zero block not declared determinant exact",
-      "class-one vs non-class-one matched fields"
+      "class-one vs non-class-one matched fields",
+      "synthetic five duplicate observations preserve mod5 Gram but not integral source",
+      "abstract nonsurjective weighted form with two nonzero weights has zero pullback rank"
     ]
   },
   "tests": {
     "black_box": [
       "all 105200 native D203 source coordinates from Phase304 match independent Phase307 omega evaluator",
-      "D163/D187 matched half-order original power-grid cross check"
+      "D163/D187 matched half-order original power-grid cross check",
+      "D427 full maximal-order native source direct 10x10 original trace Gram vs 25-residue compressed oracle"
     ],
     "structural": [
       "original and primitive full conjugation and trace factorization all 100x100 cells",
@@ -82,7 +88,8 @@
     "historical": [
       "Phase303 D163 v5=30",
       "Phase304 D187 v5=30 and D203 v5=138",
-      "Phase307 primitive 0^63 1^36 2^1"
+      "Phase307 primitive 0^63 1^36 2^1",
+      "D427 ramified p7 norm obstruction proves nonh1; old weight formula586 magnitude checked but theorem applicability not promoted"
     ]
   },
   "controls": {
@@ -95,7 +102,9 @@
       "observation set missing conjugate refused",
       "source non-unimodular row duplication loses rank",
       "offdiagonal-unit form not incorrectly treated radical",
-      "zero matrix factors censored, not given exact valuation"
+      "zero matrix factors censored, not given exact valuation",
+      "full-column rank theorem refused on non-surjective two-channel matrix",
+      "D427 original maximal-order lift not equated with original even-order source"
     ],
     "compute_parity": "Same field operations and full observation policies per compared matched D163/D187 arm; no speed/learning advantage asserted",
     "parameter_parity": "D163 and D187 share rho21, R40 and J1; D203 native R50/J2 is intentionally not asserted directly comparable",
@@ -115,12 +124,14 @@
       "Phase303 D163 original maximal-order F25 source",
       "Phase304 matched D187 and full D203 original source",
       "Phase307 50-row exact saturation",
-      "Phase310 generic modular DVR algorithm"
+      "Phase310 generic modular DVR algorithm",
+      "Phase311 post-B preregistered residue multiplicity and post-C surjective-rank protocol"
     ],
     "execution_records": [
       "Phase311 focused A CI 43472873071 PASS",
       "Phase311 focused A+B CI 43473352121 PASS, 16 tests",
-      "Phase311 latest full-root Lean separate status is not inferred from focused CI"
+      "Phase311 latest full-root Lean separate status is not inferred from focused CI",
+      "Phase311 focused A/B/C CI 43474486286 PASS, 23 tests; post-C theorem assertion head recheck pending"
     ],
     "independent_witnesses": [
       {
@@ -144,7 +155,10 @@
       "F25 extension rank -> GF25 Gauss and F5 realification",
       "primitive Gram radical37 -> original primitive trace rank63",
       "secondary ranks63/36/1 -> secondary_trace_radical.py Schur stages",
-      "original v5=138 -> source index-square factorization 10000 matrix cells and primitive determinant38"
+      "original v5=138 -> source index-square factorization 10000 matrix cells and primitive determinant38",
+      "Original Gram mod5 compression -> residue_multiplicity.py 25 weighted residue evaluation",
+      "Full-column surjective rank criterion -> original GF25 rank vs weighted trace Gram rank on four fields",
+      "Non-surjective counterworld -> 1x2 abstract weighted field matrix, two nonzero weights but rank0"
     ]
   },
   "round_trip": {
@@ -201,18 +215,22 @@
     ]
   },
   "result": {
-    "observed": "D203 original GF25 evaluation rank50, original G rank38; primitive evaluation rank100 and G rank63. Schur unit ranks63/36/1, exact primitive v5=38, original source v5=2*50+38=138. D163 h1 and D187 non-h1 matched all ranks and primitive radical0.",
+    "observed": "D203 original GF25 evaluation rank50, original G rank38; primitive evaluation rank100 and G rank63. Schur unit ranks63/36/1, exact primitive v5=38, original source v5=2*50+38=138. D163 h1 and D187 non-h1 matched all ranks and primitive radical0. Original unnormalized Gram ranks are exactly J times nonzero residue classes in four surjective source cases: D163 25, D187 25, D203 38, D427 68. D427 formal old-weight 2w=1172 exceeds first-level mod5 Gram nullity 356, but no applicability theorem for the maximal-order lift was proved.",
     "effect_size": "Explains the 1-unit difference between first-level 137 and exact 138 through a second-stage one-dimensional radical",
     "uncertainty": "Exact finite modular statements under AI-authored code plus conditional algebraic proof, independent human review absent",
     "status_after": "M",
     "retired_claims": [
       "primitive trace nondegeneracy characterizes class number one",
       "new rank mass may be added to valuationWeight45",
-      "first-level 137 was already exact 138"
+      "first-level 137 was already exact 138",
+      "residue multiplicities mod5 determine primitive Gram after /5 source saturation",
+      "a full-column rank equality remains valid for non-surjective pulled-back forms"
     ],
     "active_remainder": [
       "no uniform additional prime mass for hypothetical large h1 fields",
-      "no independent human peer review of mathematical semantic transport"
+      "no independent human peer review of mathematical semantic transport",
+      "no inverse reconstruction of primitive higher5-adic digits from original residue counts",
+      "old valuationWeight even-order field theorem not transported to D427 full maximal-order lift"
     ]
   }
 }
