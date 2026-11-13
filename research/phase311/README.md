@@ -60,6 +60,29 @@ The prior exact Smith result \(v_5(\det G_{203})=138\) is a regression check, **
 
 The matched D163 and D187 profiles explicitly reject the assertion that **primitive trace nondegeneracy characterizes class-number-one**.
 
+## Phase311-B — the one-dimensional secondary defect
+
+The Phase311-A residue calculation gave rank 63 for the **primitive** 100-row Gram and therefore at least 37 positive 5-adic Smith exponents. This only guaranteed the original valuation lower bound 137. To resolve the difference with the earlier measured 138, we added **a separate preregistered derived-radical calculation**, not a new mathematical ontology.
+
+Start with the original D203 evaluation at precision 5⁴=625 (necessary before **50 exact divisions** by 5), build the resulting primitive integral Gram modulo 5³=125, and perform *symmetric congruence* Schur elimination over the local rings:
+
+```mermaid
+flowchart TD
+  O["ORIGINAL D203 100x1052<br/>ordinary jets, Q263"] -->|"50 exact shears and 50 divisions by 5"| P["Primitive 100x100 trace Gram<br/>mod 125"]
+  P -->|"remove 63 unit directions"| R1["Residual 37x37<br/>entries divisible by 5"]
+  R1 -->|"divide by 5; remove 36 units"| R2["Residual 1x1<br/>entries divisible by 5"]
+  R2 -->|"divide by 5; final scalar is unit"| R3["No remaining radical"]
+  R3 --> S["Primitive Smith 0^63, 1^36, 2^1<br/>exact v5(det)=38"]
+  S --> G["ORIGINAL same Gram<br/>v5(det)=2x50+38=138"]
+  G -. "must NOT add overlapping old weight45" .-> F["Uniform h1 bound still OPEN"]
+```
+
+The staged ranks are exactly **63, 36, 1**, with residual dimensions **100→37→1→0**. At the third stage no factor is censored. The original source's full **100×100 Gram factorization** is independently checked modulo 625, including the difference between integer-unimodular shears and non-unimodular /5 source divisions. A *separate* generic rectangular DVR Smith algorithm reproduces `{0:63,1:36,2:1}`; two nontrivial source congruences preserve the result. An off-diagonal-only symmetric unit block `[[0,1],[1,0]]` is a deliberate hostile test: a naive diagonal-only pivot algorithm would call it radical, but the correct odd-prime congruence exposes its units.
+
+So the earlier reported original `v5(det G)=138` is now explained **without** a deep 5¹⁶ Smith computation: the finite staged calculation needs precision 5³ on the primitive Gram, after collecting the 5⁴ source digits required for exact division.
+
+This is not a cohomological Bockstein, quantum tunnelling or a new global field bound; it is a genuine higher **DVR bilinear-form radical filtration**. Its proof obligations and stop rules were frozen in `PRE_REGISTERED_SECONDARY_RADICAL.md` after Phase311-A passed and *before* Phase311-B code.
+
 ## Types and provenance
 
 - **Original D203 source:** unchanged Phase304 100×1052 coordinate evaluator, cross-checked against the independent Phase307 source evaluator; all 263 actual maximal-order observations, both original ordinary \(Z\)-jets.
