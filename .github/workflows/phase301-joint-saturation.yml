@@ -1,0 +1,27 @@
+name: Phase301 original same-parity joint saturation and Schur obstruction
+on:
+  push:
+    branches: ['research/phase301-*']
+  pull_request:
+    paths:
+      - 'research/phase301/**'
+      - '.github/workflows/phase301-joint-saturation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  full-original-D163-pairwise-vs-joint:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned source modular arithmetic runtime
+        run: |
+          python3 -m venv /tmp/phase301
+          /tmp/phase301/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Check preregistered research source syntax
+        run: /tmp/phase301/bin/python -m py_compile research/phase301/joint_same_parity_census.py
+      - name: Run original D163 176-case joint Schur source and adversarial counterworld
+        run: /tmp/phase301/bin/python -u research/phase301/joint_same_parity_census.py
