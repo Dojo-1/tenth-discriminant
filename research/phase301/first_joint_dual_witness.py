@@ -18,6 +18,7 @@ for part in ("phase206","phase297","phase298","phase299","phase300","phase301"):
     sys.path.insert(0,str(ROOT/"research"/part))
 import class_one_d163_composition as original
 import joint_same_parity_census as parent
+import same_parity_challenge as parity_source
 import minimal_transverse_repair as solver
 import double_glue_original as source_smith
 
@@ -142,7 +143,7 @@ def main():
     field=original.field_h1_background()
     G,E,W,meta=original.original_j1_source()
     assert (meta["R"],meta["S"],meta["J"],meta["Q"])==(40,1,1,109)
-    assert parent.symmetry(G,E,W)[
+    assert parity_source.symmetry(G,E,W)[
         "exact_original_mixed_parity_Gram_zeros"]==800
     positive=positive_individual_projections(G,E,W)
     witness=original_dual_witness(G,E,W)
