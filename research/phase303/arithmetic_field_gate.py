@@ -108,7 +108,7 @@ def matched_arithmetic_h1_and_counterworld():
     yes=exact_norm_prime_obstruction(163)
     no=exact_norm_prime_obstruction(23)
     assert not yes["split_primes_that_force_nonprincipal_prime_ideal"]
-    assert no["split_primes_that_force_nonprincipal_prime_ideal"]==[2]
+    assert no["split_primes_that_force_nonprincipal_prime_ideal"]==[2,3]
     # In Qsqrt(-23), delta=-23 ≡1 mod8 so 2 splits, but
     # principal norm a²+ab+6b² cannot equal 2.
     assert (-23)%8==1
