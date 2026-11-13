@@ -210,3 +210,23 @@ w_5(R,S)=\frac{S(S-1)(3R-5(S+1))}{6}.
 **This is the mathematical crossover:** first-level source-kernel counts may improve the inherited source index at low S, but they cannot improve the *large-target* valuationWeight just by being counted again. Any new field theorem requires an additional, disjoint higher-lift or global ray-class constraint on the SAME original integer-order Gram.
 
 **Reproducibility and status:** focused CI passes 28 tests on exact head 44eb351; targeted Lean polynomial CI passes, while the whole-root Lean audit is separately tracked. Precode protocols and all source/test files are under Phase312; no branch merge or new 322^4 cutoff is asserted.
+
+
+## Phase312-E | direct ORIGINAL integer-order source bridge
+
+The current field-level Lean theorem uses the **integer-order source** Z[sqrt(-D)] and the original IntegerTraceGram definition—not the maximal-order omega source used for D203. Phase312-E specifically transports the Frobenius25 source-divisibility mechanism to the SAME original integer-lattice Gram, without changing its observation set or metric.
+
+At D163, native parameters are rho21, R40, S=J1. The original observations are the 109 integer pairs (x,y) with x²+163y²<=441. Its 40 rows are 1,Z,...,Z^39 and original trace pairing is 2(ac+163bd).
+
+Since 5 is inert, z^25=z mod5 throughout the quadratic residue field. For r25..39, the integer-unimodular row shears T_r=Z^r-Z^(r-24) vanish modulo5 at all ORIGINAL evaluation points. There are exactly15 source divisions by5. The checker now verifies all original source entries modulo625 and all **1600 cells** of the SAME-original Gram factorization modulo125:
+
+    U G_original U^T = D5 G_primitive D5,
+    D5=diag(1 repeated 25, 5 repeated 15).
+
+The ORIGINAL norm-ball contains 43 distinct rational points y=0, yielding characteristic-zero Vandermonde rank40 and a nonzero positive Hermitian Gram determinant. The predicted consequence is therefore
+
+    v5(det G_original, D163)>=2*15=30.
+
+The existing weight formula valuationWeight(40,1,5)=0. This is a genuine same-original-integer-source small-S improvement **if the new exact-head CI succeeds**; it is neither additive to an overlapping valuation weight nor a large-S uniform field theorem. Our crossover calculations show the old weight dominates the first-level kernel when S>=3, precisely the relevant large-discriminant regime.
+
+The pre-code preregistration is the post-D, pre-E addendum to PRE_REGISTERED_KERNEL_WEIGHT_COMPARISON.md. Conditional [P-paper] index-square argument; [M after CI] original 109-point, 40-row numerical certificate; [H] any stronger global tenth-discriminant cutoff. No original Lean theorem or reported bound was edited.
