@@ -1,0 +1,27 @@
+name: Phase303-D F25 residue trace mechanism and maximal-order flags
+on:
+  push:
+    branches: ['research/phase303-*']
+  pull_request:
+    paths:
+      - 'research/phase303/**'
+      - '.github/workflows/phase303-residue-maximal-flags.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  maximal-order-local-residue-and-flags:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact pinned modular runtime
+        run: |
+          python3 -m venv /tmp/phase303d
+          /tmp/phase303d/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Check source syntax
+        run: /tmp/phase303d/bin/python -m py_compile research/phase303/residue_and_maximal_flags.py
+      - name: Full original/maximal F25 multiplicities and 47 plus 328 maximal-order flags
+        run: /tmp/phase303d/bin/python -u research/phase303/residue_and_maximal_flags.py
