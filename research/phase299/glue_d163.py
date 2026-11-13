@@ -23,7 +23,7 @@ FROZEN={
  "research/phase298/class_one_d163_composition.py":
     "e8cae60a662ca59cade8acd741c2d5d4f4982d6a",
  "research/phase299/gluing_core.py":
-    "54ac93e5349ed6a127dda056009f4e055f3d64ce",
+    "dba83c3fd8a07734f0bc2a7ec6724c0362fbdf9a",
 }
 
 def freeze():
