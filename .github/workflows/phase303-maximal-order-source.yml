@@ -1,0 +1,27 @@
+name: Phase303-A maximal-order D163 original source and p5 observation geometry
+on:
+  push:
+    branches: ['research/phase303-*']
+  pull_request:
+    paths:
+      - 'research/phase303/**'
+      - '.github/workflows/phase303-maximal-order-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  genuine-maximal-order-norm441:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact modular source dependencies
+        run: |
+          python3 -m venv /tmp/phase303
+          /tmp/phase303/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile preregistered source executable
+        run: /tmp/phase303/bin/python -m py_compile research/phase303/maximal_order_source.py
+      - name: Three original/maximal-order source arms and independent exact p5 profiles
+        run: /tmp/phase303/bin/python -u research/phase303/maximal_order_source.py
