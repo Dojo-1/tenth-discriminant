@@ -1,0 +1,26 @@
+name: Phase305 Frobenius-Hermite kernel ranks
+on:
+  push:
+    branches: ['research/phase305-*']
+    paths:
+      - 'research/phase305/**'
+      - '.github/workflows/phase305-frobenius-hermite.yml'
+  pull_request:
+    paths:
+      - 'research/phase305/**'
+      - '.github/workflows/phase305-frobenius-hermite.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-source-ranks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Python syntax
+        run: python3 -m py_compile research/phase305/frobenius_hermite_rank.py
+      - name: Exact independent finite-field rank and original-weight controls
+        run: python3 -u research/phase305/frobenius_hermite_rank.py
