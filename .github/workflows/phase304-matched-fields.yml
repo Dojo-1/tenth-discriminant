@@ -1,0 +1,27 @@
+name: Phase304-A fixed h1 versus non-h1 maximal-order matched fields
+on:
+  push:
+    branches: ['research/phase304-*']
+  pull_request:
+    paths:
+      - 'research/phase304/**'
+      - '.github/workflows/phase304-matched-fields.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  matched-h1-nonh1-maximal-field-sources:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact source and modular dependencies
+        run: |
+          python3 -m venv /tmp/phase304a
+          /tmp/phase304a/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile fixed original arithmetic controls
+        run: /tmp/phase304a/bin/python -m py_compile research/phase304/matched_nonh1_field_controls.py
+      - name: Matched D163 D167 D187 original maximal-order Smith and local Frobenius
+        run: /tmp/phase304a/bin/python -u research/phase304/matched_nonh1_field_controls.py
