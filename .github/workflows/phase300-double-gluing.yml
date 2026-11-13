@@ -1,0 +1,27 @@
+name: Phase300 original two-stage nonintegral discriminant gluing
+on:
+  push:
+    branches: ['research/phase300-*']
+  pull_request:
+    paths:
+      - 'research/phase300/**'
+      - '.github/workflows/phase300-double-gluing.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  double-nonintegral-h1-original-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pin exact modular source runtime
+        run: |
+          python3 -m venv /tmp/phase300
+          /tmp/phase300/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile preregistered original source experiment
+        run: /tmp/phase300/bin/python -m py_compile research/phase300/double_glue_original.py
+      - name: Exhaust two-stage original D163 gluing and hostile cyclic/split toys
+        run: /tmp/phase300/bin/python -u research/phase300/double_glue_original.py
