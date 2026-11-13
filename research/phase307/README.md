@@ -76,6 +76,22 @@ The pre-existing eight and eight conjugate roles are now executable bounded chec
 
 **They have not been validated against independent cognitive tasks or matched-budget performance baselines**. These are scoped deterministic QA checks, NOT proof of general intelligence or self-awareness.
 
+## Phase307-G/H: restrict the search terrain before raising dimensions
+
+Let the original source use J=S and set j=min(S,p). Its truncated quotient is Fp[Z]/((Z^(p²)-Z)^j). The source monomials land at exponents r+p*s. If R-1+p(S-1) < p²*j, the monomials do not wrap under reduction. An interval-union count then proves:
+
+    h_p(R,S,S)=(S-1)*max(R-p,0) <= valuationWeight(R,S,p).
+
+This is a **source-level theorem**, not a stronger class-number-one result. At p5,S=2,J=2 the threshold is sharp: R45 has (h,w)=(40,40) and R46 has (42,41). The extra relation appears only when the quotient degree50 is reached. See no_wrap_kernel.py and PRE_REGISTERED_NO_WRAP_FOLLOWUP.md.
+
+When J=S>=p, the Freshman's-dream identity (Z^(p²)-Z)^p=Z^(p³)-Z^p permits a completely different exact combinatorial reduction: monomial exponent n<p is unchanged, and for n>=p it has canonical exponent p+((n-p) mod (p³-p)). The **actual quotient rank** is the number of distinct resulting exponents. Small cases independently match the polynomial remainder routine.
+
+Under the ORIGINAL parameter ratio S=floor(R/25), a bounded scan of all odd primes p<=S in R={100,200,400,800,1600} found **no positive** h_p-valuationWeight for 1,3,5,10,17 primes respectively. This is an observed finite negative result, not a universal theorem and not an assertion of inertness at every scanned prime. It directs attention to **multilevel** valuation and the original analytic upper rather than unlimited first-level scans. See j_ge_p_rank.py and PRE_REGISTERED_J_GE_P_FOLLOWUP.md.
+
+### Hard obstruction still unbridged
+
+The local kernel is often present in NON-h1 fields. A better bound requires an inequality under hypothetical large class-number-one D, accumulated across justified inert primes and compared against the SAME original Gram's analytic upper. A source profile, gerbe class on an auxiliary nerve, or quantum toy observable is not that inequality.
+
 ## CI, provenance and stop rules
 
 - Main phase source and topological/hypercomplex tests: `.github/workflows/phase307-all-lines.yml`, including previous 21 Phase306 control tests.
