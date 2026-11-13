@@ -607,6 +607,26 @@
       "remainder_types": [
         "non-identification-of-global-ideal-class"
       ]
+    },
+    {
+      "id": "arith.full.inert.original-residue-buckets",
+      "carrier": "original unnormalized monomial/ordinary-jet source at inert p5 and actual maximal-order norm-ball Q",
+      "geometry": "25 residue-field observation classes with conjugation-symmetric integer multiplicities",
+      "algebra": "F25 residue-jet surjective map and diagonal multiplicity-weight Hermitian trace",
+      "state": "D163/187 t25 J1 rankG25; D203 t19 J2 rankG38; D427 t17 J4 rankG68",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "direct-original-gram-oracle",
+        "weighted-residue-compression",
+        "non-surjective-hostile-control"
+      ],
+      "boundary": "ONLY original mod5 Gram, not divided primitive 5-adic source; D427 full-maximal lift has separate prior theorem applicability",
+      "remainder_types": [
+        "unrecovered-higher-padic-observation-digits",
+        "old-weight-applicability-gap"
+      ]
     }
   ],
   "tendrils": [
@@ -1062,6 +1082,37 @@
       ],
       "remainder": "class-number-one-unspecified",
       "cost": "exact GF25 ranks and source coefficients"
+    },
+    {
+      "source": "arith.full.inert.extension",
+      "target": "arith.full.inert.original-residue-buckets",
+      "relation": "compress original mod5 evaluation via actual residue multiplicity counts, no primitive divisions",
+      "forward_transport": "Eoriginal factors through C on 25 residue bins and W with m_z mod5",
+      "return_transport": "cannot reconstruct original integral observation lifts or any p5-divided primitive row",
+      "preserved": [
+        "exact original trace Gram mod5",
+        "original ordinary Z-jets and source row labels"
+      ],
+      "transformed": [
+        "original observation Q to 25 weighted residues"
+      ],
+      "remainder": "higher-padic-lift-info-irrecoverable",
+      "cost": "25J local field columns instead of J times actual Q columns"
+    },
+    {
+      "source": "arith.full.inert.original-residue-buckets",
+      "target": "arith.full.inert.primitive-50",
+      "relation": "explicitly NON-invertible attempted transport from original mod5 support counts to primitive 5-adic divided source",
+      "forward_transport": "NOT IMPLEMENTED: original residue counts do not determine (Frobenius source differences)/5",
+      "return_transport": "requires original integral E modulo at least25, not just residue weights",
+      "preserved": [
+        "first-level original trace Gram only"
+      ],
+      "transformed": [
+        "would require unavailable p-adic lift digits"
+      ],
+      "remainder": "typed transport obstruction: missing integral digits",
+      "cost": "not a valid reconstruction"
     }
   ],
   "identity": {
@@ -1327,6 +1378,22 @@
         "valuationWeight45 overlaps and must not be summed",
         "not actual cohomological Bockstein"
       ]
+    },
+    {
+      "status": "M",
+      "claim_id": "phase311-original-residue-weight-rank",
+      "source": "research/phase311/residue_multiplicity.py; Phase311 PR203 focused CI",
+      "controls": [
+        "25 residue weighted original Gram matches all D163/D187/D203 original cells",
+        "D427 native rho42 10x10 direct source Gram",
+        "abstract nonsurjective weight counterworld",
+        "five synthetic duplicates do not change mod5 result"
+      ],
+      "limitations": [
+        "not primitive 5-adic lift",
+        "not class-number-one-specific",
+        "D427 original even-order field theorem applicability remains unverified"
+      ]
     }
   ],
   "observables": [
@@ -1365,7 +1432,11 @@
     "inert GF25 source kernel versus Hermitian radical decomposition",
     "primitive D203 trace radical stages100 to37 to1",
     "D203 exact v5 determinant138 from precision125 Schur trace filtration",
-    "matched h1 D163 vs nonh1 D187 inert profiles"
+    "matched h1 D163 vs nonh1 D187 inert profiles",
+    "original inert Gram reconstructed solely from 25 residue counts",
+    "surjective residue-jet rank exact J times nonzero residue weight classes",
+    "D427 original 106x4 nonh1 source with residual trace rank68",
+    "D427 2w=1172 formal weight vs first-level nullity356 applicability caveat"
   ],
   "falsifiers": [
     "any changed original trace Gram under invertible frame",
@@ -1397,6 +1468,9 @@
     "primitive pairing radical added to valuationWeight45 without index disjointness",
     "class number one inferred from local primitive Gram nondegeneracy",
     "censored 5-adic factor interpreted as exact",
-    "symmetric offdiagonal field-unit treated as degenerate due zero diagonal"
+    "symmetric offdiagonal field-unit treated as degenerate due zero diagonal",
+    "count-compressed unnormalized mod5 Gram incorrectly used to infer divided primitive Smith",
+    "surjective weighted-pullback rank theorem asserted for a rank-deficient C",
+    "D427 old even-order valuationWeight theorem silently applied to maximal-order observation lift"
   ]
 }
