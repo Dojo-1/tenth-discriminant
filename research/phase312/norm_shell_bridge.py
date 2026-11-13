@@ -115,8 +115,8 @@ def actual_shell_and_orbit_certificate(D,expected_class_number):
     assert len([x for x in groups if x is not None])==12
     assert all(v%2==0 for k,v in groups.items() if k is not None)
     principal_orbits={
-        str(k):v//2 for k,v in sorted(groups.items())
-        if k is not None
+        str(k):v//2 for k,v in sorted(
+            (k,v) for k,v in groups.items() if k is not None)
     }
     # The global norm-ball is stable under z->-z. epsilon is odd,
     # so its entire first moment vanishes automatically for ALL h.
