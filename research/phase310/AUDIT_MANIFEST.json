@@ -1,0 +1,211 @@
+{
+  "task_id": "phase310-original-split-mirror-index-square",
+  "claim": {
+    "text": "For the unchanged original D203 maximal-order 100-row two-ordinary-jet source at split p3, the conjugate p-adic embeddings are related by actual observation permutation and yield the SAME local Smith profiles. The original full integer trace Gram has v3(det G) >=1316 by a local index-square inequality and independent nonzero minor.",
+    "scope": "Fixed D203, Q263, rho24, R50,S=J2, original ordinary jets; not h1 uniform.",
+    "status_before": "H",
+    "assumptions": [
+      "O=Z[omega], omega^2-omega+51=0, D=203 squarefree",
+      "original source data frozen under Phase304 guards",
+      "splitting p3 roots Hensel-lifted coherently",
+      "standard DVR Smith decomposition and integral Hermitian trace form",
+      "nonzero original Gram determinant certified mod101"
+    ],
+    "forbidden_promotions": [
+      "No proof of uniform h1 tenth-discriminant bound",
+      "No novel class-number theorem",
+      "No claim of physical quantum entanglement or general intelligence"
+    ]
+  },
+  "specification": {
+    "intended_object": "Original Z-source E100x1052 with O-coordinates, split O tensor Z3 ≅ Z3×Z3, full conjugate-stable Q263",
+    "invariants": [
+      "X1=X0 P_tau in all 526 columns at every tested precision",
+      "P_tau involutive on genuine original (jet,point) channels",
+      "G=X0 X1^T +X1 X0^T=2 X0 P_tau X0^T modulo 3^k",
+      "Local source Smith profiles identical",
+      "Nonzero original 100x100 minor at separate good reduction ell101",
+      "Certified determinant divisibility without exactness promotion"
+    ],
+    "known_answer_cases": [
+      "Phase309 D203/p3 three-point patch had local root ranks1/2 but full source ranks12/12",
+      "Hermitian trace of omega*conjugate(omega) is0 mod3, wrong same-side dot gives1",
+      "Diagonal modular Smith [1,3,9,81] exponents0/1/2/4",
+      "ell101 original Gram determinant4 mod101"
+    ]
+  },
+  "implementation": {
+    "artifact": "research/phase310/full_source_split_mirror.py, split_dvr_smith.py, full_rank_certificate.py",
+    "commit": "a6a59873e0646ca8770d950c7888dfb95d144369",
+    "environment": "GitHub Actions Ubuntu 24.04, Python3 + pinned numpy2.2.6; Lean from pinned Lake/Mathlib manifest",
+    "live_entrypoint": "python3 research/phase310/full_rank_certificate.py; python3 -m unittest discover -s research/phase310",
+    "representation": "Original omega-coordinate integer rows, exact modular projections and conjugation point permutation"
+  },
+  "metric": {
+    "name": "Typed tuple of full-source rank, same-source trace Gram rank, local Smith depth and good-reduction minors",
+    "type": "typed_tuple",
+    "units": "Finite field ranks, valuations in 3-adic powers, residue class determinants",
+    "direction": "partial_order",
+    "raw_before_clipping": true,
+    "semantic_invariance_claimed": true,
+    "equivalence_attacks": [
+      "Reverse entire observation order",
+      "Integral unimodular row shear",
+      "Local root conjugation swap",
+      "Known-answer tiny DVR Smith case",
+      "False identical-row minor",
+      "Censoring threshold K10"
+    ]
+  },
+  "tests": {
+    "black_box": [
+      "Original frozen Phase304 E matches independently authored Phase307 omega evaluator modulo3^3, 3^10 and101"
+    ],
+    "structural": [
+      "All full 526 observation/jet channels mirror under actual conjugation",
+      "Original Gram equals cross form on all 10,000 matrix cells"
+    ],
+    "property_based": [
+      "Original ordinary Z jets reduce exactly to 12-row Frobenius polynomial quotient"
+    ],
+    "metamorphic": [
+      "Conjugation permutation squares to identity",
+      "Column/observation order change preserves original Gram",
+      "Unimodular row and column shears preserve DVR exponents"
+    ],
+    "fuzzing": [
+      "not applicable: bounded deterministic field test; randomized independent fuzzer not run"
+    ],
+    "historical": [
+      "Phase309 small patch nonprincipal Picard ideal but p-adic Gram unit; Phase307 inert p5 source benchmark"
+    ]
+  },
+  "controls": {
+    "matched_baselines": [
+      "Wrong same-embedding Euclidean pairing",
+      "Direct original integer trace Gram",
+      "Modular direct rank and separate polynomial quotient rank",
+      "Direct original source positive trace vs good reduction rank"
+    ],
+    "negative_controls": [
+      "Non-conjugation-invariant observation subset",
+      "Inert p5 false split",
+      "Duplicate source row destroys nonzero minor",
+      "Censored modular DVR factors not declared exact"
+    ],
+    "compute_parity": "Both conjugate branches use identical source/points/precision and a point permutation; no performance comparison",
+    "parameter_parity": "Same D203, R50,S=J2, Q263 and modulus for all split comparisons",
+    "sampling_parity": "All 263 original norm-ball observations, no resampling",
+    "data_access_parity": "Same original frozen evaluator and independent alternative ring implementation"
+  },
+  "preregistration": {
+    "prediction": "Split roots give exact X1=X0 P, first-level ranks12/12, exact source Smith profiles equal. Censored lower bounds are never promoted to exact.",
+    "primary_metric": "Exact original same-Gram divisibility v3(det G)>=1316 with independent nonzero 100x100 minor",
+    "uncertainty_method": "Exact modular arithmetic plus standard paper-level DVR index-square theorem; AI-authored test correlation explicitly retained",
+    "kill_condition": "Any original-source mismatch, wrong permutation, root relation failure, modular Smith known-answer failure, or missing nonzero good-prime minor",
+    "stop_condition": "No new geometric/mind-quality layer unless it resolves concrete same-source obstruction",
+    "promotion_rule": "Only fixed D203 exact modular/P-paper bound after exact-head CI, not universal field theorem"
+  },
+  "evidence": {
+    "primary_sources": [
+      "Frozen original repo Phase304 full maximal-order source",
+      "Phase307 independent omega evaluator",
+      "Phase308 coherent Hensel root implementation",
+      "Phase310 preregistrations A/B/C"
+    ],
+    "execution_records": [
+      "Phase310 full-source focused CI 43462199209 (A)",
+      "Phase310 full-source B+C CI 43463641609 (rechecks after newer heads pending)",
+      "Targeted Lean proof Phase310SplitTrace narrow CI"
+    ],
+    "independent_witnesses": [
+      {
+        "name": "Phase307 alternative evaluator",
+        "origin": "independent implementation but AI co-authored",
+        "artifact": "research/phase307/source_saturation.py"
+      },
+      {
+        "name": "Good-prime ell101 original Gram determinant",
+        "origin": "different reduction prime, same source and AI test authorship",
+        "artifact": "research/phase310/full_rank_certificate.py"
+      }
+    ],
+    "claim_to_artifact_map": [
+      "All original source entries -> Phase304 evaluator cross Phase307 independent evaluator",
+      "Conjugate mirror -> Phase310A exact all-coordinate permutation check",
+      "Equal Smith profiles -> Phase310B modular DVR levels, with censoring",
+      "Source row full rank -> Phase310C explicit nonzero 100x100 minors mod101",
+      "Integer Gram nonzero -> direct det G=4 mod101",
+      "v3(det G)>=1316 -> Phase310C index-square paper derivation + B local depth10 lower bound"
+    ]
+  },
+  "round_trip": {
+    "edges": [
+      {
+        "from": "original polynomial source",
+        "to": "split local residue maps",
+        "preserved": [
+          "actual source row labels",
+          "both original ordinary jets"
+        ],
+        "transformed": [
+          "O_K coefficients into Z3 components"
+        ],
+        "lost": [
+          "complementary residue root at single projection"
+        ],
+        "remainder": [
+          "original source conjugation must be restored"
+        ]
+      },
+      {
+        "from": "local residue embeddings",
+        "to": "integer trace Gram",
+        "preserved": [
+          "actual Hermitian cross-pairing",
+          "entire original Gram mod3^10"
+        ],
+        "transformed": [
+          "two local matrices into one symmetric integer pairing"
+        ],
+        "lost": [
+          "individual local images and minor labels"
+        ],
+        "remainder": [
+          "Gram does not reconstruct local Picard label"
+        ]
+      },
+      {
+        "from": "Smith depth10 profiles",
+        "to": "determinant lower bound",
+        "preserved": [
+          "finite valuation lower bounds"
+        ],
+        "transformed": [
+          "index valuation to index-square Gram divisor"
+        ],
+        "lost": [
+          "unknown factors>=10"
+        ],
+        "remainder": [
+          "exact full v3(det G) unresolved"
+        ]
+      }
+    ]
+  },
+  "result": {
+    "observed": "Fixed D203 original full source: local ranks12/12; mod3 Gram rank12; both split local Smith profiles equal through depth10; 46 local factors and 65 Gram factors censored; good reduction ell101 gives full rank100 on both branches and original det G=4 mod101; index-square yields lower bound v3(det G)>=1316.",
+    "effect_size": "Certified fixed-source valuation floor 1316; no demonstrated uniform h1 cutoff change",
+    "uncertainty": "Exact finite modular evidence and paper-level algebra conditional on correct implementation; no independent human reviewer",
+    "status_after": "M",
+    "retired_claims": [
+      "A nonprincipal local Picard ideal forces extra p-adic trace Gram determinant mass",
+      "Censored Smith factors can be reported as exact valuation"
+    ],
+    "active_remainder": [
+      "Exact v3(det G) remains unknown due K10 censoring",
+      "Full same-source uniform class-one comparison not established",
+      "Peer review of code, arithmetic and semantic bridge outstanding"
+    ]
+  }
+}

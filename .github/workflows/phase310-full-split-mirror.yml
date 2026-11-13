@@ -1,0 +1,41 @@
+name: Phase310 full original split-prime mirror and Frobenius jet quotient
+on:
+  push:
+    branches: ['research/phase310-*']
+    paths:
+      - 'research/phase310/**'
+      - '.github/workflows/phase310-full-split-mirror.yml'
+  pull_request:
+    paths:
+      - 'research/phase310/**'
+      - '.github/workflows/phase310-full-split-mirror.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-source-and-conjugate-tendrils:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Audit manifest JSON and evidence-scope guard
+        run: |
+          python3 -m json.tool research/phase310/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; x=json.load(open("research/phase310/AUDIT_MANIFEST.json")); assert x["result"]["status_after"]=="M"; assert x["result"]["active_remainder"]; assert x["preregistration"]["kill_condition"]; print("Phase310 evidence scope checked")'
+      - name: Pinned original-source numeric environment
+        run: |
+          python3 -m venv /tmp/phase310
+          /tmp/phase310/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Syntax
+        run: |
+          /tmp/phase310/bin/python -m py_compile research/phase310/full_source_split_mirror.py research/phase310/test_full_source_split_mirror.py research/phase310/split_dvr_smith.py research/phase310/test_split_dvr_smith.py research/phase310/full_rank_certificate.py research/phase310/test_full_rank_certificate.py
+      - name: Entire original D203 100x1052 source, split embeddings and rank
+        run: /tmp/phase310/bin/python -u research/phase310/full_source_split_mirror.py
+      - name: Exact p3 Hensel full-source mirror and Smith valuation bounds
+        run: /tmp/phase310/bin/python -u research/phase310/split_dvr_smith.py
+      - name: Independent good-prime 100x100 original source minor and p3 bound
+        run: /tmp/phase310/bin/python -u research/phase310/full_rank_certificate.py
+      - name: Conjugation reordering metamorphic and hostile oracle tests
+        run: /tmp/phase310/bin/python -m unittest discover -s research/phase310 -p 'test_*.py' -v
