@@ -25,9 +25,11 @@ jobs:
           python3 -m venv /tmp/phase311
           /tmp/phase311/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
       - name: Syntax check
-        run: /tmp/phase311/bin/python -m py_compile research/phase311/inert_trace_radicals.py research/phase311/test_inert_trace_radicals.py
+        run: /tmp/phase311/bin/python -m py_compile research/phase311/inert_trace_radicals.py research/phase311/test_inert_trace_radicals.py research/phase311/secondary_trace_radical.py research/phase311/test_secondary_trace_radical.py
       - name: Original inert F25 hermitian trace and primitive-radical controls
         run: /tmp/phase311/bin/python -u research/phase311/inert_trace_radicals.py
+      - name: Derive secondary 5-adic radical, exact v5 and full source factorization
+        run: /tmp/phase311/bin/python -u research/phase311/secondary_trace_radical.py
       - name: Independent field-rank, conjugation and matched non-h1 hostile tests
         run: /tmp/phase311/bin/python -m unittest discover -s research/phase311 -p 'test_*.py' -v
       - name: Preserve previous D203 original source and independent F25-rank kernel
