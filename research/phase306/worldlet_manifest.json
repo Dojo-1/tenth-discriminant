@@ -128,6 +128,44 @@
         "semantic",
         "authorization"
       ]
+    },
+    {
+      "id": "topology.cech.h2",
+      "carrier": "abstract tetrahedral-boundary simplicial complex S2 with F5 cochains",
+      "geometry": "2-dimensional simplicial cohomology, not the source's physical geometry",
+      "algebra": "finite F5 cochain complex",
+      "state": "nonzero H2 fundamental-cycle pairing",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "coboundary-checker",
+        "filled-tetrahedron-negative-control"
+      ],
+      "boundary": "not a gerbe on the number-field scheme",
+      "remainder_types": [
+        "arithmetic-attachment-unknown"
+      ]
+    },
+    {
+      "id": "quantum.hilbert.toy",
+      "carrier": "C5 tensor C5 exact rational-amplitude subspace, plus isolated 2- and 3-site Hamiltonians",
+      "geometry": "complex Hilbert projective state space, unitaries and spectral gap",
+      "algebra": "exact rational amplitude and Hamiltonian matrix arithmetic",
+      "state": "Schmidt-rank, purity, tight-binding second-order and avoided-crossing controls",
+      "clocks": [
+        "source",
+        "review"
+      ],
+      "observers": [
+        "exact-rank-checker",
+        "no-coupling-negative-control"
+      ],
+      "boundary": "no physical experiment or field proof transport",
+      "remainder_types": [
+        "physical-realization-unknown",
+        "adiabatic-theorem-not-shown"
+      ]
     }
   ],
   "tendrils": [
@@ -333,7 +371,10 @@
     "overlap gluing defect",
     "CRT integer reconstruction remainder",
     "promotion gate violation",
-    "compute cost"
+    "compute cost",
+    "Schmidt rank and reduced purity of toy bipartite state",
+    "tight-binding barrier-mediated t^2 coefficient",
+    "avoided-crossing gap squared"
   ],
   "falsifiers": [
     "any changed original trace Gram under invertible frame",
@@ -341,6 +382,8 @@
     "incorrect promotion of self-authored proof",
     "failed symplectic invariant",
     "increased compute without added discriminatory capability",
-    "claim of quantum entanglement without quantum observable"
+    "claim of quantum entanglement without quantum observable",
+    "claim of actual entanglement between research Worldlets rather than a tensor-product toy model",
+    "claim of adiabatic theorem or physical tunnelling from a finite Taylor coefficient"
   ]
 }
