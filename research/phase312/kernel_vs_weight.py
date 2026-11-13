@@ -116,8 +116,12 @@ def native_comparator(R,S):
     h=R*S-25*eff
     w=weight_closed_form(R,S)
     assert w is not None
-    expected=(h>w) if S<=2 else (w>=h)
-    assert expected,(R,S,h,w)
+    if S==1:
+        assert (h>w)==(R>25),(R,S,h,w)
+    elif S==2:
+        assert h>w,(R,S,h,w)
+    else:
+        assert w>=h,(R,S,h,w)
     return {
         "R":R,"S_equals_J":S,
         "first_level_GF25_kernel_h":h,
