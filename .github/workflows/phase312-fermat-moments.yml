@@ -37,6 +37,8 @@ jobs:
         run: /tmp/phase312/bin/python -u research/phase312/local_completion_no_go.py
       - name: Global class-one norm-shell theorem controls and zero-moment null
         run: /tmp/phase312/bin/python -u research/phase312/norm_shell_bridge.py
+      - name: Universal inert F25 jet kernel and native old-weight crossover
+        run: /tmp/phase312/bin/python -u research/phase312/kernel_vs_weight.py
       - name: Hostile derivative, field identification, moment and h1 tests
         run: /tmp/phase312/bin/python -m unittest discover -s research/phase312 -p 'test_*.py' -v
       - name: Replay earlier full primitive 5-adic trace radical
