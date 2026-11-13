@@ -110,3 +110,20 @@ The first transport is exact [P-paper]. The second changes the sampled trace Gra
 Our concrete new structural lemma is the Frobenius+support primitive Gram criterion; it is classical algebra and experimentally verified here, but its original number-field consequences remain open. The classical norm/split-prime argument is genuinely field-arithmetic but not novel; the p5 Gram data are genuinely source-arithmetic but not (yet) a class-one test. No scalar amalgamation can bridge the two without an independently checked implication.
 
 **Next responsible steps:** (1) independent alternate-language/code original maximal-order trace Gram and p5 Smith replay, excluding shared original source helpers; (2) formalize the simple quadratic-order coordinate identity and Frobenius primitive Gram block lemma without confusing it with field theorem; (3) if pursuing larger D/high-J, freeze a hypothetical-h1-uniform theorem statement **before** new stress data and do not claim verification from non-h1 fields; (4) human peer mathematical and formal-semantic review (#50/#51), keeping all stacked PRs DRAFT. No Work, no merge or autonomous field-cutoff promotion.
+
+
+## G. Phase303-F independent half-integral coordinate/source and modular Smith replay
+
+**Separately preregistered AFTER A–E at** [PRE_REGISTERED_INDEPENDENT_PQ_REPLAY.md](PRE_REGISTERED_INDEPENDENT_PQ_REPLAY.md), commit `4c5fc4994715283a2740b54fd82e058f39101eb6`. The independent GitHub Actions executable [independent_half_integer_replay.py](independent_half_integer_replay.py) is committed, along with [its dedicated workflow](../../.github/workflows/phase303-independent-pq.yml). At the time this ledger was updated, the GitHub connector had not returned a hosted F workflow receipt for the latest pushed heads, so **do not claim hosted F CI green** until its exact-head run is inspected.
+
+For an immediate cross-check, the *separate ChatGPT chat-container execution environment* successfully ran a shorter self-contained **pure-Python big-integer** reproduction stored as `/mnt/data/phase303_crosscheck.py`, SHA256 `9f45ceaf70fedf520cdf35d25410455008f2af8187edb12ea21e62b681de7afd`. It uses NO repository imports, no NumPy, no original omega-basis multiplication or Smith implementation. Instead it enumerates half-integral maximal-order coordinates `z=(p+q sqrt(-163))/2, p≡q mod2` with `p²+163q²≤1764`, computes exact power products and trace Gram through `(p,q)` formulas, and runs its own DVR row+column pivot elimination mod `5^16` after hostile toy controls.
+
+The complete observed local result was:
+```
+INDEPENDENT_CHAT_RUNTIME_AUDIT_PASS {
+ 'source_full': 225, 'source_even': 109,
+ 'old': ({0: 15, 2: 8, 3: 7, 4: 10}, 77),
+ 'maximal': ({0: 25, 2: 15}, 30)
+}
+```
+This is a **different arithmetic representation and independent computational algorithm**, but it shares AI authorship and the same prescribed source cutoff; it must NOT be relabeled external human review, novelty, or a proof of a uniform field theorem. The standalone script can be provided to a human reviewer for independent execution. The exact source comparison and theorem relevance distinctions remain as in Sections A–F.
