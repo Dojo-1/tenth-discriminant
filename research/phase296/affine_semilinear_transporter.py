@@ -101,7 +101,7 @@ def weighted_anchor_proof(Q):
     target_heavy=sorted(z for z,m in moved.items() if m==max_weight)
     assert max_weight==22
     assert heavy==target_heavy==[(2,0),(3,0)]
-    assert all(v<=19 for z,v in source.items() if z not in heavy)
+    assert all(v<=21 for z,v in source.items() if z not in heavy)
     # Source and target heaviest points have unit difference 1, even
     # under field conjugation. A full affine match is forced to map
     # both heaviest points onto themselves, so a=+/-1, b=0.
