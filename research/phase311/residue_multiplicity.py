@@ -93,6 +93,12 @@ def compressed_original_gram(q,d,R,S,J):
     nonzero=sum(1 for x in m if x%5!=0)
     upper=nonzero*min(J,5)
     assert rG<=min(rE,upper)
+    # Standard full-column pullback theorem. It is an equality ONLY when
+    # the original residue-jet evaluation spans every active channel.
+    full_column_span=(rE==len(bins)*min(J,5))
+    if full_column_span:
+        assert rG==upper,(
+            "surjective original residue-jet pullback must preserve W rank",d)
     assert all(counts[z]==counts[((z[0]+z[1])%5,(-z[1])%5)]
                for z in bins)
     return G,{
@@ -108,6 +114,9 @@ def compressed_original_gram(q,d,R,S,J):
         "original_Gram_rank_F5":rG,
         "rank_upper_bound_from_weights":upper,
         "induced_trace_radical_dimension":rE-rG,
+        "full_original_residue_jet_span":full_column_span,
+        "surjective_weighted_pullback_rank_exact_if_applicable":(
+            (rG==upper) if full_column_span else None),
         "actual_residue_weights_mod5":{str(z):counts[z]%5 for z in bins},
         "only_original_unscaled_source_supported":True,
         "cannot_compute_primitive_trace_from_residues_alone":True,
@@ -169,7 +178,32 @@ def larger_native_D427():
     row["native_original_rho"]=rho
     row["ten_by_ten_direct_actual_original_Gram_cells_checked"]=count
     row["D427_non_h1_norm7_ramified_obstruction"]=True
+    old_weight=sum(min(r//5,t) for r in range(R) for t in range(S))
+    assert old_weight==586
+    old_lower=2*old_weight
+    first_level_nullity_floor=R*S-row["original_Gram_rank_F5"]
+    assert first_level_nullity_floor==356
+    assert old_lower==1172 and old_lower>first_level_nullity_floor
+    row["existing_valuationWeight"]=old_weight
+    row["existing_double_weight_lower_bound"]=old_lower
+    row["original_mod5_Gram_nullity_floor"]=first_level_nullity_floor
+    row["new_first_level_floor_does_not_beat_existing_weight"]=True
     return row
+
+
+def non_surjective_abstract_control():
+    # NOT an original observation source: one row and two abstract F25
+    # channels. Weights [1,4] both nonzero, but the pullback cancels.
+    C=np.asarray([[1,0,1,0]],dtype=np.int64)
+    W=[1,4]
+    assert rank_f25(C,203)==1
+    G=weighted_gram_from_residue_representatives(C,W,203)
+    assert G.shape==(1,1) and int(G[0,0])==0
+    assert rank_f5(G)==0
+    return {"ambient_weight_nonzero_channels":2,
+            "source_rank_F25":1,
+            "pulled_back_Gram_rank_F5":0,
+            "surjective_equality_claim_refused":True}
 
 
 def controls():
@@ -194,6 +228,9 @@ def controls():
     return {
         "full_original_D163_D187_D203_arms":arms,
         "larger_native_D427_hostile_control":larger,
+        "non_surjective_abstract_two_channel_counterworld":non_surjective_abstract_control(),
+        "all_four_actual_full_residue_spans_surjective":all(
+            x["full_original_residue_jet_span"] for x in arms+[larger]),
         "adding_five_synthetic_zero_observations_leaves_mod5_Gram_fixed":True,
         "fifth_ordinary_Z_derivative_identically_zero_mod5":True,
         "no_primitive_source_info_from_residue_counts":True,
