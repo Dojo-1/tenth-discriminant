@@ -20,6 +20,10 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
+      - name: Audit manifest JSON and evidence-scope guard
+        run: |
+          python3 -m json.tool research/phase310/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; x=json.load(open("research/phase310/AUDIT_MANIFEST.json")); assert x["result"]["status_after"]=="M"; assert x["result"]["active_remainder"]; assert x["preregistration"]["kill_condition"]; print("Phase310 evidence scope checked")'
       - name: Pinned original-source numeric environment
         run: |
           python3 -m venv /tmp/phase310
