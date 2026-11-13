@@ -85,13 +85,12 @@ class InertTraceTests(unittest.TestCase):
         a,b=e[:,0::2],e[:,1::2]
         d=203
         original=m.trace_gram_from_original(e,d)[0,0]
-        wrong=(2*(a@a.T)+(a@b.T)+(b@a.T)+2*(d+1)//4*(b@b.T))%5
-        # Deliberately wrong factor is not guaranteed to differ for D=203,
-        # therefore use a known correct independent norm: Tr(omega*bar omega)
-        # = 2*m, not Tr(omega²)=2*(1-m).
+        # Independent norm identity: Tr(omega*bar omega)=2*m,
+        # whereas the incorrect same-side contraction gives
+        # Tr(omega²)=Tr(omega-m)=1-2*m.
         mm=(d+1)//4
         self.assertEqual(original,2*mm%5)
-        self.assertNotEqual((2*(1-mm))%5,original)
+        self.assertNotEqual((1-2*mm)%5,original)
 
 
 if __name__=="__main__":
