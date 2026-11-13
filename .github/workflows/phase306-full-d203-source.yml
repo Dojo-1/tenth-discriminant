@@ -1,0 +1,30 @@
+name: Phase306 actual D203 full 263-point source transport
+on:
+  push:
+    branches: ['research/phase306-*']
+    paths:
+      - 'research/phase306/full_source_bridge.py'
+      - '.github/workflows/phase306-full-d203-source.yml'
+  pull_request:
+    paths:
+      - 'research/phase306/full_source_bridge.py'
+      - '.github/workflows/phase306-full-d203-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-full-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned Phase304 dependency into isolated venv
+        run: |
+          python3 -m venv /tmp/phase306d
+          /tmp/phase306d/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile
+        run: /tmp/phase306d/bin/python -m py_compile research/phase306/full_source_bridge.py
+      - name: Reconstruct all 263 observations for selected original rows
+        run: /tmp/phase306d/bin/python -u research/phase306/full_source_bridge.py
