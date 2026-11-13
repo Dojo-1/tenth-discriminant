@@ -1,0 +1,27 @@
+name: Phase304-B actual original-policy high J2 Frobenius ordinary jets
+on:
+  push:
+    branches: ['research/phase304-*']
+  pull_request:
+    paths:
+      - 'research/phase304/**'
+      - '.github/workflows/phase304-highjet-d203.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  d203-original-policy-j2:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact source and p16 Smith runtime
+        run: |
+          python3 -m venv /tmp/phase304b
+          /tmp/phase304b/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Syntax and pinned source check
+        run: /tmp/phase304b/bin/python -m py_compile research/phase304/highjet_d203_original.py
+      - name: D203 actual J2 Z ordinary-jets original/maximal support and 45 Frobenius integral row tests
+        run: /tmp/phase304b/bin/python -u research/phase304/highjet_d203_original.py

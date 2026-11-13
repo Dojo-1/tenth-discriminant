@@ -1,0 +1,27 @@
+name: Phase304-C original J2 primitive trace radical and residual Smith
+on:
+  push:
+    branches: ['research/phase304-*']
+  pull_request:
+    paths:
+      - 'research/phase304/**'
+      - '.github/workflows/phase304-primitive-radical.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-D203-J2-primitive-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned exact modular source
+        run: |
+          python3 -m venv /tmp/phase304c
+          /tmp/phase304c/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile
+        run: /tmp/phase304c/bin/python -m py_compile research/phase304/highjet_primitive_radical.py
+      - name: Exact D203 original policy J2 residual p15 Smith and trace image radical
+        run: /tmp/phase304c/bin/python -u research/phase304/highjet_primitive_radical.py
