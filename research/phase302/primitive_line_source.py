@@ -367,6 +367,9 @@ def hensel_source_flags(G,E,W,first):
         print("PHASE302_HENSEL_ORIGINAL_FLAG",stages[-1],flush=True)
     return {
       "source_original_case":[13,15,31],
+      "original_residual_2x2_Gram_mod5pow9":[[int(S[i,j])%(P**9) for j in range(2)] for i in range(2)],
+      "original_normalized_residual_mod5_Gram":U5.tolist(),
+      "original_residual_det_v5":v5((int(S[0,0])*int(S[1,1])-int(S[0,1])**2)%MOD),
       "residual_mod5_rank":rank,
       "primitive_scale_depth":scale,
       "source_mod5_isotropic_lines":roots,
