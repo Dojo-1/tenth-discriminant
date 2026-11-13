@@ -1,0 +1,32 @@
+name: Phase308 Picard Tendrils and class-torsion controls
+on:
+  push:
+    branches: ['research/phase308-*']
+    paths:
+      - 'research/phase308/**'
+      - '.github/workflows/phase308-picard-tendrils.yml'
+  pull_request:
+    paths:
+      - 'research/phase308/**'
+      - '.github/workflows/phase308-picard-tendrils.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ideal-torsion-and-localization:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Source and independent test syntax
+        run: python3 -m py_compile research/phase308/picard_tendrils.py research/phase308/test_picard_tendrils.py
+      - name: Exact ideal-power and actual Cech 1-cocycle certificate
+        run: python3 -u research/phase308/picard_tendrils.py
+      - name: Hostile localization, class order, boundary and source-preservation tests
+        run: python3 -m unittest discover -s research/phase308 -p 'test_*.py' -v
+      - name: Replay earlier independent Picard norm controls
+        run: python3 -u research/phase307/picard_class_gate.py
+      - name: Original Phase306 control suite
+        run: python3 -m unittest discover -s research/phase306 -p 'test_*.py' -v
