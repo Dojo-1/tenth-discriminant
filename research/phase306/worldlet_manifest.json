@@ -510,6 +510,103 @@
         "omitted-observation-invariant",
         "Gram-valuation-nonimplication"
       ]
+    },
+    {
+      "id": "arith.full.split.conjugate-mirror",
+      "carrier": "unchanged D203 full original Q263 ordinary-jet source, split prime3",
+      "geometry": "two split local evaluations related by actual conjugation observation involution",
+      "algebra": "Z3 direct-summand local embeddings, original trace cross pairing",
+      "state": "Phase310 original rank12/12, Gram rank12; certified finite original Gram v3 at least1316",
+      "clocks": [
+        "source",
+        "review"
+      ],
+      "observers": [
+        "full-original-oracle",
+        "good-prime-nonzero-minor",
+        "bounded-DVR-profile"
+      ],
+      "boundary": "D203 class number4; split prime does not establish uniform h1 bound",
+      "remainder_types": [
+        "46-censored-local-Smith-factors",
+        "missing-uniform-h1-bridge"
+      ]
+    },
+    {
+      "id": "arith.full.inert.extension",
+      "carrier": "unchanged D203 full original Q263 p5 and original D163/D187 matched maximal-order sources",
+      "geometry": "quadratic residue extension F25 with actual conjugation Ptau",
+      "algebra": "F25-valued ordinary-jet evaluation, Hermitian trace 2E Ptau Etranspose over F5",
+      "state": "D203 original ranks E50/G38; D163 and D187 matched ranks E25/G25",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "F25-Gaussian-rank",
+        "twice-realified-F5-rank",
+        "original-Hermitian-trace-oracle"
+      ],
+      "boundary": "source kernel and trace radical are different typed invariants",
+      "remainder_types": [
+        "source-Frobenius-kernel",
+        "trace-image-radical"
+      ]
+    },
+    {
+      "id": "arith.full.inert.primitive-50",
+      "carrier": "D203 original 100-row source after 50 integral unimodular row shears and 50 exact p5 divisions",
+      "geometry": "primitive p5 integral evaluation superlattice in F25 observation space",
+      "algebra": "Z5 Smith index-square factor with quadratic trace pairing",
+      "state": "Eprimitive rank100, Gprimitive rank63, trace radical37; original v5 lower bound137",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "original-primitive-Gram-covariance",
+        "finite-residue-radical-rank"
+      ],
+      "boundary": "the exact 5-division is NOT an integer unimodular frame change; do not add valuationWeight45",
+      "remainder_types": [
+        "secondary-p-adic-trace-radical"
+      ]
+    },
+    {
+      "id": "arith.full.inert.secondary-radical",
+      "carrier": "100x100 primitive D203 trace Gram over Z5 through precision5^3",
+      "geometry": "three-stage symmetric-congruence Schur filtration 100 to37 to1",
+      "algebra": "DVR bilinear module with Smith levels0^63 1^36 2^1",
+      "state": "derived exact primitive v5=38 and original v5=138 after index-square100",
+      "clocks": [
+        "source",
+        "review"
+      ],
+      "observers": [
+        "symmetric-Schur-pivot-algorithm",
+        "independent-rectangular-Smith",
+        "offdiagonal-unit-hostile"
+      ],
+      "boundary": "NOT cohomological Bockstein, no class-number-one field theorem",
+      "remainder_types": [
+        "global-field-bound-unbridged"
+      ]
+    },
+    {
+      "id": "arith.matched.inert.h1-nonh1",
+      "carrier": "matched original maximal-order D163 class1 and D187 class2, R40/S=J1 rho21, p5 inert",
+      "geometry": "two distinct field worlds with indistinguishable local source/trace fingerprints",
+      "algebra": "F25 evaluation ranks25/40, primitive Hermitian Gram nondegenerate over F5",
+      "state": "both have original G rank25 and primitive G rank40, exact known val30",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "half-integer-original-source-oracle",
+        "quadratic-extension-field-rank"
+      ],
+      "boundary": "matching local signature is NOT an implication of class-number-one",
+      "remainder_types": [
+        "non-identification-of-global-ideal-class"
+      ]
     }
   ],
   "tendrils": [
@@ -902,6 +999,69 @@
       ],
       "remainder": "Gram-Picard-non-equivalence",
       "cost": "two-by-two exact determinants"
+    },
+    {
+      "source": "arith.full.split.conjugate-mirror",
+      "target": "arith.full.inert.extension",
+      "relation": "compare same original D203 source across DIFFERENT primes without equating local fields",
+      "forward_transport": "retain exact original monomial/jet/Q provenance, change coefficient ring from split p3 to inert p5",
+      "return_transport": "not a field isomorphism; full inverse across primes unavailable",
+      "preserved": [
+        "original Q263 and Hermitian trace source"
+      ],
+      "transformed": [
+        "split Z3×Z3 local residue to inert F25"
+      ],
+      "remainder": "incompatible-prime-comparison",
+      "cost": "exact independent finite rank computations"
+    },
+    {
+      "source": "arith.full.inert.extension",
+      "target": "arith.full.inert.primitive-50",
+      "relation": "source Frobenius kernel saturation plus integral p5 division",
+      "forward_transport": "50 exact row shears then divide selected original integral evaluation rows by5",
+      "return_transport": "multiply selected primitive source rows by5 and invert integral shears",
+      "preserved": [
+        "same original Gram after index-square accounting",
+        "same genuine observations and ordinary jets"
+      ],
+      "transformed": [
+        "evaluation rank50→100, Gram rank38→63"
+      ],
+      "remainder": "trace-radical-dimension37",
+      "cost": "all 100x1052 original entries and 100x100 Grams"
+    },
+    {
+      "source": "arith.full.inert.primitive-50",
+      "target": "arith.full.inert.secondary-radical",
+      "relation": "iterated Schur quotient by5 on residual trace form",
+      "forward_transport": "remove 63 units, divide37 block by5, remove36 units, divide1 block by5",
+      "return_transport": "reconstruct determinant valuation with all congruence pivots and 5^3 digits",
+      "preserved": [
+        "exact primitive determinant valuation",
+        "original metric covariance"
+      ],
+      "transformed": [
+        "radical dimensions100→37→1→0"
+      ],
+      "remainder": "none inside fixed D203 determinant; field h1 bridge remains open",
+      "cost": "exact 125-adic symmetric congruence on 100x100 matrix"
+    },
+    {
+      "source": "arith.matched.inert.h1-nonh1",
+      "target": "arith.full.inert.extension",
+      "relation": "class-number-one specificity hostile control under same p5 extension but matched source parameters",
+      "forward_transport": "compare D163/187 equal local ranks against D203 different native source; no same-source equivalence across fields",
+      "return_transport": "cannot infer global ideal class from local rank spectrum",
+      "preserved": [
+        "p5 inert quadratic extension",
+        "matched D163/D187 original source policy"
+      ],
+      "transformed": [
+        "field D changes and sample support changes"
+      ],
+      "remainder": "class-number-one-unspecified",
+      "cost": "exact GF25 ranks and source coefficients"
     }
   ],
   "identity": {
@@ -1135,6 +1295,38 @@
       "limitations": [
         "small two-row selected source; no uniform h1 or full source theorem"
       ]
+    },
+    {
+      "status": "M",
+      "claim_id": "phase311-inert-full-source-radical",
+      "source": "research/phase311/inert_trace_radicals.py; PR203 focused CI 43472873071",
+      "controls": [
+        "F25 rank vs realification",
+        "original conjugation permutation",
+        "h1 D163/nonh1 D187 matched source",
+        "split D211 hostile"
+      ],
+      "limitations": [
+        "AI-authored independent code paths are not external peer review",
+        "no class-number-one classification from local radical"
+      ]
+    },
+    {
+      "status": "M",
+      "claim_id": "phase311-secondary-D203-trace",
+      "source": "research/phase311/secondary_trace_radical.py; PR203 focused CI 43473352121",
+      "controls": [
+        "mod125 staged Schur rank 63,36,1",
+        "generic rectangular DVR Smith comparison",
+        "two unimodular congruence shears",
+        "offdiagonal-only unit form",
+        "source exact 10000 Gram factorization cells"
+      ],
+      "limitations": [
+        "same fixed D203 field is non-h1",
+        "valuationWeight45 overlaps and must not be summed",
+        "not actual cohomological Bockstein"
+      ]
     }
   ],
   "observables": [
@@ -1168,7 +1360,12 @@
     "nonzero determinant of cross paired Gram despite local rank loss",
     "actual observation Picard ideal class event history 1→4→1",
     "strictly shrinking inverse-ideal coefficient modules",
-    "trace-Gram valuation history 2→0→0"
+    "trace-Gram valuation history 2→0→0",
+    "full original split-p3 vs inert-p5 trace pairing comparison",
+    "inert GF25 source kernel versus Hermitian radical decomposition",
+    "primitive D203 trace radical stages100 to37 to1",
+    "D203 exact v5 determinant138 from precision125 Schur trace filtration",
+    "matched h1 D163 vs nonh1 D187 inert profiles"
   ],
   "falsifiers": [
     "any changed original trace Gram under invertible frame",
@@ -1195,6 +1392,11 @@
     "same-side Euclidean dot pairing silently substituted for original trace-Hermitian cross pairing",
     "p-adic Gram determinant declared divisible based only on one embedding rank",
     "Picard class incorrectly assumed monotone under larger observation subsets",
-    "observation event log falsely called persistent homology without coefficient maps"
+    "observation event log falsely called persistent homology without coefficient maps",
+    "inert source rank over F5 confused with extension-field F25 rank",
+    "primitive pairing radical added to valuationWeight45 without index disjointness",
+    "class number one inferred from local primitive Gram nondegeneracy",
+    "censored 5-adic factor interpreted as exact",
+    "symmetric offdiagonal field-unit treated as degenerate due zero diagonal"
   ]
 }
