@@ -20,6 +20,10 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
+      - name: Validate claim-to-artifact audit and no field-bound promotion
+        run: |
+          python3 -m json.tool research/phase311/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; j=json.load(open("research/phase311/AUDIT_MANIFEST.json")); assert j["result"]["status_after"]=="M"; assert j["preregistration"]["kill_condition"]; assert "no uniform additional prime mass" in j["result"]["active_remainder"][0]; print("Phase311 audit evidence scope PASS")'
       - name: Install pinned numeric environment
         run: |
           python3 -m venv /tmp/phase311
