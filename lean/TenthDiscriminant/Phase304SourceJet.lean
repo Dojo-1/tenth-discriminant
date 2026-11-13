@@ -44,8 +44,7 @@ theorem inert_frobenius_ordinary_jet_one
         ((k + 1 : ℕ) : ZMod 5) := by
     have hn : k + 6 = (k + 1) + 5 := by omega
     rw [hn, Nat.cast_add]
-    have h5 : (5 : ZMod 5) = 0 := ZMod.natCast_self 5
-    rw [h5, add_zero]
+    norm_num <;> exact ZMod.natCast_self 5
   rw [hc, hw, pow_add]
   ring
 
