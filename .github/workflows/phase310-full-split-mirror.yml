@@ -26,10 +26,12 @@ jobs:
           /tmp/phase310/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
       - name: Syntax
         run: |
-          /tmp/phase310/bin/python -m py_compile research/phase310/full_source_split_mirror.py research/phase310/test_full_source_split_mirror.py research/phase310/split_dvr_smith.py research/phase310/test_split_dvr_smith.py
+          /tmp/phase310/bin/python -m py_compile research/phase310/full_source_split_mirror.py research/phase310/test_full_source_split_mirror.py research/phase310/split_dvr_smith.py research/phase310/test_split_dvr_smith.py research/phase310/full_rank_certificate.py research/phase310/test_full_rank_certificate.py
       - name: Entire original D203 100x1052 source, split embeddings and rank
         run: /tmp/phase310/bin/python -u research/phase310/full_source_split_mirror.py
       - name: Exact p3 Hensel full-source mirror and Smith valuation bounds
         run: /tmp/phase310/bin/python -u research/phase310/split_dvr_smith.py
+      - name: Independent good-prime 100x100 original source minor and p3 bound
+        run: /tmp/phase310/bin/python -u research/phase310/full_rank_certificate.py
       - name: Conjugation reordering metamorphic and hostile oracle tests
         run: /tmp/phase310/bin/python -m unittest discover -s research/phase310 -p 'test_*.py' -v
