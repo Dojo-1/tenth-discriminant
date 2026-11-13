@@ -365,8 +365,10 @@ def promote_proved(claim, witness):
         raise PromotionDenied("self-promotion: same author/reviewer")
     if witness.mode != "formal_kernel" or not witness.evidence_uri:
         raise PromotionDenied("external proof term and checker receipt required")
-    # This function enforces a policy; it DOES NOT verify a proof or the receipt.
-    return Claim(claim.claim_id, claim.author, "P", claim.kind, claim.source_sha)
+    # Metadata cannot establish the independence or validity of a proof.
+    # External formal-kernel verification must be performed outside this fabric.
+    # Deliberately refuse automatic P promotion, even for plausible receipts.
+    raise PromotionDenied("unverified attestation: external proof gate required")
 
 
 class ContextTree:
