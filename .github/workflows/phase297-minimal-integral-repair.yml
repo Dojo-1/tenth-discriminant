@@ -1,0 +1,27 @@
+name: Phase297-D minimal index-five integral transverse Schur repair
+on:
+  push:
+    branches: ['research/phase297-*']
+  pull_request:
+    paths:
+      - 'research/phase297/**'
+      - '.github/workflows/phase297-minimal-integral-repair.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-integral-transverse-frame:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned exact modular integer array runtime
+        run: |
+          python3 -m venv /tmp/phase297d
+          /tmp/phase297d/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile source
+        run: /tmp/phase297d/bin/python -m py_compile research/phase297/minimal_transverse_repair.py
+      - name: Build exact index-five original source transverse orthogonal frame mod p16
+        run: /tmp/phase297d/bin/python -u research/phase297/minimal_transverse_repair.py
