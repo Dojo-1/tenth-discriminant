@@ -60,7 +60,7 @@ class PicardFlag:
             "first_nontrivial_grade":next(
                 (i+1 for i,x in enumerate(self.canonical_grades) if x),None),
             "transport_remainder":"ordered-local-line-classes",
-            "not_reconstructible_from_only_rank_and_determinant":True,
+            "not_reconstructible_from_only_rank_and_determinant":(self.rank>1 and self.class_order>1 and any(self.canonical_grades)),
             "not_original_integer_source":True,
         }
 
