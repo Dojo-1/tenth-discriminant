@@ -436,6 +436,58 @@
       "remainder_types": [
         "lost-restricted-Picard-class"
       ]
+    },
+    {
+      "id": "arith.original.patch.split-embedding-r",
+      "carrier": "Fp-valued sigma_r:O_K→Fp at simple root r of f(X)",
+      "geometry": "first factor of split p-adic residue algebra",
+      "algebra": "finite field and rank-one local evaluation image",
+      "state": "D203 rank1 for original 3x2 patch",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "local-rank-checker"
+      ],
+      "boundary": "conjugate root must be separate; p may not be ramified",
+      "remainder_types": [
+        "lost-other-residue-embedding"
+      ]
+    },
+    {
+      "id": "arith.original.patch.split-embedding-conj",
+      "carrier": "Fp-valued sigma_rprime:O_K→Fp with rprime=1-r",
+      "geometry": "second factor of split p-adic residue algebra",
+      "algebra": "finite field and rank-two local evaluation image",
+      "state": "D203 rank2 for original 3x2 patch",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "local-rank-checker"
+      ],
+      "boundary": "not equivalent to first embedding as framed source map",
+      "remainder_types": [
+        "source-frame-rank-asymmetry"
+      ]
+    },
+    {
+      "id": "arith.original.patch.cross-trace",
+      "carrier": "conjugation-paired bilinear form X^T Y+Y^T X over Fp",
+      "geometry": "two-component pairing on split residue algebra, not two Euclidean squares",
+      "algebra": "Fp-linear Hermitian-trace reduction",
+      "state": "D203 G mod3 [[0,1],[1,0]] full rank despite X rank1",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "original-integer-trace-oracle",
+        "bilinear-pair-checker"
+      ],
+      "boundary": "no inference from local rank to Gram determinant valuation",
+      "remainder_types": [
+        "nontransportable-single-embedding-defect"
+      ]
     }
   ],
   "tendrils": [
@@ -736,6 +788,66 @@
       ],
       "remainder": "loss-of-patch-Picard-invariant",
       "cost": "exact one-row augmentation"
+    },
+    {
+      "source": "arith.original.evaluation.patch",
+      "target": "arith.original.patch.split-embedding-r",
+      "relation": "first local residue observation of same O-linear map",
+      "forward_transport": "reduce all original O-valued evaluation entries via sigma_r",
+      "return_transport": "forgetful projection loses complementary residue field factor",
+      "preserved": [
+        "actual source row/observation labels"
+      ],
+      "transformed": [
+        "O coefficients to Fp"
+      ],
+      "remainder": "loss-of-conjugate-embedding",
+      "cost": "finite modular matrix"
+    },
+    {
+      "source": "arith.original.evaluation.patch",
+      "target": "arith.original.patch.split-embedding-conj",
+      "relation": "second conjugate local residue observation of same map",
+      "forward_transport": "reduce via sigma_(1-r)",
+      "return_transport": "forgetful projection loses first residue factor",
+      "preserved": [
+        "actual source row/observation labels"
+      ],
+      "transformed": [
+        "O coefficients to Fp"
+      ],
+      "remainder": "loss-of-first-embedding",
+      "cost": "finite modular matrix"
+    },
+    {
+      "source": "arith.original.patch.split-embedding-r",
+      "target": "arith.original.patch.cross-trace",
+      "relation": "non-Euclidean conjugation cross pairing requiring BOTH residue views",
+      "forward_transport": "X^T Y + Y^T X with explicitly paired Y from other Worldlet",
+      "return_transport": "Gram does not recover either individual image rank",
+      "preserved": [
+        "original integer Hermitian trace modp"
+      ],
+      "transformed": [
+        "rank1/rank2 different local frames to rank2 global trace Gram"
+      ],
+      "remainder": "loss-of-individual-embedding-rank",
+      "cost": "exact Fp bilinear multiplication"
+    },
+    {
+      "source": "arith.original.patch.split-embedding-conj",
+      "target": "arith.original.patch.cross-trace",
+      "relation": "second covariant input to cross-Hermitian trace",
+      "forward_transport": "Y^T X+X^T Y with other local component X",
+      "return_transport": "cannot identify conjugate factor from symmetric Gram alone",
+      "preserved": [
+        "original integer trace modp"
+      ],
+      "transformed": [
+        "paired local evaluations to symmetric trace Gram"
+      ],
+      "remainder": "original-Picard-prime-ideal-not-in-Gram",
+      "cost": "exact Fp bilinear multiplication"
     }
   ],
   "identity": {
@@ -942,6 +1054,20 @@
       "limitations": [
         "local patch phenomenon refutes naive additive valuation claim"
       ]
+    },
+    {
+      "status": "M",
+      "claim_id": "phase309-split-conjugate-cross-pair",
+      "source": "research/phase309/split_embedding_transport.py and test_split_embedding_transport.py, PR201 CI",
+      "controls": [
+        "2,401 independent integer bilinear pairs per field",
+        "same-side false-pairing",
+        "nonsplit root rejected"
+      ],
+      "limitations": [
+        "restricted original source patch, not full 100-row theorem",
+        "no physical entanglement"
+      ]
     }
   ],
   "observables": [
@@ -969,7 +1095,10 @@
     "actual original-source restricted Picard ideal class vs unit trace Gram",
     "saturated source O direct-sum I_inverse",
     "unit minor after original observation Z1 enlargement",
-    "simple split root determinant nonzero in ZMod p"
+    "simple split root determinant nonzero in ZMod p",
+    "rank1/2 asymmetry of distinct conjugate split residue embeddings",
+    "original trace Gram as conjugate cross pairing X^T Y + Y^T X",
+    "nonzero determinant of cross paired Gram despite local rank loss"
   ],
   "falsifiers": [
     "any changed original trace Gram under invertible frame",
@@ -991,6 +1120,9 @@
     "source patch Picard class silently applied to full 100-row field evaluation",
     "nonprincipal minor ideal converted to a forced positive Gram p-valuation",
     "O-coefficient linearization mistaken for a Z-integral unimodular gauge",
-    "observation refinement falsely treated as invertible transport"
+    "observation refinement falsely treated as invertible transport",
+    "two split embeddings collapsed to one residue-field rank",
+    "same-side Euclidean dot pairing silently substituted for original trace-Hermitian cross pairing",
+    "p-adic Gram determinant declared divisible based only on one embedding rank"
   ]
 }
