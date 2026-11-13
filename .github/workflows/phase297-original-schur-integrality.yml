@@ -1,0 +1,27 @@
+name: Phase297 original D587 integral Schur projection p5 cokernel
+on:
+  push:
+    branches: ['research/phase297-*']
+  pull_request:
+    paths:
+      - 'research/phase297/**'
+      - '.github/workflows/phase297-original-schur-integrality.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-gram-projection-cokernel:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned numpy modular matrix runtime
+        run: |
+          python3 -m venv /tmp/phase297
+          /tmp/phase297/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile source
+        run: /tmp/phase297/bin/python -m py_compile research/phase297/original_schur_integrality.py
+      - name: Reconstruct original monomial Gram and evaluate two parity p5 image/cokernel indices
+        run: /tmp/phase297/bin/python -u research/phase297/original_schur_integrality.py
