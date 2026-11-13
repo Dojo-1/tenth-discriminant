@@ -33,6 +33,8 @@ jobs:
         run: /tmp/phase312/bin/python -u research/phase312/primitive_moments.py
       - name: Matched D43 D163 D183 class-one and ray-class controls
         run: /tmp/phase312/bin/python -u research/phase312/class_one_ray_controls.py
+      - name: Local Z5 completion equivalence versus global class-number controls
+        run: /tmp/phase312/bin/python -u research/phase312/local_completion_no_go.py
       - name: Hostile derivative, field identification, moment and h1 tests
         run: /tmp/phase312/bin/python -m unittest discover -s research/phase312 -p 'test_*.py' -v
       - name: Replay earlier full primitive 5-adic trace radical
