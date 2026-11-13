@@ -249,7 +249,9 @@ def native_D163_integer_order_bridge():
 
 
 def main():
-    print("PHASE312_KERNEL_WEIGHT_CROSSOVER_PASS",controls(),flush=True)
+    out=controls()
+    out["same_Lean_original_integer_D163_bridge"] = native_D163_integer_order_bridge()
+    print("PHASE312_KERNEL_WEIGHT_CROSSOVER_PASS",out,flush=True)
 
 
 if __name__=="__main__":
