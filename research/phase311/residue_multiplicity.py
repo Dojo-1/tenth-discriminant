@@ -180,14 +180,15 @@ def larger_native_D427():
     row["D427_non_h1_norm7_ramified_obstruction"]=True
     old_weight=sum(min(r//5,t) for r in range(R) for t in range(S))
     assert old_weight==586
-    old_lower=2*old_weight
+    doubled_weight_formula=2*old_weight
     first_level_nullity_floor=R*S-row["original_Gram_rank_F5"]
     assert first_level_nullity_floor==356
-    assert old_lower==1172 and old_lower>first_level_nullity_floor
-    row["existing_valuationWeight"]=old_weight
-    row["existing_double_weight_lower_bound"]=old_lower
+    assert doubled_weight_formula==1172 and doubled_weight_formula>first_level_nullity_floor
+    row["existing_valuationWeight_formula_at_same_R_S"]=old_weight
+    row["double_existing_weight_formula"]=doubled_weight_formula
     row["original_mod5_Gram_nullity_floor"]=first_level_nullity_floor
-    row["new_first_level_floor_does_not_beat_existing_weight"]=True
+    row["new_first_level_floor_does_not_exceed_weight_formula"]=True
+    row["old_weight_theorem_not_reproven_for_full_maximal_source"]=True
     return row
 
 
