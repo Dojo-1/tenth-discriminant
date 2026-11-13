@@ -17,6 +17,7 @@ for part in ("phase206","phase297","phase298","phase299","phase300","phase301"):
     sys.path.insert(0,str(ROOT/"research"/part))
 import class_one_d163_composition as original
 import joint_same_parity_census as previous
+import same_parity_challenge as parity_source
 import double_glue_original as image_index
 import minimal_transverse_repair as solver
 import original_schur_integrality_k16 as smith
@@ -67,7 +68,7 @@ def hostile_ordered_toy():
     assert v5(residual[0,0])==1
     assert v5(residual[1,1])==2
     assert v5(residual[0,1])==0
-    assert int(np.linalg.det(residual))==374
+    assert int(residual[0,0])*int(residual[1,1])-int(residual[0,1])*int(residual[1,0])==374
     final_rows=[0,1,3,2]
     b=G[np.ix_(final_rows,final_rows)]
     assert sum(smith.high_precision_smith(G)[0])==(
@@ -206,7 +207,7 @@ def main():
     field=original.field_h1_background()
     G,E,W,meta=original.original_j1_source()
     assert (meta["R"],meta["S"],meta["J"],meta["Q"])==(40,1,1,109)
-    assert previous.parent if False else True
+    assert parity_source.symmetry(G,E,W)["exact_original_mixed_parity_Gram_zeros"]==800
     toy=hostile_ordered_toy()
     census=source_reverse_census(G,E,W)
     print("PHASE301C_ORIGINAL_BIDIRECTIONAL_SCHUR_VERDICT",{
