@@ -42,3 +42,14 @@ This comparison is of actual formula exponents and a proposed SAME-ORIGINAL sour
 ## Stop rules
 
 If the quotient dimension/rank or explicit modular relation fails, retire the claimed universal kernel. If h>w only for low S, do not imply improvement at the 322^4 cutoff. If higher-lift moment data differ between h1/nonh1 fields, do not infer h1-specificity without an independent global theorem.
+
+
+## Post-D precode addendum — E: EXACT original integer-order D163 bridge
+
+This addendum is recorded AFTER Phase312-D's finite-field ranks and native kernel-vs-weight comparisons passed hosted CI and BEFORE E code. It changes no earlier predictions.
+
+Freeze D163, p5 inert, NATIVE Phase206 rho21/R40/S=J1, original actual INTEGER coordinates Q={(x,y)∈Z²:x²+163y²≤441}, expected Q109. The original ring is Z[√-163], NOT the full omega maximal order. Its multiplication and original trace are (ac-163bd, ad+bc), Tr(x conj(y))=2(ac+163bd), exactly as in Lean/TenthDiscriminant/IntegerTraceGram. The 40 rows are 1,Z,...,Z^39, ordinary jet j0.
+
+For each r25..39, the integer-unimodular row shear T_r=Z^r-Z^(r-24) is divisible by5 at EVERY original point, since z^25=z in the unramified quadratic residue ring. There are exactly15 such divided rows. Prediction: verify all original integer-order E40×(2Q) entries mod625 and all 40×40 same-original Gram cells U G U^T=D5 Gprim D5 mod125, giving the **local** bound v5(det original G)>=2·15=30. Gram nonvanishing follows from 43 distinct rational points (y=0) supporting a Vandermonde matrix rank40. Old valuationWeight(40,1,5)=0.
+
+This is a SAME ORIGINAL integer-order small-S index-square improvement but not a uniform cutoff result (large native S>=3 old weight dominates the first-level kernel). Kill if source policy, integer ring coordinates, exact /5, 1600 Gram covariance cells, or 43-point nonvanishing condition fails. No additive old-weight claim or exact v5 valuation.
