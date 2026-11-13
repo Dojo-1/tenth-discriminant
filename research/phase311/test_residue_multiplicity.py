@@ -28,6 +28,30 @@ class ResidueMultiplicityTests(unittest.TestCase):
         self.assertEqual(c[0]["independent_exact_original_Gram_cells_checked"],1600)
         self.assertEqual(c[1]["independent_exact_original_Gram_cells_checked"],1600)
 
+    def test_surjective_residue_jet_rank_theorem_all_original_sources(self):
+        arms=m.original_arms()
+        larger=m.larger_native_D427()
+        for a in arms+[larger]:
+            self.assertTrue(a["full_original_residue_jet_span"])
+            self.assertTrue(a["surjective_weighted_pullback_rank_exact_if_applicable"])
+            self.assertEqual(a["original_Gram_rank_F5"],
+                             a["effective_ordinary_jets_mod5"]*
+                             a["nonzero_mod5_multiplicity_classes"])
+
+    def test_unsurjective_abstract_field_matrix_kills_universal_equality(self):
+        bad=m.non_surjective_abstract_control()
+        self.assertEqual(bad["ambient_weight_nonzero_channels"],2)
+        self.assertEqual(bad["source_rank_F25"],1)
+        self.assertEqual(bad["pulled_back_Gram_rank_F5"],0)
+        self.assertTrue(bad["surjective_equality_claim_refused"])
+
+    def test_larger_native_existing_weight_beats_unnormalized_rank_floor(self):
+        d=m.larger_native_D427()
+        self.assertEqual(d["existing_valuationWeight"],586)
+        self.assertEqual(d["existing_double_weight_lower_bound"],1172)
+        self.assertEqual(d["original_mod5_Gram_nullity_floor"],356)
+        self.assertTrue(d["new_first_level_floor_does_not_beat_existing_weight"])
+
     def test_source_rank_and_trace_rank_bounds_are_distinct(self):
         self.assertEqual(self.meta163["source_rank_F25"],25)
         self.assertEqual(self.meta163["original_Gram_rank_F5"],25)
