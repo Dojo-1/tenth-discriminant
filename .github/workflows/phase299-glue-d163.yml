@@ -1,0 +1,27 @@
+name: Phase299-A nonintegral orthogonal gluing and class-one source
+on:
+  push:
+    branches: ['research/phase299-*']
+  pull_request:
+    paths:
+      - 'research/phase299/**'
+      - '.github/workflows/phase299-glue-d163.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  h1-original-glue-and-finite-toy-groups:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pin exact modular array runtime
+        run: |
+          python3 -m venv /tmp/phase299
+          /tmp/phase299/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Python source syntax
+        run: /tmp/phase299/bin/python -m py_compile research/phase299/gluing_core.py research/phase299/glue_d163.py
+      - name: Complete toy H-perp over H and original D163 h1 source gluing
+        run: /tmp/phase299/bin/python -u research/phase299/glue_d163.py
