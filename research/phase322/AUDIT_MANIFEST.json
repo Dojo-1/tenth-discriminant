@@ -1,0 +1,247 @@
+{
+  "phase": "Phase322",
+  "date": "2026-11-14",
+  "repository": "Dojo-1/tenth-discriminant",
+  "branch": "research/phase322-exact-ray-character-group",
+  "status": "exact-head workflow passed all 8 adversarial tests; complete finite dual character groups and conductor distributions constructed",
+  "preregistration": "research/phase322/PRE_REGISTERED_EXACT_RAY_CHARACTER_GROUP.md",
+  "fields": {
+    "D163": {
+      "ray_group_order": 7500,
+      "invariant_factors": [
+        25,
+        300
+      ],
+      "ordinary_class_number": 1,
+      "character_count": 7500
+    },
+    "D187": {
+      "ray_group_order": 15000,
+      "invariant_factors": [
+        50,
+        300
+      ],
+      "ordinary_class_number": 2,
+      "character_count": 15000
+    },
+    "D203": {
+      "ray_group_order": 30000,
+      "invariant_factors": [
+        100,
+        300
+      ],
+      "ordinary_class_number": 4,
+      "character_count": 30000
+    }
+  },
+  "expected_conductor_counts": {
+    "D163": {
+      "1": 1,
+      "5": 11,
+      "25": 288,
+      "125": 7200
+    },
+    "D187": {
+      "1": 2,
+      "5": 22,
+      "25": 576,
+      "125": 14400
+    },
+    "D203": {
+      "1": 4,
+      "5": 44,
+      "25": 1152,
+      "125": 28800
+    }
+  },
+  "expected_local_reduction_kernel_orders": {
+    "modulus1": 7500,
+    "modulus5": 625,
+    "modulus25": 25,
+    "modulus125": 1
+  },
+  "planned": {
+    "exact_local_invariant_generators": [
+      25,
+      300
+    ],
+    "exact_ray_invariant_generators": [
+      25,
+      50,
+      100,
+      300
+    ],
+    "full_group_coordinate_bijection": true,
+    "exact_rational_character_exponents": true,
+    "exact_conductor_annihilator_kernels": true,
+    "full_bounded_prime_ideal_character_evaluations": true,
+    "deterministic_evaluation_matrix_digest": true,
+    "split_inert_ramified_ideal_controls": true
+  },
+  "boundaries": {
+    "no_float_roots_as_proof_data": true,
+    "no_global_euler_product_claim": true,
+    "no_l_function_or_zero_free_claim": true,
+    "no_uniform_discriminant_cutoff": true,
+    "no_l_values_computed": true,
+    "no_uniform_conductor_or_discriminant_claim": true
+  },
+  "modulus": 125,
+  "implementation": "research/phase322/exact_ray_characters.py",
+  "tests": "research/phase322/test_exact_ray_characters.py",
+  "workflow": ".github/workflows/phase322-exact-ray-characters.yml",
+  "results_document": "research/phase322/PHASE322_RESULTS.md",
+  "exact_head_verification": {
+    "workflow_run": 43632573344,
+    "job_id": 132562216161,
+    "tests": 8,
+    "tests_passed": 8,
+    "prior_audit_manifest_failures": [
+      {
+        "workflow_run": 43632498601,
+        "reason": "audit manifest missing modulus field"
+      },
+      {
+        "workflow_run": 43632538827,
+        "reason": "same audit manifest modulus field omission"
+      }
+    ],
+    "corrected_run_passed": true
+  },
+  "computed_results": {
+    "local_generators": {
+      "D163": {
+        "order_25": [
+          1,
+          5
+        ],
+        "order_300": [
+          1,
+          1
+        ]
+      },
+      "D187": {
+        "order_25": [
+          4,
+          0
+        ],
+        "order_300": [
+          0,
+          1
+        ]
+      },
+      "D203": {
+        "order_25": [
+          1,
+          5
+        ],
+        "order_300": [
+          1,
+          1
+        ]
+      }
+    },
+    "ray_generators": {
+      "D163": {
+        "order_25h": [
+          0,
+          [
+            1,
+            5
+          ]
+        ],
+        "order_300": [
+          0,
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "D187": {
+        "order_25h": [
+          1,
+          [
+            28,
+            37
+          ]
+        ],
+        "order_300": [
+          0,
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "D203": {
+        "order_25h": [
+          1,
+          [
+            44,
+            58
+          ]
+        ],
+        "order_300": [
+          0,
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "conductor_counts": {
+      "D163": {
+        "1": 1,
+        "5": 11,
+        "25": 288,
+        "125": 7200
+      },
+      "D187": {
+        "1": 2,
+        "5": 22,
+        "25": 576,
+        "125": 14400
+      },
+      "D203": {
+        "1": 4,
+        "5": 44,
+        "25": 1152,
+        "125": 28800
+      }
+    },
+    "local_reduction_orders": {
+      "1": 1,
+      "5": 12,
+      "25": 300,
+      "125": 7500
+    },
+    "local_kernel_orders": {
+      "1": 7500,
+      "5": 625,
+      "25": 25,
+      "125": 1
+    },
+    "bounded_prime_ideal_records": {
+      "D163": 118,
+      "D187": 128,
+      "D203": 125
+    },
+    "character_prime_ideal_evaluations": {
+      "D163": 885000,
+      "D187": 1920000,
+      "D203": 3750000
+    },
+    "prime_ideal_relation_checks": {
+      "D163": 630000,
+      "D187": 1260000,
+      "D203": 2520000
+    },
+    "evaluation_matrix_sha256": {
+      "D163": "b58d93d8622bbb652b73a0de55820d58286814447664b7db155e04fca27ae166",
+      "D187": "a3b094d355e4cdd0bff326fd89cac6d385ed6fa23bd574504793a83cc8b7ee34",
+      "D203": "d0af189face7e7b121f40a9a2e2e81974531cfbf554028d4e10074a6ca0fd81c"
+    }
+  }
+}
