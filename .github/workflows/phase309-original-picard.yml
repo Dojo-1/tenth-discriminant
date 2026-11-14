@@ -1,0 +1,39 @@
+name: Phase309 actual-source Picard minors and trace Gram obstruction
+on:
+  push:
+    branches: ['research/phase309-*']
+    paths:
+      - 'research/phase309/**'
+      - '.github/workflows/phase309-original-picard.yml'
+  pull_request:
+    paths:
+      - 'research/phase309/**'
+      - '.github/workflows/phase309-original-picard.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  actual-original-source-Picard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pin source numeric environment
+        run: |
+          python3 -m venv /tmp/phase309
+          /tmp/phase309/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Syntax
+        run: |
+          /tmp/phase309/bin/python -m py_compile research/phase309/original_source_picard.py research/phase309/test_original_source_picard.py research/phase309/split_embedding_transport.py research/phase309/test_split_embedding_transport.py research/phase309/picard_observation_events.py research/phase309/test_picard_observation_events.py
+      - name: Exact original 100x1052 D203 oracle and Picard-vanishing controls
+        run: /tmp/phase309/bin/python -u research/phase309/original_source_picard.py
+      - name: Exact split embedding cross pairing and full bilinear checks
+        run: /tmp/phase309/bin/python -u research/phase309/split_embedding_transport.py
+      - name: Original observation-cover Picard event log and trace Gram discrepancy
+        run: /tmp/phase309/bin/python -u research/phase309/picard_observation_events.py
+      - name: Independent adversarial source/Gram/ideal tests
+        run: /tmp/phase309/bin/python -m unittest discover -s research/phase309 -p 'test_*.py' -v
+      - name: Recheck actual ideal-class Picard source
+        run: /tmp/phase309/bin/python -u research/phase308/adaptive_torsion_family.py

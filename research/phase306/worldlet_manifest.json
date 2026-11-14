@@ -272,6 +272,244 @@
       "remainder_types": [
         "transfinite-family-undefined"
       ]
+    },
+    {
+      "id": "arith.picard.named_ideal",
+      "carrier": "invertible ideal I=(p,omega-r) as line bundle on Spec(O_K)",
+      "geometry": "Zariski-local rank-one projective module",
+      "algebra": "Dedekind ideal multiplication and Picard H1 group law",
+      "state": "D203/p3 ideal class has exact order4; family D163/187/203/167 orders1/2/4/11",
+      "clocks": [
+        "source",
+        "review"
+      ],
+      "observers": [
+        "Hensel-congruence-checker",
+        "class-group-obstruction-checker"
+      ],
+      "boundary": "a local unit is not a global O unit",
+      "remainder_types": [
+        "nonprincipal-local-to-global-obstruction"
+      ]
+    },
+    {
+      "id": "arith.picard.open_cover",
+      "carrier": "two principal Zariski opens U=D(omega), V=D(omega-1)",
+      "geometry": "scheme-local affine cover and intersection",
+      "algebra": "localized O-unit groups, Cech Gm 1-cocycles",
+      "state": "transition p; p^4 coboundary at D203",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "true-Cech-cocycle-checker",
+        "principal-negative-control"
+      ],
+      "boundary": "not the finite observation-point cover",
+      "remainder_types": [
+        "transition-not-global-unit"
+      ]
+    },
+    {
+      "id": "arith.picard.hensel_tendril",
+      "carrier": "coherent roots f(r_k)=0 mod p^k",
+      "geometry": "p-adic inverse system of finite rings",
+      "algebra": "O_K to Z/p^k ring homomorphisms",
+      "state": "D203 roots 0,6,6,6,87 and D167 root878 at depth11",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "Hensel-unique-lift",
+        "norm-shell-enumerator"
+      ],
+      "boundary": "residue coherence does not imply principal ideal",
+      "remainder_types": [
+        "unreconstructed-global-generator"
+      ]
+    },
+    {
+      "id": "arith.picard.twisted_source_optional",
+      "carrier": "projective O_K module I direct-sum N times (N=100 test)",
+      "geometry": "Steinitz determinant line of an O_K-coefficient module",
+      "algebra": "projective-module direct sums, class power",
+      "state": "det class erased for order2/4 at rank100, labels persist",
+      "clocks": [
+        "source",
+        "review"
+      ],
+      "observers": [
+        "flattened-scalar-control",
+        "typed-Picard-control"
+      ],
+      "boundary": "NOT original integer 100-row polynomial source; no same-Gram comparison",
+      "remainder_types": [
+        "forgotten-summand-Picard-labels"
+      ]
+    },
+    {
+      "id": "arith.original.evaluation.patch",
+      "carrier": "actual original (1,Z) integer polynomial rows, original j0 on {0,p,omega-r}, explicitly O-linearized",
+      "geometry": "3-observation incidence restriction inside original maximal-order ball",
+      "algebra": "Z-linear source evaluation -> O-linearized Hom_O(O^2,O^3)",
+      "state": "D203 original frozen 100x1052 oracle; D187/167 native source-policy patches",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "frozen-original-evaluator",
+        "independent-O-ring-oracle"
+      ],
+      "boundary": "NOT the full 100-row original source; O-scalar extension must be explicit",
+      "remainder_types": [
+        "forgotten-other-observations",
+        "changed-coefficient-category"
+      ]
+    },
+    {
+      "id": "arith.original.picard.patch.minors",
+      "carrier": "prime ideal I=(p,omega-r) from maximal 2x2 minors of actual source restriction",
+      "geometry": "Fitting ideal and Picard class of O-linearized rectangular map",
+      "algebra": "Dedekind O maximal-minor ideal and invertible projective module",
+      "state": "D203/p3 nonprincipal order4; D187/p7 order2; D167/p2 order11",
+      "clocks": [
+        "source",
+        "review"
+      ],
+      "observers": [
+        "ideal-Z-index",
+        "principalization-scanner"
+      ],
+      "boundary": "patch ideal does not represent full original E100x1052 maximal-minor ideal",
+      "remainder_types": [
+        "Picard-nonprincipal-obstruction"
+      ]
+    },
+    {
+      "id": "arith.original.patch.saturation",
+      "carrier": "Sat im(A)=O direct_sum I_inverse as projective rank2 module in O^3",
+      "geometry": "K-span intersection with O^3 and fractional inverse ideal",
+      "algebra": "O module saturation / Steinitz class",
+      "state": "nonfree for nonprincipal I; explicit b=conj(z)/p integral outputs",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "fractional-witness-checker"
+      ],
+      "boundary": "not an O-integral global gauge on original Z-source",
+      "remainder_types": [
+        "nontrivial-Steinitz-class"
+      ]
+    },
+    {
+      "id": "arith.original.patch.trace-gram",
+      "carrier": "2x2 original integer Hermitian trace Gram on the same selected patch",
+      "geometry": "integer symmetric bilinear form (trace norm)",
+      "algebra": "Z determinant and modular residue",
+      "state": "D203 det671 unit mod3, D187 det1055 unit mod7, D167 det527 unit mod2",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "parent-jet-trace-oracle",
+        "simple-root-Lean-lemma"
+      ],
+      "boundary": "no positive Gram prime mass from local Picard class",
+      "remainder_types": [
+        "nontransportable-Picard-obstruction"
+      ]
+    },
+    {
+      "id": "arith.original.observation.enlargement",
+      "carrier": "same original rows and four actual observations {0,p,omega-r,1}",
+      "geometry": "observation cover refinement and determinantal-ideal change",
+      "algebra": "maximal-minor ideal with a unit generator",
+      "state": "determinant ideal O; saturation free after observation1",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "unit-minor-checker"
+      ],
+      "boundary": "not an invertible equivalence of observation sites",
+      "remainder_types": [
+        "lost-restricted-Picard-class"
+      ]
+    },
+    {
+      "id": "arith.original.patch.split-embedding-r",
+      "carrier": "Fp-valued sigma_r:O_K→Fp at simple root r of f(X)",
+      "geometry": "first factor of split p-adic residue algebra",
+      "algebra": "finite field and rank-one local evaluation image",
+      "state": "D203 rank1 for original 3x2 patch",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "local-rank-checker"
+      ],
+      "boundary": "conjugate root must be separate; p may not be ramified",
+      "remainder_types": [
+        "lost-other-residue-embedding"
+      ]
+    },
+    {
+      "id": "arith.original.patch.split-embedding-conj",
+      "carrier": "Fp-valued sigma_rprime:O_K→Fp with rprime=1-r",
+      "geometry": "second factor of split p-adic residue algebra",
+      "algebra": "finite field and rank-two local evaluation image",
+      "state": "D203 rank2 for original 3x2 patch",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "local-rank-checker"
+      ],
+      "boundary": "not equivalent to first embedding as framed source map",
+      "remainder_types": [
+        "source-frame-rank-asymmetry"
+      ]
+    },
+    {
+      "id": "arith.original.patch.cross-trace",
+      "carrier": "conjugation-paired bilinear form X^T Y+Y^T X over Fp",
+      "geometry": "two-component pairing on split residue algebra, not two Euclidean squares",
+      "algebra": "Fp-linear Hermitian-trace reduction",
+      "state": "D203 G mod3 [[0,1],[1,0]] full rank despite X rank1",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "original-integer-trace-oracle",
+        "bilinear-pair-checker"
+      ],
+      "boundary": "no inference from local rank to Gram determinant valuation",
+      "remainder_types": [
+        "nontransportable-single-embedding-defect"
+      ]
+    },
+    {
+      "id": "arith.original.observation.PICARD-event-filtration",
+      "carrier": "directed actual original D203 observation subsets (0,3)⊂(0,3,omega)⊂(0,3,omega,1)",
+      "geometry": "site refinement with contravariant fractional inverse-ideal coefficient modules",
+      "algebra": "Dedekind ideal inclusion, Picard classes, integer trace-Gram determinants",
+      "state": "minor ideal norms9→3→1, Picard orders1→4→1, Gram v3 2→0→0",
+      "clocks": [
+        "source",
+        "review"
+      ],
+      "observers": [
+        "determinantal-ideal-chain",
+        "fractional-coefficient-inclusion",
+        "original-Gram-counterworld"
+      ],
+      "boundary": "nonmonotone class event, NOT a persistence barcode, NOT full 100-row source",
+      "remainder_types": [
+        "nonfunctorial-Picard-class-label",
+        "omitted-observation-invariant",
+        "Gram-valuation-nonimplication"
+      ]
     }
   ],
   "tendrils": [
@@ -412,13 +650,266 @@
       ],
       "remainder": "unconstructed-transfinite-system",
       "cost": "exact finite counts"
+    },
+    {
+      "source": "arith.maximal_order",
+      "target": "arith.picard.named_ideal",
+      "relation": "prime ideal class formation in O_K",
+      "forward_transport": "ideal I=(p,omega-r), norm-p residue map",
+      "return_transport": "forget named ideal and only retain ring source with lost class label",
+      "preserved": [
+        "original quadratic order",
+        "maximal-order norm"
+      ],
+      "transformed": [
+        "principal ring data to projective line"
+      ],
+      "remainder": "ideal-class-label",
+      "cost": "exact finite ideal arithmetic"
+    },
+    {
+      "source": "arith.picard.named_ideal",
+      "target": "arith.picard.open_cover",
+      "relation": "line-bundle local trivializations and Cech Gm transition",
+      "forward_transport": "I_U=O_U, I_V=p O_V, transition t=p",
+      "return_transport": "glue only as invertible sheaf, not as a global generator when class nontrivial",
+      "preserved": [
+        "Picard class",
+        "localization unit law"
+      ],
+      "transformed": [
+        "global ideal to local generator data"
+      ],
+      "remainder": "nontrivial-Cech-H1",
+      "cost": "two-localization ring identities"
+    },
+    {
+      "source": "arith.picard.hensel_tendril",
+      "target": "arith.picard.named_ideal",
+      "relation": "coherent residue kernel identifies I^k",
+      "forward_transport": "ker(omega->r_k mod p^k)",
+      "return_transport": "lift only a residue-class representative; principalization requires global norm solution",
+      "preserved": [
+        "ideal norm p^k",
+        "prime direction"
+      ],
+      "transformed": [
+        "finite p-adic coordinate to global ideal power"
+      ],
+      "remainder": "global-principalization-obstruction",
+      "cost": "exact complete norm shells"
+    },
+    {
+      "source": "arith.picard.named_ideal",
+      "target": "arith.picard.twisted_source_optional",
+      "relation": "direct-sum assembly with typed summand labels and determinant forgetful functor",
+      "forward_transport": "M_N=I direct-sum N, det class [I]^N",
+      "return_transport": "not invertible; aggregate module/det cannot recover named I from residue alone",
+      "preserved": [
+        "rank N",
+        "Steinitz class"
+      ],
+      "transformed": [
+        "sum components to aggregate projective module"
+      ],
+      "remainder": "summand-identity-loss",
+      "cost": "exact class group torsion"
+    },
+    {
+      "source": "arith.picard.twisted_source_optional",
+      "target": "evidence.proof",
+      "relation": "arithmetic non-equivalence and evidence governance",
+      "forward_transport": "record 2/4 in-sample scalar false positives and 4/4 typed certificates",
+      "return_transport": "cannot claim original Gram or out-of-sample intelligence",
+      "preserved": [
+        "source-tag",
+        "review-control"
+      ],
+      "transformed": [
+        "scoped test to evidence record"
+      ],
+      "remainder": "no-matched-performance-evidence",
+      "cost": "four held-in-design fields"
+    },
+    {
+      "source": "arith.original.source.full",
+      "target": "arith.original.evaluation.patch",
+      "relation": "non-invertible observation/row restriction plus declared O-linear scalar extension",
+      "forward_transport": "select rows0/2 and j0 observations0,p,omega-r; linearize source",
+      "return_transport": "cannot reconstruct omitted rows/observations or original coefficient basis",
+      "preserved": [
+        "literal source evaluation entries",
+        "actual D/rho",
+        "original ordinary-jet semantics"
+      ],
+      "transformed": [
+        "Z-module map to O-linear restricted map"
+      ],
+      "remainder": "lost-observations-and-coefficient-change",
+      "cost": "finite exact matrix restriction"
+    },
+    {
+      "source": "arith.original.evaluation.patch",
+      "target": "arith.original.picard.patch.minors",
+      "relation": "maximal-minor ideal and degree-one Picard observer",
+      "forward_transport": "take 2x2 O-valued minors p,z,z-p and ideal closure",
+      "return_transport": "ideal cannot recover original evaluation matrix",
+      "preserved": [
+        "source-point labels",
+        "Fitting ideal class"
+      ],
+      "transformed": [
+        "rectangular map to nonprincipal O ideal"
+      ],
+      "remainder": "forgotten-evaluation-values",
+      "cost": "exact O ideal Z-lattice minors"
+    },
+    {
+      "source": "arith.original.evaluation.patch",
+      "target": "arith.original.patch.saturation",
+      "relation": "saturate K-span inside O^3",
+      "forward_transport": "replace O coefficient b with I_inverse; keep a∈O",
+      "return_transport": "original free image is a strict submodule",
+      "preserved": [
+        "K-span of evaluation",
+        "projective module class"
+      ],
+      "transformed": [
+        "free source to nonfree saturated observation submodule"
+      ],
+      "remainder": "index-and-Steinitz-class",
+      "cost": "exact Dedekind module algebra"
+    },
+    {
+      "source": "arith.original.evaluation.patch",
+      "target": "arith.original.patch.trace-gram",
+      "relation": "apply original Z trace-Hermitian metric to selected source row values",
+      "forward_transport": "trace inner products of rows 1,Z in selected j0 observations",
+      "return_transport": "cannot infer Picard ideal class from Gram p-adic valuation",
+      "preserved": [
+        "integer trace metric",
+        "original row provenance"
+      ],
+      "transformed": [
+        "O observation maps to Z symmetric Gram"
+      ],
+      "remainder": "Picard-to-Gram-unrecoverable",
+      "cost": "three traces and 2x2 determinant"
+    },
+    {
+      "source": "arith.original.evaluation.patch",
+      "target": "arith.original.observation.enlargement",
+      "relation": "add ACTUAL original observation Z1",
+      "forward_transport": "append evaluation row (1,1), obtain unit minor",
+      "return_transport": "restricting back can restore nontrivial patch ideal; not an equivalence",
+      "preserved": [
+        "the first three original observation values"
+      ],
+      "transformed": [
+        "restricted minor ideal I to global unit ideal O"
+      ],
+      "remainder": "loss-of-patch-Picard-invariant",
+      "cost": "exact one-row augmentation"
+    },
+    {
+      "source": "arith.original.evaluation.patch",
+      "target": "arith.original.patch.split-embedding-r",
+      "relation": "first local residue observation of same O-linear map",
+      "forward_transport": "reduce all original O-valued evaluation entries via sigma_r",
+      "return_transport": "forgetful projection loses complementary residue field factor",
+      "preserved": [
+        "actual source row/observation labels"
+      ],
+      "transformed": [
+        "O coefficients to Fp"
+      ],
+      "remainder": "loss-of-conjugate-embedding",
+      "cost": "finite modular matrix"
+    },
+    {
+      "source": "arith.original.evaluation.patch",
+      "target": "arith.original.patch.split-embedding-conj",
+      "relation": "second conjugate local residue observation of same map",
+      "forward_transport": "reduce via sigma_(1-r)",
+      "return_transport": "forgetful projection loses first residue factor",
+      "preserved": [
+        "actual source row/observation labels"
+      ],
+      "transformed": [
+        "O coefficients to Fp"
+      ],
+      "remainder": "loss-of-first-embedding",
+      "cost": "finite modular matrix"
+    },
+    {
+      "source": "arith.original.patch.split-embedding-r",
+      "target": "arith.original.patch.cross-trace",
+      "relation": "non-Euclidean conjugation cross pairing requiring BOTH residue views",
+      "forward_transport": "X^T Y + Y^T X with explicitly paired Y from other Worldlet",
+      "return_transport": "Gram does not recover either individual image rank",
+      "preserved": [
+        "original integer Hermitian trace modp"
+      ],
+      "transformed": [
+        "rank1/rank2 different local frames to rank2 global trace Gram"
+      ],
+      "remainder": "loss-of-individual-embedding-rank",
+      "cost": "exact Fp bilinear multiplication"
+    },
+    {
+      "source": "arith.original.patch.split-embedding-conj",
+      "target": "arith.original.patch.cross-trace",
+      "relation": "second covariant input to cross-Hermitian trace",
+      "forward_transport": "Y^T X+X^T Y with other local component X",
+      "return_transport": "cannot identify conjugate factor from symmetric Gram alone",
+      "preserved": [
+        "original integer trace modp"
+      ],
+      "transformed": [
+        "paired local evaluations to symmetric trace Gram"
+      ],
+      "remainder": "original-Picard-prime-ideal-not-in-Gram",
+      "cost": "exact Fp bilinear multiplication"
+    },
+    {
+      "source": "arith.original.evaluation.patch",
+      "target": "arith.original.observation.PICARD-event-filtration",
+      "relation": "add real original observations in a fixed order and preserve source labels",
+      "forward_transport": "restrict to two, three, four observation maps; compute growing maximal-minor ideals and shrinking inverse coefficient lattices",
+      "return_transport": "forget added observations with typed lost minor generator data; cannot recover global Picard class without observation labels",
+      "preserved": [
+        "actual (1,Z) original source rows",
+        "original quadratic order",
+        "exact trace pairing"
+      ],
+      "transformed": [
+        "(3)→(3,omega)→O, Picard class trivial→order4→trivial"
+      ],
+      "remainder": "class-nonmonotonicity-due-to-observation-refinement",
+      "cost": "three small exact Dedekind ideal and Gram computations"
+    },
+    {
+      "source": "arith.original.observation.PICARD-event-filtration",
+      "target": "arith.original.patch.trace-gram",
+      "relation": "compare Picard event history with unchanged trace-Gram source per observation stage",
+      "forward_transport": "record G determinant v3 2→0→0 under observed patch expansion",
+      "return_transport": "trace determinant history does not reconstruct Picard class history",
+      "preserved": [
+        "original Hermitian trace metric"
+      ],
+      "transformed": [
+        "different observation sets give different Grams"
+      ],
+      "remainder": "Gram-Picard-non-equivalence",
+      "cost": "two-by-two exact determinants"
     }
   ],
   "identity": {
     "local_holonomies": [
       "integral GL3 frame loops",
       "symplectic Sp6 cotangent loops",
-      "central Heisenberg phase loops"
+      "central Heisenberg phase loops",
+      "Picard H1 line-bundle torsion at D203"
     ],
     "couplings": [
       "source-to-phase gauge-covariance",
@@ -426,7 +917,8 @@
     ],
     "higher_coherence": [
       "composition of gauge transport",
-      "Heisenberg central 2-cocycle"
+      "Heisenberg central 2-cocycle",
+      "fourfold Cech 1-cocycle coboundary vs nontrivial first power"
     ],
     "viability_constraints": [
       "exact determinant invariance",
@@ -553,6 +1045,96 @@
       "limitations": [
         "finite-cover site, no scheme gerbe"
       ]
+    },
+    {
+      "status": "P",
+      "claim_id": "picard-Steinitz-classification-imported",
+      "source": "known Steinitz theorem for Dedekind domains; openmaths.org reference in Phase308 README",
+      "controls": [
+        "rank1 nonprincipal vs rank4/100 abstract free"
+      ],
+      "limitations": [
+        "external mathematical result, no Lean proof of source's class order from scratch"
+      ]
+    },
+    {
+      "status": "M",
+      "claim_id": "phase308-actual-ideal-Cech-order4",
+      "source": "research/phase308/picard_tendrils.py; PR200 focused CI",
+      "controls": [
+        "all five integer quotient identities",
+        "ideal minor indices",
+        "D163 principal boundary"
+      ],
+      "limitations": [
+        "AI-authored tests and no independent human referee"
+      ]
+    },
+    {
+      "status": "H",
+      "claim_id": "phase308-uniform-field-bridge",
+      "source": "future research",
+      "controls": [
+        "unchanged original integer Gram",
+        "original class-number assumption"
+      ],
+      "limitations": [
+        "optional ideal source is not original source"
+      ]
+    },
+    {
+      "status": "M",
+      "claim_id": "phase309-original-source-picard-vs-gram",
+      "source": "research/phase309/original_source_picard.py; PR201 focused CI",
+      "controls": [
+        "actual frozen D203 original source both jets",
+        "D187 and D167 native policy",
+        "adjoin actual observation1",
+        "D163 p41 point absent"
+      ],
+      "limitations": [
+        "only two original rows and three observations; no full-source Picard claim",
+        "O-linearization explicitly changes source coefficient type"
+      ]
+    },
+    {
+      "status": "H",
+      "claim_id": "phase309-global-Picard-original-Gram-mass",
+      "source": "future same-full-source original Gram comparison, if any",
+      "controls": [
+        "full observation set includes 1; local obstruction disappears",
+        "local Gram determinant a prime unit"
+      ],
+      "limitations": [
+        "local patch phenomenon refutes naive additive valuation claim"
+      ]
+    },
+    {
+      "status": "M",
+      "claim_id": "phase309-split-conjugate-cross-pair",
+      "source": "research/phase309/split_embedding_transport.py and test_split_embedding_transport.py, PR201 CI",
+      "controls": [
+        "2,401 independent integer bilinear pairs per field",
+        "same-side false-pairing",
+        "nonsplit root rejected"
+      ],
+      "limitations": [
+        "restricted original source patch, not full 100-row theorem",
+        "no physical entanglement"
+      ]
+    },
+    {
+      "status": "M",
+      "claim_id": "phase309-actual-observation-Picard-event",
+      "source": "research/phase309/picard_observation_events.py; PR201 focused CI",
+      "controls": [
+        "only actual original D203 points",
+        "strict fractional inverse-ideal inclusion witnesses",
+        "different Gram p-valuations"
+      ],
+      "limitations": [
+        "small two-row selected source; no uniform h1 or full source theorem"
+      ]
     }
   ],
   "observables": [
@@ -571,7 +1153,22 @@
     "source saturation length and trace radical",
     "coefficient sensitive Cech H2 contrast",
     "finite-depth Smith limit with explicit remainder",
-    "octonion associator nonassociativity"
+    "octonion associator nonassociativity",
+    "Picard H1 nontrivial Cech cocycle on arithmetic Zariski cover",
+    "ideal class order1/2/4/11 with complete global norm shells",
+    "rank100 determinant-class false positive when line summands nonprincipal",
+    "Hensel root coherence versus global principalization",
+    "explicit fourth tensor-power Cech coboundary",
+    "actual original-source restricted Picard ideal class vs unit trace Gram",
+    "saturated source O direct-sum I_inverse",
+    "unit minor after original observation Z1 enlargement",
+    "simple split root determinant nonzero in ZMod p",
+    "rank1/2 asymmetry of distinct conjugate split residue embeddings",
+    "original trace Gram as conjugate cross pairing X^T Y + Y^T X",
+    "nonzero determinant of cross paired Gram despite local rank loss",
+    "actual observation Picard ideal class event history 1→4→1",
+    "strictly shrinking inverse-ideal coefficient modules",
+    "trace-Gram valuation history 2→0→0"
   ],
   "falsifiers": [
     "any changed original trace Gram under invertible frame",
@@ -585,6 +1182,19 @@
     "transport loss counted twice as a new determinant factor",
     "constant coefficient nerve H2 silently promoted to arithmetic gerbe",
     "aleph_alpha indexing treated as source proof",
-    "16 gates called cognitive benchmark evidence"
+    "16 gates called cognitive benchmark evidence",
+    "unjustified original integer Gram reinterpretation as twisted O-line source",
+    "localized overlap unit promoted to global unimodular source gauge",
+    "class order inferred from truncated norm search",
+    "in-sample 4/4 classification promoted to a general intelligence benchmark",
+    "source patch Picard class silently applied to full 100-row field evaluation",
+    "nonprincipal minor ideal converted to a forced positive Gram p-valuation",
+    "O-coefficient linearization mistaken for a Z-integral unimodular gauge",
+    "observation refinement falsely treated as invertible transport",
+    "two split embeddings collapsed to one residue-field rank",
+    "same-side Euclidean dot pairing silently substituted for original trace-Hermitian cross pairing",
+    "p-adic Gram determinant declared divisible based only on one embedding rank",
+    "Picard class incorrectly assumed monotone under larger observation subsets",
+    "observation event log falsely called persistent homology without coefficient maps"
   ]
 }
