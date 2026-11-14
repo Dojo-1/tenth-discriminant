@@ -4,13 +4,18 @@ on:
     branches: ['research/phase318-*']
     paths:
       - 'research/phase318/**'
+      - 'research/phase319/**'
+      - 'research/phase320/**'
       - '.github/workflows/phase318-wild-normal.yml'
+      - '.github/workflows/phase320-cross-field-wild-normal.yml'
   pull_request:
     paths:
       - 'research/phase318/**'
       - 'research/phase319/**'
+      - 'research/phase320/**'
       - '.github/workflows/phase318-wild-normal.yml'
       - '.github/workflows/phase319-maximal-order-realization.yml'
+      - '.github/workflows/phase320-cross-field-wild-normal.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -52,3 +57,17 @@ jobs:
         run: /tmp/phase318/bin/python -u research/phase319/maximal_order_realization.py
       - name: Phase319 adversarial regression suite
         run: /tmp/phase318/bin/python -m unittest discover -s research/phase319 -p 'test_*.py' -v
+
+      - name: Validate Phase320 cross-field preregistration and claim boundary
+        run: |
+          python3 -m json.tool research/phase320/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; x=json.load(open("research/phase320/AUDIT_MANIFEST.json")); assert x["main_unchanged"]; assert x["claim_boundary"]["no_uniform_field_valuation_or_cutoff"]; assert x["claim_boundary"]["no_global_ray_transfer_to_nonprincipal_classes"]; print("Phase320 audit scope PASS")'
+          test -f research/phase320/PRE_REGISTERED_CROSS_FIELD_WILD_NORMAL.md
+      - name: Syntax-check Phase320 and local arithmetic dependencies
+        run: |
+          /tmp/phase318/bin/python -m py_compile research/phase320/*.py
+          /tmp/phase318/bin/python -m py_compile research/phase315/wild_log125.py research/phase313/tame_wild_ray.py research/phase312/fermat_lift.py
+      - name: Cross-field maximal-order second-wild normal maps
+        run: /tmp/phase318/bin/python -u research/phase320/cross_field_wild_normal.py
+      - name: Phase320 adversarial source, class-group and normal-map tests
+        run: /tmp/phase318/bin/python -m unittest discover -s research/phase320 -p 'test_*.py' -v
