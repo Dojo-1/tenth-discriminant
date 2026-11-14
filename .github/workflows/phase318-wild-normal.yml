@@ -32,6 +32,8 @@ jobs:
         run: /tmp/phase318/bin/python -u research/phase318/split_prime_normal.py
       - name: One-dimensional radical-normal resonance pencil and 16 full ray250 character replays
         run: /tmp/phase318/bin/python -u research/phase318/normal_pencil.py
+      - name: Exact simultaneous 3 plus 4 plus 10 resonance block decomposition
+        run: /tmp/phase318/bin/python -u research/phase318/resonance_splitting.py
       - name: Hostile first-wild, nonunit, source, rank and prime-character tests
         run: /tmp/phase318/bin/python -m unittest discover -s research/phase318 -p 'test_*.py' -v
       - name: Inherit Phase317 explicit original mod25 congruence controls
