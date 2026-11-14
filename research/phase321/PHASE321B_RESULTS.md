@@ -1,6 +1,6 @@
 # Phase321-B — ray group invariant factors and split extensions
 
-**Status:** exact arithmetic output obtained; corrected adversarial assertions are pending the next exact-head CI run. The first run is preserved as a failed expectation check, not silently relabelled green.
+**Status:** corrected exact-head workflow passed all 9 adversarial tests. The first run is preserved as a failed expectation check, not silently relabelled green.
 
 The Phase321 multiplication law was used to enumerate every element of each full ray class group. For each prime p dividing the group order, the implementation counted all elements killed by p^k. These counts recover the p-primary cyclic exponents and hence the invariant factors.
 
@@ -26,8 +26,8 @@ These counts give 2-primary groups C4, C2 x C4 and C4 x C4 respectively; the 3-p
 
 The ordinary class groups are cyclic: trivial for D163, C2 for D187 and C4 for D203. For each nontrivial field, every one of the 7,500 local kernel elements was tested as the local component of a lift of a fixed generator of the ordinary class group.
 
-- D187: exactly 2 of the 7,500 lifts have square equal to the identity. The first is local residue (7,103).
-- D203: exactly 4 of the 7,500 lifts have fourth power equal to the identity. The first is local residue (34,23).
+- D187: exactly 2 of the 7,500 lifts have square equal to the identity: (7,103) and (24,121).
+- D203: exactly 4 of the 7,500 lifts have fourth power equal to the identity: (34,23), (45,56), (60,58) and (62,64).
 
 Existence of an order-preserving lift of a generator of a cyclic quotient gives a section of the ray exact sequence. Thus the extensions split for D187 and D203; D163 splits tautologically.
 
@@ -61,7 +61,7 @@ This is a finite result, not a general class-number formula.
 
 The result supplies the actual invariant factors and an explicit section in each of the three cases. It does not yet construct a full character table or evaluate all characters on an unbounded prime-ideal family. No field-uniform valuation, zero-free region or discriminant bound follows from this computation.
 
-The initial exact-head run (workflow 43631043257) exposed five incorrect test expectations: it computed the values above, while the tests still encoded a nonsplit extension and larger exponents. Those expectations are now corrected; the next exact-head run must pass before promotion.
+The initial exact-head run (workflow 43631043257) exposed five incorrect test expectations: it computed the values above, while the tests still encoded a nonsplit extension and larger exponents. The corrected exact-head run (workflow 43631244118, job 132558111600) passed all 9 tests.
 
 Reproduction:
 - `python3 -m py_compile research/phase321/*.py`
