@@ -4,9 +4,13 @@ from collections import Counter, defaultdict
 from fractions import Fraction
 from itertools import product
 from math import gcd, lcm
+from pathlib import Path
 import hashlib
 import json
 import struct
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "phase321"))
 
 from ideal_aware_ray_class import (
     FIELDS,
