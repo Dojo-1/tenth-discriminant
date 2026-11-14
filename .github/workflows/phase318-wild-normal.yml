@@ -8,14 +8,16 @@ on:
   pull_request:
     paths:
       - 'research/phase318/**'
+      - 'research/phase319/**'
       - '.github/workflows/phase318-wild-normal.yml'
+      - '.github/workflows/phase319-maximal-order-realization.yml'
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   source-preserving-wild-normal:
     runs-on: ubuntu-24.04
-    timeout-minutes: 35
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -44,3 +46,9 @@ jobs:
         run: /tmp/phase318/bin/python -m unittest discover -s research/phase318 -p 'test_*.py' -v
       - name: Inherit Phase317 explicit original mod25 congruence controls
         run: /tmp/phase318/bin/python -u research/phase317/radical_tangent.py
+      - name: Syntax-check maximal-order Phase319 implementation
+        run: /tmp/phase318/bin/python -m py_compile research/phase319/*.py
+      - name: Full maximal-order exact norm-fibre, 34-character ray and local-lift certificate
+        run: /tmp/phase318/bin/python -u research/phase319/maximal_order_realization.py
+      - name: Phase319 adversarial regression suite
+        run: /tmp/phase318/bin/python -m unittest discover -s research/phase319 -p 'test_*.py' -v
