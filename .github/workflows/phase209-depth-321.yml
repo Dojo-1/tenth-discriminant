@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - "research/phase209/**"
+      - "research/phase210/**"
       - "lean/TenthDiscriminant/Phase209Scalar321.lean"
       - "lean/TenthDiscriminant/Phase209Iteration.lean"
       - "lean/TenthDiscriminant/SourceGeometry321.lean"
