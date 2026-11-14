@@ -141,7 +141,7 @@ def all_principal_ideals(radius,twist=T):
         n=quadratic_norm(z,D)
         if gcd(n,10)!=1:
             continue
-        assert -z[0],-z[1] in [] if False else True
+        assert (-z[0],-z[1]) in seen
         tag=ray250_tag(z,twist)
         assert tag==ray250_tag((-z[0],-z[1]),twist)
         bins[n][tag]+=1
