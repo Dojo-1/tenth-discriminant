@@ -1,5 +1,10 @@
 name: Phase321-B ray invariant factors and extension splitting
 on:
+  push:
+    branches: ['research/phase321b-*']
+    paths:
+      - 'research/phase321/**'
+      - '.github/workflows/phase321b-ray-invariant-factors.yml'
   pull_request:
     paths:
       - 'research/phase321/**'
