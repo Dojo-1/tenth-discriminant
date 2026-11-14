@@ -2,7 +2,7 @@
 
 > The local ray moves. The principal ideals still multiply. The synthetic Gram loses four first-lift Smith factors. Yet no exact integral generator follows that ray.
 
-Research-only, original-source experiment in Dojo-1/tenth-discriminant, based on merged Phase312–317. No main merge, change to the original field theorem, new independent 5-adic determinant gain, or change to the reported 322^4 cutoff. Five pre-code protocols document the scope, later amendments and falsifiers.
+Research-only, original-source experiment in Dojo-1/tenth-discriminant, based on merged Phase312–317. No main merge, change to the original field theorem, new independent 5-adic determinant gain, or change to the reported 322^4 cutoff. Four sequential pre-code protocols document their precise scope, amendments and falsifiers.
 
 ## Same original source; complete local second-digit freedoms
 
