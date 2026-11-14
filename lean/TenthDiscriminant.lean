@@ -245,3 +245,4 @@ import TenthDiscriminant.Phase314WildSecondJet
 import TenthDiscriminant.Phase315Conductor125
 import TenthDiscriminant.Phase316SmallNorm
 import TenthDiscriminant.Phase317NormFibre
+import TenthDiscriminant.Phase269Finite321Certified
