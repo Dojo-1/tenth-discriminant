@@ -18,6 +18,7 @@ This is a research-only consolidation of seven PRs. It does not alter `main`, th
 | **Phase290 — PR #181** | Noether/Smith integral wall modules and prime-local source controls. | Exact local modules and controls, not a global class-number-one theorem. |
 | **Phase291 — PR #182** | Full original D563 700-row primitive (p=5) gate, including fixed-(K=8) and depth-3 checks. | Source-specific Smith data; no uniform field valuation. |
 | **Phase292 — carried in PR #182** | Matched D563/D587/D583 inert-5 controls and parity-resolved five-row Schur extension. | A finite Schur gain is not a monotone universal theorem; local field isometry does not identify original supports. |
+| **Phases293–303 — PR #213 integration** | Graded Jordan transport, support-debt filtration, W-equivariant jets, affine-semilinear moving frames, integral Schur projection, discriminant gluing, same-parity saturation, primitive-line Hensel flags and maximal-order/Picard controls. | These are source-exact finite and formalized local results; none by itself proves a uniform field-discriminant improvement. |
 
 ## The concrete Phase291–292 measurements
 
@@ -32,6 +33,20 @@ so the primitive residual (5)-valuation is exactly 17. The original Gram valuati
 **D583/D587 transport control.** The local field comparison is a square-unit isometry, but it does not preserve the original point support: 104 original points are lost under the mod-5 transport, with an explicit pointwise counterexample. Therefore the two original source Grams cannot be identified through that local isometry.
 
 **Hostile Schur control.** An integral positive-metric counterworld reverses the apparent monotonicity: the old determinant has (5)-valuation 1 while the extended determinant has valuation 0. The observed 69 is therefore not promoted to a general monotone (p)-local Schur theorem.
+
+
+## The Phase293–303 continuation
+
+PR #213 integrates the already verified Phase293–303 research branch into this parent. The line adds the following distinctions:
+
+- **Phase293–295:** odd-prime graded Jordan pairings, source-moment transport and W-equivariant jet obstructions.
+- **Phase296–299:** affine-semilinear moving frames, original-lattice Schur projection, composable cokernel remainders and integral discriminant gluing.
+- **Phase300–302:** two nonintegral gluings, joint same-parity saturation and primitive-line Hensel flags.
+- **Phase303:** maximal-order field norm, local order and high-jet feasibility; independent Frobenius primitive-Gram and DVR Smith controls.
+
+The matched field controls matter. D163 (class number one) and D187 (class number two) have the same matched maximal-order primitive Gram rank 40 in the tested (R=40,J=1) geometry. Thus primitive nondegeneracy is not a class-number-one detector. D203's native (R=50,J=2) source has primitive Gram rank 63 and residual radical 37, with exact original-source (v_5=138). D427's native high-jet source has a much larger radical; the old valuationWeight formula is not automatically transported to that maximal-order lift.
+
+Phase303 also supplies the support-completion observation later used by Phase319: the D163 maximal-order radius-21 source has 225 points, not the 109 points of the even-coordinate integer suborder. The 116 extra observations change the primitive Gram modulo 5. Phase319 investigates the consequences for wild-ray realization on its separate Phase306–318 branch.
 
 ## Evidence labels
 
