@@ -26,7 +26,9 @@
     "reconstruct_global_invariant_factors": true,
     "verify_product_and_divisibility": true,
     "verify_group_exponent_independently": true,
-    "D163_phase315_regression": true
+    "D163_phase315_regression": true,
+    "exhaustive_cyclic_quotient_section_test": true,
+    "verify_nonsplit_or_split_by_lift_orders": true
   },
   "boundaries": {
     "no_assumed_extension_splitting": true,
