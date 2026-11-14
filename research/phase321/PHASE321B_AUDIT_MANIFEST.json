@@ -28,7 +28,8 @@
     "verify_group_exponent_independently": true,
     "D163_phase315_regression": true,
     "exhaustive_cyclic_quotient_section_test": true,
-    "verify_nonsplit_or_split_by_lift_orders": true
+    "verify_nonsplit_or_split_by_lift_orders": true,
+    "canonical_lift_order_and_cocycle_obstruction": true
   },
   "boundaries": {
     "no_assumed_extension_splitting": true,
