@@ -1,0 +1,23 @@
+name: Phase290 Noether Smith integral source wall
+on:
+  push:
+    branches: ['research/phase290-*']
+  pull_request:
+    paths:
+      - 'research/phase290/**'
+      - '.github/workflows/phase290-noether-smith.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-source-prime-local:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Python syntax of Phase290 source
+        run: python3 -m py_compile research/phase290/noether_smith_wall.py
+      - name: Exact Noether wall, six-row Fitting ideals and prime-local negative controls
+        run: python3 -u research/phase290/noether_smith_wall.py
