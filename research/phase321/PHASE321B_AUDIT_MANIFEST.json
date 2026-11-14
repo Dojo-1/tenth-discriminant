@@ -139,15 +139,34 @@
     "cyclic_extension_sections": {
       "D163": {
         "splits": true,
-        "reason": "trivial quotient"
+        "reason": "trivial quotient",
+        "canonical_lift_order": 1
       },
       "D187": {
         "splits": false,
-        "all_7500_lifts_exhausted": true
+        "all_7500_lifts_exhausted": true,
+        "canonical_lift_order": 8,
+        "canonical_lift_power_h": [
+          0,
+          [
+            2,
+            124
+          ]
+        ],
+        "local_obstruction_order": 4
       },
       "D203": {
         "splits": false,
-        "all_7500_lifts_exhausted": true
+        "all_7500_lifts_exhausted": true,
+        "canonical_lift_order": 16,
+        "canonical_lift_power_h": [
+          0,
+          [
+            54,
+            18
+          ]
+        ],
+        "local_obstruction_order": 4
       }
     }
   },
