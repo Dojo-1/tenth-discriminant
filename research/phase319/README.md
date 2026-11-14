@@ -46,3 +46,5 @@ No changes to main or the reported (322^4) endpoint. No promotion of the separat
 
 
 The exact-head workflow is `.github/workflows/phase319-maximal-order-realization.yml`; no claim is promoted until that run and its hostile controls complete.
+
+The parent Phase318 workflow also runs the Phase319 certificate on this draft PR, so the new code is checked before it is consolidated.
