@@ -81,3 +81,8 @@ The current umbrella integration PR is #217. It remains a research-only consolid
 - **R:** source conflation, double-counting, nonprincipal ideal omission, or residue-to-valuation promotion.
 
 No branch in this research fabric changes `main`. No additional determinant valuation is inferred from a changed residue modulo 25.
+
+
+### Phase321 — ideal-aware ray class groups (preregistered)
+
+The next global step is now preregistered in `research/phase321/PRE_REGISTERED_IDEAL_AWARE_RAY_CLASS_GROUP.md`. It constructs the full ray class groups modulo (125) for class numbers 1, 2 and 4, using reduced-form ideal representatives and an exact cocycle. The predicted orders are 7,500, 15,000 and 30,000. The extension is not assumed to split, and nonprincipal split-prime ideals are retained. This is the missing bridge before any honest global character comparison across D163, D187 and D203.
