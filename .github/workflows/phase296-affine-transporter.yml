@@ -1,0 +1,23 @@
+name: Phase296 original affine-semilinear source transport gate
+on:
+  push:
+    branches: ['research/phase296-*']
+  pull_request:
+    paths:
+      - 'research/phase296/**'
+      - '.github/workflows/phase296-affine-transporter.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exhaustive-affine-f25-original:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Compile exact finite field and source oracle
+        run: python3 -m py_compile research/phase296/affine_semilinear_transporter.py
+      - name: Enumerate all 1200 F25 affine-semilinear moving frames and source gates
+        run: python3 -u research/phase296/affine_semilinear_transporter.py
