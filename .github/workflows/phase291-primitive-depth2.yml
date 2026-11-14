@@ -1,0 +1,27 @@
+name: Phase291-B fixed-K8 full-original primitive pairing mod25
+on:
+  push:
+    branches: ['research/phase291-*']
+  pull_request:
+    paths:
+      - 'research/phase291/**'
+      - '.github/workflows/phase291-primitive-depth2.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  full700-primitive-mod25:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Fixed NumPy dependency
+        run: |
+          python3 -m venv /tmp/phase291-b
+          /tmp/phase291-b/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile exact arithmetic
+        run: /tmp/phase291-b/bin/python -m py_compile research/phase291/primitive_full700_depth2.py
+      - name: Original 700-row primitive p5 secondary pairing Smith at 25
+        run: /tmp/phase291-b/bin/python -u research/phase291/primitive_full700_depth2.py

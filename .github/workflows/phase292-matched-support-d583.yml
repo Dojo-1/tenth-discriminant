@@ -1,0 +1,27 @@
+name: Phase292-B original D583 same-support local p5 matched control
+on:
+  push:
+    branches: ['research/phase292-*']
+  pull_request:
+    paths:
+      - 'research/phase292/**'
+      - '.github/workflows/phase292-matched-support-d583.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  p5-local-isometry-and-original-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned Python computation environment
+        run: |
+          python3 -m venv /tmp/phase292b
+          /tmp/phase292b/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile source-exact matched-rank control
+        run: /tmp/phase292b/bin/python -m py_compile research/phase292/matched_support_local_field.py
+      - name: Exact original D583 and diagnostic restricted D587 with local field/sampling remainder
+        run: /tmp/phase292b/bin/python -u research/phase292/matched_support_local_field.py
