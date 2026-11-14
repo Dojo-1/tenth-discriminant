@@ -432,6 +432,8 @@ def prime_ideal_catalog(D, ideals, class_table, alpha_table):
             typ, root, I = primes[0]
             assert I == (p, 0, p)
             ray = map_prime_ideal_to_ray(I, D, ideals, class_table, alpha_table)
+            principal = (0, min((p % MOD, 0), ((-p) % MOD, 0)))
+            assert ray == principal
             records.append({"p": p, "type": typ, "root": None,
                             "ideal_hnf": I, "ray_class": ray})
         elif primes[0][0] == "ramified":
@@ -439,6 +441,8 @@ def prime_ideal_catalog(D, ideals, class_table, alpha_table):
             square = ideal_product(I, I, D)
             assert square == (p, 0, p), ("ramified prime square", D, p, I, square)
             ray = map_prime_ideal_to_ray(I, D, ideals, class_table, alpha_table)
+            principal = (0, min((p % MOD, 0), ((-p) % MOD, 0)))
+            assert ray_multiply(ray, ray, D, class_table, alpha_table) == principal
             records.append({"p": p, "type": typ, "root": root,
                             "ideal_hnf": I, "ray_class": ray})
             ramified_squares += 1
@@ -451,6 +455,8 @@ def prime_ideal_catalog(D, ideals, class_table, alpha_table):
             ray1 = map_prime_ideal_to_ray(I1, D, ideals, class_table, alpha_table)
             ray2 = map_prime_ideal_to_ray(I2, D, ideals, class_table, alpha_table)
             assert class_table[ray1[0]][ray2[0]] == 0
+            principal = (0, min((p % MOD, 0), ((-p) % MOD, 0)))
+            assert ray_multiply(ray1, ray2, D, class_table, alpha_table) == principal
             records.append({"p": p, "type": "split", "root": r1,
                             "ideal_hnf": I1, "ray_class": ray1})
             records.append({"p": p, "type": "split", "root": r2,
