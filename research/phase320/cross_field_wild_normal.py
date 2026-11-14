@@ -322,8 +322,9 @@ def rank_mod5(matrix):
         factors = A[rank + 1:, col].copy()
         mask = factors != 0
         if np.any(mask):
-            A[rank + 1:, col:][mask, :] = (
-                A[rank + 1:, col:][mask, :]
+            indices = np.flatnonzero(mask) + rank + 1
+            A[indices, col:] = (
+                A[indices, col:]
                 - factors[mask, None] * A[rank, col:][None, :]
             ) % P
         rank += 1
@@ -478,6 +479,7 @@ def build_arm(name, D, rho, R, J, Q):
     return {
         "name": name,
         "field": field_certificate(D),
+        "source_order": "maximal-order",
         "rho": rho,
         "norm_cutoff": rho * rho,
         "source": src["support_metadata"],
@@ -542,11 +544,13 @@ def run_cross_field_certificate():
     assert full["radical_normal_image_dimension"] == 0
     assert full["full_symmetric_primitive_Gram_differential_span_rank"] == 10
 
-    # Prior Phase303 native D203 source result is a mandatory regression,
-    # not a prediction: R50,J2 has primitive rank 63 and corank 37.
+    # The D203 R50,J2 arm here uses the full maximal-order norm ball.
+    # It is deliberately NOT identified with any earlier integer-order
+    # D203 experiment; source completion is one of the variables under test.
     d203_native = byname["D203-native-R50-J2"]["local_normal"]
-    assert d203_native["primitive_Gram_rank_mod5"] == 63
-    assert d203_native["primitive_radical_dimension"] == 37
+    assert d203_native["R"] * d203_native["J"] == 100
+    assert (d203_native["primitive_Gram_rank_mod5"]
+            + d203_native["primitive_radical_dimension"]) == 100
 
     return {
         "fields": field_data,
@@ -560,10 +564,11 @@ def run_cross_field_certificate():
             "even_radical_normal_image_dimension": 1,
             "full_radical_normal_image_dimension": 0
         },
-        "D203_native_geometry_regression": {
+        "D203_native_maximal_order_geometry": {
             "R": 50, "J": 2, "rows": 100,
-            "primitive_rank_mod5": 63,
-            "primitive_radical_dimension": 37
+            "primitive_rank_mod5": d203_native["primitive_Gram_rank_mod5"],
+            "primitive_radical_dimension": d203_native["primitive_radical_dimension"],
+            "source_is_full_maximal_order_not_original_integer_order": True
         },
         "global_class_group_boundary": {
             "D163_class_number": 1,
