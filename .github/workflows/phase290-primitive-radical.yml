@@ -1,0 +1,23 @@
+name: Phase290-B primitive radical wall lifting
+on:
+  push:
+    branches: ['research/phase290-*']
+  pull_request:
+    paths:
+      - 'research/phase290/**'
+      - '.github/workflows/phase290-primitive-radical.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  finite-prime-local-lift:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Python syntax
+        run: python3 -m py_compile research/phase290/primitive_wall_radical.py
+      - name: Distinct modular kernel lifting and Leibniz determinant polynomial
+        run: python3 -u research/phase290/primitive_wall_radical.py
