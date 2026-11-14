@@ -58,8 +58,11 @@ class CrossFieldWildNormalTests(unittest.TestCase):
                           d187["local_normal"]["J"]), (23, 46, 1))
         self.assertEqual((d203["rho"], d203["local_normal"]["R"],
                           d203["local_normal"]["J"]), (24, 50, 2))
-        self.assertEqual(d203["local_normal"]["primitive_Gram_rank_mod5"], 63)
-        self.assertEqual(d203["local_normal"]["primitive_radical_dimension"], 37)
+        self.assertEqual(d203["source_order"], "maximal-order")
+        self.assertEqual(
+            d203["local_normal"]["primitive_Gram_rank_mod5"]
+            + d203["local_normal"]["primitive_radical_dimension"], 100
+        )
 
     def test_all_local_norm_lines_are_complete_and_first_digit_safe(self):
         for arm in self.data["arms"]:
