@@ -32,6 +32,8 @@ jobs:
         run: /tmp/phase314/bin/python -u research/phase314/truncated_ray_convolution.py
       - name: Abstract non-field ray assignment counterworld
         run: /tmp/phase314/bin/python -u research/phase314/abstract_counterworld.py
+      - name: Held-out rho60 full ray50 h1 stress and same-inert D187 global failure
+        run: /tmp/phase314/bin/python -u research/phase314/heldout_global_ray.py
       - name: Hostile third difference, nonunit, source and conductor2 unit tests
         run: /tmp/phase314/bin/python -m unittest discover -s research/phase314 -p 'test_*.py' -v
       - name: Preserve Phase313 exact h1 original determinant and corrected conductor2 gate
