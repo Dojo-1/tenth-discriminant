@@ -1,0 +1,27 @@
+name: Phase294-B full normalized moving-field p5^9 source covariance
+on:
+  push:
+    branches: ['research/phase294-*']
+  pull_request:
+    paths:
+      - 'research/phase294/**'
+      - '.github/workflows/phase294-normalized-moving-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  all-original-jets-moved-support:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned NumPy modular integer array runtime
+        run: |
+          python3 -m venv /tmp/phase294b
+          /tmp/phase294b/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile exact source
+        run: /tmp/phase294b/bin/python -m py_compile research/phase294/moving_normalized_field_chart.py
+      - name: Hensel-lifted local moving chart across all 725 rows, five jets, 383 points and Frobenius divisions
+        run: /tmp/phase294b/bin/python -u research/phase294/moving_normalized_field_chart.py

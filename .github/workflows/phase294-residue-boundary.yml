@@ -1,0 +1,23 @@
+name: Phase294 original residue boundary 40-dimensional jet Gram
+on:
+  push:
+    branches: ['research/phase294-*']
+  pull_request:
+    paths:
+      - 'research/phase294/**'
+      - '.github/workflows/phase294-residue-boundary.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  signed-boundary-F25-Hermite:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact source syntax
+        run: python3 -m py_compile research/phase294/residue_boundary_jet_module.py
+      - name: 725 original rows, four Frobenius orbit signed measure, Hermite rank and negative controls
+        run: python3 -u research/phase294/residue_boundary_jet_module.py
