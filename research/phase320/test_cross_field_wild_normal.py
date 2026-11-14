@@ -64,6 +64,26 @@ class CrossFieldWildNormalTests(unittest.TestCase):
             + d203["local_normal"]["primitive_radical_dimension"], 100
         )
 
+    def test_index_two_suborder_controls_for_D187_and_D203(self):
+        controls = self.data["index_two_source_support_controls"]
+        for D in (187, 203):
+            self.assertTrue(all(x["trace_metric_congruence_exact"]
+                                and x["old_support_equals_even_b_subset"]
+                                and x["supports_are_not_equal"]
+                                for x in controls[D]))
+            even = self.arms[f"D{D}-matched-even-R40-J1"]
+            full = self.arms[f"D{D}-matched-R40-J1"]
+            self.assertEqual(even["source_order"], "integer-order-even-suborder")
+            self.assertEqual(full["source_order"], "maximal-order")
+            self.assertLess(even["source"]["points"], full["source"]["points"])
+            R = 46 if D == 187 else 50
+            J = 1 if D == 187 else 2
+            even = self.arms[f"D{D}-native-even-R{R}-J{J}"]
+            full = self.arms[f"D{D}-native-R{R}-J{J}"]
+            self.assertEqual(even["source_order"], "integer-order-even-suborder")
+            self.assertEqual(full["source_order"], "maximal-order")
+            self.assertLess(even["source"]["points"], full["source"]["points"])
+
     def test_all_local_norm_lines_are_complete_and_first_digit_safe(self):
         for arm in self.data["arms"]:
             local = arm["local_normal"]
