@@ -1,0 +1,39 @@
+name: Phase319 maximal-order ray realization and local normal map
+on:
+  pull_request:
+    paths:
+      - 'research/phase319/**'
+      - 'research/phase318/**'
+      - 'research/phase317/**'
+      - 'research/phase315/**'
+      - '.github/workflows/phase319-maximal-order-realization.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  maximal-order-realization:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Validate preregistration and claim boundaries
+        run: |
+          python3 -m json.tool research/phase319/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; x=json.load(open("research/phase319/AUDIT_MANIFEST.json")); assert x["main_unchanged"]; assert x["claim_boundary"]["no_new_322_power4_claim"]; assert x["claim_boundary"]["no_uniform_additional_valuation_claim"]; print("Phase319 audit scope PASS")'
+          test -f research/phase319/PRE_REGISTERED_MAXIMAL_ORDER_REALIZATION.md
+      - name: Install pinned numeric environment
+        run: |
+          python3 -m venv /tmp/phase319
+          /tmp/phase319/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Syntax-check Phase319 and imported Phase318 modules
+        run: |
+          /tmp/phase319/bin/python -m py_compile research/phase319/*.py
+          /tmp/phase319/bin/python -m py_compile research/phase318/*.py research/phase317/*.py research/phase315/*.py
+      - name: Full maximal-order exact norm-fibre, 34-character ray and local-lift certificate
+        run: /tmp/phase319/bin/python -u research/phase319/maximal_order_realization.py
+      - name: Phase319 adversarial regression suite
+        run: /tmp/phase319/bin/python -m unittest discover -s research/phase319 -p 'test_*.py' -v
+      - name: Preserve Phase318 exact old-suborder resonance veto
+        run: /tmp/phase319/bin/python -m unittest discover -s research/phase318 -p 'test_exact_resonant_fibres.py' -v
