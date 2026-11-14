@@ -2,8 +2,8 @@
   "phase": "Phase320",
   "date": "2026-11-14",
   "repository": "Dojo-1/tenth-discriminant",
-  "branch": "research/phase277-320-unified",
-  "status": "Phase320-A and Phase320-B preregistrations implemented; core arithmetic independently cross-checked in a local container; complete Phase315 log and exact-head workflow pending",
+  "branch": "research/phase309-original-source-picard-minors",
+  "status": "Phase320-A/B implemented and exact-head verified on PR #217 head 88b5e7baafb926994cd5ab7696a036110bc5aa08; finite-source measurements are reproducible; no field-uniform theorem claimed",
   "preregistration": "research/phase320/PRE_REGISTERED_CROSS_FIELD_WILD_NORMAL.md",
   "implementation": "research/phase320/cross_field_wild_normal.py",
   "tests": "research/phase320/test_cross_field_wild_normal.py",
@@ -135,15 +135,52 @@
     "native_row_jet_geometry_is_not_native_order_identification": true
   },
   "ci": {
-    "phase320_cross_field_workflow": "pending; Actions run not surfaced for the integration PR",
-    "phase318_local_D163_regression": "previous Phase318 full-stack PASS on the unchanged D163 line; exact Phase320-head rerun pending",
-    "phase319_maximal_order_D163_regression": "previous Phase319 exact-head PASS; exact Phase320-head rerun pending",
-    "whole_root_lean": "previous Phase291–303 root checks PASS on their respective heads; combined Phase269–319 root replay pending"
+    "phase320_cross_field_workflow": {
+      "status": "success",
+      "run_id": 43616080159,
+      "job_id": 132511312097,
+      "head_sha": "88b5e7baafb926994cd5ab7696a036110bc5aa08"
+    },
+    "phase318_local_D163_regression": {
+      "status": "success",
+      "run_id": 43616080114,
+      "job_id": 132511311390,
+      "head_sha": "88b5e7baafb926994cd5ab7696a036110bc5aa08"
+    },
+    "phase319_maximal_order_D163_regression": {
+      "status": "success",
+      "run_id": 43616080114,
+      "job_id": 132511311390,
+      "head_sha": "88b5e7baafb926994cd5ab7696a036110bc5aa08"
+    },
+    "whole_root_lean": {
+      "status": "success",
+      "run_id": 43616080165,
+      "job_id": 132511326015,
+      "head_sha": "88b5e7baafb926994cd5ab7696a036110bc5aa08"
+    },
+    "phase269_bounded_crt": {
+      "status": "success",
+      "run_id": 43616080095,
+      "job_id": 132511323026,
+      "head_sha": "88b5e7baafb926994cd5ab7696a036110bc5aa08"
+    },
+    "mathematical_markdown": {
+      "status": "success",
+      "run_id": 43616080824,
+      "head_sha": "88b5e7baafb926994cd5ab7696a036110bc5aa08"
+    },
+    "aggregate": {
+      "workflow_runs": 42,
+      "success": 42,
+      "failure": 0,
+      "head_sha": "88b5e7baafb926994cd5ab7696a036110bc5aa08"
+    }
   },
   "main_unchanged": true,
   "supplemental_preregistration": "research/phase320/PRE_REGISTERED_PHASE320B_INDEX_TWO_ORDER_CONTROLS.md",
   "exploratory_core_cross_check": {
-    "status": "local independent arithmetic-kernel cross-check only; not exact-head CI and does not include Phase315 signed-log first-digit checks or the repository script's original-to-primitive Gram congruence audit",
+    "status": "superseded by the full exact-head Phase320 repository workflow; the full repository result is recorded below",
     "fields": {
       "D163": {
         "class_number": 1,
@@ -315,5 +352,38 @@
       "signed first-wild-digit preservation for every D187/D203 local lift",
       "exact-head GitHub workflow for the full repository implementation"
     ]
-  }
+  },
+  "full_exact_head_result": {
+    "status": "PASS",
+    "run_id": 43616080159,
+    "fields": {
+      "D163": {
+        "class_number": 1
+      },
+      "D187": {
+        "class_number": 2
+      },
+      "D203": {
+        "class_number": 4
+      }
+    },
+    "local_unit_replay": {
+      "per_field_units_mod125": 15000,
+      "per_field_signed_ray_classes": 7500,
+      "per_field_twisted_defect_and_corrected_log_product_tests": 150000,
+      "all_signed_and_conjugation_invariance_checks": true
+    },
+    "source_arms": 10,
+    "local_lifts_per_signed_site": 5,
+    "all_original_to_primitive_gram_identities": true,
+    "all_norm_preserving_mod125": true,
+    "all_first_wild_digits_preserved": true,
+    "all_local_differentials_symmetric": true,
+    "all_local_differentials_F5_linear": true,
+    "adversarial_tests": 8,
+    "adversarial_tests_passed": 8,
+    "no_determinant_valuation_inferred": true,
+    "no_uniform_field_valuation_or_cutoff": true
+  },
+  "publication_boundary": "Research-only integration PR #217 merged into research/phase309-original-source-picard-minors at 1b9461d081985fc84590bc379bf72f5df5cc9eff; main unchanged."
 }
