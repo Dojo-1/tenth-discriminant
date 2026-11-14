@@ -1,0 +1,168 @@
+{
+  "phase": "Phase319",
+  "date": "2026-11-14",
+  "repo": "Dojo-1/tenth-discriminant",
+  "branch": "research/phase319-maximal-order-ray-realization",
+  "parent_commit": "96ef39f34ba2792176139be4986f50b58bfa5253",
+  "preregistration": "research/phase319/PRE_REGISTERED_MAXIMAL_ORDER_REALIZATION.md",
+  "main_unchanged": true,
+  "reported_cutoff": "322^4 UNCHANGED",
+  "result_status": "Initial exact-head Phase319 workflow PASS (run 43607889835; 6 Phase319 tests and 5 Phase318 exact-fibre regression tests PASS). Aggregate assertions added afterward; refreshed exact-head CI pending.",
+  "evidence_labels": {
+    "P": "elementary norm, local trace and exact principal-ideal valuation identities under stated hypotheses",
+    "M": "finite D163 maximal-order support, exact norm fibres, conductor-250 replays and local lift calculations after CI",
+    "H": "uniform large-discriminant class-number-one implication and any additional determinant valuation",
+    "R": "identifying Q109 with Q225, promoting synthetic rays to exact generators, or promoting determinant residues to valuations"
+  },
+  "frozen_source": {
+    "field_discriminant_parameter": 163,
+    "maximal_order": "Z[omega], omega^2-omega+41=0",
+    "norm_cutoff": 441,
+    "maximal_order_points": 225,
+    "old_integer_order_points": 109,
+    "new_odd_omega_coordinate_points": 116,
+    "monomial_rows": 40,
+    "ordinary_jet_layers": 1
+  },
+  "planned_checks": {
+    "split_prime_characters": 34,
+    "exact_maximal_order_norm_fibre_for_every_changed_shell": true,
+    "conductor250_norm_shells_per_character": 177,
+    "conductor250_coprime_products_per_character": 270,
+    "all_five_local_norm125_lifts_per_signed_unit_site": true,
+    "full_symmetric_differential_span": true,
+    "radical_normal_image": true,
+    "synthetic_full_support_gram_first_two_smith_layers": true
+  },
+  "claim_boundary": {
+    "no_new_322_power4_claim": true,
+    "no_321_power4_promotion": true,
+    "no_uniform_additional_valuation_claim": true,
+    "no_independent_human_review_claim": true
+  },
+  "measurements": {
+    "maximal_order_support": {
+      "full_points": 225,
+      "old_even_suborder_points": 109,
+      "new_odd_coordinate_points": 116,
+      "residue_classes_F25": 25,
+      "signed_5unit_sites": 108,
+      "separate_nonunit_observations": 9
+    },
+    "primitive_gram": {
+      "rank_mod5": 40,
+      "smith_layers_mod25": [
+        40,
+        0,
+        0
+      ],
+      "radical_dimension": 0,
+      "determinant_residue_mod25": 7
+    },
+    "local_second_wild": {
+      "norm125_lifts": 540,
+      "lifts_per_signed_site": 5,
+      "full_symmetric_differential_span_rank": 10,
+      "radical_normal_image_dimension": 0,
+      "first_wild_digit_preserved": true,
+      "norm_mod125_preserved": true
+    },
+    "split_prime_family": {
+      "characters_tested": 34,
+      "active_on_old_even_support": 16,
+      "active_on_full_maximal_support": 34,
+      "newly_active_on_odd_coordinate_completion": [
+        113,
+        131,
+        151,
+        173,
+        197,
+        223,
+        251,
+        281,
+        313,
+        347,
+        367,
+        373,
+        379,
+        383,
+        397,
+        409,
+        421,
+        439
+      ],
+      "exact_valuation_product_checks": 53312,
+      "full_conductor250_norm_shell_replays": 6018,
+      "full_conductor250_coprime_products": 9180
+    },
+    "exact_norm_realization": {
+      "changed_norm_shells_total": 44,
+      "characters_with_unchanged_per_shell_spectrum": [
+        197
+      ],
+      "synthetic_ray_classes_not_realized_at_their_exact_norm": 88,
+      "all_changed_shells_have_two_unrealized_synthetic_signed_classes": true,
+      "mandatory_fibres": {
+        "p41": {
+          "norm": 164,
+          "generators": 4,
+          "signed_classes": 2,
+          "synthetic_classes_unrealized": 2
+        },
+        "p53": {
+          "norm": 212,
+          "generators": 4,
+          "signed_classes": 2,
+          "synthetic_classes_unrealized": 2
+        },
+        "p227": {
+          "norm": 227,
+          "generators": 4,
+          "signed_classes": 2,
+          "synthetic_classes_unrealized": 2
+        }
+      }
+    },
+    "determinant_residue": {
+      "actual_mod25": 7,
+      "synthetic_characters_changing_residue": 21,
+      "all_synthetic_primitive_grams_keep_mod5_rank": 40,
+      "all_first_two_smith_profiles": [
+        40,
+        0,
+        0
+      ],
+      "valuation_increase_inferred": false
+    }
+  },
+  "interpretation": {
+    "old_Q109_radical_is_not_the_maximal_order_Q225_radical": true,
+    "phase318_one_dimensional_radical_normal_channel_does_not_survive_full_maximal_order_completion": true,
+    "local_gram_differentials_remain_nonzero_in_full_symmetric_space": true,
+    "synthetic_residue_changes_do_not_create_positive_smith_grade": true,
+    "exact_maximal_order_norm_fibres_reject_every_changed_synthetic_ray_shell": true,
+    "p197_only_permutes_ray_tags_within_each_norm_shell": true,
+    "source_support_dependency_exposed": true
+  },
+  "CI": {
+    "phase319_first_exact_head": {
+      "run": 43607889835,
+      "conclusion": "success",
+      "phase319_tests": 6,
+      "phase318_exact_fibre_regression_tests": 5
+    },
+    "human_markdown": {
+      "run": 43607889814,
+      "conclusion": "success"
+    },
+    "phase318_full_stack": {
+      "run": 43607889872,
+      "status": "in_progress"
+    },
+    "whole_root_lean": {
+      "run": 43607889734,
+      "status": "in_progress"
+    },
+    "refreshed_head_after_aggregate_assertions": "pending"
+  }
+}
