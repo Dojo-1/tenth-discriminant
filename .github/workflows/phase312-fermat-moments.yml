@@ -1,0 +1,45 @@
+name: Phase312 original primitive Fermat moments and ray class controls
+on:
+  push:
+    branches: ['research/phase312-*']
+    paths:
+      - 'research/phase312/**'
+      - '.github/workflows/phase312-fermat-moments.yml'
+  pull_request:
+    paths:
+      - 'research/phase312/**'
+      - '.github/workflows/phase312-fermat-moments.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-source-lifts-and-global-countercontrols:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned numeric environment
+        run: |
+          python3 -m venv /tmp/phase312
+          /tmp/phase312/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Syntax and source structure
+        run: |
+          /tmp/phase312/bin/python -m py_compile research/phase312/*.py
+      - name: Exact Fermat quotient laws and corrected mod25 Hensel frame
+        run: /tmp/phase312/bin/python -u research/phase312/fermat_lift.py
+      - name: Reconstruct entire original D203 primitive jets and moment Gram
+        run: /tmp/phase312/bin/python -u research/phase312/primitive_moments.py
+      - name: Matched D43 D163 D183 class-one and ray-class controls
+        run: /tmp/phase312/bin/python -u research/phase312/class_one_ray_controls.py
+      - name: Local Z5 completion equivalence versus global class-number controls
+        run: /tmp/phase312/bin/python -u research/phase312/local_completion_no_go.py
+      - name: Global class-one norm-shell theorem controls and zero-moment null
+        run: /tmp/phase312/bin/python -u research/phase312/norm_shell_bridge.py
+      - name: Universal inert F25 jet kernel and native old-weight crossover
+        run: /tmp/phase312/bin/python -u research/phase312/kernel_vs_weight.py
+      - name: Hostile derivative, field identification, moment and h1 tests
+        run: /tmp/phase312/bin/python -m unittest discover -s research/phase312 -p 'test_*.py' -v
+      - name: Replay earlier full primitive 5-adic trace radical
+        run: /tmp/phase312/bin/python -u research/phase311/secondary_trace_radical.py

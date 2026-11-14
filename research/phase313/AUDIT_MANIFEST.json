@@ -1,0 +1,260 @@
+{
+  "phase": "Phase313",
+  "repository": "Dojo-1/tenth-discriminant",
+  "source_branch": "research/phase313-tame-wild-ray-convolution",
+  "date": "2026-11-14",
+  "evidence_labels": {
+    "P": "paper-level exact mathematical identity under explicit assumptions",
+    "A": "imported theorem/assumption",
+    "M": "fixed finite exact numerical or code experiment",
+    "H": "unproved proposed uniform implication",
+    "S": "semantic/model metaphor",
+    "R": "retired or falsified proposed implication"
+  },
+  "claim": {
+    "text": "The signed conductor25 quadratic unit quotient has an explicit tame/wild additive logarithm; in h1 fields, the full principal ideal ray norm-shell distributions convolve at coprime norms; ray unit counts plus a separate 5-divisible stratum reconstruct the SAME fixed original primitive trace Grams. At matched Q109 the h1 D163 and h8 D183 original integer-order Grams have identical full v5=77 and primitive Smith spectrum. IMPORTANT CORRECTION: The class-one convolution applies to all maximal-order ideals, not the original source suborder's restricted principal counts. The corrected map must carry the conductor2 ray tag (mod50), convolve before selection, and then project to the original integer-order source.",
+    "scope": "D43,D163 h1 and D183 h8 at matched radius21; original native Z[sqrt(-163)] Q109 R40/S=J1; D203 nonh1 original maximal-order Q263 R50/S=J2; D183 R40 deliberately matched, not its native field policy.",
+    "status_before": "H",
+    "status_after": "M",
+    "provenance": "AI-assisted algebra, GitHub CI, locally computed exact SymPy determinant; no independent human mathematician"
+  },
+  "algebraic_objects": {
+    "local": "O_D/25 where 5 inert; F25 residue, ± global units",
+    "wild": "delta(z)=epsilon(z)/conjugate(z) on local units; (O/25)^x/± -> C12 x F25_add",
+    "wild_group_algebra": "F5[U,V]/(U^5,V^5), J^9=0 but J^8 !=0; tame F25 character map misses wild 5-primary part",
+    "global": "P_n(c,w) principal integral ideals of norm n coprime5 tagged by signed tame/wild class",
+    "global_h1_law": "For h(K)=1, coprime mn prime to5, P_(mn)=P_m*P_n; B,C2,H have derived Leibniz laws.",
+    "Gram": "Original source row/jet evaluation after explicit integer-unimodular shears and exact /5 divisions; ray unit ± pairs plus nonunit z/5 map linearly to primitive Gram modulo5",
+    "independent_finite_exact_determinant": "Original 40x40 Z[sqrt(-D)] Gram integer power sums plus SymPy domain-ge determinant",
+    "original_order_bridge": "D163: O'=Z[sqrt(-163)]=Z+2 O_K; an omega-coordinate a+b omega lies in O' exactly when b is even. 2 inert, O_K/2=F4, so odd-norm original elements require F4-residue1; even-norm elements are automatically in O'.",
+    "ray50": "(O/50)^x/±1 ≅ C3 x C12 x C5^2, 900 components; h1 convolution applies to these FULL maximal-order ray distributions, never their suborder-selected projection.",
+    "projection": "Maximal-order full conductor50 ray distribution -> select odd-norm F4 residue1; add even-norm prime-to5 original elements; keep 5-divisible first lifts z/5 separately -> selected 25-ray counts -> same original Gram mod5. Selection is not a monoid homomorphism."
+  },
+  "observations": {
+    "local_unit_group": {
+      "D": [
+        43,
+        163,
+        183,
+        203
+      ],
+      "unit_count_mod25": 600,
+      "signed_ray_classes": 300,
+      "tame_count": 12,
+      "wild_count": 25,
+      "group_algebra_grades": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    "global_h1": {
+      "D": [
+        43,
+        163
+      ],
+      "individual_ideal_norm_shell_checks_per_field": 353,
+      "full_300_component_convolutions_per_field": 720,
+      "first_second_hermitian_moment_checks_per_field": 2160,
+      "first_nonzero_wild_shell_moment": "norm4 delta sum3 mod5"
+    },
+    "nonh1_counterworld": {
+      "D": 183,
+      "class_number": 8,
+      "ideal_norm2_count": 2,
+      "ideal_norm23_count": 2,
+      "principal_norm2": 0,
+      "principal_norm23": 0,
+      "principal_norm46": 2
+    },
+    "D203": {
+      "source": "original Q263 maximal-order",
+      "unit_principal_ideals": 127,
+      "ray_bins_populated": 82,
+      "nonunit_observations": 9,
+      "nonunit_first_lift_bins": 5,
+      "source_coordinates_sign_parity_checked": 32800,
+      "primitive_Gram_entries_recovered": 10000,
+      "primitive_Gram_rank_mod5": 63,
+      "primitive_parity_block_val": [
+        18,
+        20
+      ],
+      "original_det_v5": 138
+    },
+    "D163": {
+      "source": "original Lean integer-order Q109, R40/S=J1",
+      "unit_principal_ideals": 50,
+      "ray_bins_populated": 35,
+      "nonunit_observations": 9,
+      "nonunit_first_lift_bins": 5,
+      "source_coordinates_reconstructed": 8720,
+      "primitive_Gram_entries_recovered": 1600,
+      "primitive_Gram_rank_mod5": 23,
+      "primitive_Smith": {
+        "v0": 23,
+        "v1": 7,
+        "v4": 10
+      },
+      "source_divisions": 15,
+      "original_det_v5": 77,
+      "exact_even_odd_det_v5": [
+        37,
+        40
+      ],
+      "exact_even_odd_det_units_mod5": [
+        4,
+        3
+      ],
+      "exact_full_det_unit_mod5": 2
+    },
+    "matched_D183": {
+      "class_number": 8,
+      "matched_Q_identical_to_D163": true,
+      "matched_R40_not_native": true,
+      "original_mod5_Gram_identical": true,
+      "primitive_Smith": {
+        "v0": 23,
+        "v1": 7,
+        "v4": 10
+      },
+      "exact_original_det_v5": 77,
+      "exact_even_odd_det_v5": [
+        37,
+        40
+      ]
+    },
+    "conductor2_order_gate": {
+      "D": 163,
+      "status": "M only after its own exact-head hosted CI",
+      "maximal_Q": 225,
+      "original_integer_Q": 109,
+      "full_signed_ray50_classes": 900,
+      "expected_total_ideal_shell_checks": 177,
+      "expected_selected_original_5unit_ideals": 50,
+      "expected_nonunit_observations": 9,
+      "expected_original_primitive_Gram_entries": 1600,
+      "expected_primitive_rank_mod5": 23
+    },
+    "explicit_suborder_projection_counterexample": {
+      "D": 163,
+      "inside_original_order_factors": false,
+      "norm_omega": 41,
+      "norm_one_plus_omega": 43,
+      "product": "omega*(1+omega)=-40+sqrt(-163)",
+      "product_norm": 1763,
+      "inside_original_order_product": true,
+      "reason": "full maximal-order h1 convolution does not imply convolution on conductor2-selected original suborder principal-element sets"
+    }
+  },
+  "preregistrations": [
+    "research/phase313/PRE_REGISTERED_TAME_WILD_RAY.md",
+    "research/phase313/PRE_REGISTERED_RAY_TO_GRAM.md",
+    "research/phase313/PRE_REGISTERED_D163_DEEP_SMITH.md",
+    "research/phase313/PRE_REGISTERED_EXACT_DETERMINANT.md",
+    "research/phase313/PRE_REGISTERED_MATCHED_INTEGER_CONTROL.md",
+    "research/phase313/PRE_REGISTERED_CONDUCTOR2_GATE.md"
+  ],
+  "claim_to_artifact": [
+    {
+      "claim": "600-to-300 signed conductor25 ray bijection",
+      "code": "research/phase313/tame_wild_ray.py",
+      "test": "research/phase313/test_tame_wild_ray.py",
+      "status": "M"
+    },
+    {
+      "claim": "h1 full coprime principal-ray convolution and h8 D183 failure",
+      "code": "research/phase313/principal_norm_shell.py",
+      "test": "research/phase313/test_principal_norm_shell.py",
+      "status": "M"
+    },
+    {
+      "claim": "same-original Gram sign-parity 50+50",
+      "code": "research/phase313/sign_parity_gram.py",
+      "test": "research/phase313/test_sign_parity_gram.py",
+      "status": "M"
+    },
+    {
+      "claim": "global ray unit + nonunit lift -> exact original D203 and D163 primitive Gram",
+      "code": "research/phase313/ray_to_original_gram.py",
+      "test": "research/phase313/test_ray_to_original_gram.py",
+      "status": "M"
+    },
+    {
+      "claim": "h1 D163 original primitive Smith under exact /5 source transform",
+      "code": "research/phase313/d163_deep_smith.py",
+      "test": "research/phase313/test_d163_deep_smith.py",
+      "status": "M"
+    },
+    {
+      "claim": "exact integer determinant original D163, independent of modular Smith",
+      "code": "research/phase313/exact_integer_determinant.py",
+      "test": "research/phase313/test_exact_integer_determinant.py",
+      "status": "M"
+    },
+    {
+      "claim": "matched D183 h8 identical Q109 and original v5=77",
+      "code": "research/phase313/matched_integer_control.py",
+      "test": "research/phase313/test_matched_integer_control.py",
+      "status": "M"
+    },
+    {
+      "claim": "principal-unit and sign-pairing polynomial skeleton",
+      "code": "lean/TenthDiscriminant/Phase313WildRay.lean",
+      "test": ".github/workflows/phase313-lean-ray.yml",
+      "status": "P-narrow only"
+    },
+    {
+      "claim": "h1 full maximal-order conductor50 ray convolution projected through original suborder mod2 selector into SAME original D163 Gram",
+      "code": "research/phase313/conductor2_order_gate.py",
+      "test": "research/phase313/test_conductor2_order_gate.py",
+      "status": "M only after exact-head CI"
+    }
+  ],
+  "independent_controls": [
+    "full original D203 10000 primitive Gram cells vs frozen Phase307/Phase312 source oracle",
+    "full native D163 1600 primitive Gram cells vs exact original integer trace evaluator",
+    "40x40 exact integer determinant using SymPy DomainMatrix (not modulo5 Schur)",
+    "D163 mod5^6 symmetric Schur vs different rectangular modular Smith",
+    "matched SAME Q109 h1 D163 vs h8 D183: primitive histogram and exact valuation equal",
+    "nonunit z/5 lift stratum retained and wild-zero deletion changes original primitive Gram",
+    "remove sign partner -> parity cross term reappears",
+    "nonprincipal ideal class cancellation: D183 norm2*23->46",
+    "h1 D163 original-order counterexample omega norm41 and 1+omega norm43 excluded from suborder, product norm1763 included; projection cannot precede convolution"
+  ],
+  "status_and_limits": {
+    "paper_proofs": "Conditional group and norm-convolution identities; full global field/Gram theorem still unproved.",
+    "local_Lean": "Only generic CommRing principal-unit and parity polynomial identities; no ray class or determinant theorem kernel-checked.",
+    "finite_results": "Explicit exact modular arithmetic and exact integer determinants checked by AI-authored implementations; source semantically matched, not independent human proof.",
+    "retired": [
+      "raw sign-symmetric first Fermat moment detects h1",
+      "inert local ring, wild ray-unit group, fixed primitive spectrum or v5=77 diagnose class number one",
+      "wild 5-primary part is recovered by F25-valued ordinary characters",
+      "first-level field kernel or primitive residual index is independently additive to valuationWeight",
+      "the original integer-order selected principal ray counts inherit coprime ideal convolution directly from h1 maximal-order unique factorization"
+    ],
+    "active_remainder": [
+      "Prove a class-number-one plus radius-cutoff congruence on FULL principal-ray distributions for native large R,S,J, not merely coprime convolution.",
+      "Show that the image of the global ray spectrum under SAME original Gram transport has extra residual p-adic valuation after the old source-weight filtration is removed.",
+      "Transport global maximal-order ray-ideal counts to the exact original integer-order field theorem for all large discriminants, not only fixed small-source examples.",
+      "Obtain independent human mathematical review and external comparator; CI and two AI-authored algorithms are correlated evidence.",
+      "Prove a native-large-field conductor-2 and conductor-25 typed norm-shell projection into the ORIGINAL integer-order Gram and show any h1-specific residual is independent of valuationWeight."
+    ],
+    "no_uniform_cutoff_change": true,
+    "no_main_merge": true
+  },
+  "preregistration": {
+    "kill_condition": "Any mismatch in exact source/observation policy, delta homomorphism and sign invariance, 300 signed unit classes, global h1 convolution, 5-divisible observation reconstruction, original primitive Gram cell equality, exact integer determinant, or matched D183 countercontrol invalidates claimed scope.",
+    "promotion_rule": "Only fixed finite [M] and conditional paper-level [P] algebra. No uniform extra valuation, novelty, or improved 322^4 cutoff without an independent field theorem and human review."
+  },
+  "CI_reference": {
+    "prior_focused_pass": "Phase313 A-G focused 31 tests at workflow 43567944286 (before README/latest head)",
+    "latest_exact_head_status": "Phase313-H newly added; must verify complete exact-head focused, root Lean, narrow Lean and Markdown CI separately."
+  }
+}
