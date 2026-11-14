@@ -1,9 +1,7 @@
 ## Status correction — 14 November 2026
 
 The accepted public theorem on main remains the actual-field class-number-one bound
-\[
-|\operatorname{disc}(K)|<322^4=10,750,371,856.
-\]
+$|\mathrm{disc}(K)|<322^4=10,750,371,856$.
 Main has not been changed by the current research integrations.
 
 **Phase320 is now exact-head verified.** Research-only PR #217 merged the Phase269–320 fabric into `research/phase309-original-source-picard-minors` at commit `1b9461d`. Its exact PR head passed 42/42 workflows, including the complete D163/D187/D203 local conductor-125 replay, all ten source arms, first-wild-digit-preserving local lifts, Phase318/319 regressions, the finite CRT certificate and whole-root Lean checks. These are reproducible finite-source results, not a field-uniform valuation theorem.
