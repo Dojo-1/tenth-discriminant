@@ -77,11 +77,14 @@ def sign_parity_gram_certificate():
     assert (1,0) in q and (-1,0) in q
     cut=tuple(z for z in q if z!=(1,0))
     assert (1,0) not in cut and (-1,0) in cut
-    ec=pilot.evaluate_original_jets(cut,2,1,1,MOD)
-    gc=pilot.original_trace_gram(ec,len(cut),1,MOD)
-    assert ec.shape==(2,2*len(cut))
-    assert gc.shape==(2,2)
-    assert gc[0,1]==(-2)%MOD
+    # The frozen Phase304 evaluator only supports its ORIGINAL J=S=2
+    # 100-row source. Retain that exact source for the hostile control:
+    # constant row index0, Z row index2, constant ordinary j1=0.
+    ec=pilot.evaluate_original_jets(cut,R,S,J,MOD)
+    gc=pilot.original_trace_gram(ec,len(cut),J,MOD)
+    assert ec.shape==(N,2*J*len(cut))
+    assert gc.shape==(N,N)
+    assert gc[0,2]==(-2)%MOD
     return {
         "D":D,
         "actual_Q":len(q),
@@ -98,7 +101,7 @@ def sign_parity_gram_certificate():
         "odd_exact_v5":v_odd,
         "combined_primitive_exact_v5":v_even+v_odd,
         "same_original_v5_after_50_5_divisions":2*50+v_even+v_odd,
-        "asymmetric_observation_Gram_constant_Z_cross":int(gc[0,1]),
+        "asymmetric_observation_Gram_constant_Z_cross":int(gc[0,2]),
         "sign_parity_requires_full_actual_source_support":True,
         "parity_split_does_not_add_new_valuation":True,
     }
