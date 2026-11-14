@@ -1,0 +1,23 @@
+name: Phase290-D rank one prime-local radical orbit witnesses
+on:
+  push:
+    branches: ['research/phase290-*']
+  pull_request:
+    paths:
+      - 'research/phase290/**'
+      - '.github/workflows/phase290-radical-orbit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-local-null-pairing:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Source syntax
+        run: python3 -m py_compile research/phase290/radical_orbit_witness.py
+      - name: Compare local primitive-null self pairing with full adjugate orbit gradients
+        run: python3 -u research/phase290/radical_orbit_witness.py
