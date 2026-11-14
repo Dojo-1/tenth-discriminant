@@ -38,6 +38,12 @@ class RadicalFirstLiftTests(unittest.TestCase):
                              r["difference_restricted_to_radical_rank"]==0)
             self.assertEqual(r["first_radical_form_equal_original"],
                              r["difference_restricted_to_radical_rank"]==0)
+            self.assertTrue(r["tangent_result"][
+                "explicit_GL40_mod25_congruence_verified"])
+            self.assertTrue(r["tangent_result"][
+                "explicit_unit_inverse_verified"])
+            self.assertTrue(r["tangent_result"][
+                "original_coordinate_tangent_equation_verified"])
 
     def test_positive_I_plus_5X_congruence_has_zero_radical_normal_component(self):
         pos=self.data["positive_explicit_U_equal_I_plus_5X_congruence"]
@@ -70,6 +76,13 @@ class RadicalFirstLiftTests(unittest.TestCase):
             g0,Ht,K)["independent_solvability_witness"])
         self.assertFalse(t.tangent_witness_or_obstruction(
             g0,Hn,K)["is_tangent_to_mod5_congruence_orbit"])
+
+    def test_all_five_explicit_matrix_congruences_and_witness_linearity(self):
+        self.assertTrue(self.data["all_five_explicit_GL40_mod25_congruences_checked"])
+        self.assertTrue(self.data["five_parameter_tangent_witness_linear_in_shift"])
+        rows=self.data["synthetic_five_gauge_first_lift_profiles"]
+        self.assertEqual(rows[0]["tangent_result"]["witness_X_nonzero_entries_mod5"],0)
+        self.assertGreater(rows[1]["tangent_result"]["witness_X_nonzero_entries_mod5"],0)
 
     def test_no_novel_field_theorem_from_synthetic_tangency(self):
         self.assertTrue(self.data["no_full_Smith_or_new_determinant_claim"])
