@@ -28,6 +28,8 @@ from inert_trace_radicals import full_omega_q
 from norm_shell_bridge import quadratic_norm,all_ideal_count_at_norm
 from wild_log125 import signed_ray125_tag
 from wild_gauge import antisymmetric_valuation,shifted_ray_tag,full_gauge_countercertificate
+from ray_to_original_gram import embed_integer_pair_to_omega
+import source_probe
 
 
 def small_norm_form_proof_data(D):
@@ -129,9 +131,47 @@ def class_number_gt1_counterworld():
     }
 
 
+def original_integer_order_first_twist_gate():
+    """The exact original O'=Z[sqrt(-D)] norm ball has a later threshold.
+
+    Every nonrational original integer x+y sqrt(-D) has N>=D.
+    In D163, the first such element has norm163 (sqrt(-163)).
+    The first element divisible by omega but not its conjugate
+    appears at norm164=4*N(omega), namely 2*omega=1+sqrt(-163).
+    """
+    D=163
+    rho,R,S,J,Q=source_probe.params(D)
+    assert (rho,R,S,J)==(21,40,1,1)
+    q=tuple(Q)
+    assert len(q)==109
+    assert all(y==0 for x,y in q if x*x+D*y*y<D)
+    nonrational=min(x*x+D*y*y for x,y in q if y!=0)
+    assert nonrational==D
+    active=[]
+    for z in q:
+        if z==(0,0):
+            continue
+        norminteger=z[0]*z[0]+D*z[1]*z[1]
+        if antisymmetric_valuation(embed_integer_pair_to_omega(z)):
+            active.append((norminteger,z))
+    first=min(n for n,z in active)
+    assert first==4*((D+1)//4)==164
+    assert any(n==164 and z==(1,1) for n,z in active)
+    return {
+        "original_integer_order_source_Q":len(q),
+        "smallest_nonrational_original_order_element_norm":nonrational,
+        "smallest_norm_original_order_element_affected_by_wild_twist":first,
+        "first_wild_gauge_active_integer_point":[1,1],
+        "maximal_order_omega_first_nonrational_norm":(D+1)//4,
+        "exact_suborder_conductor2_delay_factor_at_first_active_point":4,
+        "original_integer_point_not_replaced_by_maximal_order":True
+    }
+
+
 def all_controls():
     positives=[class_one_small_norm_rigidity(D) for D in (43,163)]
     negative=class_number_gt1_counterworld()
+    original_first=original_integer_order_first_twist_gate()
     # Compare against the independent CI-gated Phase316-A result.
     synthetic=full_gauge_countercertificate()
     assert synthetic["synthetic_vs_actual_Gram_equal_mod5"]
@@ -141,6 +181,7 @@ def all_controls():
     return {
         "h1_small_norm_ideal_rigidity":positives,
         "h2_nonprincipal_ideal_counterworld":negative,
+        "native_original_integer_order_threshold":original_first,
         "second_depth_twist_preserves_all_h1_rational_square_shells_below_m":True,
         "but_h1_original_integer_Gram_mod25_changes_above_m":True,
         "native_source_Q":synthetic["original_native_integer_source_Q"],
