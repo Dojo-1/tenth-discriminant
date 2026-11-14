@@ -39,6 +39,7 @@ theorem correctedWildLog_additive_mod25 (a b : ZMod 25) :
     correctedWildLog (twistedDefectProduct a b) =
       correctedWildLog a + correctedWildLog b := by
   rw [correctedWildLog_exact_remainder]
-  norm_num
+  have h25 : (25 : ZMod 25) = 0 := by decide
+  simp [h25]
 
 end TenthDiscriminant.Phase315
