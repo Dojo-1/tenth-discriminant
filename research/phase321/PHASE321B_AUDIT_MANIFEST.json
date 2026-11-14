@@ -2,8 +2,8 @@
   "phase": "Phase321-B",
   "date": "2026-11-14",
   "repository": "Dojo-1/tenth-discriminant",
-  "branch": "research/phase321b-ray-invariant-factors-review",
-  "status": "corrected exact-head CI passed all 9 adversarial tests; first failed assertion run is retained as provenance",
+  "branch": "research/phase309-original-source-picard-minors",
+  "status": "merged research-only after corrected exact-head CI passed all 9 adversarial tests",
   "preregistration": "research/phase321/PRE_REGISTERED_PHASE321B_RAY_INVARIANT_FACTORS.md",
   "fields": {
     "D163": {
@@ -224,5 +224,10 @@
     "The actual invariant factors match the direct product of the local signed unit kernel C25 x C300 with the ordinary class group.",
     "Nonidentity cocycle entries for a chosen transversal do not imply nonsplitting; the canonical lift defects are removed by alternate section lifts.",
     "For these three fields only, the observed groups are C25 x C300, C50 x C300 and C100 x C300; no general class-number formula is claimed."
-  ]
+  ],
+  "integration": {
+    "pr": 221,
+    "merge_commit": "549514afdf7b40b87043e7258509cbce86257579",
+    "base_branch": "research/phase309-original-source-picard-minors"
+  }
 }
