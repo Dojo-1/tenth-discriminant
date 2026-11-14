@@ -20,6 +20,10 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
+      - name: Claim-to-artifact audit and evidence-promotion guard
+        run: |
+          python3 -m json.tool research/phase313/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; x=json.load(open("research/phase313/AUDIT_MANIFEST.json")); assert x["claim"]["status_after"]=="M"; assert x["status_and_limits"]["no_uniform_cutoff_change"]; assert x["preregistration"]["kill_condition"]; assert len(x["status_and_limits"]["active_remainder"])>=3; print("Phase313 evidence scope PASS")'
       - name: Install pinned arithmetic environment
         run: |
           python3 -m venv /tmp/phase313
