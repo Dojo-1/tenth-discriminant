@@ -3,7 +3,7 @@
   "date": "2026-11-14",
   "repository": "Dojo-1/tenth-discriminant",
   "branch": "research/phase321b-ray-invariant-factors",
-  "status": "implementation complete; local exact group enumeration and 8 adversarial tests passed; exact-head CI pending",
+  "status": "first exact-head run computed the invariant factors and split sections but failed five stale expected-value assertions; corrected tests are pending exact-head rerun",
   "preregistration": "research/phase321/PRE_REGISTERED_PHASE321B_RAY_INVARIANT_FACTORS.md",
   "fields": {
     "D163": {
@@ -29,39 +29,47 @@
     "D163_phase315_regression": true,
     "exhaustive_cyclic_quotient_section_test": true,
     "verify_nonsplit_or_split_by_lift_orders": true,
-    "canonical_lift_order_and_cocycle_obstruction": true
+    "canonical_lift_order_and_cocycle_obstruction": false,
+    "canonical_lift_defect_and_section_witness": true
   },
   "boundaries": {
     "no_assumed_extension_splitting": true,
     "no_invariant_factors_from_group_order_alone": true,
     "no_character_table_yet": true,
-    "no_uniform_valuation_or_discriminant_cutoff": true
+    "no_uniform_valuation_or_discriminant_cutoff": true,
+    "no_nonsplitting_claim": true
   },
   "implementation": "research/phase321/ray_invariant_factors.py",
   "tests": "research/phase321/test_ray_invariant_factors.py",
   "workflow": ".github/workflows/phase321b-ray-invariant-factors.yml",
   "local_results": {
-    "status": "PASS",
-    "tests": 8,
-    "tests_passed": 8,
+    "status": "COMPUTATION_OUTPUT_REPRODUCED; INITIAL_ASSERTION_SUITE_FAILED",
+    "initial_workflow_run": 43631043257,
+    "initial_workflow_job": 132557491529,
+    "initial_test_result": {
+      "tests": 8,
+      "passed": 3,
+      "failed": 5
+    },
+    "failure_cause": "Five assertions encoded an incorrect pre-registered expectation of nonsplitting and invariant factors C25 x C600 / C25 x C1200. The exact group enumeration instead found splitting sections and direct-product invariant factors. The implementation output itself completed and is retained in the workflow log.",
     "invariant_factors": {
       "D163": [
         25,
         300
       ],
       "D187": [
-        25,
-        600
+        50,
+        300
       ],
       "D203": [
-        25,
-        1200
+        100,
+        300
       ]
     },
     "group_exponents": {
       "D163": 300,
-      "D187": 600,
-      "D203": 1200
+      "D187": 300,
+      "D203": 300
     },
     "p_primary_torsion_counts": {
       "D163": {
@@ -85,8 +93,8 @@
       "D187": {
         "2": [
           1,
-          2,
           4,
+          8,
           8
         ],
         "3": [
@@ -104,9 +112,9 @@
       "D203": {
         "2": [
           1,
-          2,
           4,
-          8,
+          16,
+          16,
           16
         ],
         "3": [
@@ -140,12 +148,17 @@
       "D163": {
         "splits": true,
         "reason": "trivial quotient",
-        "canonical_lift_order": 1
+        "section_lift_count": 1
       },
       "D187": {
-        "splits": false,
+        "splits": true,
         "all_7500_lifts_exhausted": true,
-        "canonical_lift_order": 8,
+        "section_lift_count": 2,
+        "first_section_lift": [
+          7,
+          103
+        ],
+        "canonical_lift_order": 300,
         "canonical_lift_power_h": [
           0,
           [
@@ -153,26 +166,32 @@
             124
           ]
         ],
-        "local_obstruction_order": 4
+        "canonical_lift_power_order": 150
       },
       "D203": {
-        "splits": false,
+        "splits": true,
         "all_7500_lifts_exhausted": true,
-        "canonical_lift_order": 16,
+        "section_lift_count": 4,
+        "first_section_lift": [
+          34,
+          23
+        ],
+        "canonical_lift_order": 300,
         "canonical_lift_power_h": [
           0,
           [
-            54,
-            18
+            6,
+            124
           ]
         ],
-        "local_obstruction_order": 4
+        "canonical_lift_power_order": 75
       }
     }
   },
   "interpretation": [
-    "For D187 and D203 the full ray exact sequence is nonsplit: exhaustive search finds no lift of a generator of the ordinary cyclic class group with the same order.",
-    "The actual invariant factors differ from those of the direct product of the local kernel and ordinary class group.",
-    "For these three fields only, the observed ray groups are C25 x C(300h) with h=1,2,4; this is not promoted to a general theorem."
+    "The full ray exact sequence splits for all three tested fields: D163 trivially, D187 and D203 by explicit order-preserving lifts found through exhaustive search over all 7500 local kernel elements.",
+    "The actual invariant factors match the direct product of the local signed unit kernel C25 x C300 with the ordinary class group.",
+    "Nonidentity cocycle entries for a chosen transversal do not imply nonsplitting; the canonical lift defects are removed by alternate section lifts.",
+    "For these three fields only, the observed groups are C25 x C300, C50 x C300 and C100 x C300; no general class-number formula is claimed."
   ]
 }
