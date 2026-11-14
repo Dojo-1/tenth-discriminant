@@ -64,7 +64,7 @@ In Phase317-D, a constructive test attempts something STRICTER than tangent memb
 \boxed{G_k=U_k G U_k^\mathsf{T}\pmod{25}.}
 \]
 
-The exact-head CI status of this stronger step must be checked separately. If it passes, the synthetic matrices are identical as bilinear forms over \(\mathbb Z/25\), despite their 363 changed entries. This is ONLY a modulo25 equivalence; it does NOT imply their full integral Gram determinants or deeper 5-adic Smith profiles coincide.
+The stronger step **has now passed**: focused hosted run 43590228744, with **20 adversarial tests**, constructs all five exact matrices \(U_k\), checks their inverses \(I-5X_k\), and verifies EVERY ONE of the 1,600 matrix entries for each gauge. The synthetic and actual matrices are **congruent bilinear forms over \(\mathbb Z/25\)**, despite the 363 changed coordinate entries for nonzero shifts. The \(X_k\) coefficients are linear in \(k\) modulo5. This is ONLY a modulus25 congruence; it does NOT imply their full integral Gram determinants or deeper 5-adic Smith profiles coincide.
 
 ~~~mermaid
 flowchart TD
