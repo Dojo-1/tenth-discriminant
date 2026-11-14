@@ -227,6 +227,11 @@ def build_ray_coordinates(D, context):
         "g_large": g_large,
         "u25": u25,
         "u300": u300,
+        "local_generator_orders": {
+            "order_25": local_element_order(u25, D),
+            "order_300": local_element_order(u300, D)
+        },
+        "ray_generator_orders": {"order_25h": n1, "order_300": n2},
         "section": section,
         "coordinate_map": coordinate_map,
         "all_elements": all_elements
@@ -458,7 +463,9 @@ def run_phase322():
             "ray_group_order": len(model["all_elements"]),
             "ray_invariant_factors": [model["n1"], model["n2"]],
             "local_generators": {"order_25": model["u25"], "order_300": model["u300"]},
+            "local_generator_orders": model["local_generator_orders"],
             "ray_generators": {"order_25h": model["g_small"], "order_300": model["g_large"]},
+            "ray_generator_orders": model["ray_generator_orders"],
             "section_lift": model["section"],
             "coordinate_bijection_size": len(model["coordinate_map"]),
             "coordinate_generator_step_checks": 2 * len(model["coordinate_map"]),
