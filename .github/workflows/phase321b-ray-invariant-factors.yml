@@ -1,0 +1,29 @@
+name: Phase321-B ray invariant factors and extension splitting
+on:
+  pull_request:
+    paths:
+      - 'research/phase321/**'
+      - '.github/workflows/phase321b-ray-invariant-factors.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ray-invariant-factors:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Verify Phase321 and Phase321-B preregistrations
+        run: |
+          test -f research/phase321/PRE_REGISTERED_IDEAL_AWARE_RAY_CLASS_GROUP.md
+          test -f research/phase321/PRE_REGISTERED_PHASE321B_RAY_INVARIANT_FACTORS.md
+          python3 -m json.tool research/phase321/AUDIT_MANIFEST.json >/dev/null
+          python3 -m json.tool research/phase321/PHASE321B_AUDIT_MANIFEST.json >/dev/null
+      - name: Static syntax
+        run: python3 -m py_compile research/phase321/*.py
+      - name: Reconstruct all p-primary torsion counts and invariant factors
+        run: python3 -u research/phase321/ray_invariant_factors.py
+      - name: Adversarial invariant-factor, extension and exponent tests
+        run: python3 -m unittest discover -s research/phase321 -p 'test_ray_invariant_factors.py' -v
