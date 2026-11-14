@@ -1,0 +1,43 @@
+{
+  "phase": "Phase319",
+  "date": "2026-11-14",
+  "repo": "Dojo-1/tenth-discriminant",
+  "branch": "research/phase319-maximal-order-ray-realization",
+  "parent_commit": "96ef39f34ba2792176139be4986f50b58bfa5253",
+  "preregistration": "research/phase319/PRE_REGISTERED_MAXIMAL_ORDER_REALIZATION.md",
+  "main_unchanged": true,
+  "reported_cutoff": "322^4 UNCHANGED",
+  "result_status": "implementation committed; exact-head CI pending",
+  "evidence_labels": {
+    "P": "elementary norm, local trace and exact principal-ideal valuation identities under stated hypotheses",
+    "M": "finite D163 maximal-order support, exact norm fibres, conductor-250 replays and local lift calculations after CI",
+    "H": "uniform large-discriminant class-number-one implication and any additional determinant valuation",
+    "R": "identifying Q109 with Q225, promoting synthetic rays to exact generators, or promoting determinant residues to valuations"
+  },
+  "frozen_source": {
+    "field_discriminant_parameter": 163,
+    "maximal_order": "Z[omega], omega^2-omega+41=0",
+    "norm_cutoff": 441,
+    "maximal_order_points": 225,
+    "old_integer_order_points": 109,
+    "new_odd_omega_coordinate_points": 116,
+    "monomial_rows": 40,
+    "ordinary_jet_layers": 1
+  },
+  "planned_checks": {
+    "split_prime_characters": 34,
+    "exact_maximal_order_norm_fibre_for_every_changed_shell": true,
+    "conductor250_norm_shells_per_character": 177,
+    "conductor250_coprime_products_per_character": 270,
+    "all_five_local_norm125_lifts_per_signed_unit_site": true,
+    "full_symmetric_differential_span": true,
+    "radical_normal_image": true,
+    "synthetic_full_support_gram_first_two_smith_layers": true
+  },
+  "claim_boundary": {
+    "no_new_322_power4_claim": true,
+    "no_321_power4_promotion": true,
+    "no_uniform_additional_valuation_claim": true,
+    "no_independent_human_review_claim": true
+  }
+}
