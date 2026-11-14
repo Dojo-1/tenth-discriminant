@@ -157,7 +157,7 @@
             "primitive_rank_mod5": 23,
             "radical_dimension": 17,
             "e1_rank": 7,
-            "e_ge2": 0,
+            "e_ge2": 10,
             "full_differential_span_rank": 5,
             "radical_normal_image_rank": 1,
             "lifts": 250
@@ -190,7 +190,7 @@
             "primitive_rank_mod5": 19,
             "radical_dimension": 21,
             "e1_rank": 9,
-            "e_ge2": 10,
+            "e_ge2": 12,
             "full_differential_span_rank": 5,
             "radical_normal_image_rank": 2,
             "lifts": 220
@@ -251,7 +251,7 @@
             "primitive_rank_mod5": 19,
             "radical_dimension": 21,
             "e1_rank": 9,
-            "e_ge2": 10,
+            "e_ge2": 12,
             "full_differential_span_rank": 5,
             "radical_normal_image_rank": 2,
             "lifts": 220
