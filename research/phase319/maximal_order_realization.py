@@ -330,6 +330,10 @@ def full_maximal_order_certificate():
             active_full.append(prime)
 
         changed, shell_records = exact_shell_realization(Q, sites, pi)
+        assert all(
+            x["synthetic_classes_unrealized_at_exact_norm"] == 2
+            for x in shell_records
+        ), ("changed maximal-order norm shell has an unexpected ray realization", prime)
         fake_counts = Counter(
             signed_wild_character_tag(z, pi) for z in sites
         )
@@ -398,6 +402,18 @@ def full_maximal_order_certificate():
         )
 
     assert set(active_even).issubset(set(active_full))
+    assert len(active_even) == 16
+    assert len(active_full) == 34
+    total_changed_shells = sum(x["changed_exact_norm_shells"] for x in results)
+    total_unrealized = sum(
+        x["synthetic_classes_unrealized_over_full_maximal_order"]
+        for x in results
+    )
+    residue_changes = sum(x["determinant_residue_changed_mod25"] for x in results)
+    assert total_changed_shells == 44
+    assert total_unrealized == 88
+    assert residue_changes == 21
+    assert byprime[197]["changed_exact_norm_shells"] == 0
     return {
         "D": D,
         "maximal_order_norm_cutoff": RHO * RHO,
@@ -420,6 +436,10 @@ def full_maximal_order_certificate():
         "exact_ideal_valuation_product_checks": total_exact_valuation_checks,
         "full_ray250_ideal_shell_replays": total_shell_checks,
         "full_ray250_coprime_products": total_convolution_checks,
+        "total_changed_exact_norm_shells": total_changed_shells,
+        "total_unrealized_synthetic_ray_classes": total_unrealized,
+        "characters_changing_determinant_residue_mod25": residue_changes,
+        "p197_per_shell_ray_spectrum_unchanged": True,
         "mandatory_exact_norm_fibres": required_fibres,
         "per_character_records": results,
         "all_full_support_synthetic_grams_keep_unit_mod5": True,
