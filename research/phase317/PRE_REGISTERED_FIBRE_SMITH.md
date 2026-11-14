@@ -42,6 +42,7 @@ Frozen checks:
   3. Independently compare with an explicit integer 2x2 and 3x3 hostile matrix for which first and second Smith layers are known; include row/column permutation invariance and unimodular row/column shear invariance to reject a pivot-order bug.
   4. Compare actual original and synthetic Gram e1. DO NOT predeclare that they differ. If identical, report that 363 changed mod25 cells did not change first two Smith layers; if different, report a sharp countermodel that all earlier constraints fail to fix e1.
   5. Repeat the original matrix reconstructed from the exact norm164 tags ONLY; verify it matches the unchanged original. Removing the synthetic difference in that one fibre must restore all1600 entries.
+  6. Before implementing B, also freeze the COMPLETE five-element trace-zero shift family k*t for k=0,1,2,3,4, with t=(20,10) mod25. Compute the same e0/e1/e>=2 and changed Gram cells for all five. Report even if every e1 agrees. These are SYNTHETIC tags only; do not interpret the sweep as five real quadratic fields.
 
 ## C. Lean (narrow) and mathematical frontier
 
