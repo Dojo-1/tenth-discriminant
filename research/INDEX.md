@@ -50,7 +50,7 @@ Reader guide: [research/phase319/README.md](phase319/README.md).
 
 D163, D187 and D203 (class numbers 1, 2 and 4), with matched and native row/jet geometries and even-suborder/full-maximal-order controls.
 
-<badge color="success">Exact-head CI passed</badge>
+**Exact-head CI passed.**
 
 PR #217 merged into the research parent at 1b9461d. The exact head passed the Phase320, Phase318, Phase319, finite CRT, whole-root Lean and Markdown checks. Ten source arms and all local lift/first-wild-digit checks are reproducible finite-source results, not a field-uniform valuation theorem.
 
