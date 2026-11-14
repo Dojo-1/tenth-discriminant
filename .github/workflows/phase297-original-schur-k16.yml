@@ -1,0 +1,27 @@
+name: Phase297-B deeper p16 original Schur integral-frame gate
+on:
+  push:
+    branches: ['research/phase297-*']
+  pull_request:
+    paths:
+      - 'research/phase297/**'
+      - '.github/workflows/phase297-original-schur-k16.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  deep-original-cokernel:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact high-precision array runtime
+        run: |
+          python3 -m venv /tmp/phase297b
+          /tmp/phase297b/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Python source syntax
+        run: /tmp/phase297b/bin/python -m py_compile research/phase297/original_schur_integrality_k16.py
+      - name: Original D587 row/jet p16 Gram and Python-bigint Smith image comparison
+        run: /tmp/phase297b/bin/python -u research/phase297/original_schur_integrality_k16.py
