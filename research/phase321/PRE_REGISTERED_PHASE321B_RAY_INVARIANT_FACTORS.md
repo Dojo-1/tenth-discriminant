@@ -56,3 +56,14 @@ Reject:
 - **R:** treating the invariant factors as a proof that the extension splits, or confusing an abstract group decomposition with a canonical splitting of the exact sequence.
 
 Phase321-B is the immediate prerequisite for a complete exact character group. It does not yet evaluate characters on all prime ideals or prove a zero-free theorem.
+
+
+## Extension-splitting test
+
+The ordinary class groups in these three cases are cyclic (trivial, C2, C4). For D187 and D203, exhaust every local lift (g=(c,u)) of a fixed generator (c) of the ordinary class group and test whether
+[
+g^{\operatorname{ord}(c)}=1.
+]
+For a cyclic quotient, existence of such a lift is equivalent to a group-theoretic section of the ray exact sequence. If one exists, record the explicit lift. If none exists, the extension is nonsplit. Do not infer splitting or nonsplitting from a nontrivial cocycle entry alone.
+
+For D163 the quotient is trivial and the extension splits tautologically.
