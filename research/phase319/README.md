@@ -43,3 +43,6 @@ A changed Gram entry, a changed determinant residue modulo 25, an exact multipli
 - **R:** treating the (Q_{109}) radical as the maximal-order radical, or treating synthetic ray tags as actual generators.
 
 No changes to main or the reported (322^4) endpoint. No promotion of the separate (321^4) candidate.
+
+
+The exact-head workflow is `.github/workflows/phase319-maximal-order-realization.yml`; no claim is promoted until that run and its hostile controls complete.
