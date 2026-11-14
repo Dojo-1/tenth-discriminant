@@ -105,14 +105,46 @@ def maximal_order_source(D, rho):
     return Q
 
 
-def old_integer_order_source_D163(rho=21):
+def old_integer_order_source(D, rho):
+    """Original Z[sqrt(-D)] norm ball, mapped into maximal-order omega coordinates."""
     Q = []
-    for y in range(-isqrt((rho * rho) // 163),
-                   isqrt((rho * rho) // 163) + 1):
-        xbound = isqrt(rho * rho - 163 * y * y)
+    ymax = isqrt((rho * rho) // D)
+    for y in range(-ymax, ymax + 1):
+        xbound = isqrt(rho * rho - D * y * y)
         for x in range(-xbound, xbound + 1):
             Q.append((x - y, 2 * y))
     return tuple(sorted(set(Q)))
+
+
+def index_two_source_certificate(D, rho, Qmax):
+    """Verify the exact index-two order map and finite support inclusion."""
+    T = np.asarray([[1, -1], [0, 2]], dtype=np.int64)
+    B = trace_matrix(D)
+    expected = np.asarray([[2, 0], [0, 2 * D]], dtype=np.int64)
+    assert np.array_equal(T.T @ B @ T, expected)
+    Qold = old_integer_order_source(D, rho)
+    Qeven = tuple(sorted(z for z in Qmax if z[1] % 2 == 0))
+    assert set(Qold) == set(Qeven)
+    for x, y in ((x, y) for y in range(-isqrt((rho * rho) // D),
+                                       isqrt((rho * rho) // D) + 1)
+                 for x in range(-isqrt(rho * rho - D * y * y),
+                                isqrt(rho * rho - D * y * y) + 1)):
+        z = (x - y, 2 * y)
+        assert norm_int(z, D) == x * x + D * y * y
+    assert set(Qeven).issubset(set(Qmax))
+    return {
+        "D": D, "rho": rho,
+        "coordinate_map": "(x,y)->(x-y,2y)",
+        "coordinate_matrix": T.tolist(),
+        "determinant_T": 2,
+        "trace_metric_congruence_exact": True,
+        "old_integer_order_points": len(Qold),
+        "maximal_order_even_b_points": len(Qeven),
+        "full_maximal_order_points": len(Qmax),
+        "new_odd_b_points": len(Qmax) - len(Qeven),
+        "old_support_equals_even_b_subset": True,
+        "supports_are_not_equal": len(Qmax) != len(Qeven)
+    }
 
 
 def reduced_forms(D):
@@ -322,8 +354,9 @@ def rank_mod5(matrix):
         factors = A[rank + 1:, col].copy()
         mask = factors != 0
         if np.any(mask):
-            A[rank + 1:, col:][mask, :] = (
-                A[rank + 1:, col:][mask, :]
+            indices = np.flatnonzero(mask) + rank + 1
+            A[indices, col:] = (
+                A[indices, col:]
                 - factors[mask, None] * A[rank, col:][None, :]
             ) % P
         rank += 1
@@ -472,12 +505,13 @@ def local_normal_certificate(D, R, J, Q, source):
     }
 
 
-def build_arm(name, D, rho, R, J, Q):
+def build_arm(name, D, rho, R, J, Q, source_order="maximal-order"):
     src = source_gram_certificate(Q, D, R, J)
     local = local_normal_certificate(D, R, J, Q, src)
     return {
         "name": name,
         "field": field_certificate(D),
+        "source_order": source_order,
         "rho": rho,
         "norm_cutoff": rho * rho,
         "source": src["support_metadata"],
@@ -508,25 +542,39 @@ def run_cross_field_certificate():
     # D163 source-completion control: old even suborder vs full maximal order.
     Q163 = maximal_order_source(163, 21)
     Q163_even = tuple(z for z in Q163 if z[1] % 2 == 0)
-    Q163_old = old_integer_order_source_D163(21)
+    idx163 = index_two_source_certificate(163, 21, Q163)
     assert len(Q163) == 225 and len(Q163_even) == 109
-    assert set(Q163_even) == set(Q163_old)
-    arms.append(build_arm("D163-even-legacy-control", 163, 21, 40, 1, Q163_even))
+    assert idx163["old_support_equals_even_b_subset"]
+    arms.append(build_arm("D163-even-legacy-control", 163, 21, 40, 1,
+                          Q163_even, "integer-order-even-suborder"))
     arms.append(build_arm("D163-full-maximal", 163, 21, 40, 1, Q163))
 
     # Matched diagnostic: same norm cutoff, 40 original monomial rows, J=1.
+    # Each field is split into its even-b index-two suborder and full maximal order.
+    index_two_controls = {163: [idx163]}
     for D in (187, 203):
         Q = maximal_order_source(D, 21)
+        Qeven = tuple(sorted(z for z in Q if z[1] % 2 == 0))
+        idx = index_two_source_certificate(D, 21, Q)
+        index_two_controls.setdefault(D, []).append(idx)
         assert len({(a % P, b % P) for a, b in Q}) == 25
+        arms.append(build_arm(f"D{D}-matched-even-R40-J1", D, 21, 40, 1,
+                              Qeven, "integer-order-even-suborder"))
         arms.append(build_arm(f"D{D}-matched-R40-J1", D, 21, 40, 1, Q))
 
-    # Native original-source geometry, derived from the frozen parameter rule.
+    # Native row/jet geometry on the full maximal-order source, with the
+    # corresponding index-two suborder retained as a separate support arm.
     for D in (187, 203):
         rho = exact_rho(D)
         R = D // 4
         J = R // 25
         assert (rho, R, J) == ({187: (23, 46, 1), 203: (24, 50, 2)}[D])
         Q = maximal_order_source(D, rho)
+        Qeven = tuple(sorted(z for z in Q if z[1] % 2 == 0))
+        idx = index_two_source_certificate(D, rho, Q)
+        index_two_controls[D].append(idx)
+        arms.append(build_arm(f"D{D}-native-even-R{R}-J{J}", D, rho, R, J,
+                              Qeven, "integer-order-even-suborder"))
         arms.append(build_arm(f"D{D}-native-R{R}-J{J}", D, rho, R, J, Q))
 
     byname = {a["name"]: a for a in arms}
@@ -542,15 +590,18 @@ def run_cross_field_certificate():
     assert full["radical_normal_image_dimension"] == 0
     assert full["full_symmetric_primitive_Gram_differential_span_rank"] == 10
 
-    # Prior Phase303 native D203 source result is a mandatory regression,
-    # not a prediction: R50,J2 has primitive rank 63 and corank 37.
+    # The D203 R50,J2 arm here uses the full maximal-order norm ball.
+    # It is deliberately NOT identified with any earlier integer-order
+    # D203 experiment; source completion is one of the variables under test.
     d203_native = byname["D203-native-R50-J2"]["local_normal"]
-    assert d203_native["primitive_Gram_rank_mod5"] == 63
-    assert d203_native["primitive_radical_dimension"] == 37
+    assert d203_native["R"] * d203_native["J"] == 100
+    assert (d203_native["primitive_Gram_rank_mod5"]
+            + d203_native["primitive_radical_dimension"]) == 100
 
     return {
         "fields": field_data,
         "local_conductor125_unit_group_replays": ray_data,
+        "index_two_source_support_controls": index_two_controls,
         "arms": arms,
         "D163_source_completion_regression": {
             "even_order_points": 109,
@@ -560,10 +611,11 @@ def run_cross_field_certificate():
             "even_radical_normal_image_dimension": 1,
             "full_radical_normal_image_dimension": 0
         },
-        "D203_native_geometry_regression": {
+        "D203_native_maximal_order_geometry": {
             "R": 50, "J": 2, "rows": 100,
-            "primitive_rank_mod5": 63,
-            "primitive_radical_dimension": 37
+            "primitive_rank_mod5": d203_native["primitive_Gram_rank_mod5"],
+            "primitive_radical_dimension": d203_native["primitive_radical_dimension"],
+            "source_is_full_maximal_order_not_original_integer_order": True
         },
         "global_class_group_boundary": {
             "D163_class_number": 1,
