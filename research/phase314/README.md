@@ -89,3 +89,33 @@ Previous counterworlds remain binding: D163 h1 and D183 h8 share the entire exac
 - **[R]** wild information beyond degree2 affects the current primitive mod5 Gram, or selected suborder norm-shell counts convolve directly.
 
 Narrow Lean file Phase314WildSecondJet checks two-variable third differences and atomic six-moment convolution. It does **not** formalize the class group, 900 signed ray classes, or determinant. Source files and hostile tests are under this directory. No main merge, no improved tenth-discriminant cutoff and no external mathematical peer review claimed.
+
+
+## Held-out F: 60-radius genuinely nontrivial ideal tests
+
+The frozen native radius21 conductor50 check contained only four nonzero nonidentity coprime products, despite 270 eligible formal pairs. Phase314-F therefore preregistered a HELD-OUT radius60 test BEFORE execution, without replacing the native original Gram or changing any field theorem parameter.
+
+At radius60 the full maximal-order h1 ray spectra have 900 signed classes and their **216-moment wild second-jet** quotient preserves **230** genuine nonidentity products in D43 and **59** in D163. For each field, all **1440** positive norm shells coprime to10 up to3600 match independently computed Dedekind zeta ideal-count coefficients. Full ray product and compressed moment product agree on all these positive pair cases; tests also count nonzero distribution and moment coefficients, not just pass/fail booleans. See heldout_global_ray.py and the earlier-frozen PRE_REGISTERED_HELDOUT_RADIUS60.md.
+
+The negative control is D187, with class number2 by classical reduced positive definite forms, 2 and5 inert just like D43/D163, and the SAME ABSTRACT local ray50 unit group C3×C12×C5². The maximal-order element sqrt(-187)=2omega-1 has norm187=11×17, yet neither 11 nor17 is an element norm (both less than (D+1)/4=47 and nonsquares); the principal norm11 and norm17 distributions are zero while the principal norm187 distribution is nonzero. Full principal-only ray convolution therefore fails on a genuine coprime product due to nonprincipal ideal-class cancellation.
+
+~~~mermaid
+flowchart TD
+  K["Same local quadratic completions at 2 and 5"] --> W["Same ABSTRACT 900-class local ray-unit structure"]
+  W --> A["h1 D43: 230 genuine coprime products"]
+  W --> B["h1 D163: 59 genuine coprime products"]
+  W --> X["h2 D187: principal-only 11 ×17 fails at 187"]
+  A --> T["Full 900 ray products = truncated 216-moment products"]
+  B --> T
+  T -. "does NOT force a Gram rank defect" .-> H["Uniform h1 residual valuation: OPEN"]
+~~~
+
+This is substantial evidence for the arithmetic *interface* and for the global/nonlocal distinction, not a claim of a new discriminant bound. Held-out radius60 is not a native source for the analytic comparison. We did NOT transport its counts into the native integer-order Gram at a different radius.
+
+## Read the information boundary as a theorem target
+
+The image of a **linear map** from at most 78 moments to symmetric matrices can certainly contain full-rank matrices. Therefore "78 features" must NOT be turned into "rank at most78," or a new Gram determinant exponent. The missing class-one input would need to force specific relations among the actual 78 moments under the native source, so that a relevant residual minor vanishes or is 5-divisible. A successful h1 convolution identity does not supply such a relation on its own.
+
+A precise next direction is to compute the symbolic Gram coefficient maps of the six wild moments, identify their **determinantal degeneracy loci** over F5, and then ask whether actual conductor50 h1 principal-shell conditions PLUS a native norm cutoff force those loci. Matched h2 D183 and held-out h2 D187 remain mandatory counterworlds. Deep 5-adic digits are a distinct typed line.
+
+The audit manifest records AI-generated tests, failures/corrections and what the available Lean proofs actually assert. No independent human review and no improved 322^4 claim.
