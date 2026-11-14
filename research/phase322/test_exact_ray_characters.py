@@ -31,12 +31,13 @@ class Phase322ExactRayCharacterTests(unittest.TestCase):
 
     def test_local_generators_have_exact_orders_and_full_product(self):
         for D, row in self.fields.items():
-            self.assertEqual(row["local_generators"]["order_25"],
-                             tuple(row["local_generators"]["order_25"]))
+            self.assertEqual(row["local_generator_orders"],
+                             {"order_25": 25, "order_300": 300})
+            h = {163: 1, 187: 2, 203: 4}[D]
+            self.assertEqual(row["ray_generator_orders"],
+                             {"order_25h": 25 * h, "order_300": 300})
             self.assertEqual(row["coordinate_generator_step_checks"],
                              2 * EXPECTED_RAY_ORDERS[D])
-            self.assertEqual(row["ray_generators"]["order_300"],
-                             row["ray_generators"]["order_300"])
             self.assertEqual(row["coordinate_bijection_size"],
                              EXPECTED_RAY_ORDERS[D])
 
