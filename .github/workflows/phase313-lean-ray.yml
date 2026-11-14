@@ -4,16 +4,16 @@ on:
     branches: ['research/phase313-*']
     paths:
       - 'lean/TenthDiscriminant/Phase313WildRay.lean'
-      - '.github/workflows/phase312-lean-fermat.yml'
+      - '.github/workflows/phase313-lean-ray.yml'
   pull_request:
     paths:
       - 'lean/TenthDiscriminant/Phase313WildRay.lean'
-      - '.github/workflows/phase312-lean-fermat.yml'
+      - '.github/workflows/phase313-lean-ray.yml'
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  fifth-power-defects:
+  wild-principal-unit-identities:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     defaults:
