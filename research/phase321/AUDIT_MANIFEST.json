@@ -1,0 +1,45 @@
+{
+  "phase": "Phase321",
+  "date": "2026-11-14",
+  "repository": "Dojo-1/tenth-discriminant",
+  "branch": "research/phase277-320-unified",
+  "status": "preregistered; implementation not started",
+  "preregistration": "research/phase321/PRE_REGISTERED_IDEAL_AWARE_RAY_CLASS_GROUP.md",
+  "modulus": 125,
+  "fields": {
+    "D163": {
+      "class_number": 1,
+      "local_unit_count": 15000,
+      "global_units": 2,
+      "predicted_ray_class_group_order": 7500
+    },
+    "D187": {
+      "class_number": 2,
+      "local_unit_count": 15000,
+      "global_units": 2,
+      "predicted_ray_class_group_order": 15000
+    },
+    "D203": {
+      "class_number": 4,
+      "local_unit_count": 15000,
+      "global_units": 2,
+      "predicted_ray_class_group_order": 30000
+    }
+  },
+  "exact_sequence": "O_D^* -> (O_D/(125))^* -> Cl_(125)(K_D) -> Cl(K_D) -> 1",
+  "planned": {
+    "reduced_form_ideal_representatives": true,
+    "exact_ideal_lattice_multiplication": true,
+    "hermite_normal_form": true,
+    "exact_cocycle_alpha_cd": true,
+    "cocycle_associativity": true,
+    "full_ray_class_group_multiplication": true,
+    "bounded_prime_ideal_catalog_up_to_441": true
+  },
+  "boundaries": {
+    "no_assumed_direct_product_decomposition": true,
+    "no_principal_generator_substitution_for_nonprincipal_ideals": true,
+    "no_global_character_family_claim_until_group_verified": true,
+    "no_uniform_valuation_or_discriminant_cutoff": true
+  }
+}
