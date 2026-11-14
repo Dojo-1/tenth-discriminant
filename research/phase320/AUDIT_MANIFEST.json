@@ -1,0 +1,100 @@
+{
+  "phase": "Phase320",
+  "date": "2026-11-14",
+  "repository": "Dojo-1/tenth-discriminant",
+  "branch": "research/phase277-320-unified",
+  "status": "preregistered and implemented; exact-head CI pending",
+  "preregistration": "research/phase320/PRE_REGISTERED_CROSS_FIELD_WILD_NORMAL.md",
+  "implementation": "research/phase320/cross_field_wild_normal.py",
+  "tests": "research/phase320/test_cross_field_wild_normal.py",
+  "fields": {
+    "D163": {
+      "discriminant": -163,
+      "class_number": 1,
+      "five_inert": true
+    },
+    "D187": {
+      "discriminant": -187,
+      "class_number": 2,
+      "five_inert": true
+    },
+    "D203": {
+      "discriminant": -203,
+      "class_number": 4,
+      "five_inert": true
+    }
+  },
+  "source_arms": [
+    {
+      "name": "D163-even-legacy-control",
+      "D": 163,
+      "rho": 21,
+      "R": 40,
+      "J": 1
+    },
+    {
+      "name": "D163-full-maximal",
+      "D": 163,
+      "rho": 21,
+      "R": 40,
+      "J": 1
+    },
+    {
+      "name": "D187-matched-R40-J1",
+      "D": 187,
+      "rho": 21,
+      "R": 40,
+      "J": 1
+    },
+    {
+      "name": "D203-matched-R40-J1",
+      "D": 203,
+      "rho": 21,
+      "R": 40,
+      "J": 1
+    },
+    {
+      "name": "D187-native-R46-J1",
+      "D": 187,
+      "rho": 23,
+      "R": 46,
+      "J": 1
+    },
+    {
+      "name": "D203-native-R50-J2",
+      "D": 203,
+      "rho": 24,
+      "R": 50,
+      "J": 2
+    }
+  ],
+  "planned_measurements": {
+    "exact_reduced_form_class_numbers": true,
+    "exact_maximal_order_norm_ball_support": true,
+    "all_25_residue_classes_for_full_matched_support": true,
+    "exact_original_to_primitive_frobenius_gram_identity": true,
+    "complete_signed_conductor125_unit_group_per_field": true,
+    "all_norm_preserving_second_wild_lifts_per_signed_5unit_site": true,
+    "first_wild_digit_preservation": true,
+    "primitive_gram_mod5_rank_and_radical": true,
+    "first_radical_lift_form_rank": true,
+    "full_symmetric_differential_span": true,
+    "radical_normal_image_span": true,
+    "Smith_layers_only_mod25": true,
+    "nonunits_separate": true
+  },
+  "claim_boundary": {
+    "no_main_change": true,
+    "no_new_322_power4_claim": true,
+    "no_321_power4_promotion": true,
+    "no_uniform_field_valuation_or_cutoff": true,
+    "no_global_ray_character_transfer_to_nonprincipal_classes": true,
+    "no_determinant_valuation_inference_from_mod25_residue": true
+  },
+  "ci": {
+    "phase320_cross_field_workflow": "pending",
+    "phase318_local_D163_regression": "pending",
+    "phase319_maximal_order_D163_regression": "pending",
+    "whole_root_lean": "pending"
+  }
+}
