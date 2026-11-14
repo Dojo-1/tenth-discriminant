@@ -1,3 +1,21 @@
+## Status correction — 14 November 2026
+
+The accepted public theorem on main remains the actual-field class-number-one bound
+$|\mathrm{disc}(K)|<322^4=10,750,371,856$.
+Main has not been changed by the current research integrations.
+
+**Phase320 is now exact-head verified.** Research-only PR #217 merged the Phase269–320 fabric into `research/phase309-original-source-picard-minors` at commit `1b9461d`. Its exact PR head passed 42/42 workflows, including the complete D163/D187/D203 local conductor-125 replay, all ten source arms, first-wild-digit-preserving local lifts, Phase318/319 regressions, the finite CRT certificate and whole-root Lean checks. These are reproducible finite-source results, not a field-uniform valuation theorem.
+
+**Phase321 has constructed the full ideal-aware ray class groups modulo 125.** The exact group orders are 7,500, 15,000 and 30,000 for D163, D187 and D203. Exact ideal-lattice products, cocycles, all group inverses and a bounded prime-ideal catalog passed the Phase321 workflow and eight adversarial tests. PR #218 is research-only; the whole-root Lean replay is still pending.
+
+**The Phase209–268 original-Gram line is being consolidated in PR #219.** Its source oracles and Markdown checks have passed; the focused Phase209 Lean job and whole-root Lean replay are still running. The Phase267 actual-field (321^4) declaration is a formal candidate, stronger than (322^4), but remains outside main and subject to independent semantic reconstruction.
+
+PR #157 remains an open draft against main; its earlier 24/24 checks are historical to its 10 November head. Independent mathematical review issues [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50) and [#51](https://github.com/Dojo-1/tenth-discriminant/issues/51) remain open. No AI self-review or CI result closes them. No general-character zero-free theorem is claimed.
+
+See the [unified research index](research/INDEX.md) for the Phase209–321 map, PR status and evidence boundaries.
+
+---
+
 # Start here — current Tenth Discriminant research state
 
 **Status correction — 4 November 2026:** [PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) is merged and includes `Threshold322.totallyComplex_degree_two_classNumber_one_discriminant_bound_322`, the encoded totally complex quadratic class-number-one theorem `|disc(K)| < 322^4 = 10,750,371,856`. The 328^4/327^4 narrative below is retained as a **3 November historical snapshot**, not a replacement for this newer checked theorem. [Phase209 PR #157](https://github.com/Dojo-1/tenth-discriminant/pull/157) targets a **conditional** 321^4 improvement and remains draft, with concrete source-to-jet/weighted-minor bridges unproved. [Math 2.0 methods-and-understanding charter #158](https://github.com/Dojo-1/tenth-discriminant/issues/158) restores the zero-exclusion comparison and human-reconstruction objectives. [Review #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) and [cross-method source check #51](https://github.com/Dojo-1/tenth-discriminant/issues/51) remain open.
