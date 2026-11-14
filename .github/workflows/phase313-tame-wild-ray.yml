@@ -34,6 +34,8 @@ jobs:
         run: /tmp/phase313/bin/python -u research/phase313/sign_parity_gram.py
       - name: Reconstruct actual D203 and h1 integer-order D163 primitive Grams from ray counts
         run: /tmp/phase313/bin/python -u research/phase313/ray_to_original_gram.py
+      - name: Deep h1 D163 original integer Gram Schur and independent Smith to 5^6
+        run: /tmp/phase313/bin/python -u research/phase313/d163_deep_smith.py
       - name: Adversarial field, shell, nilpotence and parity tests
         run: /tmp/phase313/bin/python -m unittest discover -s research/phase313 -p 'test_*.py' -v
       - name: Preserve Phase312 global shell and source claims
