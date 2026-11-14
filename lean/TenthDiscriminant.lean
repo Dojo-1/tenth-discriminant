@@ -240,3 +240,4 @@ import TenthDiscriminant.Phase309PicardGramBoundary
 import TenthDiscriminant.Phase310SplitTrace
 import TenthDiscriminant.Phase312FermatDefect
 import TenthDiscriminant.Phase313WildRay
+import TenthDiscriminant.Phase313Conductor2
