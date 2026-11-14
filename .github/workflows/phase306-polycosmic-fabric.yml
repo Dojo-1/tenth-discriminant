@@ -1,0 +1,28 @@
+name: Phase306 polycosmic arithmetic transport and hostile controls
+on:
+  push:
+    branches: ['research/phase306-*']
+    paths:
+      - 'research/phase306/**'
+      - '.github/workflows/phase306-polycosmic-fabric.yml'
+  pull_request:
+    paths:
+      - 'research/phase306/**'
+      - '.github/workflows/phase306-polycosmic-fabric.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-arithmetic-transport:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Manifest syntax
+        run: python3 -m json.tool research/phase306/worldlet_manifest.json >/dev/null
+      - name: Syntax-check Python
+        run: python3 -m py_compile research/phase306/arithmetic_fabric.py research/phase306/test_arithmetic_fabric.py research/phase306/higher_categorical.py research/phase306/test_higher_categorical.py research/phase306/quantum_sandbox.py research/phase306/test_quantum_sandbox.py
+      - name: Exact arithmetic and hostile controls
+        run: python3 -m unittest discover -s research/phase306 -p 'test_*.py' -v

@@ -1,0 +1,389 @@
+{
+  "name": "tenth-discriminant-polycosmic-arithmetic-fabric-phase306",
+  "evidence_floor": "S",
+  "base_repo": "Dojo-1/tenth-discriminant",
+  "base_commit": "a734ee9166d7bbb0d45c28227c3613ae59ff9c27",
+  "worldlets": [
+    {
+      "id": "arith.maximal_order",
+      "carrier": "Z[omega] with omega^2=omega-51 at D203",
+      "geometry": "norm-form lattice (not a Euclidean embedding)",
+      "algebra": "commutative quadratic order over Z",
+      "state": "six actual norm-ball observations",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "original-source-oracle",
+        "reconstruction-auditor"
+      ],
+      "boundary": "integral omega coordinates",
+      "remainder_types": [
+        "sampling"
+      ]
+    },
+    {
+      "id": "local.prime5.precision2",
+      "carrier": "(Z/25Z)^{2JQ} observation channels",
+      "geometry": "5-adic congruence filtration",
+      "algebra": "Z/25Z module",
+      "state": "original j0/j1 ordinary polynomial jets",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "modular-reduction-checker"
+      ],
+      "boundary": "precisions k1 and k2 never implicitly identified",
+      "remainder_types": [
+        "modular-loss",
+        "type-mismatch"
+      ]
+    },
+    {
+      "id": "frames.source",
+      "carrier": "GL_3(Z) integral gauge groupoid",
+      "geometry": "moving discrete frames, noncommutative composition",
+      "algebra": "integer matrices",
+      "state": "U,V and inverse words over source rows",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "gram-covariance-checker"
+      ],
+      "boundary": "determinant ±1",
+      "remainder_types": [
+        "frame-holonomy"
+      ]
+    },
+    {
+      "id": "phase.cotangent",
+      "carrier": "T* (Z/25Z)^3 with canonical alternating pairing",
+      "geometry": "symplectic six-dimensional module",
+      "algebra": "alternating bilinear forms and Sp6(Z/25Z)",
+      "state": "cotangent lifts of GL3 gauges",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "symplectic-form-checker"
+      ],
+      "boundary": "algebraic phase space, no physical quantum claim",
+      "remainder_types": [
+        "phase-coherence"
+      ]
+    },
+    {
+      "id": "phase.heisenberg",
+      "carrier": "H(F5^6) finite central extension",
+      "geometry": "noncommutative symplectic 2-cocycle",
+      "algebra": "F5 Heisenberg group",
+      "state": "central phase witness",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "cocycle-associativity-checker"
+      ],
+      "boundary": "2-cocycle is not by itself a bundle gerbe",
+      "remainder_types": [
+        "coherence-2cell"
+      ]
+    },
+    {
+      "id": "local.sections",
+      "carrier": "sets of residue-valued assignments on observation subsets",
+      "geometry": "finite incidence site with overlapping patches",
+      "algebra": "sheaf of functions into Z/25Z",
+      "state": "overlap matching and unique gluing",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "overlap-checker"
+      ],
+      "boundary": "only actual sampled points",
+      "remainder_types": [
+        "gluing-obstruction"
+      ]
+    },
+    {
+      "id": "evidence.proof",
+      "carrier": "claims with dependency and provenance edges",
+      "geometry": "partial-order research graph",
+      "algebra": "typed evidence P/A/M/H/S/R",
+      "state": "self-promotion gate with external evidence authority",
+      "clocks": [
+        "source",
+        "review"
+      ],
+      "observers": [
+        "formal-kernel",
+        "external-human-reviewer"
+      ],
+      "boundary": "no same-author self-promotion",
+      "remainder_types": [
+        "formal",
+        "semantic",
+        "authorization"
+      ]
+    },
+    {
+      "id": "topology.cech.h2",
+      "carrier": "abstract tetrahedral-boundary simplicial complex S2 with F5 cochains",
+      "geometry": "2-dimensional simplicial cohomology, not the source's physical geometry",
+      "algebra": "finite F5 cochain complex",
+      "state": "nonzero H2 fundamental-cycle pairing",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "coboundary-checker",
+        "filled-tetrahedron-negative-control"
+      ],
+      "boundary": "not a gerbe on the number-field scheme",
+      "remainder_types": [
+        "arithmetic-attachment-unknown"
+      ]
+    },
+    {
+      "id": "quantum.hilbert.toy",
+      "carrier": "C5 tensor C5 exact rational-amplitude subspace, plus isolated 2- and 3-site Hamiltonians",
+      "geometry": "complex Hilbert projective state space, unitaries and spectral gap",
+      "algebra": "exact rational amplitude and Hamiltonian matrix arithmetic",
+      "state": "Schmidt-rank, purity, tight-binding second-order and avoided-crossing controls",
+      "clocks": [
+        "source",
+        "review"
+      ],
+      "observers": [
+        "exact-rank-checker",
+        "no-coupling-negative-control"
+      ],
+      "boundary": "no physical experiment or field proof transport",
+      "remainder_types": [
+        "physical-realization-unknown",
+        "adiabatic-theorem-not-shown"
+      ]
+    }
+  ],
+  "tendrils": [
+    {
+      "source": "arith.maximal_order",
+      "target": "local.prime5.precision2",
+      "relation": "reduction functor on integer module maps",
+      "forward_transport": "reduce modulo 5^k",
+      "return_transport": "lift representative with typed lost 5^k multiple",
+      "preserved": [
+        "jet-evaluation covariance"
+      ],
+      "transformed": [
+        "integral value to congruence class"
+      ],
+      "remainder": "modular-loss",
+      "cost": "finite exact arithmetic"
+    },
+    {
+      "source": "frames.source",
+      "target": "phase.cotangent",
+      "relation": "cotangent lift of integral gauge",
+      "forward_transport": "diag(U,U^-T) modulo25",
+      "return_transport": "inverse cotangent lift",
+      "preserved": [
+        "canonical alternating form",
+        "dual pairing"
+      ],
+      "transformed": [
+        "source and dual coordinates"
+      ],
+      "remainder": "zero under invertible gauge",
+      "cost": "exact small matrix multiplication"
+    },
+    {
+      "source": "local.prime5.precision2",
+      "target": "local.sections",
+      "relation": "restriction-on-overlap functor",
+      "forward_transport": "restrict observed coordinate assignments",
+      "return_transport": "glue only if overlaps match",
+      "preserved": [
+        "actual point identity",
+        "residue"
+      ],
+      "transformed": [
+        "cover indexing"
+      ],
+      "remainder": "gluing-obstruction",
+      "cost": "finite dictionary merges"
+    },
+    {
+      "source": "phase.cotangent",
+      "target": "phase.heisenberg",
+      "relation": "central-extension cocycle lift",
+      "forward_transport": "evaluate symplectic 2-cocycle",
+      "return_transport": "forget central phase with nonzero information remainder",
+      "preserved": [
+        "alternating pairing"
+      ],
+      "transformed": [
+        "phase-class"
+      ],
+      "remainder": "central-phase-loss",
+      "cost": "F5 arithmetic"
+    },
+    {
+      "source": "local.sections",
+      "target": "evidence.proof",
+      "relation": "evidence-backed correspondence (profunctor candidate)",
+      "forward_transport": "attach exact finite test receipt",
+      "return_transport": "audit source and limits",
+      "preserved": [
+        "source hash",
+        "test scope"
+      ],
+      "transformed": [
+        "measurements to scoped assertions"
+      ],
+      "remainder": "unreviewed-claim",
+      "cost": "human gate"
+    }
+  ],
+  "identity": {
+    "local_holonomies": [
+      "integral GL3 frame loops",
+      "symplectic Sp6 cotangent loops",
+      "central Heisenberg phase loops"
+    ],
+    "couplings": [
+      "source-to-phase gauge-covariance",
+      "residue-to-overlap-gluing"
+    ],
+    "higher_coherence": [
+      "composition of gauge transport",
+      "Heisenberg central 2-cocycle"
+    ],
+    "viability_constraints": [
+      "exact determinant invariance",
+      "symplectic alternating-form invariance",
+      "distinct evidence authorities"
+    ],
+    "immune_actions": [
+      "quarantine",
+      "repair",
+      "retire",
+      "hold-draft"
+    ],
+    "remainder": "identity-as-versioned-artifact-provenance, not personhood"
+  },
+  "clocks": [
+    {
+      "id": "source",
+      "role": "exact deterministic computation/test commit",
+      "rate": 1
+    },
+    {
+      "id": "review",
+      "role": "independent proof review and promotion",
+      "rate": 0.01
+    }
+  ],
+  "dynamics": {
+    "breathing": "search radius/precision explicit parameter update; frozen within each test",
+    "weaving": "integer-gauge and sheaf-compatible local sections",
+    "deweaving": "recover original frame and report lost modular information",
+    "governance": "symplectic invariant checks plus anti-self-promotion",
+    "morphogenesis": "propose a new Worldlet only after matched-control discriminatory gain",
+    "repair": "rollback failed transport; retain counterexample and evidence"
+  },
+  "qualities": {
+    "Q0_grounding": "bind D203 source norm and exact trace",
+    "Q1_reflection": "compare declared transport with independently re-evaluated source matrix",
+    "Q2_godelian_identity": "retain formal remainder; no internal theorem self-certification",
+    "Q3_other_recognition": "preserve incompatible local patch values as obstruction",
+    "Q4_mutual_resonance": "bidirectional inverse checks and round-trip error",
+    "Q5_adiabatic": "review clock slower than source clock; approvals not automatic",
+    "Q6_ergocetic": "generate hostile gauge and overlap controls",
+    "Q7_erdodetic": "test, correct, attach provenance and stop rules",
+    "Q0star_embodiment": "compute budget and actual finite source",
+    "Q1star_temporal_polyphony": "source vs review time",
+    "Q2star_contextual_composition": "noncommuting U and V as associative matrix composition",
+    "Q3star_local_global": "overlap compatibility before gluing",
+    "Q4star_holoportation": "CRT reconstruction modulo product with typed remainder",
+    "Q5star_metaplasticity": "new operator only after matched control",
+    "Q6star_judicial_correction": "no same-witness evidence promotion",
+    "Q7star_remainder": "preserve type-mismatch, modular-loss and formal unknown"
+  },
+  "evidence": [
+    {
+      "status": "P",
+      "claim_id": "local-algebra-theorems",
+      "source": "integer matrix arithmetic, symplectic cotangent lift, CRT and 2-cocycle definitions",
+      "controls": [
+        "negative determinant",
+        "negative symplectic",
+        "negative gluing"
+      ],
+      "limitations": [
+        "paper-level argument not new Lean theorem"
+      ]
+    },
+    {
+      "status": "M",
+      "claim_id": "D203-finite-pilot",
+      "source": "phase306 exact source code and hosted focused CI when run",
+      "controls": [
+        "alternate frame",
+        "precision mismatch",
+        "tampered overlap"
+      ],
+      "limitations": [
+        "AI-authored test, no human independent review"
+      ]
+    },
+    {
+      "status": "H",
+      "claim_id": "performance-and-field-bridge",
+      "source": "future preregistered matched-budget evaluation",
+      "controls": [
+        "same arithmetic without Worldlet labels"
+      ],
+      "limitations": [
+        "no new field bound, no measured cognitive improvement"
+      ]
+    },
+    {
+      "status": "S",
+      "claim_id": "multicosmo-quantum-vocabulary",
+      "source": "user-proposed architecture terms",
+      "controls": [
+        "remove optional labels"
+      ],
+      "limitations": [
+        "nonphysical and non-sentient unless independent evidence"
+      ]
+    }
+  ],
+  "observables": [
+    "source Gram equality under GL3",
+    "determinant invariance",
+    "symplectic form residual matrix",
+    "cocycle associator residual",
+    "overlap gluing defect",
+    "CRT integer reconstruction remainder",
+    "promotion gate violation",
+    "compute cost",
+    "Schmidt rank and reduced purity of toy bipartite state",
+    "tight-binding barrier-mediated t^2 coefficient",
+    "avoided-crossing gap squared"
+  ],
+  "falsifiers": [
+    "any changed original trace Gram under invertible frame",
+    "incorrectly successful incompatible patch gluing",
+    "incorrect promotion of self-authored proof",
+    "failed symplectic invariant",
+    "increased compute without added discriminatory capability",
+    "claim of quantum entanglement without quantum observable",
+    "claim of actual entanglement between research Worldlets rather than a tensor-product toy model",
+    "claim of adiabatic theorem or physical tunnelling from a finite Taylor coefficient"
+  ]
+}
