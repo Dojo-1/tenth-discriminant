@@ -29,6 +29,7 @@ jobs:
       - name: Validate preregistration and claim boundaries
         run: |
           test -f research/phase320/PRE_REGISTERED_CROSS_FIELD_WILD_NORMAL.md
+          test -f research/phase320/PRE_REGISTERED_PHASE320B_INDEX_TWO_ORDER_CONTROLS.md
           python3 -c 'import json; x=json.load(open("research/phase320/AUDIT_MANIFEST.json")); assert x["main_unchanged"]; assert x["claim_boundary"]["no_uniform_field_valuation_or_cutoff"]; assert x["claim_boundary"]["no_global_ray_transfer_to_nonprincipal_classes"]; print("Phase320 audit scope PASS")'
       - name: Install pinned numeric environment
         run: |
