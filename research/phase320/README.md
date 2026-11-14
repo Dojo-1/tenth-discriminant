@@ -34,3 +34,5 @@ Nonunits remain separate. No global split-prime character family is imported fro
 [P] exact local ring, trace and norm identities; [M] bounded source/Smith/local-lift calculations after exact-head CI; [H] any uniform field-class-number-to-valuation implication; [R] transferring D163 principal-ideal characters to nontrivial class groups, or confusing changed determinant residues with new valuations.
 
 The experiment cannot change the (322^4) publication endpoint or promote the (321^4) candidate.
+
+The Phase318 parent workflow also runs this full Phase320 certificate and its adversarial tests on the integration PR head; the dedicated Phase320 workflow remains as the standalone branch gate.
