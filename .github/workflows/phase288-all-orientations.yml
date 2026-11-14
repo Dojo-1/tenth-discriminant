@@ -1,0 +1,23 @@
+name: Phase288-C all-angle symmetry and integral moving frame
+on:
+  push:
+    branches: ['research/phase288-*']
+  pull_request:
+    paths:
+      - 'research/phase288/**'
+      - '.github/workflows/phase288-all-orientations.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  six-channel-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Python syntax
+        run: python3 -m py_compile research/phase288/full_orientation_transport.py
+      - name: Exact full-angle four-dimensional analytic response and six-channel integral source
+        run: python3 -u research/phase288/full_orientation_transport.py
