@@ -1,0 +1,117 @@
+{
+  "scope": "Phase269–320 research-only integration",
+  "repository": "Dojo-1/tenth-discriminant",
+  "branch": "research/phase277-320-unified",
+  "date": "2026-11-14",
+  "main_unchanged": true,
+  "accepted_publication_endpoint": {
+    "bound": "322^4",
+    "value": 10750371856,
+    "changed": false
+  },
+  "separate_candidate": {
+    "pr": 157,
+    "target": "321^4",
+    "status": "draft / independent review boundary remains separate"
+  },
+  "integrated_lines": {
+    "320": {
+      "preregistrations": [
+        "research/phase320/PRE_REGISTERED_CROSS_FIELD_WILD_NORMAL.md",
+        "research/phase320/PRE_REGISTERED_PHASE320B_INDEX_TWO_ORDER_CONTROLS.md"
+      ],
+      "subject": "D163/D187/D203 cross-field local second-wild normal maps and index-two source completion",
+      "exact_head_github_ci": "not yet observed",
+      "local_core_cross_check": "PASS, exploratory only; full Phase315 log and first-wild-digit replay pending"
+    },
+    "269-270": {
+      "subject": "bounded finite inert-sieve / CRT certificate and Lean bridge",
+      "prior_pr": 165,
+      "evidence": "focused finite and Lean checks passed on the source PR",
+      "field_uniform_theorem": false
+    },
+    "277-292": {
+      "branch": "research/phase277-292-noether-smith-fabric",
+      "merged_prs": [
+        167,
+        170,
+        178,
+        179,
+        180,
+        181,
+        182
+      ],
+      "merge_commits": [
+        "884baadccfc37c6e7a13c201122ed3ba5f7e8a36",
+        "e75c5522f77f332a1e382baa7f53c9fe3c59cf4a",
+        "878f19a11ac86341d1aab381f09f1cd3dbd1daeb",
+        "b5f0757f903026c6c147f42a805349420b220ca2",
+        "68762d0a9c58a1d71622e03e0ac9fb4a80d42acb",
+        "2d76236ecd9f8fdd7169435647ad7576ef4253c0",
+        "40cf91a7861c7d652569a4cb2e825d8fe4470b86"
+      ],
+      "evidence": "source-specific finite and Lean checks passed on the contributing heads"
+    },
+    "293-303": {
+      "integration_pr": 213,
+      "merge_commit": "91b198a060a70b9fea6a95a909d87099c83e1327",
+      "subject": "Hermite/Frobenius source saturation, Picard/minor controls, maximal-order bridges",
+      "evidence": "exact-head focused arithmetic, Markdown and Lean checks passed on source PR #194"
+    },
+    "306-319": {
+      "subject": "source transport, Picard, inert trace, wild-ray arithmetic and D163 maximal-order completion",
+      "phase319_pr": 212,
+      "merge_commit": "fcb873e412664c7d8297fe0faa2676e1d69e1a70",
+      "phase319_arithmetic_ci": "PASS",
+      "phase318_full_stack_ci": "PASS",
+      "markdown_ci": "PASS",
+      "whole_root_lean_at_phase319_merge": "unchanged parent had passed; duplicate current-head run still pending at merge"
+    }
+  },
+  "phase320_exploratory_core_cross_check": {
+    "fields": {
+      "D163": {
+        "h": 1
+      },
+      "D187": {
+        "h": 2
+      },
+      "D203": {
+        "h": 4
+      }
+    },
+    "source_completion": {
+      "D163": {
+        "even_points": 109,
+        "full_points": 225
+      },
+      "D187": {
+        "matched_even_points": 105,
+        "matched_full_points": 205,
+        "native_even_points": 121,
+        "native_full_points": 249
+      },
+      "D203": {
+        "matched_even_points": 105,
+        "matched_full_points": 185,
+        "native_even_points": 127,
+        "native_full_points": 263
+      }
+    },
+    "original_to_primitive_gram_identity": "independent container arithmetic-kernel check passed on all ten arms",
+    "index_two_coordinate_map": "independent container check passed for all D and radii",
+    "local_norm125_lifts": "independent container arithmetic-kernel check passed, including F5-linearity",
+    "evidence_limit": "does not include Phase315 exhaustive signed conductor-125 log group or first-wild-digit validation"
+  },
+  "current_integration_pr": 217,
+  "current_integration_status": "open; research-only; do not merge until Phase320 full local-log and exact-head gates pass",
+  "claim_boundary": {
+    "no_main_change": true,
+    "no_new_322_power4_claim": true,
+    "no_321_power4_promotion": true,
+    "no_uniform_field_valuation_or_cutoff": true,
+    "no_global_ray_transfer_to_nonprincipal_classes": true,
+    "no_determinant_valuation_inference_from_mod25_residue": true,
+    "no_local_order_isomorphism_as_support_equality": true
+  }
+}
