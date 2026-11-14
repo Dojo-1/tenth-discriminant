@@ -24,6 +24,10 @@ jobs:
         run: |
           python3 -m venv /tmp/phase316
           /tmp/phase316/bin/python -m pip install --disable-pip-version-check numpy==2.2.6 sympy==1.14.0
+      - name: Validate Phase316 evidence audit and three preregistrations
+        run: |
+          python3 -m json.tool research/phase316/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; x=json.load(open("research/phase316/AUDIT_MANIFEST.json")); assert x["no_main_merge"]; assert len(x["prereg"])==3; assert len(x["propositions"])>=7; assert x["measurements"]["first_original_global_realization_obstruction"]["norm"]==164; print("Phase316 evidence audit PASS")'
       - name: Static Python syntax
         run: /tmp/phase316/bin/python -m py_compile research/phase316/*.py
       - name: Global trace-zero conductor125 gauge twist and original Gram mod25
