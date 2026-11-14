@@ -1,0 +1,236 @@
+{
+  "phase": "Phase318",
+  "date": "2026-11-14",
+  "repo": "Dojo-1/tenth-discriminant",
+  "draft_pr": "https://github.com/Dojo-1/tenth-discriminant/pull/210",
+  "parent_research_branch": "research/phase311-inert-trace-radicals",
+  "base_commit": "9bd893c9fdb893b7d75873884cc36937bb6005a4",
+  "main_unchanged": true,
+  "reported_cutoff": "322^4 UNCHANGED",
+  "actual_original_D163_v5": "77 (inherited exact earlier native source; NOT recomputed or increased by Phase318)",
+  "evidence_labels": {
+    "P": "Elementary conditional proof with exact hypotheses, not automatically Lean checked",
+    "A": "Class number one of D163 / ideal class principalization imported as classical background",
+    "M": "Finite original-source arithmetic / linear algebra measured by hosted CI",
+    "H": "Unproved uniform large-field class-one native Gram valuation theorem",
+    "R": "Retired inference, preserving the actual counterworld",
+    "S": "Mathematical analogy only"
+  },
+  "preregistrations": [
+    {
+      "file": "research/phase318/PRE_REGISTERED_LOCAL_NORMAL.md",
+      "scope": "A/B complete local normal map and exact split-prime finite family",
+      "timing": "before A/B code"
+    },
+    {
+      "file": "research/phase318/PRE_REGISTERED_NORMAL_PENCIL.md",
+      "scope": "C rank pencil, minor interpolation and full h1 native/heldout replays",
+      "timing": "AFTER A/B evidence but before C code; not retroactive"
+    },
+    {
+      "file": "research/phase318/PRE_REGISTERED_RESONANCE_SPLITTING.md",
+      "scope": "D constructive common 3+4+10 block diagonalization",
+      "timing": "AFTER C evidence but before D code; not retroactive"
+    },
+    {
+      "file": "research/phase318/PRE_REGISTERED_EXACT_FIBRE_RESONANCE.md",
+      "scope": "E actual norm212 and norm227 generator-fibre veto",
+      "timing": "AFTER D evidence but before E code; not retroactive"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Complete native local 5-unit norm125 lift line has 5 elements, trace(h conjugate(z))=0 mod5",
+      "status": "P elementary quadratic norm algebra; M 50 signed actual units x5",
+      "source": "research/phase318/local_wild_normal.py"
+    },
+    {
+      "claim": "Native D163 first radical-lift normal image of all 50 signed unit sites is 1-dimensional, 8 nonzero sites; conjugation-compatible subspace image also dim1",
+      "status": "M finite source; NOT field uniform",
+      "source": "research/phase318/local_wild_normal.py"
+    },
+    {
+      "claim": "34 distinct exact split-prime valuation characters constructed and 16 active on Q109",
+      "status": "M, 25704 exact principal valuation multiplicativity checks",
+      "source": "research/phase318/split_prime_normal.py"
+    },
+    {
+      "claim": "Full 22500-class h1 conductor250 ray convolution on all 16 active characters, 177 independent shell totals and 270 eligible coprime products each",
+      "status": "M finite native maximal-order arithmetic, class-one input A",
+      "source": "research/phase318/normal_pencil.py"
+    },
+    {
+      "claim": "p53,p227 heldout radius60 global multiplicative ray replays pass 1440 independent norm shell totals and 59 genuinely nonidentity coprime products each",
+      "status": "M independent norm radius60 from native Q109; NOT substituting source",
+      "source": "research/phase318/normal_pencil.py"
+    },
+    {
+      "claim": "First radical normal generator N has rank4 and pencil B_lambda has ranks 7,7,7,3,7; 7x7 minor polynomial 4(lambda-3)^4",
+      "status": "M exact F5 linear algebra with P conditional polynomial/rank identity",
+      "source": "research/phase318/normal_pencil.py"
+    },
+    {
+      "claim": "Symmetric pencil splits in a common GL17(F5) basis as A3 direct-sum (lambda-3)A4 direct-sum 0_10",
+      "status": "P conditional on rank(B3)=3 rankN=4 rankB0=7; M explicit 17x17 basis all 5x289 entries",
+      "source": "research/phase318/resonance_splitting.py"
+    },
+    {
+      "claim": "p53,p227 synthetic ray character yields first two Smith profile [23,3,14] vs ACTUAL [23,7,10]",
+      "status": "M finite synthetic Gram mod25 only, NOT real field determinant",
+      "source": "research/phase318/split_prime_normal.py"
+    },
+    {
+      "claim": "Exact native norm212 and norm227 fibres have 4 integer generators, two signed classes each; 2 synthetic tags disjoint from actual ray support despite local norm125 and conductor2 admissibility",
+      "status": "M finite exhaustive integral norm equations, checked all original occupied shells",
+      "source": "research/phase318/exact_resonant_fibres.py"
+    },
+    {
+      "claim": "Every p53 and p227 synthetic Gram entry changed mod25 is attributable to only its altered exact original norm fibre",
+      "status": "M 1600-cell independent original ray reconstruction",
+      "source": "research/phase318/exact_resonant_fibres.py"
+    },
+    {
+      "claim": "Uniform h1 specific native larger-D forced residual Gram v5 beyond valuationWeight",
+      "status": "H not established and no cutoff change"
+    }
+  ],
+  "measurements": {
+    "original_source": {
+      "D": 163,
+      "rho": 21,
+      "Q": 109,
+      "R": 40,
+      "S": 1,
+      "J": 1,
+      "exact_shears_div5": 15,
+      "Gram_cells": 1600,
+      "Gram_rank_mod5": 23,
+      "radical_dim": 17,
+      "radical_first_lift_rank_actual": 7,
+      "actual_first_two_Smith": [
+        23,
+        7,
+        10
+      ],
+      "unit_signed_sites": 50,
+      "nonunit_observations": 9
+    },
+    "complete_local": {
+      "total_lifts": 250,
+      "normal_image_dimension": 1,
+      "normal_generator_matrix_rank": 4,
+      "nonzero_site_normals": 8,
+      "conjugation_pairs": 16,
+      "conjugation_self_fixed_sites_forbidden": 18,
+      "conjugation_normal_image_dim": 1
+    },
+    "global_characters": {
+      "split_prime_generators_tested": 34,
+      "active_characters": 16,
+      "exact_val_product_checks": 25704,
+      "nonzero_normal_primes": [
+        43,
+        53,
+        167,
+        227
+      ],
+      "e1_changers": [
+        53,
+        227
+      ],
+      "native_h1_ideal_shell_checks_per_active": 177,
+      "native_full_coprime_products_per_active": 270,
+      "heldout_primes": [
+        53,
+        227
+      ],
+      "heldout_ideal_shell_checks_each": 1440,
+      "heldout_nonidentity_products_each": 59
+    },
+    "pencil": {
+      "normal_matrix_rank": 4,
+      "lambda_rank": [
+        7,
+        7,
+        7,
+        3,
+        7
+      ],
+      "resonance_lambda": 3,
+      "original_minor_polynomial_F5_coeffs_ascending": [
+        4,
+        3,
+        1,
+        2,
+        4
+      ],
+      "polynomial_factored": "4*(lambda-3)^4",
+      "simultaneous_block_dims": [
+        3,
+        4,
+        10
+      ],
+      "block_dets_mod5": [
+        4,
+        1
+      ],
+      "all_289_entries_checked_each_of_5": true
+    },
+    "exact_realization": {
+      "p41": {
+        "native_exact_norm": 164,
+        "x_abs": 1,
+        "synthetic_normal_lambda": 0,
+        "changed_Gram_cells": 363
+      },
+      "p53": {
+        "native_exact_norm": 212,
+        "x_abs": 7,
+        "synthetic_normal_lambda": 3,
+        "changed_Gram_cells": 363
+      },
+      "p227": {
+        "native_exact_norm": 227,
+        "x_abs": 8,
+        "synthetic_normal_lambda": 3,
+        "changed_Gram_cells": 250
+      },
+      "signed_actual_ideals_each": 2,
+      "signed_synthetic_ideals_each": 2,
+      "all_two_synthetic_classes_outside_exact_original_fibre_each": true,
+      "local_norm125_compatible": true,
+      "conductor2_compatible": true,
+      "all_other_norm_shells_unchanged": true,
+      "nonh1_D187_inert2_5_principal_convolution_failure_preserved": true
+    }
+  },
+  "controls": [
+    "Complete all5 trace-zero local norm lifts at each of50 signed sites; every unit/nonunit source observation accounted",
+    "All50 first-normal site matrices computed from actual original divided polynomial rows, not a substituted maximal-order Gram",
+    "Conjugation-compatible site shifts matched with explicit +/- orientation and mod125 conjugate equality",
+    "Exact (not modulo125) integer principal ideal division for each split prime, multiplicativity and anti-conjugation",
+    "Full native coprime conductor250 convolution for ALL16 active prime characters, no in-sample-only four pairs",
+    "Heldout full p53 and227 conductor250 products at independent radius60 with 59 actual nonidentity comparisons each",
+    "Exact Smith e0/e1 from two different Phase317 rank algorithms and full first-radical form",
+    "Every normal image exactly one-dimensional, all 5 ranks and degree<=rankN minor coefficients independently checked",
+    "Constructed GL17(F5) simultaneous basis verifies complete 289 entry block splitting at every lambda",
+    "Hostile overlapping-image pair rejects false universal block-diagonal split",
+    "Exact native norm212/227 integer solutions, synthetic ray classes disjoint from actual support and correct CRT parity/norm modulo125",
+    "All changed original Gram entries arise from exactly one native norm shell per synthetic character",
+    "Matched nonh1 D187 inert2/5 negative control, synthetic is not real field",
+    "No improvement to full actual determinant v5 or reported field cutoff"
+  ],
+  "CI": {
+    "initial_A_B": "43591838195 success, 12 adversarial tests",
+    "full_C": "43592094267 success, 20 adversarial tests",
+    "full_D": "43592300935 success, 25 adversarial tests",
+    "full_E": "43592527100 success, 30 adversarial tests",
+    "final_head_after_docs_audit": "needs exact final head CI rerun confirmation; whole-root Lean separate"
+  },
+  "frontier": [
+    "Define globally realized signed ray support R_(D,n)^(5^k) as typed exact norm-constrained image, including nonunit strata",
+    "Find a UNIFORM class-one-specific constraint on these realized supports under native R,S,J and analytic radius for large D",
+    "Show forced nonzero normal-rank or higher 5-adic Smith layer over actual field, independent of inherited valuationWeight",
+    "Countertest against nonh1 D187 and exact matched source h8 D183; seek external mathematical review"
+  ]
+}
