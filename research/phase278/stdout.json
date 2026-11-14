@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "evidence": "six abstract finite controls",
+  "prime": 3,
+  "D": 7,
+  "cases": [
+    {
+      "name": "primitive_isotropic_line",
+      "n": 1,
+      "r": 1,
+      "q": 0,
+      "d": 0,
+      "radical": 1,
+      "index": 0,
+      "residual": 2,
+      "value": 2,
+      "bound": 1,
+      "determinant": "18"
+    },
+    {
+      "name": "scaled_isotropic_line",
+      "n": 1,
+      "r": 0,
+      "q": 0,
+      "d": 1,
+      "radical": 0,
+      "index": 1,
+      "residual": 2,
+      "value": 4,
+      "bound": 2,
+      "determinant": "162"
+    },
+    {
+      "name": "primitive_plane",
+      "n": 2,
+      "r": 2,
+      "q": 2,
+      "d": 0,
+      "radical": 0,
+      "index": 0,
+      "residual": 0,
+      "value": 0,
+      "bound": 0,
+      "determinant": "32"
+    },
+    {
+      "name": "false_addition_killer",
+      "n": 2,
+      "r": 1,
+      "q": 0,
+      "d": 1,
+      "radical": 1,
+      "index": 1,
+      "residual": 0,
+      "value": 2,
+      "bound": 2,
+      "determinant": "288"
+    },
+    {
+      "name": "other_scaled_row",
+      "n": 2,
+      "r": 1,
+      "q": 1,
+      "d": 1,
+      "radical": 0,
+      "index": 1,
+      "residual": 0,
+      "value": 2,
+      "bound": 2,
+      "determinant": "288"
+    },
+    {
+      "name": "both_scaled_rows",
+      "n": 2,
+      "r": 0,
+      "q": 0,
+      "d": 2,
+      "radical": 0,
+      "index": 2,
+      "residual": 0,
+      "value": 4,
+      "bound": 4,
+      "determinant": "2592"
+    }
+  ],
+  "publishedPanel": [
+    {
+      "prime": 3,
+      "d": 104,
+      "radical": 26,
+      "safeAdditionalBound": 208,
+      "radicalBeyondIndexBound": 0
+    },
+    {
+      "prime": 5,
+      "d": 80,
+      "radical": 28,
+      "safeAdditionalBound": 160,
+      "radicalBeyondIndexBound": 0
+    },
+    {
+      "prime": 7,
+      "d": 112,
+      "radical": 0,
+      "safeAdditionalBound": 224,
+      "radicalBeyondIndexBound": 0
+    }
+  ],
+  "limits": "No production-source replay, Lean theorem, new cutoff or independent review."
+}

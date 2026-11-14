@@ -1,5 +1,7 @@
 # The Tenth Discriminant
 
+**11 November — why prime factors cannot be counted twice.** A [short first-layer pairing argument](research/phase278/SAFE_PAIRING_GUIDE.md) explains how lattice-index and pairing defects overlap. Six registered exact controls passed locally; this adds no new Lean theorem or cutoff. For the Phase277 specimen, its first-layer radical gives no improvement over the index bound. [Verification and limits](research/phase278/VERIFICATION.md).
+
 > **Current checked public endpoint — 4 November 2026.** The merged [Phase200 PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) contains the actual-field, class-number-one theorem `|disc(K)| < 322^4 = 10,750,371,856`, relative to its encoded Lean definitions and standard axioms; independent human semantic review remains open in [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50). [Phase209 draft #157](https://github.com/Dojo-1/tenth-discriminant/pull/157) explores an optimal ordinary-jet p-adic depth mechanism and a **conditional** `321^4` target; it is **not** a new field theorem. In Tao's Math 2.0 framing, we also compare zero-exclusion methods and what humans can reconstruct: [scope #158](https://github.com/Dojo-1/tenth-discriminant/issues/158). The 328^4 and 327^4 status prose retained below is a **dated historical snapshot**, not the current endpoint.
 
 *Arithmetic against geometry, with one integer determinant in the middle.*

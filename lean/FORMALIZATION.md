@@ -1,5 +1,7 @@
 # Current claim-to-Lean map
 
+**11 November — Phase278 boundary:** the [safe pairing bound](../research/phase278/SAFE_PAIRING_GUIDE.md) is a paper argument with six exact Node BigInt controls. It is not a Lean declaration. Production Lean files, root imports, dependency pins and proof checks are unchanged. The Phase128 text below is historical; see the root README for the integrated field endpoint.
+
 Current branch: the 47.5-billion actual-field theorem, arbitrary-field classification interface and actual radial composition laws are integrated unchanged; all four first local checks pass. Main retains the published 48-billion theorem. Exact-head CI/publication is a separate draft-PR gate. [Short mathematical account](../research/ender_radius_bridge/STRUCTURAL_BRIDGE_CURRENT.md) · [Integration evidence](../research/ender_radius_bridge/PHASE128_VERIFICATION.md). The failed Phase122 attempt remains unchanged; Phase125 is its separately registered successful successor. Historical entries below retain their original scope.
 
 ## Phase128: one integrated library, three distinct consequences
