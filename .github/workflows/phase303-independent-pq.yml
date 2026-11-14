@@ -1,0 +1,27 @@
+name: Phase303-F independent half-integral source and standalone DVR Smith
+on:
+  push:
+    branches: ['research/phase303-*']
+  pull_request:
+    paths:
+      - 'research/phase303/**'
+      - '.github/workflows/phase303-independent-pq.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  independent-half-integer-gram-and-padic-snf:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Original comparison dependencies only
+        run: |
+          python3 -m venv /tmp/phase303f
+          /tmp/phase303f/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile independent standalone integer core
+        run: /tmp/phase303f/bin/python -m py_compile research/phase303/independent_half_integer_replay.py
+      - name: Independent half-integral maximal source and full p16 Smith then compare original
+        run: /tmp/phase303f/bin/python -u research/phase303/independent_half_integer_replay.py

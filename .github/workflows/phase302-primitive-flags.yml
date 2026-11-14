@@ -1,0 +1,27 @@
+name: Phase302 original binary primitive-line pairing-depth and Hensel flags
+on:
+  push:
+    branches: ['research/phase302-*']
+  pull_request:
+    paths:
+      - 'research/phase302/**'
+      - '.github/workflows/phase302-primitive-flags.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-D163-176-forms-and-Hensel-flags:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pin exact source modular runtime
+        run: |
+          python3 -m venv /tmp/phase302
+          /tmp/phase302/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile exact original source study
+        run: /tmp/phase302/bin/python -m py_compile research/phase302/primitive_line_source.py
+      - name: All 176 original residual binary forms six flags and six original-source Hensel lifts
+        run: /tmp/phase302/bin/python -u research/phase302/primitive_line_source.py
