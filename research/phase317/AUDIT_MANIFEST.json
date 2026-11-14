@@ -58,7 +58,7 @@
     },
     {
       "claim": "There exist explicit U_k=I+5X_k in GL40(Z/25) with G_k=U_k G U_k^T mod25, all 1600 cells.",
-      "evidence": "M pending exact CI after code commit dd7d6831c40188dc66a53241b3be75ae73388026",
+      "evidence": "M VERIFIED: focused hosted run 43590228744, 20 hostile tests; 5 explicit GL40(Z/25) witness/inverse matrices and all 1600 matrix entries per gauge",
       "code": "research/phase317/radical_tangent.py"
     },
     {
@@ -112,7 +112,11 @@
       ],
       "changed_entries_for_nonzero_gauges": 363,
       "changed_only_at_norm164": true,
-      "radical_perturbation_restriction_rank_all_five": 0
+      "radical_perturbation_restriction_rank_all_five": 0,
+      "explicit_GL40_mod25_congruences_verified": 5,
+      "explicit_unit_inverses_verified": 5,
+      "congruence_witness_linear_in_k": true,
+      "radical_first_lift_identical_entrywise_across_gauges": true
     }
   },
   "controls": [
@@ -131,10 +135,11 @@
     "phase317_source_initial_success": "43589657087 12 hostile tests",
     "phase317_radical_initial_success": "43589928687 19 hostile tests",
     "narrow_Lean_success": "43589928679 after redundant ring proof-script correction",
-    "explicit_congruence_exact_latest": "pending exact-head CI status",
+    "explicit_congruence_exact_latest": "43590228744 PASS source and 20 hostile tests, prior to final documentation commit",
     "root_Lean": "separate long build; no success claimed"
   },
   "frontier": [
+    "Since this entire tested norm164 synthetic gauge family is GL40(Z/25)-congruent to the actual native Gram, search for real class-one constraints with NONZERO normal component on the 17d radical or deeper 5-adic digits; matrix entry differences alone are not valuation gains.",
     "Find a real h1-specific condition on norm-constrained ray realization supports that changes the first radical lift B, not merely tangent Gram coordinates",
     "Or move to the next 5-adic digit where modulus25 congruence no longer suffices",
     "Prove native large-field uniform valuation gain beyond valuationWeight, with D187 h2 and D183 h8 matched controls",
