@@ -1,0 +1,82 @@
+{
+  "scope": "Phase209-268 divided-Frobenius and actual-field 321^4 research line",
+  "repository": "Dojo-1/tenth-discriminant",
+  "branch": "research/phase209-268-horizontal-321",
+  "date": "2026-11-14",
+  "source_pr": {
+    "number": 157,
+    "head": "research/phase209-divided-frobenius-321-scope",
+    "head_sha": "daa47c465a571583920bfd96cec3657bc97f2f8d",
+    "state": "open draft against main"
+  },
+  "formal_candidate": {
+    "theorem": "TenthDiscriminant.Threshold321.totallyComplex_degree_two_classNumber_one_discriminant_bound_321",
+    "bound": 10617447681,
+    "expression": "|disc(K)| < 321^4",
+    "scope": "totally complex degree-two number fields of class number one",
+    "formal_status": "Lean checked on original PR157 head; exact-head replay on this consolidated research branch pending"
+  },
+  "historical_ci": {
+    "exact_head": "4c3dc08e791d9835355f012a3e88b67cedf57884",
+    "focused_run": 42820526500,
+    "whole_root_run": 42820526708,
+    "all_pr_checks": 24,
+    "successful_pr_checks": 24
+  },
+  "consolidated_modules": [
+    "Phase209Scalar321",
+    "Phase209Iteration",
+    "SourceGeometry321",
+    "SourcePositivity321",
+    "Phase209ConjugateFold",
+    "Phase209DeltaCarrier",
+    "Phase209OrbitSum",
+    "Phase209WholeGramFold",
+    "Phase210FoldedInertFactor",
+    "Phase210SharpOrdinaryJet",
+    "Phase210ActualNormalizedDepth",
+    "Phase210FiniteInertBudget",
+    "Phase211Anchor",
+    "Phase211RankObstruction",
+    "Phase223Support",
+    "Phase223Horizontal",
+    "Phase225Band",
+    "Phase226HorizontalIntegral",
+    "Phase227JointJets",
+    "Phase228CombinedBasis",
+    "Phase259Horizontal321",
+    "Phase259HorizontalCertificate321",
+    "Phase260EnhancedOriginalGram321",
+    "Phase261EnhancedLog321",
+    "Phase262HorizontalLogBridge321",
+    "Phase263EnhancedLower321",
+    "Phase264UpperScalars321",
+    "Phase265ThinUpper321",
+    "Phase266ScalarOverlap321",
+    "Phase267ActualField321",
+    "Phase268FiniteInertBudget321"
+  ],
+  "research_questions": {
+    "ordinary_jet_depth_and_taylor_flow": "finite derivation-depth statement; not Hasse derivatives",
+    "horizontal_vertical_same_gram": "one combined unimodular frame and one original Gram",
+    "analytic_zero_bridge": "not established; class-one inertness is not a general-character zero-free theorem",
+    "fixed_support_rank_obstruction": "finite source rank boundary, no naive high-jet extension"
+  },
+  "review": {
+    "issue50": "open; independent semantic reconstruction of actual-field theorem",
+    "issue51": "open; cross-method/source identity and comparator review",
+    "ci_is_independent_human_review": false
+  },
+  "ci": {
+    "phase209_depth_workflow": "pending exact-head PR run",
+    "whole_root_lean": "pending exact-head PR run",
+    "mathematical_markdown": "pending exact-head PR run"
+  },
+  "boundaries": {
+    "main_unchanged": true,
+    "accepted_322_power4_endpoint_unchanged": true,
+    "no_zero_free_region_claim": true,
+    "no_class_one_inertness_transfer_to_general_characters": true,
+    "no_novelty_or_priority_claim": true
+  }
+}
