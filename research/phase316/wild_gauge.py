@@ -199,7 +199,9 @@ def shifted_generator_invariants(z,lookup):
     synthetic=lookup[(c,w)]
     assert norm(synthetic,D,TOP)==norm(z,D,TOP),(
         "trace-zero wild twist did not preserve original norm modulo125",z)
-    cz=conjugate(z,TOP)
+    # Ideals are factored in the EXACT quadratic order. Reducing the
+    # conjugate mod125 before valuation would change the integer ideal!
+    cz=conjugate(z,None)
     assert shifted_ray_tag(cz)[1]==conjugate(altered[1],M)
     assert shifted_ray_tag(cz)[0]==signed_ray125_tag(cz,D)[0]
     return synthetic
