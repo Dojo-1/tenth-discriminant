@@ -3,7 +3,7 @@
   "date": "2026-11-14",
   "repository": "Dojo-1/tenth-discriminant",
   "branch": "research/phase321b-ray-invariant-factors",
-  "status": "preregistered; implementation not started",
+  "status": "implementation complete; local exact group enumeration and 8 adversarial tests passed; exact-head CI pending",
   "preregistration": "research/phase321/PRE_REGISTERED_PHASE321B_RAY_INVARIANT_FACTORS.md",
   "fields": {
     "D163": {
@@ -35,5 +35,124 @@
     "no_invariant_factors_from_group_order_alone": true,
     "no_character_table_yet": true,
     "no_uniform_valuation_or_discriminant_cutoff": true
-  }
+  },
+  "implementation": "research/phase321/ray_invariant_factors.py",
+  "tests": "research/phase321/test_ray_invariant_factors.py",
+  "workflow": ".github/workflows/phase321b-ray-invariant-factors.yml",
+  "local_results": {
+    "status": "PASS",
+    "tests": 8,
+    "tests_passed": 8,
+    "invariant_factors": {
+      "D163": [
+        25,
+        300
+      ],
+      "D187": [
+        25,
+        600
+      ],
+      "D203": [
+        25,
+        1200
+      ]
+    },
+    "group_exponents": {
+      "D163": 300,
+      "D187": 600,
+      "D203": 1200
+    },
+    "p_primary_torsion_counts": {
+      "D163": {
+        "2": [
+          1,
+          2,
+          4
+        ],
+        "3": [
+          1,
+          3
+        ],
+        "5": [
+          1,
+          25,
+          625,
+          625,
+          625
+        ]
+      },
+      "D187": {
+        "2": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "3": [
+          1,
+          3
+        ],
+        "5": [
+          1,
+          25,
+          625,
+          625,
+          625
+        ]
+      },
+      "D203": {
+        "2": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "3": [
+          1,
+          3
+        ],
+        "5": [
+          1,
+          25,
+          625,
+          625,
+          625
+        ]
+      }
+    },
+    "split_direct_product_invariant_factors": {
+      "D163": [
+        25,
+        300
+      ],
+      "D187": [
+        50,
+        300
+      ],
+      "D203": [
+        100,
+        300
+      ]
+    },
+    "cyclic_extension_sections": {
+      "D163": {
+        "splits": true,
+        "reason": "trivial quotient"
+      },
+      "D187": {
+        "splits": false,
+        "all_7500_lifts_exhausted": true
+      },
+      "D203": {
+        "splits": false,
+        "all_7500_lifts_exhausted": true
+      }
+    }
+  },
+  "interpretation": [
+    "For D187 and D203 the full ray exact sequence is nonsplit: exhaustive search finds no lift of a generator of the ordinary cyclic class group with the same order.",
+    "The actual invariant factors differ from those of the direct product of the local kernel and ordinary class group.",
+    "For these three fields only, the observed ray groups are C25 x C(300h) with h=1,2,4; this is not promoted to a general theorem."
+  ]
 }
