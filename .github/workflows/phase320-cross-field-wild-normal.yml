@@ -1,7 +1,7 @@
 name: Phase320 cross-field maximal-order wild normal maps
 on:
   push:
-    branches: ['research/phase277-320-unified', 'research/phase277-320-unified-review']
+    branches: ['research/phase277-320-unified', 'research/phase277-320-unified-review', 'research/phase318-phase320-gate']
     paths:
       - 'research/phase320/**'
       - 'research/phase315/wild_log125.py'
