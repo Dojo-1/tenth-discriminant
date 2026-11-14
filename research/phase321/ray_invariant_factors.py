@@ -175,8 +175,10 @@ def cyclic_section_test(D, context):
     if h == 1:
         return {"D": D, "ordinary_class_group_order": 1,
                 "splits": True, "reason": "trivial quotient",
+                "section_lift_count": 1, "section_lifts": ((1, 0),),
+                "first_section_lift": (1, 0),
                 "canonical_lift_order": 1, "canonical_lift_power_h": identity,
-                "local_obstruction_order": 1}
+                "canonical_lift_power_order": 1}
     generator = next(i for i, n in enumerate(orders) if n == h)
     lifts = []
     for u in units:
@@ -192,12 +194,13 @@ def cyclic_section_test(D, context):
         "generator_class_index": generator,
         "splits": bool(lifts),
         "section_lift_count": len(lifts),
+        "section_lifts": tuple(lifts),
         "first_section_lift": lifts[0] if lifts else None,
         "all_7500_local_lifts_exhausted": True,
         "canonical_lift_order": element_order(
             canonical_lift, h * 7500, D, table, local_alpha, identity),
         "canonical_lift_power_h": canonical_power,
-        "local_obstruction_order": local_element_order(canonical_power[1], D)
+        "canonical_lift_power_order": local_element_order(canonical_power[1], D)
     }
 
 
@@ -220,9 +223,9 @@ def run_phase321b():
         sections.append(cyclic_section_test(D, context))
         h = len(context[0])
         inv["split_direct_product_invariant_factors"] = direct_product_invariants((25, 300), h)
-        inv["ray_extension_is_nonsplit"] = not sections[-1]["splits"]
-        inv["ray_invariant_factors_differ_from_split_product"] = (
-            inv["invariant_factors"] != inv["split_direct_product_invariant_factors"]
+        inv["ray_extension_splits"] = sections[-1]["splits"]
+        inv["ray_invariant_factors_match_split_product"] = (
+            inv["invariant_factors"] == inv["split_direct_product_invariant_factors"]
         )
         results.append(inv)
     return {"invariant_factor_results": results, "cyclic_section_tests": sections}
