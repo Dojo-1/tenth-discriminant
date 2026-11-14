@@ -166,6 +166,112 @@
         "physical-realization-unknown",
         "adiabatic-theorem-not-shown"
       ]
+    },
+    {
+      "id": "arithmetic.source.full",
+      "carrier": "100 original monomial source rows, 263 genuine maximal O_K(D203) points, J2 ordinary jets",
+      "geometry": "p5-filtered integral evaluation module",
+      "algebra": "free Z-module over quadratic order observations",
+      "state": "100x1052 original evaluation, independent omega oracle",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "independent-modular-source",
+        "p-adic-Smith-checker"
+      ],
+      "boundary": "same source policy as Phase304",
+      "remainder_types": [
+        "field-uniformity-open"
+      ]
+    },
+    {
+      "id": "arithmetic.saturated",
+      "carrier": "primitive Z5^100 evaluation lattice in Z5^1052",
+      "geometry": "Smith filtration and exact index-square bridge",
+      "algebra": "Z5 finite-free modules",
+      "state": "50 unit +50 p-level evaluations; primitive Gram 63/36/1",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "rank-oracle",
+        "Smith-DVR"
+      ],
+      "boundary": "no additive extra determinant mass",
+      "remainder_types": [
+        "restricted-trace-radical"
+      ]
+    },
+    {
+      "id": "arithmetic.trace_radical",
+      "carrier": "37-dimensional radical of restricted mod5 trace form",
+      "geometry": "degenerate local pairing on image",
+      "algebra": "F5 quadratic bilinear form",
+      "state": "primitive Gram rank63 of 100",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "primitive-gram-checker"
+      ],
+      "boundary": "not erased by source saturation",
+      "remainder_types": [
+        "unresolved-padic-depth"
+      ]
+    },
+    {
+      "id": "cohomology.coefficient-contrast",
+      "carrier": "tetrahedral boundary observation-cover Čech complex with two coefficient choices",
+      "geometry": "actual finite-set sheaf vs constant nerve local topology",
+      "algebra": "F5 simplicial cochains and product section groups",
+      "state": "abstract constant H2 nonzero; observation-function H2 explicitly exact",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "coboundary-checker",
+        "hostile-gluing-checker"
+      ],
+      "boundary": "no arithmetic gerbe inferred",
+      "remainder_types": [
+        "coefficient-transport-no-equivalence"
+      ]
+    },
+    {
+      "id": "hypercomplex.octonion",
+      "carrier": "8-dimensional Cayley-Dickson octonions over F5",
+      "geometry": "nonassociative alternative algebra with associator witness",
+      "algebra": "octonion composition over F5",
+      "state": "nonzero e1 e2 e4 associator",
+      "clocks": [
+        "source"
+      ],
+      "observers": [
+        "norm-multiplicativity-checker"
+      ],
+      "boundary": "optional diagnostic not linked to field bound",
+      "remainder_types": [
+        "arithmetic-attachment-unknown"
+      ]
+    },
+    {
+      "id": "ordinals.precision",
+      "carrier": "compatible finite p5^k residue stages, no new transfinite object",
+      "geometry": "profinite projective tower at fixed finite rank",
+      "algebra": "Z/p^k and Smith-depth filtrations",
+      "state": "K(1)=K(2)=50 for actual source",
+      "clocks": [
+        "source",
+        "review"
+      ],
+      "observers": [
+        "precision-type-checker"
+      ],
+      "boundary": "aleph_alpha maps are not constructed",
+      "remainder_types": [
+        "transfinite-family-undefined"
+      ]
     }
   ],
   "tendrils": [
@@ -246,6 +352,66 @@
       ],
       "remainder": "unreviewed-claim",
       "cost": "human gate"
+    },
+    {
+      "source": "arithmetic.source.full",
+      "target": "arithmetic.saturated",
+      "relation": "unimodular source row shears plus 50 selected p5 divisions",
+      "forward_transport": "factor 5-divisible rows of U E",
+      "return_transport": "multiply selected rows by5 and invert integral frame",
+      "preserved": [
+        "original trace Gram after index-square restoration"
+      ],
+      "transformed": [
+        "primitive evaluation superlattice"
+      ],
+      "remainder": "index-log5-50",
+      "cost": "exact modular source calculation"
+    },
+    {
+      "source": "arithmetic.saturated",
+      "target": "arithmetic.trace_radical",
+      "relation": "restriction of original trace pairing to primitive image",
+      "forward_transport": "Eprim B Eprim-transpose",
+      "return_transport": "lift only with radical and orthogonal complement data",
+      "preserved": [
+        "original metric B"
+      ],
+      "transformed": [
+        "bilinear restricted form"
+      ],
+      "remainder": "37-dimensional-mod5-radical",
+      "cost": "finite Smith reduction"
+    },
+    {
+      "source": "topology.cech.h2",
+      "target": "cohomology.coefficient-contrast",
+      "relation": "coefficient-system comparison, NOT an equivalence",
+      "forward_transport": "compare constant 2-cochain with actual pointwise section cochain",
+      "return_transport": "no canonical transfer of nontrivial cohomology class",
+      "preserved": [
+        "same tetrahedral nerve"
+      ],
+      "transformed": [
+        "cohomology after coefficient change"
+      ],
+      "remainder": "nontrivial-constant-to-trivial-function-sheaf",
+      "cost": "exact finite overlap calculation"
+    },
+    {
+      "source": "ordinals.precision",
+      "target": "evidence.proof",
+      "relation": "finite-stage evidence only",
+      "forward_transport": "report stabilized depth function",
+      "return_transport": "cannot infer aleph_alpha-level obstruction",
+      "preserved": [
+        "source provenance"
+      ],
+      "transformed": [
+        "finite-stage profile summary"
+      ],
+      "remainder": "unconstructed-transfinite-system",
+      "cost": "exact finite counts"
     }
   ],
   "identity": {
@@ -361,6 +527,32 @@
       "limitations": [
         "nonphysical and non-sentient unless independent evidence"
       ]
+    },
+    {
+      "status": "M",
+      "claim_id": "phase307-actual-100row-D203",
+      "source": "research/phase307/source_saturation.py; Phase307 focused CI run 43444960932",
+      "controls": [
+        "independent full omega evaluator",
+        "split D211 p5 control",
+        "noncommuting integral frame"
+      ],
+      "limitations": [
+        "non-h1 D203 finite-source example",
+        "AI-authored harness"
+      ]
+    },
+    {
+      "status": "M",
+      "claim_id": "phase307-coefficient-sheaf-test",
+      "source": "research/phase307/actual_sheaf_cohomology.py; Phase307 focused CI run 43444960932",
+      "controls": [
+        "nontrivial constant H2 sphere nerve",
+        "actual-function coboundary primitive"
+      ],
+      "limitations": [
+        "finite-cover site, no scheme gerbe"
+      ]
     }
   ],
   "observables": [
@@ -374,7 +566,12 @@
     "compute cost",
     "Schmidt rank and reduced purity of toy bipartite state",
     "tight-binding barrier-mediated t^2 coefficient",
-    "avoided-crossing gap squared"
+    "avoided-crossing gap squared",
+    "whole original 100x1052 D203 evaluation Smith source ranks",
+    "source saturation length and trace radical",
+    "coefficient sensitive Cech H2 contrast",
+    "finite-depth Smith limit with explicit remainder",
+    "octonion associator nonassociativity"
   ],
   "falsifiers": [
     "any changed original trace Gram under invertible frame",
@@ -384,6 +581,10 @@
     "increased compute without added discriminatory capability",
     "claim of quantum entanglement without quantum observable",
     "claim of actual entanglement between research Worldlets rather than a tensor-product toy model",
-    "claim of adiabatic theorem or physical tunnelling from a finite Taylor coefficient"
+    "claim of adiabatic theorem or physical tunnelling from a finite Taylor coefficient",
+    "transport loss counted twice as a new determinant factor",
+    "constant coefficient nerve H2 silently promoted to arithmetic gerbe",
+    "aleph_alpha indexing treated as source proof",
+    "16 gates called cognitive benchmark evidence"
   ]
 }
