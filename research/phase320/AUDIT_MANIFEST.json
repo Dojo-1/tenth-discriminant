@@ -89,12 +89,14 @@
     "no_321_power4_promotion": true,
     "no_uniform_field_valuation_or_cutoff": true,
     "no_global_ray_character_transfer_to_nonprincipal_classes": true,
-    "no_determinant_valuation_inference_from_mod25_residue": true
+    "no_determinant_valuation_inference_from_mod25_residue": true,
+    "no_global_ray_transfer_to_nonprincipal_classes": true
   },
   "ci": {
     "phase320_cross_field_workflow": "pending",
     "phase318_local_D163_regression": "pending",
     "phase319_maximal_order_D163_regression": "pending",
     "whole_root_lean": "pending"
-  }
+  },
+  "main_unchanged": true
 }
