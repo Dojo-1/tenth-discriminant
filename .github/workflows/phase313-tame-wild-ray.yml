@@ -23,7 +23,7 @@ jobs:
       - name: Install pinned arithmetic environment
         run: |
           python3 -m venv /tmp/phase313
-          /tmp/phase313/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+          /tmp/phase313/bin/python -m pip install --disable-pip-version-check numpy==2.2.6 sympy==1.14.0
       - name: Syntax and deterministic import controls
         run: /tmp/phase313/bin/python -m py_compile research/phase313/*.py
       - name: Exhaustive local conductor25 ray-unit tame-wild bijection
@@ -36,6 +36,8 @@ jobs:
         run: /tmp/phase313/bin/python -u research/phase313/ray_to_original_gram.py
       - name: Deep h1 D163 original integer Gram Schur and independent Smith to 5^6
         run: /tmp/phase313/bin/python -u research/phase313/d163_deep_smith.py
+      - name: Exact full integer original 40x40 determinant, independent SymPy DomainMatrix
+        run: /tmp/phase313/bin/python -u research/phase313/exact_integer_determinant.py
       - name: Adversarial field, shell, nilpotence and parity tests
         run: /tmp/phase313/bin/python -m unittest discover -s research/phase313 -p 'test_*.py' -v
       - name: Preserve Phase312 global shell and source claims
