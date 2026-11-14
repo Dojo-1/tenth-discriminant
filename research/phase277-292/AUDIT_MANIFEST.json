@@ -1,0 +1,90 @@
+{
+  "phase": "Phase277–292 research integration",
+  "date": "2026-11-14",
+  "repo": "Dojo-1/tenth-discriminant",
+  "branch": "research/phase277-292-noether-smith-fabric",
+  "base_commit": "cac0eb5bdcab8bfdfd72456f18dd7aa7092b6f5b",
+  "head_commit": "40cf91a7861c7d652569a4cb2e825d8fe4470b86",
+  "main_unchanged": true,
+  "merged_prs": [
+    167,
+    170,
+    178,
+    179,
+    180,
+    181,
+    182
+  ],
+  "evidence_status": {
+    "P": "conditional exact algebraic and finite-dimensional identities",
+    "M": "source-local D403, D563, D587 and D583 finite computations with exact CI receipts",
+    "H": "uniform class-number-one field valuation and any new discriminant cutoff remain open",
+    "R": "index plus pairing addition, local-isometry support transfer, and universal Schur monotonicity"
+  },
+  "measurements": {
+    "D563": {
+      "rows": 700,
+      "primitive_evaluation_rank": 700,
+      "primitive_trace_gram_rank": 684,
+      "corank": 16,
+      "primitive_smith_profile": {
+        "0": 684,
+        "1": 15,
+        "2": 1
+      },
+      "primitive_residual_v5": 17,
+      "original_gram_v5": 3497,
+      "prior_source_contribution": 3480
+    },
+    "D587": {
+      "full_rows": 730,
+      "primitive_trace_gram_rank": 694,
+      "corank": 36,
+      "primitive_residual_v5": 36,
+      "full_original_gram_v5": 3924,
+      "matched_725_row_diagnostic_v5": 3855,
+      "five_row_schur_v5": 69,
+      "schur_sector_contributions": [
+        28,
+        41
+      ]
+    },
+    "D583_D587_transport": {
+      "local_square_unit_isometry": true,
+      "original_points_lost": 104,
+      "original_support_identified": false,
+      "pointwise_counterexample": {
+        "source": [
+          22,
+          1
+        ],
+        "transported": [
+          22,
+          2
+        ]
+      }
+    },
+    "hostile_schur_control": {
+      "old_gram_v5": 1,
+      "extended_gram_v5": 0,
+      "monotonicity_retired": true
+    }
+  },
+  "ci": {
+    "phase291_full700": "PASS",
+    "phase291_depth2": "PASS",
+    "phase291_depth3": "PASS",
+    "phase291_fixed_K8": "PASS",
+    "phase291_odd_prime_parity": "PASS",
+    "phase292_D563_D587": "PASS",
+    "phase292_D583_matched_support": "PASS",
+    "phase292_D587_five_row_schur": "PASS",
+    "whole_root_lean": "PASS"
+  },
+  "claim_boundary": {
+    "no_new_322_power4_claim": true,
+    "no_321_power4_promotion": true,
+    "no_uniform_additional_valuation_claim": true,
+    "no_main_merge": true
+  }
+}
