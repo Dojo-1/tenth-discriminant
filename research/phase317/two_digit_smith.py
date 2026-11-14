@@ -28,7 +28,7 @@ for folder in ("phase206","phase311","phase312","phase313","phase314",
 
 from inert_trace_radicals import rank_f5
 from wild_log125 import exhaustive_lift_table
-from wild_gauge import actual_original_ray_twist,T,M
+from wild_gauge import actual_original_ray_twist,shifted_ray_tag,T,M
 from conductor250_original_mod25 import (
     original_integer_source_oracle,unit_and_nonunit_counts,
     gram_from_unit_rays_and_nonunit_lifts
@@ -103,7 +103,7 @@ def hostile_smith_controls():
         (np.asarray([[5,5],[5,5]]), (0,1,1)),
         (np.asarray([[0,0],[0,0]]), (0,0,2)),
         (np.asarray([[1,0,0],[0,1,0],[0,0,5]]), (2,1,0)),
-        (np.asarray([[5,1,0],[0,5,0],[0,0,1]]), (2,1,0)),
+        (np.asarray([[5,1,0],[0,5,0],[0,0,1]]), (2,0,1)),
     ]
     data=[]
     for idx,(a,expected) in enumerate(fixtures):
@@ -149,6 +149,9 @@ def actual_vs_gauge_smith_certificate():
         Greal)
     exact_spectra,_,_=signed_ideal_spectra_for_original_source(qint)
     actual_164=exact_spectra[164]
+    # An independently isolated, exact generator-fibre contribution.
+    G164actual=gram_from_unit_rays_and_nonunit_lifts(
+        actual_164,Counter(),lookup)
 
     real=two_smith_slices(Greal)
     assert real["e0_unit_smith_factors"]==23
@@ -160,7 +163,19 @@ def actual_vs_gauge_smith_certificate():
             qomega,actual_nonunit,lookup,k)
         assert np.array_equal(Gk%5,Greal%5)
         assert rank_f5(Gk%5)==23
+        # Nothing outside the literal norm164 Diophantine fibre is
+        # allowed to explain an apparent change of Smith invariants.
+        norm164_twisted=Counter()
+        for original,z in zip(qint,qomega):
+            x,y=original
+            if x*x+D*y*y==164 and z<(-z[0],-z[1]):
+                norm164_twisted[shifted_ray_tag(z,t)]+=1
+        assert sum(norm164_twisted.values())==2
+        G164twisted=gram_from_unit_rays_and_nonunit_lifts(
+            norm164_twisted,Counter(),lookup)
         dist=(Gk-Greal)%MOD
+        assert np.array_equal(dist,(G164twisted-G164actual)%MOD),(
+            "synthetic change not entirely explained by norm164 fibre",k)
         changed_cells=int(np.count_nonzero(dist))
         assert changed_cells==0 if k==0 else changed_cells>0
         if changed_cells:
