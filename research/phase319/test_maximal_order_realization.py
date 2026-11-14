@@ -43,6 +43,13 @@ class MaximalOrderRealizationTests(unittest.TestCase):
         d = self.data
         self.assertEqual(d["split_prime_characters_tested"], 34)
         self.assertEqual(len(self.byprime), 34)
+        self.assertEqual(d["active_on_old_even_support"], 16)
+        self.assertEqual(d["active_on_full_maximal_support"], 34)
+        self.assertEqual(len(d["newly_active_on_odd_coordinate_completion"]), 18)
+        self.assertEqual(d["total_changed_exact_norm_shells"], 44)
+        self.assertEqual(d["total_unrealized_synthetic_ray_classes"], 88)
+        self.assertEqual(d["characters_changing_determinant_residue_mod25"], 21)
+        self.assertTrue(d["p197_per_shell_ray_spectrum_unchanged"])
         for p, row in self.byprime.items():
             self.assertEqual(row["full_ray250_norm_shell_checks"], 177, p)
             self.assertEqual(row["full_ray250_coprime_products"], 270, p)
