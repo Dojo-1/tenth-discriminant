@@ -28,6 +28,8 @@ jobs:
         run: /tmp/phase316/bin/python -m py_compile research/phase316/*.py
       - name: Global trace-zero conductor125 gauge twist and original Gram mod25
         run: /tmp/phase316/bin/python -u research/phase316/wild_gauge.py
+      - name: Classical small norm square ideal shells under h1 versus D187 nonh1
+        run: /tmp/phase316/bin/python -u research/phase316/small_norm_rigidity.py
       - name: Adversarial ideal character, norm125, conj, ray250, source tests
         run: /tmp/phase316/bin/python -m unittest discover -s research/phase316 -p 'test_*.py' -v
       - name: Preserve original Phase315 arithmetic and second wild digit
