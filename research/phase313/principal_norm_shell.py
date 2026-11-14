@@ -178,7 +178,7 @@ def nonh1_class_cancel_witness():
     assert not convolution and bins[46]!=convolution
     omega_tag=ray_tag((0,1),D)
     assert omega_tag in bins[46]
-    assert omega_tag==ray_tag((0,-1),D) is False if False else True
+    assert omega_tag==ray_tag((0,-1),D)
     # Strong, explicit global class-group cancellation:
     # two NONPRINCIPAL ideal factors at coprime norms yield
     # at least one PRINCIPAL ideal at their product.
