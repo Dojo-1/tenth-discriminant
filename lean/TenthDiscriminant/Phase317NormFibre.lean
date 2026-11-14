@@ -27,7 +27,6 @@ theorem four_nonscalar_witnesses (m : ℤ) :
     originalNorm m 1 (-1) = 4*m ∧
     originalNorm m (-1) (-1) = 4*m := by
   simp [originalNorm]
-  ring
 
 /-- An arbitrary nonrational solution at norm 4m has x²=y²=1. -/
 theorem nonrational_norm_four_m_exact
