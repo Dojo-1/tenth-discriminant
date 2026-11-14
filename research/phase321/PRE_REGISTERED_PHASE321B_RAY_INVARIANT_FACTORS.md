@@ -67,3 +67,8 @@ g^{\operatorname{ord}(c)}=1.
 For a cyclic quotient, existence of such a lift is equivalent to a group-theoretic section of the ray exact sequence. If one exists, record the explicit lift. If none exists, the extension is nonsplit. Do not infer splitting or nonsplitting from a nontrivial cocycle entry alone.
 
 For D163 the quotient is trivial and the extension splits tautologically.
+
+
+## Canonical lift obstruction witness
+
+For the chosen reduced-form class generator, also record the order of the canonical lift with local component (u=1), and the exact local kernel element obtained by raising it to the ordinary class-group order. Compute that local element's order in the signed local kernel. This is an explicit cocycle witness, but the exhaustive all-lifts test above remains the criterion for nonsplitting.
