@@ -40,6 +40,14 @@ class SmallNormRigidityTests(unittest.TestCase):
         self.assertEqual(witness[11]["principal_ideals"],0)
         self.assertEqual(witness[17]["principal_ideals"],0)
 
+    def test_original_order_conductor2_delays_first_active_generator_to_164(self):
+        x=self.data["native_original_integer_order_threshold"]
+        self.assertEqual(x["smallest_nonrational_original_order_element_norm"],163)
+        self.assertEqual(x["smallest_norm_original_order_element_affected_by_wild_twist"],164)
+        self.assertEqual(x["first_wild_gauge_active_integer_point"],[1,1])
+        self.assertEqual(x["maximal_order_omega_first_nonrational_norm"],41)
+        self.assertTrue(x["original_integer_point_not_replaced_by_maximal_order"])
+
     def test_second_depth_gauge_countermodel_still_changes_original_gram(self):
         self.assertTrue(self.data["second_depth_twist_preserves_all_h1_rational_square_shells_below_m"])
         self.assertTrue(self.data["but_h1_original_integer_Gram_mod25_changes_above_m"])
