@@ -55,3 +55,5 @@ Using the reduced-form generator and local identity as the canonical lift:
 - D203: the lift has order 16; its fourth power is the local kernel element (54,18), of order 4.
 
 These are concrete witnesses to the extension's 2-primary twisting. The exhaustive search over all 7,500 local lifts, rather than the canonical lift alone, proves that no section exists.
+
+Reproduction: run `python3 research/phase321/ray_invariant_factors.py` and `python3 -m unittest discover -s research/phase321 -p 'test_ray_invariant_factors.py' -v` under the pinned repository Python 3 environment. The exact-head workflow is `.github/workflows/phase321b-ray-invariant-factors.yml`.
