@@ -7,7 +7,7 @@
   "preregistration": "research/phase319/PRE_REGISTERED_MAXIMAL_ORDER_REALIZATION.md",
   "main_unchanged": true,
   "reported_cutoff": "322^4 UNCHANGED",
-  "result_status": "Initial exact-head Phase319 workflow PASS (run 43607889835; 6 Phase319 tests and 5 Phase318 exact-fibre regression tests PASS). Aggregate assertions added afterward; refreshed exact-head CI pending.",
+  "result_status": "Merged into the Phase309 research line after exact-head Phase319 arithmetic, Phase318 full-stack and Markdown workflows passed. Whole-root Lean was unchanged by Phase319; a duplicate current-head root run was still in progress at merge time, while the exact Phase318 parent head had already passed the full-root Lean audit.",
   "evidence_labels": {
     "P": "elementary norm, local trace and exact principal-ideal valuation identities under stated hypotheses",
     "M": "finite D163 maximal-order support, exact norm fibres, conductor-250 replays and local lift calculations after CI",
@@ -38,7 +38,8 @@
     "no_new_322_power4_claim": true,
     "no_321_power4_promotion": true,
     "no_uniform_additional_valuation_claim": true,
-    "no_independent_human_review_claim": true
+    "no_independent_human_review_claim": true,
+    "no_main_merge": true
   },
   "measurements": {
     "maximal_order_support": {
@@ -145,24 +146,29 @@
     "source_support_dependency_exposed": true
   },
   "CI": {
-    "phase319_first_exact_head": {
-      "run": 43607889835,
+    "phase319_exact_head": {
+      "run": 43608177821,
       "conclusion": "success",
       "phase319_tests": 6,
       "phase318_exact_fibre_regression_tests": 5
     },
-    "human_markdown": {
-      "run": 43607889814,
+    "phase318_full_wild_normal_stack": {
+      "run": 43608177791,
       "conclusion": "success"
     },
-    "phase318_full_stack": {
-      "run": 43607889872,
-      "status": "in_progress"
+    "human_markdown": {
+      "run": 43608177805,
+      "conclusion": "success"
     },
-    "whole_root_lean": {
-      "run": 43607889734,
-      "status": "in_progress"
+    "whole_root_lean_current_phase319_head": {
+      "run": 43608177808,
+      "status": "in_progress_at_merge"
     },
-    "refreshed_head_after_aggregate_assertions": "pending"
-  }
+    "whole_root_lean_unchanged_phase318_parent": {
+      "run": 43592898564,
+      "conclusion": "success",
+      "commit": "cc98dab3925b2037644f9823ac1e3aef73804c37"
+    }
+  },
+  "merge_commit": "fe2f2c6d5db9ec11a8edbf97a3f9869b"
 }
