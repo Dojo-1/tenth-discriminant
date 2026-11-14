@@ -4,10 +4,12 @@ on:
     branches: ['research/phase313-*']
     paths:
       - 'lean/TenthDiscriminant/Phase313WildRay.lean'
+      - 'lean/TenthDiscriminant/Phase313Conductor2.lean'
       - '.github/workflows/phase313-lean-ray.yml'
   pull_request:
     paths:
       - 'lean/TenthDiscriminant/Phase313WildRay.lean'
+      - 'lean/TenthDiscriminant/Phase313Conductor2.lean'
       - '.github/workflows/phase313-lean-ray.yml'
   workflow_dispatch:
 permissions:
@@ -46,3 +48,4 @@ jobs:
           lean --version
           git rev-parse HEAD
           lake build TenthDiscriminant.Phase313WildRay
+          lake build TenthDiscriminant.Phase313Conductor2
