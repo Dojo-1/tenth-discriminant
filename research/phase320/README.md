@@ -38,3 +38,6 @@ The experiment cannot change the (322^4) publication endpoint or promote the (32
 The Phase318 parent workflow also runs this full Phase320 certificate and its adversarial tests on the integration PR head; the dedicated Phase320 workflow remains as the standalone branch gate.
 
 Standalone branch gate refresh: Phase320 audit manifest and local-unit controls are aligned with the exact-head workflow.
+
+
+**Source warning:** the D187/D203 native arms use the *native row/jet dimensions and norm radii* on the full maximal-order norm ball. They are not the same finite observation sets as the original integer-order source in the earlier D563/D587 programme. In particular, the D203 (R=50,J=2) maximal-order arm must not be identified with a prior integer-order D203 calculation. Phase320 measures the support change rather than importing a rank or radical from that different source.
