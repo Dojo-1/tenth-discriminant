@@ -74,3 +74,6 @@ A separate local container implementation of the quadratic-order arithmetic, Fro
 These are **exploratory core-only measurements**, not the final Phase320 certificate. The final claim ledger will be updated only after the full local conductor-125 group, all first-wild-digit checks, and exact-head workflow have passed.
 
 The initial pattern is already useful: the local residue algebra is the same (mathbb F_{25}) in all three fields, while primitive rank and radical depend strongly on the finite support and row/jet geometry. D163 and D187 both have zero radical in the matched full-support geometry despite different class numbers; D203 has a one-dimensional radical there. Native D203's 100-row, two-layer maximal-order source has a much larger radical. This is not a class-number law; it is evidence that support completion and source geometry must be treated as separate variables.
+
+
+The next global arithmetic bridge is preregistered as [Phase321](../phase321/PRE_REGISTERED_IDEAL_AWARE_RAY_CLASS_GROUP.md): construct the full ray class groups modulo 125 for (h=1,2,4), retaining nonprincipal ideals rather than extrapolating D163's principal split-prime family.
