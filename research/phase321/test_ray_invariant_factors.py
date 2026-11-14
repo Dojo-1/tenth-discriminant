@@ -38,10 +38,13 @@ class Phase321BRayInvariantTests(unittest.TestCase):
 
     def test_exact_sequence_extension_splitting(self):
         self.assertTrue(self.sections[163]["splits"])
-        for D in (187, 203):
+        self.assertEqual(self.sections[163]["canonical_lift_order"], 1)
+        for D, lift_order in ((187, 8), (203, 16)):
             self.assertFalse(self.sections[D]["splits"])
             self.assertEqual(self.sections[D]["section_lift_count"], 0)
             self.assertTrue(self.sections[D]["all_7500_local_lifts_exhausted"])
+            self.assertEqual(self.sections[D]["canonical_lift_order"], lift_order)
+            self.assertEqual(self.sections[D]["local_obstruction_order"], 4)
             self.assertTrue(self.groups[D]["ray_extension_is_nonsplit"])
 
     def test_actual_group_differs_from_split_direct_product(self):
