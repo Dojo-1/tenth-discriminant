@@ -20,6 +20,10 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
+      - name: Verify Phase314 claim-to-evidence audit and cutoff stop rule
+        run: |
+          python3 -m json.tool research/phase314/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; a=json.load(open("research/phase314/AUDIT_MANIFEST.json")); assert a["no_main_merge"]; assert "unchanged" in a["original_reported_cutoff"]; assert "uniform" in a["claim"]["not_claimed"]; assert len(a["sources"]["prereg"])==2; print("Phase314 audit status PASS")'
       - name: Install deterministic numerical environment
         run: |
           python3 -m venv /tmp/phase314
