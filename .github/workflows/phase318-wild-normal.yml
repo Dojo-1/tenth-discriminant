@@ -63,6 +63,7 @@ jobs:
           python3 -m json.tool research/phase320/AUDIT_MANIFEST.json >/dev/null
           python3 -c 'import json; x=json.load(open("research/phase320/AUDIT_MANIFEST.json")); assert x["main_unchanged"]; assert x["claim_boundary"]["no_uniform_field_valuation_or_cutoff"]; assert x["claim_boundary"]["no_global_ray_transfer_to_nonprincipal_classes"]; print("Phase320 audit scope PASS")'
           test -f research/phase320/PRE_REGISTERED_CROSS_FIELD_WILD_NORMAL.md
+          test -f research/phase320/PRE_REGISTERED_PHASE320B_INDEX_TWO_ORDER_CONTROLS.md
       - name: Syntax-check Phase320 and local arithmetic dependencies
         run: |
           /tmp/phase318/bin/python -m py_compile research/phase320/*.py
