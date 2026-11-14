@@ -133,6 +133,40 @@ def p_torsion_counts(D):
     }, (forms, identity_class, table, alpha, inverses, units, local_alpha)
 
 
+def local_pow(x, exponent, D):
+    out = (1, 0)
+    base = x
+    n = exponent
+    while n:
+        if n & 1:
+            out = local_mul(out, base, D)
+        base = local_mul(base, base, D)
+        n >>= 1
+    return out
+
+
+def element_order(g, group_order, D, table, local_alpha, identity):
+    order = group_order
+    for p, exponent in factor_integer(group_order).items():
+        for _ in range(exponent):
+            if ray_pow(g, order // p, D, table, local_alpha, identity) == identity:
+                order //= p
+            else:
+                break
+    return order
+
+
+def local_element_order(u, D):
+    order = 7500
+    for p, exponent in factor_integer(7500).items():
+        for _ in range(exponent):
+            if local_pow(u, order // p, D) == (1, 0):
+                order //= p
+            else:
+                break
+    return order
+
+
 def cyclic_section_test(D, context):
     forms, identity_class, table, alpha, inverses, units, local_alpha = context
     h = len(forms)
@@ -140,13 +174,18 @@ def cyclic_section_test(D, context):
     orders = class_group_element_orders(table, identity_class)
     if h == 1:
         return {"D": D, "ordinary_class_group_order": 1,
-                "splits": True, "reason": "trivial quotient"}
+                "splits": True, "reason": "trivial quotient",
+                "canonical_lift_order": 1, "canonical_lift_power_h": identity,
+                "local_obstruction_order": 1}
     generator = next(i for i, n in enumerate(orders) if n == h)
     lifts = []
     for u in units:
         g = (generator, u)
         if ray_pow(g, h, D, table, local_alpha, identity) == identity:
             lifts.append(u)
+    canonical_lift = (generator, (1, 0))
+    canonical_power = ray_pow(canonical_lift, h, D, table, local_alpha, identity)
+    assert canonical_power[0] == identity_class
     return {
         "D": D,
         "ordinary_class_group_order": h,
@@ -154,7 +193,11 @@ def cyclic_section_test(D, context):
         "splits": bool(lifts),
         "section_lift_count": len(lifts),
         "first_section_lift": lifts[0] if lifts else None,
-        "all_7500_local_lifts_exhausted": True
+        "all_7500_local_lifts_exhausted": True,
+        "canonical_lift_order": element_order(
+            canonical_lift, h * 7500, D, table, local_alpha, identity),
+        "canonical_lift_power_h": canonical_power,
+        "local_obstruction_order": local_element_order(canonical_power[1], D)
     }
 
 
