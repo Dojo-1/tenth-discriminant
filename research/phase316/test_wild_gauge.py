@@ -43,7 +43,7 @@ class GlobalWildGaugeTests(unittest.TestCase):
         self.assertEqual(n["full_conductor250_twisted_coprime_convolutions_verified"],270)
         self.assertEqual(c["original_native_integer_source_Q"],109)
         self.assertEqual(c["native_original_Gram_entries_compared"],1600)
-        self.assertEqual(c["native_original_primitive_modulus"],25)
+        self.assertEqual(c["original_native_primitive_modulus"],25)
         self.assertEqual(c["native_original_G_F5_rank"],23)
         self.assertEqual(c["synthetic_twisted_G_F5_rank"],23)
         self.assertTrue(c["synthetic_vs_actual_Gram_equal_mod5"])
