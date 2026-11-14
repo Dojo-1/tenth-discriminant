@@ -52,3 +52,25 @@ For D187 and D203, the experiment now repeats each matched and native geometry o
 satisfies (T^TB_DT=operatorname{diag}(2,2D)) and identifies the old (mathbb Z[sqrt{-D}]) norm ball point-for-point with the even-b subset. The supports are still different: the odd-b maximal-order observations are genuinely new finite samples.
 
 The additional arms are preregistered in `PRE_REGISTERED_PHASE320B_INDEX_TWO_ORDER_CONTROLS.md`. They measure whether the local radical-normal channel changes under support completion while keeping field and row/jet geometry fixed.
+
+
+## Exploratory arithmetic-kernel cross-check
+
+A separate local container implementation of the quadratic-order arithmetic, Frobenius row frame, Gram construction and local norm-preserving lift lines was run before the full Phase315 log replay. It independently checked the original-to-primitive Gram identity on all ten arms modulo the required powers, the exact index-two coordinate map/support equality, the first two Smith layers modulo 25, and linearity of the local differentials. It did **not** yet run the Phase315 signed conductor-125 log table or verify first-wild-digit preservation; those remain mandatory gates in the repository implementation.
+
+| Field / support | Points | Primitive rank mod 5 | Radical | First radical layer | Full differential span | Radical-normal image |
+|---|---:|---:|---:|---:|---:|---:|
+| D163 even suborder, matched | 109 | 23 | 17 | 7 | 5 | 1 |
+| D163 full maximal order | 225 | 40 | 0 | 0 | 10 | 0 |
+| D187 even, matched | 105 | 19 | 21 | 9 | 5 | 2 |
+| D187 full, matched | 205 | 40 | 0 | 0 | 10 | 0 |
+| D203 even, matched | 105 | 19 | 21 | 9 | 5 | 2 |
+| D203 full, matched | 185 | 39 | 1 | 1 | 10 | 1 |
+| D187 even, native rows | 121 | 23 | 23 | 11 | 5 | 0 |
+| D187 full, native rows | 249 | 35 | 11 | 11 | 10 | 2 |
+| D203 even, native rows | 127 | 21 | 79 | 12 | 5 | 0 |
+| D203 full, native rows | 263 | 29 | 71 | 21 | 10 | 3 |
+
+These are **exploratory core-only measurements**, not the final Phase320 certificate. The final claim ledger will be updated only after the full local conductor-125 group, all first-wild-digit checks, and exact-head workflow have passed.
+
+The initial pattern is already useful: the local residue algebra is the same (mathbb F_{25}) in all three fields, while primitive rank and radical depend strongly on the finite support and row/jet geometry. D163 and D187 both have zero radical in the matched full-support geometry despite different class numbers; D203 has a one-dimensional radical there. Native D203's 100-row, two-layer maximal-order source has a much larger radical. This is not a class-number law; it is evidence that support completion and source geometry must be treated as separate variables.
