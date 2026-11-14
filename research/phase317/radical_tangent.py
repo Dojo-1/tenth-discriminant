@@ -103,7 +103,7 @@ def first_radical_form(g,k):
     return B
 
 
-def tangent_witness_or_obstruction(g0,h,k):
+def tangent_witness_or_obstruction(g0,h,k,include_witness=False):
     """Construct the generic congruence tangent equation when possible."""
     g0=np.asarray(g0,dtype=np.int64)%P
     h=np.asarray(h,dtype=np.int64)%P
@@ -145,12 +145,21 @@ def tangent_witness_or_obstruction(g0,h,k):
     result=(X@gp+gp@X.T)%P
     assert np.array_equal(result,hp),(
         "claimed tangent while constructive X does not exist")
-    return {
+    # Transport the explicitly solved tangent coefficient back from
+    # G'=P^T G P: Y=P^{-T} X' P^T. This is NOT merely a rank check.
+    Y=(inverse_matrix_f5(basis).T@X@basis.T)%P
+    assert np.array_equal((Y@g0+g0@Y.T)%P,h),(
+        "tangent solver coordinate transport failed")
+    data={
         "is_tangent_to_mod5_congruence_orbit":True,
         "radical_restriction_rank":0,
         "independent_solvability_witness":True,
         "congruence_witness_basis_dimension":n,
+        "original_coordinate_tangent_equation_verified":True,
     }
+    if include_witness:
+        data["generator_X_mod5"]=Y
+    return data
 
 
 def radical_tangent_certificate():
@@ -170,6 +179,8 @@ def radical_tangent_certificate():
     assert two_smith_slices(real)["e1_exactly_one_five"]==7
 
     records=[]
+    reference_H=None
+    reference_Y=None
     for scalar in range(5):
         t=(scalar*T[0]%MOD,scalar*T[1]%MOD)
         selected,non2=actual_original_ray_twist(qomega,t)
@@ -185,8 +196,28 @@ def radical_tangent_certificate():
         assert np.array_equal((B-baseB)%P,restriction)
         smith=two_smith_slices(G)
         assert smith["e1_exactly_one_five"]==rank_f5(B)==7
-        tangent=tangent_witness_or_obstruction(g0,H,k)
+        tangent=tangent_witness_or_obstruction(g0,H,k,include_witness=True)
         assert tangent["radical_restriction_rank"]==rank_f5(restriction)
+        if not tangent["is_tangent_to_mod5_congruence_orbit"]:
+            raise AssertionError("observed synthetic perturbation unexpectedly non-tangent")
+        Y=tangent.pop("generator_X_mod5")
+        U=(np.eye(40,dtype=np.int64)+5*Y)%MOD
+        U_inverse=(np.eye(40,dtype=np.int64)-5*Y)%MOD
+        assert np.array_equal((U@U_inverse)%MOD,np.eye(40,dtype=np.int64))
+        assert np.array_equal((U@real@U.T)%MOD,G),(
+            "claimed local congruence failed full 1600-cell matrix test",scalar)
+        tangent["explicit_GL40_mod25_congruence_verified"]=True
+        tangent["explicit_unit_inverse_verified"]=True
+        tangent["witness_X_nonzero_entries_mod5"]=int(np.count_nonzero(Y))
+        if scalar==1:
+            reference_H=H.copy()
+            reference_Y=Y.copy()
+        if scalar>=2:
+            assert reference_H is not None and reference_Y is not None
+            assert np.array_equal(H,(scalar*reference_H)%P),(
+                "five-point gauge family not linear in k mod25")
+            assert np.array_equal(Y,(scalar*reference_Y)%P),(
+                "constructed split-basis tangent solution not linear in k")
         nonzero=np.argwhere(restriction)
         witness=None
         if len(nonzero):
@@ -243,6 +274,8 @@ def radical_tangent_certificate():
         "independent_radical_first_lift_original_rank":rank_f5(baseB),
         "independent_Smith_unit_pivot_e1":7,
         "synthetic_five_gauge_first_lift_profiles":records,
+        "all_five_explicit_GL40_mod25_congruences_checked":True,
+        "five_parameter_tangent_witness_linear_in_shift":True,
         "positive_explicit_U_equal_I_plus_5X_congruence":tpos,
         "negative_rank_one_radical_non_tangent_control":tneg,
         "no_full_Smith_or_new_determinant_claim":True,
