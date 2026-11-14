@@ -38,6 +38,8 @@ jobs:
         run: /tmp/phase313/bin/python -u research/phase313/d163_deep_smith.py
       - name: Exact full integer original 40x40 determinant, independent SymPy DomainMatrix
         run: /tmp/phase313/bin/python -u research/phase313/exact_integer_determinant.py
+      - name: Matched h1 D163 vs h8 D183 identical original Q109 exact Gram
+        run: /tmp/phase313/bin/python -u research/phase313/matched_integer_control.py
       - name: Adversarial field, shell, nilpotence and parity tests
         run: /tmp/phase313/bin/python -m unittest discover -s research/phase313 -p 'test_*.py' -v
       - name: Preserve Phase312 global shell and source claims
