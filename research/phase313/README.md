@@ -122,6 +122,43 @@ A wholly separate arbitrary-precision EXACT INTEGER determinant over \(\mathbb Z
 
 The strongest countercontrol uses **identical integer observation geometry**. Fields D163 (\(h=1\)) and D183 (\(h=8\)) have the same ORIGINAL integer-pair Q109 at matched radius21: \(y=0,-21\le x\le21\), and \(y=\pm1,-16\le x\le16\). The original Grams agree mod5 and both have measured exact full determinant valuation **77** with even/odd valuations 37/40. D183's R40 is deliberately matched, not its native parameter choice. Therefore these local and finite determinant fingerprints **do not characterize class number one**.
 
+## 6. Conductor 2: repair the global-to-original transport
+
+There is a crucial **semantic correction** to the phrase "global ray convolution meets the same original Gram." We verified the map from the **selected** original order's principal-element ray census to its own Gram. But class-number-one ideal convolution holds in the **maximal order** O_K, not automatically in the source suborder O'=Z[sqrt(-D)]=Z+2O_K. Suborder selection is NOT a monoid homomorphism.
+
+For D=163, the original integer coordinate x+y sqrt(-163) maps to (x-y)+2y omega. An element a+b omega belongs to the original suborder precisely when b is even. Prime2 is inert: O_K/2 is the field F4. At odd norm suborder membership means residue mod2 exactly 1; at even norm all elements are divisible2, hence already lie in the original suborder.
+
+The full class-number-one carrier therefore needs **conductor 50**:
+
+\[
+(\mathcal O_K/50)^\times/\{\pm1\}
+\cong C_3\times C_{12}\times C_5^2,
+\qquad 900\text{ signed ray-unit classes}.
+\]
+
+~~~mermaid
+flowchart TD
+  MAX["Maximal-order h1 ideals<br/>full conductor-50 distribution"] -->|"Convolve BEFORE selecting"| RAY["900-class ray50 unit spectrum"]
+  RAY -->|"Odd norm: mod2 unit residue 1"| ODD["Selected original-order 5-units"]
+  EVEN["Even norm, prime-to5<br/>2 inert: automatically in suborder"] --> ODD
+  NON["5-divisible observations<br/>retain z/5 first lift"] --> GRAM["SAME original integer-order primitive Gram mod5"]
+  ODD --> GRAM
+  GRAM -. "no extra uniform Gram defect proved" .-> GAP["Large-S h1-specific mass remains OPEN"]
+~~~
+
+At fixed radius21, the 225 actual maximal-order observations project to exactly the 109 original integer-order observations by retaining even omega coefficients. The Phase313-H test convolves eligible maximal-order conductor-50 norm shells, THEN projects through the mod2 gate, checks the original selected conductor-25 census, and recovers every entry of the same 40×40 primitive Gram.
+
+The reason this gate matters is an exact counterexample:
+
+\[
+N(\omega)=41,\quad N(1+\omega)=43,\quad
+\omega(1+\omega)=2\omega-41=-40+\sqrt{-163}.
+\]
+
+Neither factor lies in the original suborder, and the suborder has no element of norm41 or norm43. The product belongs to it, norm1763. Thus the suborder-selected principal counts FAIL naive coprime convolution even though the ambient maximal order has h1. This example lies outside the radius21 computation but is an exact order-theoretic statement.
+
+Pre-code protocol: PRE_REGISTERED_CONDUCTOR2_GATE.md; executable controls: conductor2_order_gate.py and test_conductor2_order_gate.py. The fixed exact original v5=77 and matched h1/h8 negative controls remain unaffected: this corrects a transport step, NOT prior measurements. Promote the 900-ray check to [M] only after exact-head CI passes.
+
 ## Evidence contract and remaining theorem
 
 - **[P-paper]** normalized wild-log product law, signed unit-group decomposition, class-one ideal-convolution implication, parity orthogonality and conditional determinant index-square factorization.
