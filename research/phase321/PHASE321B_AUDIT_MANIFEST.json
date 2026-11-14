@@ -2,8 +2,8 @@
   "phase": "Phase321-B",
   "date": "2026-11-14",
   "repository": "Dojo-1/tenth-discriminant",
-  "branch": "research/phase321b-ray-invariant-factors",
-  "status": "first exact-head run computed the invariant factors and split sections but failed five stale expected-value assertions; corrected tests are pending exact-head rerun",
+  "branch": "research/phase321b-ray-invariant-factors-review",
+  "status": "corrected exact-head CI passed all 9 adversarial tests; first failed assertion run is retained as provenance",
   "preregistration": "research/phase321/PRE_REGISTERED_PHASE321B_RAY_INVARIANT_FACTORS.md",
   "fields": {
     "D163": {
@@ -43,15 +43,11 @@
   "tests": "research/phase321/test_ray_invariant_factors.py",
   "workflow": ".github/workflows/phase321b-ray-invariant-factors.yml",
   "local_results": {
-    "status": "COMPUTATION_OUTPUT_REPRODUCED; INITIAL_ASSERTION_SUITE_FAILED",
-    "initial_workflow_run": 43631043257,
-    "initial_workflow_job": 132557491529,
-    "initial_test_result": {
-      "tests": 8,
-      "passed": 3,
-      "failed": 5
-    },
-    "failure_cause": "Five assertions encoded an incorrect pre-registered expectation of nonsplitting and invariant factors C25 x C600 / C25 x C1200. The exact group enumeration instead found splitting sections and direct-product invariant factors. The implementation output itself completed and is retained in the workflow log.",
+    "status": "PASS",
+    "exact_head_workflow_run": 43631244118,
+    "exact_head_job": 132558111600,
+    "tests": 9,
+    "tests_passed": 9,
     "invariant_factors": {
       "D163": [
         25,
@@ -148,15 +144,25 @@
       "D163": {
         "splits": true,
         "reason": "trivial quotient",
-        "section_lift_count": 1
+        "section_lifts": [
+          [
+            1,
+            0
+          ]
+        ]
       },
       "D187": {
         "splits": true,
         "all_7500_lifts_exhausted": true,
-        "section_lift_count": 2,
-        "first_section_lift": [
-          7,
-          103
+        "section_lifts": [
+          [
+            7,
+            103
+          ],
+          [
+            24,
+            121
+          ]
         ],
         "canonical_lift_order": 300,
         "canonical_lift_power_h": [
@@ -171,10 +177,23 @@
       "D203": {
         "splits": true,
         "all_7500_lifts_exhausted": true,
-        "section_lift_count": 4,
-        "first_section_lift": [
-          34,
-          23
+        "section_lifts": [
+          [
+            34,
+            23
+          ],
+          [
+            45,
+            56
+          ],
+          [
+            60,
+            58
+          ],
+          [
+            62,
+            64
+          ]
         ],
         "canonical_lift_order": 300,
         "canonical_lift_power_h": [
@@ -186,6 +205,18 @@
         ],
         "canonical_lift_power_order": 75
       }
+    },
+    "invariant_factors_match_split_product": {
+      "D163": true,
+      "D187": true,
+      "D203": true
+    },
+    "prior_failed_expectation_run": {
+      "workflow_run": 43631043257,
+      "job": 132557491529,
+      "tests": 8,
+      "failed_assertions": 5,
+      "reason": "pre-registered test expectations incorrectly predicted nonsplitting and oversized invariant factors; exact group enumeration corrected them"
     }
   },
   "interpretation": [
