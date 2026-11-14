@@ -178,7 +178,7 @@ def build_ray_coordinates(D, context):
     assert ray_pow(g_small, n1, D, table, local_alpha, identity) == identity
     assert ray_pow(g_large, n2, D, table, local_alpha, identity) == identity
 
-    for p in (2, 5):
+    for p in (2, 3, 5):
         if n1 % p == 0:
             assert ray_pow(g_small, n1 // p, D, table, local_alpha, identity) != identity
         if n2 % p == 0:
@@ -199,6 +199,7 @@ def build_ray_coordinates(D, context):
             coordinate_map[element] = (a, b)
 
     group_order = h * len(units)
+    assert group_order == EXPECTED_RAY_ORDERS[D]
     assert len(local_generated) == 7500
     assert len(coordinate_map) == group_order == n1 * n2
     all_elements = tuple((c, u) for c in range(h) for u in units)
