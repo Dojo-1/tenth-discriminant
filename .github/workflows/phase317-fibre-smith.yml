@@ -30,6 +30,8 @@ jobs:
         run: /tmp/phase317/bin/python -u research/phase317/norm_first_fibre.py
       - name: Two Smith digits of actual native Gram and all five synthetic gauges
         run: /tmp/phase317/bin/python -u research/phase317/two_digit_smith.py
+      - name: Radical first lift form and exact tangent versus normal gauge controls
+        run: /tmp/phase317/bin/python -u research/phase317/radical_tangent.py
       - name: Hostile source, fibre, pivot and GL40 invariance unit tests
         run: /tmp/phase317/bin/python -m unittest discover -s research/phase317 -p 'test_*.py' -v
       - name: Retain actual Phase316 exact native norm164 generator obstruction
