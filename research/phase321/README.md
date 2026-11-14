@@ -22,7 +22,7 @@ The extension is constructed, not assumed to split.
 
 The inert prime is 5 in all three fields. Exhaustion of O_D/(125) gives 15,000 units and 7,500 signed local ray residues. The ordinary class numbers are counted from exact reduced primitive forms.
 
-| Field | Ordinary class group | h | |Cl_(125)| |
+| Field | Ordinary class group | h | Ray group order |
 |---|---|---:|---:|
 | D163 | trivial | 1 | 7,500 |
 | D187 | C2 | 2 | 15,000 |
