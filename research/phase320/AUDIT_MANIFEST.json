@@ -135,10 +135,10 @@
     "native_row_jet_geometry_is_not_native_order_identification": true
   },
   "ci": {
-    "phase320_cross_field_workflow": "not observed on connector after branch integration; pending",
-    "phase318_local_D163_regression": "pending exact-head run",
-    "phase319_maximal_order_D163_regression": "pending exact-head run",
-    "whole_root_lean": "pending exact combined branch run"
+    "phase320_cross_field_workflow": "pending; Actions run not surfaced for the integration PR",
+    "phase318_local_D163_regression": "previous Phase318 full-stack PASS on the unchanged D163 line; exact Phase320-head rerun pending",
+    "phase319_maximal_order_D163_regression": "previous Phase319 exact-head PASS; exact Phase320-head rerun pending",
+    "whole_root_lean": "previous Phase291–303 root checks PASS on their respective heads; combined Phase269–319 root replay pending"
   },
   "main_unchanged": true,
   "supplemental_preregistration": "research/phase320/PRE_REGISTERED_PHASE320B_INDEX_TWO_ORDER_CONTROLS.md",
@@ -306,6 +306,14 @@
       "The even-b index-two suborder consistently has only 15 F25 residue classes in these norm balls, while full maximal-order supports cover all 25",
       "Full symmetric local differential span is rank 10 on full maximal-order arms and rank 5 on even-b arms in this exploratory kernel check",
       "No class-number-only law is inferred from three fields"
+    ],
+    "original_to_primitive_gram_identity_all_ten_arms": "PASS in independent container arithmetic-kernel check modulo 125/25",
+    "index_two_coordinate_map_and_support_identity_all_D": "PASS in independent container check for D163, D187, D203 at matched and native radii",
+    "local_norm_preserving_lifts_and_F5_linearity": "PASS in independent container arithmetic-kernel check",
+    "not_yet_checked": [
+      "Phase315 exhaustive conductor-125 unit/log group for D203",
+      "signed first-wild-digit preservation for every D187/D203 local lift",
+      "exact-head GitHub workflow for the full repository implementation"
     ]
   }
 }
