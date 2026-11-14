@@ -69,6 +69,6 @@ For a cyclic quotient, existence of such a lift is equivalent to a group-theoret
 For D163 the quotient is trivial and the extension splits tautologically.
 
 
-## Canonical lift obstruction witness
+## Canonical lift defect witness
 
-For the chosen reduced-form class generator, also record the order of the canonical lift with local component (u=1), and the exact local kernel element obtained by raising it to the ordinary class-group order. Compute that local element's order in the signed local kernel. This is an explicit cocycle witness, but the exhaustive all-lifts test above remains the criterion for nonsplitting.
+For the chosen reduced-form class generator, also record the order of the canonical lift with local component (u=1), and the exact local kernel element obtained by raising it to the ordinary class-group order. Compute that local element's order in the signed local kernel. This is a witness to the chosen transversal's cocycle defect, not a proof of nonsplitting. The exhaustive all-lifts test above decides whether a section exists.
