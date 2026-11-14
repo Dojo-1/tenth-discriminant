@@ -3,7 +3,7 @@
   "date": "2026-11-14",
   "repository": "Dojo-1/tenth-discriminant",
   "branch": "research/phase277-320-unified",
-  "status": "preregistered; implementation not started",
+  "status": "implementation complete; local exact-arithmetic run and 8 adversarial tests passed; exact-head GitHub workflow pending",
   "preregistration": "research/phase321/PRE_REGISTERED_IDEAL_AWARE_RAY_CLASS_GROUP.md",
   "modulus": 125,
   "fields": {
@@ -40,6 +40,58 @@
     "no_assumed_direct_product_decomposition": true,
     "no_principal_generator_substitution_for_nonprincipal_ideals": true,
     "no_global_character_family_claim_until_group_verified": true,
-    "no_uniform_valuation_or_discriminant_cutoff": true
+    "no_uniform_valuation_or_discriminant_cutoff": true,
+    "no_full_character_table_claim": true
+  },
+  "implementation": "research/phase321/ideal_aware_ray_class.py",
+  "tests": "research/phase321/test_ideal_aware_ray_class.py",
+  "workflow": ".github/workflows/phase321-ideal-aware-ray-class.yml",
+  "local_run": {
+    "status": "PASS",
+    "environment": "container Python 3, standard library only",
+    "tests": 8,
+    "tests_passed": 8,
+    "ray_group_orders": {
+      "163": 7500,
+      "187": 15000,
+      "203": 30000
+    },
+    "local_unit_count_mod125": 15000,
+    "signed_local_kernel_order": 7500,
+    "ideal_product_scalings": {
+      "163": 1,
+      "187": 4,
+      "203": 16
+    },
+    "cocycle_associativity_checks": {
+      "163": 1,
+      "187": 8,
+      "203": 64
+    },
+    "full_ray_group_inverse_checks": {
+      "163": 7500,
+      "187": 15000,
+      "203": 30000
+    },
+    "prime_ideal_records": {
+      "163": 118,
+      "187": 128,
+      "203": 125
+    },
+    "nonprincipal_prime_ideal_records": {
+      "163": 0,
+      "187": 50,
+      "203": 70
+    },
+    "split_rational_primes": {
+      "163": 34,
+      "187": 44,
+      "203": 41
+    },
+    "ramified_rational_primes": {
+      "163": 1,
+      "187": 2,
+      "203": 2
+    }
   }
 }
