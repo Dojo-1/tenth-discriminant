@@ -1,0 +1,210 @@
+{
+  "phase": "Phase314",
+  "date": "2026-11-14",
+  "repository": "Dojo-1/tenth-discriminant",
+  "draft_branch": "research/phase314-wild-jet-quotient",
+  "stacked_on": "Phase313 PR #205",
+  "pr": "https://github.com/Dojo-1/tenth-discriminant/pull/206",
+  "original_reported_cutoff": "322^4 (unchanged)",
+  "no_main_merge": true,
+  "evidence_tags": {
+    "P": "proved conditional algebraic proposition, exact formal scope declared",
+    "A": "imported class-number-one / ray-class / Dedekind-zeta fact",
+    "M": "bounded measurement computed by AI-authored code in hosted CI",
+    "H": "unproved uniform h1 field theorem",
+    "S": "semantic analogy only",
+    "R": "retired inference or counterworld"
+  },
+  "claim": {
+    "paper_algebra": "Over F5, every original primitive signed-ray Gram contribution is quadratic in wild additive coordinates (x,y), so the ray-to-Gram F5-linear map annihilates wild augmentation J^3; six raw moments per tame class suffice.",
+    "conductor50": "The quotient wild group algebra modulo J^3 is still an algebra; the full h1 conductor50 signed ray norm-shell convolution descends exactly to 216 moment coordinates (3*12*6). Conductor2 suborder selection occurs after convolution.",
+    "original_source": "Same original D203 Q263 100row/2jet primitive Gram and D163 original integer-order Q109 40row/1jet primitive Gram are reconstructed from 12*6+6=78 F5 moments, no source replacement.",
+    "countermodel": "Different NONNEGATIVE abstract unit-ray histograms have identical second moments and same Gram; four-shell abstract h1-style convolution assignments can vary wild moment while preserving only four actual ideal masses and internal coprime products. Neither is a real field counterexample.",
+    "heldout": "At radius60, h1 D43 and D163 exhibit many genuinely nontrivial full 900-ray conductor50 convolutions agreeing after 216-moment truncation; h2 D187 with inert2 and5 fails at 11*17=187 through nonprincipal class cancellation.",
+    "not_claimed": "No class-one-specific extra primitive mod5 rank, full p-adic Smith, uniform large-field valuation, novel published theorem or 322^4 cutoff change. The 78-feature capacity cannot be interpreted as rank(G)<=78. Rank of the 78-to-Sym_N linear map is separate and pending a preregistered exact-source experiment."
+  },
+  "sources": {
+    "primary_repository": [
+      "research/phase313/ray_to_original_gram.py",
+      "research/phase313/conductor2_order_gate.py",
+      "research/phase313/d163_deep_smith.py",
+      "lean/TenthDiscriminant/IntegerTraceGram.lean",
+      "lean/TenthDiscriminant/ClassNumberInertBridge.lean"
+    ],
+    "public_classical": [
+      "https://doi.org/10.1016/j.jalgebra.2016.06.002",
+      "https://planetmath.org/anexactsequenceforrayclassgroups"
+    ],
+    "prereg": [
+      "research/phase314/PRE_REGISTERED_JET_QUOTIENT.md",
+      "research/phase314/PRE_REGISTERED_HELDOUT_RADIUS60.md",
+      "research/phase314/PRE_REGISTERED_GRAM_IMAGE_RANK.md"
+    ]
+  },
+  "artifacts": [
+    {
+      "claim": "original full J^3 second-jet Gram",
+      "source": "research/phase314/wild_quadratic_gram.py",
+      "test": "research/phase314/test_wild_quadratic_gram.py",
+      "evidence": "M"
+    },
+    {
+      "claim": "h1 conductor50 moment algebra and original order projection",
+      "source": "research/phase314/truncated_ray_convolution.py",
+      "test": "research/phase314/test_truncated_ray_convolution.py",
+      "evidence": "M"
+    },
+    {
+      "claim": "four-shell abstract non-field wild countermodel",
+      "source": "research/phase314/abstract_counterworld.py",
+      "test": "research/phase314/test_abstract_counterworld.py",
+      "evidence": "M-abstract"
+    },
+    {
+      "claim": "heldout radius60 h1/h2 global control",
+      "source": "research/phase314/heldout_global_ray.py",
+      "test": "research/phase314/test_heldout_global_ray.py",
+      "evidence": "M"
+    },
+    {
+      "claim": "formal quadratic third differences and 6 atom moment convolution",
+      "source": "lean/TenthDiscriminant/Phase314WildSecondJet.lean",
+      "test": ".github/workflows/phase314-lean-jet.yml",
+      "evidence": "P-narrow"
+    },
+    {
+      "claim": "F5-linear image rank of 78 moment-to-original-Gram map (distinct from rank of each Gram)",
+      "source": "research/phase314/moment_operator_rank.py",
+      "test": "research/phase314/test_moment_operator_rank.py",
+      "evidence": "M only after exact-head CI"
+    }
+  ],
+  "measurements": {
+    "original_D203": {
+      "raw_unit_ray_cap": 300,
+      "raw_nonunit_lift_cap": 25,
+      "compressed_unit_feature_cap": 72,
+      "compressed_nonunit_feature_cap": 6,
+      "source_Q": 263,
+      "original_primitive_Gram_cells_checked": 10000,
+      "primitive_rank_F5": 63,
+      "all_direct_unit_Gram_cells_checked": 3000000,
+      "all_nonunit_Gram_cells_checked": 250000,
+      "third_difference_Gram_matrices_zero": 1300,
+      "nonzero_second_difference": true
+    },
+    "original_h1_D163": {
+      "raw_unit_ray_cap": 300,
+      "raw_nonunit_lift_cap": 25,
+      "compressed_feature_cap": 78,
+      "source_Q": 109,
+      "original_primitive_Gram_cells_checked": 1600,
+      "primitive_rank_F5": 23,
+      "all_direct_unit_Gram_cells_checked": 480000,
+      "all_nonunit_Gram_cells_checked": 40000,
+      "third_difference_Gram_matrices_zero": 1300,
+      "nonzero_second_difference": true,
+      "exact_original_det_v5_from_previous_phase": 77
+    },
+    "h1_native_radius21_global": {
+      "full_conductor50_ray_class_cap": 900,
+      "second_jet_algebra_cap": 216,
+      "eligible_norm_shells": 177,
+      "coprime_pairs_tested": 270,
+      "nonidentity_nonzero_pairs": 4,
+      "selected_unit_ideal_count": 50,
+      "selected_nonunit_observations": 9,
+      "original_integer_Gram_cells_checked": 1600
+    },
+    "heldout_radius60": {
+      "D43": {
+        "class_number": 1,
+        "maximal_order_Q": 3451,
+        "coprime10_ideal_shells_checked": 1440,
+        "nontrivial_full_conductor50_products": 230,
+        "full_distribution_nonzero_cells_checked": 797,
+        "compressed_moment_cells_checked": 4476
+      },
+      "D163": {
+        "class_number": 1,
+        "maximal_order_Q": 1785,
+        "coprime10_ideal_shells_checked": 1440,
+        "nontrivial_full_conductor50_products": 59,
+        "full_distribution_nonzero_cells_checked": 141,
+        "compressed_moment_cells_checked": 834
+      },
+      "D187": {
+        "class_number": 2,
+        "maximal_order_Q": 1645,
+        "prime2_inert": true,
+        "prime5_inert": true,
+        "nonprincipal_ideal_norms": [
+          11,
+          17
+        ],
+        "principal_ideal_norms_11_17": [
+          0,
+          0
+        ],
+        "principal_ideal_norm187": 1,
+        "principal_ray_convolution_failed": true
+      }
+    },
+    "wild_to_Gram_operator": {
+      "D203": {
+        "source_R": 100,
+        "symmetric_target_dimension": 5050,
+        "input_moment_coordinates": 78,
+        "operator_rank_F5": "PENDING exact-head CI",
+        "output_Gram_rank_F5": 63
+      },
+      "D163": {
+        "source_R": 40,
+        "symmetric_target_dimension": 820,
+        "input_moment_coordinates": 78,
+        "operator_rank_F5": "PENDING exact-head CI",
+        "output_Gram_rank_F5": 23
+      }
+    }
+  },
+  "controls": [
+    "All 12 signed tame classes times ALL 25 wild values per original source, not only occupied bins",
+    "All 25 first-nonunit-lift classes independently checked",
+    "All 1300 third differences vanish per original source, nonzero second difference guard",
+    "Same original direct trace Gram from frozen original source, not substituted maximal-order source for D163",
+    "Abstract nonnegative J^3 kernel distributions same Gram but different raw ray counts, explicitly not number fields",
+    "Abstract formal four-shell countermodel only, cannot refute full real h1 constraints",
+    "Correct conductor2 selection only AFTER full maximal-order convolution",
+    "Heldout radius60 expands genuine nonzero products vs radius21",
+    "Same inert 2,5 in h2 D187 but nonprincipal ideal class cancellation at norm11*17",
+    "Exact fixed integer determinant D163=77 and h2 matched D183=77 remain unchanged",
+    "Compute the exact rank and, if present, nullspace of the 78-to-Gram LINEAR map; never conflate with rank of a particular original Gram matrix.",
+    "Actual sign-symmetric nonunit first-lift x/y moment sums vanish, but these are realization constraints, not formal kernel directions of the 78-moment map."
+  ],
+  "failed_and_corrected_tests": [
+    {
+      "source": "research/phase314/test_truncated_ray_convolution.py",
+      "error": "Original hostile mixed xy example chose x=(1,2), u=(2,1), so x1*u2+x2*u1=5 ≡0 mod5; test expected nonzero incorrectly.",
+      "repair": "Replace with x=(1,0),u=(0,1), yielding nonzero cross 1; implementation and theorem unchanged.",
+      "status": "corrected and Phase314 focused workflow rerun green."
+    }
+  ],
+  "governance": {
+    "novelty": "No checked novelty claim; group algebra J-adic quotient is classical and quadratic-moment factorization follows from existing affine source.",
+    "mathematical_frontier": [
+      "Find an actual field-specific relation on LOW-DEGREE wild moments from h1, reciprocity and full native norm cutoffs, not just formal convolution and total ideal counts.",
+      "Prove any resulting primitive Gram degeneracy is uniform for hypothetical large D and is independent of the inherited valuationWeight.",
+      "Extend beyond primitive mod5 into higher 5-adic digits with explicit conductor 2, p-adic depth and ordinary-jet factorial filtration.",
+      "Seek independent human review of statement semantics and current Lean axiom/assumption dependence.",
+      "Determine intrinsic linear image rank of the 78-moment-to-original-Gram map; inspect coordinate kernel without inferring field class number from rank."
+    ],
+    "stop": "Any frozen original row/j0/j1 mismatch, 3rd difference nonzero, 6-moment convolution failure, conductor2 projection error, heldout h1 ideal-count mismatch or nonh1 negative-control failure retires corresponding claim.",
+    "status": "M pending exact-final-head CI rerun; narrow Lean polynomial checked only when its own CI success confirmed; no auto-promotion to P or new cutoff"
+  },
+  "CI": {
+    "focused_earlier_pass": "43584776212 (after mixed moment hostile test correction, before heldout)",
+    "heldout_focused_pass": "43584947372 passed with 19 Phase314 hostile tests at earlier head",
+    "exact_final_head": "Phase314-G operator-rank source/tests appended; exact final-head workflows require separate inspection. GitHub Actions queue observed; do not claim green until completed.",
+    "whole_root_Lean": "pending at manuscript freeze"
+  }
+}

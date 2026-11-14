@@ -239,3 +239,8 @@ import TenthDiscriminant.Phase307SmithDepth
 import TenthDiscriminant.Phase309PicardGramBoundary
 import TenthDiscriminant.Phase310SplitTrace
 import TenthDiscriminant.Phase312FermatDefect
+import TenthDiscriminant.Phase313WildRay
+import TenthDiscriminant.Phase313Conductor2
+import TenthDiscriminant.Phase314WildSecondJet
+import TenthDiscriminant.Phase315Conductor125
+import TenthDiscriminant.Phase316SmallNorm

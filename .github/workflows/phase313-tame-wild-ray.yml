@@ -1,0 +1,54 @@
+name: Phase313 tame-wild ray group principal convolution and parity Gram
+on:
+  push:
+    branches: ['research/phase313-*']
+    paths:
+      - 'research/phase313/**'
+      - '.github/workflows/phase313-tame-wild-ray.yml'
+  pull_request:
+    paths:
+      - 'research/phase313/**'
+      - '.github/workflows/phase313-tame-wild-ray.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tame-wild-principal-ray-and-original-gram:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Claim-to-artifact audit and evidence-promotion guard
+        run: |
+          python3 -m json.tool research/phase313/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; x=json.load(open("research/phase313/AUDIT_MANIFEST.json")); assert x["claim"]["status_after"]=="M"; assert x["status_and_limits"]["no_uniform_cutoff_change"]; assert x["preregistration"]["kill_condition"]; assert len(x["status_and_limits"]["active_remainder"])>=3; print("Phase313 evidence scope PASS")'
+      - name: Install pinned arithmetic environment
+        run: |
+          python3 -m venv /tmp/phase313
+          /tmp/phase313/bin/python -m pip install --disable-pip-version-check numpy==2.2.6 sympy==1.14.0
+      - name: Syntax and deterministic import controls
+        run: /tmp/phase313/bin/python -m py_compile research/phase313/*.py
+      - name: Exhaustive local conductor25 ray-unit tame-wild bijection
+        run: /tmp/phase313/bin/python -u research/phase313/tame_wild_ray.py
+      - name: Global class-number-one ray-convolution and D183 cancellation
+        run: /tmp/phase313/bin/python -u research/phase313/principal_norm_shell.py
+      - name: Original D203 parity block Gram and Smith reconciliation
+        run: /tmp/phase313/bin/python -u research/phase313/sign_parity_gram.py
+      - name: Reconstruct actual D203 and h1 integer-order D163 primitive Grams from ray counts
+        run: /tmp/phase313/bin/python -u research/phase313/ray_to_original_gram.py
+      - name: Deep h1 D163 original integer Gram Schur and independent Smith to 5^6
+        run: /tmp/phase313/bin/python -u research/phase313/d163_deep_smith.py
+      - name: Exact full integer original 40x40 determinant, independent SymPy DomainMatrix
+        run: /tmp/phase313/bin/python -u research/phase313/exact_integer_determinant.py
+      - name: Matched h1 D163 vs h8 D183 identical original Q109 exact Gram
+        run: /tmp/phase313/bin/python -u research/phase313/matched_integer_control.py
+      - name: Global h1 ray50 conductor2 selection to SAME original integer Gram
+        run: /tmp/phase313/bin/python -u research/phase313/conductor2_order_gate.py
+      - name: Adversarial field, shell, nilpotence and parity tests
+        run: /tmp/phase313/bin/python -m unittest discover -s research/phase313 -p 'test_*.py' -v
+      - name: Preserve Phase312 global shell and source claims
+        run: |
+          /tmp/phase313/bin/python -u research/phase312/norm_shell_bridge.py
+          /tmp/phase313/bin/python -u research/phase312/kernel_vs_weight.py

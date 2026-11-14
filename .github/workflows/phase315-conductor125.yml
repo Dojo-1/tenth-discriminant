@@ -1,0 +1,39 @@
+name: Phase315 conductor125 wild logarithm and original Gram mod25
+on:
+  push:
+    branches: ['research/phase315-*']
+    paths:
+      - 'research/phase315/**'
+      - '.github/workflows/phase315-conductor125.yml'
+  pull_request:
+    paths:
+      - 'research/phase315/**'
+      - '.github/workflows/phase315-conductor125.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  wild-second-digit-and-gram:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pin numerical and exact integer environment
+        run: |
+          python3 -m venv /tmp/phase315
+          /tmp/phase315/bin/python -m pip install --disable-pip-version-check numpy==2.2.6 sympy==1.14.0
+      - name: Check frozen source syntax
+        run: /tmp/phase315/bin/python -m py_compile research/phase315/*.py
+      - name: All inert local conductor125 units and corrected wild logarithm
+        run: /tmp/phase315/bin/python -u research/phase315/wild_log125.py
+      - name: Full h1 conductor250 -> SAME integer-order original D163 primitive Gram mod25
+        run: /tmp/phase315/bin/python -u research/phase315/conductor250_original_mod25.py
+      - name: Adversarial unit, nonunit, sign, original Gram and collision tests
+        run: /tmp/phase315/bin/python -m unittest discover -s research/phase315 -p 'test_*.py' -v
+      - name: Preserve Phase314 primary original F5 reconstruction and global controls
+        run: |
+          /tmp/phase315/bin/python -u research/phase314/wild_quadratic_gram.py
+          /tmp/phase315/bin/python -u research/phase314/truncated_ray_convolution.py
+          /tmp/phase315/bin/python -u research/phase314/moment_operator_rank.py
