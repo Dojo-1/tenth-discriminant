@@ -1,0 +1,42 @@
+name: Phase311 original inert F25 trace pairing and restricted radical
+on:
+  push:
+    branches: ['research/phase311-*']
+    paths:
+      - 'research/phase311/**'
+      - '.github/workflows/phase311-inert-trace.yml'
+  pull_request:
+    paths:
+      - 'research/phase311/**'
+      - '.github/workflows/phase311-inert-trace.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inert-trace-original-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Validate claim-to-artifact audit and no field-bound promotion
+        run: |
+          python3 -m json.tool research/phase311/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; j=json.load(open("research/phase311/AUDIT_MANIFEST.json")); assert j["result"]["status_after"]=="M"; assert j["preregistration"]["kill_condition"]; assert "no uniform additional prime mass" in j["result"]["active_remainder"][0]; print("Phase311 audit evidence scope PASS")'
+      - name: Install pinned numeric environment
+        run: |
+          python3 -m venv /tmp/phase311
+          /tmp/phase311/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Syntax check
+        run: /tmp/phase311/bin/python -m py_compile research/phase311/inert_trace_radicals.py research/phase311/test_inert_trace_radicals.py research/phase311/secondary_trace_radical.py research/phase311/test_secondary_trace_radical.py research/phase311/residue_multiplicity.py research/phase311/test_residue_multiplicity.py
+      - name: Original inert F25 hermitian trace and primitive-radical controls
+        run: /tmp/phase311/bin/python -u research/phase311/inert_trace_radicals.py
+      - name: Derive secondary 5-adic radical, exact v5 and full source factorization
+        run: /tmp/phase311/bin/python -u research/phase311/secondary_trace_radical.py
+      - name: Compress original inert Gram from 25 residue multiplicities with D427 control
+        run: /tmp/phase311/bin/python -u research/phase311/residue_multiplicity.py
+      - name: Independent field-rank, conjugation and matched non-h1 hostile tests
+        run: /tmp/phase311/bin/python -m unittest discover -s research/phase311 -p 'test_*.py' -v
+      - name: Preserve previous D203 original source and independent F25-rank kernel
+        run: /tmp/phase311/bin/python -u research/phase305/frobenius_hermite_rank.py

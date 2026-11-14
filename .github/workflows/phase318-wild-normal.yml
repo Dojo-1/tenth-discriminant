@@ -1,0 +1,46 @@
+name: Phase318 complete norm125 local and global radical normal map
+on:
+  push:
+    branches: ['research/phase318-*']
+    paths:
+      - 'research/phase318/**'
+      - '.github/workflows/phase318-wild-normal.yml'
+  pull_request:
+    paths:
+      - 'research/phase318/**'
+      - '.github/workflows/phase318-wild-normal.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-preserving-wild-normal:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pin exact modular linear algebra environment
+        run: |
+          python3 -m venv /tmp/phase318
+          /tmp/phase318/bin/python -m pip install --disable-pip-version-check numpy==2.2.6 sympy==1.14.0
+      - name: Check Phase318 evidence audit, four chronologically scoped protocols and cutoff stop rule
+        run: |
+          python3 -m json.tool research/phase318/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; a=json.load(open("research/phase318/AUDIT_MANIFEST.json")); assert a["main_unchanged"]; assert len(a["preregistrations"])==4; assert a["measurements"]["pencil"]["lambda_rank"]==[7,7,7,3,7]; assert a["measurements"]["exact_realization"]["p53"]["native_exact_norm"]==212; print("PHASE318_EVIDENCE_AUDIT_PASS")'
+      - name: Static Phase318 source syntax
+        run: /tmp/phase318/bin/python -m py_compile research/phase318/*.py
+      - name: Exhaust ALL 50 times 5 norm-compatible original wild site lifts
+        run: /tmp/phase318/bin/python -u research/phase318/local_wild_normal.py
+      - name: Split-prime exact ideal valuation family and full ray250 product controls
+        run: /tmp/phase318/bin/python -u research/phase318/split_prime_normal.py
+      - name: One-dimensional radical-normal resonance pencil and 16 full ray250 character replays
+        run: /tmp/phase318/bin/python -u research/phase318/normal_pencil.py
+      - name: Exact simultaneous 3 plus 4 plus 10 resonance block decomposition
+        run: /tmp/phase318/bin/python -u research/phase318/resonance_splitting.py
+      - name: Exact global generator support excludes local p53 and p227 Smith resonance
+        run: /tmp/phase318/bin/python -u research/phase318/exact_resonant_fibres.py
+      - name: Hostile first-wild, nonunit, source, rank and prime-character tests
+        run: /tmp/phase318/bin/python -m unittest discover -s research/phase318 -p 'test_*.py' -v
+      - name: Inherit Phase317 explicit original mod25 congruence controls
+        run: /tmp/phase318/bin/python -u research/phase317/radical_tangent.py

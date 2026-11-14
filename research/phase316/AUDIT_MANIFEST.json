@@ -1,0 +1,174 @@
+{
+  "phase": "Phase316",
+  "date": "2026-11-14",
+  "repo": "Dojo-1/tenth-discriminant",
+  "pr": "https://github.com/Dojo-1/tenth-discriminant/pull/208",
+  "base": "research/phase313-tame-wild-ray-convolution",
+  "status": "research draft, do NOT merge to main",
+  "reported_cutoff": "322^4 unchanged",
+  "evidence_labels": {
+    "P": "exact mathematical statement with proof and semantic scope",
+    "A": "external class-number-one input",
+    "M": "bounded hosted arithmetic and exact source computation",
+    "H": "hypothesis not established",
+    "R": "invalid implication, retained counterexample",
+    "S": "semantic analogy without mathematical transfer"
+  },
+  "prereg": [
+    "research/phase316/PRE_REGISTERED_WILD_GAUGE.md",
+    "research/phase316/PRE_REGISTERED_SMALL_NORM_RIGIDITY.md",
+    "research/phase316/PRE_REGISTERED_REALIZATION_OBSTRUCTION.md"
+  ],
+  "propositions": [
+    {
+      "claim": "For D=4m-1, N(a+bω)=a²+ab+mb² and if N<m then b=0",
+      "status": "P elementary, narrow Lean module",
+      "source": "lean/TenthDiscriminant/Phase316SmallNorm.lean",
+      "semantic": "No class-group lemma in Lean"
+    },
+    {
+      "claim": "Under h1, all integral ideal norm shells n<m have mass1 exactly at square n",
+      "status": "P conditional on h1 and units ±1; M D43,D163",
+      "code": "research/phase316/small_norm_rigidity.py",
+      "semantic": "Classic ideal principalization, not novel, not kernel-checked in Phase316 Lean"
+    },
+    {
+      "claim": "Conjugate principal prime valuation difference ν is additive, sign-invariant, conjugation-anti-equivariant",
+      "status": "P elementary ideal factorization; M fixed norm41 D163",
+      "code": "research/phase316/wild_gauge.py"
+    },
+    {
+      "claim": "Synthetic L'(z)=L(z)+ν(z)*5(-1+2ω) preserves first wild digit, full h1 prime-to10 convolution, norm mod125, conjugation and conductor2 data",
+      "status": "P conditional model algebra; M finite h1 controls",
+      "code": "research/phase316/wild_gauge.py",
+      "semantic": "SYNTHETIC tags, not actual generator tags of a different field"
+    },
+    {
+      "claim": "Original native D163 Q109 Gram mod5 unchanged but 363 of 1600 mod25 entries differ under the synthetic gauge",
+      "status": "M bounded source computation",
+      "code": "research/phase316/wild_gauge.py"
+    },
+    {
+      "claim": "Exactly two synthetic locally norm-compatible rays at norm164 are outside exact integral norm164 generator image; all 363 Gram changed entries arise from this one shell",
+      "status": "M plus exact elementary Diophantine norm164 enumeration",
+      "code": "research/phase316/realization_obstruction.py"
+    },
+    {
+      "claim": "A global uniform h1 generator-realizability constraint forces additional original Gram valuation beyond valuationWeight",
+      "status": "H no proof"
+    }
+  ],
+  "measurements": {
+    "h1_D163_heldout": {
+      "rho": 60,
+      "Q": 1785,
+      "independent_ideal_norm_shells": 1440,
+      "genuinely_nonidentity_full_conductor250_products": 59,
+      "unit_generator_norm125_and_conjugation_checks": 1720,
+      "changed_second_wild_unit_generators": 84
+    },
+    "h1_D163_native": {
+      "rho": 21,
+      "original_Q109": 109,
+      "independent_ideal_norm_shells": 177,
+      "full_conductor250_products": 270,
+      "original_primitive_Gram_size": 1600,
+      "primitive_Gram_rank_mod5": 23,
+      "synthetic_Gram_rank_mod5": 23,
+      "original_vs_synthetic_changed_cells_mod25": 363,
+      "first_changed_Gram_cell": [
+        0,
+        26,
+        15
+      ],
+      "changed_original_ray_shells": [
+        164
+      ]
+    },
+    "first_original_global_realization_obstruction": {
+      "norm": 164,
+      "equation": "x^2+163*y^2=164",
+      "integer_solutions": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "signed_actual_principal_ideals": 2,
+      "signed_synthetic_ideals": 2,
+      "synthetic_classes_locally_norm_164_mod125": 39,
+      "synthetic_tags_outside_actual_fibre": true,
+      "source_reconstruction_matches_full_363_cell_difference": true
+    },
+    "small_norm": {
+      "D43": {
+        "m": 11,
+        "h1_ideal_norm_shells_checked": 10,
+        "represented_square_shells": 3
+      },
+      "D163": {
+        "m": 41,
+        "h1_ideal_norm_shells_checked": 40,
+        "represented_square_shells": 6
+      },
+      "D187": {
+        "m": 47,
+        "class_number": 2,
+        "nonprincipal_small_ideal_norms_include": [
+          7,
+          11,
+          17
+        ]
+      },
+      "original_order_D163": {
+        "first_nonrational_norm": 163,
+        "first_41prime_gauge_nontrivial_norm": 164
+      }
+    }
+  },
+  "controls": [
+    "Use EXACT integral omega-coordinate ideal division, not reduction modulo125 before v_P calculation",
+    "Sign and conjugation invariance across actual source unit generators",
+    "Direct local norm modulo125 for every synthetic residue class compared to actual generator",
+    "Full heldout radius60 ideal counts and genuinely nonzero conductor250 products",
+    "Conductor2 selector after convolution, even-norm original generators separately typed",
+    "Zero twist reproduces actual Gram; traceful twist fails norm and conjugation",
+    "Do not give a signed unit tag to 5-adic nonunits e.g. rational generator 5 norm25",
+    "Universal low norm classical square constraint holds in h1 and fails for nonprincipal ideals in h2",
+    "All exact integer norm164 solutions independently enumerated, synthetic rays provably outside their image",
+    "Full original primitive Gram changes reconciled to the two signed ideals at norm164 only",
+    "Fixed field exact determinant v5=77 unchanged; no field-global rank theorem"
+  ],
+  "ci": {
+    "focused_first_success": "Earlier Phase316 norm-preserving gauge 6 tests at commit 46ede08a184677baff913a664adacb1da43b036d",
+    "combined_green": "Phase316 full focused workflow run 43587805248, 15 adversarial tests, source/Phase315 regressions",
+    "scoped_Lean_green": "Phase316 universal small norm Lean workflow run 43587662846 at preceding head",
+    "latest_exact_head": "must be re-checked after README and audit updates; whole root Lean separate"
+  },
+  "open": [
+    "Generalize actual norm-n realizability image R_{D,n}^{(p^k)} for native large field without brute-force explosion",
+    "Find nontrivial constraints on image supports/multiplicities induced by h1 and conductor2 cutoff that control Gram residual minors",
+    "Prove any such uniform residual v5 gain is independent of inherited valuationWeight",
+    "External mathematical referee to verify source semantic equivalence and actual novelty/prior art"
+  ],
+  "not_claimed": [
+    "No alternate real quadratic field from synthetic gauge",
+    "No class-number-one detector from local groups or exact matched v5=77",
+    "No uniform tenth discriminant improvement",
+    "No external peer review",
+    "No AGI/quantum physical implications"
+  ],
+  "no_main_merge": true
+}

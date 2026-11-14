@@ -1,0 +1,48 @@
+name: Phase314 original wild second-jet quotient and h1 conductor50 convolution
+on:
+  push:
+    branches: ['research/phase314-*']
+    paths:
+      - 'research/phase314/**'
+      - '.github/workflows/phase314-wild-second-jet.yml'
+  pull_request:
+    paths:
+      - 'research/phase314/**'
+      - '.github/workflows/phase314-wild-second-jet.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-sources-and-global-ray-quotient:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Verify Phase314 claim-to-evidence audit and cutoff stop rule
+        run: |
+          python3 -m json.tool research/phase314/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; a=json.load(open("research/phase314/AUDIT_MANIFEST.json")); assert a["no_main_merge"]; assert "unchanged" in a["original_reported_cutoff"]; assert "uniform" in a["claim"]["not_claimed"]; assert len(a["sources"]["prereg"])==3; print("Phase314 audit status PASS")'
+      - name: Install deterministic numerical environment
+        run: |
+          python3 -m venv /tmp/phase314
+          /tmp/phase314/bin/python -m pip install --disable-pip-version-check numpy==2.2.6 sympy==1.14.0
+      - name: Source and exact Python syntax
+        run: /tmp/phase314/bin/python -m py_compile research/phase314/*.py
+      - name: Wild J cubed annihilation and ALL original D203 D163 Gram cells
+        run: /tmp/phase314/bin/python -u research/phase314/wild_quadratic_gram.py
+      - name: Full global h1 conductor50 216-jet convolution and exact original-order projection
+        run: /tmp/phase314/bin/python -u research/phase314/truncated_ray_convolution.py
+      - name: Abstract non-field ray assignment counterworld
+        run: /tmp/phase314/bin/python -u research/phase314/abstract_counterworld.py
+      - name: Held-out rho60 full ray50 h1 stress and same-inert D187 global failure
+        run: /tmp/phase314/bin/python -u research/phase314/heldout_global_ray.py
+      - name: Exact image rank of 78-moment original Gram linear operator and nullspace
+        run: /tmp/phase314/bin/python -u research/phase314/moment_operator_rank.py
+      - name: Hostile third difference, nonunit, source and conductor2 unit tests
+        run: /tmp/phase314/bin/python -m unittest discover -s research/phase314 -p 'test_*.py' -v
+      - name: Preserve Phase313 exact h1 original determinant and corrected conductor2 gate
+        run: |
+          /tmp/phase314/bin/python -u research/phase313/d163_deep_smith.py
+          /tmp/phase314/bin/python -u research/phase313/conductor2_order_gate.py
