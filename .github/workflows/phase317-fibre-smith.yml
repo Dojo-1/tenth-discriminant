@@ -24,6 +24,10 @@ jobs:
         run: |
           python3 -m venv /tmp/phase317
           /tmp/phase317/bin/python -m pip install --disable-pip-version-check numpy==2.2.6 sympy==1.14.0
+      - name: Verify Phase317 preregistrations and evidence boundary audit
+        run: |
+          python3 -m json.tool research/phase317/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; a=json.load(open("research/phase317/AUDIT_MANIFEST.json")); assert a["main_unchanged"]; assert len(a["prereg"])==3; assert len(a["claims"])>=9; assert a["measurements"]["native_original_D163"]["Smith_first_two_digit_exponents"]==[23,7,10]; print("Phase317 evidence audit PASS")'
       - name: Static syntax
         run: /tmp/phase317/bin/python -m py_compile research/phase317/*.py
       - name: Exact norm-D+1 four/six generator field controls
