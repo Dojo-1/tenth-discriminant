@@ -21,7 +21,7 @@
     "original_source": "Same original D203 Q263 100row/2jet primitive Gram and D163 original integer-order Q109 40row/1jet primitive Gram are reconstructed from 12*6+6=78 F5 moments, no source replacement.",
     "countermodel": "Different NONNEGATIVE abstract unit-ray histograms have identical second moments and same Gram; four-shell abstract h1-style convolution assignments can vary wild moment while preserving only four actual ideal masses and internal coprime products. Neither is a real field counterexample.",
     "heldout": "At radius60, h1 D43 and D163 exhibit many genuinely nontrivial full 900-ray conductor50 convolutions agreeing after 216-moment truncation; h2 D187 with inert2 and5 fails at 11*17=187 through nonprincipal class cancellation.",
-    "not_claimed": "No class-one-specific extra primitive mod5 rank, full p-adic Smith, uniform large-field valuation, novel published theorem or 322^4 cutoff change."
+    "not_claimed": "No class-one-specific extra primitive mod5 rank, full p-adic Smith, uniform large-field valuation, novel published theorem or 322^4 cutoff change. The 78-feature capacity cannot be interpreted as rank(G)<=78. Rank of the 78-to-Sym_N linear map is separate and pending a preregistered exact-source experiment."
   },
   "sources": {
     "primary_repository": [
@@ -37,7 +37,8 @@
     ],
     "prereg": [
       "research/phase314/PRE_REGISTERED_JET_QUOTIENT.md",
-      "research/phase314/PRE_REGISTERED_HELDOUT_RADIUS60.md"
+      "research/phase314/PRE_REGISTERED_HELDOUT_RADIUS60.md",
+      "research/phase314/PRE_REGISTERED_GRAM_IMAGE_RANK.md"
     ]
   },
   "artifacts": [
@@ -70,6 +71,12 @@
       "source": "lean/TenthDiscriminant/Phase314WildSecondJet.lean",
       "test": ".github/workflows/phase314-lean-jet.yml",
       "evidence": "P-narrow"
+    },
+    {
+      "claim": "F5-linear image rank of 78 moment-to-original-Gram map (distinct from rank of each Gram)",
+      "source": "research/phase314/moment_operator_rank.py",
+      "test": "research/phase314/test_moment_operator_rank.py",
+      "evidence": "M only after exact-head CI"
     }
   ],
   "measurements": {
@@ -142,6 +149,22 @@
         "principal_ideal_norm187": 1,
         "principal_ray_convolution_failed": true
       }
+    },
+    "wild_to_Gram_operator": {
+      "D203": {
+        "source_R": 100,
+        "symmetric_target_dimension": 5050,
+        "input_moment_coordinates": 78,
+        "operator_rank_F5": "PENDING exact-head CI",
+        "output_Gram_rank_F5": 63
+      },
+      "D163": {
+        "source_R": 40,
+        "symmetric_target_dimension": 820,
+        "input_moment_coordinates": 78,
+        "operator_rank_F5": "PENDING exact-head CI",
+        "output_Gram_rank_F5": 23
+      }
     }
   },
   "controls": [
@@ -154,7 +177,9 @@
     "Correct conductor2 selection only AFTER full maximal-order convolution",
     "Heldout radius60 expands genuine nonzero products vs radius21",
     "Same inert 2,5 in h2 D187 but nonprincipal ideal class cancellation at norm11*17",
-    "Exact fixed integer determinant D163=77 and h2 matched D183=77 remain unchanged"
+    "Exact fixed integer determinant D163=77 and h2 matched D183=77 remain unchanged",
+    "Compute the exact rank and, if present, nullspace of the 78-to-Gram LINEAR map; never conflate with rank of a particular original Gram matrix.",
+    "Actual sign-symmetric nonunit first-lift x/y moment sums vanish, but these are realization constraints, not formal kernel directions of the 78-moment map."
   ],
   "failed_and_corrected_tests": [
     {
@@ -170,15 +195,16 @@
       "Find an actual field-specific relation on LOW-DEGREE wild moments from h1, reciprocity and full native norm cutoffs, not just formal convolution and total ideal counts.",
       "Prove any resulting primitive Gram degeneracy is uniform for hypothetical large D and is independent of the inherited valuationWeight.",
       "Extend beyond primitive mod5 into higher 5-adic digits with explicit conductor 2, p-adic depth and ordinary-jet factorial filtration.",
-      "Seek independent human review of statement semantics and current Lean axiom/assumption dependence."
+      "Seek independent human review of statement semantics and current Lean axiom/assumption dependence.",
+      "Determine intrinsic linear image rank of the 78-moment-to-original-Gram map; inspect coordinate kernel without inferring field class number from rank."
     ],
     "stop": "Any frozen original row/j0/j1 mismatch, 3rd difference nonzero, 6-moment convolution failure, conductor2 projection error, heldout h1 ideal-count mismatch or nonh1 negative-control failure retires corresponding claim.",
     "status": "M pending exact-final-head CI rerun; narrow Lean polynomial checked only when its own CI success confirmed; no auto-promotion to P or new cutoff"
   },
   "CI": {
     "focused_earlier_pass": "43584776212 (after mixed moment hostile test correction, before heldout)",
-    "heldout_focused_pass": "43584947372 (19 Phase314 hostile tests, original Gram, heldout controls, Phase313 regressions)",
-    "exact_final_head": "must be inspected after documentation/audit updates",
+    "heldout_focused_pass": "43584947372 passed with 19 Phase314 hostile tests at earlier head",
+    "exact_final_head": "Phase314-G operator-rank source/tests appended; exact final-head workflows require separate inspection. GitHub Actions queue observed; do not claim green until completed.",
     "whole_root_Lean": "pending at manuscript freeze"
   }
 }
