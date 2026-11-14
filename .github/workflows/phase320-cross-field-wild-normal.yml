@@ -1,0 +1,49 @@
+name: Phase320 cross-field maximal-order wild normal maps
+on:
+  push:
+    branches: ['research/phase277-320-unified']
+    paths:
+      - 'research/phase320/**'
+      - 'research/phase315/wild_log125.py'
+      - 'research/phase318/local_wild_normal.py'
+      - 'research/phase319/maximal_order_realization.py'
+      - '.github/workflows/phase320-cross-field-wild-normal.yml'
+  pull_request:
+    paths:
+      - 'research/phase320/**'
+      - 'research/phase315/wild_log125.py'
+      - 'research/phase318/local_wild_normal.py'
+      - 'research/phase319/maximal_order_realization.py'
+      - '.github/workflows/phase320-cross-field-wild-normal.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cross-field-wild-normal:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Validate preregistration and claim boundaries
+        run: |
+          test -f research/phase320/PRE_REGISTERED_CROSS_FIELD_WILD_NORMAL.md
+          python3 -c 'import json; x=json.load(open("research/phase320/AUDIT_MANIFEST.json")); assert x["main_unchanged"]; assert x["claim_boundary"]["no_uniform_field_valuation_or_cutoff"]; assert x["claim_boundary"]["no_global_ray_transfer_to_nonprincipal_classes"]; print("Phase320 audit scope PASS")'
+      - name: Install pinned numeric environment
+        run: |
+          python3 -m venv /tmp/phase320
+          /tmp/phase320/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Syntax-check Phase320 and exact local arithmetic helpers
+        run: |
+          /tmp/phase320/bin/python -m py_compile research/phase320/*.py
+          /tmp/phase320/bin/python -m py_compile research/phase315/wild_log125.py research/phase313/tame_wild_ray.py research/phase312/fermat_lift.py
+          /tmp/phase320/bin/python -m py_compile research/phase318/local_wild_normal.py research/phase319/maximal_order_realization.py
+      - name: Exhaust D163, D187 and D203 conductor-125 local unit groups and all maximal-order lift lines
+        run: /tmp/phase320/bin/python -u research/phase320/cross_field_wild_normal.py
+      - name: Phase320 adversarial source, class-group and local-normal tests
+        run: /tmp/phase320/bin/python -m unittest discover -s research/phase320 -p 'test_*.py' -v
+      - name: Preserve the Phase318 D163 integer-order normal-map regression
+        run: /tmp/phase320/bin/python -u research/phase318/local_wild_normal.py
+      - name: Preserve the Phase319 D163 maximal-order completion regression
+        run: /tmp/phase320/bin/python -u research/phase319/maximal_order_realization.py
