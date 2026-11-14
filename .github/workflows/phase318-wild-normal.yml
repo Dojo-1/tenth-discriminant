@@ -1,0 +1,36 @@
+name: Phase318 complete norm125 local and global radical normal map
+on:
+  push:
+    branches: ['research/phase318-*']
+    paths:
+      - 'research/phase318/**'
+      - '.github/workflows/phase318-wild-normal.yml'
+  pull_request:
+    paths:
+      - 'research/phase318/**'
+      - '.github/workflows/phase318-wild-normal.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-preserving-wild-normal:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pin exact modular linear algebra environment
+        run: |
+          python3 -m venv /tmp/phase318
+          /tmp/phase318/bin/python -m pip install --disable-pip-version-check numpy==2.2.6 sympy==1.14.0
+      - name: Static Phase318 source syntax
+        run: /tmp/phase318/bin/python -m py_compile research/phase318/*.py
+      - name: Exhaust ALL 50 times 5 norm-compatible original wild site lifts
+        run: /tmp/phase318/bin/python -u research/phase318/local_wild_normal.py
+      - name: Split-prime exact ideal valuation family and full ray250 product controls
+        run: /tmp/phase318/bin/python -u research/phase318/split_prime_normal.py
+      - name: Hostile first-wild, nonunit, source, rank and prime-character tests
+        run: /tmp/phase318/bin/python -m unittest discover -s research/phase318 -p 'test_*.py' -v
+      - name: Inherit Phase317 explicit original mod25 congruence controls
+        run: /tmp/phase318/bin/python -u research/phase317/radical_tangent.py
