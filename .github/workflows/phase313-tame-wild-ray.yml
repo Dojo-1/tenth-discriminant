@@ -1,0 +1,40 @@
+name: Phase313 tame-wild ray group principal convolution and parity Gram
+on:
+  push:
+    branches: ['research/phase313-*']
+    paths:
+      - 'research/phase313/**'
+      - '.github/workflows/phase313-tame-wild-ray.yml'
+  pull_request:
+    paths:
+      - 'research/phase313/**'
+      - '.github/workflows/phase313-tame-wild-ray.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tame-wild-principal-ray-and-original-gram:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned arithmetic environment
+        run: |
+          python3 -m venv /tmp/phase313
+          /tmp/phase313/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Syntax and deterministic import controls
+        run: /tmp/phase313/bin/python -m py_compile research/phase313/*.py
+      - name: Exhaustive local conductor25 ray-unit tame-wild bijection
+        run: /tmp/phase313/bin/python -u research/phase313/tame_wild_ray.py
+      - name: Global class-number-one ray-convolution and D183 cancellation
+        run: /tmp/phase313/bin/python -u research/phase313/principal_norm_shell.py
+      - name: Original D203 parity block Gram and Smith reconciliation
+        run: /tmp/phase313/bin/python -u research/phase313/sign_parity_gram.py
+      - name: Adversarial field, shell, nilpotence and parity tests
+        run: /tmp/phase313/bin/python -m unittest discover -s research/phase313 -p 'test_*.py' -v
+      - name: Preserve Phase312 global shell and source claims
+        run: |
+          /tmp/phase313/bin/python -u research/phase312/norm_shell_bridge.py
+          /tmp/phase313/bin/python -u research/phase312/kernel_vs_weight.py
