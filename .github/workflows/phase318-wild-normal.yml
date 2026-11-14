@@ -4,7 +4,10 @@ on:
     branches: ['research/phase318-*']
     paths:
       - 'research/phase318/**'
+      - 'research/phase319/**'
+      - 'research/phase320/**'
       - '.github/workflows/phase318-wild-normal.yml'
+      - '.github/workflows/phase320-cross-field-wild-normal.yml'
   pull_request:
     paths:
       - 'research/phase318/**'
