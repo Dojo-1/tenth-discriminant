@@ -36,3 +36,5 @@ Nonunits remain separate. No global split-prime character family is imported fro
 The experiment cannot change the (322^4) publication endpoint or promote the (321^4) candidate.
 
 The Phase318 parent workflow also runs this full Phase320 certificate and its adversarial tests on the integration PR head; the dedicated Phase320 workflow remains as the standalone branch gate.
+
+Exact-head integration gate: PR #216 includes the Phase320 cross-field workflow and the inherited Phase318 source-preserving workflow.
