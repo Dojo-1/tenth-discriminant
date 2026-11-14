@@ -1,0 +1,23 @@
+name: Phase290-C 37-orbit prime-local wall gradient
+on:
+  push:
+    branches: ['research/phase290-*']
+  pull_request:
+    paths:
+      - 'research/phase290/**'
+      - '.github/workflows/phase290-orbit-gradient.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-orbit-gradient:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Source syntax
+        run: python3 -m py_compile research/phase290/orbit_discriminant_gradient.py
+      - name: Reproduce 37-inversion-orbit integral wall and independent determinant partials
+        run: python3 -u research/phase290/orbit_discriminant_gradient.py
