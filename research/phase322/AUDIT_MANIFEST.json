@@ -1,0 +1,87 @@
+{
+  "phase": "Phase322",
+  "date": "2026-11-14",
+  "repository": "Dojo-1/tenth-discriminant",
+  "branch": "research/phase322-exact-ray-character-group",
+  "status": "preregistered; implementation not started",
+  "preregistration": "research/phase322/PRE_REGISTERED_EXACT_RAY_CHARACTER_GROUP.md",
+  "fields": {
+    "D163": {
+      "ray_group_order": 7500,
+      "invariant_factors": [
+        25,
+        300
+      ],
+      "ordinary_class_number": 1,
+      "character_count": 7500
+    },
+    "D187": {
+      "ray_group_order": 15000,
+      "invariant_factors": [
+        50,
+        300
+      ],
+      "ordinary_class_number": 2,
+      "character_count": 15000
+    },
+    "D203": {
+      "ray_group_order": 30000,
+      "invariant_factors": [
+        100,
+        300
+      ],
+      "ordinary_class_number": 4,
+      "character_count": 30000
+    }
+  },
+  "expected_conductor_counts": {
+    "D163": {
+      "1": 1,
+      "5": 11,
+      "25": 288,
+      "125": 7200
+    },
+    "D187": {
+      "1": 2,
+      "5": 22,
+      "25": 576,
+      "125": 14400
+    },
+    "D203": {
+      "1": 4,
+      "5": 44,
+      "25": 1152,
+      "125": 28800
+    }
+  },
+  "expected_local_reduction_kernel_orders": {
+    "modulus1": 7500,
+    "modulus5": 625,
+    "modulus25": 25,
+    "modulus125": 1
+  },
+  "planned": {
+    "exact_local_invariant_generators": [
+      25,
+      300
+    ],
+    "exact_ray_invariant_generators": [
+      25,
+      50,
+      100,
+      300
+    ],
+    "full_group_coordinate_bijection": true,
+    "exact_rational_character_exponents": true,
+    "exact_conductor_annihilator_kernels": true,
+    "full_bounded_prime_ideal_character_evaluations": true,
+    "deterministic_evaluation_matrix_digest": true,
+    "split_inert_ramified_ideal_controls": true
+  },
+  "boundaries": {
+    "no_float_roots_as_proof_data": true,
+    "no_global_euler_product_claim": true,
+    "no_l_function_or_zero_free_claim": true,
+    "no_uniform_discriminant_cutoff": true
+  }
+}
