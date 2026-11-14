@@ -83,5 +83,6 @@
     "no_global_euler_product_claim": true,
     "no_l_function_or_zero_free_claim": true,
     "no_uniform_discriminant_cutoff": true
-  }
+  },
+  "modulus": 125
 }
