@@ -146,6 +146,11 @@ def covariant_conjugate_combinations(sites,bases,mats):
         assert coeff is not None
         if j==i:
             if coeff==1:
+                tilted=(z[0]+25*bases[i][0],
+                        z[1]+25*bases[i][1])
+                ct=conjugate(tilted,None)
+                assert all((ct[t]-sign*tilted[t])%TOP==0
+                           for t in range(2))
                 cov.append(mats[i])
                 self_allowed+=1
             else:
@@ -154,6 +159,13 @@ def covariant_conjugate_combinations(sites,bases,mats):
             used.add(i)
         else:
             assert j not in used
+            zi=(z[0]+25*bases[i][0],z[1]+25*bases[i][1])
+            zj=(sites[j][0]+25*coeff*bases[j][0],
+                sites[j][1]+25*coeff*bases[j][1])
+            ci=conjugate(zi,None)
+            assert all((ci[t]-sign*zj[t])%TOP==0
+                       for t in range(2)),(
+                "site-pair perturbation broke conjugation mod125",i,j)
             cov.append((mats[i]+coeff*mats[j])%P)
             paired+=1
             used.add(i);used.add(j)
