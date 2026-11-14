@@ -56,13 +56,22 @@ PR #217 merged into the research parent at 1b9461d. The exact head passed the Ph
 
 Reader guide: [research/phase320/README.md](phase320/README.md).
 
-## Phase321 — ideal-aware ray class groups
+## Phase321 — ideal-aware ray class groups and exact invariant factors
 
-**Current integration:** PR #218, research-only, exact-head Phase321 workflow passed; whole-root Lean replay pending.
+**Integrated research-only:** [PR #218](https://github.com/Dojo-1/tenth-discriminant/pull/218), merged at `d16238d`. Its exact-head Phase321 construction, whole-root Lean replay and Markdown checks passed.
 
-The full ray class groups modulo 125 have been constructed for D163, D187 and D203 using exact ideal lattices, reduced forms and the extension cocycle. Their orders are 7,500, 15,000 and 30,000. The bounded prime-ideal catalog retains nonprincipal ideals and maps them into the full ray groups.
+The full ray class groups modulo 125 were constructed for D163, D187 and D203 using exact ideal lattices, reduced forms and the extension cocycle. Their orders are 7,500, 15,000 and 30,000. The bounded prime-ideal catalog retains nonprincipal ideals and maps them into the full ray groups.
 
-Reader guide: [research/phase321/README.md](phase321/README.md).
+**Phase321-B:** [PR #221](https://github.com/Dojo-1/tenth-discriminant/pull/221), merged at `549514a`. The exact-head workflow passed all 9 adversarial tests after correcting five stale expected-value assertions from the first run. The invariant factors are:
+- D163: C25 x C300;
+- D187: C50 x C300;
+- D203: C100 x C300.
+
+The ray exact sequence splits in all three tested fields. D187 has 2 section lifts among all 7,500 local lifts; D203 has 4. Nonidentity cocycle entries for a canonical transversal do not imply nonsplitting: alternate lifts give explicit sections. The first failed expectation run remains in the audit manifest.
+
+Reader guides: [Phase321](phase321/README.md) · [Phase321-B results](phase321/PHASE321B_RESULTS.md) · [Phase321-B preregistration](phase321/PRE_REGISTERED_PHASE321B_RAY_INVARIANT_FACTORS.md).
+
+The finite results do not establish a full character table, a uniform ray-class formula, a zero-free region or a new discriminant bound.
 
 ## Open review and publication boundaries
 
