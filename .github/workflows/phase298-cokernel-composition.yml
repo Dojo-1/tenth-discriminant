@@ -1,0 +1,27 @@
+name: Phase298 exact original transverse cokernel composition
+on:
+  push:
+    branches: ['research/phase298-*']
+  pull_request:
+    paths:
+      - 'research/phase298/**'
+      - '.github/workflows/phase298-cokernel-composition.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-D587-two-stage-parity-cokernel:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact modular array runtime
+        run: |
+          python3 -m venv /tmp/phase298
+          /tmp/phase298/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Source syntax and preregistration
+        run: python3 -m py_compile research/phase298/composable_original_cokernel.py
+      - name: Original 725 to 729 to 730 and reverse 725 to 726 to 730 cokernel comparison
+        run: /tmp/phase298/bin/python -u research/phase298/composable_original_cokernel.py
