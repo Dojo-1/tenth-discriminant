@@ -1,0 +1,27 @@
+name: Phase299-B original D587 nonintegral odd orthogonal gluing
+on:
+  push:
+    branches: ['research/phase299-*']
+  pull_request:
+    paths:
+      - 'research/phase299/**'
+      - '.github/workflows/phase299-glue-d587.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-high-jet-glue-index:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pin exact modular source dependencies
+        run: |
+          python3 -m venv /tmp/phase299b
+          /tmp/phase299b/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Python source syntax
+        run: /tmp/phase299b/bin/python -m py_compile research/phase299/gluing_core.py research/phase299/glue_d587.py
+      - name: Construct actual original D587 bad-first row H-glue with 362 old pairings
+        run: /tmp/phase299b/bin/python -u research/phase299/glue_d587.py
