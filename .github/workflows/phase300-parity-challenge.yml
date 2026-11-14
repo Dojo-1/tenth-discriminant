@@ -1,0 +1,27 @@
+name: Phase300-B original parity and same-sector nonintegral gluing
+on:
+  push:
+    branches: ['research/phase300-*']
+  pull_request:
+    paths:
+      - 'research/phase300/**'
+      - '.github/workflows/phase300-parity-challenge.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-h1-parity-and-all-same-sector-pairs:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pin exact original source runtime
+        run: |
+          python3 -m venv /tmp/phase300b
+          /tmp/phase300b/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile source
+        run: /tmp/phase300b/bin/python -m py_compile research/phase300/same_parity_challenge.py
+      - name: Prove original parity orthogonality and exhaust 43 same-parity second-row chains
+        run: /tmp/phase300b/bin/python -u research/phase300/same_parity_challenge.py
