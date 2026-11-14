@@ -1,0 +1,23 @@
+name: Phase287 4D Noether moving-frame and dyadic curvature
+on:
+  push:
+    branches: ['research/phase287-*']
+  pull_request:
+    paths:
+      - 'research/phase287/**'
+      - '.github/workflows/phase287-moving-frame.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-coupled-geometry:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Python source syntax
+        run: python3 -m py_compile research/phase287/moving_frame_coupled_theta.py
+      - name: Preregistered source-exact 4D lattice angular and projector controls
+        run: python3 -u research/phase287/moving_frame_coupled_theta.py
