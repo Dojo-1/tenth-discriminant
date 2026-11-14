@@ -1,0 +1,32 @@
+name: Phase277 matched primitive pairing audit
+on:
+  pull_request:
+    paths:
+      - 'research/phase277/**'
+      - '.github/workflows/phase277-primitive-pairing.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  local-smith:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Setup isolated pinned NumPy
+        run: |
+          python3 -m venv /tmp/phase277-venv
+          /tmp/phase277-venv/bin/pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile experiment sources
+        run: |
+          /tmp/phase277-venv/bin/python -m py_compile research/phase277/phase277_probe.py
+          /tmp/phase277-venv/bin/python -m py_compile research/phase277/phase277_saturate.py
+          /tmp/phase277-venv/bin/python -m py_compile research/phase277/phase277_exact_reference.py
+      - name: Inert split first residue and hostile controls
+        run: /tmp/phase277-venv/bin/python research/phase277/phase277_probe.py
+      - name: Saturate original D403 E and measure primitive pairing
+        run: /tmp/phase277-venv/bin/python research/phase277/phase277_saturate.py
+      - name: Independently reconstruct small exact original Gram determinant
+        run: /tmp/phase277-venv/bin/python research/phase277/phase277_exact_reference.py

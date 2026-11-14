@@ -1,0 +1,23 @@
+name: Phase288 integral transverse original-Gram no-double-counting
+on:
+  push:
+    branches: ['research/phase288-*']
+  pull_request:
+    paths:
+      - 'research/phase288/**'
+      - '.github/workflows/phase288-integral-transverse.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-integral-transport:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Syntax
+        run: python3 -m py_compile research/phase288/integral_transverse_transport.py
+      - name: Exact D283 and D403 C2-graded original-source Gram and unimodular bridge
+        run: python3 -u research/phase288/integral_transverse_transport.py

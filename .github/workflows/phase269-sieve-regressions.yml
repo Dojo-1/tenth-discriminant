@@ -1,0 +1,32 @@
+name: Phase269-270 bounded inert-prime sieve regressions
+on:
+  pull_request:
+    paths:
+      - 'tools/finite321_inert_sieve.cpp'
+      - 'tools/finite321_inert_sieve_numpy.py'
+      - 'research/phase269/**'
+      - '.github/workflows/phase269-sieve-regressions.yml'
+  push:
+    branches: ['research/phase269-*']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  independent-sieves:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: C++17 full 322^4 interval with stage-count assertions
+        run: |
+          g++ -O3 -std=c++17 -Wall -Wextra -Werror tools/finite321_inert_sieve.cpp -o /tmp/finite322
+          /tmp/finite322
+      - name: Isolated pinned NumPy environment
+        run: |
+          python3 -m venv /tmp/phase269-venv
+          /tmp/phase269-venv/bin/pip install --disable-pip-version-check numpy==2.2.6
+      - name: Independently ordered NumPy full 322^4 interval
+        run: |
+          /tmp/phase269-venv/bin/python tools/finite321_inert_sieve_numpy.py

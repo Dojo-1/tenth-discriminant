@@ -1,0 +1,23 @@
+name: Phase289-C D563 transverse layer ablation
+on:
+  push:
+    branches: ['research/phase289-*']
+  pull_request:
+    paths:
+      - 'research/phase289/**'
+      - '.github/workflows/phase289-layer-ablation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-layer-intervention:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Syntax
+        run: python3 -m py_compile research/phase289/d563_layer_ablation.py
+      - name: Independently compare original five-layer and controlled three-layer D563 quartets
+        run: python3 -u research/phase289/d563_layer_ablation.py
