@@ -1,0 +1,33 @@
+name: Phase322 exact ray characters and conductors
+on:
+  push:
+    branches: ['research/phase322-*']
+    paths:
+      - 'research/phase322/**'
+      - '.github/workflows/phase322-exact-ray-characters.yml'
+  pull_request:
+    paths:
+      - 'research/phase322/**'
+      - '.github/workflows/phase322-exact-ray-characters.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-ray-characters:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Verify Phase322 preregistration and audit manifest
+        run: |
+          test -f research/phase322/PRE_REGISTERED_EXACT_RAY_CHARACTER_GROUP.md
+          python3 -m json.tool research/phase322/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; x=json.load(open("research/phase322/AUDIT_MANIFEST.json")); assert x["modulus"]==125; assert x["boundaries"]["no_global_euler_product_claim"]; assert x["boundaries"]["no_l_function_or_zero_free_claim"]; print("Phase322 audit scope PASS")'
+      - name: Static syntax for Phase321 and Phase322
+        run: python3 -m py_compile research/phase321/*.py research/phase322/*.py
+      - name: Construct exact local/ray generators, character groups, conductor kernels and bounded prime evaluations
+        run: python3 -u research/phase322/exact_ray_characters.py
+      - name: Adversarial character, reduction, conductor and prime-ideal tests
+        run: python3 -m unittest discover -s research/phase322 -p 'test_*.py' -v
