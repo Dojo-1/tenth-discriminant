@@ -1,0 +1,37 @@
+{
+  "phase": "Phase321-B",
+  "date": "2026-11-14",
+  "repository": "Dojo-1/tenth-discriminant",
+  "branch": "research/phase321b-ray-invariant-factors",
+  "status": "preregistered; implementation not started",
+  "preregistration": "research/phase321/PRE_REGISTERED_PHASE321B_RAY_INVARIANT_FACTORS.md",
+  "fields": {
+    "D163": {
+      "ray_group_order": 7500,
+      "ordinary_class_number": 1
+    },
+    "D187": {
+      "ray_group_order": 15000,
+      "ordinary_class_number": 2
+    },
+    "D203": {
+      "ray_group_order": 30000,
+      "ordinary_class_number": 4
+    }
+  },
+  "planned": {
+    "enumerate_all_group_elements": true,
+    "exact_p_power_torsion_counts": true,
+    "derive_primary_invariant_factors_from_torsion_counts": true,
+    "reconstruct_global_invariant_factors": true,
+    "verify_product_and_divisibility": true,
+    "verify_group_exponent_independently": true,
+    "D163_phase315_regression": true
+  },
+  "boundaries": {
+    "no_assumed_extension_splitting": true,
+    "no_invariant_factors_from_group_order_alone": true,
+    "no_character_table_yet": true,
+    "no_uniform_valuation_or_discriminant_cutoff": true
+  }
+}
