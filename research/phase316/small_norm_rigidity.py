@@ -83,7 +83,12 @@ def class_one_small_norm_rigidity(D):
                 continue
             a=isqrt(n)
             assert antisymmetric_valuation((a,0))==0
-            assert signed_ray125_tag((a,0),D)==shifted_ray_tag((a,0))
+            # The rational generator 5 has norm25 but is NOT a local
+            # 5-unit: conductor125 signed ray tags are undefined there.
+            # It belongs to the independent nonunit first-lift stratum,
+            # whose gauge remains zero; never create a fake unit tag.
+            if a%5:
+                assert signed_ray125_tag((a,0),D)==shifted_ray_tag((a,0))
             if gcd(n,10)==1:
                 signed_tags+=1
             twisted+=1
