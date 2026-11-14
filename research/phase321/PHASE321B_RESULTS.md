@@ -46,3 +46,12 @@ For these three fields only, the measured pattern is
 for (h=1,2,4). This is a finite result, not a general class-number formula.
 
 The nonsplitting matters for the next step: character construction must use the actual ray-group invariant factors, not a product of the local character group with the ordinary class group. No field-uniform valuation, zero-free region or discriminant bound follows from this computation.
+
+
+## Explicit cocycle obstruction
+
+Using the reduced-form generator and local identity as the canonical lift:
+- D187: the lift has order 8; its square is the local kernel element (2,124), of order 4.
+- D203: the lift has order 16; its fourth power is the local kernel element (54,18), of order 4.
+
+These are concrete witnesses to the extension's 2-primary twisting. The exhaustive search over all 7,500 local lifts, rather than the canonical lift alone, proves that no section exists.
