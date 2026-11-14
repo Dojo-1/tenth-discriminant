@@ -54,10 +54,14 @@ class TruncatedRayConvolutionTests(unittest.TestCase):
         self.assertEqual(c.moment_product_six(A,z),z)
 
     def test_mixed_moment_cross_term_cannot_be_dropped(self):
-        u=monomials((1,2))
-        v=monomials((2,1))
+        # Cross term 1*1+0*0 =1, genuinely nonzero modulo5.
+        # Earlier (1,2)+(2,1) accidentally cancelled the cross term
+        # because 1*1+2*2=5: that was a BAD hostile test, not an
+        # arithmetic failure. Preserve this correction visibly.
+        u=monomials((1,0))
+        v=monomials((0,1))
         r=c.moment_product_six(u,v)
-        self.assertEqual(r[4]%5,monomials((3,3))[4])
+        self.assertEqual(r[4]%5,monomials((1,1))[4])
         no_cross=(u[4]*v[0]+u[0]*v[4])%5
         self.assertNotEqual(r[4]%5,no_cross)
 
