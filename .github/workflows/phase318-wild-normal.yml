@@ -1,7 +1,7 @@
 name: Phase318 complete norm125 local and global radical normal map
 on:
   push:
-    branches: ['research/phase318-*']
+    branches: ['research/phase318-*', 'research/phase320-*']
     paths:
       - 'research/phase318/**'
       - 'research/phase319/**'
