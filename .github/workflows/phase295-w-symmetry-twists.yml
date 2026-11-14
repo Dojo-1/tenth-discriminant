@@ -1,0 +1,23 @@
+name: Phase295-B original central-inversion and Galois twisted W modules
+on:
+  push:
+    branches: ['research/phase295-*']
+  pull_request:
+    paths:
+      - 'research/phase295/**'
+      - '.github/workflows/phase295-w-symmetry-twists.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-sample-W-symmetry:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Compile exact original W-jet tests
+        run: python3 -m py_compile research/phase295/symmetry_twisted_W.py
+      - name: Verify four involutive twists and original ordinary Z-jet covariance
+        run: python3 -u research/phase295/symmetry_twisted_W.py
