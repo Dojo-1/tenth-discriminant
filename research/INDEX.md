@@ -73,3 +73,16 @@ Reader guide: [research/phase321/README.md](phase321/README.md).
 - [PR #219](https://github.com/Dojo-1/tenth-discriminant/pull/219): Phase209–268 source and 321⁴ line.
 
 No research PR changes main. No new determinant valuation is inferred from a changed residue modulo 25. No class-number-(>1) global character family is inferred from principal generators alone. No general-character zero-free theorem is claimed.
+
+
+## Historical branch audit — no duplicate merges
+
+The earlier lines were checked against the current main tree before deciding whether to consolidate them again:
+
+- **Phases134–148:** the original minor, residue-transport, moving-frame and arithmetic-chamber work is already in main. Phase144–148 was merged via [PR #68](https://github.com/Dojo-1/tenth-discriminant/pull/68); issue [#67](https://github.com/Dojo-1/tenth-discriminant/issues/67) records the completion and exact finite controls. The surviving old branches are provenance, not missing work.
+- **Phases190–196 and 199:** the audited branch heads are ancestors of main. Their later scalar and prime-gain results are already represented in the main history.
+- **Phases200–206:** the source-to-field, exact arithmetic, p-adic valuation, factorial filtration and geometry modules are already in main; the Phase200 same-Gram branch files inspected are byte-identical to main.
+- **Phase201–206:** the independent reconstruction and source-geometry branches are ancestors of main.
+- **Phase192 and Phase197:** these retain branch-only intermediate floor/scalar experiments (328⁴ and 324⁴ scales). They are preserved as historical references, but not re-imported into the active research parent: the accepted 322⁴ endpoint and the stronger 321⁴ candidate supersede their target bounds.
+
+This avoids duplicate or stale integrations while keeping the proof lineage discoverable.
