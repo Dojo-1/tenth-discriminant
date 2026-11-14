@@ -1,0 +1,36 @@
+# Phase320 — cross-field maximal-order second-wild normal maps
+
+> Three fields. Three class groups. One local residue algebra.
+>
+> The experiment separates the arithmetic of the field from the finite support and from the row/jet geometry.
+
+Phase320 compares D163 (class number 1), D187 (class number 2), and D203 (class number 4). All three have 5 inert and (mathcal O_D/5congmathbb F_{25}).
+
+## Source arms
+
+| Arm | Norm radius | Original rows | Jet layers | Purpose |
+|---|---:|---:|---:|---|
+| D163 even legacy | 21 | 40 | 1 | Reproduce the old 109-point source |
+| D163 full maximal | 21 | 40 | 1 | Reproduce Phase319's 225-point completion |
+| D187 matched | 21 | 40 | 1 | Change the field while holding source geometry fixed |
+| D203 matched | 21 | 40 | 1 | Change the field while holding source geometry fixed |
+| D187 native | 23 | 46 | 1 | Restore native source dimensions |
+| D203 native | 24 | 50 | 2 | Restore native high-jet geometry |
+
+The native D203 arm is a distinct source, not a scaled copy of the matched arm.
+
+## What is measured
+
+- Exact reduced-form class numbers and maximal-order norm-ball supports.
+- The original-to-primitive Frobenius row transformation and its nonunimodular division.
+- The complete conductor-125 local unit/log group in each field.
+- Every norm-preserving second-wild lift at every signed 5-unit source site.
+- Primitive Gram rank, radical, first radical-lift Smith layer, full differential span and radical-normal image.
+
+Nonunits remain separate. No global split-prime character family is imported from D163 into the nonprincipal ideal classes of D187 or D203.
+
+## Evidence boundary
+
+[P] exact local ring, trace and norm identities; [M] bounded source/Smith/local-lift calculations after exact-head CI; [H] any uniform field-class-number-to-valuation implication; [R] transferring D163 principal-ideal characters to nontrivial class groups, or confusing changed determinant residues with new valuations.
+
+The experiment cannot change the (322^4) publication endpoint or promote the (321^4) candidate.
