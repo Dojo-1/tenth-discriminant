@@ -3,7 +3,7 @@
   "date": "2026-11-14",
   "repository": "Dojo-1/tenth-discriminant",
   "branch": "research/phase277-320-unified",
-  "status": "preregistered and implemented; exact-head CI pending",
+  "status": "Phase320-A and Phase320-B preregistrations implemented; core arithmetic independently cross-checked in a local container; complete Phase315 log and exact-head workflow pending",
   "preregistration": "research/phase320/PRE_REGISTERED_CROSS_FIELD_WILD_NORMAL.md",
   "implementation": "research/phase320/cross_field_wild_normal.py",
   "tests": "research/phase320/test_cross_field_wild_normal.py",
@@ -30,42 +30,80 @@
       "D": 163,
       "rho": 21,
       "R": 40,
-      "J": 1
+      "J": 1,
+      "source_order": "integer-order-even-suborder"
     },
     {
       "name": "D163-full-maximal",
       "D": 163,
       "rho": 21,
       "R": 40,
-      "J": 1
+      "J": 1,
+      "source_order": "maximal-order"
+    },
+    {
+      "name": "D187-matched-even-R40-J1",
+      "D": 187,
+      "rho": 21,
+      "R": 40,
+      "J": 1,
+      "source_order": "integer-order-even-suborder"
     },
     {
       "name": "D187-matched-R40-J1",
       "D": 187,
       "rho": 21,
       "R": 40,
-      "J": 1
+      "J": 1,
+      "source_order": "maximal-order"
+    },
+    {
+      "name": "D203-matched-even-R40-J1",
+      "D": 203,
+      "rho": 21,
+      "R": 40,
+      "J": 1,
+      "source_order": "integer-order-even-suborder"
     },
     {
       "name": "D203-matched-R40-J1",
       "D": 203,
       "rho": 21,
       "R": 40,
-      "J": 1
+      "J": 1,
+      "source_order": "maximal-order"
+    },
+    {
+      "name": "D187-native-even-R46-J1",
+      "D": 187,
+      "rho": 23,
+      "R": 46,
+      "J": 1,
+      "source_order": "integer-order-even-suborder"
     },
     {
       "name": "D187-native-R46-J1",
       "D": 187,
       "rho": 23,
       "R": 46,
-      "J": 1
+      "J": 1,
+      "source_order": "maximal-order"
+    },
+    {
+      "name": "D203-native-even-R50-J2",
+      "D": 203,
+      "rho": 24,
+      "R": 50,
+      "J": 2,
+      "source_order": "integer-order-even-suborder"
     },
     {
       "name": "D203-native-R50-J2",
       "D": 203,
       "rho": 24,
       "R": 50,
-      "J": 2
+      "J": 2,
+      "source_order": "maximal-order"
     }
   ],
   "planned_measurements": {
@@ -81,7 +119,8 @@
     "full_symmetric_differential_span": true,
     "radical_normal_image_span": true,
     "Smith_layers_only_mod25": true,
-    "nonunits_separate": true
+    "nonunits_separate": true,
+    "index_two_order_support_controls_for_D187_D203": true
   },
   "claim_boundary": {
     "no_main_change": true,
@@ -90,13 +129,183 @@
     "no_uniform_field_valuation_or_cutoff": true,
     "no_global_ray_character_transfer_to_nonprincipal_classes": true,
     "no_determinant_valuation_inference_from_mod25_residue": true,
-    "no_global_ray_transfer_to_nonprincipal_classes": true
+    "no_global_ray_transfer_to_nonprincipal_classes": true,
+    "no_local_order_isomorphism_as_support_equality": true,
+    "no_D203_integer_order_rank_transfer": true,
+    "native_row_jet_geometry_is_not_native_order_identification": true
   },
   "ci": {
-    "phase320_cross_field_workflow": "pending",
-    "phase318_local_D163_regression": "pending",
-    "phase319_maximal_order_D163_regression": "pending",
-    "whole_root_lean": "pending"
+    "phase320_cross_field_workflow": "not observed on connector after branch integration; pending",
+    "phase318_local_D163_regression": "pending exact-head run",
+    "phase319_maximal_order_D163_regression": "pending exact-head run",
+    "whole_root_lean": "pending exact combined branch run"
   },
-  "main_unchanged": true
+  "main_unchanged": true,
+  "supplemental_preregistration": "research/phase320/PRE_REGISTERED_PHASE320B_INDEX_TWO_ORDER_CONTROLS.md",
+  "exploratory_core_cross_check": {
+    "status": "local independent arithmetic-kernel cross-check only; not exact-head CI and does not include Phase315 signed-log first-digit checks or the repository script's original-to-primitive Gram congruence audit",
+    "fields": {
+      "D163": {
+        "class_number": 1,
+        "arms": {
+          "even": {
+            "points": 109,
+            "residue_classes": 15,
+            "unit_points": 100,
+            "nonunits": 9,
+            "signed_sites": 50,
+            "primitive_rank_mod5": 23,
+            "radical_dimension": 17,
+            "e1_rank": 7,
+            "e_ge2": 10,
+            "full_differential_span_rank": 5,
+            "radical_normal_image_rank": 1,
+            "lifts": 250
+          },
+          "full": {
+            "points": 225,
+            "residue_classes": 25,
+            "unit_points": 216,
+            "nonunits": 9,
+            "signed_sites": 108,
+            "primitive_rank_mod5": 40,
+            "radical_dimension": 0,
+            "e1_rank": 0,
+            "e_ge2": 0,
+            "full_differential_span_rank": 10,
+            "radical_normal_image_rank": 0,
+            "lifts": 540
+          }
+        }
+      },
+      "D187": {
+        "class_number": 2,
+        "arms": {
+          "matched_even": {
+            "points": 105,
+            "residue_classes": 15,
+            "unit_points": 96,
+            "nonunits": 9,
+            "signed_sites": 44,
+            "primitive_rank_mod5": 19,
+            "radical_dimension": 21,
+            "e1_rank": 9,
+            "e_ge2": 12,
+            "full_differential_span_rank": 5,
+            "radical_normal_image_rank": 2,
+            "lifts": 220
+          },
+          "matched_full": {
+            "points": 205,
+            "residue_classes": 25,
+            "unit_points": 196,
+            "nonunits": 9,
+            "signed_sites": 98,
+            "primitive_rank_mod5": 40,
+            "radical_dimension": 0,
+            "e1_rank": 0,
+            "e_ge2": 0,
+            "full_differential_span_rank": 10,
+            "radical_normal_image_rank": 0,
+            "lifts": 490
+          },
+          "native_even": {
+            "points": 121,
+            "residue_classes": 15,
+            "unit_points": 112,
+            "nonunits": 9,
+            "signed_sites": 56,
+            "primitive_rank_mod5": 23,
+            "radical_dimension": 23,
+            "e1_rank": 11,
+            "e_ge2": 12,
+            "full_differential_span_rank": 5,
+            "radical_normal_image_rank": 0,
+            "lifts": 280
+          },
+          "native_full": {
+            "points": 249,
+            "residue_classes": 25,
+            "unit_points": 240,
+            "nonunits": 9,
+            "signed_sites": 120,
+            "primitive_rank_mod5": 35,
+            "radical_dimension": 11,
+            "e1_rank": 11,
+            "e_ge2": 0,
+            "full_differential_span_rank": 10,
+            "radical_normal_image_rank": 2,
+            "lifts": 600
+          }
+        }
+      },
+      "D203": {
+        "class_number": 4,
+        "arms": {
+          "matched_even": {
+            "points": 105,
+            "residue_classes": 15,
+            "unit_points": 96,
+            "nonunits": 9,
+            "signed_sites": 44,
+            "primitive_rank_mod5": 19,
+            "radical_dimension": 21,
+            "e1_rank": 9,
+            "e_ge2": 12,
+            "full_differential_span_rank": 5,
+            "radical_normal_image_rank": 2,
+            "lifts": 220
+          },
+          "matched_full": {
+            "points": 185,
+            "residue_classes": 25,
+            "unit_points": 176,
+            "nonunits": 9,
+            "signed_sites": 88,
+            "primitive_rank_mod5": 39,
+            "radical_dimension": 1,
+            "e1_rank": 1,
+            "e_ge2": 0,
+            "full_differential_span_rank": 10,
+            "radical_normal_image_rank": 1,
+            "lifts": 440
+          },
+          "native_even": {
+            "points": 127,
+            "residue_classes": 15,
+            "unit_points": 118,
+            "nonunits": 9,
+            "signed_sites": 59,
+            "primitive_rank_mod5": 21,
+            "radical_dimension": 79,
+            "e1_rank": 12,
+            "e_ge2": 67,
+            "full_differential_span_rank": 5,
+            "radical_normal_image_rank": 0,
+            "lifts": 295
+          },
+          "native_full": {
+            "points": 263,
+            "residue_classes": 25,
+            "unit_points": 254,
+            "nonunits": 9,
+            "signed_sites": 127,
+            "primitive_rank_mod5": 29,
+            "radical_dimension": 71,
+            "e1_rank": 21,
+            "e_ge2": 50,
+            "full_differential_span_rank": 10,
+            "radical_normal_image_rank": 3,
+            "lifts": 635
+          }
+        }
+      }
+    },
+    "interpretations_not_promoted": [
+      "D187 and D203 full maximal-order supports change primitive rank and radical differently under matched and native row/jet geometries",
+      "The even-b index-two suborder consistently has only 15 F25 residue classes in these norm balls, while full maximal-order supports cover all 25",
+      "Full symmetric local differential span is rank 10 on full maximal-order arms and rank 5 on even-b arms in this exploratory kernel check",
+      "No class-number-only law is inferred from three fields"
+    ]
+  }
 }
