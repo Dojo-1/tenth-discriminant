@@ -1,0 +1,34 @@
+name: Phase316 norm-preserving global wild-gauge obstruction
+on:
+  push:
+    branches: ['research/phase316-*']
+    paths:
+      - 'research/phase316/**'
+      - '.github/workflows/phase316-wild-gauge.yml'
+  pull_request:
+    paths:
+      - 'research/phase316/**'
+      - '.github/workflows/phase316-wild-gauge.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  global-ideal-valuation-and-original-gram:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pin numerical arithmetic
+        run: |
+          python3 -m venv /tmp/phase316
+          /tmp/phase316/bin/python -m pip install --disable-pip-version-check numpy==2.2.6 sympy==1.14.0
+      - name: Static Python syntax
+        run: /tmp/phase316/bin/python -m py_compile research/phase316/*.py
+      - name: Global trace-zero conductor125 gauge twist and original Gram mod25
+        run: /tmp/phase316/bin/python -u research/phase316/wild_gauge.py
+      - name: Adversarial ideal character, norm125, conj, ray250, source tests
+        run: /tmp/phase316/bin/python -m unittest discover -s research/phase316 -p 'test_*.py' -v
+      - name: Preserve original Phase315 arithmetic and second wild digit
+        run: /tmp/phase316/bin/python -u research/phase315/conductor250_original_mod25.py
