@@ -1,0 +1,33 @@
+name: Phase321 ideal-aware ray class groups
+on:
+  push:
+    branches: ['research/phase321-*']
+    paths:
+      - 'research/phase321/**'
+      - '.github/workflows/phase321-ideal-aware-ray-class.yml'
+  pull_request:
+    paths:
+      - 'research/phase321/**'
+      - '.github/workflows/phase321-ideal-aware-ray-class.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ideal-aware-ray-class:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Verify both preregistrations and audit scope
+        run: |
+          test -f research/phase321/PRE_REGISTERED_IDEAL_AWARE_RAY_CLASS_GROUP.md
+          python3 -m json.tool research/phase321/AUDIT_MANIFEST.json >/dev/null
+          python3 -c 'import json; x=json.load(open("research/phase321/AUDIT_MANIFEST.json")); assert x["modulus"]==125; assert x["boundaries"]["no_assumed_direct_product_decomposition"]; assert x["boundaries"]["no_principal_generator_substitution_for_nonprincipal_ideals"]; print("Phase321 audit scope PASS")'
+      - name: Static source syntax
+        run: python3 -m py_compile research/phase321/*.py
+      - name: Construct exact ideal class groups and cocycles
+        run: python3 -u research/phase321/ideal_aware_ray_class.py
+      - name: Adversarial HNF, ray-group, nonprincipal ideal and prime catalog tests
+        run: python3 -m unittest discover -s research/phase321 -p 'test_*.py' -v
