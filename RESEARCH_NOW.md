@@ -1,18 +1,19 @@
 ## Status correction — 14 November 2026
 
-The accepted public theorem on main remains the actual-field class-number-one bound
-$|\mathrm{disc}(K)|<322^4=10,750,371,856$.
-Main has not been changed by the current research integrations.
+The accepted public theorem on `main` remains the actual-field class-number-one bound $|\\mathrm{disc}(K)|<322^4=10,750,371,856$. **No research integration below changes `main`.**
 
-**Phase320 is now exact-head verified.** Research-only PR #217 merged the Phase269–320 fabric into `research/phase309-original-source-picard-minors` at commit `1b9461d`. Its exact PR head passed 42/42 workflows, including the complete D163/D187/D203 local conductor-125 replay, all ten source arms, first-wild-digit-preserving local lifts, Phase318/319 regressions, the finite CRT certificate and whole-root Lean checks. These are reproducible finite-source results, not a field-uniform valuation theorem.
+**Phase320 — cross-field source completion [M].** Research-only PR #217 merged the Phase269–320 fabric into `research/phase309-original-source-picard-minors` at `1b9461d`. Its exact-head CI passed 42/42 workflows, including the D163/D187/D203 conductor-125 replay, ten source arms, first-wild-digit-preserving local lifts, Phase318/319 regressions, finite CRT certificate and whole-root Lean checks. These are reproducible finite-source results, not a field-uniform valuation theorem.
 
-**Phase321 has constructed the full ideal-aware ray class groups modulo 125.** The exact group orders are 7,500, 15,000 and 30,000 for D163, D187 and D203. Exact ideal-lattice products, cocycles, all group inverses and a bounded prime-ideal catalog passed the Phase321 workflow and eight adversarial tests. PR #218 is research-only; the whole-root Lean replay is still pending.
+**Phase209–268 — original-Gram and divided-Frobenius line [P relative to encoded definitions; independent review open].** PR #219 merged at `78f8b5d` after 25/25 exact-head workflows passed. This includes the ordinary-jet Taylor flow, horizontal integral frame, same-original-Gram lower/upper comparison and the Phase267 actual-field $321^4$ declaration for totally complex degree-two class-number-one fields. The $321^4$ declaration is research-only; it is not on `main`, and independent semantic reconstruction remains open in issues #50 and #51. The Phase210 exceptional-zero comparison is not a zero-free theorem.
 
-**The Phase209–268 original-Gram line is being consolidated in PR #219.** Its source oracles and Markdown checks have passed; the focused Phase209 Lean job and whole-root Lean replay are still running. The Phase267 actual-field (321^4) declaration is a formal candidate, stronger than (322^4), but remains outside main and subject to independent semantic reconstruction.
+**Phase321 — ideal-aware ray groups [M].** PR #218 merged at `d16238d`. Its exact ideal-lattice construction, full ray-group identity/inverse checks, bounded nonprincipal prime-ideal catalog, whole-root Lean replay and Markdown check passed. The ray-group orders modulo 125 are 7,500, 15,000 and 30,000 for D163, D187 and D203.
 
-PR #157 remains an open draft against main; its earlier 24/24 checks are historical to its 10 November head. Independent mathematical review issues [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50) and [#51](https://github.com/Dojo-1/tenth-discriminant/issues/51) remain open. No AI self-review or CI result closes them. No general-character zero-free theorem is claimed.
+**Phase321-B — invariant factors and extension splitting [M].** PR #221 merged at `549514a`; the corrected exact-head workflow passed all 9 adversarial tests. The invariant factors are C25 x C300 (D163), C50 x C300 (D187), and C100 x C300 (D203). All three tested ray exact sequences split. D187 has 2 order-preserving lifts among 7,500 local lifts; D203 has 4. The first test run's five incorrect expected-value assertions are preserved in the audit manifest; they were corrected after the exhaustive group enumeration showed that a nontrivial cocycle entry for the canonical transversal did not imply nonsplitting.
 
-See the [unified research index](research/INDEX.md) for the Phase209–321 map, PR status and evidence boundaries.
+PR #157 remains an open draft against `main`; its 10 November 24/24 checks are historical to that head. Issues [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50) and [#51](https://github.com/Dojo-1/tenth-discriminant/issues/51) remain open. CI is not independent mathematical review. No full character table, general ray-class formula, general-character zero-free theorem or new public discriminant cutoff is claimed.
+
+See the [unified research index](research/INDEX.md) for the Phase209–321 map, merged PRs, exact receipts and evidence boundaries.
+
 
 ---
 
