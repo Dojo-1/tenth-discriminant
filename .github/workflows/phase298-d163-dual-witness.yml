@@ -1,0 +1,27 @@
+name: Phase298-C class-one D163 exact original dual witness
+on:
+  push:
+    branches: ['research/phase298-*']
+  pull_request:
+    paths:
+      - 'research/phase298/**'
+      - '.github/workflows/phase298-d163-dual-witness.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-h1-original-dual:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned exact source runtime
+        run: |
+          python3 -m venv /tmp/phase298c
+          /tmp/phase298c/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile original field and dual functional code
+        run: /tmp/phase298c/bin/python -m py_compile research/phase298/class_one_d163_dual_witness.py
+      - name: Explicit original D163 class-one first-nonintegral dual and adjacent positive source checks
+        run: /tmp/phase298c/bin/python -u research/phase298/class_one_d163_dual_witness.py

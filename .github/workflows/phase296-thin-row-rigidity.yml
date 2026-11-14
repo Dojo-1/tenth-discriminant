@@ -1,0 +1,23 @@
+name: Phase296-C thin original polynomial-row automorphism rigidity
+on:
+  push:
+    branches: ['research/phase296-*']
+  pull_request:
+    paths:
+      - 'research/phase296/**'
+      - '.github/workflows/phase296-thin-row-rigidity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-jet-row-degree-rigidity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Compile exact formal polynomial controls
+        run: python3 -m py_compile research/phase296/thin_row_polynomial_rigidity.py
+      - name: Verify original 725-to-730 thin-row source rigidity and jet ghost
+        run: python3 -u research/phase296/thin_row_polynomial_rigidity.py

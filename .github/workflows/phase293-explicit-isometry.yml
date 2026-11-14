@@ -1,0 +1,27 @@
+name: Phase293-C explicit primitive pairing isometry modulo 125
+on:
+  push:
+    branches: ['research/phase293-*']
+  pull_request:
+    paths:
+      - 'research/phase293/**'
+      - '.github/workflows/phase293-explicit-isometry.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  construct-original-parity-pairing:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned modular integer matrix runtime
+        run: |
+          python3 -m venv /tmp/phase293c
+          /tmp/phase293c/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile exact source
+        run: /tmp/phase293c/bin/python -m py_compile research/phase293/explicit_primitive_isometry_mod125.py
+      - name: Construct and verify full 363 and 362 dimensional primitive parity pairing congruences
+        run: /tmp/phase293c/bin/python -u research/phase293/explicit_primitive_isometry_mod125.py

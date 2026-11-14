@@ -1,0 +1,27 @@
+name: Phase301-B first original D163 joint nonintegrality dual
+on:
+  push:
+    branches: ['research/phase301-*']
+  pull_request:
+    paths:
+      - 'research/phase301/**'
+      - '.github/workflows/phase301-original-dual.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-first-joint-dual:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned original source modular runtime
+        run: |
+          python3 -m venv /tmp/phase301b
+          /tmp/phase301b/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile original research proof executable
+        run: /tmp/phase301b/bin/python -m py_compile research/phase301/first_joint_dual_witness.py
+      - name: Original D163 L14 pairwise-integral then L15 joint-nonintegral dual and source oracle
+        run: /tmp/phase301b/bin/python -u research/phase301/first_joint_dual_witness.py

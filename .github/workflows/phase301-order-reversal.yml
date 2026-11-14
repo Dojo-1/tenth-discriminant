@@ -1,0 +1,27 @@
+name: Phase301-C bidirectional original Schur obstructions
+on:
+  push:
+    branches: ['research/phase301-*']
+  pull_request:
+    paths:
+      - 'research/phase301/**'
+      - '.github/workflows/phase301-order-reversal.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-original-176-bidirectional:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned modular source runtime
+        run: |
+          python3 -m venv /tmp/phase301c
+          /tmp/phase301c/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile exact original source research
+        run: /tmp/phase301c/bin/python -m py_compile research/phase301/order_reversal_residuals.py
+      - name: Compare all 176 pairs in both original attachment orders with exact Schur and Gram cokernel
+        run: /tmp/phase301c/bin/python -u research/phase301/order_reversal_residuals.py

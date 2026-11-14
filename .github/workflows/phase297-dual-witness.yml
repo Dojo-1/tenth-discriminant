@@ -1,0 +1,27 @@
+name: Phase297-C original D587 odd p14 dual denominator witness
+on:
+  push:
+    branches: ['research/phase297-*']
+  pull_request:
+    paths:
+      - 'research/phase297/**'
+      - '.github/workflows/phase297-dual-witness.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-odd-gram-dual-functional:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pin Python big-integer modular array runtime
+        run: |
+          python3 -m venv /tmp/phase297c
+          /tmp/phase297c/bin/python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Compile exact original source
+        run: /tmp/phase297c/bin/python -m py_compile research/phase297/odd_dual_witness_k16.py
+      - name: Produce explicit original odd Gram annihilator and exact single-p denominator certificate
+        run: /tmp/phase297c/bin/python -u research/phase297/odd_dual_witness_k16.py
