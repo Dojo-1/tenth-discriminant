@@ -1,5 +1,13 @@
 name: Phase319 maximal-order ray realization and local normal map
 on:
+  push:
+    branches: ['research/phase319-*']
+    paths:
+      - 'research/phase319/**'
+      - 'research/phase318/**'
+      - 'research/phase317/**'
+      - 'research/phase315/**'
+      - '.github/workflows/phase319-maximal-order-realization.yml'
   pull_request:
     paths:
       - 'research/phase319/**'
