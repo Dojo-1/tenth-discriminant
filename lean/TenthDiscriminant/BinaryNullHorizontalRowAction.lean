@@ -95,8 +95,8 @@ private theorem binaryNullHorizontal_binomial_identity
   have hpoly := binaryNull_binomial_polynomial w s 0 ell hell
   have heval := congrArg (Polynomial.eval w) hpoly
   rw [eval_finset_sum] at heval
-  simp only [eval_mul, eval_pow, eval_X, eval_C, eval_smul,
-    zsmul_eq_mul] at heval
+  simp only [eval_mul, eval_sub, eval_pow, eval_X, eval_C, eval_intCast,
+    eval_smul, zsmul_eq_mul] at heval
   simpa only [pow_zero, one_mul] using heval.symm
 
 /-- The horizontal matrix acting on the actual integer derivative rows
@@ -130,7 +130,7 @@ theorem binaryNullHorizontalBasisMatrix_integerDerivativeRow_action
       (derivative^[j] (X^(i.val/S) * C w^v)).eval
         (pairZsqrtdEquiv D a) = w^v * B := by
     rw [← map_pow, mul_comm, iterate_derivative_C_mul]
-    simp only [eval_mul, eval_C, eval_pow]
+    simp [B, eval_mul, eval_C, eval_pow]
   calc
     _ =
       ∑ u ∈ Finset.range (binaryNullHorizontalExponent R S i+1),
@@ -147,7 +147,8 @@ theorem binaryNullHorizontalBasisMatrix_integerDerivativeRow_action
         have hlab := binaryNullHorizontalTargetFin_labels R S i u hubound
         rw [hlab.1, hlab.2]
         rw [integerDerivativeRow_zsqrtd_jet]
-        simpa [w] using hjet _
+        congr 1
+        simpa [w, B] using hjet _
     _ =
       (∑ u ∈ Finset.range (binaryNullHorizontalExponent R S i+1),
         ((-1 : Int)^u *
@@ -156,7 +157,11 @@ theorem binaryNullHorizontalBasisMatrix_integerDerivativeRow_action
         rw [Finset.sum_mul]
         apply Finset.sum_congr rfl
         intro u hu
-        simp [zsmul_eq_mul, mul_assoc]
+        simp_rw [zsmul_eq_mul]
+        rw [Finset.sum_mul]
+        apply Finset.sum_congr rfl
+        intro u hu
+        ring
     _ =
       (w^(i.val%S-4*binaryNullHorizontalExponent R S i) *
         (w^4-w^2)^binaryNullHorizontalExponent R S i) * B := by
