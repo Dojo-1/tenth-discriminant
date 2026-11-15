@@ -41,7 +41,7 @@ theorem binaryNullHorizontalTargetFin_labels (R S : Nat)
   simp only [binaryNullHorizontalTargetFin, min_eq_left hu,
     binaryNullHorizontalTarget]
   constructor
-  · rw [Nat.mul_add_div hS]
+  · rw [Nat.mul_comm (i.val/S) S, Nat.mul_add_div hS]
     simp [Nat.div_eq_of_lt hsmall]
   · exact Nat.mul_add_mod_of_lt hsmall
 
@@ -94,7 +94,10 @@ private theorem binaryNullHorizontal_binomial_identity
       w^(s-4*ell)*(w^4-w^2)^ell := by
   have hpoly := binaryNull_binomial_polynomial w s 0 ell hell
   have heval := congrArg (Polynomial.eval w) hpoly
-  simpa [eval_C, zsmul_eq_mul] using heval.symm
+  rw [eval_finset_sum] at heval
+  simp only [eval_mul, eval_pow, eval_X, eval_C, eval_smul,
+    zsmul_eq_mul] at heval
+  simpa only [pow_zero, one_mul] using heval.symm
 
 /-- The horizontal matrix acting on the actual integer derivative rows
 is exactly multiplication by the conjugate-coordinate null factor. -/
@@ -126,7 +129,7 @@ theorem binaryNullHorizontalBasisMatrix_integerDerivativeRow_action
   have hjet (v : Nat) :
       (derivative^[j] (X^(i.val/S) * C w^v)).eval
         (pairZsqrtdEquiv D a) = w^v * B := by
-    rw [mul_comm, iterate_derivative_C_mul]
+    rw [← map_pow, mul_comm, iterate_derivative_C_mul]
     simp only [eval_mul, eval_C, eval_pow]
   calc
     _ =
@@ -144,7 +147,7 @@ theorem binaryNullHorizontalBasisMatrix_integerDerivativeRow_action
         have hlab := binaryNullHorizontalTargetFin_labels R S i u hubound
         rw [hlab.1, hlab.2]
         rw [integerDerivativeRow_zsqrtd_jet]
-        exact hjet _
+        simpa [w] using hjet _
     _ =
       (∑ u ∈ Finset.range (binaryNullHorizontalExponent R S i+1),
         ((-1 : Int)^u *
@@ -153,8 +156,7 @@ theorem binaryNullHorizontalBasisMatrix_integerDerivativeRow_action
         rw [Finset.sum_mul]
         apply Finset.sum_congr rfl
         intro u hu
-        rw [zsmul_eq_mul]
-        ring
+        simp [zsmul_eq_mul, mul_assoc]
     _ =
       (w^(i.val%S-4*binaryNullHorizontalExponent R S i) *
         (w^4-w^2)^binaryNullHorizontalExponent R S i) * B := by
