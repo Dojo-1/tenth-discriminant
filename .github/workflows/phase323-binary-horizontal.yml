@@ -6,6 +6,7 @@ on:
       - lean/TenthDiscriminant/BinaryNullHorizontalBasisMatrix.lean
       - lean/TenthDiscriminant/BinaryNullHorizontalRowAction.lean
       - lean/TenthDiscriminant/Phase323FinitePrimeCertificate.lean
+      - lean/TenthDiscriminant/BinaryNullHorizontalTraceGram.lean
       - .github/workflows/phase323-binary-horizontal.yml
   pull_request:
     paths:
@@ -46,4 +47,4 @@ jobs:
           lake update
           lake exe cache get
           lean --version
-          lake build TenthDiscriminant.BinaryNullHorizontalBasisMatrix TenthDiscriminant.BinaryNullHorizontalRowAction TenthDiscriminant.Phase323FinitePrimeCertificate
+          lake build TenthDiscriminant.BinaryNullHorizontalBasisMatrix TenthDiscriminant.BinaryNullHorizontalRowAction TenthDiscriminant.Phase323FinitePrimeCertificate TenthDiscriminant.BinaryNullHorizontalTraceGram
