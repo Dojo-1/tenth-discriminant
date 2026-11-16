@@ -42,8 +42,9 @@ class AbelianFrobeniusLabelTests(unittest.TestCase):
             inert_frobenius_label(163, 163)
         with self.assertRaises(ValueError):
             inert_frobenius_label(163, 4)
+        self.assertEqual(kronecker_for_prime(-163, 41), 1)
         with self.assertRaises(ValueError):
-            inert_frobenius_label(163, 41) if kronecker_for_prime(-163,41)==1 else inert_frobenius_label(163, 1)
+            inert_frobenius_label(163, 41)
 
     def test_prime_two_kronecker_and_real_genus_signs(self):
         for D in (163,187,203):
