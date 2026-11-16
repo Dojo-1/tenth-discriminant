@@ -85,7 +85,7 @@ theorem binaryNullHorizontalBasisMatrix_row_action
 /-- The scalar binomial identity for the horizontal null polynomial.
 It is the existing source polynomial identity evaluated at the
 conjugate sample; no new polynomial convention is introduced. -/
-private theorem binaryNullHorizontal_binomial_identity
+theorem binaryNullHorizontal_binomial_identity
     {A : Type*} [CommRing A]
     (w : A) (s ell : Nat) (hell : 4*ell ≤ s) :
     (∑ u ∈ Finset.range (ell+1),
