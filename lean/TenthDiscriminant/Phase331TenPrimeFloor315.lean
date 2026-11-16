@@ -56,14 +56,24 @@ theorem tenPrimeWeightedFloorPoint (p S : Nat)
   let F := floorMass (p*p) S
   have hsq : w*(p*p) ≤ 100000 := by
     exact tenPrimeReciprocalWeight_square_le p hp
-  have hF := floorMass_lower (p*p) S (by
-    have h := oddHorizontalPrime_ge_seven p hp
-    positivity)
-  have hFtimes := Nat.mul_le_mul_left w hF
+  have hF : S*S ≤ 2*(p*p)*F+(2*(p*p)-1)*S := by
+    exact floorMass_lower (p*p) S (by
+      have h := oddHorizontalPrime_ge_seven p hp
+      positivity)
+  have hsub : (2*(p*p)-1)*S ≤ 2*(p*p)*S :=
+    Nat.mul_le_mul_right S (Nat.sub_le _ _)
+  have hsimple : S*S ≤ 2*(p*p)*F+2*(p*p)*S :=
+    hF.trans (add_le_add_left hsub _)
   have hweightF := Nat.mul_le_mul_right F hsq
   have hweightS := Nat.mul_le_mul_right S hsq
-  dsimp [w,F] at *
-  nlinarith only [hFtimes,hweightF,hweightS]
+  calc
+    w*(S*S) ≤ w*(2*(p*p)*F+2*(p*p)*S) :=
+      Nat.mul_le_mul_left w hsimple
+    _ = 2*(w*(p*p)*F)+2*(w*(p*p)*S) := by ring
+    _ ≤ 2*(100000*F)+2*(100000*S) :=
+      add_le_add (Nat.mul_le_mul_left 2 hweightF)
+        (Nat.mul_le_mul_left 2 hweightS)
+    _ = _ := by ring
 
 /-- The entire selected ten-prime floor mass is covered by ONE
 integer inequality; the coefficient 4623 is the exact finite
@@ -72,16 +82,29 @@ theorem tenPrimeFloorMassCore (S : Nat) :
     4623*S*S ≤
       200000*(∑ p ∈ oddHorizontalPrimes,
         floorMass (p*p) S) + 2000000*S := by
-  have hsum := Finset.sum_le_sum
-    (s := oddHorizontalPrimes)
-    (fun p hp => tenPrimeWeightedFloorPoint p S hp)
-  have hw := tenPrimeReciprocalWeight_sum
+  have hsum : (∑ p ∈ oddHorizontalPrimes,
+      tenPrimeReciprocalWeight p*(S*S)) ≤
+      ∑ p ∈ oddHorizontalPrimes,
+        (200000*floorMass (p*p) S+200000*S) :=
+    Finset.sum_le_sum
+      (fun p hp => tenPrimeWeightedFloorPoint p S hp)
   have hcard : oddHorizontalPrimes.card = 10 := by
     norm_num [oddHorizontalPrimes]
-  simp only [Finset.sum_add_distrib, ← Finset.mul_sum,
-    Finset.sum_const, nsmul_eq_mul] at hsum
-  rw [hw,hcard] at hsum
-  nlinarith only [hsum]
+  have hmass :
+      (∑ p ∈ oddHorizontalPrimes, tenPrimeReciprocalWeight p)*(S*S) ≤
+      200000*(∑ p ∈ oddHorizontalPrimes, floorMass (p*p) S)+
+        200000*(oddHorizontalPrimes.card*S) := by
+    calc
+      _ = ∑ p ∈ oddHorizontalPrimes,
+            tenPrimeReciprocalWeight p*(S*S) := by rw [Finset.sum_mul]
+      _ ≤ ∑ p ∈ oddHorizontalPrimes,
+            (200000*floorMass (p*p) S+200000*S) := hsum
+      _ = _ := by
+        rw [Finset.sum_add_distrib]
+        simp only [← Finset.mul_sum, Finset.sum_const, nsmul_eq_mul]
+        ring
+  rw [tenPrimeReciprocalWeight_sum, hcard] at hmass
+  nlinarith only [hmass]
 
 /-- With the *actual* S=floor(R/25) the 10-prime gain pays the
 rational coefficient 873747 and a conservative rounding budget of
