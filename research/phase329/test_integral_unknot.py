@@ -107,7 +107,7 @@ class GramHandleSlideTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             shear(())
         with self.assertRaises(ValueError):
-            verify_coupled_return(B,((1,),),Q8[2]) if False else frame_coupled_gram(B,((1,),),Q8[2])
+            frame_coupled_gram(B,((1,),),Q8[2])
 
     def test_two_moving_frames_intertwine_coupled_metric_and_source(self):
         B=((3,1),(1,3))
@@ -116,7 +116,6 @@ class GramHandleSlideTests(unittest.TestCase):
             F=frame_coupled_gram(B,C,u)
             for v in Q8:
                 U=quaternion_left_frame(v,2)
-                uv=__import__("integral_unknot").quaternion_left_frame
                 # Applying v to the already-u-coupled metric is
                 # equivalent to one frame vu by the Phase328 group law.
                 from stabilized_return import quaternion_product
