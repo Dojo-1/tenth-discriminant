@@ -4,12 +4,12 @@ on:
     branches: ['research/phase309-original-source-picard-minors']
     paths:
       - 'lean/TenthDiscriminant/Phase335JetFiltration.lean'
-      - 'research/phase335/**'
+      - 'research/phase335/test_*.py'
       - '.github/workflows/phase335-jet-filtration.yml'
   pull_request:
     paths:
       - 'lean/TenthDiscriminant/Phase335JetFiltration.lean'
-      - 'research/phase335/**'
+      - 'research/phase335/test_*.py'
       - '.github/workflows/phase335-jet-filtration.yml'
   workflow_dispatch:
 permissions:
