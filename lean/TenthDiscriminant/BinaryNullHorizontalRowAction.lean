@@ -162,8 +162,10 @@ theorem binaryNullHorizontalBasisMatrix_integerDerivativeRow_action
     _ =
       (w^(i.val%S-4*binaryNullHorizontalExponent R S i) *
         (w^4-w^2)^binaryNullHorizontalExponent R S i) * B := by
-        rw [← binaryNullHorizontal_binomial_identity w
-          (i.val%S) (binaryNullHorizontalExponent R S i) hbound]
+        have hbin := binaryNullHorizontal_binomial_identity w
+          (i.val%S) (binaryNullHorizontalExponent R S i) hbound
+        simpa only [zsmul_eq_mul] using
+          congrArg (fun v : Zsqrtd (-(D : Int)) => v * B) hbin
 
 /-- Every actual horizontal transformed jet has its full 2^ell factor.
 The divisibility comes from the same parity lemma, applied to the
