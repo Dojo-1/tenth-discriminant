@@ -53,10 +53,6 @@ theorem normalized_ten_prime_horizontal_gain
         (945000000 : Real)*R*F/250000000 := by
     push_cast
     ring
-  change
-    ((873747/250000000 : Real)-40/(R : Real))*
-       comparisonScale R S ≤
-       (((2*R*F : Nat) : Real)*(189/100 : Real)) at *
   rw [heq, hreal]
   nlinarith only [hmul]
 
