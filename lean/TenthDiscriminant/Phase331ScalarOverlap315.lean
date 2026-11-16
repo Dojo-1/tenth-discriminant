@@ -72,6 +72,7 @@ theorem no_same_gram_scalar_overlap_315
   have hsep := strict_scalar_separation_315 D hD
   linarith only [hsep,hUpper,hLower]
 
+end
 end TenthDiscriminant.Phase331
 
 #print axioms TenthDiscriminant.Phase331.no_same_gram_scalar_overlap_315
