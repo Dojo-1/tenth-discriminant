@@ -21,6 +21,7 @@ the claimed 313^4 field bound. No Work or external computation.
 from __future__ import annotations
 
 from functools import lru_cache
+from fractions import Fraction as F
 from math import factorial
 from typing import Dict
 import unittest
@@ -156,6 +157,32 @@ class GuardedMixedBinaryTests(unittest.TestCase):
         S=R//25
         self.assertGreaterEqual(R-S+1,0)
         self.assertGreater(floor_mass(4,S),0)
+
+    def test_conditional_313_endpoint_gain_with_exact_rationals(self):
+        # These are guaranteed FLOOR-MASS and ratio lower estimates
+        # from the proposed mixed row exponents, NOT a verified
+        # source row-action or determinant theorem at 313.
+        D=313**4
+        R=D//4
+        S=R//25
+        new_mass=(R-S+1)*floor_mass(4,S)
+        gain=F(2*new_mass,R*R*S)*F(6931,10000)
+        self.assertGreater(gain,F(665,100000)-F(2,R))
+
+        # The conditional scalar interval is positive using only
+        # rational floors log D>=22.984 and log 2>=0.6931.
+        gap=(F(999997,1000000)-F(4,5))*F(22984,1000)
+        gap+=-F(57193,10000)+F(1853,2000)+F(6931,40000)
+        gap+=F(4659,625000)-F(16895455,625000*D)
+        gap+=F(6931,1000000)-F(2,R)
+        gap+=F(873747,250000000)-F(40,R)
+        gap+=F(665,100000)-F(2,R)
+        self.assertGreater(gap,F(17,10000))
+        self.assertLess(gap,F(19,10000))
+
+        # The same simplified envelopes without the mixed factor
+        # would NOT separate at 313.
+        self.assertLess(gap-(F(665,100000)-F(2,R)),0)
 
     def test_negative_naive_W_square_minus_W(self):
         # Universal W-only quadratic W²-W is invalid at non-real
