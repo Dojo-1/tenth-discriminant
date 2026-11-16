@@ -1,0 +1,33 @@
+name: Phase329 Knot Lift - Reidemeister and Integral Gram Slides
+on:
+  push:
+    branches: ['research/phase309-original-source-picard-minors']
+    paths:
+      - 'research/phase329/**'
+      - '.github/workflows/phase329-knot-lift.yml'
+  pull_request:
+    paths:
+      - 'research/phase329/**'
+      - '.github/workflows/phase329-knot-lift.yml'
+  workflow_dispatch:
+concurrency:
+  group: phase329-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  knot-lift:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Syntax check
+        run: python3 -m py_compile research/phase329/*.py
+      - name: Exact integral handle slides and Reidemeister / Hurwitz tests
+        run: python3 -m unittest discover -s research/phase329 -p 'test_*.py' -v
+      - name: Print source-preserving handle slide certificate
+        run: python3 research/phase329/integral_unknot.py
+      - name: Print colored knot controls
+        run: python3 research/phase329/braid_frobenius.py
