@@ -9,12 +9,20 @@ on:
       - lean/TenthDiscriminant/BinaryNullHorizontalTraceGram.lean
       - lean/TenthDiscriminant/Log315Certificate.lean
       - lean/TenthDiscriminant/Lower315.lean
+      - lean/TenthDiscriminant/Phase323OddPrimeProduct.lean
       - .github/workflows/phase323-binary-horizontal.yml
   pull_request:
     paths:
-      - lean/TenthDiscriminant/BinaryNullHorizontalBasisMatrix.lean
+      - 'lean/TenthDiscriminant/BinaryNullHorizontal*.lean'
+      - lean/TenthDiscriminant/Phase323FinitePrimeCertificate.lean
+      - lean/TenthDiscriminant/Phase323OddPrimeProduct.lean
+      - lean/TenthDiscriminant/Log315Certificate.lean
+      - lean/TenthDiscriminant/Lower315.lean
       - .github/workflows/phase323-binary-horizontal.yml
   workflow_dispatch:
+concurrency:
+  group: phase323-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
@@ -49,4 +57,4 @@ jobs:
           lake update
           lake exe cache get
           lean --version
-          lake build TenthDiscriminant.BinaryNullHorizontalBasisMatrix TenthDiscriminant.BinaryNullHorizontalRowAction TenthDiscriminant.Phase323FinitePrimeCertificate TenthDiscriminant.BinaryNullHorizontalTraceGram TenthDiscriminant.Log315Certificate TenthDiscriminant.Lower315
+          lake build TenthDiscriminant.BinaryNullHorizontalBasisMatrix TenthDiscriminant.BinaryNullHorizontalRowAction TenthDiscriminant.Phase323FinitePrimeCertificate TenthDiscriminant.BinaryNullHorizontalTraceGram TenthDiscriminant.Log315Certificate TenthDiscriminant.Lower315 TenthDiscriminant.Phase323OddPrimeProduct
