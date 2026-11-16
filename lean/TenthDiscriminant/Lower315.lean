@@ -163,6 +163,7 @@ theorem normalized_source_gram_lower_315
   have hdiv := div_le_div_of_nonneg_right hm hp.le
   linarith
 
+end
 end TenthDiscriminant.FirstCertificate.Tuned
 
 #print axioms TenthDiscriminant.FirstCertificate.Tuned.normalized_source_gram_lower_315
