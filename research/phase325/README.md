@@ -34,7 +34,7 @@ through the norm `g -> g*sigma(g)`.
 
 ## Exact finite group checks
 
-| D | \u007cG\u007c | \u007cH\u007c | \u007cG^sigma\u007c | Size of one inert coset class | Classes per given Frobenius square |
+| D | |G| | |H| | |G^sigma| | Size of one inert coset class | Classes per given Frobenius square |
 |---|---:|---:|---:|---:|---:|
 | 163 | 7500 | 15000 | 100 | 75 | 2 |
 | 187 | 15000 | 30000 | 200 | 75 | 4 |
