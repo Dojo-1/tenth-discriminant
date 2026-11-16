@@ -102,7 +102,7 @@ theorem tenPrimeFloorMassCore (S : Nat) :
       _ = _ := by
         rw [Finset.sum_add_distrib]
         simp only [← Finset.mul_sum, Finset.sum_const, nsmul_eq_mul]
-        ring
+        ac_rfl
   rw [tenPrimeReciprocalWeight_sum, hcard] at hmass
   nlinarith only [hmass]
 
