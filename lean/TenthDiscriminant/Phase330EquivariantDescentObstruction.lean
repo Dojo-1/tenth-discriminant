@@ -144,7 +144,6 @@ theorem weave_image_iff_parity (u v : Int) :
   · rintro ⟨⟨x, y⟩, h⟩
     have hu : x + y = u := congrArg Prod.fst h
     have hv : x - y = v := congrArg Prod.snd h
-    dsimp [weavePair] at hu hv
     refine ⟨y, ?_⟩
     omega
   · rintro ⟨t, ht⟩
@@ -162,7 +161,6 @@ theorem weave_injective : Function.Injective weavePair := by
   rcases b with ⟨s, t⟩
   have h1 : x + y = s + t := congrArg Prod.fst h
   have h2 : x - y = s - t := congrArg Prod.snd h
-  dsimp [weavePair] at h1 h2
   have hx : x = s := by omega
   have hy : y = t := by omega
   simp [hx, hy]
