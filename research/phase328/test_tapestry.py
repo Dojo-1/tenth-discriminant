@@ -125,6 +125,22 @@ class TapestryEvidenceGateTests(unittest.TestCase):
             "parity_glued_two_chart_weave":True,
         }))
 
+    def test_frobenius_cohomology_is_an_exact_internal_edge_not_a_jet_proof(self):
+        nodes={node.name:node.status for node in NODES}
+        edges={(e.source,e.target):e.kind for e in EDGES}
+        self.assertEqual(nodes["actual_ray_C2_cohomology"],"finite")
+        self.assertEqual(
+            edges[("rational_frobenius_classes","actual_ray_C2_cohomology")],
+            "exact")
+        self.assertEqual(
+            edges[("actual_ray_C2_cohomology","parity_glued_two_chart_weave")],
+            "conditional")
+        self.assertEqual(nodes["integral_ray_action_original_jet"],"open")
+        self.assertFalse(eligible_to_claim_315({
+            "actual_ray_C2_cohomology":True,
+            "parity_glued_two_chart_weave":True,
+        }))
+
     def test_no_fake_prime_field_or_invented_jet_equivariance(self):
         edge_classes={(e.source,e.target):e.kind for e in EDGES}
         self.assertEqual(edge_classes[
