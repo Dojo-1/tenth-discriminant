@@ -1,3 +1,9 @@
+## 16 November 2026 — Phase331/332 exact-head gate
+
+**P (encoded formal theorem, research branch only):** [Phase331 run 43902694177](https://github.com/Dojo-1/tenth-discriminant/actions/runs/43902694177) passed the joint original ordinary-jet Gram arithmetic lower, analytic upper, field statement `|disc(K)| < 315^4`, and printed standard Lean logical axioms at `b763e8f`. This is neither a new theorem on `main` nor an independently reviewed mathematical proof of model fidelity. The public `main` bound is still `322^4`.
+
+**H (new analytic improvement):** [Phase332 radius module](lean/TenthDiscriminant/Phase332StrongerRadius315.lean) proposes to strengthen the unchanged `thinRadius/rho <= 8/9` comparison to `<=17/20`, upgrading the normalized upper saving from `1/10` to `27/200` on the **same** original Gram. CI and source audit are pending; no smaller bound is inferred. The 313-domain `log313` and geometry modules remain separate checks, with complete same-Gram 313 lower/upper transport unproved. The mixed binary construction remains a hypothesis supported only by bounded experiments. [Detailed record](research/phase332/README.md).
+
 ## Status correction — 14 November 2026
 
 The accepted public theorem on `main` remains the actual-field class-number-one bound $|\\mathrm{disc}(K)|<322^4=10,750,371,856$. **No research integration below changes `main`.**
