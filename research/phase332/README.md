@@ -8,6 +8,37 @@ the original ordinary-\(Z\)-jet trace Gram. It is *not* a proof of a smaller
 discriminant cutoff. Phase331's \(315^4\) source/field proof is a separate
 exact-head validation target.
 
+### Same-source analytic route — Phase332 follow-up (16 Nov 2026)
+
+**P, Phase331 exact-head CI:** the 315^4 actual-field Lean statement and
+its original ordinary-jet Gram lower/upper chain passed the full
+[source/axiom workflow](https://github.com/Dojo-1/tenth-discriminant/actions/runs/43902694177)
+at `b763e8f`. This remains a research-branch declaration, with independent
+semantic reconstruction open; the public `main` theorem is unaffected.
+
+**H, Phase332 stronger analytic comparison:** the unchanged radii
+`thinRadius=ceil(11/25 D^(3/4))` and `rho=ceil(13/25 D^(3/4))`
+suggest `thinRadius <= (17/20) rho` on the 315^4 domain. The
+original `upperB_radius_difference` proof then gives at least
+`(9/10)(3/20)=27/200` of normalized saving, instead of `1/10`.
+The candidate is isolated in
+[`Phase332StrongerRadius315.lean`](../../lean/TenthDiscriminant/Phase332StrongerRadius315.lean)
+and [separate CI](https://github.com/Dojo-1/tenth-discriminant/actions/workflows/phase332-strong-radius.yml).
+It neither changes the sampled source nor substitutes a determinant.
+Do **not** promote until the exact-head proof and allowed-axiom audit pass.
+
+**H, below 315^4:** source geometry and positivity now have separate
+313-domain statements, but the 313 logarithm/conditional scalar line has
+not passed exact-head CI at the moment of this note. Even a passing
+scalar statement remains conditional without an entire 313-domain
+same-Gram lower/upper bridge. The mixed `H(Z,W)` binary gain remains
+separately speculative, despite finite pilot tests passing.
+
+**Next falsifier:** independently rebuild the new radius lemma, check
+the unchanged 315 Hadamard upper on the exact original Gram, then
+re-derive the dimensional and analytic guards at a smaller endpoint.
+No new field cutoff and no proof of a Siegel-zero claim are asserted here.
+
 ### The original rectangle survives
 
 Let \(R,S>0\), \(0\le r<R\), \(0\le s<S\).
