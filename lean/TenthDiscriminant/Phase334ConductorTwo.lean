@@ -86,8 +86,9 @@ theorem source_mod_two_has_nonzero_nilpotent
     refine ⟨(1-(D : Int))/2, ?_⟩
     omega
   constructor
-  · change (2 : Int) ∣ (1-(D : Int)) ∧ (2 : Int) ∣ 2
-    exact ⟨hfirst, dvd_refl 2⟩
+  · simpa [pairDvd, pairMul] using
+      (show (2 : Int) ∣ 1-(D : Int) ∧ (2 : Int) ∣ 2 from
+        ⟨hfirst, dvd_refl (2 : Int)⟩)
   · norm_num [pairDvd]
 
 /-- The already-proved source-polynomial result is retained exactly.
