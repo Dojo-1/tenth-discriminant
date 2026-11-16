@@ -198,9 +198,86 @@ theorem binaryNullBidirectionalBasisMatrix_polynomial_action
           (X^(t.val/S) * C (c i)) := hconstant
     _ = _ := binaryNullBasisMatrix_polynomial_with_constant R S i (c i)
 
+
+/-- The composite explicit unimodular matrix acts on each ACTUAL
+original ordinary-Z derivative row as the derivative of the compact
+two-null polynomial. The conjugate W is a fixed coefficient.
+Every original observation pair and every j is preserved. -/
+theorem binaryNullBidirectionalBasisMatrix_integerDerivativeRow_action
+    (D R S : Nat) (i : Fin (R*S))
+    (a : Int × Int) (j : Nat) :
+    let z := pairZsqrtdEquiv D a
+    let w := star z
+    let k := binaryNullBasisExponent R S i
+    let ell := binaryNullHorizontalExponent R S i
+    (∑ h : Fin (R*S),
+       (binaryNullBidirectionalBasisMatrix R S i h) •
+         pairZsqrtdEquiv D
+           (integerDerivativeRow D (h.val/S) (h.val%S) j a)) =
+    (derivative^[j] (
+       (X^(i.val/S-4*k) * (X^4-X^2)^k) *
+       C (w^(i.val%S-4*ell)*(w^4-w^2)^ell)
+         : (Zsqrtd (-(D : Int)))[X])).eval z := by
+  dsimp
+  have hpoly := binaryNullBidirectionalBasisMatrix_polynomial_action
+    R S i (star (pairZsqrtdEquiv D a))
+  rw [← hpoly, iterate_derivative_sum, eval_finset_sum]
+  apply Finset.sum_congr rfl
+  intro h hh
+  rw [iterate_derivative_smul, eval_smul]
+  congr 1
+  exact integerDerivativeRow_zsqrtd_jet D (h.val/S) (h.val%S) j a
+
+/-- This is the TRUE source-specific simultaneous 2^(k+ell) divisor
+of one transformed row, not a product of separate determinant claims.
+It uses the existing all-orders F(Z) null-jet theorem and the true
+W=conj(Z) null-value theorem, without differentiation in W. -/
+theorem binaryNullBidirectionalBasisMatrix_actualRow_dvd
+    (D R S : Nat) (i : Fin (R*S))
+    (a : Int × Int) (j : Nat) :
+    (2 : Zsqrtd (-(D : Int)))^
+      binaryNullBidirectionalExponent R S i ∣
+    ∑ h : Fin (R*S),
+      (binaryNullBidirectionalBasisMatrix R S i h) •
+        pairZsqrtdEquiv D
+          (integerDerivativeRow D (h.val/S) (h.val%S) j a) := by
+  rw [binaryNullBidirectionalBasisMatrix_integerDerivativeRow_action]
+  let z : Zsqrtd (-(D : Int)) := pairZsqrtdEquiv D a
+  let w : Zsqrtd (-(D : Int)) := star z
+  let r := i.val/S
+  let s := i.val%S
+  let k := binaryNullBasisExponent R S i
+  let ell := binaryNullHorizontalExponent R S i
+  let P : (Zsqrtd (-(D : Int)))[X] :=
+    X^(r-4*k)*(X^4-X^2)^k
+  have hZ : (2 : Zsqrtd (-(D : Int)))^k ∣
+       (derivative^[j] P).eval z := by
+    exact binaryNull_power_allOrdinaryJets_dvd D a
+      (X^(r-4*k)) k j
+  have hW : (2 : Zsqrtd (-(D : Int))) ∣ w^4-w^2 := by
+    have h := binaryNull_value_dvd_zsqrtd D (pairConj a)
+    simpa only [w, z, pairZsqrtd_conj] using h
+  rcases hZ with ⟨u,hu⟩
+  rcases hW with ⟨v,hv⟩
+  have hconst : (derivative^[j]
+      (P * C (w^(s-4*ell)*(w^4-w^2)^ell))).eval z =
+      w^(s-4*ell)*(w^4-w^2)^ell *
+        (derivative^[j] P).eval z := by
+    rw [mul_comm, iterate_derivative_C_mul]
+    simp [eval_mul, eval_C]
+  change (2 : Zsqrtd (-(D : Int)))^(k+ell) ∣
+    (derivative^[j] (P * C
+      (w^(s-4*ell)*(w^4-w^2)^ell))).eval z
+  rw [hconst, hv, mul_pow, hu]
+  refine ⟨w^(s-4*ell)*v^ell*u, ?_⟩
+  ring
+
 end TenthDiscriminant
 
 #print axioms TenthDiscriminant.binaryNullHorizontalBasisMatrix_polynomial_action
 #print axioms TenthDiscriminant.binaryNullBasisMatrix_polynomial_with_constant
 
 #print axioms TenthDiscriminant.binaryNullBidirectionalBasisMatrix_polynomial_action
+
+#print axioms TenthDiscriminant.binaryNullBidirectionalBasisMatrix_integerDerivativeRow_action
+#print axioms TenthDiscriminant.binaryNullBidirectionalBasisMatrix_actualRow_dvd
