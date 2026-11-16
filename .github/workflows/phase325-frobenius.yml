@@ -1,0 +1,29 @@
+name: Phase325 Frobenius conjugacy and local Artin factors
+on:
+  push:
+    branches: ['research/phase309-original-source-picard-minors']
+    paths:
+      - 'research/phase325/**'
+      - '.github/workflows/phase325-frobenius.yml'
+  pull_request:
+    paths:
+      - 'research/phase325/**'
+      - '.github/workflows/phase325-frobenius.yml'
+  workflow_dispatch:
+concurrency:
+  group: phase325-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  frobenius-conjugacy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Syntax check exact arithmetic
+        run: python3 -m py_compile research/phase325/*.py
+      - name: Test Frobenius conjugacy and exact local Artin phases
+        run: python3 -m unittest discover -s research/phase325 -p 'test_*.py' -v
