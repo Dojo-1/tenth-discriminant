@@ -1,0 +1,31 @@
+name: Phase330 integral chart-descent 2-torsion obstruction
+on:
+  push:
+    branches: ['research/phase309-original-source-picard-minors']
+    paths:
+      - 'research/phase330/**'
+      - '.github/workflows/phase330-chart-descent.yml'
+  pull_request:
+    paths:
+      - 'research/phase330/**'
+      - '.github/workflows/phase330-chart-descent.yml'
+  workflow_dispatch:
+concurrency:
+  group: phase330-python-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  two-chart-obstruction:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Syntax check
+        run: python3 -m py_compile research/phase330/*.py
+      - name: Exact chart-descent, source Gram and braid negative controls
+        run: python3 -m unittest discover -s research/phase330 -p 'test_*.py' -v
+      - name: Print characteristic sweep
+        run: python3 research/phase330/chart_descent.py
