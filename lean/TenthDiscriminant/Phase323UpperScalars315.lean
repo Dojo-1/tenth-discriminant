@@ -36,7 +36,7 @@ theorem radius_pos_315 (D : Nat) (hD : (315 : Nat)^4 ≤ D) :
 /-- The original radius lies strictly below the original dimension. -/
 theorem radius_lt_R_315 (D : Nat) (hD : (315 : Nat)^4 ≤ D) :
     rho D < R D := by
-  have hR := R_ge_eighty_cubes_315 D hD
+  have hR := R_ge_seventyeight_cubes_315 D hD
   have hu := rho_upper_315 D hD
   have ht := fourthRoot_ge_315 D hD
   have hc : (0 : Real) < fourthRoot D^3 :=
