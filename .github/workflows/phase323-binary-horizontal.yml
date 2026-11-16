@@ -10,6 +10,12 @@ on:
       - lean/TenthDiscriminant/BinaryNullHorizontalTraceGram.lean
       - lean/TenthDiscriminant/Log315Certificate.lean
       - lean/TenthDiscriminant/Lower315.lean
+      - lean/TenthDiscriminant/Phase323ScalarGap315.lean
+      - lean/TenthDiscriminant/SourceGeometry315.lean
+      - lean/TenthDiscriminant/SourcePositivity315.lean
+      - lean/TenthDiscriminant/Phase323UpperScalars315.lean
+      - lean/TenthDiscriminant/Phase323ThinUpper315.lean
+      - 'research/phase323/**'
       - lean/TenthDiscriminant/Phase323OddPrimeProduct.lean
       - .github/workflows/phase323-binary-horizontal.yml
   pull_request:
@@ -20,6 +26,12 @@ on:
       - lean/TenthDiscriminant/Phase323OddPrimeProduct.lean
       - lean/TenthDiscriminant/Log315Certificate.lean
       - lean/TenthDiscriminant/Lower315.lean
+      - lean/TenthDiscriminant/Phase323ScalarGap315.lean
+      - lean/TenthDiscriminant/SourceGeometry315.lean
+      - lean/TenthDiscriminant/SourcePositivity315.lean
+      - lean/TenthDiscriminant/Phase323UpperScalars315.lean
+      - lean/TenthDiscriminant/Phase323ThinUpper315.lean
+      - 'research/phase323/**'
       - .github/workflows/phase323-binary-horizontal.yml
   workflow_dispatch:
 concurrency:
@@ -30,7 +42,7 @@ permissions:
 jobs:
   horizontal-binary-basis:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 45
     defaults:
       run:
         working-directory: lean
@@ -54,9 +66,13 @@ jobs:
             /tmp/elan-install/elan-init -y --default-toolchain none
           fi
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-      - name: Build exact horizontal basis module
+      - name: Independently check 86,400 exact source cases and negative controls
+        working-directory: .
+        run: python3 -m unittest discover -s research/phase323 -p 'test_*.py' -v
+      - name: Build exact Phase323 candidate modules
         run: |
           lake update
           lake exe cache get
           lean --version
+          set -o pipefail
           lake build TenthDiscriminant.BinaryNullBidirectionalBasisMatrix TenthDiscriminant.BinaryNullHorizontalBasisMatrix TenthDiscriminant.BinaryNullHorizontalRowAction TenthDiscriminant.Phase323FinitePrimeCertificate TenthDiscriminant.BinaryNullHorizontalTraceGram TenthDiscriminant.Log315Certificate TenthDiscriminant.Lower315 TenthDiscriminant.Phase323OddPrimeProduct
