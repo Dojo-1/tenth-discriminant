@@ -23,7 +23,10 @@ theorem log_315_rational_enclosure :
   have h := checkPositiveLogBounds_sound 5 315 8
     (57524/10000) (5753/1000) hc
   norm_num at h
-  exact h
+  rcases h with ⟨hlo, hhi⟩
+  constructor
+  · linarith
+  · exact hhi
 
 private theorem log_315_power_four :
     Real.log (((315 : Nat)^4 : Nat) : Real) =
