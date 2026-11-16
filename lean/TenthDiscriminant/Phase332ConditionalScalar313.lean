@@ -44,7 +44,7 @@ theorem conditional_strict_scalar_separation_313 (D : Nat)
     apply (div_le_iff₀ hDden).2
     nlinarith only [hDreal]
   have hRnat : 100000000 ≤ Tuned.R D := by
-    unfold Tuned.R Tuned.envelopeR
+    unfold Tuned.R envelopeR
     omega
   have hRreal : (100000000 : Real) ≤ Tuned.R D := by
     exact_mod_cast hRnat
