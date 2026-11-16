@@ -133,6 +133,19 @@ class Phase324RayRepresentations(unittest.TestCase):
             self.assertEqual(row["controls"]["non_inversion_witness"],
                              "rational principal ideal (2)")
 
+    def test_bounded_principal_nonprincipal_separation(self):
+        expected = {163: (118, 0), 187: (78, 50), 203: (55, 70)}
+        for D, (ordinary_principal, nonprincipal) in expected.items():
+            row = self.rows[D]
+            counts = row["controls"]["principal_prime_ideal_counts"]
+            self.assertEqual(counts["1"], ordinary_principal)
+            self.assertEqual(
+                row["controls"]["ordinary_nonprincipal_prime_ideal_count"],
+                nonprincipal)
+            self.assertGreaterEqual(counts["1"], counts["5"])
+            self.assertGreaterEqual(counts["5"], counts["25"])
+            self.assertGreaterEqual(counts["25"], counts["125"])
+
     def test_local_conjugate_norm_exact_all_7500_D163_units(self):
         D = 163
         units = local_unit_representatives(D)
