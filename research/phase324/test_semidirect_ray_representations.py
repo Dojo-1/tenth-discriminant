@@ -78,6 +78,27 @@ class Phase324ToyProjectors(unittest.TestCase):
         self.assertEqual([24 // len(K) for K in kernels], [1, 4, 12, 24])
         self.assertEqual([1, 4 - 1, 12 - 4, 24 - 12], [1, 3, 8, 12])
 
+    def test_fourier_change_is_not_integer_unimodular(self):
+        """An integral Fourier matrix cannot be used to invent 2-adic mass.
+
+        H diagonalizes the C2 regular representation but det(H)=-2.
+        For original Gram I, the transformed Gram is 2I. Its new factor
+        2^2 comes solely from det(H)^2, not from the original determinant.
+        """
+        H = ((1, 1), (1, -1))
+        A = ((1, 0), (0, 1))
+        mul = lambda X, Y: tuple(tuple(sum(X[r][k] * Y[k][c]
+            for k in range(2)) for c in range(2)) for r in range(2))
+        transpose = lambda X: tuple(tuple(X[c][r] for c in range(2))
+                                     for r in range(2))
+        det = lambda X: X[0][0] * X[1][1] - X[0][1] * X[1][0]
+        transformed = mul(mul(H, A), transpose(H))
+        self.assertEqual(det(H), -2)
+        self.assertEqual(transformed, ((2, 0), (0, 2)))
+        self.assertEqual(det(A), 1)
+        self.assertEqual(det(transformed), 4)
+        self.assertEqual(det(transformed), det(H) ** 2 * det(A))
+
     def test_concentration_counterexample(self):
         """No lower bound on the principal class from group theory alone."""
         n1, n2 = 4, 6
