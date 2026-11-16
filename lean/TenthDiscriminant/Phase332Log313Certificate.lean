@@ -22,7 +22,10 @@ theorem log_313_rational_enclosure :
   have h := checkPositiveLogBounds_sound 5 313 8
       (5746/1000) (5747/1000) hc
   norm_num at h
-  exact h
+  rcases h with ⟨hlo, hhi⟩
+  constructor
+  · linarith
+  · exact hhi
 
 theorem log_floor_from_313_fourth_power (D : Nat)
     (hD : (313 : Nat)^4 ≤ D) :
