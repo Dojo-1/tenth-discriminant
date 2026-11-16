@@ -47,6 +47,7 @@ jobs:
           lake exe cache get
           lake build TenthDiscriminant.Phase332Log313Certificate TenthDiscriminant.Phase332SourceGeometry313 TenthDiscriminant.Phase332SourcePositivity313 TenthDiscriminant.Phase332ConditionalScalar313
           printf '%s\n' 'import TenthDiscriminant.Phase332ConditionalScalar313' \
+            'import TenthDiscriminant.Phase332SourcePositivity313' \
             '#print axioms TenthDiscriminant.Phase332.log_floor_from_313_fourth_power' \
             '#print axioms TenthDiscriminant.Phase332.conditional_strict_scalar_separation_313' \
             '#print axioms TenthDiscriminant.FirstCertificate.Tuned.thin_original_gram_pos_313' \
