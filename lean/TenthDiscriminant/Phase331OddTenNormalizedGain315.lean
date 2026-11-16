@@ -47,7 +47,6 @@ theorem normalized_ten_prime_horizontal_gain
     unfold comparisonScale
     field_simp
     ring
-  rw [heq]
   have hreal :
       (((2*R*F : Nat) : Real)*(189/100 : Real)) =
         (945000000 : Real)*R*F/250000000 := by
