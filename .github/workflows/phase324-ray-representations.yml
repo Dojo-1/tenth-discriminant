@@ -1,0 +1,29 @@
+name: Phase324 exact ray characters and semidirect representations
+on:
+  push:
+    branches: ['research/phase309-original-source-picard-minors']
+    paths:
+      - 'research/phase324/**'
+      - '.github/workflows/phase324-ray-representations.yml'
+  pull_request:
+    paths:
+      - 'research/phase324/**'
+      - '.github/workflows/phase324-ray-representations.yml'
+  workflow_dispatch:
+concurrency:
+  group: phase324-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  ray-representations:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Syntax check of exact arithmetic representation modules
+        run: python3 -m py_compile research/phase324/*.py
+      - name: Prove projectors in toy finite groups and exhaust ray conjugation/dual character tests
+        run: python3 -m unittest discover -s research/phase324 -p 'test_*.py' -v
