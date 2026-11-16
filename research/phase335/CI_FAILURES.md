@@ -23,3 +23,13 @@ Compute the original ordinary-jet *pair* as `(2,0)` with `decide` (decidable pai
 - Lean compilation of `Phase335JetFiltration`: **PASS**; all printed Phase335 theorem dependencies at build time were among `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`.
 - Failure source: GitHub workflow generated a `printf '%s\\n' \\` command with doubled trailing shell backslashes. The shell consequently tried to run the Lean `import TenthDiscriminant.Phase335JetFiltration` line as a command (`command not found`, exit 127).
 - Correction: replace the generated-shell `printf` command with a simple quoted heredoc that writes the *same* Lean inspection statements; retain the theorem statements and all mathematical checks unchanged.
+
+## Semantic correction — the all-rows condition is not a useful module filtration
+
+After the corrected Lean file compiled at run 43955819231, a semantic audit found that `sourceJetFiltration Q D J R S q` was defined as a single proposition requiring **every canonical monomial row** to have all its jets q-divisible. For nonempty Q, J>0, R>0, S>0, and nonunit q, the row corresponding to constant 1 violates that premise. Equivalences about the full-row proposition could therefore pass Lean while saying little about a nontrivial lattice of polynomials.
+
+**Retired interpretation:** treating the successfully compiled all-row proposition as a filtration of polynomial modules. The Lean proof was valid for its limited syntax, but did not formalize the intended coefficient-level object.
+
+**Required repair:** define a coefficient vector c in `Fin(R*S) -> Int`; sum its ORIGINAL monomial ordinary-jet rows with integer coefficients; define `sourceJetFiltration` and `maximalCoordinateJetFiltration` as sets of these coefficient vectors satisfying q-divisibility at all original Q and j. Prove odd-local equality and index-two inclusions as actual set statements. Prove the zero coefficient vector belongs, ensuring the intended filtered carrier is not syntactically impossible. Keep the binary H-jet and maximal-order counterexamples intact.
+
+**Theorem status:** no promotion of the old compiled all-row statement as a meaningful source-jet filtration. Any replacement needs a fresh exact-head CI and allowed-axiom audit.
