@@ -36,7 +36,15 @@ theorem log_floor_from_313_fourth_power (D : Nat)
       (D : Real) := by exact_mod_cast hD
   have hm := Real.log_le_log hsmall hDreal
   rw [Nat.cast_pow, Real.log_pow] at hm
-  linarith [log_313_rational_enclosure.1]
+  have hlow : (5746/1000 : Real) ≤ Real.log (313 : Real) :=
+    log_313_rational_enclosure.1
+  have hscaled : (4 : Real)*(5746/1000 : Real) ≤
+      (4 : Real)*Real.log (313 : Real) :=
+    mul_le_mul_of_nonneg_left hlow (by norm_num)
+  have heq : (4 : Real)*(5746/1000 : Real) = 22984/1000 := by
+    norm_num
+  rw [heq] at hscaled
+  exact hscaled.trans hm
 
 theorem fourth_power_313_control :
     (313 : Nat)^4 = 9597924961 ∧
