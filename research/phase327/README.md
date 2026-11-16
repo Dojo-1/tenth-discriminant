@@ -142,11 +142,79 @@ prime reduction, the adjoint and spinor representations cannot be
 interchanged. This is a permanent negative control on any moving
 frame programme.
 
+## New obstruction: some original jet rectangles cannot carry the quaternion algebra
+
+The characteristic interleaving reveals a **module-rank obstruction**,
+independent of spin-sign loss.
+
+Over `Q`, the Hamilton quaternion algebra
+`H_Q=Q+Qi+Qj+Qk` is a **division algebra**: for a nonzero
+quaternion, the rational norm is the strictly positive sum of four
+squares, and the inverse is `conjugate(x)/norm(x)`. A finite-dimensional
+unital left `H_Q`-module is free over that division algebra.
+Consequently,
+
+```math
+\mathbb H_{\mathbb Q}\curvearrowright \mathbb Q^N
+\quad\Longrightarrow\quad 4\mid N.
+```
+
+This necessary condition applies to **any** unital action of
+`A_D tensor Q` on the unchanged original jet row space
+`Q^{R(D) S(D)}`, because its quaternionic coefficient subalgebra
+must also act unitaly.
+
+The proposed Phase323 dimensions use
+`R(D)=floor(D/4)`, `S(D)=floor(R(D)/25)`.
+An exact counterdomain witness above the proposed cutoff is
+
+```text
+D = 315^4 + 6 = 9,845,600,631  (squarefree, D mod 4 = 3)
+R = 2,461,400,157              (R mod 4 = 1)
+S =    98,456,006              (S mod 4 = 2)
+R*S mod 4 = 2.
+```
+
+There can therefore be **no universal unital quaternion action**
+on every original `RS`-dimensional rational jet space in the
+proposed discriminant domain. This does not invalidate the
+existing determinant argument; it rejects a particular *new*
+geometric transport route. It also does not assert this D has class
+number one.
+
+There is a sharp opposite control in **characteristic 7**.
+Two `2x2` matrices over `F7` give a faithful representation
+of the coefficient quaternion algebra:
+
+```math
+I=\begin{pmatrix}0&-1\\1&0\end{pmatrix},
+\qquad
+J=\begin{pmatrix}3&2\\2&-3\end{pmatrix}\pmod7.
+```
+
+They satisfy `I^2=J^2=-1`, `IJ=-JI` over `F7`.
+The flattened four matrices `1,I,J,IJ` have determinant
+`-45 = 4 mod 7`, so they form a basis of `M2(F7)`.
+Thus the characteristic-7 coefficient quaternion algebra is
+`M2(F7)`, not a division field, and its two-dimensional module
+cannot be lifted to an unchanged two-dimensional rational
+Hamilton-quaternion module.
+
+**Consequence for the programme:** a common cyclic integral
+*carrier* is coherent, but a same-rank quaternionic
+*representation on the original ordinary-Z jets* is not globally
+available. The viable alternatives are to keep quaternionic
+structure in an external coefficient bundle, to restrict the
+frame action to subgroups that genuinely act integrally, or to
+construct a typed stabilization/descent with an explicit Gram
+determinant comparison. None is licensed to change the original
+discriminant inequality silently.
+
 ## Falsification and evidence discipline
 
 - **M / finite exact:** pulse sweep, random orthogonal families,
   quaternion algebra laws, signed/char-2/odd reduction,
-  CRT, typed prime roles, toy one-generator group algebra.
+  CRT, typed prime roles, toy one-generator group algebra, and the squarefree jet-rank witness.
 - **P / mathematical identities:** the algebra presentation,
   CRT and group-theoretic spin relations, subject to the stated
   definitions. The code is finite verification, not an external proof.
