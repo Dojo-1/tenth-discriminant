@@ -1,0 +1,29 @@
+name: Phase328 stabilized quaternionic jet return
+on:
+  push:
+    branches: ['research/phase309-original-source-picard-minors']
+    paths:
+      - 'research/phase328/**'
+      - '.github/workflows/phase328-stabilized-return.yml'
+  pull_request:
+    paths:
+      - 'research/phase328/**'
+      - '.github/workflows/phase328-stabilized-return.yml'
+  workflow_dispatch:
+concurrency:
+  group: phase328-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  original-gram-return:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Syntax check integer source and moving-frame tests
+        run: python3 -m py_compile research/phase328/*.py
+      - name: Exact integral return, unchanged source Gram and controls
+        run: python3 -m unittest discover -s research/phase328 -p 'test_*.py' -v
