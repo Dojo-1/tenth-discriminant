@@ -8,8 +8,8 @@ The selected samples Q, source integer-pair lattice, ordinary derivative
 direction, row indexing, jet cutoff J, trace pairing and production Gram
 remain entirely unchanged.
 
-For a modulus q, define the filtration by requiring every original
-ordinary jet to be divisible by q in both integer coordinates.
+For a modulus q, define a SET of integral coefficient vectors whose
+integer-linear combinations of original jets are divisible by q.
 Odd-modulus filtrations agree in the source and maximal-order bases;
 at any even modulus 2*q, maximal-coordinate divisibility loses at most
 one factor of 2 when transported back to the original source.
@@ -26,26 +26,47 @@ namespace TenthDiscriminant.Phase335
 open TenthDiscriminant
 open TenthDiscriminant.Phase333
 open TenthDiscriminant.Phase334
+open scoped BigOperators
 set_option autoImplicit false
 
-/-- Coordinatewise modulus filtration of the original rectangular
-ordinary-Z evaluation rows, with W held fixed in differentiation. -/
+/-- The complete ordinary-Z evaluation of one integer polynomial
+with coefficients indexed by the ORIGINAL rectangular monomials.
+The two components are computed from the same old derivative rows
+and are summed in the selected integer-pair quadratic order. -/
+def originalLinearJet (D R S : Nat)
+    (coeff : Fin (R*S) → Int) (j : Nat) (a : Int × Int) :
+    Int × Int :=
+  (∑ i : Fin (R*S), coeff i *
+      (integerDerivativeRow D (i.val/S) (i.val%S) j a).1,
+   ∑ i : Fin (R*S), coeff i *
+      (integerDerivativeRow D (i.val/S) (i.val%S) j a).2)
+
+/-- The actual filtered SET of integral coefficient vectors whose
+original evaluated jets ALL lie in q*L. Unlike an all-rows proposition,
+this is a useful (and nonempty) set of polynomials for any q. -/
 def sourceJetFiltration (Q : Finset (Int × Int))
-    (D J R S : Nat) (q : Int) : Prop :=
-  ∀ i : Fin (R*S), ∀ a ∈ Q, ∀ j ∈ Finset.range J,
-    pairDvd q (integerDerivativeRow D (i.val/S) (i.val%S) j a)
+    (D J R S : Nat) (q : Int) : Set (Fin (R*S) → Int) :=
+  { coeff | ∀ a ∈ Q, ∀ j ∈ Finset.range J,
+    pairDvd q (originalLinearJet D R S coeff j a) }
 
-/-- Exactly the SAME jets and sampling points, only written in the
-maximal-order coordinate basis (1,omega). -/
+/-- The identical integer polynomial and original observations,
+only expressing its evaluated jets in the maximal-order coordinates. -/
 def maximalCoordinateJetFiltration (Q : Finset (Int × Int))
-    (D J R S : Nat) (q : Int) : Prop :=
-  ∀ i : Fin (R*S), ∀ a ∈ Q, ∀ j ∈ Finset.range J,
-    pairDvd q
-      (sourceToMaximalCoords
-        (integerDerivativeRow D (i.val/S) (i.val%S) j a))
+    (D J R S : Nat) (q : Int) : Set (Fin (R*S) → Int) :=
+  { coeff | ∀ a ∈ Q, ∀ j ∈ Finset.range J,
+    pairDvd q (sourceToMaximalCoords
+      (originalLinearJet D R S coeff j a)) }
 
-/-- A source-lattice divisible vector remains divisible after ANY
-integral change to the larger maximal-order coordinate basis. -/
+/-- The zero coefficient vector belongs to the SOURCE filtration for
+all q: our mathematical carrier is not a false all-rows condition. -/
+theorem zero_coeff_in_source_filtration
+    (Q : Finset (Int × Int)) (D J R S : Nat) (q : Int) :
+    (fun _ : Fin (R*S) => (0 : Int)) ∈
+      sourceJetFiltration Q D J R S q := by
+  intro a ha j hj
+  simp [originalLinearJet, pairDvd]
+
+/-- An integral divisible pair stays divisible in maximal coordinates. -/
 theorem source_pair_divisible_implies_maximal
     (q : Int) (a : Int × Int)
     (h : pairDvd q a) :
@@ -59,33 +80,33 @@ theorem source_pair_divisible_implies_maximal
     rw [hk]
     ring
 
-/-- Exact local agreement for all ODD moduli, including odd prime
-powers, applied simultaneously to every unchanged ordinary source jet. -/
+/-- EQUALITY OF ACTUAL COEFFICIENT FILTRATION SETS for odd q.
+This is a nonvacuous comparison of the same original polynomial
+module at all odd prime powers, not a condition on every monomial. -/
 theorem odd_jet_filtration_equivalence
     (Q : Finset (Int × Int))
     (D J R S : Nat) (q : Int) (hq : q % 2 = 1) :
-    sourceJetFiltration Q D J R S q ↔
+    sourceJetFiltration Q D J R S q =
       maximalCoordinateJetFiltration Q D J R S q := by
+  ext coeff
   constructor
-  · intro h i a ha j hj
+  · intro h a ha j hj
     exact (odd_modulus_pair_divisibility_iff q hq _).2
-      (h i a ha j hj)
-  · intro h i a ha j hj
+      (h a ha j hj)
+  · intro h a ha j hj
     exact (odd_modulus_pair_divisibility_iff q hq _).1
-      (h i a ha j hj)
+      (h a ha j hj)
 
-/-- For every modulus, stronger source-jet divisibility implies the
-same maximal-coordinate filtration: no change in jets or Q. -/
+/-- A source q-filtration is contained in its maximal-coordinate
+counterpart for the same original coefficient vector. -/
 theorem source_jet_filtration_in_maximal
-    (Q : Finset (Int × Int)) (D J R S : Nat) (q : Int)
-    (h : sourceJetFiltration Q D J R S q) :
-    maximalCoordinateJetFiltration Q D J R S q := by
-  intro i a ha j hj
-  exact source_pair_divisible_implies_maximal q _ (h i a ha j hj)
+    (Q : Finset (Int × Int)) (D J R S : Nat) (q : Int) :
+    sourceJetFiltration Q D J R S q ⊆
+      maximalCoordinateJetFiltration Q D J R S q := by
+  intro coeff h a ha j hj
+  exact source_pair_divisible_implies_maximal q _ (h a ha j hj)
 
-/-- Index-two correction, in its strongest elementary form:
-if the SAME original jet is divisible by 2*q in maximal-order
-coordinates, it is divisible by q in source coordinates. -/
+/-- Index-two correction on a single original lattice value. -/
 theorem maximal_pair_two_step_to_source
     (q : Int) (a : Int × Int)
     (h : pairDvd (2*q) (sourceToMaximalCoords a)) :
@@ -99,15 +120,16 @@ theorem maximal_pair_two_step_to_source
   · refine ⟨v, ?_⟩
     nlinarith only [hv]
 
-/-- A uniform one-power-of-two loss bound for the full ORIGINAL
-jet evaluation module, not just a single arbitrary coordinate pair. -/
+/-- At every binary level the original coefficient filtration
+loses AT MOST one power of two under transport from the maximal
+order; the original ordinary jets and Q are unchanged. -/
 theorem maximal_jet_two_step_to_source
-    (Q : Finset (Int × Int)) (D J R S : Nat) (q : Int)
-    (h : maximalCoordinateJetFiltration Q D J R S (2*q)) :
-    sourceJetFiltration Q D J R S q := by
-  intro i a ha j hj
+    (Q : Finset (Int × Int)) (D J R S : Nat) (q : Int) :
+    maximalCoordinateJetFiltration Q D J R S (2*q) ⊆
+      sourceJetFiltration Q D J R S q := by
+  intro coeff h a ha j hj
   exact maximal_pair_two_step_to_source q _
-    (h i a ha j hj)
+    (h a ha j hj)
 
 /-- The source H(Z,W) evaluated at W=conj(Z), as a genuine pair in
 the ORIGINAL quadratic order. -/
