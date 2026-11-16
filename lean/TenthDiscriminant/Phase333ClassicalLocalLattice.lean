@@ -98,10 +98,11 @@ inside an unproved field equivalence. -/
 theorem odd_modulus_dvd_of_dvd_two_mul
     (q y : Int) (hq : q % 2 = 1) (h : q ∣ 2*y) : q ∣ y := by
   obtain ⟨k,hk⟩ := h
-  have hodd : q = 2*(q/2)+1 := by omega
+  have hbezout : 2*(q/2+1)-q = 1 := by omega
   refine ⟨(q/2+1)*k-y, ?_⟩
   calc
-    y = (q/2+1)*(2*y)-q*y := by rw [hodd]; ring
+    y = (2*(q/2+1)-q)*y := by rw [hbezout]; ring
+    _ = (q/2+1)*(2*y)-q*y := by ring
     _ = (q/2+1)*(q*k)-q*y := by rw [hk]
     _ = q*((q/2+1)*k-y) := by ring
 
