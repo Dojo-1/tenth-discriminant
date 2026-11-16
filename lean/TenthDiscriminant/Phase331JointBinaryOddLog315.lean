@@ -20,7 +20,7 @@ open TenthDiscriminant
 open TenthDiscriminant.Phase323
 set_option autoImplicit false
 
-private def jointOddFactor (R S : Nat) : Nat :=
+private noncomputable def jointOddFactor (R S : Nat) : Nat :=
   ∏ p ∈ oddPrimesBelow R,
     p^(2*extendedOddValuationWeight R S p)
 
