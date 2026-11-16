@@ -56,17 +56,21 @@ jobs:
           if grep -q 'sorryAx' /tmp/phase335-build.log; then echo 'Unproved sorryAx'; exit 1; fi
       - name: Check original-jet bridge theorem axioms
         run: |
-          printf '%s\\n' \\
-            'import TenthDiscriminant.Phase335JetFiltration' \\
-            '#check TenthDiscriminant.Phase335.odd_jet_filtration_equivalence' \\
-            '#check TenthDiscriminant.Phase335.maximal_jet_two_step_to_source' \\
-            '#check TenthDiscriminant.Phase335.sourceHJet_zero_divisible_by_four' \\
-            '#check TenthDiscriminant.Phase335.originalH_first_ordinary_jet_not_four' \\
-            '#check TenthDiscriminant.Phase335.maximalH_omega_not_even' \\
-            '#print axioms TenthDiscriminant.Phase335.odd_jet_filtration_equivalence' \\
-            '#print axioms TenthDiscriminant.Phase335.maximal_jet_two_step_to_source' \\
-            '#print axioms TenthDiscriminant.Phase335.sourceHJet_zero_divisible_by_four' \\
-            '#print axioms TenthDiscriminant.Phase335.originalH_first_ordinary_jet_not_four' \\
-            '#print axioms TenthDiscriminant.Phase335.maximalH_omega_not_even' \\
-            > /tmp/phase335-axioms.lean
-          lake env lean /tmp/phase335-axioms.lean
+          cat > /tmp/phase335-axioms.lean <<'LEAN'
+          import TenthDiscriminant.Phase335JetFiltration
+          #check TenthDiscriminant.Phase335.odd_jet_filtration_equivalence
+          #check TenthDiscriminant.Phase335.maximal_jet_two_step_to_source
+          #check TenthDiscriminant.Phase335.sourceHJet_zero_divisible_by_four
+          #check TenthDiscriminant.Phase335.originalH_first_ordinary_jet_not_four
+          #check TenthDiscriminant.Phase335.originalH_second_ordinary_jet_not_four
+          #check TenthDiscriminant.Phase335.maximalH_omega_not_even
+          #print axioms TenthDiscriminant.Phase335.odd_jet_filtration_equivalence
+          #print axioms TenthDiscriminant.Phase335.maximal_jet_two_step_to_source
+          #print axioms TenthDiscriminant.Phase335.sourceHJet_zero_divisible_by_four
+          #print axioms TenthDiscriminant.Phase335.originalH_first_ordinary_jet_not_four
+          #print axioms TenthDiscriminant.Phase335.originalH_second_ordinary_jet_not_four
+          #print axioms TenthDiscriminant.Phase335.maximalH_omega_not_even
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/phase335-axioms.lean | tee /tmp/phase335-axioms.log
+          if grep -q 'sorryAx' /tmp/phase335-axioms.log; then echo 'Unproved sorryAx'; exit 1; fi
