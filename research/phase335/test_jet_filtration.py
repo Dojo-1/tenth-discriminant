@@ -104,7 +104,7 @@ class ConductorSensitiveJets(unittest.TestCase):
 
     def test_odd_local_filtrations_and_binary_loss(self):
         samples=((0,0),(1,0),(0,1),(1,1),(-1,2),(3,-1))
-        rows=((r,s) for r in range(5) for s in range(3))
+        rows=tuple((r,s) for r in range(5) for s in range(3))
         jets=[original_ordinary_jet(d,r,s,j,a)
               for d in (3,7,163)
               for r,s in rows
