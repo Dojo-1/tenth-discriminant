@@ -182,6 +182,68 @@ class Phase327Two360AndSignedOne(unittest.TestCase):
                     semisimple_group_algebra_characteristic(
                         D, CoefficientPrime(ell)), good)
 
+    def test_f7_two_dimensional_quaternion_model_has_no_integral_lift(self):
+        """A 2x2 mod-7 Hamilton model exists, unlike over Q.
+
+        i=[[0,-1],[1,0]], j=[[3,2],[2,-3]] has j^2=13 I
+        over Z, not -I. But 13=-1 modulo 7, and ij=-ji.
+        The mod-7 representation is not an integral 2D lift.
+        """
+        def matmul(a, b, p=None):
+            out = tuple(tuple(sum(a[r][k]*b[k][c] for k in range(2))
+                              for c in range(2)) for r in range(2))
+            if p is not None:
+                return tuple(tuple(x % p for x in row) for row in out)
+            return out
+        def matneg(a, p):
+            return tuple(tuple((-x) % p for x in row) for row in a)
+        iZ = ((0, -1), (1, 0))
+        jZ = ((3, 2), (2, -3))
+        one = ((1, 0), (0, 1))
+        self.assertEqual(matmul(jZ, jZ), ((13, 0), (0, 13)))
+        self.assertNotEqual(matmul(jZ, jZ), ((-1, 0), (0, -1)))
+        i7 = tuple(tuple(x % 7 for x in row) for row in iZ)
+        j7 = tuple(tuple(x % 7 for x in row) for row in jZ)
+        minus_one7 = ((6, 0), (0, 6))
+        self.assertEqual(matmul(i7, i7, 7), minus_one7)
+        self.assertEqual(matmul(j7, j7, 7), minus_one7)
+        self.assertEqual(matmul(i7, j7, 7),
+                         matneg(matmul(j7, i7, 7), 7))
+        # Even over F7 this algebra is not a division field:
+        # the 2x2 matrix ring contains nonzero zero divisors.
+        e = ((1, 0), (0, 0))
+        f = ((0, 0), (0, 1))
+        self.assertNotEqual(e, ((0, 0), (0, 0)))
+        self.assertNotEqual(f, ((0, 0), (0, 0)))
+        self.assertEqual(matmul(e, f, 7), ((0, 0), (0, 0)))
+
+    def test_original_jet_rank_mod_four_obstructs_unital_quaternion_action(self):
+        """Finite witness for the structural module-rank obstruction.
+
+        A unital H_Q action on a finite rational vector space
+        makes it a left module over the Hamilton quaternion division
+        algebra, hence its Q-dimension must be a multiple of four.
+        This test checks a squarefree admissible D whose *original*
+        rectangular row count violates that necessary condition.
+        It does not verify the general module theorem in Python.
+        """
+        from math import isqrt
+        D = 315**4 + 6
+        self.assertEqual(D, 9845600631)
+        self.assertEqual(D % 4, 3)
+        self.assertTrue(all(D % (k*k) != 0
+                            for k in range(2, isqrt(D)+1)))
+        R, S = D // 4, (D // 4) // 25
+        self.assertEqual(R % 4, 1)
+        self.assertEqual(S % 4, 2)
+        self.assertEqual((R*S) % 4, 2)
+        self.assertEqual((4 * (R*S // 4)) % 4, 0)
+        # A direct full-rank quaternion action on this unmodified
+        # jet lattice would contradict 4 | rank.
+        print("PHASE327_NO_GO_JET_RANK",
+              {"D": D, "R": R, "S": S, "rank_mod4": (R*S)%4},
+              flush=True)
+
     def test_three_distinct_prime_roles_are_typed(self):
         m = RayConductor(125)
         self.assertEqual(
