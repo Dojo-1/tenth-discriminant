@@ -101,8 +101,6 @@ def verify_chart_obstruction(n:int,m:int)->dict:
     assert mul(N,N)==scale(N,2)
     assert mul(N,D)==scale(identity(2*n),0)
     assert mul(D,N)==scale(identity(2*n),0)
-    assert mul(Delta,tuple(tuple(int(i==0) if False else int(j==i)
-                           for j in range(2*n)) for i in range(n))) if False else True
 
     P=symmetric_return_mod(n,m)
     if P is None:
@@ -113,7 +111,9 @@ def verify_chart_obstruction(n:int,m:int)->dict:
             "rank":n,"modulus":m,"two_is_unit":False,
             "symmetric_return_exists":False,
             "integral_first_return_exists":True,
-            "norm_square_zero_if_char2": mul(mod(N,m),mod(N,m),m)==mod(scale(N,2),m),
+            "norm_nilpotent_in_char2": (m==2 and
+                mul(mod(N,2),mod(N,2),2)==mod(scale(identity(2*n),0),2)
+                and mod(N,2)!=mod(scale(identity(2*n),0),2)),
             "descent_status":"two_torsion_obstruction",
         }
     Sm=mod(S,m);Dm=mod(Delta,m);Nm=mod(N,m);Pm=mod(P,m)
