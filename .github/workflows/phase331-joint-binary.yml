@@ -5,12 +5,16 @@ on:
     paths:
       - 'lean/TenthDiscriminant/BinaryNullBidirectionalRowAction.lean'
       - 'lean/TenthDiscriminant/BinaryNullBidirectionalTraceGram.lean'
+      - 'lean/TenthDiscriminant/Phase331JointBinaryOddProduct315.lean'
+      - 'lean/TenthDiscriminant/Phase331JointBinaryOddLog315.lean'
       - 'lean/TenthDiscriminant/BinaryNullHorizontalRowAction.lean'
       - '.github/workflows/phase331-joint-binary.yml'
   pull_request:
     paths:
       - 'lean/TenthDiscriminant/BinaryNullBidirectionalRowAction.lean'
       - 'lean/TenthDiscriminant/BinaryNullBidirectionalTraceGram.lean'
+      - 'lean/TenthDiscriminant/Phase331JointBinaryOddProduct315.lean'
+      - 'lean/TenthDiscriminant/Phase331JointBinaryOddLog315.lean'
       - '.github/workflows/phase331-joint-binary.yml'
   workflow_dispatch:
 concurrency:
@@ -51,5 +55,5 @@ jobs:
           lake exe cache get
           lean --version
           set -o pipefail
-          lake build TenthDiscriminant.BinaryNullBidirectionalRowAction TenthDiscriminant.BinaryNullBidirectionalTraceGram 2>&1 | tee /tmp/phase331-binary.log
+          lake build TenthDiscriminant.BinaryNullBidirectionalRowAction TenthDiscriminant.BinaryNullBidirectionalTraceGram TenthDiscriminant.Phase331JointBinaryOddProduct315 TenthDiscriminant.Phase331JointBinaryOddLog315 2>&1 | tee /tmp/phase331-binary.log
           if grep -q 'sorryAx' /tmp/phase331-binary.log; then echo 'Unproved sorryAx'; exit 1; fi
