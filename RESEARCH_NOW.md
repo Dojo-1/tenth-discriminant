@@ -1,3 +1,11 @@
+## Phase333 — classical maximal-order/source-jet transport (16 November 2026)
+
+**Mathematical object:** for odd squarefree \(D\equiv3\pmod4\), the inclusion \(L=\mathbb Z[\sqrt{-D}]\hookrightarrow\mathcal O_K\) has coordinate matrix \(T=\begin{psmallmatrix}1&-1\\0&2\end{psmallmatrix}\), determinant 2. The rank-two positive trace pairing obeys \(T^\mathsf{T}B_{\mathcal O_K}T=B_L\). This is a change of coefficients of the SAME original ordinary-Z jet evaluations, not a change in nodes, derivative order, metric, or production Gram.
+
+**P (classical algebra, formally targeted):** odd-modulus coordinate divisibility equivalence and explicit binary failure \(1+\sqrt{-D}=2\omega\in2\mathcal O_K\setminus2L\); the image of the source lattice is the even-second-coordinate submodule. **M:** exact Python tests of odd prime powers, negative binary witnesses, and sampled original source Gram all passed in [run 43945824234](https://github.com/Dojo-1/tenth-discriminant/actions/runs/43945824234). **R:** first Lean compile at that head failed due an integer-division rewrite in odd-modulus Bézout cancellation; [failure ledger](research/phase333/CI_FAILURES.md) retained. **H (Lean status):** corrected source [Phase333 module](lean/TenthDiscriminant/Phase333ClassicalLocalLattice.lean) awaits exact-head success. No smaller class-number-one discriminant cutoff follows.
+
+**Next:** complete the exact-head Lean/axiom check, then test the conductor-2 distinction between nonreduced \(L/2L\) and the maximal-order residue ring (for \(D=163\), \(\mathcal O_K/2\mathcal O_K\cong\mathbb F_4\)). A coordinate inclusion does not create a new prime-valuation certificate; a strictly stronger original-jet filtration is required. [Human-readable record](research/phase333/README.md).
+
 ## 16 November 2026 — Phase331/332 exact-head gate
 
 **P (encoded formal theorem, research branch only):** [Phase331 run 43902694177](https://github.com/Dojo-1/tenth-discriminant/actions/runs/43902694177) passed the joint original ordinary-jet Gram arithmetic lower, analytic upper, field statement `|disc(K)| < 315^4`, and printed standard Lean logical axioms at `b763e8f`. This is neither a new theorem on `main` nor an independently reviewed mathematical proof of model fidelity. The public `main` bound is still `322^4`.
