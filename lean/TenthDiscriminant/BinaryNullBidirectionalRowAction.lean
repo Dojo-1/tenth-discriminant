@@ -114,7 +114,93 @@ theorem binaryNullBasisMatrix_polynomial_with_constant
       ring
     _ = _ := by rw [hbare]
 
+
+/-- The two real integer basis changes compose to a SINGLE
+ordinary-Z polynomial on the original rectangle. Crucially, the
+horizontal coefficient depends only on the W exponent, which stays
+unchanged under the vertical row change. No division by 2 or W is used. -/
+theorem binaryNullBidirectionalBasisMatrix_polynomial_action
+    {A : Type*} [CommRing A]
+    (R S : Nat) (i : Fin (R*S)) (w : A) :
+    (∑ h : Fin (R*S),
+       (binaryNullBidirectionalBasisMatrix R S i h) •
+         (X^(h.val/S) * C w^(h.val%S) : A[X])) =
+      (X^(i.val/S-4*binaryNullBasisExponent R S i) *
+       (X^4-X^2)^binaryNullBasisExponent R S i) *
+       C (w^(i.val%S - 4*binaryNullHorizontalExponent R S i) *
+         (w^4-w^2)^binaryNullHorizontalExponent R S i) := by
+  classical
+  let c : Fin (R*S) → A := fun h =>
+    w^(h.val%S-4*binaryNullHorizontalExponent R S h) *
+      (w^4-w^2)^binaryNullHorizontalExponent R S h
+  let monom : Fin (R*S) → A[X] := fun h =>
+    X^(h.val/S) * C w^(h.val%S)
+  have hhorizontal (h : Fin (R*S)) :
+      (∑ k : Fin (R*S),
+        (binaryNullHorizontalBasisMatrix R S h k) • monom k) =
+      X^(h.val/S) * C (c h) := by
+    simpa only [monom, c] using
+      binaryNullHorizontalBasisMatrix_polynomial_action R S h w
+  have hcomposition :
+    (∑ h : Fin (R*S),
+       (binaryNullBidirectionalBasisMatrix R S i h) • monom h) =
+    (∑ t : Fin (R*S),
+       (binaryNullBasisMatrix R S i t) •
+         (∑ h : Fin (R*S),
+             (binaryNullHorizontalBasisMatrix R S t h) • monom h)) := by
+    unfold binaryNullBidirectionalBasisMatrix
+    calc
+      _ = ∑ h : Fin (R*S), ∑ t : Fin (R*S),
+          (binaryNullBasisMatrix R S i t) •
+            ((binaryNullHorizontalBasisMatrix R S t h) • monom h) := by
+          simp only [Matrix.mul_apply, Finset.sum_smul, mul_smul]
+      _ = ∑ t : Fin (R*S), ∑ h : Fin (R*S),
+          (binaryNullBasisMatrix R S i t) •
+            ((binaryNullHorizontalBasisMatrix R S t h) • monom h) := by
+          rw [Finset.sum_comm]
+      _ = _ := by simp only [Finset.smul_sum]
+  have hconstant :
+    (∑ t : Fin (R*S),
+       (binaryNullBasisMatrix R S i t) •
+         (X^(t.val/S) * C (c t))) =
+    (∑ t : Fin (R*S),
+       (binaryNullBasisMatrix R S i t) •
+         (X^(t.val/S) * C (c i))) := by
+    rw [binaryNullBasisMatrix_row_action,
+      binaryNullBasisMatrix_row_action]
+    apply Finset.sum_congr rfl
+    intro t ht
+    have hbound : t ≤ binaryNullBasisExponent R S i := by
+      have := Finset.mem_range.mp ht
+      omega
+    have hs := (binaryNullBasisTargetFin_labels R S i t hbound).2
+    have hc : c (binaryNullBasisTargetFin R S i t) = c i := by
+      simp only [c, binaryNullHorizontalExponent, hs]
+    rw [hc]
+  change (∑ h : Fin (R*S),
+      (binaryNullBidirectionalBasisMatrix R S i h) • monom h) =
+    (X^(i.val/S-4*binaryNullBasisExponent R S i) *
+       (X^4-X^2)^binaryNullBasisExponent R S i) * C (c i)
+  calc
+    _ = ∑ t : Fin (R*S),
+        (binaryNullBasisMatrix R S i t) •
+         (∑ h : Fin (R*S),
+            (binaryNullHorizontalBasisMatrix R S t h) • monom h) :=
+      hcomposition
+    _ = ∑ t : Fin (R*S),
+        (binaryNullBasisMatrix R S i t) •
+          (X^(t.val/S) * C (c t)) := by
+        apply Finset.sum_congr rfl
+        intro t ht
+        rw [hhorizontal]
+    _ = ∑ t : Fin (R*S),
+        (binaryNullBasisMatrix R S i t) •
+          (X^(t.val/S) * C (c i)) := hconstant
+    _ = _ := binaryNullBasisMatrix_polynomial_with_constant R S i (c i)
+
 end TenthDiscriminant
 
 #print axioms TenthDiscriminant.binaryNullHorizontalBasisMatrix_polynomial_action
 #print axioms TenthDiscriminant.binaryNullBasisMatrix_polynomial_with_constant
+
+#print axioms TenthDiscriminant.binaryNullBidirectionalBasisMatrix_polynomial_action
