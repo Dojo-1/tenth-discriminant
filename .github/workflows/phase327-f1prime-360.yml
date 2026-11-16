@@ -1,0 +1,29 @@
+name: Phase327 F1-prime 360x360 orthogonal anti-ambiguity
+on:
+  push:
+    branches: ['research/phase309-original-source-picard-minors']
+    paths:
+      - 'research/phase327/**'
+      - '.github/workflows/phase327-f1prime-360.yml'
+  pull_request:
+    paths:
+      - 'research/phase327/**'
+      - '.github/workflows/phase327-f1prime-360.yml'
+  workflow_dispatch:
+concurrency:
+  group: phase327-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  ortho-antifuzz:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Syntax check signed one-generator and tests
+        run: python3 -m py_compile research/phase327/*.py
+      - name: Exact 360x360 grid, prime fibers, moving frames and anti-ambiguity controls
+        run: python3 -m unittest discover -s research/phase327 -p 'test_*.py' -v
