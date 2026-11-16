@@ -1,0 +1,177 @@
+#!/usr/bin/env python3
+"""Phase329: knot invariants promoted to typed exact arithmetic invariants.
+
+A. The Hurwitz action on G^2 linearizes to an INTEGRAL permutation
+representation of the two-strand braid group on Z[G^2].
+The trace of its k-th power is the count of quandle colorings of
+the closure of sigma_1^k. This is a genuine integer-linear
+representation, but on an external |G|^2-dimensional module,
+NOT the original ordinary-Z jet lattice.
+
+B. A nonsingular integer Gram B defines the discriminant group
+A_B=Z^n/B Z^n. Its Smith invariant factors may be recovered as
+successive ratios of the gcd of all k x k minors. Its linking
+pairing takes values in Q/Z via B^-1 (assuming symmetric B).
+
+Under an integral shear M=T^T (B direct_sum I) T,
+   A_M ~= A_B,    [v] -> [T^-T v],
+preserving the rational linking form and all p-primary orders.
+These are stricter no-new-valuation controls than determinant alone.
+
+This is NOT a newly discovered knot invariant or an analytic prime
+inequality. It is a demonstrably correct lift of classical knot/braid
+and integral-form techniques into the Phase328 tapestry.
+"""
+from __future__ import annotations
+
+from fractions import Fraction
+from itertools import combinations
+from math import gcd
+from functools import reduce
+from typing import Any
+
+from braid_frobenius import FiniteGroup, hurwitz_positive
+from integral_unknot import (
+    Matrix, determinant, shear_inverse, coupled_gram, transpose,
+    matrix_mul, block_diag, identity, vp,
+)
+
+
+def determinantal_divisors(A:Matrix, max_rank:int=8)->tuple[int,...]:
+    n=len(A)
+    if n>max_rank:
+        raise ValueError("Exact minor enumeration is intentionally limited")
+    if any(len(row)!=n for row in A):
+        raise ValueError("Square integer matrix required")
+    divisors=[1]
+    for k in range(1,n+1):
+        g=0
+        for rs in combinations(range(n),k):
+            for cs in combinations(range(n),k):
+                minor=tuple(tuple(A[r][c] for c in cs) for r in rs)
+                g=gcd(g,abs(determinant(minor)))
+                if g==1:
+                    break
+            if g==1:
+                break
+        divisors.append(g)
+        if g==0:
+            divisors.extend([0]*(n-k))
+            break
+    return tuple(divisors)
+
+
+def smith_invariant_factors(A:Matrix)->tuple[int,...]:
+    """Exact Smith factors from determinantal divisors, not a basis U/V."""
+    d=determinantal_divisors(A)
+    if d[-1]==0:
+        raise ValueError("This experiment handles nonsingular forms only")
+    factors=[]
+    for a,b in zip(d,d[1:]):
+        assert a>0 and b%a==0
+        factors.append(b//a)
+    assert all(factors[i+1]%factors[i]==0
+               for i in range(len(factors)-1))
+    assert reduce(lambda x,y:x*y,factors,1)==abs(determinant(A))
+    return tuple(factors)
+
+
+def rational_inverse(A:Matrix)->tuple[tuple[Fraction,...],...]:
+    n=len(A)
+    d=determinant(A)
+    if d==0:
+        raise ValueError("No discriminant linking form for singular B")
+    def cofactor(i,j):
+        smaller=tuple(
+            tuple(A[r][c] for c in range(n) if c!=j)
+            for r in range(n) if r!=i
+        )
+        return (-1 if (i+j)%2 else 1)*determinant(smaller)
+    return tuple(tuple(Fraction(cofactor(j,i),d)
+                       for j in range(n)) for i in range(n))
+
+
+def fractional_part(q:Fraction)->Fraction:
+    return q-Fraction(q.numerator//q.denominator,1)
+
+
+def linking_pair(A:Matrix,x:tuple[int,...],
+                 y:tuple[int,...])->Fraction:
+    """x^T A^-1 y mod 1; A must be a nonsingular symmetric integer form."""
+    n=len(A)
+    if len(x)!=n or len(y)!=n:
+        raise ValueError("Vector wrong dimension")
+    if transpose(A)!=A:
+        raise ValueError("Linking matrix requires symmetric form")
+    inv=rational_inverse(A)
+    value=sum(Fraction(x[i])*inv[i][j]*y[j]
+              for i in range(n) for j in range(n))
+    return fractional_part(value)
+
+
+def multiply_vector(A:Matrix,x:tuple[int,...])->tuple[int,...]:
+    if len(A[0])!=len(x):
+        raise ValueError("Matrix-vector dimensions mismatch")
+    return tuple(sum(row[j]*x[j] for j in range(len(x))) for row in A)
+
+
+def discriminant_untie(B:Matrix,C:Matrix,
+                      x:tuple[int,...],y:tuple[int,...])->dict:
+    """Verify a linking-form isometry along T^-T.
+
+    M=T^T (B+I) T. Since T^-T sends MZ^n to (B+I)Z^n,
+    it identifies their discriminant groups and linking pairings.
+    """
+    M=coupled_gram(B,C)
+    D=block_diag(B,identity(len(C)))
+    S=transpose(shear_inverse(C))
+    X=multiply_vector(S,x)
+    Y=multiply_vector(S,y)
+    assert linking_pair(M,x,y)==linking_pair(D,X,Y)
+    return {"coupled_pair":str(linking_pair(M,x,y)),
+            "decoupled_pair":str(linking_pair(D,X,Y)),
+            "transported_x":X,"transported_y":Y}
+
+
+def braid_permutation_cycles(G:FiniteGroup)->dict:
+    """Permutation of G^2 generated by positive Hurwitz crossing."""
+    universe=tuple((x,y) for x in G.members for y in G.members)
+    index={x:i for i,x in enumerate(universe)}
+    assert len(index)==len(universe)
+    images=[index[hurwitz_positive(*t,G)] for t in universe]
+    assert sorted(images)==list(range(len(images)))
+    seen=set()
+    counts={}
+    for i in range(len(images)):
+        if i in seen: continue
+        n=0
+        j=i
+        while j not in seen:
+            seen.add(j)
+            n+=1
+            j=images[j]
+        assert j==i
+        counts[n]=counts.get(n,0)+1
+    assert sum(k*v for k,v in counts.items())==len(images)
+    # A permutation matrix is integral and unimodular. Its sign is
+    # (-1)^(N - number_of_cycles).
+    ncycles=sum(counts.values())
+    sign=1 if (len(images)-ncycles)%2==0 else -1
+    return {"group":G.name,"rank":len(images),"cycles":counts,
+            "determinant":sign,
+            "permutation_unique":True}
+
+
+def trace_braid_power(cycles:dict,k:int)->int:
+    if k<0: raise ValueError("Use nonnegative powers")
+    return sum(length*count
+               for length,count in cycles["cycles"].items()
+               if k%length==0)
+
+
+if __name__=="__main__":
+    import json
+    from braid_frobenius import S3_GROUP, TOY_H48
+    rows=[braid_permutation_cycles(g) for g in (S3_GROUP,TOY_H48)]
+    print("PHASE329_BRAID_INTEGRAL_TRACE",
+          json.dumps(rows,sort_keys=True),flush=True)
