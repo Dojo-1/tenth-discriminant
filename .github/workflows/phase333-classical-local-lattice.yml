@@ -1,0 +1,73 @@
+name: Phase333 classical local lattice bridge
+
+on:
+  push:
+    branches: ['research/phase309-original-source-picard-minors']
+    paths:
+      - 'lean/TenthDiscriminant/Phase333ClassicalLocalLattice.lean'
+      - 'research/phase333/**'
+      - '.github/workflows/phase333-classical-local-lattice.yml'
+  pull_request:
+    paths:
+      - 'lean/TenthDiscriminant/Phase333ClassicalLocalLattice.lean'
+      - 'research/phase333/**'
+      - '.github/workflows/phase333-classical-local-lattice.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phase333-classical-local-lattice-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  original-lattice-compatibility:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Test exact local divisibility and source Gram
+        working-directory: .
+        run: python3 -m unittest discover -s research/phase333 -p 'test_*.py' -v
+      - name: Compile classical-to-source local lattice lemmas
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Phase333ClassicalLocalLattice 2>&1 | tee /tmp/phase333-build.log
+          if grep -q 'sorryAx' /tmp/phase333-build.log; then echo 'Unproved sorryAx'; exit 1; fi
+      - name: Check theorem axioms at exact source head
+        run: |
+          printf '%s\n' \
+            'import TenthDiscriminant.Phase333ClassicalLocalLattice' \
+            '#check TenthDiscriminant.Phase333.sourceToMaximal_range_iff_even' \
+            '#check TenthDiscriminant.Phase333.maximalTracePair_source_eq_original' \
+            '#check TenthDiscriminant.Phase333.odd_modulus_pair_divisibility_iff' \
+            '#check TenthDiscriminant.Phase333.binary_non_equivalence_control' \
+            '#check TenthDiscriminant.Phase333.sameSourceMaximalRectangularTraceGram_det_eq_original' \
+            '#print axioms TenthDiscriminant.Phase333.odd_modulus_pair_divisibility_iff' \
+            '#print axioms TenthDiscriminant.Phase333.sameSourceMaximalRectangularTraceGram_det_eq_original' \
+            > /tmp/phase333-axioms.lean
+          lake env lean /tmp/phase333-axioms.lean
