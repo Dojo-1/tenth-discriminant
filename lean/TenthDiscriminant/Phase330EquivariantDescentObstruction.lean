@@ -1,6 +1,5 @@
 import TenthDiscriminant.Phase329IntegralKnotLift
 import Mathlib.Data.ZMod.Basic
-import Mathlib.Tactic.Omega
 import Mathlib.Tactic.Ring
 
 /-!
@@ -105,9 +104,84 @@ theorem average_seven_retract (x : ZMod 7) :
     (4 : ZMod 7) * (x + x) = (8 : ZMod 7) * x := by ring
     _ = x := by rw [h8]; ring
 
+/-!
+## Positive solution: retain the parity-glued lattice
+
+The integral map W(x,y)=(x+y,x-y) has image exactly the pairs
+(u,v) with even difference. It is injective but not surjective
+on Z x Z. It diagonalizes chart exchange as (u,v)->(u,-v),
+while retaining the index-two integral remainder.
+
+This does not descend to a single chart and does not create
+arithmetic prime mass.
+-/
+
+/-- Woven two-chart coordinates (symmetric/antisymmetric), as an
+integral map rather than a rational averaging projector. -/
+def weavePair (xy : Int × Int) : Int × Int :=
+  (xy.1 + xy.2, xy.1 - xy.2)
+
+/-- Integral weaving makes the conjugation swap a sign on the
+antisymmetric channel. -/
+theorem weave_swap (x y : Int) :
+    weavePair (y, x) =
+      ((weavePair (x, y)).1, -(weavePair (x, y)).2) := by
+  simp [weavePair]
+  omega
+
+/-- The double weave is precisely multiplication by two. -/
+theorem weave_twice (x y : Int) :
+    weavePair (weavePair (x, y)) = (2 * x, 2 * y) := by
+  simp [weavePair]
+  omega
+
+/-- Exact image: two woven channels can be deweaved integrally
+if and only if their coordinates have the same parity. -/
+theorem weave_image_iff_parity (u v : Int) :
+    (∃ xy : Int × Int, weavePair xy = (u, v)) ↔
+      (∃ t : Int, u - v = 2 * t) := by
+  constructor
+  · rintro ⟨⟨x, y⟩, h⟩
+    have hu : x + y = u := congrArg Prod.fst h
+    have hv : x - y = v := congrArg Prod.snd h
+    dsimp [weavePair] at hu hv
+    refine ⟨y, ?_⟩
+    omega
+  · rintro ⟨t, ht⟩
+    refine ⟨(u - t, t), ?_⟩
+    apply Prod.ext
+    · dsimp [weavePair]
+      omega
+    · dsimp [weavePair]
+      omega
+
+/-- Two-channel weaving is injective over the integers. -/
+theorem weave_injective : Function.Injective weavePair := by
+  intro a b h
+  rcases a with ⟨x, y⟩
+  rcases b with ⟨s, t⟩
+  have h1 : x + y = s + t := congrArg Prod.fst h
+  have h2 : x - y = s - t := congrArg Prod.snd h
+  dsimp [weavePair] at h1 h2
+  have hx : x = s := by omega
+  have hy : y = t := by omega
+  simp [hx, hy]
+
+/-- The index-two parity remainder excludes (1,0). -/
+theorem weave_not_surjective : ¬ Function.Surjective weavePair := by
+  intro h
+  obtain ⟨xy, heq⟩ := h ((1 : Int), (0 : Int))
+  have hp := (weave_image_iff_parity 1 0).mp ⟨xy, heq⟩
+  rcases hp with ⟨t, ht⟩
+  omega
+
 end TenthDiscriminant.Phase330
 
 #print axioms TenthDiscriminant.Phase330.swap_equivariant_retraction_forces_double
 #print axioms TenthDiscriminant.Phase330.no_integral_swap_equivariant_retraction
 #print axioms TenthDiscriminant.Phase330.no_integral_swap_return_on_fin
 #print axioms TenthDiscriminant.Phase330.average_seven_retract
+
+#print axioms TenthDiscriminant.Phase330.weave_image_iff_parity
+#print axioms TenthDiscriminant.Phase330.weave_injective
+#print axioms TenthDiscriminant.Phase330.weave_not_surjective
