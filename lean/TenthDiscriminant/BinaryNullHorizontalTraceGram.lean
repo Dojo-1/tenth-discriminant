@@ -1,5 +1,6 @@
 import TenthDiscriminant.BinaryNullHorizontalRowAction
 import TenthDiscriminant.BinaryNullTraceGram
+import TenthDiscriminant.Phase228CombinedBasis
 
 /-!
 # Phase323-D: horizontal binary factor on the original trace Gram
@@ -37,41 +38,11 @@ row: sum_i floor((i mod S)/4) = R * sum_{s<S} floor(s/4). -/
 theorem binaryNullHorizontalBasisExponent_sum (R S : Nat) :
     (∑ i : Fin (R*S), binaryNullHorizontalExponent R S i) =
       R * ∑ s ∈ Finset.range S, s/4 := by
-  classical
-  by_cases hS : S = 0
-  · subst S
-    simp
-  have hSpos : 0 < S := Nat.pos_of_ne_zero hS
-  have hlabel (r : Fin R) (s : Fin S) :
-      (finProdFinEquiv (r,s)).val % S = s.val := by
-    change (s.val + S*r.val) % S = s.val
-    omega
-  have he := Fintype.sum_equiv
-    (finProdFinEquiv : Fin R × Fin S ≃ Fin (R*S))
-    (fun rs => binaryNullHorizontalExponent R S (finProdFinEquiv rs))
-    (binaryNullHorizontalExponent R S) (fun _ => rfl)
-  rw [← he]
-  simp only [Fintype.sum_prod_type]
-  have hrewrite :
-      (∑ r : Fin R, ∑ s : Fin S,
-        binaryNullHorizontalExponent R S (finProdFinEquiv (r,s))) =
-      ∑ r : Fin R, ∑ _s : Fin S, s.val / 4 := by
-    apply Finset.sum_congr rfl
-    intro r hr
-    apply Finset.sum_congr rfl
-    intro s hs
-    simp only [binaryNullHorizontalExponent, hlabel]
-  rw [hrewrite]
-  simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin,
-    nsmul_eq_mul, ← Finset.mul_sum, Finset.sum_fin_eq_sum_range]
-  have hguard :
-      (∑ x ∈ Finset.range S, if h : x < S then x / 4 else 0) =
-        ∑ x ∈ Finset.range S, x / 4 := by
-    apply Finset.sum_congr rfl
-    intro x hx
-    simp [Finset.mem_range.mp hx]
-  rw [hguard]
-  simp
+  -- Phase228 has already checked the same horizontal row-major
+  -- count for an arbitrary p; specialize to p=2 without a new
+  -- enumerative argument or any assumptions on the source data.
+  simpa [binaryNullHorizontalExponent, Phase228.horizontalBasisExponent] using
+    (Phase228.sum_horizontalBasisExponent R S 2)
 
 /-- The horizontal binary-null factor divides the determinant of the
 same original integer rectangular trace Gram. -/
