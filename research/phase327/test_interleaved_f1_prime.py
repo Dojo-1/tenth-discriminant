@@ -209,6 +209,24 @@ class Phase327Two360AndSignedOne(unittest.TestCase):
         self.assertEqual(matmul(j7, j7, 7), minus_one7)
         self.assertEqual(matmul(i7, j7, 7),
                          matneg(matmul(j7, i7, 7), 7))
+        # The four 2x2 matrices 1,i,j,ij are independent modulo 7:
+        # their flattened determinant is -45, which equals 4 mod 7.
+        from itertools import permutations
+        cols = [one, i7, j7, matmul(i7, j7, 7)]
+        cols = [[M[0][0], M[0][1], M[1][0], M[1][1]]
+                for M in cols]
+        rows = [[col[r] for col in cols] for r in range(4)]
+        det = 0
+        for permutation in permutations(range(4)):
+            parity = sum(permutation[a] > permutation[b]
+                         for a in range(4) for b in range(a+1, 4))
+            term = (-1)**parity
+            for r in range(4):
+                term *= rows[r][permutation[r]]
+            det += term
+        self.assertEqual(det % 7, 4)
+        # Thus the representation identifies the F7 quaternion
+        # coefficient algebra with all of M2(F7).
         # Even over F7 this algebra is not a division field:
         # the 2x2 matrix ring contains nonzero zero divisors.
         e = ((1, 0), (0, 0))
