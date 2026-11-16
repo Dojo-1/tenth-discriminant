@@ -138,7 +138,7 @@ it must **not** be counted twice.
 
 ## Controlled evidence
 
-- **P after exact-head CI:** equality of the two odd-modulus
+- **P at exact-head 336a1c9:** [GitHub Actions 43956865171](https://github.com/Dojo-1/tenth-discriminant/actions/runs/43956865171) passed full polynomial-coefficient tests, the Lean module and standard-axiom inspection; it proves equality of the two odd-modulus
   coefficient-filtration sets; index-two inclusions; zero membership;
   exact original H value and derivative counterexamples; maximal-order
   negative control
