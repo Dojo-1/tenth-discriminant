@@ -150,13 +150,17 @@ theorem sourceHJet_zero_divisible_by_four
 convention: at z=w=1 the first H jet is 2, not divisible by 4. -/
 theorem originalH_first_ordinary_jet_not_four :
     ¬ pairDvd 4 (originalHOrdinaryJet 3 1 (1,0)) := by
-  decide
+  have heq : originalHOrdinaryJet 3 1 (1,0) = (2,0) := by decide
+  rw [heq]
+  norm_num [pairDvd]
 
 /-- The same obstruction occurs for the second ordinary derivative,
 which equals 2, not a Hasse coefficient. -/
 theorem originalH_second_ordinary_jet_not_four :
     ¬ pairDvd 4 (originalHOrdinaryJet 3 2 (1,0)) := by
-  decide
+  have heq : originalHOrdinaryJet 3 2 (1,0) = (2,0) := by decide
+  rw [heq]
+  norm_num [pairDvd]
 
 /-- Conjugation in maximal-order coordinates (1,omega) uses
 conj(omega)=1-omega. Do NOT reuse the source pairConj formula. -/
