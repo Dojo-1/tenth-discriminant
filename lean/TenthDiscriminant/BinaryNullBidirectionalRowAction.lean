@@ -43,7 +43,7 @@ theorem binaryNullHorizontalBasisMatrix_polynomial_action
   have hlabel :
       (∑ u ∈ Finset.range (ell+1),
         ((-1 : Int)^u * (ell.choose u : Int)) •
-          (X^(binaryNullHorizontalTargetFin R S i u).val/S *
+          (X^((binaryNullHorizontalTargetFin R S i u).val/S) *
            C w^((binaryNullHorizontalTargetFin R S i u).val%S)
              : A[X])) =
       (∑ u ∈ Finset.range (ell+1),
@@ -60,7 +60,7 @@ theorem binaryNullHorizontalBasisMatrix_polynomial_action
     simp only [hr,hs,r,s]
   change (∑ u ∈ Finset.range (ell+1),
     ((-1 : Int)^u * (ell.choose u : Int)) •
-      (X^(binaryNullHorizontalTargetFin R S i u).val/S *
+      (X^((binaryNullHorizontalTargetFin R S i u).val/S) *
        C w^((binaryNullHorizontalTargetFin R S i u).val%S) : A[X])) =
     X^r * C (w^(s-4*ell)*(w^4-w^2)^ell)
   rw [hlabel]
