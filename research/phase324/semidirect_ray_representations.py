@@ -72,7 +72,7 @@ def conjugation_coordinates(D: int, model: dict, ideals: tuple) -> dict:
 
 
 def verify_conjugation(D: int, model: dict, ideals: tuple,
-                       sigma: dict) -> dict:
+                       sigma: dict, kernels: dict) -> dict:
     """Exhaustive finite tests of automorphism and true conjugate ideals."""
     n1, n2 = model["n1"], model["n2"]
     coordinates = model["coordinate_map"]
@@ -119,8 +119,29 @@ def verify_conjugation(D: int, model: dict, ideals: tuple,
     witness = coordinates[rational_two]
     assert sigma[witness] == witness
     assert witness != coord_neg(witness, n1, n2)
+
+    # Exact principal/nonprincipal separation on the original bounded
+    # prime-ideal catalog. These are counts, not estimates for log-prime
+    # sums and not a prime-distribution theorem.
+    principal_counts = {
+        modulus: sum(
+            coordinates[tuple(rec["ray_class"])] in
+            kernels[modulus]["coordinate_elements"]
+            for rec in catalog["records"]
+        )
+        for modulus in (1, 5, 25, 125)
+    }
+    assert (len(catalog["records"]) >= principal_counts[1]
+            >= principal_counts[5] >= principal_counts[25]
+            >= principal_counts[125] >= 0)
+    assert (len(catalog["records"]) - principal_counts[1]
+            == catalog["nonprincipal_prime_ideal_records"])
     return {"principal_checks": principal_checks,
             "prime_ideal_checks": ideal_checks,
+            "principal_prime_ideal_counts": {
+                str(k): v for k, v in principal_counts.items()},
+            "ordinary_nonprincipal_prime_ideal_count":
+                len(catalog["records"]) - principal_counts[1],
             "non_inversion_witness": "rational principal ideal (2)"}
 
 
@@ -161,7 +182,7 @@ def run_field(D: int) -> dict:
     kernels, reduction_orders = conductor_kernels(D, model)
     conductors, expected_count = character_conductors(D, model, kernels)
     sigma = conjugation_coordinates(D, model, ideals)
-    controls = verify_conjugation(D, model, ideals, sigma)
+    controls = verify_conjugation(D, model, ideals, sigma, kernels)
     n1, n2 = model["n1"], model["n2"]
     N = n1 * n2
     sigma_gen = (sigma[(1, 0)], sigma[(0, 1)])
