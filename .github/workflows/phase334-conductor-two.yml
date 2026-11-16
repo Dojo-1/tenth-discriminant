@@ -1,0 +1,70 @@
+name: Phase334 conductor-two residue-ring controls
+on:
+  push:
+    branches: ['research/phase309-original-source-picard-minors']
+    paths:
+      - 'lean/TenthDiscriminant/Phase334ConductorTwo.lean'
+      - 'research/phase334/**'
+      - '.github/workflows/phase334-conductor-two.yml'
+  pull_request:
+    paths:
+      - 'lean/TenthDiscriminant/Phase334ConductorTwo.lean'
+      - 'research/phase334/**'
+      - '.github/workflows/phase334-conductor-two.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase334-conductor-two-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  exact-residue-rings:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Exact mod-two residue-ring controls
+        working-directory: .
+        run: python3 -m unittest discover -s research/phase334 -p 'test_*.py' -v
+      - name: Build explicit conductor-two formal lemmas
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Phase334ConductorTwo 2>&1 | tee /tmp/phase334-build.log
+          if grep -q 'sorryAx' /tmp/phase334-build.log; then echo 'Unproved sorryAx'; exit 1; fi
+      - name: Check exact theorem axioms
+        run: |
+          printf '%s\n' \
+            'import TenthDiscriminant.Phase334ConductorTwo' \
+            '#check TenthDiscriminant.Phase334.sourceToMaximal_mul' \
+            '#check TenthDiscriminant.Phase334.source_mod_two_has_nonzero_nilpotent' \
+            '#check TenthDiscriminant.Phase334.original_source_binary_F_even' \
+            '#check TenthDiscriminant.Phase334.maximal_binary_F_163_not_even' \
+            '#check TenthDiscriminant.Phase334.maximal_binary_F_7_even' \
+            '#print axioms TenthDiscriminant.Phase334.sourceToMaximal_mul' \
+            '#print axioms TenthDiscriminant.Phase334.original_source_binary_F_even' \
+            '#print axioms TenthDiscriminant.Phase334.maximal_binary_F_163_not_even' \
+            > /tmp/phase334-axioms.lean
+          lake env lean /tmp/phase334-axioms.lean
