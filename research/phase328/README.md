@@ -246,3 +246,19 @@ auxiliary quaternionic copies.
 The tapestry is therefore **constructed locally**, with a
 genuine closed return square. Its universal gluing and its
 discriminant-strengthening implications remain open.
+
+## Phase329: knot-resolution lift (verified separate fiber)
+
+The next research step, [Phase329](../phase329/README.md), constructs
+an explicit nonzero integral coupling
+`M_C=T_C^T(B_D direct_sum I)T_C` with `det(T_C)=1`, together with
+source embedding/retraction, Smith invariant factors and a
+preserved rational discriminant linking pairing. It also builds a
+Hurwitz braid action on finite conjugacy tuples, linearizing into a
+unimodular permutation representation whose trace counts closed-braid
+colorings. Lean verifies the generic integral Gram/determinant
+return and quandle laws; Python checks bounded original-source cases.
+
+This is a **new verified presentation-equivalence layer**, not a
+proof that topological knots become unknotted, not a ray action on
+the unchanged ordinary-Z jets, and not an improved discriminant bound.
