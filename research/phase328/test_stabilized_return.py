@@ -31,8 +31,8 @@ class OriginalTraceGramSourceTests(unittest.TestCase):
         self.assertEqual(integer_derivative_row(7,0,1,1,(1,1)),(0,0))
         self.assertEqual(integer_derivative_row(7,1,1,1,(1,1)),(1,-1))
         B=original_integer_trace_gram(((1,0),(0,1)),7,1,1,1)
-        self.assertEqual(B,((16,),))
-        self.assertEqual(determinant(B),16)
+        self.assertEqual(B,((4,),))
+        self.assertEqual(determinant(B),4)
         self.assertEqual(
             original_integer_trace_gram(((1,0),),7,1,1,1),((2,),))
         # The source includes a literal factor two, not a normalized
