@@ -51,5 +51,5 @@ jobs:
           lake exe cache get
           lean --version
           set -o pipefail
-          lake build TenthDiscriminant.BinaryNullBidirectionalRowAction 2>&1 | tee /tmp/phase331-binary.log
+          lake build TenthDiscriminant.BinaryNullBidirectionalRowAction TenthDiscriminant.BinaryNullBidirectionalTraceGram 2>&1 | tee /tmp/phase331-binary.log
           if grep -q 'sorryAx' /tmp/phase331-binary.log; then echo 'Unproved sorryAx'; exit 1; fi
