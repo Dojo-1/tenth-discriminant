@@ -75,4 +75,5 @@ jobs:
           lake exe cache get
           lean --version
           set -o pipefail
-          lake build TenthDiscriminant.BinaryNullBidirectionalBasisMatrix TenthDiscriminant.BinaryNullHorizontalBasisMatrix TenthDiscriminant.BinaryNullHorizontalRowAction TenthDiscriminant.Phase323FinitePrimeCertificate TenthDiscriminant.BinaryNullHorizontalTraceGram TenthDiscriminant.Log315Certificate TenthDiscriminant.Lower315 TenthDiscriminant.Phase323OddPrimeProduct
+          lake build TenthDiscriminant.BinaryNullBidirectionalBasisMatrix TenthDiscriminant.BinaryNullHorizontalBasisMatrix TenthDiscriminant.BinaryNullHorizontalRowAction TenthDiscriminant.Phase323FinitePrimeCertificate TenthDiscriminant.BinaryNullHorizontalTraceGram TenthDiscriminant.Log315Certificate TenthDiscriminant.Lower315 TenthDiscriminant.Phase323OddPrimeProduct TenthDiscriminant.Phase323ScalarGap315 TenthDiscriminant.SourceGeometry315 TenthDiscriminant.SourcePositivity315 TenthDiscriminant.Phase323UpperScalars315 TenthDiscriminant.Phase323ThinUpper315 2>&1 | tee /tmp/phase323-build.log
+          if grep -q 'sorryAx' /tmp/phase323-build.log; then echo 'Unproved sorryAx in Phase323 build'; exit 1; fi
