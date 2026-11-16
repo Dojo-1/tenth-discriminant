@@ -12,6 +12,8 @@ on:
       - 'lean/TenthDiscriminant/Phase331OddTenNormalizedGain315.lean'
       - 'lean/TenthDiscriminant/Phase331OddMassSplit315.lean'
       - 'lean/TenthDiscriminant/Phase331SameGramLower315.lean'
+      - 'lean/TenthDiscriminant/Phase331ScalarOverlap315.lean'
+      - 'lean/TenthDiscriminant/Phase331ActualField315.lean'
       - 'research/phase331/**'
       - 'lean/TenthDiscriminant/BinaryNullHorizontalRowAction.lean'
       - '.github/workflows/phase331-joint-binary.yml'
@@ -26,6 +28,8 @@ on:
       - 'lean/TenthDiscriminant/Phase331OddTenNormalizedGain315.lean'
       - 'lean/TenthDiscriminant/Phase331OddMassSplit315.lean'
       - 'lean/TenthDiscriminant/Phase331SameGramLower315.lean'
+      - 'lean/TenthDiscriminant/Phase331ScalarOverlap315.lean'
+      - 'lean/TenthDiscriminant/Phase331ActualField315.lean'
       - 'research/phase331/**'
       - '.github/workflows/phase331-joint-binary.yml'
   workflow_dispatch:
@@ -70,5 +74,12 @@ jobs:
           lake exe cache get
           lean --version
           set -o pipefail
-          lake build TenthDiscriminant.BinaryNullBidirectionalRowAction TenthDiscriminant.BinaryNullBidirectionalTraceGram TenthDiscriminant.Phase331JointBinaryOddProduct315 TenthDiscriminant.Phase331JointBinaryOddLog315 TenthDiscriminant.Phase331BinaryNormalizedGain315 TenthDiscriminant.Phase331TenPrimeFloor315 TenthDiscriminant.Phase331OddTenNormalizedGain315 TenthDiscriminant.Phase331OddMassSplit315 TenthDiscriminant.Phase331SameGramLower315 2>&1 | tee /tmp/phase331-binary.log
+          lake build TenthDiscriminant.BinaryNullBidirectionalRowAction TenthDiscriminant.BinaryNullBidirectionalTraceGram TenthDiscriminant.Phase331JointBinaryOddProduct315 TenthDiscriminant.Phase331JointBinaryOddLog315 TenthDiscriminant.Phase331BinaryNormalizedGain315 TenthDiscriminant.Phase331TenPrimeFloor315 TenthDiscriminant.Phase331OddTenNormalizedGain315 TenthDiscriminant.Phase331OddMassSplit315 TenthDiscriminant.Phase331SameGramLower315 TenthDiscriminant.Phase331ScalarOverlap315 TenthDiscriminant.Phase331ActualField315 2>&1 | tee /tmp/phase331-binary.log
           if grep -q 'sorryAx' /tmp/phase331-binary.log; then echo 'Unproved sorryAx'; exit 1; fi
+      - name: Check exact final field theorem and permitted axioms
+        run: |
+          printf '%s\n' 'import TenthDiscriminant.Phase331ActualField315' \
+            '#check TenthDiscriminant.Threshold315.totallyComplex_degree_two_classNumber_one_discriminant_bound_315' \
+            '#print axioms TenthDiscriminant.Threshold315.totallyComplex_degree_two_classNumber_one_discriminant_bound_315' \
+            > /tmp/phase331-field-check.lean
+          lake env lean /tmp/phase331-field-check.lean
