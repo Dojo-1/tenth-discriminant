@@ -105,6 +105,26 @@ class TapestryEvidenceGateTests(unittest.TestCase):
         self.assertTrue(eligible_to_claim_315(
             {name:True for name in REQUIRED_315}))
 
+    def test_parity_glued_weave_is_typed_not_an_unproved_ray_action(self):
+        nodes={node.name:node.status for node in NODES}
+        edges={(e.source,e.target):e.kind for e in EDGES}
+        self.assertEqual(nodes["parity_glued_two_chart_weave"],"finite")
+        self.assertEqual(nodes["q8_integral_woven_intertwiner"],"finite")
+        self.assertEqual(nodes["symmetric_integral_one_chart_descent"],"rejected")
+        self.assertEqual(
+            edges[("stabilized_quaternionic_jet","parity_glued_two_chart_weave")],"exact")
+        self.assertEqual(
+            edges[("parity_glued_two_chart_weave","q8_integral_woven_intertwiner")],"exact")
+        self.assertEqual(
+            edges[("parity_glued_two_chart_weave","symmetric_integral_one_chart_descent")],"blocked")
+        self.assertEqual(
+            edges[("coefficient_characteristic_2","parity_glued_two_chart_weave")],"forgetful")
+        self.assertEqual(nodes["integral_ray_action_original_jet"],"open")
+        self.assertFalse(eligible_to_claim_315({
+            "q8_integral_woven_intertwiner":True,
+            "parity_glued_two_chart_weave":True,
+        }))
+
     def test_no_fake_prime_field_or_invented_jet_equivariance(self):
         edge_classes={(e.source,e.target):e.kind for e in EDGES}
         self.assertEqual(edge_classes[
