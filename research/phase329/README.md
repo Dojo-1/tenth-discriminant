@@ -4,6 +4,8 @@
 > tells us exactly which transformations were legitimate.
 
 **Scope.** Continue Phase328 without Work and without altering `main`.
+The initial 25-test Python exact harness passed on commit `50304fa`
+(run `43870083533`).
 Lift two well-developed mathematical calculi into the existing tapestry:
 
 1. **Kirby/handle-slide analogue:** reversible *integral congruences*
