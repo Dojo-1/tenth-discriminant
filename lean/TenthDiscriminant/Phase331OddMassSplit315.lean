@@ -19,6 +19,7 @@ open scoped BigOperators
 open TenthDiscriminant
 open TenthDiscriminant.Phase323
 open TenthDiscriminant.Phase259
+open TenthDiscriminant.Phase260
 open TenthDiscriminant.Phase261
 set_option autoImplicit false
 noncomputable section
@@ -150,7 +151,7 @@ theorem ten_prime_real_mass_lower (R S : Nat) :
       ((2*R*(∑ p ∈ oddHorizontalPrimes,
         floorMass (p*p) S) : Nat) : Real)*(189/100 : Real) := by
     push_cast
-    rw [Finset.sum_mul]
+    rw [← Finset.sum_mul]
     rw [← Finset.mul_sum]
     ring
   rw [hfactor] at hsum
