@@ -34,7 +34,7 @@ through the norm `g -> g*sigma(g)`.
 
 ## Exact finite group checks
 
-| D | |G| | |H| | |G^sigma| | Size of one inert coset class | Classes per given Frobenius square |
+| D | Order of G | Order of H | Conjugation-fixed elements of G | Inert conjugacy-class size | Classes sharing a Frobenius square |
 |---|---:|---:|---:|---:|---:|
 | 163 | 7500 | 15000 | 100 | 75 | 2 |
 | 187 | 15000 | 30000 | 200 | 75 | 4 |
@@ -106,7 +106,7 @@ coordinate representative `g` in Phase322's selected generators.
 - D163: inert p=2 and 127 have the same label `(2)`, hence the
   same rational Frobenius conjugacy class.
 - D187: inert p=2 and 2377 have the same rational residue class 2
-  modulo 125, hence the same `[(p)]) square, but their real genus
+  modulo 125, hence the same squared Frobenius ray class, but their real genus
   signs `(17/p)` are +1 and -1; they lie in distinct conjugacy classes.
 - D203: inert p=2 and 3877 similarly have residue 2 modulo 125,
   but genus signs `(29/p)` are -1 and +1; the classes differ.
