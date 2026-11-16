@@ -94,7 +94,70 @@ two-dimensional irreducibles. The values for D187/D203 must be
 measured from actual cocycle coordinates rather than inferred
 by multiplying D163's fixed count by the ordinary class number.
 
-## 4. Exact controls and limitations
+## 4. Verified finite results and the next exact inequality
+
+The first complete exact-head run, `43848804352` (commit
+`f0a20318f22e7ec235dcdd021e80bcfedefa3659`), passed 9/9 tests.
+These are **exact finite calculations**, not independent field theorems.
+
+| D | Fixed sigma characters | 1D irreps | 2D irreps |
+|---|---:|---:|---:|
+| 163 | 100 | 200 | 3700 |
+| 187 | 200 | 400 | 7400 |
+| 203 | 200 | 400 | 14900 |
+
+Per exact conductor 1,5,25,125 the *fixed-character* counts are:
+- D163: (1,3,16,80).
+- D187: (2,6,32,160).
+- D203: (2,6,32,160).
+
+The actual bounded catalog of prime ideals over rational p <= 441 has
+the following numbers in the **principal ray class after reduction**:
+
+| D | Ordinary class | Mod 5 | Mod 25 | Mod 125 |
+|---|---:|---:|---:|---:|
+| 163 | 118 | 25 | 4 | 0 |
+| 187 | 78 | 19 | 6 | 0 |
+| 203 | 55 | 17 | 2 | 0 |
+
+Prime ideals above 5 are excluded. In particular, *none* of these
+bounded catalogs supplies a ray-principal prime at modulus 125.
+This is a negative control against extracting existence or positive
+density from conductor filtration alone.
+
+Here is the exact inequality that representation theory **does**
+deliver. For a finite nonnegative prime-ideal weight function, let
+`A_c(x)` denote the total weights in class `c in G_k`,
+`W(x)=sum_c A_c(x)`, and
+`S_chi(x)=sum_c A_c(x) chi(c)`. Character orthogonality and
+Cauchy--Schwarz give
+
+```math
+A_e(x) \ge
+\frac{W(x)}{|G_k|}
+-\frac{\sqrt{|G_k|-1}}{|G_k|}
+ \left(\sum_{\chi\neq1}|S_\chi(x)|^2\right)^{1/2}.
+```
+
+The second moment is exactly
+`|G_k| sum_c |A_c(x)|^2 - W(x)^2` by Parseval.
+To force a **positive** lower bound using this estimate, one needs a
+*new*, genuinely arithmetic control
+`sum_(chi != 1) |S_chi|^2 < W(x)^2/(|G_k|-1)`.
+This is **not** established by the finite character tables or by
+orthogonality. It is a falsifiable analytic target, not an assumption
+silently added to the original Gram bound.
+
+The integer-lattice danger is concrete. For `G=C2`, the integral
+Fourier matrix
+`H=[[1,1],[1,-1]]` has `det(H)=-2`, not `+/-1`.
+If the original Gram is `I_2`, the transformed Gram is `2I_2`
+with determinant `4`, although the original determinant is `1`.
+The apparent additional factor `2^2` belongs to `det(H)^2`,
+not to the original Gram. A negative-control test now records this
+failure mode explicitly.
+
+## 5. Exact controls and limitations
 
 The computational test:
 - checks the actual cocycle-based norm action on every group element;
