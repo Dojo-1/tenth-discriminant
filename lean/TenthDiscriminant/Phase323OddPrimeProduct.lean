@@ -14,7 +14,8 @@ Its proposed horizontal strengthening needs a separate combined
 unimodular original-jet proof; do not multiply two 2-adic divisors.
 -/
 namespace TenthDiscriminant.Phase323
-open scoped BigOperators
+open scoped BigOperators Classical
+open TenthDiscriminant.Phase259
 open TenthDiscriminant.Phase260
 set_option autoImplicit false
 
