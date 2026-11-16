@@ -1,3 +1,11 @@
+## Phase335 — original-jet local filtration (16 November 2026)
+
+**H pending exact-head verification:** The [Phase335 formal module](lean/TenthDiscriminant/Phase335JetFiltration.lean) defines coordinatewise q-divisibility of every *original* ordinary-Z rectangular jet at every sample in the unchanged Q. It asserts filtration equivalence for odd q between source and maximal-order coordinates, and an index-two filtration shift for any 2q: source-divisibility at 2q implies maximal-divisibility at 2q, which implies source-divisibility at q. These are statements about the same evaluation map, not a new Gram determinant.
+
+**Sharp obstruction:** For H(Z,W)=Z^2-W^2 with W held constant during differentiation, H(z,conj(z))=4xy sqrt(-D) has a source factor 4. Yet its first ordinary derivative is 2z, so at z=1 the derivative has only one factor of 2. At the maximal-order generator omega, H(omega,conj(omega))=2omega-1, which is not divisible by 2 there. [Finite tests](research/phase335/test_jet_filtration.py) exercise these negatives and odd/even local transformations. [CI run](https://github.com/Dojo-1/tenth-discriminant/actions/runs/43955279131) pending, at source head 7f58c62c7bb89b83f51249d24f990be9cab6d5c3.
+
+**Evidence gates:** Promote the new theorems only after Lean build, explicit negative controls, and axiom inspection pass; preserve every failed run. Neither the order-zero gain nor an index-two coordinate transformation adds an unconditional 2-adic determinant exponent. The verified research-branch field bound remains 315^4; public main remains 322^4; the 313^4 scalar result is conditional.
+
 ## Phase333 — classical maximal-order/source-jet transport (16 November 2026)
 
 **Mathematical object:** for odd squarefree \(D\equiv3\pmod4\), the inclusion \(L=\mathbb Z[\sqrt{-D}]\hookrightarrow\mathcal O_K\) has coordinate matrix \(T=\begin{psmallmatrix}1&-1\\0&2\end{psmallmatrix}\), determinant 2. The rank-two positive trace pairing obeys \(T^\mathsf{T}B_{\mathcal O_K}T=B_L\). This is a change of coefficients of the SAME original ordinary-Z jet evaluations, not a change in nodes, derivative order, metric, or production Gram.
