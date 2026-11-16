@@ -97,7 +97,7 @@ private theorem binaryNullHorizontal_binomial_identity
   rw [eval_finset_sum] at heval
   simp only [eval_mul, eval_sub, eval_pow, eval_X, eval_C, eval_intCast,
     eval_smul, zsmul_eq_mul] at heval
-  simpa only [pow_zero, one_mul] using heval.symm
+  simpa [eval_intCast, mul_one, one_mul, mul_assoc] using heval.symm
 
 /-- The horizontal matrix acting on the actual integer derivative rows
 is exactly multiplication by the conjugate-coordinate null factor. -/
@@ -157,10 +157,7 @@ theorem binaryNullHorizontalBasisMatrix_integerDerivativeRow_action
         rw [Finset.sum_mul]
         apply Finset.sum_congr rfl
         intro u hu
-        simp_rw [zsmul_eq_mul]
-        rw [Finset.sum_mul]
-        apply Finset.sum_congr rfl
-        intro u hu
+        simp only [zsmul_eq_mul]
         ring
     _ =
       (w^(i.val%S-4*binaryNullHorizontalExponent R S i) *
