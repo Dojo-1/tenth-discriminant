@@ -172,6 +172,7 @@ theorem jointOddMass_ge_old_plus_three_five_and_ten
   rw [jointOddMass_eq_enhanced_plus_ten R S hR]
   linarith
 
+end
 end TenthDiscriminant.Phase331
 
 #print axioms TenthDiscriminant.Phase331.jointOddMass_ge_old_plus_three_five_and_ten
