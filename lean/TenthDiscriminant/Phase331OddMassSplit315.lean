@@ -153,7 +153,6 @@ theorem ten_prime_real_mass_lower (R S : Nat) :
     push_cast
     rw [← Finset.sum_mul]
     rw [← Finset.mul_sum]
-    ring
   rw [hfactor] at hsum
   exact hsum
 
