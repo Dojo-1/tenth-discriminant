@@ -187,9 +187,18 @@ not swept into a scalar confidence value.
   class-square centrality, tensor commuting, source return and
   prevents finite tests from upgrading the field-uniform bound.
 - `lean/TenthDiscriminant/Phase328StabilizedSourceReturn.lean`:
-  entrywise original-Gram return and identity auxiliary blocks.
-  **The full moving-frame determinant statement is not yet Lean
-  formalized**, even though its algebraic derivation is elementary.
+  Lean-verified exact entrywise/full-matrix original-Gram return
+  and identity auxiliary blocks.
+- `lean/TenthDiscriminant/Phase328MovingFrameCovariance.lean`:
+  Lean-verified **generic** matrix theorems for a covariant
+  retraction, metric recovery and determinant preservation under
+  explicitly assumed orthogonality, source compatibility and
+  determinant-one hypotheses. The check reports no sorryAx.
+  The concrete all-Q8 matrix instances, plus
+  `det(B + I + I + I)=det B`, are finite-tested and have
+  elementary proofs; the single composed **concrete** Lean
+  theorem from all these hypotheses to the original determinant
+  remains a separate formalization target.
 
 The proposed `315^4` bound still requires, independently:
 
