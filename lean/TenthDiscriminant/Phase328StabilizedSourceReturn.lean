@@ -68,7 +68,19 @@ theorem stabilized_original_integer_traceGram_return
       TenthDiscriminant.integerRectangularTraceGram Q D J R S i j := by
   exact stabilized_source_return _ i j
 
+/-- The exact original rectangular source Gram is recovered as
+a full matrix from its scalar block, with all source rows preserved. -/
+theorem stabilized_original_integer_traceGram_matrix
+    (Q : Finset (Int × Int)) (D J R S : Nat) :
+    (fun i j : Fin (R*S) =>
+      stabilizedEntry (TenthDiscriminant.integerRectangularTraceGram Q D J R S)
+        ((0 : Fin 4), i) ((0 : Fin 4), j)) =
+      TenthDiscriminant.integerRectangularTraceGram Q D J R S := by
+  exact stabilized_source_matrix _
+
 end TenthDiscriminant.Phase328
 
 #print axioms TenthDiscriminant.Phase328.stabilized_source_matrix
 #print axioms TenthDiscriminant.Phase328.stabilized_original_integer_traceGram_return
+
+#print axioms TenthDiscriminant.Phase328.stabilized_original_integer_traceGram_matrix
