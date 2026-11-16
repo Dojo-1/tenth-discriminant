@@ -40,6 +40,20 @@ def original_ordinary_jet(d,r,s,j,a):
     return (f*z[0],f*z[1])
 
 
+def integer_polynomial_jet(d, terms, j, a):
+    """Original finite linear combination of Z^r W^s ordinary jets.
+
+    terms holds triples (r,s,integer coefficient); W is held fixed
+    throughout the derivative. No change of samples or metric.
+    """
+    re=im=0
+    for r,s,c in terms:
+        v=original_ordinary_jet(d,r,s,j,a)
+        re+=c*v[0]
+        im+=c*v[1]
+    return re,im
+
+
 def source_h_jet(d,j,a):
     return pair_sub(original_ordinary_jet(d,2,0,j,a),
                     original_ordinary_jet(d,0,2,j,a))
@@ -101,6 +115,54 @@ class ConductorSensitiveJets(unittest.TestCase):
         for d in (3,7,11,19,43,163,203):
             self.assertEqual(maximal_h_omega(d),(-1,2))
             self.assertFalse(divisible(2,maximal_h_omega(d)))
+
+    def test_nonzero_polynomial_H_in_source_two_filtration_not_four(self):
+        # Coefficient vector (Z^2 - W^2) is NOT termwise even.
+        # Its actual original evaluated jets nevertheless lie in 2L.
+        h=((2,0,1),(0,2,-1))
+        samples=((0,0),(1,0),(0,1),(1,1),(-1,2),(3,-1))
+        for d in (3,7,163):
+            for a in samples:
+                for j in range(3):
+                    v=integer_polynomial_jet(d,h,j,a)
+                    self.assertEqual(v,source_h_jet(d,j,a))
+                    self.assertTrue(divisible(2,v))
+        self.assertFalse(divisible(
+            4,integer_polynomial_jet(3,h,1,(1,0))))
+
+    def test_coefficient_level_odd_and_binary_filters(self):
+        # Test integer POLYNOMIALS, not the vacuous statement that
+        # all original monomial rows are divisible by an odd modulus.
+        coeffs=(
+            ((2,0,1),(0,2,-1)),
+            ((3,1,2),(1,2,-3),(0,0,1)),
+            ((4,0,-2),(2,1,5),(0,2,-7),(1,0,3)),
+            ((0,0,6),),
+        )
+        samples=((0,0),(1,0),(0,1),(1,1),(-1,2),(3,-1))
+        for d in (3,7,163):
+            for terms in coeffs:
+                for j in range(4):
+                    for a in samples:
+                        v=integer_polynomial_jet(d,terms,j,a)
+                        for q in (1,3,5,9,25,27,49,125):
+                            self.assertEqual(
+                                divisible(q,v),divisible(q,to_maximal(v)))
+                        for k in range(1,6):
+                            q=2**k
+                            if divisible(2*q,to_maximal(v)):
+                                self.assertTrue(divisible(q,v))
+                            if divisible(2*q,v):
+                                self.assertTrue(divisible(2*q,to_maximal(v)))
+        for k in range(0,6):
+            q=2**k
+            # Polynomial P(Z,W)=Z at the singleton original source
+            # sample (q,q), with J=1: this is a genuine coefficient-
+            # vector filtration counterexample at level 2*q.
+            v=integer_polynomial_jet(3,((1,0,1),),0,(q,q))
+            self.assertEqual(v,(q,q))
+            self.assertTrue(divisible(2*q,to_maximal(v)))
+            self.assertFalse(divisible(2*q,v))
 
     def test_odd_local_filtrations_and_binary_loss(self):
         samples=((0,0),(1,0),(0,1),(1,1),(-1,2),(3,-1))
