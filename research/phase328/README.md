@@ -262,3 +262,22 @@ return and quandle laws; Python checks bounded original-source cases.
 This is a **new verified presentation-equivalence layer**, not a
 proof that topological knots become unknotted, not a ray action on
 the unchanged ordinary-Z jets, and not an improved discriminant bound.
+
+## Phase330: parity-glued cyclic descent and Frobenius cohomology
+
+[Phase330](../phase330/README.md) isolates the first exact symmetry
+obstruction in this tapestry. A diagonal return from two isomorphic
+integral conjugate charts cannot simultaneously be integral, additive,
+conjugation-invariant, and a left inverse when the target is a nonzero
+free lattice with trivial conjugation action. A positive alternative
+retains both channels `(x+y,x-y)` with parity gluing and index
+`2^N`, admitting integral Q8 woven-frame intertwiners on the
+external four-copy carrier.
+
+The **same cyclic C2 norm/difference calculation**, evaluated using
+actual Phase325 ray-group data, identifies the number of inert
+Frobenius conjugacy classes sharing a square as
+`|H1(C2,G_D)|=2,4,4` for D163/D187/D203. These are different
+coefficient modules, not an identification between original jets
+and ray characters. The source 2-adic divisor and the 315^4
+arithmetic inequality remain unproved.
