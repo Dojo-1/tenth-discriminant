@@ -1,0 +1,23 @@
+name: Phase332 mixed binary two-direction source pilot
+on:
+  push:
+    branches: ['research/phase309-original-source-picard-minors']
+    paths:
+      - 'research/phase332/**'
+      - '.github/workflows/phase332-mixed-binary.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase332-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  exact-integer-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact source jets, lower triangularity, extra valuation and negative controls
+        run: python3 -m unittest discover -s research/phase332 -p 'mixed_binary_increasing.py' -v
