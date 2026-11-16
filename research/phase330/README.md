@@ -249,6 +249,85 @@ A genuine resolution in the requested tapestry is therefore
 **a reversible weave with an explicit integral parity remainder**,
 not an averaging trick that divides by two invisibly.
 
+## A second cohomological fiber: actual rational Frobenius ambiguity
+
+The same **cyclic-group cohomology mechanism** now links the
+Phase325 Frobenius calculation to the chart-descent knot. The
+coefficient modules differ, and we preserve that difference.
+
+Let `G_D=Cl_125(K_D)` with its actual norm-twisted
+complex-conjugation involution `sigma`. Use additive notation
+for this finite abelian group and write
+
+```math
+N(g)=g+\sigma(g),\qquad D(g)=g-\sigma(g).
+```
+
+As in the standard cohomology of a group of order two,
+
+```math
+H^1(C_2,G_D)=\ker(N)/D(G_D),\qquad
+\widehat H^0(C_2,G_D)=G_D^\sigma/N(G_D).
+```
+
+The conjugacy classes of inert rational Frobenius lifts in
+`H_D=G_D rtimes C2` are represented by
+`G_D/D(G_D)`. Squaring maps their class to `N(G_D)`.
+**The number of conjugacy classes with a fixed Frobenius square
+is precisely `|H^1(C2,G_D)|`.** This is a general exact group
+identity; it needs no analytic prime theorem.
+
+Re-running the *actual* Phase321–325 ray coordinates gives:
+
+| D | `|G_D|` | `|ker(N)|` | `|D(G_D)|` | `|H¹(C₂,G_D)|` | `|Ĥ⁰(C₂,G_D)|` |
+|---|---:|---:|---:|---:|---:|
+| 163 | 7,500 | 150 | 75 | 2 | 2 |
+| 187 | 15,000 | 300 | 75 | 4 | 4 |
+| 203 | 30,000 | 600 | 150 | 4 | 4 |
+
+Each value `2,4,4` agrees with the **independently counted
+number of Phase325 inert Frobenius conjugacy classes sharing
+a specified square**. We also verified elementwise that
+`2g=D(g)` for every norm-kernel element `g`, so the
+quotient `H^1` is annihilated by two.
+
+The equal orders of `H¹` and `Ĥ⁰` here reflect finite
+cyclic-module arithmetic (Herbrand quotient one).
+They do **not** establish a canonical isomorphism between
+these two groups, still less between the ray-group H¹
+and `H¹(C₂,Z_sign)=Z/2`.
+
+This resolves a precise *classification knot*: it explains
+why knowing `Frob_p²=[(p)]` leaves two or four possible
+classes, and exactly where that ambiguity resides. It does
+not select the true class for an inert rational prime without
+the additional genus/cyclotomic labels derived in Phase325.
+
+### Shared structure, distinct evidence
+
+```mermaid
+flowchart TD
+  C2["Common C2 involution / norm / difference"] --> J["Paired integral jet charts"]
+  C2 --> G["Actual ray group G_D"]
+  J --> JS["Sign-module H1: parity obstruction"]
+  G --> GS["Ray H1: Frobenius-square fiber"]
+  JS --> W["Parity-glued integral weave"]
+  GS --> F["Genus/cyclotomic Frobenius labels"]
+  W -. "No typed arithmetic jet intertwiner" .-> M["Open original-Gram prime inequality"]
+  F -. "No uniform prime-distribution theorem" .-> M
+```
+
+The cohomological obstruction is now a shared *governing
+relationship*, not an assertion that the fibers or their
+arithmetical consequences are identical.
+
+The tested implementation is
+`frobenius_cohomology.py` and
+`test_frobenius_cohomology.py`, using actual finite cocycle
+data. No entire ray-class field polynomial is constructed;
+none of the exact arithmetic counts implies a Chebotarev
+error estimate or a new `315^4` discriminant bound.
+
 ## Exact artifacts and evidence
 
 - `chart_descent.py`: explicit integer matrices `S`,
@@ -257,6 +336,9 @@ not an averaging trick that divides by two invisibly.
 - `test_chart_descent.py`: cross-prime and CRT controls,
   direct mod-2 nilpotence, small actual ordinary-Z trace Grams,
   Hurwitz-versus-swap adversarial control, sign-cohomology parity.
+- `frobenius_cohomology.py` and `test_frobenius_cohomology.py`:
+  actual D163/D187/D203 cyclic H¹/Tate H⁰, square-fiber
+  counting and elementwise 2-torsion checks.
 - `parity_weave.py` and `test_parity_weave.py`: positive
   index-2^N parity sublattice, exact deweave, woven bilinear
   form and Q8 integral intertwining on four copies.
