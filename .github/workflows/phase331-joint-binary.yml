@@ -7,6 +7,9 @@ on:
       - 'lean/TenthDiscriminant/BinaryNullBidirectionalTraceGram.lean'
       - 'lean/TenthDiscriminant/Phase331JointBinaryOddProduct315.lean'
       - 'lean/TenthDiscriminant/Phase331JointBinaryOddLog315.lean'
+      - 'lean/TenthDiscriminant/Phase331BinaryNormalizedGain315.lean'
+      - 'lean/TenthDiscriminant/Phase331TenPrimeFloor315.lean'
+      - 'research/phase331/**'
       - 'lean/TenthDiscriminant/BinaryNullHorizontalRowAction.lean'
       - '.github/workflows/phase331-joint-binary.yml'
   pull_request:
@@ -15,6 +18,9 @@ on:
       - 'lean/TenthDiscriminant/BinaryNullBidirectionalTraceGram.lean'
       - 'lean/TenthDiscriminant/Phase331JointBinaryOddProduct315.lean'
       - 'lean/TenthDiscriminant/Phase331JointBinaryOddLog315.lean'
+      - 'lean/TenthDiscriminant/Phase331BinaryNormalizedGain315.lean'
+      - 'lean/TenthDiscriminant/Phase331TenPrimeFloor315.lean'
+      - 'research/phase331/**'
       - '.github/workflows/phase331-joint-binary.yml'
   workflow_dispatch:
 concurrency:
@@ -49,11 +55,14 @@ jobs:
             /tmp/elan-install/elan-init -y --default-toolchain none
           fi
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Independent integer-floor and rational scalar negative controls
+        working-directory: .
+        run: python3 -m unittest discover -s research/phase331 -p 'test_*.py' -v
       - name: Verify source-original paired binary polynomial actions
         run: |
           lake update
           lake exe cache get
           lean --version
           set -o pipefail
-          lake build TenthDiscriminant.BinaryNullBidirectionalRowAction TenthDiscriminant.BinaryNullBidirectionalTraceGram TenthDiscriminant.Phase331JointBinaryOddProduct315 TenthDiscriminant.Phase331JointBinaryOddLog315 2>&1 | tee /tmp/phase331-binary.log
+          lake build TenthDiscriminant.BinaryNullBidirectionalRowAction TenthDiscriminant.BinaryNullBidirectionalTraceGram TenthDiscriminant.Phase331JointBinaryOddProduct315 TenthDiscriminant.Phase331JointBinaryOddLog315 TenthDiscriminant.Phase331BinaryNormalizedGain315 TenthDiscriminant.Phase331TenPrimeFloor315 2>&1 | tee /tmp/phase331-binary.log
           if grep -q 'sorryAx' /tmp/phase331-binary.log; then echo 'Unproved sorryAx'; exit 1; fi
