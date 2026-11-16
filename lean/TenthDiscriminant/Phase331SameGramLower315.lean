@@ -75,7 +75,7 @@ theorem original_source_joint_normalized_lower_315
   have hmass :
       (binaryNullGramExponent R S : Real)*Real.log 2 +
       ((2*R*floorMass 4 S : Nat) : Real)*Real.log 2 +
-      Tuned.recoveredPrimeMassLower R S FirstEnderInterval.tailBudget +
+      recoveredPrimeMassLower R S FirstEnderInterval.tailBudget +
       (horizontalPrimeMass R S : Real)/500 +
       (((2*R*(∑ p ∈ TenthDiscriminant.Phase323.oddHorizontalPrimes,
          floorMass (p*p) S) : Nat) : Real)*(189/100 : Real)) ≤
