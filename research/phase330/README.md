@@ -149,6 +149,106 @@ is generally **not** the simple swap `(x,y)->(y,x)` for a
 nonabelian group. The C2 no-go concerns chart conjugation,
 not arbitrary Frobenius braid actions.
 
+## A constructive untangling: parity-glued integral eigenframes
+
+The no-go above does **not** require discarding symmetry. It says
+that symmetry cannot be projected to *one integral trivial chart*.
+Keep the two eigendirections instead, **with their gluing data**.
+
+Define
+
+```math
+W=\begin{pmatrix}I&I\\I&-I\end{pmatrix},\quad
+W(x,y)=(u,v)=(x+y,x-y).
+```
+
+The matrix W has determinant `(-2)^N` and satisfies
+`W^2=2I`. It is therefore not an integral unimodular
+coordinate change on the entire ambient `Z^(2N)`.
+But its image is the precise parity-constrained sublattice
+
+```math
+\Lambda=\{(u,v)\in\mathbb Z^N\oplus\mathbb Z^N :
+  u\equiv v\pmod 2\}.
+```
+
+And `W:Z^(2N)->Lambda` **is an integral isomorphism**:
+if `u≡v mod 2`, then `x=(u+v)/2` and `y=(u-v)/2`
+are integers. Conversely every woven pair has equal parity.
+The index of Lambda in ambient `Z^(2N)` is `2^N`;
+the quotient is exactly `(Z/2)^N`.
+
+The chart exchange **diagonalizes without losing integrality**:
+
+```math
+W\begin{pmatrix}0&I\\I&0\end{pmatrix}
+=\begin{pmatrix}I&0\\0&-I\end{pmatrix}W.
+```
+
+The equal-parity condition is the thread that prevents
+the two eigenchannels from being mistaken for independent
+unrestricted integer lattices.
+
+### Exact metric and remainder accounting
+
+For the duplicated original source bilinear form `B⊕B`,
+the transported form on Lambda is
+
+```math
+\left\langle(u,v),(u',v')\right\rangle_\Lambda
+=\frac{u^TB u'+v^TB v'}2.
+```
+
+This is **integer-valued on Lambda** even when the ambient
+formula has half-integral coefficients. The Gram of
+Lambda with respect to the W-transferred integer basis
+is exactly `B⊕B`. The apparent ambient denominator
+`2^(2N)` in its determinant cancels with the square
+of the parity lattice's index `(2^N)^2`.
+No new divisor of det B has appeared.
+
+### The quaternionic moving-frame bridge
+
+On the Phase328 four-copy lattice `J^4`, use two
+weaves `W_4=diag(W,W)` on the quaternion-coordinate
+pairs `(1,i)` and `(j,k)`. Every `u∈Q8` has an
+**integral orthogonal** conjugate representation
+
+```math
+\widetilde U_u=W_4U_uW_4^{-1},\qquad
+\widetilde U_uW_4=W_4U_u.
+```
+
+Despite the formal rational inverse `W_4^{-1}=W_4/2`,
+the entries of `widetilde U_u` are integers for all
+eight Q8 units, and its determinant remains one.
+The parity sublattice has index `4^N`. The Q8
+group law, spin sign and exact parities survive.
+This has been exhaustively checked on several finite
+chart ranks; it also follows from the signed-permutation
+formula for the Q8 action.
+
+This is a **positive integral intertwiner between two
+quaternionic representations on a stabilized carrier**.
+It does not produce a nontrivial `H_D` action on
+the original ordinary-Z jet operator, or remove the
+unproved Phase323 arithmetic factor.
+
+```mermaid
+flowchart TD
+  A["Original paired integral charts"] -->|"W: exact onto Lambda"| B["Parity-glued +/- eigenframe"]
+  C["Conjugation swaps the charts"] -->|"W S = diag(+, -) W"| B
+  D["Q8 integral spin frame"] -->|"W4 U = U~ W4"| E["Woven Q8 frame, integral"]
+  B --> E
+  B -. "ambient index 2^N retained" .-> F["2-torsion remainder"]
+  F -. "not extra determinant valuation" .-> G["Original Gram arithmetic: unchanged"]
+  E -. "no H_D jet action yet" .-> H["Open arithmetic intertwiner"]
+```
+
+A genuine resolution in the requested tapestry is therefore
+**a reversible weave with an explicit integral parity remainder**,
+not an averaging trick that divides by two invisibly.
+
 ## Exact artifacts and evidence
 
 - `chart_descent.py`: explicit integer matrices `S`,
@@ -157,6 +257,9 @@ not arbitrary Frobenius braid actions.
 - `test_chart_descent.py`: cross-prime and CRT controls,
   direct mod-2 nilpotence, small actual ordinary-Z trace Grams,
   Hurwitz-versus-swap adversarial control, sign-cohomology parity.
+- `parity_weave.py` and `test_parity_weave.py`: positive
+  index-2^N parity sublattice, exact deweave, woven bilinear
+  form and Q8 integral intertwining on four copies.
 - `lean/TenthDiscriminant/Phase330EquivariantDescentObstruction.lean`:
   generic additive equivariant return forces doubling,
   nonexistence on integral singleton and arbitrary positive-rank
