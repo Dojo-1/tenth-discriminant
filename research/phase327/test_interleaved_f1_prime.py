@@ -45,6 +45,22 @@ class Phase327Two360AndSignedOne(unittest.TestCase):
         self.assertEqual(result["commuting_pairs"], 97200)
         print("PHASE327_360_BY_360_SWEEP", result, flush=True)
 
+    def test_double_moving_frame_preserves_order_but_adjoint_loses_spin_sign(self):
+        rng = random.Random(720327)
+        for _ in range(256):
+            a = tuple(rng.randint(-6, 6) for _ in range(4))
+            u, v = Q8[rng.randrange(8)], Q8[rng.randrange(8)]
+            self.assertEqual(
+                moving_frame(u, moving_frame(v, a)),
+                moving_frame(product(u, v), a))
+            self.assertEqual(moving_frame(NEG_ONE, a), a)
+            self.assertEqual(product(NEG_ONE, a), scale(-1, a))
+        # A 360-degree lift is -1 in the spinor module, but its
+        # SO3/adjoint-frame action is the identity. They are not the
+        # same representation even in characteristic zero.
+        self.assertEqual(moving_frame(NEG_ONE, I), I)
+        self.assertNotEqual(product(NEG_ONE, I), I)
+
     def test_orthogonal_random_imaginary_vectors_anticommute(self):
         rng = random.Random(360360)
         examined = 0
