@@ -4,6 +4,7 @@ on:
     branches: ['research/phase309-original-source-picard-minors']
     paths:
       - lean/TenthDiscriminant/Phase328StabilizedSourceReturn.lean
+      - lean/TenthDiscriminant/Phase328MovingFrameCovariance.lean
       - .github/workflows/phase328-lean-source-return.yml
   workflow_dispatch:
 concurrency:
@@ -44,5 +45,5 @@ jobs:
           lake exe cache get
           lean --version
           set -o pipefail
-          lake build TenthDiscriminant.Phase328StabilizedSourceReturn 2>&1 | tee /tmp/phase328-lean.log
+          lake build TenthDiscriminant.Phase328StabilizedSourceReturn TenthDiscriminant.Phase328MovingFrameCovariance 2>&1 | tee /tmp/phase328-lean.log
           if grep -q 'sorryAx' /tmp/phase328-lean.log; then echo 'Unproved sorryAx'; exit 1; fi
