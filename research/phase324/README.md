@@ -184,6 +184,22 @@ The computational test:
 4. A global Euler product, zero-free region, Chebotarev error term,
    or an exceptional-zero exclusion.
 
+Two source-compatibility counterexamples sharpen the boundary:
+
+- An inert rational ideal `(p)` is fixed by complex conjugation. Hence
+  **every induced 2D block is scalar on it**,
+  `pi_chi([(p)]) = chi([(p)]) I_2`. The ten selected Phase323
+  small inert primes cannot create an extra independent 2D
+  determinant factor merely through these ray representations.
+- Conjugation swaps the two polynomial variables. On `P(Z,W)=Z`,
+  `partial_Z(sigma P)=partial_Z W=0`, but
+  `sigma(partial_Z P)=1`. Therefore the original **ordinary-Z jets**
+  are not conjugation-equivariant. The original `R by S` rectangle
+  is also not generally invariant under swapping the monomial
+  exponents when `R != S`. Enlarging the jet space or symmetrizing
+  the rectangle would change the original Gram and require a new
+  correspondence proof.
+
 The smallest next mathematical target for a genuine bridge is a
 **typed, integral, source-preserving ray action** `T_g` on the original
 jet module, with `T_g^T B T_g=B` or a certified determinant-divisor
