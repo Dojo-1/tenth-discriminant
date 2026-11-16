@@ -59,18 +59,6 @@ def swap_woven_pair(u:tuple[int,...],v:tuple[int,...]
     return (u,tuple(-b for b in v))
 
 
-def woven_matrix(n:int):
-    if n<1:raise ValueError("nontrivial positive rank")
-    return tuple(tuple(
-        (int(j==i%n) if j<n else
-          int((j-n)==i%n)*(1 if i<n else -1))
-        if i<n else (
-          int(j==i%n) if j<n else
-          -int((j-n)==i%n))
-        for j in range(2*n))
-        for i in range(2*n))
-
-
 def exact_woven_matrix(n:int):
     """Explicit W=[[I,I],[I,-I]] without branch ambiguity."""
     if n<1:raise ValueError("n>=1")
