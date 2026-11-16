@@ -6,6 +6,7 @@ not via the full six-million-entry Phase322 evaluation matrix.
 """
 from collections import defaultdict
 from fractions import Fraction
+import json
 from pathlib import Path
 import sys
 import unittest
@@ -92,6 +93,14 @@ class Phase324RayRepresentations(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.rows = {D: run_field(D) for D in (163, 187, 203)}
+        print("PHASE324_EXACT_REPRESENTATION_SUMMARY " + json.dumps({
+            str(D): {
+                "fixed": row["conjugation_fixed_ray_classes"],
+                "irreps_1d": row["one_dimensional_irreducibles"],
+                "irreps_2d": row["two_dimensional_irreducibles"],
+                "principal_ideal_counts": row["controls"]["principal_prime_ideal_counts"],
+                "conductor_shells": row["by_conductor"],
+            } for D, row in cls.rows.items()}, sort_keys=True), flush=True)
 
     def test_exact_group_orders_and_irrep_dimension_squares(self):
         for D, h in ((163, 1), (187, 2), (203, 4)):
