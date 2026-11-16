@@ -45,8 +45,9 @@ theorem moving_gram_return {n m : Nat}
     _ = (Iota.transpose * (U.transpose * U)) * Bhat *
           ((U.transpose * U) * Iota) := by
       simp only [Matrix.transpose_mul, Matrix.mul_assoc]
-    _ = (Iota.transpose * 1) * Bhat * (1 * Iota) := by rw [horth]
-    _ = B := by simpa using hsource
+    _ = Iota.transpose * Bhat * Iota := by
+      simp [horth]
+    _ = B := hsource
 
 /-- Determinant equality for a determinant-one integral moving frame. -/
 theorem moving_det_return {m : Nat}
