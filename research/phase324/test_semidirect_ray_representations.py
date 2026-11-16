@@ -78,6 +78,32 @@ class Phase324ToyProjectors(unittest.TestCase):
         self.assertEqual([24 // len(K) for K in kernels], [1, 4, 12, 24])
         self.assertEqual([1, 4 - 1, 12 - 4, 24 - 12], [1, 3, 8, 12])
 
+    def test_ordinary_Z_jets_not_preserved_by_conjugation(self):
+        """The original nonsquare rectangle and ordinary-Z jet are not
+        stable under the Z/W conjugation swap."""
+        def conjugate_polynomial(P):
+            return {(s, r): coefficient for (r, s), coefficient in P.items()}
+        def partial_Z(P):
+            return {(r - 1, s): r * coefficient
+                    for (r, s), coefficient in P.items() if r > 0}
+        P = {(1, 0): 1}
+        self.assertEqual(partial_Z(conjugate_polynomial(P)), {})
+        self.assertEqual(conjugate_polynomial(partial_Z(P)), {(0, 0): 1})
+        self.assertNotEqual(partial_Z(conjugate_polynomial(P)),
+                            conjugate_polynomial(partial_Z(P)))
+        R, S = 8, 3
+        self.assertTrue(5 < R and 1 < S)
+        self.assertFalse(5 < S)  # Z^5 W maps outside W-degree < S.
+
+    def test_rational_inert_prime_classes_act_as_scalars_in_2d_blocks(self):
+        """For rational p, sigma([(p)])=[(p)]; the 2D character-pair
+        diagonal has two equal entries. These are source-local checks,
+        not an analytic estimate for nonprincipal primes."""
+        for D in (163, 187, 203):
+            for p in (2, 3, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41):
+                g = canonical_signed_mod((p, 0), 125)
+                self.assertEqual(canonical_signed_mod(conjugate(g), 125), g)
+
     def test_fourier_change_is_not_integer_unimodular(self):
         """An integral Fourier matrix cannot be used to invent 2-adic mass.
 
