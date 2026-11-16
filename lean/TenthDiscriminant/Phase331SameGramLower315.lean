@@ -101,6 +101,7 @@ theorem original_source_joint_normalized_lower_315
   dsimp [R,S] at *
   linarith only [hscaled,hbase,hbin,hthree,hbinary,hten]
 
+end
 end TenthDiscriminant.Phase331
 
 #print axioms TenthDiscriminant.Phase331.original_source_joint_normalized_lower_315
