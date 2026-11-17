@@ -2,7 +2,7 @@ name: Phase347 307 original source analytic upper
 
 on:
   push:
-    branches: ['research/phase347-307-radius-transport']
+    branches: ['research/phase346-307-radius-transport']
     paths:
       - 'lean/TenthDiscriminant/Phase347Dimensions307.lean'
       - 'lean/TenthDiscriminant/Phase347UpperScalars307.lean'
