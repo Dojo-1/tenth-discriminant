@@ -1,0 +1,74 @@
+name: Phase337 same-source 313 analytic Hadamard upper
+
+on:
+  push:
+    branches: ['research/phase309-original-source-picard-minors']
+    paths:
+      - 'lean/TenthDiscriminant/Phase337Dimensions313.lean'
+      - 'lean/TenthDiscriminant/Phase337UpperScalars313.lean'
+      - 'lean/TenthDiscriminant/Phase337ThinUpper313.lean'
+      - '.github/workflows/phase337-analytic313.yml'
+  pull_request:
+    paths:
+      - 'lean/TenthDiscriminant/Phase337Dimensions313.lean'
+      - 'lean/TenthDiscriminant/Phase337UpperScalars313.lean'
+      - 'lean/TenthDiscriminant/Phase337ThinUpper313.lean'
+      - '.github/workflows/phase337-analytic313.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase337-analytic313-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-exact-upper:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Run independent old-vs-sharp rational control
+        working-directory: .
+        run: python3 -m unittest discover -s research/phase336 -p 'test_*.py' -v
+      - name: Build old dimensions, analytic scalar and SAME Qthin trace Gram upper
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Phase337Dimensions313 TenthDiscriminant.Phase337UpperScalars313 TenthDiscriminant.Phase337ThinUpper313 2>&1 | tee /tmp/phase337-build.log
+          if grep -q 'sorryAx' /tmp/phase337-build.log; then echo 'Unproved sorryAx'; exit 1; fi
+      - name: Confirm exact upper statement, positive original Gram, and axioms
+        run: |
+          cat > /tmp/phase337-axioms.lean <<'LEAN'
+          import TenthDiscriminant.Phase337ThinUpper313
+          import TenthDiscriminant.Phase332SourcePositivity313
+          #check TenthDiscriminant.FirstCertificate.Tuned.dimensions_313
+          #check TenthDiscriminant.FirstCertificate.Tuned.normalized_upper_313
+          #check TenthDiscriminant.Phase337.thin_production_normalized_upper_stronger_313
+          #check TenthDiscriminant.FirstCertificate.Tuned.thin_original_gram_pos_313
+          #print axioms TenthDiscriminant.Phase337.thin_production_normalized_upper_stronger_313
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.thin_original_gram_pos_313
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/phase337-axioms.lean | tee /tmp/phase337-axioms.log
+          if grep -q 'sorryAx' /tmp/phase337-axioms.log; then echo 'Unproved sorryAx'; exit 1; fi
