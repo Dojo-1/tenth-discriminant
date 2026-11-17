@@ -1,11 +1,11 @@
-import TenthDiscriminant.Phase347UpperScalars313
-import TenthDiscriminant.Phase332SourcePositivity313
-import TenthDiscriminant.Phase336ScalarRadius313
+import TenthDiscriminant.Phase347UpperScalars307
+import TenthDiscriminant.Phase347SourcePositivity307
+import TenthDiscriminant.Phase346Radius307
 import TenthDiscriminant.Phase346Radius307
 
 /-!
 Phase347 (candidate, UNVERIFIED): this is an exact 307-domain re-derivation
-of the source geometry or inequality, not an assumed weakening of a 313 theorem.
+of the source geometry or inequality, not an assumed weakening of a 307 theorem.
 No new prime factor or mixed-H valuation is permitted. Retain original Qthin.
 # Phase337 — SAME original thin-Q ordinary-jet Gram: 307-domain
 # Hadamard upper using the VERIFIED stronger 17/20 radius contraction.
@@ -28,7 +28,7 @@ private def oldCountUpper (D : Nat) : Real :=
 with the old node-count majorant only as the n input to the original
 Hadamard upper. No obsolete 450^4 premise is called. -/
 theorem thin_production_normalized_upper_stronger_307 (D : Nat)
-    (hD : (313 : Nat)^4 ≤ D) :
+    (hD : (307 : Nat)^4 ≤ D) :
     Real.log ((integerRectangularTraceGram
       (ellipsePairs D (Tuned.thinRadius D)) D
       (Tuned.S D) (Tuned.R D) (Tuned.S D)).det : Real) /
