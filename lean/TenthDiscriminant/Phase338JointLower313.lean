@@ -24,6 +24,7 @@ open scoped BigOperators Classical
 open TenthDiscriminant
 open TenthDiscriminant.FirstCertificate
 open TenthDiscriminant.Phase259
+open TenthDiscriminant.Phase331
 set_option autoImplicit false
 noncomputable section
 
