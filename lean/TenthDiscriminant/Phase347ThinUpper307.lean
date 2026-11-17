@@ -1,7 +1,6 @@
 import TenthDiscriminant.Phase347UpperScalars307
 import TenthDiscriminant.Phase347SourcePositivity307
 import TenthDiscriminant.Phase346Radius307
-import TenthDiscriminant.Phase346Radius307
 
 /-!
 Phase347 (candidate, UNVERIFIED): this is an exact 307-domain re-derivation
