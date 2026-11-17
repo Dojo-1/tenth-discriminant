@@ -4,6 +4,8 @@
 > No new mixed-binary valuation. No replacement sampling lattice.
 > A stronger analytic saving, with every old field-theoretic hypothesis explicit.
 
+**Provenance:** This verification protocol was written **after** the Phase336–338 candidate source files had been committed, while their CI runs were still in progress. It is a post-hoc reconstruction and a prospective verification/stop-rule record, **not** a pre-registered prediction of the initial candidate code. The exact code commits, failed CI results, and subsequent revisions must remain independently traceable.
+
 **Status (17 November 2026):** Phase336 (real scalar), Phase337
 (original Gram analytic upper), and Phase338 (arithmetic lower and
 actual-field candidate) have been submitted to separate exact-head
