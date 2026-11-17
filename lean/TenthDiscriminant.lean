@@ -29,6 +29,7 @@ import TenthDiscriminant.JetCountGram
 import TenthDiscriminant.Interpolation
 import TenthDiscriminant.LatticeEllipse
 import TenthDiscriminant.EllipseCellArea
+import TenthDiscriminant.EuclidCellBridge
 import TenthDiscriminant.IntegerTraceGram
 import TenthDiscriminant.JetPrecisionBridge
 import TenthDiscriminant.ObservationConjugation
