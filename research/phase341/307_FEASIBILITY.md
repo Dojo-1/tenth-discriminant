@@ -99,3 +99,34 @@ The 307 programme is **separate from the completed 313 formal certificate**. Nei
 - [Phase343 307 certified logarithm](../../lean/TenthDiscriminant/Phase343Log307.lean) derives `log D >= 22904/1000` from a sound finite-series enclosure `log 307 >= 5726/1000`. [Conditional scalar module](../../lean/TenthDiscriminant/Phase343Scalar307.lean) then targets a strict algebraic no-overlap of the *unproved-at-307* determinant bounds. [Exact-head scalar CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44043652544): queued at this note.
 
 **No field bound follows from these two modules.** Their consequences must be audited for source fidelity, and the actual 307-domain analytic constant must be re-established using the weaker R/rho relation. Preserve any failed Lean attempt and demote unsupported statements.
+
+
+## 6. Candidate analytic-envelope repair (paper-level)
+
+The old 313-domain `endpoint_error` proof relies on the inequalities
+`rho/R <= 521/78000`, `log D/R <= 1/9000`,
+and `2(S-1) <= R/10` to bound
+`(rho+log(R/rho))/R <= 1/100`.
+Although the first ratio is false at 307, the **proposed weaker**
+`rho/R <= 521/76000` leaves enough room:
+
+```math
+\frac{521}{76000}+\frac1{9000}<\frac1{100}.
+```
+
+This is an exact rational inequality. It makes the old `1/1000`
+endpoint-error envelope **plausible** if the weaker 307-domain
+radius ratio and the original log-over-R estimate are both
+independently proved for *all* D >= 307^4. Those two universal
+premises are not established by this algebra alone.
+
+The original proof of `log D/R <= 1/9000` uses
+`sqrt D >= 90000`. At the proposed fourth-root endpoint,
+`sqrt(307^4) = 307^2 = 94249 > 90000`, so this guard does
+not suffer the same endpoint failure as the 78-cube radius bound.
+
+**Remaining crucial unknown:** whether rebuilding
+`normalized_upper` with these 307-domain guards retains the
+`(4/5) log D - 1923/2000` original-Gram constant.
+Any degradation exceeding the conditional scalar gap would invalidate
+the complete 307 field proof. Do not count the mixed-H gain.
