@@ -4,12 +4,22 @@ on:
   push:
     branches: ['research/phase309-original-source-picard-minors']
     paths:
+      - 'lean/TenthDiscriminant/Phase336ScalarRadius313.lean'
+      - 'lean/TenthDiscriminant/Phase337Dimensions313.lean'
+      - 'lean/TenthDiscriminant/Phase337UpperScalars313.lean'
+      - 'lean/TenthDiscriminant/Phase337ThinUpper313.lean'
+      - 'lean/TenthDiscriminant/Phase332SourcePositivity313.lean'
       - 'lean/TenthDiscriminant/Phase338Lower313.lean'
       - 'lean/TenthDiscriminant/Phase338JointLower313.lean'
       - 'lean/TenthDiscriminant/Phase338Field313Candidate.lean'
       - '.github/workflows/phase338-field313.yml'
   pull_request:
     paths:
+      - 'lean/TenthDiscriminant/Phase336ScalarRadius313.lean'
+      - 'lean/TenthDiscriminant/Phase337Dimensions313.lean'
+      - 'lean/TenthDiscriminant/Phase337UpperScalars313.lean'
+      - 'lean/TenthDiscriminant/Phase337ThinUpper313.lean'
+      - 'lean/TenthDiscriminant/Phase332SourcePositivity313.lean'
       - 'lean/TenthDiscriminant/Phase338Lower313.lean'
       - 'lean/TenthDiscriminant/Phase338JointLower313.lean'
       - 'lean/TenthDiscriminant/Phase338Field313Candidate.lean'
