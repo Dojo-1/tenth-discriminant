@@ -91,3 +91,11 @@ This is only a **conditional arithmetic model**. Neither the rational logarithm 
 - **Kill control:** if the repaired analytic majorant loses the ~0.014 conditional scalar margin, do not claim the 307 field bound. Record a counterexample or a mathematically explicit obstruction instead.
 
 The 307 programme is **separate from the completed 313 formal certificate**. Neither the field-theorem source nor public `main` should be changed until these independent bridges close.
+
+
+## 5. Formal proof targets now under verification
+
+- [Phase342 original-source 307 geometry](../../lean/TenthDiscriminant/Phase342Geometry307.lean) rederives the original ellipse interpolation count, the weaker `R >= 76*(fourthRoot D)^3` guard, and `rho/R <= 521/76000`. It also formally targets the endpoint counterexample to the old 78-cube bound. [Exact-head geometry CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44043277863): pending at this note.
+- [Phase343 307 certified logarithm](../../lean/TenthDiscriminant/Phase343Log307.lean) derives `log D >= 22904/1000` from a sound finite-series enclosure `log 307 >= 5726/1000`. [Conditional scalar module](../../lean/TenthDiscriminant/Phase343Scalar307.lean) then targets a strict algebraic no-overlap of the *unproved-at-307* determinant bounds. [Exact-head scalar CI](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44043652544): queued at this note.
+
+**No field bound follows from these two modules.** Their consequences must be audited for source fidelity, and the actual 307-domain analytic constant must be re-established using the weaker R/rho relation. Preserve any failed Lean attempt and demote unsupported statements.
