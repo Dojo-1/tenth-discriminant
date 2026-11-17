@@ -1,0 +1,31 @@
+name: Phase341 exact 307 feasibility and negative controls
+
+on:
+  push:
+    branches: ['research/phase309-original-source-picard-minors']
+    paths:
+      - 'research/phase341/test_*.py'
+      - '.github/workflows/phase341-307-feasibility.yml'
+  pull_request:
+    paths:
+      - 'research/phase341/test_*.py'
+      - '.github/workflows/phase341-307-feasibility.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phase341-307-feasibility-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  endpoint-and-counterexamples:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Run exact original 307 endpoint and false-guard controls
+        run: python3 -m unittest discover -s research/phase341 -p 'test_*.py' -v
