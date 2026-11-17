@@ -1,0 +1,73 @@
+name: Phase349 307 joint original Gram and actual-field candidate
+
+on:
+  push:
+    branches: ['research/phase346-307-radius-transport']
+    paths:
+      - 'lean/TenthDiscriminant/Phase348Lower307.lean'
+      - 'lean/TenthDiscriminant/Phase348JointLower307.lean'
+      - 'lean/TenthDiscriminant/Phase349Field307Candidate.lean'
+      - '.github/workflows/phase349-field307.yml'
+  pull_request:
+    paths:
+      - 'lean/TenthDiscriminant/Phase348Lower307.lean'
+      - 'lean/TenthDiscriminant/Phase348JointLower307.lean'
+      - 'lean/TenthDiscriminant/Phase349Field307Candidate.lean'
+      - '.github/workflows/phase349-field307.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phase349-field307-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  field307:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build unchanged-gram lower, upper and field theorem
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Phase348Lower307 TenthDiscriminant.Phase348JointLower307 TenthDiscriminant.Phase349Field307Candidate 2>&1 | tee /tmp/phase349-build.log
+          if grep -q 'sorryAx' /tmp/phase349-build.log; then echo 'Unproved sorryAx'; exit 1; fi
+      - name: Exact theorem type and standard-axiom audit
+        run: |
+          cat > /tmp/phase349-axioms.lean <<'LEAN'
+          import TenthDiscriminant.Phase349Field307Candidate
+          #check TenthDiscriminant.Phase348.original_source_joint_normalized_lower_307
+          #check TenthDiscriminant.Phase347.thin_production_normalized_upper_stronger_307
+          #check TenthDiscriminant.Threshold307.totallyComplex_degree_two_classNumber_one_discriminant_bound_307
+          #print axioms TenthDiscriminant.Phase348.original_source_joint_normalized_lower_307
+          #print axioms TenthDiscriminant.Phase347.thin_production_normalized_upper_stronger_307
+          #print axioms TenthDiscriminant.Threshold307.totallyComplex_degree_two_classNumber_one_discriminant_bound_307
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/phase349-axioms.lean | tee /tmp/phase349-axioms.log
+          if grep -q 'sorryAx' /tmp/phase349-axioms.log; then echo 'Unproved sorryAx'; exit 1; fi
