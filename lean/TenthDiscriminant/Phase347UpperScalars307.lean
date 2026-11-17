@@ -1,12 +1,12 @@
-import TenthDiscriminant.Phase347Dimensions313
-import TenthDiscriminant.Phase332SourceGeometry313
-import TenthDiscriminant.Phase336ScalarRadius313
+import TenthDiscriminant.Phase347Dimensions307
+import TenthDiscriminant.Phase342Geometry307
+import TenthDiscriminant.Phase346Radius307
 import TenthDiscriminant.TunedAnalyticCutoff
 import TenthDiscriminant.Phase343Log307
 
 /-!
 Phase347 (candidate, UNVERIFIED): this is an exact 307-domain re-derivation
-of the source geometry or inequality, not an assumed weakening of a 313 theorem.
+of the source geometry or inequality, not an assumed weakening of a 307 theorem.
 No new prime factor or mixed-H valuation is permitted. Retain original Qthin.
 # Phase337 — the ORIGINAL 307-domain padded analytic scalar majorant
 
@@ -21,7 +21,7 @@ namespace TenthDiscriminant.FirstCertificate.Tuned
 set_option autoImplicit false
 noncomputable section
 
-theorem radius_pos_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
+theorem radius_pos_307 (D : Nat) (hD : (307 : Nat)^4 ≤ D) :
     0 < rho D := by
   have ht := fourthRoot_ge_307 D hD
   have hcube : (1 : Real) ≤ fourthRoot D^3 := by
@@ -36,7 +36,7 @@ theorem radius_pos_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
   exact_mod_cast hp
 
 /-- The original radius lies strictly below the original dimension. -/
-theorem radius_lt_R_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
+theorem radius_lt_R_307 (D : Nat) (hD : (307 : Nat)^4 ≤ D) :
     rho D < R D := by
   have hR := R_ge_seventysix_cubes_307 D hD
   have hu := rho_upper_307 D hD
@@ -48,7 +48,7 @@ theorem radius_lt_R_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
   exact_mod_cast hr
 
 /-- Same padded count upper at the new floor, with the same pi bound. -/
-theorem count_le_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
+theorem count_le_307 (D : Nat) (hD : (307 : Nat)^4 ≤ D) :
     ellipsePaddedUpperCount D (rho D) (ellipseVerticalBound D (rho D)) ≤
       4*(D : Real) := by
   have hi := fourthRoot_identities D
@@ -94,7 +94,7 @@ theorem log_521_over_1000_le_neg_652_307 :
 /-- Sharpen the real upper log on the *same* old rho at the 315 floor.
 This alone says nothing about the normalized Hadamard upper or a field. -/
 theorem log_radius_upper_307_sharp (D : Nat)
-    (hD : (313 : Nat)^4 <= D) :
+    (hD : (307 : Nat)^4 <= D) :
     Real.log (rho D) <= (3/4 : Real)*Real.log D-652/1000 := by
   have hi := fourthRoot_identities D
   have ht := fourthRoot_ge_307 D hD
@@ -116,12 +116,12 @@ theorem log_radius_upper_307_sharp (D : Nat)
 
 
 /-- The sharper original-radius log ceiling with constant -0.652. -/
-theorem log_radius_upper_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
+theorem log_radius_upper_307 (D : Nat) (hD : (307 : Nat)^4 ≤ D) :
     Real.log (rho D) ≤ (3/4 : Real)*Real.log D-652/1000 := by
   exact log_radius_upper_307_sharp D hD
 
 /-- The same coarse log(D)/R cost; 315 is more than enough for 300. -/
-theorem log_over_R_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
+theorem log_over_R_307 (D : Nat) (hD : (307 : Nat)^4 ≤ D) :
     Real.log D/(R D : Real) ≤ 1/9000 := by
   have hi := fourthRoot_identities D
   have ht := fourthRoot_ge_307 D hD
@@ -147,7 +147,7 @@ theorem log_over_R_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
   have hR := hd.2.2.2.2.1
   nlinarith only [hlog,he,hg,hsq,hR]
 
-theorem log_ratio_bounds_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
+theorem log_ratio_bounds_307 (D : Nat) (hD : (307 : Nat)^4 ≤ D) :
     0 ≤ Real.log ((R D : Real)/rho D) ∧
     Real.log ((R D : Real)/rho D) ≤ Real.log D := by
   have hrho := radius_pos_307 D hD
@@ -165,7 +165,7 @@ theorem log_ratio_bounds_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
   rw [Real.log_div hRp.ne' hp.ne']
   linarith
 
-theorem count_log_error_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
+theorem count_log_error_307 (D : Nat) (hD : (307 : Nat)^4 ≤ D) :
     Real.log (2*ellipsePaddedUpperCount D (rho D)
       (ellipseVerticalBound D (rho D))*S D)/(R D : Real) ≤ 1/4000 := by
   have hd := dimensions_307 D hD
@@ -205,7 +205,7 @@ theorem count_log_error_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
   norm_num only [Nat.cast_ofNat] at hl
   linarith
 
-theorem endpoint_error_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
+theorem endpoint_error_307 (D : Nat) (hD : (307 : Nat)^4 ≤ D) :
     2*((S D : Real)-1)/(R D : Real)^2*
       (rho D+Real.log ((R D : Real)/rho D)) ≤ 1/1000 := by
   have hd := dimensions_307 D hD
@@ -236,7 +236,7 @@ theorem endpoint_error_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
 
 /-- The sharpened normalized analytic majorant, at the honest new floor.
 This is an upper bound on enderUpperB, not yet on a Gram log. -/
-theorem normalized_upper_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
+theorem normalized_upper_307 (D : Nat) (hD : (307 : Nat)^4 ≤ D) :
     enderUpperB (R D) (S D) (S D) (rho D)
       (ellipsePaddedUpperCount D (rho D)
         (ellipseVerticalBound D (rho D)))/comparisonScale (R D) (S D) ≤
@@ -282,11 +282,11 @@ theorem normalized_upper_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
 
 /-- Source-exact positivity and dimensional guards for the next Qthin
 Hadamard step; old source radius remains smaller than R. -/
-theorem thin_radius_guards_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
+theorem thin_radius_guards_307 (D : Nat) (hD : (307 : Nat)^4 ≤ D) :
     10 ≤ thinRadius D ∧ thinRadius D < rho D ∧
       thinRadius D < R D := by
   have ht := fourthRoot_ge_307 D hD
-  have hcube : (313 : Real)^3 ≤ fourthRoot D^3 :=
+  have hcube : (307 : Real)^3 ≤ fourthRoot D^3 :=
     pow_le_pow_left₀ (by norm_num) ht 3
   have hceil : (11/25 : Real)*fourthRoot D^3 ≤ thinRadius D := by
     unfold thinRadius
