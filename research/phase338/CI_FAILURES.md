@@ -28,3 +28,9 @@ ordinary Z-jet convention, determinant identity, or field conclusion.
 actual-field theorem and `#print axioms` output must succeed.
 This file remains an auditable failed-attempt receipt even after
 subsequent correction.
+
+## 17 November 2026 — second failed field build (run 44035309207)
+
+[Full workflow](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44035309207) at `dc3f7b7b0a46a017ab33fc36e2f0204119a35f41` again failed in `Phase338JointLower313.lean`, now line 54. The explicit import was present, but the reference `joint_binary_odd_log_of_pos` remained unqualified; the actual theorem is in namespace `TenthDiscriminant.Phase331`. Lean reported `unknown identifier` and dependent `unsolved goals`, and printed `sorryAx` for the unfinished lower. The final field candidate was not checked in this run.
+
+**Repair:** refer to `TenthDiscriminant.Phase331.joint_binary_odd_log_of_pos` explicitly. Change only the theorem reference, keeping all operands, hypotheses, the single original Gram, the odd-prime factor and joint binary exponent invariant. Independent Phase337 source upper remains [verified](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44033778266). Another complete field CI and axiom inspection are required.
