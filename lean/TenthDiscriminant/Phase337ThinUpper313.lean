@@ -25,7 +25,7 @@ private def oldCountUpper (D : Nat) : Real :=
 with the old node-count majorant only as the n input to the original
 Hadamard upper. No obsolete 450^4 premise is called. -/
 theorem thin_production_normalized_upper_stronger_313 (D : Nat)
-    (hD : (315 : Nat)^4 ≤ D) :
+    (hD : (313 : Nat)^4 ≤ D) :
     Real.log ((integerRectangularTraceGram
       (ellipsePairs D (Tuned.thinRadius D)) D
       (Tuned.S D) (Tuned.R D) (Tuned.S D)).det : Real) /
