@@ -8,7 +8,7 @@
 
 **M (exact endpoint):** [Phase341 controls 44042946987](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44042946987) passed. The cell-area rational condition first turns positive at root 307, and the old radius/R inequality is demonstrably false there. [Controlled hypothesis dossier](research/phase341/307_FEASIBILITY.md).
 
-**H until separate CI:** [Phase343 log307/conditional scalar module](lean/TenthDiscriminant/Phase343Scalar307.lean) targets `log D >= 22904/1000` and a strictly positive **conditional** gap WITHOUT any mixed-H determinant factor. [Exact-head run 44043652544](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44043652544) is being checked. No 307-domain complete original-Gram upper, original odd-prime lower or actual-field theorem is asserted yet. The formally proved research-bound remains `313^4` until all source bridges close.
+**H until separate CI:** [Phase343 log307/conditional scalar module](lean/TenthDiscriminant/Phase343Scalar307.lean) targets `log D >= 22904/1000` and a strictly positive **conditional** gap WITHOUT any mixed-H determinant factor. [First exact-head run 44043652544](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44043652544) failed on rational upper-enclosure syntactic normalization, not on the checker or inequality. Its [failure ledger](research/phase343/CI_FAILURES.md) is retained; [corrected run 44045215370](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44045215370) is the current promotion gate. No 307-domain complete original-Gram upper, original odd-prime lower or actual-field theorem is asserted yet. The formally proved research-bound remains `313^4` until all source bridges close.
 
 ## Phase339 — graded mixed original-jet divisibility (17 November 2026)
 
