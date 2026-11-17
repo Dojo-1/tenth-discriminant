@@ -2,6 +2,10 @@
 
 **Research branch: `313^4` actual-field discriminant bound is formally checked in Lean.** [Exact-head passing proof](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44040958164) · [Source-locked evidence manifest](research/phase340/VERIFIED_313.md). The result is a research-internal formal theorem pending independent source fidelity and mathematical review. Public `main` is still `322^4`.
 
+## Phase345 — Dedekind quaternion comparison (17 November 2026)
+
+**Classical mathematical comparison, not a new discriminant bound:** [Human-readable proof and explicit challenge relevance](research/phase345/QUATERNION_FIELD_CHALLENGE_BRIDGE.md). Dedekind's fixed totally real quaternion extension N and each imaginary quadratic field E have intersection Q, so Gal(NE/Q) is Q8 x C2. Chebotarev implies that a quaternion Frobenius conjugacy class does not, by itself, force a prime to split or be inert in E. This is a negative control on any proposed additional original-Gram divisibility factor; a prime-wise inequality must be proved independently. The formal [SWN-25 quaternion moving-frame theorem](https://github.com/Dojo-1/spin-woven-numbers/actions/runs/44052792681) passed Lean CI but is only a finite-group representation theorem, not a new class-number-one bound. The checked field theorem remains 313^4 on the research branch; main remains unchanged.
+
 ## Phase341–343 — next threshold 307 (17 November 2026)
 
 **P (307 source geometry):** [Phase342 CI 44043277863](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44043277863) passed at exact math head `217230ddfbbc0ade0366c26ccab7a2efb5335bca`, proving the original Qthin ellipse count at all `D >= 307^4`, `R >= 76*(fourthRoot D)^3`, and `rho/R <= 521/76000`. It also proves a sharp endpoint counterexample to copying the old 313-domain `R >= 78*(fourthRoot D)^3` guard. Only standard Lean axioms were printed.
