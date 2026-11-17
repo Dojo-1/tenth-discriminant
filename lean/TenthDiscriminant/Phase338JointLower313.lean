@@ -51,7 +51,7 @@ theorem original_source_joint_normalized_lower_313
   have hcap : D ≤ 5*R := by
     change D ≤ 5*(D/4)
     omega
-  have hsource := joint_binary_odd_log_of_pos
+  have hsource := TenthDiscriminant.Phase331.joint_binary_odd_log_of_pos
     Q D R S hsq hc (Tuned.strict_inertness D) hpositive
   have hodd := Tuned.recovered_mass_le_exact_odd_313 D hD
   have hsplit := jointOddMass_ge_old_plus_three_five_and_ten
