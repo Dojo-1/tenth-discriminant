@@ -83,8 +83,5 @@ theorem no_scalar_overlap_307_without_mixed
 end
 end TenthDiscriminant.Phase343
 
-#print axioms TenthDiscriminant.FirstCertificate.Tuned.thin_radius_fraction_17_20_307
-#print axioms TenthDiscriminant.Phase343.strong_scalar_separation_307_without_mixed
-
 #print axioms TenthDiscriminant.Phase343.strong_scalar_separation_307_without_mixed
 #print axioms TenthDiscriminant.Phase343.no_scalar_overlap_307_without_mixed
