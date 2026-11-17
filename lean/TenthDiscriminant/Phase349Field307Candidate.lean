@@ -8,7 +8,7 @@ import TenthDiscriminant.ThinIntegratedEndpoint
 RESEARCH ONLY: 307-domain candidate, not a certificate until exact-head Lean CI
 and independent source-fidelity inspection. Uses same original Qthin ordinary
 Z jets and the same integer trace Gram as the 313-domain theorem.
-# Phase338 — candidate actual-field discriminant cutoff 307^4
+# Phase349 — candidate actual-field discriminant cutoff 307^4
 
 This is an UNVERIFIED research target until a fresh exact-head build
 passes every lower/upper statement and the standard-axiom checker.
@@ -97,8 +97,8 @@ theorem totallyComplex_degree_two_classNumber_one_discriminant_bound_307
 
 /-- Exact rational fourth-power regression. -/
 theorem fourth_power_307_control :
-    (307 : Nat)^4 = 9597924961 ∧
-    9597924961 < (315 : Nat)^4 := by
+    (307 : Nat)^4 = 8882874001 ∧
+    8882874001 < (315 : Nat)^4 := by
   norm_num
 
 end
