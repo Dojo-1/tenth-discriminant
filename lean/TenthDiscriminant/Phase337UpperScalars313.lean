@@ -245,7 +245,7 @@ theorem normalized_upper_313 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
   rw [upperB_normalized _ _ _ _ hRn hSn (radius_pos_313 D hD)]
   have hfirst := count_log_error_313 D hD
   have hend := endpoint_error_313 D hD
-  have hu := log_floor_from_313_fourth_power D hD
+  have hu := TenthDiscriminant.Phase332.log_floor_from_313_fourth_power D hD
   have hlogR := (log_R_bounds_313 D hD).2
   have hlogrho := log_radius_upper_313 D hD
   have hx : (S D : Real)/R D ≤ 1/25 :=
@@ -282,7 +282,7 @@ theorem thin_radius_guards_313 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
     10 ≤ thinRadius D ∧ thinRadius D < rho D ∧
       thinRadius D < R D := by
   have ht := fourthRoot_ge_313 D hD
-  have hcube : (315 : Real)^3 ≤ fourthRoot D^3 :=
+  have hcube : (313 : Real)^3 ≤ fourthRoot D^3 :=
     pow_le_pow_left₀ (by norm_num) ht 3
   have hceil : (11/25 : Real)*fourthRoot D^3 ≤ thinRadius D := by
     unfold thinRadius
