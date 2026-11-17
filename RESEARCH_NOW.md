@@ -2,6 +2,14 @@
 
 **Research branch: `313^4` actual-field discriminant bound is formally checked in Lean.** [Exact-head passing proof](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44040958164) · [Source-locked evidence manifest](research/phase340/VERIFIED_313.md). The result is a research-internal formal theorem pending independent source fidelity and mathematical review. Public `main` is still `322^4`.
 
+## Phase341–343 — next threshold 307 (17 November 2026)
+
+**P (307 source geometry):** [Phase342 CI 44043277863](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44043277863) passed at exact math head `217230ddfbbc0ade0366c26ccab7a2efb5335bca`, proving the original Qthin ellipse count at all `D >= 307^4`, `R >= 76*(fourthRoot D)^3`, and `rho/R <= 521/76000`. It also proves a sharp endpoint counterexample to copying the old 313-domain `R >= 78*(fourthRoot D)^3` guard. Only standard Lean axioms were printed.
+
+**M (exact endpoint):** [Phase341 controls 44042946987](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44042946987) passed. The cell-area rational condition first turns positive at root 307, and the old radius/R inequality is demonstrably false there. [Controlled hypothesis dossier](research/phase341/307_FEASIBILITY.md).
+
+**H until separate CI:** [Phase343 log307/conditional scalar module](lean/TenthDiscriminant/Phase343Scalar307.lean) targets `log D >= 22904/1000` and a strictly positive **conditional** gap WITHOUT any mixed-H determinant factor. [Exact-head run 44043652544](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44043652544) is being checked. No 307-domain complete original-Gram upper, original odd-prime lower or actual-field theorem is asserted yet. The formally proved research-bound remains `313^4` until all source bridges close.
+
 ## Phase339 — graded mixed original-jet divisibility (17 November 2026)
 
 **Paper algebra with independent M controls:** For any integral Q(Z,W) and b,j>=0, ordinary-Z evaluation of (Z^2-W^2)^b Q at the original source point (z,conj z) lies in j! * 2^max(2b-j,0) * Z[sqrt(-D)]. [Full proof](research/phase339/GRADED_MIXED_JETS.md); [exact integer controls](research/phase339/test_graded_mixed_jets.py) passed [Phase339 CI 44034542724](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44034542724). The first-derivative and higher-derivative sharpness controls disprove false uniform 4-adic gains. **Not yet Lean-formalized; no extra determinant valuation claimed; not a dependency of the 313^4 field candidate.**
