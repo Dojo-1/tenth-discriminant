@@ -1,10 +1,10 @@
-import TenthDiscriminant.Phase332SourceGeometry313
+import TenthDiscriminant.Phase342Geometry307
 import TenthDiscriminant.RadialCutoff
 import TenthDiscriminant.ThinRadiusAnalyticGain
 
 /-!
 Phase347 (candidate, UNVERIFIED): this is an exact 307-domain re-derivation
-of the source geometry or inequality, not an assumed weakening of a 313 theorem.
+of the source geometry or inequality, not an assumed weakening of a 307 theorem.
 No new prime factor or mixed-H valuation is permitted. Retain original Qthin.
 # Phase209: candidate positivity for the same original thin and padded trace Grams at 307^4
 
@@ -17,7 +17,7 @@ not a surrogate ellipsoid determinant or a new analytic metric.
 Crucially, positivity of Qold is transported from the proven thin-Q
 interpolation count by set inclusion. We do NOT reuse the old stronger
 3R+S cell-area-radius certificate, which fails its sufficient guard
-at fourth-root 313.
+at fourth-root 307.
 
 These are geometry and positivity lemmas only; the exact-head focused
 Lean run must succeed before calling them formal results. This module
@@ -27,7 +27,7 @@ namespace TenthDiscriminant.FirstCertificate.Tuned
 set_option autoImplicit false
 noncomputable section
 
-private theorem dimensions_positive_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
+private theorem dimensions_positive_307 (D : Nat) (hD : (307 : Nat)^4 ≤ D) :
     1 ≤ R D ∧ 1 ≤ S D := by
   constructor
   · unfold R envelopeR
@@ -38,9 +38,9 @@ private theorem dimensions_positive_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
 /-- At 307^4 the original thin radius does not exceed the original
 padded radius, by exact ceiling bounds. No change of lattice. -/
 theorem thin_radius_le_old_radius_307 (D : Nat)
-    (hD : (313 : Nat)^4 ≤ D) : thinRadius D ≤ rho D := by
+    (hD : (307 : Nat)^4 ≤ D) : thinRadius D ≤ rho D := by
   have ht := fourthRoot_ge_307 D hD
-  have hcube : (313 : Real)^3 ≤ fourthRoot D^3 :=
+  have hcube : (307 : Real)^3 ≤ fourthRoot D^3 :=
     pow_le_pow_left₀ (by norm_num) ht 3
   have hsmall : (thinRadius D : Real) <
       (11/25 : Real)*fourthRoot D^3+1 := by
@@ -56,7 +56,7 @@ theorem thin_radius_le_old_radius_307 (D : Nat)
 /-- The already accepted source-ellipse monotonicity transports the
 point-count lower bound to the OLD larger padded radius. -/
 theorem padded_interpolation_count_307 (D : Nat)
-    (hD : (313 : Nat)^4 ≤ D) :
+    (hD : (307 : Nat)^4 ≤ D) :
     2*(R D-1)+(S D-1) <
       (ellipsePairs D (rho D)).card := by
   have hD0 : 0 < D := by omega
@@ -69,7 +69,7 @@ theorem padded_interpolation_count_307 (D : Nat)
 /-- The existing original padded cardinality MAJORANT also bounds
 the smaller original ellipse, without equating the two Gram matrices. -/
 theorem thin_card_le_old_padded_majorant_307 (D : Nat)
-    (hD : (313 : Nat)^4 ≤ D) :
+    (hD : (307 : Nat)^4 ≤ D) :
     ((ellipsePairs D (thinRadius D)).card : Real) ≤
       ellipsePaddedUpperCount D (rho D)
         (ellipseVerticalBound D (rho D)) := by
@@ -88,7 +88,7 @@ theorem thin_card_le_old_padded_majorant_307 (D : Nat)
 /-- Strict positivity of that majorant derives from the verified
 ORIGINAL thin-Q count, not the obsolete padded 3R+S certificate. -/
 theorem old_padded_majorant_pos_307 (D : Nat)
-    (hD : (313 : Nat)^4 ≤ D) :
+    (hD : (307 : Nat)^4 ≤ D) :
     0 < ellipsePaddedUpperCount D (rho D)
         (ellipseVerticalBound D (rho D)) := by
   have hc := thin_radius_interpolation_count_307 D hD
@@ -103,7 +103,7 @@ theorem old_padded_majorant_pos_307 (D : Nat)
 In a future theorem the prime lower and geometric upper must both
 refer to this exact determinant. -/
 theorem thin_original_gram_pos_307 (D : Nat)
-    (hD : (313 : Nat)^4 ≤ D) :
+    (hD : (307 : Nat)^4 ≤ D) :
     0 < (integerRectangularTraceGram
        (ellipsePairs D (thinRadius D)) D (S D) (R D) (S D)).det := by
   have hp := dimensions_positive_307 D hD
@@ -115,7 +115,7 @@ theorem thin_original_gram_pos_307 (D : Nat)
 /-- Likewise, the ORIGINAL padded Gram is positive, independently
 of the invalid old stronger cell-area sufficient proof. -/
 theorem old_original_gram_pos_307 (D : Nat)
-    (hD : (313 : Nat)^4 ≤ D) :
+    (hD : (307 : Nat)^4 ≤ D) :
     0 < (integerRectangularTraceGram
        (ellipsePairs D (rho D)) D (S D) (R D) (S D)).det := by
   have hp := dimensions_positive_307 D hD
