@@ -27,7 +27,7 @@ theorem log_307_rational_enclosure :
   rcases h with ⟨hlo, hhi⟩
   constructor
   · linarith
-  · exact hhi
+  · linarith
 
 theorem log_floor_from_307_fourth_power (D : Nat)
     (hD : (307 : Nat)^4 ≤ D) :
