@@ -1,15 +1,15 @@
 import TenthDiscriminant.Lower315
-import TenthDiscriminant.Phase332Log313Certificate
-import TenthDiscriminant.Phase332SourceGeometry313
+import TenthDiscriminant.Phase343Log307
+import TenthDiscriminant.Phase342Geometry307
 
 /-!
 Phase347 (candidate, UNVERIFIED): this is an exact 307-domain re-derivation
-of the source geometry or inequality, not an assumed weakening of a 313 theorem.
+of the source geometry or inequality, not an assumed weakening of a 307 theorem.
 No new prime factor or mixed-H valuation is permitted. Retain original Qthin.
 # Phase337 — source-exact 307^4 dimension and logarithmic guards
 
 Transports only the classical floor relations for the UNCHANGED
-R=floor(D/4), S=floor(R/25), at root 313 instead of root 315.
+R=floor(D/4), S=floor(R/25), at root 307 instead of root 315.
 Does not transport source Gram lower or analytic upper by assumption.
 -/
 namespace TenthDiscriminant.FirstCertificate.Tuned
@@ -17,7 +17,7 @@ open TenthDiscriminant.RadialCutoff
 set_option autoImplicit false
 noncomputable section
 
-theorem dimensions_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
+theorem dimensions_307 (D : Nat) (hD : (307 : Nat)^4 ≤ D) :
     100000000 ≤ R D ∧ 500000 ≤ S D ∧ 10*R D ≤ 251*S D ∧
     R D ≤ 10000*S D ∧ (D : Real)/5 ≤ R D ∧
     (R D : Real) ≤ (D : Real)/4 ∧ (S D : Real) ≤ (R D : Real)/25 := by
@@ -38,7 +38,7 @@ theorem dimensions_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
 
 /-- Reprove the floor-ratio logarithm at 307^4; do not weaken the
 existing 322-domain theorem. -/
-theorem log_R_lower_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
+theorem log_R_lower_307 (D : Nat) (hD : (307 : Nat)^4 ≤ D) :
     Real.log D-13904/10000 ≤ Real.log (R D) := by
   have hn : 249*D ≤ 1000*R D := by
     simpa [R] using
@@ -53,7 +53,7 @@ theorem log_R_lower_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
   linarith [TenthDiscriminant.log_floor_ratio_upper_13904]
 
 /-- Both logarithmic bounds for the unchanged floor R=floor(D/4). -/
-theorem log_R_bounds_307 (D : Nat) (hD : (313 : Nat)^4 ≤ D) :
+theorem log_R_bounds_307 (D : Nat) (hD : (307 : Nat)^4 ≤ D) :
     Real.log D-13904/10000 ≤ Real.log (R D) ∧
     Real.log (R D) ≤ Real.log D-138/100 := by
   have hd := dimensions_307 D hD
