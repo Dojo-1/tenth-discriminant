@@ -1,0 +1,31 @@
+name: Phase339 graded ordinary-jet finite controls
+
+on:
+  push:
+    branches: ['research/phase309-original-source-picard-minors']
+    paths:
+      - 'research/phase339/test_*.py'
+      - '.github/workflows/phase339-graded-jets.yml'
+  pull_request:
+    paths:
+      - 'research/phase339/test_*.py'
+      - '.github/workflows/phase339-graded-jets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phase339-graded-jets-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  exact-integer-checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact integer algebra and ordinary derivative sharpness tests
+        run: python3 -m unittest discover -s research/phase339 -p 'test_*.py' -v
