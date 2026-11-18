@@ -74,7 +74,7 @@ theorem euclid_radius_count_252 (D : Nat) (hD : (252 : Nat)^4 ≤ D) :
   have ht2 : t^2 = Real.sqrt D := by simpa [t] using hi.2.1
   have ht4 : t^4 = (D : Real) := by simpa [t] using hi.2.2
   have hscale : (D : Real) * Real.sqrt D = t^6 := by
-    rw [← ht4, ← ht2]
+    rw [← ht2, ← ht4]
     ring
   have hDpos : 0 < D := by omega
   have hbuffer := euclid_radius_buffer_252 D hD
@@ -95,7 +95,8 @@ theorem euclid_radius_count_252 (D : Nat) (hD : (252 : Nat)^4 ≤ D) :
   have hsq : a^2 ≤ b^2 := by nlinarith only [hsqprod]
   have hcoef : (51/100 : Real) <
       Real.pi * (403015/1000000 : Real)^2 := by
-    have hpi : (157/50 : Real) < Real.pi := Real.pi_gt_d2
+    have hpi : (157/50 : Real) < Real.pi := by
+      convert Real.pi_gt_d2 using 1 <;> norm_num
     exact (euclid_252_rational_margin).trans
       (mul_lt_mul_of_pos_right hpi (by norm_num))
   have hcoefprod : (51/100 : Real)*t^6 <
