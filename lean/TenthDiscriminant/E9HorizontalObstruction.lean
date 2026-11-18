@@ -56,7 +56,35 @@ theorem horizontalObstruction_has_root :
     linarith
   exact ⟨x, hl, hr, hf⟩
 
+/-- The integer polynomial corresponding to the source-matched obstruction. -/
+def horizontalObstructionInt (x : Int) : Int :=
+  3*x^8-24*x^7-40*x^6+576*x^5-2448*x^4+5504*x^3-
+  12288*x^2+15360*x-13312
+
+/-- The five residue values modulo five are 3,1,3,4,4. -/
+private theorem obstruction_mod_five_nonzero (x : ZMod 5) :
+    3*x^8-24*x^7-40*x^6+576*x^5-2448*x^4+5504*x^3-
+    12288*x^2+15360*x-13312 ≠ 0 := by
+  fin_cases x <;> decide
+
+/-- No integer abscissa can be a root of the residual polynomial.
+The continuous obstruction still has a noninteger real root. -/
+theorem horizontalObstructionInt_ne_zero (x : Int) :
+    horizontalObstructionInt x ≠ 0 := by
+  intro hzero
+  have hcast : (horizontalObstructionInt x : ZMod 5) = 0 := by
+    exact_mod_cast hzero
+  have hbad :
+      3*(x : ZMod 5)^8-24*(x : ZMod 5)^7-40*(x : ZMod 5)^6+
+      576*(x : ZMod 5)^5-2448*(x : ZMod 5)^4+
+      5504*(x : ZMod 5)^3-12288*(x : ZMod 5)^2+
+      15360*(x : ZMod 5)-13312 = 0 := by
+    simpa [horizontalObstructionInt] using hcast
+  exact obstruction_mod_five_nonzero (x : ZMod 5) hbad
+
+
 end TenthDiscriminant.E9
 
 #print axioms TenthDiscriminant.E9.horizontalObstruction_has_root
 #print axioms TenthDiscriminant.E9.determinantFactor_endpoint_values
+#print axioms TenthDiscriminant.E9.horizontalObstructionInt_ne_zero
