@@ -40,7 +40,7 @@ theorem horizontalObstruction_has_root :
   have hmem : (0 : Real) ∈
       Set.Icc (horizontalObstruction 7) (horizontalObstruction 8) :=
     ⟨le_of_lt hneg, le_of_lt hpos⟩
-  obtain ⟨x, hx, hf⟩ := Set.mem_image.mp
+  obtain ⟨x, hx, hf⟩ := (Set.mem_image horizontalObstruction (Set.Icc 7 8) (0 : Real)).mp
     (intermediate_value_Icc (by norm_num : (7 : Real) ≤ 8)
        obstruction_continuous.continuousOn hmem)
   rcases Set.mem_Icc.mp hx with ⟨hxl, hxr⟩
