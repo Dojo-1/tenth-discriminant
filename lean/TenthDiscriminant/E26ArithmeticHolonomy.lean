@@ -24,7 +24,6 @@ def quadraticNorm (D : Nat) (p : Int × Int) : Int :=
 theorem quadraticNorm_conj (D : Nat) (p : Int × Int) :
     quadraticNorm D (pairConj p) = quadraticNorm D p := by
   simp [quadraticNorm, pairConj]
-  ring
 
 /-- This path loop is a genuine nonidentity arithmetic automorphism. -/
 theorem conjugation_loop_moves_witness :
@@ -81,6 +80,7 @@ theorem norm_observer_cannot_decode_future (D : Nat) :
       positiveHalfObservation (0,-1) :=
     hp.symm.trans hn
   norm_num [positiveHalfObservation] at hsame
+  cases hsame
 
 /-- The Gram is a coarser observer than the ORIGINAL derivative channel:
 exact Gram invariance is not channel-by-channel identity. -/
