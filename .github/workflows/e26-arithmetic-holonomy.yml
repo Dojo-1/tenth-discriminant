@@ -1,0 +1,56 @@
+name: E26 arithmetic conjugation holonomy (focused Lean)
+
+on:
+  push:
+    branches: ['research/e24-arithmetic-worldlet-transport']
+    paths:
+      - 'lean/TenthDiscriminant/E26ArithmeticHolonomy.lean'
+      - '.github/workflows/e26-arithmetic-holonomy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: e26-arithmetic-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  e26-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile source arithmetic conjugation holonomy
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E26ArithmeticHolonomy 2>&1 | tee /tmp/e26.log
+          if grep -q 'sorryAx' /tmp/e26.log; then exit 1; fi
+      - name: Exact theorem and axioms
+        run: |
+          cat >/tmp/e26-audit.lean <<'LEAN'
+          import TenthDiscriminant.E26ArithmeticHolonomy
+          #check TenthDiscriminant.E26.nontrivial_witness_motion_with_same_original_gram
+          #check TenthDiscriminant.E26.norm_observer_cannot_decode_future
+          #print axioms TenthDiscriminant.E26.nontrivial_witness_motion_with_same_original_gram
+          #print axioms TenthDiscriminant.E26.norm_observer_cannot_decode_future
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e26-audit.lean | tee /tmp/e26-audit.log
+          if grep -q 'sorryAx' /tmp/e26-audit.log; then exit 1; fi
