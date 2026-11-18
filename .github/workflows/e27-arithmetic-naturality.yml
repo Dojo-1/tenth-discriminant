@@ -1,0 +1,56 @@
+name: E27 moving arithmetic holonomy naturality (focused Lean)
+
+on:
+  push:
+    branches: ['research/e24-arithmetic-worldlet-transport']
+    paths:
+      - 'lean/TenthDiscriminant/E27ArithmeticNaturality.lean'
+      - '.github/workflows/e27-arithmetic-naturality.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: e27-arithmetic-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  e27-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile original-jet arithmetic holonomy naturality
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E27ArithmeticNaturality 2>&1 | tee /tmp/e27.log
+          if grep -q 'sorryAx' /tmp/e27.log; then exit 1; fi
+      - name: Exact theorem and axiom audit
+        run: |
+          cat >/tmp/e27-audit.lean <<'LEAN'
+          import TenthDiscriminant.E27ArithmeticNaturality
+          #check TenthDiscriminant.E27.moving_arithmetic_holonomy_originalGram_coherence
+          #print axioms TenthDiscriminant.E27.algebraHolonomy_natural
+          #print axioms TenthDiscriminant.E27.moving_arithmetic_holonomy_originalGram_coherence
+          #print axioms TenthDiscriminant.E27.moving_arithmetic_holonomy_det_coherence
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e27-audit.lean | tee /tmp/e27-axioms.log
+          if grep -q 'sorryAx' /tmp/e27-axioms.log; then exit 1; fi
