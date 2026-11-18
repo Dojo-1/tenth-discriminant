@@ -1,0 +1,63 @@
+name: E14 moving-frame original ordinary jets (focused Lean)
+
+on:
+  push:
+    branches: ['research/e14-source-jet-transport']
+    paths:
+      - 'lean/TenthDiscriminant/E14MovingFrameJet.lean'
+      - '.github/workflows/e14-source-jet.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: e14-source-jet-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  e14-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile source-locked moving-frame jets
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E14MovingFrameJet 2>&1 | tee /tmp/e14-build.log
+          if grep -q 'sorryAx' /tmp/e14-build.log; then echo 'Unproved sorryAx'; exit 1; fi
+      - name: Check theorem types and axiom dependencies
+        run: |
+          cat > /tmp/e14-axioms.lean <<'LEAN'
+          import TenthDiscriminant.E14MovingFrameJet
+          #check TenthDiscriminant.E14.movingFramePath_original_ordinary_jet
+          #print axioms TenthDiscriminant.E14.movingFramePath_eq_taylor
+          #print axioms TenthDiscriminant.E14.movingFramePath_coeff
+          #print axioms TenthDiscriminant.E14.movingFramePath_original_ordinary_jet
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e14-axioms.lean | tee /tmp/e14-axioms.log
+          if grep -q 'sorryAx' /tmp/e14-axioms.log; then echo 'Unproved sorryAx'; exit 1; fi
