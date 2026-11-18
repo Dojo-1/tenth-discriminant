@@ -27,7 +27,9 @@ theorem euclid_log_D_over_R_300 (D : Nat)
     rw [← hi.2.1]
     positivity
   have hrpos : (0 : Real) < FirstCertificate.Tuned.R D := by
-    exact_mod_cast (show 0 < FirstCertificate.Tuned.R D by omega)
+    exact_mod_cast (show 0 < FirstCertificate.Tuned.R D by
+      unfold FirstCertificate.Tuned.R envelopeR
+      omega)
   have hlog := Real.log_le_sub_one_of_pos hspos
   have he : 2*Real.log (Real.sqrt D)=Real.log D := by
     have h := congrArg Real.log
@@ -54,7 +56,9 @@ theorem euclid_log_ratio_over_R_300 (D : Nat)
       (by omega : (252 : Nat)^4 ≤ D)).1
     exact_mod_cast (show 0 < FirstCertificate.Tuned.euclidRadius D by omega)
   have hrpos : (0 : Real) < FirstCertificate.Tuned.R D := by
-    exact_mod_cast (show 0 < FirstCertificate.Tuned.R D by omega)
+    exact_mod_cast (show 0 < FirstCertificate.Tuned.R D by
+      unfold FirstCertificate.Tuned.R envelopeR
+      omega)
   have hR : 4*FirstCertificate.Tuned.R D ≤ D := by
     unfold FirstCertificate.Tuned.R envelopeR
     omega
@@ -63,6 +67,8 @@ theorem euclid_log_ratio_over_R_300 (D : Nat)
       exact_mod_cast hR
     linarith
   have hρone : (1 : Real) ≤ FirstCertificate.Tuned.euclidRadius D := by
+    have hh := (FirstCertificate.Tuned.euclid_radius_guards_252 D
+      (by omega : (252 : Nat)^4 ≤ D)).1
     exact_mod_cast (show 1 ≤ FirstCertificate.Tuned.euclidRadius D by omega)
   have hDpos : (0 : Real) < D := by
     exact_mod_cast (show 0 < D by omega)
@@ -130,10 +136,16 @@ theorem euclid_ellipse_upper_count_le_16D_300 (D : Nat)
     have hh : (1 : Real)^4 ≤ t^4 :=
       pow_le_pow_left₀ (by norm_num) htone 4
     simpa using hh
+  have hρD : (rho : Real) ≤ (D : Real) := by
+    rw [←ht4]
+    exact hρcube.trans hp3
+  have hYD : ((ellipseVerticalBound D rho : Nat) : Real) ≤
+      (D : Real) := by
+    rw [←ht4]
+    exact hY.trans hp1
   unfold ellipseUpperCount
   push_cast
-  rw [←ht4]
-  nlinarith only [hterm,hρcube,hY,hp1,hp3,hD1,ht4]
+  nlinarith only [hterm,hρD,hYD,hD1]
 
 /-- The normalized count-log error <= 1/4000 with n=ellipseUpperCount.
 No dependence on floating-point counts or asymptotic O-terms. -/
@@ -153,7 +165,9 @@ theorem euclid_count_log_over_R_300 (D : Nat)
     omega
   have hs : (0 : Real) < FirstCertificate.Tuned.S D := by exact_mod_cast hSpos
   have hR : (0 : Real) < FirstCertificate.Tuned.R D := by
-    exact_mod_cast (show 0 < FirstCertificate.Tuned.R D by omega)
+    exact_mod_cast (show 0 < FirstCertificate.Tuned.R D by
+      unfold FirstCertificate.Tuned.R envelopeR
+      omega)
   have hS : (FirstCertificate.Tuned.S D : Real) ≤ D := by
     have hh : FirstCertificate.Tuned.S D ≤ D := by
       unfold FirstCertificate.Tuned.S FirstCertificate.Tuned.R envelopeR
