@@ -56,8 +56,10 @@ jobs:
           import TenthDiscriminant.Euclid252Count
           #check TenthDiscriminant.FirstCertificate.Tuned.euclid_radius_count_252
           #check TenthDiscriminant.FirstCertificate.Tuned.euclid_original_gram_posDef_252
+          #check TenthDiscriminant.FirstCertificate.Tuned.euclid_original_integer_gram_det_pos_252
           #print axioms TenthDiscriminant.FirstCertificate.Tuned.euclid_radius_count_252
           #print axioms TenthDiscriminant.FirstCertificate.Tuned.euclid_original_gram_posDef_252
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.euclid_original_integer_gram_det_pos_252
           LEAN
           set -o pipefail
           lake env lean /tmp/euclid252-axioms.lean | tee /tmp/euclid252-axioms.log

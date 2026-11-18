@@ -140,9 +140,24 @@ theorem euclid_original_gram_posDef_252 (D : Nat)
   rw [ellipsePoints_card D (euclidRadius D) hp]
   exact euclid_interpolation_count_252 D hD
 
+/-- ORIGINAL integer Gram determinant is positive on the certified ellipse.
+This is the exact source type needed for the odd/binary arithmetic bridge. -/
+theorem euclid_original_integer_gram_det_pos_252 (D : Nat)
+    (hD : (252 : Nat)^4 ≤ D) :
+    0 < (integerRectangularTraceGram (ellipsePairs D (euclidRadius D))
+      D (S D) (R D) (S D)).det := by
+  exact ellipseIntegerTraceGram_det_pos_of_count
+    D (euclidRadius D) (S D) (R D) (S D)
+    (by omega)
+    (by unfold R envelopeR; omega)
+    (by unfold S R envelopeR; omega)
+    le_rfl
+    (euclid_interpolation_count_252 D hD)
+
 end
 end TenthDiscriminant.FirstCertificate.Tuned
 
 #print axioms TenthDiscriminant.FirstCertificate.Tuned.euclid_radius_count_252
 #print axioms TenthDiscriminant.FirstCertificate.Tuned.euclid_interpolation_count_252
 #print axioms TenthDiscriminant.FirstCertificate.Tuned.euclid_original_gram_posDef_252
+#print axioms TenthDiscriminant.FirstCertificate.Tuned.euclid_original_integer_gram_det_pos_252
