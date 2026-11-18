@@ -1,0 +1,59 @@
+name: E16b same-source 300 sandwich (focused Lean)
+
+on:
+  push:
+    branches: ['research/e16-integrated-source-300']
+    paths:
+      - 'lean/TenthDiscriminant/EuclidCellBridge.lean'
+      - 'lean/TenthDiscriminant/Euclid252Count.lean'
+      - 'lean/TenthDiscriminant/E15EuclidUpper.lean'
+      - 'lean/TenthDiscriminant/E16Integrated300.lean'
+      - '.github/workflows/e16-integrated-300.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: e16-integrated-300
+  cancel-in-progress: true
+
+jobs:
+  e16b-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build exact original-Gram lower-upper sandwich
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E16Integrated300 2>&1 | tee /tmp/e16b.log
+          if grep -q 'sorryAx' /tmp/e16b.log; then exit 1; fi
+      - name: Theorem types and axioms
+        run: |
+          cat > /tmp/e16b-axioms.lean <<'LEAN'
+          import TenthDiscriminant.E16Integrated300
+          #check TenthDiscriminant.E16.euclid_same_source_sandwich_300
+          #check TenthDiscriminant.E16.contradiction_of_scalar_separation
+          #print axioms TenthDiscriminant.E16.euclid_same_source_sandwich_300
+          #print axioms TenthDiscriminant.E16.contradiction_of_scalar_separation
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e16b-axioms.lean | tee /tmp/e16b-axioms.log
+          if grep -q 'sorryAx' /tmp/e16b-axioms.log; then exit 1; fi
