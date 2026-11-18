@@ -97,7 +97,6 @@ theorem enderUpperB_affine_from_guards
       enderUpperB R S S rho n / comparisonScale R S-23/2000 =
         Real.log (2*n*S)/R + A*Real.log rho + B*C - 23/2000 := by
     rw [enderUpperB_expanded R S rho n (by omega) hS hrho]
-    rfl
   calc
     _ = Real.log (2*n*S)/R + A*Real.log rho+B*C-23/2000 := heq
     _ ≤ 1/4000 + (26/25 : Real)*
