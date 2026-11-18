@@ -7,6 +7,8 @@
 
 The actual selected source lattice in TenthDiscriminant.IntegerTraceGram is the integer pair (x,y), interpreted as x+y sqrt(-D). The source explicitly says this is not necessarily the full ring of integers. Its native functions for multiplication, conjugation, ordinary-Z derivative rows, integer trace pairing, and original rectangular Gram remain unchanged.
 
+**Degenerate type boundary:** D=0 gives a formal pair algebra with nonzero nilpotent (0,1) squaring to zero, NOT the number field Q(sqrt(0)) or reduced order Z. The E24 algebraic theorem is universally quantified over D:Nat, but the quadratic-field/order interpretation requires D>0 and its independent arithmetic hypotheses. The explicit nilpotent counterworld is also a Lean theorem.
+
 E24, E25, E26 and E27 each passed an exact-head focused Lean 4.19 + Mathlib build and #print axioms verification on the research branch, using only propext, Classical.choice and Quot.sound; no sorryAx:
 
 - [E24 original Gram and square-index order transport](https://github.com/Dojo-1/tenth-discriminant/actions/runs/44294303700).

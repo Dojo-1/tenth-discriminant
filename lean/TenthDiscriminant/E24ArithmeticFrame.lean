@@ -3,9 +3,11 @@ import TenthDiscriminant.E14MovingFrameJet
 /-!
 # E24: arithmetic worldlet transport -- exact original trace-Gram and integral remainder
 
-For positive k, Z[sqrt(-D k^2)] embeds as an index-k suborder of
-Z[sqrt(-D)] by (x,y) |-> (x,k y). This is a RING embedding and
-preserves the ORIGINAL ordinary-Z jet rows and trace pairing.
+For D>0 and positive k, this models the index-k inclusion of selected
+quadratic orders Z[sqrt(-D*k*k)] into Z[sqrt(-D)] via (x,y)->(x,k*y).
+For D=0, pairMul 0 is a DEGENERATE formal dual-number pair algebra,
+not the quadratic number field Z[sqrt(0)]. The verified algebraic pair
+identities still hold, but NO field/order interpretation is asserted.
 
 It transports the integer rectangular trace Gram *exactly* if, and
 only if for the asserted identity, the observation support is the
@@ -272,6 +274,14 @@ theorem rationalDown_loses_integral_witness :
   have hInt : (2*q.2 : Int) = 1 := by exact_mod_cast hRat
   omega
 
+
+/-- D=0 is a formal pair algebra with a nonzero nilpotent.
+No field or reduced quadratic-order reading is justified at D=0. -/
+theorem degenerate_pair_algebra_nonzero_nilpotent :
+    pairMul 0 (0,1) (0,1) = (0,0) ∧
+      ((0,1) : Int × Int) ≠ (0,0) := by
+  constructor <;> decide
+
 end
 end TenthDiscriminant.E24
 
@@ -282,3 +292,4 @@ end TenthDiscriminant.E24
 #print axioms TenthDiscriminant.E24.target_odd_node_not_in_embedded_support
 #print axioms TenthDiscriminant.E24.rationalQuadraticForm_isometry
 #print axioms TenthDiscriminant.E24.rationalDown_loses_integral_witness
+#print axioms TenthDiscriminant.E24.degenerate_pair_algebra_nonzero_nilpotent
