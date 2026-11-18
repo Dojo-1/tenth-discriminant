@@ -73,7 +73,7 @@ theorem horizontalObstructionInt_ne_zero (x : Int) :
     horizontalObstructionInt x ≠ 0 := by
   intro hzero
   have hcast : (horizontalObstructionInt x : ZMod 5) = 0 := by
-    exact_mod_cast hzero
+    simpa using congrArg (fun z : Int => (z : ZMod 5)) hzero
   have hbad :
       3*(x : ZMod 5)^8-24*(x : ZMod 5)^7-40*(x : ZMod 5)^6+
       576*(x : ZMod 5)^5-2448*(x : ZMod 5)^4+
