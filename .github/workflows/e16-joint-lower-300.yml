@@ -1,0 +1,60 @@
+name: E16 joint source lower at 300 (focused Lean)
+
+on:
+  push:
+    branches: ['research/e16-joint-lower-300']
+    paths:
+      - 'lean/TenthDiscriminant/E16Dimensions300.lean'
+      - 'lean/TenthDiscriminant/E16Lower300.lean'
+      - 'lean/TenthDiscriminant/E16JointLower300.lean'
+      - '.github/workflows/e16-joint-lower-300.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: e16-lower-300
+  cancel-in-progress: true
+
+jobs:
+  e16-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build three actual-source arithmetic modules
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E16JointLower300 2>&1 | tee /tmp/e16.log
+          if grep -q 'sorryAx' /tmp/e16.log; then exit 1; fi
+      - name: Exact theorem and axiom checks
+        run: |
+          cat > /tmp/e16-axioms.lean <<'LEAN'
+          import TenthDiscriminant.E16JointLower300
+          #check TenthDiscriminant.FirstCertificate.Tuned.dimensions_300
+          #check TenthDiscriminant.FirstCertificate.Tuned.normalized_lower_300
+          #check TenthDiscriminant.E16.original_source_joint_normalized_lower_300
+          #check TenthDiscriminant.E16.euclid_original_joint_lower_300
+          #print axioms TenthDiscriminant.E16.original_source_joint_normalized_lower_300
+          #print axioms TenthDiscriminant.E16.euclid_original_joint_lower_300
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e16-axioms.lean | tee /tmp/e16-axioms.log
+          if grep -q 'sorryAx' /tmp/e16-axioms.log; then exit 1; fi
