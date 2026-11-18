@@ -67,8 +67,10 @@ theorem euclid_radius_over_R_300 (D : Nat)
     (FirstCertificate.Tuned.euclidRadius D : Real) /
       FirstCertificate.Tuned.R D ≤ 1/100 := by
   have h100 := euclid_hundred_radius_le_R_300 D hD
+  have hdim := FirstCertificate.Tuned.dimensions_300 D hD
   have hrpos : (0 : Real) < FirstCertificate.Tuned.R D := by
-    exact_mod_cast (show 0 < FirstCertificate.Tuned.R D by omega)
+    have hp : 0 < FirstCertificate.Tuned.R D := by omega
+    exact_mod_cast hp
   apply (div_le_iff₀ hrpos).2
   have hreal : (100 : Real)*FirstCertificate.Tuned.euclidRadius D ≤
       FirstCertificate.Tuned.R D := by
