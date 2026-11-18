@@ -41,8 +41,14 @@ theorem log_floor_from_300_fourth_power (D : Nat)
     exact_mod_cast hD
   have hm := Real.log_le_log hsmall hDreal
   rw [Nat.cast_pow, Real.log_pow] at hm
-  have hlo := log_300_rational_enclosure.1
-  linarith
+  have hlo : (57/10 : Real) ≤ Real.log (300 : Real) :=
+    log_300_rational_enclosure.1
+  have hscaled : (4 : Real)*(57/10 : Real) ≤
+      (4 : Real)*Real.log (300 : Real) :=
+    mul_le_mul_of_nonneg_left hlo (by norm_num)
+  have heq : (4 : Real)*(57/10 : Real) = 114/5 := by norm_num
+  rw [heq] at hscaled
+  exact hscaled.trans hm
 
 /-- Exact lower expression: all three explicit correction terms are
 nonnegative for D>=300^4, with floors kept intact. -/
