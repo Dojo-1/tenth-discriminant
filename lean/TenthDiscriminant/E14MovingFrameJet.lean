@@ -75,9 +75,62 @@ theorem movingFramePath_original_ordinary_jet
   · have hlt : r < j := by omega
     simp [derivativeRow, hj, Nat.choose_eq_zero_of_lt hlt]
 
+
+/-- Integer coordinates induced by (Re U, Im V / sqrt D) on the
+original conjugate lattice, where V = W - Z. -/
+def frameIntegralCoordinates (q : Int × Int) : Int × Int :=
+  (q.1, -2 * q.2)
+
+theorem frameIntegralCoordinates_injective :
+    Function.Injective frameIntegralCoordinates := by
+  intro a b h
+  apply Prod.ext
+  · exact congrArg Prod.fst h
+  · have hh := congrArg Prod.snd h
+    dsimp [frameIntegralCoordinates] at hh
+    omega
+
+/-- Exact image of the integer chart: the second component is even. -/
+theorem frameIntegralCoordinates_range (p : Int × Int) :
+    (∃ q, frameIntegralCoordinates q = p) ↔
+      (∃ k : Int, p.2 = 2 * k) := by
+  constructor
+  · rintro ⟨q, hq⟩
+    refine ⟨-q.2, ?_⟩
+    have hh := congrArg Prod.snd hq
+    dsimp [frameIntegralCoordinates] at hh
+    omega
+  · rintro ⟨k, hk⟩
+    refine ⟨(p.1, -k), ?_⟩
+    apply Prod.ext
+    · rfl
+    · dsimp [frameIntegralCoordinates]
+      omega
+
+/-- An unrestricted new Z x Z coordinate lattice would add spurious nodes. -/
+theorem frameIntegralCoordinates_not_surjective :
+    ¬ Function.Surjective frameIntegralCoordinates := by
+  intro h
+  obtain ⟨q, hq⟩ := h (0, 1)
+  have hh := congrArg Prod.snd hq
+  dsimp [frameIntegralCoordinates] at hh
+  omega
+
+/-- The ORIGINAL 2 and 2D integer trace weights, transported to the
+index-two chart without illicit division or changed valuations. -/
+theorem frame_pair_trace_metric (D : Nat) (p q : Int × Int) :
+    4 * integerPairTrace D p q =
+      8 * p.1 * q.1 +
+        2 * (D : Int) *
+          (frameIntegralCoordinates p).2 * (frameIntegralCoordinates q).2 := by
+  simp only [integerPairTrace, frameIntegralCoordinates]
+  ring
+
 end
 end TenthDiscriminant.E14
 
 #print axioms TenthDiscriminant.E14.movingFramePath_eq_taylor
 #print axioms TenthDiscriminant.E14.movingFramePath_coeff
 #print axioms TenthDiscriminant.E14.movingFramePath_original_ordinary_jet
+#print axioms TenthDiscriminant.E14.frameIntegralCoordinates_range
+#print axioms TenthDiscriminant.E14.frame_pair_trace_metric

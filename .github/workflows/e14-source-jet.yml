@@ -26,13 +26,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
-      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
-        with:
-          path: |
-            ~/.elan
-            ~/.cache/mathlib
-            lean/.lake/packages
-          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      # Avoid the multi-GB cache restore; Lake obtains pinned dependencies directly.
       - name: Install pinned elan
         run: |
           if [ ! -x "$HOME/.elan/bin/elan" ]; then
@@ -57,6 +51,8 @@ jobs:
           #print axioms TenthDiscriminant.E14.movingFramePath_eq_taylor
           #print axioms TenthDiscriminant.E14.movingFramePath_coeff
           #print axioms TenthDiscriminant.E14.movingFramePath_original_ordinary_jet
+          #print axioms TenthDiscriminant.E14.frameIntegralCoordinates_range
+          #print axioms TenthDiscriminant.E14.frame_pair_trace_metric
           LEAN
           set -o pipefail
           lake env lean /tmp/e14-axioms.lean | tee /tmp/e14-axioms.log
