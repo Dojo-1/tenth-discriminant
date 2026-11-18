@@ -1,0 +1,54 @@
+name: E15 direct original-Gram upper (focused Lean)
+
+on:
+  push:
+    branches: ['research/e15-euclid-upper-direct']
+    paths:
+      - 'lean/TenthDiscriminant/E15EuclidUpper.lean'
+      - '.github/workflows/e15-euclid-upper.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: e15-euclid-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  e15-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile same-source normalized analytic upper
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E15EuclidUpper 2>&1 | tee /tmp/e15-build.log
+          if grep -q 'sorryAx' /tmp/e15-build.log; then exit 1; fi
+      - name: Theorem and axiom audit
+        run: |
+          cat >/tmp/e15-axioms.lean <<'LEAN'
+          import TenthDiscriminant.E15EuclidUpper
+          #check TenthDiscriminant.FirstCertificate.Tuned.euclid_normalized_upper_252
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.euclid_normalized_upper_252
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e15-axioms.lean | tee /tmp/e15-axioms.log
+          if grep -q 'sorryAx' /tmp/e15-axioms.log; then exit 1; fi
