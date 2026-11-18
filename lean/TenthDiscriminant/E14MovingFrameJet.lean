@@ -85,7 +85,9 @@ theorem frameIntegralCoordinates_injective :
     Function.Injective frameIntegralCoordinates := by
   intro a b h
   apply Prod.ext
-  · exact congrArg Prod.fst h
+  · have hh : (frameIntegralCoordinates a).1 = (frameIntegralCoordinates b).1 :=
+      congrArg (fun p : Int × Int => p.1) h
+    simpa [frameIntegralCoordinates] using hh
   · have hh := congrArg Prod.snd h
     dsimp [frameIntegralCoordinates] at hh
     omega
