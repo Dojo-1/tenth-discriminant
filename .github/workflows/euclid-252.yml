@@ -1,0 +1,66 @@
+name: E6 Euclid-252 count (focused Lean)
+
+on:
+  push:
+    branches: ['research/euclid-252-count']
+    paths:
+      - 'lean/TenthDiscriminant/Euclid252Count.lean'
+      - 'lean/TenthDiscriminant.lean'
+      - '.github/workflows/euclid-252.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: euclid-252-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  euclid252:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build exact original ellipse certificate
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Euclid252Count 2>&1 | tee /tmp/euclid252-build.log
+          if grep -q 'sorryAx' /tmp/euclid252-build.log; then echo 'Unproved sorryAx'; exit 1; fi
+      - name: Exact type and axioms
+        run: |
+          cat > /tmp/euclid252-axioms.lean <<'LEAN'
+          import TenthDiscriminant.Euclid252Count
+          #check TenthDiscriminant.FirstCertificate.Tuned.euclid_radius_count_252
+          #check TenthDiscriminant.FirstCertificate.Tuned.euclid_original_gram_posDef_252
+          #check TenthDiscriminant.FirstCertificate.Tuned.euclid_original_integer_gram_det_pos_252
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.euclid_radius_count_252
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.euclid_original_gram_posDef_252
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.euclid_original_integer_gram_det_pos_252
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/euclid252-axioms.lean | tee /tmp/euclid252-axioms.log
+          if grep -q 'sorryAx' /tmp/euclid252-axioms.log; then echo 'Unproved sorryAx'; exit 1; fi
