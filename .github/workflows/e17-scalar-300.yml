@@ -1,0 +1,56 @@
+name: E17 scalar lower floor 300 (focused Lean)
+
+on:
+  push:
+    branches: ['research/e17-scalar-lower-300']
+    paths:
+      - 'lean/TenthDiscriminant/E17ScalarLower300.lean'
+      - '.github/workflows/e17-scalar-300.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: e17-scalar-300
+  cancel-in-progress: true
+
+jobs:
+  e17-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build exact rational floor and scalar lower inequality
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E17ScalarLower300 2>&1 | tee /tmp/e17-scalar.log
+          if grep -q 'sorryAx' /tmp/e17-scalar.log; then exit 1; fi
+      - name: Exact theorem and axioms
+        run: |
+          cat >/tmp/e17-axioms.lean <<'LEAN'
+          import TenthDiscriminant.E17ScalarLower300
+          #check TenthDiscriminant.E17.euclid_lower_gt_simple_upper_300
+          #check TenthDiscriminant.E17.no_one_of_analytic_upper_guard
+          #print axioms TenthDiscriminant.E17.euclid_lower_gt_simple_upper_300
+          #print axioms TenthDiscriminant.E17.no_one_of_analytic_upper_guard
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e17-axioms.lean | tee /tmp/e17-axioms.log
+          if grep -q 'sorryAx' /tmp/e17-axioms.log; then exit 1; fi
