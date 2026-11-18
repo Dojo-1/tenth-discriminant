@@ -36,6 +36,10 @@ import TenthDiscriminant.IntegerTraceGram
 import TenthDiscriminant.JetPrecisionBridge
 import TenthDiscriminant.ObservationConjugation
 import TenthDiscriminant.E14MovingFrameJet
+import TenthDiscriminant.E24ArithmeticFrame
+import TenthDiscriminant.E25NestedArithmeticFrames
+import TenthDiscriminant.E26ArithmeticHolonomy
+import TenthDiscriminant.E27ArithmeticNaturality
 import TenthDiscriminant.BinaryNullPolynomial
 import TenthDiscriminant.BinaryNullOrdinaryJets
 import TenthDiscriminant.BinaryNullMixedJets
