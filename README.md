@@ -1,114 +1,155 @@
-# The Tenth Discriminant
+<div align="center">
 
-> **Current checked public endpoint — 4 November 2026.** The merged [Phase200 PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) contains the actual-field, class-number-one theorem `|disc(K)| < 322^4 = 10,750,371,856`, relative to its encoded Lean definitions and standard axioms; independent human semantic review remains open in [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50). [Phase209 draft #157](https://github.com/Dojo-1/tenth-discriminant/pull/157) explores an optimal ordinary-jet p-adic depth mechanism and a **conditional** `321^4` target; it is **not** a new field theorem. In Tao's Math 2.0 framing, we also compare zero-exclusion methods and what humans can reconstruct: [scope #158](https://github.com/Dojo-1/tenth-discriminant/issues/158). The 328^4 and 327^4 status prose retained below is a **dated historical snapshot**, not the current endpoint.
+![The Tenth Discriminant — original Wabi-Futurist arithmetic / geometry field study](assets/tenth-discriminant-wabi-field.svg)
 
-*Arithmetic against geometry, with one integer determinant in the middle.*
+<sub>侘未来 · WABI-FUTURISM / NUMBER THEORY × INTEGRAL GEOMETRY × FORMAL PROOF</sub>
 
-Can arithmetic force an integer to be **larger** than geometry allows it to be?
+# tenth / discriminant
 
-That is the guiding question of this AI-assisted investigation, begun in response to [Terence Tao's experimental tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/). The difficult part is not making a number smaller. It is showing that the arithmetic lower bound and geometric upper bound genuinely constrain **the same integer**, with the same polynomial jets, integral lattice, sampling set and field assumptions.
+### one integer. two bounds.
 
-The repository combines number theory, exact computation, integral linear algebra, real geometry and Lean 4. It also records failed approaches. A failed transport, a lost prime factor or an incorrect normalization is useful evidence—not something to hide behind a more impressive-looking theorem.
+*Arithmetic wants it large. Geometry wants it small.*
 
-## Where the formal work stands
+**Preserve the Gram. Keep the proof honest.**
 
-**Current mainline Lean theorem — 4 November 2026.** For every totally complex degree-two number field $K$ of class number one, the integrated theorem bounds the **actual absolute field discriminant**:
+<sub>数と形のあいだに、証明がある。 · Between number and form, there is a proof.</sub>
+
+</div>
+
+---
+
+## 00 / The question that remains
+
+Can arithmetic force an integer determinant to be **larger** than geometry allows?
+
+This repository investigates a version of [Terence Tao's experimental tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/), using original ordinary polynomial jets, an **integer trace Gram**, exact lattice-point geometry and Lean 4.
+
+The hard part is not producing a smaller numerical cutoff. It is proving that the two estimates concern **the same integer**, with the same sampling set, lattice, derivatives, trace weights and number-field assumptions.
+
+> A beautiful argument about the wrong determinant is not an argument about this determinant.
+
+**The active evidence boundary — 18 November 2026:** public *main* contains a Lean-checked, actual-field class-number-one bound of **322⁴**. A sharper **321⁴** theorem exists on a consolidated **research branch**, and a **307⁴** candidate is under review on a stacked draft branch; neither has been promoted to the public mainline theorem. Recent Euclid-inspired **252⁴** geometry establishes original-ellipse counting and Gram positivity, **not** a 252⁴ field-discriminant cutoff.
+
+The [full prior technical README](docs/README_MAIN_SNAPSHOT_2026-11-18.md) is archived without rewriting its historical mathematical claims.
+
+## 01 / The public theorem
+
+The merged [Phase200 PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) includes a theorem about the **actual absolute field discriminant**, not an auxiliary Gram determinant. Under its Lean-encoded definitions and standard axioms:
 
 ```math
-|\mathrm{disc}(K)|<322^4=10{,}750{,}371{,}856.
+|\mathrm{disc}(K)| < 322^4
+  = 10{,}750{,}371{,}856
 ```
 
-[PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) integrated [Threshold322.totallyComplex_degree_two_classNumber_one_discriminant_bound_322](lean/TenthDiscriminant/ActualField322.lean) at [merge f41ce45b](https://github.com/Dojo-1/tenth-discriminant/commit/f41ce45b9dd7d722faa682d3f1dc1c204fb571da); all 21 associated workflows passed on its reviewed head, including full-root Lean build, source-coverage check, standard-axiom audit and negative controls. Historical integrated 323⁴, 324⁴, 327⁴, 328⁴ and 331⁴ results remain auditable.
+for every **totally complex degree-two number field** $K$ of **class number one**.
 
-**Independent semantics remains an open question, not a CI gate.** [Issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) requests human reconstruction and challenge of the source definitions, maximal-order/inert-prime reduction, arithmetic divisor, original ellipse interpolation, Hadamard majorant and field transport. [Phase201 source-based reconstruction and exact finite cross-construction counterexample](research/bridges/INDEPENDENT_RECONSTRUCTION_AND_MINORS_20261104.md) explicitly distinguish AI reconstruction from independent human peer review. No claim of priority, numerical competitiveness or a new nine-field classification follows from the 322⁴ theorem.
+The theorem is exposed in [ActualField322.lean](lean/TenthDiscriminant/ActualField322.lean). The merged PR reports all **21 associated exact-head checks passed**, including the whole-root Lean library build, source correspondence, permitted-axiom audit and negative controls.
 
-**Other constructions are not substitutes for ours.** [twinheterodox v0.7.0](https://github.com/twinheterodox/tenth-discriminant/tree/v0.7.0/versions/v7) reports the much stronger cutoff $q<570$, selecting a nonzero derivative-matrix complex minor with an auxiliary inert-prime rank argument. Our proof bounds the entire original real integer trace Gram. The finite Phase201 test shows that a nonzero complex derivative minor modulo a prime need not make the corresponding real trace-Gram determinant nonzero modulo that prime. See the typed [cross-program alignment](research/bridges/EXTERNAL_DETERMINANT_ALIGNMENT_20261103.md) and [Issue #51](https://github.com/Dojo-1/tenth-discriminant/issues/51). No other investigator was contacted and no external theorem was imported.
+**This is a kernel-checked encoded theorem**, not an independently peer-reviewed proof of every intended correspondence between original mathematical sources and formal definitions. [Independent semantic reconstruction #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) remains open. No new nine-field classification, priority claim, or best-in-class numerical bound is asserted.
 
-## The one integer that matters
+## 02 / One determinant, and no substitutes
 
-Take the original rectangular monomials $Z^rW^s$. Their ordinary $Z$-derivatives, **holding $W$ fixed**, are
+Fix the original rectangular monomials $Z^rW^s$. Their ordinary derivatives **with $W$ held fixed** are
 
 ```math
 \partial_Z^j(Z^rW^s)=
 \begin{cases}
-(r)_{\underline{j}}\,Z^{r-j}W^s, & 0\le j\le r,\\
-0, & j>r.
+(r)_{\underline{j}}\,Z^{r-j}W^s,&0\leq j\leq r,\\
+0,&j>r.
 \end{cases}
 ```
 
-Evaluating these jets at the original integer-pair observations $Q$ produces an integer matrix $E_Q$. The original trace pairing supplies the positive diagonal channel metric $B_Q$, with weights $2$ and $2D$ in the corresponding channels. Together they define
+At the original integer-pair samples $Q$, their real and imaginary coordinate channels form an **integer** evaluation matrix $E_Q$. Retain the original positive trace-channel metric $B_Q$, whose paired channel weights are $2$ and $2D$ in the odd quadratic chart. The common integer is
 
 ```math
-G_Q=E_QB_QE_Q^{\mathsf T},
+G_Q=E_Q B_Q E_Q^{\mathsf T},
 \qquad
-\Delta_Q=\det G_Q>0.
+\Delta_Q=\det(G_Q)>0.
 ```
 
-The determinant $\Delta_Q$ is an **auxiliary integer**, *not* the number field's discriminant. It is the meeting place of two arguments:
+**Two independent routes must meet at this exact $\Delta_Q$:**
 
-- **Arithmetic:** guarded inert-prime and binary divisibility force $\Delta_Q$ to have sufficient prime factors.
-- **Geometry:** the original ordinary-jet Hadamard bound constrains the size of that very same $\Delta_Q$.
-
-Changing $Q$, the derivative convention, the lattice or the trace metric can change the problem. A prettier estimate for a *different* Gram is not a proof about the original one.
+| Route | Mathematical task | Guard against false transport |
+| :-- | :-- | :-- |
+| **Arithmetic** | Force integer prime-power divisibility of $\Delta_Q$ through guarded inert-prime, binary and integral-jet arguments | An auxiliary minor or changed observation lattice is not the same Gram |
+| **Geometry** | Bound that same positive $\Delta_Q$ through ordinary-jet interpolation, original ellipse samples and a Hadamard majorant | An enlarged ellipse is permitted as a *count majorant*, not as a replacement determinant |
 
 ```mermaid
 flowchart LR
-    K["Imaginary quadratic field and class number 1"] --> Q["Original integer observations and ordinary jets"]
-    Q --> G["ONE integer trace Gram"]
-    G --> P["Inert primes: arithmetic lower bound"]
-    G --> A["Real geometry: analytic upper bound"]
-    P --> C{"Both bounds on the same determinant?"}
-    A --> C
-    C --> X["Contradiction at the stated threshold"]
-    X --> F["Return to the actual field discriminant"]
+    K["Class-number-one quadratic field"] --> Q["Original integer pairs and ordinary jets"]
+    Q --> G["ONE positive integer trace Gram"]
+    G --> A["Integral divisibility: lower bound"]
+    G --> B["Source-locked geometry: upper bound"]
+    A --> C{"Incompatible for the SAME determinant?"}
+    B --> C
+    C -->|"under proved hypotheses"| D["Field return: actual discriminant"]
+    C -->|"source changed"| E["Stop: unlicensed transport"]
 ```
 
-## How the integrated 322⁴ argument closes
+The field discriminant and $\Delta_Q$ are different integers. The theorem works only because the **field-return step** transports the resulting contradiction to the right field object.
 
-Under the class-number-one, squarefree odd-chart hypotheses, set $R=\lfloor D/4\rfloor$, $S=\lfloor R/25\rfloor$, and use the original thin integer lattice ellipse of radius $\lceil 11D^{3/4}/25\rceil$. The original ordinary-$Z$-derivative trace Gram $G_D$ is positive by the [322 source geometry](lean/TenthDiscriminant/SourceGeometry322.lean) and [positivity proof](lean/TenthDiscriminant/SourcePositivity322.lean). Its [same-Gram arithmetic lower](lean/TenthDiscriminant/SameGramLower322.lean) includes original odd primes 3 and 5 and the binary divisor exactly once. The [same-Gram analytic upper](lean/TenthDiscriminant/ThinUpper322.lean) uses the padded ellipse **only as a count majorant**.
+### The collision in the checked 322⁴ route
 
-For $D\ge322^4$, the compiled inequalities constrain precisely the **same positive integer determinant**:
+For the original source and its encoded dimension/radius guards, the two normalized logarithmic estimates are
 
 ```math
-\frac{999997}{1000000}\log D-\frac{57193}{10000}+\frac14\log2
-\;\le\;\frac{\log\det G_D}{R^2S}
-\;\le\;\frac45\log D-\frac{1853}{2000}.
+\frac{999997}{1000000}\log D
+-\frac{57193}{10000}+\frac14\log 2
+\ \leq\ \frac{\log\det(G_D)}{R^2S}
+\ \leq\ \frac45\log D-\frac{1853}{2000}.
 ```
 
-The sound rational logarithm floor gives a certified positive margin of $2853/500000000$. The [field-return module](lean/TenthDiscriminant/ActualField322.lean) carries the contradiction through both quadratic charts and arbitrary totally complex degree-two fields to the **actual discriminant**, not to $\det G_D$. The exact calculation and unresolved semantic obligations are recorded in [Phase201](research/bridges/INDEPENDENT_RECONSTRUCTION_AND_MINORS_20261104.md).
+At $D\geq322^4$, the certified rational-log floor makes these inequalities incompatible. The explicit conservative positive margin is **2853 / 500000000**.
 
-## What the different investigations establish
+The [independent-source reconstruction](research/bridges/INDEPENDENT_RECONSTRUCTION_AND_MINORS_20261104.md) specifies the jets, lattice, analytic estimates, arithmetic divisors and field return in more detail. That reconstruction was performed with AI assistance; it is **not** a human-referee report.
 
-| Thread | What survives scrutiny | Where to inspect |
-| --- | --- | --- |
-| **Arithmetic (Phases162–166)** | Lean-checked divisibility and logarithmic lemmas for the original ordinary-jet Gram, with one binary factor and an odd-only prime product. | [Binary divisor](lean/TenthDiscriminant/BinaryNullTraceGram.lean) · [binary normalization](research/thin_integrated/PHASE165_EXACT_BINARY_NORMALIZATION.md) · [same-Gram log guide](research/thin_integrated/PHASE166_SAME_GRAM_LOG.md) |
-| **Actual field bound (Phase200)** | Encoded strict $322^4$ actual-field endpoint, full-root Lean-checked and merged in PR #126; external semantic review remains open. | [322 source](lean/TenthDiscriminant/ActualField322.lean) · [PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) |
-| **Original prime recovery (Phase200B)** | The $0.0901$ normalized recovery from the *original primes 3 and 5* is integrated into the $322^4$ source lower with explicit size and floor hypotheses. | [Verified gain](lean/TenthDiscriminant/Phase200PrimeRecovery322.lean) · [source lower](lean/TenthDiscriminant/SourceOddBinary322.lean) |
-| **Historical 323–327 fourth-root endpoints** | Earlier checked thresholds superseded numerically by the merged 322⁴ endpoint; preserved as historical proof paths, not today's frontier. | [323 source](lean/TenthDiscriminant/ActualField323.lean) · [327 source](lean/TenthDiscriminant/ActualField327.lean) |
-| **Characteristic observations (Phase158)** | Exact finite rank, coefficient-obstruction and $2$-adic capacity experiments; no uniform new field cutoff. | [Dossier](research/reverse_determinant/PHASE158_CHARACTERISTIC_JETS.md) · [verifier](research/reverse_determinant/phase158_characteristic_jets.py) |
-| **Support and arithmetic gluing (Phases142, 159–160)** | Exact finite examples separating full rank, integral image, Smith data and Gram volume. A smaller support need not yield a smaller determinant bound. | [Phase142](research/ellipsoid_trimming/PHASE142_LEVERAGE_AND_UNISOLVENCE.md) · [Phase159](research/reverse_determinant/PHASE159_OBSERVATION_CONTINUUM.md) · [Phase160](research/reverse_determinant/PHASE160_ARITHMETIC_NEURITES.md) |
-| **Symmetry (Phase161)** | Source-preserving conjugation and related finite controls; removing a symmetric observation is not automatically safe. | [Human guide](research/reverse_determinant/PHASE161_SYMMETRY_GUIDE.md) · [Lean](lean/TenthDiscriminant/ObservationConjugation.lean) |
-| **Normalized 2-adic filtration (Phase181; bounded pilot)** | After the existing Phase162 row factors are removed, exact Smith barcodes distinguish two D=163 supports having the same first mod-2 nullity. No production-uniform gain or new field cutoff is proved. | [Finite pilot and explanation](research/reverse_determinant/PHASE181_NORMALIZED_BINARY_FILTRATION.md) · [open target #99](https://github.com/Dojo-1/tenth-discriminant/issues/99) |
-| **Transport coherence (Phase179)** | The formal determinant-one rational shear preserves volume but not the anchored integral lattice. | [merged PR #98](https://github.com/Dojo-1/tenth-discriminant/pull/98) · [Lean](lean/TenthDiscriminant/TransportCoherence.lean) |
+## 03 / The ellipse remembers the lattice
 
-One exact arithmetic example behind the current transport study is worth keeping in sight:
+The geometry is not a decorative Euclidean sketch. It is a finite source with an **integral coordinate chart**:
+
+```math
+Q_{D,\rho}=
+\{(x,y)\in\mathbb Z^2\mid x^2+D\,y^2\leq\rho^2\}.
+```
+
+Every assertion about the sample count must refer to the **actual $Q_{D,\rho}$ used by the Gram**. Moving frames can be useful, but their transformations have to carry derivative conventions, the integral lattice, the metric and the observation map coherently. A volume-preserving real shear need not preserve the original integral congruence class.
+
+**New on main, 18 November 2026:**
+
+- [Euclid cell-count bridge — PR #226](https://github.com/Dojo-1/tenth-discriminant/pull/226) establishes source-preserving ellipse-count and positive **original integer Gram** results at the geometric condition $D\geq252^4$. Its proof lives in [Euclid252Count.lean](lean/TenthDiscriminant/Euclid252Count.lean). It does **not** supply the arithmetic/logarithmic field contradiction at that threshold.
+- [Source-locked moving-frame ordinary jets — PR #227](https://github.com/Dojo-1/tenth-discriminant/pull/227) checks the polynomial chart $U=Z,\ V=W-Z$. Holding $W$ fixed when varying $Z$ requires the path $(U,V)\mapsto(U+T,V-T)$. The result recovers the **original ordinary $Z$-jets**, not a Hasse derivative or a tangent derivative silently substituted for them. See [E14MovingFrameJet.lean](lean/TenthDiscriminant/E14MovingFrameJet.lean).
+
+The artwork above depicts a **schematic** integer lattice and ellipse. It does not draw the actual immense finite set $Q_{D,\rho}$ for the checked theorem.
+
+## 04 / The frontier is not the publication
+
+| Line of inquiry | State | What does **not** follow |
+| :-- | :-- | :-- |
+| **Phase200 · 322⁴** | **Merged, Lean-checked on its reviewed head** · [PR #126](https://github.com/Dojo-1/tenth-discriminant/pull/126) | Independent human semantic sign-off |
+| **Phase267 · 321⁴** | Lean-checked research declaration, consolidated away from main; superseded [PR #157](https://github.com/Dojo-1/tenth-discriminant/pull/157) is closed **without merge** | A new mainline field bound or independently validated proof |
+| **Phase346–349 · 307⁴** | Source-preserving actual-field theorem **candidate** · [draft PR #223](https://github.com/Dojo-1/tenth-discriminant/pull/223) | A checked published theorem at 307⁴ |
+| **Euclid252** | **Merged** source-ellipse count and positive-Gram geometry · [PR #226](https://github.com/Dojo-1/tenth-discriminant/pull/226) | An actual-field 252⁴ inequality |
+| **Moving-frame jets** | **Merged** source-locking identity · [PR #227](https://github.com/Dojo-1/tenth-discriminant/pull/227) | New inert-prime divisibility, unchanged field bound |
+| **Cross-method comparison** | Source alignment and finite negative controls · [Issue #51](https://github.com/Dojo-1/tenth-discriminant/issues/51) | Transferring another team's selected complex minor into our entire real trace Gram |
+
+The failure modes matter as much as successful bounds. A **selected nonzero minor modulo a prime** need not make the corresponding **real trace Gram** invertible modulo that prime: see the exact finite [Phase201 counterexample](research/bridges/INDEPENDENT_RECONSTRUCTION_AND_MINORS_20261104.md). It is a counterexample to an *unlicensed inference*, not to the Phase200 theorem or another investigator's independently formulated argument.
+
+A second exact warning: the rational shear below preserves the determinant but not the anchored integral lattice reference.
 
 ```math
 H=\begin{pmatrix}1&\frac12\\0&1\end{pmatrix},
-\qquad
+\quad
 G_0=\begin{pmatrix}4&0\\0&4\end{pmatrix},
-\qquad
+\quad
 HG_0H^{\mathsf T}
 =\begin{pmatrix}5&2\\2&4\end{pmatrix}.
 ```
 
-The two integral Grams have equal determinant $16$, yet not the same integral congruence class. The obstruction is concentrated at the prime $2$ *relative to the fixed lattice reference*. Transport the reference lattice as well, and the semantic question changes. This counterexample is not a new discriminant bound and not a theorem of intrinsic computational hardness. The formalization is integrated in [PR #98](https://github.com/Dojo-1/tenth-discriminant/pull/98); [PR #104](https://github.com/Dojo-1/tenth-discriminant/pull/104) adds finite fixed-versus-moving extraction controls.
+Both displayed integral Grams have determinant $16$; they are not congruent over the original integral lattice. A matching real volume is weaker than source-matched integer arithmetic. See [TransportCoherence.lean](lean/TenthDiscriminant/TransportCoherence.lean).
 
-For the dated, detailed research record—including unsuccessful attempts—see [RESEARCH_NOW.md](RESEARCH_NOW.md), the [reverse-determinant research index](research/reverse_determinant/README.md), and the [prior-art ledger](PRIOR_ART.md). The [earlier long README is archived](research/archive/ROOT_README_BEFORE_PHASE158_2026-11-01.md).
+## 05 / Reproduce; do not merely admire
 
-## Reproduce, inspect, challenge
-
-The repository pins **Lean 4.19.0** and **Mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b`**. To build and audit the formal library:
+The formal project pins **Lean 4.19.0** and Mathlib commit **c44e0c8ee63ca166450922a373c7409c5d26b00b**.
 
 ```sh
 cd lean
@@ -119,30 +160,43 @@ python3 audit.py
 python3 negative_controls.py
 ```
 
-For one bounded exact finite experiment, from the repository root:
+For bounded, exact finite controls, return to the repository root:
 
 ```sh
 python3 -m pip install sympy==1.14.0 mpmath
 python3 research/reverse_determinant/phase158_characteristic_jets.py
 python3 research/reverse_determinant/phase181_normalized_binary_filtration.py
-python3 research/reverse_determinant/phase181_thin_support_pilot.py
 ```
 
-For the documentation's math/Markdown sanity check:
+The Markdown/MathJax-sensitive README sanity checks are part of the reader contract:
 
 ```sh
 python3 scripts/check_readme_math.py README.md
 python3 scripts/check_human_math.py
 ```
 
-A successful finite test is evidence about the tested instances. A successful Lean build is evidence about the *encoded theorem*. Neither is an independent external review of the whole intended argument. If you find a missing hypothesis, wrong field identification, false lemma, normalization mismatch or counterexample, please include the exact claim and a reproducible witness. [Issue #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) and [the source-to-source transport review](https://github.com/Dojo-1/tenth-discriminant/issues/51) are natural starting points.
+**No experimental calculations or Lean builds are implied by this documentation redesign.** Exact-head CI receipts are linked in the research PRs. Executing a checker confirms what its own test contract covers; it does not substitute for human reconstruction of the original number-theoretic argument.
 
-## Attribution and context
+## 06 / Whose mathematics, whose evidence?
 
-The challenge and its [adelic-determinant context](https://terrytao.wordpress.com/2026/10/19/a-sketch-of-the-proof-of-non-existence-of-siegel-zeroes/) are due to **Terence Tao**. The derivative-determinant approach is credited to **Ben Green**; **Roelof van Dijk** and **Kyle Pratt** contributed distinct related methods discussed in Tao's thread. Related arguments and formalizations by **twinheterodox, Peter Murphy, Antoine Olivier**, and others include stronger bounds. The citations neither imply collaboration nor endorsement; see [PRIOR_ART.md](PRIOR_ART.md) and [METHOD_COMPARISON_CURRENT.md](METHOD_COMPARISON_CURRENT.md).
+**Terence Tao** proposed the challenge and its broader mathematical framing. The derivative-determinant approach is credited to **Ben Green**; related directions from **Roelof van Dijk, Kyle Pratt**, and other participants are distinct. Stronger numerical cutoffs using **different determinant objects or hypotheses** exist in the public discussion: compare the actual assumptions and sources before ranking them. The [prior-art ledger](PRIOR_ART.md), [method comparison](METHOD_COMPARISON_CURRENT.md), and [research state](RESEARCH_NOW.md) preserve those differences.
 
-The question behind our characteristic-support experiments was inspired by **Miguel N. Walsh's** work on the polynomial method, not presented as a theorem he proved about our construction. See [Walsh's ICM survey](https://www.mathunion.org/fileadmin/ICM/Proceedings/uploads/ICM-2018-vol2-ver1-eb.pdf), [the inverse sieve problem](https://doi.org/10.1215/00127094-1645788), and [the polynomial method over varieties](https://doi.org/10.1007/s00222-020-00975-6).
+Research direction: **Jesús Vilela Jato (Dojo-1)**, with substantial AI assistance for conjecture generation, coding, Lean formalization, explanations and checking. The AI systems are **not independent referees**. This project invites reconstruction, adversarial counterexamples and review, rather than taking aesthetic coherence as evidence of a theorem.
 
-Research direction: **Jesús Vilela Jato (Dojo-1)**, with substantial AI assistance for exploration, code, Lean, explanatory writing and checking. The AI systems are not independent referees. Our aim is not to turn machine-generated polish into borrowed authority, but to leave every mathematical claim open to reconstruction and correction.
+The evidence labels distinguish **P** (proof relative to an exact formal statement and permitted axioms), **M** (bounded measurement), **H** (unproved target), **S** (semantic/design proposal), and **R** (retired or unresolved claim). Where the mapping from historical mathematics into formal definitions has not been independently reconstructed, that gap stays explicit.
 
-*Documentation convention:* use inline $x$-style math and fenced `math` blocks for displayed formulae. Do not place mathematical expressions inside code spans or split a single-dollar expression across multiple lines. The sanity checks catch common markup failures, **not** mathematical mistakes or every possible MathJax rendering defect.
+[Independent human review #50](https://github.com/Dojo-1/tenth-discriminant/issues/50) · [Source/Gram alignment review #51](https://github.com/Dojo-1/tenth-discriminant/issues/51) · [Original technical README snapshot](docs/README_MAIN_SNAPSHOT_2026-11-18.md)
+
+---
+
+<div align="center">
+
+### 間 — ma
+
+*Leave space between an elegant estimate and a theorem about the right object.*
+
+**one integer. two bounds. no borrowed certainty.**
+
+<sub>TENTH / DISCRIMINANT · OBSERVABLES SURVIVE ONLY WHEN THEIR SOURCES DO</sub>
+
+</div>
