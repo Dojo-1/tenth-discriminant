@@ -176,27 +176,34 @@ theorem no_future_decoder_of_collision
 
 /-- First stage: mod 2 forgets the entire second coefficient. -/
 theorem mod2_loses_one : (1 : ZMod 2) ∈ lostFiber 2 2 := by
+  change (2 : ZMod 2) * 1 = 0
   decide
 
 /-- At depth two, the coefficient 2 is lost, but 1 survives. -/
 theorem mod4_loses_two : (2 : ZMod 4) ∈ lostFiber 4 2 := by
+  change (2 : ZMod 4) * 2 = 0
   decide
 
 theorem mod4_preserves_one : (1 : ZMod 4) ∉ lostFiber 4 2 := by
+  change (2 : ZMod 4) * 1 ≠ 0
   decide
 
 /-- At depth three, 4 is lost but 2 survives. -/
 theorem mod8_loses_four : (4 : ZMod 8) ∈ lostFiber 8 2 := by
+  change (2 : ZMod 8) * 4 = 0
   decide
 
 theorem mod8_preserves_two : (2 : ZMod 8) ∉ lostFiber 8 2 := by
+  change (2 : ZMod 8) * 2 ≠ 0
   decide
 
 /-- At depth four, 8 is lost but 4 survives. -/
 theorem mod16_loses_eight : (8 : ZMod 16) ∈ lostFiber 16 2 := by
+  change (2 : ZMod 16) * 8 = 0
   decide
 
 theorem mod16_preserves_four : (4 : ZMod 16) ∉ lostFiber 16 2 := by
+  change (2 : ZMod 16) * 4 ≠ 0
   decide
 
 /-- Source-exact bad-prime no-decoder instance. -/
