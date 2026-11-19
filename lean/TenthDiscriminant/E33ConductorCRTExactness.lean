@@ -63,13 +63,15 @@ theorem prime_gap_surjective :
 /-- Both composites vanish, as they must for the claimed exactness. -/
 theorem conductor_kills_epsilon (b : ZMod 5) :
     conductor (epsilonInclude b) = (0,0) := by
-  simp [conductor, epsilonInclude, E28.residueFrame]
+  have hz : (5 : ZMod 5) = 0 := by decide
+  simp [conductor, epsilonInclude, E28.residueFrame, hz]
 
 theorem prime_gap_kills_conductor (p : ZMod 5 × ZMod 5) :
     primeGap (conductor p) = 0 := by
+  have hz : (5 : ZMod 5) = 0 := by decide
   rcases p with ⟨a,b⟩
   simp [primeGap, conductor, E28.residueFrame,
-    E28.splitMinus, E28.splitPlus]
+    E28.splitMinus, E28.splitPlus, hz]
 
 /-- Full elementary witness-level exactness (kernel=image at
 both middle terms, with injective first and surjective last). -/
