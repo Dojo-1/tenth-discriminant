@@ -1,0 +1,63 @@
+name: E28 conductor-sensitive residue transport (focused Lean)
+
+on:
+  push:
+    branches: ['research/e28-conductor-residue-fiber']
+    paths:
+      - 'lean/TenthDiscriminant/E28ConductorResidue.lean'
+      - 'lean/TenthDiscriminant.lean'
+      - '.github/workflows/e28-conductor-residue.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: e28-residue-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  e28-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile original-residue conductor transport
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E28ConductorResidue 2>&1 | tee /tmp/e28.log
+          if grep -q 'sorryAx' /tmp/e28.log; then exit 1; fi
+      - name: Exact declaration and axiom audit
+        run: |
+          cat >/tmp/e28-audit.lean <<'LEAN'
+          import TenthDiscriminant.E28ConductorResidue
+          #check TenthDiscriminant.E28.mod5_frame_bijective
+          #check TenthDiscriminant.E28.mod2_frame_not_injective
+          #check TenthDiscriminant.E28.mod2_coefficient_not_decodable
+          #print axioms TenthDiscriminant.E28.reduction_natural
+          #print axioms TenthDiscriminant.E28.residueFrame_mul
+          #print axioms TenthDiscriminant.E28.mod5_frame_bijective
+          #print axioms TenthDiscriminant.E28.mod2_frame_not_injective
+          #print axioms TenthDiscriminant.E28.mod2_source_nilpotent
+          #print axioms TenthDiscriminant.E28.mod2_coefficient_not_decodable
+          #print axioms TenthDiscriminant.E28.mod5_prime_label_moves
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e28-audit.lean | tee /tmp/e28-axioms.log
+          if grep -q 'sorryAx' /tmp/e28-axioms.log; then exit 1; fi
