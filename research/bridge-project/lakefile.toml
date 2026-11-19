@@ -1,0 +1,15 @@
+name = "sourceBridge"
+version = "0.1.0"
+defaultTargets = ["OriginalSourceBridge"]
+
+[[require]]
+name = "tenthDiscriminant"
+path = "../../lean"
+
+[[require]]
+name = "HardnessKernel"
+path = "../bridges/hardness-kernel"
+
+[[lean_lib]]
+name = "OriginalSourceBridge"
+srcDir = "."
