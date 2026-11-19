@@ -51,3 +51,5 @@ jobs:
           set -o pipefail
           lake env lean /tmp/phase354-audit.lean 2>&1 | tee /tmp/phase354-axioms.log
           if grep -q 'sorryAx' /tmp/phase354-axioms.log; then exit 1; fi
+      - name: Independent full-source exact integer controls (240 cases)
+        run: python3 ../research/oracles/phase354_original_ellipse_14.py
