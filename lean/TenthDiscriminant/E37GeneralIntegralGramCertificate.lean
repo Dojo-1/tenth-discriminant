@@ -54,8 +54,7 @@ private theorem det_diagonal_congruence {n : Nat}
     (H : Matrix (Fin n) (Fin n) Int) :
     (Matrix.diagonal d * H * Matrix.diagonal d).det =
       (∏ i : Fin n, d i)^2 * H.det := by
-  rw [Matrix.det_mul, Matrix.det_mul, Matrix.det_diagonal,
-    Matrix.det_diagonal]
+  rw [Matrix.det_mul, Matrix.det_mul, Matrix.det_diagonal]
   ring
 
 /-- General rank: a COMPLETE same-source Gram factorization by
