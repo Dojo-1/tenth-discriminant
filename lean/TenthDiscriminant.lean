@@ -52,6 +52,7 @@ import TenthDiscriminant.E36UnimodularMovingRowFrame
 import TenthDiscriminant.E37SourceCertificateNoFake
 import TenthDiscriminant.E38CoherentKernelThread
 import TenthDiscriminant.E39OriginalTwoPointSeparation
+import TenthDiscriminant.E41ComplexSourceSignObserver
 import TenthDiscriminant.BinaryNullPolynomial
 import TenthDiscriminant.BinaryNullOrdinaryJets
 import TenthDiscriminant.BinaryNullMixedJets
