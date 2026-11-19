@@ -53,7 +53,9 @@ theorem kernel_transition_all_depths
     (h : (2*a) % modulus (n+1) = 0) :
     a % modulus n = 0 := by
   rw [modulus_succ] at h
-  have hm : 0 < modulus n := modulus_pos n
+  have hscale : (2*a) % (2*modulus n) = 2*(a % modulus n) :=
+    Int.mul_emod_mul_of_pos a (modulus n) (by norm_num : (0 : Int) < 2)
+  rw [hscale] at h
   omega
 
 /-- Nontrivial finite kernel at EVERY depth, not just samples
@@ -63,14 +65,22 @@ theorem finite_kernel_is_nonzero_every_depth (n : Nat) :
       (2 : Int)^n % modulus n ≠ 0 := by
   rw [modulus_eq_double_pow]
   have hp : (0 : Int) < (2 : Int)^n := pow_pos (by norm_num) _
-  constructor <;> omega
+  constructor
+  · simp
+  · have hlt : (2 : Int)^n < 2 * (2 : Int)^n := by omega
+    rw [Int.emod_eq_of_lt (le_of_lt hp) hlt]
+    exact ne_of_gt hp
 
 /-- The natural coefficient-target class 1 remains absent from the
 image of the even conductor frame at ALL finite observation depths. -/
 theorem target_one_missing_all_depths (n : Nat) (a : Int) :
     (2*a) % modulus n ≠ 1 := by
   rw [modulus_eq_double_pow]
-  have hp : (0 : Int) < (2 : Int)^n := pow_pos (by norm_num) _
+  have heq : (2*a) % (2*(2 : Int)^n) =
+      2*(a % (2 : Int)^n) :=
+    Int.mul_emod_mul_of_pos a ((2 : Int)^n)
+      (by norm_num : (0 : Int) < 2)
+  rw [heq]
   omega
 
 /-- Exact REPRESENTATIVE-level model of a compatible inverse
