@@ -44,6 +44,7 @@ import TenthDiscriminant.E28ConductorResidue
 import TenthDiscriminant.E29LocalUnitAndKernel
 import TenthDiscriminant.E30FiniteKernelTransition
 import TenthDiscriminant.E31ConductorGramNegative
+import TenthDiscriminant.E32RegimeNilpotentSplit
 import TenthDiscriminant.BinaryNullPolynomial
 import TenthDiscriminant.BinaryNullOrdinaryJets
 import TenthDiscriminant.BinaryNullMixedJets
