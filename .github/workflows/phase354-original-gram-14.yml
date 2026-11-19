@@ -25,7 +25,7 @@ jobs:
             curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
             mkdir -p /tmp/elan-install
             tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
-            /tmp/elan/elan-init -y --default-toolchain none
+            /tmp/elan-install/elan-init -y --default-toolchain none
           fi
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
       - name: Compile exact full original source geometry and Gram
