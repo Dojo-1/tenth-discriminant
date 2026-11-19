@@ -3,10 +3,6 @@ name: E39 original two-point Gram separation (focused Lean)
 on:
   push:
     branches: ['research/e39-original-two-point-separation']
-    paths:
-      - 'lean/TenthDiscriminant/E39OriginalTwoPointSeparation.lean'
-      - 'lean/TenthDiscriminant.lean'
-      - '.github/workflows/e39-original-two-point-separation.yml'
   workflow_dispatch:
 permissions:
   contents: read
