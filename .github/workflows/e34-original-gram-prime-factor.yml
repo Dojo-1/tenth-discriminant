@@ -1,0 +1,58 @@
+name: E34 original-Gram prime-square source gate (focused Lean)
+
+on:
+  push:
+    branches: ['research/e34-source-gram-prime-factor-gate']
+    paths:
+      - 'lean/TenthDiscriminant/E34OriginalGramPrimeFactor.lean'
+      - 'lean/TenthDiscriminant.lean'
+      - '.github/workflows/e34-original-gram-prime-factor.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: e34-source-gram-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  e29-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile graded reconstruction gate
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E34OriginalGramPrimeFactor 2>&1 | tee /tmp/e34.log
+          if grep -q 'sorryAx' /tmp/e34.log; then exit 1; fi
+      - name: Axiom audit exact theorem declarations
+        run: |
+          cat >/tmp/e34-audit.lean <<'LEAN'
+          import TenthDiscriminant.E34OriginalGramPrimeFactor
+          #check TenthDiscriminant.E34.original_two_row_gram_prime_factor
+          #check TenthDiscriminant.E34.arithmetic_sampling_not_ambient_conductor_controls_factor
+          #print axioms TenthDiscriminant.E34.two_row_determinant_factor
+          #print axioms TenthDiscriminant.E34.original_two_row_gram_prime_factor
+          #print axioms TenthDiscriminant.E34.original_five_gram_matrix
+          #print axioms TenthDiscriminant.E34.original_five_gram_prime_entry_certificate
+          #print axioms TenthDiscriminant.E34.original_five_gram_prime_squared_factor
+          #print axioms TenthDiscriminant.E34.arithmetic_sampling_not_ambient_conductor_controls_factor
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e34-audit.lean | tee /tmp/e34-axioms.log
+          if grep -q 'sorryAx' /tmp/e34-axioms.log; then exit 1; fi
