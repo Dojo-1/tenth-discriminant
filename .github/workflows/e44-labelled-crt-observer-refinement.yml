@@ -1,0 +1,52 @@
+name: E44 labelled CRT observer refinement (focused Lean)
+
+on:
+  push:
+    branches: ['research/e44-labelled-crt-observer-refinement']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: e44-labelled-crt-observer-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  e29-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile graded reconstruction gate
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E44LabelledCRTObserverRefinement 2>&1 | tee /tmp/e44.log
+          if grep -q 'sorryAx' /tmp/e44.log; then exit 1; fi
+      - name: Axiom audit exact theorem declarations
+        run: |
+          cat >/tmp/e44-audit.lean <<'LEAN'
+          import TenthDiscriminant.E44LabelledCRTObserverRefinement
+          #check TenthDiscriminant.E44.same_original_gram_but_different_labelled_crt
+          #check TenthDiscriminant.E44.gap_not_complete_even_with_entire_original_gram
+          #print axioms TenthDiscriminant.E44.source_prime_gap_eq_four_imag
+          #print axioms TenthDiscriminant.E44.total_prime_gap_is_imag_moment_mod5
+          #print axioms TenthDiscriminant.E44.same_original_gram_but_different_labelled_crt
+          #print axioms TenthDiscriminant.E44.gap_not_complete_even_with_entire_original_gram
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e44-audit.lean | tee /tmp/e44-axioms.log
+          if grep -q 'sorryAx' /tmp/e44-axioms.log; then exit 1; fi
