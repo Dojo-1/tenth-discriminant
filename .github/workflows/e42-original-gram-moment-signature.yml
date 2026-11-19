@@ -1,0 +1,53 @@
+name: E42 complete finite original-Gram moment signature (focused Lean)
+
+on:
+  push:
+    branches: ['research/e42-original-gram-moment-signature']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: e42-original-gram-moment-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  e29-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile graded reconstruction gate
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E42OriginalGramMomentSignature 2>&1 | tee /tmp/e42.log
+          if grep -q 'sorryAx' /tmp/e42.log; then exit 1; fi
+      - name: Axiom audit exact theorem declarations
+        run: |
+          cat >/tmp/e42-audit.lean <<'LEAN'
+          import TenthDiscriminant.E42OriginalGramMomentSignature
+          #check TenthDiscriminant.E42.original_source_moment_gram
+          #check TenthDiscriminant.E42.original_gram_equal_iff_moments
+          #print axioms TenthDiscriminant.E42.original_source_moment_gram
+          #print axioms TenthDiscriminant.E42.original_source_moment_det
+          #print axioms TenthDiscriminant.E42.original_gram_equal_iff_moments
+          #print axioms TenthDiscriminant.E42.one_nonreal_point_det
+          #print axioms TenthDiscriminant.E42.partial_sign_collision_is_moment_collision
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e42-audit.lean | tee /tmp/e42-axioms.log
+          if grep -q 'sorryAx' /tmp/e42-axioms.log; then exit 1; fi
