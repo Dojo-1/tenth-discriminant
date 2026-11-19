@@ -116,12 +116,10 @@ theorem complex_real_translation_naturality
       (complexTwoSource x y u v) D 1 2 1 := by
   have hneqc : ((x+c,y) : Int × Int) ≠ (u+c,v) := by
     intro h
-    apply hneq
-    apply Prod.ext
-    · have hx := congrArg Prod.fst h
-      dsimp at hx
-      omega
-    · exact congrArg (fun q : Int × Int => q.2) h
+    have hx : x+c = u+c := congrArg (fun q : Int × Int => q.1) h
+    have hy : y = v := congrArg (fun q : Int × Int => q.2) h
+    have hx0 : x = u := by omega
+    exact hneq (by cases hx0; cases hy; rfl)
   rw [complex_two_original_gram D (x+c) y (u+c) v hneqc,
       complex_two_original_gram D x y u v hneq]
   ext i j
