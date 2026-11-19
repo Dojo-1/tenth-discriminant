@@ -46,6 +46,7 @@ import TenthDiscriminant.E30FiniteKernelTransition
 import TenthDiscriminant.E31ConductorGramNegative
 import TenthDiscriminant.E32RegimeNilpotentSplit
 import TenthDiscriminant.E33ConductorCRTExactness
+import TenthDiscriminant.E34OriginalGramPrimeFactor
 import TenthDiscriminant.BinaryNullPolynomial
 import TenthDiscriminant.BinaryNullOrdinaryJets
 import TenthDiscriminant.BinaryNullMixedJets
