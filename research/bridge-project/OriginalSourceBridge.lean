@@ -28,8 +28,8 @@ theorem gaussian_mul_is_original_pair_mul (a b : Int × Int) :
     asPair (gmul (fromPair a) (fromPair b)) =
       TenthDiscriminant.pairMul 1 a b := by
   rw [pair_multiplication_exact]
-  rcases a with ⟨a,b⟩
-  rcases b with ⟨c,d⟩
+  rcases a with ⟨a0,a1⟩
+  rcases b with ⟨b0,b1⟩
   simp [asPair_fromPair, sourcePairMul, TenthDiscriminant.pairMul]
 
 /-- The original conjugation operation is preserved exactly. -/
