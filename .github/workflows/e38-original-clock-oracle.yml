@@ -1,0 +1,23 @@
+name: E38 independent exact ordinary-jet clock oracle
+
+on:
+  push:
+    branches: ['research/e38-jet-clock-valuation-oracle']
+    paths:
+      - 'research/oracles/e38_original_jet_clock_oracle.py'
+      - '.github/workflows/e38-original-clock-oracle.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-integer-clock:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact 81-case original-jet, valuation and matched-null reproduction
+        run: python3 research/oracles/e38_original_jet_clock_oracle.py
