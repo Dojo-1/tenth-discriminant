@@ -325,6 +325,7 @@ import TenthDiscriminant.Phase342Geometry307
 import TenthDiscriminant.Phase343Log307
 import TenthDiscriminant.Phase343Scalar307
 import TenthDiscriminant.Phase346Radius307
+import TenthDiscriminant.Phase356Radius302
 import TenthDiscriminant.Phase347Dimensions307
 import TenthDiscriminant.Phase347SourcePositivity307
 import TenthDiscriminant.Phase347ThinUpper307
