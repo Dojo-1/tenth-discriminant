@@ -1,6 +1,6 @@
 import TenthDiscriminant.Lower315
 import TenthDiscriminant.Phase355Scalar302
-import TenthDiscriminant.Phase342Geometry302
+import TenthDiscriminant.Phase342Geometry307
 
 /-!
 Phase357 (research-only, verification pending): this is an exact 302-domain re-derivation
