@@ -1,0 +1,57 @@
+name: E42 source-locked all-maximal-minor gate (focused Lean)
+
+on:
+  push:
+    branches: ['research/e42-all-maximal-minor-source-gate']
+    paths:
+      - 'lean/TenthDiscriminant/E42AllOriginalMaximalMinors.lean'
+      - 'lean/TenthDiscriminant.lean'
+      - '.github/workflows/e42-all-maximal-minor-gate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: e42-all-minors-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  e29-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile graded reconstruction gate
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E42AllOriginalMaximalMinors 2>&1 | tee /tmp/e42.log
+          if grep -q 'sorryAx' /tmp/e42.log; then exit 1; fi
+      - name: Axiom audit exact theorem declarations
+        run: |
+          cat >/tmp/e42-audit.lean <<'LEAN'
+          import TenthDiscriminant.E42AllOriginalMaximalMinors
+          #check TenthDiscriminant.E42.all_maximal_minors_divisible
+          #check TenthDiscriminant.E42.exact_original_evaluation_gram_identity
+          #print axioms TenthDiscriminant.E42.all_maximal_minors_divisible
+          #print axioms TenthDiscriminant.E42.source_extraction_excludes_same_prime_full_rank_witness
+          #print axioms TenthDiscriminant.E42.exact_original_evaluation_gram_identity
+          #print axioms TenthDiscriminant.E42.actual_source_det_via_evaluation
+          #print axioms TenthDiscriminant.E42.same_source_two_prime_observer_control
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e42-audit.lean | tee /tmp/e42-axioms.log
+          if grep -q 'sorryAx' /tmp/e42-axioms.log; then exit 1; fi
