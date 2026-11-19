@@ -1,0 +1,51 @@
+name: Phase355 302 fourth-power conditional scalar contradiction
+on:
+  push:
+    branches: ['research/phase355-302-scalar-gap']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase355-scalar-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  scalar-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile exact source-independent scalar
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Phase355Scalar302 2>&1 | tee /tmp/phase355-build.log
+          if grep -q 'sorryAx' /tmp/phase355-build.log; then exit 1; fi
+      - name: Print exact theorem axioms and reject admitted proof
+        run: |
+          cat >/tmp/phase355-axioms.lean <<'LEAN'
+          import TenthDiscriminant.Phase355Scalar302
+          #check TenthDiscriminant.Phase355.strong_scalar_separation_302_without_mixed
+          #check TenthDiscriminant.Phase355.original_scalar_301_not_strict
+          #print axioms TenthDiscriminant.Phase355.log_floor_from_302_fourth_power
+          #print axioms TenthDiscriminant.Phase355.strong_scalar_separation_302_without_mixed
+          #print axioms TenthDiscriminant.Phase355.no_scalar_overlap_302_without_mixed
+          #print axioms TenthDiscriminant.Phase355.original_scalar_301_not_strict
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/phase355-axioms.lean 2>&1 | tee /tmp/phase355-axioms.log
+          if grep -q 'sorryAx' /tmp/phase355-axioms.log; then exit 1; fi
