@@ -1,0 +1,53 @@
+name: Phase354 original thin 14^4 source and integer Gram certificate
+on:
+  push:
+    branches: ['research/phase354-fourteen-root-original-gram-pos']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase354-original-gram-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  phase354-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile exact full original source geometry and Gram
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Phase354OriginalGram14 2>&1 | tee /tmp/phase354-build.log
+          if grep -q 'sorryAx' /tmp/phase354-build.log; then exit 1; fi
+      - name: Print allowed transitive axioms
+        run: |
+          cat >/tmp/phase354-audit.lean <<'LEAN'
+          import TenthDiscriminant.Phase354OriginalGram14
+          #check TenthDiscriminant.FirstCertificate.Tuned.thin_radius_interpolation_count_14
+          #check TenthDiscriminant.FirstCertificate.Tuned.thin_original_integer_gram_pos_14
+          #check TenthDiscriminant.FirstCertificate.Tuned.thin_original_real_gram_hadamard_14
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.thin_radius_interpolation_count_14
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.thin_original_integer_gram_pos_14
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.thin_original_integer_gram_nonzero_14
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.thin_original_real_gram_hadamard_14
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.thirteen_error_envelope_rejected
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/phase354-audit.lean 2>&1 | tee /tmp/phase354-axioms.log
+          if grep -q 'sorryAx' /tmp/phase354-axioms.log; then exit 1; fi
