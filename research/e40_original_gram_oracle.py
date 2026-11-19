@@ -41,9 +41,6 @@ def original_gram(D, z1, z2):
     assert z1 != z2, "original Finset collapses duplicate samples"
     # Original ordinary Z-jet rows are 1 and Z at j=0.
     e = (((1, 0), z1), ((1, 0), z2))
-    rows = tuple(tuple(original_pair_trace(D, e[k][i], e[k][j])
-                       for j in range(2)) for i in range(2)
-                 for k in ())  # intentionally never used
     # Sum over both original sample points; no matrix shortcut.
     return [[sum(original_pair_trace(D, e[k][i], e[k][j])
                  for k in range(2)) for j in range(2)] for i in range(2)]
