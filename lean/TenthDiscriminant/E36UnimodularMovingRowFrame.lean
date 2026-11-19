@@ -141,6 +141,37 @@ theorem fake_scaler_fails_unimodularity :
   rw [fakeRowScaler_not_unimodular]
   decide
 
+
+/-- A fake nonunimodular transport reaches precisely the SAME
+terminal Gram matrix as the true unimodular transport, but originates
+from a different source and does not preserve its determinant. -/
+theorem fake_scaling_same_terminal_gram :
+    fakeRowScaler *
+      integerRectangularTraceGram E31.realSource 25 1 2 1 *
+      fakeRowScaler.transpose =
+      integerRectangularTraceGram E34.realFiveSource 25 1 2 1 := by
+  rw [E31.actual_original_gram_matrix, E34.original_five_gram_matrix]
+  decide
+
+/-- Source histories MUST retain the transition determinant:
+two transports can show an identical terminal matrix despite
+different original source determinants. One transport is unimodular,
+the other is not. This is the concrete observability artifact. -/
+theorem equal_terminal_grams_different_original_determinants :
+    (integerMovingRowFrame *
+        integerRectangularTraceGram shiftedRealSource 25 1 2 1 *
+        integerMovingRowFrame.transpose =
+      fakeRowScaler *
+        integerRectangularTraceGram E31.realSource 25 1 2 1 *
+        fakeRowScaler.transpose) ∧
+    (integerRectangularTraceGram shiftedRealSource 25 1 2 1).det ≠
+      (integerRectangularTraceGram E31.realSource 25 1 2 1).det := by
+  constructor
+  · rw [moved_same_original_gram_equals_positive_control,
+      fake_scaling_same_terminal_gram]
+  · rw [shifted_original_gram_det, E31.actual_original_gram_det_four]
+    norm_num
+
 end
 end TenthDiscriminant.E36
 
@@ -153,3 +184,6 @@ end TenthDiscriminant.E36
 #print axioms TenthDiscriminant.E36.fakeRowScaler_not_unimodular
 #print axioms TenthDiscriminant.E36.fake_scaling_manufactures_prime_square
 #print axioms TenthDiscriminant.E36.fake_scaler_fails_unimodularity
+
+#print axioms TenthDiscriminant.E36.fake_scaling_same_terminal_gram
+#print axioms TenthDiscriminant.E36.equal_terminal_grams_different_original_determinants
