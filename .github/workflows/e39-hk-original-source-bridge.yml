@@ -1,0 +1,72 @@
+name: E39 actual cross-repository positive original Gram bridge
+
+on:
+  push:
+    branches: ['research/e39-hk-original-source-coherence']
+    paths:
+      - 'research/bridge-project/**'
+      - '.github/workflows/e39-hk-original-source-bridge.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: e39-shared-bridge-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  two-package-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: research/bridge-project
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Checkout pinned Hardness Kernel source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: Dojo-1/Hardness-Kernel
+          ref: aa322a93ed4b4f643378ead02ad05cb6423c62c6
+          path: research/bridges/hardness-kernel
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Check shared compiler/toolchain and pinned source
+        run: |
+          test "$(cat lean-toolchain)" = "leanprover/lean4:v4.19.0"
+          test "$(cat ../bridges/hardness-kernel/lean-toolchain)" = "leanprover/lean4:v4.19.0"
+          test "$(cat ../../lean/lean-toolchain)" = "leanprover/lean4:v4.19.0"
+          git -C ../bridges/hardness-kernel rev-parse HEAD
+      - name: Build both real source packages and full equality
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build OriginalSourceBridge 2>&1 | tee /tmp/e39-full-bridge.log
+          if grep -q 'sorryAx' /tmp/e39-full-bridge.log; then exit 1; fi
+      - name: Check exact cross-repository declarations and axioms
+        run: |
+          cat > /tmp/e39-audit.lean <<'LEAN'
+          import OriginalSourceBridge
+          #check OriginalSourceBridge.gaussian_positive_trace_is_original_trace
+          #check OriginalSourceBridge.hk_entire_original_gram_bridge
+          #print axioms OriginalSourceBridge.gaussian_mul_is_original_pair_mul
+          #print axioms OriginalSourceBridge.gaussian_conj_is_original_pair_conj
+          #print axioms OriginalSourceBridge.gaussian_positive_trace_is_original_trace
+          #print axioms OriginalSourceBridge.wrong_unconjugated_source_metric
+          #print axioms OriginalSourceBridge.hk_entire_original_gram_bridge
+          #print axioms OriginalSourceBridge.hk_entire_original_gram_det_bridge
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e39-audit.lean 2>&1 | tee /tmp/e39-axioms.log
+          if grep -q 'sorryAx' /tmp/e39-axioms.log; then exit 1; fi
