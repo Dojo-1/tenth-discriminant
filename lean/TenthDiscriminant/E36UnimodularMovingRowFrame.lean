@@ -110,6 +110,37 @@ theorem moved_original_gram_has_five_entry_certificate :
   rw [moved_same_original_gram_equals_positive_control]
   exact E34.original_five_gram_prime_squared_factor
 
+
+/-- A nonunimodular row scaler can make a spurious prime-square
+factor out of a source determinant that is NOT even divisible by 5.
+It is forbidden as a witness of arithmetic source divisibility. -/
+def fakeRowScaler : Matrix (Fin 2) (Fin 2) Int :=
+  !![1,0;0,5]
+
+theorem fakeRowScaler_not_unimodular :
+    fakeRowScaler.det = 5 := by
+  decide
+
+/-- This is the matched null: scaling Z to 5Z manufactures a determinant
+factor on the E31 Q_unit original Gram, but does NOT preserve det(G). -/
+theorem fake_scaling_manufactures_prime_square :
+    (fakeRowScaler *
+      (integerRectangularTraceGram E31.realSource 25 1 2 1) *
+      fakeRowScaler.transpose).det = 100 ∧
+    (integerRectangularTraceGram E31.realSource 25 1 2 1).det = 4 := by
+  constructor
+  · rw [E31.actual_original_gram_matrix]
+    decide
+  · exact E31.actual_original_gram_det_four
+
+/-- No claim about integral unimodular congruence may admit the
+fake row scaler: its determinant is 5 rather than +1 or -1. -/
+theorem fake_scaler_fails_unimodularity :
+    fakeRowScaler.det ≠ (1 : Int) ∧
+      fakeRowScaler.det ≠ (-1 : Int) := by
+  rw [fakeRowScaler_not_unimodular]
+  decide
+
 end
 end TenthDiscriminant.E36
 
@@ -118,3 +149,7 @@ end TenthDiscriminant.E36
 #print axioms TenthDiscriminant.E36.moved_same_original_gram_equals_positive_control
 #print axioms TenthDiscriminant.E36.e35_sufficient_gate_is_not_necessary
 #print axioms TenthDiscriminant.E36.moved_original_gram_has_five_entry_certificate
+
+#print axioms TenthDiscriminant.E36.fakeRowScaler_not_unimodular
+#print axioms TenthDiscriminant.E36.fake_scaling_manufactures_prime_square
+#print axioms TenthDiscriminant.E36.fake_scaler_fails_unimodularity
