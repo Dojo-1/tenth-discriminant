@@ -43,6 +43,7 @@ import TenthDiscriminant.E27ArithmeticNaturality
 import TenthDiscriminant.E28ConductorResidue
 import TenthDiscriminant.E29LocalUnitAndKernel
 import TenthDiscriminant.E30FiniteKernelTransition
+import TenthDiscriminant.E41UniversalKernelTransition
 import TenthDiscriminant.BinaryNullPolynomial
 import TenthDiscriminant.BinaryNullOrdinaryJets
 import TenthDiscriminant.BinaryNullMixedJets
