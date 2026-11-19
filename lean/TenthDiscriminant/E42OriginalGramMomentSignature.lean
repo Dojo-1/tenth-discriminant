@@ -50,6 +50,8 @@ theorem original_source_moment_gram
       originalRealMoment, originalNormMoment,
       Finset.sum_range_succ, Finset.mul_sum,
       Finset.sum_add_distrib] <;> ring
+  all_goals
+    simp only [Finset.sum_add_distrib, Finset.sum_mul]
 
 /-- Full ORIGINAL determinant, with no loss of the sample cardinality
 or y² channel. Works for empty Q and singletons as well. -/
