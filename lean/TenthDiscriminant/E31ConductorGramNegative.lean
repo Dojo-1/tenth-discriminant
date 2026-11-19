@@ -42,7 +42,7 @@ or continuous lattice-shape approximation. -/
 theorem actual_original_gram_det_four :
     (integerRectangularTraceGram realSource 25 1 2 1).det = 4 := by
   rw [actual_original_gram_matrix]
-  norm_num [Matrix.det_fin_two]
+  simp [Matrix.det_fin_two] <;> ring
 
 /-- E24 exact support transport recovers the SAME entire Gram in D=1. -/
 theorem original_gram_image_transport :
