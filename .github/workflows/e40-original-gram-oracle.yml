@@ -1,0 +1,29 @@
+name: E40 exact original two-point Gram oracle
+
+on:
+  push:
+    branches: ['research/e39-original-two-point-separation']
+    paths:
+      - 'research/e40_original_gram_oracle.py'
+      - '.github/workflows/e40-original-gram-oracle.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: e40-oracle-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  exact-integer-oracle:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check source syntax
+        run: python3 -m py_compile research/e40_original_gram_oracle.py
+      - name: Exact bounded controls and falsifier
+        run: python3 research/e40_original_gram_oracle.py
