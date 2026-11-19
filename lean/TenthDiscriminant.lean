@@ -41,6 +41,7 @@ import TenthDiscriminant.E25NestedArithmeticFrames
 import TenthDiscriminant.E26ArithmeticHolonomy
 import TenthDiscriminant.E27ArithmeticNaturality
 import TenthDiscriminant.E28ConductorResidue
+import TenthDiscriminant.E29LocalUnitAndKernel
 import TenthDiscriminant.BinaryNullPolynomial
 import TenthDiscriminant.BinaryNullOrdinaryJets
 import TenthDiscriminant.BinaryNullMixedJets
