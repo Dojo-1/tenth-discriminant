@@ -1,0 +1,57 @@
+name: E40 original three-row clock valuation (focused Lean)
+
+on:
+  push:
+    branches: ['research/e40-clock-filter-three-row-lean']
+    paths:
+      - 'lean/TenthDiscriminant/E40ThreeClockOriginalGram.lean'
+      - 'lean/TenthDiscriminant.lean'
+      - '.github/workflows/e40-three-clock-original-gram.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: e40-three-clock-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  e29-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile graded reconstruction gate
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E40ThreeClockOriginalGram 2>&1 | tee /tmp/e40.log
+          if grep -q 'sorryAx' /tmp/e40.log; then exit 1; fi
+      - name: Axiom audit exact theorem declarations
+        run: |
+          cat >/tmp/e40-audit.lean <<'LEAN'
+          import TenthDiscriminant.E40ThreeClockOriginalGram
+          #check TenthDiscriminant.E40.same_source_three_clock_profiles
+          #print axioms TenthDiscriminant.E40.clock_frame_unimodular
+          #print axioms TenthDiscriminant.E40.clock_J1_original_factorization
+          #print axioms TenthDiscriminant.E40.clock_J2_original_factorization
+          #print axioms TenthDiscriminant.E40.clock_J1_generic_factor
+          #print axioms TenthDiscriminant.E40.clock_J2_generic_factor
+          #print axioms TenthDiscriminant.E40.same_source_three_clock_profiles
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e40-audit.lean | tee /tmp/e40-axioms.log
+          if grep -q 'sorryAx' /tmp/e40-axioms.log; then exit 1; fi
