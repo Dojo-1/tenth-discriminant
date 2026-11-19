@@ -121,7 +121,7 @@ theorem complex_real_translation_naturality
     · have hx := congrArg Prod.fst h
       dsimp at hx
       omega
-    · exact congrArg Prod.snd h
+    · exact congrArg (fun q : Int × Int => q.2) h
   rw [complex_two_original_gram D (x+c) y (u+c) v hneqc,
       complex_two_original_gram D x y u v hneq]
   ext i j
