@@ -1,0 +1,57 @@
+name: E36 unimodular moving original row frame (focused Lean)
+
+on:
+  push:
+    branches: ['research/e36-unimodular-moving-row-frame']
+    paths:
+      - 'lean/TenthDiscriminant/E36UnimodularMovingRowFrame.lean'
+      - 'lean/TenthDiscriminant.lean'
+      - '.github/workflows/e36-moving-original-row-frame.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: e36-source-moving-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  e29-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile graded reconstruction gate
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E36UnimodularMovingRowFrame 2>&1 | tee /tmp/e36.log
+          if grep -q 'sorryAx' /tmp/e36.log; then exit 1; fi
+      - name: Axiom audit exact theorem declarations
+        run: |
+          cat >/tmp/e36-audit.lean <<'LEAN'
+          import TenthDiscriminant.E36UnimodularMovingRowFrame
+          #check TenthDiscriminant.E36.e35_sufficient_gate_is_not_necessary
+          #check TenthDiscriminant.E36.moved_same_original_gram_equals_positive_control
+          #print axioms TenthDiscriminant.E36.shifted_original_gram_matrix
+          #print axioms TenthDiscriminant.E36.moving_row_frame_unimodular
+          #print axioms TenthDiscriminant.E36.moved_same_original_gram_equals_positive_control
+          #print axioms TenthDiscriminant.E36.e35_sufficient_gate_is_not_necessary
+          #print axioms TenthDiscriminant.E36.moved_original_gram_has_five_entry_certificate
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e36-audit.lean | tee /tmp/e36-axioms.log
+          if grep -q 'sorryAx' /tmp/e36-axioms.log; then exit 1; fi
