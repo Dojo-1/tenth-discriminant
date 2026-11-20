@@ -118,7 +118,8 @@ theorem integerTraceGramMatrix_clock_succ {n : Nat}
       integerTraceGramMatrix Q D J rows +
         (fun a b => Q.sum (fun p => integerPairTrace D
           (integerDerivativeRow D (rows a).1 (rows a).2 J p)
-          (integerDerivativeRow D (rows b).1 (rows b).2 J p))) := by
+          (integerDerivativeRow D (rows b).1 (rows b).2 J p)) :
+          Matrix (Fin n) (Fin n) Int) := by
   ext a b
   exact integerTraceGramEntry_clock_succ Q D J
     (rows a).1 (rows a).2 (rows b).1 (rows b).2
