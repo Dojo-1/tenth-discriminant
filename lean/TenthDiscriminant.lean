@@ -49,6 +49,7 @@ import TenthDiscriminant.E33ConductorCRTExactness
 import TenthDiscriminant.E34OriginalGramPrimeFactor
 import TenthDiscriminant.E35OriginalJetRowCertificate
 import TenthDiscriminant.E36UnimodularMovingRowFrame
+import TenthDiscriminant.E37SourceCertificateNoFake
 import TenthDiscriminant.BinaryNullPolynomial
 import TenthDiscriminant.BinaryNullOrdinaryJets
 import TenthDiscriminant.BinaryNullMixedJets
