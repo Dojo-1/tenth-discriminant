@@ -1,14 +1,16 @@
 # Open research PR triage — 20 November 2026
 
-**Snapshot only.** Query GitHub for live check and merge status. There were 18 open PRs when this table was assembled; none is approved for automatic mainline promotion. Distinguish proof compilation from research lineage, source semantics and external review.
+**Snapshot originally captured before Phase360. For the latest correction see [E100 post-Phase360 and 301 gate](ROUND_20261120_PHASE360_362_HOUSEKEEPING.md).** Query GitHub for live check and merge status. There were 18 open PRs when this table was assembled; none is approved for automatic mainline promotion. Distinguish proof compilation from research lineage, source semantics and external review.
 
 ## Publication and source-to-field gate
 
+**New post-snapshot gates:** #270 301 original radius/conditional scalar is checked and merged into research; #272 301 SAME original-Gram analytic upper is H until exact-head Lean. Public main remains 322^4. These are not part of the historical count of open PRs below.
+
 | PR | Research | Triage |
 | --- | --- | --- |
-| [#268](https://github.com/Dojo-1/tenth-discriminant/pull/268) | Phase360 unified original-Gram 302^4 arithmetic + analytic + field theorem | Draft: fresh exact-head combined-root Lean and source-fidelity audit; then **research-parent only**. Independent issue #50 still open |
+| [#268](https://github.com/Dojo-1/tenth-discriminant/pull/268) | Phase360 unified original-Gram 302^4 arithmetic + analytic + field theorem | **Merged into research Phase350**, exact-head root/source/allowed-axiom tests passed; human number-theory review issue #50 remains open |
 | [#232](https://github.com/Dojo-1/tenth-discriminant/pull/232) | Phase350 307^4 complete-root audit and 54 former unaudited modules | Exact-head Lean checked, but underlying field semantics still need human review; avoid propagating to main |
-| [#223](https://github.com/Dojo-1/tenth-discriminant/pull/223) | Historical Phase346–349 307^4 stack | **Lean failed** at the last inspected head. Historical/superseded by Phase350 check; do not merge before repair/lineage reconciliation |
+| [#223](https://github.com/Dojo-1/tenth-discriminant/pull/223) | Historical Phase346–349 307^4 stack | **Closed as superseded**, with original 54-unimported-module audit failure retained. Later Phase350 root check corrects coverage; no forced merge |
 
 ## Conductor, kernel and transport experiments
 
@@ -16,7 +18,7 @@
 | --- | --- | --- |
 | [#229](https://github.com/Dojo-1/tenth-discriminant/pull/229) | E24–E27 integral frame transport and nested partial inverses | Base **main**: require an explicit research-only retarget/review; no implicit public claims |
 | [#230](https://github.com/Dojo-1/tenth-discriminant/pull/230), [#231](https://github.com/Dojo-1/tenth-discriminant/pull/231) | E28/E29 residue frames and graded reconstruction | Stacked research parents; inspect source-kernel vs target-cokernel semantics and root closure |
-| [#233](https://github.com/Dojo-1/tenth-discriminant/pull/233), [#234](https://github.com/Dojo-1/tenth-discriminant/pull/234) | E30 finite-depth kernel transition variants | Parallel child branches; reconcile duplicated E30 naming and counterexamples before consolidating |
+| [#234](https://github.com/Dojo-1/tenth-discriminant/pull/234), [#233](https://github.com/Dojo-1/tenth-discriminant/pull/233), [#271](https://github.com/Dojo-1/tenth-discriminant/pull/271) | E30 integer and finite ZMod residue-clock variants | #234 merged into E29 research parent; #233 conflicts with refreshed parent; #271 is source-clean ZMod integration awaiting fresh exact-head CI |
 | [#238](https://github.com/Dojo-1/tenth-discriminant/pull/238) | E33 conductor source-kernel versus target-cokernel sequence | Research-only algebraic semantics; not an arithmetic prime factor of original Gram |
 | [#246](https://github.com/Dojo-1/tenth-discriminant/pull/246) | E41 all-depth conductor-kernel projection cancellation | Separate from nonzero finite-level kernels and from full original source arithmetic |
 

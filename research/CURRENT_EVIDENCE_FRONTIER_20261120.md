@@ -1,5 +1,7 @@
 # Research evidence frontier — 20 November 2026
 
+**Latest post-Phase360 update:** [E100 source-locked closure and 301 research queue](ROUND_20261120_PHASE360_362_HOUSEKEEPING.md). Historical entries below remain evidence, not a dynamic PR ledger.
+
 This is a dated evidence register, not an external referee report. For live merge/CI state always check the exact GitHub PR head and workflow logs. Historical STATUS.md entries are retained, not overwritten.
 
 ## Publication authority (main)
@@ -30,14 +32,14 @@ for totally complex degree-two fields K of class number one (PR #126). This is a
 | 302^4 original radius ratio | #262 merged into Phase350 research | P relative to encoding; corrects false 76*t^3 guard by true 75*t^3 guard |
 | 302^4 conditional original-Gram binary-plus-odd lower | #263 merged into Phase355 research | P relative to encoding **under explicit squarefree odd-chart, classNumber=1, positive original Gram hypotheses**; source-fidelity review open |
 | 302^4 SAME original-Gram analytic upper | #265 merged into Phase350 research parent | P relative to exact-head Lean/source/allowed-axiom checks; external semantic validation open |
-| 302^4 actual-field theorem | #267 checked and merged into Phase358 research parent; unified root #268 pending | P relative to #267 Lean encoding; Phase360 single-root integration H until exact-head CI; independent number-theoretic review H |
+| 302^4 actual-field theorem | #267 component checked; unified Phase360 #268 full-root source/axiom checks passed and merged to Phase350 research parent | P relative to checked Lean encoding, independent number-theoretic semantic review H; not public main |
 
 ## Corrections / negative controls (load-bearing)
 
 1. The old conservative Phase342 count certificate fails below 307 for its chosen rational inequality; exact full ellipse counts remain ample at tested 301/302.
 2. At D=302^4, the 307 argument's R>=76*t^3 guard is FALSE. The 302 line uses a separately proved R>=75*t^3, never silently weakens the old theorem.
 3. The analytic cell-area sufficient estimate fails its chosen coefficient at t=13, but original full-ellipse counts are still sufficient there. Avoid conflating proof failure with source failure.
-4. Phase358 #265 upper and Phase357 #263 lower are now separately proved for the identical original Gram at 302^4; Phase359 #267 integrates them on its checked research head. The new source-clean Phase360 branch #268 requires a fresh combined-root proof audit.
+4. Phase358 #265 original upper and Phase357 #263 lower concern the identical Gram at 302^4; Phase360 #268 passed the fresh combined-root/source/allowed-axiom audit. This is a research theorem, not external mathematical validation.
 5. At D=301^4 the Phase355 scalar lower-minus-upper expression is negative (bounded exact/decimal research controls); no 301 proof follows from the unchanged coefficients.
 6. Complete ellipse is conjugation-saturated: independent sign toggles cannot create a new injective full source; E44's aggregated Gaussian CRT gap vanishes at D=1 on full ellipses even when some sparse sources are separable.
 7. The source-to-field semantic review #50 stays open after any model-authored proof, green workflow, or merge.
@@ -52,9 +54,9 @@ for totally complex degree-two fields K of class number one (PR #126). This is a
 
 ## Continuation gates
 
-A. Complete #268: exact-head full-root Lean, negative controls, permitted-axiom/source audit on one source-clean parent. The already checked #265/#267 results cannot substitute for the new head's verification.
+A. Preserve verified 302^4 Phase360 #268 integration. Require fresh CI for the evolving Phase350 parent after later child merges; do not infer a 301 bound from 302.
 
-B. The Phase360 source-clean integration copies already verified lower/field modules verbatim onto the Phase350 parent containing #265; independently check original Qthin, J, R, S, trace, determinant, odd/even class-number hypotheses and normalization, with no duplicate prime counting.
+B. At 301^4 Phase361 #270 checks the sharper original 847/1000 thin/padded ratio, 1377/10000 saving and conditional scalar contradiction. Phase362 #272 attempts the complete SAME ORIGINAL GRAM 301 analytic upper; H pending proof. The 301 arithmetic lower and actual field transport remain open.
 
 C. The research actual-field statement exists at #267. Request independent **human** reconstruction of the exact integral valuations, original upper and maximal-order field chart in issue #50. A green root does not license a mainline proof promotion without this review.
 
@@ -65,3 +67,5 @@ All branches and PRs retain date-stamped evidence; the historical five-band Phas
 ## Open research lineage / housekeeping
 
 The [open-PR dependency and triage register](OPEN_RESEARCH_PR_TRIAGE_20261120.md) distinguishes conductor/observer countercontrols, exact ordinary-jet factor certificates, finite clocks and the source-to-field proof queue. Review PR heads live; this dated table is a snapshot. Do not bulk-merge green workflows or mistake research branch integration for mainline publication.
+
+**E30 kernel integration update:** #234 merged into E29 research; conflicting parallel #233 is replaced by source-clean #271, pending new exact-head checks. No infinite p-adic-ring theorem or extra original-Gram prime valuation follows from these finite tests.
