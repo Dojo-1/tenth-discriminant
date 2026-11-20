@@ -138,7 +138,7 @@ def render(manifest: dict, raw: bytes) -> str:
     lines.extend([
         "theorem tier_relation_refines_phase373",
         "    (tier native : ResearchClock) :",
-        "    tierAdmitsBool tier native = true \\u2194 TierAdmits tier native := by",
+        "    tierAdmitsBool tier native = true ↔ TierAdmits tier native := by",
         "  cases tier <;> cases native <;> simp [tierAdmitsBool, TierAdmits]",
         "",
     ])
