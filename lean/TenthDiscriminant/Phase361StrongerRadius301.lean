@@ -24,7 +24,7 @@ theorem fourthRoot_ge_301 (D : Nat) (hD : (301 : Nat)^4 ≤ D) :
 
 /-- At D>=301^4 the original thin/padded CEIL radii satisfy a
 strictly sharper rational envelope than 17/20. -/
-theorem thin_radius_fraction_17_20_301 (D : Nat)
+theorem thin_radius_fraction_847_1000_301 (D : Nat)
     (hD : (301 : Nat)^4 ≤ D) :
     (thinRadius D : Real) ≤ (847/1000 : Real)*(rho D : Real) := by
   have ht := fourthRoot_ge_301 D hD
