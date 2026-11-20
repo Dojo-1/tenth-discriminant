@@ -274,28 +274,28 @@ theorem tier_relation_refines_phase373
   cases tier <;> cases native <;> simp [tierAdmitsBool, TierAdmits]
 
 theorem phase373_projection_source_anchor_mutation (tier : ResearchClock) :
-    manifestEligible (0 : Fin 8) tier 9 true false =
-      decide (TierAuthorizable .sourceAnchor tier .meso .githubCI) := by
+    manifestEligible (0 : Fin 8) tier 9 true false = true ↔
+      TierAuthorizable .sourceAnchor tier .meso .githubCI := by
   cases tier <;> decide
 
 theorem phase373_projection_prolog_clock_counterworld (tier : ResearchClock) :
-    manifestEligible (1 : Fin 8) tier 9 true false =
-      decide (TierAuthorizable .prologCounterworld tier .fast .githubCI) := by
+    manifestEligible (1 : Fin 8) tier 9 true false = true ↔
+      TierAuthorizable .prologCounterworld tier .fast .githubCI := by
   cases tier <;> decide
 
 theorem phase373_projection_lean_kernel_clock_rank (tier : ResearchClock) :
-    manifestEligible (2 : Fin 8) tier 9 true false =
-      decide (TierAuthorizable .leanFormalization tier .meso .githubCI) := by
+    manifestEligible (2 : Fin 8) tier 9 true false = true ↔
+      TierAuthorizable .leanFormalization tier .meso .githubCI := by
   cases tier <;> decide
 
 theorem phase373_projection_frame_clock_commuting_square (tier : ResearchClock) :
-    manifestEligible (3 : Fin 8) tier 9 true false =
-      decide (TierAuthorizable .leanFormalization tier .meso .githubCI) := by
+    manifestEligible (3 : Fin 8) tier 9 true false = true ↔
+      TierAuthorizable .leanFormalization tier .meso .githubCI := by
   cases tier <;> decide
 
 theorem phase373_projection_external_field_chart_reconstruction (tier : ResearchClock) :
-    manifestEligible (5 : Fin 8) tier 9 true false =
-      decide (TierAuthorizable .externalReview tier .review .humanReview) := by
+    manifestEligible (5 : Fin 8) tier 9 true false = true ↔
+      TierAuthorizable .externalReview tier .review .humanReview := by
   cases tier <;> decide
 
 theorem source_not_fast :
