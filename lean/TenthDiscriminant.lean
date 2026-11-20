@@ -331,6 +331,7 @@ import TenthDiscriminant.Phase354OriginalGram14
 import TenthDiscriminant.Phase355Scalar302
 import TenthDiscriminant.Phase357Dimensions302
 import TenthDiscriminant.Phase358ThinUpper302
+import TenthDiscriminant.Phase359Field302Candidate
 import TenthDiscriminant.Phase347Dimensions307
 import TenthDiscriminant.Phase347SourcePositivity307
 import TenthDiscriminant.Phase347ThinUpper307
