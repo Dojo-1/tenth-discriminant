@@ -117,11 +117,11 @@ theorem constant_time_map_collapses_causality :
     ¬ StrictMono (fun _ : Nat => (0 : Nat)) := by
   constructor
   · intro a b hab
-    omega
+    simp
   · intro h
-    have hh : (0 : Nat) < (1 : Nat) := by omega
+    have hh : (0 : Nat) < (1 : Nat) := by decide
     have bad := h hh
-    omega
+    simpa using bad
 
 /-- Authorized transition between logical research clocks.
 The map must transport both permission and strict order. -/
@@ -185,7 +185,7 @@ theorem flat_clock_invalid_transport :
     ¬ ∃ t : StrictTimeTransport, (∀ n, t.toUtc n = 0) := by
   rintro ⟨t, ht⟩
   have h := t.strict (show (0 : Nat) < 1 by omega)
-  rw [ht, ht] at h
+  rw [ht 0, ht 1] at h
   omega
 
 end TenthDiscriminant.Phase373
