@@ -53,6 +53,18 @@ class ExternalVerifierControls(unittest.TestCase):
                 attest_ci_task(t,d,key=key,verifier_id='auditor-outside-policy',
                                role='source_guard',marker='VERIFIED_PROLOG_TESTS')
 
+    def test_gh_runner_echoed_guard_not_a_failure(self):
+        loop,key=fixture();t=loop.issue(HEAD,1,nonce='nonce-verifier-0007')
+        stamp='2026-11-20T14:27:25.7964355Z '
+        txt=(stamp + "if grep -E 'uncaught exception' /tmp/log; then exit 1; fi" + "\n"
+             + stamp + 'PHASE370_TASK_ID=' + t.id + "\n"
+             + stamp + 'VERIFIED_PROLOG_TESTS' + "\n")
+        good=replace(self.data(t),log_text=txt)
+        receipt=attest_ci_task(t,good,key=key,verifier_id='auditor-outside-policy',
+                  role='source_guard',marker='VERIFIED_PROLOG_TESTS',diagnostic=True)
+        loop.accept(receipt)
+        self.assertTrue(loop.verify_chain())
+
     def test_field_claim_not_signed_from_ci(self):
         loop,key=fixture();t=loop.issue(HEAD,1,nonce='nonce-verifier-0006')
         with self.assertRaisesRegex(ContractError,'independent field review'):
