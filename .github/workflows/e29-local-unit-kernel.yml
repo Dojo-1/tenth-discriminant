@@ -1,0 +1,57 @@
+name: E29 modular unit gate and graded kernel (focused Lean)
+
+on:
+  push:
+    branches: ['research/e29-local-unit-and-kernel-tower']
+    paths:
+      - 'lean/TenthDiscriminant/E29LocalUnitAndKernel.lean'
+      - 'lean/TenthDiscriminant.lean'
+      - '.github/workflows/e29-local-unit-kernel.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: e29-local-unit-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  e29-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile graded reconstruction gate
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E29LocalUnitAndKernel 2>&1 | tee /tmp/e29.log
+          if grep -q 'sorryAx' /tmp/e29.log; then exit 1; fi
+      - name: Axiom audit exact theorem declarations
+        run: |
+          cat >/tmp/e29-audit.lean <<'LEAN'
+          import TenthDiscriminant.E29LocalUnitAndKernel
+          #check TenthDiscriminant.E29.frame_bijective_iff_unit_witness
+          #check TenthDiscriminant.E29.same_observation_iff_fiber
+          #print axioms TenthDiscriminant.E29.frame_bijective_iff_unit_witness
+          #print axioms TenthDiscriminant.E29.same_observation_iff_fiber
+          #print axioms TenthDiscriminant.E29.no_future_decoder_of_collision
+          #print axioms TenthDiscriminant.E29.mod5_bijective_via_general_gate
+          #print axioms TenthDiscriminant.E29.mod2_not_bijective_via_general_gate
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e29-audit.lean | tee /tmp/e29-axioms.log
+          if grep -q 'sorryAx' /tmp/e29-axioms.log; then exit 1; fi
