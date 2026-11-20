@@ -1,0 +1,78 @@
+name: Phase374 generated manifest-to-Lean eligibility refinement
+on:
+  push:
+    branches: ['research/phase374-manifest-refinement']
+    paths:
+      - 'research/phase374/**'
+      - 'lean/TenthDiscriminant/Phase374ManifestRefinement.lean'
+      - '.github/workflows/phase374-refinement.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase374-refinement-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  finite-source-oracle:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Guard original integer trace-Gram Lean source
+        run: python3 scripts/phase365_lean_anchor_guard.py
+      - name: Regenerate finite Lean certificate and fail on stale policy
+        run: python3 research/phase374/gen_refinement.py --check
+      - name: Cross-check original Python selector and independent finite rule
+        run: |
+          set -o pipefail
+          python3 -m unittest discover -s research/phase374 -p 'test_*.py' -v 2>&1 | tee /tmp/phase374-python.log
+          grep -q 'Ran 12 tests' /tmp/phase374-python.log
+          grep -q '^OK$' /tmp/phase374-python.log
+          if grep -E '^FAILED |^ERROR:|^FAIL:' /tmp/phase374-python.log; then exit 1; fi
+          echo 'PHASE374_960_FINITE_CASES_PASS; original source-only selector oracle'
+  lean-certificate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile committed eight-arm finite Lean certificate
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Phase374ManifestRefinement 2>&1 | tee /tmp/phase374-lean.log
+          if grep -E 'sorryAx|admitAx|error:' /tmp/phase374-lean.log; then exit 1; fi
+      - name: Inspect axiom and full finite theorem identities
+        run: |
+          cat > /tmp/phase374-axioms.lean <<'LEAN'
+          import TenthDiscriminant.Phase374ManifestRefinement
+          #check TenthDiscriminant.Phase374.exhaustive_fast_manifest_refinement
+          #check TenthDiscriminant.Phase374.exhaustive_meso_manifest_refinement
+          #check TenthDiscriminant.Phase374.exhaustive_review_manifest_refinement
+          #check TenthDiscriminant.Phase374.source_not_fast
+          #check TenthDiscriminant.Phase374.fast_prolog_allowed_in_meso
+          #check TenthDiscriminant.Phase374.d203_contrast_requires_opt_in
+          #print axioms TenthDiscriminant.Phase374.exhaustive_fast_manifest_refinement
+          #print axioms TenthDiscriminant.Phase374.exhaustive_meso_manifest_refinement
+          #print axioms TenthDiscriminant.Phase374.exhaustive_review_manifest_refinement
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/phase374-axioms.lean 2>&1 | tee /tmp/phase374-axioms.log
+          if grep -E 'sorryAx|admitAx|error:' /tmp/phase374-axioms.log; then exit 1; fi
+          echo 'VERIFIED_PHASE374_FINITE_REFINEMENT; not a compiler or field proof'
