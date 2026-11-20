@@ -1,0 +1,29 @@
+name: Phase365 GNU Prolog adversarial original-Gram controls
+on:
+  push:
+    branches: ['research/phase365-prolog-adversarial-obstructions']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase365-prolog-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  prolog-adversarial:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install GNU Prolog on pinned runner
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends gprolog
+          gprolog --version
+      - name: Fail-closed textual anchors to original Lean source
+        run: |
+          python3 scripts/phase365_lean_anchor_guard.py
+      - name: Run exact bounded Prolog controls and negative examples
+        run: |
+          gprolog --consult-file research/prolog/phase365_adversarial.pl --query-goal 'main'
