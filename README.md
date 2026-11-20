@@ -28,7 +28,7 @@ The hard part is not producing a smaller numerical cutoff. It is proving that th
 
 > A beautiful argument about the wrong determinant is not an argument about this determinant.
 
-**The active evidence boundary — 18 November 2026:** public *main* contains a Lean-checked, actual-field class-number-one bound of **322⁴**. A sharper **321⁴** theorem exists on a consolidated **research branch**, and a **307⁴** candidate is under review on a stacked draft branch; neither has been promoted to the public mainline theorem. Recent Euclid-inspired **252⁴** geometry establishes original-ellipse counting and Gram positivity, **not** a 252⁴ field-discriminant cutoff.
+**The active evidence boundary — 20 November 2026:** public *main* still contains the Lean-checked **322⁴ actual-field bound**. Sharper **321⁴** and **307⁴** actual-field theorems remain **research-only**, pending independent source-to-field review. Source-exact **14⁴** complete-ellipse interpolation and original integer-Gram positivity are formally checked on research branches; **302⁴** scalar separation, corrected radius and conditional binary/odd lower are checked in separate research fibers. The **302⁴ original-Gram analytic upper is a draft proof target**, not yet an integrated field theorem. The [dated claim and dependency register](research/CURRENT_EVIDENCE_FRONTIER_20261120.md) names every gate and negative control.
 
 The [full prior technical README](docs/README_MAIN_SNAPSHOT_2026-11-18.md) is archived without rewriting its historical mathematical claims.
 
