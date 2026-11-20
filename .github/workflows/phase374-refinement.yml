@@ -62,12 +62,17 @@ jobs:
         run: |
           cat > /tmp/phase374-axioms.lean <<'LEAN'
           import TenthDiscriminant.Phase374ManifestRefinement
+          #check TenthDiscriminant.Phase374.tier_relation_refines_phase373
+          #check TenthDiscriminant.Phase374.phase373_projection_source_anchor_mutation
+          #check TenthDiscriminant.Phase374.phase373_projection_prolog_clock_counterworld
+          #check TenthDiscriminant.Phase374.phase373_projection_external_field_chart_reconstruction
           #check TenthDiscriminant.Phase374.exhaustive_fast_manifest_refinement
           #check TenthDiscriminant.Phase374.exhaustive_meso_manifest_refinement
           #check TenthDiscriminant.Phase374.exhaustive_review_manifest_refinement
           #check TenthDiscriminant.Phase374.source_not_fast
           #check TenthDiscriminant.Phase374.fast_prolog_allowed_in_meso
           #check TenthDiscriminant.Phase374.d203_contrast_requires_opt_in
+          #print axioms TenthDiscriminant.Phase374.tier_relation_refines_phase373
           #print axioms TenthDiscriminant.Phase374.exhaustive_fast_manifest_refinement
           #print axioms TenthDiscriminant.Phase374.exhaustive_meso_manifest_refinement
           #print axioms TenthDiscriminant.Phase374.exhaustive_review_manifest_refinement
