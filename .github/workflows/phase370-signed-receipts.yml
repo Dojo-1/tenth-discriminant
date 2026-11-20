@@ -1,0 +1,38 @@
+name: Phase370 signed outcome and provenance gates
+on:
+  push:
+    branches: ['research/phase370-provenance-bound-evidence']
+    paths:
+      - 'research/phase369/policy.py'
+      - 'research/phase370/**'
+      - '.github/workflows/phase370-signed-receipts.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase370-signed-receipts-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  offline-provenance-contract:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned Ed25519 library
+        run: |
+          python3 -m pip install --disable-pip-version-check cryptography==46.0.4
+      - name: Source convention and Python syntax checks
+        run: |
+          python3 scripts/phase365_lean_anchor_guard.py
+          python3 -m py_compile research/phase369/policy.py research/phase370/attestation.py research/phase370/adjudicator.py research/phase370/test_attestation.py research/phase370/test_adjudicator.py
+      - name: Adversarial synthetic signature and historical false-green controls
+        run: |
+          set -o pipefail
+          python3 -m unittest discover -s research/phase370 -p 'test_*.py' -v 2>&1 | tee /tmp/phase370-tests.log
+          grep -q 'Ran 24 tests' /tmp/phase370-tests.log
+          grep -q '^OK$' /tmp/phase370-tests.log
+          if grep -E '^FAILED |^ERROR:|^FAIL:' /tmp/phase370-tests.log; then exit 1; fi
+      - name: State the non-authority boundary
+        run: echo 'PHASE370_FIXTURE_CONTRACT_PASS; NO EXTERNAL SIGNER OR FIELD THEOREM VERIFIED'
