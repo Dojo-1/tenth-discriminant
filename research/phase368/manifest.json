@@ -1,0 +1,480 @@
+{
+  "name": "tenth-discriminant-phase368-polycosmic-adversarial-bandit",
+  "evidence_floor": "H",
+  "frozen_source": "original-integer-pair-ordinary-Z-gram@phase367",
+  "parent_research": "Phase306 arithmetic fabric",
+  "formal_base": "Phase367OriginalEvaluationFactor.lean / PR278",
+  "worldlets": [
+    {
+      "id": "source.original",
+      "carrier": "Finset(Int x Int), original ordinary Z jets",
+      "geometry": "source lattice / derivative filtration",
+      "algebra": "integer-pair trace",
+      "state": "original same-Gram source",
+      "clocks": [
+        "meso"
+      ],
+      "observers": [
+        "source-anchor-guard"
+      ],
+      "boundary": "Q,D,J,R,S fixed; W conjugate held fixed",
+      "remainder_types": [
+        "formal",
+        "source_drift"
+      ],
+      "source": "original-integer-pair-ordinary-Z-gram@phase367"
+    },
+    {
+      "id": "logic.prolog",
+      "carrier": "bounded integer counterworlds",
+      "geometry": "finite search/proof lineage DAG",
+      "algebra": "exact integers and rules",
+      "state": "finite regressions only",
+      "clocks": [
+        "fast"
+      ],
+      "observers": [
+        "GNU Prolog",
+        "mutation guard"
+      ],
+      "boundary": "finite sample cannot establish field301",
+      "remainder_types": [
+        "finite_to_uniform",
+        "formal"
+      ],
+      "source": "original-integer-pair-ordinary-Z-gram@phase367"
+    },
+    {
+      "id": "proof.lean",
+      "carrier": "Lean 4 proof objects",
+      "geometry": "dependency partial order",
+      "algebra": "dependent types",
+      "state": "Phase366/367 checked encoded lemmas",
+      "clocks": [
+        "meso"
+      ],
+      "observers": [
+        "Lean kernel"
+      ],
+      "boundary": "formal syntax not independent field semantics",
+      "remainder_types": [
+        "semantic",
+        "formal"
+      ],
+      "source": "original-integer-pair-ordinary-Z-gram@phase367"
+    },
+    {
+      "id": "arithmetic.padic",
+      "carrier": "Z/p^k residue modules",
+      "geometry": "p-adic precision filtration",
+      "algebra": "integer modules and residue rings",
+      "state": "candidate same-source valuations",
+      "clocks": [
+        "meso",
+        "review"
+      ],
+      "observers": [
+        "modular arithmetic auditor"
+      ],
+      "boundary": "no extra conductor prime",
+      "remainder_types": [
+        "valuation_lift_open"
+      ],
+      "source": "original-integer-pair-ordinary-Z-gram@phase367"
+    },
+    {
+      "id": "field.chart",
+      "carrier": "imaginary quadratic maximal-order class number",
+      "geometry": "arithmetic equivalence chart",
+      "algebra": "quadratic number fields",
+      "state": "301^4 interpretation under review",
+      "clocks": [
+        "meso",
+        "review"
+      ],
+      "observers": [
+        "independent number theorist"
+      ],
+      "boundary": "field semantics not self approved",
+      "remainder_types": [
+        "field_semantic_review_open"
+      ],
+      "source": "original-integer-pair-ordinary-Z-gram@phase367"
+    },
+    {
+      "id": "reviewer.external",
+      "carrier": "human independent reconstruction record",
+      "geometry": "authorization dependency graph",
+      "algebra": "typed evidence governance",
+      "state": "pending external review",
+      "clocks": [
+        "review"
+      ],
+      "observers": [
+        "independent human"
+      ],
+      "boundary": "not model controllable",
+      "remainder_types": [
+        "authorization_open"
+      ],
+      "source": "original-integer-pair-ordinary-Z-gram@phase367"
+    },
+    {
+      "id": "fabric.phase306",
+      "carrier": "D203 maximal order O_K",
+      "geometry": "Phase306 polycosmic arithmetic fabric",
+      "algebra": "maximal order not Z pair arbitrary D",
+      "state": "comparison only",
+      "clocks": [
+        "fast",
+        "meso"
+      ],
+      "observers": [
+        "phase306 original oracle"
+      ],
+      "boundary": "D203 not equivalent to original 301 source",
+      "remainder_types": [
+        "cross_coefficient_category"
+      ],
+      "source": "maximal-order-D203-phase306"
+    },
+    {
+      "id": "governance",
+      "carrier": "typed evidence and remainder dependencies",
+      "geometry": "non-self-promoting authorization graph",
+      "algebra": "P/A/M/H/S/R policy",
+      "state": "selector proposes, never promotes",
+      "clocks": [
+        "fast",
+        "review"
+      ],
+      "observers": [
+        "external receipt registry"
+      ],
+      "boundary": "no self certified status",
+      "remainder_types": [
+        "formal",
+        "authorization"
+      ],
+      "source": "original-integer-pair-ordinary-Z-gram@phase367"
+    }
+  ],
+  "tendrils": [
+    {
+      "source": "source.original",
+      "target": "proof.lean",
+      "relation": "source to formal proof",
+      "forward_transport": "typed source/certificate projection",
+      "return_transport": "audited round-trip reconstruction",
+      "preserved": [
+        "declared scope"
+      ],
+      "transformed": [
+        "local representation"
+      ],
+      "remainder": "semantic",
+      "cost": "bounded"
+    },
+    {
+      "source": "logic.prolog",
+      "target": "source.original",
+      "relation": "finite witness inclusion",
+      "forward_transport": "typed source/certificate projection",
+      "return_transport": "audited round-trip reconstruction",
+      "preserved": [
+        "declared scope"
+      ],
+      "transformed": [
+        "local representation"
+      ],
+      "remainder": "finite_to_uniform",
+      "cost": "bounded"
+    },
+    {
+      "source": "arithmetic.padic",
+      "target": "field.chart",
+      "relation": "candidate valuation to maximal-order bridge",
+      "forward_transport": "typed source/certificate projection",
+      "return_transport": "audited round-trip reconstruction",
+      "preserved": [
+        "declared scope"
+      ],
+      "transformed": [
+        "local representation"
+      ],
+      "remainder": "field_semantic_review_open",
+      "cost": "bounded"
+    },
+    {
+      "source": "fabric.phase306",
+      "target": "source.original",
+      "relation": "contrast only, NOT exact transport",
+      "forward_transport": "typed source/certificate projection",
+      "return_transport": "audited round-trip reconstruction",
+      "preserved": [
+        "declared scope"
+      ],
+      "transformed": [
+        "local representation"
+      ],
+      "remainder": "cross_coefficient_category",
+      "cost": "bounded"
+    },
+    {
+      "source": "reviewer.external",
+      "target": "governance",
+      "relation": "externally authenticated review",
+      "forward_transport": "typed source/certificate projection",
+      "return_transport": "audited round-trip reconstruction",
+      "preserved": [
+        "declared scope"
+      ],
+      "transformed": [
+        "local representation"
+      ],
+      "remainder": "authorization_open",
+      "cost": "bounded"
+    }
+  ],
+  "identity": {
+    "local_holonomies": [
+      "source lineage",
+      "formal dependency",
+      "p-adic filtration",
+      "independent review"
+    ],
+    "couplings": [
+      "formal-source",
+      "arithmetic-review"
+    ],
+    "higher_coherence": [
+      "source,arith,formal",
+      "source,field,review"
+    ],
+    "viability_constraints": [
+      "no source drift",
+      "no untyped remainder",
+      "no self promotion"
+    ],
+    "immune_actions": [
+      "quarantine",
+      "retry",
+      "retire",
+      "request review"
+    ],
+    "remainder": "identity"
+  },
+  "clocks": [
+    {
+      "id": "fast",
+      "role": "bounded falsification",
+      "rate": 1
+    },
+    {
+      "id": "meso",
+      "role": "formal compilation and source checks",
+      "rate": 0.25
+    },
+    {
+      "id": "review",
+      "role": "independent number-theoretic reconstruction",
+      "rate": 0.01
+    }
+  ],
+  "dynamics": {
+    "breathing": "cost-bounded viable arm set",
+    "weaving": "triadic source-arithmetic-proof coherence",
+    "deweaving": "recover source/provenance and typed remainder",
+    "governance": "external-receipt routing updates only, no claim promotion",
+    "morphogenesis": "new arm only under preregistered unresolved obligation",
+    "repair": "reject duplicate/self-certified receipts"
+  },
+  "hyperedges": [
+    {
+      "id": "source_falsification",
+      "participants": [
+        "source.original",
+        "logic.prolog",
+        "governance"
+      ],
+      "obligation": "source consistency and mutation rejection"
+    },
+    {
+      "id": "clock_triple",
+      "participants": [
+        "source.original",
+        "logic.prolog",
+        "proof.lean"
+      ],
+      "obligation": "no clock as gauge"
+    },
+    {
+      "id": "valuation_triple",
+      "participants": [
+        "source.original",
+        "arithmetic.padic",
+        "proof.lean"
+      ],
+      "obligation": "source-locked valuation interpretation"
+    },
+    {
+      "id": "field_review_triple",
+      "participants": [
+        "source.original",
+        "field.chart",
+        "reviewer.external"
+      ],
+      "obligation": "independent field semantics"
+    },
+    {
+      "id": "contrast_triple",
+      "participants": [
+        "fabric.phase306",
+        "source.original",
+        "governance"
+      ],
+      "obligation": "D203 non-equivalence typed remainder"
+    }
+  ],
+  "arms": [
+    {
+      "id": "source_anchor_mutation",
+      "worldlet": "source.original",
+      "purpose": "falsify",
+      "cost": 1,
+      "source": "original-integer-pair-ordinary-Z-gram@phase367",
+      "scope": "source_contract",
+      "hyperedge": "source_falsification",
+      "transport": "exact",
+      "remainder": "none",
+      "execution": "local"
+    },
+    {
+      "id": "prolog_clock_counterworld",
+      "worldlet": "logic.prolog",
+      "purpose": "falsify",
+      "cost": 2,
+      "source": "original-integer-pair-ordinary-Z-gram@phase367",
+      "scope": "matrix_general",
+      "hyperedge": "clock_triple",
+      "transport": "lossy",
+      "remainder": "finite_to_uniform",
+      "execution": "local"
+    },
+    {
+      "id": "lean_kernel_clock_rank",
+      "worldlet": "proof.lean",
+      "purpose": "formalize",
+      "cost": 4,
+      "source": "original-integer-pair-ordinary-Z-gram@phase367",
+      "scope": "encoded_lemma",
+      "hyperedge": "clock_triple",
+      "transport": "exact",
+      "remainder": "none",
+      "execution": "local"
+    },
+    {
+      "id": "frame_clock_commuting_square",
+      "worldlet": "proof.lean",
+      "purpose": "formalize",
+      "cost": 3,
+      "source": "original-integer-pair-ordinary-Z-gram@phase367",
+      "scope": "encoded_lemma",
+      "hyperedge": "clock_triple",
+      "transport": "exact",
+      "remainder": "none",
+      "execution": "local"
+    },
+    {
+      "id": "padic_source_valuation_audit",
+      "worldlet": "arithmetic.padic",
+      "purpose": "falsify",
+      "cost": 5,
+      "source": "original-integer-pair-ordinary-Z-gram@phase367",
+      "scope": "field_301_semantic",
+      "hyperedge": "valuation_triple",
+      "transport": "lossy",
+      "remainder": "valuation_lift_open",
+      "execution": "local"
+    },
+    {
+      "id": "external_field_chart_reconstruction",
+      "worldlet": "reviewer.external",
+      "purpose": "field_review",
+      "cost": 8,
+      "source": "original-integer-pair-ordinary-Z-gram@phase367",
+      "scope": "field_301_semantic",
+      "hyperedge": "field_review_triple",
+      "transport": "lossy",
+      "remainder": "authorization_open",
+      "execution": "human"
+    },
+    {
+      "id": "field_chart_review_map",
+      "worldlet": "field.chart",
+      "purpose": "semantic_reconstruction",
+      "cost": 6,
+      "source": "original-integer-pair-ordinary-Z-gram@phase367",
+      "scope": "field_301_semantic",
+      "hyperedge": "field_review_triple",
+      "transport": "lossy",
+      "remainder": "field_semantic_review_open",
+      "execution": "local"
+    },
+    {
+      "id": "d203_worldlet_contrast",
+      "worldlet": "fabric.phase306",
+      "purpose": "contrast",
+      "cost": 3,
+      "source": "maximal-order-D203-phase306",
+      "scope": "matrix_general",
+      "hyperedge": "contrast_triple",
+      "transport": "lossy",
+      "remainder": "cross_coefficient_category",
+      "execution": "local"
+    }
+  ],
+  "evidence": [
+    {
+      "status": "P",
+      "claim_id": "Phase367 original integer factorization",
+      "source": "PR278 checked Lean encoding",
+      "limitations": [
+        "not independent field theorem"
+      ]
+    },
+    {
+      "status": "M",
+      "claim_id": "Phase365/367 finite Prolog counterworlds",
+      "source": "research/prolog",
+      "limitations": [
+        "bounded arithmetic only"
+      ]
+    },
+    {
+      "status": "H",
+      "claim_id": "bandit improvement over matched baselines",
+      "source": "Phase368",
+      "limitations": [
+        "unmeasured"
+      ]
+    }
+  ],
+  "observables": [
+    "validated diagnostic yield",
+    "verified proof obligations",
+    "typed remainder mismatch",
+    "false promotion attempts",
+    "source fidelity",
+    "compute cost",
+    "Pareto coverage"
+  ],
+  "falsifiers": [
+    "D203 transported as 301 source",
+    "clock mistaken for unimodular frame",
+    "self-certified reward accepted",
+    "Prolog finite test closes field theorem",
+    "binary hyperedge passes",
+    "flat matched baseline equally effective"
+  ]
+}
