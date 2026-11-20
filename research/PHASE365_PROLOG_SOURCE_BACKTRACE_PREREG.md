@@ -57,3 +57,19 @@ Construct a canonical original integer evaluation matrix E(Q,D,J,R,S) from the a
 The first purely real test was not an adequate adversary for the conjugate factor W: it cannot distinguish z*z from z*conj(z). The harness now independently implements exact integer-pair multiplication (a+b*sqrt(-D)), conjugation, ordinary Z derivative with W held fixed, and the original positive trace 2*(ac+Dbd).
 
 At the EXISTING Lean control from IntegerTraceGram.lean, Q={(0,1)}, D=3, J=2 and rows (0,0),(1,1), the exact Gram is [[2,6],[6,24]] with determinant 12. The false unconjugated replacement z*z=-3 flips the key off-diagonal contribution, whereas z*conj(z)=+3. This is a stronger independent check of the actual non-real source convention, still only one finite regression. The textual Lean guard now insists on the named nonreal theorem, pairConj in the derivative definition, and the original matrix, and kills an intentionally flipped sign. No additional field theorem is inferred.
+
+
+## E111 — archimedean/p-adic clock-split theorem target (20 November 2026)
+
+For a FIXED finite original lattice source Q and FIXED original row family, let G_J denote the original positive integer trace Gram at ordinary derivative depth J. The contribution added when J rises to J+1 is, in real coordinates, a sum of weighted outer products 2*a*a^T+2*D*b*b^T, hence positive semidefinite if D>=0. This gives the **paper-level** matrix inequality G_(J+1)-G_J >=_PSD 0, and suggests a Lean theorem at the real-cast original Gram (before any claim about determinants/fields).
+
+The exact bounded example Q={(1,0),(6,0),(11,0)}, R=3,S=1 has
+
+    G_2-G_1 = [[0,0,0],[0,6,72],[0,72,1264]]
+    G_3-G_2 = [[0,0,0],[0,0,0],[0,0,24]]
+
+The nontrivial principal 2x2 minor of the first increment is 6*1264-72^2 = 2400 >0. All increments are PSD in this fixed example; det G_1 < det G_2 < det G_3; nevertheless v5(det G_1)=6, v5(det G_2)=2, v5(det G_3)=0.
+
+**New discriminator:** the archimedean positive-semidefinite observation order does NOT induce a monotone p-adic valuation order. The research should explicitly type an observation-clock morphism J->J+1 separately from an integral unimodular row-frame isomorphism U. No unlabeled "moving-frame invariance" may cross this distinction.
+
+Lean promotion H: prove the original entrywise difference as an exact sum of outer products on one source and trace convention, then PSD over the reals. A separate independent integer witness already refutes naive monotonic valuation; do not hypothesize it generically.
