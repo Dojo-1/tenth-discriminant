@@ -276,27 +276,27 @@ theorem tier_relation_refines_phase373
 theorem phase373_projection_source_anchor_mutation (tier : ResearchClock) :
     manifestEligible (0 : Fin 8) tier 9 true false = true ↔
       TierAuthorizable .sourceAnchor tier .meso .githubCI := by
-  cases tier <;> decide
+  cases tier <;> simp [manifestEligible, armCost, nativeClocks, isHuman, isOriginal, isContrast, isForbidden, tierAdmitsBool, TierAuthorizable, NativeAdmissible, TierAdmits, Allowed, CanExecute]
 
 theorem phase373_projection_prolog_clock_counterworld (tier : ResearchClock) :
     manifestEligible (1 : Fin 8) tier 9 true false = true ↔
       TierAuthorizable .prologCounterworld tier .fast .githubCI := by
-  cases tier <;> decide
+  cases tier <;> simp [manifestEligible, armCost, nativeClocks, isHuman, isOriginal, isContrast, isForbidden, tierAdmitsBool, TierAuthorizable, NativeAdmissible, TierAdmits, Allowed, CanExecute]
 
 theorem phase373_projection_lean_kernel_clock_rank (tier : ResearchClock) :
     manifestEligible (2 : Fin 8) tier 9 true false = true ↔
       TierAuthorizable .leanFormalization tier .meso .githubCI := by
-  cases tier <;> decide
+  cases tier <;> simp [manifestEligible, armCost, nativeClocks, isHuman, isOriginal, isContrast, isForbidden, tierAdmitsBool, TierAuthorizable, NativeAdmissible, TierAdmits, Allowed, CanExecute]
 
 theorem phase373_projection_frame_clock_commuting_square (tier : ResearchClock) :
     manifestEligible (3 : Fin 8) tier 9 true false = true ↔
       TierAuthorizable .leanFormalization tier .meso .githubCI := by
-  cases tier <;> decide
+  cases tier <;> simp [manifestEligible, armCost, nativeClocks, isHuman, isOriginal, isContrast, isForbidden, tierAdmitsBool, TierAuthorizable, NativeAdmissible, TierAdmits, Allowed, CanExecute]
 
 theorem phase373_projection_external_field_chart_reconstruction (tier : ResearchClock) :
     manifestEligible (5 : Fin 8) tier 9 true false = true ↔
       TierAuthorizable .externalReview tier .review .humanReview := by
-  cases tier <;> decide
+  cases tier <;> simp [manifestEligible, armCost, nativeClocks, isHuman, isOriginal, isContrast, isForbidden, tierAdmitsBool, TierAuthorizable, NativeAdmissible, TierAdmits, Allowed, CanExecute]
 
 theorem source_not_fast :
     manifestEligible (0 : Fin 8) .fast 9 true false = false := by decide
