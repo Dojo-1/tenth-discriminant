@@ -51,3 +51,7 @@ Reject a notion of execution identity based solely on run ID; reject unissued, r
     gprolog --consult-file research/phase372/attempt_lineage.pl --query-goal phase372_main
 
 Require fresh exact-head CI and inspection of actual output, not exit code alone. Leave draft unmerged until external source semantics are reviewed.
+
+## E137 — Frozen clock mismatch found by first CI (not silently repaired)
+
+The historical Phase371 source-guard issuance had research_clock=fast and a real matching GitHub execution. The inherited Phase368 manifest, however, declares source.original/source_anchor_mutation on the mesoscopic clock, not fast. At budget 1, the Phase369 PendingParetoBandit refuses the fast task as ineligible. This is a real cross-interface authorization mismatch, not merely a test fixture error. Historical Phase371 stays M for GitHub execution provenance but is NOT an authorized Phase368 scheduler decision. Phase372 formal/Python policy fixtures must use the meso clock; a separate adversarial test insists the historical fast interpretation is rejected. Do not alter the historical task ID or comment retroactively. A later explicit, preregistered clock-authorization revision would be required to make a fast source diagnostic eligible.
