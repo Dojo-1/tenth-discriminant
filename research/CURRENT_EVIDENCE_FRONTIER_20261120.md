@@ -61,3 +61,7 @@ C. The research actual-field statement exists at #267. Request independent **hum
 D. E46 #264 has merged. Keep observation-loss controls distinct from arithmetic valuations: a new prime power still requires exact integral row certificates on the complete original source. Preserve E31 #235, E32 #237, E37 #250 and E38 #251 countercontrols, integrated into research parents.
 
 All branches and PRs retain date-stamped evidence; the historical five-band Phase352 paper argument is superseded as the best sufficient count certificate by the proved 14^4 geometry, not erased.
+
+## Open research lineage / housekeeping
+
+The [open-PR dependency and triage register](OPEN_RESEARCH_PR_TRIAGE_20261120.md) distinguishes conductor/observer countercontrols, exact ordinary-jet factor certificates, finite clocks and the source-to-field proof queue. Review PR heads live; this dated table is a snapshot. Do not bulk-merge green workflows or mistake research branch integration for mainline publication.
