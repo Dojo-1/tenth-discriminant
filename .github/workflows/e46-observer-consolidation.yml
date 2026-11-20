@@ -43,7 +43,7 @@ jobs:
           import TenthDiscriminant.E44LabelledCRTObserverRefinement
           import TenthDiscriminant.E45FullEllipseOrientationNull
           #print axioms TenthDiscriminant.E42.original_gram_equal_iff_moments
-          #print axioms TenthDiscriminant.E43.independent_conjugation_gram_invariant
+          #print axioms TenthDiscriminant.E43.original_gram_invariant_under_injective_pointwise_conjugations
           #print axioms TenthDiscriminant.E45.ellipse_injective_partial_conjugation_no_new_source
           #print axioms TenthDiscriminant.E45.gaussian_full_ellipse_total_prime_gap_zero
           LEAN
