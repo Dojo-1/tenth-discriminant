@@ -1,0 +1,51 @@
+name: Phase362 source-exact 301 fourth-power original Gram upper
+on:
+  push:
+    branches: ['research/phase362-301-original-gram-upper']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase362-same-gram-301-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  original-upper-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build exact 301 original source upper
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Phase362ThinUpper301 2>&1 | tee /tmp/phase362-build.log
+          if grep -q 'sorryAx' /tmp/phase362-build.log; then exit 1; fi
+      - name: Inspect exact theorem and allowed transitive axioms
+        run: |
+          cat >/tmp/phase362-audit.lean <<'LEAN'
+          import TenthDiscriminant.Phase362ThinUpper301
+          #check TenthDiscriminant.Phase362.thin_production_normalized_upper_stronger_301
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.R_ge_seventyfive_cubes_301
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.dimensions_301
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.thin_original_gram_pos_301
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.normalized_upper_301
+          #print axioms TenthDiscriminant.Phase362.thin_production_normalized_upper_stronger_301
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/phase362-audit.lean 2>&1 | tee /tmp/phase362-axioms.log
+          if grep -q 'sorryAx' /tmp/phase362-axioms.log; then exit 1; fi
