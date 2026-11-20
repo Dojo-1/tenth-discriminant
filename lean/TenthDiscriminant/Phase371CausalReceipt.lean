@@ -100,9 +100,9 @@ theorem credit_requires_external_validation
 theorem wellFormed_step {s t : Ledger}
     (h : Step s t) (hs : WellFormed s) : WellFormed t := by
   cases h with
-  | issued s task hi =>
+  | issued task hi =>
       simpa [WellFormed, issue] using hs
-  | credited s r hr =>
+  | credited r hr =>
       have ht : r.task.id ∉ s.creditedTasks := hr.2.1
       have hu : r.runId ∉ s.creditedRuns := hr.2.2.1
       constructor
@@ -132,7 +132,7 @@ theorem empty_ledger_wellFormed :
 /-- A deliberately invalid claim is NOT asserted: a successful CI status
 without a task in pending cannot produce a valid credit. -/
 theorem success_flag_alone_not_enough (r : Receipt)
-    (h : r.executionVerified = true) :
+    (_h : r.executionVerified = true) :
     ¬ ReceiptOK { pending := [], creditedTasks := [], creditedRuns := [] } r := by
   exact no_credit_without_issue _ _ rfl
 
