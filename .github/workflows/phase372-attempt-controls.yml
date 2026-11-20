@@ -1,0 +1,54 @@
+name: Phase372 attempt-aware Python and GNU Prolog guards
+on:
+  push:
+    branches: ['research/phase372-attempt-identity-and-anti-recirculation']
+    paths:
+      - 'research/phase372/**'
+      - '.github/workflows/phase372-attempt-controls.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase372-attempt-controls-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  signed-attempt-contract:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned Ed25519 tests
+        run: |
+          python3 -m pip install --disable-pip-version-check cryptography==46.0.4
+      - name: Verify inherited same-original Lean source anchors
+        run: |
+          python3 scripts/phase365_lean_anchor_guard.py
+      - name: Execute all signed attempt identity and causal-order controls
+        run: |
+          set -o pipefail
+          python3 -m unittest discover -s research/phase372 -p 'test_*.py' -v 2>&1 | tee /tmp/phase372-python.log
+          grep -q 'Ran 30 tests' /tmp/phase372-python.log
+          grep -q '^OK$' /tmp/phase372-python.log
+          if grep -E '^FAILED |^ERROR:|^FAIL:' /tmp/phase372-python.log; then exit 1; fi
+          echo 'PHASE372_SYNTHETIC_SIGNATURE_CONTROLS_PASS; no real isolated signer'
+  prolog-attempt-obstructions:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install GNU Prolog
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends gprolog
+          gprolog --version
+      - name: Exact finite attempt-lineage falsification
+        run: |
+          set -o pipefail
+          gprolog --consult-file research/phase372/attempt_lineage.pl --query-goal phase372_main 2>&1 | tee /tmp/phase372-prolog.log
+          if grep -E 'uncaught exception|warning: unknown directive|^FAIL |error\(' /tmp/phase372-prolog.log; then exit 1; fi
+          grep -q '^PHASE372_PROLOG_GOVERNANCE_PASS' /tmp/phase372-prolog.log
+          test "$(grep -c '^PASS ' /tmp/phase372-prolog.log)" -eq 15
