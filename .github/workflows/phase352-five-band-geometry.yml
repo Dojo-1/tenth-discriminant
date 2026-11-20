@@ -1,0 +1,23 @@
+name: Phase352 five-band source-geometry exact integer test
+
+on:
+  push:
+    branches: ['research/phase352-five-band-uniform-geometry']
+    paths:
+      - 'research/oracles/phase352_five_band_source_geometry.py'
+      - '.github/workflows/phase352-five-band-geometry.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-polygon:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact original integer-pair ellipse five-band certificate
+        run: python3 research/oracles/phase352_five_band_source_geometry.py
