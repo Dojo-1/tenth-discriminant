@@ -154,8 +154,8 @@ def render(manifest: dict, raw: bytes) -> str:
         theoremname="phase373_projection_"+idname
         lines.extend([
             f"theorem {theoremname} (tier : ResearchClock) :",
-            f"    manifestEligible ({i} : Fin 8) tier 9 true false =",
-            f"      decide (TierAuthorizable .{logical} tier .{native} .{plane}) := by",
+            f"    manifestEligible ({i} : Fin 8) tier 9 true false = true ↔",
+            f"      TierAuthorizable .{logical} tier .{native} .{plane} := by",
             "  cases tier <;> decide",
             "",
         ])
