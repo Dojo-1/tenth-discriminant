@@ -163,6 +163,31 @@ nonreal_sign_falsifier :-
     pair_mul(3,z(0,1),z(0,-1),z(3,0)),
     nonreal_conjugate_observer.
 
+
+% Two-clock discriminator: for fixed real source, adding ordinary-jet
+% observations increases the *positive-semidefinite* Gram in Loewner order,
+% but p-adic determinant valuations need not increase.
+increment_entry(Q,J1,J2,R,T,Delta) :-
+    J2 > J1, gram_entry(Q,J1,R,T,A), gram_entry(Q,J2,R,T,B),
+    Delta is B-A.
+
+archimedean_padic_clock_split :-
+    Q=[1,6,11],
+    increment_entry(Q,1,2,0,0,0),
+    increment_entry(Q,1,2,0,1,0),
+    increment_entry(Q,1,2,0,2,0),
+    increment_entry(Q,1,2,1,1,6),
+    increment_entry(Q,1,2,1,2,72),
+    increment_entry(Q,1,2,2,2,1264),
+    Minor is 6*1264-72*72, Minor =:= 2400, Minor > 0,
+    increment_entry(Q,2,3,0,0,0),
+    increment_entry(Q,2,3,1,1,0),
+    increment_entry(Q,2,3,1,2,0),
+    increment_entry(Q,2,3,2,2,24),
+    det_3(Q,1,A), det_3(Q,2,B), det_3(Q,3,C),
+    A < B, B < C,
+    v_p(A,5,6), v_p(B,5,2), v_p(C,5,0).
+
 % Bounded search, not universal inference.
 clock_counterexample(J1,J2,V1,V2) :-
     between(1,3,J1), between(1,3,J2), J1 < J2,
@@ -248,6 +273,8 @@ run_tests :-
         det_3([1,6,11],2,784400)),
     test(fixed_sample_clock_j3,
         det_3([1,6,11],3,799664)),
+    test(archimedean_psd_vs_padic_clock_drop,
+        archimedean_padic_clock_split),
     test(clock_valuations_6_2_0,
         (det_3([1,6,11],1,A), v_p(A,5,6),
          det_3([1,6,11],2,B), v_p(B,5,2),
