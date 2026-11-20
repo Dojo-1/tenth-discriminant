@@ -202,6 +202,7 @@ class VersionedMigrationTests(unittest.TestCase):
     def test_worldlet_retargeting_rejected(self):
         def mutate(x):
             next(a for a in x["arms"] if a["id"]==ARM)["worldlet"]="proof.lean"
+            next(h for h in x["hyperedges"] if h["id"]=="source_falsification")["participants"].append("proof.lean")
         g,k,t,o,n=fixture(mutator=mutate)
         with self.assertRaises(ContractError):g.verify(signed(g,k,t,o,n))
 
