@@ -132,6 +132,34 @@ def render(manifest: dict, raw: bytes) -> str:
             "  decide",
             "",
         ])
+    # Bridge the executable Boolean relation back to the Phase373 Prop,
+    # and check the full manifest's four representative arms against
+    # Phase373's independently authored finite policy projection.
+    lines.extend([
+        "theorem tier_relation_refines_phase373",
+        "    (tier native : ResearchClock) :",
+        "    tierAdmitsBool tier native = true \\u2194 TierAdmits tier native := by",
+        "  cases tier <;> cases native <;> simp [tierAdmitsBool, TierAdmits]",
+        "",
+    ])
+    sample=[
+        ("source_anchor_mutation","sourceAnchor","meso","githubCI"),
+        ("prolog_clock_counterworld","prologCounterworld","fast","githubCI"),
+        ("lean_kernel_clock_rank","leanFormalization","meso","githubCI"),
+        ("frame_clock_commuting_square","leanFormalization","meso","githubCI"),
+        ("external_field_chart_reconstruction","externalReview","review","humanReview"),
+    ]
+    for idname, logical, native, plane in sample:
+        i=ids.index(idname)
+        theoremname="phase373_projection_"+idname
+        lines.extend([
+            f"theorem {theoremname} (tier : ResearchClock) :",
+            f"    manifestEligible ({i} : Fin 8) tier 9 true false =",
+            f"      decide (TierAuthorizable .{logical} tier .{native} .{plane}) := by",
+            "  cases tier <;> decide",
+            "",
+        ])
+
     # Exact boundary witnesses, including a source contrast and native/tier asymmetry.
     i_source=ids.index("source_anchor_mutation")
     i_prolog=ids.index("prolog_clock_counterworld")
