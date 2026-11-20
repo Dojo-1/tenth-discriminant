@@ -1,0 +1,54 @@
+name: Phase373 native-tier clock and signed time controls
+on:
+  push:
+    branches: ['research/phase373-clock-authority-square']
+    paths:
+      - 'research/phase373/**'
+      - '.github/workflows/phase373-clock-controls.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase373-clock-controls-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  signed-clock-contract:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned Ed25519 test library
+        run: |
+          python3 -m pip install --disable-pip-version-check cryptography==46.0.4
+      - name: Guard original integer trace-Gram source
+        run: |
+          python3 scripts/phase365_lean_anchor_guard.py
+      - name: Fail closed on any clock-authority regression
+        run: |
+          set -o pipefail
+          python3 -m unittest discover -s research/phase373 -p 'test_*.py' -v 2>&1 | tee /tmp/phase373-python.log
+          grep -q 'Ran 32 tests' /tmp/phase373-python.log
+          grep -q '^OK$' /tmp/phase373-python.log
+          if grep -E '^FAILED |^ERROR:|^FAIL:' /tmp/phase373-python.log; then exit 1; fi
+          echo 'PHASE373_SYNTHETIC_CLOCK_CONTROLS_PASS; no external signer/authenticated clock'
+  prolog-clock-obstructions:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install GNU Prolog
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends gprolog
+          gprolog --version
+      - name: Fail closed on finite clock-policy counterworlds
+        run: |
+          set -o pipefail
+          gprolog --consult-file research/phase373/clock_authority.pl --query-goal phase373_main 2>&1 | tee /tmp/phase373-prolog.log
+          if grep -E 'uncaught exception|warning: unknown directive|^FAIL |error\(' /tmp/phase373-prolog.log; then exit 1; fi
+          grep -q '^PHASE373_CLOCK_AUTHORITY_PASS' /tmp/phase373-prolog.log
+          test "$(grep -c '^PASS ' /tmp/phase373-prolog.log)" -eq 22
