@@ -31,7 +31,7 @@ jobs:
         run: |
           set -o pipefail
           python3 -m unittest discover -s research/phase370 -p 'test_*.py' -v 2>&1 | tee /tmp/phase370-tests.log
-          grep -q 'Ran 20 tests' /tmp/phase370-tests.log
+          grep -q 'Ran 24 tests' /tmp/phase370-tests.log
           grep -q '^OK$' /tmp/phase370-tests.log
           if grep -E '^FAILED |^ERROR:|^FAIL:' /tmp/phase370-tests.log; then exit 1; fi
       - name: State the non-authority boundary
