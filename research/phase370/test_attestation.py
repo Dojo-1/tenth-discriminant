@@ -21,13 +21,13 @@ def fixture():
     pub = key.public_key().public_bytes(serialization.Encoding.Raw,
                                          serialization.PublicFormat.Raw).hex()
     trust = {'auditor-outside-policy': TrustEntry(pub, (
-       'source_guard','prolog_exact','lean_kernel','independent_human'))}
+       'source_guard','prolog_exact','lean_kernel'))}
     return EvidenceLoop(MANIFEST, trust), key
 
 
-def signed(key, task, *, role='source_guard', diag=True, close=False, **changes):
+def signed(key, task, *, role='source_guard', diag=True, close=False, verifier_id='auditor-outside-policy', **changes):
     data = Outcome(task.id,task.arm,task.scope,task.source,
-                   task.repository_head,role,'auditor-outside-policy',
+                   task.repository_head,role,verifier_id,
                    digest({'synthetic_artifact':task.id}), 'run-demo-42',
                    'VERIFIED_TEST_ARTIFACT',True,False,True,diag,close,
                    task.cost_units)
@@ -93,7 +93,10 @@ class ProvenanceTests(unittest.TestCase):
         while t.arm!='external_field_chart_reconstruction':
             t=loop.issue(HEAD,8,phase='review',nonce='nonce-'+str(loop.policy.epoch).zfill(16))
         with self.assertRaises(ContractError):loop.accept(signed(key,t,role='lean_kernel',close=True))
-        loop.accept(signed(key,t,role='independent_human',close=True))
+        human = Ed25519PrivateKey.generate()
+        pub = human.public_key().public_bytes(serialization.Encoding.Raw,serialization.PublicFormat.Raw).hex()
+        loop.trust['external-human-review'] = TrustEntry(pub,('independent_human',))
+        loop.accept(signed(human,t,role='independent_human',close=True,verifier_id='external-human-review'))
         self.assertEqual(loop.policy.state[t.arm].closure_hits,1)
         self.assertNotIn('promoted_claims',str(loop.snapshot()))
 
@@ -123,6 +126,27 @@ class ProvenanceTests(unittest.TestCase):
     def test_deterministic_digest_nonmatching_payload(self):
         self.assertNotEqual(digest({'a':1}),digest({'a':2}))
         self.assertEqual(digest({'a':1,'b':2}),digest({'b':2,'a':1}))
+
+    def test_no_shared_ci_and_external_human_key(self):
+        loop,key=fixture()
+        pub=loop.trust['auditor-outside-policy'].public_key_hex
+        bad={'ci':TrustEntry(pub,('source_guard',)),
+             'external':TrustEntry(pub,('independent_human',))}
+        with self.assertRaises(ContractError):EvidenceLoop(MANIFEST,bad)
+
+    def test_no_dual_role_signer(self):
+        loop,key=fixture()
+        pub=loop.trust['auditor-outside-policy'].public_key_hex
+        with self.assertRaises(ContractError):EvidenceLoop(MANIFEST,{
+            'self':TrustEntry(pub,('source_guard','independent_human'))})
+
+    def test_one_run_cannot_pay_two_tasks(self):
+        loop,key=fixture()
+        first=loop.issue(HEAD,1,nonce='nonce-run-reuse-0001')
+        loop.accept(signed(key,first))
+        next_task=loop.issue(HEAD,1,nonce='nonce-run-reuse-0002')
+        with self.assertRaises(ContractError):loop.accept(signed(key,next_task))
+        self.assertEqual(loop.policy.state[next_task.arm].observations,1)
 
     def test_reject_invalid_commit(self):
         loop,_=fixture()
