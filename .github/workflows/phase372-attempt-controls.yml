@@ -29,7 +29,7 @@ jobs:
         run: |
           set -o pipefail
           python3 -m unittest discover -s research/phase372 -p 'test_*.py' -v 2>&1 | tee /tmp/phase372-python.log
-          grep -q 'Ran 30 tests' /tmp/phase372-python.log
+          grep -q 'Ran 31 tests' /tmp/phase372-python.log
           grep -q '^OK$' /tmp/phase372-python.log
           if grep -E '^FAILED |^ERROR:|^FAIL:' /tmp/phase372-python.log; then exit 1; fi
           echo 'PHASE372_SYNTHETIC_SIGNATURE_CONTROLS_PASS; no real isolated signer'
