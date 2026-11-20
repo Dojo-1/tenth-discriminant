@@ -4,6 +4,7 @@ on:
     branches: ['research/phase371-causal-receipt-state-machine']
     paths:
       - 'research/phase371/**'
+      - 'lean/TenthDiscriminant/Phase371CausalReceipt.lean'
       - '.github/workflows/phase371-task-probe.yml'
   workflow_dispatch:
 permissions:

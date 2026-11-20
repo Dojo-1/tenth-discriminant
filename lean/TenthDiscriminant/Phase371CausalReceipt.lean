@@ -140,3 +140,5 @@ end TenthDiscriminant.Phase371
 
 #print axioms TenthDiscriminant.Phase371.wellFormed_reachable
 #print axioms TenthDiscriminant.Phase371.success_flag_alone_not_enough
+
+-- Phase371 final frozen commit: verifier booleans are externally supplied hypotheses.
