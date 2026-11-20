@@ -233,3 +233,5 @@ class ClockSquareTests(unittest.TestCase):
 
 if __name__=="__main__":
     unittest.main()
+
+# Frozen cross-check: synthetic signatures cannot authenticate independent GitHub evidence.

@@ -194,3 +194,5 @@ end TenthDiscriminant.Phase373
 #print axioms TenthDiscriminant.Phase373.causal_order_reflect
 #print axioms TenthDiscriminant.Phase373.no_source_meso_to_fast_bridge
 #print axioms TenthDiscriminant.Phase373.evidence_square_causality
+
+-- Frozen cross-check: the core clock model is separate from timestamp authentication.
