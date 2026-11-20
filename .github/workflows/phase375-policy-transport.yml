@@ -1,0 +1,96 @@
+name: Phase375 versioned policy transport and lineage gates
+on:
+  push:
+    branches: ['research/phase375-versioned-policy-transport']
+    paths:
+      - 'lean/TenthDiscriminant/Phase375PolicyTransport.lean'
+      - 'research/phase375/**'
+      - '.github/workflows/phase375-policy-transport.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase375-transport-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  policy-migration-guards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pinned synthetic Ed25519 library
+        run: python3 -m pip install --disable-pip-version-check cryptography==46.0.4
+      - name: Guard unchanged original integer Gram source
+        run: python3 scripts/phase365_lean_anchor_guard.py
+      - name: Synthetic versioned policy and signature adversaries
+        run: |
+          set -o pipefail
+          python3 -m unittest discover -s research/phase375 -p 'test_*.py' -v 2>&1 | tee /tmp/phase375-python.log
+          grep -q 'Ran 30 tests' /tmp/phase375-python.log
+          grep -q '^OK$' /tmp/phase375-python.log
+          if grep -E '^FAILED |^ERROR:|^FAIL:' /tmp/phase375-python.log; then exit 1; fi
+          echo 'PHASE375_SYNTHETIC_MIGRATION_PASS; NO AUTHENTICATED ISSUER OR FIELD THEOREM'
+  prolog-policy-counterworlds:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install GNU Prolog
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends gprolog
+          gprolog --version
+      - name: Finite transport obstruction controls
+        run: |
+          set -o pipefail
+          gprolog --consult-file research/phase375/version_counterworlds.pl --query-goal phase375_main 2>&1 | tee /tmp/phase375-prolog.log
+          if grep -E 'uncaught exception|warning: unknown directive|^FAIL |error\(' /tmp/phase375-prolog.log; then exit 1; fi
+          grep -q '^PHASE375_PROLOG_VERSION_TRANSPORT_PASS' /tmp/phase375-prolog.log
+          test "$(grep -c '^PASS ' /tmp/phase375-prolog.log)" -eq 17
+  lean-versioned-lineage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile Phase375 typed policy transport
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Phase375PolicyTransport 2>&1 | tee /tmp/phase375-lean.log
+          if grep -E 'sorryAx|admitAx|error:' /tmp/phase375-lean.log; then exit 1; fi
+      - name: Exact theorem and axiom audit
+        run: |
+          cat > /tmp/phase375-audit.lean <<'LEAN'
+          import TenthDiscriminant.Phase375PolicyTransport
+          #check TenthDiscriminant.Phase375.no_retroactive_fast_issuance
+          #check TenthDiscriminant.Phase375.widening_without_prior_permission_not_migratable
+          #check TenthDiscriminant.Phase375.changed_source_prevents_silent_migration
+          #check TenthDiscriminant.Phase375.compatible_transition_exists
+          #check TenthDiscriminant.Phase375.MigrationEdge.comp
+          #print axioms TenthDiscriminant.Phase375.no_retroactive_fast_issuance
+          #print axioms TenthDiscriminant.Phase375.changed_source_prevents_silent_migration
+          #print axioms TenthDiscriminant.Phase375.compatible_transition_exists
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/phase375-audit.lean 2>&1 | tee /tmp/phase375-audit.log
+          if grep -E 'sorryAx|admitAx|error:' /tmp/phase375-audit.log; then exit 1; fi
+          echo 'VERIFIED_PHASE375_LEAN_MODEL; external signing and field semantics UNPROVED'
