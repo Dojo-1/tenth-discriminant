@@ -1,0 +1,34 @@
+name: Phase371 real task-bound GitHub source probe
+on:
+  push:
+    branches: ['research/phase371-causal-receipt-state-machine']
+    paths:
+      - 'research/phase371/**'
+      - 'lean/TenthDiscriminant/Phase371CausalReceipt.lean'
+      - '.github/workflows/phase371-task-probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase371-task-probe-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-contract-probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Test exact probe identity and no-credit first push
+        run: python3 -m unittest discover -s research/phase371 -p 'test_task_probe.py' -v
+      - name: Task-bound source guard, only after independently logged issuance and rerun
+        run: |
+          set -o pipefail
+          python3 research/phase371/task_probe.py | tee /tmp/phase371-probe.log
+          if [ "$GITHUB_RUN_ATTEMPT" -eq 1 ]; then
+            grep -qx 'PHASE371_INITIAL_PUSH_NOT_ISSUED_NO_CREDIT' /tmp/phase371-probe.log
+          else
+            grep -Eq '^PHASE371_TASK_ID=[0-9a-f]{64}$' /tmp/phase371-probe.log
+            grep -qx 'VERIFIED_PHASE371_SOURCE_ANCHOR' /tmp/phase371-probe.log
+          fi
