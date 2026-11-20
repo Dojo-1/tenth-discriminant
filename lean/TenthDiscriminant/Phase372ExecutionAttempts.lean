@@ -160,3 +160,5 @@ end TenthDiscriminant.Phase372
 
 #print axioms TenthDiscriminant.Phase372.wellFormed_reachable
 #print axioms TenthDiscriminant.Phase372.same_run_distinct_execution
+
+-- Exact-head CI freeze: the signer and timestamp semantics remain external assumptions.

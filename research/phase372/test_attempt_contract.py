@@ -261,3 +261,5 @@ class AttemptContractTests(unittest.TestCase):
 
 if __name__=="__main__":
     unittest.main()
+
+# Exact-head freeze: historical fast-clock issue remains explicitly ineligible.
