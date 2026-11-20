@@ -93,8 +93,20 @@ class EvidenceLoop:
     def __init__(self, manifest: dict, trust: Mapping[str, TrustEntry]):
         self.policy = PendingParetoBandit(manifest)
         self.trust = dict(trust)
+        # An independent human-review key may not also validate model/CI work.
+        for entry in self.trust.values():
+            if ('independent_human' in entry.allowed_roles and
+                any(x in entry.allowed_roles for x in ('lean_kernel','prolog_exact','source_guard'))):
+                raise ContractError('human-review authorization must be segregated')
+        humankeys = {v.public_key_hex for v in self.trust.values()
+                     if 'independent_human' in v.allowed_roles}
+        if any(v.public_key_hex in humankeys and
+               'independent_human' not in v.allowed_roles
+               for v in self.trust.values()):
+            raise ContractError('human review and CI share the same public key')
         self.tasks: dict[str, TaskIntent] = {}
         self.consumed: set[str] = set()
+        self.consumed_run_ids: set[str] = set()
         self.chain: list[dict] = []
         self.ledger_head = '0' * 64
 
@@ -146,6 +158,8 @@ class EvidenceLoop:
             raise ContractError('invalid artifact digest')
         if not a.run_id or a.run_id == '0':
             raise ContractError('no externally traceable execution identifier')
+        if a.run_id in self.consumed_run_ids:
+            raise ContractError('CI execution already attributed to another issued task')
         allowed_role = {'encoded_lemma': 'lean_kernel',
                         'source_contract': 'source_guard',
                         'matrix_general': 'prolog_exact',
@@ -189,6 +203,7 @@ class EvidenceLoop:
         finally:
             self.policy.approved_receipts.pop(a.task_id, None)
         self.consumed.add(a.task_id)
+        self.consumed_run_ids.add(a.run_id)
         self._append('verified_observation', {'task_id': a.task_id,
                          'artifact_sha256': a.artifact_digest,
                          'verifier': a.verifier_id, 'run_id': a.run_id,
