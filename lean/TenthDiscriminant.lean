@@ -327,6 +327,11 @@ import TenthDiscriminant.Phase343Scalar307
 import TenthDiscriminant.Phase355Scalar302
 import TenthDiscriminant.Phase346Radius307
 import TenthDiscriminant.Phase356Radius302
+import TenthDiscriminant.Phase353DirectCellAreaCount
+import TenthDiscriminant.Phase354OriginalGram14
+import TenthDiscriminant.Phase355Scalar302
+import TenthDiscriminant.Phase357Dimensions302
+import TenthDiscriminant.Phase358ThinUpper302
 import TenthDiscriminant.Phase347Dimensions307
 import TenthDiscriminant.Phase347SourcePositivity307
 import TenthDiscriminant.Phase347ThinUpper307
