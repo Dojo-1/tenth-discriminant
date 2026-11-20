@@ -33,7 +33,7 @@ theorem odd_large_classNumber_ne_one_301
   have hpositive := Tuned.thin_original_gram_pos_301 D hD
   have hlower := TenthDiscriminant.Phase348.original_source_joint_normalized_lower_301
     (ellipsePairs D (Tuned.thinRadius D)) D hD hsq hc hpositive
-  exact TenthDiscriminant.TenthDiscriminant.Phase361.no_scalar_overlap_301_with_sharp_radius
+  exact TenthDiscriminant.Phase361.no_scalar_overlap_301_with_sharp_radius
     D hD _ hupper hlower
 
 /-- Preserve the original odd/even maximal-order chart split. -/
