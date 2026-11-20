@@ -97,6 +97,16 @@ def isForbidden (a : Fin 8) : Bool :=
   | 7 => false
   | _ => false
 
+/-- Total Boolean implementation of the Phase373 finite tier relation.
+The proof checks this executable clause against the Python oracle. -/
+def tierAdmitsBool (tier native : ResearchClock) : Bool :=
+  match tier, native with
+  | .fast, .fast => true
+  | .meso, .fast => true
+  | .meso, .meso => true
+  | .review, _ => true
+  | _, _ => false
+
 /-- Versioned, manifest-derived predicate. Cost is still a scalar
 RESOURCE BOUND, not an intelligence or mathematical truth score. -/
 def manifestEligible (a : Fin 8) (tier : ResearchClock) (budget : Nat)
@@ -105,7 +115,7 @@ def manifestEligible (a : Fin 8) (tier : ResearchClock) (budget : Nat)
   !isForbidden a &&
   (isOriginal a || (includeContrast && isContrast a)) &&
   (includeHuman || !isHuman a) &&
-  (nativeClocks a).any (fun c => decide (TierAdmits tier c)) &&
+  (nativeClocks a).any (fun c => tierAdmitsBool tier c) &&
   (!isHuman a || tier == .review)
 
 /-- Masks are computed using UNMODIFIED Phase368 PolyBandit.eligible
