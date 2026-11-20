@@ -33,6 +33,6 @@ python3 -m pip install cryptography==46.0.4
 python3 -m unittest discover -s research/phase370 -p 'test_*.py' -v
 ```
 
-The 20 tests use **synthetic signing keys and fixture log strings**. They do not constitute an independent deployed verifier. Source and clock gates come from Phase368/369; the Phase370 branch carries Phase369's pending-aware policy but not the separately archived full Phase369 synthetic benchmark.
+The 24 tests use **synthetic signing keys and fixture log strings**. They do not constitute an independent deployed verifier. Source and clock gates come from Phase368/369; the Phase370 branch carries Phase369's pending-aware policy but not the separately archived full Phase369 synthetic benchmark.
 
 **Promotion gate:** Build a real read-only Github fetcher and externally isolated signer, durable independently anchored event log, key revocation, task expiry/retry, and held-out adjudicated real-task baseline comparison. Do not merge into public main on green fixture tests. The `301^4` source-to-field arithmetic and number-field semantic reconstruction remains independently open (issue #50). No Siegel-zero inference.
