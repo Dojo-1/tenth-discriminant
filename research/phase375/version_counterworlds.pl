@@ -77,7 +77,7 @@ phase375_main :-
          authorized(v375_fast_widened,source_anchor,fast,9,no,no)),
     test(widening_not_retroactive,
          \+ candidate_migration(task_fast_historical,v375_fast_widened,external_auditor)),
-    test_compatible_rename,
+    test(compatible_rename,
          candidate_migration(task_meso,v375_compatible,external_auditor)),
     test(unrelated_change_not_authority_loss,
          same_meaning(v374,v375_compatible,source_anchor)),
