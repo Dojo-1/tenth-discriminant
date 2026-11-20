@@ -1,0 +1,53 @@
+name: E45 full original ellipse orientation null (focused Lean)
+on:
+  push:
+    branches: ['research/e45-full-ellipse-orientation-null']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: e45-full-ellipse-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  e45-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build exact original E45 source
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.E45FullEllipseOrientationNull 2>&1 | tee /tmp/e45-build.log
+          if grep -q 'sorryAx' /tmp/e45-build.log; then exit 1; fi
+      - name: Inspect exact theorem axioms
+        run: |
+          cat >/tmp/e45-audit.lean <<'LEAN'
+          import TenthDiscriminant.E45FullEllipseOrientationNull
+          #check TenthDiscriminant.E45.ellipse_injective_partial_conjugation_no_new_source
+          #check TenthDiscriminant.E45.gaussian_full_ellipse_total_prime_gap_zero
+          #print axioms TenthDiscriminant.E45.ellipse_conjugate_mem
+          #print axioms TenthDiscriminant.E45.ellipse_conjugate_image_eq
+          #print axioms TenthDiscriminant.E45.closed_support_injective_toggle_preserves_support
+          #print axioms TenthDiscriminant.E45.ellipse_injective_partial_conjugation_no_new_source
+          #print axioms TenthDiscriminant.E45.ellipse_imaginary_sum_zero
+          #print axioms TenthDiscriminant.E45.gaussian_full_ellipse_total_prime_gap_zero
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/e45-audit.lean 2>&1 | tee /tmp/e45-axioms.log
+          if grep -q 'sorryAx' /tmp/e45-axioms.log; then exit 1; fi
