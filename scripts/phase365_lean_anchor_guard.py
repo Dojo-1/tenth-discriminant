@@ -102,6 +102,9 @@ def check_all(*, mutator=None) -> None:
     must_have("original trace", src, "2*(a.1*b.1+(D:Int)*a.2*b.2)")
     must_have("ordinary Z derivative", src, "defintegerDerivativeRow(Drsj:Nat)")
     must_have("ordinary Z derivative", src, "r.descFactorialj")
+    must_have("fixed-W conjugate", src, "pairPowD(pairConjp)s")
+    must_have("original nonreal regression", src, "theoremintegerTraceGram_asymmetric_control")
+    must_have("original nonreal regression", src, "!![2,6;6,24]")
     must_have("original row-major", src,
               "integerTraceGramMatrixQDJ(funi=>(i.val/S,i.val%S))")
 
@@ -137,6 +140,11 @@ def main() -> int:
         lambda u,l,p,o,f,s: (u,l,p,o,f,
                              s.replace("2*(a.1*b.1+(D:Int)*a.2*b.2)",
                                        "a.1*b.1+(D:Int)*a.2*b.2"))
+    )
+    must_reject(
+        "wrong_nonreal_conjugate_sign",
+        lambda u,l,p,o,f,s: (u,l,p,o,f,
+                             s.replace("!![2,6;6,24]", "!![2,-6;-6,24]"))
     )
     print("PHASE365_TEXTUAL_LEAN_SOURCE_ANCHORS_OK (not a proof)")
     return 0
