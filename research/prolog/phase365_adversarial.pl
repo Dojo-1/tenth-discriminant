@@ -104,6 +104,65 @@ v_p_loop(N,P,V) :-
       v_p_loop(N1,P,V0), V is V0+1
     ; V = 0 ).
 
+
+% True non-real integer-pair operations, not a Euclidean scalar proxy.
+% These mirror IntegerTraceGram.lean: pairMul, pairConj, pairPow,
+% r.descFactorial j, ordinary Z differentiation holding W fixed.
+pair_mul(D,z(A,B),z(C,E),z(R,I)) :-
+    R is A*C-D*B*E, I is A*E+B*C.
+pair_conj(z(A,B),z(A,NB)) :- NB is -B.
+pair_scale(F,z(A,B),z(R,I)) :- R is F*A, I is F*B.
+pair_pow(_,_,0,z(1,0)) :- !.
+pair_pow(D,Z,N,P) :-
+    N > 0, N1 is N-1,
+    pair_pow(D,Z,N1,P0),
+    pair_mul(D,P0,Z,P).
+pair_trace(D,z(A,B),z(C,E),T) :-
+    T is 2*(A*C+D*B*E).
+
+integer_ordinary_jet(_,R,_,J,_,z(0,0)) :-
+    J > R, !.
+integer_ordinary_jet(D,R,S,J,Z,Out) :-
+    J =< R,
+    falling(R,J,F), N is R-J,
+    pair_pow(D,Z,N,P), pair_conj(Z,C),
+    pair_pow(D,C,S,W),
+    pair_mul(D,P,W,Raw), pair_scale(F,Raw,Out).
+
+lattice_sum_j(K,K,_,_,_,_,0) :- !.
+lattice_sum_j(K,J,D,Z,row(R,S),row(T,U),Total) :-
+    K < J,
+    integer_ordinary_jet(D,R,S,K,Z,A),
+    integer_ordinary_jet(D,T,U,K,Z,B),
+    pair_trace(D,A,B,Here),
+    K1 is K+1,
+    lattice_sum_j(K1,J,D,Z,row(R,S),row(T,U),Rest),
+    Total is Here+Rest.
+
+lattice_sum_q([],_,_,_,_,0).
+lattice_sum_q([Z|Zs],D,J,Row1,Row2,Total) :-
+    lattice_sum_j(0,J,D,Z,Row1,Row2,Here),
+    lattice_sum_q(Zs,D,J,Row1,Row2,Rest),
+    Total is Here+Rest.
+
+lattice_original_gram_entry(Q,D,J,Row1,Row2,Value) :-
+    J >= 1,
+    lattice_sum_q(Q,D,J,Row1,Row2,Value).
+
+nonreal_conjugate_observer :-
+    Q=[z(0,1)], D=3, J=2,
+    lattice_original_gram_entry(Q,D,J,row(0,0),row(0,0),A),
+    lattice_original_gram_entry(Q,D,J,row(0,0),row(1,1),B),
+    lattice_original_gram_entry(Q,D,J,row(1,1),row(1,1),C),
+    A =:= 2, B =:= 6, C =:= 24,
+    Det is A*C-B*B, Det =:= 12.
+
+% Holding the W factor FIXED is observable: z*z=-3 while z*conj(z)=+3.
+nonreal_sign_falsifier :-
+    pair_mul(3,z(0,1),z(0,1),z(-3,0)),
+    pair_mul(3,z(0,1),z(0,-1),z(3,0)),
+    nonreal_conjugate_observer.
+
 % Bounded search, not universal inference.
 clock_counterexample(J1,J2,V1,V2) :-
     between(1,3,J1), between(1,3,J2), J1 < J2,
@@ -197,6 +256,10 @@ run_tests :-
         clock_counterexample(1,2,6,2)),
     test(two_distinct_prime_roles,
         two_prime_role_control),
+    test(original_nonreal_conjugate_trace,
+        nonreal_conjugate_observer),
+    test(nonreal_sign_countercontrol,
+        nonreal_sign_falsifier),
     test(selected_minor_is_not_gram_upper,
         selected_minor_counterexample(1,1,1,2)),
     test(same_sample_cardinality_not_same_factor,
