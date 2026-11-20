@@ -1,0 +1,51 @@
+name: Phase359 actual-field 302 fourth-power research candidate
+on:
+  push:
+    branches: ['research/phase359-302-actual-field-candidate']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase359-actual-field-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  field-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile 302 source-lock field candidate
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Phase359Field302Candidate 2>&1 | tee /tmp/phase359-build.log
+          if grep -q 'sorryAx' /tmp/phase359-build.log; then exit 1; fi
+      - name: Print exact full field theorem axioms
+        run: |
+          cat >/tmp/phase359-axioms.lean <<'LEAN'
+          import TenthDiscriminant.Phase359Field302Candidate
+          #check TenthDiscriminant.Threshold302.totallyComplex_degree_two_classNumber_one_discriminant_bound_302
+          #print axioms TenthDiscriminant.FirstCertificate.Tuned.thin_original_gram_pos_302
+          #print axioms TenthDiscriminant.Phase358.thin_production_normalized_upper_stronger_302
+          #print axioms TenthDiscriminant.Phase348.original_source_joint_normalized_lower_302
+          #print axioms TenthDiscriminant.Phase355.no_scalar_overlap_302_without_mixed
+          #print axioms TenthDiscriminant.Threshold302.totallyComplex_degree_two_classNumber_one_discriminant_bound_302
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/phase359-axioms.lean 2>&1 | tee /tmp/phase359-axioms.log
+          if grep -q 'sorryAx' /tmp/phase359-axioms.log; then exit 1; fi
