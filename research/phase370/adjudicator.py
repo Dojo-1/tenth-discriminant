@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, asdict
 import hashlib
+import re
 
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 from attestation import ContractError, Outcome, SignedOutcome, TaskIntent, canonical
@@ -48,14 +49,23 @@ def attest_ci_task(task: TaskIntent, evidence: WorkflowEvidence,
         raise ContractError('untraceable CI identity')
     if not evidence.trusted_fetch:
         raise ContractError('CI payload not delivered by external trusted fetcher')
-    logs = evidence.log_text.splitlines()
-    if f'PHASE370_TASK_ID={task.id}' not in logs:
+    # Strip runner timestamp/ANSI but never treat an echoed grep command
+    # containing error vocabulary as an actual execution error.
+    payloads = []
+    for raw in evidence.log_text.splitlines():
+        line = re.sub(r'\x1b\[[0-9;]*m', '', raw)
+        line = re.sub(r'^\d{4}-\d\d-\d\dT[^ ]+Z\s*', '', line)
+        if line.startswith(('##[group]Run ', 'run: ', 'shell: ', 'grep -',
+                            'if grep ', 'echo ', 'test ', '##[endgroup]')):
+            continue
+        payloads.append(line.strip())
+    if f'PHASE370_TASK_ID={task.id}' not in payloads:
         raise ContractError('workflow not bound to issued task ID')
-    if marker not in logs or not marker.startswith('VERIFIED_'):
+    if marker not in payloads or not marker.startswith('VERIFIED_'):
         raise ContractError('workflow lacks exact checked completion marker')
     forbidden = ('uncaught exception', 'warning: unknown directive',
                  'sorryax', 'admitax', 'unsolved goals')
-    if any(s in evidence.log_text.lower() for s in forbidden):
+    if any(s in line.lower() for line in payloads for s in forbidden):
         raise ContractError('job log contains forbidden error or proof escape')
     data = Outcome(task.id, task.arm, task.scope, task.source,
                    task.repository_head, role, verifier_id,
