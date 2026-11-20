@@ -156,7 +156,7 @@ def render(manifest: dict, raw: bytes) -> str:
             f"theorem {theoremname} (tier : ResearchClock) :",
             f"    manifestEligible ({i} : Fin 8) tier 9 true false = true ↔",
             f"      TierAuthorizable .{logical} tier .{native} .{plane} := by",
-            "  cases tier <;> decide",
+            "  cases tier <;> simp [manifestEligible, armCost, nativeClocks, isHuman, isOriginal, isContrast, isForbidden, tierAdmitsBool, TierAuthorizable, NativeAdmissible, TierAdmits, Allowed, CanExecute]",
             "",
         ])
 
