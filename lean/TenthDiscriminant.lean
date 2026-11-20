@@ -31,6 +31,7 @@ import TenthDiscriminant.LatticeEllipse
 import TenthDiscriminant.EllipseCellArea
 import TenthDiscriminant.IntegerTraceGram
 import TenthDiscriminant.Phase366ObservationClockPSD
+import TenthDiscriminant.Phase367OriginalEvaluationFactor
 import TenthDiscriminant.JetPrecisionBridge
 import TenthDiscriminant.ObservationConjugation
 import TenthDiscriminant.BinaryNullPolynomial

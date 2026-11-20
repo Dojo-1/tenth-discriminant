@@ -1,0 +1,33 @@
+name: Phase367 Prolog adversarial evaluation factor
+on:
+  push:
+    branches: ['research/phase367-source-exact-evaluation-factorization']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase367-prolog-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  evaluation-factor-oracle:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install GNU Prolog
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends gprolog
+          gprolog --version
+      - name: Guard original source contract
+        run: |
+          python3 scripts/phase365_lean_anchor_guard.py
+      - name: Exact source evaluation controls and falsifiers
+        run: |
+          set -o pipefail
+          gprolog --consult-file research/prolog/phase367_eval_factor.pl --query-goal phase367_main 2>&1 | tee /tmp/phase367-prolog.log
+          if grep -E 'uncaught exception|warning: unknown directive|^FAIL |error\(' /tmp/phase367-prolog.log; then exit 1; fi
+          grep -q '^PHASE367_BOUNDED_FACTOR_ORACLE_PASS' /tmp/phase367-prolog.log
+          test "$(grep -c '^PASS ' /tmp/phase367-prolog.log)" -eq 6

@@ -1,0 +1,52 @@
+name: Phase367 exact original integer evaluation Gram factorization
+on:
+  push:
+    branches: ['research/phase367-source-exact-evaluation-factorization']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase367-original-evaluation-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-gram-factor:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build exact Phase367 source identity and transfer
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Phase367OriginalEvaluationFactor 2>&1 | tee /tmp/phase367.log
+          if grep -E 'sorryAx|admitAx|error:' /tmp/phase367.log; then exit 1; fi
+      - name: Inspect axioms of original Gram and unimodular determinant
+        run: |
+          cat >/tmp/phase367-audit.lean <<'LEAN'
+          import TenthDiscriminant.Phase367OriginalEvaluationFactor
+          #check TenthDiscriminant.Phase367.originalRealEvaluation
+          #check TenthDiscriminant.Phase367.originalImagEvaluation
+          #check TenthDiscriminant.Phase367.original_integer_trace_gram_factorization
+          #check TenthDiscriminant.Phase367.original_rectangular_integer_gram_factorization
+          #check TenthDiscriminant.Phase367.original_gram_unimodular_det
+          #print axioms TenthDiscriminant.Phase367.original_integer_trace_gram_factorization
+          #print axioms TenthDiscriminant.Phase367.original_gram_unimodular_det
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/phase367-audit.lean 2>&1 | tee /tmp/phase367-axioms.log
+          if grep -E 'sorryAx|admitAx|error:' /tmp/phase367-axioms.log; then exit 1; fi
