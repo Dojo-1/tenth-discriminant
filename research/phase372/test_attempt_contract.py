@@ -31,7 +31,7 @@ def fixture():
         serialization.Encoding.Raw,serialization.PublicFormat.Raw).hex()
     loop=AttemptEvidenceLoop(MANIFEST,{
         "outside-ci-verifier":TrustEntry(pub,("source_guard","prolog_exact","lean_kernel"))})
-    task=loop.issue(HEAD,budget=1,phase="fast",nonce="phase372-test-issuance-0001")
+    task=loop.issue(HEAD,budget=1,phase="meso",nonce="phase372-test-issuance-0001")
     loop.register_issuance(Issuance(task.id,"github:issuecomment:7049599129",STAMP))
     return loop,key,task
 
@@ -65,6 +65,18 @@ def real_observation(attempt=2,job_id="136542423196",started=START,content=None)
         started,"success","success",lines)
 
 class AttemptContractTests(unittest.TestCase):
+    def test_historical_phase371_fast_clock_not_policy_eligible(self):
+        # Phase371 was a genuine GitHub execution but was NOT a valid choice
+        # of the current Phase368 Worldlet manifest: source arm is meso-only.
+        key=Ed25519PrivateKey.generate()
+        pub=key.public_key().public_bytes(
+            serialization.Encoding.Raw,serialization.PublicFormat.Raw).hex()
+        loop=AttemptEvidenceLoop(MANIFEST,{
+            "outside-ci-verifier":TrustEntry(pub,("source_guard",))})
+        with self.assertRaises(ContractError):
+            loop.issue(HEAD,budget=1,phase="fast",nonce="historical-fast-clock-issue")
+        self.assertEqual(len(loop.base.tasks),0)
+
     def test_real_run_family_collision(self):
         first=ExecutionIdentity("44809412040",1,"136541801767",HEAD)
         second=ExecutionIdentity("44809412040",2,"136542423196",HEAD)
@@ -115,7 +127,7 @@ class AttemptContractTests(unittest.TestCase):
     def test_same_run_distinct_attempts_distinct_tasks_allowed(self):
         loop,key,t1=fixture()
         loop.accept(signed(key,t1))
-        t2=loop.issue(HEAD,budget=1,phase="fast",nonce="phase372-test-issuance-0002")
+        t2=loop.issue(HEAD,budget=1,phase="meso",nonce="phase372-test-issuance-0002")
         loop.register_issuance(Issuance(t2.id,"github:issuecomment:7049599129",
                                         STAMP))
         loop.accept(signed(key,t2,attempt=3,job_id="136542423197",
@@ -126,7 +138,7 @@ class AttemptContractTests(unittest.TestCase):
 
     def test_same_job_under_different_attempt_rejected(self):
         loop,key,t1=fixture();loop.accept(signed(key,t1))
-        t2=loop.issue(HEAD,budget=1,phase="fast",nonce="phase372-test-issuance-0003")
+        t2=loop.issue(HEAD,budget=1,phase="meso",nonce="phase372-test-issuance-0003")
         loop.register_issuance(Issuance(t2.id,"github:issuecomment:7049599129",
                                         STAMP))
         with self.assertRaises(ContractError):loop.accept(signed(
