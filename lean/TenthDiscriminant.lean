@@ -50,6 +50,7 @@ import TenthDiscriminant.E34OriginalGramPrimeFactor
 import TenthDiscriminant.E35OriginalJetRowCertificate
 import TenthDiscriminant.E36UnimodularMovingRowFrame
 import TenthDiscriminant.E37SourceCertificateNoFake
+import TenthDiscriminant.E38CoherentKernelThread
 import TenthDiscriminant.BinaryNullPolynomial
 import TenthDiscriminant.BinaryNullOrdinaryJets
 import TenthDiscriminant.BinaryNullMixedJets
