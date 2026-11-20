@@ -111,15 +111,21 @@ theorem integerTraceGramEntry_clock_succ
           (integerDerivativeRow D t u J p)) := by
   simp only [integerTraceGramEntry, Finset.sum_range_succ]
 
+/-- Integer matrix of the ONE newly added original ordinary-Z jet clock.
+A named typed Matrix avoids mixing anonymous function and Matrix addition. -/
+def integerClockDelta {n : Nat}
+    (Q : Finset (Int × Int)) (D J : Nat) (rows : Fin n → Nat × Nat) :
+    Matrix (Fin n) (Fin n) Int :=
+  fun a b => Q.sum (fun p => integerPairTrace D
+    (integerDerivativeRow D (rows a).1 (rows a).2 J p)
+    (integerDerivativeRow D (rows b).1 (rows b).2 J p))
+
 /-- The matching original integer matrix statement retains every row. -/
 theorem integerTraceGramMatrix_clock_succ {n : Nat}
     (Q : Finset (Int × Int)) (D J : Nat) (rows : Fin n → Nat × Nat) :
     integerTraceGramMatrix Q D (J+1) rows =
       integerTraceGramMatrix Q D J rows +
-        (fun a b => Q.sum (fun p => integerPairTrace D
-          (integerDerivativeRow D (rows a).1 (rows a).2 J p)
-          (integerDerivativeRow D (rows b).1 (rows b).2 J p)) :
-          Matrix (Fin n) (Fin n) Int) := by
+        integerClockDelta Q D J rows := by
   ext a b
   exact integerTraceGramEntry_clock_succ Q D J
     (rows a).1 (rows a).2 (rows b).1 (rows b).2
