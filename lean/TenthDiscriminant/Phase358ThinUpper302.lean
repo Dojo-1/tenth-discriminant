@@ -3,11 +3,11 @@ import TenthDiscriminant.Phase358SourcePositivity302
 import TenthDiscriminant.Phase356Radius302
 
 /-!
-Phase347 (candidate, UNVERIFIED): this is an exact 302-domain re-derivation
+Phase358 (research-only, verification pending): this is an exact 302-domain re-derivation
 of the source geometry or inequality, not an assumed weakening of a 302 theorem.
 No new prime factor or mixed-H valuation is permitted. Retain original Qthin.
-# Phase337 — SAME original thin-Q ordinary-jet Gram: 302-domain
-# Hadamard upper using the VERIFIED stronger 17/20 radius contraction.
+# Phase358 — SAME original thin-Q ordinary-jet Gram: 302-domain
+# Hadamard upper using the independently Lean-checked 17/20 radius contraction.
 
 This is NOT a source-determinant reduction between Qthin and Qold;
 the padded ellipse is used ONLY as the existing cardinality majorant.
@@ -73,4 +73,4 @@ theorem thin_production_normalized_upper_stronger_302 (D : Nat)
 end
 end TenthDiscriminant.Phase358
 
-#print axioms TenthDiscriminant.Phase347.thin_production_normalized_upper_stronger_302
+#print axioms TenthDiscriminant.Phase358.thin_production_normalized_upper_stronger_302
