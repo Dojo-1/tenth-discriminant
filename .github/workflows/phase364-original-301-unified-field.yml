@@ -1,0 +1,53 @@
+name: Phase364 original source 301 unified field candidate
+on:
+  push:
+    branches: ['research/phase364-301-same-gram-integration']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase364-same-gram-301-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  integrated-301-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build exact 301 integrated source and field theorem
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Phase364Field301Candidate 2>&1 | tee /tmp/phase364-build.log
+          if grep -E 'sorryAx|admitAx' /tmp/phase364-build.log; then exit 1; fi
+      - name: Print exact original-source and field theorem axioms
+        run: |
+          cat >/tmp/phase364-audit.lean <<'LEAN'
+          import TenthDiscriminant.Phase364Field301Candidate
+          #check TenthDiscriminant.Phase362.thin_production_normalized_upper_stronger_301
+          #check TenthDiscriminant.Phase348.original_source_joint_normalized_lower_301
+          #check TenthDiscriminant.FirstCertificate.Tuned.thin_original_gram_pos_301
+          #check TenthDiscriminant.Phase361.strong_scalar_separation_301_with_sharp_radius
+          #check TenthDiscriminant.Threshold301.odd_large_classNumber_ne_one_301
+          #check TenthDiscriminant.Threshold301.totallyComplex_degree_two_classNumber_one_discriminant_bound_301
+          #print axioms TenthDiscriminant.Threshold301.odd_large_classNumber_ne_one_301
+          #print axioms TenthDiscriminant.Threshold301.totallyComplex_degree_two_classNumber_one_discriminant_bound_301
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/phase364-audit.lean 2>&1 | tee /tmp/phase364-axioms.log
+          if grep -E 'sorryAx|admitAx' /tmp/phase364-axioms.log; then exit 1; fi
