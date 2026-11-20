@@ -44,6 +44,31 @@ def CanExecute : ResearchArm → ResearchClock → ExecutionPlane → Prop
   | .externalReview, .review, .humanReview => True
   | _, _, _ => False
 
+/-- Scheduling tiers in the original Phase368 Python *nest*:
+meso includes fast-native Worldlets and review includes both lower tiers.
+They are not wall-clock timestamps. -/
+def TierAdmits : ResearchClock → ResearchClock → Prop
+  | .fast, .fast => True
+  | .meso, .fast => True
+  | .meso, .meso => True
+  | .review, _ => True
+  | _, _ => False
+
+def NativeAdmissible (a : ResearchArm) (tier native : ResearchClock) : Prop :=
+  Allowed a native ∧ TierAdmits tier native
+
+def TierAuthorizable (a : ResearchArm) (tier native : ResearchClock)
+    (p : ExecutionPlane) : Prop :=
+  NativeAdmissible a tier native ∧ CanExecute a native p
+
+theorem fast_native_prolog_on_meso_tier :
+    TierAuthorizable .prologCounterworld .meso .fast .githubCI := by
+  simp [TierAuthorizable, NativeAdmissible, TierAdmits, Allowed, CanExecute]
+
+theorem source_native_meso_not_on_fast_tier :
+    ¬ TierAuthorizable .sourceAnchor .fast .meso .githubCI := by
+  simp [TierAuthorizable, NativeAdmissible, TierAdmits]
+
 def Authorizable (a : ResearchArm) (c : ResearchClock)
     (p : ExecutionPlane) : Prop :=
   Allowed a c ∧ CanExecute a c p
@@ -126,10 +151,11 @@ theorem no_source_meso_to_fast_bridge :
 where its result later happens to be observed. -/
 structure AuthorizedTask where
   arm : ResearchArm
-  schedulingClock : ResearchClock
+  schedulingTier : ResearchClock
+  nativeClock : ResearchClock
   executionPlane : ExecutionPlane
   policyVersion : Nat
-  authorized : Authorizable arm schedulingClock executionPlane
+  authorized : TierAuthorizable arm schedulingTier nativeClock executionPlane
 
 /-- Evidence transport keeps authorization with the *original* task. -/
 structure EvidenceSquare where
@@ -149,7 +175,8 @@ theorem evidence_square_causality (s : EvidenceSquare) :
   exact lt_of_lt_of_le s.issuedBeforeStart s.startBeforeValidation
 
 theorem evidence_square_preserves_policy_authority (s : EvidenceSquare) :
-    Authorizable s.task.arm s.task.schedulingClock s.task.executionPlane :=
+    TierAuthorizable s.task.arm s.task.schedulingTier
+      s.task.nativeClock s.task.executionPlane :=
   s.task.authorized
 
 /-- A constant timestamp map cannot discharge the positive causal constraint,
@@ -163,6 +190,7 @@ theorem flat_clock_invalid_transport :
 
 end TenthDiscriminant.Phase373
 
+#print axioms TenthDiscriminant.Phase373.fast_native_prolog_on_meso_tier
 #print axioms TenthDiscriminant.Phase373.causal_order_reflect
 #print axioms TenthDiscriminant.Phase373.no_source_meso_to_fast_bridge
 #print axioms TenthDiscriminant.Phase373.evidence_square_causality
