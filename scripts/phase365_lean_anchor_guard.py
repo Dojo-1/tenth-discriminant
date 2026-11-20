@@ -83,7 +83,7 @@ def check_all(*, mutator=None) -> None:
     must_have("Phase363 lower", lower, COMPARE)
     must_have("Phase363 lower", lower, "SquarefreeD")
     must_have("Phase363 lower", lower, "original_source_joint_normalized_lower_301")
-    must_have("Phase362 positivity", pos, UPPER)
+    must_have("Phase362 positivity", pos, "integerRectangularTraceGram(ellipsePairsD(thinRadiusD))D(SD)(RD)(SD)")
 
     must_have("Phase364 odd-chart", odd,
               "TenthDiscriminant.Phase362.thin_production_normalized_upper_stronger_301DhD")
