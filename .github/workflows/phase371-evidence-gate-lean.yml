@@ -1,0 +1,54 @@
+name: Phase371 anti-replay Lean governance model
+on:
+  push:
+    branches: ['research/phase371-causal-receipt-state-machine']
+    paths:
+      - 'lean/TenthDiscriminant/Phase371CausalReceipt.lean'
+      - '.github/workflows/phase371-evidence-gate-lean.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase371-evidence-gate-lean-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  focused-lean-proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build exact Phase371 source-scoped authorization state machine
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Phase371CausalReceipt 2>&1 | tee /tmp/phase371-lean.log
+          if grep -E 'sorryAx|admitAx|error:' /tmp/phase371-lean.log; then exit 1; fi
+      - name: Reinspect transitive axioms and theorem identity
+        run: |
+          cat > /tmp/phase371-audit.lean <<'LEAN'
+          import TenthDiscriminant.Phase371CausalReceipt
+          #check TenthDiscriminant.Phase371.no_credit_without_issue
+          #check TenthDiscriminant.Phase371.wellFormed_reachable
+          #check TenthDiscriminant.Phase371.success_flag_alone_not_enough
+          #print axioms TenthDiscriminant.Phase371.wellFormed_reachable
+          #print axioms TenthDiscriminant.Phase371.success_flag_alone_not_enough
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/phase371-audit.lean 2>&1 | tee /tmp/phase371-axioms.log
+          if grep -E 'sorryAx|admitAx|error:' /tmp/phase371-axioms.log; then exit 1; fi
+          echo 'VERIFIED_PHASE371_LEAN_MODEL; not a Python or GitHub security proof'
