@@ -26,4 +26,8 @@ jobs:
           python3 scripts/phase365_lean_anchor_guard.py
       - name: Exact source evaluation controls and falsifiers
         run: |
-          gprolog --consult-file research/prolog/phase367_eval_factor.pl --query-goal phase367_main
+          set -o pipefail
+          gprolog --consult-file research/prolog/phase367_eval_factor.pl --query-goal phase367_main 2>&1 | tee /tmp/phase367-prolog.log
+          if grep -E 'uncaught exception|warning: unknown directive|^FAIL |error\(' /tmp/phase367-prolog.log; then exit 1; fi
+          grep -q '^PHASE367_BOUNDED_FACTOR_ORACLE_PASS' /tmp/phase367-prolog.log
+          test "$(grep -c '^PASS ' /tmp/phase367-prolog.log)" -eq 6
