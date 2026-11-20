@@ -30,6 +30,7 @@ import TenthDiscriminant.Interpolation
 import TenthDiscriminant.LatticeEllipse
 import TenthDiscriminant.EllipseCellArea
 import TenthDiscriminant.IntegerTraceGram
+import TenthDiscriminant.Phase366ObservationClockPSD
 import TenthDiscriminant.JetPrecisionBridge
 import TenthDiscriminant.ObservationConjugation
 import TenthDiscriminant.BinaryNullPolynomial
