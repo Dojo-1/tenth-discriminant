@@ -467,7 +467,9 @@
     "false promotion attempts",
     "source fidelity",
     "compute cost",
-    "Pareto coverage"
+    "Pareto coverage",
+    "gluing defect of source/proof/reviewer triad (pre-registered, not yet measured)",
+    "identity viability of source/claim lineage (pre-registered, not yet measured)"
   ],
   "falsifiers": [
     "D203 transported as 301 source",
