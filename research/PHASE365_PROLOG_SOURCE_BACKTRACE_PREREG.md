@@ -50,3 +50,10 @@ GNU Prolog main/0 returns exit code 0 on all controls passing and 1 otherwise. C
 Construct a canonical original integer evaluation matrix E(Q,D,J,R,S) from the actual derivative rows, show a source-locked identity G=E B E^T for the trace metric B, and transport admissible unimodular U through it. Then distinguish operations preserving det G from operations changing the derivative observation clock. Do NOT infer universal valuation or field results from the finite Prolog toy.
 
 **Human reconstruction checkpoint:** independently derive the shifted two-sample Gram and its unimodular U-congruence. Identify which hypothesis fails if one tries to transport its 5-adic valuation to Qunit or to J=2.
+
+
+## E110 — non-real conjugate/source control (20 November 2026)
+
+The first purely real test was not an adequate adversary for the conjugate factor W: it cannot distinguish z*z from z*conj(z). The harness now independently implements exact integer-pair multiplication (a+b*sqrt(-D)), conjugation, ordinary Z derivative with W held fixed, and the original positive trace 2*(ac+Dbd).
+
+At the EXISTING Lean control from IntegerTraceGram.lean, Q={(0,1)}, D=3, J=2 and rows (0,0),(1,1), the exact Gram is [[2,6],[6,24]] with determinant 12. The false unconjugated replacement z*z=-3 flips the key off-diagonal contribution, whereas z*conj(z)=+3. This is a stronger independent check of the actual non-real source convention, still only one finite regression. The textual Lean guard now insists on the named nonreal theorem, pairConj in the derivative definition, and the original matrix, and kills an intentionally flipped sign. No additional field theorem is inferred.
