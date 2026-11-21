@@ -1,0 +1,266 @@
+{
+  "task_id": "phase379-tao-masullo-multiline-20261121",
+  "claim": {
+    "text": "Under ZF(7/8) for primitive quadratic Dirichlet characters, every class-number-one imaginary quadratic field has absolute fundamental discriminant d<=652; rational inequality gate and independent source/transport audit",
+    "scope": "Negative fundamental D; h(D)=1; exact Fractions at d>=654; bounded 2x2/graph/jet counterworlds; no unconditional GRH proof",
+    "status_before": "H",
+    "assumptions": [
+      "External primitive quadratic ZF(7/8)",
+      "Epstein/Poisson formula and Bessel K representation",
+      "Dirichlet factorization and class number formula",
+      "Hasse alternating eta and beta integral identities",
+      "Fundamental discriminant congruence classification"
+    ],
+    "forbidden_promotions": [
+      "No independent GRH or Siegel-zero theorem",
+      "No promotion of original trace-Gram field-return theorem",
+      "No Selberg or Ihara universal RH",
+      "No claim Masullo trace identity is disproved by local false statements"
+    ]
+  },
+  "specification": {
+    "intended_object": "An externally conditional effective d bound with all finite analytic numerical bounds exact",
+    "invariants": [
+      "No floating acceptance comparisons",
+      "Distinguish real primitive quadratic characters from arbitrary Hecke characters",
+      "Keep original integer Gram unchanged",
+      "Keep boundary Re(s)=0 distinct from Re(s)>0"
+    ],
+    "known_answer_cases": [
+      "Positive sign at 654",
+      "Negative main term at 653",
+      "T=diag(1,-1) ONB counterexample",
+      "T=E11,A=E12 trace norm counterexample",
+      "Ihara lambda=1+sqrt(7),q=3",
+      "Euler factor 1+3^-s zeros on boundary"
+    ]
+  },
+  "implementation": {
+    "artifact": "research/phase379/{tao_652_exact.py,typed_transport_controls.py,ROUND_PHASE379_ALL_LINES.md}",
+    "commit": "research/phase379-tao-652-multiline (draft; final commit SHA to be pinned from GitHub)",
+    "environment": "Python 3.13 standard library; mpmath separate nonacceptance sanity check",
+    "live_entrypoint": "python3 research/phase379/tao_652_exact.py && python3 research/phase379/typed_transport_controls.py",
+    "representation": "fractions.Fraction, exact integer-power enclosures, finite 2x2 matrices, Taylor coefficient arrays, graph spectral formula"
+  },
+  "metric": {
+    "name": "positive rational lower bound for zeta_K(7/8) for all d>=654",
+    "type": "interval",
+    "units": "dimensionless",
+    "direction": "higher_is_better",
+    "raw_before_clipping": true,
+    "semantic_invariance_claimed": false,
+    "equivalence_attacks": [
+      "Independent mpmath values strictly inside rational enclosures",
+      "Negative d=653 main term",
+      "Matrix ONB change",
+      "Euler Re(s)=0 boundary"
+    ]
+  },
+  "tests": {
+    "black_box": [
+      "Python script prints exact enclosure with positivity assertion",
+      "Local independent mpmath true-value comparison"
+    ],
+    "structural": [
+      "Fraction-based reciprocal fourth/eighth root inequalities",
+      "Finite beta and Hasse series remainder inequalities"
+    ],
+    "property_based": [
+      "Taylor polynomial multiplication for zero orders 0..5 with six invertible factors"
+    ],
+    "metamorphic": [
+      "Change ONB for trace sum",
+      "Left vs right operator multiplication",
+      "Change Euler factor nonvanishing to boundary vanishing"
+    ],
+    "fuzzing": [
+      "not applicable: bounded deliberate countermodels suffice for the exact scopes"
+    ],
+    "historical": [
+      "Prior Phase378 d<1024 rational acceptance and 313-discriminant dual enumeration",
+      "Known d<=652 challenge bound"
+    ]
+  },
+  "controls": {
+    "matched_baselines": [
+      "Prior Phase378 d<1024 certificate",
+      "Public d<=652 conditional result"
+    ],
+    "negative_controls": [
+      "d=653 negative Epstein main term",
+      "Abnormal Euler factor zero at Re(s)=0",
+      "False Masullo operator equalities",
+      "Non-Ramanujan graph"
+    ],
+    "compute_parity": "All finite acceptance tests use standard-library Python; large external Lean proof not rebuilt",
+    "parameter_parity": "Same sigma=7/8 and same class-number-one field domain as Phase378",
+    "sampling_parity": "Exact rational arithmetic, not sampling",
+    "data_access_parity": "Published formulas and current public repo source; uploaded Masullo document"
+  },
+  "preregistration": {
+    "prediction": "Rational bound positive at d>=654, negative control d=653; no direct theorem about general Hecke GRH",
+    "primary_metric": "Exact lower bound > 1/100000",
+    "uncertainty_method": "Outward rational error bounds for all finite truncations; external analytic theorem assumptions listed",
+    "kill_condition": "Any false analytic normalization, invalid remainder inequality or nonpositive Fraction margin; any failed interpreter test",
+    "stop_condition": "No more conceptual lifts until source-level analytic and original Gram semantic bridges addressed",
+    "promotion_rule": "Only rational inequalities from M to explicitly checked certificate; conditional theorem needs analytic proof review and exact hypotheses"
+  },
+  "evidence": {
+    "primary_sources": [
+      "Tao Oct20 2026 blog experimental challenge",
+      "User-supplied Masullo Music of the Primes p522/697/698",
+      "Lean/Mathlib community RH verification statement Nov21 2026",
+      "Original Dojo-1 Tenth Discriminant, RH adversarial, DCZA and Selberg-Ihara repository files"
+    ],
+    "execution_records": [
+      "Local python3 tao_652_exact.py passed",
+      "Local python3 typed_transport_controls.py passed",
+      "Local mpmath enclosure membership sanity check passed"
+    ],
+    "independent_witnesses": [
+      {
+        "name": "Lean and Mathlib community proof checkers",
+        "origin": "independent checkers of the external Alpoge formalized RH claim, not this Phase379 certificate",
+        "artifact": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+      }
+    ],
+    "claim_to_artifact_map": [
+      "Rational bounds -> tao_652_exact.py",
+      "Matrix and boundary counterexamples -> typed_transport_controls.py",
+      "Conditional mathematical argument -> ROUND_PHASE379_ALL_LINES.md",
+      "External analytic formula -> classical Epstein/Poisson/Bessel theorem, not formalized here"
+    ]
+  },
+  "round_trip": {
+    "edges": [
+      {
+        "from": "requirement",
+        "to": "formal specification",
+        "preserved": [
+          "class number one, fundamental D"
+        ],
+        "transformed": [
+          "ZF(7/8) added as explicit hypothesis"
+        ],
+        "lost": [
+          "cannot infer uniform zero-freeness"
+        ],
+        "remainder": [
+          "hypothesis dependency"
+        ]
+      },
+      {
+        "from": "formal specification",
+        "to": "source representation",
+        "preserved": [
+          "7/8 fixed point, real quadratic character"
+        ],
+        "transformed": [
+          "Epstein/Poisson into beta, zeta, Bessel remainder"
+        ],
+        "lost": [
+          "no Lean derivation of analytic source formula"
+        ],
+        "remainder": [
+          "analytic-source obligation"
+        ]
+      },
+      {
+        "from": "source representation",
+        "to": "implementation",
+        "preserved": [
+          "correct value and bound directions"
+        ],
+        "transformed": [
+          "special functions into rational truncations"
+        ],
+        "lost": [
+          "symbolic identities are inputs"
+        ],
+        "remainder": [
+          "external integral and continuation identities"
+        ]
+      },
+      {
+        "from": "implementation",
+        "to": "tests",
+        "preserved": [
+          "Fraction comparison boundaries"
+        ],
+        "transformed": [
+          "finite arithmetic and pointwise counterworlds"
+        ],
+        "lost": [
+          "no universal quantified analytic proof"
+        ],
+        "remainder": [
+          "source-to-code specification check"
+        ]
+      },
+      {
+        "from": "tests",
+        "to": "measurement",
+        "preserved": [
+          "lower bound > 1/100000"
+        ],
+        "transformed": [
+          "machine acceptance plus independent numerical sanity"
+        ],
+        "lost": [
+          "same author generated test and implementation"
+        ],
+        "remainder": [
+          "correlated evidence"
+        ]
+      },
+      {
+        "from": "measurement",
+        "to": "interpretation",
+        "preserved": [
+          "conditional d<654"
+        ],
+        "transformed": [
+          "fundamental discriminant congruence yields d<=652"
+        ],
+        "lost": [
+          "not a stronger unconditional method"
+        ],
+        "remainder": [
+          "independent peer review"
+        ]
+      },
+      {
+        "from": "interpretation",
+        "to": "requirement",
+        "preserved": [
+          "Tao goal remains bound from a zero-free manuscript"
+        ],
+        "transformed": [
+          "report conditional known result and separations"
+        ],
+        "lost": [
+          "no claim novel best bound"
+        ],
+        "remainder": [
+          "restore link to original integer Gram"
+        ]
+      }
+    ]
+  },
+  "result": {
+    "observed": "Local exact rational lower bound positive above 1e-5 at d>=654; matrix, Euler and Ihara controls passed",
+    "effect_size": "d<654 hence d<=652 (negative fundamental congruences); rational lower ~1.367274e-5",
+    "uncertainty": "Finite fractions exact; externally assumed analytic identities and ZF(7/8)",
+    "status_after": "M",
+    "retired_claims": [
+      "Basis-invariant sum of absolute diagonals",
+      "Universal equality ||AT||_1=||TA||_1",
+      "Any conjecture that Dirichlet GRH alone enforces universal Ihara or Selberg RH"
+    ],
+    "active_remainder": [
+      "No Lean build of Phase379 analytic bridge",
+      "Independent review of imported analytic normalizations",
+      "Original 301^4 source-to-field semantics remain open"
+    ]
+  }
+}
