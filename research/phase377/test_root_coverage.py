@@ -163,6 +163,16 @@ class RootCoverageAuditControls(unittest.TestCase):
                 encoding="utf-8")
             self.assertNotRegex(actual.source_code(path),r"\bsorry\b")
 
+    def test_audit_manifest_prevents_premature_claim_promotion(self):
+        import json
+        manifest=json.loads((REPO/"research/phase377/AUDIT_MANIFEST.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["claim"]["status_before"],"H")
+        self.assertEqual(manifest["result"]["status_after"],"H")
+        self.assertIn("UNAUDITED_PROJECT_MODULES",manifest["tests"]["historical"][0])
+        self.assertIn("full-root",manifest["preregistration"]["primary_metric"])
+        self.assertTrue(manifest["claim"]["forbidden_promotions"])
+        self.assertTrue(manifest["result"]["active_remainder"])
+
     def test_no_silent_root_audit_exemption_for_new_phases(self):
         source=AUDIT.read_text(encoding="utf-8")
         self.assertNotIn("PHASE371_SKIP",source)
