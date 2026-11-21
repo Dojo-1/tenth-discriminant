@@ -1,0 +1,34 @@
+name: Phase377 structural root-audit preflight (NOT root certification)
+on:
+  push:
+    branches: ['research/phase377-root-proof-audit-reconciliation']
+    paths:
+      - 'lean/TenthDiscriminant.lean'
+      - 'research/phase377/**'
+      - '.github/workflows/phase377-root-audit-preflight.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase377-root-preflight-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-and-import-coverage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Preserve original source contract
+        run: python3 scripts/phase365_lean_anchor_guard.py
+      - name: Check Phase374 manifest table unchanged
+        run: python3 research/phase374/gen_refinement.py --check
+      - name: Audit complete source reachability and negative worlds
+        run: |
+          set -o pipefail
+          python3 -m unittest discover -s research/phase377 -p 'test_*.py' -v 2>&1 | tee /tmp/phase377-preflight.log
+          grep -q 'Ran 13 tests' /tmp/phase377-preflight.log
+          grep -q '^OK$' /tmp/phase377-preflight.log
+          if grep -E '^FAILED |^ERROR:|^FAIL:' /tmp/phase377-preflight.log; then exit 1; fi
+          echo 'PHASE377_ROOT_COVERAGE_PREFLIGHT_OK; full kernel proof audit STILL REQUIRED'

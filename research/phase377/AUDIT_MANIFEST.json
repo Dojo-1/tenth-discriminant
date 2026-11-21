@@ -1,0 +1,195 @@
+{
+  "task_id": "td-phase377-root-import-closure",
+  "claim": {
+    "text": "Root audit traverses every project Lean module, including Phase371–376, without exemptions or removal of proof checks.",
+    "scope": "lean/TenthDiscriminant.lean import reachability and lean/audit.py / Audit.lean full-root admission, frozen parent SHA 94ba275e932d257fa7162a39c6ed15588d0e517b.",
+    "status_before": "H",
+    "assumptions": [
+      "Pinned Lean 4.19.0/mathlib checkout",
+      "All .lean files under lean/TenthDiscriminant are captured by audit.py project_coverage",
+      "GitHub Actions executes the committed workflow and root imports"
+    ],
+    "forbidden_promotions": [
+      "No independent number-field class-number proof",
+      "No external issuer, reviewer or revocation PKI certificate",
+      "No theorem about Python/Lean universal equivalence",
+      "No full-root success if only preflight/focused CI passes"
+    ]
+  },
+  "specification": {
+    "intended_object": "Single complete project import graph for the exact root namespace audit, preserving historical original Gram and Phase371–376 symbolic evidence scopes.",
+    "invariants": [
+      "Every project module reachable from root",
+      "No project-level sorry/admit/axiom/native_decide/unsafe",
+      "Only propext, Classical.choice, Quot.sound in transitive Lean environment",
+      "Math known-false controls still rejected"
+    ],
+    "known_answer_cases": [
+      "Previously omitted Phase371–376 cause UNAUDITED_PROJECT_MODULES",
+      "Missing fixture import B raises",
+      "Cyclic fixture A→A raises",
+      "Fully imported A,B fixture passes"
+    ]
+  },
+  "implementation": {
+    "artifact": "lean/TenthDiscriminant.lean; research/phase377/test_root_coverage.py; existing lean/audit.py and lean/Audit.lean unchanged",
+    "commit": "Phase376 parent 94ba275e932d257fa7162a39c6ed15588d0e517b; Phase377 head to be set by GitHub",
+    "environment": "GitHub Actions ubuntu-24.04; Lean v4.19.0, pinned mathlib c44e0c8; CPython",
+    "live_entrypoint": ".github/workflows/lean.yml: lake build; python3 audit.py; python3 negative_controls.py",
+    "representation": "Finite directed project import graph, independent DFS comparison, source escape scanner, kernel environment audit"
+  },
+  "metric": {
+    "name": "Complete import reachability and transitive axiom audit",
+    "type": "typed_tuple",
+    "units": "(missing-module count, rejected escape count, transitive permitted-axiom status, negative-control pass/fail)",
+    "direction": "partial_order",
+    "raw_before_clipping": true,
+    "semantic_invariance_claimed": false,
+    "equivalence_attacks": [
+      "Reorder imports without changing reachability",
+      "Remove one import to force missing-module rejection",
+      "Introduce self-cycle to force cycle detection",
+      "Compare independent DFS set to project_coverage"
+    ]
+  },
+  "tests": {
+    "black_box": [
+      "GitHub full-root Lean proof checks workflow must pass on exact head"
+    ],
+    "structural": [
+      "Existing audit.py project_coverage",
+      "Independent Python DFS exact set equality",
+      "Audit.py unchanged check"
+    ],
+    "property_based": [
+      "not applicable: finite structural counterexamples, no stochastic generation"
+    ],
+    "metamorphic": [
+      "Import order not part of reachability claim",
+      "Missing B/extra B graph mutations"
+    ],
+    "fuzzing": [
+      "not applicable: proof/structural checks are deterministic; no fuzzing claim"
+    ],
+    "historical": [
+      "Phase375 root #44822330911 failed with UNAUDITED_PROJECT_MODULES"
+    ]
+  },
+  "controls": {
+    "matched_baselines": [
+      "Phase376 focused Lean #44900790848 passed; Phase376 root #44900795338 pending/unknown, not counted as root acceptance"
+    ],
+    "negative_controls": [
+      "Missing B rejected",
+      "Self-cycle rejected",
+      "Missing C rejected",
+      "Forbidden proof escape fixture detected",
+      "Existing lean/negative_controls.py not disabled"
+    ],
+    "compute_parity": "not applicable: deterministic root compilation rather than performance comparison",
+    "parameter_parity": "not applicable",
+    "sampling_parity": "not applicable",
+    "data_access_parity": "same pinned Git repository tree and Mathlib hash"
+  },
+  "preregistration": {
+    "prediction": "After explicit import registration the coverage check lists zero missing modules; the full root audit either passes or exposes further real blockers.",
+    "primary_metric": "GitHub exact-head full-root Lean proof checks conclusion=success and audit.py positive coverage, axiom and negative-control markers",
+    "uncertainty_method": "Deterministic reproducible CI result; no statistical inference",
+    "kill_condition": "Any of missing module, nonstandard axiom, forbidden source escape, failing known-false control, or unverified head; do not claim root gate complete",
+    "stop_condition": "Stop adding research abstractions until project audit and external review floor are reconciled",
+    "promotion_rule": "Promote only project import closure P after exact-head full-root CI success and inspected logs; focus gate alone is M structural evidence"
+  },
+  "evidence": {
+    "primary_sources": [
+      "lean/audit.py",
+      "lean/Audit.lean",
+      ".github/workflows/lean.yml",
+      "lean/TenthDiscriminant.lean"
+    ],
+    "execution_records": [
+      "https://github.com/Dojo-1/tenth-discriminant/actions/runs/44822330911",
+      "https://github.com/Dojo-1/tenth-discriminant/actions/runs/44900790848"
+    ],
+    "independent_witnesses": [],
+    "claim_to_artifact_map": [
+      "Coverage → lean/audit.py project_coverage + root imports",
+      "Axiom soundness → Lean Audit.lean #audit_namespace on compiled env",
+      "Falsification → lean/negative_controls.py",
+      "Scoped prior P → Phase376 focused CI"
+    ]
+  },
+  "round_trip": {
+    "edges": [
+      {
+        "from": "requirement",
+        "to": "formal specification",
+        "preserved": [
+          "all project declarations audited"
+        ],
+        "transformed": [
+          "requirement into import-reachability property"
+        ],
+        "lost": [
+          "external source validity"
+        ],
+        "remainder": "[R]_sem field source-to-number-field bridge"
+      },
+      {
+        "from": "formal specification",
+        "to": "implementation",
+        "preserved": [
+          "all imports reachable"
+        ],
+        "transformed": [
+          "finite filesystem DFS into root imports"
+        ],
+        "lost": [
+          "proof equivalence to intended number theory"
+        ],
+        "remainder": "[R]_formal audit architecture does not prove domain interpretation"
+      },
+      {
+        "from": "implementation",
+        "to": "tests",
+        "preserved": [
+          "detect omission/cycle in synthetic graphs"
+        ],
+        "transformed": [
+          "root parser into test observations"
+        ],
+        "lost": [
+          "real CI environment kernel checks"
+        ],
+        "remainder": "[R]_formal full-root CI pending"
+      },
+      {
+        "from": "tests",
+        "to": "interpretation",
+        "preserved": [
+          "negative fixtures and complete graph"
+        ],
+        "transformed": [
+          "pass/fail status"
+        ],
+        "lost": [
+          "external independent review"
+        ],
+        "remainder": "[R]_attr"
+      }
+    ]
+  },
+  "result": {
+    "observed": "Not yet measured on Phase377 exact-head full-root workflow.",
+    "effect_size": "not applicable: binary proof-audit gate",
+    "uncertainty": "Preflight checks and root workflow pending, no full-root certification yet",
+    "status_after": "H",
+    "retired_claims": [
+      "Focused CI success implies root acceptance"
+    ],
+    "active_remainder": [
+      "[R]_formal full root CI unverified",
+      "[R]_attr no independent evidence signer",
+      "[R]_sem no independent 301^4 field reconstruction"
+    ]
+  }
+}
