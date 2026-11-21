@@ -189,22 +189,16 @@ class RevocationControls(unittest.TestCase):
             g.register_origin(signed_origin(keys,t,signer="approver"))
 
     def test_issuer_key_role_required(self):
-        g,keys,t,o,n=fixture(key_roles=("source_guard","policy_migration","revoke_key"))
-        g.advance(1)
         with self.assertRaises(ContractError):
-            g.register_origin(signed_origin(keys,t))
+            fixture(key_roles=("source_guard","policy_migration","revoke_key"))
 
     def test_approver_role_required(self):
-        g,keys,t,o,n=fixture(key_roles=("issue_task","source_guard","revoke_key"))
-        accepted_origin(g,keys,t);g.advance(2)
         with self.assertRaises(ContractError):
-            g.approve(signed_migration(keys,t,o,n))
+            fixture(key_roles=("issue_task","source_guard","revoke_key"))
 
     def test_guardian_key_role_required(self):
-        g,keys,t,o,n=fixture(key_roles=("issue_task","policy_migration","source_guard"))
-        g.advance(4)
         with self.assertRaises(ContractError):
-            g.revoke(signed_revoke(keys,"approver",4))
+            fixture(key_roles=("issue_task","policy_migration","source_guard"))
 
     def test_issuer_approver_same_public_bytes_different_alias_rejected(self):
         keys=[keypair("issuer","issue_task"),
