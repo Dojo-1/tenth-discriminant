@@ -347,3 +347,14 @@ import TenthDiscriminant.Phase348Lower307
 import TenthDiscriminant.Phase349Field307Candidate
 import TenthDiscriminant.SourceGeometry315
 import TenthDiscriminant.SourcePositivity315
+
+-- Phase377 audit reconciliation: import every Phase371-376 governance proof
+-- into the SAME project root audited by lean/audit.py and Audit.lean.
+-- This is an audit expansion, not an exception or a claim of independent
+-- evidence. Root CI must still compile, scan axioms, and reject false lemmas.
+import TenthDiscriminant.Phase371CausalReceipt
+import TenthDiscriminant.Phase372ExecutionAttempts
+import TenthDiscriminant.Phase373ClockAuthoritySquare
+import TenthDiscriminant.Phase374ManifestRefinement
+import TenthDiscriminant.Phase375PolicyTransport
+import TenthDiscriminant.Phase376IndependentWitness
