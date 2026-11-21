@@ -112,7 +112,7 @@ not perform cryptography, clock authentication or field review.
 ## Evidence classification and next external gate
 
 P: only exact-head Lean-checked symbolic statements once CI succeeds.
-M: 30 synthetic Ed25519 Python tests and 20 finite Prolog tests,
+M: 32 synthetic Ed25519 Python tests and 20 finite Prolog tests,
 if exact-head execution confirms.
 H: trustworthy enrollment/identity, role separation in the real world,
 external anchored revocation state, independent timestamps, durable event
