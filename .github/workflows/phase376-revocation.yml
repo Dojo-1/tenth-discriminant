@@ -1,0 +1,99 @@
+name: Phase376 independent-key revocation and historic evidence gates
+on:
+  push:
+    branches: ['research/phase376-independent-witness-revocation']
+    paths:
+      - 'research/phase376/**'
+      - 'lean/TenthDiscriminant/Phase376IndependentWitness.lean'
+      - '.github/workflows/phase376-revocation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase376-revocation-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  signed-revocation-fixtures:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned Ed25519 library
+        run: python3 -m pip install --disable-pip-version-check cryptography==46.0.4
+      - name: Guard original source identity
+        run: python3 scripts/phase365_lean_anchor_guard.py
+      - name: Execute synthetic independent-key and revocation adversaries
+        run: |
+          set -o pipefail
+          python3 -m unittest discover -s research/phase376 -p 'test_*.py' -v 2>&1 | tee /tmp/phase376-python.log
+          grep -q 'Ran 30 tests' /tmp/phase376-python.log
+          grep -q '^OK$' /tmp/phase376-python.log
+          if grep -E '^FAILED |^ERROR:|^FAIL:' /tmp/phase376-python.log; then exit 1; fi
+          echo 'PHASE376_SYNTHETIC_KEYS_PASS; NO LIVE IDENTITY OR TRUSTED CLOCK'
+  prolog-revocation-obstructions:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install GNU Prolog
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends gprolog
+          gprolog --version
+      - name: Run finite revocation and independence counterworlds
+        run: |
+          set -o pipefail
+          gprolog --consult-file research/phase376/revocation_worlds.pl --query-goal phase376_main 2>&1 | tee /tmp/phase376-prolog.log
+          if grep -E 'uncaught exception|warning: unknown directive|^FAIL |error\(' /tmp/phase376-prolog.log; then exit 1; fi
+          grep -q '^PHASE376_PROLOG_REVOCATION_PASS' /tmp/phase376-prolog.log
+          test "$(grep -c '^PASS ' /tmp/phase376-prolog.log)" -eq 20
+  lean-revocation-theorems:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile Phase376 key-state theorem targets
+        run: |
+          lake update
+          lake exe cache get
+          set -o pipefail
+          lake build TenthDiscriminant.Phase376IndependentWitness 2>&1 | tee /tmp/phase376-lean.log
+          if grep -E 'sorryAx|admitAx|error:' /tmp/phase376-lean.log; then exit 1; fi
+      - name: Print exact checked theorem identities and axioms
+        run: |
+          cat > /tmp/phase376-audit.lean <<'LEAN'
+          import TenthDiscriminant.Phase376IndependentWitness
+          #check TenthDiscriminant.Phase376.revoked_blocks_new_authority
+          #check TenthDiscriminant.Phase376.alias_names_do_not_establish_independence
+          #check TenthDiscriminant.Phase376.revoked_approver_cannot_authorize
+          #check TenthDiscriminant.Phase376.revoked_issuer_cannot_authorize
+          #check TenthDiscriminant.Phase376.historical_record_retains_origin
+          #check TenthDiscriminant.Phase376.clock_rollback_rejected
+          #check TenthDiscriminant.Phase376.demo_key_valid_before_revocation
+          #check TenthDiscriminant.Phase376.demo_key_invalid_at_cutoff
+          #print axioms TenthDiscriminant.Phase376.revoked_blocks_new_authority
+          #print axioms TenthDiscriminant.Phase376.alias_names_do_not_establish_independence
+          #print axioms TenthDiscriminant.Phase376.historical_record_retains_origin
+          LEAN
+          set -o pipefail
+          lake env lean /tmp/phase376-audit.lean 2>&1 | tee /tmp/phase376-audit.log
+          if grep -E 'sorryAx|admitAx|error:' /tmp/phase376-audit.log; then exit 1; fi
+          echo 'VERIFIED_PHASE376_LEAN_SYMBOLIC; EXTERNAL AUTHENTICATION NOT PROVED'
