@@ -213,6 +213,20 @@ class RevocationControls(unittest.TestCase):
         with self.assertRaisesRegex(ContractError,"alias"):
             RevocationAwareMigration((keys[0][1],same,keys[1][1]))
 
+    def test_issuer_and_approver_roles_cannot_share_one_key(self):
+        _, issuer=keypair("issuer","issue_task")
+        _, guardian=keypair("guardian","revoke_key")
+        both=replace(issuer,roles=("issue_task","policy_migration"))
+        with self.assertRaises(ContractError):
+            RevocationAwareMigration((both,guardian))
+
+    def test_governance_key_cannot_double_as_approver(self):
+        _, issuer=keypair("issuer","issue_task")
+        _, governor=keypair("guardian","revoke_key")
+        both=replace(governor,roles=("revoke_key","policy_migration"))
+        with self.assertRaises(ContractError):
+            RevocationAwareMigration((issuer,both))
+
     def test_unregistered_approver_rejected(self):
         g,keys,t,o,n=fixture();accepted_origin(g,keys,t);g.advance(2)
         r=signed_migration(keys,t,o,n,approver_id="unknown")
