@@ -86,7 +86,8 @@ class RevocationAwareMigration:
                 or not HEX64.fullmatch(key.public_key_hex)
                 or key.public_key_hex in fingerprints
                 or type(key.registered_at) is not int or key.registered_at < 0
-                or not key.roles):
+                or len(key.roles) != 1
+                or key.roles[0] not in {"issue_task","policy_migration","revoke_key"}):
                 raise ContractError("invalid or alias-reused public-key identity")
             self.keys[key.key_id] = key
             fingerprints.add(key.public_key_hex)
