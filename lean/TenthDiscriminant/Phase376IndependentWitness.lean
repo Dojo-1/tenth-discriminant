@@ -38,15 +38,8 @@ theorem pre_registration_not_active (c : Credential) (tick : Nat)
   intro hactive
   exact Nat.not_le_of_gt h hactive.1
 
-/-- External signer authenticity is an ASSUMPTION carried by the witness.
-This type cannot be constructed with the issuer's and approver's same
-public-key fingerprint, even when those keys have different aliases. -/
-structure IndependentWitness (issuer approver : Credential) where
-  differentPublicKey : issuer.publicFingerprint ≠ approver.publicFingerprint
-  activeIssuer : ActiveAt issuer 0
-  activeApprover : ActiveAt approver 0
-
-/-- A more general time-indexed authority witness. -/
+/-- The authority witness has an explicit observation time: issuer and
+approver identity cannot be established from actor aliases alone. -/
 structure AuthorizedAt (issuer approver : Credential) (tick : Nat) where
   distinctPublicKeys : issuer.publicFingerprint ≠ approver.publicFingerprint
   issuerActive : ActiveAt issuer tick
@@ -138,10 +131,9 @@ theorem demo_key_valid_before_revocation : ActiveAt demoKey 6 := by
   constructor
   · decide
   · intro cutoff h
-    have hc : cutoff = 7 := by
-      simpa [demoKey] using (Option.some.inj h.symm).symm
-    subst cutoff
-    decide
+    change some (7 : Nat) = some cutoff at h
+    have hc : 7 = cutoff := Option.some.inj h
+    omega
 
 theorem demo_key_invalid_at_cutoff : ¬ ActiveAt demoKey 7 := by
   exact revoked_blocks_new_authority demoKey 7 7 rfl (Nat.le_refl 7)
