@@ -28,7 +28,7 @@ jobs:
         run: |
           set -o pipefail
           python3 -m unittest discover -s research/phase376 -p 'test_*.py' -v 2>&1 | tee /tmp/phase376-python.log
-          grep -q 'Ran 30 tests' /tmp/phase376-python.log
+          grep -q 'Ran 32 tests' /tmp/phase376-python.log
           grep -q '^OK$' /tmp/phase376-python.log
           if grep -E '^FAILED |^ERROR:|^FAIL:' /tmp/phase376-python.log; then exit 1; fi
           echo 'PHASE376_SYNTHETIC_KEYS_PASS; NO LIVE IDENTITY OR TRUSTED CLOCK'
