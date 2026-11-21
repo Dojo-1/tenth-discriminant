@@ -1,0 +1,281 @@
+{
+  "task_id": "phase380-all-lines-grh199-radical-spectral-cocycle-20261121",
+  "claim": {
+    "text": "Conditioned on ZF(33/64) and standard Epstein/Dedekind identities, class number one imaginary quadratic d<=199; exact Gram radical, spectral sampling and character correction finite controls",
+    "scope": "Negative fundamental quadratic field discriminants d>=200, 62 finite d<=199; original D=3 finite Gram; finite operator and source modulus fixtures",
+    "status_before": "H",
+    "assumptions": [
+      "ZF(33/64) for primitive quadratic Dirichlet characters",
+      "standard Epstein/Poisson and Dirichlet Dedekind factorization",
+      "Bessel K bound, gamma and eta identities",
+      "quadratic class-number formula",
+      "Bass identity only when invoking graph zeta"
+    ],
+    "forbidden_promotions": [
+      "Do not call d<=199 unconditional or same-assumption improvement over ZF(7/8)",
+      "Do not infer class-number bound from finite root check alone",
+      "No new Lean/Prolog kernel result this session",
+      "Do not refute Masullo full formula from false local operator or sample lemma",
+      "Do not conflate source E mod p rank with Gram nonsingularity"
+    ]
+  },
+  "specification": {
+    "intended_object": "Typed chain from fixed sigma zero-free region to Epstein positivity, with independently tested source-rank and local Euler/spectral controls",
+    "invariants": [
+      "d is absolute fundamental field discriminant",
+      "sigma=33/64 and excludes only real zeros in (sigma,1)",
+      "Fraction-only acceptance",
+      "source Gram E B E^T unchanged",
+      "character source modulus |D|f^2 retained",
+      "operator PSD not scalar trace"
+    ],
+    "known_answer_cases": [
+      "positive Fraction sign for d>=200",
+      "negative main term at d=199",
+      "same Gram D=3 small control with rank E mod5=4 and rank G mod5=3",
+      "Masullo small ONB and trace norm counterexamples",
+      "smooth bump sampling/L1 counterworld",
+      "Dirichlet D=-4/-8 source-aware F correction cocycle",
+      "Ihara q=3 negative spectral form with positive trace"
+    ]
+  },
+  "implementation": {
+    "artifact": "research/phase380/{zero_free_33_64_certificate.py,finite_199.py,gram_radical_adversarial.py,spectral_sampling_and_positivity.py,conductor_cocycle_finite.py,ROUND_PHASE380_ALL_LINES.md}",
+    "commit": "draft branch intended; pin actual GitHub head once committed",
+    "environment": "Python 3.13 standard library; no local Lean or Prolog available",
+    "live_entrypoint": "run each five Python3 scripts; finite_199.py imports source from research/phase378/tao_zero_free_1024.py",
+    "representation": "Fraction exact beta/eta/roots; integer ring ordinary-Z jet; F5 ranks; finite source-correct character support"
+  },
+  "metric": {
+    "name": "certified rational lower bound for zeta_K(33/64) for d>=200",
+    "type": "interval",
+    "units": "dimensionless",
+    "direction": "higher_is_better",
+    "raw_before_clipping": true,
+    "semantic_invariance_claimed": false,
+    "equivalence_attacks": [
+      "rational upper main at d=199 remains negative",
+      "unimodular basis preserves integer Gram and mod-p radical",
+      "lossy projection loses rank",
+      "source masked-prime correction differs from primitive re-use",
+      "spectral positive trace and determinant cannot prove PSD"
+    ]
+  },
+  "tests": {
+    "black_box": [
+      "five local Python script executions with assert gates"
+    ],
+    "structural": [
+      "Hasse Euler tail 2^-72 and beta split tail exact inequalities",
+      "ordinary Z-jet D=3 source recreation and Gram equality",
+      "exact finite class-number dual routes"
+    ],
+    "property_based": [
+      "all f|g|h positive up to 20, 304 cocycles"
+    ],
+    "metamorphic": [
+      "source-aware character level composition",
+      "integer Gram unimodular frame invariance",
+      "trace positivity vs full PSD negative controls"
+    ],
+    "fuzzing": [
+      "not applicable: exact bounded exhaustive finite enumerations suffice for registered controls"
+    ],
+    "historical": [
+      "Phase379 ZF(7/8) d<=652",
+      "Phase201 original small Gram",
+      "A10 Masullo counterexamples and A9 source verification"
+    ]
+  },
+  "controls": {
+    "matched_baselines": [
+      "Phase379 ZF(7/8)=>d<=652 with strictly weaker hypothesis",
+      "earlier original 322^4 encoded theorem (DIFFERENT assumptions; not comparable as proof mechanism)"
+    ],
+    "negative_controls": [
+      "d=199 upper main term remains negative",
+      "mod5 full row rank but singular Gram",
+      "bump sample/L1 false comparison",
+      "already masked conductor factor produces 1 rather than 4/3",
+      "positive trace and determinant fail to show PSD"
+    ],
+    "compute_parity": "all scripts executed locally with standard Python; no external giant proof build",
+    "parameter_parity": "different sigma declared, no matched-assumption performance claim",
+    "sampling_parity": "exhaustive 62 fields and 132 pairs/304 triples; no random sample",
+    "data_access_parity": "user-supplied 940-page Masullo PDF; current GitHub source and Tao blog"
+  },
+  "preregistration": {
+    "prediction": "at sigma=33/64 Fraction lower at d>=200 >1/1000 and main term at d=199 negative; finite transport nulls reject false statements",
+    "primary_metric": "rational lower >1/1000",
+    "uncertainty_method": "outward integer-power/bracket truncations; explicit Bessel bound conditional on external identity",
+    "kill_condition": "any invalid beta/eta or Epstein normalization, nonpositive Fraction bound, wrong class number, or false conversion from rank to Gram",
+    "stop_condition": "no new algebraic hierarchy until independent analytic/semantic source verification",
+    "promotion_rule": "only rational finite gates count as executed M; conditional analytic lemma remains written argument under cited external theorems, no claim of new Lean verification"
+  },
+  "evidence": {
+    "primary_sources": [
+      "Alpoge pinned Lean source 6b1e1b8 and Lean/Mathlib community statement Nov 21",
+      "Tao original October 20 tenth discriminant challenge",
+      "user-supplied Masullo Music of the Primes pages 453, 501-2, 522, 697-698",
+      "Dojo-1 Tenth Discriminant original Gram modules and independent reconstruction",
+      "DCZA MMF11 and Selberg-Ihara v0 source"
+    ],
+    "execution_records": [
+      "Python3 zero_free_33_64_certificate.py PASSED lower >1/1000",
+      "Python3 gram_radical_adversarial.py PASSED exact Gram equality/ranks",
+      "Python3 spectral_sampling_and_positivity.py PASSED",
+      "Python3 conductor_cocycle_finite.py PASSED 132 and304",
+      "Python3 finite_199.py PASSED 62 dual class number values"
+    ],
+    "independent_witnesses": [
+      {
+        "name": "Lean/Mathlib community multiple kernel checkers",
+        "origin": "external verification only of Alpoge original RH statement, not Phase380",
+        "artifact": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+      }
+    ],
+    "claim_to_artifact_map": [
+      "ZF(33/64)=>d<=199 conditional proof => ROUND_PHASE380_ALL_LINES.md and exact rational script",
+      "62 finite field classification => finite_199.py reusing Phase378 two algorithms",
+      "Gram radical counterexample => gram_radical_adversarial.py and original source",
+      "Masullo p453 sampling claim failure => 940-page manuscript and spectral_sampling_and_positivity.py",
+      "conductor correction cocycle => conductor_cocycle_finite.py",
+      "Ihara PSD != trace average => spectral_sampling_and_positivity.py"
+    ]
+  },
+  "round_trip": {
+    "edges": [
+      {
+        "from": "requirement",
+        "to": "formal specification",
+        "preserved": [
+          "Tao discriminant and Siegel-zero scope"
+        ],
+        "transformed": [
+          "select sigma33/64 as stronger hypothesis"
+        ],
+        "lost": [
+          "not unconditional"
+        ],
+        "remainder": [
+          "explicit assumption"
+        ]
+      },
+      {
+        "from": "formal specification",
+        "to": "source representation",
+        "preserved": [
+          "fundamental discriminant and h1 field"
+        ],
+        "transformed": [
+          "Epstein Poisson and eta/beta series"
+        ],
+        "lost": [
+          "external identities not compiled"
+        ],
+        "remainder": [
+          "analytic source-to-Lean obligation"
+        ]
+      },
+      {
+        "from": "source representation",
+        "to": "implementation",
+        "preserved": [
+          "exact sign inequality direction"
+        ],
+        "transformed": [
+          "finite rational enclosures"
+        ],
+        "lost": [
+          "not a kernel proof of analytic identities"
+        ],
+        "remainder": [
+          "independent analytic reviewer"
+        ]
+      },
+      {
+        "from": "implementation",
+        "to": "tests",
+        "preserved": [
+          "no float acceptance, 62 class numbers, 304 cocycles"
+        ],
+        "transformed": [
+          "finite checks and hand-witness nulls"
+        ],
+        "lost": [
+          "not universal Hecke or Selberg theorems"
+        ],
+        "remainder": [
+          "source-level formalization"
+        ]
+      },
+      {
+        "from": "tests",
+        "to": "measurement",
+        "preserved": [
+          "positive Fraction margin"
+        ],
+        "transformed": [
+          "print decimal preview"
+        ],
+        "lost": [
+          "decimal output not certificate"
+        ],
+        "remainder": [
+          "correlated AI-authored witness"
+        ]
+      },
+      {
+        "from": "measurement",
+        "to": "interpretation",
+        "preserved": [
+          "conditional d<=199"
+        ],
+        "transformed": [
+          "classify finite fields using dual algorithms"
+        ],
+        "lost": [
+          "not a new unconditional classification"
+        ],
+        "remainder": [
+          "human independent source review"
+        ]
+      },
+      {
+        "from": "interpretation",
+        "to": "requirement",
+        "preserved": [
+          "Tao scope and all research lines separated"
+        ],
+        "transformed": [
+          "larger audit ledger and exact source gate"
+        ],
+        "lost": [
+          "no invented Hecke/graph RH"
+        ],
+        "remainder": [
+          "return to theorem interface"
+        ]
+      }
+    ]
+  },
+  "result": {
+    "observed": "all five finite scripts pass, 62 fields crosschecked, 132 source support comparisons, 304 cocycles, Gram and sampling false-inference witnesses",
+    "effect_size": "positive rational lower >1/1000 at d>=200 under external assumptions",
+    "uncertainty": "all acceptance inequalities exact Fraction; external analytic theorems and ZF assumption not derived locally",
+    "status_after": "M",
+    "retired_claims": [
+      "full row rank modp implies Gram nonsingular",
+      "L1 norm by itself universally controls discrete Schwartz sampling",
+      "positive scalar trace/determinant implies PSD",
+      "same numerical bound comparison ignores strength of ZF premise"
+    ],
+    "active_remainder": [
+      "Lean source-level Epstein/character bridge",
+      "actual original Gram field-semantic review #50",
+      "Masullo entire spectral test-family density and zero-count hypothesis",
+      "MMF11 Mathlib analytic orders",
+      "Selberg geodesic operator"
+    ]
+  }
+}
