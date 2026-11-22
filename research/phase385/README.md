@@ -46,3 +46,23 @@ returns `0,2,1` respectively. Hence the normalized quotient cannot be reconstruc
 The original proof **already contains** generic Lean modules `InertFrobenius.lean`, `FrobeniusJet.lean`, `RectangularRowAction.lean`, `RectangularGramFactor.lean` and `BinaryNullTraceGram.lean`. This phase adds **M** (independently implemented finite regressions) and **P** (the elementary factorization/inertia consequences), not a new large-D Lean field theorem. `Phase384` and `MMF14` exact-head Lean builds passed separately. The source-to-field and production-ellipse review issue [#50](https://github.com/Dojo-1/tenth-discriminant/issues/50) remains open.
 
 **Kill rule:** if the true production `Q`, ordinary derivative, Frobenius basis matrix or trace weight differs from these definitions, retract the comparison and replay it with corrected source objects. **Stop rule:** do not promote residual factors found on one finite ellipse into a uniform stronger discriminant bound without a theorem controlling the normalized Gram's higher Smith layers *on the exact production supports*. No merge or publication claim.
+
+## Phase385.2 — precision transport of normalized jets
+
+Let `P(a)` be a row of the transformed *ordinary* source polynomial jets, with integer coefficients in the pair coordinates, and suppose the existing inert Frobenius theorem gives `p^k | P(a)` for all integer points. For the normalized quotient `F(a)=P(a)/p^k`, integer-polynomial congruence gives
+
+`a = b (mod p^(k+m))  =>  F(a) = F(b) (mod p^m)` for every `m>=1`.
+
+With `K=max_i k_i`, the normalized source Gram `H_Q mod p^m` can thus be reconstructed from the histogram of original observations modulo `p^(K+m)`, together with the same source jet polynomials and weights. This is a *sufficient precision* statement, not an optimality claim and not a proof of a new uniform determinant factor.
+
+For `D=43,p=3,R=7,S=3`, `K=2`: modulo 27 suffices for normalized jets modulo 3, modulo 81 for jets modulo 9. The independently executed `precision_jet_control.py` passed **11,340** exact original-source shift/row/derivative checks at modulus 27, checks at modulus 81, and negative controls showing residues mod 3 or 9 can be insufficient for a `k=1` quotient. For instance `q_3(x)=(x^3-x)/3` takes residues `0,2,1 (mod 3)` at `x=0,3,6`, although all three inputs are congruent modulo 3.
+
+Run both primary regressions after installing the pinned SymPy requirement:
+
+```bash
+python3 -m pip install -r requirements.txt
+python3 phase385_nested_source.py
+python3 precision_jet_control.py
+```
+
+An inexpensive exact-head workflow on [Phase385 draft PR #295](https://github.com/Dojo-1/Tenth-Discriminant/pull/295) executes these two regression scripts; no independent human verification is inferred from CI.
