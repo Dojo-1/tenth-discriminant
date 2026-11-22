@@ -136,14 +136,17 @@ theorem sourceQuotReal_shift_mod3 (D x y t : ℤ) :
       ((sourceQuotReal D x y : ℤ) : ZMod 3) - (t : ZMod 3) := by
   rw [sourceQuotReal_shift]
   push_cast
-  norm_num
+  have hthree : (3 : ZMod 3) = 0 := by decide
+  have hnine : (9 : ZMod 3) = 0 := by decide
+  simp [hthree, hnine]
 
 theorem sourceQuotImag_shift_mod3 (D x y t : ℤ) :
     ((sourceQuotImag D (x+3*t) y : ℤ) : ZMod 3) =
       ((sourceQuotImag D x y : ℤ) : ZMod 3) := by
   rw [sourceQuotImag_shift]
   push_cast
-  norm_num
+  have hthree : (3 : ZMod 3) = 0 := by decide
+  simp [hthree]
 
 end QuadraticSourceShift
 end TenthDiscriminant.Phase389
