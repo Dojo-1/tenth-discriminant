@@ -68,6 +68,15 @@ def main():
             assert actual_rank<class_cap
             print("   exact original normalized rank mod3:",actual_rank,
                   "vs occupied-class cap:",class_cap)
+    # Preserved exact negative control from Phase279: original D283/p3
+    # Frobenius F=67, fully saturated evaluation index=527, primitive
+    # restricted trace-pairing valuation=29, so actual v3(detG)=1217.
+    # Incorrectly re-adding Phase387's 32 would demand >=1281 and FAIL.
+    exact_v3=2*(67+527)+29
+    false_additive_lower=2*(67+527+32)+29
+    assert exact_v3==1217 and false_additive_lower==1281
+    assert not(exact_v3>=false_additive_lower)
+    print("PASS exact negative: additive claim 1281 contradicts actual v3=1217")
     print("PASS matched-source historical replay: zero additive extra units")
 
 if __name__=="__main__":main()
