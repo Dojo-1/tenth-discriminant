@@ -46,6 +46,12 @@ def run():
                     A[r*S+s][2*(J*c+j)]=x
                     A[r*S+s][2*(J*c+j)+1]=y
     assert rank_mod(A,P)==column_rank(A)==90
+    # The paper eventual-row periodicity r -> r+24 after the saturated
+    # threshold gives 37+34+31+28=130 original row labels (not 148).
+    source_period_reduced=[A[r*S+s] for s in range(S)
+        for r in range(P*(S-1-s)+J+P*(P*P-1))]
+    assert len(source_period_reduced)==130
+    assert rank_mod(source_period_reduced,P)==column_rank(source_period_reduced)==90
     for js,expected in (([0],27),([0,1],54),([0,1,2],81),([0,1,2,3],90)):
         ids=[2*(J*c+j)+t for c in range(len(classes)) for j in js for t in range(2)]
         assert column_rank(A,ids)==expected
