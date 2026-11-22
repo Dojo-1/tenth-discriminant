@@ -1,0 +1,27 @@
+name: Phase385 exact source-Gram residual controls
+on:
+  push:
+    branches: ['research/phase385-*']
+  pull_request:
+    paths:
+      - 'research/phase385/**'
+      - '.github/workflows/phase385-nested-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  finite-padic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install exact integer matrix arithmetic
+        run: python3 -m pip install --disable-pip-version-check sympy==1.14.0
+      - name: Syntax and source-only static controls
+        run: python3 -m py_compile research/phase385/phase385_nested_source.py research/phase385/precision_jet_control.py
+      - name: Run bounded nonmonotone residual Smith-layer regression
+        run: python3 -u research/phase385/phase385_nested_source.py
+      - name: Verify source quotient-jet p-adic precision
+        run: python3 -u research/phase385/precision_jet_control.py
