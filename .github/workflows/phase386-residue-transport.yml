@@ -1,0 +1,23 @@
+name: Phase386 source-jet precision and exact residue histograms
+on:
+  push:
+    branches: ['research/phase386-*']
+  pull_request:
+    paths:
+      - 'research/phase386/**'
+      - '.github/workflows/phase386-residue-transport.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-jet-histogram:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Compile exact standard-library controls
+        run: python3 -m py_compile research/phase386/*.py
+      - name: Check p^(m+1) jet precision and production Q histogram
+        run: cd research/phase386 && python3 -u test_phase386.py
