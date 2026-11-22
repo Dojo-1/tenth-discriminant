@@ -237,3 +237,4 @@ import TenthDiscriminant.Phase272JetDescent
 import TenthDiscriminant.Phase273TubularJet
 import TenthDiscriminant.Phase275TwoSidedTube
 import TenthDiscriminant.Phase276BreathingValuation
+import TenthDiscriminant.Phase383TwoOddPrimes
