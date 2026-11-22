@@ -138,7 +138,7 @@ theorem sourceQuotReal_shift_mod3 (D x y t : ℤ) :
   push_cast
   have hthree : (3 : ZMod 3) = 0 := by decide
   have hnine : (9 : ZMod 3) = 0 := by decide
-  simp [hthree, hnine]
+  simp [hthree, hnine] <;> ring
 
 theorem sourceQuotImag_shift_mod3 (D x y t : ℤ) :
     ((sourceQuotImag D (x+3*t) y : ℤ) : ZMod 3) =
