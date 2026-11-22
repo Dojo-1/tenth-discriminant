@@ -75,3 +75,27 @@ If the same evaluation index I admits two lower bounds A and B, the combined low
 Freeze **D403/p3** original source, n400, Q219, J4, both signed integer coordinates and all four ordinary derivatives. Compute the full class-compressed modulo-3 normalized evaluation matrix (at most 216 columns) and compare its rank to the historical actual 90. Require an independent direct ordinary-jet oracle and two rank implementations. Reject if source rows, W, Q, metric or rank90 differ. Do not extrapolate to production-scale valuation until the cross-class relations have a uniform source-typed proof and survive the normalization. This is a small falsifiable next experiment, not an invitation to spin another research ontology.
 
 The separately scoped Masullo, conductor and Selberg-Ihara results are not changed by this overlap audit. No merge was performed.
+
+
+## Source-compressed 400-by-216 rank regression (new measured control)
+
+The bounded next experiment above was executed **without constructing the full 1,752-column original normalized matrix**. The original D403/p3 source ellipse has y=-1,0,1 with enough consecutive x values for every x mod9 residue. Hence all 27 coordinate classes modulo 9 are realized.
+
+Construct the original Frobenius-normalized ordinary-Z derivative columns at each class representative using the factored source polynomial, retaining j=0,1,2,3 and both integer-coordinate trace channels. The resulting finite class-compressed matrix is **400 rows x (27*4*2)=216 columns**. By the Phase386 p^(m+1) precision lemma, its column span modulo3 is the same as the original 400x1752 normalized evaluation matrix modulo3.
+
+Two **different elimination directions** (row Gauss-Jordan and incremental column-basis reduction) both give EXACT rank **90**, matching the historical Phase280/281 source measurement. The derivative-channel rank profile is:
+
+| Source ordinary derivative channels included | Rank |
+|---|---:|
+| j=0 | 27 |
+| j=0,1 | 54 |
+| j=0,1,2 | 81 |
+| j=0,1,2,3 | **90** |
+
+Removing the final ordinary derivative j=3 incorrectly lowers rank to 81: this hostile control matches the already documented Phase280 drop-last-jet failure. A deterministic permutation of the residue-class columns preserves rank90. Selected entries at six genuine Q points and eight original r labels were independently checked against the older *direct integer-pair ordinary derivative* implementation, rather than trusting only the factored modular evaluation code.
+
+Executable artifact: [d403_compressed_rank.py](d403_compressed_rank.py); CI pins the same source helper files and checks both independent ranks.
+
+**Interpretation boundary:** the nine extra ranks contributed by j=3 are numerical dimensions, NOT a proof that they coincide as identified subspaces with Phase284's nine first-Bockstein/Frobenius-overlap witnesses. This equality-of-subspaces would require an explicit source-preserving linear map and an algebraic test; similar dimension alone is insufficient. Neither 126-dimensional class-cap slack nor j=3's nine new ranks imply new p-adic determinant exponents without a complete Smith-index theorem. The full original signed trace Gram and its higher Smith layers remain separately controlled.
+
+**Next theorem target (not claimed here):** derive the source-normalized residue-jet column space for D mod9=7, p3, R100, S=J4 as a finite algebraic module, and prove its rank90 and exact j3 quotient rank9 without sampling-dependent elimination. Pair a proposed generator relation with a direct-original-jet falsification and then formalize it in pinned Lean. Do not promote this bounded result into a new large-D cutoff.
