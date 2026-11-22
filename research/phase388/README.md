@@ -92,3 +92,40 @@ The independent script [lowjet_minor_certificate.py](lowjet_minor_certificate.py
 Thus rank(A_low)>=81 by an explicit unimodular minor and rank(A_low)<=81 by conjugation; **rank(A_low)=81 follows without the whole-matrix rank algorithm**. This is a finite computation plus elementary conjugation proof, and has not been translated into pinned Lean. Full rank(A)=90 still uses two independent exact finite Gaussian elimination implementations, and is not claimed to follow purely from the conjugation upper bound.
 
 This fixed-minor artifact makes the finite lower-jet endpoint more auditable and is an additional negative control against accidentally dropping the imaginary source channel or swapping W-held ordinary derivatives for Hasse jets.
+
+
+## Universal S=4 translation identity: algebraic upper bound 90
+
+There is a genuinely SOURCE-LEVEL theorem behind the finite data. Fix **any** quadratic integer-pair source A_D with D≡1 mod3 (so the p3 source reduction is the inert field F9). Keep p=3, S=4 and arbitrary original legal r,s; hence k(r,s)<=3. For any integer source z and t∈{0,1,2}, let z_t=z+3t (which shifts both Z and its held value W by 3 in the sample, though differentiation still holds W constant). Then **for every original normalized ordinary jet row**:
+
+\[
+\boxed{F_{r,s,3}(z_t)-F_{r,s,3}(z_0)
+=t\,\sum_{u=0}^{2}F_{r,s,0}(z_u)\pmod3.}
+\]
+
+**Proof in standard characteristic-3 differential algebra.** Put q=(Z^3-W)/3 at the integral source points. Its evaluation is integral by inert Frobenius. For ordinary Z differentiation of the normalized polynomials introduce the formal derivation δ on F3[Z,W,q] with
+
+\[
+\delta Z=1,\qquad \delta W=0,\qquad \delta q=Z^2.
+\]
+
+Then δ²q=2Z and δ³q=2. In characteristic 3, δ³ is itself a derivation (the middle binomial coefficients 3 choose 1 and 3 choose 2 vanish). It kills Z and W and sends q to 2, so **δ³=2∂/∂q** on this polynomial algebra. The original normal row is Z^a W^s q^k, with k<=3, and the δ^j evaluations reproduce the original normalized **ordinary** source jets for j<=3.
+
+Under a source shift z→z+3t, Z,W are unchanged modulo3 but the integral Frobenius quotient satisfies q(z+3t)≡q(z)-t (mod3). Write the fixed-base normal value as a degree-at-most-three polynomial g(q)=a0+a1 q+a2 q²+a3 q³ over F9. Direct arithmetic in F3 gives
+
+\[
+\sum_{u=0}^{2}g(q-u)=2a_2,\qquad
+2[g'(q-t)-g'(q)]=-t a_2=t(2a_2),
+\]
+
+which proves the claimed identity. This proof is **NOT** a universal S theorem: the degree bound k<=3 is essential. At S=5, k=4 the identity is false, explicitly at D403, r12,s0,z=0; that negative control is in [jet3_translation_identity.py](jet3_translation_identity.py).
+
+### Finite geometry yields the full rank upper without a 400x216 rank oracle
+
+The actual D403 source has all three x-lifts modulo9 for each base z∈F9, with y=0,±1. By the translation identity, every fourth-jet column over a lifted x is a linear combination of **one fourth-jet base column** and three zeroth-jet columns. Conjugation further reduces the fourth-jet base columns to 9 scalar degrees of freedom. Since the lower three jets have at most 81 scalar degrees, the full original A has rank <=81+9=**90** by source algebra alone.
+
+The fixed 81x81 lower-jet unit minor proves lower rank=81. The nine explicitly constructed lower-null N_i and elementary polynomial-root independence prove the relative fourth-jet rank is at least9. Hence **rank A=90** algebraically, conditioned only on the finitely verified nine source row identities, the original quadratic source definitions, and the stated field/conjugation arithmetic. No black-box 400x216 elimination is needed for the *upper* bound.
+
+Finally, the independent [compact_90_factorization.py](compact_90_factorization.py) fixes 90 geometrically chosen scalar source columns (81 lower + 9 fourth representatives) and 90 original row labels. Its 90x90 minor has determinant **2 modulo3**. It constructs coefficients expressing ALL 216 original columns in those 90 generators and verifies every resulting entry across all 400 rows. Each column requires at most four nonzero source-basis coefficients. This is a full exact finite matrix factorization certificate, distinct from the periodicity-based 130-row upper bound in Phase387.
+
+**Evidence boundaries:** P-paper for the δ³ and source-shift identity with k<=3; M for six-source-parameter exact tests and the full source factorization; H for a pinned Lean formalization and the source-to-number-field semantic review. Neither the rank90 nor the nine Phase284 functions produce any separately creditable p-adic Smith valuation: the earlier Phase387 overlap correction still applies.
