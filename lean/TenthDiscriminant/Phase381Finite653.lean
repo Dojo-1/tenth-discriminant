@@ -1,4 +1,5 @@
 import TenthDiscriminant.FiniteSieveBridge
+import TenthDiscriminant.QuadraticDiscriminant
 
 /-!
 # Phase381 — small, source-matched finite class-number gate
