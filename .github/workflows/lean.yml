@@ -29,7 +29,7 @@ jobs:
             ~/.elan
             ~/.cache/mathlib
             lean/.lake/packages
-          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v2
       - name: Install pinned elan
         run: |
           if [ ! -x "$HOME/.elan/bin/elan" ]; then
@@ -39,6 +39,16 @@ jobs:
             /tmp/elan-install/elan-init -y --default-toolchain none
           fi
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Repair incomplete pinned Lean toolchain
+        run: |
+          pinned="$(cat lean-toolchain)"
+          if ! "$HOME/.elan/bin/elan" which lake >/dev/null 2>&1; then
+            echo "Cached pinned toolchain has no lake executable; reinstalling $pinned"
+            "$HOME/.elan/bin/elan" toolchain uninstall "$pinned" || true
+            "$HOME/.elan/bin/elan" toolchain install "$pinned"
+          fi
+          "$HOME/.elan/bin/elan" which lake
+          lake --version
       - name: Resolve pinned dependencies and cache
         run: |
           lake update
@@ -52,7 +62,7 @@ jobs:
             ~/.elan
             ~/.cache/mathlib
             lean/.lake/packages
-          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v2
       - name: Check source-to-certificate correspondence
         run: python3 verify_sources.py
       - name: Build exact statements
