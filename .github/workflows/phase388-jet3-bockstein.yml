@@ -1,0 +1,23 @@
+name: Phase388 exact fourth-jet Bockstein source bridge
+on:
+  push:
+    branches: ['research/phase388-*']
+  pull_request:
+    paths:
+      - 'research/phase388/**'
+      - '.github/workflows/phase388-jet3-bockstein.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-jet3-bridge:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Compile source-only exact controls
+        run: python3 -m py_compile research/phase388/jet3_bockstein_bridge.py
+      - name: Match nine sparse lower-null combinations with Phase284 fourth-jet functions
+        run: python3 -u research/phase388/jet3_bockstein_bridge.py
