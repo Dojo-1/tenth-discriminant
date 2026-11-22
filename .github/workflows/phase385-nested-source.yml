@@ -20,6 +20,8 @@ jobs:
       - name: Install exact integer matrix arithmetic
         run: python3 -m pip install --disable-pip-version-check sympy==1.14.0
       - name: Syntax and source-only static controls
-        run: python3 -m py_compile research/phase385/phase385_nested_source.py
+        run: python3 -m py_compile research/phase385/phase385_nested_source.py research/phase385/precision_jet_control.py
       - name: Run bounded nonmonotone residual Smith-layer regression
         run: python3 -u research/phase385/phase385_nested_source.py
+      - name: Verify source quotient-jet p-adic precision
+        run: python3 -u research/phase385/precision_jet_control.py
