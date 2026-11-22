@@ -18,8 +18,12 @@ jobs:
         with:
           persist-credentials: false
       - name: Compile source-only exact controls
-        run: python3 -m py_compile research/phase388/jet3_bockstein_bridge.py research/phase388/lowjet_minor_certificate.py
+        run: python3 -m py_compile research/phase388/jet3_bockstein_bridge.py research/phase388/lowjet_minor_certificate.py research/phase388/jet3_translation_identity.py research/phase388/compact_90_factorization.py
       - name: Match nine sparse lower-null combinations with Phase284 fourth-jet functions
         run: python3 -u research/phase388/jet3_bockstein_bridge.py
       - name: Certify exact lower-jet rank by conjugation and frozen unit minor
         run: python3 -u research/phase388/lowjet_minor_certificate.py
+      - name: Verify general S4 fourth-jet translation identity and S5 hostile case
+        run: python3 -u research/phase388/jet3_translation_identity.py
+      - name: Verify source-exact 90x90 unit minor and full rank factorization
+        run: python3 -u research/phase388/compact_90_factorization.py
