@@ -238,3 +238,4 @@ import TenthDiscriminant.Phase273TubularJet
 import TenthDiscriminant.Phase275TwoSidedTube
 import TenthDiscriminant.Phase276BreathingValuation
 import TenthDiscriminant.OrderIndexTwoTraceBridge
+import TenthDiscriminant.Phase389CubicTranslation

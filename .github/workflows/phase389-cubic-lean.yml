@@ -1,0 +1,53 @@
+name: Phase389 characteristic-three cubic translation Lean
+on:
+  push:
+    branches: ['research/phase389-*']
+  pull_request:
+    paths:
+      - 'lean/TenthDiscriminant/Phase389CubicTranslation.lean'
+      - '.github/workflows/phase389-cubic-lean.yml'
+      - 'research/phase389/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cubic-source-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v2
+      - name: Install pinned elan and repair missing lake
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          pinned="$(cat lean-toolchain)"
+          if ! "$HOME/.elan/bin/elan" which lake >/dev/null 2>&1; then
+            "$HOME/.elan/bin/elan" toolchain uninstall "$pinned" || true
+            "$HOME/.elan/bin/elan" toolchain install "$pinned"
+          fi
+          "$HOME/.elan/bin/elan" which lake
+      - name: Resolve pinned Mathlib and compile Phase389 source
+        run: |
+          lake update
+          lake exe cache get
+          lean --version
+          lake build TenthDiscriminant.Phase389CubicTranslation
+      - name: Run independent finite hostile controls
+        run: python3 ../research/phase389/finite_controls.py
