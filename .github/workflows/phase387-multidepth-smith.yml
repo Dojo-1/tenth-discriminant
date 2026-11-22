@@ -1,0 +1,27 @@
+name: Phase387 exact multidepth Smith and occupied source classes
+on:
+  push:
+    branches: ['research/phase387-*']
+  pull_request:
+    paths:
+      - 'research/phase387/**'
+      - '.github/workflows/phase387-multidepth-smith.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-depths:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned exact Smith oracle
+        run: python3 -m pip install --disable-pip-version-check sympy==1.14.0
+      - name: Compile finite source scripts
+        run: python3 -m py_compile research/phase387/occupied_depths.py research/phase387/smith_matched_controls.py
+      - name: Verify exact occupied depth bounds
+        run: python3 -u research/phase387/occupied_depths.py
+      - name: Verify Smith-generator and Cauchy-Binet controls
+        run: python3 -u research/phase387/smith_matched_controls.py
