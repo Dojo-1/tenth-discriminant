@@ -78,3 +78,17 @@ The code is [jet3_bockstein_bridge.py](jet3_bockstein_bridge.py), using two diff
 - **R:** interpreting matching dimension alone as a proof of equality, identifying original Phase284 rows directly with lower-null rows, adding nine valuation units, or claiming an improved unconditional field bound.
 
 **Next bounded proof:** formalize the nine original-source lower-jet-null identities in Lean without Hasse derivatives, compile a finite matrix rank factorization with exact source coordinates, and require one wrong-support mutation to fail. Keep the original independent human issue #50 open; leave Masullo/Hecke, conductor and Selberg-Ihara claims unchanged.
+
+## Fixed 81-by-81 lower-jet minor: a more transparent proof of rank 81
+
+The actual 27 mod9 source classes are stable under conjugation: 9 classes with y=0 are fixed, while the 18 classes with y=1 or 8 form 9 conjugate pairs. Every original normalized source-jet value commutes with conjugation (it is built from integer polynomials, the original held-W convention and division by a scalar 3^k). Hence for each j=0,1,2 the 54 scalar source columns carry at most 9+2*9=27 independent scalar degrees of freedom. This yields the source-typed upper bound rank(A_low)<=81 with no Gaussian elimination.
+
+The independent script [lowjet_minor_certificate.py](lowjet_minor_certificate.py) freezes **81 row labels** (first 51 row-major labels plus an explicitly listed sparse continuation), and freezes **81 scalar columns** (one coordinate from each y=0 class, both coordinates from each y=1 class, for every j<3). It checks the conjugation identities over all 400 source rows, then computes the 81x81 modular determinant using a separate exact elimination procedure. The result is
+
+\[
+\det(M_{81\times81})\equiv 1\pmod3.
+\]
+
+Thus rank(A_low)>=81 by an explicit unimodular minor and rank(A_low)<=81 by conjugation; **rank(A_low)=81 follows without the whole-matrix rank algorithm**. This is a finite computation plus elementary conjugation proof, and has not been translated into pinned Lean. Full rank(A)=90 still uses two independent exact finite Gaussian elimination implementations, and is not claimed to follow purely from the conjugation upper bound.
+
+This fixed-minor artifact makes the finite lower-jet endpoint more auditable and is an additional negative control against accidentally dropping the imaginary source channel or swapping W-held ordinary derivatives for Hasse jets.
