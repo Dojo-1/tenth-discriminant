@@ -71,6 +71,7 @@ def test_production():
     assert 3**16>2*rho
     N=count_y_slices(D,rho)
     assert N==6538432431
+    assert 2*(R-1)+(S-1)==5482689649 and N>2*(R-1)+(S-1)
     hist9=exact_ellipse_histogram(D,rho,9)
     hist27=exact_ellipse_histogram(D,rho,27)
     assert len(hist9)==81 and sum(hist9.values())==N
