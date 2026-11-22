@@ -20,10 +20,12 @@ jobs:
       - name: Install pinned exact Smith oracle
         run: python3 -m pip install --disable-pip-version-check sympy==1.14.0
       - name: Compile finite source scripts
-        run: python3 -m py_compile research/phase387/occupied_depths.py research/phase387/smith_matched_controls.py research/phase387/historical_overlap.py
+        run: python3 -m py_compile research/phase387/occupied_depths.py research/phase387/smith_matched_controls.py research/phase387/historical_overlap.py research/phase387/d403_compressed_rank.py
       - name: Verify exact occupied depth bounds
         run: python3 -u research/phase387/occupied_depths.py
       - name: Verify Smith-generator and Cauchy-Binet controls
         run: python3 -u research/phase387/smith_matched_controls.py
       - name: Reject double-credit against Phase278-281 original sources
         run: python3 -u research/phase387/historical_overlap.py
+      - name: Match D403 p3 full-source rank in 27 residue classes
+        run: python3 -u research/phase387/d403_compressed_rank.py
