@@ -1,0 +1,68 @@
+name: Phase385 central sign bridge Lean
+on:
+  push:
+    branches: ['research/phase382-zf-three-quarters-295']
+    paths:
+      - 'lean/TenthDiscriminant/Phase385CentralSign.lean'
+      - 'lean/TenthDiscriminant.lean'
+      - 'research/phase385/**'
+      - 'research/phase384/central_half_rational.py'
+      - '.github/workflows/phase385-central-sign.yml'
+  pull_request:
+    paths:
+      - 'lean/TenthDiscriminant/Phase385CentralSign.lean'
+      - 'lean/TenthDiscriminant.lean'
+      - 'research/phase385/**'
+      - 'research/phase384/central_half_rational.py'
+      - '.github/workflows/phase385-central-sign.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase385-${{ github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  central-sign-ivt:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Reproduce the separate exact-rational sign certificate
+        run: python3 research/phase384/central_half_rational.py
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile exact conditional sign-to-zero theorems
+        working-directory: lean
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.Phase385CentralSign
+      - name: Print exact theorem types and transitive axioms
+        working-directory: lean
+        run: |
+          printf '%s\n' \
+            'import TenthDiscriminant.Phase385CentralSign' \
+            '#check TenthDiscriminant.Phase385.real_zero_between_half_and_one' \
+            '#check TenthDiscriminant.Phase385.positive_dedekind_half_forces_real_zero' \
+            '#check TenthDiscriminant.Phase385.no_real_zero_excludes_d_ge_200' \
+            '#print axioms TenthDiscriminant.Phase385.real_zero_between_half_and_one' \
+            '#print axioms TenthDiscriminant.Phase385.no_real_zero_excludes_d_ge_200' \
+            > /tmp/phase385_axioms.lean
+          lake env lean /tmp/phase385_axioms.lean
