@@ -1,0 +1,39 @@
+name: Phase390 independent original Gram and maximal-order chart audit
+on:
+  push:
+    branches: ['audit/phase390-original-gram-maximal-order']
+    paths:
+      - 'research/phase390/**'
+      - '.github/workflows/phase390-independent-source-audit.yml'
+  pull_request:
+    paths:
+      - 'research/phase390/**'
+      - '.github/workflows/phase390-independent-source-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-independent-source-oracle:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact standard-library regression and negative controls
+        run: python3 -m unittest research.phase390.test_independent_source_oracle -v
+      - name: Print independently reconstructed complete-source evidence
+        run: python3 -m research.phase390.independent_source_oracle
+      - name: Validate Phase390 preregistered audit manifest
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          doc=json.loads(Path("research/phase390/audit_manifest.json").read_text())
+          for section in ("claim","specification","implementation","metric","tests",
+                          "controls","preregistration","evidence","round_trip","result"):
+              assert section in doc,section
+          assert doc["result"]["status_after"]=="M"
+          assert not doc["result"]["observed"].startswith("302^4 theorem independently proven")
+          print("Phase390 manifest topology and evidence boundaries checked")
+          PY
