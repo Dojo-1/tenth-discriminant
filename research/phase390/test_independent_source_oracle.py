@@ -3,7 +3,9 @@ import unittest
 from research.phase390.independent_source_oracle import (
     full_gram_chart_test,exact_ellipse_count_at_fourth_root,
     strict_prime_boundary,source_points,maximal_points,chart,
-    derivative,trace,gram,det_bareiss)
+    derivative,trace,gram,det_bareiss,
+    local_source_valuation_pilot,predicted_binary_exponent,
+    predicted_local_odd_exponent)
 
 class Phase390IndependentSourceTests(unittest.TestCase):
     def test_full_original_integer_gram_in_two_genuinely_distinct_charts(self):
@@ -87,6 +89,18 @@ class Phase390IndependentSourceTests(unittest.TestCase):
             # The class-one field D=163 has a principal split prime
             # at p=41: Norm((1+sqrt(-163))/2)=41.
         self.assertEqual(strict_prime_boundary(163)["boundary_prime"],41)
+
+    def test_actual_full_original_gram_odd_binary_valuation_pilot(self):
+        # Not a proof of the uniform high-dimensional valuation statement.
+        w=local_source_valuation_pilot()
+        self.assertEqual(w["Q_cardinality"],87)
+        self.assertEqual(w["actual_valuations"],{2:216,3:36,5:21})
+        self.assertEqual(w["theorem_required_exponents"],{2:84,3:30,5:10})
+        self.assertEqual(predicted_binary_exponent(6,6),84)
+        self.assertEqual(predicted_local_odd_exponent(6,6,3),30)
+        self.assertEqual(predicted_local_odd_exponent(6,6,5),10)
+        self.assertTrue(all(w["actual_valuations"][p]>=w["theorem_required_exponents"][p]
+                            for p in (2,3,5)))
 
     def test_bad_parameters_are_rejected(self):
         with self.assertRaises(AssertionError):
