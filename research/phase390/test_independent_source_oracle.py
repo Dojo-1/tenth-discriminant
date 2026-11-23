@@ -65,6 +65,7 @@ class Phase390IndependentSourceTests(unittest.TestCase):
     def test_exact_302_endpoint_count_is_nonvacuous(self):
         c=exact_ellipse_count_at_fourth_root(302)
         self.assertEqual(c["D"],8318169616)
+        self.assertNotEqual(c["D"]%4,3) # uniform guard, not an admissible odd field
         self.assertEqual(c["R"],2079542404)
         self.assertEqual(c["S"],83181696)
         self.assertEqual(c["thin_radius"],12119188)
@@ -78,6 +79,7 @@ class Phase390IndependentSourceTests(unittest.TestCase):
         # close the arithmetic-plus-analytic proof at 301^4.
         c=exact_ellipse_count_at_fourth_root(301)
         self.assertEqual(c["D"],8208541201)
+        self.assertNotEqual(c["D"]%4,3) # fourth power, not squarefree
         self.assertEqual(c["original_ellipse_points"],4992989319)
         self.assertEqual(c["strict_margin"],806633310)
         self.assertGreater(c["strict_margin"],0)
