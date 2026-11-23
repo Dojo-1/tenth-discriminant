@@ -1,5 +1,7 @@
 """Phase390 exact arithmetic regressions of the audit, no external field proof."""
 import unittest
+from decimal import Decimal
+from research.phase390.scalar_endpoint_oracle import scalar_difference
 from research.phase390.independent_source_oracle import (
     full_gram_chart_test,exact_ellipse_count_at_fourth_root,
     strict_prime_boundary,source_points,maximal_points,chart,
@@ -101,6 +103,17 @@ class Phase390IndependentSourceTests(unittest.TestCase):
         self.assertEqual(predicted_local_odd_exponent(6,6,5),10)
         self.assertTrue(all(w["actual_valuations"][p]>=w["theorem_required_exponents"][p]
                             for p in (2,3,5)))
+
+    def test_independently_evaluated_301_302_scalar_sign_control(self):
+        bad=scalar_difference(301)
+        good=scalar_difference(302)
+        self.assertLess(Decimal(bad["lower_minus_upper"]),0)
+        self.assertGreater(Decimal(good["lower_minus_upper"]),0)
+        self.assertLess(abs(Decimal(good["lower_minus_upper"])-
+                            Decimal("0.0016402484690816805239")),Decimal("1e-17"))
+        self.assertLess(abs(Decimal(bad["lower_minus_upper"])-
+                            Decimal("-0.0010131141438207330262")),Decimal("1e-17"))
+        self.assertEqual(good["status"],"DECIMAL_DIAGNOSTIC_NOT_ANALYTIC_CERTIFICATE")
 
     def test_bad_parameters_are_rejected(self):
         with self.assertRaises(AssertionError):
