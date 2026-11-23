@@ -2,6 +2,7 @@
 import unittest
 from decimal import Decimal
 from research.phase390.scalar_endpoint_oracle import scalar_difference
+from research.phase390.frobenius_row_pilot import row_pilot,split_prime_counterexample,combination,factored
 from research.phase390.independent_source_oracle import (
     full_gram_chart_test,exact_ellipse_count_at_fourth_root,
     strict_prime_boundary,source_points,maximal_points,chart,
@@ -116,6 +117,24 @@ class Phase390IndependentSourceTests(unittest.TestCase):
         self.assertLess(abs(Decimal(bad["lower_minus_upper"])-
                             Decimal("-0.0010131141438207330262")),Decimal("1e-17"))
         self.assertEqual(good["status"],"DECIMAL_DIAGNOSTIC_NOT_ANALYTIC_CERTIFICATE")
+
+    def test_inert_3_and_5_original_combined_row_divisible_through_all_jets(self):
+        for p in (3,5):
+            with self.subTest(prime=p):
+                result=row_pilot(163,p,18)
+                self.assertTrue(result["whole_row_p2_divisible"])
+                self.assertEqual(result["Q"],87)
+                self.assertEqual(result["ordinary_jets_checked"],87*(p+3))
+                self.assertEqual((result["k"],result["ell"]),(1,1))
+                self.assertEqual((result["R"],result["S"]),(p+1,p*p+2))
+
+    def test_split_prime_negatives_defeat_illegal_universal_divisibility(self):
+        for D,p in ((11,3),(19,5)):
+            negative=split_prime_counterexample(D,p)
+            self.assertTrue(negative["p_squared_divisibility_fails"])
+            self.assertEqual(combination(D,p,negative["z"],0),
+                             factored(D,p,negative["z"],0))
+            self.assertTrue(any(a%(p*p)!=0 for a in negative["combined_row"]))
 
     def test_bad_parameters_are_rejected(self):
         with self.assertRaises(AssertionError):
