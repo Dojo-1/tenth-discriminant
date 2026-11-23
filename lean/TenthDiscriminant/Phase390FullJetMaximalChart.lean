@@ -57,7 +57,8 @@ theorem toMax_mul (D : Nat) (c : Int)
 theorem toMax_conj (a : Int × Int) :
     toMax (pairConj a) = maxConj (toMax a) := by
   rcases a with ⟨x,y⟩
-  simp [toMax,pairConj,maxConj]
+  simp only [toMax,pairConj,maxConj,Prod.fst,Prod.snd,Prod.mk.injEq]
+  constructor <;> ring
 
 theorem toMax_scale (n : Int) (a : Int × Int) :
     toMax (pairScale n a) = maxScale n (toMax a) := by
@@ -141,7 +142,7 @@ theorem forty_one_boundary_controls :
     maxMul 41 (0,1) (1,-1) = (41,0) ∧
     (0 : ZMod 41)^2-(0 : ZMod 41)+41=0 ∧
     (1 : ZMod 41)^2-(1 : ZMod 41)+41=0 := by
-  norm_num [maxMul]
+  norm_num [maxMul] <;> decide
 
 end TenthDiscriminant.Phase390
 
