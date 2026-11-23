@@ -167,12 +167,51 @@ def strict_prime_boundary(D):
     return {"D":D,"boundary_prime":c,"boundary_split":True,
             "p_less_than_c_cannot_be_replaced_with_p_le_c":True}
 
+def valuation(n,p):
+    if n==0:raise ValueError("zero has no finite p-adic valuation")
+    v=0
+    while n%p==0:
+        n//=p
+        v+=1
+    return v
+
+def predicted_binary_exponent(R,S):
+    # Phase331 simultaneous row-frame exponent, not two products.
+    return R*S+2*(S*sum(r//4 for r in range(R))
+                   +R*sum(s//4 for s in range(S)))
+
+def predicted_local_odd_exponent(R,S,p):
+    # Phase323 valuationWeight plus ONE selected horizontal p^2 gain.
+    vertical=sum(min(r//p,s)for r in range(R)for s in range(S))
+    horizontal=R*sum(s//(p*p) for s in range(S)) if p in (3,5,7,11,13,17,19,23,29,31,37,41) else 0
+    return 2*(vertical+horizontal)
+
+def local_source_valuation_pilot():
+    D=163;rho=18;R=S=J=6
+    Q=source_points(D,rho)
+    original=gram(D,R,S,J,Q,"source")
+    transported=gram(D,R,S,J,[chart(z)for z in Q],"maximal")
+    assert original==transported
+    det=det_bareiss(original)
+    if det<=0:raise AssertionError("not a positive full trace Gram")
+    actual={p:valuation(det,p)for p in (2,3,5)}
+    required={2:predicted_binary_exponent(R,S),
+              3:predicted_local_odd_exponent(R,S,3),
+              5:predicted_local_odd_exponent(R,S,5)}
+    assert required=={2:84,3:30,5:10}
+    assert actual=={2:216,3:36,5:21}
+    assert all(actual[p]>=required[p]for p in required)
+    return {"D":D,"R":R,"S":S,"J":J,"rho":rho,"Q_cardinality":len(Q),
+            "actual_valuations":actual,"theorem_required_exponents":required,
+            "scope":"FINITE_NONVACUOUS_ORIGINAL_GRAM_ONLY"}
+
 def run():
     examples=((3,4),(7,5),(11,6),(19,7),(43,8),(163,15))
     data=[full_gram_chart_test(D,rho) for D,rho in examples]
     controls=[strict_prime_boundary(D) for D in (7,11,19,43,67,163)]
     counts=[exact_ellipse_count_at_fourth_root(t) for t in (301,302)]
-    return {"commit_under_audit":"e720d2679e9292e101a39afd8f1b7720863e42f5",
+    pilot=local_source_valuation_pilot()
+    return {"local_matched_valuation_pilot":pilot,"commit_under_audit":"e720d2679e9292e101a39afd8f1b7720863e42f5",
             "status":"BOUNDED_EXACT_ARITHMETIC_NOT_AN_INDEPENDENT_FIELD_PROOF",
             "source_chart_oracles":data,"strict_prime_cutoff_controls":controls,
             "exact_endpoint_ellipse_counts":counts,
