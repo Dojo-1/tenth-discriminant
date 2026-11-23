@@ -342,3 +342,4 @@ import TenthDiscriminant.Phase348Lower307
 import TenthDiscriminant.Phase349Field307Candidate
 import TenthDiscriminant.SourceGeometry315
 import TenthDiscriminant.SourcePositivity315
+import TenthDiscriminant.Phase390FullJetMaximalChart
