@@ -108,7 +108,7 @@ An integer `isqrt` vertical-slice count of the **full** original ellipse, withou
 | 301 | 8,208,541,201 | 11,999,197 | 4,992,989,319 | 4,186,356,009 | +806,633,310 |
 | 302 | 8,318,169,616 | 12,119,188 | 5,058,469,573 | 4,242,266,501 | +816,203,072 |
 
-The pointwise margin is exact for the two displayed D, and the 301 count also passes. Hence **source count alone cannot imply the new cutoff**. Phase354's general cardinality theorem remains the load-bearing universal step.
+These endpoints are uniform-parameter tests only: 301^4 and 302^4 are perfect fourth powers and neither is a squarefree odd-chart field parameter D congruent to 3 modulo 4. The pointwise margin is exact for the two displayed D, and the 301 count also passes. Hence **source count alone cannot imply the new cutoff**. Phase354's general cardinality theorem remains the load-bearing universal step.
 
 A separately transcribed 75-digit `Decimal.ln` calculation of Phase355's same scalar formulas gives
 
