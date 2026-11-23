@@ -1,0 +1,63 @@
+name: Phase386 actual Dirichlet L real-zero bridge
+on:
+  pull_request:
+    paths:
+      - 'lean/TenthDiscriminant/Phase386ComplexDirichlet.lean'
+      - 'lean/TenthDiscriminant.lean'
+      - '.github/workflows/phase386-complex-dirichlet.yml'
+  push:
+    branches: ['research/phase382-zf-three-quarters-295']
+    paths:
+      - 'lean/TenthDiscriminant/Phase386ComplexDirichlet.lean'
+      - 'lean/TenthDiscriminant.lean'
+      - '.github/workflows/phase386-complex-dirichlet.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase386-${{ github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  actual-complex-L:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile concrete L-function theorems
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.Phase386ComplexDirichlet
+      - name: Report theorem types and transitive axioms
+        run: |
+          printf '%s\n' \
+            'import TenthDiscriminant.Phase386ComplexDirichlet' \
+            '#check TenthDiscriminant.Phase386.realDirichletL_continuous' \
+            '#check TenthDiscriminant.Phase386.actual_dirichlet_real_zero_of_sign' \
+            '#check TenthDiscriminant.Phase386.actual_dirichlet_zero_free_bound' \
+            '#print axioms TenthDiscriminant.Phase386.actual_dirichlet_real_zero_of_sign' \
+            '#print axioms TenthDiscriminant.Phase386.actual_dirichlet_zero_free_bound' \
+            > /tmp/phase386_axioms.lean
+          lake env lean /tmp/phase386_axioms.lean

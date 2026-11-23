@@ -1,0 +1,63 @@
+name: Phase388 quadratic Dirichlet Schwarz reflection
+on:
+  pull_request:
+    paths:
+      - 'lean/TenthDiscriminant/Phase388SchwarzReflection.lean'
+      - 'lean/TenthDiscriminant.lean'
+      - '.github/workflows/phase388-reflection.yml'
+  push:
+    branches: ['research/phase382-zf-three-quarters-295']
+    paths:
+      - 'lean/TenthDiscriminant/Phase388SchwarzReflection.lean'
+      - 'lean/TenthDiscriminant.lean'
+      - '.github/workflows/phase388-reflection.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase388-pr302
+  cancel-in-progress: true
+jobs:
+  reflection:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.elan
+            ~/.cache/mathlib
+            lean/.lake/packages
+          key: lean-4.19.0-mathlib-c44e0c8-linux-v1
+      - name: Install pinned elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --retry 3 https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz -o /tmp/elan.tar.gz
+            mkdir -p /tmp/elan-install
+            tar -xzf /tmp/elan.tar.gz -C /tmp/elan-install
+            /tmp/elan-install/elan-init -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build reflection and reality bridge
+        run: |
+          lake update
+          lake exe cache get
+          git rev-parse HEAD
+          lake build TenthDiscriminant.Phase388SchwarzReflection
+      - name: Report exact theorem types and axioms
+        run: |
+          printf '%s\n' \
+            'import TenthDiscriminant.Phase388SchwarzReflection' \
+            '#check TenthDiscriminant.Phase388.quadratic_LFunction_reflection' \
+            '#check TenthDiscriminant.Phase388.quadratic_LFunction_im_zero' \
+            '#check TenthDiscriminant.Phase388.quadratic_real_zero_of_sign' \
+            '#print axioms TenthDiscriminant.Phase388.quadratic_LFunction_im_zero' \
+            '#print axioms TenthDiscriminant.Phase388.quadratic_real_zero_of_sign' \
+            > /tmp/phase388_axioms.lean
+          lake env lean /tmp/phase388_axioms.lean
