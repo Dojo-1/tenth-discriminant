@@ -21,3 +21,15 @@ This file is an unverified draft until focused Lean CI and the full-root audit a
 Still explicit assumptions: actual K-to-chi_D primitive conductor map; Dedekind factorization; Epstein-Poisson formula and central positivity; positive endpoint L(1,chi_D); and zero-freeness or GRH for the final conditional bound. In Phase386 the natural number d is not yet tied to NumberField.discr. Original trace-Gram issue #50 remains open.
 
 Classification labels: P only for compiler-verified exact statements, A for the external analytic/field links, M for bounded rational computations, R for new-record claims concerning the known GRH-conditional 199 result.
+
+
+## Verification update — 23 November 2026
+
+**P, focused Lean verified:** After two syntax/proof-engineering iterations, the exact Phase388 source compiled without errors against Lean 4.19.0 / pinned Mathlib c44e0c8, and the separate transitive-axiom job returned only propext, Classical.choice and Quot.sound (no sorryAx).
+
+- Focused CI: https://github.com/Dojo-1/tenth-discriminant/actions/runs/45146459843
+- Verified statements: quadratic_LFunction_reflection (complex argument), quadratic_LFunction_im_zero (all real arguments), quadratic_real_zero_of_sign (a true complex zero, without an hImagZero assumption).
+- Head SHA: c86787a9c7ce644c505d3b6d3c57addbf61ad2fe.
+- The whole-project root audit is a distinct check; do not mark it green before checking the specific run's conclusion.
+
+**Still A:** central Epstein positivity, the exact quadratic field / primitive conductor / character identification, product factorization and the L(1)>0 sign. The term zetaHalf is supplied as a real number in the conditional theorem and must ultimately be linked to Riemann zeta(1/2). No hImagZero remains in the Phase388 theorem.
