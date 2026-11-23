@@ -74,6 +74,7 @@ theorem real_part_only_is_insufficient :
     (Complex.I).re = 0 ∧ Complex.I ≠ 0 := by
   simp
 
+end
 end TenthDiscriminant.Phase386
 
 #check TenthDiscriminant.Phase386.realDirichletL_continuous
