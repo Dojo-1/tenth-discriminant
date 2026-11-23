@@ -243,3 +243,5 @@ import TenthDiscriminant.Phase385CentralSign
 import TenthDiscriminant.Phase386ComplexDirichlet
 
 import TenthDiscriminant.Phase387QuadraticReality
+
+import TenthDiscriminant.Phase388SchwarzReflection
