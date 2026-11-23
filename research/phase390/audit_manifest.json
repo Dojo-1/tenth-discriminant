@@ -1,0 +1,247 @@
+{
+  "task_id": "phase390-original-gram-source-audit",
+  "claim": {
+    "text": "Phase360 research 302^4 field-discriminant theorem should use a single original trace Gram and legally transport the maximal-order field hypotheses.",
+    "scope": "Frozen e720d267 proof; new bounded six-D, R=3,S=2,J=2 exact oracle and 301/302 cutoff ellipse counts.",
+    "status_before": "H",
+    "assumptions": [
+      "D squarefree and 3 mod4 for the odd maximal-order chart.",
+      "Underlying class-one -> prime inertness theorem is an external bridge to be audited."
+    ],
+    "forbidden_promotions": [
+      "Small examples do not prove all high-D p-adic valuations.",
+      "Lean compile is not independent human semantic verification."
+    ]
+  },
+  "specification": {
+    "intended_object": "Source E_Q from ordinary Z-jets holding W fixed; same G=E_Q diag(2,2D) E_Q^T in both charts, never replace Q by full O_K.",
+    "invariants": [
+      "T(x,y)=(x-y,2y), det(T)=2.",
+      "T^T Bmax T=Bsource and every jet maps under T.",
+      "strict p<(D+1)/4 cutoff; not <="
+    ],
+    "known_answer_cases": [
+      "Six small discriminants D=3,7,11,19,43,163.",
+      "D=163,p=41 boundary split.",
+      "t=302 exact Q count 5,058,469,573."
+    ]
+  },
+  "implementation": {
+    "artifact": "research/phase390/independent_source_oracle.py",
+    "commit": "e720d2679e9292e101a39afd8f1b7720863e42f5 frozen target; audit branch phase390",
+    "environment": "Python3 standard library, integer-only.",
+    "live_entrypoint": "python3 -m unittest research.phase390.test_independent_source_oracle -v",
+    "representation": "Separate quadratic-ring multiplication algorithms in Z[sqrt(-D)] and Z[omega], exact Bareiss determinants."
+  },
+  "metric": {
+    "name": "typed equality, substitution falsification, count margins and strict prime boundary",
+    "type": "typed_tuple",
+    "units": "integers: entries/determinants/cardinality; Boolean source identity",
+    "direction": "two_sided",
+    "raw_before_clipping": true,
+    "semantic_invariance_claimed": true,
+    "equivalence_attacks": [
+      "Same-Q maximal-order chart transport.",
+      "Full-O_K resampling non-equivalence.",
+      "Real-path derivative vs W-fixed jet.",
+      "Boundary p=c split and index-two map noninvertible mod2."
+    ]
+  },
+  "tests": {
+    "black_box": [
+      "All six full original finite Grams in two charts agree."
+    ],
+    "structural": [
+      "Rowwise jet equality, metric congruence and Bareiss det.",
+      "Exact y-slice counts at t=301,302."
+    ],
+    "property_based": [
+      "Exhaustive rows/jets/source points for six fixed finite cases; no random generalization."
+    ],
+    "metamorphic": [
+      "Same physical Q mapped by T vs enlarged full maximal-order sampling."
+    ],
+    "fuzzing": [
+      "not applicable: exact deterministic examples; no randomized fuzzer."
+    ],
+    "historical": [
+      "Phase201 minor/Gram failure, Phase356 bad 76t^3 guard, Phase387 valuation overlap."
+    ]
+  },
+  "controls": {
+    "matched_baselines": [
+      "Source ring and separately implemented maximal ring at the same physical original Q."
+    ],
+    "negative_controls": [
+      "Full O_K sample changes G.",
+      "p=c split at D=163, p=41.",
+      "Wrong derivative and metric.",
+      "301 count positive without 301 scalar collision."
+    ],
+    "compute_parity": "Both algorithms process all rows and the same finite sample set; full O_K test explicitly uses changed input.",
+    "parameter_parity": "Fixed R=3,S=2,J=2 across small cases.",
+    "sampling_parity": "Identical physical Q under T; changed full O_K sampling is a negative control.",
+    "data_access_parity": "Both use the same fixed integer inputs, no external data."
+  },
+  "preregistration": {
+    "prediction": "Exact same-Q Grams agree; changed sample Gram differs; strict prime bound necessary. Frozen before repo CI, following local exploratory pilot.",
+    "primary_metric": "Exact full-Gram identity and negative resampling control.",
+    "uncertainty_method": "Exact integers, bounded cases; universal extrapolation not justified.",
+    "kill_condition": "Any same-Q mismatch, unchanged Gram under full-order resampling, or incorrect endpoint counts kills the claim.",
+    "stop_condition": "Do not propose new cutoff before production source valuation and field interpretation independently reviewed.",
+    "promotion_rule": "Only bounded exact arithmetic M; no universal field-bound promotion from this oracle."
+  },
+  "evidence": {
+    "primary_sources": [
+      "https://github.com/Dojo-1/tenth-discriminant/blob/e720d2679e9292e101a39afd8f1b7720863e42f5/lean/TenthDiscriminant/Phase359Field302Candidate.lean",
+      "https://github.com/Dojo-1/tenth-discriminant/blob/e720d2679e9292e101a39afd8f1b7720863e42f5/lean/TenthDiscriminant/IntegerTraceGram.lean"
+    ],
+    "execution_records": [
+      "Local container pilot 23 Nov 2026; CI is a separate follow-up provenance record."
+    ],
+    "independent_witnesses": [
+      {
+        "name": "Different chart arithmetic oracle",
+        "origin": "different implementation path, same AI author; NOT an independent human referee",
+        "artifact": "research/phase390/independent_source_oracle.py"
+      }
+    ],
+    "claim_to_artifact_map": [
+      "Field theorem -> Phase359Field302Candidate.lean",
+      "Original Gram -> IntegerTraceGram.lean",
+      "Same-source invariance & negative resampling -> Phase390 oracle tests",
+      "High-D p-adic valuation -> remains unreviewed independently."
+    ]
+  },
+  "round_trip": {
+    "edges": [
+      {
+        "from": "requirement",
+        "to": "formal specification",
+        "preserved": [
+          "same original Q/J/R/S"
+        ],
+        "transformed": [
+          "field statement to Gram comparison"
+        ],
+        "lost": [
+          "none"
+        ],
+        "remainder": [
+          "field order interpretation"
+        ]
+      },
+      {
+        "from": "formal specification",
+        "to": "representation",
+        "preserved": [
+          "W-fixed jets"
+        ],
+        "transformed": [
+          "source chart to maximal chart"
+        ],
+        "lost": [
+          "invertibility mod2"
+        ],
+        "remainder": [
+          "p2 cannot transport valuations blindly"
+        ]
+      },
+      {
+        "from": "representation",
+        "to": "implementation",
+        "preserved": [
+          "metric 2,2D"
+        ],
+        "transformed": [
+          "separate ring multiplications"
+        ],
+        "lost": [
+          "universality"
+        ],
+        "remainder": [
+          "production dimensions"
+        ]
+      },
+      {
+        "from": "implementation",
+        "to": "tests",
+        "preserved": [
+          "full finite Gram"
+        ],
+        "transformed": [
+          "six finite cases"
+        ],
+        "lost": [
+          "high-D source valuation"
+        ],
+        "remainder": [
+          "large-R bound"
+        ]
+      },
+      {
+        "from": "tests",
+        "to": "measurement",
+        "preserved": [
+          "exact equality"
+        ],
+        "transformed": [
+          "determinants and counts"
+        ],
+        "lost": [
+          "no analytic upper"
+        ],
+        "remainder": [
+          "scalar contradiction"
+        ]
+      },
+      {
+        "from": "measurement",
+        "to": "interpretation",
+        "preserved": [
+          "same physical source"
+        ],
+        "transformed": [
+          "negative non-equivalent sampling"
+        ],
+        "lost": [
+          "no independent referee"
+        ],
+        "remainder": [
+          "external reconstruction"
+        ]
+      },
+      {
+        "from": "interpretation",
+        "to": "requirement",
+        "preserved": [
+          "strict cutoff p<c"
+        ],
+        "transformed": [
+          "confirmed bounded chart seam"
+        ],
+        "lost": [
+          "no field proof promotion"
+        ],
+        "remainder": [
+          "issue #50 open"
+        ]
+      }
+    ]
+  },
+  "result": {
+    "observed": "Full Gram exact match in six small D, strict change under full maximal-order samples, boundary p=c splitting, exact count margin at 302^4.",
+    "effect_size": "At 302^4: 5,058,469,573 points vs 4,242,266,501 required, +816,203,072.",
+    "uncertainty": "Exact integer calculations for bounded cases; universal extrapolation and human semantic sign-off unresolved.",
+    "status_after": "M",
+    "retired_claims": [
+      "Full maximal-order resampling is just a basis change.",
+      "p<c can be weakened to p<=c."
+    ],
+    "active_remainder": [
+      "Universal high-jet valuation reconstruction",
+      "Global odd/even field chart semantic audit",
+      "Independent human source-to-field review #50"
+    ]
+  }
+}
