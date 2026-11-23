@@ -38,7 +38,7 @@ private theorem reflected_hasDerivAt {f : ℂ → ℂ} {x d : ℂ}
   have hnorm : ‖conj z - conj x‖ = ‖z - x‖ := by
     calc
       _ = ‖conj (z - x)‖ := by rw [map_sub]
-      _ = ‖z - x‖ := by simp
+      _ = ‖z - x‖ := by exact Complex.norm_conj (z - x)
   have hnum :
       ‖conj (f (conj z)) - conj (f (conj x)) - (z - x) * conj d‖ =
       ‖f (conj z) - f (conj x) - (conj z - conj x) * d‖ := by
