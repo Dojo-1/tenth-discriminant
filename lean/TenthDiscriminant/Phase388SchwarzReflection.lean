@@ -37,16 +37,16 @@ private theorem reflected_hasDerivAt {f : ℂ → ℂ} {x d : ℂ}
   funext z
   have hnorm : ‖conj z - conj x‖ = ‖z - x‖ := by
     calc
-      _ = ‖conj (z - x)‖ := by simp
+      _ = ‖conj (z - x)‖ := by rw [map_sub]
       _ = ‖z - x‖ := by simp
   have hnum :
       ‖conj (f (conj z)) - conj (f (conj x)) - (z - x) * conj d‖ =
       ‖f (conj z) - f (conj x) - (conj z - conj x) * d‖ := by
-    calc
-      _ = ‖conj (f (conj z) - f (conj x) - (conj z - conj x) * d)‖ := by
-        congr 1
-        simp
-      _ = _ := by simp
+    have hconj :
+        conj (f (conj z) - f (conj x) - (conj z - conj x) * d) =
+          conj (f (conj z)) - conj (f (conj x)) - (z - x) * conj d := by
+      simp [map_sub, map_mul]
+    rw [← hconj, norm_conj]
   rw [hnum, hnorm]
 
 private theorem reflected_differentiable {f : ℂ → ℂ}
@@ -79,9 +79,9 @@ theorem quadratic_LFunction_conj_of_one_lt
   by_cases hn : n = 0
   · simp [hn]
   · simp only [if_neg hn]
-    have hnarg : (n : ℂ).arg ≠ π := by
+    have hnarg : (n : ℂ).arg ≠ Real.pi := by
       rw [Complex.natCast_arg]
-      positivity
+      exact ne_of_lt Real.pi_pos
     rw [map_div₀, quadratic_coeff_conj χ hquad n,
       ← Complex.conj_cpow (n : ℂ) z hnarg, Complex.conj_natCast]
 
